@@ -1,0 +1,98 @@
+# CustomerSubscriptionData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Type** | **string** | The resource&#39;s type | [default to "customer_subscriptions"]
+**Attributes** | [**CustomerSubscriptionDataAttributes**](CustomerSubscriptionDataAttributes.md) |  | 
+**Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
+
+## Methods
+
+### NewCustomerSubscriptionData
+
+`func NewCustomerSubscriptionData(type_ string, attributes CustomerSubscriptionDataAttributes, ) *CustomerSubscriptionData`
+
+NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewCustomerSubscriptionDataWithDefaults
+
+`func NewCustomerSubscriptionDataWithDefaults() *CustomerSubscriptionData`
+
+NewCustomerSubscriptionDataWithDefaults instantiates a new CustomerSubscriptionData object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *CustomerSubscriptionData) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CustomerSubscriptionData) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CustomerSubscriptionData) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetAttributes
+
+`func (o *CustomerSubscriptionData) GetAttributes() CustomerSubscriptionDataAttributes`
+
+GetAttributes returns the Attributes field if non-nil, zero value otherwise.
+
+### GetAttributesOk
+
+`func (o *CustomerSubscriptionData) GetAttributesOk() (*CustomerSubscriptionDataAttributes, bool)`
+
+GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributes
+
+`func (o *CustomerSubscriptionData) SetAttributes(v CustomerSubscriptionDataAttributes)`
+
+SetAttributes sets Attributes field to given value.
+
+
+### GetRelationships
+
+`func (o *CustomerSubscriptionData) GetRelationships() CouponRecipientCreateDataRelationships`
+
+GetRelationships returns the Relationships field if non-nil, zero value otherwise.
+
+### GetRelationshipsOk
+
+`func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool)`
+
+GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelationships
+
+`func (o *CustomerSubscriptionData) SetRelationships(v CouponRecipientCreateDataRelationships)`
+
+SetRelationships sets Relationships field to given value.
+
+### HasRelationships
+
+`func (o *CustomerSubscriptionData) HasRelationships() bool`
+
+HasRelationships returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

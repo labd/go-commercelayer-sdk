@@ -1,0 +1,98 @@
+# ParcelLineItemData
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Type** | **string** | The resource&#39;s type | [default to "parcel_line_items"]
+**Attributes** | [**ParcelLineItemDataAttributes**](ParcelLineItemDataAttributes.md) |  | 
+**Relationships** | Pointer to [**ParcelLineItemDataRelationships**](ParcelLineItemDataRelationships.md) |  | [optional] 
+
+## Methods
+
+### NewParcelLineItemData
+
+`func NewParcelLineItemData(type_ string, attributes ParcelLineItemDataAttributes, ) *ParcelLineItemData`
+
+NewParcelLineItemData instantiates a new ParcelLineItemData object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewParcelLineItemDataWithDefaults
+
+`func NewParcelLineItemDataWithDefaults() *ParcelLineItemData`
+
+NewParcelLineItemDataWithDefaults instantiates a new ParcelLineItemData object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetType
+
+`func (o *ParcelLineItemData) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *ParcelLineItemData) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *ParcelLineItemData) SetType(v string)`
+
+SetType sets Type field to given value.
+
+
+### GetAttributes
+
+`func (o *ParcelLineItemData) GetAttributes() ParcelLineItemDataAttributes`
+
+GetAttributes returns the Attributes field if non-nil, zero value otherwise.
+
+### GetAttributesOk
+
+`func (o *ParcelLineItemData) GetAttributesOk() (*ParcelLineItemDataAttributes, bool)`
+
+GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttributes
+
+`func (o *ParcelLineItemData) SetAttributes(v ParcelLineItemDataAttributes)`
+
+SetAttributes sets Attributes field to given value.
+
+
+### GetRelationships
+
+`func (o *ParcelLineItemData) GetRelationships() ParcelLineItemDataRelationships`
+
+GetRelationships returns the Relationships field if non-nil, zero value otherwise.
+
+### GetRelationshipsOk
+
+`func (o *ParcelLineItemData) GetRelationshipsOk() (*ParcelLineItemDataRelationships, bool)`
+
+GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRelationships
+
+`func (o *ParcelLineItemData) SetRelationships(v ParcelLineItemDataRelationships)`
+
+SetRelationships sets Relationships field to given value.
+
+### HasRelationships
+
+`func (o *ParcelLineItemData) HasRelationships() bool`
+
+HasRelationships returns a boolean if a field has been set.
+
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
