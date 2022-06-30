@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -19,6 +19,7 @@ import (
 type RefundDataRelationships struct {
 	Order            *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
 	ReferenceCapture *AuthorizationDataRelationshipsCaptures `json:"reference_capture,omitempty"`
+	Events           *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
 }
 
 // NewRefundDataRelationships instantiates a new RefundDataRelationships object
@@ -102,6 +103,38 @@ func (o *RefundDataRelationships) SetReferenceCapture(v AuthorizationDataRelatio
 	o.ReferenceCapture = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *RefundDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret CustomerAddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RefundDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *RefundDataRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *RefundDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o RefundDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Order != nil {
@@ -109,6 +142,9 @@ func (o RefundDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.ReferenceCapture != nil {
 		toSerialize["reference_capture"] = o.ReferenceCapture
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

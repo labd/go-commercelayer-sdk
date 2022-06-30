@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type RefundsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param captureId The resource's id
-		@return ApiGETCaptureIdRefundsRequest
+		@return RefundsApiGETCaptureIdRefundsRequest
 	*/
-	GETCaptureIdRefunds(ctx context.Context, captureId string) ApiGETCaptureIdRefundsRequest
+	GETCaptureIdRefunds(ctx context.Context, captureId string) RefundsApiGETCaptureIdRefundsRequest
 
 	// GETCaptureIdRefundsExecute executes the request
-	GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsRequest) (*http.Response, error)
+	GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdRefundsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdRefunds Retrieve the refunds associated to the order
@@ -43,12 +43,12 @@ type RefundsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdRefundsRequest
+		@return RefundsApiGETOrderIdRefundsRequest
 	*/
-	GETOrderIdRefunds(ctx context.Context, orderId string) ApiGETOrderIdRefundsRequest
+	GETOrderIdRefunds(ctx context.Context, orderId string) RefundsApiGETOrderIdRefundsRequest
 
 	// GETOrderIdRefundsExecute executes the request
-	GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsRequest) (*http.Response, error)
+	GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefundsRequest) (*http.Response, error)
 
 	/*
 		GETRefunds List all refunds
@@ -56,12 +56,12 @@ type RefundsApi interface {
 		List all refunds
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETRefundsRequest
+		@return RefundsApiGETRefundsRequest
 	*/
-	GETRefunds(ctx context.Context) ApiGETRefundsRequest
+	GETRefunds(ctx context.Context) RefundsApiGETRefundsRequest
 
 	// GETRefundsExecute executes the request
-	GETRefundsExecute(r ApiGETRefundsRequest) (*http.Response, error)
+	GETRefundsExecute(r RefundsApiGETRefundsRequest) (*http.Response, error)
 
 	/*
 		GETRefundsRefundId Retrieve a refund
@@ -70,25 +70,25 @@ type RefundsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param refundId The resource's id
-		@return ApiGETRefundsRefundIdRequest
+		@return RefundsApiGETRefundsRefundIdRequest
 	*/
-	GETRefundsRefundId(ctx context.Context, refundId string) ApiGETRefundsRefundIdRequest
+	GETRefundsRefundId(ctx context.Context, refundId string) RefundsApiGETRefundsRefundIdRequest
 
 	// GETRefundsRefundIdExecute executes the request
 	//  @return Refund
-	GETRefundsRefundIdExecute(r ApiGETRefundsRefundIdRequest) (*Refund, *http.Response, error)
+	GETRefundsRefundIdExecute(r RefundsApiGETRefundsRefundIdRequest) (*Refund, *http.Response, error)
 }
 
 // RefundsApiService RefundsApi service
 type RefundsApiService service
 
-type ApiGETCaptureIdRefundsRequest struct {
+type RefundsApiGETCaptureIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService RefundsApi
 	captureId  string
 }
 
-func (r ApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
+func (r RefundsApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdRefundsExecute(r)
 }
 
@@ -99,10 +99,10 @@ Retrieve the refunds associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdRefundsRequest
+ @return RefundsApiGETCaptureIdRefundsRequest
 */
-func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) ApiGETCaptureIdRefundsRequest {
-	return ApiGETCaptureIdRefundsRequest{
+func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) RefundsApiGETCaptureIdRefundsRequest {
+	return RefundsApiGETCaptureIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -110,7 +110,7 @@ func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId s
 }
 
 // Execute executes the request
-func (a *RefundsApiService) GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsRequest) (*http.Response, error) {
+func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdRefundsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -174,13 +174,13 @@ func (a *RefundsApiService) GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdRefundsRequest struct {
+type RefundsApiGETOrderIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService RefundsApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
+func (r RefundsApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdRefundsExecute(r)
 }
 
@@ -191,10 +191,10 @@ Retrieve the refunds associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdRefundsRequest
+ @return RefundsApiGETOrderIdRefundsRequest
 */
-func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId string) ApiGETOrderIdRefundsRequest {
-	return ApiGETOrderIdRefundsRequest{
+func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId string) RefundsApiGETOrderIdRefundsRequest {
+	return RefundsApiGETOrderIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -202,7 +202,7 @@ func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-func (a *RefundsApiService) GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsRequest) (*http.Response, error) {
+func (a *RefundsApiService) GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefundsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -266,12 +266,12 @@ func (a *RefundsApiService) GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundsRequest struct {
+type RefundsApiGETRefundsRequest struct {
 	ctx        context.Context
 	ApiService RefundsApi
 }
 
-func (r ApiGETRefundsRequest) Execute() (*http.Response, error) {
+func (r RefundsApiGETRefundsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETRefundsExecute(r)
 }
 
@@ -281,17 +281,17 @@ GETRefunds List all refunds
 List all refunds
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETRefundsRequest
+ @return RefundsApiGETRefundsRequest
 */
-func (a *RefundsApiService) GETRefunds(ctx context.Context) ApiGETRefundsRequest {
-	return ApiGETRefundsRequest{
+func (a *RefundsApiService) GETRefunds(ctx context.Context) RefundsApiGETRefundsRequest {
+	return RefundsApiGETRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *RefundsApiService) GETRefundsExecute(r ApiGETRefundsRequest) (*http.Response, error) {
+func (a *RefundsApiService) GETRefundsExecute(r RefundsApiGETRefundsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -354,13 +354,13 @@ func (a *RefundsApiService) GETRefundsExecute(r ApiGETRefundsRequest) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundsRefundIdRequest struct {
+type RefundsApiGETRefundsRefundIdRequest struct {
 	ctx        context.Context
 	ApiService RefundsApi
 	refundId   string
 }
 
-func (r ApiGETRefundsRefundIdRequest) Execute() (*Refund, *http.Response, error) {
+func (r RefundsApiGETRefundsRefundIdRequest) Execute() (*Refund, *http.Response, error) {
 	return r.ApiService.GETRefundsRefundIdExecute(r)
 }
 
@@ -371,10 +371,10 @@ Retrieve a refund
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param refundId The resource's id
- @return ApiGETRefundsRefundIdRequest
+ @return RefundsApiGETRefundsRefundIdRequest
 */
-func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId string) ApiGETRefundsRefundIdRequest {
-	return ApiGETRefundsRefundIdRequest{
+func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId string) RefundsApiGETRefundsRefundIdRequest {
+	return RefundsApiGETRefundsRefundIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		refundId:   refundId,
@@ -383,7 +383,7 @@ func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId str
 
 // Execute executes the request
 //  @return Refund
-func (a *RefundsApiService) GETRefundsRefundIdExecute(r ApiGETRefundsRefundIdRequest) (*Refund, *http.Response, error) {
+func (a *RefundsApiService) GETRefundsRefundIdExecute(r RefundsApiGETRefundsRefundIdRequest) (*Refund, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

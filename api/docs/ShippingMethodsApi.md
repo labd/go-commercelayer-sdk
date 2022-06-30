@@ -8,8 +8,10 @@ Method | HTTP request | Description
 [**GETDeliveryLeadTimeIdShippingMethod**](ShippingMethodsApi.md#GETDeliveryLeadTimeIdShippingMethod) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/shipping_method | Retrieve the shipping method associated to the delivery lead time
 [**GETShipmentIdAvailableShippingMethods**](ShippingMethodsApi.md#GETShipmentIdAvailableShippingMethods) | **Get** /shipments/{shipmentId}/available_shipping_methods | Retrieve the available shipping methods associated to the shipment
 [**GETShipmentIdShippingMethod**](ShippingMethodsApi.md#GETShipmentIdShippingMethod) | **Get** /shipments/{shipmentId}/shipping_method | Retrieve the shipping method associated to the shipment
+[**GETShippingMethodTierIdShippingMethod**](ShippingMethodsApi.md#GETShippingMethodTierIdShippingMethod) | **Get** /shipping_method_tiers/{shippingMethodTierId}/shipping_method | Retrieve the shipping method associated to the shipping method tier
 [**GETShippingMethods**](ShippingMethodsApi.md#GETShippingMethods) | **Get** /shipping_methods | List all shipping methods
 [**GETShippingMethodsShippingMethodId**](ShippingMethodsApi.md#GETShippingMethodsShippingMethodId) | **Get** /shipping_methods/{shippingMethodId} | Retrieve a shipping method
+[**GETShippingWeightTierIdShippingMethod**](ShippingMethodsApi.md#GETShippingWeightTierIdShippingMethod) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/shipping_method | Retrieve the shipping method associated to the shipping weight tier
 [**PATCHShippingMethodsShippingMethodId**](ShippingMethodsApi.md#PATCHShippingMethodsShippingMethodId) | **Patch** /shipping_methods/{shippingMethodId} | Update a shipping method
 [**POSTShippingMethods**](ShippingMethodsApi.md#POSTShippingMethods) | **Post** /shipping_methods | Create a shipping method
 
@@ -287,6 +289,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETShippingMethodTierIdShippingMethod
+
+> GETShippingMethodTierIdShippingMethod(ctx, shippingMethodTierId).Execute()
+
+Retrieve the shipping method associated to the shipping method tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodTierId := "shippingMethodTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ShippingMethodsApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethodTierIdShippingMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodTierIdShippingMethodRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETShippingMethods
 
 > GETShippingMethods(ctx).Execute()
@@ -410,6 +480,74 @@ No authorization required
 
 - **Content-Type**: Not defined
 - **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingWeightTierIdShippingMethod
+
+> GETShippingWeightTierIdShippingMethod(ctx, shippingWeightTierId).Execute()
+
+Retrieve the shipping method associated to the shipping weight tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.ShippingMethodsApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingWeightTierIdShippingMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingWeightTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingWeightTierIdShippingMethodRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

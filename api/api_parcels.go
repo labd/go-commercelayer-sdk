@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiDELETEParcelsParcelIdRequest
+		@return ParcelsApiDELETEParcelsParcelIdRequest
 	*/
-	DELETEParcelsParcelId(ctx context.Context, parcelId string) ApiDELETEParcelsParcelIdRequest
+	DELETEParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiDELETEParcelsParcelIdRequest
 
 	// DELETEParcelsParcelIdExecute executes the request
-	DELETEParcelsParcelIdExecute(r ApiDELETEParcelsParcelIdRequest) (*http.Response, error)
+	DELETEParcelsParcelIdExecute(r ParcelsApiDELETEParcelsParcelIdRequest) (*http.Response, error)
 
 	/*
 		GETPackageIdParcels Retrieve the parcels associated to the package
@@ -43,12 +43,12 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param packageId The resource's id
-		@return ApiGETPackageIdParcelsRequest
+		@return ParcelsApiGETPackageIdParcelsRequest
 	*/
-	GETPackageIdParcels(ctx context.Context, packageId string) ApiGETPackageIdParcelsRequest
+	GETPackageIdParcels(ctx context.Context, packageId string) ParcelsApiGETPackageIdParcelsRequest
 
 	// GETPackageIdParcelsExecute executes the request
-	GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsRequest) (*http.Response, error)
+	GETPackageIdParcelsExecute(r ParcelsApiGETPackageIdParcelsRequest) (*http.Response, error)
 
 	/*
 		GETParcelLineItemIdParcel Retrieve the parcel associated to the parcel line item
@@ -57,12 +57,12 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelLineItemId The resource's id
-		@return ApiGETParcelLineItemIdParcelRequest
+		@return ParcelsApiGETParcelLineItemIdParcelRequest
 	*/
-	GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdParcelRequest
+	GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ParcelsApiGETParcelLineItemIdParcelRequest
 
 	// GETParcelLineItemIdParcelExecute executes the request
-	GETParcelLineItemIdParcelExecute(r ApiGETParcelLineItemIdParcelRequest) (*http.Response, error)
+	GETParcelLineItemIdParcelExecute(r ParcelsApiGETParcelLineItemIdParcelRequest) (*http.Response, error)
 
 	/*
 		GETParcels List all parcels
@@ -70,12 +70,12 @@ type ParcelsApi interface {
 		List all parcels
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETParcelsRequest
+		@return ParcelsApiGETParcelsRequest
 	*/
-	GETParcels(ctx context.Context) ApiGETParcelsRequest
+	GETParcels(ctx context.Context) ParcelsApiGETParcelsRequest
 
 	// GETParcelsExecute executes the request
-	GETParcelsExecute(r ApiGETParcelsRequest) (*http.Response, error)
+	GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*http.Response, error)
 
 	/*
 		GETParcelsParcelId Retrieve a parcel
@@ -84,13 +84,13 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelsParcelIdRequest
+		@return ParcelsApiGETParcelsParcelIdRequest
 	*/
-	GETParcelsParcelId(ctx context.Context, parcelId string) ApiGETParcelsParcelIdRequest
+	GETParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiGETParcelsParcelIdRequest
 
 	// GETParcelsParcelIdExecute executes the request
 	//  @return Parcel
-	GETParcelsParcelIdExecute(r ApiGETParcelsParcelIdRequest) (*Parcel, *http.Response, error)
+	GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParcelIdRequest) (*Parcel, *http.Response, error)
 
 	/*
 		GETShipmentIdParcels Retrieve the parcels associated to the shipment
@@ -99,12 +99,12 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdParcelsRequest
+		@return ParcelsApiGETShipmentIdParcelsRequest
 	*/
-	GETShipmentIdParcels(ctx context.Context, shipmentId string) ApiGETShipmentIdParcelsRequest
+	GETShipmentIdParcels(ctx context.Context, shipmentId string) ParcelsApiGETShipmentIdParcelsRequest
 
 	// GETShipmentIdParcelsExecute executes the request
-	GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcelsRequest) (*http.Response, error)
+	GETShipmentIdParcelsExecute(r ParcelsApiGETShipmentIdParcelsRequest) (*http.Response, error)
 
 	/*
 		PATCHParcelsParcelId Update a parcel
@@ -113,12 +113,12 @@ type ParcelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiPATCHParcelsParcelIdRequest
+		@return ParcelsApiPATCHParcelsParcelIdRequest
 	*/
-	PATCHParcelsParcelId(ctx context.Context, parcelId string) ApiPATCHParcelsParcelIdRequest
+	PATCHParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiPATCHParcelsParcelIdRequest
 
 	// PATCHParcelsParcelIdExecute executes the request
-	PATCHParcelsParcelIdExecute(r ApiPATCHParcelsParcelIdRequest) (*http.Response, error)
+	PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcelsParcelIdRequest) (*http.Response, error)
 
 	/*
 		POSTParcels Create a parcel
@@ -126,24 +126,24 @@ type ParcelsApi interface {
 		Create a parcel
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTParcelsRequest
+		@return ParcelsApiPOSTParcelsRequest
 	*/
-	POSTParcels(ctx context.Context) ApiPOSTParcelsRequest
+	POSTParcels(ctx context.Context) ParcelsApiPOSTParcelsRequest
 
 	// POSTParcelsExecute executes the request
-	POSTParcelsExecute(r ApiPOSTParcelsRequest) (*http.Response, error)
+	POSTParcelsExecute(r ParcelsApiPOSTParcelsRequest) (*http.Response, error)
 }
 
 // ParcelsApiService ParcelsApi service
 type ParcelsApiService service
 
-type ApiDELETEParcelsParcelIdRequest struct {
+type ParcelsApiDELETEParcelsParcelIdRequest struct {
 	ctx        context.Context
 	ApiService ParcelsApi
 	parcelId   string
 }
 
-func (r ApiDELETEParcelsParcelIdRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiDELETEParcelsParcelIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEParcelsParcelIdExecute(r)
 }
 
@@ -154,10 +154,10 @@ Delete a parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiDELETEParcelsParcelIdRequest
+ @return ParcelsApiDELETEParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) DELETEParcelsParcelId(ctx context.Context, parcelId string) ApiDELETEParcelsParcelIdRequest {
-	return ApiDELETEParcelsParcelIdRequest{
+func (a *ParcelsApiService) DELETEParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiDELETEParcelsParcelIdRequest {
+	return ParcelsApiDELETEParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -165,7 +165,7 @@ func (a *ParcelsApiService) DELETEParcelsParcelId(ctx context.Context, parcelId 
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ApiDELETEParcelsParcelIdRequest) (*http.Response, error) {
+func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ParcelsApiDELETEParcelsParcelIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -229,13 +229,13 @@ func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ApiDELETEParcelsParce
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackageIdParcelsRequest struct {
+type ParcelsApiGETPackageIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService ParcelsApi
 	packageId  string
 }
 
-func (r ApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdParcelsExecute(r)
 }
 
@@ -246,10 +246,10 @@ Retrieve the parcels associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackageIdParcelsRequest
+ @return ParcelsApiGETPackageIdParcelsRequest
 */
-func (a *ParcelsApiService) GETPackageIdParcels(ctx context.Context, packageId string) ApiGETPackageIdParcelsRequest {
-	return ApiGETPackageIdParcelsRequest{
+func (a *ParcelsApiService) GETPackageIdParcels(ctx context.Context, packageId string) ParcelsApiGETPackageIdParcelsRequest {
+	return ParcelsApiGETPackageIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -257,7 +257,7 @@ func (a *ParcelsApiService) GETPackageIdParcels(ctx context.Context, packageId s
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsRequest) (*http.Response, error) {
+func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ParcelsApiGETPackageIdParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -321,13 +321,13 @@ func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemIdParcelRequest struct {
+type ParcelsApiGETParcelLineItemIdParcelRequest struct {
 	ctx              context.Context
 	ApiService       ParcelsApi
 	parcelLineItemId string
 }
 
-func (r ApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelLineItemIdParcelExecute(r)
 }
 
@@ -338,10 +338,10 @@ Retrieve the parcel associated to the parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiGETParcelLineItemIdParcelRequest
+ @return ParcelsApiGETParcelLineItemIdParcelRequest
 */
-func (a *ParcelsApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdParcelRequest {
-	return ApiGETParcelLineItemIdParcelRequest{
+func (a *ParcelsApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ParcelsApiGETParcelLineItemIdParcelRequest {
+	return ParcelsApiGETParcelLineItemIdParcelRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -349,7 +349,7 @@ func (a *ParcelsApiService) GETParcelLineItemIdParcel(ctx context.Context, parce
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) GETParcelLineItemIdParcelExecute(r ApiGETParcelLineItemIdParcelRequest) (*http.Response, error) {
+func (a *ParcelsApiService) GETParcelLineItemIdParcelExecute(r ParcelsApiGETParcelLineItemIdParcelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -413,12 +413,12 @@ func (a *ParcelsApiService) GETParcelLineItemIdParcelExecute(r ApiGETParcelLineI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelsRequest struct {
+type ParcelsApiGETParcelsRequest struct {
 	ctx        context.Context
 	ApiService ParcelsApi
 }
 
-func (r ApiGETParcelsRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiGETParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelsExecute(r)
 }
 
@@ -428,17 +428,17 @@ GETParcels List all parcels
 List all parcels
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETParcelsRequest
+ @return ParcelsApiGETParcelsRequest
 */
-func (a *ParcelsApiService) GETParcels(ctx context.Context) ApiGETParcelsRequest {
-	return ApiGETParcelsRequest{
+func (a *ParcelsApiService) GETParcels(ctx context.Context) ParcelsApiGETParcelsRequest {
+	return ParcelsApiGETParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) GETParcelsExecute(r ApiGETParcelsRequest) (*http.Response, error) {
+func (a *ParcelsApiService) GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -501,13 +501,13 @@ func (a *ParcelsApiService) GETParcelsExecute(r ApiGETParcelsRequest) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelsParcelIdRequest struct {
+type ParcelsApiGETParcelsParcelIdRequest struct {
 	ctx        context.Context
 	ApiService ParcelsApi
 	parcelId   string
 }
 
-func (r ApiGETParcelsParcelIdRequest) Execute() (*Parcel, *http.Response, error) {
+func (r ParcelsApiGETParcelsParcelIdRequest) Execute() (*Parcel, *http.Response, error) {
 	return r.ApiService.GETParcelsParcelIdExecute(r)
 }
 
@@ -518,10 +518,10 @@ Retrieve a parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelsParcelIdRequest
+ @return ParcelsApiGETParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId string) ApiGETParcelsParcelIdRequest {
-	return ApiGETParcelsParcelIdRequest{
+func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiGETParcelsParcelIdRequest {
+	return ParcelsApiGETParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -530,7 +530,7 @@ func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId str
 
 // Execute executes the request
 //  @return Parcel
-func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ApiGETParcelsParcelIdRequest) (*Parcel, *http.Response, error) {
+func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParcelIdRequest) (*Parcel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -604,13 +604,13 @@ func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ApiGETParcelsParcelIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdParcelsRequest struct {
+type ParcelsApiGETShipmentIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService ParcelsApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdParcelsExecute(r)
 }
 
@@ -621,10 +621,10 @@ Retrieve the parcels associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdParcelsRequest
+ @return ParcelsApiGETShipmentIdParcelsRequest
 */
-func (a *ParcelsApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) ApiGETShipmentIdParcelsRequest {
-	return ApiGETShipmentIdParcelsRequest{
+func (a *ParcelsApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) ParcelsApiGETShipmentIdParcelsRequest {
+	return ParcelsApiGETShipmentIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -632,7 +632,7 @@ func (a *ParcelsApiService) GETShipmentIdParcels(ctx context.Context, shipmentId
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcelsRequest) (*http.Response, error) {
+func (a *ParcelsApiService) GETShipmentIdParcelsExecute(r ParcelsApiGETShipmentIdParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -696,19 +696,19 @@ func (a *ParcelsApiService) GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcel
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHParcelsParcelIdRequest struct {
+type ParcelsApiPATCHParcelsParcelIdRequest struct {
 	ctx          context.Context
 	ApiService   ParcelsApi
 	parcelId     string
 	parcelUpdate *ParcelUpdate
 }
 
-func (r ApiPATCHParcelsParcelIdRequest) ParcelUpdate(parcelUpdate ParcelUpdate) ApiPATCHParcelsParcelIdRequest {
+func (r ParcelsApiPATCHParcelsParcelIdRequest) ParcelUpdate(parcelUpdate ParcelUpdate) ParcelsApiPATCHParcelsParcelIdRequest {
 	r.parcelUpdate = &parcelUpdate
 	return r
 }
 
-func (r ApiPATCHParcelsParcelIdRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiPATCHParcelsParcelIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHParcelsParcelIdExecute(r)
 }
 
@@ -719,10 +719,10 @@ Update a parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiPATCHParcelsParcelIdRequest
+ @return ParcelsApiPATCHParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId string) ApiPATCHParcelsParcelIdRequest {
-	return ApiPATCHParcelsParcelIdRequest{
+func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiPATCHParcelsParcelIdRequest {
+	return ParcelsApiPATCHParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -730,7 +730,7 @@ func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId s
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ApiPATCHParcelsParcelIdRequest) (*http.Response, error) {
+func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcelsParcelIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -799,18 +799,18 @@ func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ApiPATCHParcelsParcelI
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTParcelsRequest struct {
+type ParcelsApiPOSTParcelsRequest struct {
 	ctx          context.Context
 	ApiService   ParcelsApi
 	parcelCreate *ParcelCreate
 }
 
-func (r ApiPOSTParcelsRequest) ParcelCreate(parcelCreate ParcelCreate) ApiPOSTParcelsRequest {
+func (r ParcelsApiPOSTParcelsRequest) ParcelCreate(parcelCreate ParcelCreate) ParcelsApiPOSTParcelsRequest {
 	r.parcelCreate = &parcelCreate
 	return r
 }
 
-func (r ApiPOSTParcelsRequest) Execute() (*http.Response, error) {
+func (r ParcelsApiPOSTParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTParcelsExecute(r)
 }
 
@@ -820,17 +820,17 @@ POSTParcels Create a parcel
 Create a parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTParcelsRequest
+ @return ParcelsApiPOSTParcelsRequest
 */
-func (a *ParcelsApiService) POSTParcels(ctx context.Context) ApiPOSTParcelsRequest {
-	return ApiPOSTParcelsRequest{
+func (a *ParcelsApiService) POSTParcels(ctx context.Context) ParcelsApiPOSTParcelsRequest {
+	return ParcelsApiPOSTParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelsApiService) POSTParcelsExecute(r ApiPOSTParcelsRequest) (*http.Response, error) {
+func (a *ParcelsApiService) POSTParcelsExecute(r ParcelsApiPOSTParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

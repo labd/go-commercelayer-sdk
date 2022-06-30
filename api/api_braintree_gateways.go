@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type BraintreeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreeGatewayId The resource's id
-		@return ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
+		@return BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
 	*/
-	DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
+	DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
 
 	// DELETEBraintreeGatewaysBraintreeGatewayIdExecute executes the request
-	DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error)
+	DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error)
 
 	/*
 		GETBraintreeGateways List all braintree gateways
@@ -42,12 +42,12 @@ type BraintreeGatewaysApi interface {
 		List all braintree gateways
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETBraintreeGatewaysRequest
+		@return BraintreeGatewaysApiGETBraintreeGatewaysRequest
 	*/
-	GETBraintreeGateways(ctx context.Context) ApiGETBraintreeGatewaysRequest
+	GETBraintreeGateways(ctx context.Context) BraintreeGatewaysApiGETBraintreeGatewaysRequest
 
 	// GETBraintreeGatewaysExecute executes the request
-	GETBraintreeGatewaysExecute(r ApiGETBraintreeGatewaysRequest) (*http.Response, error)
+	GETBraintreeGatewaysExecute(r BraintreeGatewaysApiGETBraintreeGatewaysRequest) (*http.Response, error)
 
 	/*
 		GETBraintreeGatewaysBraintreeGatewayId Retrieve a braintree gateway
@@ -56,13 +56,13 @@ type BraintreeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreeGatewayId The resource's id
-		@return ApiGETBraintreeGatewaysBraintreeGatewayIdRequest
+		@return BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest
 	*/
-	GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewaysBraintreeGatewayIdRequest
+	GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest
 
 	// GETBraintreeGatewaysBraintreeGatewayIdExecute executes the request
 	//  @return BraintreeGateway
-	GETBraintreeGatewaysBraintreeGatewayIdExecute(r ApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*BraintreeGateway, *http.Response, error)
+	GETBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*BraintreeGateway, *http.Response, error)
 
 	/*
 		PATCHBraintreeGatewaysBraintreeGatewayId Update a braintree gateway
@@ -71,12 +71,12 @@ type BraintreeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreeGatewayId The resource's id
-		@return ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
+		@return BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
 	*/
-	PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
+	PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
 
 	// PATCHBraintreeGatewaysBraintreeGatewayIdExecute executes the request
-	PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error)
+	PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error)
 
 	/*
 		POSTBraintreeGateways Create a braintree gateway
@@ -84,24 +84,24 @@ type BraintreeGatewaysApi interface {
 		Create a braintree gateway
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTBraintreeGatewaysRequest
+		@return BraintreeGatewaysApiPOSTBraintreeGatewaysRequest
 	*/
-	POSTBraintreeGateways(ctx context.Context) ApiPOSTBraintreeGatewaysRequest
+	POSTBraintreeGateways(ctx context.Context) BraintreeGatewaysApiPOSTBraintreeGatewaysRequest
 
 	// POSTBraintreeGatewaysExecute executes the request
-	POSTBraintreeGatewaysExecute(r ApiPOSTBraintreeGatewaysRequest) (*http.Response, error)
+	POSTBraintreeGatewaysExecute(r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) (*http.Response, error)
 }
 
 // BraintreeGatewaysApiService BraintreeGatewaysApi service
 type BraintreeGatewaysApiService service
 
-type ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         BraintreeGatewaysApi
 	braintreeGatewayId string
 }
 
-func (r ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -123,7 +123,7 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
+func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewaysRequest struct {
+type BraintreeGatewaysApiGETBraintreeGatewaysRequest struct {
 	ctx        context.Context
 	ApiService BraintreeGatewaysApi
 }
 
-func (r ApiGETBraintreeGatewaysRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiGETBraintreeGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreeGatewaysExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETBraintreeGateways List all braintree gateways
 List all braintree gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETBraintreeGatewaysRequest
+ @return BraintreeGatewaysApiGETBraintreeGatewaysRequest
 */
-func (a *BraintreeGatewaysApiService) GETBraintreeGateways(ctx context.Context) ApiGETBraintreeGatewaysRequest {
-	return ApiGETBraintreeGatewaysRequest{
+func (a *BraintreeGatewaysApiService) GETBraintreeGateways(ctx context.Context) BraintreeGatewaysApiGETBraintreeGatewaysRequest {
+	return BraintreeGatewaysApiGETBraintreeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraintreeGatewaysRequest) (*http.Response, error) {
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r BraintreeGatewaysApiGETBraintreeGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraint
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         BraintreeGatewaysApi
 	braintreeGatewayId string
 }
 
-func (r ApiGETBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*BraintreeGateway, *http.Response, error) {
+func (r BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*BraintreeGateway, *http.Response, error) {
 	return r.ApiService.GETBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiGETBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiGETBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -304,7 +304,7 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx
 
 // Execute executes the request
 //  @return BraintreeGateway
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExecute(r ApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*BraintreeGateway, *http.Response, error) {
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*BraintreeGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                    context.Context
 	ApiService             BraintreeGatewaysApi
 	braintreeGatewayId     string
 	braintreeGatewayUpdate *BraintreeGatewayUpdate
 }
 
-func (r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) BraintreeGatewayUpdate(braintreeGatewayUpdate BraintreeGatewayUpdate) ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
+func (r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) BraintreeGatewayUpdate(braintreeGatewayUpdate BraintreeGatewayUpdate) BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
 	r.braintreeGatewayUpdate = &braintreeGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -412,7 +412,7 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(c
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
+func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTBraintreeGatewaysRequest struct {
+type BraintreeGatewaysApiPOSTBraintreeGatewaysRequest struct {
 	ctx                    context.Context
 	ApiService             BraintreeGatewaysApi
 	braintreeGatewayCreate *BraintreeGatewayCreate
 }
 
-func (r ApiPOSTBraintreeGatewaysRequest) BraintreeGatewayCreate(braintreeGatewayCreate BraintreeGatewayCreate) ApiPOSTBraintreeGatewaysRequest {
+func (r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) BraintreeGatewayCreate(braintreeGatewayCreate BraintreeGatewayCreate) BraintreeGatewaysApiPOSTBraintreeGatewaysRequest {
 	r.braintreeGatewayCreate = &braintreeGatewayCreate
 	return r
 }
 
-func (r ApiPOSTBraintreeGatewaysRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTBraintreeGatewaysExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTBraintreeGateways Create a braintree gateway
 Create a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTBraintreeGatewaysRequest
+ @return BraintreeGatewaysApiPOSTBraintreeGatewaysRequest
 */
-func (a *BraintreeGatewaysApiService) POSTBraintreeGateways(ctx context.Context) ApiPOSTBraintreeGatewaysRequest {
-	return ApiPOSTBraintreeGatewaysRequest{
+func (a *BraintreeGatewaysApiService) POSTBraintreeGateways(ctx context.Context) BraintreeGatewaysApiPOSTBraintreeGatewaysRequest {
+	return BraintreeGatewaysApiPOSTBraintreeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBraintreeGatewaysRequest) (*http.Response, error) {
+func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

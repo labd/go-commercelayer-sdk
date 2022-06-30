@@ -6,7 +6,7 @@ info:
     url: https://commercelayer.io
   description: Headless Commerce for Global Brands.
   title: Commerce Layer API
-  version: 2.9.4
+  version: 2.9.5
 servers:
 - description: Sign in
   url: https://core.commercelayer.io/users/sign_in
@@ -75,6 +75,8 @@ tags:
   name: delivery_lead_times
 - description: resource type
   name: event_callbacks
+- description: resource type
+  name: events
 - description: resource type
   name: external_gateways
 - description: resource type
@@ -156,6 +158,10 @@ tags:
 - description: resource type
   name: price_lists
 - description: resource type
+  name: price_tiers
+- description: resource type
+  name: price_volume_tiers
+- description: resource type
   name: prices
 - description: resource type
   name: promotion_rules
@@ -172,7 +178,11 @@ tags:
 - description: resource type
   name: shipping_categories
 - description: resource type
+  name: shipping_method_tiers
+- description: resource type
   name: shipping_methods
+- description: resource type
+  name: shipping_weight_tiers
 - description: resource type
   name: shipping_zones
 - description: resource type
@@ -2647,6 +2657,26 @@ paths:
       tags:
       - has_one
       - addresses
+  /customer_addresses/{customerAddressId}/events:
+    get:
+      description: Retrieve the events associated to the customer address
+      operationId: GET/customerAddressId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: customerAddressId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the customer address
+      summary: Retrieve the events associated to the customer address
+      tags:
+      - has_many
+      - events
   /customer_groups:
     get:
       description: List all customer groups
@@ -2907,6 +2937,26 @@ paths:
       tags:
       - has_one
       - customers
+  /customer_password_resets/{customerPasswordResetId}/events:
+    get:
+      description: Retrieve the events associated to the customer password reset
+      operationId: GET/customerPasswordResetId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: customerPasswordResetId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the customer password reset
+      summary: Retrieve the events associated to the customer password reset
+      tags:
+      - has_many
+      - events
   /customer_payment_sources:
     get:
       description: List all customer payment sources
@@ -3127,6 +3177,26 @@ paths:
       tags:
       - has_one
       - customers
+  /customer_subscriptions/{customerSubscriptionId}/events:
+    get:
+      description: Retrieve the events associated to the customer subscription
+      operationId: GET/customerSubscriptionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: customerSubscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the customer subscription
+      summary: Retrieve the events associated to the customer subscription
+      tags:
+      - has_many
+      - events
   /customers:
     get:
       description: List all customers
@@ -3377,6 +3447,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /customers/{customerId}/events:
+    get:
+      description: Retrieve the events associated to the customer
+      operationId: GET/customerId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: customerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the customer
+      summary: Retrieve the events associated to the customer
+      tags:
+      - has_many
+      - events
   /delivery_lead_times:
     get:
       description: List all delivery lead times
@@ -3579,6 +3669,79 @@ paths:
       summary: Retrieve the webhook associated to the event callback
       tags:
       - has_one
+      - webhooks
+  /events:
+    get:
+      description: List all events
+      operationId: GET/events
+      responses:
+        "200":
+          description: A list of event objects
+      summary: List all events
+      tags:
+      - events
+  /events/{eventId}:
+    get:
+      description: Retrieve an event
+      operationId: GET/events/eventId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: eventId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/event'
+          description: The event object
+      summary: Retrieve an event
+      tags:
+      - events
+  /events/{eventId}/last_event_callbacks:
+    get:
+      description: Retrieve the last event callbacks associated to the event
+      operationId: GET/eventId/last_event_callbacks
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: eventId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The last_event_callbacks associated to the event
+      summary: Retrieve the last event callbacks associated to the event
+      tags:
+      - has_many
+      - event_callbacks
+  /events/{eventId}/webhooks:
+    get:
+      description: Retrieve the webhooks associated to the event
+      operationId: GET/eventId/webhooks
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: eventId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The webhooks associated to the event
+      summary: Retrieve the webhooks associated to the event
+      tags:
+      - has_many
       - webhooks
   /external_gateways:
     get:
@@ -5433,6 +5596,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /gift_cards/{giftCardId}/events:
+    get:
+      description: Retrieve the events associated to the gift card
+      operationId: GET/giftCardId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: giftCardId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the gift card
+      summary: Retrieve the events associated to the gift card
+      tags:
+      - has_many
+      - events
   /google_geocoders:
     get:
       description: List all google geocoders
@@ -5629,6 +5812,26 @@ paths:
       summary: Retrieve an import
       tags:
       - imports
+  /imports/{importId}/events:
+    get:
+      description: Retrieve the events associated to the import
+      operationId: GET/importId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: importId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the import
+      summary: Retrieve the events associated to the import
+      tags:
+      - has_many
+      - events
   /in_stock_subscriptions:
     get:
       description: List all in stock subscriptions
@@ -5779,6 +5982,26 @@ paths:
       tags:
       - has_one
       - skus
+  /in_stock_subscriptions/{inStockSubscriptionId}/events:
+    get:
+      description: Retrieve the events associated to the in stock subscription
+      operationId: GET/inStockSubscriptionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: inStockSubscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the in stock subscription
+      summary: Retrieve the events associated to the in stock subscription
+      tags:
+      - has_many
+      - events
   /inventory_models:
     get:
       description: List all inventory models
@@ -7593,6 +7816,26 @@ paths:
       tags:
       - has_one
       - order_subscriptions
+  /order_copies/{orderCopyId}/events:
+    get:
+      description: Retrieve the events associated to the order copy
+      operationId: GET/orderCopyId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: orderCopyId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the order copy
+      summary: Retrieve the events associated to the order copy
+      tags:
+      - has_many
+      - events
   /order_subscriptions:
     get:
       description: List all order subscriptions
@@ -7783,6 +8026,26 @@ paths:
       tags:
       - has_many
       - orders
+  /order_subscriptions/{orderSubscriptionId}/events:
+    get:
+      description: Retrieve the events associated to the order subscription
+      operationId: GET/orderSubscriptionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: orderSubscriptionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the order subscription
+      summary: Retrieve the events associated to the order subscription
+      tags:
+      - has_many
+      - events
   /order_validation_rules:
     get:
       description: List all order validation rules
@@ -8287,6 +8550,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /orders/{orderId}/events:
+    get:
+      description: Retrieve the events associated to the order
+      operationId: GET/orderId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the order
+      summary: Retrieve the events associated to the order
+      tags:
+      - has_many
+      - events
   /organization:
     get:
       description: Retrieve the organization
@@ -8752,6 +9035,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /parcels/{parcelId}/events:
+    get:
+      description: Retrieve the events associated to the parcel
+      operationId: GET/parcelId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: parcelId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the parcel
+      summary: Retrieve the events associated to the parcel
+      tags:
+      - has_many
+      - events
   /payment_gateways:
     get:
       description: List all payment gateways
@@ -9585,6 +9888,209 @@ paths:
       tags:
       - has_many
       - attachments
+  /price_tiers:
+    get:
+      description: List all price tiers
+      operationId: GET/price_tiers
+      responses:
+        "200":
+          description: A list of price tier objects
+      summary: List all price tiers
+      tags:
+      - price_tiers
+  /price_tiers/{priceTierId}:
+    get:
+      description: Retrieve a price tier
+      operationId: GET/price_tiers/priceTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/priceTier'
+          description: The price tier object
+      summary: Retrieve a price tier
+      tags:
+      - price_tiers
+  /price_tiers/{priceTierId}/price:
+    get:
+      description: Retrieve the price associated to the price tier
+      operationId: GET/priceTierId/price
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The price associated to the price tier
+      summary: Retrieve the price associated to the price tier
+      tags:
+      - has_one
+      - prices
+  /price_tiers/{priceTierId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the price tier
+      operationId: GET/priceTierId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the price tier
+      summary: Retrieve the attachments associated to the price tier
+      tags:
+      - has_many
+      - attachments
+  /price_volume_tiers:
+    get:
+      description: List all price volume tiers
+      operationId: GET/price_volume_tiers
+      responses:
+        "200":
+          description: A list of price volume tier objects
+      summary: List all price volume tiers
+      tags:
+      - price_volume_tiers
+    post:
+      description: Create a price volume tier
+      operationId: POST/price_volume_tiers
+      requestBody:
+        content:
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/priceVolumeTierCreate'
+        required: true
+      responses:
+        "201":
+          description: The created price volume tier object
+      summary: Create a price volume tier
+      tags:
+      - price_volume_tiers
+  /price_volume_tiers/{priceVolumeTierId}:
+    delete:
+      description: Delete a price volume tier
+      operationId: DELETE/price_volume_tiers/priceVolumeTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceVolumeTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No content
+      summary: Delete a price volume tier
+      tags:
+      - price_volume_tiers
+    get:
+      description: Retrieve a price volume tier
+      operationId: GET/price_volume_tiers/priceVolumeTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceVolumeTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/priceVolumeTier'
+          description: The price volume tier object
+      summary: Retrieve a price volume tier
+      tags:
+      - price_volume_tiers
+    patch:
+      description: Update a price volume tier
+      operationId: PATCH/price_volume_tiers/priceVolumeTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceVolumeTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/priceVolumeTierUpdate'
+        required: true
+      responses:
+        "200":
+          description: The updated price volume tier object
+      summary: Update a price volume tier
+      tags:
+      - price_volume_tiers
+  /price_volume_tiers/{priceVolumeTierId}/price:
+    get:
+      description: Retrieve the price associated to the price volume tier
+      operationId: GET/priceVolumeTierId/price
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceVolumeTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The price associated to the price volume tier
+      summary: Retrieve the price associated to the price volume tier
+      tags:
+      - has_one
+      - prices
+  /price_volume_tiers/{priceVolumeTierId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the price volume tier
+      operationId: GET/priceVolumeTierId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceVolumeTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the price volume tier
+      summary: Retrieve the attachments associated to the price volume tier
+      tags:
+      - has_many
+      - attachments
   /prices:
     get:
       description: List all prices
@@ -9715,6 +10221,46 @@ paths:
       tags:
       - has_one
       - skus
+  /prices/{priceId}/price_tiers:
+    get:
+      description: Retrieve the price tiers associated to the price
+      operationId: GET/priceId/price_tiers
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The price_tiers associated to the price
+      summary: Retrieve the price tiers associated to the price
+      tags:
+      - has_many
+      - price_tiers
+  /prices/{priceId}/price_volume_tiers:
+    get:
+      description: Retrieve the price volume tiers associated to the price
+      operationId: GET/priceId/price_volume_tiers
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: priceId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The price_volume_tiers associated to the price
+      summary: Retrieve the price volume tiers associated to the price
+      tags:
+      - has_many
+      - price_volume_tiers
   /prices/{priceId}/attachments:
     get:
       description: Retrieve the attachments associated to the price
@@ -9974,6 +10520,26 @@ paths:
       tags:
       - has_one
       - captures
+  /refunds/{refundId}/events:
+    get:
+      description: Retrieve the events associated to the refund
+      operationId: GET/refundId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: refundId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the refund
+      summary: Retrieve the events associated to the refund
+      tags:
+      - has_many
+      - events
   /return_line_items:
     get:
       description: List all return line items
@@ -10334,6 +10900,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /returns/{returnId}/events:
+    get:
+      description: Retrieve the events associated to the return
+      operationId: GET/returnId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: returnId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the return
+      summary: Retrieve the events associated to the return
+      tags:
+      - has_many
+      - events
   /shipments:
     get:
       description: List all shipments
@@ -10651,6 +11237,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /shipments/{shipmentId}/events:
+    get:
+      description: Retrieve the events associated to the shipment
+      operationId: GET/shipmentId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shipmentId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the shipment
+      summary: Retrieve the events associated to the shipment
+      tags:
+      - has_many
+      - events
   /shipping_categories:
     get:
       description: List all shipping categories
@@ -10778,6 +11384,80 @@ paths:
         "200":
           description: The attachments associated to the shipping category
       summary: Retrieve the attachments associated to the shipping category
+      tags:
+      - has_many
+      - attachments
+  /shipping_method_tiers:
+    get:
+      description: List all shipping method tiers
+      operationId: GET/shipping_method_tiers
+      responses:
+        "200":
+          description: A list of shipping method tier objects
+      summary: List all shipping method tiers
+      tags:
+      - shipping_method_tiers
+  /shipping_method_tiers/{shippingMethodTierId}:
+    get:
+      description: Retrieve a shipping method tier
+      operationId: GET/shipping_method_tiers/shippingMethodTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/shippingMethodTier'
+          description: The shipping method tier object
+      summary: Retrieve a shipping method tier
+      tags:
+      - shipping_method_tiers
+  /shipping_method_tiers/{shippingMethodTierId}/shipping_method:
+    get:
+      description: Retrieve the shipping method associated to the shipping method
+        tier
+      operationId: GET/shippingMethodTierId/shipping_method
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The shipping_method associated to the shipping method tier
+      summary: Retrieve the shipping method associated to the shipping method tier
+      tags:
+      - has_one
+      - shipping_methods
+  /shipping_method_tiers/{shippingMethodTierId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the shipping method tier
+      operationId: GET/shippingMethodTierId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the shipping method tier
+      summary: Retrieve the attachments associated to the shipping method tier
       tags:
       - has_many
       - attachments
@@ -10931,6 +11611,26 @@ paths:
       tags:
       - has_one
       - shipping_categories
+  /shipping_methods/{shippingMethodId}/stock_location:
+    get:
+      description: Retrieve the stock location associated to the shipping method
+      operationId: GET/shippingMethodId/stock_location
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The stock_location associated to the shipping method
+      summary: Retrieve the stock location associated to the shipping method
+      tags:
+      - has_one
+      - stock_locations
   /shipping_methods/{shippingMethodId}/delivery_lead_time_for_shipment:
     get:
       description: Retrieve the delivery lead time for shipment associated to the
@@ -10954,6 +11654,46 @@ paths:
       tags:
       - has_one
       - delivery_lead_times
+  /shipping_methods/{shippingMethodId}/shipping_method_tiers:
+    get:
+      description: Retrieve the shipping method tiers associated to the shipping method
+      operationId: GET/shippingMethodId/shipping_method_tiers
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The shipping_method_tiers associated to the shipping method
+      summary: Retrieve the shipping method tiers associated to the shipping method
+      tags:
+      - has_many
+      - shipping_method_tiers
+  /shipping_methods/{shippingMethodId}/shipping_weight_tiers:
+    get:
+      description: Retrieve the shipping weight tiers associated to the shipping method
+      operationId: GET/shippingMethodId/shipping_weight_tiers
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingMethodId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The shipping_weight_tiers associated to the shipping method
+      summary: Retrieve the shipping weight tiers associated to the shipping method
+      tags:
+      - has_many
+      - shipping_weight_tiers
   /shipping_methods/{shippingMethodId}/attachments:
     get:
       description: Retrieve the attachments associated to the shipping method
@@ -10971,6 +11711,137 @@ paths:
         "200":
           description: The attachments associated to the shipping method
       summary: Retrieve the attachments associated to the shipping method
+      tags:
+      - has_many
+      - attachments
+  /shipping_weight_tiers:
+    get:
+      description: List all shipping weight tiers
+      operationId: GET/shipping_weight_tiers
+      responses:
+        "200":
+          description: A list of shipping weight tier objects
+      summary: List all shipping weight tiers
+      tags:
+      - shipping_weight_tiers
+    post:
+      description: Create a shipping weight tier
+      operationId: POST/shipping_weight_tiers
+      requestBody:
+        content:
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/shippingWeightTierCreate'
+        required: true
+      responses:
+        "201":
+          description: The created shipping weight tier object
+      summary: Create a shipping weight tier
+      tags:
+      - shipping_weight_tiers
+  /shipping_weight_tiers/{shippingWeightTierId}:
+    delete:
+      description: Delete a shipping weight tier
+      operationId: DELETE/shipping_weight_tiers/shippingWeightTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingWeightTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          description: No content
+      summary: Delete a shipping weight tier
+      tags:
+      - shipping_weight_tiers
+    get:
+      description: Retrieve a shipping weight tier
+      operationId: GET/shipping_weight_tiers/shippingWeightTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingWeightTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/vnd.api+json:
+              schema:
+                $ref: '#/components/schemas/shippingWeightTier'
+          description: The shipping weight tier object
+      summary: Retrieve a shipping weight tier
+      tags:
+      - shipping_weight_tiers
+    patch:
+      description: Update a shipping weight tier
+      operationId: PATCH/shipping_weight_tiers/shippingWeightTierId
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingWeightTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/vnd.api+json:
+            schema:
+              $ref: '#/components/schemas/shippingWeightTierUpdate'
+        required: true
+      responses:
+        "200":
+          description: The updated shipping weight tier object
+      summary: Update a shipping weight tier
+      tags:
+      - shipping_weight_tiers
+  /shipping_weight_tiers/{shippingWeightTierId}/shipping_method:
+    get:
+      description: Retrieve the shipping method associated to the shipping weight
+        tier
+      operationId: GET/shippingWeightTierId/shipping_method
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingWeightTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The shipping_method associated to the shipping weight tier
+      summary: Retrieve the shipping method associated to the shipping weight tier
+      tags:
+      - has_one
+      - shipping_methods
+  /shipping_weight_tiers/{shippingWeightTierId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the shipping weight tier
+      operationId: GET/shippingWeightTierId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: shippingWeightTierId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the shipping weight tier
+      summary: Retrieve the attachments associated to the shipping weight tier
       tags:
       - has_many
       - attachments
@@ -12480,6 +13351,26 @@ paths:
       tags:
       - has_one
       - line_items
+  /stock_transfers/{stockTransferId}/events:
+    get:
+      description: Retrieve the events associated to the stock transfer
+      operationId: GET/stockTransferId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: stockTransferId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the stock transfer
+      summary: Retrieve the events associated to the stock transfer
+      tags:
+      - has_many
+      - events
   /stripe_gateways:
     get:
       description: List all stripe gateways
@@ -14103,6 +14994,13 @@ components:
       required:
       - data
       type: object
+    event:
+      properties:
+        data:
+          $ref: '#/components/schemas/event_data'
+      required:
+      - data
+      type: object
     externalGateway:
       properties:
         data:
@@ -14873,6 +15771,34 @@ components:
       required:
       - data
       type: object
+    priceTier:
+      properties:
+        data:
+          $ref: '#/components/schemas/priceTier_data'
+      required:
+      - data
+      type: object
+    priceVolumeTier:
+      properties:
+        data:
+          $ref: '#/components/schemas/priceVolumeTier_data'
+      required:
+      - data
+      type: object
+    priceVolumeTierCreate:
+      properties:
+        data:
+          $ref: '#/components/schemas/priceVolumeTierCreate_data'
+      required:
+      - data
+      type: object
+    priceVolumeTierUpdate:
+      properties:
+        data:
+          $ref: '#/components/schemas/priceVolumeTierUpdate_data'
+      required:
+      - data
+      type: object
     price:
       properties:
         data:
@@ -14992,6 +15918,13 @@ components:
       required:
       - data
       type: object
+    shippingMethodTier:
+      properties:
+        data:
+          $ref: '#/components/schemas/shippingMethodTier_data'
+      required:
+      - data
+      type: object
     shippingMethod:
       properties:
         data:
@@ -15010,6 +15943,27 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/shippingMethodUpdate_data'
+      required:
+      - data
+      type: object
+    shippingWeightTier:
+      properties:
+        data:
+          $ref: '#/components/schemas/shippingWeightTier_data'
+      required:
+      - data
+      type: object
+    shippingWeightTierCreate:
+      properties:
+        data:
+          $ref: '#/components/schemas/shippingWeightTierCreate_data'
+      required:
+      - data
+      type: object
+    shippingWeightTierUpdate:
+      properties:
+        data:
+          $ref: '#/components/schemas/shippingWeightTierUpdate_data'
       required:
       - data
       type: object
@@ -16416,8 +17370,8 @@ components:
           type: string
         public_access:
           description: Indicates if the application has public access.
-          example: "true"
-          type: string
+          example: true
+          type: boolean
         redirect_uri:
           description: The application's redirect URI.
           example: https://bluebrand.com/img/logo.svg
@@ -19541,12 +20495,29 @@ components:
             foo: bar
           type: object
       type: object
+    customerAddress_data_relationships_events:
+      properties:
+        type:
+          default: events
+          description: The resource's type
+          example: events
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
     customerAddress_data_relationships:
       properties:
         customer:
           $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
         address:
           $ref: '#/components/schemas/bingGeocoder_data_relationships_addresses'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     customerAddress_data:
       properties:
@@ -19588,6 +20559,13 @@ components:
       - attributes
       - type
       type: object
+    customerAddressUpdate_data_relationships:
+      properties:
+        customer:
+          $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
+        address:
+          $ref: '#/components/schemas/bingGeocoder_data_relationships_addresses'
+      type: object
     customerAddressUpdate_data:
       properties:
         type:
@@ -19602,7 +20580,7 @@ components:
         attributes:
           $ref: '#/components/schemas/adyenPaymentCreate_data_attributes'
         relationships:
-          $ref: '#/components/schemas/customerAddress_data_relationships'
+          $ref: '#/components/schemas/customerAddressUpdate_data_relationships'
       required:
       - attributes
       - id
@@ -19804,6 +20782,13 @@ components:
             foo: bar
           type: object
       type: object
+    customerPasswordReset_data_relationships:
+      properties:
+        customer:
+          $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
+      type: object
     customerPasswordReset_data:
       properties:
         type:
@@ -19814,7 +20799,7 @@ components:
         attributes:
           $ref: '#/components/schemas/customerPasswordReset_data_attributes'
         relationships:
-          $ref: '#/components/schemas/couponRecipientCreate_data_relationships'
+          $ref: '#/components/schemas/customerPasswordReset_data_relationships'
       required:
       - attributes
       - type
@@ -20106,7 +21091,7 @@ components:
         attributes:
           $ref: '#/components/schemas/customerSubscription_data_attributes'
         relationships:
-          $ref: '#/components/schemas/couponRecipientCreate_data_relationships'
+          $ref: '#/components/schemas/customerPasswordReset_data_relationships'
       required:
       - attributes
       - type
@@ -20328,6 +21313,8 @@ components:
           $ref: '#/components/schemas/customer_data_relationships_returns'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     customer_data:
       properties:
@@ -20753,6 +21740,80 @@ components:
           $ref: '#/components/schemas/eventCallback_data_attributes'
         relationships:
           $ref: '#/components/schemas/eventCallback_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    event_data_attributes:
+      properties:
+        name:
+          description: The event's internal name.
+          example: orders.create
+          type: string
+        id:
+          description: Unique identifier for the resource (hash).
+          example: XAyRWNUzyN
+          type: string
+        created_at:
+          description: Time at which the resource was created.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        updated_at:
+          description: Time at which the resource was last updated.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      type: object
+    event_data_relationships_last_event_callbacks:
+      properties:
+        type:
+          default: event_callbacks
+          description: The resource's type
+          example: event_callbacks
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
+    event_data_relationships:
+      properties:
+        last_event_callbacks:
+          $ref: '#/components/schemas/event_data_relationships_last_event_callbacks'
+        webhooks:
+          $ref: '#/components/schemas/eventCallback_data_relationships_webhook'
+      type: object
+    event_data:
+      properties:
+        type:
+          default: events
+          description: The resource's type
+          example: events
+          type: string
+        attributes:
+          $ref: '#/components/schemas/event_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/event_data_relationships'
       required:
       - attributes
       - type
@@ -22705,6 +23766,8 @@ components:
           $ref: '#/components/schemas/giftCard_data_relationships_gift_card_recipient'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     giftCard_data:
       properties:
@@ -23123,6 +24186,11 @@ components:
             foo: bar
           type: object
       type: object
+    import_data_relationships:
+      properties:
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
+      type: object
     import_data:
       properties:
         type:
@@ -23133,8 +24201,7 @@ components:
         attributes:
           $ref: '#/components/schemas/import_data_attributes'
         relationships:
-          properties: {}
-          type: object
+          $ref: '#/components/schemas/import_data_relationships'
       required:
       - attributes
       - type
@@ -23263,6 +24330,8 @@ components:
           $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
         sku:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     inStockSubscription_data:
       properties:
@@ -23379,6 +24448,15 @@ components:
             foo: bar
           type: object
       type: object
+    inStockSubscriptionUpdate_data_relationships:
+      properties:
+        market:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_markets'
+        customer:
+          $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
+        sku:
+          $ref: '#/components/schemas/bundle_data_relationships_skus'
+      type: object
     inStockSubscriptionUpdate_data:
       properties:
         type:
@@ -23393,7 +24471,7 @@ components:
         attributes:
           $ref: '#/components/schemas/inStockSubscriptionUpdate_data_attributes'
         relationships:
-          $ref: '#/components/schemas/inStockSubscription_data_relationships'
+          $ref: '#/components/schemas/inStockSubscriptionUpdate_data_relationships'
       required:
       - attributes
       - id
@@ -25993,6 +27071,8 @@ components:
           $ref: '#/components/schemas/adyenPayment_data_relationships_order'
         order_subscription:
           $ref: '#/components/schemas/customer_data_relationships_order_subscriptions'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     orderCopy_data:
       properties:
@@ -26182,6 +27262,8 @@ components:
           $ref: '#/components/schemas/orderSubscription_data_relationships_order_copies'
         orders:
           $ref: '#/components/schemas/adyenPayment_data_relationships_order'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     orderSubscription_data:
       properties:
@@ -26914,6 +27996,8 @@ components:
           $ref: '#/components/schemas/orderSubscription_data_relationships_order_copies'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     order_data:
       properties:
@@ -27791,7 +28875,7 @@ components:
           example: 1000.0
           type: number
         unit_of_weight:
-          description: "The unit of weight. Can be one of 'gr', or 'oz'."
+          description: "Can be one of 'gr', 'lb', or 'oz'"
           example: gr
           type: string
         eel_pfc:
@@ -27968,6 +29052,8 @@ components:
           $ref: '#/components/schemas/parcel_data_relationships_parcel_line_items'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     parcel_data:
       properties:
@@ -27992,7 +29078,151 @@ components:
           example: 1000.0
           type: number
         unit_of_weight:
-          description: "The unit of weight. Can be one of 'gr', or 'oz'."
+          description: "Can be one of 'gr', 'lb', or 'oz'"
+          example: gr
+          type: string
+        eel_pfc:
+          description: "When shipping outside the US, you need to provide either an\
+            \ Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation\
+            \ (PFC). Which you need is based on the value of the goods being shipped.\
+            \ Value can be one of \"EEL\" o \"PFC\"."
+          example: EEL
+          type: string
+        contents_type:
+          description: "The type of item you are sending. Can be one of 'merchandise',\
+            \ 'gift', 'documents', 'returned_goods', 'sample', or 'other'."
+          example: merchandise
+          type: string
+        contents_explanation:
+          description: "If you specify 'other' in the 'contents_type' attribute, you\
+            \ must supply a brief description in this attribute."
+          example: ""
+          type: string
+        customs_certify:
+          description: Indicates if the provided information is accurate
+          example: false
+          type: boolean
+        customs_signer:
+          description: This is the name of the person who is certifying that the information
+            provided on the customs form is accurate. Use a name of the person in
+            your organization who is responsible for this.
+          example: John Doe
+          type: string
+        non_delivery_option:
+          description: "In case the shipment cannot be delivered, this option tells\
+            \ the carrier what you want to happen to the parcel. You can pass either\
+            \ 'return', or 'abandon'. The value defaults to 'return'. If you pass\
+            \ 'abandon', you will not receive the parcel back if it cannot be delivered."
+          example: return
+          type: string
+        restriction_type:
+          description: "Describes if your parcel requires any special treatment or\
+            \ quarantine when entering the country. Can be one of 'none', 'other',\
+            \ 'quarantine', or 'sanitary_phytosanitary_inspection'."
+          example: none
+          type: string
+        restriction_comments:
+          description: "If you specify 'other' in the restriction type, you must supply\
+            \ a brief description of what is required."
+          example: ""
+          type: string
+        customs_info_required:
+          description: Indicates if the parcel requires customs info to get the shipping
+            rates.
+          example: false
+          type: boolean
+        tracking_number:
+          description: The tracking number associated to this parcel.
+          example: 1Z4V2A000000000000
+          type: string
+        tracking_status:
+          description: "The tracking status for this parcel, automatically updated\
+            \ in real time by the shipping carrier."
+          example: delivered
+          type: string
+        tracking_status_detail:
+          description: "Additional information about the tracking status, automatically\
+            \ updated in real time by the shipping carrier."
+          example: arrived_at_destination
+          type: string
+        tracking_status_updated_at:
+          description: Time at which the parcel's tracking status was last updated.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        tracking_details:
+          description: "The parcel's full tracking history, automatically updated\
+            \ in real time by the shipping carrier."
+          example: ""
+          type: string
+        carrier_weight_oz:
+          description: The weight of the parcel as measured by the carrier in ounces
+            (if available)
+          example: "42.32"
+          type: string
+        signed_by:
+          description: The name of the person who signed for the parcel (if available)
+          example: John Smith
+          type: string
+        incoterm:
+          description: The type of Incoterm (if available).
+          example: EXW
+          type: string
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      required:
+      - unit_of_weight
+      - weight
+      type: object
+    parcelCreate_data_relationships:
+      properties:
+        shipment:
+          $ref: '#/components/schemas/order_data_relationships_shipments'
+        package:
+          $ref: '#/components/schemas/parcel_data_relationships_package'
+      required:
+      - package
+      - shipment
+      type: object
+    parcelCreate_data:
+      properties:
+        type:
+          default: parcels
+          description: The resource's type
+          example: parcels
+          type: string
+        attributes:
+          $ref: '#/components/schemas/parcelCreate_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/parcelCreate_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    parcelUpdate_data_attributes:
+      properties:
+        weight:
+          description: "The parcel weight, used to automatically calculate the tax\
+            \ rates from the available carrier accounts."
+          example: 1000.0
+          type: number
+        unit_of_weight:
+          description: "Can be one of 'gr', 'lb', or 'oz'"
           example: gr
           type: string
         eel_pfc:
@@ -28100,31 +29330,6 @@ components:
             foo: bar
           type: object
       type: object
-    parcelCreate_data_relationships:
-      properties:
-        shipment:
-          $ref: '#/components/schemas/order_data_relationships_shipments'
-        package:
-          $ref: '#/components/schemas/parcel_data_relationships_package'
-      required:
-      - package
-      - shipment
-      type: object
-    parcelCreate_data:
-      properties:
-        type:
-          default: parcels
-          description: The resource's type
-          example: parcels
-          type: string
-        attributes:
-          $ref: '#/components/schemas/parcelCreate_data_attributes'
-        relationships:
-          $ref: '#/components/schemas/parcelCreate_data_relationships'
-      required:
-      - attributes
-      - type
-      type: object
     parcelUpdate_data_relationships:
       properties:
         shipment:
@@ -28144,7 +29349,7 @@ components:
           example: XGZwpOSrWL
           type: string
         attributes:
-          $ref: '#/components/schemas/parcelCreate_data_attributes'
+          $ref: '#/components/schemas/parcelUpdate_data_attributes'
         relationships:
           $ref: '#/components/schemas/parcelUpdate_data_relationships'
       required:
@@ -29144,6 +30349,215 @@ components:
       - id
       - type
       type: object
+    priceTier_data_attributes:
+      properties:
+        name:
+          description: The price tier's name
+          example: six pack
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this price tier, in cents."
+          example: 1000
+          type: integer
+        price_amount_float:
+          description: "The price of this price tier, float."
+          example: 10.0
+          type: number
+        formatted_price_amount:
+          description: "The price of this price tier, formatted."
+          example: "€10,00"
+          type: string
+        id:
+          description: Unique identifier for the resource (hash).
+          example: XAyRWNUzyN
+          type: string
+        created_at:
+          description: Time at which the resource was created.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        updated_at:
+          description: Time at which the resource was last updated.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      type: object
+    priceTier_data_relationships:
+      properties:
+        price:
+          $ref: '#/components/schemas/priceList_data_relationships_prices'
+        attachments:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+      type: object
+    priceTier_data:
+      properties:
+        type:
+          default: price_tiers
+          description: The resource's type
+          example: price_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/priceTier_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/priceTier_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    priceVolumeTier_data:
+      properties:
+        type:
+          default: price_volume_tiers
+          description: The resource's type
+          example: price_volume_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/priceTier_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/priceTier_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    priceVolumeTierCreate_data_attributes:
+      properties:
+        name:
+          description: The price tier's name
+          example: six pack
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this price tier, in cents."
+          example: 1000
+          type: integer
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      required:
+      - name
+      - price_amount_cents
+      type: object
+    priceVolumeTierCreate_data_relationships:
+      properties:
+        price:
+          $ref: '#/components/schemas/priceList_data_relationships_prices'
+      required:
+      - price
+      type: object
+    priceVolumeTierCreate_data:
+      properties:
+        type:
+          default: price_volume_tiers
+          description: The resource's type
+          example: price_volume_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/priceVolumeTierCreate_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/priceVolumeTierCreate_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    priceVolumeTierUpdate_data_attributes:
+      properties:
+        name:
+          description: The price tier's name
+          example: six pack
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this price tier, in cents."
+          example: 1000
+          type: integer
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      type: object
+    priceVolumeTierUpdate_data_relationships:
+      properties:
+        price:
+          $ref: '#/components/schemas/priceList_data_relationships_prices'
+      type: object
+    priceVolumeTierUpdate_data:
+      properties:
+        type:
+          default: price_volume_tiers
+          description: The resource's type
+          example: price_volume_tiers
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+        attributes:
+          $ref: '#/components/schemas/priceVolumeTierUpdate_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/priceVolumeTierUpdate_data_relationships'
+      required:
+      - attributes
+      - id
+      - type
+      type: object
     price_data_attributes:
       properties:
         currency_code:
@@ -29212,12 +30626,46 @@ components:
             foo: bar
           type: object
       type: object
+    price_data_relationships_price_tiers:
+      properties:
+        type:
+          default: price_tiers
+          description: The resource's type
+          example: price_tiers
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
+    price_data_relationships_price_volume_tiers:
+      properties:
+        type:
+          default: price_volume_tiers
+          description: The resource's type
+          example: price_volume_tiers
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
     price_data_relationships:
       properties:
         price_list:
           $ref: '#/components/schemas/market_data_relationships_price_list'
         sku:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
+        price_tiers:
+          $ref: '#/components/schemas/price_data_relationships_price_tiers'
+        price_volume_tiers:
+          $ref: '#/components/schemas/price_data_relationships_price_volume_tiers'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
       type: object
@@ -29280,6 +30728,8 @@ components:
           $ref: '#/components/schemas/market_data_relationships_price_list'
         sku:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
+        price_tiers:
+          $ref: '#/components/schemas/price_data_relationships_price_tiers'
       required:
       - price_list
       type: object
@@ -29339,6 +30789,8 @@ components:
           $ref: '#/components/schemas/market_data_relationships_price_list'
         sku:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
+        price_tiers:
+          $ref: '#/components/schemas/price_data_relationships_price_tiers'
       type: object
     priceUpdate_data:
       properties:
@@ -29476,6 +30928,8 @@ components:
           $ref: '#/components/schemas/adyenPayment_data_relationships_order'
         reference_capture:
           $ref: '#/components/schemas/authorization_data_relationships_captures'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     refund_data:
       properties:
@@ -29793,6 +31247,8 @@ components:
           $ref: '#/components/schemas/return_data_relationships_return_line_items'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     return_data:
       properties:
@@ -29969,6 +31425,15 @@ components:
           description: "The shipping rate purchase error message, if any."
           example: Account not allowed for this service.
           type: string
+        get_rates_errors:
+          description: Any errors collected when fetching shipping rates.
+          example:
+          - carrier: DHLExpress
+            message: "to_address.postal_code: Shorter than minimum length 3"
+            type: rate_error
+          items:
+            type: object
+          type: array
         get_rates_started_at:
           description: Time at which the getting of the shipping rates started.
           example: 2018-01-01T12:00:00.000Z
@@ -30095,6 +31560,8 @@ components:
           $ref: '#/components/schemas/package_data_relationships_parcels'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     shipment_data:
       properties:
@@ -30340,11 +31807,91 @@ components:
       - id
       - type
       type: object
+    shippingMethodTier_data_attributes:
+      properties:
+        name:
+          description: The shipping method tier's name
+          example: Light shipping under 3kg
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this shipping method tier, in cents."
+          example: 1000
+          type: integer
+        price_amount_float:
+          description: "The price of this shipping method tier, float."
+          example: 10.0
+          type: number
+        formatted_price_amount:
+          description: "The price of this shipping method tier, formatted."
+          example: "€10,00"
+          type: string
+        id:
+          description: Unique identifier for the resource (hash).
+          example: XAyRWNUzyN
+          type: string
+        created_at:
+          description: Time at which the resource was created.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        updated_at:
+          description: Time at which the resource was last updated.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      type: object
+    shippingMethodTier_data_relationships:
+      properties:
+        shipping_method:
+          $ref: '#/components/schemas/deliveryLeadTime_data_relationships_shipping_method'
+        attachments:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+      type: object
+    shippingMethodTier_data:
+      properties:
+        type:
+          default: shipping_method_tiers
+          description: The resource's type
+          example: shipping_method_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/shippingMethodTier_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/shippingMethodTier_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
     shippingMethod_data_attributes:
       properties:
         name:
           description: The shipping method's name
           example: Standard shipping
+          type: string
+        scheme:
+          description: "The shipping method's scheme, one of 'flat' or 'weight_tiered'."
+          example: flat
           type: string
         currency_code:
           description: The international 3-letter currency code as defined by the
@@ -30397,6 +31944,18 @@ components:
             \ to a shipment, formatted."
           example: "€0,00"
           type: string
+        min_weight:
+          description: The minimum weight for which this shipping method is available.
+          example: 3.0
+          type: number
+        max_weight:
+          description: The maximum weight for which this shipping method is available.
+          example: 300.0
+          type: number
+        unit_of_weight:
+          description: "Can be one of 'gr', 'lb', or 'oz'"
+          example: gr
+          type: string
         id:
           description: Unique identifier for the resource (hash).
           example: XAyRWNUzyN
@@ -30443,6 +32002,36 @@ components:
       - id
       - type
       type: object
+    shippingMethod_data_relationships_shipping_method_tiers:
+      properties:
+        type:
+          default: shipping_method_tiers
+          description: The resource's type
+          example: shipping_method_tiers
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
+    shippingMethod_data_relationships_shipping_weight_tiers:
+      properties:
+        type:
+          default: shipping_weight_tiers
+          description: The resource's type
+          example: shipping_weight_tiers
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      required:
+      - id
+      - type
+      type: object
     shippingMethod_data_relationships:
       properties:
         market:
@@ -30451,8 +32040,14 @@ components:
           $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_zone'
         shipping_category:
           $ref: '#/components/schemas/shipment_data_relationships_shipping_category'
+        stock_location:
+          $ref: '#/components/schemas/deliveryLeadTime_data_relationships_stock_location'
         delivery_lead_time_for_shipment:
           $ref: '#/components/schemas/shipment_data_relationships_delivery_lead_time'
+        shipping_method_tiers:
+          $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_method_tiers'
+        shipping_weight_tiers:
+          $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_weight_tiers'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
       type: object
@@ -30477,6 +32072,10 @@ components:
           description: The shipping method's name
           example: Standard shipping
           type: string
+        scheme:
+          description: "The shipping method's scheme, one of 'flat' or 'weight_tiered'."
+          example: flat
+          type: string
         currency_code:
           description: The international 3-letter currency code as defined by the
             ISO 4217 standard.
@@ -30491,6 +32090,18 @@ components:
             \ in cents."
           example: 9900
           type: integer
+        min_weight:
+          description: The minimum weight for which this shipping method is available.
+          example: 3.0
+          type: number
+        max_weight:
+          description: The maximum weight for which this shipping method is available.
+          example: 300.0
+          type: number
+        unit_of_weight:
+          description: "Can be one of 'gr', 'lb', or 'oz'"
+          example: gr
+          type: string
         reference:
           description: "A string that you can use to add any external identifier to\
             \ the resource. This can be useful for integrating the resource to an\
@@ -30521,9 +32132,10 @@ components:
           $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_zone'
         shipping_category:
           $ref: '#/components/schemas/shipment_data_relationships_shipping_category'
-      required:
-      - shipping_category
-      - shipping_zone
+        stock_location:
+          $ref: '#/components/schemas/deliveryLeadTime_data_relationships_stock_location'
+        shipping_method_tiers:
+          $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_method_tiers'
       type: object
     shippingMethodCreate_data:
       properties:
@@ -30546,6 +32158,10 @@ components:
           description: The shipping method's name
           example: Standard shipping
           type: string
+        scheme:
+          description: "The shipping method's scheme, one of 'flat' or 'weight_tiered'."
+          example: flat
+          type: string
         currency_code:
           description: The international 3-letter currency code as defined by the
             ISO 4217 standard.
@@ -30559,6 +32175,146 @@ components:
           description: "Apply free shipping if the order amount is over this value,\
             \ in cents."
           example: 9900
+          type: integer
+        min_weight:
+          description: The minimum weight for which this shipping method is available.
+          example: 3.0
+          type: number
+        max_weight:
+          description: The maximum weight for which this shipping method is available.
+          example: 300.0
+          type: number
+        unit_of_weight:
+          description: "Can be one of 'gr', 'lb', or 'oz'"
+          example: gr
+          type: string
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      type: object
+    shippingMethodUpdate_data:
+      properties:
+        type:
+          default: shipping_methods
+          description: The resource's type
+          example: shipping_methods
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+        attributes:
+          $ref: '#/components/schemas/shippingMethodUpdate_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/shippingMethodCreate_data_relationships'
+      required:
+      - attributes
+      - id
+      - type
+      type: object
+    shippingWeightTier_data:
+      properties:
+        type:
+          default: shipping_weight_tiers
+          description: The resource's type
+          example: shipping_weight_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/shippingMethodTier_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/shippingMethodTier_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    shippingWeightTierCreate_data_attributes:
+      properties:
+        name:
+          description: The shipping method tier's name
+          example: Light shipping under 3kg
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this shipping method tier, in cents."
+          example: 1000
+          type: integer
+        reference:
+          description: "A string that you can use to add any external identifier to\
+            \ the resource. This can be useful for integrating the resource to an\
+            \ external system, like an ERP, a marketing tool, a CRM, or whatever."
+          example: ANY-EXTERNAL-REFEFERNCE
+          type: string
+        reference_origin:
+          description: Any identifier of the third party system that defines the reference
+            code
+          example: ANY-EXTERNAL-REFEFERNCE-ORIGIN
+          type: string
+        metadata:
+          description: Set of key-value pairs that you can attach to the resource.
+            This can be useful for storing additional information about the resource
+            in a structured format.
+          example:
+            foo: bar
+          type: object
+      required:
+      - name
+      - price_amount_cents
+      type: object
+    shippingWeightTierCreate_data_relationships:
+      properties:
+        shipping_method:
+          $ref: '#/components/schemas/deliveryLeadTime_data_relationships_shipping_method'
+      required:
+      - shipping_method
+      type: object
+    shippingWeightTierCreate_data:
+      properties:
+        type:
+          default: shipping_weight_tiers
+          description: The resource's type
+          example: shipping_weight_tiers
+          type: string
+        attributes:
+          $ref: '#/components/schemas/shippingWeightTierCreate_data_attributes'
+        relationships:
+          $ref: '#/components/schemas/shippingWeightTierCreate_data_relationships'
+      required:
+      - attributes
+      - type
+      type: object
+    shippingWeightTierUpdate_data_attributes:
+      properties:
+        name:
+          description: The shipping method tier's name
+          example: Light shipping under 3kg
+          type: string
+        up_to:
+          description: The tier upper limit. When 'null' it means infinity (useful
+            to have an always matching tier).
+          example: 20.5
+          type: number
+        price_amount_cents:
+          description: "The price of this shipping method tier, in cents."
+          example: 1000
           type: integer
         reference:
           description: "A string that you can use to add any external identifier to\
@@ -30579,30 +32335,21 @@ components:
             foo: bar
           type: object
       type: object
-    shippingMethodUpdate_data_relationships:
-      properties:
-        market:
-          $ref: '#/components/schemas/avalaraAccount_data_relationships_markets'
-        shipping_zone:
-          $ref: '#/components/schemas/shippingMethod_data_relationships_shipping_zone'
-        shipping_category:
-          $ref: '#/components/schemas/shipment_data_relationships_shipping_category'
-      type: object
-    shippingMethodUpdate_data:
+    shippingWeightTierUpdate_data:
       properties:
         type:
-          default: shipping_methods
+          default: shipping_weight_tiers
           description: The resource's type
-          example: shipping_methods
+          example: shipping_weight_tiers
           type: string
         id:
           description: The resource's id
           example: XGZwpOSrWL
           type: string
         attributes:
-          $ref: '#/components/schemas/shippingMethodUpdate_data_attributes'
+          $ref: '#/components/schemas/shippingWeightTierUpdate_data_attributes'
         relationships:
-          $ref: '#/components/schemas/shippingMethodUpdate_data_relationships'
+          $ref: '#/components/schemas/shipmentUpdate_data_relationships'
       required:
       - attributes
       - id
@@ -31612,7 +33359,7 @@ components:
           example: 300.0
           type: number
         unit_of_weight:
-          description: "Can be one of 'gr', or 'oz'"
+          description: "Can be one of 'gr', 'lb', or 'oz'"
           example: gr
           type: string
         hs_tariff_number:
@@ -31799,7 +33546,7 @@ components:
           example: 300.0
           type: number
         unit_of_weight:
-          description: "Can be one of 'gr', or 'oz'"
+          description: "Can be one of 'gr', 'lb', or 'oz'"
           example: gr
           type: string
         hs_tariff_number:
@@ -31890,7 +33637,7 @@ components:
           example: 300.0
           type: number
         unit_of_weight:
-          description: "Can be one of 'gr', or 'oz'"
+          description: "Can be one of 'gr', 'lb', or 'oz'"
           example: gr
           type: string
         hs_tariff_number:
@@ -32450,6 +34197,8 @@ components:
           $ref: '#/components/schemas/order_data_relationships_shipments'
         line_item:
           $ref: '#/components/schemas/lineItemOption_data_relationships_line_item'
+        events:
+          $ref: '#/components/schemas/customerAddress_data_relationships_events'
       type: object
     stockTransfer_data:
       properties:
@@ -33731,25 +35480,10 @@ components:
             foo: bar
           type: object
       type: object
-    webhook_data_relationships_last_event_callbacks:
-      properties:
-        type:
-          default: event_callbacks
-          description: The resource's type
-          example: event_callbacks
-          type: string
-        id:
-          description: The resource's id
-          example: XGZwpOSrWL
-          type: string
-      required:
-      - id
-      - type
-      type: object
     webhook_data_relationships:
       properties:
         last_event_callbacks:
-          $ref: '#/components/schemas/webhook_data_relationships_last_event_callbacks'
+          $ref: '#/components/schemas/event_data_relationships_last_event_callbacks'
       type: object
     webhook_data:
       properties:

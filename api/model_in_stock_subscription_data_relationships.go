@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,7 @@ type InStockSubscriptionDataRelationships struct {
 	Market   *AvalaraAccountDataRelationshipsMarkets   `json:"market,omitempty"`
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
 	Sku      *BundleDataRelationshipsSkus              `json:"sku,omitempty"`
+	Events   *CustomerAddressDataRelationshipsEvents   `json:"events,omitempty"`
 }
 
 // NewInStockSubscriptionDataRelationships instantiates a new InStockSubscriptionDataRelationships object
@@ -135,6 +136,38 @@ func (o *InStockSubscriptionDataRelationships) SetSku(v BundleDataRelationshipsS
 	o.Sku = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *InStockSubscriptionDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret CustomerAddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *InStockSubscriptionDataRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *InStockSubscriptionDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o InStockSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Market != nil {
@@ -145,6 +178,9 @@ func (o InStockSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type WebhooksApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param webhookId The resource's id
-		@return ApiDELETEWebhooksWebhookIdRequest
+		@return WebhooksApiDELETEWebhooksWebhookIdRequest
 	*/
-	DELETEWebhooksWebhookId(ctx context.Context, webhookId string) ApiDELETEWebhooksWebhookIdRequest
+	DELETEWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiDELETEWebhooksWebhookIdRequest
 
 	// DELETEWebhooksWebhookIdExecute executes the request
-	DELETEWebhooksWebhookIdExecute(r ApiDELETEWebhooksWebhookIdRequest) (*http.Response, error)
+	DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEWebhooksWebhookIdRequest) (*http.Response, error)
 
 	/*
 		GETEventCallbackIdWebhook Retrieve the webhook associated to the event callback
@@ -43,12 +43,26 @@ type WebhooksApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param eventCallbackId The resource's id
-		@return ApiGETEventCallbackIdWebhookRequest
+		@return WebhooksApiGETEventCallbackIdWebhookRequest
 	*/
-	GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) ApiGETEventCallbackIdWebhookRequest
+	GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) WebhooksApiGETEventCallbackIdWebhookRequest
 
 	// GETEventCallbackIdWebhookExecute executes the request
-	GETEventCallbackIdWebhookExecute(r ApiGETEventCallbackIdWebhookRequest) (*http.Response, error)
+	GETEventCallbackIdWebhookExecute(r WebhooksApiGETEventCallbackIdWebhookRequest) (*http.Response, error)
+
+	/*
+		GETEventIdWebhooks Retrieve the webhooks associated to the event
+
+		Retrieve the webhooks associated to the event
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param eventId The resource's id
+		@return WebhooksApiGETEventIdWebhooksRequest
+	*/
+	GETEventIdWebhooks(ctx context.Context, eventId string) WebhooksApiGETEventIdWebhooksRequest
+
+	// GETEventIdWebhooksExecute executes the request
+	GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWebhooksRequest) (*http.Response, error)
 
 	/*
 		GETWebhooks List all webhooks
@@ -56,12 +70,12 @@ type WebhooksApi interface {
 		List all webhooks
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETWebhooksRequest
+		@return WebhooksApiGETWebhooksRequest
 	*/
-	GETWebhooks(ctx context.Context) ApiGETWebhooksRequest
+	GETWebhooks(ctx context.Context) WebhooksApiGETWebhooksRequest
 
 	// GETWebhooksExecute executes the request
-	GETWebhooksExecute(r ApiGETWebhooksRequest) (*http.Response, error)
+	GETWebhooksExecute(r WebhooksApiGETWebhooksRequest) (*http.Response, error)
 
 	/*
 		GETWebhooksWebhookId Retrieve a webhook
@@ -70,13 +84,13 @@ type WebhooksApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param webhookId The resource's id
-		@return ApiGETWebhooksWebhookIdRequest
+		@return WebhooksApiGETWebhooksWebhookIdRequest
 	*/
-	GETWebhooksWebhookId(ctx context.Context, webhookId string) ApiGETWebhooksWebhookIdRequest
+	GETWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiGETWebhooksWebhookIdRequest
 
 	// GETWebhooksWebhookIdExecute executes the request
 	//  @return Webhook
-	GETWebhooksWebhookIdExecute(r ApiGETWebhooksWebhookIdRequest) (*Webhook, *http.Response, error)
+	GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhooksWebhookIdRequest) (*Webhook, *http.Response, error)
 
 	/*
 		PATCHWebhooksWebhookId Update a webhook
@@ -85,12 +99,12 @@ type WebhooksApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param webhookId The resource's id
-		@return ApiPATCHWebhooksWebhookIdRequest
+		@return WebhooksApiPATCHWebhooksWebhookIdRequest
 	*/
-	PATCHWebhooksWebhookId(ctx context.Context, webhookId string) ApiPATCHWebhooksWebhookIdRequest
+	PATCHWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiPATCHWebhooksWebhookIdRequest
 
 	// PATCHWebhooksWebhookIdExecute executes the request
-	PATCHWebhooksWebhookIdExecute(r ApiPATCHWebhooksWebhookIdRequest) (*http.Response, error)
+	PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWebhooksWebhookIdRequest) (*http.Response, error)
 
 	/*
 		POSTWebhooks Create a webhook
@@ -98,24 +112,24 @@ type WebhooksApi interface {
 		Create a webhook
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTWebhooksRequest
+		@return WebhooksApiPOSTWebhooksRequest
 	*/
-	POSTWebhooks(ctx context.Context) ApiPOSTWebhooksRequest
+	POSTWebhooks(ctx context.Context) WebhooksApiPOSTWebhooksRequest
 
 	// POSTWebhooksExecute executes the request
-	POSTWebhooksExecute(r ApiPOSTWebhooksRequest) (*http.Response, error)
+	POSTWebhooksExecute(r WebhooksApiPOSTWebhooksRequest) (*http.Response, error)
 }
 
 // WebhooksApiService WebhooksApi service
 type WebhooksApiService service
 
-type ApiDELETEWebhooksWebhookIdRequest struct {
+type WebhooksApiDELETEWebhooksWebhookIdRequest struct {
 	ctx        context.Context
 	ApiService WebhooksApi
 	webhookId  string
 }
 
-func (r ApiDELETEWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
+func (r WebhooksApiDELETEWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEWebhooksWebhookIdExecute(r)
 }
 
@@ -126,10 +140,10 @@ Delete a webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookId The resource's id
- @return ApiDELETEWebhooksWebhookIdRequest
+ @return WebhooksApiDELETEWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId string) ApiDELETEWebhooksWebhookIdRequest {
-	return ApiDELETEWebhooksWebhookIdRequest{
+func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiDELETEWebhooksWebhookIdRequest {
+	return WebhooksApiDELETEWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		webhookId:  webhookId,
@@ -137,7 +151,7 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhoo
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r ApiDELETEWebhooksWebhookIdRequest) (*http.Response, error) {
+func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEWebhooksWebhookIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +215,13 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r ApiDELETEWebhooksW
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETEventCallbackIdWebhookRequest struct {
+type WebhooksApiGETEventCallbackIdWebhookRequest struct {
 	ctx             context.Context
 	ApiService      WebhooksApi
 	eventCallbackId string
 }
 
-func (r ApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
+func (r WebhooksApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETEventCallbackIdWebhookExecute(r)
 }
 
@@ -218,10 +232,10 @@ Retrieve the webhook associated to the event callback
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param eventCallbackId The resource's id
- @return ApiGETEventCallbackIdWebhookRequest
+ @return WebhooksApiGETEventCallbackIdWebhookRequest
 */
-func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) ApiGETEventCallbackIdWebhookRequest {
-	return ApiGETEventCallbackIdWebhookRequest{
+func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) WebhooksApiGETEventCallbackIdWebhookRequest {
+	return WebhooksApiGETEventCallbackIdWebhookRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		eventCallbackId: eventCallbackId,
@@ -229,7 +243,7 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, even
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r ApiGETEventCallbackIdWebhookRequest) (*http.Response, error) {
+func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEventCallbackIdWebhookRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +307,104 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r ApiGETEventCallb
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWebhooksRequest struct {
+type WebhooksApiGETEventIdWebhooksRequest struct {
+	ctx        context.Context
+	ApiService WebhooksApi
+	eventId    string
+}
+
+func (r WebhooksApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETEventIdWebhooksExecute(r)
+}
+
+/*
+GETEventIdWebhooks Retrieve the webhooks associated to the event
+
+Retrieve the webhooks associated to the event
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param eventId The resource's id
+ @return WebhooksApiGETEventIdWebhooksRequest
+*/
+func (a *WebhooksApiService) GETEventIdWebhooks(ctx context.Context, eventId string) WebhooksApiGETEventIdWebhooksRequest {
+	return WebhooksApiGETEventIdWebhooksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		eventId:    eventId,
+	}
+}
+
+// Execute executes the request
+func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWebhooksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GETEventIdWebhooks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/events/{eventId}/webhooks"
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type WebhooksApiGETWebhooksRequest struct {
 	ctx        context.Context
 	ApiService WebhooksApi
 }
 
-func (r ApiGETWebhooksRequest) Execute() (*http.Response, error) {
+func (r WebhooksApiGETWebhooksRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETWebhooksExecute(r)
 }
 
@@ -308,17 +414,17 @@ GETWebhooks List all webhooks
 List all webhooks
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETWebhooksRequest
+ @return WebhooksApiGETWebhooksRequest
 */
-func (a *WebhooksApiService) GETWebhooks(ctx context.Context) ApiGETWebhooksRequest {
-	return ApiGETWebhooksRequest{
+func (a *WebhooksApiService) GETWebhooks(ctx context.Context) WebhooksApiGETWebhooksRequest {
+	return WebhooksApiGETWebhooksRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) GETWebhooksExecute(r ApiGETWebhooksRequest) (*http.Response, error) {
+func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +487,13 @@ func (a *WebhooksApiService) GETWebhooksExecute(r ApiGETWebhooksRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWebhooksWebhookIdRequest struct {
+type WebhooksApiGETWebhooksWebhookIdRequest struct {
 	ctx        context.Context
 	ApiService WebhooksApi
 	webhookId  string
 }
 
-func (r ApiGETWebhooksWebhookIdRequest) Execute() (*Webhook, *http.Response, error) {
+func (r WebhooksApiGETWebhooksWebhookIdRequest) Execute() (*Webhook, *http.Response, error) {
 	return r.ApiService.GETWebhooksWebhookIdExecute(r)
 }
 
@@ -398,10 +504,10 @@ Retrieve a webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookId The resource's id
- @return ApiGETWebhooksWebhookIdRequest
+ @return WebhooksApiGETWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId string) ApiGETWebhooksWebhookIdRequest {
-	return ApiGETWebhooksWebhookIdRequest{
+func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiGETWebhooksWebhookIdRequest {
+	return WebhooksApiGETWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		webhookId:  webhookId,
@@ -410,7 +516,7 @@ func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId
 
 // Execute executes the request
 //  @return Webhook
-func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r ApiGETWebhooksWebhookIdRequest) (*Webhook, *http.Response, error) {
+func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhooksWebhookIdRequest) (*Webhook, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +590,19 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r ApiGETWebhooksWebhook
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHWebhooksWebhookIdRequest struct {
+type WebhooksApiPATCHWebhooksWebhookIdRequest struct {
 	ctx           context.Context
 	ApiService    WebhooksApi
 	webhookId     string
 	webhookUpdate *WebhookUpdate
 }
 
-func (r ApiPATCHWebhooksWebhookIdRequest) WebhookUpdate(webhookUpdate WebhookUpdate) ApiPATCHWebhooksWebhookIdRequest {
+func (r WebhooksApiPATCHWebhooksWebhookIdRequest) WebhookUpdate(webhookUpdate WebhookUpdate) WebhooksApiPATCHWebhooksWebhookIdRequest {
 	r.webhookUpdate = &webhookUpdate
 	return r
 }
 
-func (r ApiPATCHWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
+func (r WebhooksApiPATCHWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHWebhooksWebhookIdExecute(r)
 }
 
@@ -507,10 +613,10 @@ Update a webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookId The resource's id
- @return ApiPATCHWebhooksWebhookIdRequest
+ @return WebhooksApiPATCHWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId string) ApiPATCHWebhooksWebhookIdRequest {
-	return ApiPATCHWebhooksWebhookIdRequest{
+func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiPATCHWebhooksWebhookIdRequest {
+	return WebhooksApiPATCHWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		webhookId:  webhookId,
@@ -518,7 +624,7 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhook
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r ApiPATCHWebhooksWebhookIdRequest) (*http.Response, error) {
+func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWebhooksWebhookIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +693,18 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r ApiPATCHWebhooksWeb
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTWebhooksRequest struct {
+type WebhooksApiPOSTWebhooksRequest struct {
 	ctx           context.Context
 	ApiService    WebhooksApi
 	webhookCreate *WebhookCreate
 }
 
-func (r ApiPOSTWebhooksRequest) WebhookCreate(webhookCreate WebhookCreate) ApiPOSTWebhooksRequest {
+func (r WebhooksApiPOSTWebhooksRequest) WebhookCreate(webhookCreate WebhookCreate) WebhooksApiPOSTWebhooksRequest {
 	r.webhookCreate = &webhookCreate
 	return r
 }
 
-func (r ApiPOSTWebhooksRequest) Execute() (*http.Response, error) {
+func (r WebhooksApiPOSTWebhooksRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTWebhooksExecute(r)
 }
 
@@ -608,17 +714,17 @@ POSTWebhooks Create a webhook
 Create a webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTWebhooksRequest
+ @return WebhooksApiPOSTWebhooksRequest
 */
-func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) ApiPOSTWebhooksRequest {
-	return ApiPOSTWebhooksRequest{
+func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) WebhooksApiPOSTWebhooksRequest {
+	return WebhooksApiPOSTWebhooksRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WebhooksApiService) POSTWebhooksExecute(r ApiPOSTWebhooksRequest) (*http.Response, error) {
+func (a *WebhooksApiService) POSTWebhooksExecute(r WebhooksApiPOSTWebhooksRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

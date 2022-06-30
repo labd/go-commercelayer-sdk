@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type InventoryReturnLocationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
+		@return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
 	*/
-	DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
+	DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
 
 	// DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute executes the request
-	DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error)
+	DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModelIdInventoryReturnLocations Retrieve the inventory return locations associated to the inventory model
@@ -43,12 +43,12 @@ type InventoryReturnLocationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiGETInventoryModelIdInventoryReturnLocationsRequest
+		@return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest
 	*/
-	GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryReturnLocationsRequest
+	GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest
 
 	// GETInventoryModelIdInventoryReturnLocationsExecute executes the request
-	GETInventoryModelIdInventoryReturnLocationsExecute(r ApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error)
+	GETInventoryModelIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryReturnLocations List all inventory return locations
@@ -56,12 +56,12 @@ type InventoryReturnLocationsApi interface {
 		List all inventory return locations
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETInventoryReturnLocationsRequest
+		@return InventoryReturnLocationsApiGETInventoryReturnLocationsRequest
 	*/
-	GETInventoryReturnLocations(ctx context.Context) ApiGETInventoryReturnLocationsRequest
+	GETInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiGETInventoryReturnLocationsRequest
 
 	// GETInventoryReturnLocationsExecute executes the request
-	GETInventoryReturnLocationsExecute(r ApiGETInventoryReturnLocationsRequest) (*http.Response, error)
+	GETInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryReturnLocationsInventoryReturnLocationId Retrieve an inventory return location
@@ -70,13 +70,13 @@ type InventoryReturnLocationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
+		@return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
 	*/
-	GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
+	GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
 
 	// GETInventoryReturnLocationsInventoryReturnLocationIdExecute executes the request
 	//  @return InventoryReturnLocation
-	GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) (*InventoryReturnLocation, *http.Response, error)
+	GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) (*InventoryReturnLocation, *http.Response, error)
 
 	/*
 		GETStockLocationIdInventoryReturnLocations Retrieve the inventory return locations associated to the stock location
@@ -85,12 +85,12 @@ type InventoryReturnLocationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdInventoryReturnLocationsRequest
+		@return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest
 	*/
-	GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryReturnLocationsRequest
+	GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest
 
 	// GETStockLocationIdInventoryReturnLocationsExecute executes the request
-	GETStockLocationIdInventoryReturnLocationsExecute(r ApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error)
+	GETStockLocationIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error)
 
 	/*
 		PATCHInventoryReturnLocationsInventoryReturnLocationId Update an inventory return location
@@ -99,12 +99,12 @@ type InventoryReturnLocationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
+		@return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
 	*/
-	PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
+	PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
 
 	// PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute executes the request
-	PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error)
+	PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error)
 
 	/*
 		POSTInventoryReturnLocations Create an inventory return location
@@ -112,24 +112,24 @@ type InventoryReturnLocationsApi interface {
 		Create an inventory return location
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTInventoryReturnLocationsRequest
+		@return InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest
 	*/
-	POSTInventoryReturnLocations(ctx context.Context) ApiPOSTInventoryReturnLocationsRequest
+	POSTInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest
 
 	// POSTInventoryReturnLocationsExecute executes the request
-	POSTInventoryReturnLocationsExecute(r ApiPOSTInventoryReturnLocationsRequest) (*http.Response, error)
+	POSTInventoryReturnLocationsExecute(r InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest) (*http.Response, error)
 }
 
 // InventoryReturnLocationsApiService InventoryReturnLocationsApi service
 type InventoryReturnLocationsApiService service
 
-type ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
+type InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
 	ctx                       context.Context
 	ApiService                InventoryReturnLocationsApi
 	inventoryReturnLocationId string
 }
 
-func (r ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r)
 }
 
@@ -140,10 +140,10 @@ Delete an inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
+ @return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest {
-	return ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest{
+func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest {
+	return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -151,7 +151,7 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -215,13 +215,13 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
+type InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
 	ctx              context.Context
 	ApiService       InventoryReturnLocationsApi
 	inventoryModelId string
 }
 
-func (r ApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelIdInventoryReturnLocationsExecute(r)
 }
 
@@ -232,10 +232,10 @@ Retrieve the inventory return locations associated to the inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiGETInventoryModelIdInventoryReturnLocationsRequest
+ @return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryReturnLocationsRequest {
-	return ApiGETInventoryModelIdInventoryReturnLocationsRequest{
+func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest {
+	return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -243,7 +243,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r ApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -307,12 +307,12 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationsRequest struct {
+type InventoryReturnLocationsApiGETInventoryReturnLocationsRequest struct {
 	ctx        context.Context
 	ApiService InventoryReturnLocationsApi
 }
 
-func (r ApiGETInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiGETInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationsExecute(r)
 }
 
@@ -322,17 +322,17 @@ GETInventoryReturnLocations List all inventory return locations
 List all inventory return locations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETInventoryReturnLocationsRequest
+ @return InventoryReturnLocationsApiGETInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocations(ctx context.Context) ApiGETInventoryReturnLocationsRequest {
-	return ApiGETInventoryReturnLocationsRequest{
+func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiGETInventoryReturnLocationsRequest {
+	return InventoryReturnLocationsApiGETInventoryReturnLocationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(r ApiGETInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -395,13 +395,13 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
+type InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
 	ctx                       context.Context
 	ApiService                InventoryReturnLocationsApi
 	inventoryReturnLocationId string
 }
 
-func (r ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*InventoryReturnLocation, *http.Response, error) {
+func (r InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*InventoryReturnLocation, *http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r)
 }
 
@@ -412,10 +412,10 @@ Retrieve an inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
+ @return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest {
-	return ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest{
+func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest {
+	return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -424,7 +424,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 
 // Execute executes the request
 //  @return InventoryReturnLocation
-func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) (*InventoryReturnLocation, *http.Response, error) {
+func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) (*InventoryReturnLocation, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -498,13 +498,13 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdInventoryReturnLocationsRequest struct {
+type InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest struct {
 	ctx             context.Context
 	ApiService      InventoryReturnLocationsApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdInventoryReturnLocationsExecute(r)
 }
 
@@ -515,10 +515,10 @@ Retrieve the inventory return locations associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdInventoryReturnLocationsRequest
+ @return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryReturnLocationsRequest {
-	return ApiGETStockLocationIdInventoryReturnLocationsRequest{
+func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest {
+	return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -526,7 +526,7 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocationsExecute(r ApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -590,19 +590,19 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
+type InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
 	ctx                           context.Context
 	ApiService                    InventoryReturnLocationsApi
 	inventoryReturnLocationId     string
 	inventoryReturnLocationUpdate *InventoryReturnLocationUpdate
 }
 
-func (r ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) InventoryReturnLocationUpdate(inventoryReturnLocationUpdate InventoryReturnLocationUpdate) ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
+func (r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) InventoryReturnLocationUpdate(inventoryReturnLocationUpdate InventoryReturnLocationUpdate) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	r.inventoryReturnLocationUpdate = &inventoryReturnLocationUpdate
 	return r
 }
 
-func (r ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r)
 }
 
@@ -613,10 +613,10 @@ Update an inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
+ @return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
-	return ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest{
+func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
+	return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -624,7 +624,7 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r ApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -693,18 +693,18 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTInventoryReturnLocationsRequest struct {
+type InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest struct {
 	ctx                           context.Context
 	ApiService                    InventoryReturnLocationsApi
 	inventoryReturnLocationCreate *InventoryReturnLocationCreate
 }
 
-func (r ApiPOSTInventoryReturnLocationsRequest) InventoryReturnLocationCreate(inventoryReturnLocationCreate InventoryReturnLocationCreate) ApiPOSTInventoryReturnLocationsRequest {
+func (r InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest) InventoryReturnLocationCreate(inventoryReturnLocationCreate InventoryReturnLocationCreate) InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest {
 	r.inventoryReturnLocationCreate = &inventoryReturnLocationCreate
 	return r
 }
 
-func (r ApiPOSTInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTInventoryReturnLocationsExecute(r)
 }
 
@@ -714,17 +714,17 @@ POSTInventoryReturnLocations Create an inventory return location
 Create an inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTInventoryReturnLocationsRequest
+ @return InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocations(ctx context.Context) ApiPOSTInventoryReturnLocationsRequest {
-	return ApiPOSTInventoryReturnLocationsRequest{
+func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest {
+	return InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocationsExecute(r ApiPOSTInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocationsExecute(r InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

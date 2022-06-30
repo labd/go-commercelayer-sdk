@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "parcels"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ParcelCreateDataAttributes**](ParcelCreateDataAttributes.md) |  | 
+**Attributes** | [**ParcelUpdateDataAttributes**](ParcelUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelUpdateDataRelationships**](ParcelUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelUpdateData
 
-`func NewParcelUpdateData(type_ string, id string, attributes ParcelCreateDataAttributes, ) *ParcelUpdateData`
+`func NewParcelUpdateData(type_ string, id string, attributes ParcelUpdateDataAttributes, ) *ParcelUpdateData`
 
 NewParcelUpdateData instantiates a new ParcelUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ParcelUpdateData) GetAttributes() ParcelCreateDataAttributes`
+`func (o *ParcelUpdateData) GetAttributes() ParcelUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelUpdateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool)`
+`func (o *ParcelUpdateData) GetAttributesOk() (*ParcelUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelUpdateData) SetAttributes(v ParcelCreateDataAttributes)`
+`func (o *ParcelUpdateData) SetAttributes(v ParcelUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type StripeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiDELETEStripeGatewaysStripeGatewayIdRequest
+		@return StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest
 	*/
-	DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiDELETEStripeGatewaysStripeGatewayIdRequest
+	DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest
 
 	// DELETEStripeGatewaysStripeGatewayIdExecute executes the request
-	DELETEStripeGatewaysStripeGatewayIdExecute(r ApiDELETEStripeGatewaysStripeGatewayIdRequest) (*http.Response, error)
+	DELETEStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest) (*http.Response, error)
 
 	/*
 		GETStripeGateways List all stripe gateways
@@ -42,12 +42,12 @@ type StripeGatewaysApi interface {
 		List all stripe gateways
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETStripeGatewaysRequest
+		@return StripeGatewaysApiGETStripeGatewaysRequest
 	*/
-	GETStripeGateways(ctx context.Context) ApiGETStripeGatewaysRequest
+	GETStripeGateways(ctx context.Context) StripeGatewaysApiGETStripeGatewaysRequest
 
 	// GETStripeGatewaysExecute executes the request
-	GETStripeGatewaysExecute(r ApiGETStripeGatewaysRequest) (*http.Response, error)
+	GETStripeGatewaysExecute(r StripeGatewaysApiGETStripeGatewaysRequest) (*http.Response, error)
 
 	/*
 		GETStripeGatewaysStripeGatewayId Retrieve a stripe gateway
@@ -56,13 +56,13 @@ type StripeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiGETStripeGatewaysStripeGatewayIdRequest
+		@return StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest
 	*/
-	GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewaysStripeGatewayIdRequest
+	GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest
 
 	// GETStripeGatewaysStripeGatewayIdExecute executes the request
 	//  @return StripeGateway
-	GETStripeGatewaysStripeGatewayIdExecute(r ApiGETStripeGatewaysStripeGatewayIdRequest) (*StripeGateway, *http.Response, error)
+	GETStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) (*StripeGateway, *http.Response, error)
 
 	/*
 		PATCHStripeGatewaysStripeGatewayId Update a stripe gateway
@@ -71,12 +71,12 @@ type StripeGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiPATCHStripeGatewaysStripeGatewayIdRequest
+		@return StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest
 	*/
-	PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiPATCHStripeGatewaysStripeGatewayIdRequest
+	PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest
 
 	// PATCHStripeGatewaysStripeGatewayIdExecute executes the request
-	PATCHStripeGatewaysStripeGatewayIdExecute(r ApiPATCHStripeGatewaysStripeGatewayIdRequest) (*http.Response, error)
+	PATCHStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) (*http.Response, error)
 
 	/*
 		POSTStripeGateways Create a stripe gateway
@@ -84,24 +84,24 @@ type StripeGatewaysApi interface {
 		Create a stripe gateway
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTStripeGatewaysRequest
+		@return StripeGatewaysApiPOSTStripeGatewaysRequest
 	*/
-	POSTStripeGateways(ctx context.Context) ApiPOSTStripeGatewaysRequest
+	POSTStripeGateways(ctx context.Context) StripeGatewaysApiPOSTStripeGatewaysRequest
 
 	// POSTStripeGatewaysExecute executes the request
-	POSTStripeGatewaysExecute(r ApiPOSTStripeGatewaysRequest) (*http.Response, error)
+	POSTStripeGatewaysExecute(r StripeGatewaysApiPOSTStripeGatewaysRequest) (*http.Response, error)
 }
 
 // StripeGatewaysApiService StripeGatewaysApi service
 type StripeGatewaysApiService service
 
-type ApiDELETEStripeGatewaysStripeGatewayIdRequest struct {
+type StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      StripeGatewaysApi
 	stripeGatewayId string
 }
 
-func (r ApiDELETEStripeGatewaysStripeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStripeGatewaysStripeGatewayIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiDELETEStripeGatewaysStripeGatewayIdRequest
+ @return StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiDELETEStripeGatewaysStripeGatewayIdRequest {
-	return ApiDELETEStripeGatewaysStripeGatewayIdRequest{
+func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest {
+	return StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -123,7 +123,7 @@ func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayId(ctx conte
 }
 
 // Execute executes the request
-func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayIdExecute(r ApiDELETEStripeGatewaysStripeGatewayIdRequest) (*http.Response, error) {
+func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewaysRequest struct {
+type StripeGatewaysApiGETStripeGatewaysRequest struct {
 	ctx        context.Context
 	ApiService StripeGatewaysApi
 }
 
-func (r ApiGETStripeGatewaysRequest) Execute() (*http.Response, error) {
+func (r StripeGatewaysApiGETStripeGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripeGatewaysExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETStripeGateways List all stripe gateways
 List all stripe gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStripeGatewaysRequest
+ @return StripeGatewaysApiGETStripeGatewaysRequest
 */
-func (a *StripeGatewaysApiService) GETStripeGateways(ctx context.Context) ApiGETStripeGatewaysRequest {
-	return ApiGETStripeGatewaysRequest{
+func (a *StripeGatewaysApiService) GETStripeGateways(ctx context.Context) StripeGatewaysApiGETStripeGatewaysRequest {
+	return StripeGatewaysApiGETStripeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r ApiGETStripeGatewaysRequest) (*http.Response, error) {
+func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r StripeGatewaysApiGETStripeGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r ApiGETStripeGatewa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewaysStripeGatewayIdRequest struct {
+type StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      StripeGatewaysApi
 	stripeGatewayId string
 }
 
-func (r ApiGETStripeGatewaysStripeGatewayIdRequest) Execute() (*StripeGateway, *http.Response, error) {
+func (r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) Execute() (*StripeGateway, *http.Response, error) {
 	return r.ApiService.GETStripeGatewaysStripeGatewayIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiGETStripeGatewaysStripeGatewayIdRequest
+ @return StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewaysStripeGatewayIdRequest {
-	return ApiGETStripeGatewaysStripeGatewayIdRequest{
+func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest {
+	return StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -304,7 +304,7 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.
 
 // Execute executes the request
 //  @return StripeGateway
-func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r ApiGETStripeGatewaysStripeGatewayIdRequest) (*StripeGateway, *http.Response, error) {
+func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) (*StripeGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHStripeGatewaysStripeGatewayIdRequest struct {
+type StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest struct {
 	ctx                 context.Context
 	ApiService          StripeGatewaysApi
 	stripeGatewayId     string
 	stripeGatewayUpdate *StripeGatewayUpdate
 }
 
-func (r ApiPATCHStripeGatewaysStripeGatewayIdRequest) StripeGatewayUpdate(stripeGatewayUpdate StripeGatewayUpdate) ApiPATCHStripeGatewaysStripeGatewayIdRequest {
+func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) StripeGatewayUpdate(stripeGatewayUpdate StripeGatewayUpdate) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
 	r.stripeGatewayUpdate = &stripeGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHStripeGatewaysStripeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHStripeGatewaysStripeGatewayIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiPATCHStripeGatewaysStripeGatewayIdRequest
+ @return StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) ApiPATCHStripeGatewaysStripeGatewayIdRequest {
-	return ApiPATCHStripeGatewaysStripeGatewayIdRequest{
+func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
+	return StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -412,7 +412,7 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx contex
 }
 
 // Execute executes the request
-func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r ApiPATCHStripeGatewaysStripeGatewayIdRequest) (*http.Response, error) {
+func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTStripeGatewaysRequest struct {
+type StripeGatewaysApiPOSTStripeGatewaysRequest struct {
 	ctx                 context.Context
 	ApiService          StripeGatewaysApi
 	stripeGatewayCreate *StripeGatewayCreate
 }
 
-func (r ApiPOSTStripeGatewaysRequest) StripeGatewayCreate(stripeGatewayCreate StripeGatewayCreate) ApiPOSTStripeGatewaysRequest {
+func (r StripeGatewaysApiPOSTStripeGatewaysRequest) StripeGatewayCreate(stripeGatewayCreate StripeGatewayCreate) StripeGatewaysApiPOSTStripeGatewaysRequest {
 	r.stripeGatewayCreate = &stripeGatewayCreate
 	return r
 }
 
-func (r ApiPOSTStripeGatewaysRequest) Execute() (*http.Response, error) {
+func (r StripeGatewaysApiPOSTStripeGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTStripeGatewaysExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTStripeGateways Create a stripe gateway
 Create a stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStripeGatewaysRequest
+ @return StripeGatewaysApiPOSTStripeGatewaysRequest
 */
-func (a *StripeGatewaysApiService) POSTStripeGateways(ctx context.Context) ApiPOSTStripeGatewaysRequest {
-	return ApiPOSTStripeGatewaysRequest{
+func (a *StripeGatewaysApiService) POSTStripeGateways(ctx context.Context) StripeGatewaysApiPOSTStripeGatewaysRequest {
+	return StripeGatewaysApiPOSTStripeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r ApiPOSTStripeGatewaysRequest) (*http.Response, error) {
+func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApiPOSTStripeGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

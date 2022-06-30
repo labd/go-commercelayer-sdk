@@ -5,14 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**ShippingZone** | [**ShippingMethodDataRelationshipsShippingZone**](ShippingMethodDataRelationshipsShippingZone.md) |  | 
-**ShippingCategory** | [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | 
+**ShippingZone** | Pointer to [**ShippingMethodDataRelationshipsShippingZone**](ShippingMethodDataRelationshipsShippingZone.md) |  | [optional] 
+**ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
+**StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
+**ShippingMethodTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingMethodTiers**](ShippingMethodDataRelationshipsShippingMethodTiers.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodCreateDataRelationships
 
-`func NewShippingMethodCreateDataRelationships(shippingZone ShippingMethodDataRelationshipsShippingZone, shippingCategory ShipmentDataRelationshipsShippingCategory, ) *ShippingMethodCreateDataRelationships`
+`func NewShippingMethodCreateDataRelationships() *ShippingMethodCreateDataRelationships`
 
 NewShippingMethodCreateDataRelationships instantiates a new ShippingMethodCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -71,6 +73,11 @@ and a boolean to check if the value has been set.
 
 SetShippingZone sets ShippingZone field to given value.
 
+### HasShippingZone
+
+`func (o *ShippingMethodCreateDataRelationships) HasShippingZone() bool`
+
+HasShippingZone returns a boolean if a field has been set.
 
 ### GetShippingCategory
 
@@ -91,6 +98,61 @@ and a boolean to check if the value has been set.
 
 SetShippingCategory sets ShippingCategory field to given value.
 
+### HasShippingCategory
+
+`func (o *ShippingMethodCreateDataRelationships) HasShippingCategory() bool`
+
+HasShippingCategory returns a boolean if a field has been set.
+
+### GetStockLocation
+
+`func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+
+GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
+
+### GetStockLocationOk
+
+`func (o *ShippingMethodCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+
+GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockLocation
+
+`func (o *ShippingMethodCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+
+SetStockLocation sets StockLocation field to given value.
+
+### HasStockLocation
+
+`func (o *ShippingMethodCreateDataRelationships) HasStockLocation() bool`
+
+HasStockLocation returns a boolean if a field has been set.
+
+### GetShippingMethodTiers
+
+`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers`
+
+GetShippingMethodTiers returns the ShippingMethodTiers field if non-nil, zero value otherwise.
+
+### GetShippingMethodTiersOk
+
+`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool)`
+
+GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingMethodTiers
+
+`func (o *ShippingMethodCreateDataRelationships) SetShippingMethodTiers(v ShippingMethodDataRelationshipsShippingMethodTiers)`
+
+SetShippingMethodTiers sets ShippingMethodTiers field to given value.
+
+### HasShippingMethodTiers
+
+`func (o *ShippingMethodCreateDataRelationships) HasShippingMethodTiers() bool`
+
+HasShippingMethodTiers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

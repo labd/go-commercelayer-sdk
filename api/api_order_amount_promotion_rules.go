@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderAmountPromotionRuleId The resource's id
-		@return ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+		@return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 	*/
-	DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+	DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 
 	// DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute executes the request
-	DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error)
+	DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the external promotion
@@ -43,12 +43,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+	GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETExternalPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETExternalPromotionIdOrderAmountPromotionRuleExecute(r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETExternalPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the fixed amount promotion
@@ -57,12 +57,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+	GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the fixed price promotion
@@ -71,12 +71,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+	GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFixedPricePromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the free gift promotion
@@ -85,12 +85,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+	GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the free shipping promotion
@@ -99,12 +99,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+	GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETOrderAmountPromotionRules List all order amount promotion rules
@@ -112,12 +112,12 @@ type OrderAmountPromotionRulesApi interface {
 		List all order amount promotion rules
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETOrderAmountPromotionRulesRequest
+		@return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest
 	*/
-	GETOrderAmountPromotionRules(ctx context.Context) ApiGETOrderAmountPromotionRulesRequest
+	GETOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest
 
 	// GETOrderAmountPromotionRulesExecute executes the request
-	GETOrderAmountPromotionRulesExecute(r ApiGETOrderAmountPromotionRulesRequest) (*http.Response, error)
+	GETOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) (*http.Response, error)
 
 	/*
 		GETOrderAmountPromotionRulesOrderAmountPromotionRuleId Retrieve an order amount promotion rule
@@ -126,13 +126,13 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderAmountPromotionRuleId The resource's id
-		@return ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+		@return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 	*/
-	GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+	GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 
 	// GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute executes the request
 	//  @return OrderAmountPromotionRule
-	GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRule, *http.Response, error)
+	GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRule, *http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the percentage discount promotion
@@ -141,12 +141,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+	GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the promotion
@@ -155,12 +155,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdOrderAmountPromotionRuleRequest
+		@return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdOrderAmountPromotionRuleRequest
+	GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId Update an order amount promotion rule
@@ -169,12 +169,12 @@ type OrderAmountPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderAmountPromotionRuleId The resource's id
-		@return ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+		@return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 	*/
-	PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+	PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 
 	// PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute executes the request
-	PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error)
+	PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error)
 
 	/*
 		POSTOrderAmountPromotionRules Create an order amount promotion rule
@@ -182,24 +182,24 @@ type OrderAmountPromotionRulesApi interface {
 		Create an order amount promotion rule
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTOrderAmountPromotionRulesRequest
+		@return OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest
 	*/
-	POSTOrderAmountPromotionRules(ctx context.Context) ApiPOSTOrderAmountPromotionRulesRequest
+	POSTOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest
 
 	// POSTOrderAmountPromotionRulesExecute executes the request
-	POSTOrderAmountPromotionRulesExecute(r ApiPOSTOrderAmountPromotionRulesRequest) (*http.Response, error)
+	POSTOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) (*http.Response, error)
 }
 
 // OrderAmountPromotionRulesApiService OrderAmountPromotionRulesApi service
 type OrderAmountPromotionRulesApiService service
 
-type ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
+type OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 OrderAmountPromotionRulesApi
 	orderAmountPromotionRuleId string
 }
 
-func (r ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -210,10 +210,10 @@ Delete an order amount promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderAmountPromotionRuleId The resource's id
- @return ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+ @return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
-	return ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
+func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+	return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
@@ -221,7 +221,7 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -285,13 +285,13 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          OrderAmountPromotionRulesApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -302,10 +302,10 @@ Retrieve the order amount promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -313,7 +313,7 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute(r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -377,13 +377,13 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             OrderAmountPromotionRulesApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -394,10 +394,10 @@ Retrieve the order amount promotion rule associated to the fixed amount promotio
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -405,7 +405,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -469,13 +469,13 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            OrderAmountPromotionRulesApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -486,10 +486,10 @@ Retrieve the order amount promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -497,7 +497,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -561,13 +561,13 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          OrderAmountPromotionRulesApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -578,10 +578,10 @@ Retrieve the order amount promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -589,7 +589,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -653,13 +653,13 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              OrderAmountPromotionRulesApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -670,10 +670,10 @@ Retrieve the order amount promotion rule associated to the free shipping promoti
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -681,7 +681,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -745,12 +745,12 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderAmountPromotionRulesRequest struct {
+type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest struct {
 	ctx        context.Context
 	ApiService OrderAmountPromotionRulesApi
 }
 
-func (r ApiGETOrderAmountPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderAmountPromotionRulesExecute(r)
 }
 
@@ -760,17 +760,17 @@ GETOrderAmountPromotionRules List all order amount promotion rules
 List all order amount promotion rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrderAmountPromotionRulesRequest
+ @return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRules(ctx context.Context) ApiGETOrderAmountPromotionRulesRequest {
-	return ApiGETOrderAmountPromotionRulesRequest{
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest {
+	return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecute(r ApiGETOrderAmountPromotionRulesRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -833,13 +833,13 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecut
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
+type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 OrderAmountPromotionRulesApi
 	orderAmountPromotionRuleId string
 }
 
-func (r ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*OrderAmountPromotionRule, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*OrderAmountPromotionRule, *http.Response, error) {
 	return r.ApiService.GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -850,10 +850,10 @@ Retrieve an order amount promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderAmountPromotionRuleId The resource's id
- @return ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+ @return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
-	return ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+	return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
@@ -862,7 +862,7 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 
 // Execute executes the request
 //  @return OrderAmountPromotionRule
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRule, *http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRule, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -936,13 +936,13 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    OrderAmountPromotionRulesApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -953,10 +953,10 @@ Retrieve the order amount promotion rule associated to the percentage discount p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -964,7 +964,7 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1028,13 +1028,13 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
+type OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  OrderAmountPromotionRulesApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -1045,10 +1045,10 @@ Retrieve the order amount promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdOrderAmountPromotionRuleRequest
+ @return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETPromotionIdOrderAmountPromotionRuleRequest{
+func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest {
+	return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -1056,7 +1056,7 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1120,19 +1120,19 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
+type OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
 	ctx                            context.Context
 	ApiService                     OrderAmountPromotionRulesApi
 	orderAmountPromotionRuleId     string
 	orderAmountPromotionRuleUpdate *OrderAmountPromotionRuleUpdate
 }
 
-func (r ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate OrderAmountPromotionRuleUpdate) ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate OrderAmountPromotionRuleUpdate) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	r.orderAmountPromotionRuleUpdate = &orderAmountPromotionRuleUpdate
 	return r
 }
 
-func (r ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -1143,10 +1143,10 @@ Update an order amount promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderAmountPromotionRuleId The resource's id
- @return ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
+ @return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
-	return ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+	return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
@@ -1154,7 +1154,7 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r ApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1223,18 +1223,18 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTOrderAmountPromotionRulesRequest struct {
+type OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest struct {
 	ctx                            context.Context
 	ApiService                     OrderAmountPromotionRulesApi
 	orderAmountPromotionRuleCreate *OrderAmountPromotionRuleCreate
 }
 
-func (r ApiPOSTOrderAmountPromotionRulesRequest) OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate OrderAmountPromotionRuleCreate) ApiPOSTOrderAmountPromotionRulesRequest {
+func (r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate OrderAmountPromotionRuleCreate) OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest {
 	r.orderAmountPromotionRuleCreate = &orderAmountPromotionRuleCreate
 	return r
 }
 
-func (r ApiPOSTOrderAmountPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTOrderAmountPromotionRulesExecute(r)
 }
 
@@ -1244,17 +1244,17 @@ POSTOrderAmountPromotionRules Create an order amount promotion rule
 Create an order amount promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTOrderAmountPromotionRulesRequest
+ @return OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest
 */
-func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRules(ctx context.Context) ApiPOSTOrderAmountPromotionRulesRequest {
-	return ApiPOSTOrderAmountPromotionRulesRequest{
+func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest {
+	return OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecute(r ApiPOSTOrderAmountPromotionRulesRequest) (*http.Response, error) {
+func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

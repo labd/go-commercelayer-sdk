@@ -103,6 +103,8 @@ Method | HTTP request | Description
 [**GETPercentageDiscountPromotionIdSkuListPromotionRule**](HasOneApi.md#GETPercentageDiscountPromotionIdSkuListPromotionRule) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list_promotion_rule | Retrieve the sku list promotion rule associated to the percentage discount promotion
 [**GETPriceIdPriceList**](HasOneApi.md#GETPriceIdPriceList) | **Get** /prices/{priceId}/price_list | Retrieve the price list associated to the price
 [**GETPriceIdSku**](HasOneApi.md#GETPriceIdSku) | **Get** /prices/{priceId}/sku | Retrieve the sku associated to the price
+[**GETPriceTierIdPrice**](HasOneApi.md#GETPriceTierIdPrice) | **Get** /price_tiers/{priceTierId}/price | Retrieve the price associated to the price tier
+[**GETPriceVolumeTierIdPrice**](HasOneApi.md#GETPriceVolumeTierIdPrice) | **Get** /price_volume_tiers/{priceVolumeTierId}/price | Retrieve the price associated to the price volume tier
 [**GETPromotionIdCouponCodesPromotionRule**](HasOneApi.md#GETPromotionIdCouponCodesPromotionRule) | **Get** /promotions/{promotionId}/coupon_codes_promotion_rule | Retrieve the coupon codes promotion rule associated to the promotion
 [**GETPromotionIdMarket**](HasOneApi.md#GETPromotionIdMarket) | **Get** /promotions/{promotionId}/market | Retrieve the market associated to the promotion
 [**GETPromotionIdOrderAmountPromotionRule**](HasOneApi.md#GETPromotionIdOrderAmountPromotionRule) | **Get** /promotions/{promotionId}/order_amount_promotion_rule | Retrieve the order amount promotion rule associated to the promotion
@@ -127,6 +129,9 @@ Method | HTTP request | Description
 [**GETShippingMethodIdMarket**](HasOneApi.md#GETShippingMethodIdMarket) | **Get** /shipping_methods/{shippingMethodId}/market | Retrieve the market associated to the shipping method
 [**GETShippingMethodIdShippingCategory**](HasOneApi.md#GETShippingMethodIdShippingCategory) | **Get** /shipping_methods/{shippingMethodId}/shipping_category | Retrieve the shipping category associated to the shipping method
 [**GETShippingMethodIdShippingZone**](HasOneApi.md#GETShippingMethodIdShippingZone) | **Get** /shipping_methods/{shippingMethodId}/shipping_zone | Retrieve the shipping zone associated to the shipping method
+[**GETShippingMethodIdStockLocation**](HasOneApi.md#GETShippingMethodIdStockLocation) | **Get** /shipping_methods/{shippingMethodId}/stock_location | Retrieve the stock location associated to the shipping method
+[**GETShippingMethodTierIdShippingMethod**](HasOneApi.md#GETShippingMethodTierIdShippingMethod) | **Get** /shipping_method_tiers/{shippingMethodTierId}/shipping_method | Retrieve the shipping method associated to the shipping method tier
+[**GETShippingWeightTierIdShippingMethod**](HasOneApi.md#GETShippingWeightTierIdShippingMethod) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/shipping_method | Retrieve the shipping method associated to the shipping weight tier
 [**GETSkuIdShippingCategory**](HasOneApi.md#GETSkuIdShippingCategory) | **Get** /skus/{skuId}/shipping_category | Retrieve the shipping category associated to the SKU
 [**GETSkuListItemIdSku**](HasOneApi.md#GETSkuListItemIdSku) | **Get** /sku_list_items/{skuListItemId}/sku | Retrieve the sku associated to the SKU list item
 [**GETSkuListItemIdSkuList**](HasOneApi.md#GETSkuListItemIdSkuList) | **Get** /sku_list_items/{skuListItemId}/sku_list | Retrieve the sku list associated to the SKU list item
@@ -6886,6 +6891,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETPriceTierIdPrice
+
+> GETPriceTierIdPrice(ctx, priceTierId).Execute()
+
+Retrieve the price associated to the price tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceTierId := "priceTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasOneApi.GETPriceTierIdPrice(context.Background(), priceTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPriceTierIdPrice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceTierIdPriceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceVolumeTierIdPrice
+
+> GETPriceVolumeTierIdPrice(ctx, priceVolumeTierId).Execute()
+
+Retrieve the price associated to the price volume tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasOneApi.GETPriceVolumeTierIdPrice(context.Background(), priceVolumeTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETPriceVolumeTierIdPrice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceVolumeTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceVolumeTierIdPriceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPromotionIdCouponCodesPromotionRule
 
 > GETPromotionIdCouponCodesPromotionRule(ctx, promotionId).Execute()
@@ -8494,6 +8635,210 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShippingMethodIdShippingZoneRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodIdStockLocation
+
+> GETShippingMethodIdStockLocation(ctx, shippingMethodId).Execute()
+
+Retrieve the stock location associated to the shipping method
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasOneApi.GETShippingMethodIdStockLocation(context.Background(), shippingMethodId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETShippingMethodIdStockLocation``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodIdStockLocationRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodTierIdShippingMethod
+
+> GETShippingMethodTierIdShippingMethod(ctx, shippingMethodTierId).Execute()
+
+Retrieve the shipping method associated to the shipping method tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodTierId := "shippingMethodTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasOneApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETShippingMethodTierIdShippingMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodTierIdShippingMethodRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingWeightTierIdShippingMethod
+
+> GETShippingWeightTierIdShippingMethod(ctx, shippingWeightTierId).Execute()
+
+Retrieve the shipping method associated to the shipping weight tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasOneApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasOneApi.GETShippingWeightTierIdShippingMethod``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingWeightTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingWeightTierIdShippingMethodRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

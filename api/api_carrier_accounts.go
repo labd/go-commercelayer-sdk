@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -28,12 +28,12 @@ type CarrierAccountsApi interface {
 		List all carrier accounts
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCarrierAccountsRequest
+		@return CarrierAccountsApiGETCarrierAccountsRequest
 	*/
-	GETCarrierAccounts(ctx context.Context) ApiGETCarrierAccountsRequest
+	GETCarrierAccounts(ctx context.Context) CarrierAccountsApiGETCarrierAccountsRequest
 
 	// GETCarrierAccountsExecute executes the request
-	GETCarrierAccountsExecute(r ApiGETCarrierAccountsRequest) (*http.Response, error)
+	GETCarrierAccountsExecute(r CarrierAccountsApiGETCarrierAccountsRequest) (*http.Response, error)
 
 	/*
 		GETCarrierAccountsCarrierAccountId Retrieve a carrier account
@@ -42,13 +42,13 @@ type CarrierAccountsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param carrierAccountId The resource's id
-		@return ApiGETCarrierAccountsCarrierAccountIdRequest
+		@return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
 	*/
-	GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountsCarrierAccountIdRequest
+	GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
 
 	// GETCarrierAccountsCarrierAccountIdExecute executes the request
 	//  @return CarrierAccount
-	GETCarrierAccountsCarrierAccountIdExecute(r ApiGETCarrierAccountsCarrierAccountIdRequest) (*CarrierAccount, *http.Response, error)
+	GETCarrierAccountsCarrierAccountIdExecute(r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) (*CarrierAccount, *http.Response, error)
 
 	/*
 		GETShipmentIdCarrierAccounts Retrieve the carrier accounts associated to the shipment
@@ -57,23 +57,23 @@ type CarrierAccountsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdCarrierAccountsRequest
+		@return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
 	*/
-	GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) ApiGETShipmentIdCarrierAccountsRequest
+	GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
 
 	// GETShipmentIdCarrierAccountsExecute executes the request
-	GETShipmentIdCarrierAccountsExecute(r ApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error)
+	GETShipmentIdCarrierAccountsExecute(r CarrierAccountsApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error)
 }
 
 // CarrierAccountsApiService CarrierAccountsApi service
 type CarrierAccountsApiService service
 
-type ApiGETCarrierAccountsRequest struct {
+type CarrierAccountsApiGETCarrierAccountsRequest struct {
 	ctx        context.Context
 	ApiService CarrierAccountsApi
 }
 
-func (r ApiGETCarrierAccountsRequest) Execute() (*http.Response, error) {
+func (r CarrierAccountsApiGETCarrierAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCarrierAccountsExecute(r)
 }
 
@@ -83,17 +83,17 @@ GETCarrierAccounts List all carrier accounts
 List all carrier accounts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCarrierAccountsRequest
+ @return CarrierAccountsApiGETCarrierAccountsRequest
 */
-func (a *CarrierAccountsApiService) GETCarrierAccounts(ctx context.Context) ApiGETCarrierAccountsRequest {
-	return ApiGETCarrierAccountsRequest{
+func (a *CarrierAccountsApiService) GETCarrierAccounts(ctx context.Context) CarrierAccountsApiGETCarrierAccountsRequest {
+	return CarrierAccountsApiGETCarrierAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r ApiGETCarrierAccountsRequest) (*http.Response, error) {
+func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsApiGETCarrierAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -156,13 +156,13 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r ApiGETCarrierAcc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCarrierAccountsCarrierAccountIdRequest struct {
+type CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest struct {
 	ctx              context.Context
 	ApiService       CarrierAccountsApi
 	carrierAccountId string
 }
 
-func (r ApiGETCarrierAccountsCarrierAccountIdRequest) Execute() (*CarrierAccount, *http.Response, error) {
+func (r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) Execute() (*CarrierAccount, *http.Response, error) {
 	return r.ApiService.GETCarrierAccountsCarrierAccountIdExecute(r)
 }
 
@@ -173,10 +173,10 @@ Retrieve a carrier account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param carrierAccountId The resource's id
- @return ApiGETCarrierAccountsCarrierAccountIdRequest
+ @return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
 */
-func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountsCarrierAccountIdRequest {
-	return ApiGETCarrierAccountsCarrierAccountIdRequest{
+func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest {
+	return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
@@ -185,7 +185,7 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx conte
 
 // Execute executes the request
 //  @return CarrierAccount
-func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r ApiGETCarrierAccountsCarrierAccountIdRequest) (*CarrierAccount, *http.Response, error) {
+func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) (*CarrierAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -259,13 +259,13 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdCarrierAccountsRequest struct {
+type CarrierAccountsApiGETShipmentIdCarrierAccountsRequest struct {
 	ctx        context.Context
 	ApiService CarrierAccountsApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
+func (r CarrierAccountsApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdCarrierAccountsExecute(r)
 }
 
@@ -276,10 +276,10 @@ Retrieve the carrier accounts associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdCarrierAccountsRequest
+ @return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
 */
-func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) ApiGETShipmentIdCarrierAccountsRequest {
-	return ApiGETShipmentIdCarrierAccountsRequest{
+func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) CarrierAccountsApiGETShipmentIdCarrierAccountsRequest {
+	return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -287,7 +287,7 @@ func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Con
 }
 
 // Execute executes the request
-func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccountsExecute(r ApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error) {
+func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccountsExecute(r CarrierAccountsApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ParcelCreateDataAttributes struct for ParcelCreateDataAttributes
 type ParcelCreateDataAttributes struct {
 	// The parcel weight, used to automatically calculate the tax rates from the available carrier accounts.
-	Weight *float32 `json:"weight,omitempty"`
-	// The unit of weight. Can be one of 'gr', or 'oz'.
-	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
+	Weight float32 `json:"weight"`
+	// Can be one of 'gr', 'lb', or 'oz'
+	UnitOfWeight string `json:"unit_of_weight"`
 	// When shipping outside the US, you need to provide either an Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation (PFC). Which you need is based on the value of the goods being shipped. Value can be one of \"EEL\" o \"PFC\".
 	EelPfc *string `json:"eel_pfc,omitempty"`
 	// The type of item you are sending. Can be one of 'merchandise', 'gift', 'documents', 'returned_goods', 'sample', or 'other'.
@@ -67,8 +67,10 @@ type ParcelCreateDataAttributes struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreateDataAttributes() *ParcelCreateDataAttributes {
+func NewParcelCreateDataAttributes(weight float32, unitOfWeight string) *ParcelCreateDataAttributes {
 	this := ParcelCreateDataAttributes{}
+	this.Weight = weight
+	this.UnitOfWeight = unitOfWeight
 	return &this
 }
 
@@ -80,68 +82,52 @@ func NewParcelCreateDataAttributesWithDefaults() *ParcelCreateDataAttributes {
 	return &this
 }
 
-// GetWeight returns the Weight field value if set, zero value otherwise.
+// GetWeight returns the Weight field value
 func (o *ParcelCreateDataAttributes) GetWeight() float32 {
-	if o == nil || o.Weight == nil {
+	if o == nil {
 		var ret float32
 		return ret
 	}
-	return *o.Weight
+
+	return o.Weight
 }
 
-// GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
+// GetWeightOk returns a tuple with the Weight field value
 // and a boolean to check if the value has been set.
 func (o *ParcelCreateDataAttributes) GetWeightOk() (*float32, bool) {
-	if o == nil || o.Weight == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Weight, true
+	return &o.Weight, true
 }
 
-// HasWeight returns a boolean if a field has been set.
-func (o *ParcelCreateDataAttributes) HasWeight() bool {
-	if o != nil && o.Weight != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetWeight gets a reference to the given float32 and assigns it to the Weight field.
+// SetWeight sets field value
 func (o *ParcelCreateDataAttributes) SetWeight(v float32) {
-	o.Weight = &v
+	o.Weight = v
 }
 
-// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
+// GetUnitOfWeight returns the UnitOfWeight field value
 func (o *ParcelCreateDataAttributes) GetUnitOfWeight() string {
-	if o == nil || o.UnitOfWeight == nil {
+	if o == nil {
 		var ret string
 		return ret
 	}
-	return *o.UnitOfWeight
+
+	return o.UnitOfWeight
 }
 
-// GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
+// GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value
 // and a boolean to check if the value has been set.
 func (o *ParcelCreateDataAttributes) GetUnitOfWeightOk() (*string, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.UnitOfWeight, true
+	return &o.UnitOfWeight, true
 }
 
-// HasUnitOfWeight returns a boolean if a field has been set.
-func (o *ParcelCreateDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
+// SetUnitOfWeight sets field value
 func (o *ParcelCreateDataAttributes) SetUnitOfWeight(v string) {
-	o.UnitOfWeight = &v
+	o.UnitOfWeight = v
 }
 
 // GetEelPfc returns the EelPfc field value if set, zero value otherwise.
@@ -786,10 +772,10 @@ func (o *ParcelCreateDataAttributes) SetMetadata(v map[string]interface{}) {
 
 func (o ParcelCreateDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.Weight != nil {
+	if true {
 		toSerialize["weight"] = o.Weight
 	}
-	if o.UnitOfWeight != nil {
+	if true {
 		toSerialize["unit_of_weight"] = o.UnitOfWeight
 	}
 	if o.EelPfc != nil {

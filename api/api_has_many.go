@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenGatewayId The resource's id
-		@return ApiGETAdyenGatewayIdAdyenPaymentsRequest
+		@return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest
 	*/
-	GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewayIdAdyenPaymentsRequest
+	GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest
 
 	// GETAdyenGatewayIdAdyenPaymentsExecute executes the request
-	GETAdyenGatewayIdAdyenPaymentsExecute(r ApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error)
+	GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETAdyenGatewayIdPaymentMethods Retrieve the payment methods associated to the adyen gateway
@@ -43,12 +43,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenGatewayId The resource's id
-		@return ApiGETAdyenGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest
 	*/
-	GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewayIdPaymentMethodsRequest
+	GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdPaymentMethodsRequest
 
 	// GETAdyenGatewayIdPaymentMethodsExecute executes the request
-	GETAdyenGatewayIdPaymentMethodsExecute(r ApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETAuthorizationIdCaptures Retrieve the captures associated to the authorization
@@ -57,12 +57,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param authorizationId The resource's id
-		@return ApiGETAuthorizationIdCapturesRequest
+		@return HasManyApiGETAuthorizationIdCapturesRequest
 	*/
-	GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) ApiGETAuthorizationIdCapturesRequest
+	GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdCapturesRequest
 
 	// GETAuthorizationIdCapturesExecute executes the request
-	GETAuthorizationIdCapturesExecute(r ApiGETAuthorizationIdCapturesRequest) (*http.Response, error)
+	GETAuthorizationIdCapturesExecute(r HasManyApiGETAuthorizationIdCapturesRequest) (*http.Response, error)
 
 	/*
 		GETAuthorizationIdVoids Retrieve the voids associated to the authorization
@@ -71,12 +71,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param authorizationId The resource's id
-		@return ApiGETAuthorizationIdVoidsRequest
+		@return HasManyApiGETAuthorizationIdVoidsRequest
 	*/
-	GETAuthorizationIdVoids(ctx context.Context, authorizationId string) ApiGETAuthorizationIdVoidsRequest
+	GETAuthorizationIdVoids(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdVoidsRequest
 
 	// GETAuthorizationIdVoidsExecute executes the request
-	GETAuthorizationIdVoidsExecute(r ApiGETAuthorizationIdVoidsRequest) (*http.Response, error)
+	GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthorizationIdVoidsRequest) (*http.Response, error)
 
 	/*
 		GETAvalaraAccountIdAttachments Retrieve the attachments associated to the avalara account
@@ -85,12 +85,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param avalaraAccountId The resource's id
-		@return ApiGETAvalaraAccountIdAttachmentsRequest
+		@return HasManyApiGETAvalaraAccountIdAttachmentsRequest
 	*/
-	GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdAttachmentsRequest
+	GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdAttachmentsRequest
 
 	// GETAvalaraAccountIdAttachmentsExecute executes the request
-	GETAvalaraAccountIdAttachmentsExecute(r ApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error)
+	GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETAvalaraAccountIdMarkets Retrieve the markets associated to the avalara account
@@ -99,12 +99,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param avalaraAccountId The resource's id
-		@return ApiGETAvalaraAccountIdMarketsRequest
+		@return HasManyApiGETAvalaraAccountIdMarketsRequest
 	*/
-	GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdMarketsRequest
+	GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdMarketsRequest
 
 	// GETAvalaraAccountIdMarketsExecute executes the request
-	GETAvalaraAccountIdMarketsExecute(r ApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error)
+	GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETAvalaraAccountIdTaxCategories Retrieve the tax categories associated to the avalara account
@@ -113,12 +113,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param avalaraAccountId The resource's id
-		@return ApiGETAvalaraAccountIdTaxCategoriesRequest
+		@return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest
 	*/
-	GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdTaxCategoriesRequest
+	GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdTaxCategoriesRequest
 
 	// GETAvalaraAccountIdTaxCategoriesExecute executes the request
-	GETAvalaraAccountIdTaxCategoriesExecute(r ApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error)
+	GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error)
 
 	/*
 		GETBingGeocoderIdAddresses Retrieve the addresses associated to the bing geocoder
@@ -127,12 +127,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bingGeocoderId The resource's id
-		@return ApiGETBingGeocoderIdAddressesRequest
+		@return HasManyApiGETBingGeocoderIdAddressesRequest
 	*/
-	GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAddressesRequest
+	GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAddressesRequest
 
 	// GETBingGeocoderIdAddressesExecute executes the request
-	GETBingGeocoderIdAddressesExecute(r ApiGETBingGeocoderIdAddressesRequest) (*http.Response, error)
+	GETBingGeocoderIdAddressesExecute(r HasManyApiGETBingGeocoderIdAddressesRequest) (*http.Response, error)
 
 	/*
 		GETBingGeocoderIdAttachments Retrieve the attachments associated to the bing geocoder
@@ -141,12 +141,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bingGeocoderId The resource's id
-		@return ApiGETBingGeocoderIdAttachmentsRequest
+		@return HasManyApiGETBingGeocoderIdAttachmentsRequest
 	*/
-	GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAttachmentsRequest
+	GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAttachmentsRequest
 
 	// GETBingGeocoderIdAttachmentsExecute executes the request
-	GETBingGeocoderIdAttachmentsExecute(r ApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error)
+	GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETBraintreeGatewayIdBraintreePayments Retrieve the braintree payments associated to the braintree gateway
@@ -155,12 +155,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreeGatewayId The resource's id
-		@return ApiGETBraintreeGatewayIdBraintreePaymentsRequest
+		@return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest
 	*/
-	GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewayIdBraintreePaymentsRequest
+	GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest
 
 	// GETBraintreeGatewayIdBraintreePaymentsExecute executes the request
-	GETBraintreeGatewayIdBraintreePaymentsExecute(r ApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error)
+	GETBraintreeGatewayIdBraintreePaymentsExecute(r HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error)
 
 	/*
 		GETBraintreeGatewayIdPaymentMethods Retrieve the payment methods associated to the braintree gateway
@@ -169,12 +169,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreeGatewayId The resource's id
-		@return ApiGETBraintreeGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest
 	*/
-	GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewayIdPaymentMethodsRequest
+	GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest
 
 	// GETBraintreeGatewayIdPaymentMethodsExecute executes the request
-	GETBraintreeGatewayIdPaymentMethodsExecute(r ApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETBraintreeGatewayIdPaymentMethodsExecute(r HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdAttachments Retrieve the attachments associated to the bundle
@@ -183,12 +183,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdAttachmentsRequest
+		@return HasManyApiGETBundleIdAttachmentsRequest
 	*/
-	GETBundleIdAttachments(ctx context.Context, bundleId string) ApiGETBundleIdAttachmentsRequest
+	GETBundleIdAttachments(ctx context.Context, bundleId string) HasManyApiGETBundleIdAttachmentsRequest
 
 	// GETBundleIdAttachmentsExecute executes the request
-	GETBundleIdAttachmentsExecute(r ApiGETBundleIdAttachmentsRequest) (*http.Response, error)
+	GETBundleIdAttachmentsExecute(r HasManyApiGETBundleIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdSkus Retrieve the skus associated to the bundle
@@ -197,12 +197,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdSkusRequest
+		@return HasManyApiGETBundleIdSkusRequest
 	*/
-	GETBundleIdSkus(ctx context.Context, bundleId string) ApiGETBundleIdSkusRequest
+	GETBundleIdSkus(ctx context.Context, bundleId string) HasManyApiGETBundleIdSkusRequest
 
 	// GETBundleIdSkusExecute executes the request
-	GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) (*http.Response, error)
+	GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETCaptureIdRefunds Retrieve the refunds associated to the capture
@@ -211,12 +211,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param captureId The resource's id
-		@return ApiGETCaptureIdRefundsRequest
+		@return HasManyApiGETCaptureIdRefundsRequest
 	*/
-	GETCaptureIdRefunds(ctx context.Context, captureId string) ApiGETCaptureIdRefundsRequest
+	GETCaptureIdRefunds(ctx context.Context, captureId string) HasManyApiGETCaptureIdRefundsRequest
 
 	// GETCaptureIdRefundsExecute executes the request
-	GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsRequest) (*http.Response, error)
+	GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdRefundsRequest) (*http.Response, error)
 
 	/*
 		GETCarrierAccountIdAttachments Retrieve the attachments associated to the carrier account
@@ -225,12 +225,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param carrierAccountId The resource's id
-		@return ApiGETCarrierAccountIdAttachmentsRequest
+		@return HasManyApiGETCarrierAccountIdAttachmentsRequest
 	*/
-	GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdAttachmentsRequest
+	GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) HasManyApiGETCarrierAccountIdAttachmentsRequest
 
 	// GETCarrierAccountIdAttachmentsExecute executes the request
-	GETCarrierAccountIdAttachmentsExecute(r ApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error)
+	GETCarrierAccountIdAttachmentsExecute(r HasManyApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETCheckoutComGatewayIdCheckoutComPayments Retrieve the checkout com payments associated to the checkout.com gateway
@@ -239,12 +239,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param checkoutComGatewayId The resource's id
-		@return ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
+		@return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 	*/
-	GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
+	GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 
 	// GETCheckoutComGatewayIdCheckoutComPaymentsExecute executes the request
-	GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error)
+	GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETCheckoutComGatewayIdPaymentMethods Retrieve the payment methods associated to the checkout.com gateway
@@ -253,12 +253,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param checkoutComGatewayId The resource's id
-		@return ApiGETCheckoutComGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest
 	*/
-	GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewayIdPaymentMethodsRequest
+	GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest
 
 	// GETCheckoutComGatewayIdPaymentMethodsExecute executes the request
-	GETCheckoutComGatewayIdPaymentMethodsExecute(r ApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETCheckoutComGatewayIdPaymentMethodsExecute(r HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETCouponCodesPromotionRuleIdCoupons Retrieve the coupons associated to the coupon codes promotion rule
@@ -267,12 +267,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponCodesPromotionRuleId The resource's id
-		@return ApiGETCouponCodesPromotionRuleIdCouponsRequest
+		@return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest
 	*/
-	GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRuleIdCouponsRequest
+	GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest
 
 	// GETCouponCodesPromotionRuleIdCouponsExecute executes the request
-	GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error)
+	GETCouponCodesPromotionRuleIdCouponsExecute(r HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error)
 
 	/*
 		GETCouponRecipientIdAttachments Retrieve the attachments associated to the coupon recipient
@@ -281,12 +281,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiGETCouponRecipientIdAttachmentsRequest
+		@return HasManyApiGETCouponRecipientIdAttachmentsRequest
 	*/
-	GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdAttachmentsRequest
+	GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) HasManyApiGETCouponRecipientIdAttachmentsRequest
 
 	// GETCouponRecipientIdAttachmentsExecute executes the request
-	GETCouponRecipientIdAttachmentsExecute(r ApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error)
+	GETCouponRecipientIdAttachmentsExecute(r HasManyApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETCustomerAddressIdEvents Retrieve the events associated to the customer address
+
+		Retrieve the events associated to the customer address
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param customerAddressId The resource's id
+		@return HasManyApiGETCustomerAddressIdEventsRequest
+	*/
+	GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) HasManyApiGETCustomerAddressIdEventsRequest
+
+	// GETCustomerAddressIdEventsExecute executes the request
+	GETCustomerAddressIdEventsExecute(r HasManyApiGETCustomerAddressIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroupIdAttachments Retrieve the attachments associated to the customer group
@@ -295,12 +309,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiGETCustomerGroupIdAttachmentsRequest
+		@return HasManyApiGETCustomerGroupIdAttachmentsRequest
 	*/
-	GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdAttachmentsRequest
+	GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdAttachmentsRequest
 
 	// GETCustomerGroupIdAttachmentsExecute executes the request
-	GETCustomerGroupIdAttachmentsExecute(r ApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error)
+	GETCustomerGroupIdAttachmentsExecute(r HasManyApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroupIdCustomers Retrieve the customers associated to the customer group
@@ -309,12 +323,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiGETCustomerGroupIdCustomersRequest
+		@return HasManyApiGETCustomerGroupIdCustomersRequest
 	*/
-	GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdCustomersRequest
+	GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdCustomersRequest
 
 	// GETCustomerGroupIdCustomersExecute executes the request
-	GETCustomerGroupIdCustomersExecute(r ApiGETCustomerGroupIdCustomersRequest) (*http.Response, error)
+	GETCustomerGroupIdCustomersExecute(r HasManyApiGETCustomerGroupIdCustomersRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroupIdMarkets Retrieve the markets associated to the customer group
@@ -323,12 +337,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiGETCustomerGroupIdMarketsRequest
+		@return HasManyApiGETCustomerGroupIdMarketsRequest
 	*/
-	GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdMarketsRequest
+	GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdMarketsRequest
 
 	// GETCustomerGroupIdMarketsExecute executes the request
-	GETCustomerGroupIdMarketsExecute(r ApiGETCustomerGroupIdMarketsRequest) (*http.Response, error)
+	GETCustomerGroupIdMarketsExecute(r HasManyApiGETCustomerGroupIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdAttachments Retrieve the attachments associated to the customer
@@ -337,12 +351,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdAttachmentsRequest
+		@return HasManyApiGETCustomerIdAttachmentsRequest
 	*/
-	GETCustomerIdAttachments(ctx context.Context, customerId string) ApiGETCustomerIdAttachmentsRequest
+	GETCustomerIdAttachments(ctx context.Context, customerId string) HasManyApiGETCustomerIdAttachmentsRequest
 
 	// GETCustomerIdAttachmentsExecute executes the request
-	GETCustomerIdAttachmentsExecute(r ApiGETCustomerIdAttachmentsRequest) (*http.Response, error)
+	GETCustomerIdAttachmentsExecute(r HasManyApiGETCustomerIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdCustomerAddresses Retrieve the customer addresses associated to the customer
@@ -351,12 +365,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerAddressesRequest
+		@return HasManyApiGETCustomerIdCustomerAddressesRequest
 	*/
-	GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) ApiGETCustomerIdCustomerAddressesRequest
+	GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerAddressesRequest
 
 	// GETCustomerIdCustomerAddressesExecute executes the request
-	GETCustomerIdCustomerAddressesExecute(r ApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error)
+	GETCustomerIdCustomerAddressesExecute(r HasManyApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdCustomerPaymentSources Retrieve the customer payment sources associated to the customer
@@ -365,12 +379,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerPaymentSourcesRequest
+		@return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest
 	*/
-	GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) ApiGETCustomerIdCustomerPaymentSourcesRequest
+	GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerPaymentSourcesRequest
 
 	// GETCustomerIdCustomerPaymentSourcesExecute executes the request
-	GETCustomerIdCustomerPaymentSourcesExecute(r ApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error)
+	GETCustomerIdCustomerPaymentSourcesExecute(r HasManyApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdCustomerSubscriptions Retrieve the customer subscriptions associated to the customer
@@ -379,12 +393,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerSubscriptionsRequest
+		@return HasManyApiGETCustomerIdCustomerSubscriptionsRequest
 	*/
-	GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdCustomerSubscriptionsRequest
+	GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerSubscriptionsRequest
 
 	// GETCustomerIdCustomerSubscriptionsExecute executes the request
-	GETCustomerIdCustomerSubscriptionsExecute(r ApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error)
+	GETCustomerIdCustomerSubscriptionsExecute(r HasManyApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error)
+
+	/*
+		GETCustomerIdEvents Retrieve the events associated to the customer
+
+		Retrieve the events associated to the customer
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param customerId The resource's id
+		@return HasManyApiGETCustomerIdEventsRequest
+	*/
+	GETCustomerIdEvents(ctx context.Context, customerId string) HasManyApiGETCustomerIdEventsRequest
+
+	// GETCustomerIdEventsExecute executes the request
+	GETCustomerIdEventsExecute(r HasManyApiGETCustomerIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdOrderSubscriptions Retrieve the order subscriptions associated to the customer
@@ -393,12 +421,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdOrderSubscriptionsRequest
+		@return HasManyApiGETCustomerIdOrderSubscriptionsRequest
 	*/
-	GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdOrderSubscriptionsRequest
+	GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrderSubscriptionsRequest
 
 	// GETCustomerIdOrderSubscriptionsExecute executes the request
-	GETCustomerIdOrderSubscriptionsExecute(r ApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error)
+	GETCustomerIdOrderSubscriptionsExecute(r HasManyApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdOrders Retrieve the orders associated to the customer
@@ -407,12 +435,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdOrdersRequest
+		@return HasManyApiGETCustomerIdOrdersRequest
 	*/
-	GETCustomerIdOrders(ctx context.Context, customerId string) ApiGETCustomerIdOrdersRequest
+	GETCustomerIdOrders(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrdersRequest
 
 	// GETCustomerIdOrdersExecute executes the request
-	GETCustomerIdOrdersExecute(r ApiGETCustomerIdOrdersRequest) (*http.Response, error)
+	GETCustomerIdOrdersExecute(r HasManyApiGETCustomerIdOrdersRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdReturns Retrieve the returns associated to the customer
@@ -421,12 +449,40 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdReturnsRequest
+		@return HasManyApiGETCustomerIdReturnsRequest
 	*/
-	GETCustomerIdReturns(ctx context.Context, customerId string) ApiGETCustomerIdReturnsRequest
+	GETCustomerIdReturns(ctx context.Context, customerId string) HasManyApiGETCustomerIdReturnsRequest
 
 	// GETCustomerIdReturnsExecute executes the request
-	GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturnsRequest) (*http.Response, error)
+	GETCustomerIdReturnsExecute(r HasManyApiGETCustomerIdReturnsRequest) (*http.Response, error)
+
+	/*
+		GETCustomerPasswordResetIdEvents Retrieve the events associated to the customer password reset
+
+		Retrieve the events associated to the customer password reset
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param customerPasswordResetId The resource's id
+		@return HasManyApiGETCustomerPasswordResetIdEventsRequest
+	*/
+	GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) HasManyApiGETCustomerPasswordResetIdEventsRequest
+
+	// GETCustomerPasswordResetIdEventsExecute executes the request
+	GETCustomerPasswordResetIdEventsExecute(r HasManyApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error)
+
+	/*
+		GETCustomerSubscriptionIdEvents Retrieve the events associated to the customer subscription
+
+		Retrieve the events associated to the customer subscription
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param customerSubscriptionId The resource's id
+		@return HasManyApiGETCustomerSubscriptionIdEventsRequest
+	*/
+	GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) HasManyApiGETCustomerSubscriptionIdEventsRequest
+
+	// GETCustomerSubscriptionIdEventsExecute executes the request
+	GETCustomerSubscriptionIdEventsExecute(r HasManyApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETDeliveryLeadTimeIdAttachments Retrieve the attachments associated to the delivery lead time
@@ -435,12 +491,40 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param deliveryLeadTimeId The resource's id
-		@return ApiGETDeliveryLeadTimeIdAttachmentsRequest
+		@return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest
 	*/
-	GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdAttachmentsRequest
+	GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest
 
 	// GETDeliveryLeadTimeIdAttachmentsExecute executes the request
-	GETDeliveryLeadTimeIdAttachmentsExecute(r ApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error)
+	GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETEventIdLastEventCallbacks Retrieve the last event callbacks associated to the event
+
+		Retrieve the last event callbacks associated to the event
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param eventId The resource's id
+		@return HasManyApiGETEventIdLastEventCallbacksRequest
+	*/
+	GETEventIdLastEventCallbacks(ctx context.Context, eventId string) HasManyApiGETEventIdLastEventCallbacksRequest
+
+	// GETEventIdLastEventCallbacksExecute executes the request
+	GETEventIdLastEventCallbacksExecute(r HasManyApiGETEventIdLastEventCallbacksRequest) (*http.Response, error)
+
+	/*
+		GETEventIdWebhooks Retrieve the webhooks associated to the event
+
+		Retrieve the webhooks associated to the event
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param eventId The resource's id
+		@return HasManyApiGETEventIdWebhooksRequest
+	*/
+	GETEventIdWebhooks(ctx context.Context, eventId string) HasManyApiGETEventIdWebhooksRequest
+
+	// GETEventIdWebhooksExecute executes the request
+	GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebhooksRequest) (*http.Response, error)
 
 	/*
 		GETExternalGatewayIdExternalPayments Retrieve the external payments associated to the external gateway
@@ -449,12 +533,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalGatewayId The resource's id
-		@return ApiGETExternalGatewayIdExternalPaymentsRequest
+		@return HasManyApiGETExternalGatewayIdExternalPaymentsRequest
 	*/
-	GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdExternalPaymentsRequest
+	GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdExternalPaymentsRequest
 
 	// GETExternalGatewayIdExternalPaymentsExecute executes the request
-	GETExternalGatewayIdExternalPaymentsExecute(r ApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error)
+	GETExternalGatewayIdExternalPaymentsExecute(r HasManyApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETExternalGatewayIdPaymentMethods Retrieve the payment methods associated to the external gateway
@@ -463,12 +547,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalGatewayId The resource's id
-		@return ApiGETExternalGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETExternalGatewayIdPaymentMethodsRequest
 	*/
-	GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdPaymentMethodsRequest
+	GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdPaymentMethodsRequest
 
 	// GETExternalGatewayIdPaymentMethodsExecute executes the request
-	GETExternalGatewayIdPaymentMethodsExecute(r ApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETExternalGatewayIdPaymentMethodsExecute(r HasManyApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdAttachments Retrieve the attachments associated to the external promotion
@@ -477,12 +561,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdAttachmentsRequest
+		@return HasManyApiGETExternalPromotionIdAttachmentsRequest
 	*/
-	GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdAttachmentsRequest
+	GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) HasManyApiGETExternalPromotionIdAttachmentsRequest
 
 	// GETExternalPromotionIdAttachmentsExecute executes the request
-	GETExternalPromotionIdAttachmentsExecute(r ApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETExternalPromotionIdAttachmentsExecute(r HasManyApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETExternalTaxCalculatorIdAttachments Retrieve the attachments associated to the external tax calculator
@@ -491,12 +575,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalTaxCalculatorId The resource's id
-		@return ApiGETExternalTaxCalculatorIdAttachmentsRequest
+		@return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest
 	*/
-	GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdAttachmentsRequest
+	GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest
 
 	// GETExternalTaxCalculatorIdAttachmentsExecute executes the request
-	GETExternalTaxCalculatorIdAttachmentsExecute(r ApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
+	GETExternalTaxCalculatorIdAttachmentsExecute(r HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETExternalTaxCalculatorIdMarkets Retrieve the markets associated to the external tax calculator
@@ -505,12 +589,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalTaxCalculatorId The resource's id
-		@return ApiGETExternalTaxCalculatorIdMarketsRequest
+		@return HasManyApiGETExternalTaxCalculatorIdMarketsRequest
 	*/
-	GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdMarketsRequest
+	GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdMarketsRequest
 
 	// GETExternalTaxCalculatorIdMarketsExecute executes the request
-	GETExternalTaxCalculatorIdMarketsExecute(r ApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error)
+	GETExternalTaxCalculatorIdMarketsExecute(r HasManyApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETExternalTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the external tax calculator
@@ -519,12 +603,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalTaxCalculatorId The resource's id
-		@return ApiGETExternalTaxCalculatorIdTaxCategoriesRequest
+		@return HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest
 	*/
-	GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdTaxCategoriesRequest
+	GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest
 
 	// GETExternalTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETExternalTaxCalculatorIdTaxCategoriesExecute(r ApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
+	GETExternalTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdAttachments Retrieve the attachments associated to the fixed amount promotion
@@ -533,12 +617,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdAttachmentsRequest
+		@return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest
 	*/
-	GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdAttachmentsRequest
+	GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) HasManyApiGETFixedAmountPromotionIdAttachmentsRequest
 
 	// GETFixedAmountPromotionIdAttachmentsExecute executes the request
-	GETFixedAmountPromotionIdAttachmentsExecute(r ApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdAttachmentsExecute(r HasManyApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdAttachments Retrieve the attachments associated to the fixed price promotion
@@ -547,12 +631,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdAttachmentsRequest
+		@return HasManyApiGETFixedPricePromotionIdAttachmentsRequest
 	*/
-	GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdAttachmentsRequest
+	GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdAttachmentsRequest
 
 	// GETFixedPricePromotionIdAttachmentsExecute executes the request
-	GETFixedPricePromotionIdAttachmentsExecute(r ApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error)
+	GETFixedPricePromotionIdAttachmentsExecute(r HasManyApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdSkus Retrieve the skus associated to the fixed price promotion
@@ -561,12 +645,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdSkusRequest
+		@return HasManyApiGETFixedPricePromotionIdSkusRequest
 	*/
-	GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkusRequest
+	GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdSkusRequest
 
 	// GETFixedPricePromotionIdSkusExecute executes the request
-	GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error)
+	GETFixedPricePromotionIdSkusExecute(r HasManyApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdAttachments Retrieve the attachments associated to the free gift promotion
@@ -575,12 +659,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdAttachmentsRequest
+		@return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest
 	*/
-	GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdAttachmentsRequest
+	GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdAttachmentsRequest
 
 	// GETFreeGiftPromotionIdAttachmentsExecute executes the request
-	GETFreeGiftPromotionIdAttachmentsExecute(r ApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdAttachmentsExecute(r HasManyApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdSkus Retrieve the skus associated to the free gift promotion
@@ -589,12 +673,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdSkusRequest
+		@return HasManyApiGETFreeGiftPromotionIdSkusRequest
 	*/
-	GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkusRequest
+	GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdSkusRequest
 
 	// GETFreeGiftPromotionIdSkusExecute executes the request
-	GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdAttachments Retrieve the attachments associated to the free shipping promotion
@@ -603,12 +687,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdAttachmentsRequest
+		@return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest
 	*/
-	GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdAttachmentsRequest
+	GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) HasManyApiGETFreeShippingPromotionIdAttachmentsRequest
 
 	// GETFreeShippingPromotionIdAttachmentsExecute executes the request
-	GETFreeShippingPromotionIdAttachmentsExecute(r ApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdAttachmentsExecute(r HasManyApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETGeocoderIdAddresses Retrieve the addresses associated to the geocoder
@@ -617,12 +701,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param geocoderId The resource's id
-		@return ApiGETGeocoderIdAddressesRequest
+		@return HasManyApiGETGeocoderIdAddressesRequest
 	*/
-	GETGeocoderIdAddresses(ctx context.Context, geocoderId string) ApiGETGeocoderIdAddressesRequest
+	GETGeocoderIdAddresses(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAddressesRequest
 
 	// GETGeocoderIdAddressesExecute executes the request
-	GETGeocoderIdAddressesExecute(r ApiGETGeocoderIdAddressesRequest) (*http.Response, error)
+	GETGeocoderIdAddressesExecute(r HasManyApiGETGeocoderIdAddressesRequest) (*http.Response, error)
 
 	/*
 		GETGeocoderIdAttachments Retrieve the attachments associated to the geocoder
@@ -631,12 +715,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param geocoderId The resource's id
-		@return ApiGETGeocoderIdAttachmentsRequest
+		@return HasManyApiGETGeocoderIdAttachmentsRequest
 	*/
-	GETGeocoderIdAttachments(ctx context.Context, geocoderId string) ApiGETGeocoderIdAttachmentsRequest
+	GETGeocoderIdAttachments(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAttachmentsRequest
 
 	// GETGeocoderIdAttachmentsExecute executes the request
-	GETGeocoderIdAttachmentsExecute(r ApiGETGeocoderIdAttachmentsRequest) (*http.Response, error)
+	GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeocoderIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardIdAttachments Retrieve the attachments associated to the gift card
@@ -645,12 +729,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiGETGiftCardIdAttachmentsRequest
+		@return HasManyApiGETGiftCardIdAttachmentsRequest
 	*/
-	GETGiftCardIdAttachments(ctx context.Context, giftCardId string) ApiGETGiftCardIdAttachmentsRequest
+	GETGiftCardIdAttachments(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdAttachmentsRequest
 
 	// GETGiftCardIdAttachmentsExecute executes the request
-	GETGiftCardIdAttachmentsExecute(r ApiGETGiftCardIdAttachmentsRequest) (*http.Response, error)
+	GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftCardIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETGiftCardIdEvents Retrieve the events associated to the gift card
+
+		Retrieve the events associated to the gift card
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param giftCardId The resource's id
+		@return HasManyApiGETGiftCardIdEventsRequest
+	*/
+	GETGiftCardIdEvents(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdEventsRequest
+
+	// GETGiftCardIdEventsExecute executes the request
+	GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardRecipientIdAttachments Retrieve the attachments associated to the gift card recipient
@@ -659,12 +757,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardRecipientId The resource's id
-		@return ApiGETGiftCardRecipientIdAttachmentsRequest
+		@return HasManyApiGETGiftCardRecipientIdAttachmentsRequest
 	*/
-	GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdAttachmentsRequest
+	GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) HasManyApiGETGiftCardRecipientIdAttachmentsRequest
 
 	// GETGiftCardRecipientIdAttachmentsExecute executes the request
-	GETGiftCardRecipientIdAttachmentsExecute(r ApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error)
+	GETGiftCardRecipientIdAttachmentsExecute(r HasManyApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETGoogleGeocoderIdAddresses Retrieve the addresses associated to the google geocoder
@@ -673,12 +771,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param googleGeocoderId The resource's id
-		@return ApiGETGoogleGeocoderIdAddressesRequest
+		@return HasManyApiGETGoogleGeocoderIdAddressesRequest
 	*/
-	GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAddressesRequest
+	GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAddressesRequest
 
 	// GETGoogleGeocoderIdAddressesExecute executes the request
-	GETGoogleGeocoderIdAddressesExecute(r ApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error)
+	GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error)
 
 	/*
 		GETGoogleGeocoderIdAttachments Retrieve the attachments associated to the google geocoder
@@ -687,12 +785,40 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param googleGeocoderId The resource's id
-		@return ApiGETGoogleGeocoderIdAttachmentsRequest
+		@return HasManyApiGETGoogleGeocoderIdAttachmentsRequest
 	*/
-	GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAttachmentsRequest
+	GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAttachmentsRequest
 
 	// GETGoogleGeocoderIdAttachmentsExecute executes the request
-	GETGoogleGeocoderIdAttachmentsExecute(r ApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error)
+	GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETImportIdEvents Retrieve the events associated to the import
+
+		Retrieve the events associated to the import
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param importId The resource's id
+		@return HasManyApiGETImportIdEventsRequest
+	*/
+	GETImportIdEvents(ctx context.Context, importId string) HasManyApiGETImportIdEventsRequest
+
+	// GETImportIdEventsExecute executes the request
+	GETImportIdEventsExecute(r HasManyApiGETImportIdEventsRequest) (*http.Response, error)
+
+	/*
+		GETInStockSubscriptionIdEvents Retrieve the events associated to the in stock subscription
+
+		Retrieve the events associated to the in stock subscription
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param inStockSubscriptionId The resource's id
+		@return HasManyApiGETInStockSubscriptionIdEventsRequest
+	*/
+	GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) HasManyApiGETInStockSubscriptionIdEventsRequest
+
+	// GETInStockSubscriptionIdEventsExecute executes the request
+	GETInStockSubscriptionIdEventsExecute(r HasManyApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModelIdAttachments Retrieve the attachments associated to the inventory model
@@ -701,12 +827,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiGETInventoryModelIdAttachmentsRequest
+		@return HasManyApiGETInventoryModelIdAttachmentsRequest
 	*/
-	GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdAttachmentsRequest
+	GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdAttachmentsRequest
 
 	// GETInventoryModelIdAttachmentsExecute executes the request
-	GETInventoryModelIdAttachmentsExecute(r ApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error)
+	GETInventoryModelIdAttachmentsExecute(r HasManyApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModelIdInventoryReturnLocations Retrieve the inventory return locations associated to the inventory model
@@ -715,12 +841,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiGETInventoryModelIdInventoryReturnLocationsRequest
+		@return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest
 	*/
-	GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryReturnLocationsRequest
+	GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest
 
 	// GETInventoryModelIdInventoryReturnLocationsExecute executes the request
-	GETInventoryModelIdInventoryReturnLocationsExecute(r ApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error)
+	GETInventoryModelIdInventoryReturnLocationsExecute(r HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModelIdInventoryStockLocations Retrieve the inventory stock locations associated to the inventory model
@@ -729,12 +855,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiGETInventoryModelIdInventoryStockLocationsRequest
+		@return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest
 	*/
-	GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryStockLocationsRequest
+	GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryStockLocationsRequest
 
 	// GETInventoryModelIdInventoryStockLocationsExecute executes the request
-	GETInventoryModelIdInventoryStockLocationsExecute(r ApiGETInventoryModelIdInventoryStockLocationsRequest) (*http.Response, error)
+	GETInventoryModelIdInventoryStockLocationsExecute(r HasManyApiGETInventoryModelIdInventoryStockLocationsRequest) (*http.Response, error)
 
 	/*
 		GETKlarnaGatewayIdKlarnaPayments Retrieve the klarna payments associated to the klarna gateway
@@ -743,12 +869,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param klarnaGatewayId The resource's id
-		@return ApiGETKlarnaGatewayIdKlarnaPaymentsRequest
+		@return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest
 	*/
-	GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewayIdKlarnaPaymentsRequest
+	GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest
 
 	// GETKlarnaGatewayIdKlarnaPaymentsExecute executes the request
-	GETKlarnaGatewayIdKlarnaPaymentsExecute(r ApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error)
+	GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETKlarnaGatewayIdPaymentMethods Retrieve the payment methods associated to the klarna gateway
@@ -757,12 +883,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param klarnaGatewayId The resource's id
-		@return ApiGETKlarnaGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest
 	*/
-	GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewayIdPaymentMethodsRequest
+	GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest
 
 	// GETKlarnaGatewayIdPaymentMethodsExecute executes the request
-	GETKlarnaGatewayIdPaymentMethodsExecute(r ApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdLineItemOptions Retrieve the line item options associated to the line item
@@ -771,12 +897,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdLineItemOptionsRequest
+		@return HasManyApiGETLineItemIdLineItemOptionsRequest
 	*/
-	GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) ApiGETLineItemIdLineItemOptionsRequest
+	GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdLineItemOptionsRequest
 
 	// GETLineItemIdLineItemOptionsExecute executes the request
-	GETLineItemIdLineItemOptionsExecute(r ApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error)
+	GETLineItemIdLineItemOptionsExecute(r HasManyApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdStockLineItems Retrieve the stock line items associated to the line item
@@ -785,12 +911,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdStockLineItemsRequest
+		@return HasManyApiGETLineItemIdStockLineItemsRequest
 	*/
-	GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) ApiGETLineItemIdStockLineItemsRequest
+	GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockLineItemsRequest
 
 	// GETLineItemIdStockLineItemsExecute executes the request
-	GETLineItemIdStockLineItemsExecute(r ApiGETLineItemIdStockLineItemsRequest) (*http.Response, error)
+	GETLineItemIdStockLineItemsExecute(r HasManyApiGETLineItemIdStockLineItemsRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdStockTransfers Retrieve the stock transfers associated to the line item
@@ -799,12 +925,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdStockTransfersRequest
+		@return HasManyApiGETLineItemIdStockTransfersRequest
 	*/
-	GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) ApiGETLineItemIdStockTransfersRequest
+	GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockTransfersRequest
 
 	// GETLineItemIdStockTransfersExecute executes the request
-	GETLineItemIdStockTransfersExecute(r ApiGETLineItemIdStockTransfersRequest) (*http.Response, error)
+	GETLineItemIdStockTransfersExecute(r HasManyApiGETLineItemIdStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETManualGatewayIdPaymentMethods Retrieve the payment methods associated to the manual gateway
@@ -813,12 +939,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualGatewayId The resource's id
-		@return ApiGETManualGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETManualGatewayIdPaymentMethodsRequest
 	*/
-	GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) ApiGETManualGatewayIdPaymentMethodsRequest
+	GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) HasManyApiGETManualGatewayIdPaymentMethodsRequest
 
 	// GETManualGatewayIdPaymentMethodsExecute executes the request
-	GETManualGatewayIdPaymentMethodsExecute(r ApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETManualGatewayIdPaymentMethodsExecute(r HasManyApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETManualTaxCalculatorIdAttachments Retrieve the attachments associated to the manual tax calculator
@@ -827,12 +953,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualTaxCalculatorId The resource's id
-		@return ApiGETManualTaxCalculatorIdAttachmentsRequest
+		@return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest
 	*/
-	GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdAttachmentsRequest
+	GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdAttachmentsRequest
 
 	// GETManualTaxCalculatorIdAttachmentsExecute executes the request
-	GETManualTaxCalculatorIdAttachmentsExecute(r ApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
+	GETManualTaxCalculatorIdAttachmentsExecute(r HasManyApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETManualTaxCalculatorIdMarkets Retrieve the markets associated to the manual tax calculator
@@ -841,12 +967,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualTaxCalculatorId The resource's id
-		@return ApiGETManualTaxCalculatorIdMarketsRequest
+		@return HasManyApiGETManualTaxCalculatorIdMarketsRequest
 	*/
-	GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdMarketsRequest
+	GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdMarketsRequest
 
 	// GETManualTaxCalculatorIdMarketsExecute executes the request
-	GETManualTaxCalculatorIdMarketsExecute(r ApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error)
+	GETManualTaxCalculatorIdMarketsExecute(r HasManyApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETManualTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the manual tax calculator
@@ -855,12 +981,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualTaxCalculatorId The resource's id
-		@return ApiGETManualTaxCalculatorIdTaxCategoriesRequest
+		@return HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest
 	*/
-	GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxCategoriesRequest
+	GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest
 
 	// GETManualTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETManualTaxCalculatorIdTaxCategoriesExecute(r ApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
+	GETManualTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
 
 	/*
 		GETManualTaxCalculatorIdTaxRules Retrieve the tax rules associated to the manual tax calculator
@@ -869,12 +995,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualTaxCalculatorId The resource's id
-		@return ApiGETManualTaxCalculatorIdTaxRulesRequest
+		@return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest
 	*/
-	GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxRulesRequest
+	GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxRulesRequest
 
 	// GETManualTaxCalculatorIdTaxRulesExecute executes the request
-	GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error)
+	GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdAttachments Retrieve the attachments associated to the market
@@ -883,12 +1009,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdAttachmentsRequest
+		@return HasManyApiGETMarketIdAttachmentsRequest
 	*/
-	GETMarketIdAttachments(ctx context.Context, marketId string) ApiGETMarketIdAttachmentsRequest
+	GETMarketIdAttachments(ctx context.Context, marketId string) HasManyApiGETMarketIdAttachmentsRequest
 
 	// GETMarketIdAttachmentsExecute executes the request
-	GETMarketIdAttachmentsExecute(r ApiGETMarketIdAttachmentsRequest) (*http.Response, error)
+	GETMarketIdAttachmentsExecute(r HasManyApiGETMarketIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETMerchantIdAttachments Retrieve the attachments associated to the merchant
@@ -897,12 +1023,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param merchantId The resource's id
-		@return ApiGETMerchantIdAttachmentsRequest
+		@return HasManyApiGETMerchantIdAttachmentsRequest
 	*/
-	GETMerchantIdAttachments(ctx context.Context, merchantId string) ApiGETMerchantIdAttachmentsRequest
+	GETMerchantIdAttachments(ctx context.Context, merchantId string) HasManyApiGETMerchantIdAttachmentsRequest
 
 	// GETMerchantIdAttachmentsExecute executes the request
-	GETMerchantIdAttachmentsExecute(r ApiGETMerchantIdAttachmentsRequest) (*http.Response, error)
+	GETMerchantIdAttachmentsExecute(r HasManyApiGETMerchantIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETOrderCopyIdEvents Retrieve the events associated to the order copy
+
+		Retrieve the events associated to the order copy
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param orderCopyId The resource's id
+		@return HasManyApiGETOrderCopyIdEventsRequest
+	*/
+	GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) HasManyApiGETOrderCopyIdEventsRequest
+
+	// GETOrderCopyIdEventsExecute executes the request
+	GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopyIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAttachments Retrieve the attachments associated to the order
@@ -911,12 +1051,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAttachmentsRequest
+		@return HasManyApiGETOrderIdAttachmentsRequest
 	*/
-	GETOrderIdAttachments(ctx context.Context, orderId string) ApiGETOrderIdAttachmentsRequest
+	GETOrderIdAttachments(ctx context.Context, orderId string) HasManyApiGETOrderIdAttachmentsRequest
 
 	// GETOrderIdAttachmentsExecute executes the request
-	GETOrderIdAttachmentsExecute(r ApiGETOrderIdAttachmentsRequest) (*http.Response, error)
+	GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAuthorizations Retrieve the authorizations associated to the order
@@ -925,12 +1065,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAuthorizationsRequest
+		@return HasManyApiGETOrderIdAuthorizationsRequest
 	*/
-	GETOrderIdAuthorizations(ctx context.Context, orderId string) ApiGETOrderIdAuthorizationsRequest
+	GETOrderIdAuthorizations(ctx context.Context, orderId string) HasManyApiGETOrderIdAuthorizationsRequest
 
 	// GETOrderIdAuthorizationsExecute executes the request
-	GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAuthorizationsRequest) (*http.Response, error)
+	GETOrderIdAuthorizationsExecute(r HasManyApiGETOrderIdAuthorizationsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAvailableCustomerPaymentSources Retrieve the available customer payment sources associated to the order
@@ -939,12 +1079,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAvailableCustomerPaymentSourcesRequest
+		@return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest
 	*/
-	GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) ApiGETOrderIdAvailableCustomerPaymentSourcesRequest
+	GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest
 
 	// GETOrderIdAvailableCustomerPaymentSourcesExecute executes the request
-	GETOrderIdAvailableCustomerPaymentSourcesExecute(r ApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error)
+	GETOrderIdAvailableCustomerPaymentSourcesExecute(r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAvailableFreeBundles Retrieve the available free bundles associated to the order
@@ -953,12 +1093,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAvailableFreeBundlesRequest
+		@return HasManyApiGETOrderIdAvailableFreeBundlesRequest
 	*/
-	GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeBundlesRequest
+	GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeBundlesRequest
 
 	// GETOrderIdAvailableFreeBundlesExecute executes the request
-	GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error)
+	GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAvailableFreeSkus Retrieve the available free skus associated to the order
@@ -967,12 +1107,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAvailableFreeSkusRequest
+		@return HasManyApiGETOrderIdAvailableFreeSkusRequest
 	*/
-	GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeSkusRequest
+	GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeSkusRequest
 
 	// GETOrderIdAvailableFreeSkusExecute executes the request
-	GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error)
+	GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAvailablePaymentMethods Retrieve the available payment methods associated to the order
@@ -981,12 +1121,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAvailablePaymentMethodsRequest
+		@return HasManyApiGETOrderIdAvailablePaymentMethodsRequest
 	*/
-	GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) ApiGETOrderIdAvailablePaymentMethodsRequest
+	GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailablePaymentMethodsRequest
 
 	// GETOrderIdAvailablePaymentMethodsExecute executes the request
-	GETOrderIdAvailablePaymentMethodsExecute(r ApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error)
+	GETOrderIdAvailablePaymentMethodsExecute(r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdCaptures Retrieve the captures associated to the order
@@ -995,12 +1135,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdCapturesRequest
+		@return HasManyApiGETOrderIdCapturesRequest
 	*/
-	GETOrderIdCaptures(ctx context.Context, orderId string) ApiGETOrderIdCapturesRequest
+	GETOrderIdCaptures(ctx context.Context, orderId string) HasManyApiGETOrderIdCapturesRequest
 
 	// GETOrderIdCapturesExecute executes the request
-	GETOrderIdCapturesExecute(r ApiGETOrderIdCapturesRequest) (*http.Response, error)
+	GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapturesRequest) (*http.Response, error)
+
+	/*
+		GETOrderIdEvents Retrieve the events associated to the order
+
+		Retrieve the events associated to the order
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param orderId The resource's id
+		@return HasManyApiGETOrderIdEventsRequest
+	*/
+	GETOrderIdEvents(ctx context.Context, orderId string) HasManyApiGETOrderIdEventsRequest
+
+	// GETOrderIdEventsExecute executes the request
+	GETOrderIdEventsExecute(r HasManyApiGETOrderIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdLineItems Retrieve the line items associated to the order
@@ -1009,12 +1163,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdLineItemsRequest
+		@return HasManyApiGETOrderIdLineItemsRequest
 	*/
-	GETOrderIdLineItems(ctx context.Context, orderId string) ApiGETOrderIdLineItemsRequest
+	GETOrderIdLineItems(ctx context.Context, orderId string) HasManyApiGETOrderIdLineItemsRequest
 
 	// GETOrderIdLineItemsExecute executes the request
-	GETOrderIdLineItemsExecute(r ApiGETOrderIdLineItemsRequest) (*http.Response, error)
+	GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLineItemsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdOrderCopies Retrieve the order copies associated to the order
@@ -1023,12 +1177,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdOrderCopiesRequest
+		@return HasManyApiGETOrderIdOrderCopiesRequest
 	*/
-	GETOrderIdOrderCopies(ctx context.Context, orderId string) ApiGETOrderIdOrderCopiesRequest
+	GETOrderIdOrderCopies(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderCopiesRequest
 
 	// GETOrderIdOrderCopiesExecute executes the request
-	GETOrderIdOrderCopiesExecute(r ApiGETOrderIdOrderCopiesRequest) (*http.Response, error)
+	GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdOrderCopiesRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdOrderSubscriptions Retrieve the order subscriptions associated to the order
@@ -1037,12 +1191,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdOrderSubscriptionsRequest
+		@return HasManyApiGETOrderIdOrderSubscriptionsRequest
 	*/
-	GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) ApiGETOrderIdOrderSubscriptionsRequest
+	GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderSubscriptionsRequest
 
 	// GETOrderIdOrderSubscriptionsExecute executes the request
-	GETOrderIdOrderSubscriptionsExecute(r ApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error)
+	GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdRefunds Retrieve the refunds associated to the order
@@ -1051,12 +1205,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdRefundsRequest
+		@return HasManyApiGETOrderIdRefundsRequest
 	*/
-	GETOrderIdRefunds(ctx context.Context, orderId string) ApiGETOrderIdRefundsRequest
+	GETOrderIdRefunds(ctx context.Context, orderId string) HasManyApiGETOrderIdRefundsRequest
 
 	// GETOrderIdRefundsExecute executes the request
-	GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsRequest) (*http.Response, error)
+	GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefundsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdShipments Retrieve the shipments associated to the order
@@ -1065,12 +1219,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdShipmentsRequest
+		@return HasManyApiGETOrderIdShipmentsRequest
 	*/
-	GETOrderIdShipments(ctx context.Context, orderId string) ApiGETOrderIdShipmentsRequest
+	GETOrderIdShipments(ctx context.Context, orderId string) HasManyApiGETOrderIdShipmentsRequest
 
 	// GETOrderIdShipmentsExecute executes the request
-	GETOrderIdShipmentsExecute(r ApiGETOrderIdShipmentsRequest) (*http.Response, error)
+	GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShipmentsRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdVoids Retrieve the voids associated to the order
@@ -1079,12 +1233,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdVoidsRequest
+		@return HasManyApiGETOrderIdVoidsRequest
 	*/
-	GETOrderIdVoids(ctx context.Context, orderId string) ApiGETOrderIdVoidsRequest
+	GETOrderIdVoids(ctx context.Context, orderId string) HasManyApiGETOrderIdVoidsRequest
 
 	// GETOrderIdVoidsExecute executes the request
-	GETOrderIdVoidsExecute(r ApiGETOrderIdVoidsRequest) (*http.Response, error)
+	GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRequest) (*http.Response, error)
+
+	/*
+		GETOrderSubscriptionIdEvents Retrieve the events associated to the order subscription
+
+		Retrieve the events associated to the order subscription
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param orderSubscriptionId The resource's id
+		@return HasManyApiGETOrderSubscriptionIdEventsRequest
+	*/
+	GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdEventsRequest
+
+	// GETOrderSubscriptionIdEventsExecute executes the request
+	GETOrderSubscriptionIdEventsExecute(r HasManyApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdOrderCopies Retrieve the order copies associated to the order subscription
@@ -1093,12 +1261,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdOrderCopiesRequest
+		@return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest
 	*/
-	GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrderCopiesRequest
+	GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrderCopiesRequest
 
 	// GETOrderSubscriptionIdOrderCopiesExecute executes the request
-	GETOrderSubscriptionIdOrderCopiesExecute(r ApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error)
+	GETOrderSubscriptionIdOrderCopiesExecute(r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdOrders Retrieve the orders associated to the order subscription
@@ -1107,12 +1275,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdOrdersRequest
+		@return HasManyApiGETOrderSubscriptionIdOrdersRequest
 	*/
-	GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrdersRequest
+	GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrdersRequest
 
 	// GETOrderSubscriptionIdOrdersExecute executes the request
-	GETOrderSubscriptionIdOrdersExecute(r ApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error)
+	GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error)
 
 	/*
 		GETPackageIdAttachments Retrieve the attachments associated to the package
@@ -1121,12 +1289,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param packageId The resource's id
-		@return ApiGETPackageIdAttachmentsRequest
+		@return HasManyApiGETPackageIdAttachmentsRequest
 	*/
-	GETPackageIdAttachments(ctx context.Context, packageId string) ApiGETPackageIdAttachmentsRequest
+	GETPackageIdAttachments(ctx context.Context, packageId string) HasManyApiGETPackageIdAttachmentsRequest
 
 	// GETPackageIdAttachmentsExecute executes the request
-	GETPackageIdAttachmentsExecute(r ApiGETPackageIdAttachmentsRequest) (*http.Response, error)
+	GETPackageIdAttachmentsExecute(r HasManyApiGETPackageIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETPackageIdParcels Retrieve the parcels associated to the package
@@ -1135,12 +1303,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param packageId The resource's id
-		@return ApiGETPackageIdParcelsRequest
+		@return HasManyApiGETPackageIdParcelsRequest
 	*/
-	GETPackageIdParcels(ctx context.Context, packageId string) ApiGETPackageIdParcelsRequest
+	GETPackageIdParcels(ctx context.Context, packageId string) HasManyApiGETPackageIdParcelsRequest
 
 	// GETPackageIdParcelsExecute executes the request
-	GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsRequest) (*http.Response, error)
+	GETPackageIdParcelsExecute(r HasManyApiGETPackageIdParcelsRequest) (*http.Response, error)
 
 	/*
 		GETParcelIdAttachments Retrieve the attachments associated to the parcel
@@ -1149,12 +1317,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelIdAttachmentsRequest
+		@return HasManyApiGETParcelIdAttachmentsRequest
 	*/
-	GETParcelIdAttachments(ctx context.Context, parcelId string) ApiGETParcelIdAttachmentsRequest
+	GETParcelIdAttachments(ctx context.Context, parcelId string) HasManyApiGETParcelIdAttachmentsRequest
 
 	// GETParcelIdAttachmentsExecute executes the request
-	GETParcelIdAttachmentsExecute(r ApiGETParcelIdAttachmentsRequest) (*http.Response, error)
+	GETParcelIdAttachmentsExecute(r HasManyApiGETParcelIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETParcelIdEvents Retrieve the events associated to the parcel
+
+		Retrieve the events associated to the parcel
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param parcelId The resource's id
+		@return HasManyApiGETParcelIdEventsRequest
+	*/
+	GETParcelIdEvents(ctx context.Context, parcelId string) HasManyApiGETParcelIdEventsRequest
+
+	// GETParcelIdEventsExecute executes the request
+	GETParcelIdEventsExecute(r HasManyApiGETParcelIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETParcelIdParcelLineItems Retrieve the parcel line items associated to the parcel
@@ -1163,12 +1345,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelIdParcelLineItemsRequest
+		@return HasManyApiGETParcelIdParcelLineItemsRequest
 	*/
-	GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ApiGETParcelIdParcelLineItemsRequest
+	GETParcelIdParcelLineItems(ctx context.Context, parcelId string) HasManyApiGETParcelIdParcelLineItemsRequest
 
 	// GETParcelIdParcelLineItemsExecute executes the request
-	GETParcelIdParcelLineItemsExecute(r ApiGETParcelIdParcelLineItemsRequest) (*http.Response, error)
+	GETParcelIdParcelLineItemsExecute(r HasManyApiGETParcelIdParcelLineItemsRequest) (*http.Response, error)
 
 	/*
 		GETPaymentGatewayIdPaymentMethods Retrieve the payment methods associated to the payment gateway
@@ -1177,12 +1359,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentGatewayId The resource's id
-		@return ApiGETPaymentGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest
 	*/
-	GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) ApiGETPaymentGatewayIdPaymentMethodsRequest
+	GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) HasManyApiGETPaymentGatewayIdPaymentMethodsRequest
 
 	// GETPaymentGatewayIdPaymentMethodsExecute executes the request
-	GETPaymentGatewayIdPaymentMethodsExecute(r ApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETPaymentGatewayIdPaymentMethodsExecute(r HasManyApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETPaymentMethodIdAttachments Retrieve the attachments associated to the payment method
@@ -1191,12 +1373,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentMethodId The resource's id
-		@return ApiGETPaymentMethodIdAttachmentsRequest
+		@return HasManyApiGETPaymentMethodIdAttachmentsRequest
 	*/
-	GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdAttachmentsRequest
+	GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) HasManyApiGETPaymentMethodIdAttachmentsRequest
 
 	// GETPaymentMethodIdAttachmentsExecute executes the request
-	GETPaymentMethodIdAttachmentsExecute(r ApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error)
+	GETPaymentMethodIdAttachmentsExecute(r HasManyApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETPaypalGatewayIdPaymentMethods Retrieve the payment methods associated to the paypal gateway
@@ -1205,12 +1387,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalGatewayId The resource's id
-		@return ApiGETPaypalGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest
 	*/
-	GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewayIdPaymentMethodsRequest
+	GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaymentMethodsRequest
 
 	// GETPaypalGatewayIdPaymentMethodsExecute executes the request
-	GETPaypalGatewayIdPaymentMethodsExecute(r ApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETPaypalGatewayIdPaypalPayments Retrieve the paypal payments associated to the paypal gateway
@@ -1219,12 +1401,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalGatewayId The resource's id
-		@return ApiGETPaypalGatewayIdPaypalPaymentsRequest
+		@return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest
 	*/
-	GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewayIdPaypalPaymentsRequest
+	GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest
 
 	// GETPaypalGatewayIdPaypalPaymentsExecute executes the request
-	GETPaypalGatewayIdPaypalPaymentsExecute(r ApiGETPaypalGatewayIdPaypalPaymentsRequest) (*http.Response, error)
+	GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdAttachments Retrieve the attachments associated to the percentage discount promotion
@@ -1233,12 +1415,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdAttachmentsRequest
+		@return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest
 	*/
-	GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdAttachmentsRequest
+	GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest
 
 	// GETPercentageDiscountPromotionIdAttachmentsExecute executes the request
-	GETPercentageDiscountPromotionIdAttachmentsExecute(r ApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdAttachmentsExecute(r HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdSkus Retrieve the skus associated to the percentage discount promotion
@@ -1247,12 +1429,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdSkusRequest
+		@return HasManyApiGETPercentageDiscountPromotionIdSkusRequest
 	*/
-	GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkusRequest
+	GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdSkusRequest
 
 	// GETPercentageDiscountPromotionIdSkusExecute executes the request
-	GETPercentageDiscountPromotionIdSkusExecute(r ApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdSkusExecute(r HasManyApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETPriceIdAttachments Retrieve the attachments associated to the price
@@ -1261,12 +1443,40 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceId The resource's id
-		@return ApiGETPriceIdAttachmentsRequest
+		@return HasManyApiGETPriceIdAttachmentsRequest
 	*/
-	GETPriceIdAttachments(ctx context.Context, priceId string) ApiGETPriceIdAttachmentsRequest
+	GETPriceIdAttachments(ctx context.Context, priceId string) HasManyApiGETPriceIdAttachmentsRequest
 
 	// GETPriceIdAttachmentsExecute executes the request
-	GETPriceIdAttachmentsExecute(r ApiGETPriceIdAttachmentsRequest) (*http.Response, error)
+	GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETPriceIdPriceTiers Retrieve the price tiers associated to the price
+
+		Retrieve the price tiers associated to the price
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceId The resource's id
+		@return HasManyApiGETPriceIdPriceTiersRequest
+	*/
+	GETPriceIdPriceTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceTiersRequest
+
+	// GETPriceIdPriceTiersExecute executes the request
+	GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPriceTiersRequest) (*http.Response, error)
+
+	/*
+		GETPriceIdPriceVolumeTiers Retrieve the price volume tiers associated to the price
+
+		Retrieve the price volume tiers associated to the price
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceId The resource's id
+		@return HasManyApiGETPriceIdPriceVolumeTiersRequest
+	*/
+	GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceVolumeTiersRequest
+
+	// GETPriceIdPriceVolumeTiersExecute executes the request
+	GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPriceIdPriceVolumeTiersRequest) (*http.Response, error)
 
 	/*
 		GETPriceListIdAttachments Retrieve the attachments associated to the price list
@@ -1275,12 +1485,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceListId The resource's id
-		@return ApiGETPriceListIdAttachmentsRequest
+		@return HasManyApiGETPriceListIdAttachmentsRequest
 	*/
-	GETPriceListIdAttachments(ctx context.Context, priceListId string) ApiGETPriceListIdAttachmentsRequest
+	GETPriceListIdAttachments(ctx context.Context, priceListId string) HasManyApiGETPriceListIdAttachmentsRequest
 
 	// GETPriceListIdAttachmentsExecute executes the request
-	GETPriceListIdAttachmentsExecute(r ApiGETPriceListIdAttachmentsRequest) (*http.Response, error)
+	GETPriceListIdAttachmentsExecute(r HasManyApiGETPriceListIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETPriceListIdPrices Retrieve the prices associated to the price list
@@ -1289,12 +1499,40 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceListId The resource's id
-		@return ApiGETPriceListIdPricesRequest
+		@return HasManyApiGETPriceListIdPricesRequest
 	*/
-	GETPriceListIdPrices(ctx context.Context, priceListId string) ApiGETPriceListIdPricesRequest
+	GETPriceListIdPrices(ctx context.Context, priceListId string) HasManyApiGETPriceListIdPricesRequest
 
 	// GETPriceListIdPricesExecute executes the request
-	GETPriceListIdPricesExecute(r ApiGETPriceListIdPricesRequest) (*http.Response, error)
+	GETPriceListIdPricesExecute(r HasManyApiGETPriceListIdPricesRequest) (*http.Response, error)
+
+	/*
+		GETPriceTierIdAttachments Retrieve the attachments associated to the price tier
+
+		Retrieve the attachments associated to the price tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceTierId The resource's id
+		@return HasManyApiGETPriceTierIdAttachmentsRequest
+	*/
+	GETPriceTierIdAttachments(ctx context.Context, priceTierId string) HasManyApiGETPriceTierIdAttachmentsRequest
+
+	// GETPriceTierIdAttachmentsExecute executes the request
+	GETPriceTierIdAttachmentsExecute(r HasManyApiGETPriceTierIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETPriceVolumeTierIdAttachments Retrieve the attachments associated to the price volume tier
+
+		Retrieve the attachments associated to the price volume tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceVolumeTierId The resource's id
+		@return HasManyApiGETPriceVolumeTierIdAttachmentsRequest
+	*/
+	GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) HasManyApiGETPriceVolumeTierIdAttachmentsRequest
+
+	// GETPriceVolumeTierIdAttachmentsExecute executes the request
+	GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdAttachments Retrieve the attachments associated to the promotion
@@ -1303,12 +1541,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdAttachmentsRequest
+		@return HasManyApiGETPromotionIdAttachmentsRequest
 	*/
-	GETPromotionIdAttachments(ctx context.Context, promotionId string) ApiGETPromotionIdAttachmentsRequest
+	GETPromotionIdAttachments(ctx context.Context, promotionId string) HasManyApiGETPromotionIdAttachmentsRequest
 
 	// GETPromotionIdAttachmentsExecute executes the request
-	GETPromotionIdAttachmentsExecute(r ApiGETPromotionIdAttachmentsRequest) (*http.Response, error)
+	GETPromotionIdAttachmentsExecute(r HasManyApiGETPromotionIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETRefundIdEvents Retrieve the events associated to the refund
+
+		Retrieve the events associated to the refund
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param refundId The resource's id
+		@return HasManyApiGETRefundIdEventsRequest
+	*/
+	GETRefundIdEvents(ctx context.Context, refundId string) HasManyApiGETRefundIdEventsRequest
+
+	// GETRefundIdEventsExecute executes the request
+	GETRefundIdEventsExecute(r HasManyApiGETRefundIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdAttachments Retrieve the attachments associated to the return
@@ -1317,12 +1569,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdAttachmentsRequest
+		@return HasManyApiGETReturnIdAttachmentsRequest
 	*/
-	GETReturnIdAttachments(ctx context.Context, returnId string) ApiGETReturnIdAttachmentsRequest
+	GETReturnIdAttachments(ctx context.Context, returnId string) HasManyApiGETReturnIdAttachmentsRequest
 
 	// GETReturnIdAttachmentsExecute executes the request
-	GETReturnIdAttachmentsExecute(r ApiGETReturnIdAttachmentsRequest) (*http.Response, error)
+	GETReturnIdAttachmentsExecute(r HasManyApiGETReturnIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETReturnIdEvents Retrieve the events associated to the return
+
+		Retrieve the events associated to the return
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param returnId The resource's id
+		@return HasManyApiGETReturnIdEventsRequest
+	*/
+	GETReturnIdEvents(ctx context.Context, returnId string) HasManyApiGETReturnIdEventsRequest
+
+	// GETReturnIdEventsExecute executes the request
+	GETReturnIdEventsExecute(r HasManyApiGETReturnIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdReturnLineItems Retrieve the return line items associated to the return
@@ -1331,12 +1597,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdReturnLineItemsRequest
+		@return HasManyApiGETReturnIdReturnLineItemsRequest
 	*/
-	GETReturnIdReturnLineItems(ctx context.Context, returnId string) ApiGETReturnIdReturnLineItemsRequest
+	GETReturnIdReturnLineItems(ctx context.Context, returnId string) HasManyApiGETReturnIdReturnLineItemsRequest
 
 	// GETReturnIdReturnLineItemsExecute executes the request
-	GETReturnIdReturnLineItemsExecute(r ApiGETReturnIdReturnLineItemsRequest) (*http.Response, error)
+	GETReturnIdReturnLineItemsExecute(r HasManyApiGETReturnIdReturnLineItemsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdAttachments Retrieve the attachments associated to the shipment
@@ -1345,12 +1611,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdAttachmentsRequest
+		@return HasManyApiGETShipmentIdAttachmentsRequest
 	*/
-	GETShipmentIdAttachments(ctx context.Context, shipmentId string) ApiGETShipmentIdAttachmentsRequest
+	GETShipmentIdAttachments(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAttachmentsRequest
 
 	// GETShipmentIdAttachmentsExecute executes the request
-	GETShipmentIdAttachmentsExecute(r ApiGETShipmentIdAttachmentsRequest) (*http.Response, error)
+	GETShipmentIdAttachmentsExecute(r HasManyApiGETShipmentIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdAvailableShippingMethods Retrieve the available shipping methods associated to the shipment
@@ -1359,12 +1625,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdAvailableShippingMethodsRequest
+		@return HasManyApiGETShipmentIdAvailableShippingMethodsRequest
 	*/
-	GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) ApiGETShipmentIdAvailableShippingMethodsRequest
+	GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAvailableShippingMethodsRequest
 
 	// GETShipmentIdAvailableShippingMethodsExecute executes the request
-	GETShipmentIdAvailableShippingMethodsExecute(r ApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error)
+	GETShipmentIdAvailableShippingMethodsExecute(r HasManyApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdCarrierAccounts Retrieve the carrier accounts associated to the shipment
@@ -1373,12 +1639,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdCarrierAccountsRequest
+		@return HasManyApiGETShipmentIdCarrierAccountsRequest
 	*/
-	GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) ApiGETShipmentIdCarrierAccountsRequest
+	GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdCarrierAccountsRequest
 
 	// GETShipmentIdCarrierAccountsExecute executes the request
-	GETShipmentIdCarrierAccountsExecute(r ApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error)
+	GETShipmentIdCarrierAccountsExecute(r HasManyApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error)
+
+	/*
+		GETShipmentIdEvents Retrieve the events associated to the shipment
+
+		Retrieve the events associated to the shipment
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shipmentId The resource's id
+		@return HasManyApiGETShipmentIdEventsRequest
+	*/
+	GETShipmentIdEvents(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdEventsRequest
+
+	// GETShipmentIdEventsExecute executes the request
+	GETShipmentIdEventsExecute(r HasManyApiGETShipmentIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdParcels Retrieve the parcels associated to the shipment
@@ -1387,12 +1667,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdParcelsRequest
+		@return HasManyApiGETShipmentIdParcelsRequest
 	*/
-	GETShipmentIdParcels(ctx context.Context, shipmentId string) ApiGETShipmentIdParcelsRequest
+	GETShipmentIdParcels(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdParcelsRequest
 
 	// GETShipmentIdParcelsExecute executes the request
-	GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcelsRequest) (*http.Response, error)
+	GETShipmentIdParcelsExecute(r HasManyApiGETShipmentIdParcelsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdStockLineItems Retrieve the stock line items associated to the shipment
@@ -1401,12 +1681,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdStockLineItemsRequest
+		@return HasManyApiGETShipmentIdStockLineItemsRequest
 	*/
-	GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLineItemsRequest
+	GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockLineItemsRequest
 
 	// GETShipmentIdStockLineItemsExecute executes the request
-	GETShipmentIdStockLineItemsExecute(r ApiGETShipmentIdStockLineItemsRequest) (*http.Response, error)
+	GETShipmentIdStockLineItemsExecute(r HasManyApiGETShipmentIdStockLineItemsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdStockTransfers Retrieve the stock transfers associated to the shipment
@@ -1415,12 +1695,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdStockTransfersRequest
+		@return HasManyApiGETShipmentIdStockTransfersRequest
 	*/
-	GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) ApiGETShipmentIdStockTransfersRequest
+	GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockTransfersRequest
 
 	// GETShipmentIdStockTransfersExecute executes the request
-	GETShipmentIdStockTransfersExecute(r ApiGETShipmentIdStockTransfersRequest) (*http.Response, error)
+	GETShipmentIdStockTransfersExecute(r HasManyApiGETShipmentIdStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETShippingCategoryIdAttachments Retrieve the attachments associated to the shipping category
@@ -1429,12 +1709,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingCategoryId The resource's id
-		@return ApiGETShippingCategoryIdAttachmentsRequest
+		@return HasManyApiGETShippingCategoryIdAttachmentsRequest
 	*/
-	GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdAttachmentsRequest
+	GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdAttachmentsRequest
 
 	// GETShippingCategoryIdAttachmentsExecute executes the request
-	GETShippingCategoryIdAttachmentsExecute(r ApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error)
+	GETShippingCategoryIdAttachmentsExecute(r HasManyApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETShippingCategoryIdSkus Retrieve the skus associated to the shipping category
@@ -1443,12 +1723,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingCategoryId The resource's id
-		@return ApiGETShippingCategoryIdSkusRequest
+		@return HasManyApiGETShippingCategoryIdSkusRequest
 	*/
-	GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdSkusRequest
+	GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdSkusRequest
 
 	// GETShippingCategoryIdSkusExecute executes the request
-	GETShippingCategoryIdSkusExecute(r ApiGETShippingCategoryIdSkusRequest) (*http.Response, error)
+	GETShippingCategoryIdSkusExecute(r HasManyApiGETShippingCategoryIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETShippingMethodIdAttachments Retrieve the attachments associated to the shipping method
@@ -1457,12 +1737,68 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingMethodId The resource's id
-		@return ApiGETShippingMethodIdAttachmentsRequest
+		@return HasManyApiGETShippingMethodIdAttachmentsRequest
 	*/
-	GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdAttachmentsRequest
+	GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdAttachmentsRequest
 
 	// GETShippingMethodIdAttachmentsExecute executes the request
-	GETShippingMethodIdAttachmentsExecute(r ApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error)
+	GETShippingMethodIdAttachmentsExecute(r HasManyApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETShippingMethodIdShippingMethodTiers Retrieve the shipping method tiers associated to the shipping method
+
+		Retrieve the shipping method tiers associated to the shipping method
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingMethodId The resource's id
+		@return HasManyApiGETShippingMethodIdShippingMethodTiersRequest
+	*/
+	GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingMethodTiersRequest
+
+	// GETShippingMethodIdShippingMethodTiersExecute executes the request
+	GETShippingMethodIdShippingMethodTiersExecute(r HasManyApiGETShippingMethodIdShippingMethodTiersRequest) (*http.Response, error)
+
+	/*
+		GETShippingMethodIdShippingWeightTiers Retrieve the shipping weight tiers associated to the shipping method
+
+		Retrieve the shipping weight tiers associated to the shipping method
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingMethodId The resource's id
+		@return HasManyApiGETShippingMethodIdShippingWeightTiersRequest
+	*/
+	GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingWeightTiersRequest
+
+	// GETShippingMethodIdShippingWeightTiersExecute executes the request
+	GETShippingMethodIdShippingWeightTiersExecute(r HasManyApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error)
+
+	/*
+		GETShippingMethodTierIdAttachments Retrieve the attachments associated to the shipping method tier
+
+		Retrieve the attachments associated to the shipping method tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingMethodTierId The resource's id
+		@return HasManyApiGETShippingMethodTierIdAttachmentsRequest
+	*/
+	GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) HasManyApiGETShippingMethodTierIdAttachmentsRequest
+
+	// GETShippingMethodTierIdAttachmentsExecute executes the request
+	GETShippingMethodTierIdAttachmentsExecute(r HasManyApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error)
+
+	/*
+		GETShippingWeightTierIdAttachments Retrieve the attachments associated to the shipping weight tier
+
+		Retrieve the attachments associated to the shipping weight tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingWeightTierId The resource's id
+		@return HasManyApiGETShippingWeightTierIdAttachmentsRequest
+	*/
+	GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) HasManyApiGETShippingWeightTierIdAttachmentsRequest
+
+	// GETShippingWeightTierIdAttachmentsExecute executes the request
+	GETShippingWeightTierIdAttachmentsExecute(r HasManyApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETShippingZoneIdAttachments Retrieve the attachments associated to the shipping zone
@@ -1471,12 +1807,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingZoneId The resource's id
-		@return ApiGETShippingZoneIdAttachmentsRequest
+		@return HasManyApiGETShippingZoneIdAttachmentsRequest
 	*/
-	GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) ApiGETShippingZoneIdAttachmentsRequest
+	GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) HasManyApiGETShippingZoneIdAttachmentsRequest
 
 	// GETShippingZoneIdAttachmentsExecute executes the request
-	GETShippingZoneIdAttachmentsExecute(r ApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error)
+	GETShippingZoneIdAttachmentsExecute(r HasManyApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdAttachments Retrieve the attachments associated to the SKU
@@ -1485,12 +1821,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdAttachmentsRequest
+		@return HasManyApiGETSkuIdAttachmentsRequest
 	*/
-	GETSkuIdAttachments(ctx context.Context, skuId string) ApiGETSkuIdAttachmentsRequest
+	GETSkuIdAttachments(ctx context.Context, skuId string) HasManyApiGETSkuIdAttachmentsRequest
 
 	// GETSkuIdAttachmentsExecute executes the request
-	GETSkuIdAttachmentsExecute(r ApiGETSkuIdAttachmentsRequest) (*http.Response, error)
+	GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdDeliveryLeadTimes Retrieve the delivery lead times associated to the SKU
@@ -1499,12 +1835,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdDeliveryLeadTimesRequest
+		@return HasManyApiGETSkuIdDeliveryLeadTimesRequest
 	*/
-	GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) ApiGETSkuIdDeliveryLeadTimesRequest
+	GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) HasManyApiGETSkuIdDeliveryLeadTimesRequest
 
 	// GETSkuIdDeliveryLeadTimesExecute executes the request
-	GETSkuIdDeliveryLeadTimesExecute(r ApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error)
+	GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdPrices Retrieve the prices associated to the SKU
@@ -1513,12 +1849,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdPricesRequest
+		@return HasManyApiGETSkuIdPricesRequest
 	*/
-	GETSkuIdPrices(ctx context.Context, skuId string) ApiGETSkuIdPricesRequest
+	GETSkuIdPrices(ctx context.Context, skuId string) HasManyApiGETSkuIdPricesRequest
 
 	// GETSkuIdPricesExecute executes the request
-	GETSkuIdPricesExecute(r ApiGETSkuIdPricesRequest) (*http.Response, error)
+	GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdSkuOptions Retrieve the sku options associated to the SKU
@@ -1527,12 +1863,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdSkuOptionsRequest
+		@return HasManyApiGETSkuIdSkuOptionsRequest
 	*/
-	GETSkuIdSkuOptions(ctx context.Context, skuId string) ApiGETSkuIdSkuOptionsRequest
+	GETSkuIdSkuOptions(ctx context.Context, skuId string) HasManyApiGETSkuIdSkuOptionsRequest
 
 	// GETSkuIdSkuOptionsExecute executes the request
-	GETSkuIdSkuOptionsExecute(r ApiGETSkuIdSkuOptionsRequest) (*http.Response, error)
+	GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOptionsRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdStockItems Retrieve the stock items associated to the SKU
@@ -1541,12 +1877,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdStockItemsRequest
+		@return HasManyApiGETSkuIdStockItemsRequest
 	*/
-	GETSkuIdStockItems(ctx context.Context, skuId string) ApiGETSkuIdStockItemsRequest
+	GETSkuIdStockItems(ctx context.Context, skuId string) HasManyApiGETSkuIdStockItemsRequest
 
 	// GETSkuIdStockItemsExecute executes the request
-	GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItemsRequest) (*http.Response, error)
+	GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockItemsRequest) (*http.Response, error)
 
 	/*
 		GETSkuListIdBundles Retrieve the bundles associated to the SKU list
@@ -1555,12 +1891,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiGETSkuListIdBundlesRequest
+		@return HasManyApiGETSkuListIdBundlesRequest
 	*/
-	GETSkuListIdBundles(ctx context.Context, skuListId string) ApiGETSkuListIdBundlesRequest
+	GETSkuListIdBundles(ctx context.Context, skuListId string) HasManyApiGETSkuListIdBundlesRequest
 
 	// GETSkuListIdBundlesExecute executes the request
-	GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesRequest) (*http.Response, error)
+	GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdBundlesRequest) (*http.Response, error)
 
 	/*
 		GETSkuListIdSkuListItems Retrieve the sku list items associated to the SKU list
@@ -1569,12 +1905,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiGETSkuListIdSkuListItemsRequest
+		@return HasManyApiGETSkuListIdSkuListItemsRequest
 	*/
-	GETSkuListIdSkuListItems(ctx context.Context, skuListId string) ApiGETSkuListIdSkuListItemsRequest
+	GETSkuListIdSkuListItems(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkuListItemsRequest
 
 	// GETSkuListIdSkuListItemsExecute executes the request
-	GETSkuListIdSkuListItemsExecute(r ApiGETSkuListIdSkuListItemsRequest) (*http.Response, error)
+	GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuListIdSkuListItemsRequest) (*http.Response, error)
 
 	/*
 		GETSkuListIdSkus Retrieve the skus associated to the SKU list
@@ -1583,12 +1919,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiGETSkuListIdSkusRequest
+		@return HasManyApiGETSkuListIdSkusRequest
 	*/
-	GETSkuListIdSkus(ctx context.Context, skuListId string) ApiGETSkuListIdSkusRequest
+	GETSkuListIdSkus(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkusRequest
 
 	// GETSkuListIdSkusExecute executes the request
-	GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest) (*http.Response, error)
+	GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkuListPromotionRuleIdSkus Retrieve the skus associated to the SKU list promotion rule
@@ -1597,12 +1933,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListPromotionRuleId The resource's id
-		@return ApiGETSkuListPromotionRuleIdSkusRequest
+		@return HasManyApiGETSkuListPromotionRuleIdSkusRequest
 	*/
-	GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkusRequest
+	GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) HasManyApiGETSkuListPromotionRuleIdSkusRequest
 
 	// GETSkuListPromotionRuleIdSkusExecute executes the request
-	GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error)
+	GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkuOptionIdAttachments Retrieve the attachments associated to the SKU option
@@ -1611,12 +1947,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuOptionId The resource's id
-		@return ApiGETSkuOptionIdAttachmentsRequest
+		@return HasManyApiGETSkuOptionIdAttachmentsRequest
 	*/
-	GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdAttachmentsRequest
+	GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) HasManyApiGETSkuOptionIdAttachmentsRequest
 
 	// GETSkuOptionIdAttachmentsExecute executes the request
-	GETSkuOptionIdAttachmentsExecute(r ApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error)
+	GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETStockItemIdAttachments Retrieve the attachments associated to the stock item
@@ -1625,12 +1961,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockItemId The resource's id
-		@return ApiGETStockItemIdAttachmentsRequest
+		@return HasManyApiGETStockItemIdAttachmentsRequest
 	*/
-	GETStockItemIdAttachments(ctx context.Context, stockItemId string) ApiGETStockItemIdAttachmentsRequest
+	GETStockItemIdAttachments(ctx context.Context, stockItemId string) HasManyApiGETStockItemIdAttachmentsRequest
 
 	// GETStockItemIdAttachmentsExecute executes the request
-	GETStockItemIdAttachmentsExecute(r ApiGETStockItemIdAttachmentsRequest) (*http.Response, error)
+	GETStockItemIdAttachmentsExecute(r HasManyApiGETStockItemIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdAttachments Retrieve the attachments associated to the stock location
@@ -1639,12 +1975,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdAttachmentsRequest
+		@return HasManyApiGETStockLocationIdAttachmentsRequest
 	*/
-	GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAttachmentsRequest
+	GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdAttachmentsRequest
 
 	// GETStockLocationIdAttachmentsExecute executes the request
-	GETStockLocationIdAttachmentsExecute(r ApiGETStockLocationIdAttachmentsRequest) (*http.Response, error)
+	GETStockLocationIdAttachmentsExecute(r HasManyApiGETStockLocationIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdInventoryReturnLocations Retrieve the inventory return locations associated to the stock location
@@ -1653,12 +1989,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdInventoryReturnLocationsRequest
+		@return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest
 	*/
-	GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryReturnLocationsRequest
+	GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryReturnLocationsRequest
 
 	// GETStockLocationIdInventoryReturnLocationsExecute executes the request
-	GETStockLocationIdInventoryReturnLocationsExecute(r ApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error)
+	GETStockLocationIdInventoryReturnLocationsExecute(r HasManyApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdInventoryStockLocations Retrieve the inventory stock locations associated to the stock location
@@ -1667,12 +2003,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdInventoryStockLocationsRequest
+		@return HasManyApiGETStockLocationIdInventoryStockLocationsRequest
 	*/
-	GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryStockLocationsRequest
+	GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryStockLocationsRequest
 
 	// GETStockLocationIdInventoryStockLocationsExecute executes the request
-	GETStockLocationIdInventoryStockLocationsExecute(r ApiGETStockLocationIdInventoryStockLocationsRequest) (*http.Response, error)
+	GETStockLocationIdInventoryStockLocationsExecute(r HasManyApiGETStockLocationIdInventoryStockLocationsRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdStockItems Retrieve the stock items associated to the stock location
@@ -1681,12 +2017,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdStockItemsRequest
+		@return HasManyApiGETStockLocationIdStockItemsRequest
 	*/
-	GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockItemsRequest
+	GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockItemsRequest
 
 	// GETStockLocationIdStockItemsExecute executes the request
-	GETStockLocationIdStockItemsExecute(r ApiGETStockLocationIdStockItemsRequest) (*http.Response, error)
+	GETStockLocationIdStockItemsExecute(r HasManyApiGETStockLocationIdStockItemsRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdStockTransfers Retrieve the stock transfers associated to the stock location
@@ -1695,12 +2031,26 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdStockTransfersRequest
+		@return HasManyApiGETStockLocationIdStockTransfersRequest
 	*/
-	GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockTransfersRequest
+	GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockTransfersRequest
 
 	// GETStockLocationIdStockTransfersExecute executes the request
-	GETStockLocationIdStockTransfersExecute(r ApiGETStockLocationIdStockTransfersRequest) (*http.Response, error)
+	GETStockLocationIdStockTransfersExecute(r HasManyApiGETStockLocationIdStockTransfersRequest) (*http.Response, error)
+
+	/*
+		GETStockTransferIdEvents Retrieve the events associated to the stock transfer
+
+		Retrieve the events associated to the stock transfer
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param stockTransferId The resource's id
+		@return HasManyApiGETStockTransferIdEventsRequest
+	*/
+	GETStockTransferIdEvents(ctx context.Context, stockTransferId string) HasManyApiGETStockTransferIdEventsRequest
+
+	// GETStockTransferIdEventsExecute executes the request
+	GETStockTransferIdEventsExecute(r HasManyApiGETStockTransferIdEventsRequest) (*http.Response, error)
 
 	/*
 		GETStripeGatewayIdPaymentMethods Retrieve the payment methods associated to the stripe gateway
@@ -1709,12 +2059,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiGETStripeGatewayIdPaymentMethodsRequest
+		@return HasManyApiGETStripeGatewayIdPaymentMethodsRequest
 	*/
-	GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdPaymentMethodsRequest
+	GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdPaymentMethodsRequest
 
 	// GETStripeGatewayIdPaymentMethodsExecute executes the request
-	GETStripeGatewayIdPaymentMethodsExecute(r ApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error)
+	GETStripeGatewayIdPaymentMethodsExecute(r HasManyApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error)
 
 	/*
 		GETStripeGatewayIdStripePayments Retrieve the stripe payments associated to the stripe gateway
@@ -1723,12 +2073,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiGETStripeGatewayIdStripePaymentsRequest
+		@return HasManyApiGETStripeGatewayIdStripePaymentsRequest
 	*/
-	GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdStripePaymentsRequest
+	GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdStripePaymentsRequest
 
 	// GETStripeGatewayIdStripePaymentsExecute executes the request
-	GETStripeGatewayIdStripePaymentsExecute(r ApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error)
+	GETStripeGatewayIdStripePaymentsExecute(r HasManyApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error)
 
 	/*
 		GETTaxCalculatorIdAttachments Retrieve the attachments associated to the tax calculator
@@ -1737,12 +2087,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCalculatorId The resource's id
-		@return ApiGETTaxCalculatorIdAttachmentsRequest
+		@return HasManyApiGETTaxCalculatorIdAttachmentsRequest
 	*/
-	GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdAttachmentsRequest
+	GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdAttachmentsRequest
 
 	// GETTaxCalculatorIdAttachmentsExecute executes the request
-	GETTaxCalculatorIdAttachmentsExecute(r ApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
+	GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETTaxCalculatorIdMarkets Retrieve the markets associated to the tax calculator
@@ -1751,12 +2101,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCalculatorId The resource's id
-		@return ApiGETTaxCalculatorIdMarketsRequest
+		@return HasManyApiGETTaxCalculatorIdMarketsRequest
 	*/
-	GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdMarketsRequest
+	GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdMarketsRequest
 
 	// GETTaxCalculatorIdMarketsExecute executes the request
-	GETTaxCalculatorIdMarketsExecute(r ApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error)
+	GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the tax calculator
@@ -1765,12 +2115,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCalculatorId The resource's id
-		@return ApiGETTaxCalculatorIdTaxCategoriesRequest
+		@return HasManyApiGETTaxCalculatorIdTaxCategoriesRequest
 	*/
-	GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdTaxCategoriesRequest
+	GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdTaxCategoriesRequest
 
 	// GETTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETTaxCalculatorIdTaxCategoriesExecute(r ApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
+	GETTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
 
 	/*
 		GETTaxCategoryIdAttachments Retrieve the attachments associated to the tax category
@@ -1779,12 +2129,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCategoryId The resource's id
-		@return ApiGETTaxCategoryIdAttachmentsRequest
+		@return HasManyApiGETTaxCategoryIdAttachmentsRequest
 	*/
-	GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdAttachmentsRequest
+	GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) HasManyApiGETTaxCategoryIdAttachmentsRequest
 
 	// GETTaxCategoryIdAttachmentsExecute executes the request
-	GETTaxCategoryIdAttachmentsExecute(r ApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error)
+	GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETTaxjarAccountIdAttachments Retrieve the attachments associated to the taxjar account
@@ -1793,12 +2143,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxjarAccountId The resource's id
-		@return ApiGETTaxjarAccountIdAttachmentsRequest
+		@return HasManyApiGETTaxjarAccountIdAttachmentsRequest
 	*/
-	GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdAttachmentsRequest
+	GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdAttachmentsRequest
 
 	// GETTaxjarAccountIdAttachmentsExecute executes the request
-	GETTaxjarAccountIdAttachmentsExecute(r ApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error)
+	GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error)
 
 	/*
 		GETTaxjarAccountIdMarkets Retrieve the markets associated to the taxjar account
@@ -1807,12 +2157,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxjarAccountId The resource's id
-		@return ApiGETTaxjarAccountIdMarketsRequest
+		@return HasManyApiGETTaxjarAccountIdMarketsRequest
 	*/
-	GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdMarketsRequest
+	GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdMarketsRequest
 
 	// GETTaxjarAccountIdMarketsExecute executes the request
-	GETTaxjarAccountIdMarketsExecute(r ApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error)
+	GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error)
 
 	/*
 		GETTaxjarAccountIdTaxCategories Retrieve the tax categories associated to the taxjar account
@@ -1821,12 +2171,12 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxjarAccountId The resource's id
-		@return ApiGETTaxjarAccountIdTaxCategoriesRequest
+		@return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest
 	*/
-	GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdTaxCategoriesRequest
+	GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdTaxCategoriesRequest
 
 	// GETTaxjarAccountIdTaxCategoriesExecute executes the request
-	GETTaxjarAccountIdTaxCategoriesExecute(r ApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error)
+	GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error)
 
 	/*
 		GETWebhookIdLastEventCallbacks Retrieve the last event callbacks associated to the webhook
@@ -1835,24 +2185,24 @@ type HasManyApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param webhookId The resource's id
-		@return ApiGETWebhookIdLastEventCallbacksRequest
+		@return HasManyApiGETWebhookIdLastEventCallbacksRequest
 	*/
-	GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) ApiGETWebhookIdLastEventCallbacksRequest
+	GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) HasManyApiGETWebhookIdLastEventCallbacksRequest
 
 	// GETWebhookIdLastEventCallbacksExecute executes the request
-	GETWebhookIdLastEventCallbacksExecute(r ApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error)
+	GETWebhookIdLastEventCallbacksExecute(r HasManyApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error)
 }
 
 // HasManyApiService HasManyApi service
 type HasManyApiService service
 
-type ApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
+type HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
 	ctx            context.Context
 	ApiService     HasManyApi
 	adyenGatewayId string
 }
 
-func (r ApiGETAdyenGatewayIdAdyenPaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenGatewayIdAdyenPaymentsExecute(r)
 }
 
@@ -1863,10 +2213,10 @@ Retrieve the adyen payments associated to the adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiGETAdyenGatewayIdAdyenPaymentsRequest
+ @return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest
 */
-func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewayIdAdyenPaymentsRequest {
-	return ApiGETAdyenGatewayIdAdyenPaymentsRequest{
+func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest {
+	return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -1874,7 +2224,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r ApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1938,13 +2288,13 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r ApiGETAdyenG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETAdyenGatewayIdPaymentMethodsRequest struct {
 	ctx            context.Context
 	ApiService     HasManyApi
 	adyenGatewayId string
 }
 
-func (r ApiGETAdyenGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAdyenGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -1955,10 +2305,10 @@ Retrieve the payment methods associated to the adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiGETAdyenGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewayIdPaymentMethodsRequest {
-	return ApiGETAdyenGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -1966,7 +2316,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r ApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2030,13 +2380,13 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r ApiGETAdyen
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationIdCapturesRequest struct {
+type HasManyApiGETAuthorizationIdCapturesRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationIdCapturesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAuthorizationIdCapturesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationIdCapturesExecute(r)
 }
 
@@ -2047,10 +2397,10 @@ Retrieve the captures associated to the authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationIdCapturesRequest
+ @return HasManyApiGETAuthorizationIdCapturesRequest
 */
-func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) ApiGETAuthorizationIdCapturesRequest {
-	return ApiGETAuthorizationIdCapturesRequest{
+func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdCapturesRequest {
+	return HasManyApiGETAuthorizationIdCapturesRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -2058,7 +2408,7 @@ func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, auth
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r ApiGETAuthorizationIdCapturesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAuthorizationIdCapturesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2122,13 +2472,13 @@ func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r ApiGETAuthorizat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationIdVoidsRequest struct {
+type HasManyApiGETAuthorizationIdVoidsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationIdVoidsExecute(r)
 }
 
@@ -2139,10 +2489,10 @@ Retrieve the voids associated to the authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationIdVoidsRequest
+ @return HasManyApiGETAuthorizationIdVoidsRequest
 */
-func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) ApiGETAuthorizationIdVoidsRequest {
-	return ApiGETAuthorizationIdVoidsRequest{
+func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdVoidsRequest {
+	return HasManyApiGETAuthorizationIdVoidsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -2150,7 +2500,7 @@ func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authori
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r ApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2214,13 +2564,13 @@ func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r ApiGETAuthorization
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAvalaraAccountIdAttachmentsRequest struct {
+type HasManyApiGETAvalaraAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	avalaraAccountId string
 }
 
-func (r ApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdAttachmentsExecute(r)
 }
 
@@ -2231,10 +2581,10 @@ Retrieve the attachments associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return ApiGETAvalaraAccountIdAttachmentsRequest
+ @return HasManyApiGETAvalaraAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdAttachmentsRequest {
-	return ApiGETAvalaraAccountIdAttachmentsRequest{
+func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdAttachmentsRequest {
+	return HasManyApiGETAvalaraAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -2242,7 +2592,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r ApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2306,13 +2656,13 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r ApiGETAvalar
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAvalaraAccountIdMarketsRequest struct {
+type HasManyApiGETAvalaraAccountIdMarketsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	avalaraAccountId string
 }
 
-func (r ApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdMarketsExecute(r)
 }
 
@@ -2323,10 +2673,10 @@ Retrieve the markets associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return ApiGETAvalaraAccountIdMarketsRequest
+ @return HasManyApiGETAvalaraAccountIdMarketsRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdMarketsRequest {
-	return ApiGETAvalaraAccountIdMarketsRequest{
+func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdMarketsRequest {
+	return HasManyApiGETAvalaraAccountIdMarketsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -2334,7 +2684,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, aval
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r ApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2398,13 +2748,13 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r ApiGETAvalaraAcc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAvalaraAccountIdTaxCategoriesRequest struct {
+type HasManyApiGETAvalaraAccountIdTaxCategoriesRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	avalaraAccountId string
 }
 
-func (r ApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdTaxCategoriesExecute(r)
 }
 
@@ -2415,10 +2765,10 @@ Retrieve the tax categories associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return ApiGETAvalaraAccountIdTaxCategoriesRequest
+ @return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdTaxCategoriesRequest {
-	return ApiGETAvalaraAccountIdTaxCategoriesRequest{
+func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdTaxCategoriesRequest {
+	return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -2426,7 +2776,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r ApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2490,13 +2840,13 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r ApiGETAval
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBingGeocoderIdAddressesRequest struct {
+type HasManyApiGETBingGeocoderIdAddressesRequest struct {
 	ctx            context.Context
 	ApiService     HasManyApi
 	bingGeocoderId string
 }
 
-func (r ApiGETBingGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBingGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBingGeocoderIdAddressesExecute(r)
 }
 
@@ -2507,10 +2857,10 @@ Retrieve the addresses associated to the bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return ApiGETBingGeocoderIdAddressesRequest
+ @return HasManyApiGETBingGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAddressesRequest {
-	return ApiGETBingGeocoderIdAddressesRequest{
+func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAddressesRequest {
+	return HasManyApiGETBingGeocoderIdAddressesRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -2518,7 +2868,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bing
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r ApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2582,13 +2932,13 @@ func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r ApiGETBingGeocod
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBingGeocoderIdAttachmentsRequest struct {
+type HasManyApiGETBingGeocoderIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     HasManyApi
 	bingGeocoderId string
 }
 
-func (r ApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBingGeocoderIdAttachmentsExecute(r)
 }
 
@@ -2599,10 +2949,10 @@ Retrieve the attachments associated to the bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return ApiGETBingGeocoderIdAttachmentsRequest
+ @return HasManyApiGETBingGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAttachmentsRequest {
-	return ApiGETBingGeocoderIdAttachmentsRequest{
+func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAttachmentsRequest {
+	return HasManyApiGETBingGeocoderIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -2610,7 +2960,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bi
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r ApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2674,13 +3024,13 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r ApiGETBingGeoc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
+type HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
 	ctx                context.Context
 	ApiService         HasManyApi
 	braintreeGatewayId string
 }
 
-func (r ApiGETBraintreeGatewayIdBraintreePaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreeGatewayIdBraintreePaymentsExecute(r)
 }
 
@@ -2691,10 +3041,10 @@ Retrieve the braintree payments associated to the braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiGETBraintreeGatewayIdBraintreePaymentsRequest
+ @return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest
 */
-func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewayIdBraintreePaymentsRequest {
-	return ApiGETBraintreeGatewayIdBraintreePaymentsRequest{
+func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest {
+	return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -2702,7 +3052,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.C
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r ApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2766,13 +3116,13 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest struct {
 	ctx                context.Context
 	ApiService         HasManyApi
 	braintreeGatewayId string
 }
 
-func (r ApiGETBraintreeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreeGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -2783,10 +3133,10 @@ Retrieve the payment methods associated to the braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiGETBraintreeGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewayIdPaymentMethodsRequest {
-	return ApiGETBraintreeGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -2794,7 +3144,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r ApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2858,13 +3208,13 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r ApiGETB
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdAttachmentsRequest struct {
+type HasManyApiGETBundleIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdAttachmentsExecute(r)
 }
 
@@ -2875,10 +3225,10 @@ Retrieve the attachments associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdAttachmentsRequest
+ @return HasManyApiGETBundleIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) ApiGETBundleIdAttachmentsRequest {
-	return ApiGETBundleIdAttachmentsRequest{
+func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) HasManyApiGETBundleIdAttachmentsRequest {
+	return HasManyApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -2886,7 +3236,7 @@ func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r ApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2950,13 +3300,13 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r ApiGETBundleIdAttach
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdSkusRequest struct {
+type HasManyApiGETBundleIdSkusRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdSkusExecute(r)
 }
 
@@ -2967,10 +3317,10 @@ Retrieve the skus associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdSkusRequest
+ @return HasManyApiGETBundleIdSkusRequest
 */
-func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId string) ApiGETBundleIdSkusRequest {
-	return ApiGETBundleIdSkusRequest{
+func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId string) HasManyApiGETBundleIdSkusRequest {
+	return HasManyApiGETBundleIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -2978,7 +3328,7 @@ func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId string
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3042,13 +3392,13 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdRefundsRequest struct {
+type HasManyApiGETCaptureIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	captureId  string
 }
 
-func (r ApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdRefundsExecute(r)
 }
 
@@ -3059,10 +3409,10 @@ Retrieve the refunds associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdRefundsRequest
+ @return HasManyApiGETCaptureIdRefundsRequest
 */
-func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) ApiGETCaptureIdRefundsRequest {
-	return ApiGETCaptureIdRefundsRequest{
+func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) HasManyApiGETCaptureIdRefundsRequest {
+	return HasManyApiGETCaptureIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -3070,7 +3420,7 @@ func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdRefundsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3134,13 +3484,13 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r ApiGETCaptureIdRefundsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCarrierAccountIdAttachmentsRequest struct {
+type HasManyApiGETCarrierAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	carrierAccountId string
 }
 
-func (r ApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCarrierAccountIdAttachmentsExecute(r)
 }
 
@@ -3151,10 +3501,10 @@ Retrieve the attachments associated to the carrier account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param carrierAccountId The resource's id
- @return ApiGETCarrierAccountIdAttachmentsRequest
+ @return HasManyApiGETCarrierAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdAttachmentsRequest {
-	return ApiGETCarrierAccountIdAttachmentsRequest{
+func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) HasManyApiGETCarrierAccountIdAttachmentsRequest {
+	return HasManyApiGETCarrierAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
@@ -3162,7 +3512,7 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r ApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3226,13 +3576,13 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r ApiGETCarrie
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
+type HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
 	ctx                  context.Context
 	ApiService           HasManyApi
 	checkoutComGatewayId string
 }
 
-func (r ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r)
 }
 
@@ -3243,10 +3593,10 @@ Retrieve the checkout com payments associated to the checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
+ @return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 */
-func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
-	return ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
+func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
+	return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -3254,7 +3604,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx conte
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3318,13 +3668,13 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest struct {
 	ctx                  context.Context
 	ApiService           HasManyApi
 	checkoutComGatewayId string
 }
 
-func (r ApiGETCheckoutComGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -3335,10 +3685,10 @@ Retrieve the payment methods associated to the checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return ApiGETCheckoutComGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewayIdPaymentMethodsRequest {
-	return ApiGETCheckoutComGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -3346,7 +3696,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r ApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3410,13 +3760,13 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
+type HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
 	ctx                        context.Context
 	ApiService                 HasManyApi
 	couponCodesPromotionRuleId string
 }
 
-func (r ApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponCodesPromotionRuleIdCouponsExecute(r)
 }
 
@@ -3427,10 +3777,10 @@ Retrieve the coupons associated to the coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return ApiGETCouponCodesPromotionRuleIdCouponsRequest
+ @return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
-func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRuleIdCouponsRequest {
-	return ApiGETCouponCodesPromotionRuleIdCouponsRequest{
+func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest {
+	return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -3438,7 +3788,7 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3502,13 +3852,13 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponRecipientIdAttachmentsRequest struct {
+type HasManyApiGETCouponRecipientIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        HasManyApi
 	couponRecipientId string
 }
 
-func (r ApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponRecipientIdAttachmentsExecute(r)
 }
 
@@ -3519,10 +3869,10 @@ Retrieve the attachments associated to the coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiGETCouponRecipientIdAttachmentsRequest
+ @return HasManyApiGETCouponRecipientIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdAttachmentsRequest {
-	return ApiGETCouponRecipientIdAttachmentsRequest{
+func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) HasManyApiGETCouponRecipientIdAttachmentsRequest {
+	return HasManyApiGETCouponRecipientIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -3530,7 +3880,7 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r ApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3594,13 +3944,105 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r ApiGETCoupo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupIdAttachmentsRequest struct {
+type HasManyApiGETCustomerAddressIdEventsRequest struct {
+	ctx               context.Context
+	ApiService        HasManyApi
+	customerAddressId string
+}
+
+func (r HasManyApiGETCustomerAddressIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerAddressIdEventsExecute(r)
+}
+
+/*
+GETCustomerAddressIdEvents Retrieve the events associated to the customer address
+
+Retrieve the events associated to the customer address
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param customerAddressId The resource's id
+ @return HasManyApiGETCustomerAddressIdEventsRequest
+*/
+func (a *HasManyApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) HasManyApiGETCustomerAddressIdEventsRequest {
+	return HasManyApiGETCustomerAddressIdEventsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		customerAddressId: customerAddressId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCustomerAddressIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerAddressIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerGroupIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdAttachmentsExecute(r)
 }
 
@@ -3611,10 +4053,10 @@ Retrieve the attachments associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupIdAttachmentsRequest
+ @return HasManyApiGETCustomerGroupIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdAttachmentsRequest {
-	return ApiGETCustomerGroupIdAttachmentsRequest{
+func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdAttachmentsRequest {
+	return HasManyApiGETCustomerGroupIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -3622,7 +4064,7 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, c
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r ApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3686,13 +4128,13 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r ApiGETCustome
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupIdCustomersRequest struct {
+type HasManyApiGETCustomerGroupIdCustomersRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdCustomersExecute(r)
 }
 
@@ -3703,10 +4145,10 @@ Retrieve the customers associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupIdCustomersRequest
+ @return HasManyApiGETCustomerGroupIdCustomersRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdCustomersRequest {
-	return ApiGETCustomerGroupIdCustomersRequest{
+func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdCustomersRequest {
+	return HasManyApiGETCustomerGroupIdCustomersRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -3714,7 +4156,7 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, cus
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r ApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3778,13 +4220,13 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r ApiGETCustomerG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupIdMarketsRequest struct {
+type HasManyApiGETCustomerGroupIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdMarketsExecute(r)
 }
 
@@ -3795,10 +4237,10 @@ Retrieve the markets associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupIdMarketsRequest
+ @return HasManyApiGETCustomerGroupIdMarketsRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdMarketsRequest {
-	return ApiGETCustomerGroupIdMarketsRequest{
+func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdMarketsRequest {
+	return HasManyApiGETCustomerGroupIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -3806,7 +4248,7 @@ func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, custo
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r ApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3870,13 +4312,13 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r ApiGETCustomerGro
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdAttachmentsRequest struct {
+type HasManyApiGETCustomerIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdAttachmentsExecute(r)
 }
 
@@ -3887,10 +4329,10 @@ Retrieve the attachments associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdAttachmentsRequest
+ @return HasManyApiGETCustomerIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) ApiGETCustomerIdAttachmentsRequest {
-	return ApiGETCustomerIdAttachmentsRequest{
+func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) HasManyApiGETCustomerIdAttachmentsRequest {
+	return HasManyApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -3898,7 +4340,7 @@ func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, custom
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r ApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3962,13 +4404,13 @@ func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r ApiGETCustomerIdAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerAddressesRequest struct {
+type HasManyApiGETCustomerIdCustomerAddressesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerAddressesExecute(r)
 }
 
@@ -3979,10 +4421,10 @@ Retrieve the customer addresses associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerAddressesRequest
+ @return HasManyApiGETCustomerIdCustomerAddressesRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) ApiGETCustomerIdCustomerAddressesRequest {
-	return ApiGETCustomerIdCustomerAddressesRequest{
+func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerAddressesRequest {
+	return HasManyApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -3990,7 +4432,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r ApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4054,13 +4496,13 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r ApiGETCustom
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerPaymentSourcesRequest struct {
+type HasManyApiGETCustomerIdCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerPaymentSourcesExecute(r)
 }
 
@@ -4071,10 +4513,10 @@ Retrieve the customer payment sources associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerPaymentSourcesRequest
+ @return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) ApiGETCustomerIdCustomerPaymentSourcesRequest {
-	return ApiGETCustomerIdCustomerPaymentSourcesRequest{
+func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerPaymentSourcesRequest {
+	return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -4082,7 +4524,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r ApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasManyApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4146,13 +4588,13 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r ApiGETC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerSubscriptionsRequest struct {
+type HasManyApiGETCustomerIdCustomerSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerSubscriptionsExecute(r)
 }
 
@@ -4163,10 +4605,10 @@ Retrieve the customer subscriptions associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerSubscriptionsRequest
+ @return HasManyApiGETCustomerIdCustomerSubscriptionsRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdCustomerSubscriptionsRequest {
-	return ApiGETCustomerIdCustomerSubscriptionsRequest{
+func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerSubscriptionsRequest {
+	return HasManyApiGETCustomerIdCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -4174,7 +4616,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r ApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4238,13 +4680,105 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r ApiGETCu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdOrderSubscriptionsRequest struct {
+type HasManyApiGETCustomerIdEventsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerIdEventsExecute(r)
+}
+
+/*
+GETCustomerIdEvents Retrieve the events associated to the customer
+
+Retrieve the events associated to the customer
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param customerId The resource's id
+ @return HasManyApiGETCustomerIdEventsRequest
+*/
+func (a *HasManyApiService) GETCustomerIdEvents(ctx context.Context, customerId string) HasManyApiGETCustomerIdEventsRequest {
+	return HasManyApiGETCustomerIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		customerId: customerId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customers/{customerId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerIdOrderSubscriptionsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	customerId string
+}
+
+func (r HasManyApiGETCustomerIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdOrderSubscriptionsExecute(r)
 }
 
@@ -4255,10 +4789,10 @@ Retrieve the order subscriptions associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdOrderSubscriptionsRequest
+ @return HasManyApiGETCustomerIdOrderSubscriptionsRequest
 */
-func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdOrderSubscriptionsRequest {
-	return ApiGETCustomerIdOrderSubscriptionsRequest{
+func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrderSubscriptionsRequest {
+	return HasManyApiGETCustomerIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -4266,7 +4800,7 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r ApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4330,13 +4864,13 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r ApiGETCusto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdOrdersRequest struct {
+type HasManyApiGETCustomerIdOrdersRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdOrdersExecute(r)
 }
 
@@ -4347,10 +4881,10 @@ Retrieve the orders associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdOrdersRequest
+ @return HasManyApiGETCustomerIdOrdersRequest
 */
-func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId string) ApiGETCustomerIdOrdersRequest {
-	return ApiGETCustomerIdOrdersRequest{
+func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrdersRequest {
+	return HasManyApiGETCustomerIdOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -4358,7 +4892,7 @@ func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdOrdersExecute(r ApiGETCustomerIdOrdersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerIdOrdersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4422,13 +4956,13 @@ func (a *HasManyApiService) GETCustomerIdOrdersExecute(r ApiGETCustomerIdOrdersR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdReturnsRequest struct {
+type HasManyApiGETCustomerIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdReturnsExecute(r)
 }
 
@@ -4439,10 +4973,10 @@ Retrieve the returns associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdReturnsRequest
+ @return HasManyApiGETCustomerIdReturnsRequest
 */
-func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ApiGETCustomerIdReturnsRequest {
-	return ApiGETCustomerIdReturnsRequest{
+func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId string) HasManyApiGETCustomerIdReturnsRequest {
+	return HasManyApiGETCustomerIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -4450,7 +4984,7 @@ func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturnsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerIdReturnsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4514,13 +5048,197 @@ func (a *HasManyApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
+type HasManyApiGETCustomerPasswordResetIdEventsRequest struct {
+	ctx                     context.Context
+	ApiService              HasManyApi
+	customerPasswordResetId string
+}
+
+func (r HasManyApiGETCustomerPasswordResetIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerPasswordResetIdEventsExecute(r)
+}
+
+/*
+GETCustomerPasswordResetIdEvents Retrieve the events associated to the customer password reset
+
+Retrieve the events associated to the customer password reset
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param customerPasswordResetId The resource's id
+ @return HasManyApiGETCustomerPasswordResetIdEventsRequest
+*/
+func (a *HasManyApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) HasManyApiGETCustomerPasswordResetIdEventsRequest {
+	return HasManyApiGETCustomerPasswordResetIdEventsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		customerPasswordResetId: customerPasswordResetId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerPasswordResetIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETCustomerSubscriptionIdEventsRequest struct {
+	ctx                    context.Context
+	ApiService             HasManyApi
+	customerSubscriptionId string
+}
+
+func (r HasManyApiGETCustomerSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETCustomerSubscriptionIdEventsExecute(r)
+}
+
+/*
+GETCustomerSubscriptionIdEvents Retrieve the events associated to the customer subscription
+
+Retrieve the events associated to the customer subscription
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param customerSubscriptionId The resource's id
+ @return HasManyApiGETCustomerSubscriptionIdEventsRequest
+*/
+func (a *HasManyApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) HasManyApiGETCustomerSubscriptionIdEventsRequest {
+	return HasManyApiGETCustomerSubscriptionIdEventsRequest{
+		ApiService:             a,
+		ctx:                    ctx,
+		customerSubscriptionId: customerSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerSubscriptionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         HasManyApi
 	deliveryLeadTimeId string
 }
 
-func (r ApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimeIdAttachmentsExecute(r)
 }
 
@@ -4531,10 +5249,10 @@ Retrieve the attachments associated to the delivery lead time
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deliveryLeadTimeId The resource's id
- @return ApiGETDeliveryLeadTimeIdAttachmentsRequest
+ @return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdAttachmentsRequest {
-	return ApiGETDeliveryLeadTimeIdAttachmentsRequest{
+func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest {
+	return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
@@ -4542,7 +5260,7 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r ApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4606,13 +5324,197 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r ApiGETDeli
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalGatewayIdExternalPaymentsRequest struct {
+type HasManyApiGETEventIdLastEventCallbacksRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	eventId    string
+}
+
+func (r HasManyApiGETEventIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETEventIdLastEventCallbacksExecute(r)
+}
+
+/*
+GETEventIdLastEventCallbacks Retrieve the last event callbacks associated to the event
+
+Retrieve the last event callbacks associated to the event
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param eventId The resource's id
+ @return HasManyApiGETEventIdLastEventCallbacksRequest
+*/
+func (a *HasManyApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId string) HasManyApiGETEventIdLastEventCallbacksRequest {
+	return HasManyApiGETEventIdLastEventCallbacksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		eventId:    eventId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETEventIdLastEventCallbacksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETEventIdLastEventCallbacks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/events/{eventId}/last_event_callbacks"
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETEventIdWebhooksRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	eventId    string
+}
+
+func (r HasManyApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETEventIdWebhooksExecute(r)
+}
+
+/*
+GETEventIdWebhooks Retrieve the webhooks associated to the event
+
+Retrieve the webhooks associated to the event
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param eventId The resource's id
+ @return HasManyApiGETEventIdWebhooksRequest
+*/
+func (a *HasManyApiService) GETEventIdWebhooks(ctx context.Context, eventId string) HasManyApiGETEventIdWebhooksRequest {
+	return HasManyApiGETEventIdWebhooksRequest{
+		ApiService: a,
+		ctx:        ctx,
+		eventId:    eventId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebhooksRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETEventIdWebhooks")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/events/{eventId}/webhooks"
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExternalGatewayIdExternalPaymentsRequest struct {
 	ctx               context.Context
 	ApiService        HasManyApi
 	externalGatewayId string
 }
 
-func (r ApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalGatewayIdExternalPaymentsExecute(r)
 }
 
@@ -4623,10 +5525,10 @@ Retrieve the external payments associated to the external gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalGatewayId The resource's id
- @return ApiGETExternalGatewayIdExternalPaymentsRequest
+ @return HasManyApiGETExternalGatewayIdExternalPaymentsRequest
 */
-func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdExternalPaymentsRequest {
-	return ApiGETExternalGatewayIdExternalPaymentsRequest{
+func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdExternalPaymentsRequest {
+	return HasManyApiGETExternalGatewayIdExternalPaymentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
@@ -4634,7 +5536,7 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r ApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasManyApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4698,13 +5600,13 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETExternalGatewayIdPaymentMethodsRequest struct {
 	ctx               context.Context
 	ApiService        HasManyApi
 	externalGatewayId string
 }
 
-func (r ApiGETExternalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -4715,10 +5617,10 @@ Retrieve the payment methods associated to the external gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalGatewayId The resource's id
- @return ApiGETExternalGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETExternalGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdPaymentMethodsRequest {
-	return ApiGETExternalGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETExternalGatewayIdPaymentMethodsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
@@ -4726,7 +5628,7 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r ApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4790,13 +5692,13 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r ApiGETEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdAttachmentsRequest struct {
+type HasManyApiGETExternalPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdAttachmentsExecute(r)
 }
 
@@ -4807,10 +5709,10 @@ Retrieve the attachments associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdAttachmentsRequest
+ @return HasManyApiGETExternalPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdAttachmentsRequest {
-	return ApiGETExternalPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) HasManyApiGETExternalPromotionIdAttachmentsRequest {
+	return HasManyApiGETExternalPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -4818,7 +5720,7 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r ApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4882,13 +5784,13 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r ApiGETExt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
+type HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              HasManyApi
 	externalTaxCalculatorId string
 }
 
-func (r ApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -4899,10 +5801,10 @@ Retrieve the attachments associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiGETExternalTaxCalculatorIdAttachmentsRequest
+ @return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdAttachmentsRequest {
-	return ApiGETExternalTaxCalculatorIdAttachmentsRequest{
+func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest {
+	return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -4910,7 +5812,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r ApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4974,13 +5876,13 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorIdMarketsRequest struct {
+type HasManyApiGETExternalTaxCalculatorIdMarketsRequest struct {
 	ctx                     context.Context
 	ApiService              HasManyApi
 	externalTaxCalculatorId string
 }
 
-func (r ApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -4991,10 +5893,10 @@ Retrieve the markets associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiGETExternalTaxCalculatorIdMarketsRequest
+ @return HasManyApiGETExternalTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdMarketsRequest {
-	return ApiGETExternalTaxCalculatorIdMarketsRequest{
+func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdMarketsRequest {
+	return HasManyApiGETExternalTaxCalculatorIdMarketsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -5002,7 +5904,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r ApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5066,13 +5968,13 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r ApiGETExt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
+type HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx                     context.Context
 	ApiService              HasManyApi
 	externalTaxCalculatorId string
 }
 
-func (r ApiGETExternalTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -5083,10 +5985,10 @@ Retrieve the tax categories associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiGETExternalTaxCalculatorIdTaxCategoriesRequest
+ @return HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
-	return ApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
+func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
+	return HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -5094,7 +5996,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r ApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5158,13 +6060,13 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdAttachmentsRequest struct {
+type HasManyApiGETFixedAmountPromotionIdAttachmentsRequest struct {
 	ctx                    context.Context
 	ApiService             HasManyApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdAttachmentsExecute(r)
 }
 
@@ -5175,10 +6077,10 @@ Retrieve the attachments associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdAttachmentsRequest
+ @return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdAttachmentsRequest {
-	return ApiGETFixedAmountPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) HasManyApiGETFixedAmountPromotionIdAttachmentsRequest {
+	return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -5186,7 +6088,7 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r ApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasManyApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5250,13 +6152,13 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdAttachmentsRequest struct {
+type HasManyApiGETFixedPricePromotionIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdAttachmentsExecute(r)
 }
 
@@ -5267,10 +6169,10 @@ Retrieve the attachments associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdAttachmentsRequest
+ @return HasManyApiGETFixedPricePromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdAttachmentsRequest {
-	return ApiGETFixedPricePromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdAttachmentsRequest {
+	return HasManyApiGETFixedPricePromotionIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5278,7 +6180,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r ApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasManyApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5342,13 +6244,13 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r ApiGETF
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkusRequest struct {
+type HasManyApiGETFixedPricePromotionIdSkusRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFixedPricePromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkusExecute(r)
 }
 
@@ -5359,10 +6261,10 @@ Retrieve the skus associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkusRequest
+ @return HasManyApiGETFixedPricePromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkusRequest {
-	return ApiGETFixedPricePromotionIdSkusRequest{
+func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdSkusRequest {
+	return HasManyApiGETFixedPricePromotionIdSkusRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5370,7 +6272,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fi
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5434,13 +6336,13 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPri
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdAttachmentsRequest struct {
+type HasManyApiGETFreeGiftPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdAttachmentsExecute(r)
 }
 
@@ -5451,10 +6353,10 @@ Retrieve the attachments associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdAttachmentsRequest
+ @return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdAttachmentsRequest {
-	return ApiGETFreeGiftPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdAttachmentsRequest {
+	return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -5462,7 +6364,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r ApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5526,13 +6428,13 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r ApiGETFre
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkusRequest struct {
+type HasManyApiGETFreeGiftPromotionIdSkusRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFreeGiftPromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkusExecute(r)
 }
 
@@ -5543,10 +6445,10 @@ Retrieve the skus associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkusRequest
+ @return HasManyApiGETFreeGiftPromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkusRequest {
-	return ApiGETFreeGiftPromotionIdSkusRequest{
+func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdSkusRequest {
+	return HasManyApiGETFreeGiftPromotionIdSkusRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -5554,7 +6456,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, free
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5618,13 +6520,13 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdAttachmentsRequest struct {
+type HasManyApiGETFreeShippingPromotionIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              HasManyApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdAttachmentsExecute(r)
 }
 
@@ -5635,10 +6537,10 @@ Retrieve the attachments associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdAttachmentsRequest
+ @return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdAttachmentsRequest {
-	return ApiGETFreeShippingPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) HasManyApiGETFreeShippingPromotionIdAttachmentsRequest {
+	return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -5646,7 +6548,7 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r ApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasManyApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5710,13 +6612,13 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGeocoderIdAddressesRequest struct {
+type HasManyApiGETGeocoderIdAddressesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	geocoderId string
 }
 
-func (r ApiGETGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGeocoderIdAddressesExecute(r)
 }
 
@@ -5727,10 +6629,10 @@ Retrieve the addresses associated to the geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param geocoderId The resource's id
- @return ApiGETGeocoderIdAddressesRequest
+ @return HasManyApiGETGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) ApiGETGeocoderIdAddressesRequest {
-	return ApiGETGeocoderIdAddressesRequest{
+func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAddressesRequest {
+	return HasManyApiGETGeocoderIdAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		geocoderId: geocoderId,
@@ -5738,7 +6640,7 @@ func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoder
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r ApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5802,13 +6704,13 @@ func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r ApiGETGeocoderIdAddr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGeocoderIdAttachmentsRequest struct {
+type HasManyApiGETGeocoderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	geocoderId string
 }
 
-func (r ApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGeocoderIdAttachmentsExecute(r)
 }
 
@@ -5819,10 +6721,10 @@ Retrieve the attachments associated to the geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param geocoderId The resource's id
- @return ApiGETGeocoderIdAttachmentsRequest
+ @return HasManyApiGETGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) ApiGETGeocoderIdAttachmentsRequest {
-	return ApiGETGeocoderIdAttachmentsRequest{
+func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAttachmentsRequest {
+	return HasManyApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		geocoderId: geocoderId,
@@ -5830,7 +6732,7 @@ func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocod
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r ApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5894,13 +6796,13 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r ApiGETGeocoderIdAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardIdAttachmentsRequest struct {
+type HasManyApiGETGiftCardIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	giftCardId string
 }
 
-func (r ApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdAttachmentsExecute(r)
 }
 
@@ -5911,10 +6813,10 @@ Retrieve the attachments associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardIdAttachmentsRequest
+ @return HasManyApiGETGiftCardIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) ApiGETGiftCardIdAttachmentsRequest {
-	return ApiGETGiftCardIdAttachmentsRequest{
+func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdAttachmentsRequest {
+	return HasManyApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -5922,7 +6824,7 @@ func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCa
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r ApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5986,13 +6888,105 @@ func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r ApiGETGiftCardIdAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardRecipientIdAttachmentsRequest struct {
+type HasManyApiGETGiftCardIdEventsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	giftCardId string
+}
+
+func (r HasManyApiGETGiftCardIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETGiftCardIdEventsExecute(r)
+}
+
+/*
+GETGiftCardIdEvents Retrieve the events associated to the gift card
+
+Retrieve the events associated to the gift card
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param giftCardId The resource's id
+ @return HasManyApiGETGiftCardIdEventsRequest
+*/
+func (a *HasManyApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdEventsRequest {
+	return HasManyApiGETGiftCardIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		giftCardId: giftCardId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/gift_cards/{giftCardId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETGiftCardRecipientIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	giftCardRecipientId string
 }
 
-func (r ApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientIdAttachmentsExecute(r)
 }
 
@@ -6003,10 +6997,10 @@ Retrieve the attachments associated to the gift card recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardRecipientId The resource's id
- @return ApiGETGiftCardRecipientIdAttachmentsRequest
+ @return HasManyApiGETGiftCardRecipientIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdAttachmentsRequest {
-	return ApiGETGiftCardRecipientIdAttachmentsRequest{
+func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) HasManyApiGETGiftCardRecipientIdAttachmentsRequest {
+	return HasManyApiGETGiftCardRecipientIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
@@ -6014,7 +7008,7 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r ApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6078,13 +7072,13 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r ApiGETGif
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGoogleGeocoderIdAddressesRequest struct {
+type HasManyApiGETGoogleGeocoderIdAddressesRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	googleGeocoderId string
 }
 
-func (r ApiGETGoogleGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGoogleGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGoogleGeocoderIdAddressesExecute(r)
 }
 
@@ -6095,10 +7089,10 @@ Retrieve the addresses associated to the google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return ApiGETGoogleGeocoderIdAddressesRequest
+ @return HasManyApiGETGoogleGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAddressesRequest {
-	return ApiGETGoogleGeocoderIdAddressesRequest{
+func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAddressesRequest {
+	return HasManyApiGETGoogleGeocoderIdAddressesRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -6106,7 +7100,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, go
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r ApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6170,13 +7164,13 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r ApiGETGoogleGe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGoogleGeocoderIdAttachmentsRequest struct {
+type HasManyApiGETGoogleGeocoderIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	googleGeocoderId string
 }
 
-func (r ApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGoogleGeocoderIdAttachmentsExecute(r)
 }
 
@@ -6187,10 +7181,10 @@ Retrieve the attachments associated to the google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return ApiGETGoogleGeocoderIdAttachmentsRequest
+ @return HasManyApiGETGoogleGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAttachmentsRequest {
-	return ApiGETGoogleGeocoderIdAttachmentsRequest{
+func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAttachmentsRequest {
+	return HasManyApiGETGoogleGeocoderIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -6198,7 +7192,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r ApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6262,13 +7256,197 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r ApiGETGoogle
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelIdAttachmentsRequest struct {
+type HasManyApiGETImportIdEventsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	importId   string
+}
+
+func (r HasManyApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETImportIdEventsExecute(r)
+}
+
+/*
+GETImportIdEvents Retrieve the events associated to the import
+
+Retrieve the events associated to the import
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param importId The resource's id
+ @return HasManyApiGETImportIdEventsRequest
+*/
+func (a *HasManyApiService) GETImportIdEvents(ctx context.Context, importId string) HasManyApiGETImportIdEventsRequest {
+	return HasManyApiGETImportIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		importId:   importId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETImportIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/imports/{importId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterToString(r.importId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETInStockSubscriptionIdEventsRequest struct {
+	ctx                   context.Context
+	ApiService            HasManyApi
+	inStockSubscriptionId string
+}
+
+func (r HasManyApiGETInStockSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETInStockSubscriptionIdEventsExecute(r)
+}
+
+/*
+GETInStockSubscriptionIdEvents Retrieve the events associated to the in stock subscription
+
+Retrieve the events associated to the in stock subscription
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param inStockSubscriptionId The resource's id
+ @return HasManyApiGETInStockSubscriptionIdEventsRequest
+*/
+func (a *HasManyApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) HasManyApiGETInStockSubscriptionIdEventsRequest {
+	return HasManyApiGETInStockSubscriptionIdEventsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		inStockSubscriptionId: inStockSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInStockSubscriptionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETInventoryModelIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	inventoryModelId string
 }
 
-func (r ApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelIdAttachmentsExecute(r)
 }
 
@@ -6279,10 +7457,10 @@ Retrieve the attachments associated to the inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiGETInventoryModelIdAttachmentsRequest
+ @return HasManyApiGETInventoryModelIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdAttachmentsRequest {
-	return ApiGETInventoryModelIdAttachmentsRequest{
+func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdAttachmentsRequest {
+	return HasManyApiGETInventoryModelIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -6290,7 +7468,7 @@ func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r ApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6354,13 +7532,13 @@ func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r ApiGETInvent
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
+type HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	inventoryModelId string
 }
 
-func (r ApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelIdInventoryReturnLocationsExecute(r)
 }
 
@@ -6371,10 +7549,10 @@ Retrieve the inventory return locations associated to the inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiGETInventoryModelIdInventoryReturnLocationsRequest
+ @return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryReturnLocationsRequest {
-	return ApiGETInventoryModelIdInventoryReturnLocationsRequest{
+func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest {
+	return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -6382,7 +7560,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r ApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6446,13 +7624,13 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelIdInventoryStockLocationsRequest struct {
+type HasManyApiGETInventoryModelIdInventoryStockLocationsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	inventoryModelId string
 }
 
-func (r ApiGETInventoryModelIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETInventoryModelIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelIdInventoryStockLocationsExecute(r)
 }
 
@@ -6463,10 +7641,10 @@ Retrieve the inventory stock locations associated to the inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiGETInventoryModelIdInventoryStockLocationsRequest
+ @return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdInventoryStockLocationsRequest {
-	return ApiGETInventoryModelIdInventoryStockLocationsRequest{
+func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryStockLocationsRequest {
+	return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -6474,7 +7652,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx conte
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r ApiGETInventoryModelIdInventoryStockLocationsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r HasManyApiGETInventoryModelIdInventoryStockLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6538,13 +7716,13 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
+type HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	klarnaGatewayId string
 }
 
-func (r ApiGETKlarnaGatewayIdKlarnaPaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaGatewayIdKlarnaPaymentsExecute(r)
 }
 
@@ -6555,10 +7733,10 @@ Retrieve the klarna payments associated to the klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return ApiGETKlarnaGatewayIdKlarnaPaymentsRequest
+ @return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest
 */
-func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
-	return ApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
+func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
+	return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -6566,7 +7744,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r ApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6630,13 +7808,13 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r ApiGETKlar
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	klarnaGatewayId string
 }
 
-func (r ApiGETKlarnaGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -6647,10 +7825,10 @@ Retrieve the payment methods associated to the klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return ApiGETKlarnaGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewayIdPaymentMethodsRequest {
-	return ApiGETKlarnaGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -6658,7 +7836,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r ApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6722,13 +7900,13 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r ApiGETKlar
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdLineItemOptionsRequest struct {
+type HasManyApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdLineItemOptionsExecute(r)
 }
 
@@ -6739,10 +7917,10 @@ Retrieve the line item options associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdLineItemOptionsRequest
+ @return HasManyApiGETLineItemIdLineItemOptionsRequest
 */
-func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) ApiGETLineItemIdLineItemOptionsRequest {
-	return ApiGETLineItemIdLineItemOptionsRequest{
+func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdLineItemOptionsRequest {
+	return HasManyApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -6750,7 +7928,7 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, li
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r ApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6814,13 +7992,13 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r ApiGETLineItem
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdStockLineItemsRequest struct {
+type HasManyApiGETLineItemIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdStockLineItemsExecute(r)
 }
 
@@ -6831,10 +8009,10 @@ Retrieve the stock line items associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdStockLineItemsRequest
+ @return HasManyApiGETLineItemIdStockLineItemsRequest
 */
-func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) ApiGETLineItemIdStockLineItemsRequest {
-	return ApiGETLineItemIdStockLineItemsRequest{
+func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockLineItemsRequest {
+	return HasManyApiGETLineItemIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -6842,7 +8020,7 @@ func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lin
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r ApiGETLineItemIdStockLineItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLineItemIdStockLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6906,13 +8084,13 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r ApiGETLineItemI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdStockTransfersRequest struct {
+type HasManyApiGETLineItemIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdStockTransfersExecute(r)
 }
 
@@ -6923,10 +8101,10 @@ Retrieve the stock transfers associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdStockTransfersRequest
+ @return HasManyApiGETLineItemIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) ApiGETLineItemIdStockTransfersRequest {
-	return ApiGETLineItemIdStockTransfersRequest{
+func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockTransfersRequest {
+	return HasManyApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -6934,7 +8112,7 @@ func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lin
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r ApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6998,13 +8176,13 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r ApiGETLineItemI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETManualGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	manualGatewayId string
 }
 
-func (r ApiGETManualGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETManualGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -7015,10 +8193,10 @@ Retrieve the payment methods associated to the manual gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualGatewayId The resource's id
- @return ApiGETManualGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETManualGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) ApiGETManualGatewayIdPaymentMethodsRequest {
-	return ApiGETManualGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) HasManyApiGETManualGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETManualGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		manualGatewayId: manualGatewayId,
@@ -7026,7 +8204,7 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r ApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7090,13 +8268,13 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r ApiGETManu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdAttachmentsRequest struct {
+type HasManyApiGETManualTaxCalculatorIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -7107,10 +8285,10 @@ Retrieve the attachments associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdAttachmentsRequest
+ @return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdAttachmentsRequest {
-	return ApiGETManualTaxCalculatorIdAttachmentsRequest{
+func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdAttachmentsRequest {
+	return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -7118,7 +8296,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r ApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasManyApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7182,13 +8360,13 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r ApiGETM
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdMarketsRequest struct {
+type HasManyApiGETManualTaxCalculatorIdMarketsRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -7199,10 +8377,10 @@ Retrieve the markets associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdMarketsRequest
+ @return HasManyApiGETManualTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdMarketsRequest {
-	return ApiGETManualTaxCalculatorIdMarketsRequest{
+func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdMarketsRequest {
+	return HasManyApiGETManualTaxCalculatorIdMarketsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -7210,7 +8388,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r ApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7274,13 +8452,13 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r ApiGETManua
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
+type HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -7291,10 +8469,10 @@ Retrieve the tax categories associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdTaxCategoriesRequest
+ @return HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxCategoriesRequest {
-	return ApiGETManualTaxCalculatorIdTaxCategoriesRequest{
+func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest {
+	return HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -7302,7 +8480,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r ApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7366,13 +8544,13 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdTaxRulesRequest struct {
+type HasManyApiGETManualTaxCalculatorIdTaxRulesRequest struct {
 	ctx                   context.Context
 	ApiService            HasManyApi
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdTaxRulesExecute(r)
 }
 
@@ -7383,10 +8561,10 @@ Retrieve the tax rules associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdTaxRulesRequest
+ @return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxRulesRequest {
-	return ApiGETManualTaxCalculatorIdTaxRulesRequest{
+func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxRulesRequest {
+	return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -7394,7 +8572,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7458,13 +8636,13 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdAttachmentsRequest struct {
+type HasManyApiGETMarketIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdAttachmentsExecute(r)
 }
 
@@ -7475,10 +8653,10 @@ Retrieve the attachments associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdAttachmentsRequest
+ @return HasManyApiGETMarketIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId string) ApiGETMarketIdAttachmentsRequest {
-	return ApiGETMarketIdAttachmentsRequest{
+func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId string) HasManyApiGETMarketIdAttachmentsRequest {
+	return HasManyApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -7486,7 +8664,7 @@ func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r ApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7550,13 +8728,13 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r ApiGETMarketIdAttach
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMerchantIdAttachmentsRequest struct {
+type HasManyApiGETMerchantIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	merchantId string
 }
 
-func (r ApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMerchantIdAttachmentsExecute(r)
 }
 
@@ -7567,10 +8745,10 @@ Retrieve the attachments associated to the merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return ApiGETMerchantIdAttachmentsRequest
+ @return HasManyApiGETMerchantIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) ApiGETMerchantIdAttachmentsRequest {
-	return ApiGETMerchantIdAttachmentsRequest{
+func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) HasManyApiGETMerchantIdAttachmentsRequest {
+	return HasManyApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -7578,7 +8756,7 @@ func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, mercha
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r ApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7642,13 +8820,105 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r ApiGETMerchantIdAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAttachmentsRequest struct {
+type HasManyApiGETOrderCopyIdEventsRequest struct {
+	ctx         context.Context
+	ApiService  HasManyApi
+	orderCopyId string
+}
+
+func (r HasManyApiGETOrderCopyIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderCopyIdEventsExecute(r)
+}
+
+/*
+GETOrderCopyIdEvents Retrieve the events associated to the order copy
+
+Retrieve the events associated to the order copy
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param orderCopyId The resource's id
+ @return HasManyApiGETOrderCopyIdEventsRequest
+*/
+func (a *HasManyApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) HasManyApiGETOrderCopyIdEventsRequest {
+	return HasManyApiGETOrderCopyIdEventsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		orderCopyId: orderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopyIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderCopyIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_copies/{orderCopyId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAttachmentsExecute(r)
 }
 
@@ -7659,10 +8929,10 @@ Retrieve the attachments associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAttachmentsRequest
+ @return HasManyApiGETOrderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId string) ApiGETOrderIdAttachmentsRequest {
-	return ApiGETOrderIdAttachmentsRequest{
+func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId string) HasManyApiGETOrderIdAttachmentsRequest {
+	return HasManyApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -7670,7 +8940,7 @@ func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r ApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7734,13 +9004,13 @@ func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r ApiGETOrderIdAttachme
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAuthorizationsRequest struct {
+type HasManyApiGETOrderIdAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAuthorizationsExecute(r)
 }
 
@@ -7751,10 +9021,10 @@ Retrieve the authorizations associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAuthorizationsRequest
+ @return HasManyApiGETOrderIdAuthorizationsRequest
 */
-func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) ApiGETOrderIdAuthorizationsRequest {
-	return ApiGETOrderIdAuthorizationsRequest{
+func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) HasManyApiGETOrderIdAuthorizationsRequest {
+	return HasManyApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -7762,7 +9032,7 @@ func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderI
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7826,13 +9096,13 @@ func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAutho
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
+type HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableCustomerPaymentSourcesExecute(r)
 }
 
@@ -7843,10 +9113,10 @@ Retrieve the available customer payment sources associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableCustomerPaymentSourcesRequest
+ @return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) ApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
-	return ApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
+func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
+	return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -7854,7 +9124,7 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r ApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7918,13 +9188,13 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableFreeBundlesRequest struct {
+type HasManyApiGETOrderIdAvailableFreeBundlesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableFreeBundlesExecute(r)
 }
 
@@ -7935,10 +9205,10 @@ Retrieve the available free bundles associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableFreeBundlesRequest
+ @return HasManyApiGETOrderIdAvailableFreeBundlesRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeBundlesRequest {
-	return ApiGETOrderIdAvailableFreeBundlesRequest{
+func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeBundlesRequest {
+	return HasManyApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -7946,7 +9216,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8010,13 +9280,13 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableFreeSkusRequest struct {
+type HasManyApiGETOrderIdAvailableFreeSkusRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableFreeSkusExecute(r)
 }
 
@@ -8027,10 +9297,10 @@ Retrieve the available free skus associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableFreeSkusRequest
+ @return HasManyApiGETOrderIdAvailableFreeSkusRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeSkusRequest {
-	return ApiGETOrderIdAvailableFreeSkusRequest{
+func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeSkusRequest {
+	return HasManyApiGETOrderIdAvailableFreeSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8038,7 +9308,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, ord
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8102,13 +9372,13 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAv
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailablePaymentMethodsRequest struct {
+type HasManyApiGETOrderIdAvailablePaymentMethodsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailablePaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailablePaymentMethodsExecute(r)
 }
 
@@ -8119,10 +9389,10 @@ Retrieve the available payment methods associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailablePaymentMethodsRequest
+ @return HasManyApiGETOrderIdAvailablePaymentMethodsRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) ApiGETOrderIdAvailablePaymentMethodsRequest {
-	return ApiGETOrderIdAvailablePaymentMethodsRequest{
+func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailablePaymentMethodsRequest {
+	return HasManyApiGETOrderIdAvailablePaymentMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8130,7 +9400,7 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r ApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8194,13 +9464,13 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r ApiGETOrd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdCapturesRequest struct {
+type HasManyApiGETOrderIdCapturesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdCapturesExecute(r)
 }
 
@@ -8211,10 +9481,10 @@ Retrieve the captures associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdCapturesRequest
+ @return HasManyApiGETOrderIdCapturesRequest
 */
-func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId string) ApiGETOrderIdCapturesRequest {
-	return ApiGETOrderIdCapturesRequest{
+func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId string) HasManyApiGETOrderIdCapturesRequest {
+	return HasManyApiGETOrderIdCapturesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8222,7 +9492,7 @@ func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId stri
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdCapturesExecute(r ApiGETOrderIdCapturesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapturesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8286,13 +9556,105 @@ func (a *HasManyApiService) GETOrderIdCapturesExecute(r ApiGETOrderIdCapturesReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdLineItemsRequest struct {
+type HasManyApiGETOrderIdEventsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdLineItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdEventsExecute(r)
+}
+
+/*
+GETOrderIdEvents Retrieve the events associated to the order
+
+Retrieve the events associated to the order
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param orderId The resource's id
+ @return HasManyApiGETOrderIdEventsRequest
+*/
+func (a *HasManyApiService) GETOrderIdEvents(ctx context.Context, orderId string) HasManyApiGETOrderIdEventsRequest {
+	return HasManyApiGETOrderIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdLineItemsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	orderId    string
+}
+
+func (r HasManyApiGETOrderIdLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdLineItemsExecute(r)
 }
 
@@ -8303,10 +9665,10 @@ Retrieve the line items associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdLineItemsRequest
+ @return HasManyApiGETOrderIdLineItemsRequest
 */
-func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId string) ApiGETOrderIdLineItemsRequest {
-	return ApiGETOrderIdLineItemsRequest{
+func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId string) HasManyApiGETOrderIdLineItemsRequest {
+	return HasManyApiGETOrderIdLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8314,7 +9676,7 @@ func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId str
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdLineItemsExecute(r ApiGETOrderIdLineItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8378,13 +9740,13 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r ApiGETOrderIdLineItemsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdOrderCopiesRequest struct {
+type HasManyApiGETOrderIdOrderCopiesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdOrderCopiesExecute(r)
 }
 
@@ -8395,10 +9757,10 @@ Retrieve the order copies associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdOrderCopiesRequest
+ @return HasManyApiGETOrderIdOrderCopiesRequest
 */
-func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) ApiGETOrderIdOrderCopiesRequest {
-	return ApiGETOrderIdOrderCopiesRequest{
+func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderCopiesRequest {
+	return HasManyApiGETOrderIdOrderCopiesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8406,7 +9768,7 @@ func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r ApiGETOrderIdOrderCopiesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8470,13 +9832,13 @@ func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r ApiGETOrderIdOrderCop
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdOrderSubscriptionsRequest struct {
+type HasManyApiGETOrderIdOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdOrderSubscriptionsExecute(r)
 }
 
@@ -8487,10 +9849,10 @@ Retrieve the order subscriptions associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdOrderSubscriptionsRequest
+ @return HasManyApiGETOrderIdOrderSubscriptionsRequest
 */
-func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) ApiGETOrderIdOrderSubscriptionsRequest {
-	return ApiGETOrderIdOrderSubscriptionsRequest{
+func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderSubscriptionsRequest {
+	return HasManyApiGETOrderIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8498,7 +9860,7 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, or
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r ApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8562,13 +9924,13 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r ApiGETOrderIdO
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdRefundsRequest struct {
+type HasManyApiGETOrderIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdRefundsExecute(r)
 }
 
@@ -8579,10 +9941,10 @@ Retrieve the refunds associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdRefundsRequest
+ @return HasManyApiGETOrderIdRefundsRequest
 */
-func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId string) ApiGETOrderIdRefundsRequest {
-	return ApiGETOrderIdRefundsRequest{
+func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId string) HasManyApiGETOrderIdRefundsRequest {
+	return HasManyApiGETOrderIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8590,7 +9952,7 @@ func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefundsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8654,13 +10016,13 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r ApiGETOrderIdRefundsReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdShipmentsRequest struct {
+type HasManyApiGETOrderIdShipmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdShipmentsExecute(r)
 }
 
@@ -8671,10 +10033,10 @@ Retrieve the shipments associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdShipmentsRequest
+ @return HasManyApiGETOrderIdShipmentsRequest
 */
-func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId string) ApiGETOrderIdShipmentsRequest {
-	return ApiGETOrderIdShipmentsRequest{
+func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId string) HasManyApiGETOrderIdShipmentsRequest {
+	return HasManyApiGETOrderIdShipmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8682,7 +10044,7 @@ func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId str
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdShipmentsExecute(r ApiGETOrderIdShipmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShipmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8746,13 +10108,13 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r ApiGETOrderIdShipmentsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdVoidsRequest struct {
+type HasManyApiGETOrderIdVoidsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdVoidsExecute(r)
 }
 
@@ -8763,10 +10125,10 @@ Retrieve the voids associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdVoidsRequest
+ @return HasManyApiGETOrderIdVoidsRequest
 */
-func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId string) ApiGETOrderIdVoidsRequest {
-	return ApiGETOrderIdVoidsRequest{
+func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId string) HasManyApiGETOrderIdVoidsRequest {
+	return HasManyApiGETOrderIdVoidsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8774,7 +10136,7 @@ func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderIdVoidsExecute(r ApiGETOrderIdVoidsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8838,13 +10200,105 @@ func (a *HasManyApiService) GETOrderIdVoidsExecute(r ApiGETOrderIdVoidsRequest) 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdOrderCopiesRequest struct {
+type HasManyApiGETOrderSubscriptionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdEventsExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdEvents Retrieve the events associated to the order subscription
+
+Retrieve the events associated to the order subscription
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param orderSubscriptionId The resource's id
+ @return HasManyApiGETOrderSubscriptionIdEventsRequest
+*/
+func (a *HasManyApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdEventsRequest {
+	return HasManyApiGETOrderSubscriptionIdEventsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderSubscriptionIdOrderCopiesRequest struct {
+	ctx                 context.Context
+	ApiService          HasManyApi
+	orderSubscriptionId string
+}
+
+func (r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdOrderCopiesExecute(r)
 }
 
@@ -8855,10 +10309,10 @@ Retrieve the order copies associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdOrderCopiesRequest
+ @return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest
 */
-func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrderCopiesRequest {
-	return ApiGETOrderSubscriptionIdOrderCopiesRequest{
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrderCopiesRequest {
+	return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -8866,7 +10320,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r ApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8930,13 +10384,13 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r ApiGETOrd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdOrdersRequest struct {
+type HasManyApiGETOrderSubscriptionIdOrdersRequest struct {
 	ctx                 context.Context
 	ApiService          HasManyApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdOrdersExecute(r)
 }
 
@@ -8947,10 +10401,10 @@ Retrieve the orders associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdOrdersRequest
+ @return HasManyApiGETOrderSubscriptionIdOrdersRequest
 */
-func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrdersRequest {
-	return ApiGETOrderSubscriptionIdOrdersRequest{
+func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrdersRequest {
+	return HasManyApiGETOrderSubscriptionIdOrdersRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -8958,7 +10412,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, or
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r ApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9022,13 +10476,13 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r ApiGETOrderSub
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackageIdAttachmentsRequest struct {
+type HasManyApiGETPackageIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	packageId  string
 }
 
-func (r ApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdAttachmentsExecute(r)
 }
 
@@ -9039,10 +10493,10 @@ Retrieve the attachments associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackageIdAttachmentsRequest
+ @return HasManyApiGETPackageIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, packageId string) ApiGETPackageIdAttachmentsRequest {
-	return ApiGETPackageIdAttachmentsRequest{
+func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, packageId string) HasManyApiGETPackageIdAttachmentsRequest {
+	return HasManyApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -9050,7 +10504,7 @@ func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, package
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r ApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9114,13 +10568,13 @@ func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r ApiGETPackageIdAtta
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackageIdParcelsRequest struct {
+type HasManyApiGETPackageIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	packageId  string
 }
 
-func (r ApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdParcelsExecute(r)
 }
 
@@ -9131,10 +10585,10 @@ Retrieve the parcels associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackageIdParcelsRequest
+ @return HasManyApiGETPackageIdParcelsRequest
 */
-func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId string) ApiGETPackageIdParcelsRequest {
-	return ApiGETPackageIdParcelsRequest{
+func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId string) HasManyApiGETPackageIdParcelsRequest {
+	return HasManyApiGETPackageIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -9142,7 +10596,7 @@ func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9206,13 +10660,13 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r ApiGETPackageIdParcelsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdAttachmentsRequest struct {
+type HasManyApiGETParcelIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	parcelId   string
 }
 
-func (r ApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdAttachmentsExecute(r)
 }
 
@@ -9223,10 +10677,10 @@ Retrieve the attachments associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdAttachmentsRequest
+ @return HasManyApiGETParcelIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) ApiGETParcelIdAttachmentsRequest {
-	return ApiGETParcelIdAttachmentsRequest{
+func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) HasManyApiGETParcelIdAttachmentsRequest {
+	return HasManyApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -9234,7 +10688,7 @@ func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r ApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9298,13 +10752,105 @@ func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r ApiGETParcelIdAttach
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdParcelLineItemsRequest struct {
+type HasManyApiGETParcelIdEventsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	parcelId   string
 }
 
-func (r ApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETParcelIdEventsExecute(r)
+}
+
+/*
+GETParcelIdEvents Retrieve the events associated to the parcel
+
+Retrieve the events associated to the parcel
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param parcelId The resource's id
+ @return HasManyApiGETParcelIdEventsRequest
+*/
+func (a *HasManyApiService) GETParcelIdEvents(ctx context.Context, parcelId string) HasManyApiGETParcelIdEventsRequest {
+	return HasManyApiGETParcelIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		parcelId:   parcelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/parcels/{parcelId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETParcelIdParcelLineItemsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	parcelId   string
+}
+
+func (r HasManyApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdParcelLineItemsExecute(r)
 }
 
@@ -9315,10 +10861,10 @@ Retrieve the parcel line items associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdParcelLineItemsRequest
+ @return HasManyApiGETParcelIdParcelLineItemsRequest
 */
-func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ApiGETParcelIdParcelLineItemsRequest {
-	return ApiGETParcelIdParcelLineItemsRequest{
+func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) HasManyApiGETParcelIdParcelLineItemsRequest {
+	return HasManyApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -9326,7 +10872,7 @@ func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parc
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r ApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9390,13 +10936,13 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r ApiGETParcelIdPa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETPaymentGatewayIdPaymentMethodsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	paymentGatewayId string
 }
 
-func (r ApiGETPaymentGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPaymentGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -9407,10 +10953,10 @@ Retrieve the payment methods associated to the payment gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentGatewayId The resource's id
- @return ApiGETPaymentGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) ApiGETPaymentGatewayIdPaymentMethodsRequest {
-	return ApiGETPaymentGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) HasManyApiGETPaymentGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		paymentGatewayId: paymentGatewayId,
@@ -9418,7 +10964,7 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r ApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9482,13 +11028,13 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r ApiGETPay
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentMethodIdAttachmentsRequest struct {
+type HasManyApiGETPaymentMethodIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	paymentMethodId string
 }
 
-func (r ApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdAttachmentsExecute(r)
 }
 
@@ -9499,10 +11045,10 @@ Retrieve the attachments associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return ApiGETPaymentMethodIdAttachmentsRequest
+ @return HasManyApiGETPaymentMethodIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdAttachmentsRequest {
-	return ApiGETPaymentMethodIdAttachmentsRequest{
+func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) HasManyApiGETPaymentMethodIdAttachmentsRequest {
+	return HasManyApiGETPaymentMethodIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -9510,7 +11056,7 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, p
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r ApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9574,13 +11120,13 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r ApiGETPayment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETPaypalGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	paypalGatewayId string
 }
 
-func (r ApiGETPaypalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPaypalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -9591,10 +11137,10 @@ Retrieve the payment methods associated to the paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalGatewayId The resource's id
- @return ApiGETPaypalGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewayIdPaymentMethodsRequest {
-	return ApiGETPaypalGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
@@ -9602,7 +11148,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r ApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9666,13 +11212,13 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r ApiGETPayp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalGatewayIdPaypalPaymentsRequest struct {
+type HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	paypalGatewayId string
 }
 
-func (r ApiGETPaypalGatewayIdPaypalPaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalGatewayIdPaypalPaymentsExecute(r)
 }
 
@@ -9683,10 +11229,10 @@ Retrieve the paypal payments associated to the paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalGatewayId The resource's id
- @return ApiGETPaypalGatewayIdPaypalPaymentsRequest
+ @return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest
 */
-func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewayIdPaypalPaymentsRequest {
-	return ApiGETPaypalGatewayIdPaypalPaymentsRequest{
+func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest {
+	return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
@@ -9694,7 +11240,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r ApiGETPaypalGatewayIdPaypalPaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9758,13 +11304,13 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r ApiGETPayp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
+type HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
 	ctx                           context.Context
 	ApiService                    HasManyApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdAttachmentsExecute(r)
 }
 
@@ -9775,10 +11321,10 @@ Retrieve the attachments associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdAttachmentsRequest
+ @return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdAttachmentsRequest {
-	return ApiGETPercentageDiscountPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest {
+	return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -9786,7 +11332,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx cont
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r ApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9850,13 +11396,13 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkusRequest struct {
+type HasManyApiGETPercentageDiscountPromotionIdSkusRequest struct {
 	ctx                           context.Context
 	ApiService                    HasManyApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPercentageDiscountPromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkusExecute(r)
 }
 
@@ -9867,10 +11413,10 @@ Retrieve the skus associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkusRequest
+ @return HasManyApiGETPercentageDiscountPromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkusRequest {
-	return ApiGETPercentageDiscountPromotionIdSkusRequest{
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdSkusRequest {
+	return HasManyApiGETPercentageDiscountPromotionIdSkusRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -9878,7 +11424,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r ApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasManyApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9942,13 +11488,13 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdAttachmentsRequest struct {
+type HasManyApiGETPriceIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	priceId    string
 }
 
-func (r ApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdAttachmentsExecute(r)
 }
 
@@ -9959,10 +11505,10 @@ Retrieve the attachments associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdAttachmentsRequest
+ @return HasManyApiGETPriceIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId string) ApiGETPriceIdAttachmentsRequest {
-	return ApiGETPriceIdAttachmentsRequest{
+func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId string) HasManyApiGETPriceIdAttachmentsRequest {
+	return HasManyApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -9970,7 +11516,7 @@ func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r ApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10034,13 +11580,197 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r ApiGETPriceIdAttachme
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceListIdAttachmentsRequest struct {
+type HasManyApiGETPriceIdPriceTiersRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	priceId    string
+}
+
+func (r HasManyApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdPriceTiersExecute(r)
+}
+
+/*
+GETPriceIdPriceTiers Retrieve the price tiers associated to the price
+
+Retrieve the price tiers associated to the price
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceId The resource's id
+ @return HasManyApiGETPriceIdPriceTiersRequest
+*/
+func (a *HasManyApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceTiersRequest {
+	return HasManyApiGETPriceIdPriceTiersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdPriceTiers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/price_tiers"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceIdPriceVolumeTiersRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	priceId    string
+}
+
+func (r HasManyApiGETPriceIdPriceVolumeTiersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdPriceVolumeTiersExecute(r)
+}
+
+/*
+GETPriceIdPriceVolumeTiers Retrieve the price volume tiers associated to the price
+
+Retrieve the price volume tiers associated to the price
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceId The resource's id
+ @return HasManyApiGETPriceIdPriceVolumeTiersRequest
+*/
+func (a *HasManyApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceVolumeTiersRequest {
+	return HasManyApiGETPriceIdPriceVolumeTiersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPriceIdPriceVolumeTiersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdPriceVolumeTiers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/price_volume_tiers"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceListIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  HasManyApi
 	priceListId string
 }
 
-func (r ApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceListIdAttachmentsExecute(r)
 }
 
@@ -10051,10 +11781,10 @@ Retrieve the attachments associated to the price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return ApiGETPriceListIdAttachmentsRequest
+ @return HasManyApiGETPriceListIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) ApiGETPriceListIdAttachmentsRequest {
-	return ApiGETPriceListIdAttachmentsRequest{
+func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) HasManyApiGETPriceListIdAttachmentsRequest {
+	return HasManyApiGETPriceListIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -10062,7 +11792,7 @@ func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, price
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r ApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10126,13 +11856,13 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r ApiGETPriceListId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceListIdPricesRequest struct {
+type HasManyApiGETPriceListIdPricesRequest struct {
 	ctx         context.Context
 	ApiService  HasManyApi
 	priceListId string
 }
 
-func (r ApiGETPriceListIdPricesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPriceListIdPricesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceListIdPricesExecute(r)
 }
 
@@ -10143,10 +11873,10 @@ Retrieve the prices associated to the price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return ApiGETPriceListIdPricesRequest
+ @return HasManyApiGETPriceListIdPricesRequest
 */
-func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) ApiGETPriceListIdPricesRequest {
-	return ApiGETPriceListIdPricesRequest{
+func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) HasManyApiGETPriceListIdPricesRequest {
+	return HasManyApiGETPriceListIdPricesRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -10154,7 +11884,7 @@ func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListI
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPriceListIdPricesExecute(r ApiGETPriceListIdPricesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceListIdPricesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10218,13 +11948,197 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r ApiGETPriceListIdPrice
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdAttachmentsRequest struct {
+type HasManyApiGETPriceTierIdAttachmentsRequest struct {
+	ctx         context.Context
+	ApiService  HasManyApi
+	priceTierId string
+}
+
+func (r HasManyApiGETPriceTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceTierIdAttachmentsExecute(r)
+}
+
+/*
+GETPriceTierIdAttachments Retrieve the attachments associated to the price tier
+
+Retrieve the attachments associated to the price tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceTierId The resource's id
+ @return HasManyApiGETPriceTierIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) HasManyApiGETPriceTierIdAttachmentsRequest {
+	return HasManyApiGETPriceTierIdAttachmentsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		priceTierId: priceTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPriceTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_tiers/{priceTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceVolumeTierIdAttachmentsRequest struct {
+	ctx               context.Context
+	ApiService        HasManyApi
+	priceVolumeTierId string
+}
+
+func (r HasManyApiGETPriceVolumeTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceVolumeTierIdAttachmentsExecute(r)
+}
+
+/*
+GETPriceVolumeTierIdAttachments Retrieve the attachments associated to the price volume tier
+
+Retrieve the attachments associated to the price volume tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceVolumeTierId The resource's id
+ @return HasManyApiGETPriceVolumeTierIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) HasManyApiGETPriceVolumeTierIdAttachmentsRequest {
+	return HasManyApiGETPriceVolumeTierIdAttachmentsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		priceVolumeTierId: priceVolumeTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceVolumeTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPromotionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  HasManyApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdAttachmentsExecute(r)
 }
 
@@ -10235,10 +12149,10 @@ Retrieve the attachments associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdAttachmentsRequest
+ @return HasManyApiGETPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) ApiGETPromotionIdAttachmentsRequest {
-	return ApiGETPromotionIdAttachmentsRequest{
+func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) HasManyApiGETPromotionIdAttachmentsRequest {
+	return HasManyApiGETPromotionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -10246,7 +12160,7 @@ func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promo
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r ApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10310,13 +12224,105 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r ApiGETPromotionId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdAttachmentsRequest struct {
+type HasManyApiGETRefundIdEventsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	refundId   string
+}
+
+func (r HasManyApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRefundIdEventsExecute(r)
+}
+
+/*
+GETRefundIdEvents Retrieve the events associated to the refund
+
+Retrieve the events associated to the refund
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param refundId The resource's id
+ @return HasManyApiGETRefundIdEventsRequest
+*/
+func (a *HasManyApiService) GETRefundIdEvents(ctx context.Context, refundId string) HasManyApiGETRefundIdEventsRequest {
+	return HasManyApiGETRefundIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		refundId:   refundId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETRefundIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/refunds/{refundId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReturnIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdAttachmentsExecute(r)
 }
 
@@ -10327,10 +12333,10 @@ Retrieve the attachments associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdAttachmentsRequest
+ @return HasManyApiGETReturnIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId string) ApiGETReturnIdAttachmentsRequest {
-	return ApiGETReturnIdAttachmentsRequest{
+func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId string) HasManyApiGETReturnIdAttachmentsRequest {
+	return HasManyApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -10338,7 +12344,7 @@ func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r ApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10402,13 +12408,105 @@ func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r ApiGETReturnIdAttach
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdReturnLineItemsRequest struct {
+type HasManyApiGETReturnIdEventsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdReturnLineItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETReturnIdEventsExecute(r)
+}
+
+/*
+GETReturnIdEvents Retrieve the events associated to the return
+
+Retrieve the events associated to the return
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param returnId The resource's id
+ @return HasManyApiGETReturnIdEventsRequest
+*/
+func (a *HasManyApiService) GETReturnIdEvents(ctx context.Context, returnId string) HasManyApiGETReturnIdEventsRequest {
+	return HasManyApiGETReturnIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		returnId:   returnId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/returns/{returnId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETReturnIdReturnLineItemsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	returnId   string
+}
+
+func (r HasManyApiGETReturnIdReturnLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdReturnLineItemsExecute(r)
 }
 
@@ -10419,10 +12517,10 @@ Retrieve the return line items associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdReturnLineItemsRequest
+ @return HasManyApiGETReturnIdReturnLineItemsRequest
 */
-func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId string) ApiGETReturnIdReturnLineItemsRequest {
-	return ApiGETReturnIdReturnLineItemsRequest{
+func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId string) HasManyApiGETReturnIdReturnLineItemsRequest {
+	return HasManyApiGETReturnIdReturnLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -10430,7 +12528,7 @@ func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, retu
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r ApiGETReturnIdReturnLineItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETReturnIdReturnLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10494,13 +12592,13 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r ApiGETReturnIdRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdAttachmentsRequest struct {
+type HasManyApiGETShipmentIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdAttachmentsExecute(r)
 }
 
@@ -10511,10 +12609,10 @@ Retrieve the attachments associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdAttachmentsRequest
+ @return HasManyApiGETShipmentIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) ApiGETShipmentIdAttachmentsRequest {
-	return ApiGETShipmentIdAttachmentsRequest{
+func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAttachmentsRequest {
+	return HasManyApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10522,7 +12620,7 @@ func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipme
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r ApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10586,13 +12684,13 @@ func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r ApiGETShipmentIdAt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdAvailableShippingMethodsRequest struct {
+type HasManyApiGETShipmentIdAvailableShippingMethodsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdAvailableShippingMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdAvailableShippingMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdAvailableShippingMethodsExecute(r)
 }
 
@@ -10603,10 +12701,10 @@ Retrieve the available shipping methods associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdAvailableShippingMethodsRequest
+ @return HasManyApiGETShipmentIdAvailableShippingMethodsRequest
 */
-func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) ApiGETShipmentIdAvailableShippingMethodsRequest {
-	return ApiGETShipmentIdAvailableShippingMethodsRequest{
+func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAvailableShippingMethodsRequest {
+	return HasManyApiGETShipmentIdAvailableShippingMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10614,7 +12712,7 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r ApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasManyApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10678,13 +12776,13 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdCarrierAccountsRequest struct {
+type HasManyApiGETShipmentIdCarrierAccountsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdCarrierAccountsExecute(r)
 }
 
@@ -10695,10 +12793,10 @@ Retrieve the carrier accounts associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdCarrierAccountsRequest
+ @return HasManyApiGETShipmentIdCarrierAccountsRequest
 */
-func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) ApiGETShipmentIdCarrierAccountsRequest {
-	return ApiGETShipmentIdCarrierAccountsRequest{
+func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdCarrierAccountsRequest {
+	return HasManyApiGETShipmentIdCarrierAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10706,7 +12804,7 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r ApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10770,13 +12868,105 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r ApiGETShipment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdParcelsRequest struct {
+type HasManyApiGETShipmentIdEventsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShipmentIdEventsExecute(r)
+}
+
+/*
+GETShipmentIdEvents Retrieve the events associated to the shipment
+
+Retrieve the events associated to the shipment
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shipmentId The resource's id
+ @return HasManyApiGETShipmentIdEventsRequest
+*/
+func (a *HasManyApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdEventsRequest {
+	return HasManyApiGETShipmentIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		shipmentId: shipmentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipments/{shipmentId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShipmentIdParcelsRequest struct {
+	ctx        context.Context
+	ApiService HasManyApi
+	shipmentId string
+}
+
+func (r HasManyApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdParcelsExecute(r)
 }
 
@@ -10787,10 +12977,10 @@ Retrieve the parcels associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdParcelsRequest
+ @return HasManyApiGETShipmentIdParcelsRequest
 */
-func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) ApiGETShipmentIdParcelsRequest {
-	return ApiGETShipmentIdParcelsRequest{
+func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdParcelsRequest {
+	return HasManyApiGETShipmentIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10798,7 +12988,7 @@ func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcelsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentIdParcelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10862,13 +13052,13 @@ func (a *HasManyApiService) GETShipmentIdParcelsExecute(r ApiGETShipmentIdParcel
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockLineItemsRequest struct {
+type HasManyApiGETShipmentIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockLineItemsExecute(r)
 }
 
@@ -10879,10 +13069,10 @@ Retrieve the stock line items associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockLineItemsRequest
+ @return HasManyApiGETShipmentIdStockLineItemsRequest
 */
-func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLineItemsRequest {
-	return ApiGETShipmentIdStockLineItemsRequest{
+func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockLineItemsRequest {
+	return HasManyApiGETShipmentIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10890,7 +13080,7 @@ func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shi
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r ApiGETShipmentIdStockLineItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETShipmentIdStockLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10954,13 +13144,13 @@ func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r ApiGETShipmentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockTransfersRequest struct {
+type HasManyApiGETShipmentIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockTransfersExecute(r)
 }
 
@@ -10971,10 +13161,10 @@ Retrieve the stock transfers associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockTransfersRequest
+ @return HasManyApiGETShipmentIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) ApiGETShipmentIdStockTransfersRequest {
-	return ApiGETShipmentIdStockTransfersRequest{
+func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockTransfersRequest {
+	return HasManyApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -10982,7 +13172,7 @@ func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shi
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r ApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11046,13 +13236,13 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r ApiGETShipmentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingCategoryIdAttachmentsRequest struct {
+type HasManyApiGETShippingCategoryIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         HasManyApi
 	shippingCategoryId string
 }
 
-func (r ApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingCategoryIdAttachmentsExecute(r)
 }
 
@@ -11063,10 +13253,10 @@ Retrieve the attachments associated to the shipping category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingCategoryId The resource's id
- @return ApiGETShippingCategoryIdAttachmentsRequest
+ @return HasManyApiGETShippingCategoryIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdAttachmentsRequest {
-	return ApiGETShippingCategoryIdAttachmentsRequest{
+func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdAttachmentsRequest {
+	return HasManyApiGETShippingCategoryIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
@@ -11074,7 +13264,7 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r ApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11138,13 +13328,13 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r ApiGETShip
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingCategoryIdSkusRequest struct {
+type HasManyApiGETShippingCategoryIdSkusRequest struct {
 	ctx                context.Context
 	ApiService         HasManyApi
 	shippingCategoryId string
 }
 
-func (r ApiGETShippingCategoryIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShippingCategoryIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingCategoryIdSkusExecute(r)
 }
 
@@ -11155,10 +13345,10 @@ Retrieve the skus associated to the shipping category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingCategoryId The resource's id
- @return ApiGETShippingCategoryIdSkusRequest
+ @return HasManyApiGETShippingCategoryIdSkusRequest
 */
-func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdSkusRequest {
-	return ApiGETShippingCategoryIdSkusRequest{
+func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdSkusRequest {
+	return HasManyApiGETShippingCategoryIdSkusRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
@@ -11166,7 +13356,7 @@ func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shipp
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r ApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11230,13 +13420,13 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r ApiGETShippingCat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdAttachmentsRequest struct {
+type HasManyApiGETShippingMethodIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       HasManyApi
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdAttachmentsExecute(r)
 }
 
@@ -11247,10 +13437,10 @@ Retrieve the attachments associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdAttachmentsRequest
+ @return HasManyApiGETShippingMethodIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdAttachmentsRequest {
-	return ApiGETShippingMethodIdAttachmentsRequest{
+func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdAttachmentsRequest {
+	return HasManyApiGETShippingMethodIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -11258,7 +13448,7 @@ func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r ApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11322,13 +13512,381 @@ func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r ApiGETShippi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingZoneIdAttachmentsRequest struct {
+type HasManyApiGETShippingMethodIdShippingMethodTiersRequest struct {
+	ctx              context.Context
+	ApiService       HasManyApi
+	shippingMethodId string
+}
+
+func (r HasManyApiGETShippingMethodIdShippingMethodTiersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodIdShippingMethodTiersExecute(r)
+}
+
+/*
+GETShippingMethodIdShippingMethodTiers Retrieve the shipping method tiers associated to the shipping method
+
+Retrieve the shipping method tiers associated to the shipping method
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingMethodId The resource's id
+ @return HasManyApiGETShippingMethodIdShippingMethodTiersRequest
+*/
+func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingMethodTiersRequest {
+	return HasManyApiGETShippingMethodIdShippingMethodTiersRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		shippingMethodId: shippingMethodId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasManyApiGETShippingMethodIdShippingMethodTiersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdShippingMethodTiers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_method_tiers"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingMethodIdShippingWeightTiersRequest struct {
+	ctx              context.Context
+	ApiService       HasManyApi
+	shippingMethodId string
+}
+
+func (r HasManyApiGETShippingMethodIdShippingWeightTiersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodIdShippingWeightTiersExecute(r)
+}
+
+/*
+GETShippingMethodIdShippingWeightTiers Retrieve the shipping weight tiers associated to the shipping method
+
+Retrieve the shipping weight tiers associated to the shipping method
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingMethodId The resource's id
+ @return HasManyApiGETShippingMethodIdShippingWeightTiersRequest
+*/
+func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingWeightTiersRequest {
+	return HasManyApiGETShippingMethodIdShippingWeightTiersRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		shippingMethodId: shippingMethodId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasManyApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdShippingWeightTiers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_weight_tiers"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingMethodTierIdAttachmentsRequest struct {
+	ctx                  context.Context
+	ApiService           HasManyApi
+	shippingMethodTierId string
+}
+
+func (r HasManyApiGETShippingMethodTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodTierIdAttachmentsExecute(r)
+}
+
+/*
+GETShippingMethodTierIdAttachments Retrieve the attachments associated to the shipping method tier
+
+Retrieve the attachments associated to the shipping method tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingMethodTierId The resource's id
+ @return HasManyApiGETShippingMethodTierIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) HasManyApiGETShippingMethodTierIdAttachmentsRequest {
+	return HasManyApiGETShippingMethodTierIdAttachmentsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingMethodTierId: shippingMethodTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingWeightTierIdAttachmentsRequest struct {
+	ctx                  context.Context
+	ApiService           HasManyApi
+	shippingWeightTierId string
+}
+
+func (r HasManyApiGETShippingWeightTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingWeightTierIdAttachmentsExecute(r)
+}
+
+/*
+GETShippingWeightTierIdAttachments Retrieve the attachments associated to the shipping weight tier
+
+Retrieve the attachments associated to the shipping weight tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingWeightTierId The resource's id
+ @return HasManyApiGETShippingWeightTierIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) HasManyApiGETShippingWeightTierIdAttachmentsRequest {
+	return HasManyApiGETShippingWeightTierIdAttachmentsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingWeightTierId: shippingWeightTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingWeightTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETShippingZoneIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     HasManyApi
 	shippingZoneId string
 }
 
-func (r ApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingZoneIdAttachmentsExecute(r)
 }
 
@@ -11339,10 +13897,10 @@ Retrieve the attachments associated to the shipping zone
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingZoneId The resource's id
- @return ApiGETShippingZoneIdAttachmentsRequest
+ @return HasManyApiGETShippingZoneIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) ApiGETShippingZoneIdAttachmentsRequest {
-	return ApiGETShippingZoneIdAttachmentsRequest{
+func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) HasManyApiGETShippingZoneIdAttachmentsRequest {
+	return HasManyApiGETShippingZoneIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
@@ -11350,7 +13908,7 @@ func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r ApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11414,13 +13972,13 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r ApiGETShipping
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdAttachmentsRequest struct {
+type HasManyApiGETSkuIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdAttachmentsExecute(r)
 }
 
@@ -11431,10 +13989,10 @@ Retrieve the attachments associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdAttachmentsRequest
+ @return HasManyApiGETSkuIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId string) ApiGETSkuIdAttachmentsRequest {
-	return ApiGETSkuIdAttachmentsRequest{
+func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId string) HasManyApiGETSkuIdAttachmentsRequest {
+	return HasManyApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -11442,7 +14000,7 @@ func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId strin
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r ApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11506,13 +14064,13 @@ func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r ApiGETSkuIdAttachmentsR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdDeliveryLeadTimesRequest struct {
+type HasManyApiGETSkuIdDeliveryLeadTimesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdDeliveryLeadTimesExecute(r)
 }
 
@@ -11523,10 +14081,10 @@ Retrieve the delivery lead times associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdDeliveryLeadTimesRequest
+ @return HasManyApiGETSkuIdDeliveryLeadTimesRequest
 */
-func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) ApiGETSkuIdDeliveryLeadTimesRequest {
-	return ApiGETSkuIdDeliveryLeadTimesRequest{
+func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) HasManyApiGETSkuIdDeliveryLeadTimesRequest {
+	return HasManyApiGETSkuIdDeliveryLeadTimesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -11534,7 +14092,7 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r ApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11598,13 +14156,13 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r ApiGETSkuIdDelive
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdPricesRequest struct {
+type HasManyApiGETSkuIdPricesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdPricesExecute(r)
 }
 
@@ -11615,10 +14173,10 @@ Retrieve the prices associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdPricesRequest
+ @return HasManyApiGETSkuIdPricesRequest
 */
-func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId string) ApiGETSkuIdPricesRequest {
-	return ApiGETSkuIdPricesRequest{
+func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId string) HasManyApiGETSkuIdPricesRequest {
+	return HasManyApiGETSkuIdPricesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -11626,7 +14184,7 @@ func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId string) Ap
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuIdPricesExecute(r ApiGETSkuIdPricesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11690,13 +14248,13 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r ApiGETSkuIdPricesRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdSkuOptionsRequest struct {
+type HasManyApiGETSkuIdSkuOptionsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdSkuOptionsExecute(r)
 }
 
@@ -11707,10 +14265,10 @@ Retrieve the sku options associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdSkuOptionsRequest
+ @return HasManyApiGETSkuIdSkuOptionsRequest
 */
-func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) ApiGETSkuIdSkuOptionsRequest {
-	return ApiGETSkuIdSkuOptionsRequest{
+func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) HasManyApiGETSkuIdSkuOptionsRequest {
+	return HasManyApiGETSkuIdSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -11718,7 +14276,7 @@ func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r ApiGETSkuIdSkuOptionsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11782,13 +14340,13 @@ func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r ApiGETSkuIdSkuOptionsReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdStockItemsRequest struct {
+type HasManyApiGETSkuIdStockItemsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdStockItemsExecute(r)
 }
 
@@ -11799,10 +14357,10 @@ Retrieve the stock items associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdStockItemsRequest
+ @return HasManyApiGETSkuIdStockItemsRequest
 */
-func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId string) ApiGETSkuIdStockItemsRequest {
-	return ApiGETSkuIdStockItemsRequest{
+func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId string) HasManyApiGETSkuIdStockItemsRequest {
+	return HasManyApiGETSkuIdStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -11810,7 +14368,7 @@ func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId string
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11874,13 +14432,13 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItemsReq
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdBundlesRequest struct {
+type HasManyApiGETSkuListIdBundlesRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdBundlesExecute(r)
 }
 
@@ -11891,10 +14449,10 @@ Retrieve the bundles associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdBundlesRequest
+ @return HasManyApiGETSkuListIdBundlesRequest
 */
-func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) ApiGETSkuListIdBundlesRequest {
-	return ApiGETSkuListIdBundlesRequest{
+func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) HasManyApiGETSkuListIdBundlesRequest {
+	return HasManyApiGETSkuListIdBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -11902,7 +14460,7 @@ func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11966,13 +14524,13 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdSkuListItemsRequest struct {
+type HasManyApiGETSkuListIdSkuListItemsRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdSkuListItemsExecute(r)
 }
 
@@ -11983,10 +14541,10 @@ Retrieve the sku list items associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdSkuListItemsRequest
+ @return HasManyApiGETSkuListIdSkuListItemsRequest
 */
-func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) ApiGETSkuListIdSkuListItemsRequest {
-	return ApiGETSkuListIdSkuListItemsRequest{
+func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkuListItemsRequest {
+	return HasManyApiGETSkuListIdSkuListItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -11994,7 +14552,7 @@ func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuLis
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r ApiGETSkuListIdSkuListItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuListIdSkuListItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12058,13 +14616,13 @@ func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r ApiGETSkuListIdSku
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdSkusRequest struct {
+type HasManyApiGETSkuListIdSkusRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdSkusExecute(r)
 }
 
@@ -12075,10 +14633,10 @@ Retrieve the skus associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdSkusRequest
+ @return HasManyApiGETSkuListIdSkusRequest
 */
-func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) ApiGETSkuListIdSkusRequest {
-	return ApiGETSkuListIdSkusRequest{
+func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkusRequest {
+	return HasManyApiGETSkuListIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -12086,7 +14644,7 @@ func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId stri
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12150,13 +14708,13 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListPromotionRuleIdSkusRequest struct {
+type HasManyApiGETSkuListPromotionRuleIdSkusRequest struct {
 	ctx                    context.Context
 	ApiService             HasManyApi
 	skuListPromotionRuleId string
 }
 
-func (r ApiGETSkuListPromotionRuleIdSkusRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuListPromotionRuleIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRuleIdSkusExecute(r)
 }
 
@@ -12167,10 +14725,10 @@ Retrieve the skus associated to the SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return ApiGETSkuListPromotionRuleIdSkusRequest
+ @return HasManyApiGETSkuListPromotionRuleIdSkusRequest
 */
-func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkusRequest {
-	return ApiGETSkuListPromotionRuleIdSkusRequest{
+func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) HasManyApiGETSkuListPromotionRuleIdSkusRequest {
+	return HasManyApiGETSkuListPromotionRuleIdSkusRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -12178,7 +14736,7 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12242,13 +14800,13 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuList
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuOptionIdAttachmentsRequest struct {
+type HasManyApiGETSkuOptionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  HasManyApi
 	skuOptionId string
 }
 
-func (r ApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuOptionIdAttachmentsExecute(r)
 }
 
@@ -12259,10 +14817,10 @@ Retrieve the attachments associated to the SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiGETSkuOptionIdAttachmentsRequest
+ @return HasManyApiGETSkuOptionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdAttachmentsRequest {
-	return ApiGETSkuOptionIdAttachmentsRequest{
+func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) HasManyApiGETSkuOptionIdAttachmentsRequest {
+	return HasManyApiGETSkuOptionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -12270,7 +14828,7 @@ func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOp
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r ApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12334,13 +14892,13 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r ApiGETSkuOptionId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemIdAttachmentsRequest struct {
+type HasManyApiGETStockItemIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  HasManyApi
 	stockItemId string
 }
 
-func (r ApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdAttachmentsExecute(r)
 }
 
@@ -12351,10 +14909,10 @@ Retrieve the attachments associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemIdAttachmentsRequest
+ @return HasManyApiGETStockItemIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) ApiGETStockItemIdAttachmentsRequest {
-	return ApiGETStockItemIdAttachmentsRequest{
+func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) HasManyApiGETStockItemIdAttachmentsRequest {
+	return HasManyApiGETStockItemIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -12362,7 +14920,7 @@ func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stock
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r ApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12426,13 +14984,13 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r ApiGETStockItemId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdAttachmentsRequest struct {
+type HasManyApiGETStockLocationIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdAttachmentsExecute(r)
 }
 
@@ -12443,10 +15001,10 @@ Retrieve the attachments associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdAttachmentsRequest
+ @return HasManyApiGETStockLocationIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAttachmentsRequest {
-	return ApiGETStockLocationIdAttachmentsRequest{
+func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdAttachmentsRequest {
+	return HasManyApiGETStockLocationIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -12454,7 +15012,7 @@ func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r ApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12518,13 +15076,13 @@ func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r ApiGETStockLo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdInventoryReturnLocationsRequest struct {
+type HasManyApiGETStockLocationIdInventoryReturnLocationsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdInventoryReturnLocationsExecute(r)
 }
 
@@ -12535,10 +15093,10 @@ Retrieve the inventory return locations associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdInventoryReturnLocationsRequest
+ @return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryReturnLocationsRequest {
-	return ApiGETStockLocationIdInventoryReturnLocationsRequest{
+func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryReturnLocationsRequest {
+	return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -12546,7 +15104,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx conte
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r ApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r HasManyApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12610,13 +15168,13 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdInventoryStockLocationsRequest struct {
+type HasManyApiGETStockLocationIdInventoryStockLocationsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockLocationIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdInventoryStockLocationsExecute(r)
 }
 
@@ -12627,10 +15185,10 @@ Retrieve the inventory stock locations associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdInventoryStockLocationsRequest
+ @return HasManyApiGETStockLocationIdInventoryStockLocationsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) ApiGETStockLocationIdInventoryStockLocationsRequest {
-	return ApiGETStockLocationIdInventoryStockLocationsRequest{
+func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryStockLocationsRequest {
+	return HasManyApiGETStockLocationIdInventoryStockLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -12638,7 +15196,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r ApiGETStockLocationIdInventoryStockLocationsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r HasManyApiGETStockLocationIdInventoryStockLocationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12702,13 +15260,13 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdStockItemsRequest struct {
+type HasManyApiGETStockLocationIdStockItemsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdStockItemsExecute(r)
 }
 
@@ -12719,10 +15277,10 @@ Retrieve the stock items associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdStockItemsRequest
+ @return HasManyApiGETStockLocationIdStockItemsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockItemsRequest {
-	return ApiGETStockLocationIdStockItemsRequest{
+func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockItemsRequest {
+	return HasManyApiGETStockLocationIdStockItemsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -12730,7 +15288,7 @@ func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, st
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r ApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12794,13 +15352,13 @@ func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r ApiGETStockLoc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdStockTransfersRequest struct {
+type HasManyApiGETStockLocationIdStockTransfersRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdStockTransfersExecute(r)
 }
 
@@ -12811,10 +15369,10 @@ Retrieve the stock transfers associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdStockTransfersRequest
+ @return HasManyApiGETStockLocationIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockTransfersRequest {
-	return ApiGETStockLocationIdStockTransfersRequest{
+func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockTransfersRequest {
+	return HasManyApiGETStockLocationIdStockTransfersRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -12822,7 +15380,7 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r ApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12886,13 +15444,105 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r ApiGETStoc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewayIdPaymentMethodsRequest struct {
+type HasManyApiGETStockTransferIdEventsRequest struct {
+	ctx             context.Context
+	ApiService      HasManyApi
+	stockTransferId string
+}
+
+func (r HasManyApiGETStockTransferIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETStockTransferIdEventsExecute(r)
+}
+
+/*
+GETStockTransferIdEvents Retrieve the events associated to the stock transfer
+
+Retrieve the events associated to the stock transfer
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param stockTransferId The resource's id
+ @return HasManyApiGETStockTransferIdEventsRequest
+*/
+func (a *HasManyApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) HasManyApiGETStockTransferIdEventsRequest {
+	return HasManyApiGETStockTransferIdEventsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		stockTransferId: stockTransferId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStockTransferIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockTransferIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETStripeGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stripeGatewayId string
 }
 
-func (r ApiGETStripeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStripeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripeGatewayIdPaymentMethodsExecute(r)
 }
 
@@ -12903,10 +15553,10 @@ Retrieve the payment methods associated to the stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiGETStripeGatewayIdPaymentMethodsRequest
+ @return HasManyApiGETStripeGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdPaymentMethodsRequest {
-	return ApiGETStripeGatewayIdPaymentMethodsRequest{
+func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETStripeGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -12914,7 +15564,7 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r ApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12978,13 +15628,13 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r ApiGETStri
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewayIdStripePaymentsRequest struct {
+type HasManyApiGETStripeGatewayIdStripePaymentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	stripeGatewayId string
 }
 
-func (r ApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripeGatewayIdStripePaymentsExecute(r)
 }
 
@@ -12995,10 +15645,10 @@ Retrieve the stripe payments associated to the stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiGETStripeGatewayIdStripePaymentsRequest
+ @return HasManyApiGETStripeGatewayIdStripePaymentsRequest
 */
-func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdStripePaymentsRequest {
-	return ApiGETStripeGatewayIdStripePaymentsRequest{
+func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdStripePaymentsRequest {
+	return HasManyApiGETStripeGatewayIdStripePaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -13006,7 +15656,7 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r ApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13070,13 +15720,13 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r ApiGETStri
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCalculatorIdAttachmentsRequest struct {
+type HasManyApiGETTaxCalculatorIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxCalculatorId string
 }
 
-func (r ApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -13087,10 +15737,10 @@ Retrieve the attachments associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return ApiGETTaxCalculatorIdAttachmentsRequest
+ @return HasManyApiGETTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdAttachmentsRequest {
-	return ApiGETTaxCalculatorIdAttachmentsRequest{
+func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdAttachmentsRequest {
+	return HasManyApiGETTaxCalculatorIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -13098,7 +15748,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, t
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r ApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13162,13 +15812,13 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r ApiGETTaxCalc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCalculatorIdMarketsRequest struct {
+type HasManyApiGETTaxCalculatorIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxCalculatorId string
 }
 
-func (r ApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -13179,10 +15829,10 @@ Retrieve the markets associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return ApiGETTaxCalculatorIdMarketsRequest
+ @return HasManyApiGETTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdMarketsRequest {
-	return ApiGETTaxCalculatorIdMarketsRequest{
+func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdMarketsRequest {
+	return HasManyApiGETTaxCalculatorIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -13190,7 +15840,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCa
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r ApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13254,13 +15904,13 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r ApiGETTaxCalculat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCalculatorIdTaxCategoriesRequest struct {
+type HasManyApiGETTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxCalculatorId string
 }
 
-func (r ApiGETTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -13271,10 +15921,10 @@ Retrieve the tax categories associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return ApiGETTaxCalculatorIdTaxCategoriesRequest
+ @return HasManyApiGETTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdTaxCategoriesRequest {
-	return ApiGETTaxCalculatorIdTaxCategoriesRequest{
+func (a *HasManyApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdTaxCategoriesRequest {
+	return HasManyApiGETTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -13282,7 +15932,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxCalculatorIdTaxCategoriesExecute(r ApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13346,13 +15996,13 @@ func (a *HasManyApiService) GETTaxCalculatorIdTaxCategoriesExecute(r ApiGETTaxCa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCategoryIdAttachmentsRequest struct {
+type HasManyApiGETTaxCategoryIdAttachmentsRequest struct {
 	ctx           context.Context
 	ApiService    HasManyApi
 	taxCategoryId string
 }
 
-func (r ApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCategoryIdAttachmentsExecute(r)
 }
 
@@ -13363,10 +16013,10 @@ Retrieve the attachments associated to the tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return ApiGETTaxCategoryIdAttachmentsRequest
+ @return HasManyApiGETTaxCategoryIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdAttachmentsRequest {
-	return ApiGETTaxCategoryIdAttachmentsRequest{
+func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) HasManyApiGETTaxCategoryIdAttachmentsRequest {
+	return HasManyApiGETTaxCategoryIdAttachmentsRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -13374,7 +16024,7 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, tax
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r ApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13438,13 +16088,13 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r ApiGETTaxCatego
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxjarAccountIdAttachmentsRequest struct {
+type HasManyApiGETTaxjarAccountIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxjarAccountId string
 }
 
-func (r ApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdAttachmentsExecute(r)
 }
 
@@ -13455,10 +16105,10 @@ Retrieve the attachments associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return ApiGETTaxjarAccountIdAttachmentsRequest
+ @return HasManyApiGETTaxjarAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdAttachmentsRequest {
-	return ApiGETTaxjarAccountIdAttachmentsRequest{
+func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdAttachmentsRequest {
+	return HasManyApiGETTaxjarAccountIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -13466,7 +16116,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, t
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r ApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13530,13 +16180,13 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r ApiGETTaxjarA
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxjarAccountIdMarketsRequest struct {
+type HasManyApiGETTaxjarAccountIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxjarAccountId string
 }
 
-func (r ApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdMarketsExecute(r)
 }
 
@@ -13547,10 +16197,10 @@ Retrieve the markets associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return ApiGETTaxjarAccountIdMarketsRequest
+ @return HasManyApiGETTaxjarAccountIdMarketsRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdMarketsRequest {
-	return ApiGETTaxjarAccountIdMarketsRequest{
+func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdMarketsRequest {
+	return HasManyApiGETTaxjarAccountIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -13558,7 +16208,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxja
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r ApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13622,13 +16272,13 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r ApiGETTaxjarAccou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxjarAccountIdTaxCategoriesRequest struct {
+type HasManyApiGETTaxjarAccountIdTaxCategoriesRequest struct {
 	ctx             context.Context
 	ApiService      HasManyApi
 	taxjarAccountId string
 }
 
-func (r ApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdTaxCategoriesExecute(r)
 }
 
@@ -13639,10 +16289,10 @@ Retrieve the tax categories associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return ApiGETTaxjarAccountIdTaxCategoriesRequest
+ @return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdTaxCategoriesRequest {
-	return ApiGETTaxjarAccountIdTaxCategoriesRequest{
+func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdTaxCategoriesRequest {
+	return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -13650,7 +16300,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r ApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13714,13 +16364,13 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r ApiGETTaxja
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWebhookIdLastEventCallbacksRequest struct {
+type HasManyApiGETWebhookIdLastEventCallbacksRequest struct {
 	ctx        context.Context
 	ApiService HasManyApi
 	webhookId  string
 }
 
-func (r ApiGETWebhookIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
+func (r HasManyApiGETWebhookIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETWebhookIdLastEventCallbacksExecute(r)
 }
 
@@ -13731,10 +16381,10 @@ Retrieve the last event callbacks associated to the webhook
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param webhookId The resource's id
- @return ApiGETWebhookIdLastEventCallbacksRequest
+ @return HasManyApiGETWebhookIdLastEventCallbacksRequest
 */
-func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) ApiGETWebhookIdLastEventCallbacksRequest {
-	return ApiGETWebhookIdLastEventCallbacksRequest{
+func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) HasManyApiGETWebhookIdLastEventCallbacksRequest {
+	return HasManyApiGETWebhookIdLastEventCallbacksRequest{
 		ApiService: a,
 		ctx:        ctx,
 		webhookId:  webhookId,
@@ -13742,7 +16392,7 @@ func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r ApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r HasManyApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}

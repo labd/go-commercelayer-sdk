@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type CustomerGroupsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiDELETECustomerGroupsCustomerGroupIdRequest
+		@return CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest
 	*/
-	DELETECustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiDELETECustomerGroupsCustomerGroupIdRequest
+	DELETECustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest
 
 	// DELETECustomerGroupsCustomerGroupIdExecute executes the request
-	DELETECustomerGroupsCustomerGroupIdExecute(r ApiDELETECustomerGroupsCustomerGroupIdRequest) (*http.Response, error)
+	DELETECustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroups List all customer groups
@@ -42,12 +42,12 @@ type CustomerGroupsApi interface {
 		List all customer groups
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCustomerGroupsRequest
+		@return CustomerGroupsApiGETCustomerGroupsRequest
 	*/
-	GETCustomerGroups(ctx context.Context) ApiGETCustomerGroupsRequest
+	GETCustomerGroups(ctx context.Context) CustomerGroupsApiGETCustomerGroupsRequest
 
 	// GETCustomerGroupsExecute executes the request
-	GETCustomerGroupsExecute(r ApiGETCustomerGroupsRequest) (*http.Response, error)
+	GETCustomerGroupsExecute(r CustomerGroupsApiGETCustomerGroupsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroupsCustomerGroupId Retrieve a customer group
@@ -56,13 +56,13 @@ type CustomerGroupsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiGETCustomerGroupsCustomerGroupIdRequest
+		@return CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest
 	*/
-	GETCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiGETCustomerGroupsCustomerGroupIdRequest
+	GETCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest
 
 	// GETCustomerGroupsCustomerGroupIdExecute executes the request
 	//  @return CustomerGroup
-	GETCustomerGroupsCustomerGroupIdExecute(r ApiGETCustomerGroupsCustomerGroupIdRequest) (*CustomerGroup, *http.Response, error)
+	GETCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) (*CustomerGroup, *http.Response, error)
 
 	/*
 		GETCustomerIdCustomerGroup Retrieve the customer group associated to the customer
@@ -71,12 +71,12 @@ type CustomerGroupsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerGroupRequest
+		@return CustomerGroupsApiGETCustomerIdCustomerGroupRequest
 	*/
-	GETCustomerIdCustomerGroup(ctx context.Context, customerId string) ApiGETCustomerIdCustomerGroupRequest
+	GETCustomerIdCustomerGroup(ctx context.Context, customerId string) CustomerGroupsApiGETCustomerIdCustomerGroupRequest
 
 	// GETCustomerIdCustomerGroupExecute executes the request
-	GETCustomerIdCustomerGroupExecute(r ApiGETCustomerIdCustomerGroupRequest) (*http.Response, error)
+	GETCustomerIdCustomerGroupExecute(r CustomerGroupsApiGETCustomerIdCustomerGroupRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdCustomerGroup Retrieve the customer group associated to the market
@@ -85,12 +85,12 @@ type CustomerGroupsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdCustomerGroupRequest
+		@return CustomerGroupsApiGETMarketIdCustomerGroupRequest
 	*/
-	GETMarketIdCustomerGroup(ctx context.Context, marketId string) ApiGETMarketIdCustomerGroupRequest
+	GETMarketIdCustomerGroup(ctx context.Context, marketId string) CustomerGroupsApiGETMarketIdCustomerGroupRequest
 
 	// GETMarketIdCustomerGroupExecute executes the request
-	GETMarketIdCustomerGroupExecute(r ApiGETMarketIdCustomerGroupRequest) (*http.Response, error)
+	GETMarketIdCustomerGroupExecute(r CustomerGroupsApiGETMarketIdCustomerGroupRequest) (*http.Response, error)
 
 	/*
 		PATCHCustomerGroupsCustomerGroupId Update a customer group
@@ -99,12 +99,12 @@ type CustomerGroupsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiPATCHCustomerGroupsCustomerGroupIdRequest
+		@return CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest
 	*/
-	PATCHCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiPATCHCustomerGroupsCustomerGroupIdRequest
+	PATCHCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest
 
 	// PATCHCustomerGroupsCustomerGroupIdExecute executes the request
-	PATCHCustomerGroupsCustomerGroupIdExecute(r ApiPATCHCustomerGroupsCustomerGroupIdRequest) (*http.Response, error)
+	PATCHCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) (*http.Response, error)
 
 	/*
 		POSTCustomerGroups Create a customer group
@@ -112,24 +112,24 @@ type CustomerGroupsApi interface {
 		Create a customer group
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTCustomerGroupsRequest
+		@return CustomerGroupsApiPOSTCustomerGroupsRequest
 	*/
-	POSTCustomerGroups(ctx context.Context) ApiPOSTCustomerGroupsRequest
+	POSTCustomerGroups(ctx context.Context) CustomerGroupsApiPOSTCustomerGroupsRequest
 
 	// POSTCustomerGroupsExecute executes the request
-	POSTCustomerGroupsExecute(r ApiPOSTCustomerGroupsRequest) (*http.Response, error)
+	POSTCustomerGroupsExecute(r CustomerGroupsApiPOSTCustomerGroupsRequest) (*http.Response, error)
 }
 
 // CustomerGroupsApiService CustomerGroupsApi service
 type CustomerGroupsApiService service
 
-type ApiDELETECustomerGroupsCustomerGroupIdRequest struct {
+type CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest struct {
 	ctx             context.Context
 	ApiService      CustomerGroupsApi
 	customerGroupId string
 }
 
-func (r ApiDELETECustomerGroupsCustomerGroupIdRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomerGroupsCustomerGroupIdExecute(r)
 }
 
@@ -140,10 +140,10 @@ Delete a customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiDELETECustomerGroupsCustomerGroupIdRequest
+ @return CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest
 */
-func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiDELETECustomerGroupsCustomerGroupIdRequest {
-	return ApiDELETECustomerGroupsCustomerGroupIdRequest{
+func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest {
+	return CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -151,7 +151,7 @@ func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupId(ctx conte
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupIdExecute(r ApiDELETECustomerGroupsCustomerGroupIdRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiDELETECustomerGroupsCustomerGroupIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -215,12 +215,12 @@ func (a *CustomerGroupsApiService) DELETECustomerGroupsCustomerGroupIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupsRequest struct {
+type CustomerGroupsApiGETCustomerGroupsRequest struct {
 	ctx        context.Context
 	ApiService CustomerGroupsApi
 }
 
-func (r ApiGETCustomerGroupsRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiGETCustomerGroupsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupsExecute(r)
 }
 
@@ -230,17 +230,17 @@ GETCustomerGroups List all customer groups
 List all customer groups
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCustomerGroupsRequest
+ @return CustomerGroupsApiGETCustomerGroupsRequest
 */
-func (a *CustomerGroupsApiService) GETCustomerGroups(ctx context.Context) ApiGETCustomerGroupsRequest {
-	return ApiGETCustomerGroupsRequest{
+func (a *CustomerGroupsApiService) GETCustomerGroups(ctx context.Context) CustomerGroupsApiGETCustomerGroupsRequest {
+	return CustomerGroupsApiGETCustomerGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) GETCustomerGroupsExecute(r ApiGETCustomerGroupsRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) GETCustomerGroupsExecute(r CustomerGroupsApiGETCustomerGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -303,13 +303,13 @@ func (a *CustomerGroupsApiService) GETCustomerGroupsExecute(r ApiGETCustomerGrou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupsCustomerGroupIdRequest struct {
+type CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest struct {
 	ctx             context.Context
 	ApiService      CustomerGroupsApi
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupsCustomerGroupIdRequest) Execute() (*CustomerGroup, *http.Response, error) {
+func (r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) Execute() (*CustomerGroup, *http.Response, error) {
 	return r.ApiService.GETCustomerGroupsCustomerGroupIdExecute(r)
 }
 
@@ -320,10 +320,10 @@ Retrieve a customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupsCustomerGroupIdRequest
+ @return CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest
 */
-func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiGETCustomerGroupsCustomerGroupIdRequest {
-	return ApiGETCustomerGroupsCustomerGroupIdRequest{
+func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest {
+	return CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -332,7 +332,7 @@ func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupId(ctx context.
 
 // Execute executes the request
 //  @return CustomerGroup
-func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupIdExecute(r ApiGETCustomerGroupsCustomerGroupIdRequest) (*CustomerGroup, *http.Response, error) {
+func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) (*CustomerGroup, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -406,13 +406,13 @@ func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerGroupRequest struct {
+type CustomerGroupsApiGETCustomerIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService CustomerGroupsApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerGroupRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiGETCustomerIdCustomerGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerGroupExecute(r)
 }
 
@@ -423,10 +423,10 @@ Retrieve the customer group associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerGroupRequest
+ @return CustomerGroupsApiGETCustomerIdCustomerGroupRequest
 */
-func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) ApiGETCustomerIdCustomerGroupRequest {
-	return ApiGETCustomerIdCustomerGroupRequest{
+func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) CustomerGroupsApiGETCustomerIdCustomerGroupRequest {
+	return CustomerGroupsApiGETCustomerIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -434,7 +434,7 @@ func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroup(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroupExecute(r ApiGETCustomerIdCustomerGroupRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroupExecute(r CustomerGroupsApiGETCustomerIdCustomerGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -498,13 +498,13 @@ func (a *CustomerGroupsApiService) GETCustomerIdCustomerGroupExecute(r ApiGETCus
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdCustomerGroupRequest struct {
+type CustomerGroupsApiGETMarketIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService CustomerGroupsApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdCustomerGroupRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiGETMarketIdCustomerGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdCustomerGroupExecute(r)
 }
 
@@ -515,10 +515,10 @@ Retrieve the customer group associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdCustomerGroupRequest
+ @return CustomerGroupsApiGETMarketIdCustomerGroupRequest
 */
-func (a *CustomerGroupsApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) ApiGETMarketIdCustomerGroupRequest {
-	return ApiGETMarketIdCustomerGroupRequest{
+func (a *CustomerGroupsApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) CustomerGroupsApiGETMarketIdCustomerGroupRequest {
+	return CustomerGroupsApiGETMarketIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -526,7 +526,7 @@ func (a *CustomerGroupsApiService) GETMarketIdCustomerGroup(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) GETMarketIdCustomerGroupExecute(r ApiGETMarketIdCustomerGroupRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) GETMarketIdCustomerGroupExecute(r CustomerGroupsApiGETMarketIdCustomerGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -590,19 +590,19 @@ func (a *CustomerGroupsApiService) GETMarketIdCustomerGroupExecute(r ApiGETMarke
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHCustomerGroupsCustomerGroupIdRequest struct {
+type CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest struct {
 	ctx                 context.Context
 	ApiService          CustomerGroupsApi
 	customerGroupId     string
 	customerGroupUpdate *CustomerGroupUpdate
 }
 
-func (r ApiPATCHCustomerGroupsCustomerGroupIdRequest) CustomerGroupUpdate(customerGroupUpdate CustomerGroupUpdate) ApiPATCHCustomerGroupsCustomerGroupIdRequest {
+func (r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) CustomerGroupUpdate(customerGroupUpdate CustomerGroupUpdate) CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest {
 	r.customerGroupUpdate = &customerGroupUpdate
 	return r
 }
 
-func (r ApiPATCHCustomerGroupsCustomerGroupIdRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCustomerGroupsCustomerGroupIdExecute(r)
 }
 
@@ -613,10 +613,10 @@ Update a customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiPATCHCustomerGroupsCustomerGroupIdRequest
+ @return CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest
 */
-func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) ApiPATCHCustomerGroupsCustomerGroupIdRequest {
-	return ApiPATCHCustomerGroupsCustomerGroupIdRequest{
+func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupId(ctx context.Context, customerGroupId string) CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest {
+	return CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -624,7 +624,7 @@ func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupId(ctx contex
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupIdExecute(r ApiPATCHCustomerGroupsCustomerGroupIdRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -693,18 +693,18 @@ func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupIdExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTCustomerGroupsRequest struct {
+type CustomerGroupsApiPOSTCustomerGroupsRequest struct {
 	ctx                 context.Context
 	ApiService          CustomerGroupsApi
 	customerGroupCreate *CustomerGroupCreate
 }
 
-func (r ApiPOSTCustomerGroupsRequest) CustomerGroupCreate(customerGroupCreate CustomerGroupCreate) ApiPOSTCustomerGroupsRequest {
+func (r CustomerGroupsApiPOSTCustomerGroupsRequest) CustomerGroupCreate(customerGroupCreate CustomerGroupCreate) CustomerGroupsApiPOSTCustomerGroupsRequest {
 	r.customerGroupCreate = &customerGroupCreate
 	return r
 }
 
-func (r ApiPOSTCustomerGroupsRequest) Execute() (*http.Response, error) {
+func (r CustomerGroupsApiPOSTCustomerGroupsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCustomerGroupsExecute(r)
 }
 
@@ -714,17 +714,17 @@ POSTCustomerGroups Create a customer group
 Create a customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCustomerGroupsRequest
+ @return CustomerGroupsApiPOSTCustomerGroupsRequest
 */
-func (a *CustomerGroupsApiService) POSTCustomerGroups(ctx context.Context) ApiPOSTCustomerGroupsRequest {
-	return ApiPOSTCustomerGroupsRequest{
+func (a *CustomerGroupsApiService) POSTCustomerGroups(ctx context.Context) CustomerGroupsApiPOSTCustomerGroupsRequest {
+	return CustomerGroupsApiPOSTCustomerGroupsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerGroupsApiService) POSTCustomerGroupsExecute(r ApiPOSTCustomerGroupsRequest) (*http.Response, error) {
+func (a *CustomerGroupsApiService) POSTCustomerGroupsExecute(r CustomerGroupsApiPOSTCustomerGroupsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

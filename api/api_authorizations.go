@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -28,12 +28,12 @@ type AuthorizationsApi interface {
 		List all authorizations
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETAuthorizationsRequest
+		@return AuthorizationsApiGETAuthorizationsRequest
 	*/
-	GETAuthorizations(ctx context.Context) ApiGETAuthorizationsRequest
+	GETAuthorizations(ctx context.Context) AuthorizationsApiGETAuthorizationsRequest
 
 	// GETAuthorizationsExecute executes the request
-	GETAuthorizationsExecute(r ApiGETAuthorizationsRequest) (*http.Response, error)
+	GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*http.Response, error)
 
 	/*
 		GETAuthorizationsAuthorizationId Retrieve an authorization
@@ -42,13 +42,13 @@ type AuthorizationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param authorizationId The resource's id
-		@return ApiGETAuthorizationsAuthorizationIdRequest
+		@return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 	*/
-	GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiGETAuthorizationsAuthorizationIdRequest
+	GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 
 	// GETAuthorizationsAuthorizationIdExecute executes the request
 	//  @return Authorization
-	GETAuthorizationsAuthorizationIdExecute(r ApiGETAuthorizationsAuthorizationIdRequest) (*Authorization, *http.Response, error)
+	GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*Authorization, *http.Response, error)
 
 	/*
 		GETCaptureIdReferenceAuthorization Retrieve the reference authorization associated to the capture
@@ -57,12 +57,12 @@ type AuthorizationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param captureId The resource's id
-		@return ApiGETCaptureIdReferenceAuthorizationRequest
+		@return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 	*/
-	GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) ApiGETCaptureIdReferenceAuthorizationRequest
+	GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 
 	// GETCaptureIdReferenceAuthorizationExecute executes the request
-	GETCaptureIdReferenceAuthorizationExecute(r ApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error)
+	GETCaptureIdReferenceAuthorizationExecute(r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAuthorizations Retrieve the authorizations associated to the order
@@ -71,12 +71,12 @@ type AuthorizationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAuthorizationsRequest
+		@return AuthorizationsApiGETOrderIdAuthorizationsRequest
 	*/
-	GETOrderIdAuthorizations(ctx context.Context, orderId string) ApiGETOrderIdAuthorizationsRequest
+	GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest
 
 	// GETOrderIdAuthorizationsExecute executes the request
-	GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAuthorizationsRequest) (*http.Response, error)
+	GETOrderIdAuthorizationsExecute(r AuthorizationsApiGETOrderIdAuthorizationsRequest) (*http.Response, error)
 
 	/*
 		GETVoidIdReferenceAuthorization Retrieve the reference authorization associated to the void
@@ -85,12 +85,12 @@ type AuthorizationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param voidId The resource's id
-		@return ApiGETVoidIdReferenceAuthorizationRequest
+		@return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 	*/
-	GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) ApiGETVoidIdReferenceAuthorizationRequest
+	GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 
 	// GETVoidIdReferenceAuthorizationExecute executes the request
-	GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error)
+	GETVoidIdReferenceAuthorizationExecute(r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error)
 
 	/*
 		PATCHAuthorizationsAuthorizationId Update an authorization
@@ -99,23 +99,23 @@ type AuthorizationsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param authorizationId The resource's id
-		@return ApiPATCHAuthorizationsAuthorizationIdRequest
+		@return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 	*/
-	PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiPATCHAuthorizationsAuthorizationIdRequest
+	PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 
 	// PATCHAuthorizationsAuthorizationIdExecute executes the request
-	PATCHAuthorizationsAuthorizationIdExecute(r ApiPATCHAuthorizationsAuthorizationIdRequest) (*http.Response, error)
+	PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*http.Response, error)
 }
 
 // AuthorizationsApiService AuthorizationsApi service
 type AuthorizationsApiService service
 
-type ApiGETAuthorizationsRequest struct {
+type AuthorizationsApiGETAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService AuthorizationsApi
 }
 
-func (r ApiGETAuthorizationsRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationsExecute(r)
 }
 
@@ -125,17 +125,17 @@ GETAuthorizations List all authorizations
 List all authorizations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAuthorizationsRequest
+ @return AuthorizationsApiGETAuthorizationsRequest
 */
-func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) ApiGETAuthorizationsRequest {
-	return ApiGETAuthorizationsRequest{
+func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) AuthorizationsApiGETAuthorizationsRequest {
+	return AuthorizationsApiGETAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizationsRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -198,13 +198,13 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizatio
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationsAuthorizationIdRequest struct {
+type AuthorizationsApiGETAuthorizationsAuthorizationIdRequest struct {
 	ctx             context.Context
 	ApiService      AuthorizationsApi
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationsAuthorizationIdRequest) Execute() (*Authorization, *http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) Execute() (*Authorization, *http.Response, error) {
 	return r.ApiService.GETAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -215,10 +215,10 @@ Retrieve an authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationsAuthorizationIdRequest
+ @return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiGETAuthorizationsAuthorizationIdRequest {
-	return ApiGETAuthorizationsAuthorizationIdRequest{
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
+	return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -227,7 +227,7 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.
 
 // Execute executes the request
 //  @return Authorization
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r ApiGETAuthorizationsAuthorizationIdRequest) (*Authorization, *http.Response, error) {
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*Authorization, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -301,13 +301,13 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdReferenceAuthorizationRequest struct {
+type AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService AuthorizationsApi
 	captureId  string
 }
 
-func (r ApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdReferenceAuthorizationExecute(r)
 }
 
@@ -318,10 +318,10 @@ Retrieve the reference authorization associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdReferenceAuthorizationRequest
+ @return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) ApiGETCaptureIdReferenceAuthorizationRequest {
-	return ApiGETCaptureIdReferenceAuthorizationRequest{
+func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
+	return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -329,7 +329,7 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r ApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -393,13 +393,13 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAuthorizationsRequest struct {
+type AuthorizationsApiGETOrderIdAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService AuthorizationsApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAuthorizationsExecute(r)
 }
 
@@ -410,10 +410,10 @@ Retrieve the authorizations associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAuthorizationsRequest
+ @return AuthorizationsApiGETOrderIdAuthorizationsRequest
 */
-func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) ApiGETOrderIdAuthorizationsRequest {
-	return ApiGETOrderIdAuthorizationsRequest{
+func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest {
+	return AuthorizationsApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -421,7 +421,7 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r AuthorizationsApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -485,13 +485,13 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrder
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidIdReferenceAuthorizationRequest struct {
+type AuthorizationsApiGETVoidIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService AuthorizationsApi
 	voidId     string
 }
 
-func (r ApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETVoidIdReferenceAuthorizationExecute(r)
 }
 
@@ -502,10 +502,10 @@ Retrieve the reference authorization associated to the void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidIdReferenceAuthorizationRequest
+ @return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) ApiGETVoidIdReferenceAuthorizationRequest {
-	return ApiGETVoidIdReferenceAuthorizationRequest{
+func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
+	return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -513,7 +513,7 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -577,19 +577,19 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHAuthorizationsAuthorizationIdRequest struct {
+type AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest struct {
 	ctx                 context.Context
 	ApiService          AuthorizationsApi
 	authorizationId     string
 	authorizationUpdate *AuthorizationUpdate
 }
 
-func (r ApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) ApiPATCHAuthorizationsAuthorizationIdRequest {
+func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
 	r.authorizationUpdate = &authorizationUpdate
 	return r
 }
 
-func (r ApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -600,10 +600,10 @@ Update an authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiPATCHAuthorizationsAuthorizationIdRequest
+ @return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiPATCHAuthorizationsAuthorizationIdRequest {
-	return ApiPATCHAuthorizationsAuthorizationIdRequest{
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
+	return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -611,7 +611,7 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r ApiPATCHAuthorizationsAuthorizationIdRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}

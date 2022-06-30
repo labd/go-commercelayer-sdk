@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type CustomerSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerSubscriptionId The resource's id
-		@return ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
+		@return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
 	*/
-	DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
+	DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
 
 	// DELETECustomerSubscriptionsCustomerSubscriptionIdExecute executes the request
-	DELETECustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error)
+	DELETECustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdCustomerSubscriptions Retrieve the customer subscriptions associated to the customer
@@ -43,12 +43,12 @@ type CustomerSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerSubscriptionsRequest
+		@return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
 	*/
-	GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdCustomerSubscriptionsRequest
+	GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
 
 	// GETCustomerIdCustomerSubscriptionsExecute executes the request
-	GETCustomerIdCustomerSubscriptionsExecute(r ApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error)
+	GETCustomerIdCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerSubscriptions List all customer subscriptions
@@ -56,12 +56,12 @@ type CustomerSubscriptionsApi interface {
 		List all customer subscriptions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCustomerSubscriptionsRequest
+		@return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest
 	*/
-	GETCustomerSubscriptions(ctx context.Context) ApiGETCustomerSubscriptionsRequest
+	GETCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiGETCustomerSubscriptionsRequest
 
 	// GETCustomerSubscriptionsExecute executes the request
-	GETCustomerSubscriptionsExecute(r ApiGETCustomerSubscriptionsRequest) (*http.Response, error)
+	GETCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETCustomerSubscriptionsCustomerSubscriptionId Retrieve a customer subscription
@@ -70,13 +70,13 @@ type CustomerSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerSubscriptionId The resource's id
-		@return ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
+		@return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
 	*/
-	GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
+	GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
 
 	// GETCustomerSubscriptionsCustomerSubscriptionIdExecute executes the request
 	//  @return CustomerSubscription
-	GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscription, *http.Response, error)
+	GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscription, *http.Response, error)
 
 	/*
 		PATCHCustomerSubscriptionsCustomerSubscriptionId Update a customer subscription
@@ -85,12 +85,12 @@ type CustomerSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerSubscriptionId The resource's id
-		@return ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
+		@return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
 	*/
-	PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
+	PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
 
 	// PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute executes the request
-	PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error)
+	PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		POSTCustomerSubscriptions Create a customer subscription
@@ -98,24 +98,24 @@ type CustomerSubscriptionsApi interface {
 		Create a customer subscription
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTCustomerSubscriptionsRequest
+		@return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest
 	*/
-	POSTCustomerSubscriptions(ctx context.Context) ApiPOSTCustomerSubscriptionsRequest
+	POSTCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest
 
 	// POSTCustomerSubscriptionsExecute executes the request
-	POSTCustomerSubscriptionsExecute(r ApiPOSTCustomerSubscriptionsRequest) (*http.Response, error)
+	POSTCustomerSubscriptionsExecute(r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) (*http.Response, error)
 }
 
 // CustomerSubscriptionsApiService CustomerSubscriptionsApi service
 type CustomerSubscriptionsApiService service
 
-type ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest struct {
+type CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest struct {
 	ctx                    context.Context
 	ApiService             CustomerSubscriptionsApi
 	customerSubscriptionId string
 }
 
-func (r ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomerSubscriptionsCustomerSubscriptionIdExecute(r)
 }
 
@@ -126,10 +126,10 @@ Delete a customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
+ @return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest {
-	return ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest{
+func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest {
+	return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -137,7 +137,7 @@ func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSub
 }
 
 // Execute executes the request
-func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error) {
+func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +201,13 @@ func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSub
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerSubscriptionsRequest struct {
+type CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService CustomerSubscriptionsApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerSubscriptionsExecute(r)
 }
 
@@ -218,10 +218,10 @@ Retrieve the customer subscriptions associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerSubscriptionsRequest
+ @return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
 */
-func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdCustomerSubscriptionsRequest {
-	return ApiGETCustomerIdCustomerSubscriptionsRequest{
+func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest {
+	return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -229,7 +229,7 @@ func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx
 }
 
 // Execute executes the request
-func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptionsExecute(r ApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error) {
+func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +293,12 @@ func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptionsExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerSubscriptionsRequest struct {
+type CustomerSubscriptionsApiGETCustomerSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService CustomerSubscriptionsApi
 }
 
-func (r ApiGETCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionsExecute(r)
 }
 
@@ -308,17 +308,17 @@ GETCustomerSubscriptions List all customer subscriptions
 List all customer subscriptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCustomerSubscriptionsRequest
+ @return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest
 */
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptions(ctx context.Context) ApiGETCustomerSubscriptionsRequest {
-	return ApiGETCustomerSubscriptionsRequest{
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiGETCustomerSubscriptionsRequest {
+	return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r ApiGETCustomerSubscriptionsRequest) (*http.Response, error) {
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +381,13 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest struct {
+type CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest struct {
 	ctx                    context.Context
 	ApiService             CustomerSubscriptionsApi
 	customerSubscriptionId string
 }
 
-func (r ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*CustomerSubscription, *http.Response, error) {
+func (r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*CustomerSubscription, *http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r)
 }
 
@@ -398,10 +398,10 @@ Retrieve a customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
+ @return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest {
-	return ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest{
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest {
+	return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -410,7 +410,7 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 
 // Execute executes the request
 //  @return CustomerSubscription
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscription, *http.Response, error) {
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscription, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +484,19 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest struct {
+type CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest struct {
 	ctx                        context.Context
 	ApiService                 CustomerSubscriptionsApi
 	customerSubscriptionId     string
 	customerSubscriptionUpdate *CustomerSubscriptionUpdate
 }
 
-func (r ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) CustomerSubscriptionUpdate(customerSubscriptionUpdate CustomerSubscriptionUpdate) ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
+func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) CustomerSubscriptionUpdate(customerSubscriptionUpdate CustomerSubscriptionUpdate) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
 	r.customerSubscriptionUpdate = &customerSubscriptionUpdate
 	return r
 }
 
-func (r ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r)
 }
 
@@ -507,10 +507,10 @@ Update a customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
+ @return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
-	return ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest{
+func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
+	return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -518,7 +518,7 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 }
 
 // Execute executes the request
-func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r ApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error) {
+func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +587,18 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTCustomerSubscriptionsRequest struct {
+type CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest struct {
 	ctx                        context.Context
 	ApiService                 CustomerSubscriptionsApi
 	customerSubscriptionCreate *CustomerSubscriptionCreate
 }
 
-func (r ApiPOSTCustomerSubscriptionsRequest) CustomerSubscriptionCreate(customerSubscriptionCreate CustomerSubscriptionCreate) ApiPOSTCustomerSubscriptionsRequest {
+func (r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) CustomerSubscriptionCreate(customerSubscriptionCreate CustomerSubscriptionCreate) CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest {
 	r.customerSubscriptionCreate = &customerSubscriptionCreate
 	return r
 }
 
-func (r ApiPOSTCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCustomerSubscriptionsExecute(r)
 }
 
@@ -608,17 +608,17 @@ POSTCustomerSubscriptions Create a customer subscription
 Create a customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCustomerSubscriptionsRequest
+ @return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest
 */
-func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptions(ctx context.Context) ApiPOSTCustomerSubscriptionsRequest {
-	return ApiPOSTCustomerSubscriptionsRequest{
+func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest {
+	return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r ApiPOSTCustomerSubscriptionsRequest) (*http.Response, error) {
+func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

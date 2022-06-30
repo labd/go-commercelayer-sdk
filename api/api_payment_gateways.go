@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenPaymentId The resource's id
-		@return ApiGETAdyenPaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest
 	*/
-	GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdPaymentGatewayRequest
+	GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest
 
 	// GETAdyenPaymentIdPaymentGatewayExecute executes the request
-	GETAdyenPaymentIdPaymentGatewayExecute(r ApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETAdyenPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETBraintreePaymentIdPaymentGateway Retrieve the payment gateway associated to the braintree payment
@@ -43,12 +43,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreePaymentId The resource's id
-		@return ApiGETBraintreePaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest
 	*/
-	GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdPaymentGatewayRequest
+	GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest
 
 	// GETBraintreePaymentIdPaymentGatewayExecute executes the request
-	GETBraintreePaymentIdPaymentGatewayExecute(r ApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETBraintreePaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETCheckoutComPaymentIdPaymentGateway Retrieve the payment gateway associated to the checkout.com payment
@@ -57,12 +57,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param checkoutComPaymentId The resource's id
-		@return ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest
 	*/
-	GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+	GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest
 
 	// GETCheckoutComPaymentIdPaymentGatewayExecute executes the request
-	GETCheckoutComPaymentIdPaymentGatewayExecute(r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETCheckoutComPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETExternalPaymentIdPaymentGateway Retrieve the payment gateway associated to the external payment
@@ -71,12 +71,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiGETExternalPaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest
 	*/
-	GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdPaymentGatewayRequest
+	GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest
 
 	// GETExternalPaymentIdPaymentGatewayExecute executes the request
-	GETExternalPaymentIdPaymentGatewayExecute(r ApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETExternalPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETKlarnaPaymentIdPaymentGateway Retrieve the payment gateway associated to the klarna payment
@@ -85,12 +85,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param klarnaPaymentId The resource's id
-		@return ApiGETKlarnaPaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest
 	*/
-	GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdPaymentGatewayRequest
+	GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest
 
 	// GETKlarnaPaymentIdPaymentGatewayExecute executes the request
-	GETKlarnaPaymentIdPaymentGatewayExecute(r ApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETKlarnaPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETPaymentGateways List all payment gateways
@@ -98,12 +98,12 @@ type PaymentGatewaysApi interface {
 		List all payment gateways
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETPaymentGatewaysRequest
+		@return PaymentGatewaysApiGETPaymentGatewaysRequest
 	*/
-	GETPaymentGateways(ctx context.Context) ApiGETPaymentGatewaysRequest
+	GETPaymentGateways(ctx context.Context) PaymentGatewaysApiGETPaymentGatewaysRequest
 
 	// GETPaymentGatewaysExecute executes the request
-	GETPaymentGatewaysExecute(r ApiGETPaymentGatewaysRequest) (*http.Response, error)
+	GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*http.Response, error)
 
 	/*
 		GETPaymentGatewaysPaymentGatewayId Retrieve a payment gateway
@@ -112,13 +112,13 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentGatewayId The resource's id
-		@return ApiGETPaymentGatewaysPaymentGatewayIdRequest
+		@return PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest
 	*/
-	GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId string) ApiGETPaymentGatewaysPaymentGatewayIdRequest
+	GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId string) PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest
 
 	// GETPaymentGatewaysPaymentGatewayIdExecute executes the request
 	//  @return PaymentGateway
-	GETPaymentGatewaysPaymentGatewayIdExecute(r ApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGateway, *http.Response, error)
+	GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGateway, *http.Response, error)
 
 	/*
 		GETPaymentMethodIdPaymentGateway Retrieve the payment gateway associated to the payment method
@@ -127,12 +127,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentMethodId The resource's id
-		@return ApiGETPaymentMethodIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest
 	*/
-	GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdPaymentGatewayRequest
+	GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest
 
 	// GETPaymentMethodIdPaymentGatewayExecute executes the request
-	GETPaymentMethodIdPaymentGatewayExecute(r ApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error)
+	GETPaymentMethodIdPaymentGatewayExecute(r PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETPaypalPaymentIdPaymentGateway Retrieve the payment gateway associated to the paypal payment
@@ -141,12 +141,12 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalPaymentId The resource's id
-		@return ApiGETPaypalPaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest
 	*/
-	GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdPaymentGatewayRequest
+	GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest
 
 	// GETPaypalPaymentIdPaymentGatewayExecute executes the request
-	GETPaypalPaymentIdPaymentGatewayExecute(r ApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETPaypalPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETStripePaymentIdPaymentGateway Retrieve the payment gateway associated to the stripe payment
@@ -155,24 +155,24 @@ type PaymentGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiGETStripePaymentIdPaymentGatewayRequest
+		@return PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest
 	*/
-	GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdPaymentGatewayRequest
+	GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest
 
 	// GETStripePaymentIdPaymentGatewayExecute executes the request
-	GETStripePaymentIdPaymentGatewayExecute(r ApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETStripePaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error)
 }
 
 // PaymentGatewaysApiService PaymentGatewaysApi service
 type PaymentGatewaysApiService service
 
-type ApiGETAdyenPaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest struct {
 	ctx            context.Context
 	ApiService     PaymentGatewaysApi
 	adyenPaymentId string
 }
 
-func (r ApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -183,10 +183,10 @@ Retrieve the payment gateway associated to the adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiGETAdyenPaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdPaymentGatewayRequest {
-	return ApiGETAdyenPaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -194,7 +194,7 @@ func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGateway(ctx context.
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r ApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -258,13 +258,13 @@ func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest struct {
 	ctx                context.Context
 	ApiService         PaymentGatewaysApi
 	braintreePaymentId string
 }
 
-func (r ApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreePaymentIdPaymentGatewayExecute(r)
 }
 
@@ -275,10 +275,10 @@ Retrieve the payment gateway associated to the braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiGETBraintreePaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdPaymentGatewayRequest {
-	return ApiGETBraintreePaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -286,7 +286,7 @@ func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGateway(ctx cont
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r ApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -350,13 +350,13 @@ func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
 	ctx                  context.Context
 	ApiService           PaymentGatewaysApi
 	checkoutComPaymentId string
 }
 
-func (r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -367,10 +367,10 @@ Retrieve the payment gateway associated to the checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdPaymentGatewayRequest {
-	return ApiGETCheckoutComPaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -378,7 +378,7 @@ func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGateway(ctx co
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -442,13 +442,13 @@ func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest struct {
 	ctx               context.Context
 	ApiService        PaymentGatewaysApi
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -459,10 +459,10 @@ Retrieve the payment gateway associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdPaymentGatewayRequest {
-	return ApiGETExternalPaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -470,7 +470,7 @@ func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGateway(ctx conte
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r ApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -534,13 +534,13 @@ func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      PaymentGatewaysApi
 	klarnaPaymentId string
 }
 
-func (r ApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -551,10 +551,10 @@ Retrieve the payment gateway associated to the klarna payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaPaymentId The resource's id
- @return ApiGETKlarnaPaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdPaymentGatewayRequest {
-	return ApiGETKlarnaPaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaPaymentId: klarnaPaymentId,
@@ -562,7 +562,7 @@ func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGateway(ctx context
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r ApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -626,12 +626,12 @@ func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentGatewaysRequest struct {
+type PaymentGatewaysApiGETPaymentGatewaysRequest struct {
 	ctx        context.Context
 	ApiService PaymentGatewaysApi
 }
 
-func (r ApiGETPaymentGatewaysRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysExecute(r)
 }
 
@@ -641,17 +641,17 @@ GETPaymentGateways List all payment gateways
 List all payment gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPaymentGatewaysRequest
+ @return PaymentGatewaysApiGETPaymentGatewaysRequest
 */
-func (a *PaymentGatewaysApiService) GETPaymentGateways(ctx context.Context) ApiGETPaymentGatewaysRequest {
-	return ApiGETPaymentGatewaysRequest{
+func (a *PaymentGatewaysApiService) GETPaymentGateways(ctx context.Context) PaymentGatewaysApiGETPaymentGatewaysRequest {
+	return PaymentGatewaysApiGETPaymentGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r ApiGETPaymentGatewaysRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -714,13 +714,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r ApiGETPaymentGat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentGatewaysPaymentGatewayIdRequest struct {
+type PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest struct {
 	ctx              context.Context
 	ApiService       PaymentGatewaysApi
 	paymentGatewayId string
 }
 
-func (r ApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*PaymentGateway, *http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*PaymentGateway, *http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysPaymentGatewayIdExecute(r)
 }
 
@@ -731,10 +731,10 @@ Retrieve a payment gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentGatewayId The resource's id
- @return ApiGETPaymentGatewaysPaymentGatewayIdRequest
+ @return PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest
 */
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId string) ApiGETPaymentGatewaysPaymentGatewayIdRequest {
-	return ApiGETPaymentGatewaysPaymentGatewayIdRequest{
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId string) PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest {
+	return PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		paymentGatewayId: paymentGatewayId,
@@ -743,7 +743,7 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx conte
 
 // Execute executes the request
 //  @return PaymentGateway
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r ApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGateway, *http.Response, error) {
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -817,13 +817,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentMethodIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      PaymentGatewaysApi
 	paymentMethodId string
 }
 
-func (r ApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdPaymentGatewayExecute(r)
 }
 
@@ -834,10 +834,10 @@ Retrieve the payment gateway associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return ApiGETPaymentMethodIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdPaymentGatewayRequest {
-	return ApiGETPaymentMethodIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -845,7 +845,7 @@ func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGateway(ctx context
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r ApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -909,13 +909,13 @@ func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalPaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      PaymentGatewaysApi
 	paypalPaymentId string
 }
 
-func (r ApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -926,10 +926,10 @@ Retrieve the payment gateway associated to the paypal payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalPaymentId The resource's id
- @return ApiGETPaypalPaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdPaymentGatewayRequest {
-	return ApiGETPaypalPaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalPaymentId: paypalPaymentId,
@@ -937,7 +937,7 @@ func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGateway(ctx context
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r ApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1001,13 +1001,13 @@ func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentIdPaymentGatewayRequest struct {
+type PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      PaymentGatewaysApi
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripePaymentIdPaymentGatewayExecute(r)
 }
 
@@ -1018,10 +1018,10 @@ Retrieve the payment gateway associated to the stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentIdPaymentGatewayRequest
+ @return PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdPaymentGatewayRequest {
-	return ApiGETStripePaymentIdPaymentGatewayRequest{
+func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -1029,7 +1029,7 @@ func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGateway(ctx context
 }
 
 // Execute executes the request
-func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGatewayExecute(r ApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}

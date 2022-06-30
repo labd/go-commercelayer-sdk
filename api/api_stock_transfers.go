@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiDELETEStockTransfersStockTransferIdRequest
+		@return StockTransfersApiDELETEStockTransfersStockTransferIdRequest
 	*/
-	DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiDELETEStockTransfersStockTransferIdRequest
+	DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiDELETEStockTransfersStockTransferIdRequest
 
 	// DELETEStockTransfersStockTransferIdExecute executes the request
-	DELETEStockTransfersStockTransferIdExecute(r ApiDELETEStockTransfersStockTransferIdRequest) (*http.Response, error)
+	DELETEStockTransfersStockTransferIdExecute(r StockTransfersApiDELETEStockTransfersStockTransferIdRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdStockTransfers Retrieve the stock transfers associated to the line item
@@ -43,12 +43,12 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdStockTransfersRequest
+		@return StockTransfersApiGETLineItemIdStockTransfersRequest
 	*/
-	GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) ApiGETLineItemIdStockTransfersRequest
+	GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) StockTransfersApiGETLineItemIdStockTransfersRequest
 
 	// GETLineItemIdStockTransfersExecute executes the request
-	GETLineItemIdStockTransfersExecute(r ApiGETLineItemIdStockTransfersRequest) (*http.Response, error)
+	GETLineItemIdStockTransfersExecute(r StockTransfersApiGETLineItemIdStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdStockTransfers Retrieve the stock transfers associated to the shipment
@@ -57,12 +57,12 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdStockTransfersRequest
+		@return StockTransfersApiGETShipmentIdStockTransfersRequest
 	*/
-	GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) ApiGETShipmentIdStockTransfersRequest
+	GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) StockTransfersApiGETShipmentIdStockTransfersRequest
 
 	// GETShipmentIdStockTransfersExecute executes the request
-	GETShipmentIdStockTransfersExecute(r ApiGETShipmentIdStockTransfersRequest) (*http.Response, error)
+	GETShipmentIdStockTransfersExecute(r StockTransfersApiGETShipmentIdStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdStockTransfers Retrieve the stock transfers associated to the stock location
@@ -71,12 +71,12 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdStockTransfersRequest
+		@return StockTransfersApiGETStockLocationIdStockTransfersRequest
 	*/
-	GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockTransfersRequest
+	GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) StockTransfersApiGETStockLocationIdStockTransfersRequest
 
 	// GETStockLocationIdStockTransfersExecute executes the request
-	GETStockLocationIdStockTransfersExecute(r ApiGETStockLocationIdStockTransfersRequest) (*http.Response, error)
+	GETStockLocationIdStockTransfersExecute(r StockTransfersApiGETStockLocationIdStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETStockTransfers List all stock transfers
@@ -84,12 +84,12 @@ type StockTransfersApi interface {
 		List all stock transfers
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETStockTransfersRequest
+		@return StockTransfersApiGETStockTransfersRequest
 	*/
-	GETStockTransfers(ctx context.Context) ApiGETStockTransfersRequest
+	GETStockTransfers(ctx context.Context) StockTransfersApiGETStockTransfersRequest
 
 	// GETStockTransfersExecute executes the request
-	GETStockTransfersExecute(r ApiGETStockTransfersRequest) (*http.Response, error)
+	GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*http.Response, error)
 
 	/*
 		GETStockTransfersStockTransferId Retrieve a stock transfer
@@ -98,13 +98,13 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransfersStockTransferIdRequest
+		@return StockTransfersApiGETStockTransfersStockTransferIdRequest
 	*/
-	GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiGETStockTransfersStockTransferIdRequest
+	GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiGETStockTransfersStockTransferIdRequest
 
 	// GETStockTransfersStockTransferIdExecute executes the request
 	//  @return StockTransfer
-	GETStockTransfersStockTransferIdExecute(r ApiGETStockTransfersStockTransferIdRequest) (*StockTransfer, *http.Response, error)
+	GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*StockTransfer, *http.Response, error)
 
 	/*
 		PATCHStockTransfersStockTransferId Update a stock transfer
@@ -113,12 +113,12 @@ type StockTransfersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiPATCHStockTransfersStockTransferIdRequest
+		@return StockTransfersApiPATCHStockTransfersStockTransferIdRequest
 	*/
-	PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiPATCHStockTransfersStockTransferIdRequest
+	PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiPATCHStockTransfersStockTransferIdRequest
 
 	// PATCHStockTransfersStockTransferIdExecute executes the request
-	PATCHStockTransfersStockTransferIdExecute(r ApiPATCHStockTransfersStockTransferIdRequest) (*http.Response, error)
+	PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*http.Response, error)
 
 	/*
 		POSTStockTransfers Create a stock transfer
@@ -126,24 +126,24 @@ type StockTransfersApi interface {
 		Create a stock transfer
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTStockTransfersRequest
+		@return StockTransfersApiPOSTStockTransfersRequest
 	*/
-	POSTStockTransfers(ctx context.Context) ApiPOSTStockTransfersRequest
+	POSTStockTransfers(ctx context.Context) StockTransfersApiPOSTStockTransfersRequest
 
 	// POSTStockTransfersExecute executes the request
-	POSTStockTransfersExecute(r ApiPOSTStockTransfersRequest) (*http.Response, error)
+	POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*http.Response, error)
 }
 
 // StockTransfersApiService StockTransfersApi service
 type StockTransfersApiService service
 
-type ApiDELETEStockTransfersStockTransferIdRequest struct {
+type StockTransfersApiDELETEStockTransfersStockTransferIdRequest struct {
 	ctx             context.Context
 	ApiService      StockTransfersApi
 	stockTransferId string
 }
 
-func (r ApiDELETEStockTransfersStockTransferIdRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiDELETEStockTransfersStockTransferIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStockTransfersStockTransferIdExecute(r)
 }
 
@@ -154,10 +154,10 @@ Delete a stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiDELETEStockTransfersStockTransferIdRequest
+ @return StockTransfersApiDELETEStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiDELETEStockTransfersStockTransferIdRequest {
-	return ApiDELETEStockTransfersStockTransferIdRequest{
+func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiDELETEStockTransfersStockTransferIdRequest {
+	return StockTransfersApiDELETEStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -165,7 +165,7 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx conte
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r ApiDELETEStockTransfersStockTransferIdRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r StockTransfersApiDELETEStockTransfersStockTransferIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -229,13 +229,13 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdStockTransfersRequest struct {
+type StockTransfersApiGETLineItemIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService StockTransfersApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdStockTransfersExecute(r)
 }
 
@@ -246,10 +246,10 @@ Retrieve the stock transfers associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdStockTransfersRequest
+ @return StockTransfersApiGETLineItemIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) ApiGETLineItemIdStockTransfersRequest {
-	return ApiGETLineItemIdStockTransfersRequest{
+func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) StockTransfersApiGETLineItemIdStockTransfersRequest {
+	return StockTransfersApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -257,7 +257,7 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r ApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTransfersApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -321,13 +321,13 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r ApiGETLi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockTransfersRequest struct {
+type StockTransfersApiGETShipmentIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService StockTransfersApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockTransfersExecute(r)
 }
 
@@ -338,10 +338,10 @@ Retrieve the stock transfers associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockTransfersRequest
+ @return StockTransfersApiGETShipmentIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) ApiGETShipmentIdStockTransfersRequest {
-	return ApiGETShipmentIdStockTransfersRequest{
+func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) StockTransfersApiGETShipmentIdStockTransfersRequest {
+	return StockTransfersApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -349,7 +349,7 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r ApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTransfersApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -413,13 +413,13 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r ApiGETSh
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdStockTransfersRequest struct {
+type StockTransfersApiGETStockLocationIdStockTransfersRequest struct {
 	ctx             context.Context
 	ApiService      StockTransfersApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdStockTransfersExecute(r)
 }
 
@@ -430,10 +430,10 @@ Retrieve the stock transfers associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdStockTransfersRequest
+ @return StockTransfersApiGETStockLocationIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockTransfersRequest {
-	return ApiGETStockLocationIdStockTransfersRequest{
+func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) StockTransfersApiGETStockLocationIdStockTransfersRequest {
+	return StockTransfersApiGETStockLocationIdStockTransfersRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -441,7 +441,7 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r ApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r StockTransfersApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -505,12 +505,12 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransfersRequest struct {
+type StockTransfersApiGETStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService StockTransfersApi
 }
 
-func (r ApiGETStockTransfersRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiGETStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransfersExecute(r)
 }
 
@@ -520,17 +520,17 @@ GETStockTransfers List all stock transfers
 List all stock transfers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStockTransfersRequest
+ @return StockTransfersApiGETStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) ApiGETStockTransfersRequest {
-	return ApiGETStockTransfersRequest{
+func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockTransfersApiGETStockTransfersRequest {
+	return StockTransfersApiGETStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) GETStockTransfersExecute(r ApiGETStockTransfersRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -593,13 +593,13 @@ func (a *StockTransfersApiService) GETStockTransfersExecute(r ApiGETStockTransfe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransfersStockTransferIdRequest struct {
+type StockTransfersApiGETStockTransfersStockTransferIdRequest struct {
 	ctx             context.Context
 	ApiService      StockTransfersApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransfersStockTransferIdRequest) Execute() (*StockTransfer, *http.Response, error) {
+func (r StockTransfersApiGETStockTransfersStockTransferIdRequest) Execute() (*StockTransfer, *http.Response, error) {
 	return r.ApiService.GETStockTransfersStockTransferIdExecute(r)
 }
 
@@ -610,10 +610,10 @@ Retrieve a stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransfersStockTransferIdRequest
+ @return StockTransfersApiGETStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiGETStockTransfersStockTransferIdRequest {
-	return ApiGETStockTransfersStockTransferIdRequest{
+func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiGETStockTransfersStockTransferIdRequest {
+	return StockTransfersApiGETStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -622,7 +622,7 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.
 
 // Execute executes the request
 //  @return StockTransfer
-func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r ApiGETStockTransfersStockTransferIdRequest) (*StockTransfer, *http.Response, error) {
+func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*StockTransfer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -696,19 +696,19 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHStockTransfersStockTransferIdRequest struct {
+type StockTransfersApiPATCHStockTransfersStockTransferIdRequest struct {
 	ctx                 context.Context
 	ApiService          StockTransfersApi
 	stockTransferId     string
 	stockTransferUpdate *StockTransferUpdate
 }
 
-func (r ApiPATCHStockTransfersStockTransferIdRequest) StockTransferUpdate(stockTransferUpdate StockTransferUpdate) ApiPATCHStockTransfersStockTransferIdRequest {
+func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) StockTransferUpdate(stockTransferUpdate StockTransferUpdate) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
 	r.stockTransferUpdate = &stockTransferUpdate
 	return r
 }
 
-func (r ApiPATCHStockTransfersStockTransferIdRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHStockTransfersStockTransferIdExecute(r)
 }
 
@@ -719,10 +719,10 @@ Update a stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiPATCHStockTransfersStockTransferIdRequest
+ @return StockTransfersApiPATCHStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) ApiPATCHStockTransfersStockTransferIdRequest {
-	return ApiPATCHStockTransfersStockTransferIdRequest{
+func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
+	return StockTransfersApiPATCHStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -730,7 +730,7 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx contex
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r ApiPATCHStockTransfersStockTransferIdRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -799,18 +799,18 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTStockTransfersRequest struct {
+type StockTransfersApiPOSTStockTransfersRequest struct {
 	ctx                 context.Context
 	ApiService          StockTransfersApi
 	stockTransferCreate *StockTransferCreate
 }
 
-func (r ApiPOSTStockTransfersRequest) StockTransferCreate(stockTransferCreate StockTransferCreate) ApiPOSTStockTransfersRequest {
+func (r StockTransfersApiPOSTStockTransfersRequest) StockTransferCreate(stockTransferCreate StockTransferCreate) StockTransfersApiPOSTStockTransfersRequest {
 	r.stockTransferCreate = &stockTransferCreate
 	return r
 }
 
-func (r ApiPOSTStockTransfersRequest) Execute() (*http.Response, error) {
+func (r StockTransfersApiPOSTStockTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTStockTransfersExecute(r)
 }
 
@@ -820,17 +820,17 @@ POSTStockTransfers Create a stock transfer
 Create a stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStockTransfersRequest
+ @return StockTransfersApiPOSTStockTransfersRequest
 */
-func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) ApiPOSTStockTransfersRequest {
-	return ApiPOSTStockTransfersRequest{
+func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) StockTransfersApiPOSTStockTransfersRequest {
+	return StockTransfersApiPOSTStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockTransfersApiService) POSTStockTransfersExecute(r ApiPOSTStockTransfersRequest) (*http.Response, error) {
+func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

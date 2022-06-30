@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -22,6 +22,7 @@ type OrderSubscriptionDataRelationships struct {
 	Customer    *CouponRecipientDataRelationshipsCustomer      `json:"customer,omitempty"`
 	OrderCopies *OrderSubscriptionDataRelationshipsOrderCopies `json:"order_copies,omitempty"`
 	Orders      *AdyenPaymentDataRelationshipsOrder            `json:"orders,omitempty"`
+	Events      *CustomerAddressDataRelationshipsEvents        `json:"events,omitempty"`
 }
 
 // NewOrderSubscriptionDataRelationships instantiates a new OrderSubscriptionDataRelationships object
@@ -201,6 +202,38 @@ func (o *OrderSubscriptionDataRelationships) SetOrders(v AdyenPaymentDataRelatio
 	o.Orders = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret CustomerAddressDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
+func (o *OrderSubscriptionDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o OrderSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Market != nil {
@@ -217,6 +250,9 @@ func (o OrderSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Orders != nil {
 		toSerialize["orders"] = o.Orders
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

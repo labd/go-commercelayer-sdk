@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type CouponRecipientsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiDELETECouponRecipientsCouponRecipientIdRequest
+		@return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest
 	*/
-	DELETECouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiDELETECouponRecipientsCouponRecipientIdRequest
+	DELETECouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest
 
 	// DELETECouponRecipientsCouponRecipientIdExecute executes the request
-	DELETECouponRecipientsCouponRecipientIdExecute(r ApiDELETECouponRecipientsCouponRecipientIdRequest) (*http.Response, error)
+	DELETECouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest) (*http.Response, error)
 
 	/*
 		GETCouponRecipients List all coupon recipients
@@ -42,12 +42,12 @@ type CouponRecipientsApi interface {
 		List all coupon recipients
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCouponRecipientsRequest
+		@return CouponRecipientsApiGETCouponRecipientsRequest
 	*/
-	GETCouponRecipients(ctx context.Context) ApiGETCouponRecipientsRequest
+	GETCouponRecipients(ctx context.Context) CouponRecipientsApiGETCouponRecipientsRequest
 
 	// GETCouponRecipientsExecute executes the request
-	GETCouponRecipientsExecute(r ApiGETCouponRecipientsRequest) (*http.Response, error)
+	GETCouponRecipientsExecute(r CouponRecipientsApiGETCouponRecipientsRequest) (*http.Response, error)
 
 	/*
 		GETCouponRecipientsCouponRecipientId Retrieve a coupon recipient
@@ -56,13 +56,13 @@ type CouponRecipientsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiGETCouponRecipientsCouponRecipientIdRequest
+		@return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest
 	*/
-	GETCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientsCouponRecipientIdRequest
+	GETCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest
 
 	// GETCouponRecipientsCouponRecipientIdExecute executes the request
 	//  @return CouponRecipient
-	GETCouponRecipientsCouponRecipientIdExecute(r ApiGETCouponRecipientsCouponRecipientIdRequest) (*CouponRecipient, *http.Response, error)
+	GETCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) (*CouponRecipient, *http.Response, error)
 
 	/*
 		PATCHCouponRecipientsCouponRecipientId Update a coupon recipient
@@ -71,12 +71,12 @@ type CouponRecipientsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiPATCHCouponRecipientsCouponRecipientIdRequest
+		@return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest
 	*/
-	PATCHCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiPATCHCouponRecipientsCouponRecipientIdRequest
+	PATCHCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest
 
 	// PATCHCouponRecipientsCouponRecipientIdExecute executes the request
-	PATCHCouponRecipientsCouponRecipientIdExecute(r ApiPATCHCouponRecipientsCouponRecipientIdRequest) (*http.Response, error)
+	PATCHCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) (*http.Response, error)
 
 	/*
 		POSTCouponRecipients Create a coupon recipient
@@ -84,24 +84,24 @@ type CouponRecipientsApi interface {
 		Create a coupon recipient
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTCouponRecipientsRequest
+		@return CouponRecipientsApiPOSTCouponRecipientsRequest
 	*/
-	POSTCouponRecipients(ctx context.Context) ApiPOSTCouponRecipientsRequest
+	POSTCouponRecipients(ctx context.Context) CouponRecipientsApiPOSTCouponRecipientsRequest
 
 	// POSTCouponRecipientsExecute executes the request
-	POSTCouponRecipientsExecute(r ApiPOSTCouponRecipientsRequest) (*http.Response, error)
+	POSTCouponRecipientsExecute(r CouponRecipientsApiPOSTCouponRecipientsRequest) (*http.Response, error)
 }
 
 // CouponRecipientsApiService CouponRecipientsApi service
 type CouponRecipientsApiService service
 
-type ApiDELETECouponRecipientsCouponRecipientIdRequest struct {
+type CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest struct {
 	ctx               context.Context
 	ApiService        CouponRecipientsApi
 	couponRecipientId string
 }
 
-func (r ApiDELETECouponRecipientsCouponRecipientIdRequest) Execute() (*http.Response, error) {
+func (r CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECouponRecipientsCouponRecipientIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiDELETECouponRecipientsCouponRecipientIdRequest
+ @return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest
 */
-func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiDELETECouponRecipientsCouponRecipientIdRequest {
-	return ApiDELETECouponRecipientsCouponRecipientIdRequest{
+func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest {
+	return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -123,7 +123,7 @@ func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientId(ctx
 }
 
 // Execute executes the request
-func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientIdExecute(r ApiDELETECouponRecipientsCouponRecipientIdRequest) (*http.Response, error) {
+func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientIdExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponRecipientsRequest struct {
+type CouponRecipientsApiGETCouponRecipientsRequest struct {
 	ctx        context.Context
 	ApiService CouponRecipientsApi
 }
 
-func (r ApiGETCouponRecipientsRequest) Execute() (*http.Response, error) {
+func (r CouponRecipientsApiGETCouponRecipientsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponRecipientsExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETCouponRecipients List all coupon recipients
 List all coupon recipients
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCouponRecipientsRequest
+ @return CouponRecipientsApiGETCouponRecipientsRequest
 */
-func (a *CouponRecipientsApiService) GETCouponRecipients(ctx context.Context) ApiGETCouponRecipientsRequest {
-	return ApiGETCouponRecipientsRequest{
+func (a *CouponRecipientsApiService) GETCouponRecipients(ctx context.Context) CouponRecipientsApiGETCouponRecipientsRequest {
+	return CouponRecipientsApiGETCouponRecipientsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r ApiGETCouponRecipientsRequest) (*http.Response, error) {
+func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r CouponRecipientsApiGETCouponRecipientsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r ApiGETCouponRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponRecipientsCouponRecipientIdRequest struct {
+type CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest struct {
 	ctx               context.Context
 	ApiService        CouponRecipientsApi
 	couponRecipientId string
 }
 
-func (r ApiGETCouponRecipientsCouponRecipientIdRequest) Execute() (*CouponRecipient, *http.Response, error) {
+func (r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) Execute() (*CouponRecipient, *http.Response, error) {
 	return r.ApiService.GETCouponRecipientsCouponRecipientIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiGETCouponRecipientsCouponRecipientIdRequest
+ @return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest
 */
-func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientsCouponRecipientIdRequest {
-	return ApiGETCouponRecipientsCouponRecipientIdRequest{
+func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest {
+	return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -304,7 +304,7 @@ func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx co
 
 // Execute executes the request
 //  @return CouponRecipient
-func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute(r ApiGETCouponRecipientsCouponRecipientIdRequest) (*CouponRecipient, *http.Response, error) {
+func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) (*CouponRecipient, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHCouponRecipientsCouponRecipientIdRequest struct {
+type CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest struct {
 	ctx                   context.Context
 	ApiService            CouponRecipientsApi
 	couponRecipientId     string
 	couponRecipientUpdate *CouponRecipientUpdate
 }
 
-func (r ApiPATCHCouponRecipientsCouponRecipientIdRequest) CouponRecipientUpdate(couponRecipientUpdate CouponRecipientUpdate) ApiPATCHCouponRecipientsCouponRecipientIdRequest {
+func (r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) CouponRecipientUpdate(couponRecipientUpdate CouponRecipientUpdate) CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest {
 	r.couponRecipientUpdate = &couponRecipientUpdate
 	return r
 }
 
-func (r ApiPATCHCouponRecipientsCouponRecipientIdRequest) Execute() (*http.Response, error) {
+func (r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCouponRecipientsCouponRecipientIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiPATCHCouponRecipientsCouponRecipientIdRequest
+ @return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest
 */
-func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) ApiPATCHCouponRecipientsCouponRecipientIdRequest {
-	return ApiPATCHCouponRecipientsCouponRecipientIdRequest{
+func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest {
+	return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -412,7 +412,7 @@ func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx 
 }
 
 // Execute executes the request
-func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecute(r ApiPATCHCouponRecipientsCouponRecipientIdRequest) (*http.Response, error) {
+func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTCouponRecipientsRequest struct {
+type CouponRecipientsApiPOSTCouponRecipientsRequest struct {
 	ctx                   context.Context
 	ApiService            CouponRecipientsApi
 	couponRecipientCreate *CouponRecipientCreate
 }
 
-func (r ApiPOSTCouponRecipientsRequest) CouponRecipientCreate(couponRecipientCreate CouponRecipientCreate) ApiPOSTCouponRecipientsRequest {
+func (r CouponRecipientsApiPOSTCouponRecipientsRequest) CouponRecipientCreate(couponRecipientCreate CouponRecipientCreate) CouponRecipientsApiPOSTCouponRecipientsRequest {
 	r.couponRecipientCreate = &couponRecipientCreate
 	return r
 }
 
-func (r ApiPOSTCouponRecipientsRequest) Execute() (*http.Response, error) {
+func (r CouponRecipientsApiPOSTCouponRecipientsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCouponRecipientsExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTCouponRecipients Create a coupon recipient
 Create a coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCouponRecipientsRequest
+ @return CouponRecipientsApiPOSTCouponRecipientsRequest
 */
-func (a *CouponRecipientsApiService) POSTCouponRecipients(ctx context.Context) ApiPOSTCouponRecipientsRequest {
-	return ApiPOSTCouponRecipientsRequest{
+func (a *CouponRecipientsApiService) POSTCouponRecipients(ctx context.Context) CouponRecipientsApiPOSTCouponRecipientsRequest {
+	return CouponRecipientsApiPOSTCouponRecipientsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponRecipientsApiService) POSTCouponRecipientsExecute(r ApiPOSTCouponRecipientsRequest) (*http.Response, error) {
+func (a *CouponRecipientsApiService) POSTCouponRecipientsExecute(r CouponRecipientsApiPOSTCouponRecipientsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

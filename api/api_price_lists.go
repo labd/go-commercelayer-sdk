@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type PriceListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceListId The resource's id
-		@return ApiDELETEPriceListsPriceListIdRequest
+		@return PriceListsApiDELETEPriceListsPriceListIdRequest
 	*/
-	DELETEPriceListsPriceListId(ctx context.Context, priceListId string) ApiDELETEPriceListsPriceListIdRequest
+	DELETEPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiDELETEPriceListsPriceListIdRequest
 
 	// DELETEPriceListsPriceListIdExecute executes the request
-	DELETEPriceListsPriceListIdExecute(r ApiDELETEPriceListsPriceListIdRequest) (*http.Response, error)
+	DELETEPriceListsPriceListIdExecute(r PriceListsApiDELETEPriceListsPriceListIdRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdPriceList Retrieve the price list associated to the market
@@ -43,12 +43,12 @@ type PriceListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdPriceListRequest
+		@return PriceListsApiGETMarketIdPriceListRequest
 	*/
-	GETMarketIdPriceList(ctx context.Context, marketId string) ApiGETMarketIdPriceListRequest
+	GETMarketIdPriceList(ctx context.Context, marketId string) PriceListsApiGETMarketIdPriceListRequest
 
 	// GETMarketIdPriceListExecute executes the request
-	GETMarketIdPriceListExecute(r ApiGETMarketIdPriceListRequest) (*http.Response, error)
+	GETMarketIdPriceListExecute(r PriceListsApiGETMarketIdPriceListRequest) (*http.Response, error)
 
 	/*
 		GETPriceIdPriceList Retrieve the price list associated to the price
@@ -57,12 +57,12 @@ type PriceListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceId The resource's id
-		@return ApiGETPriceIdPriceListRequest
+		@return PriceListsApiGETPriceIdPriceListRequest
 	*/
-	GETPriceIdPriceList(ctx context.Context, priceId string) ApiGETPriceIdPriceListRequest
+	GETPriceIdPriceList(ctx context.Context, priceId string) PriceListsApiGETPriceIdPriceListRequest
 
 	// GETPriceIdPriceListExecute executes the request
-	GETPriceIdPriceListExecute(r ApiGETPriceIdPriceListRequest) (*http.Response, error)
+	GETPriceIdPriceListExecute(r PriceListsApiGETPriceIdPriceListRequest) (*http.Response, error)
 
 	/*
 		GETPriceLists List all price lists
@@ -70,12 +70,12 @@ type PriceListsApi interface {
 		List all price lists
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETPriceListsRequest
+		@return PriceListsApiGETPriceListsRequest
 	*/
-	GETPriceLists(ctx context.Context) ApiGETPriceListsRequest
+	GETPriceLists(ctx context.Context) PriceListsApiGETPriceListsRequest
 
 	// GETPriceListsExecute executes the request
-	GETPriceListsExecute(r ApiGETPriceListsRequest) (*http.Response, error)
+	GETPriceListsExecute(r PriceListsApiGETPriceListsRequest) (*http.Response, error)
 
 	/*
 		GETPriceListsPriceListId Retrieve a price list
@@ -84,13 +84,13 @@ type PriceListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceListId The resource's id
-		@return ApiGETPriceListsPriceListIdRequest
+		@return PriceListsApiGETPriceListsPriceListIdRequest
 	*/
-	GETPriceListsPriceListId(ctx context.Context, priceListId string) ApiGETPriceListsPriceListIdRequest
+	GETPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiGETPriceListsPriceListIdRequest
 
 	// GETPriceListsPriceListIdExecute executes the request
 	//  @return PriceList
-	GETPriceListsPriceListIdExecute(r ApiGETPriceListsPriceListIdRequest) (*PriceList, *http.Response, error)
+	GETPriceListsPriceListIdExecute(r PriceListsApiGETPriceListsPriceListIdRequest) (*PriceList, *http.Response, error)
 
 	/*
 		PATCHPriceListsPriceListId Update a price list
@@ -99,12 +99,12 @@ type PriceListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceListId The resource's id
-		@return ApiPATCHPriceListsPriceListIdRequest
+		@return PriceListsApiPATCHPriceListsPriceListIdRequest
 	*/
-	PATCHPriceListsPriceListId(ctx context.Context, priceListId string) ApiPATCHPriceListsPriceListIdRequest
+	PATCHPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiPATCHPriceListsPriceListIdRequest
 
 	// PATCHPriceListsPriceListIdExecute executes the request
-	PATCHPriceListsPriceListIdExecute(r ApiPATCHPriceListsPriceListIdRequest) (*http.Response, error)
+	PATCHPriceListsPriceListIdExecute(r PriceListsApiPATCHPriceListsPriceListIdRequest) (*http.Response, error)
 
 	/*
 		POSTPriceLists Create a price list
@@ -112,24 +112,24 @@ type PriceListsApi interface {
 		Create a price list
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTPriceListsRequest
+		@return PriceListsApiPOSTPriceListsRequest
 	*/
-	POSTPriceLists(ctx context.Context) ApiPOSTPriceListsRequest
+	POSTPriceLists(ctx context.Context) PriceListsApiPOSTPriceListsRequest
 
 	// POSTPriceListsExecute executes the request
-	POSTPriceListsExecute(r ApiPOSTPriceListsRequest) (*http.Response, error)
+	POSTPriceListsExecute(r PriceListsApiPOSTPriceListsRequest) (*http.Response, error)
 }
 
 // PriceListsApiService PriceListsApi service
 type PriceListsApiService service
 
-type ApiDELETEPriceListsPriceListIdRequest struct {
+type PriceListsApiDELETEPriceListsPriceListIdRequest struct {
 	ctx         context.Context
 	ApiService  PriceListsApi
 	priceListId string
 }
 
-func (r ApiDELETEPriceListsPriceListIdRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiDELETEPriceListsPriceListIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPriceListsPriceListIdExecute(r)
 }
 
@@ -140,10 +140,10 @@ Delete a price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return ApiDELETEPriceListsPriceListIdRequest
+ @return PriceListsApiDELETEPriceListsPriceListIdRequest
 */
-func (a *PriceListsApiService) DELETEPriceListsPriceListId(ctx context.Context, priceListId string) ApiDELETEPriceListsPriceListIdRequest {
-	return ApiDELETEPriceListsPriceListIdRequest{
+func (a *PriceListsApiService) DELETEPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiDELETEPriceListsPriceListIdRequest {
+	return PriceListsApiDELETEPriceListsPriceListIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -151,7 +151,7 @@ func (a *PriceListsApiService) DELETEPriceListsPriceListId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r ApiDELETEPriceListsPriceListIdRequest) (*http.Response, error) {
+func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r PriceListsApiDELETEPriceListsPriceListIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -215,13 +215,13 @@ func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r ApiDELETEPri
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdPriceListRequest struct {
+type PriceListsApiGETMarketIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService PriceListsApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdPriceListRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiGETMarketIdPriceListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdPriceListExecute(r)
 }
 
@@ -232,10 +232,10 @@ Retrieve the price list associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdPriceListRequest
+ @return PriceListsApiGETMarketIdPriceListRequest
 */
-func (a *PriceListsApiService) GETMarketIdPriceList(ctx context.Context, marketId string) ApiGETMarketIdPriceListRequest {
-	return ApiGETMarketIdPriceListRequest{
+func (a *PriceListsApiService) GETMarketIdPriceList(ctx context.Context, marketId string) PriceListsApiGETMarketIdPriceListRequest {
+	return PriceListsApiGETMarketIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -243,7 +243,7 @@ func (a *PriceListsApiService) GETMarketIdPriceList(ctx context.Context, marketI
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) GETMarketIdPriceListExecute(r ApiGETMarketIdPriceListRequest) (*http.Response, error) {
+func (a *PriceListsApiService) GETMarketIdPriceListExecute(r PriceListsApiGETMarketIdPriceListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -307,13 +307,13 @@ func (a *PriceListsApiService) GETMarketIdPriceListExecute(r ApiGETMarketIdPrice
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdPriceListRequest struct {
+type PriceListsApiGETPriceIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService PriceListsApi
 	priceId    string
 }
 
-func (r ApiGETPriceIdPriceListRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiGETPriceIdPriceListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdPriceListExecute(r)
 }
 
@@ -324,10 +324,10 @@ Retrieve the price list associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdPriceListRequest
+ @return PriceListsApiGETPriceIdPriceListRequest
 */
-func (a *PriceListsApiService) GETPriceIdPriceList(ctx context.Context, priceId string) ApiGETPriceIdPriceListRequest {
-	return ApiGETPriceIdPriceListRequest{
+func (a *PriceListsApiService) GETPriceIdPriceList(ctx context.Context, priceId string) PriceListsApiGETPriceIdPriceListRequest {
+	return PriceListsApiGETPriceIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -335,7 +335,7 @@ func (a *PriceListsApiService) GETPriceIdPriceList(ctx context.Context, priceId 
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) GETPriceIdPriceListExecute(r ApiGETPriceIdPriceListRequest) (*http.Response, error) {
+func (a *PriceListsApiService) GETPriceIdPriceListExecute(r PriceListsApiGETPriceIdPriceListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -399,12 +399,12 @@ func (a *PriceListsApiService) GETPriceIdPriceListExecute(r ApiGETPriceIdPriceLi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceListsRequest struct {
+type PriceListsApiGETPriceListsRequest struct {
 	ctx        context.Context
 	ApiService PriceListsApi
 }
 
-func (r ApiGETPriceListsRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiGETPriceListsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceListsExecute(r)
 }
 
@@ -414,17 +414,17 @@ GETPriceLists List all price lists
 List all price lists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPriceListsRequest
+ @return PriceListsApiGETPriceListsRequest
 */
-func (a *PriceListsApiService) GETPriceLists(ctx context.Context) ApiGETPriceListsRequest {
-	return ApiGETPriceListsRequest{
+func (a *PriceListsApiService) GETPriceLists(ctx context.Context) PriceListsApiGETPriceListsRequest {
+	return PriceListsApiGETPriceListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) GETPriceListsExecute(r ApiGETPriceListsRequest) (*http.Response, error) {
+func (a *PriceListsApiService) GETPriceListsExecute(r PriceListsApiGETPriceListsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -487,13 +487,13 @@ func (a *PriceListsApiService) GETPriceListsExecute(r ApiGETPriceListsRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceListsPriceListIdRequest struct {
+type PriceListsApiGETPriceListsPriceListIdRequest struct {
 	ctx         context.Context
 	ApiService  PriceListsApi
 	priceListId string
 }
 
-func (r ApiGETPriceListsPriceListIdRequest) Execute() (*PriceList, *http.Response, error) {
+func (r PriceListsApiGETPriceListsPriceListIdRequest) Execute() (*PriceList, *http.Response, error) {
 	return r.ApiService.GETPriceListsPriceListIdExecute(r)
 }
 
@@ -504,10 +504,10 @@ Retrieve a price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return ApiGETPriceListsPriceListIdRequest
+ @return PriceListsApiGETPriceListsPriceListIdRequest
 */
-func (a *PriceListsApiService) GETPriceListsPriceListId(ctx context.Context, priceListId string) ApiGETPriceListsPriceListIdRequest {
-	return ApiGETPriceListsPriceListIdRequest{
+func (a *PriceListsApiService) GETPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiGETPriceListsPriceListIdRequest {
+	return PriceListsApiGETPriceListsPriceListIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -516,7 +516,7 @@ func (a *PriceListsApiService) GETPriceListsPriceListId(ctx context.Context, pri
 
 // Execute executes the request
 //  @return PriceList
-func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r ApiGETPriceListsPriceListIdRequest) (*PriceList, *http.Response, error) {
+func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGETPriceListsPriceListIdRequest) (*PriceList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -590,19 +590,19 @@ func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r ApiGETPriceList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHPriceListsPriceListIdRequest struct {
+type PriceListsApiPATCHPriceListsPriceListIdRequest struct {
 	ctx             context.Context
 	ApiService      PriceListsApi
 	priceListId     string
 	priceListUpdate *PriceListUpdate
 }
 
-func (r ApiPATCHPriceListsPriceListIdRequest) PriceListUpdate(priceListUpdate PriceListUpdate) ApiPATCHPriceListsPriceListIdRequest {
+func (r PriceListsApiPATCHPriceListsPriceListIdRequest) PriceListUpdate(priceListUpdate PriceListUpdate) PriceListsApiPATCHPriceListsPriceListIdRequest {
 	r.priceListUpdate = &priceListUpdate
 	return r
 }
 
-func (r ApiPATCHPriceListsPriceListIdRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiPATCHPriceListsPriceListIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHPriceListsPriceListIdExecute(r)
 }
 
@@ -613,10 +613,10 @@ Update a price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return ApiPATCHPriceListsPriceListIdRequest
+ @return PriceListsApiPATCHPriceListsPriceListIdRequest
 */
-func (a *PriceListsApiService) PATCHPriceListsPriceListId(ctx context.Context, priceListId string) ApiPATCHPriceListsPriceListIdRequest {
-	return ApiPATCHPriceListsPriceListIdRequest{
+func (a *PriceListsApiService) PATCHPriceListsPriceListId(ctx context.Context, priceListId string) PriceListsApiPATCHPriceListsPriceListIdRequest {
+	return PriceListsApiPATCHPriceListsPriceListIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -624,7 +624,7 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListId(ctx context.Context, p
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r ApiPATCHPriceListsPriceListIdRequest) (*http.Response, error) {
+func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApiPATCHPriceListsPriceListIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -693,18 +693,18 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r ApiPATCHPrice
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTPriceListsRequest struct {
+type PriceListsApiPOSTPriceListsRequest struct {
 	ctx             context.Context
 	ApiService      PriceListsApi
 	priceListCreate *PriceListCreate
 }
 
-func (r ApiPOSTPriceListsRequest) PriceListCreate(priceListCreate PriceListCreate) ApiPOSTPriceListsRequest {
+func (r PriceListsApiPOSTPriceListsRequest) PriceListCreate(priceListCreate PriceListCreate) PriceListsApiPOSTPriceListsRequest {
 	r.priceListCreate = &priceListCreate
 	return r
 }
 
-func (r ApiPOSTPriceListsRequest) Execute() (*http.Response, error) {
+func (r PriceListsApiPOSTPriceListsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTPriceListsExecute(r)
 }
 
@@ -714,17 +714,17 @@ POSTPriceLists Create a price list
 Create a price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTPriceListsRequest
+ @return PriceListsApiPOSTPriceListsRequest
 */
-func (a *PriceListsApiService) POSTPriceLists(ctx context.Context) ApiPOSTPriceListsRequest {
-	return ApiPOSTPriceListsRequest{
+func (a *PriceListsApiService) POSTPriceLists(ctx context.Context) PriceListsApiPOSTPriceListsRequest {
+	return PriceListsApiPOSTPriceListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceListsApiService) POSTPriceListsExecute(r ApiPOSTPriceListsRequest) (*http.Response, error) {
+func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceListsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

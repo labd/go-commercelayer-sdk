@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param addressId The resource's id
-		@return ApiGETAddressIdGeocoderRequest
+		@return HasOneApiGETAddressIdGeocoderRequest
 	*/
-	GETAddressIdGeocoder(ctx context.Context, addressId string) ApiGETAddressIdGeocoderRequest
+	GETAddressIdGeocoder(ctx context.Context, addressId string) HasOneApiGETAddressIdGeocoderRequest
 
 	// GETAddressIdGeocoderExecute executes the request
-	GETAddressIdGeocoderExecute(r ApiGETAddressIdGeocoderRequest) (*http.Response, error)
+	GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGeocoderRequest) (*http.Response, error)
 
 	/*
 		GETAdyenPaymentIdOrder Retrieve the order associated to the adyen payment
@@ -43,12 +43,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenPaymentId The resource's id
-		@return ApiGETAdyenPaymentIdOrderRequest
+		@return HasOneApiGETAdyenPaymentIdOrderRequest
 	*/
-	GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdOrderRequest
+	GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdOrderRequest
 
 	// GETAdyenPaymentIdOrderExecute executes the request
-	GETAdyenPaymentIdOrderExecute(r ApiGETAdyenPaymentIdOrderRequest) (*http.Response, error)
+	GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETAdyenPaymentIdPaymentGateway Retrieve the payment gateway associated to the adyen payment
@@ -57,12 +57,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenPaymentId The resource's id
-		@return ApiGETAdyenPaymentIdPaymentGatewayRequest
+		@return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
 	*/
-	GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdPaymentGatewayRequest
+	GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
 
 	// GETAdyenPaymentIdPaymentGatewayExecute executes the request
-	GETAdyenPaymentIdPaymentGatewayExecute(r ApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETAuthorizationIdOrder Retrieve the order associated to the authorization
@@ -71,12 +71,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param authorizationId The resource's id
-		@return ApiGETAuthorizationIdOrderRequest
+		@return HasOneApiGETAuthorizationIdOrderRequest
 	*/
-	GETAuthorizationIdOrder(ctx context.Context, authorizationId string) ApiGETAuthorizationIdOrderRequest
+	GETAuthorizationIdOrder(ctx context.Context, authorizationId string) HasOneApiGETAuthorizationIdOrderRequest
 
 	// GETAuthorizationIdOrderExecute executes the request
-	GETAuthorizationIdOrderExecute(r ApiGETAuthorizationIdOrderRequest) (*http.Response, error)
+	GETAuthorizationIdOrderExecute(r HasOneApiGETAuthorizationIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETBillingInfoValidationRuleIdMarket Retrieve the market associated to the billing info validation rule
@@ -85,12 +85,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param billingInfoValidationRuleId The resource's id
-		@return ApiGETBillingInfoValidationRuleIdMarketRequest
+		@return HasOneApiGETBillingInfoValidationRuleIdMarketRequest
 	*/
-	GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) ApiGETBillingInfoValidationRuleIdMarketRequest
+	GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) HasOneApiGETBillingInfoValidationRuleIdMarketRequest
 
 	// GETBillingInfoValidationRuleIdMarketExecute executes the request
-	GETBillingInfoValidationRuleIdMarketExecute(r ApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error)
+	GETBillingInfoValidationRuleIdMarketExecute(r HasOneApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETBraintreePaymentIdOrder Retrieve the order associated to the braintree payment
@@ -99,12 +99,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreePaymentId The resource's id
-		@return ApiGETBraintreePaymentIdOrderRequest
+		@return HasOneApiGETBraintreePaymentIdOrderRequest
 	*/
-	GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdOrderRequest
+	GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdOrderRequest
 
 	// GETBraintreePaymentIdOrderExecute executes the request
-	GETBraintreePaymentIdOrderExecute(r ApiGETBraintreePaymentIdOrderRequest) (*http.Response, error)
+	GETBraintreePaymentIdOrderExecute(r HasOneApiGETBraintreePaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETBraintreePaymentIdPaymentGateway Retrieve the payment gateway associated to the braintree payment
@@ -113,12 +113,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param braintreePaymentId The resource's id
-		@return ApiGETBraintreePaymentIdPaymentGatewayRequest
+		@return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
 	*/
-	GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdPaymentGatewayRequest
+	GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
 
 	// GETBraintreePaymentIdPaymentGatewayExecute executes the request
-	GETBraintreePaymentIdPaymentGatewayExecute(r ApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETBraintreePaymentIdPaymentGatewayExecute(r HasOneApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdMarket Retrieve the market associated to the bundle
@@ -127,12 +127,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdMarketRequest
+		@return HasOneApiGETBundleIdMarketRequest
 	*/
-	GETBundleIdMarket(ctx context.Context, bundleId string) ApiGETBundleIdMarketRequest
+	GETBundleIdMarket(ctx context.Context, bundleId string) HasOneApiGETBundleIdMarketRequest
 
 	// GETBundleIdMarketExecute executes the request
-	GETBundleIdMarketExecute(r ApiGETBundleIdMarketRequest) (*http.Response, error)
+	GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdSkuList Retrieve the sku list associated to the bundle
@@ -141,12 +141,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdSkuListRequest
+		@return HasOneApiGETBundleIdSkuListRequest
 	*/
-	GETBundleIdSkuList(ctx context.Context, bundleId string) ApiGETBundleIdSkuListRequest
+	GETBundleIdSkuList(ctx context.Context, bundleId string) HasOneApiGETBundleIdSkuListRequest
 
 	// GETBundleIdSkuListExecute executes the request
-	GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequest) (*http.Response, error)
+	GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETCaptureIdOrder Retrieve the order associated to the capture
@@ -155,12 +155,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param captureId The resource's id
-		@return ApiGETCaptureIdOrderRequest
+		@return HasOneApiGETCaptureIdOrderRequest
 	*/
-	GETCaptureIdOrder(ctx context.Context, captureId string) ApiGETCaptureIdOrderRequest
+	GETCaptureIdOrder(ctx context.Context, captureId string) HasOneApiGETCaptureIdOrderRequest
 
 	// GETCaptureIdOrderExecute executes the request
-	GETCaptureIdOrderExecute(r ApiGETCaptureIdOrderRequest) (*http.Response, error)
+	GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETCaptureIdReferenceAuthorization Retrieve the reference authorization associated to the capture
@@ -169,12 +169,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param captureId The resource's id
-		@return ApiGETCaptureIdReferenceAuthorizationRequest
+		@return HasOneApiGETCaptureIdReferenceAuthorizationRequest
 	*/
-	GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) ApiGETCaptureIdReferenceAuthorizationRequest
+	GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) HasOneApiGETCaptureIdReferenceAuthorizationRequest
 
 	// GETCaptureIdReferenceAuthorizationExecute executes the request
-	GETCaptureIdReferenceAuthorizationExecute(r ApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error)
+	GETCaptureIdReferenceAuthorizationExecute(r HasOneApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error)
 
 	/*
 		GETCarrierAccountIdMarket Retrieve the market associated to the carrier account
@@ -183,12 +183,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param carrierAccountId The resource's id
-		@return ApiGETCarrierAccountIdMarketRequest
+		@return HasOneApiGETCarrierAccountIdMarketRequest
 	*/
-	GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdMarketRequest
+	GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) HasOneApiGETCarrierAccountIdMarketRequest
 
 	// GETCarrierAccountIdMarketExecute executes the request
-	GETCarrierAccountIdMarketExecute(r ApiGETCarrierAccountIdMarketRequest) (*http.Response, error)
+	GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrierAccountIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETCheckoutComPaymentIdOrder Retrieve the order associated to the checkout.com payment
@@ -197,12 +197,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param checkoutComPaymentId The resource's id
-		@return ApiGETCheckoutComPaymentIdOrderRequest
+		@return HasOneApiGETCheckoutComPaymentIdOrderRequest
 	*/
-	GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdOrderRequest
+	GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdOrderRequest
 
 	// GETCheckoutComPaymentIdOrderExecute executes the request
-	GETCheckoutComPaymentIdOrderExecute(r ApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error)
+	GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETCheckoutComPaymentIdPaymentGateway Retrieve the payment gateway associated to the checkout.com payment
@@ -211,12 +211,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param checkoutComPaymentId The resource's id
-		@return ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+		@return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
 	*/
-	GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+	GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
 
 	// GETCheckoutComPaymentIdPaymentGatewayExecute executes the request
-	GETCheckoutComPaymentIdPaymentGatewayExecute(r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETCouponIdPromotionRule Retrieve the promotion rule associated to the coupon
@@ -225,12 +225,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponId The resource's id
-		@return ApiGETCouponIdPromotionRuleRequest
+		@return HasOneApiGETCouponIdPromotionRuleRequest
 	*/
-	GETCouponIdPromotionRule(ctx context.Context, couponId string) ApiGETCouponIdPromotionRuleRequest
+	GETCouponIdPromotionRule(ctx context.Context, couponId string) HasOneApiGETCouponIdPromotionRuleRequest
 
 	// GETCouponIdPromotionRuleExecute executes the request
-	GETCouponIdPromotionRuleExecute(r ApiGETCouponIdPromotionRuleRequest) (*http.Response, error)
+	GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponIdPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETCouponRecipientIdCustomer Retrieve the customer associated to the coupon recipient
@@ -239,12 +239,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiGETCouponRecipientIdCustomerRequest
+		@return HasOneApiGETCouponRecipientIdCustomerRequest
 	*/
-	GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdCustomerRequest
+	GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) HasOneApiGETCouponRecipientIdCustomerRequest
 
 	// GETCouponRecipientIdCustomerExecute executes the request
-	GETCouponRecipientIdCustomerExecute(r ApiGETCouponRecipientIdCustomerRequest) (*http.Response, error)
+	GETCouponRecipientIdCustomerExecute(r HasOneApiGETCouponRecipientIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerAddressIdAddress Retrieve the address associated to the customer address
@@ -253,12 +253,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerAddressId The resource's id
-		@return ApiGETCustomerAddressIdAddressRequest
+		@return HasOneApiGETCustomerAddressIdAddressRequest
 	*/
-	GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdAddressRequest
+	GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdAddressRequest
 
 	// GETCustomerAddressIdAddressExecute executes the request
-	GETCustomerAddressIdAddressExecute(r ApiGETCustomerAddressIdAddressRequest) (*http.Response, error)
+	GETCustomerAddressIdAddressExecute(r HasOneApiGETCustomerAddressIdAddressRequest) (*http.Response, error)
 
 	/*
 		GETCustomerAddressIdCustomer Retrieve the customer associated to the customer address
@@ -267,12 +267,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerAddressId The resource's id
-		@return ApiGETCustomerAddressIdCustomerRequest
+		@return HasOneApiGETCustomerAddressIdCustomerRequest
 	*/
-	GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdCustomerRequest
+	GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdCustomerRequest
 
 	// GETCustomerAddressIdCustomerExecute executes the request
-	GETCustomerAddressIdCustomerExecute(r ApiGETCustomerAddressIdCustomerRequest) (*http.Response, error)
+	GETCustomerAddressIdCustomerExecute(r HasOneApiGETCustomerAddressIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdCustomerGroup Retrieve the customer group associated to the customer
@@ -281,12 +281,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdCustomerGroupRequest
+		@return HasOneApiGETCustomerIdCustomerGroupRequest
 	*/
-	GETCustomerIdCustomerGroup(ctx context.Context, customerId string) ApiGETCustomerIdCustomerGroupRequest
+	GETCustomerIdCustomerGroup(ctx context.Context, customerId string) HasOneApiGETCustomerIdCustomerGroupRequest
 
 	// GETCustomerIdCustomerGroupExecute executes the request
-	GETCustomerIdCustomerGroupExecute(r ApiGETCustomerIdCustomerGroupRequest) (*http.Response, error)
+	GETCustomerIdCustomerGroupExecute(r HasOneApiGETCustomerIdCustomerGroupRequest) (*http.Response, error)
 
 	/*
 		GETCustomerPasswordResetIdCustomer Retrieve the customer associated to the customer password reset
@@ -295,12 +295,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerPasswordResetId The resource's id
-		@return ApiGETCustomerPasswordResetIdCustomerRequest
+		@return HasOneApiGETCustomerPasswordResetIdCustomerRequest
 	*/
-	GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetIdCustomerRequest
+	GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) HasOneApiGETCustomerPasswordResetIdCustomerRequest
 
 	// GETCustomerPasswordResetIdCustomerExecute executes the request
-	GETCustomerPasswordResetIdCustomerExecute(r ApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error)
+	GETCustomerPasswordResetIdCustomerExecute(r HasOneApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerPaymentSourceIdCustomer Retrieve the customer associated to the customer payment source
@@ -309,12 +309,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerPaymentSourceId The resource's id
-		@return ApiGETCustomerPaymentSourceIdCustomerRequest
+		@return HasOneApiGETCustomerPaymentSourceIdCustomerRequest
 	*/
-	GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) ApiGETCustomerPaymentSourceIdCustomerRequest
+	GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) HasOneApiGETCustomerPaymentSourceIdCustomerRequest
 
 	// GETCustomerPaymentSourceIdCustomerExecute executes the request
-	GETCustomerPaymentSourceIdCustomerExecute(r ApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error)
+	GETCustomerPaymentSourceIdCustomerExecute(r HasOneApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerSubscriptionIdCustomer Retrieve the customer associated to the customer subscription
@@ -323,12 +323,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerSubscriptionId The resource's id
-		@return ApiGETCustomerSubscriptionIdCustomerRequest
+		@return HasOneApiGETCustomerSubscriptionIdCustomerRequest
 	*/
-	GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionIdCustomerRequest
+	GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) HasOneApiGETCustomerSubscriptionIdCustomerRequest
 
 	// GETCustomerSubscriptionIdCustomerExecute executes the request
-	GETCustomerSubscriptionIdCustomerExecute(r ApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETCustomerSubscriptionIdCustomerExecute(r HasOneApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETDeliveryLeadTimeIdShippingMethod Retrieve the shipping method associated to the delivery lead time
@@ -337,12 +337,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param deliveryLeadTimeId The resource's id
-		@return ApiGETDeliveryLeadTimeIdShippingMethodRequest
+		@return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
 	*/
-	GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdShippingMethodRequest
+	GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
 
 	// GETDeliveryLeadTimeIdShippingMethodExecute executes the request
-	GETDeliveryLeadTimeIdShippingMethodExecute(r ApiGETDeliveryLeadTimeIdShippingMethodRequest) (*http.Response, error)
+	GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest) (*http.Response, error)
 
 	/*
 		GETDeliveryLeadTimeIdStockLocation Retrieve the stock location associated to the delivery lead time
@@ -351,12 +351,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param deliveryLeadTimeId The resource's id
-		@return ApiGETDeliveryLeadTimeIdStockLocationRequest
+		@return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
 	*/
-	GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdStockLocationRequest
+	GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
 
 	// GETDeliveryLeadTimeIdStockLocationExecute executes the request
-	GETDeliveryLeadTimeIdStockLocationExecute(r ApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error)
+	GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETEventCallbackIdWebhook Retrieve the webhook associated to the event callback
@@ -365,12 +365,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param eventCallbackId The resource's id
-		@return ApiGETEventCallbackIdWebhookRequest
+		@return HasOneApiGETEventCallbackIdWebhookRequest
 	*/
-	GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) ApiGETEventCallbackIdWebhookRequest
+	GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) HasOneApiGETEventCallbackIdWebhookRequest
 
 	// GETEventCallbackIdWebhookExecute executes the request
-	GETEventCallbackIdWebhookExecute(r ApiGETEventCallbackIdWebhookRequest) (*http.Response, error)
+	GETEventCallbackIdWebhookExecute(r HasOneApiGETEventCallbackIdWebhookRequest) (*http.Response, error)
 
 	/*
 		GETExternalPaymentIdOrder Retrieve the order associated to the external payment
@@ -379,12 +379,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiGETExternalPaymentIdOrderRequest
+		@return HasOneApiGETExternalPaymentIdOrderRequest
 	*/
-	GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdOrderRequest
+	GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdOrderRequest
 
 	// GETExternalPaymentIdOrderExecute executes the request
-	GETExternalPaymentIdOrderExecute(r ApiGETExternalPaymentIdOrderRequest) (*http.Response, error)
+	GETExternalPaymentIdOrderExecute(r HasOneApiGETExternalPaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETExternalPaymentIdPaymentGateway Retrieve the payment gateway associated to the external payment
@@ -393,12 +393,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiGETExternalPaymentIdPaymentGatewayRequest
+		@return HasOneApiGETExternalPaymentIdPaymentGatewayRequest
 	*/
-	GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdPaymentGatewayRequest
+	GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdPaymentGatewayRequest
 
 	// GETExternalPaymentIdPaymentGatewayExecute executes the request
-	GETExternalPaymentIdPaymentGatewayExecute(r ApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETExternalPaymentIdPaymentGatewayExecute(r HasOneApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETExternalPaymentIdWallet Retrieve the wallet associated to the external payment
@@ -407,12 +407,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiGETExternalPaymentIdWalletRequest
+		@return HasOneApiGETExternalPaymentIdWalletRequest
 	*/
-	GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdWalletRequest
+	GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdWalletRequest
 
 	// GETExternalPaymentIdWalletExecute executes the request
-	GETExternalPaymentIdWalletExecute(r ApiGETExternalPaymentIdWalletRequest) (*http.Response, error)
+	GETExternalPaymentIdWalletExecute(r HasOneApiGETExternalPaymentIdWalletRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the external promotion
@@ -421,12 +421,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+	GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETExternalPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETExternalPromotionIdCouponCodesPromotionRuleExecute(r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETExternalPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdMarket Retrieve the market associated to the external promotion
@@ -435,12 +435,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdMarketRequest
+		@return HasOneApiGETExternalPromotionIdMarketRequest
 	*/
-	GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdMarketRequest
+	GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdMarketRequest
 
 	// GETExternalPromotionIdMarketExecute executes the request
-	GETExternalPromotionIdMarketExecute(r ApiGETExternalPromotionIdMarketRequest) (*http.Response, error)
+	GETExternalPromotionIdMarketExecute(r HasOneApiGETExternalPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the external promotion
@@ -449,12 +449,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+	GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETExternalPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETExternalPromotionIdOrderAmountPromotionRuleExecute(r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETExternalPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the external promotion
@@ -463,12 +463,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdSkuListPromotionRuleRequest
+	GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
 
 	// GETExternalPromotionIdSkuListPromotionRuleExecute executes the request
-	GETExternalPromotionIdSkuListPromotionRuleExecute(r ApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETExternalPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the fixed amount promotion
@@ -477,12 +477,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+	GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdMarket Retrieve the market associated to the fixed amount promotion
@@ -491,12 +491,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdMarketRequest
+		@return HasOneApiGETFixedAmountPromotionIdMarketRequest
 	*/
-	GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdMarketRequest
+	GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdMarketRequest
 
 	// GETFixedAmountPromotionIdMarketExecute executes the request
-	GETFixedAmountPromotionIdMarketExecute(r ApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdMarketExecute(r HasOneApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the fixed amount promotion
@@ -505,12 +505,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+	GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the fixed amount promotion
@@ -519,12 +519,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
+	GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 
 	// GETFixedAmountPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the fixed price promotion
@@ -533,12 +533,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+	GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFixedPricePromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdMarket Retrieve the market associated to the fixed price promotion
@@ -547,12 +547,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdMarketRequest
+		@return HasOneApiGETFixedPricePromotionIdMarketRequest
 	*/
-	GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdMarketRequest
+	GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdMarketRequest
 
 	// GETFixedPricePromotionIdMarketExecute executes the request
-	GETFixedPricePromotionIdMarketExecute(r ApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error)
+	GETFixedPricePromotionIdMarketExecute(r HasOneApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the fixed price promotion
@@ -561,12 +561,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+	GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFixedPricePromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdSkuList Retrieve the sku list associated to the fixed price promotion
@@ -575,12 +575,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdSkuListRequest
+		@return HasOneApiGETFixedPricePromotionIdSkuListRequest
 	*/
-	GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListRequest
+	GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListRequest
 
 	// GETFixedPricePromotionIdSkuListExecute executes the request
-	GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error)
+	GETFixedPricePromotionIdSkuListExecute(r HasOneApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the fixed price promotion
@@ -589,12 +589,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 	*/
-	GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
+	GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 
 	// GETFixedPricePromotionIdSkuListPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdSkuListPromotionRuleExecute(r ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETFixedPricePromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the free gift promotion
@@ -603,12 +603,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+	GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdMarket Retrieve the market associated to the free gift promotion
@@ -617,12 +617,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdMarketRequest
+		@return HasOneApiGETFreeGiftPromotionIdMarketRequest
 	*/
-	GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdMarketRequest
+	GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdMarketRequest
 
 	// GETFreeGiftPromotionIdMarketExecute executes the request
-	GETFreeGiftPromotionIdMarketExecute(r ApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the free gift promotion
@@ -631,12 +631,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+	GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdSkuList Retrieve the sku list associated to the free gift promotion
@@ -645,12 +645,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdSkuListRequest
+		@return HasOneApiGETFreeGiftPromotionIdSkuListRequest
 	*/
-	GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListRequest
+	GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListRequest
 
 	// GETFreeGiftPromotionIdSkuListExecute executes the request
-	GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the free gift promotion
@@ -659,12 +659,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
+	GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 
 	// GETFreeGiftPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the free shipping promotion
@@ -673,12 +673,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+	GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdMarket Retrieve the market associated to the free shipping promotion
@@ -687,12 +687,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdMarketRequest
+		@return HasOneApiGETFreeShippingPromotionIdMarketRequest
 	*/
-	GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdMarketRequest
+	GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdMarketRequest
 
 	// GETFreeShippingPromotionIdMarketExecute executes the request
-	GETFreeShippingPromotionIdMarketExecute(r ApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdMarketExecute(r HasOneApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the free shipping promotion
@@ -701,12 +701,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+	GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the free shipping promotion
@@ -715,12 +715,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
+	GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 
 	// GETFreeShippingPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardIdGiftCardRecipient Retrieve the gift card recipient associated to the gift card
@@ -729,12 +729,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiGETGiftCardIdGiftCardRecipientRequest
+		@return HasOneApiGETGiftCardIdGiftCardRecipientRequest
 	*/
-	GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) ApiGETGiftCardIdGiftCardRecipientRequest
+	GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdGiftCardRecipientRequest
 
 	// GETGiftCardIdGiftCardRecipientExecute executes the request
-	GETGiftCardIdGiftCardRecipientExecute(r ApiGETGiftCardIdGiftCardRecipientRequest) (*http.Response, error)
+	GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETGiftCardIdGiftCardRecipientRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardIdMarket Retrieve the market associated to the gift card
@@ -743,12 +743,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiGETGiftCardIdMarketRequest
+		@return HasOneApiGETGiftCardIdMarketRequest
 	*/
-	GETGiftCardIdMarket(ctx context.Context, giftCardId string) ApiGETGiftCardIdMarketRequest
+	GETGiftCardIdMarket(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdMarketRequest
 
 	// GETGiftCardIdMarketExecute executes the request
-	GETGiftCardIdMarketExecute(r ApiGETGiftCardIdMarketRequest) (*http.Response, error)
+	GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardRecipientIdCustomer Retrieve the customer associated to the gift card recipient
@@ -757,12 +757,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardRecipientId The resource's id
-		@return ApiGETGiftCardRecipientIdCustomerRequest
+		@return HasOneApiGETGiftCardRecipientIdCustomerRequest
 	*/
-	GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdCustomerRequest
+	GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) HasOneApiGETGiftCardRecipientIdCustomerRequest
 
 	// GETGiftCardRecipientIdCustomerExecute executes the request
-	GETGiftCardRecipientIdCustomerExecute(r ApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error)
+	GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionIdCustomer Retrieve the customer associated to the in stock subscription
@@ -771,12 +771,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionIdCustomerRequest
+		@return HasOneApiGETInStockSubscriptionIdCustomerRequest
 	*/
-	GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdCustomerRequest
+	GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdCustomerRequest
 
 	// GETInStockSubscriptionIdCustomerExecute executes the request
-	GETInStockSubscriptionIdCustomerExecute(r ApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETInStockSubscriptionIdCustomerExecute(r HasOneApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionIdMarket Retrieve the market associated to the in stock subscription
@@ -785,12 +785,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionIdMarketRequest
+		@return HasOneApiGETInStockSubscriptionIdMarketRequest
 	*/
-	GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdMarketRequest
+	GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdMarketRequest
 
 	// GETInStockSubscriptionIdMarketExecute executes the request
-	GETInStockSubscriptionIdMarketExecute(r ApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error)
+	GETInStockSubscriptionIdMarketExecute(r HasOneApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionIdSku Retrieve the sku associated to the in stock subscription
@@ -799,12 +799,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionIdSkuRequest
+		@return HasOneApiGETInStockSubscriptionIdSkuRequest
 	*/
-	GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdSkuRequest
+	GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdSkuRequest
 
 	// GETInStockSubscriptionIdSkuExecute executes the request
-	GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error)
+	GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETInventoryReturnLocationIdInventoryModel Retrieve the inventory model associated to the inventory return location
@@ -813,12 +813,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiGETInventoryReturnLocationIdInventoryModelRequest
+		@return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
 	*/
-	GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdInventoryModelRequest
+	GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
 
 	// GETInventoryReturnLocationIdInventoryModelExecute executes the request
-	GETInventoryReturnLocationIdInventoryModelExecute(r ApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error)
+	GETInventoryReturnLocationIdInventoryModelExecute(r HasOneApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		GETInventoryReturnLocationIdStockLocation Retrieve the stock location associated to the inventory return location
@@ -827,12 +827,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiGETInventoryReturnLocationIdStockLocationRequest
+		@return HasOneApiGETInventoryReturnLocationIdStockLocationRequest
 	*/
-	GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdStockLocationRequest
+	GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdStockLocationRequest
 
 	// GETInventoryReturnLocationIdStockLocationExecute executes the request
-	GETInventoryReturnLocationIdStockLocationExecute(r ApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error)
+	GETInventoryReturnLocationIdStockLocationExecute(r HasOneApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETInventoryStockLocationIdInventoryModel Retrieve the inventory model associated to the inventory stock location
@@ -841,12 +841,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryStockLocationId The resource's id
-		@return ApiGETInventoryStockLocationIdInventoryModelRequest
+		@return HasOneApiGETInventoryStockLocationIdInventoryModelRequest
 	*/
-	GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdInventoryModelRequest
+	GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdInventoryModelRequest
 
 	// GETInventoryStockLocationIdInventoryModelExecute executes the request
-	GETInventoryStockLocationIdInventoryModelExecute(r ApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error)
+	GETInventoryStockLocationIdInventoryModelExecute(r HasOneApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		GETInventoryStockLocationIdStockLocation Retrieve the stock location associated to the inventory stock location
@@ -855,12 +855,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryStockLocationId The resource's id
-		@return ApiGETInventoryStockLocationIdStockLocationRequest
+		@return HasOneApiGETInventoryStockLocationIdStockLocationRequest
 	*/
-	GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdStockLocationRequest
+	GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdStockLocationRequest
 
 	// GETInventoryStockLocationIdStockLocationExecute executes the request
-	GETInventoryStockLocationIdStockLocationExecute(r ApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error)
+	GETInventoryStockLocationIdStockLocationExecute(r HasOneApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETKlarnaPaymentIdOrder Retrieve the order associated to the klarna payment
@@ -869,12 +869,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param klarnaPaymentId The resource's id
-		@return ApiGETKlarnaPaymentIdOrderRequest
+		@return HasOneApiGETKlarnaPaymentIdOrderRequest
 	*/
-	GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdOrderRequest
+	GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdOrderRequest
 
 	// GETKlarnaPaymentIdOrderExecute executes the request
-	GETKlarnaPaymentIdOrderExecute(r ApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error)
+	GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETKlarnaPaymentIdPaymentGateway Retrieve the payment gateway associated to the klarna payment
@@ -883,12 +883,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param klarnaPaymentId The resource's id
-		@return ApiGETKlarnaPaymentIdPaymentGatewayRequest
+		@return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
 	*/
-	GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdPaymentGatewayRequest
+	GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
 
 	// GETKlarnaPaymentIdPaymentGatewayExecute executes the request
-	GETKlarnaPaymentIdPaymentGatewayExecute(r ApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdOrder Retrieve the order associated to the line item
@@ -897,12 +897,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdOrderRequest
+		@return HasOneApiGETLineItemIdOrderRequest
 	*/
-	GETLineItemIdOrder(ctx context.Context, lineItemId string) ApiGETLineItemIdOrderRequest
+	GETLineItemIdOrder(ctx context.Context, lineItemId string) HasOneApiGETLineItemIdOrderRequest
 
 	// GETLineItemIdOrderExecute executes the request
-	GETLineItemIdOrderExecute(r ApiGETLineItemIdOrderRequest) (*http.Response, error)
+	GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETLineItemOptionIdLineItem Retrieve the line item associated to the line item option
@@ -911,12 +911,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemOptionId The resource's id
-		@return ApiGETLineItemOptionIdLineItemRequest
+		@return HasOneApiGETLineItemOptionIdLineItemRequest
 	*/
-	GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionIdLineItemRequest
+	GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdLineItemRequest
 
 	// GETLineItemOptionIdLineItemExecute executes the request
-	GETLineItemOptionIdLineItemExecute(r ApiGETLineItemOptionIdLineItemRequest) (*http.Response, error)
+	GETLineItemOptionIdLineItemExecute(r HasOneApiGETLineItemOptionIdLineItemRequest) (*http.Response, error)
 
 	/*
 		GETLineItemOptionIdSkuOption Retrieve the sku option associated to the line item option
@@ -925,12 +925,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemOptionId The resource's id
-		@return ApiGETLineItemOptionIdSkuOptionRequest
+		@return HasOneApiGETLineItemOptionIdSkuOptionRequest
 	*/
-	GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionIdSkuOptionRequest
+	GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdSkuOptionRequest
 
 	// GETLineItemOptionIdSkuOptionExecute executes the request
-	GETLineItemOptionIdSkuOptionExecute(r ApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error)
+	GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdCustomerGroup Retrieve the customer group associated to the market
@@ -939,12 +939,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdCustomerGroupRequest
+		@return HasOneApiGETMarketIdCustomerGroupRequest
 	*/
-	GETMarketIdCustomerGroup(ctx context.Context, marketId string) ApiGETMarketIdCustomerGroupRequest
+	GETMarketIdCustomerGroup(ctx context.Context, marketId string) HasOneApiGETMarketIdCustomerGroupRequest
 
 	// GETMarketIdCustomerGroupExecute executes the request
-	GETMarketIdCustomerGroupExecute(r ApiGETMarketIdCustomerGroupRequest) (*http.Response, error)
+	GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketIdCustomerGroupRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdInventoryModel Retrieve the inventory model associated to the market
@@ -953,12 +953,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdInventoryModelRequest
+		@return HasOneApiGETMarketIdInventoryModelRequest
 	*/
-	GETMarketIdInventoryModel(ctx context.Context, marketId string) ApiGETMarketIdInventoryModelRequest
+	GETMarketIdInventoryModel(ctx context.Context, marketId string) HasOneApiGETMarketIdInventoryModelRequest
 
 	// GETMarketIdInventoryModelExecute executes the request
-	GETMarketIdInventoryModelExecute(r ApiGETMarketIdInventoryModelRequest) (*http.Response, error)
+	GETMarketIdInventoryModelExecute(r HasOneApiGETMarketIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdMerchant Retrieve the merchant associated to the market
@@ -967,12 +967,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdMerchantRequest
+		@return HasOneApiGETMarketIdMerchantRequest
 	*/
-	GETMarketIdMerchant(ctx context.Context, marketId string) ApiGETMarketIdMerchantRequest
+	GETMarketIdMerchant(ctx context.Context, marketId string) HasOneApiGETMarketIdMerchantRequest
 
 	// GETMarketIdMerchantExecute executes the request
-	GETMarketIdMerchantExecute(r ApiGETMarketIdMerchantRequest) (*http.Response, error)
+	GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerchantRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdPriceList Retrieve the price list associated to the market
@@ -981,12 +981,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdPriceListRequest
+		@return HasOneApiGETMarketIdPriceListRequest
 	*/
-	GETMarketIdPriceList(ctx context.Context, marketId string) ApiGETMarketIdPriceListRequest
+	GETMarketIdPriceList(ctx context.Context, marketId string) HasOneApiGETMarketIdPriceListRequest
 
 	// GETMarketIdPriceListExecute executes the request
-	GETMarketIdPriceListExecute(r ApiGETMarketIdPriceListRequest) (*http.Response, error)
+	GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPriceListRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdTaxCalculator Retrieve the tax calculator associated to the market
@@ -995,12 +995,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdTaxCalculatorRequest
+		@return HasOneApiGETMarketIdTaxCalculatorRequest
 	*/
-	GETMarketIdTaxCalculator(ctx context.Context, marketId string) ApiGETMarketIdTaxCalculatorRequest
+	GETMarketIdTaxCalculator(ctx context.Context, marketId string) HasOneApiGETMarketIdTaxCalculatorRequest
 
 	// GETMarketIdTaxCalculatorExecute executes the request
-	GETMarketIdTaxCalculatorExecute(r ApiGETMarketIdTaxCalculatorRequest) (*http.Response, error)
+	GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketIdTaxCalculatorRequest) (*http.Response, error)
 
 	/*
 		GETMerchantIdAddress Retrieve the address associated to the merchant
@@ -1009,12 +1009,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param merchantId The resource's id
-		@return ApiGETMerchantIdAddressRequest
+		@return HasOneApiGETMerchantIdAddressRequest
 	*/
-	GETMerchantIdAddress(ctx context.Context, merchantId string) ApiGETMerchantIdAddressRequest
+	GETMerchantIdAddress(ctx context.Context, merchantId string) HasOneApiGETMerchantIdAddressRequest
 
 	// GETMerchantIdAddressExecute executes the request
-	GETMerchantIdAddressExecute(r ApiGETMerchantIdAddressRequest) (*http.Response, error)
+	GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdAddressRequest) (*http.Response, error)
 
 	/*
 		GETOrderCopyIdOrderSubscription Retrieve the order subscription associated to the order copy
@@ -1023,12 +1023,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderCopyId The resource's id
-		@return ApiGETOrderCopyIdOrderSubscriptionRequest
+		@return HasOneApiGETOrderCopyIdOrderSubscriptionRequest
 	*/
-	GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdOrderSubscriptionRequest
+	GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdOrderSubscriptionRequest
 
 	// GETOrderCopyIdOrderSubscriptionExecute executes the request
-	GETOrderCopyIdOrderSubscriptionExecute(r ApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error)
+	GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error)
 
 	/*
 		GETOrderCopyIdSourceOrder Retrieve the source order associated to the order copy
@@ -1037,12 +1037,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderCopyId The resource's id
-		@return ApiGETOrderCopyIdSourceOrderRequest
+		@return HasOneApiGETOrderCopyIdSourceOrderRequest
 	*/
-	GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdSourceOrderRequest
+	GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdSourceOrderRequest
 
 	// GETOrderCopyIdSourceOrderExecute executes the request
-	GETOrderCopyIdSourceOrderExecute(r ApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error)
+	GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error)
 
 	/*
 		GETOrderCopyIdTargetOrder Retrieve the target order associated to the order copy
@@ -1051,12 +1051,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderCopyId The resource's id
-		@return ApiGETOrderCopyIdTargetOrderRequest
+		@return HasOneApiGETOrderCopyIdTargetOrderRequest
 	*/
-	GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdTargetOrderRequest
+	GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdTargetOrderRequest
 
 	// GETOrderCopyIdTargetOrderExecute executes the request
-	GETOrderCopyIdTargetOrderExecute(r ApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error)
+	GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdBillingAddress Retrieve the billing address associated to the order
@@ -1065,12 +1065,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdBillingAddressRequest
+		@return HasOneApiGETOrderIdBillingAddressRequest
 	*/
-	GETOrderIdBillingAddress(ctx context.Context, orderId string) ApiGETOrderIdBillingAddressRequest
+	GETOrderIdBillingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdBillingAddressRequest
 
 	// GETOrderIdBillingAddressExecute executes the request
-	GETOrderIdBillingAddressExecute(r ApiGETOrderIdBillingAddressRequest) (*http.Response, error)
+	GETOrderIdBillingAddressExecute(r HasOneApiGETOrderIdBillingAddressRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdCustomer Retrieve the customer associated to the order
@@ -1079,12 +1079,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdCustomerRequest
+		@return HasOneApiGETOrderIdCustomerRequest
 	*/
-	GETOrderIdCustomer(ctx context.Context, orderId string) ApiGETOrderIdCustomerRequest
+	GETOrderIdCustomer(ctx context.Context, orderId string) HasOneApiGETOrderIdCustomerRequest
 
 	// GETOrderIdCustomerExecute executes the request
-	GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerRequest) (*http.Response, error)
+	GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdMarket Retrieve the market associated to the order
@@ -1093,12 +1093,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdMarketRequest
+		@return HasOneApiGETOrderIdMarketRequest
 	*/
-	GETOrderIdMarket(ctx context.Context, orderId string) ApiGETOrderIdMarketRequest
+	GETOrderIdMarket(ctx context.Context, orderId string) HasOneApiGETOrderIdMarketRequest
 
 	// GETOrderIdMarketExecute executes the request
-	GETOrderIdMarketExecute(r ApiGETOrderIdMarketRequest) (*http.Response, error)
+	GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdPaymentMethod Retrieve the payment method associated to the order
@@ -1107,12 +1107,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdPaymentMethodRequest
+		@return HasOneApiGETOrderIdPaymentMethodRequest
 	*/
-	GETOrderIdPaymentMethod(ctx context.Context, orderId string) ApiGETOrderIdPaymentMethodRequest
+	GETOrderIdPaymentMethod(ctx context.Context, orderId string) HasOneApiGETOrderIdPaymentMethodRequest
 
 	// GETOrderIdPaymentMethodExecute executes the request
-	GETOrderIdPaymentMethodExecute(r ApiGETOrderIdPaymentMethodRequest) (*http.Response, error)
+	GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdPaymentMethodRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdShippingAddress Retrieve the shipping address associated to the order
@@ -1121,12 +1121,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdShippingAddressRequest
+		@return HasOneApiGETOrderIdShippingAddressRequest
 	*/
-	GETOrderIdShippingAddress(ctx context.Context, orderId string) ApiGETOrderIdShippingAddressRequest
+	GETOrderIdShippingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdShippingAddressRequest
 
 	// GETOrderIdShippingAddressExecute executes the request
-	GETOrderIdShippingAddressExecute(r ApiGETOrderIdShippingAddressRequest) (*http.Response, error)
+	GETOrderIdShippingAddressExecute(r HasOneApiGETOrderIdShippingAddressRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdCustomer Retrieve the customer associated to the order subscription
@@ -1135,12 +1135,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdCustomerRequest
+		@return HasOneApiGETOrderSubscriptionIdCustomerRequest
 	*/
-	GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdCustomerRequest
+	GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdCustomerRequest
 
 	// GETOrderSubscriptionIdCustomerExecute executes the request
-	GETOrderSubscriptionIdCustomerExecute(r ApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdMarket Retrieve the market associated to the order subscription
@@ -1149,12 +1149,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdMarketRequest
+		@return HasOneApiGETOrderSubscriptionIdMarketRequest
 	*/
-	GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdMarketRequest
+	GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdMarketRequest
 
 	// GETOrderSubscriptionIdMarketExecute executes the request
-	GETOrderSubscriptionIdMarketExecute(r ApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error)
+	GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdSourceOrder Retrieve the source order associated to the order subscription
@@ -1163,12 +1163,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdSourceOrderRequest
+		@return HasOneApiGETOrderSubscriptionIdSourceOrderRequest
 	*/
-	GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdSourceOrderRequest
+	GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdSourceOrderRequest
 
 	// GETOrderSubscriptionIdSourceOrderExecute executes the request
-	GETOrderSubscriptionIdSourceOrderExecute(r ApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error)
+	GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error)
 
 	/*
 		GETOrderValidationRuleIdMarket Retrieve the market associated to the order validation rule
@@ -1177,12 +1177,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderValidationRuleId The resource's id
-		@return ApiGETOrderValidationRuleIdMarketRequest
+		@return HasOneApiGETOrderValidationRuleIdMarketRequest
 	*/
-	GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) ApiGETOrderValidationRuleIdMarketRequest
+	GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) HasOneApiGETOrderValidationRuleIdMarketRequest
 
 	// GETOrderValidationRuleIdMarketExecute executes the request
-	GETOrderValidationRuleIdMarketExecute(r ApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error)
+	GETOrderValidationRuleIdMarketExecute(r HasOneApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETPackageIdStockLocation Retrieve the stock location associated to the package
@@ -1191,12 +1191,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param packageId The resource's id
-		@return ApiGETPackageIdStockLocationRequest
+		@return HasOneApiGETPackageIdStockLocationRequest
 	*/
-	GETPackageIdStockLocation(ctx context.Context, packageId string) ApiGETPackageIdStockLocationRequest
+	GETPackageIdStockLocation(ctx context.Context, packageId string) HasOneApiGETPackageIdStockLocationRequest
 
 	// GETPackageIdStockLocationExecute executes the request
-	GETPackageIdStockLocationExecute(r ApiGETPackageIdStockLocationRequest) (*http.Response, error)
+	GETPackageIdStockLocationExecute(r HasOneApiGETPackageIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETParcelIdPackage Retrieve the package associated to the parcel
@@ -1205,12 +1205,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelIdPackageRequest
+		@return HasOneApiGETParcelIdPackageRequest
 	*/
-	GETParcelIdPackage(ctx context.Context, parcelId string) ApiGETParcelIdPackageRequest
+	GETParcelIdPackage(ctx context.Context, parcelId string) HasOneApiGETParcelIdPackageRequest
 
 	// GETParcelIdPackageExecute executes the request
-	GETParcelIdPackageExecute(r ApiGETParcelIdPackageRequest) (*http.Response, error)
+	GETParcelIdPackageExecute(r HasOneApiGETParcelIdPackageRequest) (*http.Response, error)
 
 	/*
 		GETParcelIdShipment Retrieve the shipment associated to the parcel
@@ -1219,12 +1219,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelIdShipmentRequest
+		@return HasOneApiGETParcelIdShipmentRequest
 	*/
-	GETParcelIdShipment(ctx context.Context, parcelId string) ApiGETParcelIdShipmentRequest
+	GETParcelIdShipment(ctx context.Context, parcelId string) HasOneApiGETParcelIdShipmentRequest
 
 	// GETParcelIdShipmentExecute executes the request
-	GETParcelIdShipmentExecute(r ApiGETParcelIdShipmentRequest) (*http.Response, error)
+	GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShipmentRequest) (*http.Response, error)
 
 	/*
 		GETParcelLineItemIdParcel Retrieve the parcel associated to the parcel line item
@@ -1233,12 +1233,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelLineItemId The resource's id
-		@return ApiGETParcelLineItemIdParcelRequest
+		@return HasOneApiGETParcelLineItemIdParcelRequest
 	*/
-	GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdParcelRequest
+	GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdParcelRequest
 
 	// GETParcelLineItemIdParcelExecute executes the request
-	GETParcelLineItemIdParcelExecute(r ApiGETParcelLineItemIdParcelRequest) (*http.Response, error)
+	GETParcelLineItemIdParcelExecute(r HasOneApiGETParcelLineItemIdParcelRequest) (*http.Response, error)
 
 	/*
 		GETParcelLineItemIdStockLineItem Retrieve the stock line item associated to the parcel line item
@@ -1247,12 +1247,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelLineItemId The resource's id
-		@return ApiGETParcelLineItemIdStockLineItemRequest
+		@return HasOneApiGETParcelLineItemIdStockLineItemRequest
 	*/
-	GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdStockLineItemRequest
+	GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdStockLineItemRequest
 
 	// GETParcelLineItemIdStockLineItemExecute executes the request
-	GETParcelLineItemIdStockLineItemExecute(r ApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error)
+	GETParcelLineItemIdStockLineItemExecute(r HasOneApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error)
 
 	/*
 		GETPaymentMethodIdMarket Retrieve the market associated to the payment method
@@ -1261,12 +1261,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentMethodId The resource's id
-		@return ApiGETPaymentMethodIdMarketRequest
+		@return HasOneApiGETPaymentMethodIdMarketRequest
 	*/
-	GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdMarketRequest
+	GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdMarketRequest
 
 	// GETPaymentMethodIdMarketExecute executes the request
-	GETPaymentMethodIdMarketExecute(r ApiGETPaymentMethodIdMarketRequest) (*http.Response, error)
+	GETPaymentMethodIdMarketExecute(r HasOneApiGETPaymentMethodIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETPaymentMethodIdPaymentGateway Retrieve the payment gateway associated to the payment method
@@ -1275,12 +1275,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paymentMethodId The resource's id
-		@return ApiGETPaymentMethodIdPaymentGatewayRequest
+		@return HasOneApiGETPaymentMethodIdPaymentGatewayRequest
 	*/
-	GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdPaymentGatewayRequest
+	GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdPaymentGatewayRequest
 
 	// GETPaymentMethodIdPaymentGatewayExecute executes the request
-	GETPaymentMethodIdPaymentGatewayExecute(r ApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error)
+	GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETPaypalPaymentIdOrder Retrieve the order associated to the paypal payment
@@ -1289,12 +1289,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalPaymentId The resource's id
-		@return ApiGETPaypalPaymentIdOrderRequest
+		@return HasOneApiGETPaypalPaymentIdOrderRequest
 	*/
-	GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdOrderRequest
+	GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdOrderRequest
 
 	// GETPaypalPaymentIdOrderExecute executes the request
-	GETPaypalPaymentIdOrderExecute(r ApiGETPaypalPaymentIdOrderRequest) (*http.Response, error)
+	GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETPaypalPaymentIdPaymentGateway Retrieve the payment gateway associated to the paypal payment
@@ -1303,12 +1303,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalPaymentId The resource's id
-		@return ApiGETPaypalPaymentIdPaymentGatewayRequest
+		@return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
 	*/
-	GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdPaymentGatewayRequest
+	GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
 
 	// GETPaypalPaymentIdPaymentGatewayExecute executes the request
-	GETPaypalPaymentIdPaymentGatewayExecute(r ApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the percentage discount promotion
@@ -1317,12 +1317,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+	GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdMarket Retrieve the market associated to the percentage discount promotion
@@ -1331,12 +1331,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdMarketRequest
+		@return HasOneApiGETPercentageDiscountPromotionIdMarketRequest
 	*/
-	GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdMarketRequest
+	GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdMarketRequest
 
 	// GETPercentageDiscountPromotionIdMarketExecute executes the request
-	GETPercentageDiscountPromotionIdMarketExecute(r ApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdMarketExecute(r HasOneApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the percentage discount promotion
@@ -1345,12 +1345,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+	GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdSkuList Retrieve the sku list associated to the percentage discount promotion
@@ -1359,12 +1359,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdSkuListRequest
+		@return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
 	*/
-	GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListRequest
+	GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
 
 	// GETPercentageDiscountPromotionIdSkuListExecute executes the request
-	GETPercentageDiscountPromotionIdSkuListExecute(r ApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdSkuListExecute(r HasOneApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the percentage discount promotion
@@ -1373,12 +1373,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
+	GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 
 	// GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPriceIdPriceList Retrieve the price list associated to the price
@@ -1387,12 +1387,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceId The resource's id
-		@return ApiGETPriceIdPriceListRequest
+		@return HasOneApiGETPriceIdPriceListRequest
 	*/
-	GETPriceIdPriceList(ctx context.Context, priceId string) ApiGETPriceIdPriceListRequest
+	GETPriceIdPriceList(ctx context.Context, priceId string) HasOneApiGETPriceIdPriceListRequest
 
 	// GETPriceIdPriceListExecute executes the request
-	GETPriceIdPriceListExecute(r ApiGETPriceIdPriceListRequest) (*http.Response, error)
+	GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPriceListRequest) (*http.Response, error)
 
 	/*
 		GETPriceIdSku Retrieve the sku associated to the price
@@ -1401,12 +1401,40 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceId The resource's id
-		@return ApiGETPriceIdSkuRequest
+		@return HasOneApiGETPriceIdSkuRequest
 	*/
-	GETPriceIdSku(ctx context.Context, priceId string) ApiGETPriceIdSkuRequest
+	GETPriceIdSku(ctx context.Context, priceId string) HasOneApiGETPriceIdSkuRequest
 
 	// GETPriceIdSkuExecute executes the request
-	GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*http.Response, error)
+	GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest) (*http.Response, error)
+
+	/*
+		GETPriceTierIdPrice Retrieve the price associated to the price tier
+
+		Retrieve the price associated to the price tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceTierId The resource's id
+		@return HasOneApiGETPriceTierIdPriceRequest
+	*/
+	GETPriceTierIdPrice(ctx context.Context, priceTierId string) HasOneApiGETPriceTierIdPriceRequest
+
+	// GETPriceTierIdPriceExecute executes the request
+	GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdPriceRequest) (*http.Response, error)
+
+	/*
+		GETPriceVolumeTierIdPrice Retrieve the price associated to the price volume tier
+
+		Retrieve the price associated to the price volume tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param priceVolumeTierId The resource's id
+		@return HasOneApiGETPriceVolumeTierIdPriceRequest
+	*/
+	GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) HasOneApiGETPriceVolumeTierIdPriceRequest
+
+	// GETPriceVolumeTierIdPriceExecute executes the request
+	GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceVolumeTierIdPriceRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the promotion
@@ -1415,12 +1443,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdCouponCodesPromotionRuleRequest
+		@return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdCouponCodesPromotionRuleRequest
+	GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdMarket Retrieve the market associated to the promotion
@@ -1429,12 +1457,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdMarketRequest
+		@return HasOneApiGETPromotionIdMarketRequest
 	*/
-	GETPromotionIdMarket(ctx context.Context, promotionId string) ApiGETPromotionIdMarketRequest
+	GETPromotionIdMarket(ctx context.Context, promotionId string) HasOneApiGETPromotionIdMarketRequest
 
 	// GETPromotionIdMarketExecute executes the request
-	GETPromotionIdMarketExecute(r ApiGETPromotionIdMarketRequest) (*http.Response, error)
+	GETPromotionIdMarketExecute(r HasOneApiGETPromotionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule associated to the promotion
@@ -1443,12 +1471,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdOrderAmountPromotionRuleRequest
+		@return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
 	*/
-	GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdOrderAmountPromotionRuleRequest
+	GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
 
 	// GETPromotionIdOrderAmountPromotionRuleExecute executes the request
-	GETPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
+	GETPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the promotion
@@ -1457,12 +1485,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdSkuListPromotionRuleRequest
+		@return HasOneApiGETPromotionIdSkuListPromotionRuleRequest
 	*/
-	GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdSkuListPromotionRuleRequest
+	GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdSkuListPromotionRuleRequest
 
 	// GETPromotionIdSkuListPromotionRuleExecute executes the request
-	GETPromotionIdSkuListPromotionRuleExecute(r ApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
+	GETPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETRefundIdOrder Retrieve the order associated to the refund
@@ -1471,12 +1499,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param refundId The resource's id
-		@return ApiGETRefundIdOrderRequest
+		@return HasOneApiGETRefundIdOrderRequest
 	*/
-	GETRefundIdOrder(ctx context.Context, refundId string) ApiGETRefundIdOrderRequest
+	GETRefundIdOrder(ctx context.Context, refundId string) HasOneApiGETRefundIdOrderRequest
 
 	// GETRefundIdOrderExecute executes the request
-	GETRefundIdOrderExecute(r ApiGETRefundIdOrderRequest) (*http.Response, error)
+	GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETRefundIdReferenceCapture Retrieve the reference capture associated to the refund
@@ -1485,12 +1513,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param refundId The resource's id
-		@return ApiGETRefundIdReferenceCaptureRequest
+		@return HasOneApiGETRefundIdReferenceCaptureRequest
 	*/
-	GETRefundIdReferenceCapture(ctx context.Context, refundId string) ApiGETRefundIdReferenceCaptureRequest
+	GETRefundIdReferenceCapture(ctx context.Context, refundId string) HasOneApiGETRefundIdReferenceCaptureRequest
 
 	// GETRefundIdReferenceCaptureExecute executes the request
-	GETRefundIdReferenceCaptureExecute(r ApiGETRefundIdReferenceCaptureRequest) (*http.Response, error)
+	GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefundIdReferenceCaptureRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdCustomer Retrieve the customer associated to the return
@@ -1499,12 +1527,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdCustomerRequest
+		@return HasOneApiGETReturnIdCustomerRequest
 	*/
-	GETReturnIdCustomer(ctx context.Context, returnId string) ApiGETReturnIdCustomerRequest
+	GETReturnIdCustomer(ctx context.Context, returnId string) HasOneApiGETReturnIdCustomerRequest
 
 	// GETReturnIdCustomerExecute executes the request
-	GETReturnIdCustomerExecute(r ApiGETReturnIdCustomerRequest) (*http.Response, error)
+	GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdDestinationAddress Retrieve the destination address associated to the return
@@ -1513,12 +1541,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdDestinationAddressRequest
+		@return HasOneApiGETReturnIdDestinationAddressRequest
 	*/
-	GETReturnIdDestinationAddress(ctx context.Context, returnId string) ApiGETReturnIdDestinationAddressRequest
+	GETReturnIdDestinationAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdDestinationAddressRequest
 
 	// GETReturnIdDestinationAddressExecute executes the request
-	GETReturnIdDestinationAddressExecute(r ApiGETReturnIdDestinationAddressRequest) (*http.Response, error)
+	GETReturnIdDestinationAddressExecute(r HasOneApiGETReturnIdDestinationAddressRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdOrder Retrieve the order associated to the return
@@ -1527,12 +1555,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdOrderRequest
+		@return HasOneApiGETReturnIdOrderRequest
 	*/
-	GETReturnIdOrder(ctx context.Context, returnId string) ApiGETReturnIdOrderRequest
+	GETReturnIdOrder(ctx context.Context, returnId string) HasOneApiGETReturnIdOrderRequest
 
 	// GETReturnIdOrderExecute executes the request
-	GETReturnIdOrderExecute(r ApiGETReturnIdOrderRequest) (*http.Response, error)
+	GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdOriginAddress Retrieve the origin address associated to the return
@@ -1541,12 +1569,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdOriginAddressRequest
+		@return HasOneApiGETReturnIdOriginAddressRequest
 	*/
-	GETReturnIdOriginAddress(ctx context.Context, returnId string) ApiGETReturnIdOriginAddressRequest
+	GETReturnIdOriginAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdOriginAddressRequest
 
 	// GETReturnIdOriginAddressExecute executes the request
-	GETReturnIdOriginAddressExecute(r ApiGETReturnIdOriginAddressRequest) (*http.Response, error)
+	GETReturnIdOriginAddressExecute(r HasOneApiGETReturnIdOriginAddressRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdStockLocation Retrieve the stock location associated to the return
@@ -1555,12 +1583,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdStockLocationRequest
+		@return HasOneApiGETReturnIdStockLocationRequest
 	*/
-	GETReturnIdStockLocation(ctx context.Context, returnId string) ApiGETReturnIdStockLocationRequest
+	GETReturnIdStockLocation(ctx context.Context, returnId string) HasOneApiGETReturnIdStockLocationRequest
 
 	// GETReturnIdStockLocationExecute executes the request
-	GETReturnIdStockLocationExecute(r ApiGETReturnIdStockLocationRequest) (*http.Response, error)
+	GETReturnIdStockLocationExecute(r HasOneApiGETReturnIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETReturnLineItemIdLineItem Retrieve the line item associated to the return line item
@@ -1569,12 +1597,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnLineItemId The resource's id
-		@return ApiGETReturnLineItemIdLineItemRequest
+		@return HasOneApiGETReturnLineItemIdLineItemRequest
 	*/
-	GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdLineItemRequest
+	GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdLineItemRequest
 
 	// GETReturnLineItemIdLineItemExecute executes the request
-	GETReturnLineItemIdLineItemExecute(r ApiGETReturnLineItemIdLineItemRequest) (*http.Response, error)
+	GETReturnLineItemIdLineItemExecute(r HasOneApiGETReturnLineItemIdLineItemRequest) (*http.Response, error)
 
 	/*
 		GETReturnLineItemIdReturn Retrieve the return associated to the return line item
@@ -1583,12 +1611,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnLineItemId The resource's id
-		@return ApiGETReturnLineItemIdReturnRequest
+		@return HasOneApiGETReturnLineItemIdReturnRequest
 	*/
-	GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdReturnRequest
+	GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdReturnRequest
 
 	// GETReturnLineItemIdReturnExecute executes the request
-	GETReturnLineItemIdReturnExecute(r ApiGETReturnLineItemIdReturnRequest) (*http.Response, error)
+	GETReturnLineItemIdReturnExecute(r HasOneApiGETReturnLineItemIdReturnRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdDeliveryLeadTime Retrieve the delivery lead time associated to the shipment
@@ -1597,12 +1625,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdDeliveryLeadTimeRequest
+		@return HasOneApiGETShipmentIdDeliveryLeadTimeRequest
 	*/
-	GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) ApiGETShipmentIdDeliveryLeadTimeRequest
+	GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdDeliveryLeadTimeRequest
 
 	// GETShipmentIdDeliveryLeadTimeExecute executes the request
-	GETShipmentIdDeliveryLeadTimeExecute(r ApiGETShipmentIdDeliveryLeadTimeRequest) (*http.Response, error)
+	GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETShipmentIdDeliveryLeadTimeRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdOrder Retrieve the order associated to the shipment
@@ -1611,12 +1639,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdOrderRequest
+		@return HasOneApiGETShipmentIdOrderRequest
 	*/
-	GETShipmentIdOrder(ctx context.Context, shipmentId string) ApiGETShipmentIdOrderRequest
+	GETShipmentIdOrder(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOrderRequest
 
 	// GETShipmentIdOrderExecute executes the request
-	GETShipmentIdOrderExecute(r ApiGETShipmentIdOrderRequest) (*http.Response, error)
+	GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdOriginAddress Retrieve the origin address associated to the shipment
@@ -1625,12 +1653,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdOriginAddressRequest
+		@return HasOneApiGETShipmentIdOriginAddressRequest
 	*/
-	GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdOriginAddressRequest
+	GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOriginAddressRequest
 
 	// GETShipmentIdOriginAddressExecute executes the request
-	GETShipmentIdOriginAddressExecute(r ApiGETShipmentIdOriginAddressRequest) (*http.Response, error)
+	GETShipmentIdOriginAddressExecute(r HasOneApiGETShipmentIdOriginAddressRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdShippingAddress Retrieve the shipping address associated to the shipment
@@ -1639,12 +1667,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdShippingAddressRequest
+		@return HasOneApiGETShipmentIdShippingAddressRequest
 	*/
-	GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingAddressRequest
+	GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingAddressRequest
 
 	// GETShipmentIdShippingAddressExecute executes the request
-	GETShipmentIdShippingAddressExecute(r ApiGETShipmentIdShippingAddressRequest) (*http.Response, error)
+	GETShipmentIdShippingAddressExecute(r HasOneApiGETShipmentIdShippingAddressRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdShippingCategory Retrieve the shipping category associated to the shipment
@@ -1653,12 +1681,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdShippingCategoryRequest
+		@return HasOneApiGETShipmentIdShippingCategoryRequest
 	*/
-	GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingCategoryRequest
+	GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingCategoryRequest
 
 	// GETShipmentIdShippingCategoryExecute executes the request
-	GETShipmentIdShippingCategoryExecute(r ApiGETShipmentIdShippingCategoryRequest) (*http.Response, error)
+	GETShipmentIdShippingCategoryExecute(r HasOneApiGETShipmentIdShippingCategoryRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdShippingMethod Retrieve the shipping method associated to the shipment
@@ -1667,12 +1695,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdShippingMethodRequest
+		@return HasOneApiGETShipmentIdShippingMethodRequest
 	*/
-	GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingMethodRequest
+	GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingMethodRequest
 
 	// GETShipmentIdShippingMethodExecute executes the request
-	GETShipmentIdShippingMethodExecute(r ApiGETShipmentIdShippingMethodRequest) (*http.Response, error)
+	GETShipmentIdShippingMethodExecute(r HasOneApiGETShipmentIdShippingMethodRequest) (*http.Response, error)
 
 	/*
 		GETShipmentIdStockLocation Retrieve the stock location associated to the shipment
@@ -1681,12 +1709,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentIdStockLocationRequest
+		@return HasOneApiGETShipmentIdStockLocationRequest
 	*/
-	GETShipmentIdStockLocation(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLocationRequest
+	GETShipmentIdStockLocation(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdStockLocationRequest
 
 	// GETShipmentIdStockLocationExecute executes the request
-	GETShipmentIdStockLocationExecute(r ApiGETShipmentIdStockLocationRequest) (*http.Response, error)
+	GETShipmentIdStockLocationExecute(r HasOneApiGETShipmentIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETShippingMethodIdDeliveryLeadTimeForShipment Retrieve the delivery lead time for shipment associated to the shipping method
@@ -1695,12 +1723,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingMethodId The resource's id
-		@return ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
+		@return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 	*/
-	GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
+	GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 
 	// GETShippingMethodIdDeliveryLeadTimeForShipmentExecute executes the request
-	GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) (*http.Response, error)
+	GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) (*http.Response, error)
 
 	/*
 		GETShippingMethodIdMarket Retrieve the market associated to the shipping method
@@ -1709,12 +1737,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingMethodId The resource's id
-		@return ApiGETShippingMethodIdMarketRequest
+		@return HasOneApiGETShippingMethodIdMarketRequest
 	*/
-	GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdMarketRequest
+	GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdMarketRequest
 
 	// GETShippingMethodIdMarketExecute executes the request
-	GETShippingMethodIdMarketExecute(r ApiGETShippingMethodIdMarketRequest) (*http.Response, error)
+	GETShippingMethodIdMarketExecute(r HasOneApiGETShippingMethodIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETShippingMethodIdShippingCategory Retrieve the shipping category associated to the shipping method
@@ -1723,12 +1751,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingMethodId The resource's id
-		@return ApiGETShippingMethodIdShippingCategoryRequest
+		@return HasOneApiGETShippingMethodIdShippingCategoryRequest
 	*/
-	GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingCategoryRequest
+	GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingCategoryRequest
 
 	// GETShippingMethodIdShippingCategoryExecute executes the request
-	GETShippingMethodIdShippingCategoryExecute(r ApiGETShippingMethodIdShippingCategoryRequest) (*http.Response, error)
+	GETShippingMethodIdShippingCategoryExecute(r HasOneApiGETShippingMethodIdShippingCategoryRequest) (*http.Response, error)
 
 	/*
 		GETShippingMethodIdShippingZone Retrieve the shipping zone associated to the shipping method
@@ -1737,12 +1765,54 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingMethodId The resource's id
-		@return ApiGETShippingMethodIdShippingZoneRequest
+		@return HasOneApiGETShippingMethodIdShippingZoneRequest
 	*/
-	GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingZoneRequest
+	GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingZoneRequest
 
 	// GETShippingMethodIdShippingZoneExecute executes the request
-	GETShippingMethodIdShippingZoneExecute(r ApiGETShippingMethodIdShippingZoneRequest) (*http.Response, error)
+	GETShippingMethodIdShippingZoneExecute(r HasOneApiGETShippingMethodIdShippingZoneRequest) (*http.Response, error)
+
+	/*
+		GETShippingMethodIdStockLocation Retrieve the stock location associated to the shipping method
+
+		Retrieve the stock location associated to the shipping method
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingMethodId The resource's id
+		@return HasOneApiGETShippingMethodIdStockLocationRequest
+	*/
+	GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdStockLocationRequest
+
+	// GETShippingMethodIdStockLocationExecute executes the request
+	GETShippingMethodIdStockLocationExecute(r HasOneApiGETShippingMethodIdStockLocationRequest) (*http.Response, error)
+
+	/*
+		GETShippingMethodTierIdShippingMethod Retrieve the shipping method associated to the shipping method tier
+
+		Retrieve the shipping method associated to the shipping method tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingMethodTierId The resource's id
+		@return HasOneApiGETShippingMethodTierIdShippingMethodRequest
+	*/
+	GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) HasOneApiGETShippingMethodTierIdShippingMethodRequest
+
+	// GETShippingMethodTierIdShippingMethodExecute executes the request
+	GETShippingMethodTierIdShippingMethodExecute(r HasOneApiGETShippingMethodTierIdShippingMethodRequest) (*http.Response, error)
+
+	/*
+		GETShippingWeightTierIdShippingMethod Retrieve the shipping method associated to the shipping weight tier
+
+		Retrieve the shipping method associated to the shipping weight tier
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param shippingWeightTierId The resource's id
+		@return HasOneApiGETShippingWeightTierIdShippingMethodRequest
+	*/
+	GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) HasOneApiGETShippingWeightTierIdShippingMethodRequest
+
+	// GETShippingWeightTierIdShippingMethodExecute executes the request
+	GETShippingWeightTierIdShippingMethodExecute(r HasOneApiGETShippingWeightTierIdShippingMethodRequest) (*http.Response, error)
 
 	/*
 		GETSkuIdShippingCategory Retrieve the shipping category associated to the SKU
@@ -1751,12 +1821,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkuIdShippingCategoryRequest
+		@return HasOneApiGETSkuIdShippingCategoryRequest
 	*/
-	GETSkuIdShippingCategory(ctx context.Context, skuId string) ApiGETSkuIdShippingCategoryRequest
+	GETSkuIdShippingCategory(ctx context.Context, skuId string) HasOneApiGETSkuIdShippingCategoryRequest
 
 	// GETSkuIdShippingCategoryExecute executes the request
-	GETSkuIdShippingCategoryExecute(r ApiGETSkuIdShippingCategoryRequest) (*http.Response, error)
+	GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdShippingCategoryRequest) (*http.Response, error)
 
 	/*
 		GETSkuListItemIdSku Retrieve the sku associated to the SKU list item
@@ -1765,12 +1835,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListItemId The resource's id
-		@return ApiGETSkuListItemIdSkuRequest
+		@return HasOneApiGETSkuListItemIdSkuRequest
 	*/
-	GETSkuListItemIdSku(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuRequest
+	GETSkuListItemIdSku(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuRequest
 
 	// GETSkuListItemIdSkuExecute executes the request
-	GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRequest) (*http.Response, error)
+	GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETSkuListItemIdSkuList Retrieve the sku list associated to the SKU list item
@@ -1779,12 +1849,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListItemId The resource's id
-		@return ApiGETSkuListItemIdSkuListRequest
+		@return HasOneApiGETSkuListItemIdSkuListRequest
 	*/
-	GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuListRequest
+	GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuListRequest
 
 	// GETSkuListItemIdSkuListExecute executes the request
-	GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdSkuListRequest) (*http.Response, error)
+	GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListItemIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETSkuListPromotionRuleIdSkuList Retrieve the sku list associated to the SKU list promotion rule
@@ -1793,12 +1863,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListPromotionRuleId The resource's id
-		@return ApiGETSkuListPromotionRuleIdSkuListRequest
+		@return HasOneApiGETSkuListPromotionRuleIdSkuListRequest
 	*/
-	GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkuListRequest
+	GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) HasOneApiGETSkuListPromotionRuleIdSkuListRequest
 
 	// GETSkuListPromotionRuleIdSkuListExecute executes the request
-	GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error)
+	GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETSkuOptionIdMarket Retrieve the market associated to the SKU option
@@ -1807,12 +1877,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuOptionId The resource's id
-		@return ApiGETSkuOptionIdMarketRequest
+		@return HasOneApiGETSkuOptionIdMarketRequest
 	*/
-	GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdMarketRequest
+	GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) HasOneApiGETSkuOptionIdMarketRequest
 
 	// GETSkuOptionIdMarketExecute executes the request
-	GETSkuOptionIdMarketExecute(r ApiGETSkuOptionIdMarketRequest) (*http.Response, error)
+	GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionIdMarketRequest) (*http.Response, error)
 
 	/*
 		GETStockItemIdSku Retrieve the sku associated to the stock item
@@ -1821,12 +1891,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockItemId The resource's id
-		@return ApiGETStockItemIdSkuRequest
+		@return HasOneApiGETStockItemIdSkuRequest
 	*/
-	GETStockItemIdSku(ctx context.Context, stockItemId string) ApiGETStockItemIdSkuRequest
+	GETStockItemIdSku(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdSkuRequest
 
 	// GETStockItemIdSkuExecute executes the request
-	GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuRequest) (*http.Response, error)
+	GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETStockItemIdStockLocation Retrieve the stock location associated to the stock item
@@ -1835,12 +1905,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockItemId The resource's id
-		@return ApiGETStockItemIdStockLocationRequest
+		@return HasOneApiGETStockItemIdStockLocationRequest
 	*/
-	GETStockItemIdStockLocation(ctx context.Context, stockItemId string) ApiGETStockItemIdStockLocationRequest
+	GETStockItemIdStockLocation(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdStockLocationRequest
 
 	// GETStockItemIdStockLocationExecute executes the request
-	GETStockItemIdStockLocationExecute(r ApiGETStockItemIdStockLocationRequest) (*http.Response, error)
+	GETStockItemIdStockLocationExecute(r HasOneApiGETStockItemIdStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETStockLineItemIdLineItem Retrieve the line item associated to the stock line item
@@ -1849,12 +1919,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLineItemId The resource's id
-		@return ApiGETStockLineItemIdLineItemRequest
+		@return HasOneApiGETStockLineItemIdLineItemRequest
 	*/
-	GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdLineItemRequest
+	GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdLineItemRequest
 
 	// GETStockLineItemIdLineItemExecute executes the request
-	GETStockLineItemIdLineItemExecute(r ApiGETStockLineItemIdLineItemRequest) (*http.Response, error)
+	GETStockLineItemIdLineItemExecute(r HasOneApiGETStockLineItemIdLineItemRequest) (*http.Response, error)
 
 	/*
 		GETStockLineItemIdShipment Retrieve the shipment associated to the stock line item
@@ -1863,12 +1933,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLineItemId The resource's id
-		@return ApiGETStockLineItemIdShipmentRequest
+		@return HasOneApiGETStockLineItemIdShipmentRequest
 	*/
-	GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdShipmentRequest
+	GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdShipmentRequest
 
 	// GETStockLineItemIdShipmentExecute executes the request
-	GETStockLineItemIdShipmentExecute(r ApiGETStockLineItemIdShipmentRequest) (*http.Response, error)
+	GETStockLineItemIdShipmentExecute(r HasOneApiGETStockLineItemIdShipmentRequest) (*http.Response, error)
 
 	/*
 		GETStockLineItemIdStockItem Retrieve the stock item associated to the stock line item
@@ -1877,12 +1947,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLineItemId The resource's id
-		@return ApiGETStockLineItemIdStockItemRequest
+		@return HasOneApiGETStockLineItemIdStockItemRequest
 	*/
-	GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdStockItemRequest
+	GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdStockItemRequest
 
 	// GETStockLineItemIdStockItemExecute executes the request
-	GETStockLineItemIdStockItemExecute(r ApiGETStockLineItemIdStockItemRequest) (*http.Response, error)
+	GETStockLineItemIdStockItemExecute(r HasOneApiGETStockLineItemIdStockItemRequest) (*http.Response, error)
 
 	/*
 		GETStockLocationIdAddress Retrieve the address associated to the stock location
@@ -1891,12 +1961,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLocationId The resource's id
-		@return ApiGETStockLocationIdAddressRequest
+		@return HasOneApiGETStockLocationIdAddressRequest
 	*/
-	GETStockLocationIdAddress(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAddressRequest
+	GETStockLocationIdAddress(ctx context.Context, stockLocationId string) HasOneApiGETStockLocationIdAddressRequest
 
 	// GETStockLocationIdAddressExecute executes the request
-	GETStockLocationIdAddressExecute(r ApiGETStockLocationIdAddressRequest) (*http.Response, error)
+	GETStockLocationIdAddressExecute(r HasOneApiGETStockLocationIdAddressRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdDestinationStockLocation Retrieve the destination stock location associated to the stock transfer
@@ -1905,12 +1975,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdDestinationStockLocationRequest
+		@return HasOneApiGETStockTransferIdDestinationStockLocationRequest
 	*/
-	GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdDestinationStockLocationRequest
+	GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdDestinationStockLocationRequest
 
 	// GETStockTransferIdDestinationStockLocationExecute executes the request
-	GETStockTransferIdDestinationStockLocationExecute(r ApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error)
+	GETStockTransferIdDestinationStockLocationExecute(r HasOneApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdLineItem Retrieve the line item associated to the stock transfer
@@ -1919,12 +1989,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdLineItemRequest
+		@return HasOneApiGETStockTransferIdLineItemRequest
 	*/
-	GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) ApiGETStockTransferIdLineItemRequest
+	GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdLineItemRequest
 
 	// GETStockTransferIdLineItemExecute executes the request
-	GETStockTransferIdLineItemExecute(r ApiGETStockTransferIdLineItemRequest) (*http.Response, error)
+	GETStockTransferIdLineItemExecute(r HasOneApiGETStockTransferIdLineItemRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdOriginStockLocation Retrieve the origin stock location associated to the stock transfer
@@ -1933,12 +2003,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdOriginStockLocationRequest
+		@return HasOneApiGETStockTransferIdOriginStockLocationRequest
 	*/
-	GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdOriginStockLocationRequest
+	GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdOriginStockLocationRequest
 
 	// GETStockTransferIdOriginStockLocationExecute executes the request
-	GETStockTransferIdOriginStockLocationExecute(r ApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error)
+	GETStockTransferIdOriginStockLocationExecute(r HasOneApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdShipment Retrieve the shipment associated to the stock transfer
@@ -1947,12 +2017,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdShipmentRequest
+		@return HasOneApiGETStockTransferIdShipmentRequest
 	*/
-	GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ApiGETStockTransferIdShipmentRequest
+	GETStockTransferIdShipment(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdShipmentRequest
 
 	// GETStockTransferIdShipmentExecute executes the request
-	GETStockTransferIdShipmentExecute(r ApiGETStockTransferIdShipmentRequest) (*http.Response, error)
+	GETStockTransferIdShipmentExecute(r HasOneApiGETStockTransferIdShipmentRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdSku Retrieve the sku associated to the stock transfer
@@ -1961,12 +2031,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdSkuRequest
+		@return HasOneApiGETStockTransferIdSkuRequest
 	*/
-	GETStockTransferIdSku(ctx context.Context, stockTransferId string) ApiGETStockTransferIdSkuRequest
+	GETStockTransferIdSku(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdSkuRequest
 
 	// GETStockTransferIdSkuExecute executes the request
-	GETStockTransferIdSkuExecute(r ApiGETStockTransferIdSkuRequest) (*http.Response, error)
+	GETStockTransferIdSkuExecute(r HasOneApiGETStockTransferIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETStripePaymentIdOrder Retrieve the order associated to the stripe payment
@@ -1975,12 +2045,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiGETStripePaymentIdOrderRequest
+		@return HasOneApiGETStripePaymentIdOrderRequest
 	*/
-	GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdOrderRequest
+	GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdOrderRequest
 
 	// GETStripePaymentIdOrderExecute executes the request
-	GETStripePaymentIdOrderExecute(r ApiGETStripePaymentIdOrderRequest) (*http.Response, error)
+	GETStripePaymentIdOrderExecute(r HasOneApiGETStripePaymentIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETStripePaymentIdPaymentGateway Retrieve the payment gateway associated to the stripe payment
@@ -1989,12 +2059,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiGETStripePaymentIdPaymentGatewayRequest
+		@return HasOneApiGETStripePaymentIdPaymentGatewayRequest
 	*/
-	GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdPaymentGatewayRequest
+	GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdPaymentGatewayRequest
 
 	// GETStripePaymentIdPaymentGatewayExecute executes the request
-	GETStripePaymentIdPaymentGatewayExecute(r ApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error)
+	GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error)
 
 	/*
 		GETTaxCategoryIdSku Retrieve the sku associated to the tax category
@@ -2003,12 +2073,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCategoryId The resource's id
-		@return ApiGETTaxCategoryIdSkuRequest
+		@return HasOneApiGETTaxCategoryIdSkuRequest
 	*/
-	GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdSkuRequest
+	GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) HasOneApiGETTaxCategoryIdSkuRequest
 
 	// GETTaxCategoryIdSkuExecute executes the request
-	GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRequest) (*http.Response, error)
+	GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETTaxRuleIdManualTaxCalculator Retrieve the manual tax calculator associated to the tax rule
@@ -2017,12 +2087,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxRuleId The resource's id
-		@return ApiGETTaxRuleIdManualTaxCalculatorRequest
+		@return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
 	*/
-	GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ApiGETTaxRuleIdManualTaxCalculatorRequest
+	GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
 
 	// GETTaxRuleIdManualTaxCalculatorExecute executes the request
-	GETTaxRuleIdManualTaxCalculatorExecute(r ApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error)
+	GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error)
 
 	/*
 		GETTransactionIdOrder Retrieve the order associated to the transaction
@@ -2031,12 +2101,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param transactionId The resource's id
-		@return ApiGETTransactionIdOrderRequest
+		@return HasOneApiGETTransactionIdOrderRequest
 	*/
-	GETTransactionIdOrder(ctx context.Context, transactionId string) ApiGETTransactionIdOrderRequest
+	GETTransactionIdOrder(ctx context.Context, transactionId string) HasOneApiGETTransactionIdOrderRequest
 
 	// GETTransactionIdOrderExecute executes the request
-	GETTransactionIdOrderExecute(r ApiGETTransactionIdOrderRequest) (*http.Response, error)
+	GETTransactionIdOrderExecute(r HasOneApiGETTransactionIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETVoidIdOrder Retrieve the order associated to the void
@@ -2045,12 +2115,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param voidId The resource's id
-		@return ApiGETVoidIdOrderRequest
+		@return HasOneApiGETVoidIdOrderRequest
 	*/
-	GETVoidIdOrder(ctx context.Context, voidId string) ApiGETVoidIdOrderRequest
+	GETVoidIdOrder(ctx context.Context, voidId string) HasOneApiGETVoidIdOrderRequest
 
 	// GETVoidIdOrderExecute executes the request
-	GETVoidIdOrderExecute(r ApiGETVoidIdOrderRequest) (*http.Response, error)
+	GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderRequest) (*http.Response, error)
 
 	/*
 		GETVoidIdReferenceAuthorization Retrieve the reference authorization associated to the void
@@ -2059,12 +2129,12 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param voidId The resource's id
-		@return ApiGETVoidIdReferenceAuthorizationRequest
+		@return HasOneApiGETVoidIdReferenceAuthorizationRequest
 	*/
-	GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) ApiGETVoidIdReferenceAuthorizationRequest
+	GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) HasOneApiGETVoidIdReferenceAuthorizationRequest
 
 	// GETVoidIdReferenceAuthorizationExecute executes the request
-	GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error)
+	GETVoidIdReferenceAuthorizationExecute(r HasOneApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error)
 
 	/*
 		GETWireTransferIdOrder Retrieve the order associated to the wire transfer
@@ -2073,24 +2143,24 @@ type HasOneApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param wireTransferId The resource's id
-		@return ApiGETWireTransferIdOrderRequest
+		@return HasOneApiGETWireTransferIdOrderRequest
 	*/
-	GETWireTransferIdOrder(ctx context.Context, wireTransferId string) ApiGETWireTransferIdOrderRequest
+	GETWireTransferIdOrder(ctx context.Context, wireTransferId string) HasOneApiGETWireTransferIdOrderRequest
 
 	// GETWireTransferIdOrderExecute executes the request
-	GETWireTransferIdOrderExecute(r ApiGETWireTransferIdOrderRequest) (*http.Response, error)
+	GETWireTransferIdOrderExecute(r HasOneApiGETWireTransferIdOrderRequest) (*http.Response, error)
 }
 
 // HasOneApiService HasOneApi service
 type HasOneApiService service
 
-type ApiGETAddressIdGeocoderRequest struct {
+type HasOneApiGETAddressIdGeocoderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	addressId  string
 }
 
-func (r ApiGETAddressIdGeocoderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETAddressIdGeocoderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAddressIdGeocoderExecute(r)
 }
 
@@ -2101,10 +2171,10 @@ Retrieve the geocoder associated to the address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param addressId The resource's id
- @return ApiGETAddressIdGeocoderRequest
+ @return HasOneApiGETAddressIdGeocoderRequest
 */
-func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) ApiGETAddressIdGeocoderRequest {
-	return ApiGETAddressIdGeocoderRequest{
+func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) HasOneApiGETAddressIdGeocoderRequest {
+	return HasOneApiGETAddressIdGeocoderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		addressId:  addressId,
@@ -2112,7 +2182,7 @@ func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId s
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETAddressIdGeocoderExecute(r ApiGETAddressIdGeocoderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGeocoderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2176,13 +2246,13 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r ApiGETAddressIdGeocoder
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenPaymentIdOrderRequest struct {
+type HasOneApiGETAdyenPaymentIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     HasOneApi
 	adyenPaymentId string
 }
 
-func (r ApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenPaymentIdOrderExecute(r)
 }
 
@@ -2193,10 +2263,10 @@ Retrieve the order associated to the adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiGETAdyenPaymentIdOrderRequest
+ @return HasOneApiGETAdyenPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdOrderRequest {
-	return ApiGETAdyenPaymentIdOrderRequest{
+func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdOrderRequest {
+	return HasOneApiGETAdyenPaymentIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -2204,7 +2274,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaym
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r ApiGETAdyenPaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2268,13 +2338,13 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r ApiGETAdyenPaymentIdO
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenPaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETAdyenPaymentIdPaymentGatewayRequest struct {
 	ctx            context.Context
 	ApiService     HasOneApi
 	adyenPaymentId string
 }
 
-func (r ApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -2285,10 +2355,10 @@ Retrieve the payment gateway associated to the adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiGETAdyenPaymentIdPaymentGatewayRequest
+ @return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdPaymentGatewayRequest {
-	return ApiGETAdyenPaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -2296,7 +2366,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r ApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGETAdyenPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2360,13 +2430,13 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r ApiGETAdyenP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationIdOrderRequest struct {
+type HasOneApiGETAuthorizationIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationIdOrderExecute(r)
 }
 
@@ -2377,10 +2447,10 @@ Retrieve the order associated to the authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationIdOrderRequest
+ @return HasOneApiGETAuthorizationIdOrderRequest
 */
-func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) ApiGETAuthorizationIdOrderRequest {
-	return ApiGETAuthorizationIdOrderRequest{
+func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) HasOneApiGETAuthorizationIdOrderRequest {
+	return HasOneApiGETAuthorizationIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -2388,7 +2458,7 @@ func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authoriz
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r ApiGETAuthorizationIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthorizationIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2452,13 +2522,13 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r ApiGETAuthorizationI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBillingInfoValidationRuleIdMarketRequest struct {
+type HasOneApiGETBillingInfoValidationRuleIdMarketRequest struct {
 	ctx                         context.Context
 	ApiService                  HasOneApi
 	billingInfoValidationRuleId string
 }
 
-func (r ApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRuleIdMarketExecute(r)
 }
 
@@ -2469,10 +2539,10 @@ Retrieve the market associated to the billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billingInfoValidationRuleId The resource's id
- @return ApiGETBillingInfoValidationRuleIdMarketRequest
+ @return HasOneApiGETBillingInfoValidationRuleIdMarketRequest
 */
-func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) ApiGETBillingInfoValidationRuleIdMarketRequest {
-	return ApiGETBillingInfoValidationRuleIdMarketRequest{
+func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) HasOneApiGETBillingInfoValidationRuleIdMarketRequest {
+	return HasOneApiGETBillingInfoValidationRuleIdMarketRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
@@ -2480,7 +2550,7 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r ApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2544,13 +2614,13 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r ApiGETB
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentIdOrderRequest struct {
+type HasOneApiGETBraintreePaymentIdOrderRequest struct {
 	ctx                context.Context
 	ApiService         HasOneApi
 	braintreePaymentId string
 }
 
-func (r ApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreePaymentIdOrderExecute(r)
 }
 
@@ -2561,10 +2631,10 @@ Retrieve the order associated to the braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiGETBraintreePaymentIdOrderRequest
+ @return HasOneApiGETBraintreePaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdOrderRequest {
-	return ApiGETBraintreePaymentIdOrderRequest{
+func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdOrderRequest {
+	return HasOneApiGETBraintreePaymentIdOrderRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -2572,7 +2642,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, brain
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r ApiGETBraintreePaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBraintreePaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2636,13 +2706,13 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r ApiGETBraintreePa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETBraintreePaymentIdPaymentGatewayRequest struct {
 	ctx                context.Context
 	ApiService         HasOneApi
 	braintreePaymentId string
 }
 
-func (r ApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreePaymentIdPaymentGatewayExecute(r)
 }
 
@@ -2653,10 +2723,10 @@ Retrieve the payment gateway associated to the braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiGETBraintreePaymentIdPaymentGatewayRequest
+ @return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdPaymentGatewayRequest {
-	return ApiGETBraintreePaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdPaymentGatewayRequest {
+	return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -2664,7 +2734,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r ApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneApiGETBraintreePaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2728,13 +2798,13 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r ApiGETBr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdMarketRequest struct {
+type HasOneApiGETBundleIdMarketRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdMarketExecute(r)
 }
 
@@ -2745,10 +2815,10 @@ Retrieve the market associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdMarketRequest
+ @return HasOneApiGETBundleIdMarketRequest
 */
-func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId string) ApiGETBundleIdMarketRequest {
-	return ApiGETBundleIdMarketRequest{
+func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId string) HasOneApiGETBundleIdMarketRequest {
+	return HasOneApiGETBundleIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -2756,7 +2826,7 @@ func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId strin
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETBundleIdMarketExecute(r ApiGETBundleIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2820,13 +2890,13 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r ApiGETBundleIdMarketReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdSkuListRequest struct {
+type HasOneApiGETBundleIdSkuListRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdSkuListExecute(r)
 }
 
@@ -2837,10 +2907,10 @@ Retrieve the sku list associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdSkuListRequest
+ @return HasOneApiGETBundleIdSkuListRequest
 */
-func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) ApiGETBundleIdSkuListRequest {
-	return ApiGETBundleIdSkuListRequest{
+func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) HasOneApiGETBundleIdSkuListRequest {
+	return HasOneApiGETBundleIdSkuListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -2848,7 +2918,7 @@ func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId stri
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2912,13 +2982,13 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdOrderRequest struct {
+type HasOneApiGETCaptureIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	captureId  string
 }
 
-func (r ApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdOrderExecute(r)
 }
 
@@ -2929,10 +2999,10 @@ Retrieve the order associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdOrderRequest
+ @return HasOneApiGETCaptureIdOrderRequest
 */
-func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId string) ApiGETCaptureIdOrderRequest {
-	return ApiGETCaptureIdOrderRequest{
+func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId string) HasOneApiGETCaptureIdOrderRequest {
+	return HasOneApiGETCaptureIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -2940,7 +3010,7 @@ func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId stri
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCaptureIdOrderExecute(r ApiGETCaptureIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3004,13 +3074,13 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r ApiGETCaptureIdOrderReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdReferenceAuthorizationRequest struct {
+type HasOneApiGETCaptureIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	captureId  string
 }
 
-func (r ApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdReferenceAuthorizationExecute(r)
 }
 
@@ -3021,10 +3091,10 @@ Retrieve the reference authorization associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdReferenceAuthorizationRequest
+ @return HasOneApiGETCaptureIdReferenceAuthorizationRequest
 */
-func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) ApiGETCaptureIdReferenceAuthorizationRequest {
-	return ApiGETCaptureIdReferenceAuthorizationRequest{
+func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) HasOneApiGETCaptureIdReferenceAuthorizationRequest {
+	return HasOneApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -3032,7 +3102,7 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r ApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3096,13 +3166,13 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r ApiGETCap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCarrierAccountIdMarketRequest struct {
+type HasOneApiGETCarrierAccountIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	carrierAccountId string
 }
 
-func (r ApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCarrierAccountIdMarketExecute(r)
 }
 
@@ -3113,10 +3183,10 @@ Retrieve the market associated to the carrier account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param carrierAccountId The resource's id
- @return ApiGETCarrierAccountIdMarketRequest
+ @return HasOneApiGETCarrierAccountIdMarketRequest
 */
-func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdMarketRequest {
-	return ApiGETCarrierAccountIdMarketRequest{
+func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) HasOneApiGETCarrierAccountIdMarketRequest {
+	return HasOneApiGETCarrierAccountIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
@@ -3124,7 +3194,7 @@ func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrie
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r ApiGETCarrierAccountIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrierAccountIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3188,13 +3258,13 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r ApiGETCarrierAccou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComPaymentIdOrderRequest struct {
+type HasOneApiGETCheckoutComPaymentIdOrderRequest struct {
 	ctx                  context.Context
 	ApiService           HasOneApi
 	checkoutComPaymentId string
 }
 
-func (r ApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentIdOrderExecute(r)
 }
 
@@ -3205,10 +3275,10 @@ Retrieve the order associated to the checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return ApiGETCheckoutComPaymentIdOrderRequest
+ @return HasOneApiGETCheckoutComPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdOrderRequest {
-	return ApiGETCheckoutComPaymentIdOrderRequest{
+func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdOrderRequest {
+	return HasOneApiGETCheckoutComPaymentIdOrderRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -3216,7 +3286,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, che
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r ApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3280,13 +3350,13 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r ApiGETCheckoutC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
 	ctx                  context.Context
 	ApiService           HasOneApi
 	checkoutComPaymentId string
 }
 
-func (r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -3297,10 +3367,10 @@ Retrieve the payment gateway associated to the checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return ApiGETCheckoutComPaymentIdPaymentGatewayRequest
+ @return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdPaymentGatewayRequest {
-	return ApiGETCheckoutComPaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -3308,7 +3378,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r ApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3372,13 +3442,13 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponIdPromotionRuleRequest struct {
+type HasOneApiGETCouponIdPromotionRuleRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	couponId   string
 }
 
-func (r ApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponIdPromotionRuleExecute(r)
 }
 
@@ -3389,10 +3459,10 @@ Retrieve the promotion rule associated to the coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return ApiGETCouponIdPromotionRuleRequest
+ @return HasOneApiGETCouponIdPromotionRuleRequest
 */
-func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) ApiGETCouponIdPromotionRuleRequest {
-	return ApiGETCouponIdPromotionRuleRequest{
+func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) HasOneApiGETCouponIdPromotionRuleRequest {
+	return HasOneApiGETCouponIdPromotionRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -3400,7 +3470,7 @@ func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r ApiGETCouponIdPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponIdPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3464,13 +3534,13 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r ApiGETCouponIdPromo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponRecipientIdCustomerRequest struct {
+type HasOneApiGETCouponRecipientIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	couponRecipientId string
 }
 
-func (r ApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponRecipientIdCustomerExecute(r)
 }
 
@@ -3481,10 +3551,10 @@ Retrieve the customer associated to the coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiGETCouponRecipientIdCustomerRequest
+ @return HasOneApiGETCouponRecipientIdCustomerRequest
 */
-func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdCustomerRequest {
-	return ApiGETCouponRecipientIdCustomerRequest{
+func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) HasOneApiGETCouponRecipientIdCustomerRequest {
+	return HasOneApiGETCouponRecipientIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -3492,7 +3562,7 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, cou
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r ApiGETCouponRecipientIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCouponRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3556,13 +3626,13 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r ApiGETCouponRec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerAddressIdAddressRequest struct {
+type HasOneApiGETCustomerAddressIdAddressRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	customerAddressId string
 }
 
-func (r ApiGETCustomerAddressIdAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerAddressIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressIdAddressExecute(r)
 }
 
@@ -3573,10 +3643,10 @@ Retrieve the address associated to the customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return ApiGETCustomerAddressIdAddressRequest
+ @return HasOneApiGETCustomerAddressIdAddressRequest
 */
-func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdAddressRequest {
-	return ApiGETCustomerAddressIdAddressRequest{
+func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdAddressRequest {
+	return HasOneApiGETCustomerAddressIdAddressRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -3584,7 +3654,7 @@ func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, cust
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r ApiGETCustomerAddressIdAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCustomerAddressIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3648,13 +3718,13 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r ApiGETCustomerAd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerAddressIdCustomerRequest struct {
+type HasOneApiGETCustomerAddressIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	customerAddressId string
 }
 
-func (r ApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressIdCustomerExecute(r)
 }
 
@@ -3665,10 +3735,10 @@ Retrieve the customer associated to the customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return ApiGETCustomerAddressIdCustomerRequest
+ @return HasOneApiGETCustomerAddressIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdCustomerRequest {
-	return ApiGETCustomerAddressIdCustomerRequest{
+func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdCustomerRequest {
+	return HasOneApiGETCustomerAddressIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -3676,7 +3746,7 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, cus
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r ApiGETCustomerAddressIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCustomerAddressIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3740,13 +3810,13 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r ApiGETCustomerA
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerGroupRequest struct {
+type HasOneApiGETCustomerIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerGroupRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerIdCustomerGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerGroupExecute(r)
 }
 
@@ -3757,10 +3827,10 @@ Retrieve the customer group associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerGroupRequest
+ @return HasOneApiGETCustomerIdCustomerGroupRequest
 */
-func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) ApiGETCustomerIdCustomerGroupRequest {
-	return ApiGETCustomerIdCustomerGroupRequest{
+func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) HasOneApiGETCustomerIdCustomerGroupRequest {
+	return HasOneApiGETCustomerIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -3768,7 +3838,7 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, custo
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r ApiGETCustomerIdCustomerGroupRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCustomerIdCustomerGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3832,13 +3902,13 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r ApiGETCustomerIdC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPasswordResetIdCustomerRequest struct {
+type HasOneApiGETCustomerPasswordResetIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	customerPasswordResetId string
 }
 
-func (r ApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetIdCustomerExecute(r)
 }
 
@@ -3849,10 +3919,10 @@ Retrieve the customer associated to the customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiGETCustomerPasswordResetIdCustomerRequest
+ @return HasOneApiGETCustomerPasswordResetIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetIdCustomerRequest {
-	return ApiGETCustomerPasswordResetIdCustomerRequest{
+func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) HasOneApiGETCustomerPasswordResetIdCustomerRequest {
+	return HasOneApiGETCustomerPasswordResetIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -3860,7 +3930,7 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r ApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3924,13 +3994,13 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r ApiGETCus
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPaymentSourceIdCustomerRequest struct {
+type HasOneApiGETCustomerPaymentSourceIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	customerPaymentSourceId string
 }
 
-func (r ApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerPaymentSourceIdCustomerExecute(r)
 }
 
@@ -3941,10 +4011,10 @@ Retrieve the customer associated to the customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPaymentSourceId The resource's id
- @return ApiGETCustomerPaymentSourceIdCustomerRequest
+ @return HasOneApiGETCustomerPaymentSourceIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) ApiGETCustomerPaymentSourceIdCustomerRequest {
-	return ApiGETCustomerPaymentSourceIdCustomerRequest{
+func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) HasOneApiGETCustomerPaymentSourceIdCustomerRequest {
+	return HasOneApiGETCustomerPaymentSourceIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
@@ -3952,7 +4022,7 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r ApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4016,13 +4086,13 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r ApiGETCus
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerSubscriptionIdCustomerRequest struct {
+type HasOneApiGETCustomerSubscriptionIdCustomerRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	customerSubscriptionId string
 }
 
-func (r ApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionIdCustomerExecute(r)
 }
 
@@ -4033,10 +4103,10 @@ Retrieve the customer associated to the customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiGETCustomerSubscriptionIdCustomerRequest
+ @return HasOneApiGETCustomerSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionIdCustomerRequest {
-	return ApiGETCustomerSubscriptionIdCustomerRequest{
+func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) HasOneApiGETCustomerSubscriptionIdCustomerRequest {
+	return HasOneApiGETCustomerSubscriptionIdCustomerRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -4044,7 +4114,7 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r ApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4108,13 +4178,13 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r ApiGETCust
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETDeliveryLeadTimeIdShippingMethodRequest struct {
+type HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest struct {
 	ctx                context.Context
 	ApiService         HasOneApi
 	deliveryLeadTimeId string
 }
 
-func (r ApiGETDeliveryLeadTimeIdShippingMethodRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimeIdShippingMethodExecute(r)
 }
 
@@ -4125,10 +4195,10 @@ Retrieve the shipping method associated to the delivery lead time
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deliveryLeadTimeId The resource's id
- @return ApiGETDeliveryLeadTimeIdShippingMethodRequest
+ @return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdShippingMethodRequest {
-	return ApiGETDeliveryLeadTimeIdShippingMethodRequest{
+func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest {
+	return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
@@ -4136,7 +4206,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r ApiGETDeliveryLeadTimeIdShippingMethodRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4200,13 +4270,13 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r ApiGETDe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETDeliveryLeadTimeIdStockLocationRequest struct {
+type HasOneApiGETDeliveryLeadTimeIdStockLocationRequest struct {
 	ctx                context.Context
 	ApiService         HasOneApi
 	deliveryLeadTimeId string
 }
 
-func (r ApiGETDeliveryLeadTimeIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETDeliveryLeadTimeIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimeIdStockLocationExecute(r)
 }
 
@@ -4217,10 +4287,10 @@ Retrieve the stock location associated to the delivery lead time
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deliveryLeadTimeId The resource's id
- @return ApiGETDeliveryLeadTimeIdStockLocationRequest
+ @return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
 */
-func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdStockLocationRequest {
-	return ApiGETDeliveryLeadTimeIdStockLocationRequest{
+func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdStockLocationRequest {
+	return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
@@ -4228,7 +4298,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r ApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4292,13 +4362,13 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r ApiGETDel
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETEventCallbackIdWebhookRequest struct {
+type HasOneApiGETEventCallbackIdWebhookRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	eventCallbackId string
 }
 
-func (r ApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETEventCallbackIdWebhookExecute(r)
 }
 
@@ -4309,10 +4379,10 @@ Retrieve the webhook associated to the event callback
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param eventCallbackId The resource's id
- @return ApiGETEventCallbackIdWebhookRequest
+ @return HasOneApiGETEventCallbackIdWebhookRequest
 */
-func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) ApiGETEventCallbackIdWebhookRequest {
-	return ApiGETEventCallbackIdWebhookRequest{
+func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) HasOneApiGETEventCallbackIdWebhookRequest {
+	return HasOneApiGETEventCallbackIdWebhookRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		eventCallbackId: eventCallbackId,
@@ -4320,7 +4390,7 @@ func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventC
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r ApiGETEventCallbackIdWebhookRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventCallbackIdWebhookRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4384,13 +4454,13 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r ApiGETEventCallbac
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdOrderRequest struct {
+type HasOneApiGETExternalPaymentIdOrderRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdOrderExecute(r)
 }
 
@@ -4401,10 +4471,10 @@ Retrieve the order associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdOrderRequest
+ @return HasOneApiGETExternalPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdOrderRequest {
-	return ApiGETExternalPaymentIdOrderRequest{
+func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdOrderRequest {
+	return HasOneApiGETExternalPaymentIdOrderRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -4412,7 +4482,7 @@ func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, extern
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r ApiGETExternalPaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExternalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4476,13 +4546,13 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r ApiGETExternalPaym
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETExternalPaymentIdPaymentGatewayRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -4493,10 +4563,10 @@ Retrieve the payment gateway associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdPaymentGatewayRequest
+ @return HasOneApiGETExternalPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdPaymentGatewayRequest {
-	return ApiGETExternalPaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETExternalPaymentIdPaymentGatewayRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -4504,7 +4574,7 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r ApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApiGETExternalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4568,13 +4638,13 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r ApiGETExt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdWalletRequest struct {
+type HasOneApiGETExternalPaymentIdWalletRequest struct {
 	ctx               context.Context
 	ApiService        HasOneApi
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdWalletRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPaymentIdWalletRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdWalletExecute(r)
 }
 
@@ -4585,10 +4655,10 @@ Retrieve the wallet associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdWalletRequest
+ @return HasOneApiGETExternalPaymentIdWalletRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdWalletRequest {
-	return ApiGETExternalPaymentIdWalletRequest{
+func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdWalletRequest {
+	return HasOneApiGETExternalPaymentIdWalletRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -4596,7 +4666,7 @@ func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, exter
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r ApiGETExternalPaymentIdWalletRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExternalPaymentIdWalletRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4660,13 +4730,13 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r ApiGETExternalPay
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -4677,10 +4747,10 @@ Retrieve the coupon codes promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -4688,7 +4758,7 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute(r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4752,13 +4822,13 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdMarketRequest struct {
+type HasOneApiGETExternalPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdMarketExecute(r)
 }
 
@@ -4769,10 +4839,10 @@ Retrieve the market associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdMarketRequest
+ @return HasOneApiGETExternalPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdMarketRequest {
-	return ApiGETExternalPromotionIdMarketRequest{
+func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdMarketRequest {
+	return HasOneApiGETExternalPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -4780,7 +4850,7 @@ func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, ext
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r ApiGETExternalPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExternalPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4844,13 +4914,13 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r ApiGETExternalP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -4861,10 +4931,10 @@ Retrieve the order amount promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -4872,7 +4942,7 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute(r ApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4936,13 +5006,13 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -4953,10 +5023,10 @@ Retrieve the sku list promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETExternalPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -4964,7 +5034,7 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r ApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5028,13 +5098,13 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -5045,10 +5115,10 @@ Retrieve the coupon codes promotion rule associated to the fixed amount promotio
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -5056,7 +5126,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5120,13 +5190,13 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdMarketRequest struct {
+type HasOneApiGETFixedAmountPromotionIdMarketRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdMarketExecute(r)
 }
 
@@ -5137,10 +5207,10 @@ Retrieve the market associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdMarketRequest
+ @return HasOneApiGETFixedAmountPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdMarketRequest {
-	return ApiGETFixedAmountPromotionIdMarketRequest{
+func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdMarketRequest {
+	return HasOneApiGETFixedAmountPromotionIdMarketRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -5148,7 +5218,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r ApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5212,13 +5282,13 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r ApiGETFixedA
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -5229,10 +5299,10 @@ Retrieve the order amount promotion rule associated to the fixed amount promotio
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -5240,7 +5310,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5304,13 +5374,13 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -5321,10 +5391,10 @@ Retrieve the sku list promotion rule associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -5332,7 +5402,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx con
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5396,13 +5466,13 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -5413,10 +5483,10 @@ Retrieve the coupon codes promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5424,7 +5494,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5488,13 +5558,13 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdMarketRequest struct {
+type HasOneApiGETFixedPricePromotionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdMarketExecute(r)
 }
 
@@ -5505,10 +5575,10 @@ Retrieve the market associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdMarketRequest
+ @return HasOneApiGETFixedPricePromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdMarketRequest {
-	return ApiGETFixedPricePromotionIdMarketRequest{
+func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdMarketRequest {
+	return HasOneApiGETFixedPricePromotionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5516,7 +5586,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, f
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r ApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5580,13 +5650,13 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r ApiGETFixedPr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -5597,10 +5667,10 @@ Retrieve the order amount promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5608,7 +5678,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r ApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5672,13 +5742,13 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkuListRequest struct {
+type HasOneApiGETFixedPricePromotionIdSkuListRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkuListExecute(r)
 }
 
@@ -5689,10 +5759,10 @@ Retrieve the sku list associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkuListRequest
+ @return HasOneApiGETFixedPricePromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListRequest {
-	return ApiGETFixedPricePromotionIdSkuListRequest{
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListRequest {
+	return HasOneApiGETFixedPricePromotionIdSkuListRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5700,7 +5770,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5764,13 +5834,13 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -5781,10 +5851,10 @@ Retrieve the sku list promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
-	return ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -5792,7 +5862,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx cont
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5856,13 +5926,13 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -5873,10 +5943,10 @@ Retrieve the coupon codes promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -5884,7 +5954,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5948,13 +6018,13 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdMarketRequest struct {
+type HasOneApiGETFreeGiftPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdMarketExecute(r)
 }
 
@@ -5965,10 +6035,10 @@ Retrieve the market associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdMarketRequest
+ @return HasOneApiGETFreeGiftPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdMarketRequest {
-	return ApiGETFreeGiftPromotionIdMarketRequest{
+func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdMarketRequest {
+	return HasOneApiGETFreeGiftPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -5976,7 +6046,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, fre
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r ApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6040,13 +6110,13 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r ApiGETFreeGiftP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -6057,10 +6127,10 @@ Retrieve the order amount promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -6068,7 +6138,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6132,13 +6202,13 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkuListRequest struct {
+type HasOneApiGETFreeGiftPromotionIdSkuListRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkuListExecute(r)
 }
 
@@ -6149,10 +6219,10 @@ Retrieve the sku list associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkuListRequest
+ @return HasOneApiGETFreeGiftPromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListRequest {
-	return ApiGETFreeGiftPromotionIdSkuListRequest{
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListRequest {
+	return HasOneApiGETFreeGiftPromotionIdSkuListRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -6160,7 +6230,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, fr
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6224,13 +6294,13 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGift
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -6241,10 +6311,10 @@ Retrieve the sku list promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -6252,7 +6322,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6316,13 +6386,13 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -6333,10 +6403,10 @@ Retrieve the coupon codes promotion rule associated to the free shipping promoti
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -6344,7 +6414,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ct
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6408,13 +6478,13 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdMarketRequest struct {
+type HasOneApiGETFreeShippingPromotionIdMarketRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdMarketExecute(r)
 }
 
@@ -6425,10 +6495,10 @@ Retrieve the market associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdMarketRequest
+ @return HasOneApiGETFreeShippingPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdMarketRequest {
-	return ApiGETFreeShippingPromotionIdMarketRequest{
+func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdMarketRequest {
+	return HasOneApiGETFreeShippingPromotionIdMarketRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -6436,7 +6506,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r ApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6500,13 +6570,13 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r ApiGETFreeS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -6517,10 +6587,10 @@ Retrieve the order amount promotion rule associated to the free shipping promoti
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -6528,7 +6598,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ct
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r ApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6592,13 +6662,13 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              HasOneApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -6609,10 +6679,10 @@ Retrieve the sku list promotion rule associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -6620,7 +6690,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6684,13 +6754,13 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardIdGiftCardRecipientRequest struct {
+type HasOneApiGETGiftCardIdGiftCardRecipientRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	giftCardId string
 }
 
-func (r ApiGETGiftCardIdGiftCardRecipientRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETGiftCardIdGiftCardRecipientRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdGiftCardRecipientExecute(r)
 }
 
@@ -6701,10 +6771,10 @@ Retrieve the gift card recipient associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardIdGiftCardRecipientRequest
+ @return HasOneApiGETGiftCardIdGiftCardRecipientRequest
 */
-func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) ApiGETGiftCardIdGiftCardRecipientRequest {
-	return ApiGETGiftCardIdGiftCardRecipientRequest{
+func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdGiftCardRecipientRequest {
+	return HasOneApiGETGiftCardIdGiftCardRecipientRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -6712,7 +6782,7 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, g
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r ApiGETGiftCardIdGiftCardRecipientRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETGiftCardIdGiftCardRecipientRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6776,13 +6846,13 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r ApiGETGiftCar
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardIdMarketRequest struct {
+type HasOneApiGETGiftCardIdMarketRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	giftCardId string
 }
 
-func (r ApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdMarketExecute(r)
 }
 
@@ -6793,10 +6863,10 @@ Retrieve the market associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardIdMarketRequest
+ @return HasOneApiGETGiftCardIdMarketRequest
 */
-func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) ApiGETGiftCardIdMarketRequest {
-	return ApiGETGiftCardIdMarketRequest{
+func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdMarketRequest {
+	return HasOneApiGETGiftCardIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -6804,7 +6874,7 @@ func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId s
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETGiftCardIdMarketExecute(r ApiGETGiftCardIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6868,13 +6938,13 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r ApiGETGiftCardIdMarketRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardRecipientIdCustomerRequest struct {
+type HasOneApiGETGiftCardRecipientIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	giftCardRecipientId string
 }
 
-func (r ApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientIdCustomerExecute(r)
 }
 
@@ -6885,10 +6955,10 @@ Retrieve the customer associated to the gift card recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardRecipientId The resource's id
- @return ApiGETGiftCardRecipientIdCustomerRequest
+ @return HasOneApiGETGiftCardRecipientIdCustomerRequest
 */
-func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdCustomerRequest {
-	return ApiGETGiftCardRecipientIdCustomerRequest{
+func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) HasOneApiGETGiftCardRecipientIdCustomerRequest {
+	return HasOneApiGETGiftCardRecipientIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
@@ -6896,7 +6966,7 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, g
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r ApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -6960,13 +7030,13 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r ApiGETGiftCar
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdCustomerRequest struct {
+type HasOneApiGETInStockSubscriptionIdCustomerRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdCustomerExecute(r)
 }
 
@@ -6977,10 +7047,10 @@ Retrieve the customer associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdCustomerRequest
+ @return HasOneApiGETInStockSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdCustomerRequest {
-	return ApiGETInStockSubscriptionIdCustomerRequest{
+func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdCustomerRequest {
+	return HasOneApiGETInStockSubscriptionIdCustomerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -6988,7 +7058,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r ApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7052,13 +7122,13 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r ApiGETInSto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdMarketRequest struct {
+type HasOneApiGETInStockSubscriptionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdMarketExecute(r)
 }
 
@@ -7069,10 +7139,10 @@ Retrieve the market associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdMarketRequest
+ @return HasOneApiGETInStockSubscriptionIdMarketRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdMarketRequest {
-	return ApiGETInStockSubscriptionIdMarketRequest{
+func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdMarketRequest {
+	return HasOneApiGETInStockSubscriptionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -7080,7 +7150,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, i
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r ApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7144,13 +7214,13 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r ApiGETInStock
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdSkuRequest struct {
+type HasOneApiGETInStockSubscriptionIdSkuRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInStockSubscriptionIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdSkuExecute(r)
 }
 
@@ -7161,10 +7231,10 @@ Retrieve the sku associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdSkuRequest
+ @return HasOneApiGETInStockSubscriptionIdSkuRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdSkuRequest {
-	return ApiGETInStockSubscriptionIdSkuRequest{
+func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdSkuRequest {
+	return HasOneApiGETInStockSubscriptionIdSkuRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -7172,7 +7242,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inSt
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7236,13 +7306,13 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSub
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationIdInventoryModelRequest struct {
+type HasOneApiGETInventoryReturnLocationIdInventoryModelRequest struct {
 	ctx                       context.Context
 	ApiService                HasOneApi
 	inventoryReturnLocationId string
 }
 
-func (r ApiGETInventoryReturnLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInventoryReturnLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationIdInventoryModelExecute(r)
 }
 
@@ -7253,10 +7323,10 @@ Retrieve the inventory model associated to the inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiGETInventoryReturnLocationIdInventoryModelRequest
+ @return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdInventoryModelRequest {
-	return ApiGETInventoryReturnLocationIdInventoryModelRequest{
+func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdInventoryModelRequest {
+	return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -7264,7 +7334,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r ApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r HasOneApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7328,13 +7398,13 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationIdStockLocationRequest struct {
+type HasOneApiGETInventoryReturnLocationIdStockLocationRequest struct {
 	ctx                       context.Context
 	ApiService                HasOneApi
 	inventoryReturnLocationId string
 }
 
-func (r ApiGETInventoryReturnLocationIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInventoryReturnLocationIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationIdStockLocationExecute(r)
 }
 
@@ -7345,10 +7415,10 @@ Retrieve the stock location associated to the inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiGETInventoryReturnLocationIdStockLocationRequest
+ @return HasOneApiGETInventoryReturnLocationIdStockLocationRequest
 */
-func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdStockLocationRequest {
-	return ApiGETInventoryReturnLocationIdStockLocationRequest{
+func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdStockLocationRequest {
+	return HasOneApiGETInventoryReturnLocationIdStockLocationRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -7356,7 +7426,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r ApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r HasOneApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7420,13 +7490,13 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryStockLocationIdInventoryModelRequest struct {
+type HasOneApiGETInventoryStockLocationIdInventoryModelRequest struct {
 	ctx                      context.Context
 	ApiService               HasOneApi
 	inventoryStockLocationId string
 }
 
-func (r ApiGETInventoryStockLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInventoryStockLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryStockLocationIdInventoryModelExecute(r)
 }
 
@@ -7437,10 +7507,10 @@ Retrieve the inventory model associated to the inventory stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryStockLocationId The resource's id
- @return ApiGETInventoryStockLocationIdInventoryModelRequest
+ @return HasOneApiGETInventoryStockLocationIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdInventoryModelRequest {
-	return ApiGETInventoryStockLocationIdInventoryModelRequest{
+func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdInventoryModelRequest {
+	return HasOneApiGETInventoryStockLocationIdInventoryModelRequest{
 		ApiService:               a,
 		ctx:                      ctx,
 		inventoryStockLocationId: inventoryStockLocationId,
@@ -7448,7 +7518,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r ApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r HasOneApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7512,13 +7582,13 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryStockLocationIdStockLocationRequest struct {
+type HasOneApiGETInventoryStockLocationIdStockLocationRequest struct {
 	ctx                      context.Context
 	ApiService               HasOneApi
 	inventoryStockLocationId string
 }
 
-func (r ApiGETInventoryStockLocationIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETInventoryStockLocationIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryStockLocationIdStockLocationExecute(r)
 }
 
@@ -7529,10 +7599,10 @@ Retrieve the stock location associated to the inventory stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryStockLocationId The resource's id
- @return ApiGETInventoryStockLocationIdStockLocationRequest
+ @return HasOneApiGETInventoryStockLocationIdStockLocationRequest
 */
-func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdStockLocationRequest {
-	return ApiGETInventoryStockLocationIdStockLocationRequest{
+func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdStockLocationRequest {
+	return HasOneApiGETInventoryStockLocationIdStockLocationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
 		inventoryStockLocationId: inventoryStockLocationId,
@@ -7540,7 +7610,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r ApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r HasOneApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7604,13 +7674,13 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaPaymentIdOrderRequest struct {
+type HasOneApiGETKlarnaPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	klarnaPaymentId string
 }
 
-func (r ApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaPaymentIdOrderExecute(r)
 }
 
@@ -7621,10 +7691,10 @@ Retrieve the order associated to the klarna payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaPaymentId The resource's id
- @return ApiGETKlarnaPaymentIdOrderRequest
+ @return HasOneApiGETKlarnaPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdOrderRequest {
-	return ApiGETKlarnaPaymentIdOrderRequest{
+func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdOrderRequest {
+	return HasOneApiGETKlarnaPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaPaymentId: klarnaPaymentId,
@@ -7632,7 +7702,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPa
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r ApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7696,13 +7766,13 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r ApiGETKlarnaPaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	klarnaPaymentId string
 }
 
-func (r ApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -7713,10 +7783,10 @@ Retrieve the payment gateway associated to the klarna payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaPaymentId The resource's id
- @return ApiGETKlarnaPaymentIdPaymentGatewayRequest
+ @return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdPaymentGatewayRequest {
-	return ApiGETKlarnaPaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaPaymentId: klarnaPaymentId,
@@ -7724,7 +7794,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r ApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7788,13 +7858,13 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r ApiGETKlarn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdOrderRequest struct {
+type HasOneApiGETLineItemIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdOrderExecute(r)
 }
 
@@ -7805,10 +7875,10 @@ Retrieve the order associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdOrderRequest
+ @return HasOneApiGETLineItemIdOrderRequest
 */
-func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) ApiGETLineItemIdOrderRequest {
-	return ApiGETLineItemIdOrderRequest{
+func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) HasOneApiGETLineItemIdOrderRequest {
+	return HasOneApiGETLineItemIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -7816,7 +7886,7 @@ func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId st
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETLineItemIdOrderExecute(r ApiGETLineItemIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7880,13 +7950,13 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r ApiGETLineItemIdOrderRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionIdLineItemRequest struct {
+type HasOneApiGETLineItemOptionIdLineItemRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	lineItemOptionId string
 }
 
-func (r ApiGETLineItemOptionIdLineItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETLineItemOptionIdLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemOptionIdLineItemExecute(r)
 }
 
@@ -7897,10 +7967,10 @@ Retrieve the line item associated to the line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiGETLineItemOptionIdLineItemRequest
+ @return HasOneApiGETLineItemOptionIdLineItemRequest
 */
-func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionIdLineItemRequest {
-	return ApiGETLineItemOptionIdLineItemRequest{
+func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdLineItemRequest {
+	return HasOneApiGETLineItemOptionIdLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -7908,7 +7978,7 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, line
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r ApiGETLineItemOptionIdLineItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLineItemOptionIdLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -7972,13 +8042,13 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r ApiGETLineItemOp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionIdSkuOptionRequest struct {
+type HasOneApiGETLineItemOptionIdSkuOptionRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	lineItemOptionId string
 }
 
-func (r ApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemOptionIdSkuOptionExecute(r)
 }
 
@@ -7989,10 +8059,10 @@ Retrieve the sku option associated to the line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiGETLineItemOptionIdSkuOptionRequest
+ @return HasOneApiGETLineItemOptionIdSkuOptionRequest
 */
-func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionIdSkuOptionRequest {
-	return ApiGETLineItemOptionIdSkuOptionRequest{
+func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdSkuOptionRequest {
+	return HasOneApiGETLineItemOptionIdSkuOptionRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -8000,7 +8070,7 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lin
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r ApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8064,13 +8134,13 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r ApiGETLineItemO
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdCustomerGroupRequest struct {
+type HasOneApiGETMarketIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdCustomerGroupRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMarketIdCustomerGroupRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdCustomerGroupExecute(r)
 }
 
@@ -8081,10 +8151,10 @@ Retrieve the customer group associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdCustomerGroupRequest
+ @return HasOneApiGETMarketIdCustomerGroupRequest
 */
-func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) ApiGETMarketIdCustomerGroupRequest {
-	return ApiGETMarketIdCustomerGroupRequest{
+func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) HasOneApiGETMarketIdCustomerGroupRequest {
+	return HasOneApiGETMarketIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -8092,7 +8162,7 @@ func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r ApiGETMarketIdCustomerGroupRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketIdCustomerGroupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8156,13 +8226,13 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r ApiGETMarketIdCusto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdInventoryModelRequest struct {
+type HasOneApiGETMarketIdInventoryModelRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMarketIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdInventoryModelExecute(r)
 }
 
@@ -8173,10 +8243,10 @@ Retrieve the inventory model associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdInventoryModelRequest
+ @return HasOneApiGETMarketIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) ApiGETMarketIdInventoryModelRequest {
-	return ApiGETMarketIdInventoryModelRequest{
+func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) HasOneApiGETMarketIdInventoryModelRequest {
+	return HasOneApiGETMarketIdInventoryModelRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -8184,7 +8254,7 @@ func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, market
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r ApiGETMarketIdInventoryModelRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarketIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8248,13 +8318,13 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r ApiGETMarketIdInve
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdMerchantRequest struct {
+type HasOneApiGETMarketIdMerchantRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdMerchantExecute(r)
 }
 
@@ -8265,10 +8335,10 @@ Retrieve the merchant associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdMerchantRequest
+ @return HasOneApiGETMarketIdMerchantRequest
 */
-func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId string) ApiGETMarketIdMerchantRequest {
-	return ApiGETMarketIdMerchantRequest{
+func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId string) HasOneApiGETMarketIdMerchantRequest {
+	return HasOneApiGETMarketIdMerchantRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -8276,7 +8346,7 @@ func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId str
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMarketIdMerchantExecute(r ApiGETMarketIdMerchantRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerchantRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8340,13 +8410,13 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r ApiGETMarketIdMerchantRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdPriceListRequest struct {
+type HasOneApiGETMarketIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdPriceListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMarketIdPriceListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdPriceListExecute(r)
 }
 
@@ -8357,10 +8427,10 @@ Retrieve the price list associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdPriceListRequest
+ @return HasOneApiGETMarketIdPriceListRequest
 */
-func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId string) ApiGETMarketIdPriceListRequest {
-	return ApiGETMarketIdPriceListRequest{
+func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId string) HasOneApiGETMarketIdPriceListRequest {
+	return HasOneApiGETMarketIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -8368,7 +8438,7 @@ func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId st
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMarketIdPriceListExecute(r ApiGETMarketIdPriceListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPriceListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8432,13 +8502,13 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r ApiGETMarketIdPriceList
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdTaxCalculatorRequest struct {
+type HasOneApiGETMarketIdTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdTaxCalculatorExecute(r)
 }
 
@@ -8449,10 +8519,10 @@ Retrieve the tax calculator associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdTaxCalculatorRequest
+ @return HasOneApiGETMarketIdTaxCalculatorRequest
 */
-func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) ApiGETMarketIdTaxCalculatorRequest {
-	return ApiGETMarketIdTaxCalculatorRequest{
+func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) HasOneApiGETMarketIdTaxCalculatorRequest {
+	return HasOneApiGETMarketIdTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -8460,7 +8530,7 @@ func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r ApiGETMarketIdTaxCalculatorRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketIdTaxCalculatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8524,13 +8594,13 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r ApiGETMarketIdTaxCa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMerchantIdAddressRequest struct {
+type HasOneApiGETMerchantIdAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	merchantId string
 }
 
-func (r ApiGETMerchantIdAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETMerchantIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMerchantIdAddressExecute(r)
 }
 
@@ -8541,10 +8611,10 @@ Retrieve the address associated to the merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return ApiGETMerchantIdAddressRequest
+ @return HasOneApiGETMerchantIdAddressRequest
 */
-func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) ApiGETMerchantIdAddressRequest {
-	return ApiGETMerchantIdAddressRequest{
+func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) HasOneApiGETMerchantIdAddressRequest {
+	return HasOneApiGETMerchantIdAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -8552,7 +8622,7 @@ func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETMerchantIdAddressExecute(r ApiGETMerchantIdAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8616,13 +8686,13 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r ApiGETMerchantIdAddress
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdOrderSubscriptionRequest struct {
+type HasOneApiGETOrderCopyIdOrderSubscriptionRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdOrderSubscriptionExecute(r)
 }
 
@@ -8633,10 +8703,10 @@ Retrieve the order subscription associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdOrderSubscriptionRequest
+ @return HasOneApiGETOrderCopyIdOrderSubscriptionRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdOrderSubscriptionRequest {
-	return ApiGETOrderCopyIdOrderSubscriptionRequest{
+func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdOrderSubscriptionRequest {
+	return HasOneApiGETOrderCopyIdOrderSubscriptionRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -8644,7 +8714,7 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r ApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8708,13 +8778,13 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r ApiGETOrderC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdSourceOrderRequest struct {
+type HasOneApiGETOrderCopyIdSourceOrderRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdSourceOrderExecute(r)
 }
 
@@ -8725,10 +8795,10 @@ Retrieve the source order associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdSourceOrderRequest
+ @return HasOneApiGETOrderCopyIdSourceOrderRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdSourceOrderRequest {
-	return ApiGETOrderCopyIdSourceOrderRequest{
+func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdSourceOrderRequest {
+	return HasOneApiGETOrderCopyIdSourceOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -8736,7 +8806,7 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderC
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r ApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8800,13 +8870,13 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r ApiGETOrderCopyIdS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdTargetOrderRequest struct {
+type HasOneApiGETOrderCopyIdTargetOrderRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdTargetOrderExecute(r)
 }
 
@@ -8817,10 +8887,10 @@ Retrieve the target order associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdTargetOrderRequest
+ @return HasOneApiGETOrderCopyIdTargetOrderRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdTargetOrderRequest {
-	return ApiGETOrderCopyIdTargetOrderRequest{
+func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdTargetOrderRequest {
+	return HasOneApiGETOrderCopyIdTargetOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -8828,7 +8898,7 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderC
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r ApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8892,13 +8962,13 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r ApiGETOrderCopyIdT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdBillingAddressRequest struct {
+type HasOneApiGETOrderIdBillingAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdBillingAddressExecute(r)
 }
 
@@ -8909,10 +8979,10 @@ Retrieve the billing address associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdBillingAddressRequest
+ @return HasOneApiGETOrderIdBillingAddressRequest
 */
-func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) ApiGETOrderIdBillingAddressRequest {
-	return ApiGETOrderIdBillingAddressRequest{
+func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdBillingAddressRequest {
+	return HasOneApiGETOrderIdBillingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -8920,7 +8990,7 @@ func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r ApiGETOrderIdBillingAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderIdBillingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -8984,13 +9054,13 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r ApiGETOrderIdBillin
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdCustomerRequest struct {
+type HasOneApiGETOrderIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdCustomerExecute(r)
 }
 
@@ -9001,10 +9071,10 @@ Retrieve the customer associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdCustomerRequest
+ @return HasOneApiGETOrderIdCustomerRequest
 */
-func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId string) ApiGETOrderIdCustomerRequest {
-	return ApiGETOrderIdCustomerRequest{
+func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId string) HasOneApiGETOrderIdCustomerRequest {
+	return HasOneApiGETOrderIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -9012,7 +9082,7 @@ func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9076,13 +9146,13 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdMarketRequest struct {
+type HasOneApiGETOrderIdMarketRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdMarketExecute(r)
 }
 
@@ -9093,10 +9163,10 @@ Retrieve the market associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdMarketRequest
+ @return HasOneApiGETOrderIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId string) ApiGETOrderIdMarketRequest {
-	return ApiGETOrderIdMarketRequest{
+func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId string) HasOneApiGETOrderIdMarketRequest {
+	return HasOneApiGETOrderIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -9104,7 +9174,7 @@ func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderIdMarketExecute(r ApiGETOrderIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9168,13 +9238,13 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r ApiGETOrderIdMarketRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdPaymentMethodRequest struct {
+type HasOneApiGETOrderIdPaymentMethodRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdPaymentMethodRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderIdPaymentMethodRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdPaymentMethodExecute(r)
 }
 
@@ -9185,10 +9255,10 @@ Retrieve the payment method associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdPaymentMethodRequest
+ @return HasOneApiGETOrderIdPaymentMethodRequest
 */
-func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId string) ApiGETOrderIdPaymentMethodRequest {
-	return ApiGETOrderIdPaymentMethodRequest{
+func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId string) HasOneApiGETOrderIdPaymentMethodRequest {
+	return HasOneApiGETOrderIdPaymentMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -9196,7 +9266,7 @@ func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r ApiGETOrderIdPaymentMethodRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdPaymentMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9260,13 +9330,13 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r ApiGETOrderIdPayment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdShippingAddressRequest struct {
+type HasOneApiGETOrderIdShippingAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdShippingAddressExecute(r)
 }
 
@@ -9277,10 +9347,10 @@ Retrieve the shipping address associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdShippingAddressRequest
+ @return HasOneApiGETOrderIdShippingAddressRequest
 */
-func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) ApiGETOrderIdShippingAddressRequest {
-	return ApiGETOrderIdShippingAddressRequest{
+func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdShippingAddressRequest {
+	return HasOneApiGETOrderIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -9288,7 +9358,7 @@ func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r ApiGETOrderIdShippingAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderIdShippingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9352,13 +9422,13 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r ApiGETOrderIdShipp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdCustomerRequest struct {
+type HasOneApiGETOrderSubscriptionIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdCustomerExecute(r)
 }
 
@@ -9369,10 +9439,10 @@ Retrieve the customer associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdCustomerRequest
+ @return HasOneApiGETOrderSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdCustomerRequest {
-	return ApiGETOrderSubscriptionIdCustomerRequest{
+func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdCustomerRequest {
+	return HasOneApiGETOrderSubscriptionIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -9380,7 +9450,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, o
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r ApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9444,13 +9514,13 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r ApiGETOrderSu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdMarketRequest struct {
+type HasOneApiGETOrderSubscriptionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdMarketExecute(r)
 }
 
@@ -9461,10 +9531,10 @@ Retrieve the market associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdMarketRequest
+ @return HasOneApiGETOrderSubscriptionIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdMarketRequest {
-	return ApiGETOrderSubscriptionIdMarketRequest{
+func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdMarketRequest {
+	return HasOneApiGETOrderSubscriptionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -9472,7 +9542,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, ord
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r ApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9536,13 +9606,13 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r ApiGETOrderSubs
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdSourceOrderRequest struct {
+type HasOneApiGETOrderSubscriptionIdSourceOrderRequest struct {
 	ctx                 context.Context
 	ApiService          HasOneApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdSourceOrderExecute(r)
 }
 
@@ -9553,10 +9623,10 @@ Retrieve the source order associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdSourceOrderRequest
+ @return HasOneApiGETOrderSubscriptionIdSourceOrderRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdSourceOrderRequest {
-	return ApiGETOrderSubscriptionIdSourceOrderRequest{
+func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdSourceOrderRequest {
+	return HasOneApiGETOrderSubscriptionIdSourceOrderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -9564,7 +9634,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r ApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9628,13 +9698,13 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r ApiGETOrde
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderValidationRuleIdMarketRequest struct {
+type HasOneApiGETOrderValidationRuleIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            HasOneApi
 	orderValidationRuleId string
 }
 
-func (r ApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderValidationRuleIdMarketExecute(r)
 }
 
@@ -9645,10 +9715,10 @@ Retrieve the market associated to the order validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderValidationRuleId The resource's id
- @return ApiGETOrderValidationRuleIdMarketRequest
+ @return HasOneApiGETOrderValidationRuleIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) ApiGETOrderValidationRuleIdMarketRequest {
-	return ApiGETOrderValidationRuleIdMarketRequest{
+func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) HasOneApiGETOrderValidationRuleIdMarketRequest {
+	return HasOneApiGETOrderValidationRuleIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		orderValidationRuleId: orderValidationRuleId,
@@ -9656,7 +9726,7 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, o
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r ApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9720,13 +9790,13 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r ApiGETOrderVa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackageIdStockLocationRequest struct {
+type HasOneApiGETPackageIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	packageId  string
 }
 
-func (r ApiGETPackageIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPackageIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdStockLocationExecute(r)
 }
 
@@ -9737,10 +9807,10 @@ Retrieve the stock location associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackageIdStockLocationRequest
+ @return HasOneApiGETPackageIdStockLocationRequest
 */
-func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) ApiGETPackageIdStockLocationRequest {
-	return ApiGETPackageIdStockLocationRequest{
+func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) HasOneApiGETPackageIdStockLocationRequest {
+	return HasOneApiGETPackageIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -9748,7 +9818,7 @@ func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packag
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPackageIdStockLocationExecute(r ApiGETPackageIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackageIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9812,13 +9882,13 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r ApiGETPackageIdSto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdPackageRequest struct {
+type HasOneApiGETParcelIdPackageRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	parcelId   string
 }
 
-func (r ApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdPackageExecute(r)
 }
 
@@ -9829,10 +9899,10 @@ Retrieve the package associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdPackageRequest
+ @return HasOneApiGETParcelIdPackageRequest
 */
-func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId string) ApiGETParcelIdPackageRequest {
-	return ApiGETParcelIdPackageRequest{
+func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId string) HasOneApiGETParcelIdPackageRequest {
+	return HasOneApiGETParcelIdPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -9840,7 +9910,7 @@ func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId stri
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETParcelIdPackageExecute(r ApiGETParcelIdPackageRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPackageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9904,13 +9974,13 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r ApiGETParcelIdPackageRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdShipmentRequest struct {
+type HasOneApiGETParcelIdShipmentRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	parcelId   string
 }
 
-func (r ApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdShipmentExecute(r)
 }
 
@@ -9921,10 +9991,10 @@ Retrieve the shipment associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdShipmentRequest
+ @return HasOneApiGETParcelIdShipmentRequest
 */
-func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId string) ApiGETParcelIdShipmentRequest {
-	return ApiGETParcelIdShipmentRequest{
+func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId string) HasOneApiGETParcelIdShipmentRequest {
+	return HasOneApiGETParcelIdShipmentRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -9932,7 +10002,7 @@ func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId str
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETParcelIdShipmentExecute(r ApiGETParcelIdShipmentRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -9996,13 +10066,13 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r ApiGETParcelIdShipmentRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemIdParcelRequest struct {
+type HasOneApiGETParcelLineItemIdParcelRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	parcelLineItemId string
 }
 
-func (r ApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelLineItemIdParcelExecute(r)
 }
 
@@ -10013,10 +10083,10 @@ Retrieve the parcel associated to the parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiGETParcelLineItemIdParcelRequest
+ @return HasOneApiGETParcelLineItemIdParcelRequest
 */
-func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdParcelRequest {
-	return ApiGETParcelLineItemIdParcelRequest{
+func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdParcelRequest {
+	return HasOneApiGETParcelLineItemIdParcelRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -10024,7 +10094,7 @@ func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcel
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r ApiGETParcelLineItemIdParcelRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcelLineItemIdParcelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10088,13 +10158,13 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r ApiGETParcelLineIt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemIdStockLineItemRequest struct {
+type HasOneApiGETParcelLineItemIdStockLineItemRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	parcelLineItemId string
 }
 
-func (r ApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelLineItemIdStockLineItemExecute(r)
 }
 
@@ -10105,10 +10175,10 @@ Retrieve the stock line item associated to the parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiGETParcelLineItemIdStockLineItemRequest
+ @return HasOneApiGETParcelLineItemIdStockLineItemRequest
 */
-func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdStockLineItemRequest {
-	return ApiGETParcelLineItemIdStockLineItemRequest{
+func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdStockLineItemRequest {
+	return HasOneApiGETParcelLineItemIdStockLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -10116,7 +10186,7 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r ApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10180,13 +10250,13 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r ApiGETParce
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentMethodIdMarketRequest struct {
+type HasOneApiGETPaymentMethodIdMarketRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	paymentMethodId string
 }
 
-func (r ApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdMarketExecute(r)
 }
 
@@ -10197,10 +10267,10 @@ Retrieve the market associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return ApiGETPaymentMethodIdMarketRequest
+ @return HasOneApiGETPaymentMethodIdMarketRequest
 */
-func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdMarketRequest {
-	return ApiGETPaymentMethodIdMarketRequest{
+func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdMarketRequest {
+	return HasOneApiGETPaymentMethodIdMarketRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -10208,7 +10278,7 @@ func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, payment
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r ApiGETPaymentMethodIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPaymentMethodIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10272,13 +10342,13 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r ApiGETPaymentMethod
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentMethodIdPaymentGatewayRequest struct {
+type HasOneApiGETPaymentMethodIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	paymentMethodId string
 }
 
-func (r ApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdPaymentGatewayExecute(r)
 }
 
@@ -10289,10 +10359,10 @@ Retrieve the payment gateway associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return ApiGETPaymentMethodIdPaymentGatewayRequest
+ @return HasOneApiGETPaymentMethodIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdPaymentGatewayRequest {
-	return ApiGETPaymentMethodIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdPaymentGatewayRequest {
+	return HasOneApiGETPaymentMethodIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -10300,7 +10370,7 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r ApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGETPaymentMethodIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10364,13 +10434,13 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r ApiGETPayme
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalPaymentIdOrderRequest struct {
+type HasOneApiGETPaypalPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	paypalPaymentId string
 }
 
-func (r ApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalPaymentIdOrderExecute(r)
 }
 
@@ -10381,10 +10451,10 @@ Retrieve the order associated to the paypal payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalPaymentId The resource's id
- @return ApiGETPaypalPaymentIdOrderRequest
+ @return HasOneApiGETPaypalPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdOrderRequest {
-	return ApiGETPaypalPaymentIdOrderRequest{
+func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdOrderRequest {
+	return HasOneApiGETPaypalPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalPaymentId: paypalPaymentId,
@@ -10392,7 +10462,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPa
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r ApiGETPaypalPaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10456,13 +10526,13 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r ApiGETPaypalPaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalPaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETPaypalPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	paypalPaymentId string
 }
 
-func (r ApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalPaymentIdPaymentGatewayExecute(r)
 }
 
@@ -10473,10 +10543,10 @@ Retrieve the payment gateway associated to the paypal payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalPaymentId The resource's id
- @return ApiGETPaypalPaymentIdPaymentGatewayRequest
+ @return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdPaymentGatewayRequest {
-	return ApiGETPaypalPaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalPaymentId: paypalPaymentId,
@@ -10484,7 +10554,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r ApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGETPaypalPaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10548,13 +10618,13 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r ApiGETPaypa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    HasOneApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -10565,10 +10635,10 @@ Retrieve the coupon codes promotion rule associated to the percentage discount p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -10576,7 +10646,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10640,13 +10710,13 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdMarketRequest struct {
+type HasOneApiGETPercentageDiscountPromotionIdMarketRequest struct {
 	ctx                           context.Context
 	ApiService                    HasOneApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdMarketExecute(r)
 }
 
@@ -10657,10 +10727,10 @@ Retrieve the market associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdMarketRequest
+ @return HasOneApiGETPercentageDiscountPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdMarketRequest {
-	return ApiGETPercentageDiscountPromotionIdMarketRequest{
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdMarketRequest {
+	return HasOneApiGETPercentageDiscountPromotionIdMarketRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -10668,7 +10738,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r ApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOneApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10732,13 +10802,13 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    HasOneApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -10749,10 +10819,10 @@ Retrieve the order amount promotion rule associated to the percentage discount p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -10760,7 +10830,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10824,13 +10894,13 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkuListRequest struct {
+type HasOneApiGETPercentageDiscountPromotionIdSkuListRequest struct {
 	ctx                           context.Context
 	ApiService                    HasOneApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkuListExecute(r)
 }
 
@@ -10841,10 +10911,10 @@ Retrieve the sku list associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkuListRequest
+ @return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListRequest {
-	return ApiGETPercentageDiscountPromotionIdSkuListRequest{
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListRequest {
+	return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -10852,7 +10922,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.C
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r ApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasOneApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -10916,13 +10986,13 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    HasOneApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -10933,10 +11003,10 @@ Retrieve the sku list promotion rule associated to the percentage discount promo
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -10944,7 +11014,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11008,13 +11078,13 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdPriceListRequest struct {
+type HasOneApiGETPriceIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	priceId    string
 }
 
-func (r ApiGETPriceIdPriceListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPriceIdPriceListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdPriceListExecute(r)
 }
 
@@ -11025,10 +11095,10 @@ Retrieve the price list associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdPriceListRequest
+ @return HasOneApiGETPriceIdPriceListRequest
 */
-func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId string) ApiGETPriceIdPriceListRequest {
-	return ApiGETPriceIdPriceListRequest{
+func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId string) HasOneApiGETPriceIdPriceListRequest {
+	return HasOneApiGETPriceIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -11036,7 +11106,7 @@ func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId stri
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPriceIdPriceListExecute(r ApiGETPriceIdPriceListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPriceListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11100,13 +11170,13 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r ApiGETPriceIdPriceListRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdSkuRequest struct {
+type HasOneApiGETPriceIdSkuRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	priceId    string
 }
 
-func (r ApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdSkuExecute(r)
 }
 
@@ -11117,10 +11187,10 @@ Retrieve the sku associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdSkuRequest
+ @return HasOneApiGETPriceIdSkuRequest
 */
-func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId string) ApiGETPriceIdSkuRequest {
-	return ApiGETPriceIdSkuRequest{
+func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId string) HasOneApiGETPriceIdSkuRequest {
+	return HasOneApiGETPriceIdSkuRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -11128,7 +11198,7 @@ func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId string) Ap
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11192,13 +11262,197 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
+type HasOneApiGETPriceTierIdPriceRequest struct {
+	ctx         context.Context
+	ApiService  HasOneApi
+	priceTierId string
+}
+
+func (r HasOneApiGETPriceTierIdPriceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceTierIdPriceExecute(r)
+}
+
+/*
+GETPriceTierIdPrice Retrieve the price associated to the price tier
+
+Retrieve the price associated to the price tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceTierId The resource's id
+ @return HasOneApiGETPriceTierIdPriceRequest
+*/
+func (a *HasOneApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId string) HasOneApiGETPriceTierIdPriceRequest {
+	return HasOneApiGETPriceTierIdPriceRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		priceTierId: priceTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdPriceRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETPriceTierIdPrice")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_tiers/{priceTierId}/price"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETPriceVolumeTierIdPriceRequest struct {
+	ctx               context.Context
+	ApiService        HasOneApi
+	priceVolumeTierId string
+}
+
+func (r HasOneApiGETPriceVolumeTierIdPriceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceVolumeTierIdPriceExecute(r)
+}
+
+/*
+GETPriceVolumeTierIdPrice Retrieve the price associated to the price volume tier
+
+Retrieve the price associated to the price volume tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param priceVolumeTierId The resource's id
+ @return HasOneApiGETPriceVolumeTierIdPriceRequest
+*/
+func (a *HasOneApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) HasOneApiGETPriceVolumeTierIdPriceRequest {
+	return HasOneApiGETPriceVolumeTierIdPriceRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		priceVolumeTierId: priceVolumeTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceVolumeTierIdPriceRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETPriceVolumeTierIdPrice")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/price"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -11209,10 +11463,10 @@ Retrieve the coupon codes promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdCouponCodesPromotionRuleRequest
+ @return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETPromotionIdCouponCodesPromotionRuleRequest{
+func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest {
+	return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -11220,7 +11474,7 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11284,13 +11538,13 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdMarketRequest struct {
+type HasOneApiGETPromotionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdMarketExecute(r)
 }
 
@@ -11301,10 +11555,10 @@ Retrieve the market associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdMarketRequest
+ @return HasOneApiGETPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) ApiGETPromotionIdMarketRequest {
-	return ApiGETPromotionIdMarketRequest{
+func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) HasOneApiGETPromotionIdMarketRequest {
+	return HasOneApiGETPromotionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -11312,7 +11566,7 @@ func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPromotionIdMarketExecute(r ApiGETPromotionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11376,13 +11630,13 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r ApiGETPromotionIdMarket
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
+type HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdOrderAmountPromotionRuleExecute(r)
 }
 
@@ -11393,10 +11647,10 @@ Retrieve the order amount promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdOrderAmountPromotionRuleRequest
+ @return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdOrderAmountPromotionRuleRequest {
-	return ApiGETPromotionIdOrderAmountPromotionRuleRequest{
+func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest {
+	return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -11404,7 +11658,7 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r ApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11468,13 +11722,13 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r ApiGE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdSkuListPromotionRuleRequest struct {
+type HasOneApiGETPromotionIdSkuListPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -11485,10 +11739,10 @@ Retrieve the sku list promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdSkuListPromotionRuleRequest
+ @return HasOneApiGETPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdSkuListPromotionRuleRequest {
-	return ApiGETPromotionIdSkuListPromotionRuleRequest{
+func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdSkuListPromotionRuleRequest {
+	return HasOneApiGETPromotionIdSkuListPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -11496,7 +11750,7 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r ApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11560,13 +11814,13 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r ApiGETPro
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundIdOrderRequest struct {
+type HasOneApiGETRefundIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	refundId   string
 }
 
-func (r ApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETRefundIdOrderExecute(r)
 }
 
@@ -11577,10 +11831,10 @@ Retrieve the order associated to the refund
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param refundId The resource's id
- @return ApiGETRefundIdOrderRequest
+ @return HasOneApiGETRefundIdOrderRequest
 */
-func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId string) ApiGETRefundIdOrderRequest {
-	return ApiGETRefundIdOrderRequest{
+func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId string) HasOneApiGETRefundIdOrderRequest {
+	return HasOneApiGETRefundIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		refundId:   refundId,
@@ -11588,7 +11842,7 @@ func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId string
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETRefundIdOrderExecute(r ApiGETRefundIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11652,13 +11906,13 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r ApiGETRefundIdOrderRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundIdReferenceCaptureRequest struct {
+type HasOneApiGETRefundIdReferenceCaptureRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	refundId   string
 }
 
-func (r ApiGETRefundIdReferenceCaptureRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETRefundIdReferenceCaptureRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETRefundIdReferenceCaptureExecute(r)
 }
 
@@ -11669,10 +11923,10 @@ Retrieve the reference capture associated to the refund
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param refundId The resource's id
- @return ApiGETRefundIdReferenceCaptureRequest
+ @return HasOneApiGETRefundIdReferenceCaptureRequest
 */
-func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) ApiGETRefundIdReferenceCaptureRequest {
-	return ApiGETRefundIdReferenceCaptureRequest{
+func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) HasOneApiGETRefundIdReferenceCaptureRequest {
+	return HasOneApiGETRefundIdReferenceCaptureRequest{
 		ApiService: a,
 		ctx:        ctx,
 		refundId:   refundId,
@@ -11680,7 +11934,7 @@ func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refu
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r ApiGETRefundIdReferenceCaptureRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefundIdReferenceCaptureRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11744,13 +11998,13 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r ApiGETRefundIdRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdCustomerRequest struct {
+type HasOneApiGETReturnIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdCustomerExecute(r)
 }
 
@@ -11761,10 +12015,10 @@ Retrieve the customer associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdCustomerRequest
+ @return HasOneApiGETReturnIdCustomerRequest
 */
-func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId string) ApiGETReturnIdCustomerRequest {
-	return ApiGETReturnIdCustomerRequest{
+func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId string) HasOneApiGETReturnIdCustomerRequest {
+	return HasOneApiGETReturnIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -11772,7 +12026,7 @@ func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId str
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnIdCustomerExecute(r ApiGETReturnIdCustomerRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11836,13 +12090,13 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r ApiGETReturnIdCustomerRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdDestinationAddressRequest struct {
+type HasOneApiGETReturnIdDestinationAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdDestinationAddressExecute(r)
 }
 
@@ -11853,10 +12107,10 @@ Retrieve the destination address associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdDestinationAddressRequest
+ @return HasOneApiGETReturnIdDestinationAddressRequest
 */
-func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) ApiGETReturnIdDestinationAddressRequest {
-	return ApiGETReturnIdDestinationAddressRequest{
+func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdDestinationAddressRequest {
+	return HasOneApiGETReturnIdDestinationAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -11864,7 +12118,7 @@ func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, re
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r ApiGETReturnIdDestinationAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETReturnIdDestinationAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -11928,13 +12182,13 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r ApiGETReturnId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdOrderRequest struct {
+type HasOneApiGETReturnIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdOrderExecute(r)
 }
 
@@ -11945,10 +12199,10 @@ Retrieve the order associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdOrderRequest
+ @return HasOneApiGETReturnIdOrderRequest
 */
-func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId string) ApiGETReturnIdOrderRequest {
-	return ApiGETReturnIdOrderRequest{
+func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId string) HasOneApiGETReturnIdOrderRequest {
+	return HasOneApiGETReturnIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -11956,7 +12210,7 @@ func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId string
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnIdOrderExecute(r ApiGETReturnIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12020,13 +12274,13 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r ApiGETReturnIdOrderRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdOriginAddressRequest struct {
+type HasOneApiGETReturnIdOriginAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdOriginAddressExecute(r)
 }
 
@@ -12037,10 +12291,10 @@ Retrieve the origin address associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdOriginAddressRequest
+ @return HasOneApiGETReturnIdOriginAddressRequest
 */
-func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) ApiGETReturnIdOriginAddressRequest {
-	return ApiGETReturnIdOriginAddressRequest{
+func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdOriginAddressRequest {
+	return HasOneApiGETReturnIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -12048,7 +12302,7 @@ func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r ApiGETReturnIdOriginAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnIdOriginAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12112,13 +12366,13 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r ApiGETReturnIdOrigi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdStockLocationRequest struct {
+type HasOneApiGETReturnIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdStockLocationExecute(r)
 }
 
@@ -12129,10 +12383,10 @@ Retrieve the stock location associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdStockLocationRequest
+ @return HasOneApiGETReturnIdStockLocationRequest
 */
-func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) ApiGETReturnIdStockLocationRequest {
-	return ApiGETReturnIdStockLocationRequest{
+func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) HasOneApiGETReturnIdStockLocationRequest {
+	return HasOneApiGETReturnIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -12140,7 +12394,7 @@ func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnIdStockLocationExecute(r ApiGETReturnIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12204,13 +12458,13 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r ApiGETReturnIdStock
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnLineItemIdLineItemRequest struct {
+type HasOneApiGETReturnLineItemIdLineItemRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	returnLineItemId string
 }
 
-func (r ApiGETReturnLineItemIdLineItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnLineItemIdLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnLineItemIdLineItemExecute(r)
 }
 
@@ -12221,10 +12475,10 @@ Retrieve the line item associated to the return line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnLineItemId The resource's id
- @return ApiGETReturnLineItemIdLineItemRequest
+ @return HasOneApiGETReturnLineItemIdLineItemRequest
 */
-func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdLineItemRequest {
-	return ApiGETReturnLineItemIdLineItemRequest{
+func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdLineItemRequest {
+	return HasOneApiGETReturnLineItemIdLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		returnLineItemId: returnLineItemId,
@@ -12232,7 +12486,7 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, retu
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r ApiGETReturnLineItemIdLineItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETReturnLineItemIdLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12296,13 +12550,13 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r ApiGETReturnLine
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnLineItemIdReturnRequest struct {
+type HasOneApiGETReturnLineItemIdReturnRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	returnLineItemId string
 }
 
-func (r ApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnLineItemIdReturnExecute(r)
 }
 
@@ -12313,10 +12567,10 @@ Retrieve the return associated to the return line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnLineItemId The resource's id
- @return ApiGETReturnLineItemIdReturnRequest
+ @return HasOneApiGETReturnLineItemIdReturnRequest
 */
-func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdReturnRequest {
-	return ApiGETReturnLineItemIdReturnRequest{
+func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdReturnRequest {
+	return HasOneApiGETReturnLineItemIdReturnRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		returnLineItemId: returnLineItemId,
@@ -12324,7 +12578,7 @@ func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, return
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12388,13 +12642,13 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineIt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdDeliveryLeadTimeRequest struct {
+type HasOneApiGETShipmentIdDeliveryLeadTimeRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdDeliveryLeadTimeRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdDeliveryLeadTimeRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdDeliveryLeadTimeExecute(r)
 }
 
@@ -12405,10 +12659,10 @@ Retrieve the delivery lead time associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdDeliveryLeadTimeRequest
+ @return HasOneApiGETShipmentIdDeliveryLeadTimeRequest
 */
-func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) ApiGETShipmentIdDeliveryLeadTimeRequest {
-	return ApiGETShipmentIdDeliveryLeadTimeRequest{
+func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdDeliveryLeadTimeRequest {
+	return HasOneApiGETShipmentIdDeliveryLeadTimeRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12416,7 +12670,7 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r ApiGETShipmentIdDeliveryLeadTimeRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETShipmentIdDeliveryLeadTimeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12480,13 +12734,13 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r ApiGETShipment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdOrderRequest struct {
+type HasOneApiGETShipmentIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdOrderExecute(r)
 }
 
@@ -12497,10 +12751,10 @@ Retrieve the order associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdOrderRequest
+ @return HasOneApiGETShipmentIdOrderRequest
 */
-func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) ApiGETShipmentIdOrderRequest {
-	return ApiGETShipmentIdOrderRequest{
+func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOrderRequest {
+	return HasOneApiGETShipmentIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12508,7 +12762,7 @@ func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId st
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdOrderExecute(r ApiGETShipmentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12572,13 +12826,13 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r ApiGETShipmentIdOrderRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdOriginAddressRequest struct {
+type HasOneApiGETShipmentIdOriginAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdOriginAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdOriginAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdOriginAddressExecute(r)
 }
 
@@ -12589,10 +12843,10 @@ Retrieve the origin address associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdOriginAddressRequest
+ @return HasOneApiGETShipmentIdOriginAddressRequest
 */
-func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdOriginAddressRequest {
-	return ApiGETShipmentIdOriginAddressRequest{
+func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOriginAddressRequest {
+	return HasOneApiGETShipmentIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12600,7 +12854,7 @@ func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipm
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r ApiGETShipmentIdOriginAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipmentIdOriginAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12664,13 +12918,13 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r ApiGETShipmentIdO
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdShippingAddressRequest struct {
+type HasOneApiGETShipmentIdShippingAddressRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdShippingAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdShippingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdShippingAddressExecute(r)
 }
 
@@ -12681,10 +12935,10 @@ Retrieve the shipping address associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdShippingAddressRequest
+ @return HasOneApiGETShipmentIdShippingAddressRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingAddressRequest {
-	return ApiGETShipmentIdShippingAddressRequest{
+func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingAddressRequest {
+	return HasOneApiGETShipmentIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12692,7 +12946,7 @@ func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shi
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r ApiGETShipmentIdShippingAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShipmentIdShippingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12756,13 +13010,13 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r ApiGETShipmentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdShippingCategoryRequest struct {
+type HasOneApiGETShipmentIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdShippingCategoryRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdShippingCategoryRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdShippingCategoryExecute(r)
 }
 
@@ -12773,10 +13027,10 @@ Retrieve the shipping category associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdShippingCategoryRequest
+ @return HasOneApiGETShipmentIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingCategoryRequest {
-	return ApiGETShipmentIdShippingCategoryRequest{
+func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingCategoryRequest {
+	return HasOneApiGETShipmentIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12784,7 +13038,7 @@ func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r ApiGETShipmentIdShippingCategoryRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETShipmentIdShippingCategoryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12848,13 +13102,13 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r ApiGETShipment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdShippingMethodRequest struct {
+type HasOneApiGETShipmentIdShippingMethodRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdShippingMethodRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdShippingMethodRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdShippingMethodExecute(r)
 }
 
@@ -12865,10 +13119,10 @@ Retrieve the shipping method associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdShippingMethodRequest
+ @return HasOneApiGETShipmentIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingMethodRequest {
-	return ApiGETShipmentIdShippingMethodRequest{
+func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingMethodRequest {
+	return HasOneApiGETShipmentIdShippingMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12876,7 +13130,7 @@ func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, ship
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r ApiGETShipmentIdShippingMethodRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShipmentIdShippingMethodRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -12940,13 +13194,13 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r ApiGETShipmentId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockLocationRequest struct {
+type HasOneApiGETShipmentIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShipmentIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockLocationExecute(r)
 }
 
@@ -12957,10 +13211,10 @@ Retrieve the stock location associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockLocationRequest
+ @return HasOneApiGETShipmentIdStockLocationRequest
 */
-func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLocationRequest {
-	return ApiGETShipmentIdStockLocationRequest{
+func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdStockLocationRequest {
+	return HasOneApiGETShipmentIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -12968,7 +13222,7 @@ func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipm
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r ApiGETShipmentIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipmentIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13032,13 +13286,13 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r ApiGETShipmentIdS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest struct {
+type HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r)
 }
 
@@ -13049,10 +13303,10 @@ Retrieve the delivery lead time for shipment associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
+ @return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
-	return ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
+func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
+	return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -13060,7 +13314,7 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx co
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r ApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13124,13 +13378,13 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdMarketRequest struct {
+type HasOneApiGETShippingMethodIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdMarketExecute(r)
 }
 
@@ -13141,10 +13395,10 @@ Retrieve the market associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdMarketRequest
+ @return HasOneApiGETShippingMethodIdMarketRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdMarketRequest {
-	return ApiGETShippingMethodIdMarketRequest{
+func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdMarketRequest {
+	return HasOneApiGETShippingMethodIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -13152,7 +13406,7 @@ func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippi
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r ApiGETShippingMethodIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippingMethodIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13216,13 +13470,13 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r ApiGETShippingMeth
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdShippingCategoryRequest struct {
+type HasOneApiGETShippingMethodIdShippingCategoryRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdShippingCategoryRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShippingMethodIdShippingCategoryRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdShippingCategoryExecute(r)
 }
 
@@ -13233,10 +13487,10 @@ Retrieve the shipping category associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdShippingCategoryRequest
+ @return HasOneApiGETShippingMethodIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingCategoryRequest {
-	return ApiGETShippingMethodIdShippingCategoryRequest{
+func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingCategoryRequest {
+	return HasOneApiGETShippingMethodIdShippingCategoryRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -13244,7 +13498,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r ApiGETShippingMethodIdShippingCategoryRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneApiGETShippingMethodIdShippingCategoryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13308,13 +13562,13 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r ApiGETSh
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdShippingZoneRequest struct {
+type HasOneApiGETShippingMethodIdShippingZoneRequest struct {
 	ctx              context.Context
 	ApiService       HasOneApi
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdShippingZoneRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETShippingMethodIdShippingZoneRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdShippingZoneExecute(r)
 }
 
@@ -13325,10 +13579,10 @@ Retrieve the shipping zone associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdShippingZoneRequest
+ @return HasOneApiGETShippingMethodIdShippingZoneRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingZoneRequest {
-	return ApiGETShippingMethodIdShippingZoneRequest{
+func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingZoneRequest {
+	return HasOneApiGETShippingMethodIdShippingZoneRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -13336,7 +13590,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r ApiGETShippingMethodIdShippingZoneRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGETShippingMethodIdShippingZoneRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13400,13 +13654,289 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r ApiGETShippi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdShippingCategoryRequest struct {
+type HasOneApiGETShippingMethodIdStockLocationRequest struct {
+	ctx              context.Context
+	ApiService       HasOneApi
+	shippingMethodId string
+}
+
+func (r HasOneApiGETShippingMethodIdStockLocationRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodIdStockLocationExecute(r)
+}
+
+/*
+GETShippingMethodIdStockLocation Retrieve the stock location associated to the shipping method
+
+Retrieve the stock location associated to the shipping method
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingMethodId The resource's id
+ @return HasOneApiGETShippingMethodIdStockLocationRequest
+*/
+func (a *HasOneApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdStockLocationRequest {
+	return HasOneApiGETShippingMethodIdStockLocationRequest{
+		ApiService:       a,
+		ctx:              ctx,
+		shippingMethodId: shippingMethodId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGETShippingMethodIdStockLocationRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETShippingMethodIdStockLocation")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/stock_location"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETShippingMethodTierIdShippingMethodRequest struct {
+	ctx                  context.Context
+	ApiService           HasOneApi
+	shippingMethodTierId string
+}
+
+func (r HasOneApiGETShippingMethodTierIdShippingMethodRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingMethodTierIdShippingMethodExecute(r)
+}
+
+/*
+GETShippingMethodTierIdShippingMethod Retrieve the shipping method associated to the shipping method tier
+
+Retrieve the shipping method associated to the shipping method tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingMethodTierId The resource's id
+ @return HasOneApiGETShippingMethodTierIdShippingMethodRequest
+*/
+func (a *HasOneApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) HasOneApiGETShippingMethodTierIdShippingMethodRequest {
+	return HasOneApiGETShippingMethodTierIdShippingMethodRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingMethodTierId: shippingMethodTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOneApiGETShippingMethodTierIdShippingMethodRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETShippingMethodTierIdShippingMethod")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/shipping_method"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETShippingWeightTierIdShippingMethodRequest struct {
+	ctx                  context.Context
+	ApiService           HasOneApi
+	shippingWeightTierId string
+}
+
+func (r HasOneApiGETShippingWeightTierIdShippingMethodRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETShippingWeightTierIdShippingMethodExecute(r)
+}
+
+/*
+GETShippingWeightTierIdShippingMethod Retrieve the shipping method associated to the shipping weight tier
+
+Retrieve the shipping method associated to the shipping weight tier
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param shippingWeightTierId The resource's id
+ @return HasOneApiGETShippingWeightTierIdShippingMethodRequest
+*/
+func (a *HasOneApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) HasOneApiGETShippingWeightTierIdShippingMethodRequest {
+	return HasOneApiGETShippingWeightTierIdShippingMethodRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		shippingWeightTierId: shippingWeightTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOneApiGETShippingWeightTierIdShippingMethodRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETShippingWeightTierIdShippingMethod")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/shipping_method"
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETSkuIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	skuId      string
 }
 
-func (r ApiGETSkuIdShippingCategoryRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETSkuIdShippingCategoryRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdShippingCategoryExecute(r)
 }
 
@@ -13417,10 +13947,10 @@ Retrieve the shipping category associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdShippingCategoryRequest
+ @return HasOneApiGETSkuIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) ApiGETSkuIdShippingCategoryRequest {
-	return ApiGETSkuIdShippingCategoryRequest{
+func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) HasOneApiGETSkuIdShippingCategoryRequest {
+	return HasOneApiGETSkuIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -13428,7 +13958,7 @@ func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId s
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r ApiGETSkuIdShippingCategoryRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdShippingCategoryRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13492,13 +14022,13 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r ApiGETSkuIdShipping
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemIdSkuRequest struct {
+type HasOneApiGETSkuListItemIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    HasOneApi
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETSkuListItemIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListItemIdSkuExecute(r)
 }
 
@@ -13509,10 +14039,10 @@ Retrieve the sku associated to the SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemIdSkuRequest
+ @return HasOneApiGETSkuListItemIdSkuRequest
 */
-func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuRequest {
-	return ApiGETSkuListItemIdSkuRequest{
+func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuRequest {
+	return HasOneApiGETSkuListItemIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -13520,7 +14050,7 @@ func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13584,13 +14114,13 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemIdSkuListRequest struct {
+type HasOneApiGETSkuListItemIdSkuListRequest struct {
 	ctx           context.Context
 	ApiService    HasOneApi
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListItemIdSkuListExecute(r)
 }
 
@@ -13601,10 +14131,10 @@ Retrieve the sku list associated to the SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemIdSkuListRequest
+ @return HasOneApiGETSkuListItemIdSkuListRequest
 */
-func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuListRequest {
-	return ApiGETSkuListItemIdSkuListRequest{
+func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuListRequest {
+	return HasOneApiGETSkuListItemIdSkuListRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -13612,7 +14142,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13676,13 +14206,13 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListPromotionRuleIdSkuListRequest struct {
+type HasOneApiGETSkuListPromotionRuleIdSkuListRequest struct {
 	ctx                    context.Context
 	ApiService             HasOneApi
 	skuListPromotionRuleId string
 }
 
-func (r ApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRuleIdSkuListExecute(r)
 }
 
@@ -13693,10 +14223,10 @@ Retrieve the sku list associated to the SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return ApiGETSkuListPromotionRuleIdSkuListRequest
+ @return HasOneApiGETSkuListPromotionRuleIdSkuListRequest
 */
-func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkuListRequest {
-	return ApiGETSkuListPromotionRuleIdSkuListRequest{
+func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) HasOneApiGETSkuListPromotionRuleIdSkuListRequest {
+	return HasOneApiGETSkuListPromotionRuleIdSkuListRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -13704,7 +14234,7 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13768,13 +14298,13 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuLi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuOptionIdMarketRequest struct {
+type HasOneApiGETSkuOptionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	skuOptionId string
 }
 
-func (r ApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuOptionIdMarketExecute(r)
 }
 
@@ -13785,10 +14315,10 @@ Retrieve the market associated to the SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiGETSkuOptionIdMarketRequest
+ @return HasOneApiGETSkuOptionIdMarketRequest
 */
-func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdMarketRequest {
-	return ApiGETSkuOptionIdMarketRequest{
+func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) HasOneApiGETSkuOptionIdMarketRequest {
+	return HasOneApiGETSkuOptionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -13796,7 +14326,7 @@ func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r ApiGETSkuOptionIdMarketRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13860,13 +14390,13 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r ApiGETSkuOptionIdMarket
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemIdSkuRequest struct {
+type HasOneApiGETStockItemIdSkuRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	stockItemId string
 }
 
-func (r ApiGETStockItemIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockItemIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdSkuExecute(r)
 }
 
@@ -13877,10 +14407,10 @@ Retrieve the sku associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemIdSkuRequest
+ @return HasOneApiGETStockItemIdSkuRequest
 */
-func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) ApiGETStockItemIdSkuRequest {
-	return ApiGETStockItemIdSkuRequest{
+func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdSkuRequest {
+	return HasOneApiGETStockItemIdSkuRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -13888,7 +14418,7 @@ func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId st
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -13952,13 +14482,13 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemIdStockLocationRequest struct {
+type HasOneApiGETStockItemIdStockLocationRequest struct {
 	ctx         context.Context
 	ApiService  HasOneApi
 	stockItemId string
 }
 
-func (r ApiGETStockItemIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockItemIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdStockLocationExecute(r)
 }
 
@@ -13969,10 +14499,10 @@ Retrieve the stock location associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemIdStockLocationRequest
+ @return HasOneApiGETStockItemIdStockLocationRequest
 */
-func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) ApiGETStockItemIdStockLocationRequest {
-	return ApiGETStockItemIdStockLocationRequest{
+func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdStockLocationRequest {
+	return HasOneApiGETStockItemIdStockLocationRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -13980,7 +14510,7 @@ func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stoc
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r ApiGETStockItemIdStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStockItemIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14044,13 +14574,13 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r ApiGETStockItemI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemIdLineItemRequest struct {
+type HasOneApiGETStockLineItemIdLineItemRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemIdLineItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockLineItemIdLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdLineItemExecute(r)
 }
 
@@ -14061,10 +14591,10 @@ Retrieve the line item associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemIdLineItemRequest
+ @return HasOneApiGETStockLineItemIdLineItemRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdLineItemRequest {
-	return ApiGETStockLineItemIdLineItemRequest{
+func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdLineItemRequest {
+	return HasOneApiGETStockLineItemIdLineItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -14072,7 +14602,7 @@ func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stock
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r ApiGETStockLineItemIdLineItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStockLineItemIdLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14136,13 +14666,13 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r ApiGETStockLineIt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemIdShipmentRequest struct {
+type HasOneApiGETStockLineItemIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdShipmentExecute(r)
 }
 
@@ -14153,10 +14683,10 @@ Retrieve the shipment associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemIdShipmentRequest
+ @return HasOneApiGETStockLineItemIdShipmentRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdShipmentRequest {
-	return ApiGETStockLineItemIdShipmentRequest{
+func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdShipmentRequest {
+	return HasOneApiGETStockLineItemIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -14164,7 +14694,7 @@ func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stock
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r ApiGETStockLineItemIdShipmentRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStockLineItemIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14228,13 +14758,13 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r ApiGETStockLineIt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemIdStockItemRequest struct {
+type HasOneApiGETStockLineItemIdStockItemRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdStockItemExecute(r)
 }
 
@@ -14245,10 +14775,10 @@ Retrieve the stock item associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemIdStockItemRequest
+ @return HasOneApiGETStockLineItemIdStockItemRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdStockItemRequest {
-	return ApiGETStockLineItemIdStockItemRequest{
+func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdStockItemRequest {
+	return HasOneApiGETStockLineItemIdStockItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -14256,7 +14786,7 @@ func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stoc
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r ApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14320,13 +14850,13 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r ApiGETStockLineI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdAddressRequest struct {
+type HasOneApiGETStockLocationIdAddressRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdAddressRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockLocationIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdAddressExecute(r)
 }
 
@@ -14337,10 +14867,10 @@ Retrieve the address associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdAddressRequest
+ @return HasOneApiGETStockLocationIdAddressRequest
 */
-func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAddressRequest {
-	return ApiGETStockLocationIdAddressRequest{
+func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) HasOneApiGETStockLocationIdAddressRequest {
+	return HasOneApiGETStockLocationIdAddressRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -14348,7 +14878,7 @@ func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockL
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockLocationIdAddressExecute(r ApiGETStockLocationIdAddressRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockLocationIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14412,13 +14942,13 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r ApiGETStockLocatio
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdDestinationStockLocationRequest struct {
+type HasOneApiGETStockTransferIdDestinationStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdDestinationStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockTransferIdDestinationStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdDestinationStockLocationExecute(r)
 }
 
@@ -14429,10 +14959,10 @@ Retrieve the destination stock location associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdDestinationStockLocationRequest
+ @return HasOneApiGETStockTransferIdDestinationStockLocationRequest
 */
-func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdDestinationStockLocationRequest {
-	return ApiGETStockTransferIdDestinationStockLocationRequest{
+func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdDestinationStockLocationRequest {
+	return HasOneApiGETStockTransferIdDestinationStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -14440,7 +14970,7 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx contex
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r ApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r HasOneApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14504,13 +15034,13 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdLineItemRequest struct {
+type HasOneApiGETStockTransferIdLineItemRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdLineItemRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockTransferIdLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdLineItemExecute(r)
 }
 
@@ -14521,10 +15051,10 @@ Retrieve the line item associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdLineItemRequest
+ @return HasOneApiGETStockTransferIdLineItemRequest
 */
-func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) ApiGETStockTransferIdLineItemRequest {
-	return ApiGETStockTransferIdLineItemRequest{
+func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdLineItemRequest {
+	return HasOneApiGETStockTransferIdLineItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -14532,7 +15062,7 @@ func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stock
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r ApiGETStockTransferIdLineItemRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStockTransferIdLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14596,13 +15126,13 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r ApiGETStockTransf
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdOriginStockLocationRequest struct {
+type HasOneApiGETStockTransferIdOriginStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdOriginStockLocationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockTransferIdOriginStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdOriginStockLocationExecute(r)
 }
 
@@ -14613,10 +15143,10 @@ Retrieve the origin stock location associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdOriginStockLocationRequest
+ @return HasOneApiGETStockTransferIdOriginStockLocationRequest
 */
-func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdOriginStockLocationRequest {
-	return ApiGETStockTransferIdOriginStockLocationRequest{
+func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdOriginStockLocationRequest {
+	return HasOneApiGETStockTransferIdOriginStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -14624,7 +15154,7 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Con
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r ApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOneApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14688,13 +15218,13 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdShipmentRequest struct {
+type HasOneApiGETStockTransferIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdShipmentExecute(r)
 }
 
@@ -14705,10 +15235,10 @@ Retrieve the shipment associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdShipmentRequest
+ @return HasOneApiGETStockTransferIdShipmentRequest
 */
-func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ApiGETStockTransferIdShipmentRequest {
-	return ApiGETStockTransferIdShipmentRequest{
+func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdShipmentRequest {
+	return HasOneApiGETStockTransferIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -14716,7 +15246,7 @@ func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stock
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r ApiGETStockTransferIdShipmentRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStockTransferIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14780,13 +15310,13 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r ApiGETStockTransf
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdSkuRequest struct {
+type HasOneApiGETStockTransferIdSkuRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStockTransferIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdSkuExecute(r)
 }
 
@@ -14797,10 +15327,10 @@ Retrieve the sku associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdSkuRequest
+ @return HasOneApiGETStockTransferIdSkuRequest
 */
-func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) ApiGETStockTransferIdSkuRequest {
-	return ApiGETStockTransferIdSkuRequest{
+func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdSkuRequest {
+	return HasOneApiGETStockTransferIdSkuRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -14808,7 +15338,7 @@ func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTrans
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStockTransferIdSkuExecute(r ApiGETStockTransferIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTransferIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14872,13 +15402,13 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r ApiGETStockTransferIdS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentIdOrderRequest struct {
+type HasOneApiGETStripePaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripePaymentIdOrderExecute(r)
 }
 
@@ -14889,10 +15419,10 @@ Retrieve the order associated to the stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentIdOrderRequest
+ @return HasOneApiGETStripePaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdOrderRequest {
-	return ApiGETStripePaymentIdOrderRequest{
+func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdOrderRequest {
+	return HasOneApiGETStripePaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -14900,7 +15430,7 @@ func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePa
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r ApiGETStripePaymentIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -14964,13 +15494,13 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r ApiGETStripePaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentIdPaymentGatewayRequest struct {
+type HasOneApiGETStripePaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      HasOneApi
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripePaymentIdPaymentGatewayExecute(r)
 }
 
@@ -14981,10 +15511,10 @@ Retrieve the payment gateway associated to the stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentIdPaymentGatewayRequest
+ @return HasOneApiGETStripePaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdPaymentGatewayRequest {
-	return ApiGETStripePaymentIdPaymentGatewayRequest{
+func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdPaymentGatewayRequest {
+	return HasOneApiGETStripePaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -14992,7 +15522,7 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r ApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGETStripePaymentIdPaymentGatewayRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15056,13 +15586,13 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r ApiGETStrip
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCategoryIdSkuRequest struct {
+type HasOneApiGETTaxCategoryIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    HasOneApi
 	taxCategoryId string
 }
 
-func (r ApiGETTaxCategoryIdSkuRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETTaxCategoryIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCategoryIdSkuExecute(r)
 }
 
@@ -15073,10 +15603,10 @@ Retrieve the sku associated to the tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return ApiGETTaxCategoryIdSkuRequest
+ @return HasOneApiGETTaxCategoryIdSkuRequest
 */
-func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdSkuRequest {
-	return ApiGETTaxCategoryIdSkuRequest{
+func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) HasOneApiGETTaxCategoryIdSkuRequest {
+	return HasOneApiGETTaxCategoryIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -15084,7 +15614,7 @@ func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryI
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15148,13 +15678,13 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRuleIdManualTaxCalculatorRequest struct {
+type HasOneApiGETTaxRuleIdManualTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	taxRuleId  string
 }
 
-func (r ApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxRuleIdManualTaxCalculatorExecute(r)
 }
 
@@ -15165,10 +15695,10 @@ Retrieve the manual tax calculator associated to the tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiGETTaxRuleIdManualTaxCalculatorRequest
+ @return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
 */
-func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ApiGETTaxRuleIdManualTaxCalculatorRequest {
-	return ApiGETTaxRuleIdManualTaxCalculatorRequest{
+func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) HasOneApiGETTaxRuleIdManualTaxCalculatorRequest {
+	return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -15176,7 +15706,7 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r ApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15240,13 +15770,13 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r ApiGETTaxRul
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTransactionIdOrderRequest struct {
+type HasOneApiGETTransactionIdOrderRequest struct {
 	ctx           context.Context
 	ApiService    HasOneApi
 	transactionId string
 }
 
-func (r ApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTransactionIdOrderExecute(r)
 }
 
@@ -15257,10 +15787,10 @@ Retrieve the order associated to the transaction
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param transactionId The resource's id
- @return ApiGETTransactionIdOrderRequest
+ @return HasOneApiGETTransactionIdOrderRequest
 */
-func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) ApiGETTransactionIdOrderRequest {
-	return ApiGETTransactionIdOrderRequest{
+func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) HasOneApiGETTransactionIdOrderRequest {
+	return HasOneApiGETTransactionIdOrderRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		transactionId: transactionId,
@@ -15268,7 +15798,7 @@ func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactio
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETTransactionIdOrderExecute(r ApiGETTransactionIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactionIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15332,13 +15862,13 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r ApiGETTransactionIdOrd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidIdOrderRequest struct {
+type HasOneApiGETVoidIdOrderRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	voidId     string
 }
 
-func (r ApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETVoidIdOrderExecute(r)
 }
 
@@ -15349,10 +15879,10 @@ Retrieve the order associated to the void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidIdOrderRequest
+ @return HasOneApiGETVoidIdOrderRequest
 */
-func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId string) ApiGETVoidIdOrderRequest {
-	return ApiGETVoidIdOrderRequest{
+func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId string) HasOneApiGETVoidIdOrderRequest {
+	return HasOneApiGETVoidIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -15360,7 +15890,7 @@ func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId string) Ap
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETVoidIdOrderExecute(r ApiGETVoidIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15424,13 +15954,13 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r ApiGETVoidIdOrderRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidIdReferenceAuthorizationRequest struct {
+type HasOneApiGETVoidIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService HasOneApi
 	voidId     string
 }
 
-func (r ApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETVoidIdReferenceAuthorizationExecute(r)
 }
 
@@ -15441,10 +15971,10 @@ Retrieve the reference authorization associated to the void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidIdReferenceAuthorizationRequest
+ @return HasOneApiGETVoidIdReferenceAuthorizationRequest
 */
-func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) ApiGETVoidIdReferenceAuthorizationRequest {
-	return ApiGETVoidIdReferenceAuthorizationRequest{
+func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) HasOneApiGETVoidIdReferenceAuthorizationRequest {
+	return HasOneApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -15452,7 +15982,7 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -15516,13 +16046,13 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWireTransferIdOrderRequest struct {
+type HasOneApiGETWireTransferIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     HasOneApi
 	wireTransferId string
 }
 
-func (r ApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
+func (r HasOneApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETWireTransferIdOrderExecute(r)
 }
 
@@ -15533,10 +16063,10 @@ Retrieve the order associated to the wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return ApiGETWireTransferIdOrderRequest
+ @return HasOneApiGETWireTransferIdOrderRequest
 */
-func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) ApiGETWireTransferIdOrderRequest {
-	return ApiGETWireTransferIdOrderRequest{
+func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) HasOneApiGETWireTransferIdOrderRequest {
+	return HasOneApiGETWireTransferIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -15544,7 +16074,7 @@ func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTrans
 }
 
 // Execute executes the request
-func (a *HasOneApiService) GETWireTransferIdOrderExecute(r ApiGETWireTransferIdOrderRequest) (*http.Response, error) {
+func (a *HasOneApiService) GETWireTransferIdOrderExecute(r HasOneApiGETWireTransferIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}

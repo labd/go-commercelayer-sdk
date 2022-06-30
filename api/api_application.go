@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -27,24 +27,24 @@ type ApplicationApi interface {
 		Retrieve the application
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETApplicationApplicationIdRequest
+		@return ApplicationApiGETApplicationApplicationIdRequest
 	*/
-	GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest
+	GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest
 
 	// GETApplicationApplicationIdExecute executes the request
 	//  @return Application
-	GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
+	GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
 }
 
 // ApplicationApiService ApplicationApi service
 type ApplicationApiService service
 
-type ApiGETApplicationApplicationIdRequest struct {
+type ApplicationApiGETApplicationApplicationIdRequest struct {
 	ctx        context.Context
 	ApiService ApplicationApi
 }
 
-func (r ApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
+func (r ApplicationApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -54,10 +54,10 @@ GETApplicationApplicationId Retrieve the application
 Retrieve the application
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETApplicationApplicationIdRequest
+ @return ApplicationApiGETApplicationApplicationIdRequest
 */
-func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest {
-	return ApiGETApplicationApplicationIdRequest{
+func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest {
+	return ApplicationApiGETApplicationApplicationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -65,7 +65,7 @@ func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context)
 
 // Execute executes the request
 //  @return Application
-func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
+func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

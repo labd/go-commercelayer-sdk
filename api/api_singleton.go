@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -27,13 +27,13 @@ type SingletonApi interface {
 		Retrieve the application
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETApplicationApplicationIdRequest
+		@return SingletonApiGETApplicationApplicationIdRequest
 	*/
-	GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest
+	GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest
 
 	// GETApplicationApplicationIdExecute executes the request
 	//  @return Application
-	GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
+	GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
 
 	/*
 		GETOrganizationOrganizationId Retrieve the organization
@@ -41,24 +41,24 @@ type SingletonApi interface {
 		Retrieve the organization
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETOrganizationOrganizationIdRequest
+		@return SingletonApiGETOrganizationOrganizationIdRequest
 	*/
-	GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest
+	GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest
 
 	// GETOrganizationOrganizationIdExecute executes the request
 	//  @return Organization
-	GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
+	GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
 }
 
 // SingletonApiService SingletonApi service
 type SingletonApiService service
 
-type ApiGETApplicationApplicationIdRequest struct {
+type SingletonApiGETApplicationApplicationIdRequest struct {
 	ctx        context.Context
 	ApiService SingletonApi
 }
 
-func (r ApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
+func (r SingletonApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -68,10 +68,10 @@ GETApplicationApplicationId Retrieve the application
 Retrieve the application
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETApplicationApplicationIdRequest
+ @return SingletonApiGETApplicationApplicationIdRequest
 */
-func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest {
-	return ApiGETApplicationApplicationIdRequest{
+func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest {
+	return SingletonApiGETApplicationApplicationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -79,7 +79,7 @@ func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) A
 
 // Execute executes the request
 //  @return Application
-func (a *SingletonApiService) GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
+func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -152,12 +152,12 @@ func (a *SingletonApiService) GETApplicationApplicationIdExecute(r ApiGETApplica
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETOrganizationOrganizationIdRequest struct {
+type SingletonApiGETOrganizationOrganizationIdRequest struct {
 	ctx        context.Context
 	ApiService SingletonApi
 }
 
-func (r ApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
+func (r SingletonApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -167,10 +167,10 @@ GETOrganizationOrganizationId Retrieve the organization
 Retrieve the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrganizationOrganizationIdRequest
+ @return SingletonApiGETOrganizationOrganizationIdRequest
 */
-func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest {
-	return ApiGETOrganizationOrganizationIdRequest{
+func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest {
+	return SingletonApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -178,7 +178,7 @@ func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context)
 
 // Execute executes the request
 //  @return Organization
-func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
+func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

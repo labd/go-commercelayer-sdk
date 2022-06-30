@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -17,11 +17,14 @@ import (
 
 // ShippingMethodDataRelationships struct for ShippingMethodDataRelationships
 type ShippingMethodDataRelationships struct {
-	Market                      *AvalaraAccountDataRelationshipsMarkets      `json:"market,omitempty"`
-	ShippingZone                *ShippingMethodDataRelationshipsShippingZone `json:"shipping_zone,omitempty"`
-	ShippingCategory            *ShipmentDataRelationshipsShippingCategory   `json:"shipping_category,omitempty"`
-	DeliveryLeadTimeForShipment *ShipmentDataRelationshipsDeliveryLeadTime   `json:"delivery_lead_time_for_shipment,omitempty"`
-	Attachments                 *AvalaraAccountDataRelationshipsAttachments  `json:"attachments,omitempty"`
+	Market                      *AvalaraAccountDataRelationshipsMarkets             `json:"market,omitempty"`
+	ShippingZone                *ShippingMethodDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
+	ShippingCategory            *ShipmentDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
+	StockLocation               *DeliveryLeadTimeDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
+	DeliveryLeadTimeForShipment *ShipmentDataRelationshipsDeliveryLeadTime          `json:"delivery_lead_time_for_shipment,omitempty"`
+	ShippingMethodTiers         *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
+	ShippingWeightTiers         *ShippingMethodDataRelationshipsShippingWeightTiers `json:"shipping_weight_tiers,omitempty"`
+	Attachments                 *AvalaraAccountDataRelationshipsAttachments         `json:"attachments,omitempty"`
 }
 
 // NewShippingMethodDataRelationships instantiates a new ShippingMethodDataRelationships object
@@ -137,6 +140,38 @@ func (o *ShippingMethodDataRelationships) SetShippingCategory(v ShipmentDataRela
 	o.ShippingCategory = &v
 }
 
+// GetStockLocation returns the StockLocation field value if set, zero value otherwise.
+func (o *ShippingMethodDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+	if o == nil || o.StockLocation == nil {
+		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		return ret
+	}
+	return *o.StockLocation
+}
+
+// GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+	if o == nil || o.StockLocation == nil {
+		return nil, false
+	}
+	return o.StockLocation, true
+}
+
+// HasStockLocation returns a boolean if a field has been set.
+func (o *ShippingMethodDataRelationships) HasStockLocation() bool {
+	if o != nil && o.StockLocation != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetStockLocation gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the StockLocation field.
+func (o *ShippingMethodDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+	o.StockLocation = &v
+}
+
 // GetDeliveryLeadTimeForShipment returns the DeliveryLeadTimeForShipment field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipment() ShipmentDataRelationshipsDeliveryLeadTime {
 	if o == nil || o.DeliveryLeadTimeForShipment == nil {
@@ -167,6 +202,70 @@ func (o *ShippingMethodDataRelationships) HasDeliveryLeadTimeForShipment() bool 
 // SetDeliveryLeadTimeForShipment gets a reference to the given ShipmentDataRelationshipsDeliveryLeadTime and assigns it to the DeliveryLeadTimeForShipment field.
 func (o *ShippingMethodDataRelationships) SetDeliveryLeadTimeForShipment(v ShipmentDataRelationshipsDeliveryLeadTime) {
 	o.DeliveryLeadTimeForShipment = &v
+}
+
+// GetShippingMethodTiers returns the ShippingMethodTiers field value if set, zero value otherwise.
+func (o *ShippingMethodDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers {
+	if o == nil || o.ShippingMethodTiers == nil {
+		var ret ShippingMethodDataRelationshipsShippingMethodTiers
+		return ret
+	}
+	return *o.ShippingMethodTiers
+}
+
+// GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool) {
+	if o == nil || o.ShippingMethodTiers == nil {
+		return nil, false
+	}
+	return o.ShippingMethodTiers, true
+}
+
+// HasShippingMethodTiers returns a boolean if a field has been set.
+func (o *ShippingMethodDataRelationships) HasShippingMethodTiers() bool {
+	if o != nil && o.ShippingMethodTiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingMethodTiers gets a reference to the given ShippingMethodDataRelationshipsShippingMethodTiers and assigns it to the ShippingMethodTiers field.
+func (o *ShippingMethodDataRelationships) SetShippingMethodTiers(v ShippingMethodDataRelationshipsShippingMethodTiers) {
+	o.ShippingMethodTiers = &v
+}
+
+// GetShippingWeightTiers returns the ShippingWeightTiers field value if set, zero value otherwise.
+func (o *ShippingMethodDataRelationships) GetShippingWeightTiers() ShippingMethodDataRelationshipsShippingWeightTiers {
+	if o == nil || o.ShippingWeightTiers == nil {
+		var ret ShippingMethodDataRelationshipsShippingWeightTiers
+		return ret
+	}
+	return *o.ShippingWeightTiers
+}
+
+// GetShippingWeightTiersOk returns a tuple with the ShippingWeightTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataRelationships) GetShippingWeightTiersOk() (*ShippingMethodDataRelationshipsShippingWeightTiers, bool) {
+	if o == nil || o.ShippingWeightTiers == nil {
+		return nil, false
+	}
+	return o.ShippingWeightTiers, true
+}
+
+// HasShippingWeightTiers returns a boolean if a field has been set.
+func (o *ShippingMethodDataRelationships) HasShippingWeightTiers() bool {
+	if o != nil && o.ShippingWeightTiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingWeightTiers gets a reference to the given ShippingMethodDataRelationshipsShippingWeightTiers and assigns it to the ShippingWeightTiers field.
+func (o *ShippingMethodDataRelationships) SetShippingWeightTiers(v ShippingMethodDataRelationshipsShippingWeightTiers) {
+	o.ShippingWeightTiers = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
@@ -212,8 +311,17 @@ func (o ShippingMethodDataRelationships) MarshalJSON() ([]byte, error) {
 	if o.ShippingCategory != nil {
 		toSerialize["shipping_category"] = o.ShippingCategory
 	}
+	if o.StockLocation != nil {
+		toSerialize["stock_location"] = o.StockLocation
+	}
 	if o.DeliveryLeadTimeForShipment != nil {
 		toSerialize["delivery_lead_time_for_shipment"] = o.DeliveryLeadTimeForShipment
+	}
+	if o.ShippingMethodTiers != nil {
+		toSerialize["shipping_method_tiers"] = o.ShippingMethodTiers
+	}
+	if o.ShippingWeightTiers != nil {
+		toSerialize["shipping_weight_tiers"] = o.ShippingWeightTiers
 	}
 	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_subscriptions"]
 **Attributes** | [**CustomerSubscriptionDataAttributes**](CustomerSubscriptionDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CustomerSubscriptionData) GetRelationships() CouponRecipientCreateDataRelationships`
+`func (o *CustomerSubscriptionData) GetRelationships() CustomerPasswordResetDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool)`
+`func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerSubscriptionData) SetRelationships(v CouponRecipientCreateDataRelationships)`
+`func (o *CustomerSubscriptionData) SetRelationships(v CustomerPasswordResetDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

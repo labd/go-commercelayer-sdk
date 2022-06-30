@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,7 @@ type ParcelDataAttributes struct {
 	Number *string `json:"number,omitempty"`
 	// The parcel weight, used to automatically calculate the tax rates from the available carrier accounts.
 	Weight *float32 `json:"weight,omitempty"`
-	// The unit of weight. Can be one of 'gr', or 'oz'.
+	// Can be one of 'gr', 'lb', or 'oz'
 	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
 	// When shipping outside the US, you need to provide either an Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation (PFC). Which you need is based on the value of the goods being shipped. Value can be one of \"EEL\" o \"PFC\".
 	EelPfc *string `json:"eel_pfc,omitempty"`

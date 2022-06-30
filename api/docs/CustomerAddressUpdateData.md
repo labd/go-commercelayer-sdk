@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "customer_addresses"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CustomerAddressDataRelationships**](CustomerAddressDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CustomerAddressUpdateDataRelationships**](CustomerAddressUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressDataRelationships`
+`func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressDataRelationships, bool)`
+`func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressDataRelationships)`
+`func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

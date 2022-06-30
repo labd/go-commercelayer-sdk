@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type ShippingMethodUpdateData struct {
 	// The resource's id
 	Id            string                                 `json:"id"`
 	Attributes    ShippingMethodUpdateDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodUpdateDataRelationships `json:"relationships,omitempty"`
+	Relationships *ShippingMethodCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
@@ -120,9 +120,9 @@ func (o *ShippingMethodUpdateData) SetAttributes(v ShippingMethodUpdateDataAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodUpdateDataRelationships {
+func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingMethodUpdateDataRelationships
+		var ret ShippingMethodCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodUpdateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*ShippingMethodUpdateDataRelationships, bool) {
+func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*ShippingMethodCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ShippingMethodUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingMethodUpdateDataRelationships and assigns it to the Relationships field.
-func (o *ShippingMethodUpdateData) SetRelationships(v ShippingMethodUpdateDataRelationships) {
+// SetRelationships gets a reference to the given ShippingMethodCreateDataRelationships and assigns it to the Relationships field.
+func (o *ShippingMethodUpdateData) SetRelationships(v ShippingMethodCreateDataRelationships) {
 	o.Relationships = &v
 }
 

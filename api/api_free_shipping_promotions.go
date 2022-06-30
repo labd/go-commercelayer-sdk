@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type FreeShippingPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
+		@return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
 	*/
-	DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
+	DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
 
 	// DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute executes the request
-	DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error)
+	DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotions List all free shipping promotions
@@ -42,12 +42,12 @@ type FreeShippingPromotionsApi interface {
 		List all free shipping promotions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETFreeShippingPromotionsRequest
+		@return FreeShippingPromotionsApiGETFreeShippingPromotionsRequest
 	*/
-	GETFreeShippingPromotions(ctx context.Context) ApiGETFreeShippingPromotionsRequest
+	GETFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiGETFreeShippingPromotionsRequest
 
 	// GETFreeShippingPromotionsExecute executes the request
-	GETFreeShippingPromotionsExecute(r ApiGETFreeShippingPromotionsRequest) (*http.Response, error)
+	GETFreeShippingPromotionsExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionsFreeShippingPromotionId Retrieve a free shipping promotion
@@ -56,13 +56,13 @@ type FreeShippingPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
+		@return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
 	*/
-	GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
+	GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
 
 	// GETFreeShippingPromotionsFreeShippingPromotionIdExecute executes the request
 	//  @return FreeShippingPromotion
-	GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotion, *http.Response, error)
+	GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotion, *http.Response, error)
 
 	/*
 		PATCHFreeShippingPromotionsFreeShippingPromotionId Update a free shipping promotion
@@ -71,12 +71,12 @@ type FreeShippingPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
+		@return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 	*/
-	PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
+	PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 
 	// PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute executes the request
-	PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error)
+	PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error)
 
 	/*
 		POSTFreeShippingPromotions Create a free shipping promotion
@@ -84,24 +84,24 @@ type FreeShippingPromotionsApi interface {
 		Create a free shipping promotion
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTFreeShippingPromotionsRequest
+		@return FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest
 	*/
-	POSTFreeShippingPromotions(ctx context.Context) ApiPOSTFreeShippingPromotionsRequest
+	POSTFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest
 
 	// POSTFreeShippingPromotionsExecute executes the request
-	POSTFreeShippingPromotionsExecute(r ApiPOSTFreeShippingPromotionsRequest) (*http.Response, error)
+	POSTFreeShippingPromotionsExecute(r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) (*http.Response, error)
 }
 
 // FreeShippingPromotionsApiService FreeShippingPromotionsApi service
 type FreeShippingPromotionsApiService service
 
-type ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
+type FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
 	ctx                     context.Context
 	ApiService              FreeShippingPromotionsApi
 	freeShippingPromotionId string
 }
 
-func (r ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*http.Response, error) {
+func (r FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
+ @return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest {
-	return ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest{
+func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest {
+	return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -123,7 +123,7 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 }
 
 // Execute executes the request
-func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error) {
+func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionsRequest struct {
+type FreeShippingPromotionsApiGETFreeShippingPromotionsRequest struct {
 	ctx        context.Context
 	ApiService FreeShippingPromotionsApi
 }
 
-func (r ApiGETFreeShippingPromotionsRequest) Execute() (*http.Response, error) {
+func (r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionsExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETFreeShippingPromotions List all free shipping promotions
 List all free shipping promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETFreeShippingPromotionsRequest
+ @return FreeShippingPromotionsApiGETFreeShippingPromotionsRequest
 */
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotions(ctx context.Context) ApiGETFreeShippingPromotionsRequest {
-	return ApiGETFreeShippingPromotionsRequest{
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiGETFreeShippingPromotionsRequest {
+	return FreeShippingPromotionsApiGETFreeShippingPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r ApiGETFreeShippingPromotionsRequest) (*http.Response, error) {
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
+type FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
 	ctx                     context.Context
 	ApiService              FreeShippingPromotionsApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*FreeShippingPromotion, *http.Response, error) {
+func (r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*FreeShippingPromotion, *http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
+ @return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest {
-	return ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest{
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest {
+	return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -304,7 +304,7 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 
 // Execute executes the request
 //  @return FreeShippingPromotion
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotion, *http.Response, error) {
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotion, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
+type FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
 	ctx                         context.Context
 	ApiService                  FreeShippingPromotionsApi
 	freeShippingPromotionId     string
 	freeShippingPromotionUpdate *FreeShippingPromotionUpdate
 }
 
-func (r ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) FreeShippingPromotionUpdate(freeShippingPromotionUpdate FreeShippingPromotionUpdate) ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
+func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) FreeShippingPromotionUpdate(freeShippingPromotionUpdate FreeShippingPromotionUpdate) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	r.freeShippingPromotionUpdate = &freeShippingPromotionUpdate
 	return r
 }
 
-func (r ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*http.Response, error) {
+func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
+ @return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
-	return ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest{
+func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
+	return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -412,7 +412,7 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 }
 
 // Execute executes the request
-func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r ApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error) {
+func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTFreeShippingPromotionsRequest struct {
+type FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest struct {
 	ctx                         context.Context
 	ApiService                  FreeShippingPromotionsApi
 	freeShippingPromotionCreate *FreeShippingPromotionCreate
 }
 
-func (r ApiPOSTFreeShippingPromotionsRequest) FreeShippingPromotionCreate(freeShippingPromotionCreate FreeShippingPromotionCreate) ApiPOSTFreeShippingPromotionsRequest {
+func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) FreeShippingPromotionCreate(freeShippingPromotionCreate FreeShippingPromotionCreate) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest {
 	r.freeShippingPromotionCreate = &freeShippingPromotionCreate
 	return r
 }
 
-func (r ApiPOSTFreeShippingPromotionsRequest) Execute() (*http.Response, error) {
+func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTFreeShippingPromotionsExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTFreeShippingPromotions Create a free shipping promotion
 Create a free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTFreeShippingPromotionsRequest
+ @return FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest
 */
-func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotions(ctx context.Context) ApiPOSTFreeShippingPromotionsRequest {
-	return ApiPOSTFreeShippingPromotionsRequest{
+func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest {
+	return FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r ApiPOSTFreeShippingPromotionsRequest) (*http.Response, error) {
+func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

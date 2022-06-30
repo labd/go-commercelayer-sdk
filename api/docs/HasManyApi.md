@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**GETCheckoutComGatewayIdPaymentMethods**](HasManyApi.md#GETCheckoutComGatewayIdPaymentMethods) | **Get** /checkout_com_gateways/{checkoutComGatewayId}/payment_methods | Retrieve the payment methods associated to the checkout.com gateway
 [**GETCouponCodesPromotionRuleIdCoupons**](HasManyApi.md#GETCouponCodesPromotionRuleIdCoupons) | **Get** /coupon_codes_promotion_rules/{couponCodesPromotionRuleId}/coupons | Retrieve the coupons associated to the coupon codes promotion rule
 [**GETCouponRecipientIdAttachments**](HasManyApi.md#GETCouponRecipientIdAttachments) | **Get** /coupon_recipients/{couponRecipientId}/attachments | Retrieve the attachments associated to the coupon recipient
+[**GETCustomerAddressIdEvents**](HasManyApi.md#GETCustomerAddressIdEvents) | **Get** /customer_addresses/{customerAddressId}/events | Retrieve the events associated to the customer address
 [**GETCustomerGroupIdAttachments**](HasManyApi.md#GETCustomerGroupIdAttachments) | **Get** /customer_groups/{customerGroupId}/attachments | Retrieve the attachments associated to the customer group
 [**GETCustomerGroupIdCustomers**](HasManyApi.md#GETCustomerGroupIdCustomers) | **Get** /customer_groups/{customerGroupId}/customers | Retrieve the customers associated to the customer group
 [**GETCustomerGroupIdMarkets**](HasManyApi.md#GETCustomerGroupIdMarkets) | **Get** /customer_groups/{customerGroupId}/markets | Retrieve the markets associated to the customer group
@@ -30,10 +31,15 @@ Method | HTTP request | Description
 [**GETCustomerIdCustomerAddresses**](HasManyApi.md#GETCustomerIdCustomerAddresses) | **Get** /customers/{customerId}/customer_addresses | Retrieve the customer addresses associated to the customer
 [**GETCustomerIdCustomerPaymentSources**](HasManyApi.md#GETCustomerIdCustomerPaymentSources) | **Get** /customers/{customerId}/customer_payment_sources | Retrieve the customer payment sources associated to the customer
 [**GETCustomerIdCustomerSubscriptions**](HasManyApi.md#GETCustomerIdCustomerSubscriptions) | **Get** /customers/{customerId}/customer_subscriptions | Retrieve the customer subscriptions associated to the customer
+[**GETCustomerIdEvents**](HasManyApi.md#GETCustomerIdEvents) | **Get** /customers/{customerId}/events | Retrieve the events associated to the customer
 [**GETCustomerIdOrderSubscriptions**](HasManyApi.md#GETCustomerIdOrderSubscriptions) | **Get** /customers/{customerId}/order_subscriptions | Retrieve the order subscriptions associated to the customer
 [**GETCustomerIdOrders**](HasManyApi.md#GETCustomerIdOrders) | **Get** /customers/{customerId}/orders | Retrieve the orders associated to the customer
 [**GETCustomerIdReturns**](HasManyApi.md#GETCustomerIdReturns) | **Get** /customers/{customerId}/returns | Retrieve the returns associated to the customer
+[**GETCustomerPasswordResetIdEvents**](HasManyApi.md#GETCustomerPasswordResetIdEvents) | **Get** /customer_password_resets/{customerPasswordResetId}/events | Retrieve the events associated to the customer password reset
+[**GETCustomerSubscriptionIdEvents**](HasManyApi.md#GETCustomerSubscriptionIdEvents) | **Get** /customer_subscriptions/{customerSubscriptionId}/events | Retrieve the events associated to the customer subscription
 [**GETDeliveryLeadTimeIdAttachments**](HasManyApi.md#GETDeliveryLeadTimeIdAttachments) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/attachments | Retrieve the attachments associated to the delivery lead time
+[**GETEventIdLastEventCallbacks**](HasManyApi.md#GETEventIdLastEventCallbacks) | **Get** /events/{eventId}/last_event_callbacks | Retrieve the last event callbacks associated to the event
+[**GETEventIdWebhooks**](HasManyApi.md#GETEventIdWebhooks) | **Get** /events/{eventId}/webhooks | Retrieve the webhooks associated to the event
 [**GETExternalGatewayIdExternalPayments**](HasManyApi.md#GETExternalGatewayIdExternalPayments) | **Get** /external_gateways/{externalGatewayId}/external_payments | Retrieve the external payments associated to the external gateway
 [**GETExternalGatewayIdPaymentMethods**](HasManyApi.md#GETExternalGatewayIdPaymentMethods) | **Get** /external_gateways/{externalGatewayId}/payment_methods | Retrieve the payment methods associated to the external gateway
 [**GETExternalPromotionIdAttachments**](HasManyApi.md#GETExternalPromotionIdAttachments) | **Get** /external_promotions/{externalPromotionId}/attachments | Retrieve the attachments associated to the external promotion
@@ -49,9 +55,12 @@ Method | HTTP request | Description
 [**GETGeocoderIdAddresses**](HasManyApi.md#GETGeocoderIdAddresses) | **Get** /geocoders/{geocoderId}/addresses | Retrieve the addresses associated to the geocoder
 [**GETGeocoderIdAttachments**](HasManyApi.md#GETGeocoderIdAttachments) | **Get** /geocoders/{geocoderId}/attachments | Retrieve the attachments associated to the geocoder
 [**GETGiftCardIdAttachments**](HasManyApi.md#GETGiftCardIdAttachments) | **Get** /gift_cards/{giftCardId}/attachments | Retrieve the attachments associated to the gift card
+[**GETGiftCardIdEvents**](HasManyApi.md#GETGiftCardIdEvents) | **Get** /gift_cards/{giftCardId}/events | Retrieve the events associated to the gift card
 [**GETGiftCardRecipientIdAttachments**](HasManyApi.md#GETGiftCardRecipientIdAttachments) | **Get** /gift_card_recipients/{giftCardRecipientId}/attachments | Retrieve the attachments associated to the gift card recipient
 [**GETGoogleGeocoderIdAddresses**](HasManyApi.md#GETGoogleGeocoderIdAddresses) | **Get** /google_geocoders/{googleGeocoderId}/addresses | Retrieve the addresses associated to the google geocoder
 [**GETGoogleGeocoderIdAttachments**](HasManyApi.md#GETGoogleGeocoderIdAttachments) | **Get** /google_geocoders/{googleGeocoderId}/attachments | Retrieve the attachments associated to the google geocoder
+[**GETImportIdEvents**](HasManyApi.md#GETImportIdEvents) | **Get** /imports/{importId}/events | Retrieve the events associated to the import
+[**GETInStockSubscriptionIdEvents**](HasManyApi.md#GETInStockSubscriptionIdEvents) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/events | Retrieve the events associated to the in stock subscription
 [**GETInventoryModelIdAttachments**](HasManyApi.md#GETInventoryModelIdAttachments) | **Get** /inventory_models/{inventoryModelId}/attachments | Retrieve the attachments associated to the inventory model
 [**GETInventoryModelIdInventoryReturnLocations**](HasManyApi.md#GETInventoryModelIdInventoryReturnLocations) | **Get** /inventory_models/{inventoryModelId}/inventory_return_locations | Retrieve the inventory return locations associated to the inventory model
 [**GETInventoryModelIdInventoryStockLocations**](HasManyApi.md#GETInventoryModelIdInventoryStockLocations) | **Get** /inventory_models/{inventoryModelId}/inventory_stock_locations | Retrieve the inventory stock locations associated to the inventory model
@@ -67,6 +76,7 @@ Method | HTTP request | Description
 [**GETManualTaxCalculatorIdTaxRules**](HasManyApi.md#GETManualTaxCalculatorIdTaxRules) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/tax_rules | Retrieve the tax rules associated to the manual tax calculator
 [**GETMarketIdAttachments**](HasManyApi.md#GETMarketIdAttachments) | **Get** /markets/{marketId}/attachments | Retrieve the attachments associated to the market
 [**GETMerchantIdAttachments**](HasManyApi.md#GETMerchantIdAttachments) | **Get** /merchants/{merchantId}/attachments | Retrieve the attachments associated to the merchant
+[**GETOrderCopyIdEvents**](HasManyApi.md#GETOrderCopyIdEvents) | **Get** /order_copies/{orderCopyId}/events | Retrieve the events associated to the order copy
 [**GETOrderIdAttachments**](HasManyApi.md#GETOrderIdAttachments) | **Get** /orders/{orderId}/attachments | Retrieve the attachments associated to the order
 [**GETOrderIdAuthorizations**](HasManyApi.md#GETOrderIdAuthorizations) | **Get** /orders/{orderId}/authorizations | Retrieve the authorizations associated to the order
 [**GETOrderIdAvailableCustomerPaymentSources**](HasManyApi.md#GETOrderIdAvailableCustomerPaymentSources) | **Get** /orders/{orderId}/available_customer_payment_sources | Retrieve the available customer payment sources associated to the order
@@ -74,17 +84,20 @@ Method | HTTP request | Description
 [**GETOrderIdAvailableFreeSkus**](HasManyApi.md#GETOrderIdAvailableFreeSkus) | **Get** /orders/{orderId}/available_free_skus | Retrieve the available free skus associated to the order
 [**GETOrderIdAvailablePaymentMethods**](HasManyApi.md#GETOrderIdAvailablePaymentMethods) | **Get** /orders/{orderId}/available_payment_methods | Retrieve the available payment methods associated to the order
 [**GETOrderIdCaptures**](HasManyApi.md#GETOrderIdCaptures) | **Get** /orders/{orderId}/captures | Retrieve the captures associated to the order
+[**GETOrderIdEvents**](HasManyApi.md#GETOrderIdEvents) | **Get** /orders/{orderId}/events | Retrieve the events associated to the order
 [**GETOrderIdLineItems**](HasManyApi.md#GETOrderIdLineItems) | **Get** /orders/{orderId}/line_items | Retrieve the line items associated to the order
 [**GETOrderIdOrderCopies**](HasManyApi.md#GETOrderIdOrderCopies) | **Get** /orders/{orderId}/order_copies | Retrieve the order copies associated to the order
 [**GETOrderIdOrderSubscriptions**](HasManyApi.md#GETOrderIdOrderSubscriptions) | **Get** /orders/{orderId}/order_subscriptions | Retrieve the order subscriptions associated to the order
 [**GETOrderIdRefunds**](HasManyApi.md#GETOrderIdRefunds) | **Get** /orders/{orderId}/refunds | Retrieve the refunds associated to the order
 [**GETOrderIdShipments**](HasManyApi.md#GETOrderIdShipments) | **Get** /orders/{orderId}/shipments | Retrieve the shipments associated to the order
 [**GETOrderIdVoids**](HasManyApi.md#GETOrderIdVoids) | **Get** /orders/{orderId}/voids | Retrieve the voids associated to the order
+[**GETOrderSubscriptionIdEvents**](HasManyApi.md#GETOrderSubscriptionIdEvents) | **Get** /order_subscriptions/{orderSubscriptionId}/events | Retrieve the events associated to the order subscription
 [**GETOrderSubscriptionIdOrderCopies**](HasManyApi.md#GETOrderSubscriptionIdOrderCopies) | **Get** /order_subscriptions/{orderSubscriptionId}/order_copies | Retrieve the order copies associated to the order subscription
 [**GETOrderSubscriptionIdOrders**](HasManyApi.md#GETOrderSubscriptionIdOrders) | **Get** /order_subscriptions/{orderSubscriptionId}/orders | Retrieve the orders associated to the order subscription
 [**GETPackageIdAttachments**](HasManyApi.md#GETPackageIdAttachments) | **Get** /packages/{packageId}/attachments | Retrieve the attachments associated to the package
 [**GETPackageIdParcels**](HasManyApi.md#GETPackageIdParcels) | **Get** /packages/{packageId}/parcels | Retrieve the parcels associated to the package
 [**GETParcelIdAttachments**](HasManyApi.md#GETParcelIdAttachments) | **Get** /parcels/{parcelId}/attachments | Retrieve the attachments associated to the parcel
+[**GETParcelIdEvents**](HasManyApi.md#GETParcelIdEvents) | **Get** /parcels/{parcelId}/events | Retrieve the events associated to the parcel
 [**GETParcelIdParcelLineItems**](HasManyApi.md#GETParcelIdParcelLineItems) | **Get** /parcels/{parcelId}/parcel_line_items | Retrieve the parcel line items associated to the parcel
 [**GETPaymentGatewayIdPaymentMethods**](HasManyApi.md#GETPaymentGatewayIdPaymentMethods) | **Get** /payment_gateways/{paymentGatewayId}/payment_methods | Retrieve the payment methods associated to the payment gateway
 [**GETPaymentMethodIdAttachments**](HasManyApi.md#GETPaymentMethodIdAttachments) | **Get** /payment_methods/{paymentMethodId}/attachments | Retrieve the attachments associated to the payment method
@@ -93,20 +106,31 @@ Method | HTTP request | Description
 [**GETPercentageDiscountPromotionIdAttachments**](HasManyApi.md#GETPercentageDiscountPromotionIdAttachments) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/attachments | Retrieve the attachments associated to the percentage discount promotion
 [**GETPercentageDiscountPromotionIdSkus**](HasManyApi.md#GETPercentageDiscountPromotionIdSkus) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/skus | Retrieve the skus associated to the percentage discount promotion
 [**GETPriceIdAttachments**](HasManyApi.md#GETPriceIdAttachments) | **Get** /prices/{priceId}/attachments | Retrieve the attachments associated to the price
+[**GETPriceIdPriceTiers**](HasManyApi.md#GETPriceIdPriceTiers) | **Get** /prices/{priceId}/price_tiers | Retrieve the price tiers associated to the price
+[**GETPriceIdPriceVolumeTiers**](HasManyApi.md#GETPriceIdPriceVolumeTiers) | **Get** /prices/{priceId}/price_volume_tiers | Retrieve the price volume tiers associated to the price
 [**GETPriceListIdAttachments**](HasManyApi.md#GETPriceListIdAttachments) | **Get** /price_lists/{priceListId}/attachments | Retrieve the attachments associated to the price list
 [**GETPriceListIdPrices**](HasManyApi.md#GETPriceListIdPrices) | **Get** /price_lists/{priceListId}/prices | Retrieve the prices associated to the price list
+[**GETPriceTierIdAttachments**](HasManyApi.md#GETPriceTierIdAttachments) | **Get** /price_tiers/{priceTierId}/attachments | Retrieve the attachments associated to the price tier
+[**GETPriceVolumeTierIdAttachments**](HasManyApi.md#GETPriceVolumeTierIdAttachments) | **Get** /price_volume_tiers/{priceVolumeTierId}/attachments | Retrieve the attachments associated to the price volume tier
 [**GETPromotionIdAttachments**](HasManyApi.md#GETPromotionIdAttachments) | **Get** /promotions/{promotionId}/attachments | Retrieve the attachments associated to the promotion
+[**GETRefundIdEvents**](HasManyApi.md#GETRefundIdEvents) | **Get** /refunds/{refundId}/events | Retrieve the events associated to the refund
 [**GETReturnIdAttachments**](HasManyApi.md#GETReturnIdAttachments) | **Get** /returns/{returnId}/attachments | Retrieve the attachments associated to the return
+[**GETReturnIdEvents**](HasManyApi.md#GETReturnIdEvents) | **Get** /returns/{returnId}/events | Retrieve the events associated to the return
 [**GETReturnIdReturnLineItems**](HasManyApi.md#GETReturnIdReturnLineItems) | **Get** /returns/{returnId}/return_line_items | Retrieve the return line items associated to the return
 [**GETShipmentIdAttachments**](HasManyApi.md#GETShipmentIdAttachments) | **Get** /shipments/{shipmentId}/attachments | Retrieve the attachments associated to the shipment
 [**GETShipmentIdAvailableShippingMethods**](HasManyApi.md#GETShipmentIdAvailableShippingMethods) | **Get** /shipments/{shipmentId}/available_shipping_methods | Retrieve the available shipping methods associated to the shipment
 [**GETShipmentIdCarrierAccounts**](HasManyApi.md#GETShipmentIdCarrierAccounts) | **Get** /shipments/{shipmentId}/carrier_accounts | Retrieve the carrier accounts associated to the shipment
+[**GETShipmentIdEvents**](HasManyApi.md#GETShipmentIdEvents) | **Get** /shipments/{shipmentId}/events | Retrieve the events associated to the shipment
 [**GETShipmentIdParcels**](HasManyApi.md#GETShipmentIdParcels) | **Get** /shipments/{shipmentId}/parcels | Retrieve the parcels associated to the shipment
 [**GETShipmentIdStockLineItems**](HasManyApi.md#GETShipmentIdStockLineItems) | **Get** /shipments/{shipmentId}/stock_line_items | Retrieve the stock line items associated to the shipment
 [**GETShipmentIdStockTransfers**](HasManyApi.md#GETShipmentIdStockTransfers) | **Get** /shipments/{shipmentId}/stock_transfers | Retrieve the stock transfers associated to the shipment
 [**GETShippingCategoryIdAttachments**](HasManyApi.md#GETShippingCategoryIdAttachments) | **Get** /shipping_categories/{shippingCategoryId}/attachments | Retrieve the attachments associated to the shipping category
 [**GETShippingCategoryIdSkus**](HasManyApi.md#GETShippingCategoryIdSkus) | **Get** /shipping_categories/{shippingCategoryId}/skus | Retrieve the skus associated to the shipping category
 [**GETShippingMethodIdAttachments**](HasManyApi.md#GETShippingMethodIdAttachments) | **Get** /shipping_methods/{shippingMethodId}/attachments | Retrieve the attachments associated to the shipping method
+[**GETShippingMethodIdShippingMethodTiers**](HasManyApi.md#GETShippingMethodIdShippingMethodTiers) | **Get** /shipping_methods/{shippingMethodId}/shipping_method_tiers | Retrieve the shipping method tiers associated to the shipping method
+[**GETShippingMethodIdShippingWeightTiers**](HasManyApi.md#GETShippingMethodIdShippingWeightTiers) | **Get** /shipping_methods/{shippingMethodId}/shipping_weight_tiers | Retrieve the shipping weight tiers associated to the shipping method
+[**GETShippingMethodTierIdAttachments**](HasManyApi.md#GETShippingMethodTierIdAttachments) | **Get** /shipping_method_tiers/{shippingMethodTierId}/attachments | Retrieve the attachments associated to the shipping method tier
+[**GETShippingWeightTierIdAttachments**](HasManyApi.md#GETShippingWeightTierIdAttachments) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/attachments | Retrieve the attachments associated to the shipping weight tier
 [**GETShippingZoneIdAttachments**](HasManyApi.md#GETShippingZoneIdAttachments) | **Get** /shipping_zones/{shippingZoneId}/attachments | Retrieve the attachments associated to the shipping zone
 [**GETSkuIdAttachments**](HasManyApi.md#GETSkuIdAttachments) | **Get** /skus/{skuId}/attachments | Retrieve the attachments associated to the SKU
 [**GETSkuIdDeliveryLeadTimes**](HasManyApi.md#GETSkuIdDeliveryLeadTimes) | **Get** /skus/{skuId}/delivery_lead_times | Retrieve the delivery lead times associated to the SKU
@@ -124,6 +148,7 @@ Method | HTTP request | Description
 [**GETStockLocationIdInventoryStockLocations**](HasManyApi.md#GETStockLocationIdInventoryStockLocations) | **Get** /stock_locations/{stockLocationId}/inventory_stock_locations | Retrieve the inventory stock locations associated to the stock location
 [**GETStockLocationIdStockItems**](HasManyApi.md#GETStockLocationIdStockItems) | **Get** /stock_locations/{stockLocationId}/stock_items | Retrieve the stock items associated to the stock location
 [**GETStockLocationIdStockTransfers**](HasManyApi.md#GETStockLocationIdStockTransfers) | **Get** /stock_locations/{stockLocationId}/stock_transfers | Retrieve the stock transfers associated to the stock location
+[**GETStockTransferIdEvents**](HasManyApi.md#GETStockTransferIdEvents) | **Get** /stock_transfers/{stockTransferId}/events | Retrieve the events associated to the stock transfer
 [**GETStripeGatewayIdPaymentMethods**](HasManyApi.md#GETStripeGatewayIdPaymentMethods) | **Get** /stripe_gateways/{stripeGatewayId}/payment_methods | Retrieve the payment methods associated to the stripe gateway
 [**GETStripeGatewayIdStripePayments**](HasManyApi.md#GETStripeGatewayIdStripePayments) | **Get** /stripe_gateways/{stripeGatewayId}/stripe_payments | Retrieve the stripe payments associated to the stripe gateway
 [**GETTaxCalculatorIdAttachments**](HasManyApi.md#GETTaxCalculatorIdAttachments) | **Get** /tax_calculators/{taxCalculatorId}/attachments | Retrieve the attachments associated to the tax calculator
@@ -1429,6 +1454,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETCustomerAddressIdEvents
+
+> GETCustomerAddressIdEvents(ctx, customerAddressId).Execute()
+
+Retrieve the events associated to the customer address
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerAddressId := "customerAddressId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCustomerAddressIdEvents(context.Background(), customerAddressId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerAddressIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerAddressId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerAddressIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETCustomerGroupIdAttachments
 
 > GETCustomerGroupIdAttachments(ctx, customerGroupId).Execute()
@@ -1905,6 +1998,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETCustomerIdEvents
+
+> GETCustomerIdEvents(ctx, customerId).Execute()
+
+Retrieve the events associated to the customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerId := "customerId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdEvents(context.Background(), customerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETCustomerIdOrderSubscriptions
 
 > GETCustomerIdOrderSubscriptions(ctx, customerId).Execute()
@@ -2109,6 +2270,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETCustomerPasswordResetIdEvents
+
+> GETCustomerPasswordResetIdEvents(ctx, customerPasswordResetId).Execute()
+
+Retrieve the events associated to the customer password reset
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerPasswordResetId := "customerPasswordResetId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCustomerPasswordResetIdEvents(context.Background(), customerPasswordResetId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerPasswordResetIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerPasswordResetId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerPasswordResetIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCustomerSubscriptionIdEvents
+
+> GETCustomerSubscriptionIdEvents(ctx, customerSubscriptionId).Execute()
+
+Retrieve the events associated to the customer subscription
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerSubscriptionId := "customerSubscriptionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCustomerSubscriptionIdEvents(context.Background(), customerSubscriptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerSubscriptionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerSubscriptionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerSubscriptionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETDeliveryLeadTimeIdAttachments
 
 > GETDeliveryLeadTimeIdAttachments(ctx, deliveryLeadTimeId).Execute()
@@ -2153,6 +2450,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETDeliveryLeadTimeIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETEventIdLastEventCallbacks
+
+> GETEventIdLastEventCallbacks(ctx, eventId).Execute()
+
+Retrieve the last event callbacks associated to the event
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    eventId := "eventId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETEventIdLastEventCallbacks(context.Background(), eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETEventIdLastEventCallbacks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETEventIdLastEventCallbacksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETEventIdWebhooks
+
+> GETEventIdWebhooks(ctx, eventId).Execute()
+
+Retrieve the webhooks associated to the event
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    eventId := "eventId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETEventIdWebhooks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETEventIdWebhooksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3197,6 +3630,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETGiftCardIdEvents
+
+> GETGiftCardIdEvents(ctx, giftCardId).Execute()
+
+Retrieve the events associated to the gift card
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    giftCardId := "giftCardId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETGiftCardIdEvents(context.Background(), giftCardId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGiftCardIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**giftCardId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETGiftCardIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETGiftCardRecipientIdAttachments
 
 > GETGiftCardRecipientIdAttachments(ctx, giftCardRecipientId).Execute()
@@ -3377,6 +3878,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETGoogleGeocoderIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETImportIdEvents
+
+> GETImportIdEvents(ctx, importId).Execute()
+
+Retrieve the events associated to the import
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    importId := "importId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETImportIdEvents(context.Background(), importId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETImportIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**importId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETImportIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETInStockSubscriptionIdEvents
+
+> GETInStockSubscriptionIdEvents(ctx, inStockSubscriptionId).Execute()
+
+Retrieve the events associated to the in stock subscription
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETInStockSubscriptionIdEvents(context.Background(), inStockSubscriptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETInStockSubscriptionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**inStockSubscriptionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETInStockSubscriptionIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4421,6 +5058,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETOrderCopyIdEvents
+
+> GETOrderCopyIdEvents(ctx, orderCopyId).Execute()
+
+Retrieve the events associated to the order copy
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    orderCopyId := "orderCopyId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETOrderCopyIdEvents(context.Background(), orderCopyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderCopyIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderCopyId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderCopyIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETOrderIdAttachments
 
 > GETOrderIdAttachments(ctx, orderId).Execute()
@@ -4897,6 +5602,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETOrderIdEvents
+
+> GETOrderIdEvents(ctx, orderId).Execute()
+
+Retrieve the events associated to the order
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    orderId := "orderId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETOrderIdEvents(context.Background(), orderId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETOrderIdLineItems
 
 > GETOrderIdLineItems(ctx, orderId).Execute()
@@ -5305,6 +6078,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETOrderSubscriptionIdEvents
+
+> GETOrderSubscriptionIdEvents(ctx, orderSubscriptionId).Execute()
+
+Retrieve the events associated to the order subscription
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdEvents(context.Background(), orderSubscriptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderSubscriptionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderSubscriptionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETOrderSubscriptionIdOrderCopies
 
 > GETOrderSubscriptionIdOrderCopies(ctx, orderSubscriptionId).Execute()
@@ -5621,6 +6462,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETParcelIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETParcelIdEvents
+
+> GETParcelIdEvents(ctx, parcelId).Execute()
+
+Retrieve the events associated to the parcel
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    parcelId := "parcelId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETParcelIdEvents(context.Background(), parcelId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETParcelIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**parcelId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETParcelIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6189,6 +7098,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETPriceIdPriceTiers
+
+> GETPriceIdPriceTiers(ctx, priceId).Execute()
+
+Retrieve the price tiers associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceId := "priceId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETPriceIdPriceTiers(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdPriceTiers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdPriceTiersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceIdPriceVolumeTiers
+
+> GETPriceIdPriceVolumeTiers(ctx, priceId).Execute()
+
+Retrieve the price volume tiers associated to the price
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceId := "priceId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETPriceIdPriceVolumeTiers(context.Background(), priceId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdPriceVolumeTiers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceIdPriceVolumeTiersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPriceListIdAttachments
 
 > GETPriceListIdAttachments(ctx, priceListId).Execute()
@@ -6325,6 +7370,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETPriceTierIdAttachments
+
+> GETPriceTierIdAttachments(ctx, priceTierId).Execute()
+
+Retrieve the attachments associated to the price tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceTierId := "priceTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceVolumeTierIdAttachments
+
+> GETPriceVolumeTierIdAttachments(ctx, priceVolumeTierId).Execute()
+
+Retrieve the attachments associated to the price volume tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceVolumeTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceVolumeTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceVolumeTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPromotionIdAttachments
 
 > GETPromotionIdAttachments(ctx, promotionId).Execute()
@@ -6393,6 +7574,74 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETRefundIdEvents
+
+> GETRefundIdEvents(ctx, refundId).Execute()
+
+Retrieve the events associated to the refund
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    refundId := "refundId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETRefundIdEvents(context.Background(), refundId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETRefundIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**refundId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRefundIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETReturnIdAttachments
 
 > GETReturnIdAttachments(ctx, returnId).Execute()
@@ -6437,6 +7686,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETReturnIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETReturnIdEvents
+
+> GETReturnIdEvents(ctx, returnId).Execute()
+
+Retrieve the events associated to the return
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    returnId := "returnId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETReturnIdEvents(context.Background(), returnId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETReturnIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**returnId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETReturnIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -6709,6 +8026,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShipmentIdCarrierAccountsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShipmentIdEvents
+
+> GETShipmentIdEvents(ctx, shipmentId).Execute()
+
+Retrieve the events associated to the shipment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shipmentId := "shipmentId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdEvents(context.Background(), shipmentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shipmentId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShipmentIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7117,6 +8502,278 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShippingMethodIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodIdShippingMethodTiers
+
+> GETShippingMethodIdShippingMethodTiers(ctx, shippingMethodId).Execute()
+
+Retrieve the shipping method tiers associated to the shipping method
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodIdShippingMethodTiers(context.Background(), shippingMethodId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodIdShippingMethodTiers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodIdShippingMethodTiersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodIdShippingWeightTiers
+
+> GETShippingMethodIdShippingWeightTiers(ctx, shippingMethodId).Execute()
+
+Retrieve the shipping weight tiers associated to the shipping method
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodIdShippingWeightTiers(context.Background(), shippingMethodId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodIdShippingWeightTiers``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodIdShippingWeightTiersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodTierIdAttachments
+
+> GETShippingMethodTierIdAttachments(ctx, shippingMethodTierId).Execute()
+
+Retrieve the attachments associated to the shipping method tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodTierId := "shippingMethodTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingWeightTierIdAttachments
+
+> GETShippingWeightTierIdAttachments(ctx, shippingWeightTierId).Execute()
+
+Retrieve the attachments associated to the shipping weight tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingWeightTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingWeightTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingWeightTierIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8273,6 +9930,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLocationIdStockTransfersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETStockTransferIdEvents
+
+> GETStockTransferIdEvents(ctx, stockTransferId).Execute()
+
+Retrieve the events associated to the stock transfer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    stockTransferId := "stockTransferId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETStockTransferIdEvents(context.Background(), stockTransferId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockTransferIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**stockTransferId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETStockTransferIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

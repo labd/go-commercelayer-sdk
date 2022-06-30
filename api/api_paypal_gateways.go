@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type PaypalGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalGatewayId The resource's id
-		@return ApiDELETEPaypalGatewaysPaypalGatewayIdRequest
+		@return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
 	*/
-	DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiDELETEPaypalGatewaysPaypalGatewayIdRequest
+	DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
 
 	// DELETEPaypalGatewaysPaypalGatewayIdExecute executes the request
-	DELETEPaypalGatewaysPaypalGatewayIdExecute(r ApiDELETEPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error)
+	DELETEPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error)
 
 	/*
 		GETPaypalGateways List all paypal gateways
@@ -42,12 +42,12 @@ type PaypalGatewaysApi interface {
 		List all paypal gateways
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETPaypalGatewaysRequest
+		@return PaypalGatewaysApiGETPaypalGatewaysRequest
 	*/
-	GETPaypalGateways(ctx context.Context) ApiGETPaypalGatewaysRequest
+	GETPaypalGateways(ctx context.Context) PaypalGatewaysApiGETPaypalGatewaysRequest
 
 	// GETPaypalGatewaysExecute executes the request
-	GETPaypalGatewaysExecute(r ApiGETPaypalGatewaysRequest) (*http.Response, error)
+	GETPaypalGatewaysExecute(r PaypalGatewaysApiGETPaypalGatewaysRequest) (*http.Response, error)
 
 	/*
 		GETPaypalGatewaysPaypalGatewayId Retrieve a paypal gateway
@@ -56,13 +56,13 @@ type PaypalGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalGatewayId The resource's id
-		@return ApiGETPaypalGatewaysPaypalGatewayIdRequest
+		@return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
 	*/
-	GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewaysPaypalGatewayIdRequest
+	GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
 
 	// GETPaypalGatewaysPaypalGatewayIdExecute executes the request
 	//  @return PaypalGateway
-	GETPaypalGatewaysPaypalGatewayIdExecute(r ApiGETPaypalGatewaysPaypalGatewayIdRequest) (*PaypalGateway, *http.Response, error)
+	GETPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) (*PaypalGateway, *http.Response, error)
 
 	/*
 		PATCHPaypalGatewaysPaypalGatewayId Update a paypal gateway
@@ -71,12 +71,12 @@ type PaypalGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param paypalGatewayId The resource's id
-		@return ApiPATCHPaypalGatewaysPaypalGatewayIdRequest
+		@return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
 	*/
-	PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiPATCHPaypalGatewaysPaypalGatewayIdRequest
+	PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
 
 	// PATCHPaypalGatewaysPaypalGatewayIdExecute executes the request
-	PATCHPaypalGatewaysPaypalGatewayIdExecute(r ApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error)
+	PATCHPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error)
 
 	/*
 		POSTPaypalGateways Create a paypal gateway
@@ -84,24 +84,24 @@ type PaypalGatewaysApi interface {
 		Create a paypal gateway
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTPaypalGatewaysRequest
+		@return PaypalGatewaysApiPOSTPaypalGatewaysRequest
 	*/
-	POSTPaypalGateways(ctx context.Context) ApiPOSTPaypalGatewaysRequest
+	POSTPaypalGateways(ctx context.Context) PaypalGatewaysApiPOSTPaypalGatewaysRequest
 
 	// POSTPaypalGatewaysExecute executes the request
-	POSTPaypalGatewaysExecute(r ApiPOSTPaypalGatewaysRequest) (*http.Response, error)
+	POSTPaypalGatewaysExecute(r PaypalGatewaysApiPOSTPaypalGatewaysRequest) (*http.Response, error)
 }
 
 // PaypalGatewaysApiService PaypalGatewaysApi service
 type PaypalGatewaysApiService service
 
-type ApiDELETEPaypalGatewaysPaypalGatewayIdRequest struct {
+type PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      PaypalGatewaysApi
 	paypalGatewayId string
 }
 
-func (r ApiDELETEPaypalGatewaysPaypalGatewayIdRequest) Execute() (*http.Response, error) {
+func (r PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPaypalGatewaysPaypalGatewayIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalGatewayId The resource's id
- @return ApiDELETEPaypalGatewaysPaypalGatewayIdRequest
+ @return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
-	return ApiDELETEPaypalGatewaysPaypalGatewayIdRequest{
+func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
+	return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
@@ -123,7 +123,7 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx conte
 }
 
 // Execute executes the request
-func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r ApiDELETEPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error) {
+func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalGatewaysRequest struct {
+type PaypalGatewaysApiGETPaypalGatewaysRequest struct {
 	ctx        context.Context
 	ApiService PaypalGatewaysApi
 }
 
-func (r ApiGETPaypalGatewaysRequest) Execute() (*http.Response, error) {
+func (r PaypalGatewaysApiGETPaypalGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalGatewaysExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETPaypalGateways List all paypal gateways
 List all paypal gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPaypalGatewaysRequest
+ @return PaypalGatewaysApiGETPaypalGatewaysRequest
 */
-func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) ApiGETPaypalGatewaysRequest {
-	return ApiGETPaypalGatewaysRequest{
+func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) PaypalGatewaysApiGETPaypalGatewaysRequest {
+	return PaypalGatewaysApiGETPaypalGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r ApiGETPaypalGatewaysRequest) (*http.Response, error) {
+func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiGETPaypalGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r ApiGETPaypalGatewa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalGatewaysPaypalGatewayIdRequest struct {
+type PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      PaypalGatewaysApi
 	paypalGatewayId string
 }
 
-func (r ApiGETPaypalGatewaysPaypalGatewayIdRequest) Execute() (*PaypalGateway, *http.Response, error) {
+func (r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) Execute() (*PaypalGateway, *http.Response, error) {
 	return r.ApiService.GETPaypalGatewaysPaypalGatewayIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalGatewayId The resource's id
- @return ApiGETPaypalGatewaysPaypalGatewayIdRequest
+ @return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiGETPaypalGatewaysPaypalGatewayIdRequest {
-	return ApiGETPaypalGatewaysPaypalGatewayIdRequest{
+func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest {
+	return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
@@ -304,7 +304,7 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.
 
 // Execute executes the request
 //  @return PaypalGateway
-func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r ApiGETPaypalGatewaysPaypalGatewayIdRequest) (*PaypalGateway, *http.Response, error) {
+func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) (*PaypalGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHPaypalGatewaysPaypalGatewayIdRequest struct {
+type PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest struct {
 	ctx                 context.Context
 	ApiService          PaypalGatewaysApi
 	paypalGatewayId     string
 	paypalGatewayUpdate *PaypalGatewayUpdate
 }
 
-func (r ApiPATCHPaypalGatewaysPaypalGatewayIdRequest) PaypalGatewayUpdate(paypalGatewayUpdate PaypalGatewayUpdate) ApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
+func (r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) PaypalGatewayUpdate(paypalGatewayUpdate PaypalGatewayUpdate) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
 	r.paypalGatewayUpdate = &paypalGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHPaypalGatewaysPaypalGatewayIdRequest) Execute() (*http.Response, error) {
+func (r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHPaypalGatewaysPaypalGatewayIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalGatewayId The resource's id
- @return ApiPATCHPaypalGatewaysPaypalGatewayIdRequest
+ @return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) ApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
-	return ApiPATCHPaypalGatewaysPaypalGatewayIdRequest{
+func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
+	return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
@@ -412,7 +412,7 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx contex
 }
 
 // Execute executes the request
-func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r ApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error) {
+func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTPaypalGatewaysRequest struct {
+type PaypalGatewaysApiPOSTPaypalGatewaysRequest struct {
 	ctx                 context.Context
 	ApiService          PaypalGatewaysApi
 	paypalGatewayCreate *PaypalGatewayCreate
 }
 
-func (r ApiPOSTPaypalGatewaysRequest) PaypalGatewayCreate(paypalGatewayCreate PaypalGatewayCreate) ApiPOSTPaypalGatewaysRequest {
+func (r PaypalGatewaysApiPOSTPaypalGatewaysRequest) PaypalGatewayCreate(paypalGatewayCreate PaypalGatewayCreate) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
 	r.paypalGatewayCreate = &paypalGatewayCreate
 	return r
 }
 
-func (r ApiPOSTPaypalGatewaysRequest) Execute() (*http.Response, error) {
+func (r PaypalGatewaysApiPOSTPaypalGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTPaypalGatewaysExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTPaypalGateways Create a paypal gateway
 Create a paypal gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTPaypalGatewaysRequest
+ @return PaypalGatewaysApiPOSTPaypalGatewaysRequest
 */
-func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) ApiPOSTPaypalGatewaysRequest {
-	return ApiPOSTPaypalGatewaysRequest{
+func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
+	return PaypalGatewaysApiPOSTPaypalGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r ApiPOSTPaypalGatewaysRequest) (*http.Response, error) {
+func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApiPOSTPaypalGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

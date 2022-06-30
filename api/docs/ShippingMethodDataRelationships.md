@@ -7,7 +7,10 @@ Name | Type | Description | Notes
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **ShippingZone** | Pointer to [**ShippingMethodDataRelationshipsShippingZone**](ShippingMethodDataRelationshipsShippingZone.md) |  | [optional] 
 **ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
+**StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
 **DeliveryLeadTimeForShipment** | Pointer to [**ShipmentDataRelationshipsDeliveryLeadTime**](ShipmentDataRelationshipsDeliveryLeadTime.md) |  | [optional] 
+**ShippingMethodTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingMethodTiers**](ShippingMethodDataRelationshipsShippingMethodTiers.md) |  | [optional] 
+**ShippingWeightTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingWeightTiers**](ShippingMethodDataRelationshipsShippingWeightTiers.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
@@ -104,6 +107,31 @@ SetShippingCategory sets ShippingCategory field to given value.
 
 HasShippingCategory returns a boolean if a field has been set.
 
+### GetStockLocation
+
+`func (o *ShippingMethodDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+
+GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
+
+### GetStockLocationOk
+
+`func (o *ShippingMethodDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+
+GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStockLocation
+
+`func (o *ShippingMethodDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+
+SetStockLocation sets StockLocation field to given value.
+
+### HasStockLocation
+
+`func (o *ShippingMethodDataRelationships) HasStockLocation() bool`
+
+HasStockLocation returns a boolean if a field has been set.
+
 ### GetDeliveryLeadTimeForShipment
 
 `func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipment() ShipmentDataRelationshipsDeliveryLeadTime`
@@ -128,6 +156,56 @@ SetDeliveryLeadTimeForShipment sets DeliveryLeadTimeForShipment field to given v
 `func (o *ShippingMethodDataRelationships) HasDeliveryLeadTimeForShipment() bool`
 
 HasDeliveryLeadTimeForShipment returns a boolean if a field has been set.
+
+### GetShippingMethodTiers
+
+`func (o *ShippingMethodDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers`
+
+GetShippingMethodTiers returns the ShippingMethodTiers field if non-nil, zero value otherwise.
+
+### GetShippingMethodTiersOk
+
+`func (o *ShippingMethodDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool)`
+
+GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingMethodTiers
+
+`func (o *ShippingMethodDataRelationships) SetShippingMethodTiers(v ShippingMethodDataRelationshipsShippingMethodTiers)`
+
+SetShippingMethodTiers sets ShippingMethodTiers field to given value.
+
+### HasShippingMethodTiers
+
+`func (o *ShippingMethodDataRelationships) HasShippingMethodTiers() bool`
+
+HasShippingMethodTiers returns a boolean if a field has been set.
+
+### GetShippingWeightTiers
+
+`func (o *ShippingMethodDataRelationships) GetShippingWeightTiers() ShippingMethodDataRelationshipsShippingWeightTiers`
+
+GetShippingWeightTiers returns the ShippingWeightTiers field if non-nil, zero value otherwise.
+
+### GetShippingWeightTiersOk
+
+`func (o *ShippingMethodDataRelationships) GetShippingWeightTiersOk() (*ShippingMethodDataRelationshipsShippingWeightTiers, bool)`
+
+GetShippingWeightTiersOk returns a tuple with the ShippingWeightTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingWeightTiers
+
+`func (o *ShippingMethodDataRelationships) SetShippingWeightTiers(v ShippingMethodDataRelationshipsShippingWeightTiers)`
+
+SetShippingWeightTiers sets ShippingWeightTiers field to given value.
+
+### HasShippingWeightTiers
+
+`func (o *ShippingMethodDataRelationships) HasShippingWeightTiers() bool`
+
+HasShippingWeightTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 

@@ -36,11 +36,15 @@ Method | HTTP request | Description
 [**GETPercentageDiscountPromotionIdAttachments**](AttachmentsApi.md#GETPercentageDiscountPromotionIdAttachments) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/attachments | Retrieve the attachments associated to the percentage discount promotion
 [**GETPriceIdAttachments**](AttachmentsApi.md#GETPriceIdAttachments) | **Get** /prices/{priceId}/attachments | Retrieve the attachments associated to the price
 [**GETPriceListIdAttachments**](AttachmentsApi.md#GETPriceListIdAttachments) | **Get** /price_lists/{priceListId}/attachments | Retrieve the attachments associated to the price list
+[**GETPriceTierIdAttachments**](AttachmentsApi.md#GETPriceTierIdAttachments) | **Get** /price_tiers/{priceTierId}/attachments | Retrieve the attachments associated to the price tier
+[**GETPriceVolumeTierIdAttachments**](AttachmentsApi.md#GETPriceVolumeTierIdAttachments) | **Get** /price_volume_tiers/{priceVolumeTierId}/attachments | Retrieve the attachments associated to the price volume tier
 [**GETPromotionIdAttachments**](AttachmentsApi.md#GETPromotionIdAttachments) | **Get** /promotions/{promotionId}/attachments | Retrieve the attachments associated to the promotion
 [**GETReturnIdAttachments**](AttachmentsApi.md#GETReturnIdAttachments) | **Get** /returns/{returnId}/attachments | Retrieve the attachments associated to the return
 [**GETShipmentIdAttachments**](AttachmentsApi.md#GETShipmentIdAttachments) | **Get** /shipments/{shipmentId}/attachments | Retrieve the attachments associated to the shipment
 [**GETShippingCategoryIdAttachments**](AttachmentsApi.md#GETShippingCategoryIdAttachments) | **Get** /shipping_categories/{shippingCategoryId}/attachments | Retrieve the attachments associated to the shipping category
 [**GETShippingMethodIdAttachments**](AttachmentsApi.md#GETShippingMethodIdAttachments) | **Get** /shipping_methods/{shippingMethodId}/attachments | Retrieve the attachments associated to the shipping method
+[**GETShippingMethodTierIdAttachments**](AttachmentsApi.md#GETShippingMethodTierIdAttachments) | **Get** /shipping_method_tiers/{shippingMethodTierId}/attachments | Retrieve the attachments associated to the shipping method tier
+[**GETShippingWeightTierIdAttachments**](AttachmentsApi.md#GETShippingWeightTierIdAttachments) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/attachments | Retrieve the attachments associated to the shipping weight tier
 [**GETShippingZoneIdAttachments**](AttachmentsApi.md#GETShippingZoneIdAttachments) | **Get** /shipping_zones/{shippingZoneId}/attachments | Retrieve the attachments associated to the shipping zone
 [**GETSkuIdAttachments**](AttachmentsApi.md#GETSkuIdAttachments) | **Get** /skus/{skuId}/attachments | Retrieve the attachments associated to the SKU
 [**GETSkuOptionIdAttachments**](AttachmentsApi.md#GETSkuOptionIdAttachments) | **Get** /sku_options/{skuOptionId}/attachments | Retrieve the attachments associated to the SKU option
@@ -2223,6 +2227,142 @@ No authorization required
 [[Back to README]](../README.md)
 
 
+## GETPriceTierIdAttachments
+
+> GETPriceTierIdAttachments(ctx, priceTierId).Execute()
+
+Retrieve the attachments associated to the price tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceTierId := "priceTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttachmentsApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceVolumeTierIdAttachments
+
+> GETPriceVolumeTierIdAttachments(ctx, priceVolumeTierId).Execute()
+
+Retrieve the attachments associated to the price volume tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttachmentsApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceVolumeTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceVolumeTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceVolumeTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETPromotionIdAttachments
 
 > GETPromotionIdAttachments(ctx, promotionId).Execute()
@@ -2539,6 +2679,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETShippingMethodIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingMethodTierIdAttachments
+
+> GETShippingMethodTierIdAttachments(ctx, shippingMethodTierId).Execute()
+
+Retrieve the attachments associated to the shipping method tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingMethodTierId := "shippingMethodTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttachmentsApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingMethodTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingMethodTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingMethodTierIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETShippingWeightTierIdAttachments
+
+> GETShippingWeightTierIdAttachments(ctx, shippingWeightTierId).Execute()
+
+Retrieve the attachments associated to the shipping weight tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttachmentsApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingWeightTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**shippingWeightTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETShippingWeightTierIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

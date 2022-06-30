@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type PercentageDiscountPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+		@return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 	*/
-	DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+	DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 
 	// DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute executes the request
-	DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error)
+	DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotions List all percentage discount promotions
@@ -42,12 +42,12 @@ type PercentageDiscountPromotionsApi interface {
 		List all percentage discount promotions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETPercentageDiscountPromotionsRequest
+		@return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest
 	*/
-	GETPercentageDiscountPromotions(ctx context.Context) ApiGETPercentageDiscountPromotionsRequest
+	GETPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest
 
 	// GETPercentageDiscountPromotionsExecute executes the request
-	GETPercentageDiscountPromotionsExecute(r ApiGETPercentageDiscountPromotionsRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionsPercentageDiscountPromotionId Retrieve a percentage discount promotion
@@ -56,13 +56,13 @@ type PercentageDiscountPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+		@return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 	*/
-	GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+	GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 
 	// GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute executes the request
 	//  @return PercentageDiscountPromotion
-	GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotion, *http.Response, error)
+	GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotion, *http.Response, error)
 
 	/*
 		PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId Update a percentage discount promotion
@@ -71,12 +71,12 @@ type PercentageDiscountPromotionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+		@return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 	*/
-	PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+	PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 
 	// PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute executes the request
-	PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error)
+	PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error)
 
 	/*
 		POSTPercentageDiscountPromotions Create a percentage discount promotion
@@ -84,24 +84,24 @@ type PercentageDiscountPromotionsApi interface {
 		Create a percentage discount promotion
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTPercentageDiscountPromotionsRequest
+		@return PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest
 	*/
-	POSTPercentageDiscountPromotions(ctx context.Context) ApiPOSTPercentageDiscountPromotionsRequest
+	POSTPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest
 
 	// POSTPercentageDiscountPromotionsExecute executes the request
-	POSTPercentageDiscountPromotionsExecute(r ApiPOSTPercentageDiscountPromotionsRequest) (*http.Response, error)
+	POSTPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) (*http.Response, error)
 }
 
 // PercentageDiscountPromotionsApiService PercentageDiscountPromotionsApi service
 type PercentageDiscountPromotionsApiService service
 
-type ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
+type PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
 	ctx                           context.Context
 	ApiService                    PercentageDiscountPromotionsApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*http.Response, error) {
+func (r PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+ @return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
-	return ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
+func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+	return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -123,7 +123,7 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 }
 
 // Execute executes the request
-func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error) {
+func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionsRequest struct {
+type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest struct {
 	ctx        context.Context
 	ApiService PercentageDiscountPromotionsApi
 }
 
-func (r ApiGETPercentageDiscountPromotionsRequest) Execute() (*http.Response, error) {
+func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionsExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETPercentageDiscountPromotions List all percentage discount promotions
 List all percentage discount promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPercentageDiscountPromotionsRequest
+ @return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest
 */
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions(ctx context.Context) ApiGETPercentageDiscountPromotionsRequest {
-	return ApiGETPercentageDiscountPromotionsRequest{
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest {
+	return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsExecute(r ApiGETPercentageDiscountPromotionsRequest) (*http.Response, error) {
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
+type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
 	ctx                           context.Context
 	ApiService                    PercentageDiscountPromotionsApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*PercentageDiscountPromotion, *http.Response, error) {
+func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*PercentageDiscountPromotion, *http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+ @return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
-	return ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+	return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -304,7 +304,7 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 
 // Execute executes the request
 //  @return PercentageDiscountPromotion
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotion, *http.Response, error) {
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotion, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
+type PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
 	ctx                               context.Context
 	ApiService                        PercentageDiscountPromotionsApi
 	percentageDiscountPromotionId     string
 	percentageDiscountPromotionUpdate *PercentageDiscountPromotionUpdate
 }
 
-func (r ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate PercentageDiscountPromotionUpdate) ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate PercentageDiscountPromotionUpdate) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	r.percentageDiscountPromotionUpdate = &percentageDiscountPromotionUpdate
 	return r
 }
 
-func (r ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*http.Response, error) {
+func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+ @return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
-	return ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
+func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+	return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -412,7 +412,7 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 }
 
 // Execute executes the request
-func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r ApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error) {
+func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTPercentageDiscountPromotionsRequest struct {
+type PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest struct {
 	ctx                               context.Context
 	ApiService                        PercentageDiscountPromotionsApi
 	percentageDiscountPromotionCreate *PercentageDiscountPromotionCreate
 }
 
-func (r ApiPOSTPercentageDiscountPromotionsRequest) PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate PercentageDiscountPromotionCreate) ApiPOSTPercentageDiscountPromotionsRequest {
+func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate PercentageDiscountPromotionCreate) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest {
 	r.percentageDiscountPromotionCreate = &percentageDiscountPromotionCreate
 	return r
 }
 
-func (r ApiPOSTPercentageDiscountPromotionsRequest) Execute() (*http.Response, error) {
+func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTPercentageDiscountPromotionsExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTPercentageDiscountPromotions Create a percentage discount promotion
 Create a percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTPercentageDiscountPromotionsRequest
+ @return PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest
 */
-func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotions(ctx context.Context) ApiPOSTPercentageDiscountPromotionsRequest {
-	return ApiPOSTPercentageDiscountPromotionsRequest{
+func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest {
+	return PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotionsExecute(r ApiPOSTPercentageDiscountPromotionsRequest) (*http.Response, error) {
+func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type StripePaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiDELETEStripePaymentsStripePaymentIdRequest
+		@return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest
 	*/
-	DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiDELETEStripePaymentsStripePaymentIdRequest
+	DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest
 
 	// DELETEStripePaymentsStripePaymentIdExecute executes the request
-	DELETEStripePaymentsStripePaymentIdExecute(r ApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error)
+	DELETEStripePaymentsStripePaymentIdExecute(r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error)
 
 	/*
 		GETStripeGatewayIdStripePayments Retrieve the stripe payments associated to the stripe gateway
@@ -43,12 +43,12 @@ type StripePaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripeGatewayId The resource's id
-		@return ApiGETStripeGatewayIdStripePaymentsRequest
+		@return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest
 	*/
-	GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdStripePaymentsRequest
+	GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest
 
 	// GETStripeGatewayIdStripePaymentsExecute executes the request
-	GETStripeGatewayIdStripePaymentsExecute(r ApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error)
+	GETStripeGatewayIdStripePaymentsExecute(r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error)
 
 	/*
 		GETStripePayments List all stripe payments
@@ -56,12 +56,12 @@ type StripePaymentsApi interface {
 		List all stripe payments
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETStripePaymentsRequest
+		@return StripePaymentsApiGETStripePaymentsRequest
 	*/
-	GETStripePayments(ctx context.Context) ApiGETStripePaymentsRequest
+	GETStripePayments(ctx context.Context) StripePaymentsApiGETStripePaymentsRequest
 
 	// GETStripePaymentsExecute executes the request
-	GETStripePaymentsExecute(r ApiGETStripePaymentsRequest) (*http.Response, error)
+	GETStripePaymentsExecute(r StripePaymentsApiGETStripePaymentsRequest) (*http.Response, error)
 
 	/*
 		GETStripePaymentsStripePaymentId Retrieve a stripe payment
@@ -70,13 +70,13 @@ type StripePaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiGETStripePaymentsStripePaymentIdRequest
+		@return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest
 	*/
-	GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiGETStripePaymentsStripePaymentIdRequest
+	GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest
 
 	// GETStripePaymentsStripePaymentIdExecute executes the request
 	//  @return StripePayment
-	GETStripePaymentsStripePaymentIdExecute(r ApiGETStripePaymentsStripePaymentIdRequest) (*StripePayment, *http.Response, error)
+	GETStripePaymentsStripePaymentIdExecute(r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) (*StripePayment, *http.Response, error)
 
 	/*
 		PATCHStripePaymentsStripePaymentId Update a stripe payment
@@ -85,12 +85,12 @@ type StripePaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stripePaymentId The resource's id
-		@return ApiPATCHStripePaymentsStripePaymentIdRequest
+		@return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest
 	*/
-	PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiPATCHStripePaymentsStripePaymentIdRequest
+	PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest
 
 	// PATCHStripePaymentsStripePaymentIdExecute executes the request
-	PATCHStripePaymentsStripePaymentIdExecute(r ApiPATCHStripePaymentsStripePaymentIdRequest) (*http.Response, error)
+	PATCHStripePaymentsStripePaymentIdExecute(r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) (*http.Response, error)
 
 	/*
 		POSTStripePayments Create a stripe payment
@@ -98,24 +98,24 @@ type StripePaymentsApi interface {
 		Create a stripe payment
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTStripePaymentsRequest
+		@return StripePaymentsApiPOSTStripePaymentsRequest
 	*/
-	POSTStripePayments(ctx context.Context) ApiPOSTStripePaymentsRequest
+	POSTStripePayments(ctx context.Context) StripePaymentsApiPOSTStripePaymentsRequest
 
 	// POSTStripePaymentsExecute executes the request
-	POSTStripePaymentsExecute(r ApiPOSTStripePaymentsRequest) (*http.Response, error)
+	POSTStripePaymentsExecute(r StripePaymentsApiPOSTStripePaymentsRequest) (*http.Response, error)
 }
 
 // StripePaymentsApiService StripePaymentsApi service
 type StripePaymentsApiService service
 
-type ApiDELETEStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      StripePaymentsApi
 	stripePaymentId string
 }
 
-func (r ApiDELETEStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -126,10 +126,10 @@ Delete a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiDELETEStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiDELETEStripePaymentsStripePaymentIdRequest {
-	return ApiDELETEStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -137,7 +137,7 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx conte
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r ApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +201,13 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewayIdStripePaymentsRequest struct {
+type StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest struct {
 	ctx             context.Context
 	ApiService      StripePaymentsApi
 	stripeGatewayId string
 }
 
-func (r ApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripeGatewayIdStripePaymentsExecute(r)
 }
 
@@ -218,10 +218,10 @@ Retrieve the stripe payments associated to the stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiGETStripeGatewayIdStripePaymentsRequest
+ @return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdStripePaymentsRequest {
-	return ApiGETStripeGatewayIdStripePaymentsRequest{
+func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest {
+	return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -229,7 +229,7 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r ApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +293,12 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentsRequest struct {
+type StripePaymentsApiGETStripePaymentsRequest struct {
 	ctx        context.Context
 	ApiService StripePaymentsApi
 }
 
-func (r ApiGETStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiGETStripePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripePaymentsExecute(r)
 }
 
@@ -308,17 +308,17 @@ GETStripePayments List all stripe payments
 List all stripe payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStripePaymentsRequest
+ @return StripePaymentsApiGETStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) ApiGETStripePaymentsRequest {
-	return ApiGETStripePaymentsRequest{
+func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) StripePaymentsApiGETStripePaymentsRequest {
+	return StripePaymentsApiGETStripePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymentsRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiGETStripePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +381,13 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymen
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiGETStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      StripePaymentsApi
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentsStripePaymentIdRequest) Execute() (*StripePayment, *http.Response, error) {
+func (r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) Execute() (*StripePayment, *http.Response, error) {
 	return r.ApiService.GETStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -398,10 +398,10 @@ Retrieve a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiGETStripePaymentsStripePaymentIdRequest {
-	return ApiGETStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -410,7 +410,7 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.
 
 // Execute executes the request
 //  @return StripePayment
-func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r ApiGETStripePaymentsStripePaymentIdRequest) (*StripePayment, *http.Response, error) {
+func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) (*StripePayment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +484,19 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest struct {
 	ctx                 context.Context
 	ApiService          StripePaymentsApi
 	stripePaymentId     string
 	stripePaymentUpdate *StripePaymentUpdate
 }
 
-func (r ApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) ApiPATCHStripePaymentsStripePaymentIdRequest {
+func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
 	r.stripePaymentUpdate = &stripePaymentUpdate
 	return r
 }
 
-func (r ApiPATCHStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -507,10 +507,10 @@ Update a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiPATCHStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiPATCHStripePaymentsStripePaymentIdRequest {
-	return ApiPATCHStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -518,7 +518,7 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx contex
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r ApiPATCHStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +587,18 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTStripePaymentsRequest struct {
+type StripePaymentsApiPOSTStripePaymentsRequest struct {
 	ctx                 context.Context
 	ApiService          StripePaymentsApi
 	stripePaymentCreate *StripePaymentCreate
 }
 
-func (r ApiPOSTStripePaymentsRequest) StripePaymentCreate(stripePaymentCreate StripePaymentCreate) ApiPOSTStripePaymentsRequest {
+func (r StripePaymentsApiPOSTStripePaymentsRequest) StripePaymentCreate(stripePaymentCreate StripePaymentCreate) StripePaymentsApiPOSTStripePaymentsRequest {
 	r.stripePaymentCreate = &stripePaymentCreate
 	return r
 }
 
-func (r ApiPOSTStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiPOSTStripePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTStripePaymentsExecute(r)
 }
 
@@ -608,17 +608,17 @@ POSTStripePayments Create a stripe payment
 Create a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStripePaymentsRequest
+ @return StripePaymentsApiPOSTStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) ApiPOSTStripePaymentsRequest {
-	return ApiPOSTStripePaymentsRequest{
+func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) StripePaymentsApiPOSTStripePaymentsRequest {
+	return StripePaymentsApiPOSTStripePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaymentsRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApiPOSTStripePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

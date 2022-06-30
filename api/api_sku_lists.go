@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiDELETESkuListsSkuListIdRequest
+		@return SkuListsApiDELETESkuListsSkuListIdRequest
 	*/
-	DELETESkuListsSkuListId(ctx context.Context, skuListId string) ApiDELETESkuListsSkuListIdRequest
+	DELETESkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiDELETESkuListsSkuListIdRequest
 
 	// DELETESkuListsSkuListIdExecute executes the request
-	DELETESkuListsSkuListIdExecute(r ApiDELETESkuListsSkuListIdRequest) (*http.Response, error)
+	DELETESkuListsSkuListIdExecute(r SkuListsApiDELETESkuListsSkuListIdRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdSkuList Retrieve the sku list associated to the bundle
@@ -43,12 +43,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdSkuListRequest
+		@return SkuListsApiGETBundleIdSkuListRequest
 	*/
-	GETBundleIdSkuList(ctx context.Context, bundleId string) ApiGETBundleIdSkuListRequest
+	GETBundleIdSkuList(ctx context.Context, bundleId string) SkuListsApiGETBundleIdSkuListRequest
 
 	// GETBundleIdSkuListExecute executes the request
-	GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequest) (*http.Response, error)
+	GETBundleIdSkuListExecute(r SkuListsApiGETBundleIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdSkuList Retrieve the sku list associated to the fixed price promotion
@@ -57,12 +57,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdSkuListRequest
+		@return SkuListsApiGETFixedPricePromotionIdSkuListRequest
 	*/
-	GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListRequest
+	GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) SkuListsApiGETFixedPricePromotionIdSkuListRequest
 
 	// GETFixedPricePromotionIdSkuListExecute executes the request
-	GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error)
+	GETFixedPricePromotionIdSkuListExecute(r SkuListsApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdSkuList Retrieve the sku list associated to the free gift promotion
@@ -71,12 +71,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdSkuListRequest
+		@return SkuListsApiGETFreeGiftPromotionIdSkuListRequest
 	*/
-	GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListRequest
+	GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) SkuListsApiGETFreeGiftPromotionIdSkuListRequest
 
 	// GETFreeGiftPromotionIdSkuListExecute executes the request
-	GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdSkuListExecute(r SkuListsApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdSkuList Retrieve the sku list associated to the percentage discount promotion
@@ -85,12 +85,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdSkuListRequest
+		@return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
 	*/
-	GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListRequest
+	GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
 
 	// GETPercentageDiscountPromotionIdSkuListExecute executes the request
-	GETPercentageDiscountPromotionIdSkuListExecute(r ApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdSkuListExecute(r SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETSkuListItemIdSkuList Retrieve the sku list associated to the SKU list item
@@ -99,12 +99,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListItemId The resource's id
-		@return ApiGETSkuListItemIdSkuListRequest
+		@return SkuListsApiGETSkuListItemIdSkuListRequest
 	*/
-	GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuListRequest
+	GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) SkuListsApiGETSkuListItemIdSkuListRequest
 
 	// GETSkuListItemIdSkuListExecute executes the request
-	GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdSkuListRequest) (*http.Response, error)
+	GETSkuListItemIdSkuListExecute(r SkuListsApiGETSkuListItemIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETSkuListPromotionRuleIdSkuList Retrieve the sku list associated to the SKU list promotion rule
@@ -113,12 +113,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListPromotionRuleId The resource's id
-		@return ApiGETSkuListPromotionRuleIdSkuListRequest
+		@return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
 	*/
-	GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkuListRequest
+	GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
 
 	// GETSkuListPromotionRuleIdSkuListExecute executes the request
-	GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error)
+	GETSkuListPromotionRuleIdSkuListExecute(r SkuListsApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error)
 
 	/*
 		GETSkuLists List all SKU lists
@@ -126,12 +126,12 @@ type SkuListsApi interface {
 		List all SKU lists
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETSkuListsRequest
+		@return SkuListsApiGETSkuListsRequest
 	*/
-	GETSkuLists(ctx context.Context) ApiGETSkuListsRequest
+	GETSkuLists(ctx context.Context) SkuListsApiGETSkuListsRequest
 
 	// GETSkuListsExecute executes the request
-	GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.Response, error)
+	GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*http.Response, error)
 
 	/*
 		GETSkuListsSkuListId Retrieve a SKU list
@@ -140,13 +140,13 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiGETSkuListsSkuListIdRequest
+		@return SkuListsApiGETSkuListsSkuListIdRequest
 	*/
-	GETSkuListsSkuListId(ctx context.Context, skuListId string) ApiGETSkuListsSkuListIdRequest
+	GETSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiGETSkuListsSkuListIdRequest
 
 	// GETSkuListsSkuListIdExecute executes the request
 	//  @return SkuList
-	GETSkuListsSkuListIdExecute(r ApiGETSkuListsSkuListIdRequest) (*SkuList, *http.Response, error)
+	GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*SkuList, *http.Response, error)
 
 	/*
 		PATCHSkuListsSkuListId Update a SKU list
@@ -155,12 +155,12 @@ type SkuListsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiPATCHSkuListsSkuListIdRequest
+		@return SkuListsApiPATCHSkuListsSkuListIdRequest
 	*/
-	PATCHSkuListsSkuListId(ctx context.Context, skuListId string) ApiPATCHSkuListsSkuListIdRequest
+	PATCHSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiPATCHSkuListsSkuListIdRequest
 
 	// PATCHSkuListsSkuListIdExecute executes the request
-	PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSkuListIdRequest) (*http.Response, error)
+	PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*http.Response, error)
 
 	/*
 		POSTSkuLists Create a SKU list
@@ -168,24 +168,24 @@ type SkuListsApi interface {
 		Create a SKU list
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTSkuListsRequest
+		@return SkuListsApiPOSTSkuListsRequest
 	*/
-	POSTSkuLists(ctx context.Context) ApiPOSTSkuListsRequest
+	POSTSkuLists(ctx context.Context) SkuListsApiPOSTSkuListsRequest
 
 	// POSTSkuListsExecute executes the request
-	POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*http.Response, error)
+	POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*http.Response, error)
 }
 
 // SkuListsApiService SkuListsApi service
 type SkuListsApiService service
 
-type ApiDELETESkuListsSkuListIdRequest struct {
+type SkuListsApiDELETESkuListsSkuListIdRequest struct {
 	ctx        context.Context
 	ApiService SkuListsApi
 	skuListId  string
 }
 
-func (r ApiDELETESkuListsSkuListIdRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiDELETESkuListsSkuListIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkuListsSkuListIdExecute(r)
 }
 
@@ -196,10 +196,10 @@ Delete a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiDELETESkuListsSkuListIdRequest
+ @return SkuListsApiDELETESkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuListId string) ApiDELETESkuListsSkuListIdRequest {
-	return ApiDELETESkuListsSkuListIdRequest{
+func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiDELETESkuListsSkuListIdRequest {
+	return SkuListsApiDELETESkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -207,7 +207,7 @@ func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuLis
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r ApiDELETESkuListsSkuListIdRequest) (*http.Response, error) {
+func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r SkuListsApiDELETESkuListsSkuListIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -271,13 +271,13 @@ func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r ApiDELETESkuListsS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdSkuListRequest struct {
+type SkuListsApiGETBundleIdSkuListRequest struct {
 	ctx        context.Context
 	ApiService SkuListsApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdSkuListExecute(r)
 }
 
@@ -288,10 +288,10 @@ Retrieve the sku list associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdSkuListRequest
+ @return SkuListsApiGETBundleIdSkuListRequest
 */
-func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) ApiGETBundleIdSkuListRequest {
-	return ApiGETBundleIdSkuListRequest{
+func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) SkuListsApiGETBundleIdSkuListRequest {
+	return SkuListsApiGETBundleIdSkuListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -299,7 +299,7 @@ func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId st
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETBundleIdSkuListExecute(r SkuListsApiGETBundleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -363,13 +363,13 @@ func (a *SkuListsApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkuListRequest struct {
+type SkuListsApiGETFixedPricePromotionIdSkuListRequest struct {
 	ctx                   context.Context
 	ApiService            SkuListsApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkuListExecute(r)
 }
 
@@ -380,10 +380,10 @@ Retrieve the sku list associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkuListRequest
+ @return SkuListsApiGETFixedPricePromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListRequest {
-	return ApiGETFixedPricePromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) SkuListsApiGETFixedPricePromotionIdSkuListRequest {
+	return SkuListsApiGETFixedPricePromotionIdSkuListRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -391,7 +391,7 @@ func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r SkuListsApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -455,13 +455,13 @@ func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkuListRequest struct {
+type SkuListsApiGETFreeGiftPromotionIdSkuListRequest struct {
 	ctx                 context.Context
 	ApiService          SkuListsApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkuListExecute(r)
 }
 
@@ -472,10 +472,10 @@ Retrieve the sku list associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkuListRequest
+ @return SkuListsApiGETFreeGiftPromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListRequest {
-	return ApiGETFreeGiftPromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) SkuListsApiGETFreeGiftPromotionIdSkuListRequest {
+	return SkuListsApiGETFreeGiftPromotionIdSkuListRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -483,7 +483,7 @@ func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r SkuListsApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -547,13 +547,13 @@ func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkuListRequest struct {
+type SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest struct {
 	ctx                           context.Context
 	ApiService                    SkuListsApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkuListExecute(r)
 }
 
@@ -564,10 +564,10 @@ Retrieve the sku list associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkuListRequest
+ @return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListRequest {
-	return ApiGETPercentageDiscountPromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest {
+	return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -575,7 +575,7 @@ func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r ApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -639,13 +639,13 @@ func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemIdSkuListRequest struct {
+type SkuListsApiGETSkuListItemIdSkuListRequest struct {
 	ctx           context.Context
 	ApiService    SkuListsApi
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListItemIdSkuListExecute(r)
 }
 
@@ -656,10 +656,10 @@ Retrieve the sku list associated to the SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemIdSkuListRequest
+ @return SkuListsApiGETSkuListItemIdSkuListRequest
 */
-func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuListRequest {
-	return ApiGETSkuListItemIdSkuListRequest{
+func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) SkuListsApiGETSkuListItemIdSkuListRequest {
+	return SkuListsApiGETSkuListItemIdSkuListRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -667,7 +667,7 @@ func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuLis
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r SkuListsApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -731,13 +731,13 @@ func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListPromotionRuleIdSkuListRequest struct {
+type SkuListsApiGETSkuListPromotionRuleIdSkuListRequest struct {
 	ctx                    context.Context
 	ApiService             SkuListsApi
 	skuListPromotionRuleId string
 }
 
-func (r ApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRuleIdSkuListExecute(r)
 }
 
@@ -748,10 +748,10 @@ Retrieve the sku list associated to the SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return ApiGETSkuListPromotionRuleIdSkuListRequest
+ @return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
 */
-func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkuListRequest {
-	return ApiGETSkuListPromotionRuleIdSkuListRequest{
+func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) SkuListsApiGETSkuListPromotionRuleIdSkuListRequest {
+	return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -759,7 +759,7 @@ func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r SkuListsApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -823,12 +823,12 @@ func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSku
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListsRequest struct {
+type SkuListsApiGETSkuListsRequest struct {
 	ctx        context.Context
 	ApiService SkuListsApi
 }
 
-func (r ApiGETSkuListsRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListsExecute(r)
 }
 
@@ -838,17 +838,17 @@ GETSkuLists List all SKU lists
 List all SKU lists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETSkuListsRequest
+ @return SkuListsApiGETSkuListsRequest
 */
-func (a *SkuListsApiService) GETSkuLists(ctx context.Context) ApiGETSkuListsRequest {
-	return ApiGETSkuListsRequest{
+func (a *SkuListsApiService) GETSkuLists(ctx context.Context) SkuListsApiGETSkuListsRequest {
+	return SkuListsApiGETSkuListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -911,13 +911,13 @@ func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListsSkuListIdRequest struct {
+type SkuListsApiGETSkuListsSkuListIdRequest struct {
 	ctx        context.Context
 	ApiService SkuListsApi
 	skuListId  string
 }
 
-func (r ApiGETSkuListsSkuListIdRequest) Execute() (*SkuList, *http.Response, error) {
+func (r SkuListsApiGETSkuListsSkuListIdRequest) Execute() (*SkuList, *http.Response, error) {
 	return r.ApiService.GETSkuListsSkuListIdExecute(r)
 }
 
@@ -928,10 +928,10 @@ Retrieve a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListsSkuListIdRequest
+ @return SkuListsApiGETSkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId string) ApiGETSkuListsSkuListIdRequest {
-	return ApiGETSkuListsSkuListIdRequest{
+func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiGETSkuListsSkuListIdRequest {
+	return SkuListsApiGETSkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -940,7 +940,7 @@ func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId
 
 // Execute executes the request
 //  @return SkuList
-func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r ApiGETSkuListsSkuListIdRequest) (*SkuList, *http.Response, error) {
+func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*SkuList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1014,19 +1014,19 @@ func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r ApiGETSkuListsSkuList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHSkuListsSkuListIdRequest struct {
+type SkuListsApiPATCHSkuListsSkuListIdRequest struct {
 	ctx           context.Context
 	ApiService    SkuListsApi
 	skuListId     string
 	skuListUpdate *SkuListUpdate
 }
 
-func (r ApiPATCHSkuListsSkuListIdRequest) SkuListUpdate(skuListUpdate SkuListUpdate) ApiPATCHSkuListsSkuListIdRequest {
+func (r SkuListsApiPATCHSkuListsSkuListIdRequest) SkuListUpdate(skuListUpdate SkuListUpdate) SkuListsApiPATCHSkuListsSkuListIdRequest {
 	r.skuListUpdate = &skuListUpdate
 	return r
 }
 
-func (r ApiPATCHSkuListsSkuListIdRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiPATCHSkuListsSkuListIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHSkuListsSkuListIdExecute(r)
 }
 
@@ -1037,10 +1037,10 @@ Update a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiPATCHSkuListsSkuListIdRequest
+ @return SkuListsApiPATCHSkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuListId string) ApiPATCHSkuListsSkuListIdRequest {
-	return ApiPATCHSkuListsSkuListIdRequest{
+func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiPATCHSkuListsSkuListIdRequest {
+	return SkuListsApiPATCHSkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -1048,7 +1048,7 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuList
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSkuListIdRequest) (*http.Response, error) {
+func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1117,18 +1117,18 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSku
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTSkuListsRequest struct {
+type SkuListsApiPOSTSkuListsRequest struct {
 	ctx           context.Context
 	ApiService    SkuListsApi
 	skuListCreate *SkuListCreate
 }
 
-func (r ApiPOSTSkuListsRequest) SkuListCreate(skuListCreate SkuListCreate) ApiPOSTSkuListsRequest {
+func (r SkuListsApiPOSTSkuListsRequest) SkuListCreate(skuListCreate SkuListCreate) SkuListsApiPOSTSkuListsRequest {
 	r.skuListCreate = &skuListCreate
 	return r
 }
 
-func (r ApiPOSTSkuListsRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiPOSTSkuListsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTSkuListsExecute(r)
 }
 
@@ -1138,17 +1138,17 @@ POSTSkuLists Create a SKU list
 Create a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTSkuListsRequest
+ @return SkuListsApiPOSTSkuListsRequest
 */
-func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) ApiPOSTSkuListsRequest {
-	return ApiPOSTSkuListsRequest{
+func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) SkuListsApiPOSTSkuListsRequest {
+	return SkuListsApiPOSTSkuListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*http.Response, error) {
+func (a *SkuListsApiService) POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

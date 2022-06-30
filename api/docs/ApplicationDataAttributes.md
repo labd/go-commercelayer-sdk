@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The application&#39;s internal name. | [optional] 
 **Kind** | Pointer to **string** | The application&#39;s kind, can be one of: &#39;sales_channel&#39;, &#39;checkout&#39;, &#39;contentful&#39;, &#39;datocms&#39;, &#39;sanity&#39;, &#39;cli&#39;, &#39;integration&#39;, &#39;webapp&#39;, &#39;zapier&#39;, or &#39;channel&#39; | [optional] 
-**PublicAccess** | Pointer to **string** | Indicates if the application has public access. | [optional] 
+**PublicAccess** | Pointer to **bool** | Indicates if the application has public access. | [optional] 
 **RedirectUri** | Pointer to **string** | The application&#39;s redirect URI. | [optional] 
 **Scopes** | Pointer to **string** | The application&#39;s scopes. | [optional] 
 **Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
@@ -87,20 +87,20 @@ HasKind returns a boolean if a field has been set.
 
 ### GetPublicAccess
 
-`func (o *ApplicationDataAttributes) GetPublicAccess() string`
+`func (o *ApplicationDataAttributes) GetPublicAccess() bool`
 
 GetPublicAccess returns the PublicAccess field if non-nil, zero value otherwise.
 
 ### GetPublicAccessOk
 
-`func (o *ApplicationDataAttributes) GetPublicAccessOk() (*string, bool)`
+`func (o *ApplicationDataAttributes) GetPublicAccessOk() (*bool, bool)`
 
 GetPublicAccessOk returns a tuple with the PublicAccess field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPublicAccess
 
-`func (o *ApplicationDataAttributes) SetPublicAccess(v string)`
+`func (o *ApplicationDataAttributes) SetPublicAccess(v bool)`
 
 SetPublicAccess sets PublicAccess field to given value.
 

@@ -6,6 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEPricesPriceId**](PricesApi.md#DELETEPricesPriceId) | **Delete** /prices/{priceId} | Delete a price
 [**GETPriceListIdPrices**](PricesApi.md#GETPriceListIdPrices) | **Get** /price_lists/{priceListId}/prices | Retrieve the prices associated to the price list
+[**GETPriceTierIdPrice**](PricesApi.md#GETPriceTierIdPrice) | **Get** /price_tiers/{priceTierId}/price | Retrieve the price associated to the price tier
+[**GETPriceVolumeTierIdPrice**](PricesApi.md#GETPriceVolumeTierIdPrice) | **Get** /price_volume_tiers/{priceVolumeTierId}/price | Retrieve the price associated to the price volume tier
 [**GETPrices**](PricesApi.md#GETPrices) | **Get** /prices | List all prices
 [**GETPricesPriceId**](PricesApi.md#GETPricesPriceId) | **Get** /prices/{priceId} | Retrieve a price
 [**GETSkuIdPrices**](PricesApi.md#GETSkuIdPrices) | **Get** /skus/{skuId}/prices | Retrieve the prices associated to the SKU
@@ -126,6 +128,142 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPriceListIdPricesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceTierIdPrice
+
+> GETPriceTierIdPrice(ctx, priceTierId).Execute()
+
+Retrieve the price associated to the price tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceTierId := "priceTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PricesApi.GETPriceTierIdPrice(context.Background(), priceTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceTierIdPrice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceTierIdPriceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceVolumeTierIdPrice
+
+> GETPriceVolumeTierIdPrice(ctx, priceVolumeTierId).Execute()
+
+Retrieve the price associated to the price volume tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.PricesApi.GETPriceVolumeTierIdPrice(context.Background(), priceVolumeTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceVolumeTierIdPrice``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceVolumeTierId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceVolumeTierIdPriceRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

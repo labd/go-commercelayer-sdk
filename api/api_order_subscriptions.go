@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
+		@return OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
 	*/
-	DELETEOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
+	DELETEOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
 
 	// DELETEOrderSubscriptionsOrderSubscriptionIdExecute executes the request
-	DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error)
+	DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdOrderSubscriptions Retrieve the order subscriptions associated to the customer
@@ -43,12 +43,12 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdOrderSubscriptionsRequest
+		@return OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest
 	*/
-	GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdOrderSubscriptionsRequest
+	GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest
 
 	// GETCustomerIdOrderSubscriptionsExecute executes the request
-	GETCustomerIdOrderSubscriptionsExecute(r ApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error)
+	GETCustomerIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETOrderCopyIdOrderSubscription Retrieve the order subscription associated to the order copy
@@ -57,12 +57,12 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderCopyId The resource's id
-		@return ApiGETOrderCopyIdOrderSubscriptionRequest
+		@return OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest
 	*/
-	GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdOrderSubscriptionRequest
+	GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest
 
 	// GETOrderCopyIdOrderSubscriptionExecute executes the request
-	GETOrderCopyIdOrderSubscriptionExecute(r ApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error)
+	GETOrderCopyIdOrderSubscriptionExecute(r OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdOrderSubscriptions Retrieve the order subscriptions associated to the order
@@ -71,12 +71,12 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdOrderSubscriptionsRequest
+		@return OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest
 	*/
-	GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) ApiGETOrderIdOrderSubscriptionsRequest
+	GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest
 
 	// GETOrderIdOrderSubscriptionsExecute executes the request
-	GETOrderIdOrderSubscriptionsExecute(r ApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error)
+	GETOrderIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptions List all order subscriptions
@@ -84,12 +84,12 @@ type OrderSubscriptionsApi interface {
 		List all order subscriptions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETOrderSubscriptionsRequest
+		@return OrderSubscriptionsApiGETOrderSubscriptionsRequest
 	*/
-	GETOrderSubscriptions(ctx context.Context) ApiGETOrderSubscriptionsRequest
+	GETOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiGETOrderSubscriptionsRequest
 
 	// GETOrderSubscriptionsExecute executes the request
-	GETOrderSubscriptionsExecute(r ApiGETOrderSubscriptionsRequest) (*http.Response, error)
+	GETOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionsOrderSubscriptionId Retrieve an order subscription
@@ -98,13 +98,13 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionsOrderSubscriptionIdRequest
+		@return OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest
 	*/
-	GETOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionsOrderSubscriptionIdRequest
+	GETOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest
 
 	// GETOrderSubscriptionsOrderSubscriptionIdExecute executes the request
 	//  @return OrderSubscription
-	GETOrderSubscriptionsOrderSubscriptionIdExecute(r ApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscription, *http.Response, error)
+	GETOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscription, *http.Response, error)
 
 	/*
 		PATCHOrderSubscriptionsOrderSubscriptionId Update an order subscription
@@ -113,12 +113,12 @@ type OrderSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
+		@return OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
 	*/
-	PATCHOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
+	PATCHOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
 
 	// PATCHOrderSubscriptionsOrderSubscriptionIdExecute executes the request
-	PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error)
+	PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		POSTOrderSubscriptions Create an order subscription
@@ -126,24 +126,24 @@ type OrderSubscriptionsApi interface {
 		Create an order subscription
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTOrderSubscriptionsRequest
+		@return OrderSubscriptionsApiPOSTOrderSubscriptionsRequest
 	*/
-	POSTOrderSubscriptions(ctx context.Context) ApiPOSTOrderSubscriptionsRequest
+	POSTOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiPOSTOrderSubscriptionsRequest
 
 	// POSTOrderSubscriptionsExecute executes the request
-	POSTOrderSubscriptionsExecute(r ApiPOSTOrderSubscriptionsRequest) (*http.Response, error)
+	POSTOrderSubscriptionsExecute(r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) (*http.Response, error)
 }
 
 // OrderSubscriptionsApiService OrderSubscriptionsApi service
 type OrderSubscriptionsApiService service
 
-type ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest struct {
+type OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest struct {
 	ctx                 context.Context
 	ApiService          OrderSubscriptionsApi
 	orderSubscriptionId string
 }
 
-func (r ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r)
 }
 
@@ -154,10 +154,10 @@ Delete an order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
+ @return OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest
 */
-func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest {
-	return ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest{
+func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest {
+	return OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -165,7 +165,7 @@ func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscription
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r ApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -229,13 +229,13 @@ func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscription
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdOrderSubscriptionsRequest struct {
+type OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService OrderSubscriptionsApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdOrderSubscriptionsExecute(r)
 }
 
@@ -246,10 +246,10 @@ Retrieve the order subscriptions associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdOrderSubscriptionsRequest
+ @return OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest
 */
-func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) ApiGETCustomerIdOrderSubscriptionsRequest {
-	return ApiGETCustomerIdOrderSubscriptionsRequest{
+func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest {
+	return OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -257,7 +257,7 @@ func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptions(ctx conte
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptionsExecute(r ApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -321,13 +321,13 @@ func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptionsExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdOrderSubscriptionRequest struct {
+type OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest struct {
 	ctx         context.Context
 	ApiService  OrderSubscriptionsApi
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdOrderSubscriptionExecute(r)
 }
 
@@ -338,10 +338,10 @@ Retrieve the order subscription associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdOrderSubscriptionRequest
+ @return OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest
 */
-func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdOrderSubscriptionRequest {
-	return ApiGETOrderCopyIdOrderSubscriptionRequest{
+func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest {
+	return OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -349,7 +349,7 @@ func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscription(ctx conte
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r ApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -413,13 +413,13 @@ func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdOrderSubscriptionsRequest struct {
+type OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService OrderSubscriptionsApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdOrderSubscriptionsExecute(r)
 }
 
@@ -430,10 +430,10 @@ Retrieve the order subscriptions associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdOrderSubscriptionsRequest
+ @return OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest
 */
-func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) ApiGETOrderIdOrderSubscriptionsRequest {
-	return ApiGETOrderIdOrderSubscriptionsRequest{
+func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest {
+	return OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -441,7 +441,7 @@ func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptions(ctx context.
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionsExecute(r ApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -505,12 +505,12 @@ func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionsExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionsRequest struct {
+type OrderSubscriptionsApiGETOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService OrderSubscriptionsApi
 }
 
-func (r ApiGETOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionsExecute(r)
 }
 
@@ -520,17 +520,17 @@ GETOrderSubscriptions List all order subscriptions
 List all order subscriptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrderSubscriptionsRequest
+ @return OrderSubscriptionsApiGETOrderSubscriptionsRequest
 */
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptions(ctx context.Context) ApiGETOrderSubscriptionsRequest {
-	return ApiGETOrderSubscriptionsRequest{
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiGETOrderSubscriptionsRequest {
+	return OrderSubscriptionsApiGETOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r ApiGETOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -593,13 +593,13 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r ApiGETOrde
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionsOrderSubscriptionIdRequest struct {
+type OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest struct {
 	ctx                 context.Context
 	ApiService          OrderSubscriptionsApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*OrderSubscription, *http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*OrderSubscription, *http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionsOrderSubscriptionIdExecute(r)
 }
 
@@ -610,10 +610,10 @@ Retrieve an order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionsOrderSubscriptionIdRequest
+ @return OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest
 */
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionsOrderSubscriptionIdRequest {
-	return ApiGETOrderSubscriptionsOrderSubscriptionIdRequest{
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest {
+	return OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -622,7 +622,7 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(
 
 // Execute executes the request
 //  @return OrderSubscription
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdExecute(r ApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscription, *http.Response, error) {
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscription, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -696,19 +696,19 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest struct {
+type OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest struct {
 	ctx                     context.Context
 	ApiService              OrderSubscriptionsApi
 	orderSubscriptionId     string
 	orderSubscriptionUpdate *OrderSubscriptionUpdate
 }
 
-func (r ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) OrderSubscriptionUpdate(orderSubscriptionUpdate OrderSubscriptionUpdate) ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
+func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) OrderSubscriptionUpdate(orderSubscriptionUpdate OrderSubscriptionUpdate) OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
 	r.orderSubscriptionUpdate = &orderSubscriptionUpdate
 	return r
 }
 
-func (r ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r)
 }
 
@@ -719,10 +719,10 @@ Update an order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
+ @return OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest
 */
-func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
-	return ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest{
+func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
+	return OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -730,7 +730,7 @@ func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionI
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r ApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -799,18 +799,18 @@ func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionI
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTOrderSubscriptionsRequest struct {
+type OrderSubscriptionsApiPOSTOrderSubscriptionsRequest struct {
 	ctx                     context.Context
 	ApiService              OrderSubscriptionsApi
 	orderSubscriptionCreate *OrderSubscriptionCreate
 }
 
-func (r ApiPOSTOrderSubscriptionsRequest) OrderSubscriptionCreate(orderSubscriptionCreate OrderSubscriptionCreate) ApiPOSTOrderSubscriptionsRequest {
+func (r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) OrderSubscriptionCreate(orderSubscriptionCreate OrderSubscriptionCreate) OrderSubscriptionsApiPOSTOrderSubscriptionsRequest {
 	r.orderSubscriptionCreate = &orderSubscriptionCreate
 	return r
 }
 
-func (r ApiPOSTOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTOrderSubscriptionsExecute(r)
 }
 
@@ -820,17 +820,17 @@ POSTOrderSubscriptions Create an order subscription
 Create an order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTOrderSubscriptionsRequest
+ @return OrderSubscriptionsApiPOSTOrderSubscriptionsRequest
 */
-func (a *OrderSubscriptionsApiService) POSTOrderSubscriptions(ctx context.Context) ApiPOSTOrderSubscriptionsRequest {
-	return ApiPOSTOrderSubscriptionsRequest{
+func (a *OrderSubscriptionsApiService) POSTOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiPOSTOrderSubscriptionsRequest {
+	return OrderSubscriptionsApiPOSTOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderSubscriptionsApiService) POSTOrderSubscriptionsExecute(r ApiPOSTOrderSubscriptionsRequest) (*http.Response, error) {
+func (a *OrderSubscriptionsApiService) POSTOrderSubscriptionsExecute(r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

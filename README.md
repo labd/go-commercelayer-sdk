@@ -1,11 +1,9 @@
 # Go Commercelayer SDK
 
-This projects provides several clients to connect with the Commercelayer apis.
+This projects provides an API client to connect with the Commercelayer apis.
 
-# Clients
-
+# Documentation
 -  [api](./api/README.md)
 
 # Development
-- `make tools/openapi-generator-cli`
-- `make generate`
+- `make`

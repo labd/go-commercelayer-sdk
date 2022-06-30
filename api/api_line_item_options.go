@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type LineItemOptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemOptionId The resource's id
-		@return ApiDELETELineItemOptionsLineItemOptionIdRequest
+		@return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 	*/
-	DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiDELETELineItemOptionsLineItemOptionIdRequest
+	DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 
 	// DELETELineItemOptionsLineItemOptionIdExecute executes the request
-	DELETELineItemOptionsLineItemOptionIdExecute(r ApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error)
+	DELETELineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error)
 
 	/*
 		GETLineItemIdLineItemOptions Retrieve the line item options associated to the line item
@@ -43,12 +43,12 @@ type LineItemOptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemId The resource's id
-		@return ApiGETLineItemIdLineItemOptionsRequest
+		@return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 	*/
-	GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) ApiGETLineItemIdLineItemOptionsRequest
+	GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 
 	// GETLineItemIdLineItemOptionsExecute executes the request
-	GETLineItemIdLineItemOptionsExecute(r ApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error)
+	GETLineItemIdLineItemOptionsExecute(r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error)
 
 	/*
 		GETLineItemOptions List all line item options
@@ -56,12 +56,12 @@ type LineItemOptionsApi interface {
 		List all line item options
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETLineItemOptionsRequest
+		@return LineItemOptionsApiGETLineItemOptionsRequest
 	*/
-	GETLineItemOptions(ctx context.Context) ApiGETLineItemOptionsRequest
+	GETLineItemOptions(ctx context.Context) LineItemOptionsApiGETLineItemOptionsRequest
 
 	// GETLineItemOptionsExecute executes the request
-	GETLineItemOptionsExecute(r ApiGETLineItemOptionsRequest) (*http.Response, error)
+	GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*http.Response, error)
 
 	/*
 		GETLineItemOptionsLineItemOptionId Retrieve a line item option
@@ -70,13 +70,13 @@ type LineItemOptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemOptionId The resource's id
-		@return ApiGETLineItemOptionsLineItemOptionIdRequest
+		@return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 	*/
-	GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionsLineItemOptionIdRequest
+	GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 
 	// GETLineItemOptionsLineItemOptionIdExecute executes the request
 	//  @return LineItemOption
-	GETLineItemOptionsLineItemOptionIdExecute(r ApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOption, *http.Response, error)
+	GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOption, *http.Response, error)
 
 	/*
 		PATCHLineItemOptionsLineItemOptionId Update a line item option
@@ -85,12 +85,12 @@ type LineItemOptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param lineItemOptionId The resource's id
-		@return ApiPATCHLineItemOptionsLineItemOptionIdRequest
+		@return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 	*/
-	PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiPATCHLineItemOptionsLineItemOptionIdRequest
+	PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 
 	// PATCHLineItemOptionsLineItemOptionIdExecute executes the request
-	PATCHLineItemOptionsLineItemOptionIdExecute(r ApiPATCHLineItemOptionsLineItemOptionIdRequest) (*http.Response, error)
+	PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*http.Response, error)
 
 	/*
 		POSTLineItemOptions Create a line item option
@@ -98,24 +98,24 @@ type LineItemOptionsApi interface {
 		Create a line item option
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTLineItemOptionsRequest
+		@return LineItemOptionsApiPOSTLineItemOptionsRequest
 	*/
-	POSTLineItemOptions(ctx context.Context) ApiPOSTLineItemOptionsRequest
+	POSTLineItemOptions(ctx context.Context) LineItemOptionsApiPOSTLineItemOptionsRequest
 
 	// POSTLineItemOptionsExecute executes the request
-	POSTLineItemOptionsExecute(r ApiPOSTLineItemOptionsRequest) (*http.Response, error)
+	POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*http.Response, error)
 }
 
 // LineItemOptionsApiService LineItemOptionsApi service
 type LineItemOptionsApiService service
 
-type ApiDELETELineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       LineItemOptionsApi
 	lineItemOptionId string
 }
 
-func (r ApiDELETELineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETELineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -126,10 +126,10 @@ Delete a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiDELETELineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiDELETELineItemOptionsLineItemOptionIdRequest {
-	return ApiDELETELineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -137,7 +137,7 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx co
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute(r ApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +201,13 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdLineItemOptionsRequest struct {
+type LineItemOptionsApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService LineItemOptionsApi
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdLineItemOptionsExecute(r)
 }
 
@@ -218,10 +218,10 @@ Retrieve the line item options associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdLineItemOptionsRequest
+ @return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) ApiGETLineItemIdLineItemOptionsRequest {
-	return ApiGETLineItemIdLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest {
+	return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -229,7 +229,7 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Con
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r ApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +293,12 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionsRequest struct {
+type LineItemOptionsApiGETLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService LineItemOptionsApi
 }
 
-func (r ApiGETLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemOptionsExecute(r)
 }
 
@@ -308,17 +308,17 @@ GETLineItemOptions List all line item options
 List all line item options
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETLineItemOptionsRequest
+ @return LineItemOptionsApiGETLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) ApiGETLineItemOptionsRequest {
-	return ApiGETLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) LineItemOptionsApiGETLineItemOptionsRequest {
+	return LineItemOptionsApiGETLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOptionsRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +381,13 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOp
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       LineItemOptionsApi
 	lineItemOptionId string
 }
 
-func (r ApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*LineItemOption, *http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*LineItemOption, *http.Response, error) {
 	return r.ApiService.GETLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -398,10 +398,10 @@ Retrieve a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiGETLineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionsLineItemOptionIdRequest {
-	return ApiGETLineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -410,7 +410,7 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx conte
 
 // Execute executes the request
 //  @return LineItemOption
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r ApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOption, *http.Response, error) {
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOption, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +484,19 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHLineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest struct {
 	ctx                  context.Context
 	ApiService           LineItemOptionsApi
 	lineItemOptionId     string
 	lineItemOptionUpdate *LineItemOptionUpdate
 }
 
-func (r ApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemOptionUpdate(lineItemOptionUpdate LineItemOptionUpdate) ApiPATCHLineItemOptionsLineItemOptionIdRequest {
+func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemOptionUpdate(lineItemOptionUpdate LineItemOptionUpdate) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
 	r.lineItemOptionUpdate = &lineItemOptionUpdate
 	return r
 }
 
-func (r ApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -507,10 +507,10 @@ Update a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiPATCHLineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiPATCHLineItemOptionsLineItemOptionIdRequest {
-	return ApiPATCHLineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -518,7 +518,7 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx con
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r ApiPATCHLineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +587,18 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTLineItemOptionsRequest struct {
+type LineItemOptionsApiPOSTLineItemOptionsRequest struct {
 	ctx                  context.Context
 	ApiService           LineItemOptionsApi
 	lineItemOptionCreate *LineItemOptionCreate
 }
 
-func (r ApiPOSTLineItemOptionsRequest) LineItemOptionCreate(lineItemOptionCreate LineItemOptionCreate) ApiPOSTLineItemOptionsRequest {
+func (r LineItemOptionsApiPOSTLineItemOptionsRequest) LineItemOptionCreate(lineItemOptionCreate LineItemOptionCreate) LineItemOptionsApiPOSTLineItemOptionsRequest {
 	r.lineItemOptionCreate = &lineItemOptionCreate
 	return r
 }
 
-func (r ApiPOSTLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiPOSTLineItemOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTLineItemOptionsExecute(r)
 }
 
@@ -608,17 +608,17 @@ POSTLineItemOptions Create a line item option
 Create a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTLineItemOptionsRequest
+ @return LineItemOptionsApiPOSTLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) ApiPOSTLineItemOptionsRequest {
-	return ApiPOSTLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) LineItemOptionsApiPOSTLineItemOptionsRequest {
+	return LineItemOptionsApiPOSTLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItemOptionsRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

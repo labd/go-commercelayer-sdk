@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiDELETECustomersCustomerIdRequest
+		@return CustomersApiDELETECustomersCustomerIdRequest
 	*/
-	DELETECustomersCustomerId(ctx context.Context, customerId string) ApiDELETECustomersCustomerIdRequest
+	DELETECustomersCustomerId(ctx context.Context, customerId string) CustomersApiDELETECustomersCustomerIdRequest
 
 	// DELETECustomersCustomerIdExecute executes the request
-	DELETECustomersCustomerIdExecute(r ApiDELETECustomersCustomerIdRequest) (*http.Response, error)
+	DELETECustomersCustomerIdExecute(r CustomersApiDELETECustomersCustomerIdRequest) (*http.Response, error)
 
 	/*
 		GETCouponRecipientIdCustomer Retrieve the customer associated to the coupon recipient
@@ -43,12 +43,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponRecipientId The resource's id
-		@return ApiGETCouponRecipientIdCustomerRequest
+		@return CustomersApiGETCouponRecipientIdCustomerRequest
 	*/
-	GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdCustomerRequest
+	GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) CustomersApiGETCouponRecipientIdCustomerRequest
 
 	// GETCouponRecipientIdCustomerExecute executes the request
-	GETCouponRecipientIdCustomerExecute(r ApiGETCouponRecipientIdCustomerRequest) (*http.Response, error)
+	GETCouponRecipientIdCustomerExecute(r CustomersApiGETCouponRecipientIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerAddressIdCustomer Retrieve the customer associated to the customer address
@@ -57,12 +57,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerAddressId The resource's id
-		@return ApiGETCustomerAddressIdCustomerRequest
+		@return CustomersApiGETCustomerAddressIdCustomerRequest
 	*/
-	GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdCustomerRequest
+	GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) CustomersApiGETCustomerAddressIdCustomerRequest
 
 	// GETCustomerAddressIdCustomerExecute executes the request
-	GETCustomerAddressIdCustomerExecute(r ApiGETCustomerAddressIdCustomerRequest) (*http.Response, error)
+	GETCustomerAddressIdCustomerExecute(r CustomersApiGETCustomerAddressIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerGroupIdCustomers Retrieve the customers associated to the customer group
@@ -71,12 +71,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerGroupId The resource's id
-		@return ApiGETCustomerGroupIdCustomersRequest
+		@return CustomersApiGETCustomerGroupIdCustomersRequest
 	*/
-	GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdCustomersRequest
+	GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) CustomersApiGETCustomerGroupIdCustomersRequest
 
 	// GETCustomerGroupIdCustomersExecute executes the request
-	GETCustomerGroupIdCustomersExecute(r ApiGETCustomerGroupIdCustomersRequest) (*http.Response, error)
+	GETCustomerGroupIdCustomersExecute(r CustomersApiGETCustomerGroupIdCustomersRequest) (*http.Response, error)
 
 	/*
 		GETCustomerPasswordResetIdCustomer Retrieve the customer associated to the customer password reset
@@ -85,12 +85,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerPasswordResetId The resource's id
-		@return ApiGETCustomerPasswordResetIdCustomerRequest
+		@return CustomersApiGETCustomerPasswordResetIdCustomerRequest
 	*/
-	GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetIdCustomerRequest
+	GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) CustomersApiGETCustomerPasswordResetIdCustomerRequest
 
 	// GETCustomerPasswordResetIdCustomerExecute executes the request
-	GETCustomerPasswordResetIdCustomerExecute(r ApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error)
+	GETCustomerPasswordResetIdCustomerExecute(r CustomersApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerPaymentSourceIdCustomer Retrieve the customer associated to the customer payment source
@@ -99,12 +99,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerPaymentSourceId The resource's id
-		@return ApiGETCustomerPaymentSourceIdCustomerRequest
+		@return CustomersApiGETCustomerPaymentSourceIdCustomerRequest
 	*/
-	GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) ApiGETCustomerPaymentSourceIdCustomerRequest
+	GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) CustomersApiGETCustomerPaymentSourceIdCustomerRequest
 
 	// GETCustomerPaymentSourceIdCustomerExecute executes the request
-	GETCustomerPaymentSourceIdCustomerExecute(r ApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error)
+	GETCustomerPaymentSourceIdCustomerExecute(r CustomersApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomerSubscriptionIdCustomer Retrieve the customer associated to the customer subscription
@@ -113,12 +113,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerSubscriptionId The resource's id
-		@return ApiGETCustomerSubscriptionIdCustomerRequest
+		@return CustomersApiGETCustomerSubscriptionIdCustomerRequest
 	*/
-	GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionIdCustomerRequest
+	GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) CustomersApiGETCustomerSubscriptionIdCustomerRequest
 
 	// GETCustomerSubscriptionIdCustomerExecute executes the request
-	GETCustomerSubscriptionIdCustomerExecute(r ApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETCustomerSubscriptionIdCustomerExecute(r CustomersApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETCustomers List all customers
@@ -126,12 +126,12 @@ type CustomersApi interface {
 		List all customers
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCustomersRequest
+		@return CustomersApiGETCustomersRequest
 	*/
-	GETCustomers(ctx context.Context) ApiGETCustomersRequest
+	GETCustomers(ctx context.Context) CustomersApiGETCustomersRequest
 
 	// GETCustomersExecute executes the request
-	GETCustomersExecute(r ApiGETCustomersRequest) (*http.Response, error)
+	GETCustomersExecute(r CustomersApiGETCustomersRequest) (*http.Response, error)
 
 	/*
 		GETCustomersCustomerId Retrieve a customer
@@ -140,13 +140,13 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomersCustomerIdRequest
+		@return CustomersApiGETCustomersCustomerIdRequest
 	*/
-	GETCustomersCustomerId(ctx context.Context, customerId string) ApiGETCustomersCustomerIdRequest
+	GETCustomersCustomerId(ctx context.Context, customerId string) CustomersApiGETCustomersCustomerIdRequest
 
 	// GETCustomersCustomerIdExecute executes the request
 	//  @return Customer
-	GETCustomersCustomerIdExecute(r ApiGETCustomersCustomerIdRequest) (*Customer, *http.Response, error)
+	GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*Customer, *http.Response, error)
 
 	/*
 		GETGiftCardRecipientIdCustomer Retrieve the customer associated to the gift card recipient
@@ -155,12 +155,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardRecipientId The resource's id
-		@return ApiGETGiftCardRecipientIdCustomerRequest
+		@return CustomersApiGETGiftCardRecipientIdCustomerRequest
 	*/
-	GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdCustomerRequest
+	GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) CustomersApiGETGiftCardRecipientIdCustomerRequest
 
 	// GETGiftCardRecipientIdCustomerExecute executes the request
-	GETGiftCardRecipientIdCustomerExecute(r ApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error)
+	GETGiftCardRecipientIdCustomerExecute(r CustomersApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionIdCustomer Retrieve the customer associated to the in stock subscription
@@ -169,12 +169,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionIdCustomerRequest
+		@return CustomersApiGETInStockSubscriptionIdCustomerRequest
 	*/
-	GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdCustomerRequest
+	GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) CustomersApiGETInStockSubscriptionIdCustomerRequest
 
 	// GETInStockSubscriptionIdCustomerExecute executes the request
-	GETInStockSubscriptionIdCustomerExecute(r ApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETInStockSubscriptionIdCustomerExecute(r CustomersApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdCustomer Retrieve the customer associated to the order
@@ -183,12 +183,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdCustomerRequest
+		@return CustomersApiGETOrderIdCustomerRequest
 	*/
-	GETOrderIdCustomer(ctx context.Context, orderId string) ApiGETOrderIdCustomerRequest
+	GETOrderIdCustomer(ctx context.Context, orderId string) CustomersApiGETOrderIdCustomerRequest
 
 	// GETOrderIdCustomerExecute executes the request
-	GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerRequest) (*http.Response, error)
+	GETOrderIdCustomerExecute(r CustomersApiGETOrderIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETOrderSubscriptionIdCustomer Retrieve the customer associated to the order subscription
@@ -197,12 +197,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderSubscriptionId The resource's id
-		@return ApiGETOrderSubscriptionIdCustomerRequest
+		@return CustomersApiGETOrderSubscriptionIdCustomerRequest
 	*/
-	GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdCustomerRequest
+	GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) CustomersApiGETOrderSubscriptionIdCustomerRequest
 
 	// GETOrderSubscriptionIdCustomerExecute executes the request
-	GETOrderSubscriptionIdCustomerExecute(r ApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error)
+	GETOrderSubscriptionIdCustomerExecute(r CustomersApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error)
 
 	/*
 		GETReturnIdCustomer Retrieve the customer associated to the return
@@ -211,12 +211,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnIdCustomerRequest
+		@return CustomersApiGETReturnIdCustomerRequest
 	*/
-	GETReturnIdCustomer(ctx context.Context, returnId string) ApiGETReturnIdCustomerRequest
+	GETReturnIdCustomer(ctx context.Context, returnId string) CustomersApiGETReturnIdCustomerRequest
 
 	// GETReturnIdCustomerExecute executes the request
-	GETReturnIdCustomerExecute(r ApiGETReturnIdCustomerRequest) (*http.Response, error)
+	GETReturnIdCustomerExecute(r CustomersApiGETReturnIdCustomerRequest) (*http.Response, error)
 
 	/*
 		PATCHCustomersCustomerId Update a customer
@@ -225,12 +225,12 @@ type CustomersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiPATCHCustomersCustomerIdRequest
+		@return CustomersApiPATCHCustomersCustomerIdRequest
 	*/
-	PATCHCustomersCustomerId(ctx context.Context, customerId string) ApiPATCHCustomersCustomerIdRequest
+	PATCHCustomersCustomerId(ctx context.Context, customerId string) CustomersApiPATCHCustomersCustomerIdRequest
 
 	// PATCHCustomersCustomerIdExecute executes the request
-	PATCHCustomersCustomerIdExecute(r ApiPATCHCustomersCustomerIdRequest) (*http.Response, error)
+	PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*http.Response, error)
 
 	/*
 		POSTCustomers Create a customer
@@ -238,24 +238,24 @@ type CustomersApi interface {
 		Create a customer
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTCustomersRequest
+		@return CustomersApiPOSTCustomersRequest
 	*/
-	POSTCustomers(ctx context.Context) ApiPOSTCustomersRequest
+	POSTCustomers(ctx context.Context) CustomersApiPOSTCustomersRequest
 
 	// POSTCustomersExecute executes the request
-	POSTCustomersExecute(r ApiPOSTCustomersRequest) (*http.Response, error)
+	POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*http.Response, error)
 }
 
 // CustomersApiService CustomersApi service
 type CustomersApiService service
 
-type ApiDELETECustomersCustomerIdRequest struct {
+type CustomersApiDELETECustomersCustomerIdRequest struct {
 	ctx        context.Context
 	ApiService CustomersApi
 	customerId string
 }
 
-func (r ApiDELETECustomersCustomerIdRequest) Execute() (*http.Response, error) {
+func (r CustomersApiDELETECustomersCustomerIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomersCustomerIdExecute(r)
 }
 
@@ -266,10 +266,10 @@ Delete a customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiDELETECustomersCustomerIdRequest
+ @return CustomersApiDELETECustomersCustomerIdRequest
 */
-func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId string) ApiDELETECustomersCustomerIdRequest {
-	return ApiDELETECustomersCustomerIdRequest{
+func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId string) CustomersApiDELETECustomersCustomerIdRequest {
+	return CustomersApiDELETECustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -277,7 +277,7 @@ func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, cus
 }
 
 // Execute executes the request
-func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r ApiDELETECustomersCustomerIdRequest) (*http.Response, error) {
+func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDELETECustomersCustomerIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -341,13 +341,13 @@ func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r ApiDELETECustom
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponRecipientIdCustomerRequest struct {
+type CustomersApiGETCouponRecipientIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        CustomersApi
 	couponRecipientId string
 }
 
-func (r ApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponRecipientIdCustomerExecute(r)
 }
 
@@ -358,10 +358,10 @@ Retrieve the customer associated to the coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return ApiGETCouponRecipientIdCustomerRequest
+ @return CustomersApiGETCouponRecipientIdCustomerRequest
 */
-func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdCustomerRequest {
-	return ApiGETCouponRecipientIdCustomerRequest{
+func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) CustomersApiGETCouponRecipientIdCustomerRequest {
+	return CustomersApiGETCouponRecipientIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -369,7 +369,7 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r ApiGETCouponRecipientIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApiGETCouponRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -433,13 +433,13 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r ApiGETCoupon
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerAddressIdCustomerRequest struct {
+type CustomersApiGETCustomerAddressIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        CustomersApi
 	customerAddressId string
 }
 
-func (r ApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressIdCustomerExecute(r)
 }
 
@@ -450,10 +450,10 @@ Retrieve the customer associated to the customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return ApiGETCustomerAddressIdCustomerRequest
+ @return CustomersApiGETCustomerAddressIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdCustomerRequest {
-	return ApiGETCustomerAddressIdCustomerRequest{
+func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) CustomersApiGETCustomerAddressIdCustomerRequest {
+	return CustomersApiGETCustomerAddressIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -461,7 +461,7 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r ApiGETCustomerAddressIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApiGETCustomerAddressIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -525,13 +525,13 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r ApiGETCustom
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupIdCustomersRequest struct {
+type CustomersApiGETCustomerGroupIdCustomersRequest struct {
 	ctx             context.Context
 	ApiService      CustomersApi
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdCustomersExecute(r)
 }
 
@@ -542,10 +542,10 @@ Retrieve the customers associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupIdCustomersRequest
+ @return CustomersApiGETCustomerGroupIdCustomersRequest
 */
-func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdCustomersRequest {
-	return ApiGETCustomerGroupIdCustomersRequest{
+func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) CustomersApiGETCustomerGroupIdCustomersRequest {
+	return CustomersApiGETCustomerGroupIdCustomersRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -553,7 +553,7 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, c
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r ApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -617,13 +617,13 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r ApiGETCustome
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPasswordResetIdCustomerRequest struct {
+type CustomersApiGETCustomerPasswordResetIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              CustomersApi
 	customerPasswordResetId string
 }
 
-func (r ApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetIdCustomerExecute(r)
 }
 
@@ -634,10 +634,10 @@ Retrieve the customer associated to the customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiGETCustomerPasswordResetIdCustomerRequest
+ @return CustomersApiGETCustomerPasswordResetIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetIdCustomerRequest {
-	return ApiGETCustomerPasswordResetIdCustomerRequest{
+func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) CustomersApiGETCustomerPasswordResetIdCustomerRequest {
+	return CustomersApiGETCustomerPasswordResetIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -645,7 +645,7 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Con
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r ApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r CustomersApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -709,13 +709,13 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPaymentSourceIdCustomerRequest struct {
+type CustomersApiGETCustomerPaymentSourceIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              CustomersApi
 	customerPaymentSourceId string
 }
 
-func (r ApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerPaymentSourceIdCustomerExecute(r)
 }
 
@@ -726,10 +726,10 @@ Retrieve the customer associated to the customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPaymentSourceId The resource's id
- @return ApiGETCustomerPaymentSourceIdCustomerRequest
+ @return CustomersApiGETCustomerPaymentSourceIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) ApiGETCustomerPaymentSourceIdCustomerRequest {
-	return ApiGETCustomerPaymentSourceIdCustomerRequest{
+func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) CustomersApiGETCustomerPaymentSourceIdCustomerRequest {
+	return CustomersApiGETCustomerPaymentSourceIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
@@ -737,7 +737,7 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Con
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r ApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r CustomersApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -801,13 +801,13 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerSubscriptionIdCustomerRequest struct {
+type CustomersApiGETCustomerSubscriptionIdCustomerRequest struct {
 	ctx                    context.Context
 	ApiService             CustomersApi
 	customerSubscriptionId string
 }
 
-func (r ApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionIdCustomerExecute(r)
 }
 
@@ -818,10 +818,10 @@ Retrieve the customer associated to the customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiGETCustomerSubscriptionIdCustomerRequest
+ @return CustomersApiGETCustomerSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionIdCustomerRequest {
-	return ApiGETCustomerSubscriptionIdCustomerRequest{
+func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) CustomersApiGETCustomerSubscriptionIdCustomerRequest {
+	return CustomersApiGETCustomerSubscriptionIdCustomerRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -829,7 +829,7 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r ApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r CustomersApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -893,12 +893,12 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r ApiGETC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomersRequest struct {
+type CustomersApiGETCustomersRequest struct {
 	ctx        context.Context
 	ApiService CustomersApi
 }
 
-func (r ApiGETCustomersRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETCustomersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomersExecute(r)
 }
 
@@ -908,17 +908,17 @@ GETCustomers List all customers
 List all customers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCustomersRequest
+ @return CustomersApiGETCustomersRequest
 */
-func (a *CustomersApiService) GETCustomers(ctx context.Context) ApiGETCustomersRequest {
-	return ApiGETCustomersRequest{
+func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETCustomersRequest {
+	return CustomersApiGETCustomersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETCustomersExecute(r ApiGETCustomersRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -981,13 +981,13 @@ func (a *CustomersApiService) GETCustomersExecute(r ApiGETCustomersRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomersCustomerIdRequest struct {
+type CustomersApiGETCustomersCustomerIdRequest struct {
 	ctx        context.Context
 	ApiService CustomersApi
 	customerId string
 }
 
-func (r ApiGETCustomersCustomerIdRequest) Execute() (*Customer, *http.Response, error) {
+func (r CustomersApiGETCustomersCustomerIdRequest) Execute() (*Customer, *http.Response, error) {
 	return r.ApiService.GETCustomersCustomerIdExecute(r)
 }
 
@@ -998,10 +998,10 @@ Retrieve a customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomersCustomerIdRequest
+ @return CustomersApiGETCustomersCustomerIdRequest
 */
-func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId string) ApiGETCustomersCustomerIdRequest {
-	return ApiGETCustomersCustomerIdRequest{
+func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId string) CustomersApiGETCustomersCustomerIdRequest {
+	return CustomersApiGETCustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -1010,7 +1010,7 @@ func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, custom
 
 // Execute executes the request
 //  @return Customer
-func (a *CustomersApiService) GETCustomersCustomerIdExecute(r ApiGETCustomersCustomerIdRequest) (*Customer, *http.Response, error) {
+func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*Customer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1084,13 +1084,13 @@ func (a *CustomersApiService) GETCustomersCustomerIdExecute(r ApiGETCustomersCus
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardRecipientIdCustomerRequest struct {
+type CustomersApiGETGiftCardRecipientIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          CustomersApi
 	giftCardRecipientId string
 }
 
-func (r ApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientIdCustomerExecute(r)
 }
 
@@ -1101,10 +1101,10 @@ Retrieve the customer associated to the gift card recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardRecipientId The resource's id
- @return ApiGETGiftCardRecipientIdCustomerRequest
+ @return CustomersApiGETGiftCardRecipientIdCustomerRequest
 */
-func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdCustomerRequest {
-	return ApiGETGiftCardRecipientIdCustomerRequest{
+func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) CustomersApiGETGiftCardRecipientIdCustomerRequest {
+	return CustomersApiGETGiftCardRecipientIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
@@ -1112,7 +1112,7 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r ApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1176,13 +1176,13 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r ApiGETGift
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdCustomerRequest struct {
+type CustomersApiGETInStockSubscriptionIdCustomerRequest struct {
 	ctx                   context.Context
 	ApiService            CustomersApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdCustomerExecute(r)
 }
 
@@ -1193,10 +1193,10 @@ Retrieve the customer associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdCustomerRequest
+ @return CustomersApiGETInStockSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdCustomerRequest {
-	return ApiGETInStockSubscriptionIdCustomerRequest{
+func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) CustomersApiGETInStockSubscriptionIdCustomerRequest {
+	return CustomersApiGETInStockSubscriptionIdCustomerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -1204,7 +1204,7 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r ApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r CustomersApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1268,13 +1268,13 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r ApiGETIn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdCustomerRequest struct {
+type CustomersApiGETOrderIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService CustomersApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdCustomerExecute(r)
 }
 
@@ -1285,10 +1285,10 @@ Retrieve the customer associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdCustomerRequest
+ @return CustomersApiGETOrderIdCustomerRequest
 */
-func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId string) ApiGETOrderIdCustomerRequest {
-	return ApiGETOrderIdCustomerRequest{
+func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId string) CustomersApiGETOrderIdCustomerRequest {
+	return CustomersApiGETOrderIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -1296,7 +1296,7 @@ func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId st
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1360,13 +1360,13 @@ func (a *CustomersApiService) GETOrderIdCustomerExecute(r ApiGETOrderIdCustomerR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdCustomerRequest struct {
+type CustomersApiGETOrderSubscriptionIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          CustomersApi
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdCustomerExecute(r)
 }
 
@@ -1377,10 +1377,10 @@ Retrieve the customer associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdCustomerRequest
+ @return CustomersApiGETOrderSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdCustomerRequest {
-	return ApiGETOrderSubscriptionIdCustomerRequest{
+func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) CustomersApiGETOrderSubscriptionIdCustomerRequest {
+	return CustomersApiGETOrderSubscriptionIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -1388,7 +1388,7 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r ApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1452,13 +1452,13 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r ApiGETOrde
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdCustomerRequest struct {
+type CustomersApiGETReturnIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService CustomersApi
 	returnId   string
 }
 
-func (r ApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
+func (r CustomersApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdCustomerExecute(r)
 }
 
@@ -1469,10 +1469,10 @@ Retrieve the customer associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdCustomerRequest
+ @return CustomersApiGETReturnIdCustomerRequest
 */
-func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId string) ApiGETReturnIdCustomerRequest {
-	return ApiGETReturnIdCustomerRequest{
+func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId string) CustomersApiGETReturnIdCustomerRequest {
+	return CustomersApiGETReturnIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -1480,7 +1480,7 @@ func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId 
 }
 
 // Execute executes the request
-func (a *CustomersApiService) GETReturnIdCustomerExecute(r ApiGETReturnIdCustomerRequest) (*http.Response, error) {
+func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturnIdCustomerRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1544,19 +1544,19 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r ApiGETReturnIdCustome
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHCustomersCustomerIdRequest struct {
+type CustomersApiPATCHCustomersCustomerIdRequest struct {
 	ctx            context.Context
 	ApiService     CustomersApi
 	customerId     string
 	customerUpdate *CustomerUpdate
 }
 
-func (r ApiPATCHCustomersCustomerIdRequest) CustomerUpdate(customerUpdate CustomerUpdate) ApiPATCHCustomersCustomerIdRequest {
+func (r CustomersApiPATCHCustomersCustomerIdRequest) CustomerUpdate(customerUpdate CustomerUpdate) CustomersApiPATCHCustomersCustomerIdRequest {
 	r.customerUpdate = &customerUpdate
 	return r
 }
 
-func (r ApiPATCHCustomersCustomerIdRequest) Execute() (*http.Response, error) {
+func (r CustomersApiPATCHCustomersCustomerIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCustomersCustomerIdExecute(r)
 }
 
@@ -1567,10 +1567,10 @@ Update a customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiPATCHCustomersCustomerIdRequest
+ @return CustomersApiPATCHCustomersCustomerIdRequest
 */
-func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId string) ApiPATCHCustomersCustomerIdRequest {
-	return ApiPATCHCustomersCustomerIdRequest{
+func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId string) CustomersApiPATCHCustomersCustomerIdRequest {
+	return CustomersApiPATCHCustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -1578,7 +1578,7 @@ func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, cust
 }
 
 // Execute executes the request
-func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r ApiPATCHCustomersCustomerIdRequest) (*http.Response, error) {
+func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1647,18 +1647,18 @@ func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r ApiPATCHCustomer
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTCustomersRequest struct {
+type CustomersApiPOSTCustomersRequest struct {
 	ctx            context.Context
 	ApiService     CustomersApi
 	customerCreate *CustomerCreate
 }
 
-func (r ApiPOSTCustomersRequest) CustomerCreate(customerCreate CustomerCreate) ApiPOSTCustomersRequest {
+func (r CustomersApiPOSTCustomersRequest) CustomerCreate(customerCreate CustomerCreate) CustomersApiPOSTCustomersRequest {
 	r.customerCreate = &customerCreate
 	return r
 }
 
-func (r ApiPOSTCustomersRequest) Execute() (*http.Response, error) {
+func (r CustomersApiPOSTCustomersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCustomersExecute(r)
 }
 
@@ -1668,17 +1668,17 @@ POSTCustomers Create a customer
 Create a customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCustomersRequest
+ @return CustomersApiPOSTCustomersRequest
 */
-func (a *CustomersApiService) POSTCustomers(ctx context.Context) ApiPOSTCustomersRequest {
-	return ApiPOSTCustomersRequest{
+func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOSTCustomersRequest {
+	return CustomersApiPOSTCustomersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomersApiService) POSTCustomersExecute(r ApiPOSTCustomersRequest) (*http.Response, error) {
+func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponCodesPromotionRuleId The resource's id
-		@return ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+		@return CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 	*/
-	DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+	DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 
 	// DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute executes the request
-	DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error)
+	DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error)
 
 	/*
 		GETCouponCodesPromotionRules List all coupon codes promotion rules
@@ -42,12 +42,12 @@ type CouponCodesPromotionRulesApi interface {
 		List all coupon codes promotion rules
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETCouponCodesPromotionRulesRequest
+		@return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest
 	*/
-	GETCouponCodesPromotionRules(ctx context.Context) ApiGETCouponCodesPromotionRulesRequest
+	GETCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest
 
 	// GETCouponCodesPromotionRulesExecute executes the request
-	GETCouponCodesPromotionRulesExecute(r ApiGETCouponCodesPromotionRulesRequest) (*http.Response, error)
+	GETCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest) (*http.Response, error)
 
 	/*
 		GETCouponCodesPromotionRulesCouponCodesPromotionRuleId Retrieve a coupon codes promotion rule
@@ -56,13 +56,13 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponCodesPromotionRuleId The resource's id
-		@return ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+		@return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 	*/
-	GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+	GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 
 	// GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute executes the request
 	//  @return CouponCodesPromotionRule
-	GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*CouponCodesPromotionRule, *http.Response, error)
+	GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*CouponCodesPromotionRule, *http.Response, error)
 
 	/*
 		GETCouponIdPromotionRule Retrieve the promotion rule associated to the coupon
@@ -71,12 +71,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponId The resource's id
-		@return ApiGETCouponIdPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest
 	*/
-	GETCouponIdPromotionRule(ctx context.Context, couponId string) ApiGETCouponIdPromotionRuleRequest
+	GETCouponIdPromotionRule(ctx context.Context, couponId string) CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest
 
 	// GETCouponIdPromotionRuleExecute executes the request
-	GETCouponIdPromotionRuleExecute(r ApiGETCouponIdPromotionRuleRequest) (*http.Response, error)
+	GETCouponIdPromotionRuleExecute(r CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETExternalPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the external promotion
@@ -85,12 +85,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPromotionId The resource's id
-		@return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+	GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETExternalPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETExternalPromotionIdCouponCodesPromotionRuleExecute(r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETExternalPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedAmountPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the fixed amount promotion
@@ -99,12 +99,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedAmountPromotionId The resource's id
-		@return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+	GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the fixed price promotion
@@ -113,12 +113,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+	GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFixedPricePromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the free gift promotion
@@ -127,12 +127,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+	GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETFreeShippingPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the free shipping promotion
@@ -141,12 +141,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeShippingPromotionId The resource's id
-		@return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+	GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the percentage discount promotion
@@ -155,12 +155,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+	GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		GETPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule associated to the promotion
@@ -169,12 +169,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param promotionId The resource's id
-		@return ApiGETPromotionIdCouponCodesPromotionRuleRequest
+		@return CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest
 	*/
-	GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdCouponCodesPromotionRuleRequest
+	GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest
 
 	// GETPromotionIdCouponCodesPromotionRuleExecute executes the request
-	GETPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
+	GETPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error)
 
 	/*
 		PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId Update a coupon codes promotion rule
@@ -183,12 +183,12 @@ type CouponCodesPromotionRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param couponCodesPromotionRuleId The resource's id
-		@return ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+		@return CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 	*/
-	PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+	PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 
 	// PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute executes the request
-	PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error)
+	PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error)
 
 	/*
 		POSTCouponCodesPromotionRules Create a coupon codes promotion rule
@@ -196,24 +196,24 @@ type CouponCodesPromotionRulesApi interface {
 		Create a coupon codes promotion rule
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTCouponCodesPromotionRulesRequest
+		@return CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest
 	*/
-	POSTCouponCodesPromotionRules(ctx context.Context) ApiPOSTCouponCodesPromotionRulesRequest
+	POSTCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest
 
 	// POSTCouponCodesPromotionRulesExecute executes the request
-	POSTCouponCodesPromotionRulesExecute(r ApiPOSTCouponCodesPromotionRulesRequest) (*http.Response, error)
+	POSTCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest) (*http.Response, error)
 }
 
 // CouponCodesPromotionRulesApiService CouponCodesPromotionRulesApi service
 type CouponCodesPromotionRulesApiService service
 
-type ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
+type CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 CouponCodesPromotionRulesApi
 	couponCodesPromotionRuleId string
 }
 
-func (r ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r)
 }
 
@@ -224,10 +224,10 @@ Delete a coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+ @return CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 */
-func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
-	return ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
+func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
+	return CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -235,7 +235,7 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -299,12 +299,12 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponCodesPromotionRulesRequest struct {
+type CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest struct {
 	ctx        context.Context
 	ApiService CouponCodesPromotionRulesApi
 }
 
-func (r ApiGETCouponCodesPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponCodesPromotionRulesExecute(r)
 }
 
@@ -314,17 +314,17 @@ GETCouponCodesPromotionRules List all coupon codes promotion rules
 List all coupon codes promotion rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCouponCodesPromotionRulesRequest
+ @return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRules(ctx context.Context) ApiGETCouponCodesPromotionRulesRequest {
-	return ApiGETCouponCodesPromotionRulesRequest{
+func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest {
+	return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecute(r ApiGETCouponCodesPromotionRulesRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -387,13 +387,13 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecut
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
+type CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 CouponCodesPromotionRulesApi
 	couponCodesPromotionRuleId string
 }
 
-func (r ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*CouponCodesPromotionRule, *http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*CouponCodesPromotionRule, *http.Response, error) {
 	return r.ApiService.GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r)
 }
 
@@ -404,10 +404,10 @@ Retrieve a coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+ @return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
-	return ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
+func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
+	return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -416,7 +416,7 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 
 // Execute executes the request
 //  @return CouponCodesPromotionRule
-func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*CouponCodesPromotionRule, *http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*CouponCodesPromotionRule, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -490,13 +490,13 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCouponIdPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest struct {
 	ctx        context.Context
 	ApiService CouponCodesPromotionRulesApi
 	couponId   string
 }
 
-func (r ApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponIdPromotionRuleExecute(r)
 }
 
@@ -507,10 +507,10 @@ Retrieve the promotion rule associated to the coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return ApiGETCouponIdPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) ApiGETCouponIdPromotionRuleRequest {
-	return ApiGETCouponIdPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -518,7 +518,7 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRule(ctx conte
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r ApiGETCouponIdPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -582,13 +582,13 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          CouponCodesPromotionRulesApi
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -599,10 +599,10 @@ Retrieve the coupon codes promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -610,7 +610,7 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute(r ApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -674,13 +674,13 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             CouponCodesPromotionRulesApi
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -691,10 +691,10 @@ Retrieve the coupon codes promotion rule associated to the fixed amount promotio
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -702,7 +702,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -766,13 +766,13 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            CouponCodesPromotionRulesApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -783,10 +783,10 @@ Retrieve the coupon codes promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -794,7 +794,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r ApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -858,13 +858,13 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          CouponCodesPromotionRulesApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -875,10 +875,10 @@ Retrieve the coupon codes promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -886,7 +886,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -950,13 +950,13 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              CouponCodesPromotionRulesApi
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -967,10 +967,10 @@ Retrieve the coupon codes promotion rule associated to the free shipping promoti
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -978,7 +978,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r ApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1042,13 +1042,13 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    CouponCodesPromotionRulesApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -1059,10 +1059,10 @@ Retrieve the coupon codes promotion rule associated to the percentage discount p
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -1070,7 +1070,7 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1134,13 +1134,13 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
+type CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  CouponCodesPromotionRulesApi
 	promotionId string
 }
 
-func (r ApiGETPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdCouponCodesPromotionRuleExecute(r)
 }
 
@@ -1151,10 +1151,10 @@ Retrieve the coupon codes promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdCouponCodesPromotionRuleRequest
+ @return CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdCouponCodesPromotionRuleRequest {
-	return ApiGETPromotionIdCouponCodesPromotionRuleRequest{
+func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest {
+	return CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -1162,7 +1162,7 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r ApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1226,19 +1226,19 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
+type CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
 	ctx                            context.Context
 	ApiService                     CouponCodesPromotionRulesApi
 	couponCodesPromotionRuleId     string
 	couponCodesPromotionRuleUpdate *CouponCodesPromotionRuleUpdate
 }
 
-func (r ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate CouponCodesPromotionRuleUpdate) ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
+func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate CouponCodesPromotionRuleUpdate) CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
 	r.couponCodesPromotionRuleUpdate = &couponCodesPromotionRuleUpdate
 	return r
 }
 
-func (r ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r)
 }
 
@@ -1249,10 +1249,10 @@ Update a coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
+ @return CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest
 */
-func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
-	return ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
+func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
+	return CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -1260,7 +1260,7 @@ func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCoup
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r ApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1329,18 +1329,18 @@ func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCoup
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTCouponCodesPromotionRulesRequest struct {
+type CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest struct {
 	ctx                            context.Context
 	ApiService                     CouponCodesPromotionRulesApi
 	couponCodesPromotionRuleCreate *CouponCodesPromotionRuleCreate
 }
 
-func (r ApiPOSTCouponCodesPromotionRulesRequest) CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate CouponCodesPromotionRuleCreate) ApiPOSTCouponCodesPromotionRulesRequest {
+func (r CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest) CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate CouponCodesPromotionRuleCreate) CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest {
 	r.couponCodesPromotionRuleCreate = &couponCodesPromotionRuleCreate
 	return r
 }
 
-func (r ApiPOSTCouponCodesPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCouponCodesPromotionRulesExecute(r)
 }
 
@@ -1350,17 +1350,17 @@ POSTCouponCodesPromotionRules Create a coupon codes promotion rule
 Create a coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCouponCodesPromotionRulesRequest
+ @return CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest
 */
-func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRules(ctx context.Context) ApiPOSTCouponCodesPromotionRulesRequest {
-	return ApiPOSTCouponCodesPromotionRulesRequest{
+func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest {
+	return CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRulesExecute(r ApiPOSTCouponCodesPromotionRulesRequest) (*http.Response, error) {
+func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

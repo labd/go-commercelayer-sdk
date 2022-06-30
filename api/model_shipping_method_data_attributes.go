@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -19,6 +19,8 @@ import (
 type ShippingMethodDataAttributes struct {
 	// The shipping method's name
 	Name *string `json:"name,omitempty"`
+	// The shipping method's scheme, one of 'flat' or 'weight_tiered'.
+	Scheme *string `json:"scheme,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode *string `json:"currency_code,omitempty"`
 	// Time at which the shipping method was disabled.
@@ -41,6 +43,12 @@ type ShippingMethodDataAttributes struct {
 	PriceAmountForShipmentFloat *float32 `json:"price_amount_for_shipment_float,omitempty"`
 	// The calculated price (zero or price amount) when associated to a shipment, formatted.
 	FormattedPriceAmountForShipment *string `json:"formatted_price_amount_for_shipment,omitempty"`
+	// The minimum weight for which this shipping method is available.
+	MinWeight *float32 `json:"min_weight,omitempty"`
+	// The maximum weight for which this shipping method is available.
+	MaxWeight *float32 `json:"max_weight,omitempty"`
+	// Can be one of 'gr', 'lb', or 'oz'
+	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
 	// Unique identifier for the resource (hash).
 	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
@@ -102,6 +110,38 @@ func (o *ShippingMethodDataAttributes) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ShippingMethodDataAttributes) SetName(v string) {
 	o.Name = &v
+}
+
+// GetScheme returns the Scheme field value if set, zero value otherwise.
+func (o *ShippingMethodDataAttributes) GetScheme() string {
+	if o == nil || o.Scheme == nil {
+		var ret string
+		return ret
+	}
+	return *o.Scheme
+}
+
+// GetSchemeOk returns a tuple with the Scheme field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataAttributes) GetSchemeOk() (*string, bool) {
+	if o == nil || o.Scheme == nil {
+		return nil, false
+	}
+	return o.Scheme, true
+}
+
+// HasScheme returns a boolean if a field has been set.
+func (o *ShippingMethodDataAttributes) HasScheme() bool {
+	if o != nil && o.Scheme != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheme gets a reference to the given string and assigns it to the Scheme field.
+func (o *ShippingMethodDataAttributes) SetScheme(v string) {
+	o.Scheme = &v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
@@ -456,6 +496,102 @@ func (o *ShippingMethodDataAttributes) SetFormattedPriceAmountForShipment(v stri
 	o.FormattedPriceAmountForShipment = &v
 }
 
+// GetMinWeight returns the MinWeight field value if set, zero value otherwise.
+func (o *ShippingMethodDataAttributes) GetMinWeight() float32 {
+	if o == nil || o.MinWeight == nil {
+		var ret float32
+		return ret
+	}
+	return *o.MinWeight
+}
+
+// GetMinWeightOk returns a tuple with the MinWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataAttributes) GetMinWeightOk() (*float32, bool) {
+	if o == nil || o.MinWeight == nil {
+		return nil, false
+	}
+	return o.MinWeight, true
+}
+
+// HasMinWeight returns a boolean if a field has been set.
+func (o *ShippingMethodDataAttributes) HasMinWeight() bool {
+	if o != nil && o.MinWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMinWeight gets a reference to the given float32 and assigns it to the MinWeight field.
+func (o *ShippingMethodDataAttributes) SetMinWeight(v float32) {
+	o.MinWeight = &v
+}
+
+// GetMaxWeight returns the MaxWeight field value if set, zero value otherwise.
+func (o *ShippingMethodDataAttributes) GetMaxWeight() float32 {
+	if o == nil || o.MaxWeight == nil {
+		var ret float32
+		return ret
+	}
+	return *o.MaxWeight
+}
+
+// GetMaxWeightOk returns a tuple with the MaxWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataAttributes) GetMaxWeightOk() (*float32, bool) {
+	if o == nil || o.MaxWeight == nil {
+		return nil, false
+	}
+	return o.MaxWeight, true
+}
+
+// HasMaxWeight returns a boolean if a field has been set.
+func (o *ShippingMethodDataAttributes) HasMaxWeight() bool {
+	if o != nil && o.MaxWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxWeight gets a reference to the given float32 and assigns it to the MaxWeight field.
+func (o *ShippingMethodDataAttributes) SetMaxWeight(v float32) {
+	o.MaxWeight = &v
+}
+
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
+func (o *ShippingMethodDataAttributes) GetUnitOfWeight() string {
+	if o == nil || o.UnitOfWeight == nil {
+		var ret string
+		return ret
+	}
+	return *o.UnitOfWeight
+}
+
+// GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodDataAttributes) GetUnitOfWeightOk() (*string, bool) {
+	if o == nil || o.UnitOfWeight == nil {
+		return nil, false
+	}
+	return o.UnitOfWeight, true
+}
+
+// HasUnitOfWeight returns a boolean if a field has been set.
+func (o *ShippingMethodDataAttributes) HasUnitOfWeight() bool {
+	if o != nil && o.UnitOfWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
+func (o *ShippingMethodDataAttributes) SetUnitOfWeight(v string) {
+	o.UnitOfWeight = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ShippingMethodDataAttributes) GetId() string {
 	if o == nil || o.Id == nil {
@@ -653,6 +789,9 @@ func (o ShippingMethodDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Scheme != nil {
+		toSerialize["scheme"] = o.Scheme
+	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
@@ -685,6 +824,15 @@ func (o ShippingMethodDataAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.FormattedPriceAmountForShipment != nil {
 		toSerialize["formatted_price_amount_for_shipment"] = o.FormattedPriceAmountForShipment
+	}
+	if o.MinWeight != nil {
+		toSerialize["min_weight"] = o.MinWeight
+	}
+	if o.MaxWeight != nil {
+		toSerialize["max_weight"] = o.MaxWeight
+	}
+	if o.UnitOfWeight != nil {
+		toSerialize["unit_of_weight"] = o.UnitOfWeight
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

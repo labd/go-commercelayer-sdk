@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type ApplicationDataAttributes struct {
 	// The application's kind, can be one of: 'sales_channel', 'checkout', 'contentful', 'datocms', 'sanity', 'cli', 'integration', 'webapp', 'zapier', or 'channel'
 	Kind *string `json:"kind,omitempty"`
 	// Indicates if the application has public access.
-	PublicAccess *string `json:"public_access,omitempty"`
+	PublicAccess *bool `json:"public_access,omitempty"`
 	// The application's redirect URI.
 	RedirectUri *string `json:"redirect_uri,omitempty"`
 	// The application's scopes.
@@ -123,9 +123,9 @@ func (o *ApplicationDataAttributes) SetKind(v string) {
 }
 
 // GetPublicAccess returns the PublicAccess field value if set, zero value otherwise.
-func (o *ApplicationDataAttributes) GetPublicAccess() string {
+func (o *ApplicationDataAttributes) GetPublicAccess() bool {
 	if o == nil || o.PublicAccess == nil {
-		var ret string
+		var ret bool
 		return ret
 	}
 	return *o.PublicAccess
@@ -133,7 +133,7 @@ func (o *ApplicationDataAttributes) GetPublicAccess() string {
 
 // GetPublicAccessOk returns a tuple with the PublicAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ApplicationDataAttributes) GetPublicAccessOk() (*string, bool) {
+func (o *ApplicationDataAttributes) GetPublicAccessOk() (*bool, bool) {
 	if o == nil || o.PublicAccess == nil {
 		return nil, false
 	}
@@ -149,8 +149,8 @@ func (o *ApplicationDataAttributes) HasPublicAccess() bool {
 	return false
 }
 
-// SetPublicAccess gets a reference to the given string and assigns it to the PublicAccess field.
-func (o *ApplicationDataAttributes) SetPublicAccess(v string) {
+// SetPublicAccess gets a reference to the given bool and assigns it to the PublicAccess field.
+func (o *ApplicationDataAttributes) SetPublicAccess(v bool) {
 	o.PublicAccess = &v
 }
 

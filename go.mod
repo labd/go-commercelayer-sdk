@@ -1,4 +1,4 @@
-module github.com/demeyerthom/go-commercelayer-sdk
+module github.com/incentro-dc/go-commercelayer-sdk
 
 go 1.18
 

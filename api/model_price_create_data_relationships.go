@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,9 @@ import (
 
 // PriceCreateDataRelationships struct for PriceCreateDataRelationships
 type PriceCreateDataRelationships struct {
-	PriceList MarketDataRelationshipsPriceList `json:"price_list"`
-	Sku       *BundleDataRelationshipsSkus     `json:"sku,omitempty"`
+	PriceList  MarketDataRelationshipsPriceList  `json:"price_list"`
+	Sku        *BundleDataRelationshipsSkus      `json:"sku,omitempty"`
+	PriceTiers *PriceDataRelationshipsPriceTiers `json:"price_tiers,omitempty"`
 }
 
 // NewPriceCreateDataRelationships instantiates a new PriceCreateDataRelationships object
@@ -95,6 +96,38 @@ func (o *PriceCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 	o.Sku = &v
 }
 
+// GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
+func (o *PriceCreateDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers {
+	if o == nil || o.PriceTiers == nil {
+		var ret PriceDataRelationshipsPriceTiers
+		return ret
+	}
+	return *o.PriceTiers
+}
+
+// GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceCreateDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool) {
+	if o == nil || o.PriceTiers == nil {
+		return nil, false
+	}
+	return o.PriceTiers, true
+}
+
+// HasPriceTiers returns a boolean if a field has been set.
+func (o *PriceCreateDataRelationships) HasPriceTiers() bool {
+	if o != nil && o.PriceTiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceTiers gets a reference to the given PriceDataRelationshipsPriceTiers and assigns it to the PriceTiers field.
+func (o *PriceCreateDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers) {
+	o.PriceTiers = &v
+}
+
 func (o PriceCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -102,6 +135,9 @@ func (o PriceCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
+	}
+	if o.PriceTiers != nil {
+		toSerialize["price_tiers"] = o.PriceTiers
 	}
 	return json.Marshal(toSerialize)
 }

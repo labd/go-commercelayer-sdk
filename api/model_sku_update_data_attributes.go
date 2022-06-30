@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,7 +29,7 @@ type SkuUpdateDataAttributes struct {
 	PiecesPerPack *int32 `json:"pieces_per_pack,omitempty"`
 	// The weight of the SKU. If present, it will be used to calculate the shipping rates.
 	Weight *float32 `json:"weight,omitempty"`
-	// Can be one of 'gr', or 'oz'
+	// Can be one of 'gr', 'lb', or 'oz'
 	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
 	// The Harmonized System Code used by customs to identify the products shipped across international borders.
 	HsTariffNumber *string `json:"hs_tariff_number,omitempty"`

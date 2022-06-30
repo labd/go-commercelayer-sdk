@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type ReturnsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiDELETEReturnsReturnIdRequest
+		@return ReturnsApiDELETEReturnsReturnIdRequest
 	*/
-	DELETEReturnsReturnId(ctx context.Context, returnId string) ApiDELETEReturnsReturnIdRequest
+	DELETEReturnsReturnId(ctx context.Context, returnId string) ReturnsApiDELETEReturnsReturnIdRequest
 
 	// DELETEReturnsReturnIdExecute executes the request
-	DELETEReturnsReturnIdExecute(r ApiDELETEReturnsReturnIdRequest) (*http.Response, error)
+	DELETEReturnsReturnIdExecute(r ReturnsApiDELETEReturnsReturnIdRequest) (*http.Response, error)
 
 	/*
 		GETCustomerIdReturns Retrieve the returns associated to the customer
@@ -43,12 +43,12 @@ type ReturnsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param customerId The resource's id
-		@return ApiGETCustomerIdReturnsRequest
+		@return ReturnsApiGETCustomerIdReturnsRequest
 	*/
-	GETCustomerIdReturns(ctx context.Context, customerId string) ApiGETCustomerIdReturnsRequest
+	GETCustomerIdReturns(ctx context.Context, customerId string) ReturnsApiGETCustomerIdReturnsRequest
 
 	// GETCustomerIdReturnsExecute executes the request
-	GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturnsRequest) (*http.Response, error)
+	GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerIdReturnsRequest) (*http.Response, error)
 
 	/*
 		GETReturnLineItemIdReturn Retrieve the return associated to the return line item
@@ -57,12 +57,12 @@ type ReturnsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnLineItemId The resource's id
-		@return ApiGETReturnLineItemIdReturnRequest
+		@return ReturnsApiGETReturnLineItemIdReturnRequest
 	*/
-	GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdReturnRequest
+	GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ReturnsApiGETReturnLineItemIdReturnRequest
 
 	// GETReturnLineItemIdReturnExecute executes the request
-	GETReturnLineItemIdReturnExecute(r ApiGETReturnLineItemIdReturnRequest) (*http.Response, error)
+	GETReturnLineItemIdReturnExecute(r ReturnsApiGETReturnLineItemIdReturnRequest) (*http.Response, error)
 
 	/*
 		GETReturns List all returns
@@ -70,12 +70,12 @@ type ReturnsApi interface {
 		List all returns
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETReturnsRequest
+		@return ReturnsApiGETReturnsRequest
 	*/
-	GETReturns(ctx context.Context) ApiGETReturnsRequest
+	GETReturns(ctx context.Context) ReturnsApiGETReturnsRequest
 
 	// GETReturnsExecute executes the request
-	GETReturnsExecute(r ApiGETReturnsRequest) (*http.Response, error)
+	GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*http.Response, error)
 
 	/*
 		GETReturnsReturnId Retrieve a return
@@ -84,13 +84,13 @@ type ReturnsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiGETReturnsReturnIdRequest
+		@return ReturnsApiGETReturnsReturnIdRequest
 	*/
-	GETReturnsReturnId(ctx context.Context, returnId string) ApiGETReturnsReturnIdRequest
+	GETReturnsReturnId(ctx context.Context, returnId string) ReturnsApiGETReturnsReturnIdRequest
 
 	// GETReturnsReturnIdExecute executes the request
 	//  @return ModelReturn
-	GETReturnsReturnIdExecute(r ApiGETReturnsReturnIdRequest) (*ModelReturn, *http.Response, error)
+	GETReturnsReturnIdExecute(r ReturnsApiGETReturnsReturnIdRequest) (*ModelReturn, *http.Response, error)
 
 	/*
 		PATCHReturnsReturnId Update a return
@@ -99,12 +99,12 @@ type ReturnsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param returnId The resource's id
-		@return ApiPATCHReturnsReturnIdRequest
+		@return ReturnsApiPATCHReturnsReturnIdRequest
 	*/
-	PATCHReturnsReturnId(ctx context.Context, returnId string) ApiPATCHReturnsReturnIdRequest
+	PATCHReturnsReturnId(ctx context.Context, returnId string) ReturnsApiPATCHReturnsReturnIdRequest
 
 	// PATCHReturnsReturnIdExecute executes the request
-	PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnIdRequest) (*http.Response, error)
+	PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturnsReturnIdRequest) (*http.Response, error)
 
 	/*
 		POSTReturns Create a return
@@ -112,24 +112,24 @@ type ReturnsApi interface {
 		Create a return
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTReturnsRequest
+		@return ReturnsApiPOSTReturnsRequest
 	*/
-	POSTReturns(ctx context.Context) ApiPOSTReturnsRequest
+	POSTReturns(ctx context.Context) ReturnsApiPOSTReturnsRequest
 
 	// POSTReturnsExecute executes the request
-	POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.Response, error)
+	POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (*http.Response, error)
 }
 
 // ReturnsApiService ReturnsApi service
 type ReturnsApiService service
 
-type ApiDELETEReturnsReturnIdRequest struct {
+type ReturnsApiDELETEReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService ReturnsApi
 	returnId   string
 }
 
-func (r ApiDELETEReturnsReturnIdRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiDELETEReturnsReturnIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEReturnsReturnIdExecute(r)
 }
 
@@ -140,10 +140,10 @@ Delete a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiDELETEReturnsReturnIdRequest
+ @return ReturnsApiDELETEReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId string) ApiDELETEReturnsReturnIdRequest {
-	return ApiDELETEReturnsReturnIdRequest{
+func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId string) ReturnsApiDELETEReturnsReturnIdRequest {
+	return ReturnsApiDELETEReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -151,7 +151,7 @@ func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId 
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ApiDELETEReturnsReturnIdRequest) (*http.Response, error) {
+func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETEReturnsReturnIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -215,13 +215,13 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ApiDELETEReturnsRetur
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdReturnsRequest struct {
+type ReturnsApiGETCustomerIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService ReturnsApi
 	customerId string
 }
 
-func (r ApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdReturnsExecute(r)
 }
 
@@ -232,10 +232,10 @@ Retrieve the returns associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdReturnsRequest
+ @return ReturnsApiGETCustomerIdReturnsRequest
 */
-func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ApiGETCustomerIdReturnsRequest {
-	return ApiGETCustomerIdReturnsRequest{
+func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ReturnsApiGETCustomerIdReturnsRequest {
+	return ReturnsApiGETCustomerIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -243,7 +243,7 @@ func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturnsRequest) (*http.Response, error) {
+func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerIdReturnsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -307,13 +307,13 @@ func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnLineItemIdReturnRequest struct {
+type ReturnsApiGETReturnLineItemIdReturnRequest struct {
 	ctx              context.Context
 	ApiService       ReturnsApi
 	returnLineItemId string
 }
 
-func (r ApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnLineItemIdReturnExecute(r)
 }
 
@@ -324,10 +324,10 @@ Retrieve the return associated to the return line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnLineItemId The resource's id
- @return ApiGETReturnLineItemIdReturnRequest
+ @return ReturnsApiGETReturnLineItemIdReturnRequest
 */
-func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdReturnRequest {
-	return ApiGETReturnLineItemIdReturnRequest{
+func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ReturnsApiGETReturnLineItemIdReturnRequest {
+	return ReturnsApiGETReturnLineItemIdReturnRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		returnLineItemId: returnLineItemId,
@@ -335,7 +335,7 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, retur
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
+func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ReturnsApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -399,12 +399,12 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnsRequest struct {
+type ReturnsApiGETReturnsRequest struct {
 	ctx        context.Context
 	ApiService ReturnsApi
 }
 
-func (r ApiGETReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETReturnsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnsExecute(r)
 }
 
@@ -414,17 +414,17 @@ GETReturns List all returns
 List all returns
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETReturnsRequest
+ @return ReturnsApiGETReturnsRequest
 */
-func (a *ReturnsApiService) GETReturns(ctx context.Context) ApiGETReturnsRequest {
-	return ApiGETReturnsRequest{
+func (a *ReturnsApiService) GETReturns(ctx context.Context) ReturnsApiGETReturnsRequest {
+	return ReturnsApiGETReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Response, error) {
+func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -487,13 +487,13 @@ func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Res
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnsReturnIdRequest struct {
+type ReturnsApiGETReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService ReturnsApi
 	returnId   string
 }
 
-func (r ApiGETReturnsReturnIdRequest) Execute() (*ModelReturn, *http.Response, error) {
+func (r ReturnsApiGETReturnsReturnIdRequest) Execute() (*ModelReturn, *http.Response, error) {
 	return r.ApiService.GETReturnsReturnIdExecute(r)
 }
 
@@ -504,10 +504,10 @@ Retrieve a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnsReturnIdRequest
+ @return ReturnsApiGETReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId string) ApiGETReturnsReturnIdRequest {
-	return ApiGETReturnsReturnIdRequest{
+func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId string) ReturnsApiGETReturnsReturnIdRequest {
+	return ReturnsApiGETReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -516,7 +516,7 @@ func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId str
 
 // Execute executes the request
 //  @return ModelReturn
-func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ApiGETReturnsReturnIdRequest) (*ModelReturn, *http.Response, error) {
+func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsReturnIdRequest) (*ModelReturn, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -590,19 +590,19 @@ func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ApiGETReturnsReturnIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHReturnsReturnIdRequest struct {
+type ReturnsApiPATCHReturnsReturnIdRequest struct {
 	ctx          context.Context
 	ApiService   ReturnsApi
 	returnId     string
 	returnUpdate *ReturnUpdate
 }
 
-func (r ApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnUpdate) ApiPATCHReturnsReturnIdRequest {
+func (r ReturnsApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnUpdate) ReturnsApiPATCHReturnsReturnIdRequest {
 	r.returnUpdate = &returnUpdate
 	return r
 }
 
-func (r ApiPATCHReturnsReturnIdRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiPATCHReturnsReturnIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHReturnsReturnIdExecute(r)
 }
 
@@ -613,10 +613,10 @@ Update a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiPATCHReturnsReturnIdRequest
+ @return ReturnsApiPATCHReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId string) ApiPATCHReturnsReturnIdRequest {
-	return ApiPATCHReturnsReturnIdRequest{
+func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId string) ReturnsApiPATCHReturnsReturnIdRequest {
+	return ReturnsApiPATCHReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -624,7 +624,7 @@ func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId s
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnIdRequest) (*http.Response, error) {
+func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturnsReturnIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -693,18 +693,18 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnI
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTReturnsRequest struct {
+type ReturnsApiPOSTReturnsRequest struct {
 	ctx          context.Context
 	ApiService   ReturnsApi
 	returnCreate *ReturnCreate
 }
 
-func (r ApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) ApiPOSTReturnsRequest {
+func (r ReturnsApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) ReturnsApiPOSTReturnsRequest {
 	r.returnCreate = &returnCreate
 	return r
 }
 
-func (r ApiPOSTReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiPOSTReturnsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTReturnsExecute(r)
 }
 
@@ -714,17 +714,17 @@ POSTReturns Create a return
 Create a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTReturnsRequest
+ @return ReturnsApiPOSTReturnsRequest
 */
-func (a *ReturnsApiService) POSTReturns(ctx context.Context) ApiPOSTReturnsRequest {
-	return ApiPOSTReturnsRequest{
+func (a *ReturnsApiService) POSTReturns(ctx context.Context) ReturnsApiPOSTReturnsRequest {
+	return ReturnsApiPOSTReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.Response, error) {
+func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

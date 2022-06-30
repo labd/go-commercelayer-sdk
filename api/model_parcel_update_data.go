@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,7 @@ type ParcelUpdateData struct {
 	Type string `json:"type"`
 	// The resource's id
 	Id            string                         `json:"id"`
-	Attributes    ParcelCreateDataAttributes     `json:"attributes"`
+	Attributes    ParcelUpdateDataAttributes     `json:"attributes"`
 	Relationships *ParcelUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -29,7 +29,7 @@ type ParcelUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelUpdateData(type_ string, id string, attributes ParcelCreateDataAttributes) *ParcelUpdateData {
+func NewParcelUpdateData(type_ string, id string, attributes ParcelUpdateDataAttributes) *ParcelUpdateData {
 	this := ParcelUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *ParcelUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelUpdateData) GetAttributes() ParcelCreateDataAttributes {
+func (o *ParcelUpdateData) GetAttributes() ParcelUpdateDataAttributes {
 	if o == nil {
-		var ret ParcelCreateDataAttributes
+		var ret ParcelUpdateDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *ParcelUpdateData) GetAttributes() ParcelCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelUpdateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool) {
+func (o *ParcelUpdateData) GetAttributesOk() (*ParcelUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +115,7 @@ func (o *ParcelUpdateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ParcelUpdateData) SetAttributes(v ParcelCreateDataAttributes) {
+func (o *ParcelUpdateData) SetAttributes(v ParcelUpdateDataAttributes) {
 	o.Attributes = v
 }
 

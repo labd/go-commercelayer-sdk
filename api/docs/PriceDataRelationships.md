@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
 **Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
+**PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
+**PriceVolumeTiers** | Pointer to [**PriceDataRelationshipsPriceVolumeTiers**](PriceDataRelationshipsPriceVolumeTiers.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
@@ -76,6 +78,56 @@ SetSku sets Sku field to given value.
 `func (o *PriceDataRelationships) HasSku() bool`
 
 HasSku returns a boolean if a field has been set.
+
+### GetPriceTiers
+
+`func (o *PriceDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers`
+
+GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
+
+### GetPriceTiersOk
+
+`func (o *PriceDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool)`
+
+GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceTiers
+
+`func (o *PriceDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers)`
+
+SetPriceTiers sets PriceTiers field to given value.
+
+### HasPriceTiers
+
+`func (o *PriceDataRelationships) HasPriceTiers() bool`
+
+HasPriceTiers returns a boolean if a field has been set.
+
+### GetPriceVolumeTiers
+
+`func (o *PriceDataRelationships) GetPriceVolumeTiers() PriceDataRelationshipsPriceVolumeTiers`
+
+GetPriceVolumeTiers returns the PriceVolumeTiers field if non-nil, zero value otherwise.
+
+### GetPriceVolumeTiersOk
+
+`func (o *PriceDataRelationships) GetPriceVolumeTiersOk() (*PriceDataRelationshipsPriceVolumeTiers, bool)`
+
+GetPriceVolumeTiersOk returns a tuple with the PriceVolumeTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceVolumeTiers
+
+`func (o *PriceDataRelationships) SetPriceVolumeTiers(v PriceDataRelationshipsPriceVolumeTiers)`
+
+SetPriceVolumeTiers sets PriceVolumeTiers field to given value.
+
+### HasPriceVolumeTiers
+
+`func (o *PriceDataRelationships) HasPriceVolumeTiers() bool`
+
+HasPriceVolumeTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 

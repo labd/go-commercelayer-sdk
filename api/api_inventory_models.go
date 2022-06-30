@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiDELETEInventoryModelsInventoryModelIdRequest
+		@return InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest
 	*/
-	DELETEInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiDELETEInventoryModelsInventoryModelIdRequest
+	DELETEInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest
 
 	// DELETEInventoryModelsInventoryModelIdExecute executes the request
-	DELETEInventoryModelsInventoryModelIdExecute(r ApiDELETEInventoryModelsInventoryModelIdRequest) (*http.Response, error)
+	DELETEInventoryModelsInventoryModelIdExecute(r InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModels List all inventory models
@@ -42,12 +42,12 @@ type InventoryModelsApi interface {
 		List all inventory models
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETInventoryModelsRequest
+		@return InventoryModelsApiGETInventoryModelsRequest
 	*/
-	GETInventoryModels(ctx context.Context) ApiGETInventoryModelsRequest
+	GETInventoryModels(ctx context.Context) InventoryModelsApiGETInventoryModelsRequest
 
 	// GETInventoryModelsExecute executes the request
-	GETInventoryModelsExecute(r ApiGETInventoryModelsRequest) (*http.Response, error)
+	GETInventoryModelsExecute(r InventoryModelsApiGETInventoryModelsRequest) (*http.Response, error)
 
 	/*
 		GETInventoryModelsInventoryModelId Retrieve an inventory model
@@ -56,13 +56,13 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiGETInventoryModelsInventoryModelIdRequest
+		@return InventoryModelsApiGETInventoryModelsInventoryModelIdRequest
 	*/
-	GETInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiGETInventoryModelsInventoryModelIdRequest
+	GETInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiGETInventoryModelsInventoryModelIdRequest
 
 	// GETInventoryModelsInventoryModelIdExecute executes the request
 	//  @return InventoryModel
-	GETInventoryModelsInventoryModelIdExecute(r ApiGETInventoryModelsInventoryModelIdRequest) (*InventoryModel, *http.Response, error)
+	GETInventoryModelsInventoryModelIdExecute(r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) (*InventoryModel, *http.Response, error)
 
 	/*
 		GETInventoryReturnLocationIdInventoryModel Retrieve the inventory model associated to the inventory return location
@@ -71,12 +71,12 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryReturnLocationId The resource's id
-		@return ApiGETInventoryReturnLocationIdInventoryModelRequest
+		@return InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest
 	*/
-	GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdInventoryModelRequest
+	GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest
 
 	// GETInventoryReturnLocationIdInventoryModelExecute executes the request
-	GETInventoryReturnLocationIdInventoryModelExecute(r ApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error)
+	GETInventoryReturnLocationIdInventoryModelExecute(r InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		GETInventoryStockLocationIdInventoryModel Retrieve the inventory model associated to the inventory stock location
@@ -85,12 +85,12 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryStockLocationId The resource's id
-		@return ApiGETInventoryStockLocationIdInventoryModelRequest
+		@return InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest
 	*/
-	GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdInventoryModelRequest
+	GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest
 
 	// GETInventoryStockLocationIdInventoryModelExecute executes the request
-	GETInventoryStockLocationIdInventoryModelExecute(r ApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error)
+	GETInventoryStockLocationIdInventoryModelExecute(r InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		GETMarketIdInventoryModel Retrieve the inventory model associated to the market
@@ -99,12 +99,12 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param marketId The resource's id
-		@return ApiGETMarketIdInventoryModelRequest
+		@return InventoryModelsApiGETMarketIdInventoryModelRequest
 	*/
-	GETMarketIdInventoryModel(ctx context.Context, marketId string) ApiGETMarketIdInventoryModelRequest
+	GETMarketIdInventoryModel(ctx context.Context, marketId string) InventoryModelsApiGETMarketIdInventoryModelRequest
 
 	// GETMarketIdInventoryModelExecute executes the request
-	GETMarketIdInventoryModelExecute(r ApiGETMarketIdInventoryModelRequest) (*http.Response, error)
+	GETMarketIdInventoryModelExecute(r InventoryModelsApiGETMarketIdInventoryModelRequest) (*http.Response, error)
 
 	/*
 		PATCHInventoryModelsInventoryModelId Update an inventory model
@@ -113,12 +113,12 @@ type InventoryModelsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inventoryModelId The resource's id
-		@return ApiPATCHInventoryModelsInventoryModelIdRequest
+		@return InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest
 	*/
-	PATCHInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiPATCHInventoryModelsInventoryModelIdRequest
+	PATCHInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest
 
 	// PATCHInventoryModelsInventoryModelIdExecute executes the request
-	PATCHInventoryModelsInventoryModelIdExecute(r ApiPATCHInventoryModelsInventoryModelIdRequest) (*http.Response, error)
+	PATCHInventoryModelsInventoryModelIdExecute(r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) (*http.Response, error)
 
 	/*
 		POSTInventoryModels Create an inventory model
@@ -126,24 +126,24 @@ type InventoryModelsApi interface {
 		Create an inventory model
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTInventoryModelsRequest
+		@return InventoryModelsApiPOSTInventoryModelsRequest
 	*/
-	POSTInventoryModels(ctx context.Context) ApiPOSTInventoryModelsRequest
+	POSTInventoryModels(ctx context.Context) InventoryModelsApiPOSTInventoryModelsRequest
 
 	// POSTInventoryModelsExecute executes the request
-	POSTInventoryModelsExecute(r ApiPOSTInventoryModelsRequest) (*http.Response, error)
+	POSTInventoryModelsExecute(r InventoryModelsApiPOSTInventoryModelsRequest) (*http.Response, error)
 }
 
 // InventoryModelsApiService InventoryModelsApi service
 type InventoryModelsApiService service
 
-type ApiDELETEInventoryModelsInventoryModelIdRequest struct {
+type InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest struct {
 	ctx              context.Context
 	ApiService       InventoryModelsApi
 	inventoryModelId string
 }
 
-func (r ApiDELETEInventoryModelsInventoryModelIdRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEInventoryModelsInventoryModelIdExecute(r)
 }
 
@@ -154,10 +154,10 @@ Delete an inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiDELETEInventoryModelsInventoryModelIdRequest
+ @return InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest
 */
-func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiDELETEInventoryModelsInventoryModelIdRequest {
-	return ApiDELETEInventoryModelsInventoryModelIdRequest{
+func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest {
+	return InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -165,7 +165,7 @@ func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelId(ctx co
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelIdExecute(r ApiDELETEInventoryModelsInventoryModelIdRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelIdExecute(r InventoryModelsApiDELETEInventoryModelsInventoryModelIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -229,12 +229,12 @@ func (a *InventoryModelsApiService) DELETEInventoryModelsInventoryModelIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelsRequest struct {
+type InventoryModelsApiGETInventoryModelsRequest struct {
 	ctx        context.Context
 	ApiService InventoryModelsApi
 }
 
-func (r ApiGETInventoryModelsRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiGETInventoryModelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelsExecute(r)
 }
 
@@ -244,17 +244,17 @@ GETInventoryModels List all inventory models
 List all inventory models
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETInventoryModelsRequest
+ @return InventoryModelsApiGETInventoryModelsRequest
 */
-func (a *InventoryModelsApiService) GETInventoryModels(ctx context.Context) ApiGETInventoryModelsRequest {
-	return ApiGETInventoryModelsRequest{
+func (a *InventoryModelsApiService) GETInventoryModels(ctx context.Context) InventoryModelsApiGETInventoryModelsRequest {
+	return InventoryModelsApiGETInventoryModelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) GETInventoryModelsExecute(r ApiGETInventoryModelsRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) GETInventoryModelsExecute(r InventoryModelsApiGETInventoryModelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -317,13 +317,13 @@ func (a *InventoryModelsApiService) GETInventoryModelsExecute(r ApiGETInventoryM
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryModelsInventoryModelIdRequest struct {
+type InventoryModelsApiGETInventoryModelsInventoryModelIdRequest struct {
 	ctx              context.Context
 	ApiService       InventoryModelsApi
 	inventoryModelId string
 }
 
-func (r ApiGETInventoryModelsInventoryModelIdRequest) Execute() (*InventoryModel, *http.Response, error) {
+func (r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) Execute() (*InventoryModel, *http.Response, error) {
 	return r.ApiService.GETInventoryModelsInventoryModelIdExecute(r)
 }
 
@@ -334,10 +334,10 @@ Retrieve an inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiGETInventoryModelsInventoryModelIdRequest
+ @return InventoryModelsApiGETInventoryModelsInventoryModelIdRequest
 */
-func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiGETInventoryModelsInventoryModelIdRequest {
-	return ApiGETInventoryModelsInventoryModelIdRequest{
+func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiGETInventoryModelsInventoryModelIdRequest {
+	return InventoryModelsApiGETInventoryModelsInventoryModelIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -346,7 +346,7 @@ func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelId(ctx conte
 
 // Execute executes the request
 //  @return InventoryModel
-func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelIdExecute(r ApiGETInventoryModelsInventoryModelIdRequest) (*InventoryModel, *http.Response, error) {
+func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelIdExecute(r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) (*InventoryModel, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -420,13 +420,13 @@ func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationIdInventoryModelRequest struct {
+type InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest struct {
 	ctx                       context.Context
 	ApiService                InventoryModelsApi
 	inventoryReturnLocationId string
 }
 
-func (r ApiGETInventoryReturnLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationIdInventoryModelExecute(r)
 }
 
@@ -437,10 +437,10 @@ Retrieve the inventory model associated to the inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiGETInventoryReturnLocationIdInventoryModelRequest
+ @return InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest
 */
-func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdInventoryModelRequest {
-	return ApiGETInventoryReturnLocationIdInventoryModelRequest{
+func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest {
+	return InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -448,7 +448,7 @@ func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModel(c
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModelExecute(r ApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModelExecute(r InventoryModelsApiGETInventoryReturnLocationIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -512,13 +512,13 @@ func (a *InventoryModelsApiService) GETInventoryReturnLocationIdInventoryModelEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryStockLocationIdInventoryModelRequest struct {
+type InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest struct {
 	ctx                      context.Context
 	ApiService               InventoryModelsApi
 	inventoryStockLocationId string
 }
 
-func (r ApiGETInventoryStockLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryStockLocationIdInventoryModelExecute(r)
 }
 
@@ -529,10 +529,10 @@ Retrieve the inventory model associated to the inventory stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryStockLocationId The resource's id
- @return ApiGETInventoryStockLocationIdInventoryModelRequest
+ @return InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest
 */
-func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdInventoryModelRequest {
-	return ApiGETInventoryStockLocationIdInventoryModelRequest{
+func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest {
+	return InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest{
 		ApiService:               a,
 		ctx:                      ctx,
 		inventoryStockLocationId: inventoryStockLocationId,
@@ -540,7 +540,7 @@ func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModel(ct
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModelExecute(r ApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModelExecute(r InventoryModelsApiGETInventoryStockLocationIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -604,13 +604,13 @@ func (a *InventoryModelsApiService) GETInventoryStockLocationIdInventoryModelExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdInventoryModelRequest struct {
+type InventoryModelsApiGETMarketIdInventoryModelRequest struct {
 	ctx        context.Context
 	ApiService InventoryModelsApi
 	marketId   string
 }
 
-func (r ApiGETMarketIdInventoryModelRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiGETMarketIdInventoryModelRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdInventoryModelExecute(r)
 }
 
@@ -621,10 +621,10 @@ Retrieve the inventory model associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdInventoryModelRequest
+ @return InventoryModelsApiGETMarketIdInventoryModelRequest
 */
-func (a *InventoryModelsApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) ApiGETMarketIdInventoryModelRequest {
-	return ApiGETMarketIdInventoryModelRequest{
+func (a *InventoryModelsApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) InventoryModelsApiGETMarketIdInventoryModelRequest {
+	return InventoryModelsApiGETMarketIdInventoryModelRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -632,7 +632,7 @@ func (a *InventoryModelsApiService) GETMarketIdInventoryModel(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) GETMarketIdInventoryModelExecute(r ApiGETMarketIdInventoryModelRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) GETMarketIdInventoryModelExecute(r InventoryModelsApiGETMarketIdInventoryModelRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -696,19 +696,19 @@ func (a *InventoryModelsApiService) GETMarketIdInventoryModelExecute(r ApiGETMar
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHInventoryModelsInventoryModelIdRequest struct {
+type InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest struct {
 	ctx                  context.Context
 	ApiService           InventoryModelsApi
 	inventoryModelId     string
 	inventoryModelUpdate *InventoryModelUpdate
 }
 
-func (r ApiPATCHInventoryModelsInventoryModelIdRequest) InventoryModelUpdate(inventoryModelUpdate InventoryModelUpdate) ApiPATCHInventoryModelsInventoryModelIdRequest {
+func (r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) InventoryModelUpdate(inventoryModelUpdate InventoryModelUpdate) InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest {
 	r.inventoryModelUpdate = &inventoryModelUpdate
 	return r
 }
 
-func (r ApiPATCHInventoryModelsInventoryModelIdRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHInventoryModelsInventoryModelIdExecute(r)
 }
 
@@ -719,10 +719,10 @@ Update an inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return ApiPATCHInventoryModelsInventoryModelIdRequest
+ @return InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest
 */
-func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) ApiPATCHInventoryModelsInventoryModelIdRequest {
-	return ApiPATCHInventoryModelsInventoryModelIdRequest{
+func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelId(ctx context.Context, inventoryModelId string) InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest {
+	return InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -730,7 +730,7 @@ func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelId(ctx con
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelIdExecute(r ApiPATCHInventoryModelsInventoryModelIdRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelIdExecute(r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -799,18 +799,18 @@ func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTInventoryModelsRequest struct {
+type InventoryModelsApiPOSTInventoryModelsRequest struct {
 	ctx                  context.Context
 	ApiService           InventoryModelsApi
 	inventoryModelCreate *InventoryModelCreate
 }
 
-func (r ApiPOSTInventoryModelsRequest) InventoryModelCreate(inventoryModelCreate InventoryModelCreate) ApiPOSTInventoryModelsRequest {
+func (r InventoryModelsApiPOSTInventoryModelsRequest) InventoryModelCreate(inventoryModelCreate InventoryModelCreate) InventoryModelsApiPOSTInventoryModelsRequest {
 	r.inventoryModelCreate = &inventoryModelCreate
 	return r
 }
 
-func (r ApiPOSTInventoryModelsRequest) Execute() (*http.Response, error) {
+func (r InventoryModelsApiPOSTInventoryModelsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTInventoryModelsExecute(r)
 }
 
@@ -820,17 +820,17 @@ POSTInventoryModels Create an inventory model
 Create an inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTInventoryModelsRequest
+ @return InventoryModelsApiPOSTInventoryModelsRequest
 */
-func (a *InventoryModelsApiService) POSTInventoryModels(ctx context.Context) ApiPOSTInventoryModelsRequest {
-	return ApiPOSTInventoryModelsRequest{
+func (a *InventoryModelsApiService) POSTInventoryModels(ctx context.Context) InventoryModelsApiPOSTInventoryModelsRequest {
+	return InventoryModelsApiPOSTInventoryModelsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InventoryModelsApiService) POSTInventoryModelsExecute(r ApiPOSTInventoryModelsRequest) (*http.Response, error) {
+func (a *InventoryModelsApiService) POSTInventoryModelsExecute(r InventoryModelsApiPOSTInventoryModelsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

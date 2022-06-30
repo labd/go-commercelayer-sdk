@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type GiftCardsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiDELETEGiftCardsGiftCardIdRequest
+		@return GiftCardsApiDELETEGiftCardsGiftCardIdRequest
 	*/
-	DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiDELETEGiftCardsGiftCardIdRequest
+	DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiDELETEGiftCardsGiftCardIdRequest
 
 	// DELETEGiftCardsGiftCardIdExecute executes the request
-	DELETEGiftCardsGiftCardIdExecute(r ApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error)
+	DELETEGiftCardsGiftCardIdExecute(r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error)
 
 	/*
 		GETGiftCards List all gift cards
@@ -42,12 +42,12 @@ type GiftCardsApi interface {
 		List all gift cards
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETGiftCardsRequest
+		@return GiftCardsApiGETGiftCardsRequest
 	*/
-	GETGiftCards(ctx context.Context) ApiGETGiftCardsRequest
+	GETGiftCards(ctx context.Context) GiftCardsApiGETGiftCardsRequest
 
 	// GETGiftCardsExecute executes the request
-	GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*http.Response, error)
+	GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequest) (*http.Response, error)
 
 	/*
 		GETGiftCardsGiftCardId Retrieve a gift card
@@ -56,13 +56,13 @@ type GiftCardsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiGETGiftCardsGiftCardIdRequest
+		@return GiftCardsApiGETGiftCardsGiftCardIdRequest
 	*/
-	GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiGETGiftCardsGiftCardIdRequest
+	GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiGETGiftCardsGiftCardIdRequest
 
 	// GETGiftCardsGiftCardIdExecute executes the request
 	//  @return GiftCard
-	GETGiftCardsGiftCardIdExecute(r ApiGETGiftCardsGiftCardIdRequest) (*GiftCard, *http.Response, error)
+	GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGiftCardsGiftCardIdRequest) (*GiftCard, *http.Response, error)
 
 	/*
 		PATCHGiftCardsGiftCardId Update a gift card
@@ -71,12 +71,12 @@ type GiftCardsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param giftCardId The resource's id
-		@return ApiPATCHGiftCardsGiftCardIdRequest
+		@return GiftCardsApiPATCHGiftCardsGiftCardIdRequest
 	*/
-	PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiPATCHGiftCardsGiftCardIdRequest
+	PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiPATCHGiftCardsGiftCardIdRequest
 
 	// PATCHGiftCardsGiftCardIdExecute executes the request
-	PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCardsGiftCardIdRequest) (*http.Response, error)
+	PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) (*http.Response, error)
 
 	/*
 		POSTGiftCards Create a gift card
@@ -84,24 +84,24 @@ type GiftCardsApi interface {
 		Create a gift card
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTGiftCardsRequest
+		@return GiftCardsApiPOSTGiftCardsRequest
 	*/
-	POSTGiftCards(ctx context.Context) ApiPOSTGiftCardsRequest
+	POSTGiftCards(ctx context.Context) GiftCardsApiPOSTGiftCardsRequest
 
 	// POSTGiftCardsExecute executes the request
-	POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*http.Response, error)
+	POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRequest) (*http.Response, error)
 }
 
 // GiftCardsApiService GiftCardsApi service
 type GiftCardsApiService service
 
-type ApiDELETEGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiDELETEGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService GiftCardsApi
 	giftCardId string
 }
 
-func (r ApiDELETEGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEGiftCardsGiftCardIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiDELETEGiftCardsGiftCardIdRequest
+ @return GiftCardsApiDELETEGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiDELETEGiftCardsGiftCardIdRequest {
-	return ApiDELETEGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiDELETEGiftCardsGiftCardIdRequest {
+	return GiftCardsApiDELETEGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -123,7 +123,7 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, gif
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r ApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error) {
+func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r ApiDELETEGiftCa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardsRequest struct {
+type GiftCardsApiGETGiftCardsRequest struct {
 	ctx        context.Context
 	ApiService GiftCardsApi
 }
 
-func (r ApiGETGiftCardsRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiGETGiftCardsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardsExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETGiftCards List all gift cards
 List all gift cards
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETGiftCardsRequest
+ @return GiftCardsApiGETGiftCardsRequest
 */
-func (a *GiftCardsApiService) GETGiftCards(ctx context.Context) ApiGETGiftCardsRequest {
-	return ApiGETGiftCardsRequest{
+func (a *GiftCardsApiService) GETGiftCards(ctx context.Context) GiftCardsApiGETGiftCardsRequest {
+	return GiftCardsApiGETGiftCardsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*http.Response, error) {
+func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiGETGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService GiftCardsApi
 	giftCardId string
 }
 
-func (r ApiGETGiftCardsGiftCardIdRequest) Execute() (*GiftCard, *http.Response, error) {
+func (r GiftCardsApiGETGiftCardsGiftCardIdRequest) Execute() (*GiftCard, *http.Response, error) {
 	return r.ApiService.GETGiftCardsGiftCardIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardsGiftCardIdRequest
+ @return GiftCardsApiGETGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiGETGiftCardsGiftCardIdRequest {
-	return ApiGETGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiGETGiftCardsGiftCardIdRequest {
+	return GiftCardsApiGETGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -304,7 +304,7 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCa
 
 // Execute executes the request
 //  @return GiftCard
-func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r ApiGETGiftCardsGiftCardIdRequest) (*GiftCard, *http.Response, error) {
+func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGiftCardsGiftCardIdRequest) (*GiftCard, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r ApiGETGiftCardsGif
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiPATCHGiftCardsGiftCardIdRequest struct {
 	ctx            context.Context
 	ApiService     GiftCardsApi
 	giftCardId     string
 	giftCardUpdate *GiftCardUpdate
 }
 
-func (r ApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpdate GiftCardUpdate) ApiPATCHGiftCardsGiftCardIdRequest {
+func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpdate GiftCardUpdate) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
 	r.giftCardUpdate = &giftCardUpdate
 	return r
 }
 
-func (r ApiPATCHGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHGiftCardsGiftCardIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiPATCHGiftCardsGiftCardIdRequest
+ @return GiftCardsApiPATCHGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiPATCHGiftCardsGiftCardIdRequest {
-	return ApiPATCHGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
+	return GiftCardsApiPATCHGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -412,7 +412,7 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, gift
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCardsGiftCardIdRequest) (*http.Response, error) {
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCard
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTGiftCardsRequest struct {
+type GiftCardsApiPOSTGiftCardsRequest struct {
 	ctx            context.Context
 	ApiService     GiftCardsApi
 	giftCardCreate *GiftCardCreate
 }
 
-func (r ApiPOSTGiftCardsRequest) GiftCardCreate(giftCardCreate GiftCardCreate) ApiPOSTGiftCardsRequest {
+func (r GiftCardsApiPOSTGiftCardsRequest) GiftCardCreate(giftCardCreate GiftCardCreate) GiftCardsApiPOSTGiftCardsRequest {
 	r.giftCardCreate = &giftCardCreate
 	return r
 }
 
-func (r ApiPOSTGiftCardsRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiPOSTGiftCardsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTGiftCardsExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTGiftCards Create a gift card
 Create a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTGiftCardsRequest
+ @return GiftCardsApiPOSTGiftCardsRequest
 */
-func (a *GiftCardsApiService) POSTGiftCards(ctx context.Context) ApiPOSTGiftCardsRequest {
-	return ApiPOSTGiftCardsRequest{
+func (a *GiftCardsApiService) POSTGiftCards(ctx context.Context) GiftCardsApiPOSTGiftCardsRequest {
+	return GiftCardsApiPOSTGiftCardsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*http.Response, error) {
+func (a *GiftCardsApiService) POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

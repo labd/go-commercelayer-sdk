@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEWebhooksWebhookId**](WebhooksApi.md#DELETEWebhooksWebhookId) | **Delete** /webhooks/{webhookId} | Delete a webhook
 [**GETEventCallbackIdWebhook**](WebhooksApi.md#GETEventCallbackIdWebhook) | **Get** /event_callbacks/{eventCallbackId}/webhook | Retrieve the webhook associated to the event callback
+[**GETEventIdWebhooks**](WebhooksApi.md#GETEventIdWebhooks) | **Get** /events/{eventId}/webhooks | Retrieve the webhooks associated to the event
 [**GETWebhooks**](WebhooksApi.md#GETWebhooks) | **Get** /webhooks | List all webhooks
 [**GETWebhooksWebhookId**](WebhooksApi.md#GETWebhooksWebhookId) | **Get** /webhooks/{webhookId} | Retrieve a webhook
 [**PATCHWebhooksWebhookId**](WebhooksApi.md#PATCHWebhooksWebhookId) | **Patch** /webhooks/{webhookId} | Update a webhook
@@ -125,6 +126,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETEventCallbackIdWebhookRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETEventIdWebhooks
+
+> GETEventIdWebhooks(ctx, eventId).Execute()
+
+Retrieve the webhooks associated to the event
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    eventId := "eventId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.WebhooksApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETEventIdWebhooks``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**eventId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETEventIdWebhooksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

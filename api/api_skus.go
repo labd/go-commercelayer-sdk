@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiDELETESkusSkuIdRequest
+		@return SkusApiDELETESkusSkuIdRequest
 	*/
-	DELETESkusSkuId(ctx context.Context, skuId string) ApiDELETESkusSkuIdRequest
+	DELETESkusSkuId(ctx context.Context, skuId string) SkusApiDELETESkusSkuIdRequest
 
 	// DELETESkusSkuIdExecute executes the request
-	DELETESkusSkuIdExecute(r ApiDELETESkusSkuIdRequest) (*http.Response, error)
+	DELETESkusSkuIdExecute(r SkusApiDELETESkusSkuIdRequest) (*http.Response, error)
 
 	/*
 		GETBundleIdSkus Retrieve the skus associated to the bundle
@@ -43,12 +43,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param bundleId The resource's id
-		@return ApiGETBundleIdSkusRequest
+		@return SkusApiGETBundleIdSkusRequest
 	*/
-	GETBundleIdSkus(ctx context.Context, bundleId string) ApiGETBundleIdSkusRequest
+	GETBundleIdSkus(ctx context.Context, bundleId string) SkusApiGETBundleIdSkusRequest
 
 	// GETBundleIdSkusExecute executes the request
-	GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) (*http.Response, error)
+	GETBundleIdSkusExecute(r SkusApiGETBundleIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETFixedPricePromotionIdSkus Retrieve the skus associated to the fixed price promotion
@@ -57,12 +57,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param fixedPricePromotionId The resource's id
-		@return ApiGETFixedPricePromotionIdSkusRequest
+		@return SkusApiGETFixedPricePromotionIdSkusRequest
 	*/
-	GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkusRequest
+	GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) SkusApiGETFixedPricePromotionIdSkusRequest
 
 	// GETFixedPricePromotionIdSkusExecute executes the request
-	GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error)
+	GETFixedPricePromotionIdSkusExecute(r SkusApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETFreeGiftPromotionIdSkus Retrieve the skus associated to the free gift promotion
@@ -71,12 +71,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param freeGiftPromotionId The resource's id
-		@return ApiGETFreeGiftPromotionIdSkusRequest
+		@return SkusApiGETFreeGiftPromotionIdSkusRequest
 	*/
-	GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkusRequest
+	GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) SkusApiGETFreeGiftPromotionIdSkusRequest
 
 	// GETFreeGiftPromotionIdSkusExecute executes the request
-	GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error)
+	GETFreeGiftPromotionIdSkusExecute(r SkusApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionIdSku Retrieve the sku associated to the in stock subscription
@@ -85,12 +85,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionIdSkuRequest
+		@return SkusApiGETInStockSubscriptionIdSkuRequest
 	*/
-	GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdSkuRequest
+	GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) SkusApiGETInStockSubscriptionIdSkuRequest
 
 	// GETInStockSubscriptionIdSkuExecute executes the request
-	GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error)
+	GETInStockSubscriptionIdSkuExecute(r SkusApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETOrderIdAvailableFreeSkus Retrieve the available free skus associated to the order
@@ -99,12 +99,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdAvailableFreeSkusRequest
+		@return SkusApiGETOrderIdAvailableFreeSkusRequest
 	*/
-	GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeSkusRequest
+	GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) SkusApiGETOrderIdAvailableFreeSkusRequest
 
 	// GETOrderIdAvailableFreeSkusExecute executes the request
-	GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error)
+	GETOrderIdAvailableFreeSkusExecute(r SkusApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error)
 
 	/*
 		GETPercentageDiscountPromotionIdSkus Retrieve the skus associated to the percentage discount promotion
@@ -113,12 +113,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param percentageDiscountPromotionId The resource's id
-		@return ApiGETPercentageDiscountPromotionIdSkusRequest
+		@return SkusApiGETPercentageDiscountPromotionIdSkusRequest
 	*/
-	GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkusRequest
+	GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) SkusApiGETPercentageDiscountPromotionIdSkusRequest
 
 	// GETPercentageDiscountPromotionIdSkusExecute executes the request
-	GETPercentageDiscountPromotionIdSkusExecute(r ApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error)
+	GETPercentageDiscountPromotionIdSkusExecute(r SkusApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETPriceIdSku Retrieve the sku associated to the price
@@ -127,12 +127,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param priceId The resource's id
-		@return ApiGETPriceIdSkuRequest
+		@return SkusApiGETPriceIdSkuRequest
 	*/
-	GETPriceIdSku(ctx context.Context, priceId string) ApiGETPriceIdSkuRequest
+	GETPriceIdSku(ctx context.Context, priceId string) SkusApiGETPriceIdSkuRequest
 
 	// GETPriceIdSkuExecute executes the request
-	GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*http.Response, error)
+	GETPriceIdSkuExecute(r SkusApiGETPriceIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETShippingCategoryIdSkus Retrieve the skus associated to the shipping category
@@ -141,12 +141,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shippingCategoryId The resource's id
-		@return ApiGETShippingCategoryIdSkusRequest
+		@return SkusApiGETShippingCategoryIdSkusRequest
 	*/
-	GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdSkusRequest
+	GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) SkusApiGETShippingCategoryIdSkusRequest
 
 	// GETShippingCategoryIdSkusExecute executes the request
-	GETShippingCategoryIdSkusExecute(r ApiGETShippingCategoryIdSkusRequest) (*http.Response, error)
+	GETShippingCategoryIdSkusExecute(r SkusApiGETShippingCategoryIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkuListIdSkus Retrieve the skus associated to the SKU list
@@ -155,12 +155,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListId The resource's id
-		@return ApiGETSkuListIdSkusRequest
+		@return SkusApiGETSkuListIdSkusRequest
 	*/
-	GETSkuListIdSkus(ctx context.Context, skuListId string) ApiGETSkuListIdSkusRequest
+	GETSkuListIdSkus(ctx context.Context, skuListId string) SkusApiGETSkuListIdSkusRequest
 
 	// GETSkuListIdSkusExecute executes the request
-	GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest) (*http.Response, error)
+	GETSkuListIdSkusExecute(r SkusApiGETSkuListIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkuListItemIdSku Retrieve the sku associated to the SKU list item
@@ -169,12 +169,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListItemId The resource's id
-		@return ApiGETSkuListItemIdSkuRequest
+		@return SkusApiGETSkuListItemIdSkuRequest
 	*/
-	GETSkuListItemIdSku(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuRequest
+	GETSkuListItemIdSku(ctx context.Context, skuListItemId string) SkusApiGETSkuListItemIdSkuRequest
 
 	// GETSkuListItemIdSkuExecute executes the request
-	GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRequest) (*http.Response, error)
+	GETSkuListItemIdSkuExecute(r SkusApiGETSkuListItemIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETSkuListPromotionRuleIdSkus Retrieve the skus associated to the SKU list promotion rule
@@ -183,12 +183,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuListPromotionRuleId The resource's id
-		@return ApiGETSkuListPromotionRuleIdSkusRequest
+		@return SkusApiGETSkuListPromotionRuleIdSkusRequest
 	*/
-	GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkusRequest
+	GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) SkusApiGETSkuListPromotionRuleIdSkusRequest
 
 	// GETSkuListPromotionRuleIdSkusExecute executes the request
-	GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error)
+	GETSkuListPromotionRuleIdSkusExecute(r SkusApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkus List all SKUs
@@ -196,12 +196,12 @@ type SkusApi interface {
 		List all SKUs
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETSkusRequest
+		@return SkusApiGETSkusRequest
 	*/
-	GETSkus(ctx context.Context) ApiGETSkusRequest
+	GETSkus(ctx context.Context) SkusApiGETSkusRequest
 
 	// GETSkusExecute executes the request
-	GETSkusExecute(r ApiGETSkusRequest) (*http.Response, error)
+	GETSkusExecute(r SkusApiGETSkusRequest) (*http.Response, error)
 
 	/*
 		GETSkusSkuId Retrieve a SKU
@@ -210,13 +210,13 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiGETSkusSkuIdRequest
+		@return SkusApiGETSkusSkuIdRequest
 	*/
-	GETSkusSkuId(ctx context.Context, skuId string) ApiGETSkusSkuIdRequest
+	GETSkusSkuId(ctx context.Context, skuId string) SkusApiGETSkusSkuIdRequest
 
 	// GETSkusSkuIdExecute executes the request
 	//  @return Sku
-	GETSkusSkuIdExecute(r ApiGETSkusSkuIdRequest) (*Sku, *http.Response, error)
+	GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*Sku, *http.Response, error)
 
 	/*
 		GETStockItemIdSku Retrieve the sku associated to the stock item
@@ -225,12 +225,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockItemId The resource's id
-		@return ApiGETStockItemIdSkuRequest
+		@return SkusApiGETStockItemIdSkuRequest
 	*/
-	GETStockItemIdSku(ctx context.Context, stockItemId string) ApiGETStockItemIdSkuRequest
+	GETStockItemIdSku(ctx context.Context, stockItemId string) SkusApiGETStockItemIdSkuRequest
 
 	// GETStockItemIdSkuExecute executes the request
-	GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuRequest) (*http.Response, error)
+	GETStockItemIdSkuExecute(r SkusApiGETStockItemIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdSku Retrieve the sku associated to the stock transfer
@@ -239,12 +239,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdSkuRequest
+		@return SkusApiGETStockTransferIdSkuRequest
 	*/
-	GETStockTransferIdSku(ctx context.Context, stockTransferId string) ApiGETStockTransferIdSkuRequest
+	GETStockTransferIdSku(ctx context.Context, stockTransferId string) SkusApiGETStockTransferIdSkuRequest
 
 	// GETStockTransferIdSkuExecute executes the request
-	GETStockTransferIdSkuExecute(r ApiGETStockTransferIdSkuRequest) (*http.Response, error)
+	GETStockTransferIdSkuExecute(r SkusApiGETStockTransferIdSkuRequest) (*http.Response, error)
 
 	/*
 		GETTaxCategoryIdSku Retrieve the sku associated to the tax category
@@ -253,12 +253,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxCategoryId The resource's id
-		@return ApiGETTaxCategoryIdSkuRequest
+		@return SkusApiGETTaxCategoryIdSkuRequest
 	*/
-	GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdSkuRequest
+	GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) SkusApiGETTaxCategoryIdSkuRequest
 
 	// GETTaxCategoryIdSkuExecute executes the request
-	GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRequest) (*http.Response, error)
+	GETTaxCategoryIdSkuExecute(r SkusApiGETTaxCategoryIdSkuRequest) (*http.Response, error)
 
 	/*
 		PATCHSkusSkuId Update a SKU
@@ -267,12 +267,12 @@ type SkusApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param skuId The resource's id
-		@return ApiPATCHSkusSkuIdRequest
+		@return SkusApiPATCHSkusSkuIdRequest
 	*/
-	PATCHSkusSkuId(ctx context.Context, skuId string) ApiPATCHSkusSkuIdRequest
+	PATCHSkusSkuId(ctx context.Context, skuId string) SkusApiPATCHSkusSkuIdRequest
 
 	// PATCHSkusSkuIdExecute executes the request
-	PATCHSkusSkuIdExecute(r ApiPATCHSkusSkuIdRequest) (*http.Response, error)
+	PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (*http.Response, error)
 
 	/*
 		POSTSkus Create a SKU
@@ -280,24 +280,24 @@ type SkusApi interface {
 		Create a SKU
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTSkusRequest
+		@return SkusApiPOSTSkusRequest
 	*/
-	POSTSkus(ctx context.Context) ApiPOSTSkusRequest
+	POSTSkus(ctx context.Context) SkusApiPOSTSkusRequest
 
 	// POSTSkusExecute executes the request
-	POSTSkusExecute(r ApiPOSTSkusRequest) (*http.Response, error)
+	POSTSkusExecute(r SkusApiPOSTSkusRequest) (*http.Response, error)
 }
 
 // SkusApiService SkusApi service
 type SkusApiService service
 
-type ApiDELETESkusSkuIdRequest struct {
+type SkusApiDELETESkusSkuIdRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	skuId      string
 }
 
-func (r ApiDELETESkusSkuIdRequest) Execute() (*http.Response, error) {
+func (r SkusApiDELETESkusSkuIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkusSkuIdExecute(r)
 }
 
@@ -308,10 +308,10 @@ Delete a SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiDELETESkusSkuIdRequest
+ @return SkusApiDELETESkusSkuIdRequest
 */
-func (a *SkusApiService) DELETESkusSkuId(ctx context.Context, skuId string) ApiDELETESkusSkuIdRequest {
-	return ApiDELETESkusSkuIdRequest{
+func (a *SkusApiService) DELETESkusSkuId(ctx context.Context, skuId string) SkusApiDELETESkusSkuIdRequest {
+	return SkusApiDELETESkusSkuIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -319,7 +319,7 @@ func (a *SkusApiService) DELETESkusSkuId(ctx context.Context, skuId string) ApiD
 }
 
 // Execute executes the request
-func (a *SkusApiService) DELETESkusSkuIdExecute(r ApiDELETESkusSkuIdRequest) (*http.Response, error) {
+func (a *SkusApiService) DELETESkusSkuIdExecute(r SkusApiDELETESkusSkuIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -383,13 +383,13 @@ func (a *SkusApiService) DELETESkusSkuIdExecute(r ApiDELETESkusSkuIdRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdSkusRequest struct {
+type SkusApiGETBundleIdSkusRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	bundleId   string
 }
 
-func (r ApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdSkusExecute(r)
 }
 
@@ -400,10 +400,10 @@ Retrieve the skus associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdSkusRequest
+ @return SkusApiGETBundleIdSkusRequest
 */
-func (a *SkusApiService) GETBundleIdSkus(ctx context.Context, bundleId string) ApiGETBundleIdSkusRequest {
-	return ApiGETBundleIdSkusRequest{
+func (a *SkusApiService) GETBundleIdSkus(ctx context.Context, bundleId string) SkusApiGETBundleIdSkusRequest {
+	return SkusApiGETBundleIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -411,7 +411,7 @@ func (a *SkusApiService) GETBundleIdSkus(ctx context.Context, bundleId string) A
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETBundleIdSkusExecute(r SkusApiGETBundleIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -475,13 +475,13 @@ func (a *SkusApiService) GETBundleIdSkusExecute(r ApiGETBundleIdSkusRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkusRequest struct {
+type SkusApiGETFixedPricePromotionIdSkusRequest struct {
 	ctx                   context.Context
 	ApiService            SkusApi
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETFixedPricePromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkusExecute(r)
 }
 
@@ -492,10 +492,10 @@ Retrieve the skus associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkusRequest
+ @return SkusApiGETFixedPricePromotionIdSkusRequest
 */
-func (a *SkusApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkusRequest {
-	return ApiGETFixedPricePromotionIdSkusRequest{
+func (a *SkusApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) SkusApiGETFixedPricePromotionIdSkusRequest {
+	return SkusApiGETFixedPricePromotionIdSkusRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -503,7 +503,7 @@ func (a *SkusApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixed
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETFixedPricePromotionIdSkusExecute(r SkusApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -567,13 +567,13 @@ func (a *SkusApiService) GETFixedPricePromotionIdSkusExecute(r ApiGETFixedPriceP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkusRequest struct {
+type SkusApiGETFreeGiftPromotionIdSkusRequest struct {
 	ctx                 context.Context
 	ApiService          SkusApi
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETFreeGiftPromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkusExecute(r)
 }
 
@@ -584,10 +584,10 @@ Retrieve the skus associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkusRequest
+ @return SkusApiGETFreeGiftPromotionIdSkusRequest
 */
-func (a *SkusApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkusRequest {
-	return ApiGETFreeGiftPromotionIdSkusRequest{
+func (a *SkusApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) SkusApiGETFreeGiftPromotionIdSkusRequest {
+	return SkusApiGETFreeGiftPromotionIdSkusRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -595,7 +595,7 @@ func (a *SkusApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGif
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETFreeGiftPromotionIdSkusExecute(r SkusApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -659,13 +659,13 @@ func (a *SkusApiService) GETFreeGiftPromotionIdSkusExecute(r ApiGETFreeGiftPromo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdSkuRequest struct {
+type SkusApiGETInStockSubscriptionIdSkuRequest struct {
 	ctx                   context.Context
 	ApiService            SkusApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETInStockSubscriptionIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdSkuExecute(r)
 }
 
@@ -676,10 +676,10 @@ Retrieve the sku associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdSkuRequest
+ @return SkusApiGETInStockSubscriptionIdSkuRequest
 */
-func (a *SkusApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdSkuRequest {
-	return ApiGETInStockSubscriptionIdSkuRequest{
+func (a *SkusApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) SkusApiGETInStockSubscriptionIdSkuRequest {
+	return SkusApiGETInStockSubscriptionIdSkuRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -687,7 +687,7 @@ func (a *SkusApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStoc
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETInStockSubscriptionIdSkuExecute(r SkusApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -751,13 +751,13 @@ func (a *SkusApiService) GETInStockSubscriptionIdSkuExecute(r ApiGETInStockSubsc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableFreeSkusRequest struct {
+type SkusApiGETOrderIdAvailableFreeSkusRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableFreeSkusExecute(r)
 }
 
@@ -768,10 +768,10 @@ Retrieve the available free skus associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableFreeSkusRequest
+ @return SkusApiGETOrderIdAvailableFreeSkusRequest
 */
-func (a *SkusApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeSkusRequest {
-	return ApiGETOrderIdAvailableFreeSkusRequest{
+func (a *SkusApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) SkusApiGETOrderIdAvailableFreeSkusRequest {
+	return SkusApiGETOrderIdAvailableFreeSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -779,7 +779,7 @@ func (a *SkusApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderI
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETOrderIdAvailableFreeSkusExecute(r SkusApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -843,13 +843,13 @@ func (a *SkusApiService) GETOrderIdAvailableFreeSkusExecute(r ApiGETOrderIdAvail
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkusRequest struct {
+type SkusApiGETPercentageDiscountPromotionIdSkusRequest struct {
 	ctx                           context.Context
 	ApiService                    SkusApi
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETPercentageDiscountPromotionIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkusExecute(r)
 }
 
@@ -860,10 +860,10 @@ Retrieve the skus associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkusRequest
+ @return SkusApiGETPercentageDiscountPromotionIdSkusRequest
 */
-func (a *SkusApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkusRequest {
-	return ApiGETPercentageDiscountPromotionIdSkusRequest{
+func (a *SkusApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) SkusApiGETPercentageDiscountPromotionIdSkusRequest {
+	return SkusApiGETPercentageDiscountPromotionIdSkusRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -871,7 +871,7 @@ func (a *SkusApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETPercentageDiscountPromotionIdSkusExecute(r ApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETPercentageDiscountPromotionIdSkusExecute(r SkusApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -935,13 +935,13 @@ func (a *SkusApiService) GETPercentageDiscountPromotionIdSkusExecute(r ApiGETPer
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdSkuRequest struct {
+type SkusApiGETPriceIdSkuRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	priceId    string
 }
 
-func (r ApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdSkuExecute(r)
 }
 
@@ -952,10 +952,10 @@ Retrieve the sku associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdSkuRequest
+ @return SkusApiGETPriceIdSkuRequest
 */
-func (a *SkusApiService) GETPriceIdSku(ctx context.Context, priceId string) ApiGETPriceIdSkuRequest {
-	return ApiGETPriceIdSkuRequest{
+func (a *SkusApiService) GETPriceIdSku(ctx context.Context, priceId string) SkusApiGETPriceIdSkuRequest {
+	return SkusApiGETPriceIdSkuRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -963,7 +963,7 @@ func (a *SkusApiService) GETPriceIdSku(ctx context.Context, priceId string) ApiG
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETPriceIdSkuExecute(r SkusApiGETPriceIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1027,13 +1027,13 @@ func (a *SkusApiService) GETPriceIdSkuExecute(r ApiGETPriceIdSkuRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingCategoryIdSkusRequest struct {
+type SkusApiGETShippingCategoryIdSkusRequest struct {
 	ctx                context.Context
 	ApiService         SkusApi
 	shippingCategoryId string
 }
 
-func (r ApiGETShippingCategoryIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETShippingCategoryIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingCategoryIdSkusExecute(r)
 }
 
@@ -1044,10 +1044,10 @@ Retrieve the skus associated to the shipping category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingCategoryId The resource's id
- @return ApiGETShippingCategoryIdSkusRequest
+ @return SkusApiGETShippingCategoryIdSkusRequest
 */
-func (a *SkusApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdSkusRequest {
-	return ApiGETShippingCategoryIdSkusRequest{
+func (a *SkusApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) SkusApiGETShippingCategoryIdSkusRequest {
+	return SkusApiGETShippingCategoryIdSkusRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
@@ -1055,7 +1055,7 @@ func (a *SkusApiService) GETShippingCategoryIdSkus(ctx context.Context, shipping
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETShippingCategoryIdSkusExecute(r ApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETShippingCategoryIdSkusExecute(r SkusApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1119,13 +1119,13 @@ func (a *SkusApiService) GETShippingCategoryIdSkusExecute(r ApiGETShippingCatego
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdSkusRequest struct {
+type SkusApiGETSkuListIdSkusRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdSkusExecute(r)
 }
 
@@ -1136,10 +1136,10 @@ Retrieve the skus associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdSkusRequest
+ @return SkusApiGETSkuListIdSkusRequest
 */
-func (a *SkusApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) ApiGETSkuListIdSkusRequest {
-	return ApiGETSkuListIdSkusRequest{
+func (a *SkusApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) SkusApiGETSkuListIdSkusRequest {
+	return SkusApiGETSkuListIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -1147,7 +1147,7 @@ func (a *SkusApiService) GETSkuListIdSkus(ctx context.Context, skuListId string)
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETSkuListIdSkusExecute(r SkusApiGETSkuListIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1211,13 +1211,13 @@ func (a *SkusApiService) GETSkuListIdSkusExecute(r ApiGETSkuListIdSkusRequest) (
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemIdSkuRequest struct {
+type SkusApiGETSkuListItemIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    SkusApi
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETSkuListItemIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListItemIdSkuExecute(r)
 }
 
@@ -1228,10 +1228,10 @@ Retrieve the sku associated to the SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemIdSkuRequest
+ @return SkusApiGETSkuListItemIdSkuRequest
 */
-func (a *SkusApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuRequest {
-	return ApiGETSkuListItemIdSkuRequest{
+func (a *SkusApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) SkusApiGETSkuListItemIdSkuRequest {
+	return SkusApiGETSkuListItemIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -1239,7 +1239,7 @@ func (a *SkusApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId 
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETSkuListItemIdSkuExecute(r SkusApiGETSkuListItemIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1303,13 +1303,13 @@ func (a *SkusApiService) GETSkuListItemIdSkuExecute(r ApiGETSkuListItemIdSkuRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListPromotionRuleIdSkusRequest struct {
+type SkusApiGETSkuListPromotionRuleIdSkusRequest struct {
 	ctx                    context.Context
 	ApiService             SkusApi
 	skuListPromotionRuleId string
 }
 
-func (r ApiGETSkuListPromotionRuleIdSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETSkuListPromotionRuleIdSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRuleIdSkusExecute(r)
 }
 
@@ -1320,10 +1320,10 @@ Retrieve the skus associated to the SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return ApiGETSkuListPromotionRuleIdSkusRequest
+ @return SkusApiGETSkuListPromotionRuleIdSkusRequest
 */
-func (a *SkusApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkusRequest {
-	return ApiGETSkuListPromotionRuleIdSkusRequest{
+func (a *SkusApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) SkusApiGETSkuListPromotionRuleIdSkusRequest {
+	return SkusApiGETSkuListPromotionRuleIdSkusRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -1331,7 +1331,7 @@ func (a *SkusApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuL
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETSkuListPromotionRuleIdSkusExecute(r SkusApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1395,12 +1395,12 @@ func (a *SkusApiService) GETSkuListPromotionRuleIdSkusExecute(r ApiGETSkuListPro
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkusRequest struct {
+type SkusApiGETSkusRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 }
 
-func (r ApiGETSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkusExecute(r)
 }
 
@@ -1410,17 +1410,17 @@ GETSkus List all SKUs
 List all SKUs
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETSkusRequest
+ @return SkusApiGETSkusRequest
 */
-func (a *SkusApiService) GETSkus(ctx context.Context) ApiGETSkusRequest {
-	return ApiGETSkusRequest{
+func (a *SkusApiService) GETSkus(ctx context.Context) SkusApiGETSkusRequest {
+	return SkusApiGETSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETSkusExecute(r ApiGETSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) GETSkusExecute(r SkusApiGETSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1483,13 +1483,13 @@ func (a *SkusApiService) GETSkusExecute(r ApiGETSkusRequest) (*http.Response, er
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkusSkuIdRequest struct {
+type SkusApiGETSkusSkuIdRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	skuId      string
 }
 
-func (r ApiGETSkusSkuIdRequest) Execute() (*Sku, *http.Response, error) {
+func (r SkusApiGETSkusSkuIdRequest) Execute() (*Sku, *http.Response, error) {
 	return r.ApiService.GETSkusSkuIdExecute(r)
 }
 
@@ -1500,10 +1500,10 @@ Retrieve a SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkusSkuIdRequest
+ @return SkusApiGETSkusSkuIdRequest
 */
-func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) ApiGETSkusSkuIdRequest {
-	return ApiGETSkusSkuIdRequest{
+func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) SkusApiGETSkusSkuIdRequest {
+	return SkusApiGETSkusSkuIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -1512,7 +1512,7 @@ func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) ApiGETS
 
 // Execute executes the request
 //  @return Sku
-func (a *SkusApiService) GETSkusSkuIdExecute(r ApiGETSkusSkuIdRequest) (*Sku, *http.Response, error) {
+func (a *SkusApiService) GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*Sku, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1586,13 +1586,13 @@ func (a *SkusApiService) GETSkusSkuIdExecute(r ApiGETSkusSkuIdRequest) (*Sku, *h
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemIdSkuRequest struct {
+type SkusApiGETStockItemIdSkuRequest struct {
 	ctx         context.Context
 	ApiService  SkusApi
 	stockItemId string
 }
 
-func (r ApiGETStockItemIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETStockItemIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdSkuExecute(r)
 }
 
@@ -1603,10 +1603,10 @@ Retrieve the sku associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemIdSkuRequest
+ @return SkusApiGETStockItemIdSkuRequest
 */
-func (a *SkusApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) ApiGETStockItemIdSkuRequest {
-	return ApiGETStockItemIdSkuRequest{
+func (a *SkusApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) SkusApiGETStockItemIdSkuRequest {
+	return SkusApiGETStockItemIdSkuRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -1614,7 +1614,7 @@ func (a *SkusApiService) GETStockItemIdSku(ctx context.Context, stockItemId stri
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETStockItemIdSkuExecute(r SkusApiGETStockItemIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1678,13 +1678,13 @@ func (a *SkusApiService) GETStockItemIdSkuExecute(r ApiGETStockItemIdSkuRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdSkuRequest struct {
+type SkusApiGETStockTransferIdSkuRequest struct {
 	ctx             context.Context
 	ApiService      SkusApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETStockTransferIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdSkuExecute(r)
 }
 
@@ -1695,10 +1695,10 @@ Retrieve the sku associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdSkuRequest
+ @return SkusApiGETStockTransferIdSkuRequest
 */
-func (a *SkusApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) ApiGETStockTransferIdSkuRequest {
-	return ApiGETStockTransferIdSkuRequest{
+func (a *SkusApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) SkusApiGETStockTransferIdSkuRequest {
+	return SkusApiGETStockTransferIdSkuRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -1706,7 +1706,7 @@ func (a *SkusApiService) GETStockTransferIdSku(ctx context.Context, stockTransfe
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETStockTransferIdSkuExecute(r ApiGETStockTransferIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETStockTransferIdSkuExecute(r SkusApiGETStockTransferIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1770,13 +1770,13 @@ func (a *SkusApiService) GETStockTransferIdSkuExecute(r ApiGETStockTransferIdSku
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCategoryIdSkuRequest struct {
+type SkusApiGETTaxCategoryIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    SkusApi
 	taxCategoryId string
 }
 
-func (r ApiGETTaxCategoryIdSkuRequest) Execute() (*http.Response, error) {
+func (r SkusApiGETTaxCategoryIdSkuRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCategoryIdSkuExecute(r)
 }
 
@@ -1787,10 +1787,10 @@ Retrieve the sku associated to the tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return ApiGETTaxCategoryIdSkuRequest
+ @return SkusApiGETTaxCategoryIdSkuRequest
 */
-func (a *SkusApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdSkuRequest {
-	return ApiGETTaxCategoryIdSkuRequest{
+func (a *SkusApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) SkusApiGETTaxCategoryIdSkuRequest {
+	return SkusApiGETTaxCategoryIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -1798,7 +1798,7 @@ func (a *SkusApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId 
 }
 
 // Execute executes the request
-func (a *SkusApiService) GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRequest) (*http.Response, error) {
+func (a *SkusApiService) GETTaxCategoryIdSkuExecute(r SkusApiGETTaxCategoryIdSkuRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1862,19 +1862,19 @@ func (a *SkusApiService) GETTaxCategoryIdSkuExecute(r ApiGETTaxCategoryIdSkuRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHSkusSkuIdRequest struct {
+type SkusApiPATCHSkusSkuIdRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	skuId      string
 	skuUpdate  *SkuUpdate
 }
 
-func (r ApiPATCHSkusSkuIdRequest) SkuUpdate(skuUpdate SkuUpdate) ApiPATCHSkusSkuIdRequest {
+func (r SkusApiPATCHSkusSkuIdRequest) SkuUpdate(skuUpdate SkuUpdate) SkusApiPATCHSkusSkuIdRequest {
 	r.skuUpdate = &skuUpdate
 	return r
 }
 
-func (r ApiPATCHSkusSkuIdRequest) Execute() (*http.Response, error) {
+func (r SkusApiPATCHSkusSkuIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHSkusSkuIdExecute(r)
 }
 
@@ -1885,10 +1885,10 @@ Update a SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiPATCHSkusSkuIdRequest
+ @return SkusApiPATCHSkusSkuIdRequest
 */
-func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) ApiPATCHSkusSkuIdRequest {
-	return ApiPATCHSkusSkuIdRequest{
+func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) SkusApiPATCHSkusSkuIdRequest {
+	return SkusApiPATCHSkusSkuIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -1896,7 +1896,7 @@ func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) ApiPA
 }
 
 // Execute executes the request
-func (a *SkusApiService) PATCHSkusSkuIdExecute(r ApiPATCHSkusSkuIdRequest) (*http.Response, error) {
+func (a *SkusApiService) PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1965,18 +1965,18 @@ func (a *SkusApiService) PATCHSkusSkuIdExecute(r ApiPATCHSkusSkuIdRequest) (*htt
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTSkusRequest struct {
+type SkusApiPOSTSkusRequest struct {
 	ctx        context.Context
 	ApiService SkusApi
 	skuCreate  *SkuCreate
 }
 
-func (r ApiPOSTSkusRequest) SkuCreate(skuCreate SkuCreate) ApiPOSTSkusRequest {
+func (r SkusApiPOSTSkusRequest) SkuCreate(skuCreate SkuCreate) SkusApiPOSTSkusRequest {
 	r.skuCreate = &skuCreate
 	return r
 }
 
-func (r ApiPOSTSkusRequest) Execute() (*http.Response, error) {
+func (r SkusApiPOSTSkusRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTSkusExecute(r)
 }
 
@@ -1986,17 +1986,17 @@ POSTSkus Create a SKU
 Create a SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTSkusRequest
+ @return SkusApiPOSTSkusRequest
 */
-func (a *SkusApiService) POSTSkus(ctx context.Context) ApiPOSTSkusRequest {
-	return ApiPOSTSkusRequest{
+func (a *SkusApiService) POSTSkus(ctx context.Context) SkusApiPOSTSkusRequest {
+	return SkusApiPOSTSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkusApiService) POSTSkusExecute(r ApiPOSTSkusRequest) (*http.Response, error) {
+func (a *SkusApiService) POSTSkusExecute(r SkusApiPOSTSkusRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

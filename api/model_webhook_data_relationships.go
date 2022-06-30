@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // WebhookDataRelationships struct for WebhookDataRelationships
 type WebhookDataRelationships struct {
-	LastEventCallbacks *WebhookDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
+	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 }
 
 // NewWebhookDataRelationships instantiates a new WebhookDataRelationships object
@@ -38,9 +38,9 @@ func NewWebhookDataRelationshipsWithDefaults() *WebhookDataRelationships {
 }
 
 // GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
-func (o *WebhookDataRelationships) GetLastEventCallbacks() WebhookDataRelationshipsLastEventCallbacks {
+func (o *WebhookDataRelationships) GetLastEventCallbacks() EventDataRelationshipsLastEventCallbacks {
 	if o == nil || o.LastEventCallbacks == nil {
-		var ret WebhookDataRelationshipsLastEventCallbacks
+		var ret EventDataRelationshipsLastEventCallbacks
 		return ret
 	}
 	return *o.LastEventCallbacks
@@ -48,7 +48,7 @@ func (o *WebhookDataRelationships) GetLastEventCallbacks() WebhookDataRelationsh
 
 // GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebhookDataRelationships) GetLastEventCallbacksOk() (*WebhookDataRelationshipsLastEventCallbacks, bool) {
+func (o *WebhookDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationshipsLastEventCallbacks, bool) {
 	if o == nil || o.LastEventCallbacks == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *WebhookDataRelationships) HasLastEventCallbacks() bool {
 	return false
 }
 
-// SetLastEventCallbacks gets a reference to the given WebhookDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
-func (o *WebhookDataRelationships) SetLastEventCallbacks(v WebhookDataRelationshipsLastEventCallbacks) {
+// SetLastEventCallbacks gets a reference to the given EventDataRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
+func (o *WebhookDataRelationships) SetLastEventCallbacks(v EventDataRelationshipsLastEventCallbacks) {
 	o.LastEventCallbacks = &v
 }
 

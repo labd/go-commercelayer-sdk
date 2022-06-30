@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type InStockSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
+		@return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
 	*/
-	DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
+	DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
 
 	// DELETEInStockSubscriptionsInStockSubscriptionIdExecute executes the request
-	DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error)
+	DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptions List all in stock subscriptions
@@ -42,12 +42,12 @@ type InStockSubscriptionsApi interface {
 		List all in stock subscriptions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETInStockSubscriptionsRequest
+		@return InStockSubscriptionsApiGETInStockSubscriptionsRequest
 	*/
-	GETInStockSubscriptions(ctx context.Context) ApiGETInStockSubscriptionsRequest
+	GETInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiGETInStockSubscriptionsRequest
 
 	// GETInStockSubscriptionsExecute executes the request
-	GETInStockSubscriptionsExecute(r ApiGETInStockSubscriptionsRequest) (*http.Response, error)
+	GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*http.Response, error)
 
 	/*
 		GETInStockSubscriptionsInStockSubscriptionId Retrieve an in stock subscription
@@ -56,13 +56,13 @@ type InStockSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiGETInStockSubscriptionsInStockSubscriptionIdRequest
+		@return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
 	*/
-	GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionsInStockSubscriptionIdRequest
+	GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
 
 	// GETInStockSubscriptionsInStockSubscriptionIdExecute executes the request
 	//  @return InStockSubscription
-	GETInStockSubscriptionsInStockSubscriptionIdExecute(r ApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscription, *http.Response, error)
+	GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscription, *http.Response, error)
 
 	/*
 		PATCHInStockSubscriptionsInStockSubscriptionId Update an in stock subscription
@@ -71,12 +71,12 @@ type InStockSubscriptionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param inStockSubscriptionId The resource's id
-		@return ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
+		@return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
 	*/
-	PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
+	PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
 
 	// PATCHInStockSubscriptionsInStockSubscriptionIdExecute executes the request
-	PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error)
+	PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error)
 
 	/*
 		POSTInStockSubscriptions Create an in stock subscription
@@ -84,24 +84,24 @@ type InStockSubscriptionsApi interface {
 		Create an in stock subscription
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTInStockSubscriptionsRequest
+		@return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
 	*/
-	POSTInStockSubscriptions(ctx context.Context) ApiPOSTInStockSubscriptionsRequest
+	POSTInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
 
 	// POSTInStockSubscriptionsExecute executes the request
-	POSTInStockSubscriptionsExecute(r ApiPOSTInStockSubscriptionsRequest) (*http.Response, error)
+	POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*http.Response, error)
 }
 
 // InStockSubscriptionsApiService InStockSubscriptionsApi service
 type InStockSubscriptionsApiService service
 
-type ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                   context.Context
 	ApiService            InStockSubscriptionsApi
 	inStockSubscriptionId string
 }
 
-func (r ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -123,7 +123,7 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
+func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionsRequest struct {
+type InStockSubscriptionsApiGETInStockSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService InStockSubscriptionsApi
 }
 
-func (r ApiGETInStockSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETInStockSubscriptions List all in stock subscriptions
 List all in stock subscriptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETInStockSubscriptionsRequest
+ @return InStockSubscriptionsApiGETInStockSubscriptionsRequest
 */
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) ApiGETInStockSubscriptionsRequest {
-	return ApiGETInStockSubscriptionsRequest{
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiGETInStockSubscriptionsRequest {
+	return InStockSubscriptionsApiGETInStockSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGETInStockSubscriptionsRequest) (*http.Response, error) {
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                   context.Context
 	ApiService            InStockSubscriptionsApi
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*InStockSubscription, *http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*InStockSubscription, *http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -304,7 +304,7 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 
 // Execute executes the request
 //  @return InStockSubscription
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r ApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscription, *http.Response, error) {
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscription, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                       context.Context
 	ApiService                InStockSubscriptionsApi
 	inStockSubscriptionId     string
 	inStockSubscriptionUpdate *InStockSubscriptionUpdate
 }
 
-func (r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) InStockSubscriptionUpdate(inStockSubscriptionUpdate InStockSubscriptionUpdate) ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
+func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) InStockSubscriptionUpdate(inStockSubscriptionUpdate InStockSubscriptionUpdate) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
 	r.inStockSubscriptionUpdate = &inStockSubscriptionUpdate
 	return r
 }
 
-func (r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -412,7 +412,7 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
+func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTInStockSubscriptionsRequest struct {
+type InStockSubscriptionsApiPOSTInStockSubscriptionsRequest struct {
 	ctx                       context.Context
 	ApiService                InStockSubscriptionsApi
 	inStockSubscriptionCreate *InStockSubscriptionCreate
 }
 
-func (r ApiPOSTInStockSubscriptionsRequest) InStockSubscriptionCreate(inStockSubscriptionCreate InStockSubscriptionCreate) ApiPOSTInStockSubscriptionsRequest {
+func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) InStockSubscriptionCreate(inStockSubscriptionCreate InStockSubscriptionCreate) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
 	r.inStockSubscriptionCreate = &inStockSubscriptionCreate
 	return r
 }
 
-func (r ApiPOSTInStockSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTInStockSubscriptionsExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTInStockSubscriptions Create an in stock subscription
 Create an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTInStockSubscriptionsRequest
+ @return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
 */
-func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) ApiPOSTInStockSubscriptionsRequest {
-	return ApiPOSTInStockSubscriptionsRequest{
+func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
+	return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPOSTInStockSubscriptionsRequest) (*http.Response, error) {
+func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

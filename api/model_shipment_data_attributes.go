@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -39,6 +39,8 @@ type ShipmentDataAttributes struct {
 	PurchaseErrorCode *string `json:"purchase_error_code,omitempty"`
 	// The shipping rate purchase error message, if any.
 	PurchaseErrorMessage *string `json:"purchase_error_message,omitempty"`
+	// Any errors collected when fetching shipping rates.
+	GetRatesErrors []map[string]interface{} `json:"get_rates_errors,omitempty"`
 	// Time at which the getting of the shipping rates started.
 	GetRatesStartedAt *string `json:"get_rates_started_at,omitempty"`
 	// Time at which the getting of the shipping rates completed.
@@ -432,6 +434,38 @@ func (o *ShipmentDataAttributes) SetPurchaseErrorMessage(v string) {
 	o.PurchaseErrorMessage = &v
 }
 
+// GetGetRatesErrors returns the GetRatesErrors field value if set, zero value otherwise.
+func (o *ShipmentDataAttributes) GetGetRatesErrors() []map[string]interface{} {
+	if o == nil || o.GetRatesErrors == nil {
+		var ret []map[string]interface{}
+		return ret
+	}
+	return o.GetRatesErrors
+}
+
+// GetGetRatesErrorsOk returns a tuple with the GetRatesErrors field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShipmentDataAttributes) GetGetRatesErrorsOk() ([]map[string]interface{}, bool) {
+	if o == nil || o.GetRatesErrors == nil {
+		return nil, false
+	}
+	return o.GetRatesErrors, true
+}
+
+// HasGetRatesErrors returns a boolean if a field has been set.
+func (o *ShipmentDataAttributes) HasGetRatesErrors() bool {
+	if o != nil && o.GetRatesErrors != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetGetRatesErrors gets a reference to the given []map[string]interface{} and assigns it to the GetRatesErrors field.
+func (o *ShipmentDataAttributes) SetGetRatesErrors(v []map[string]interface{}) {
+	o.GetRatesErrors = v
+}
+
 // GetGetRatesStartedAt returns the GetRatesStartedAt field value if set, zero value otherwise.
 func (o *ShipmentDataAttributes) GetGetRatesStartedAt() string {
 	if o == nil || o.GetRatesStartedAt == nil {
@@ -818,6 +852,9 @@ func (o ShipmentDataAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.PurchaseErrorMessage != nil {
 		toSerialize["purchase_error_message"] = o.PurchaseErrorMessage
+	}
+	if o.GetRatesErrors != nil {
+		toSerialize["get_rates_errors"] = o.GetRatesErrors
 	}
 	if o.GetRatesStartedAt != nil {
 		toSerialize["get_rates_started_at"] = o.GetRatesStartedAt

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param orderId The resource's id
-		@return ApiGETOrderIdShipmentsRequest
+		@return ShipmentsApiGETOrderIdShipmentsRequest
 	*/
-	GETOrderIdShipments(ctx context.Context, orderId string) ApiGETOrderIdShipmentsRequest
+	GETOrderIdShipments(ctx context.Context, orderId string) ShipmentsApiGETOrderIdShipmentsRequest
 
 	// GETOrderIdShipmentsExecute executes the request
-	GETOrderIdShipmentsExecute(r ApiGETOrderIdShipmentsRequest) (*http.Response, error)
+	GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderIdShipmentsRequest) (*http.Response, error)
 
 	/*
 		GETParcelIdShipment Retrieve the shipment associated to the parcel
@@ -43,12 +43,12 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param parcelId The resource's id
-		@return ApiGETParcelIdShipmentRequest
+		@return ShipmentsApiGETParcelIdShipmentRequest
 	*/
-	GETParcelIdShipment(ctx context.Context, parcelId string) ApiGETParcelIdShipmentRequest
+	GETParcelIdShipment(ctx context.Context, parcelId string) ShipmentsApiGETParcelIdShipmentRequest
 
 	// GETParcelIdShipmentExecute executes the request
-	GETParcelIdShipmentExecute(r ApiGETParcelIdShipmentRequest) (*http.Response, error)
+	GETParcelIdShipmentExecute(r ShipmentsApiGETParcelIdShipmentRequest) (*http.Response, error)
 
 	/*
 		GETShipments List all shipments
@@ -56,12 +56,12 @@ type ShipmentsApi interface {
 		List all shipments
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETShipmentsRequest
+		@return ShipmentsApiGETShipmentsRequest
 	*/
-	GETShipments(ctx context.Context) ApiGETShipmentsRequest
+	GETShipments(ctx context.Context) ShipmentsApiGETShipmentsRequest
 
 	// GETShipmentsExecute executes the request
-	GETShipmentsExecute(r ApiGETShipmentsRequest) (*http.Response, error)
+	GETShipmentsExecute(r ShipmentsApiGETShipmentsRequest) (*http.Response, error)
 
 	/*
 		GETShipmentsShipmentId Retrieve a shipment
@@ -70,13 +70,13 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiGETShipmentsShipmentIdRequest
+		@return ShipmentsApiGETShipmentsShipmentIdRequest
 	*/
-	GETShipmentsShipmentId(ctx context.Context, shipmentId string) ApiGETShipmentsShipmentIdRequest
+	GETShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiGETShipmentsShipmentIdRequest
 
 	// GETShipmentsShipmentIdExecute executes the request
 	//  @return Shipment
-	GETShipmentsShipmentIdExecute(r ApiGETShipmentsShipmentIdRequest) (*Shipment, *http.Response, error)
+	GETShipmentsShipmentIdExecute(r ShipmentsApiGETShipmentsShipmentIdRequest) (*Shipment, *http.Response, error)
 
 	/*
 		GETStockLineItemIdShipment Retrieve the shipment associated to the stock line item
@@ -85,12 +85,12 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockLineItemId The resource's id
-		@return ApiGETStockLineItemIdShipmentRequest
+		@return ShipmentsApiGETStockLineItemIdShipmentRequest
 	*/
-	GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdShipmentRequest
+	GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ShipmentsApiGETStockLineItemIdShipmentRequest
 
 	// GETStockLineItemIdShipmentExecute executes the request
-	GETStockLineItemIdShipmentExecute(r ApiGETStockLineItemIdShipmentRequest) (*http.Response, error)
+	GETStockLineItemIdShipmentExecute(r ShipmentsApiGETStockLineItemIdShipmentRequest) (*http.Response, error)
 
 	/*
 		GETStockTransferIdShipment Retrieve the shipment associated to the stock transfer
@@ -99,12 +99,12 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param stockTransferId The resource's id
-		@return ApiGETStockTransferIdShipmentRequest
+		@return ShipmentsApiGETStockTransferIdShipmentRequest
 	*/
-	GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ApiGETStockTransferIdShipmentRequest
+	GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ShipmentsApiGETStockTransferIdShipmentRequest
 
 	// GETStockTransferIdShipmentExecute executes the request
-	GETStockTransferIdShipmentExecute(r ApiGETStockTransferIdShipmentRequest) (*http.Response, error)
+	GETStockTransferIdShipmentExecute(r ShipmentsApiGETStockTransferIdShipmentRequest) (*http.Response, error)
 
 	/*
 		PATCHShipmentsShipmentId Update a shipment
@@ -113,24 +113,24 @@ type ShipmentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param shipmentId The resource's id
-		@return ApiPATCHShipmentsShipmentIdRequest
+		@return ShipmentsApiPATCHShipmentsShipmentIdRequest
 	*/
-	PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ApiPATCHShipmentsShipmentIdRequest
+	PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiPATCHShipmentsShipmentIdRequest
 
 	// PATCHShipmentsShipmentIdExecute executes the request
-	PATCHShipmentsShipmentIdExecute(r ApiPATCHShipmentsShipmentIdRequest) (*http.Response, error)
+	PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATCHShipmentsShipmentIdRequest) (*http.Response, error)
 }
 
 // ShipmentsApiService ShipmentsApi service
 type ShipmentsApiService service
 
-type ApiGETOrderIdShipmentsRequest struct {
+type ShipmentsApiGETOrderIdShipmentsRequest struct {
 	ctx        context.Context
 	ApiService ShipmentsApi
 	orderId    string
 }
 
-func (r ApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdShipmentsExecute(r)
 }
 
@@ -141,10 +141,10 @@ Retrieve the shipments associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdShipmentsRequest
+ @return ShipmentsApiGETOrderIdShipmentsRequest
 */
-func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId string) ApiGETOrderIdShipmentsRequest {
-	return ApiGETOrderIdShipmentsRequest{
+func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId string) ShipmentsApiGETOrderIdShipmentsRequest {
+	return ShipmentsApiGETOrderIdShipmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -152,7 +152,7 @@ func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId s
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ApiGETOrderIdShipmentsRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderIdShipmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -216,13 +216,13 @@ func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ApiGETOrderIdShipment
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdShipmentRequest struct {
+type ShipmentsApiGETParcelIdShipmentRequest struct {
 	ctx        context.Context
 	ApiService ShipmentsApi
 	parcelId   string
 }
 
-func (r ApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdShipmentExecute(r)
 }
 
@@ -233,10 +233,10 @@ Retrieve the shipment associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdShipmentRequest
+ @return ShipmentsApiGETParcelIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId string) ApiGETParcelIdShipmentRequest {
-	return ApiGETParcelIdShipmentRequest{
+func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId string) ShipmentsApiGETParcelIdShipmentRequest {
+	return ShipmentsApiGETParcelIdShipmentRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -244,7 +244,7 @@ func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId 
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ApiGETParcelIdShipmentRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ShipmentsApiGETParcelIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -308,12 +308,12 @@ func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ApiGETParcelIdShipmen
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentsRequest struct {
+type ShipmentsApiGETShipmentsRequest struct {
 	ctx        context.Context
 	ApiService ShipmentsApi
 }
 
-func (r ApiGETShipmentsRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiGETShipmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentsExecute(r)
 }
 
@@ -323,17 +323,17 @@ GETShipments List all shipments
 List all shipments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETShipmentsRequest
+ @return ShipmentsApiGETShipmentsRequest
 */
-func (a *ShipmentsApiService) GETShipments(ctx context.Context) ApiGETShipmentsRequest {
-	return ApiGETShipmentsRequest{
+func (a *ShipmentsApiService) GETShipments(ctx context.Context) ShipmentsApiGETShipmentsRequest {
+	return ShipmentsApiGETShipmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) GETShipmentsExecute(r ApiGETShipmentsRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) GETShipmentsExecute(r ShipmentsApiGETShipmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -396,13 +396,13 @@ func (a *ShipmentsApiService) GETShipmentsExecute(r ApiGETShipmentsRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentsShipmentIdRequest struct {
+type ShipmentsApiGETShipmentsShipmentIdRequest struct {
 	ctx        context.Context
 	ApiService ShipmentsApi
 	shipmentId string
 }
 
-func (r ApiGETShipmentsShipmentIdRequest) Execute() (*Shipment, *http.Response, error) {
+func (r ShipmentsApiGETShipmentsShipmentIdRequest) Execute() (*Shipment, *http.Response, error) {
 	return r.ApiService.GETShipmentsShipmentIdExecute(r)
 }
 
@@ -413,10 +413,10 @@ Retrieve a shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentsShipmentIdRequest
+ @return ShipmentsApiGETShipmentsShipmentIdRequest
 */
-func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipmentId string) ApiGETShipmentsShipmentIdRequest {
-	return ApiGETShipmentsShipmentIdRequest{
+func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiGETShipmentsShipmentIdRequest {
+	return ShipmentsApiGETShipmentsShipmentIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -425,7 +425,7 @@ func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipme
 
 // Execute executes the request
 //  @return Shipment
-func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ApiGETShipmentsShipmentIdRequest) (*Shipment, *http.Response, error) {
+func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShipmentsShipmentIdRequest) (*Shipment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -499,13 +499,13 @@ func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ApiGETShipmentsShi
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemIdShipmentRequest struct {
+type ShipmentsApiGETStockLineItemIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      ShipmentsApi
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdShipmentExecute(r)
 }
 
@@ -516,10 +516,10 @@ Retrieve the shipment associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemIdShipmentRequest
+ @return ShipmentsApiGETStockLineItemIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdShipmentRequest {
-	return ApiGETStockLineItemIdShipmentRequest{
+func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ShipmentsApiGETStockLineItemIdShipmentRequest {
+	return ShipmentsApiGETStockLineItemIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -527,7 +527,7 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, st
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ApiGETStockLineItemIdShipmentRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGETStockLineItemIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -591,13 +591,13 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ApiGETStockLin
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdShipmentRequest struct {
+type ShipmentsApiGETStockTransferIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      ShipmentsApi
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdShipmentExecute(r)
 }
 
@@ -608,10 +608,10 @@ Retrieve the shipment associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdShipmentRequest
+ @return ShipmentsApiGETStockTransferIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ApiGETStockTransferIdShipmentRequest {
-	return ApiGETStockTransferIdShipmentRequest{
+func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ShipmentsApiGETStockTransferIdShipmentRequest {
+	return ShipmentsApiGETStockTransferIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -619,7 +619,7 @@ func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, st
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ApiGETStockTransferIdShipmentRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ShipmentsApiGETStockTransferIdShipmentRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -683,19 +683,19 @@ func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ApiGETStockTra
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHShipmentsShipmentIdRequest struct {
+type ShipmentsApiPATCHShipmentsShipmentIdRequest struct {
 	ctx            context.Context
 	ApiService     ShipmentsApi
 	shipmentId     string
 	shipmentUpdate *ShipmentUpdate
 }
 
-func (r ApiPATCHShipmentsShipmentIdRequest) ShipmentUpdate(shipmentUpdate ShipmentUpdate) ApiPATCHShipmentsShipmentIdRequest {
+func (r ShipmentsApiPATCHShipmentsShipmentIdRequest) ShipmentUpdate(shipmentUpdate ShipmentUpdate) ShipmentsApiPATCHShipmentsShipmentIdRequest {
 	r.shipmentUpdate = &shipmentUpdate
 	return r
 }
 
-func (r ApiPATCHShipmentsShipmentIdRequest) Execute() (*http.Response, error) {
+func (r ShipmentsApiPATCHShipmentsShipmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHShipmentsShipmentIdExecute(r)
 }
 
@@ -706,10 +706,10 @@ Update a shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiPATCHShipmentsShipmentIdRequest
+ @return ShipmentsApiPATCHShipmentsShipmentIdRequest
 */
-func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ApiPATCHShipmentsShipmentIdRequest {
-	return ApiPATCHShipmentsShipmentIdRequest{
+func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiPATCHShipmentsShipmentIdRequest {
+	return ShipmentsApiPATCHShipmentsShipmentIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -717,7 +717,7 @@ func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, ship
 }
 
 // Execute executes the request
-func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ApiPATCHShipmentsShipmentIdRequest) (*http.Response, error) {
+func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATCHShipmentsShipmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type GeocodersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param addressId The resource's id
-		@return ApiGETAddressIdGeocoderRequest
+		@return GeocodersApiGETAddressIdGeocoderRequest
 	*/
-	GETAddressIdGeocoder(ctx context.Context, addressId string) ApiGETAddressIdGeocoderRequest
+	GETAddressIdGeocoder(ctx context.Context, addressId string) GeocodersApiGETAddressIdGeocoderRequest
 
 	// GETAddressIdGeocoderExecute executes the request
-	GETAddressIdGeocoderExecute(r ApiGETAddressIdGeocoderRequest) (*http.Response, error)
+	GETAddressIdGeocoderExecute(r GeocodersApiGETAddressIdGeocoderRequest) (*http.Response, error)
 
 	/*
 		GETGeocoders List all geocoders
@@ -42,12 +42,12 @@ type GeocodersApi interface {
 		List all geocoders
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETGeocodersRequest
+		@return GeocodersApiGETGeocodersRequest
 	*/
-	GETGeocoders(ctx context.Context) ApiGETGeocodersRequest
+	GETGeocoders(ctx context.Context) GeocodersApiGETGeocodersRequest
 
 	// GETGeocodersExecute executes the request
-	GETGeocodersExecute(r ApiGETGeocodersRequest) (*http.Response, error)
+	GETGeocodersExecute(r GeocodersApiGETGeocodersRequest) (*http.Response, error)
 
 	/*
 		GETGeocodersGeocoderId Retrieve a geocoder
@@ -56,25 +56,25 @@ type GeocodersApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param geocoderId The resource's id
-		@return ApiGETGeocodersGeocoderIdRequest
+		@return GeocodersApiGETGeocodersGeocoderIdRequest
 	*/
-	GETGeocodersGeocoderId(ctx context.Context, geocoderId string) ApiGETGeocodersGeocoderIdRequest
+	GETGeocodersGeocoderId(ctx context.Context, geocoderId string) GeocodersApiGETGeocodersGeocoderIdRequest
 
 	// GETGeocodersGeocoderIdExecute executes the request
 	//  @return Geocoder
-	GETGeocodersGeocoderIdExecute(r ApiGETGeocodersGeocoderIdRequest) (*Geocoder, *http.Response, error)
+	GETGeocodersGeocoderIdExecute(r GeocodersApiGETGeocodersGeocoderIdRequest) (*Geocoder, *http.Response, error)
 }
 
 // GeocodersApiService GeocodersApi service
 type GeocodersApiService service
 
-type ApiGETAddressIdGeocoderRequest struct {
+type GeocodersApiGETAddressIdGeocoderRequest struct {
 	ctx        context.Context
 	ApiService GeocodersApi
 	addressId  string
 }
 
-func (r ApiGETAddressIdGeocoderRequest) Execute() (*http.Response, error) {
+func (r GeocodersApiGETAddressIdGeocoderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAddressIdGeocoderExecute(r)
 }
 
@@ -85,10 +85,10 @@ Retrieve the geocoder associated to the address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param addressId The resource's id
- @return ApiGETAddressIdGeocoderRequest
+ @return GeocodersApiGETAddressIdGeocoderRequest
 */
-func (a *GeocodersApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) ApiGETAddressIdGeocoderRequest {
-	return ApiGETAddressIdGeocoderRequest{
+func (a *GeocodersApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) GeocodersApiGETAddressIdGeocoderRequest {
+	return GeocodersApiGETAddressIdGeocoderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		addressId:  addressId,
@@ -96,7 +96,7 @@ func (a *GeocodersApiService) GETAddressIdGeocoder(ctx context.Context, addressI
 }
 
 // Execute executes the request
-func (a *GeocodersApiService) GETAddressIdGeocoderExecute(r ApiGETAddressIdGeocoderRequest) (*http.Response, error) {
+func (a *GeocodersApiService) GETAddressIdGeocoderExecute(r GeocodersApiGETAddressIdGeocoderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -160,12 +160,12 @@ func (a *GeocodersApiService) GETAddressIdGeocoderExecute(r ApiGETAddressIdGeoco
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGeocodersRequest struct {
+type GeocodersApiGETGeocodersRequest struct {
 	ctx        context.Context
 	ApiService GeocodersApi
 }
 
-func (r ApiGETGeocodersRequest) Execute() (*http.Response, error) {
+func (r GeocodersApiGETGeocodersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGeocodersExecute(r)
 }
 
@@ -175,17 +175,17 @@ GETGeocoders List all geocoders
 List all geocoders
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETGeocodersRequest
+ @return GeocodersApiGETGeocodersRequest
 */
-func (a *GeocodersApiService) GETGeocoders(ctx context.Context) ApiGETGeocodersRequest {
-	return ApiGETGeocodersRequest{
+func (a *GeocodersApiService) GETGeocoders(ctx context.Context) GeocodersApiGETGeocodersRequest {
+	return GeocodersApiGETGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GeocodersApiService) GETGeocodersExecute(r ApiGETGeocodersRequest) (*http.Response, error) {
+func (a *GeocodersApiService) GETGeocodersExecute(r GeocodersApiGETGeocodersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -248,13 +248,13 @@ func (a *GeocodersApiService) GETGeocodersExecute(r ApiGETGeocodersRequest) (*ht
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGeocodersGeocoderIdRequest struct {
+type GeocodersApiGETGeocodersGeocoderIdRequest struct {
 	ctx        context.Context
 	ApiService GeocodersApi
 	geocoderId string
 }
 
-func (r ApiGETGeocodersGeocoderIdRequest) Execute() (*Geocoder, *http.Response, error) {
+func (r GeocodersApiGETGeocodersGeocoderIdRequest) Execute() (*Geocoder, *http.Response, error) {
 	return r.ApiService.GETGeocodersGeocoderIdExecute(r)
 }
 
@@ -265,10 +265,10 @@ Retrieve a geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param geocoderId The resource's id
- @return ApiGETGeocodersGeocoderIdRequest
+ @return GeocodersApiGETGeocodersGeocoderIdRequest
 */
-func (a *GeocodersApiService) GETGeocodersGeocoderId(ctx context.Context, geocoderId string) ApiGETGeocodersGeocoderIdRequest {
-	return ApiGETGeocodersGeocoderIdRequest{
+func (a *GeocodersApiService) GETGeocodersGeocoderId(ctx context.Context, geocoderId string) GeocodersApiGETGeocodersGeocoderIdRequest {
+	return GeocodersApiGETGeocodersGeocoderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		geocoderId: geocoderId,
@@ -277,7 +277,7 @@ func (a *GeocodersApiService) GETGeocodersGeocoderId(ctx context.Context, geocod
 
 // Execute executes the request
 //  @return Geocoder
-func (a *GeocodersApiService) GETGeocodersGeocoderIdExecute(r ApiGETGeocodersGeocoderIdRequest) (*Geocoder, *http.Response, error) {
+func (a *GeocodersApiService) GETGeocodersGeocoderIdExecute(r GeocodersApiGETGeocodersGeocoderIdRequest) (*Geocoder, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -28,12 +28,12 @@ type TransactionsApi interface {
 		List all transactions
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETTransactionsRequest
+		@return TransactionsApiGETTransactionsRequest
 	*/
-	GETTransactions(ctx context.Context) ApiGETTransactionsRequest
+	GETTransactions(ctx context.Context) TransactionsApiGETTransactionsRequest
 
 	// GETTransactionsExecute executes the request
-	GETTransactionsExecute(r ApiGETTransactionsRequest) (*http.Response, error)
+	GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*http.Response, error)
 
 	/*
 		GETTransactionsTransactionId Retrieve a transaction
@@ -42,24 +42,24 @@ type TransactionsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param transactionId The resource's id
-		@return ApiGETTransactionsTransactionIdRequest
+		@return TransactionsApiGETTransactionsTransactionIdRequest
 	*/
-	GETTransactionsTransactionId(ctx context.Context, transactionId string) ApiGETTransactionsTransactionIdRequest
+	GETTransactionsTransactionId(ctx context.Context, transactionId string) TransactionsApiGETTransactionsTransactionIdRequest
 
 	// GETTransactionsTransactionIdExecute executes the request
 	//  @return Transaction
-	GETTransactionsTransactionIdExecute(r ApiGETTransactionsTransactionIdRequest) (*Transaction, *http.Response, error)
+	GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*Transaction, *http.Response, error)
 }
 
 // TransactionsApiService TransactionsApi service
 type TransactionsApiService service
 
-type ApiGETTransactionsRequest struct {
+type TransactionsApiGETTransactionsRequest struct {
 	ctx        context.Context
 	ApiService TransactionsApi
 }
 
-func (r ApiGETTransactionsRequest) Execute() (*http.Response, error) {
+func (r TransactionsApiGETTransactionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTransactionsExecute(r)
 }
 
@@ -69,17 +69,17 @@ GETTransactions List all transactions
 List all transactions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETTransactionsRequest
+ @return TransactionsApiGETTransactionsRequest
 */
-func (a *TransactionsApiService) GETTransactions(ctx context.Context) ApiGETTransactionsRequest {
-	return ApiGETTransactionsRequest{
+func (a *TransactionsApiService) GETTransactions(ctx context.Context) TransactionsApiGETTransactionsRequest {
+	return TransactionsApiGETTransactionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TransactionsApiService) GETTransactionsExecute(r ApiGETTransactionsRequest) (*http.Response, error) {
+func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -142,13 +142,13 @@ func (a *TransactionsApiService) GETTransactionsExecute(r ApiGETTransactionsRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTransactionsTransactionIdRequest struct {
+type TransactionsApiGETTransactionsTransactionIdRequest struct {
 	ctx           context.Context
 	ApiService    TransactionsApi
 	transactionId string
 }
 
-func (r ApiGETTransactionsTransactionIdRequest) Execute() (*Transaction, *http.Response, error) {
+func (r TransactionsApiGETTransactionsTransactionIdRequest) Execute() (*Transaction, *http.Response, error) {
 	return r.ApiService.GETTransactionsTransactionIdExecute(r)
 }
 
@@ -159,10 +159,10 @@ Retrieve a transaction
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param transactionId The resource's id
- @return ApiGETTransactionsTransactionIdRequest
+ @return TransactionsApiGETTransactionsTransactionIdRequest
 */
-func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId string) ApiGETTransactionsTransactionIdRequest {
-	return ApiGETTransactionsTransactionIdRequest{
+func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId string) TransactionsApiGETTransactionsTransactionIdRequest {
+	return TransactionsApiGETTransactionsTransactionIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		transactionId: transactionId,
@@ -171,7 +171,7 @@ func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Contex
 
 // Execute executes the request
 //  @return Transaction
-func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r ApiGETTransactionsTransactionIdRequest) (*Transaction, *http.Response, error) {
+func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*Transaction, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

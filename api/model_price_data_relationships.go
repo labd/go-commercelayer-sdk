@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,11 @@ import (
 
 // PriceDataRelationships struct for PriceDataRelationships
 type PriceDataRelationships struct {
-	PriceList   *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
-	Sku         *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	PriceList        *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
+	Sku              *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
+	PriceTiers       *PriceDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
+	PriceVolumeTiers *PriceDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
+	Attachments      *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewPriceDataRelationships instantiates a new PriceDataRelationships object
@@ -103,6 +105,70 @@ func (o *PriceDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 	o.Sku = &v
 }
 
+// GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers {
+	if o == nil || o.PriceTiers == nil {
+		var ret PriceDataRelationshipsPriceTiers
+		return ret
+	}
+	return *o.PriceTiers
+}
+
+// GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool) {
+	if o == nil || o.PriceTiers == nil {
+		return nil, false
+	}
+	return o.PriceTiers, true
+}
+
+// HasPriceTiers returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasPriceTiers() bool {
+	if o != nil && o.PriceTiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceTiers gets a reference to the given PriceDataRelationshipsPriceTiers and assigns it to the PriceTiers field.
+func (o *PriceDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers) {
+	o.PriceTiers = &v
+}
+
+// GetPriceVolumeTiers returns the PriceVolumeTiers field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetPriceVolumeTiers() PriceDataRelationshipsPriceVolumeTiers {
+	if o == nil || o.PriceVolumeTiers == nil {
+		var ret PriceDataRelationshipsPriceVolumeTiers
+		return ret
+	}
+	return *o.PriceVolumeTiers
+}
+
+// GetPriceVolumeTiersOk returns a tuple with the PriceVolumeTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetPriceVolumeTiersOk() (*PriceDataRelationshipsPriceVolumeTiers, bool) {
+	if o == nil || o.PriceVolumeTiers == nil {
+		return nil, false
+	}
+	return o.PriceVolumeTiers, true
+}
+
+// HasPriceVolumeTiers returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasPriceVolumeTiers() bool {
+	if o != nil && o.PriceVolumeTiers != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceVolumeTiers gets a reference to the given PriceDataRelationshipsPriceVolumeTiers and assigns it to the PriceVolumeTiers field.
+func (o *PriceDataRelationships) SetPriceVolumeTiers(v PriceDataRelationshipsPriceVolumeTiers) {
+	o.PriceVolumeTiers = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
@@ -142,6 +208,12 @@ func (o PriceDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
+	}
+	if o.PriceTiers != nil {
+		toSerialize["price_tiers"] = o.PriceTiers
+	}
+	if o.PriceVolumeTiers != nil {
+		toSerialize["price_volume_tiers"] = o.PriceVolumeTiers
 	}
 	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments

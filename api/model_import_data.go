@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ImportData struct for ImportData
 type ImportData struct {
 	// The resource's type
-	Type          string                 `json:"type"`
-	Attributes    ImportDataAttributes   `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                   `json:"type"`
+	Attributes    ImportDataAttributes     `json:"attributes"`
+	Relationships *ImportDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewImportData instantiates a new ImportData object
@@ -93,17 +93,17 @@ func (o *ImportData) SetAttributes(v ImportDataAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ImportData) GetRelationships() map[string]interface{} {
+func (o *ImportData) GetRelationships() ImportDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret ImportDataRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *ImportData) GetRelationshipsOk() (*ImportDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,9 +119,9 @@ func (o *ImportData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *ImportData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given ImportDataRelationships and assigns it to the Relationships field.
+func (o *ImportData) SetRelationships(v ImportDataRelationships) {
+	o.Relationships = &v
 }
 
 func (o ImportData) MarshalJSON() ([]byte, error) {

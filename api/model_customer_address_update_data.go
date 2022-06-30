@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type CustomerAddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                            `json:"id"`
-	Attributes    AdyenPaymentCreateDataAttributes  `json:"attributes"`
-	Relationships *CustomerAddressDataRelationships `json:"relationships,omitempty"`
+	Id            string                                  `json:"id"`
+	Attributes    AdyenPaymentCreateDataAttributes        `json:"attributes"`
+	Relationships *CustomerAddressUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressUpdateData instantiates a new CustomerAddressUpdateData object
@@ -120,9 +120,9 @@ func (o *CustomerAddressUpdateData) SetAttributes(v AdyenPaymentCreateDataAttrib
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressDataRelationships {
+func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerAddressDataRelationships
+		var ret CustomerAddressUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressDataRelati
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressDataRelationships, bool) {
+func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CustomerAddressUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerAddressDataRelationships and assigns it to the Relationships field.
-func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressDataRelationships) {
+// SetRelationships gets a reference to the given CustomerAddressUpdateDataRelationships and assigns it to the Relationships field.
+func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

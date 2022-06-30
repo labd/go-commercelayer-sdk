@@ -5,9 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The shipping method&#39;s name | 
+**Scheme** | Pointer to **string** | The shipping method&#39;s scheme, one of &#39;flat&#39; or &#39;weight_tiered&#39;. | [optional] 
 **CurrencyCode** | Pointer to **string** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **PriceAmountCents** | **int32** | The price of this shipping method, in cents. | 
 **FreeOverAmountCents** | Pointer to **int32** | Apply free shipping if the order amount is over this value, in cents. | [optional] 
+**MinWeight** | Pointer to **float32** | The minimum weight for which this shipping method is available. | [optional] 
+**MaxWeight** | Pointer to **float32** | The maximum weight for which this shipping method is available. | [optional] 
+**UnitOfWeight** | Pointer to **string** | Can be one of &#39;gr&#39;, &#39;lb&#39;, or &#39;oz&#39; | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
@@ -50,6 +54,31 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
+
+### GetScheme
+
+`func (o *ShippingMethodCreateDataAttributes) GetScheme() string`
+
+GetScheme returns the Scheme field if non-nil, zero value otherwise.
+
+### GetSchemeOk
+
+`func (o *ShippingMethodCreateDataAttributes) GetSchemeOk() (*string, bool)`
+
+GetSchemeOk returns a tuple with the Scheme field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScheme
+
+`func (o *ShippingMethodCreateDataAttributes) SetScheme(v string)`
+
+SetScheme sets Scheme field to given value.
+
+### HasScheme
+
+`func (o *ShippingMethodCreateDataAttributes) HasScheme() bool`
+
+HasScheme returns a boolean if a field has been set.
 
 ### GetCurrencyCode
 
@@ -120,6 +149,81 @@ SetFreeOverAmountCents sets FreeOverAmountCents field to given value.
 `func (o *ShippingMethodCreateDataAttributes) HasFreeOverAmountCents() bool`
 
 HasFreeOverAmountCents returns a boolean if a field has been set.
+
+### GetMinWeight
+
+`func (o *ShippingMethodCreateDataAttributes) GetMinWeight() float32`
+
+GetMinWeight returns the MinWeight field if non-nil, zero value otherwise.
+
+### GetMinWeightOk
+
+`func (o *ShippingMethodCreateDataAttributes) GetMinWeightOk() (*float32, bool)`
+
+GetMinWeightOk returns a tuple with the MinWeight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinWeight
+
+`func (o *ShippingMethodCreateDataAttributes) SetMinWeight(v float32)`
+
+SetMinWeight sets MinWeight field to given value.
+
+### HasMinWeight
+
+`func (o *ShippingMethodCreateDataAttributes) HasMinWeight() bool`
+
+HasMinWeight returns a boolean if a field has been set.
+
+### GetMaxWeight
+
+`func (o *ShippingMethodCreateDataAttributes) GetMaxWeight() float32`
+
+GetMaxWeight returns the MaxWeight field if non-nil, zero value otherwise.
+
+### GetMaxWeightOk
+
+`func (o *ShippingMethodCreateDataAttributes) GetMaxWeightOk() (*float32, bool)`
+
+GetMaxWeightOk returns a tuple with the MaxWeight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxWeight
+
+`func (o *ShippingMethodCreateDataAttributes) SetMaxWeight(v float32)`
+
+SetMaxWeight sets MaxWeight field to given value.
+
+### HasMaxWeight
+
+`func (o *ShippingMethodCreateDataAttributes) HasMaxWeight() bool`
+
+HasMaxWeight returns a boolean if a field has been set.
+
+### GetUnitOfWeight
+
+`func (o *ShippingMethodCreateDataAttributes) GetUnitOfWeight() string`
+
+GetUnitOfWeight returns the UnitOfWeight field if non-nil, zero value otherwise.
+
+### GetUnitOfWeightOk
+
+`func (o *ShippingMethodCreateDataAttributes) GetUnitOfWeightOk() (*string, bool)`
+
+GetUnitOfWeightOk returns a tuple with the UnitOfWeight field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUnitOfWeight
+
+`func (o *ShippingMethodCreateDataAttributes) SetUnitOfWeight(v string)`
+
+SetUnitOfWeight sets UnitOfWeight field to given value.
+
+### HasUnitOfWeight
+
+`func (o *ShippingMethodCreateDataAttributes) HasUnitOfWeight() bool`
+
+HasUnitOfWeight returns a boolean if a field has been set.
 
 ### GetReference
 

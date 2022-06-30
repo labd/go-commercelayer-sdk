@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -27,24 +27,24 @@ type OrganizationApi interface {
 		Retrieve the organization
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETOrganizationOrganizationIdRequest
+		@return OrganizationApiGETOrganizationOrganizationIdRequest
 	*/
-	GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest
+	GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest
 
 	// GETOrganizationOrganizationIdExecute executes the request
 	//  @return Organization
-	GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
+	GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
 }
 
 // OrganizationApiService OrganizationApi service
 type OrganizationApiService service
 
-type ApiGETOrganizationOrganizationIdRequest struct {
+type OrganizationApiGETOrganizationOrganizationIdRequest struct {
 	ctx        context.Context
 	ApiService OrganizationApi
 }
 
-func (r ApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
+func (r OrganizationApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -54,10 +54,10 @@ GETOrganizationOrganizationId Retrieve the organization
 Retrieve the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrganizationOrganizationIdRequest
+ @return OrganizationApiGETOrganizationOrganizationIdRequest
 */
-func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest {
-	return ApiGETOrganizationOrganizationIdRequest{
+func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest {
+	return OrganizationApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -65,7 +65,7 @@ func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Conte
 
 // Execute executes the request
 //  @return Organization
-func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
+func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

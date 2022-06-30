@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type TaxRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxRuleId The resource's id
-		@return ApiDELETETaxRulesTaxRuleIdRequest
+		@return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 	*/
-	DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiDELETETaxRulesTaxRuleIdRequest
+	DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 
 	// DELETETaxRulesTaxRuleIdExecute executes the request
-	DELETETaxRulesTaxRuleIdExecute(r ApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error)
+	DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error)
 
 	/*
 		GETManualTaxCalculatorIdTaxRules Retrieve the tax rules associated to the manual tax calculator
@@ -43,12 +43,12 @@ type TaxRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param manualTaxCalculatorId The resource's id
-		@return ApiGETManualTaxCalculatorIdTaxRulesRequest
+		@return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 	*/
-	GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxRulesRequest
+	GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 
 	// GETManualTaxCalculatorIdTaxRulesExecute executes the request
-	GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error)
+	GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error)
 
 	/*
 		GETTaxRules List all tax rules
@@ -56,12 +56,12 @@ type TaxRulesApi interface {
 		List all tax rules
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETTaxRulesRequest
+		@return TaxRulesApiGETTaxRulesRequest
 	*/
-	GETTaxRules(ctx context.Context) ApiGETTaxRulesRequest
+	GETTaxRules(ctx context.Context) TaxRulesApiGETTaxRulesRequest
 
 	// GETTaxRulesExecute executes the request
-	GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.Response, error)
+	GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*http.Response, error)
 
 	/*
 		GETTaxRulesTaxRuleId Retrieve a tax rule
@@ -70,13 +70,13 @@ type TaxRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxRuleId The resource's id
-		@return ApiGETTaxRulesTaxRuleIdRequest
+		@return TaxRulesApiGETTaxRulesTaxRuleIdRequest
 	*/
-	GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiGETTaxRulesTaxRuleIdRequest
+	GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest
 
 	// GETTaxRulesTaxRuleIdExecute executes the request
 	//  @return TaxRule
-	GETTaxRulesTaxRuleIdExecute(r ApiGETTaxRulesTaxRuleIdRequest) (*TaxRule, *http.Response, error)
+	GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*TaxRule, *http.Response, error)
 
 	/*
 		PATCHTaxRulesTaxRuleId Update a tax rule
@@ -85,12 +85,12 @@ type TaxRulesApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param taxRuleId The resource's id
-		@return ApiPATCHTaxRulesTaxRuleIdRequest
+		@return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 	*/
-	PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiPATCHTaxRulesTaxRuleIdRequest
+	PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 
 	// PATCHTaxRulesTaxRuleIdExecute executes the request
-	PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTaxRuleIdRequest) (*http.Response, error)
+	PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*http.Response, error)
 
 	/*
 		POSTTaxRules Create a tax rule
@@ -98,24 +98,24 @@ type TaxRulesApi interface {
 		Create a tax rule
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTTaxRulesRequest
+		@return TaxRulesApiPOSTTaxRulesRequest
 	*/
-	POSTTaxRules(ctx context.Context) ApiPOSTTaxRulesRequest
+	POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTaxRulesRequest
 
 	// POSTTaxRulesExecute executes the request
-	POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*http.Response, error)
+	POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*http.Response, error)
 }
 
 // TaxRulesApiService TaxRulesApi service
 type TaxRulesApiService service
 
-type ApiDELETETaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiDELETETaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService TaxRulesApi
 	taxRuleId  string
 }
 
-func (r ApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETETaxRulesTaxRuleIdExecute(r)
 }
 
@@ -126,10 +126,10 @@ Delete a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiDELETETaxRulesTaxRuleIdRequest
+ @return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiDELETETaxRulesTaxRuleIdRequest {
-	return ApiDELETETaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
+	return TaxRulesApiDELETETaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -137,7 +137,7 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRul
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r ApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +201,13 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r ApiDELETETaxRulesT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdTaxRulesRequest struct {
+type TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest struct {
 	ctx                   context.Context
 	ApiService            TaxRulesApi
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdTaxRulesExecute(r)
 }
 
@@ -218,10 +218,10 @@ Retrieve the tax rules associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdTaxRulesRequest
+ @return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 */
-func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxRulesRequest {
-	return ApiGETManualTaxCalculatorIdTaxRulesRequest{
+func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
+	return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -229,7 +229,7 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +293,12 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETMan
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRulesRequest struct {
+type TaxRulesApiGETTaxRulesRequest struct {
 	ctx        context.Context
 	ApiService TaxRulesApi
 }
 
-func (r ApiGETTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiGETTaxRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxRulesExecute(r)
 }
 
@@ -308,17 +308,17 @@ GETTaxRules List all tax rules
 List all tax rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETTaxRulesRequest
+ @return TaxRulesApiGETTaxRulesRequest
 */
-func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) ApiGETTaxRulesRequest {
-	return ApiGETTaxRulesRequest{
+func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxRulesRequest {
+	return TaxRulesApiGETTaxRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +381,13 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiGETTaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService TaxRulesApi
 	taxRuleId  string
 }
 
-func (r ApiGETTaxRulesTaxRuleIdRequest) Execute() (*TaxRule, *http.Response, error) {
+func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*TaxRule, *http.Response, error) {
 	return r.ApiService.GETTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -398,10 +398,10 @@ Retrieve a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiGETTaxRulesTaxRuleIdRequest
+ @return TaxRulesApiGETTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiGETTaxRulesTaxRuleIdRequest {
-	return ApiGETTaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
+	return TaxRulesApiGETTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -410,7 +410,7 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId
 
 // Execute executes the request
 //  @return TaxRule
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r ApiGETTaxRulesTaxRuleIdRequest) (*TaxRule, *http.Response, error) {
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*TaxRule, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +484,19 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r ApiGETTaxRulesTaxRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHTaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiPATCHTaxRulesTaxRuleIdRequest struct {
 	ctx           context.Context
 	ApiService    TaxRulesApi
 	taxRuleId     string
 	taxRuleUpdate *TaxRuleUpdate
 }
 
-func (r ApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) ApiPATCHTaxRulesTaxRuleIdRequest {
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
 	r.taxRuleUpdate = &taxRuleUpdate
 	return r
 }
 
-func (r ApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -507,10 +507,10 @@ Update a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiPATCHTaxRulesTaxRuleIdRequest
+ @return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiPATCHTaxRulesTaxRuleIdRequest {
-	return ApiPATCHTaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
+	return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -518,7 +518,7 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRule
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTaxRuleIdRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +587,18 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTax
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTTaxRulesRequest struct {
+type TaxRulesApiPOSTTaxRulesRequest struct {
 	ctx           context.Context
 	ApiService    TaxRulesApi
 	taxRuleCreate *TaxRuleCreate
 }
 
-func (r ApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreate) ApiPOSTTaxRulesRequest {
+func (r TaxRulesApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreate) TaxRulesApiPOSTTaxRulesRequest {
 	r.taxRuleCreate = &taxRuleCreate
 	return r
 }
 
-func (r ApiPOSTTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiPOSTTaxRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTTaxRulesExecute(r)
 }
 
@@ -608,17 +608,17 @@ POSTTaxRules Create a tax rule
 Create a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTTaxRulesRequest
+ @return TaxRulesApiPOSTTaxRulesRequest
 */
-func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) ApiPOSTTaxRulesRequest {
-	return ApiPOSTTaxRulesRequest{
+func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTaxRulesRequest {
+	return TaxRulesApiPOSTTaxRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

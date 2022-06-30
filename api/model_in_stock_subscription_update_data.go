@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type InStockSubscriptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                  `json:"id"`
-	Attributes    InStockSubscriptionUpdateDataAttributes `json:"attributes"`
-	Relationships *InStockSubscriptionDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                      `json:"id"`
+	Attributes    InStockSubscriptionUpdateDataAttributes     `json:"attributes"`
+	Relationships *InStockSubscriptionUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewInStockSubscriptionUpdateData instantiates a new InStockSubscriptionUpdateData object
@@ -120,9 +120,9 @@ func (o *InStockSubscriptionUpdateData) SetAttributes(v InStockSubscriptionUpdat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionDataRelationships {
+func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret InStockSubscriptionDataRelationships
+		var ret InStockSubscriptionUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionDa
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*InStockSubscriptionDataRelationships, bool) {
+func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*InStockSubscriptionUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *InStockSubscriptionUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given InStockSubscriptionDataRelationships and assigns it to the Relationships field.
-func (o *InStockSubscriptionUpdateData) SetRelationships(v InStockSubscriptionDataRelationships) {
+// SetRelationships gets a reference to the given InStockSubscriptionUpdateDataRelationships and assigns it to the Relationships field.
+func (o *InStockSubscriptionUpdateData) SetRelationships(v InStockSubscriptionUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -19,12 +19,20 @@ import (
 type ShippingMethodUpdateDataAttributes struct {
 	// The shipping method's name
 	Name *string `json:"name,omitempty"`
+	// The shipping method's scheme, one of 'flat' or 'weight_tiered'.
+	Scheme *string `json:"scheme,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
 	CurrencyCode *string `json:"currency_code,omitempty"`
 	// The price of this shipping method, in cents.
 	PriceAmountCents *int32 `json:"price_amount_cents,omitempty"`
 	// Apply free shipping if the order amount is over this value, in cents.
 	FreeOverAmountCents *int32 `json:"free_over_amount_cents,omitempty"`
+	// The minimum weight for which this shipping method is available.
+	MinWeight *float32 `json:"min_weight,omitempty"`
+	// The maximum weight for which this shipping method is available.
+	MaxWeight *float32 `json:"max_weight,omitempty"`
+	// Can be one of 'gr', 'lb', or 'oz'
+	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
@@ -80,6 +88,38 @@ func (o *ShippingMethodUpdateDataAttributes) HasName() bool {
 // SetName gets a reference to the given string and assigns it to the Name field.
 func (o *ShippingMethodUpdateDataAttributes) SetName(v string) {
 	o.Name = &v
+}
+
+// GetScheme returns the Scheme field value if set, zero value otherwise.
+func (o *ShippingMethodUpdateDataAttributes) GetScheme() string {
+	if o == nil || o.Scheme == nil {
+		var ret string
+		return ret
+	}
+	return *o.Scheme
+}
+
+// GetSchemeOk returns a tuple with the Scheme field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodUpdateDataAttributes) GetSchemeOk() (*string, bool) {
+	if o == nil || o.Scheme == nil {
+		return nil, false
+	}
+	return o.Scheme, true
+}
+
+// HasScheme returns a boolean if a field has been set.
+func (o *ShippingMethodUpdateDataAttributes) HasScheme() bool {
+	if o != nil && o.Scheme != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetScheme gets a reference to the given string and assigns it to the Scheme field.
+func (o *ShippingMethodUpdateDataAttributes) SetScheme(v string) {
+	o.Scheme = &v
 }
 
 // GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
@@ -176,6 +216,102 @@ func (o *ShippingMethodUpdateDataAttributes) HasFreeOverAmountCents() bool {
 // SetFreeOverAmountCents gets a reference to the given int32 and assigns it to the FreeOverAmountCents field.
 func (o *ShippingMethodUpdateDataAttributes) SetFreeOverAmountCents(v int32) {
 	o.FreeOverAmountCents = &v
+}
+
+// GetMinWeight returns the MinWeight field value if set, zero value otherwise.
+func (o *ShippingMethodUpdateDataAttributes) GetMinWeight() float32 {
+	if o == nil || o.MinWeight == nil {
+		var ret float32
+		return ret
+	}
+	return *o.MinWeight
+}
+
+// GetMinWeightOk returns a tuple with the MinWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodUpdateDataAttributes) GetMinWeightOk() (*float32, bool) {
+	if o == nil || o.MinWeight == nil {
+		return nil, false
+	}
+	return o.MinWeight, true
+}
+
+// HasMinWeight returns a boolean if a field has been set.
+func (o *ShippingMethodUpdateDataAttributes) HasMinWeight() bool {
+	if o != nil && o.MinWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMinWeight gets a reference to the given float32 and assigns it to the MinWeight field.
+func (o *ShippingMethodUpdateDataAttributes) SetMinWeight(v float32) {
+	o.MinWeight = &v
+}
+
+// GetMaxWeight returns the MaxWeight field value if set, zero value otherwise.
+func (o *ShippingMethodUpdateDataAttributes) GetMaxWeight() float32 {
+	if o == nil || o.MaxWeight == nil {
+		var ret float32
+		return ret
+	}
+	return *o.MaxWeight
+}
+
+// GetMaxWeightOk returns a tuple with the MaxWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodUpdateDataAttributes) GetMaxWeightOk() (*float32, bool) {
+	if o == nil || o.MaxWeight == nil {
+		return nil, false
+	}
+	return o.MaxWeight, true
+}
+
+// HasMaxWeight returns a boolean if a field has been set.
+func (o *ShippingMethodUpdateDataAttributes) HasMaxWeight() bool {
+	if o != nil && o.MaxWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetMaxWeight gets a reference to the given float32 and assigns it to the MaxWeight field.
+func (o *ShippingMethodUpdateDataAttributes) SetMaxWeight(v float32) {
+	o.MaxWeight = &v
+}
+
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
+func (o *ShippingMethodUpdateDataAttributes) GetUnitOfWeight() string {
+	if o == nil || o.UnitOfWeight == nil {
+		var ret string
+		return ret
+	}
+	return *o.UnitOfWeight
+}
+
+// GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ShippingMethodUpdateDataAttributes) GetUnitOfWeightOk() (*string, bool) {
+	if o == nil || o.UnitOfWeight == nil {
+		return nil, false
+	}
+	return o.UnitOfWeight, true
+}
+
+// HasUnitOfWeight returns a boolean if a field has been set.
+func (o *ShippingMethodUpdateDataAttributes) HasUnitOfWeight() bool {
+	if o != nil && o.UnitOfWeight != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
+func (o *ShippingMethodUpdateDataAttributes) SetUnitOfWeight(v string) {
+	o.UnitOfWeight = &v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise.
@@ -279,6 +415,9 @@ func (o ShippingMethodUpdateDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
+	if o.Scheme != nil {
+		toSerialize["scheme"] = o.Scheme
+	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
@@ -287,6 +426,15 @@ func (o ShippingMethodUpdateDataAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.FreeOverAmountCents != nil {
 		toSerialize["free_over_amount_cents"] = o.FreeOverAmountCents
+	}
+	if o.MinWeight != nil {
+		toSerialize["min_weight"] = o.MinWeight
+	}
+	if o.MaxWeight != nil {
+		toSerialize["max_weight"] = o.MaxWeight
+	}
+	if o.UnitOfWeight != nil {
+		toSerialize["unit_of_weight"] = o.UnitOfWeight
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

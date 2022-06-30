@@ -438,7 +438,7 @@ import (
 
 func main() {
     parcelId := "parcelId_example" // string | The resource's id
-    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("parcels", "XGZwpOSrWL", *openapiclient.NewParcelCreateDataAttributes())) // ParcelUpdate | 
+    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("parcels", "XGZwpOSrWL", *openapiclient.NewParcelUpdateDataAttributes())) // ParcelUpdate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -507,7 +507,7 @@ import (
 )
 
 func main() {
-    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("parcels", *openapiclient.NewParcelCreateDataAttributes())) // ParcelCreate | 
+    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("parcels", *openapiclient.NewParcelCreateDataAttributes(float32(1000.0), "gr"))) // ParcelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

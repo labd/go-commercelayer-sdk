@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type ExternalPaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiDELETEExternalPaymentsExternalPaymentIdRequest
+		@return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest
 	*/
-	DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiDELETEExternalPaymentsExternalPaymentIdRequest
+	DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest
 
 	// DELETEExternalPaymentsExternalPaymentIdExecute executes the request
-	DELETEExternalPaymentsExternalPaymentIdExecute(r ApiDELETEExternalPaymentsExternalPaymentIdRequest) (*http.Response, error)
+	DELETEExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest) (*http.Response, error)
 
 	/*
 		GETExternalGatewayIdExternalPayments Retrieve the external payments associated to the external gateway
@@ -43,12 +43,12 @@ type ExternalPaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalGatewayId The resource's id
-		@return ApiGETExternalGatewayIdExternalPaymentsRequest
+		@return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest
 	*/
-	GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdExternalPaymentsRequest
+	GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest
 
 	// GETExternalGatewayIdExternalPaymentsExecute executes the request
-	GETExternalGatewayIdExternalPaymentsExecute(r ApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error)
+	GETExternalGatewayIdExternalPaymentsExecute(r ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETExternalPayments List all external payments
@@ -56,12 +56,12 @@ type ExternalPaymentsApi interface {
 		List all external payments
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETExternalPaymentsRequest
+		@return ExternalPaymentsApiGETExternalPaymentsRequest
 	*/
-	GETExternalPayments(ctx context.Context) ApiGETExternalPaymentsRequest
+	GETExternalPayments(ctx context.Context) ExternalPaymentsApiGETExternalPaymentsRequest
 
 	// GETExternalPaymentsExecute executes the request
-	GETExternalPaymentsExecute(r ApiGETExternalPaymentsRequest) (*http.Response, error)
+	GETExternalPaymentsExecute(r ExternalPaymentsApiGETExternalPaymentsRequest) (*http.Response, error)
 
 	/*
 		GETExternalPaymentsExternalPaymentId Retrieve an external payment
@@ -70,13 +70,13 @@ type ExternalPaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiGETExternalPaymentsExternalPaymentIdRequest
+		@return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest
 	*/
-	GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentsExternalPaymentIdRequest
+	GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest
 
 	// GETExternalPaymentsExternalPaymentIdExecute executes the request
 	//  @return ExternalPayment
-	GETExternalPaymentsExternalPaymentIdExecute(r ApiGETExternalPaymentsExternalPaymentIdRequest) (*ExternalPayment, *http.Response, error)
+	GETExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest) (*ExternalPayment, *http.Response, error)
 
 	/*
 		PATCHExternalPaymentsExternalPaymentId Update an external payment
@@ -85,12 +85,12 @@ type ExternalPaymentsApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param externalPaymentId The resource's id
-		@return ApiPATCHExternalPaymentsExternalPaymentIdRequest
+		@return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest
 	*/
-	PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiPATCHExternalPaymentsExternalPaymentIdRequest
+	PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest
 
 	// PATCHExternalPaymentsExternalPaymentIdExecute executes the request
-	PATCHExternalPaymentsExternalPaymentIdExecute(r ApiPATCHExternalPaymentsExternalPaymentIdRequest) (*http.Response, error)
+	PATCHExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) (*http.Response, error)
 
 	/*
 		POSTExternalPayments Create an external payment
@@ -98,24 +98,24 @@ type ExternalPaymentsApi interface {
 		Create an external payment
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTExternalPaymentsRequest
+		@return ExternalPaymentsApiPOSTExternalPaymentsRequest
 	*/
-	POSTExternalPayments(ctx context.Context) ApiPOSTExternalPaymentsRequest
+	POSTExternalPayments(ctx context.Context) ExternalPaymentsApiPOSTExternalPaymentsRequest
 
 	// POSTExternalPaymentsExecute executes the request
-	POSTExternalPaymentsExecute(r ApiPOSTExternalPaymentsRequest) (*http.Response, error)
+	POSTExternalPaymentsExecute(r ExternalPaymentsApiPOSTExternalPaymentsRequest) (*http.Response, error)
 }
 
 // ExternalPaymentsApiService ExternalPaymentsApi service
 type ExternalPaymentsApiService service
 
-type ApiDELETEExternalPaymentsExternalPaymentIdRequest struct {
+type ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest struct {
 	ctx               context.Context
 	ApiService        ExternalPaymentsApi
 	externalPaymentId string
 }
 
-func (r ApiDELETEExternalPaymentsExternalPaymentIdRequest) Execute() (*http.Response, error) {
+func (r ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEExternalPaymentsExternalPaymentIdExecute(r)
 }
 
@@ -126,10 +126,10 @@ Delete an external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiDELETEExternalPaymentsExternalPaymentIdRequest
+ @return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiDELETEExternalPaymentsExternalPaymentIdRequest {
-	return ApiDELETEExternalPaymentsExternalPaymentIdRequest{
+func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest {
+	return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -137,7 +137,7 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx
 }
 
 // Execute executes the request
-func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExecute(r ApiDELETEExternalPaymentsExternalPaymentIdRequest) (*http.Response, error) {
+func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +201,13 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalGatewayIdExternalPaymentsRequest struct {
+type ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest struct {
 	ctx               context.Context
 	ApiService        ExternalPaymentsApi
 	externalGatewayId string
 }
 
-func (r ApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
+func (r ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalGatewayIdExternalPaymentsExecute(r)
 }
 
@@ -218,10 +218,10 @@ Retrieve the external payments associated to the external gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalGatewayId The resource's id
- @return ApiGETExternalGatewayIdExternalPaymentsRequest
+ @return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest
 */
-func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ApiGETExternalGatewayIdExternalPaymentsRequest {
-	return ApiGETExternalGatewayIdExternalPaymentsRequest{
+func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest {
+	return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
@@ -229,7 +229,7 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx co
 }
 
 // Execute executes the request
-func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute(r ApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
+func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute(r ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +293,12 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentsRequest struct {
+type ExternalPaymentsApiGETExternalPaymentsRequest struct {
 	ctx        context.Context
 	ApiService ExternalPaymentsApi
 }
 
-func (r ApiGETExternalPaymentsRequest) Execute() (*http.Response, error) {
+func (r ExternalPaymentsApiGETExternalPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentsExecute(r)
 }
 
@@ -308,17 +308,17 @@ GETExternalPayments List all external payments
 List all external payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETExternalPaymentsRequest
+ @return ExternalPaymentsApiGETExternalPaymentsRequest
 */
-func (a *ExternalPaymentsApiService) GETExternalPayments(ctx context.Context) ApiGETExternalPaymentsRequest {
-	return ApiGETExternalPaymentsRequest{
+func (a *ExternalPaymentsApiService) GETExternalPayments(ctx context.Context) ExternalPaymentsApiGETExternalPaymentsRequest {
+	return ExternalPaymentsApiGETExternalPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ApiGETExternalPaymentsRequest) (*http.Response, error) {
+func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ExternalPaymentsApiGETExternalPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +381,13 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ApiGETExternal
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentsExternalPaymentIdRequest struct {
+type ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest struct {
 	ctx               context.Context
 	ApiService        ExternalPaymentsApi
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentsExternalPaymentIdRequest) Execute() (*ExternalPayment, *http.Response, error) {
+func (r ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest) Execute() (*ExternalPayment, *http.Response, error) {
 	return r.ApiService.GETExternalPaymentsExternalPaymentIdExecute(r)
 }
 
@@ -398,10 +398,10 @@ Retrieve an external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentsExternalPaymentIdRequest
+ @return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentsExternalPaymentIdRequest {
-	return ApiGETExternalPaymentsExternalPaymentIdRequest{
+func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest {
+	return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -410,7 +410,7 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx co
 
 // Execute executes the request
 //  @return ExternalPayment
-func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute(r ApiGETExternalPaymentsExternalPaymentIdRequest) (*ExternalPayment, *http.Response, error) {
+func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest) (*ExternalPayment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +484,19 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHExternalPaymentsExternalPaymentIdRequest struct {
+type ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest struct {
 	ctx                   context.Context
 	ApiService            ExternalPaymentsApi
 	externalPaymentId     string
 	externalPaymentUpdate *ExternalPaymentUpdate
 }
 
-func (r ApiPATCHExternalPaymentsExternalPaymentIdRequest) ExternalPaymentUpdate(externalPaymentUpdate ExternalPaymentUpdate) ApiPATCHExternalPaymentsExternalPaymentIdRequest {
+func (r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) ExternalPaymentUpdate(externalPaymentUpdate ExternalPaymentUpdate) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
 	r.externalPaymentUpdate = &externalPaymentUpdate
 	return r
 }
 
-func (r ApiPATCHExternalPaymentsExternalPaymentIdRequest) Execute() (*http.Response, error) {
+func (r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHExternalPaymentsExternalPaymentIdExecute(r)
 }
 
@@ -507,10 +507,10 @@ Update an external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiPATCHExternalPaymentsExternalPaymentIdRequest
+ @return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ApiPATCHExternalPaymentsExternalPaymentIdRequest {
-	return ApiPATCHExternalPaymentsExternalPaymentIdRequest{
+func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
+	return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -518,7 +518,7 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx 
 }
 
 // Execute executes the request
-func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecute(r ApiPATCHExternalPaymentsExternalPaymentIdRequest) (*http.Response, error) {
+func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +587,18 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTExternalPaymentsRequest struct {
+type ExternalPaymentsApiPOSTExternalPaymentsRequest struct {
 	ctx                   context.Context
 	ApiService            ExternalPaymentsApi
 	externalPaymentCreate *ExternalPaymentCreate
 }
 
-func (r ApiPOSTExternalPaymentsRequest) ExternalPaymentCreate(externalPaymentCreate ExternalPaymentCreate) ApiPOSTExternalPaymentsRequest {
+func (r ExternalPaymentsApiPOSTExternalPaymentsRequest) ExternalPaymentCreate(externalPaymentCreate ExternalPaymentCreate) ExternalPaymentsApiPOSTExternalPaymentsRequest {
 	r.externalPaymentCreate = &externalPaymentCreate
 	return r
 }
 
-func (r ApiPOSTExternalPaymentsRequest) Execute() (*http.Response, error) {
+func (r ExternalPaymentsApiPOSTExternalPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTExternalPaymentsExecute(r)
 }
 
@@ -608,17 +608,17 @@ POSTExternalPayments Create an external payment
 Create an external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTExternalPaymentsRequest
+ @return ExternalPaymentsApiPOSTExternalPaymentsRequest
 */
-func (a *ExternalPaymentsApiService) POSTExternalPayments(ctx context.Context) ApiPOSTExternalPaymentsRequest {
-	return ApiPOSTExternalPaymentsRequest{
+func (a *ExternalPaymentsApiService) POSTExternalPayments(ctx context.Context) ExternalPaymentsApiPOSTExternalPaymentsRequest {
+	return ExternalPaymentsApiPOSTExternalPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ApiPOSTExternalPaymentsRequest) (*http.Response, error) {
+func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ExternalPaymentsApiPOSTExternalPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

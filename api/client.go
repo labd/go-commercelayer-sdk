@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -42,7 +42,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Commerce Layer API API v2.9.4
+// APIClient manages communication with the Commerce Layer API API v2.9.5
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -105,6 +105,8 @@ type APIClient struct {
 	DeliveryLeadTimesApi DeliveryLeadTimesApi
 
 	EventCallbacksApi EventCallbacksApi
+
+	EventsApi EventsApi
 
 	ExternalGatewaysApi ExternalGatewaysApi
 
@@ -190,6 +192,10 @@ type APIClient struct {
 
 	PriceListsApi PriceListsApi
 
+	PriceTiersApi PriceTiersApi
+
+	PriceVolumeTiersApi PriceVolumeTiersApi
+
 	PricesApi PricesApi
 
 	PromotionRulesApi PromotionRulesApi
@@ -206,7 +212,11 @@ type APIClient struct {
 
 	ShippingCategoriesApi ShippingCategoriesApi
 
+	ShippingMethodTiersApi ShippingMethodTiersApi
+
 	ShippingMethodsApi ShippingMethodsApi
+
+	ShippingWeightTiersApi ShippingWeightTiersApi
 
 	ShippingZonesApi ShippingZonesApi
 
@@ -295,6 +305,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CustomersApi = (*CustomersApiService)(&c.common)
 	c.DeliveryLeadTimesApi = (*DeliveryLeadTimesApiService)(&c.common)
 	c.EventCallbacksApi = (*EventCallbacksApiService)(&c.common)
+	c.EventsApi = (*EventsApiService)(&c.common)
 	c.ExternalGatewaysApi = (*ExternalGatewaysApiService)(&c.common)
 	c.ExternalPaymentsApi = (*ExternalPaymentsApiService)(&c.common)
 	c.ExternalPromotionsApi = (*ExternalPromotionsApiService)(&c.common)
@@ -337,6 +348,8 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.PaypalPaymentsApi = (*PaypalPaymentsApiService)(&c.common)
 	c.PercentageDiscountPromotionsApi = (*PercentageDiscountPromotionsApiService)(&c.common)
 	c.PriceListsApi = (*PriceListsApiService)(&c.common)
+	c.PriceTiersApi = (*PriceTiersApiService)(&c.common)
+	c.PriceVolumeTiersApi = (*PriceVolumeTiersApiService)(&c.common)
 	c.PricesApi = (*PricesApiService)(&c.common)
 	c.PromotionRulesApi = (*PromotionRulesApiService)(&c.common)
 	c.PromotionsApi = (*PromotionsApiService)(&c.common)
@@ -345,7 +358,9 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.ReturnsApi = (*ReturnsApiService)(&c.common)
 	c.ShipmentsApi = (*ShipmentsApiService)(&c.common)
 	c.ShippingCategoriesApi = (*ShippingCategoriesApiService)(&c.common)
+	c.ShippingMethodTiersApi = (*ShippingMethodTiersApiService)(&c.common)
 	c.ShippingMethodsApi = (*ShippingMethodsApiService)(&c.common)
+	c.ShippingWeightTiersApi = (*ShippingWeightTiersApiService)(&c.common)
 	c.ShippingZonesApi = (*ShippingZonesApiService)(&c.common)
 	c.SingletonApi = (*SingletonApiService)(&c.common)
 	c.SkuListItemsApi = (*SkuListItemsApiService)(&c.common)

@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
 **Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
+**PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
 
 ## Methods
 
@@ -75,6 +76,31 @@ SetSku sets Sku field to given value.
 `func (o *PriceUpdateDataRelationships) HasSku() bool`
 
 HasSku returns a boolean if a field has been set.
+
+### GetPriceTiers
+
+`func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers`
+
+GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
+
+### GetPriceTiersOk
+
+`func (o *PriceUpdateDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool)`
+
+GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceTiers
+
+`func (o *PriceUpdateDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers)`
+
+SetPriceTiers sets PriceTiers field to given value.
+
+### HasPriceTiers
+
+`func (o *PriceUpdateDataRelationships) HasPriceTiers() bool`
+
+HasPriceTiers returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

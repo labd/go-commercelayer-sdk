@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.4
+API version: 2.9.5
 Contact: support@commercelayer.io
 */
 
@@ -29,12 +29,12 @@ type AdyenGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenGatewayId The resource's id
-		@return ApiDELETEAdyenGatewaysAdyenGatewayIdRequest
+		@return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest
 	*/
-	DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiDELETEAdyenGatewaysAdyenGatewayIdRequest
+	DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest
 
 	// DELETEAdyenGatewaysAdyenGatewayIdExecute executes the request
-	DELETEAdyenGatewaysAdyenGatewayIdExecute(r ApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error)
+	DELETEAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error)
 
 	/*
 		GETAdyenGateways List all adyen gateways
@@ -42,12 +42,12 @@ type AdyenGatewaysApi interface {
 		List all adyen gateways
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiGETAdyenGatewaysRequest
+		@return AdyenGatewaysApiGETAdyenGatewaysRequest
 	*/
-	GETAdyenGateways(ctx context.Context) ApiGETAdyenGatewaysRequest
+	GETAdyenGateways(ctx context.Context) AdyenGatewaysApiGETAdyenGatewaysRequest
 
 	// GETAdyenGatewaysExecute executes the request
-	GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysRequest) (*http.Response, error)
+	GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*http.Response, error)
 
 	/*
 		GETAdyenGatewaysAdyenGatewayId Retrieve an adyen gateway
@@ -56,13 +56,13 @@ type AdyenGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenGatewayId The resource's id
-		@return ApiGETAdyenGatewaysAdyenGatewayIdRequest
+		@return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest
 	*/
-	GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewaysAdyenGatewayIdRequest
+	GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest
 
 	// GETAdyenGatewaysAdyenGatewayIdExecute executes the request
 	//  @return AdyenGateway
-	GETAdyenGatewaysAdyenGatewayIdExecute(r ApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGateway, *http.Response, error)
+	GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGateway, *http.Response, error)
 
 	/*
 		PATCHAdyenGatewaysAdyenGatewayId Update an adyen gateway
@@ -71,12 +71,12 @@ type AdyenGatewaysApi interface {
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 		@param adyenGatewayId The resource's id
-		@return ApiPATCHAdyenGatewaysAdyenGatewayIdRequest
+		@return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest
 	*/
-	PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiPATCHAdyenGatewaysAdyenGatewayIdRequest
+	PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest
 
 	// PATCHAdyenGatewaysAdyenGatewayIdExecute executes the request
-	PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error)
+	PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error)
 
 	/*
 		POSTAdyenGateways Create an adyen gateway
@@ -84,24 +84,24 @@ type AdyenGatewaysApi interface {
 		Create an adyen gateway
 
 		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApiPOSTAdyenGatewaysRequest
+		@return AdyenGatewaysApiPOSTAdyenGatewaysRequest
 	*/
-	POSTAdyenGateways(ctx context.Context) ApiPOSTAdyenGatewaysRequest
+	POSTAdyenGateways(ctx context.Context) AdyenGatewaysApiPOSTAdyenGatewaysRequest
 
 	// POSTAdyenGatewaysExecute executes the request
-	POSTAdyenGatewaysExecute(r ApiPOSTAdyenGatewaysRequest) (*http.Response, error)
+	POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*http.Response, error)
 }
 
 // AdyenGatewaysApiService AdyenGatewaysApi service
 type AdyenGatewaysApiService service
 
-type ApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     AdyenGatewaysApi
 	adyenGatewayId string
 }
 
-func (r ApiDELETEAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -112,10 +112,10 @@ Delete an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiDELETEAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -123,7 +123,7 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r ApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
+func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +187,12 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewaysRequest struct {
+type AdyenGatewaysApiGETAdyenGatewaysRequest struct {
 	ctx        context.Context
 	ApiService AdyenGatewaysApi
 }
 
-func (r ApiGETAdyenGatewaysRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysExecute(r)
 }
 
@@ -202,17 +202,17 @@ GETAdyenGateways List all adyen gateways
 List all adyen gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAdyenGatewaysRequest
+ @return AdyenGatewaysApiGETAdyenGatewaysRequest
 */
-func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) ApiGETAdyenGatewaysRequest {
-	return ApiGETAdyenGatewaysRequest{
+func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) AdyenGatewaysApiGETAdyenGatewaysRequest {
+	return AdyenGatewaysApiGETAdyenGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysRequest) (*http.Response, error) {
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +275,13 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     AdyenGatewaysApi
 	adyenGatewayId string
 }
 
-func (r ApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*AdyenGateway, *http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*AdyenGateway, *http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -292,10 +292,10 @@ Retrieve an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiGETAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiGETAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -304,7 +304,7 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Con
 
 // Execute executes the request
 //  @return AdyenGateway
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r ApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGateway, *http.Response, error) {
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +378,19 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r ApiGET
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         AdyenGatewaysApi
 	adyenGatewayId     string
 	adyenGatewayUpdate *AdyenGatewayUpdate
 }
 
-func (r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) ApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
 	r.adyenGatewayUpdate = &adyenGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -401,10 +401,10 @@ Update an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiPATCHAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -412,7 +412,7 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +481,18 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiP
 	return localVarHTTPResponse, nil
 }
 
-type ApiPOSTAdyenGatewaysRequest struct {
+type AdyenGatewaysApiPOSTAdyenGatewaysRequest struct {
 	ctx                context.Context
 	ApiService         AdyenGatewaysApi
 	adyenGatewayCreate *AdyenGatewayCreate
 }
 
-func (r ApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewayCreate AdyenGatewayCreate) ApiPOSTAdyenGatewaysRequest {
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewayCreate AdyenGatewayCreate) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
 	r.adyenGatewayCreate = &adyenGatewayCreate
 	return r
 }
 
-func (r ApiPOSTAdyenGatewaysRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTAdyenGatewaysExecute(r)
 }
 
@@ -502,17 +502,17 @@ POSTAdyenGateways Create an adyen gateway
 Create an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTAdyenGatewaysRequest
+ @return AdyenGatewaysApiPOSTAdyenGatewaysRequest
 */
-func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) ApiPOSTAdyenGatewaysRequest {
-	return ApiPOSTAdyenGatewaysRequest{
+func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
+	return AdyenGatewaysApiPOSTAdyenGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGatewaysRequest) (*http.Response, error) {
+func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

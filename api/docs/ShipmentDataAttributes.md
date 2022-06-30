@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **Rates** | Pointer to **[]map[string]interface{}** | The available shipping rates. | [optional] 
 **PurchaseErrorCode** | Pointer to **string** | The shipping rate purchase error code, if any. | [optional] 
 **PurchaseErrorMessage** | Pointer to **string** | The shipping rate purchase error message, if any. | [optional] 
+**GetRatesErrors** | Pointer to **[]map[string]interface{}** | Any errors collected when fetching shipping rates. | [optional] 
 **GetRatesStartedAt** | Pointer to **string** | Time at which the getting of the shipping rates started. | [optional] 
 **GetRatesCompletedAt** | Pointer to **string** | Time at which the getting of the shipping rates completed. | [optional] 
 **PurchaseStartedAt** | Pointer to **string** | Time at which the purchasing of the shipping rate started. | [optional] 
@@ -320,6 +321,31 @@ SetPurchaseErrorMessage sets PurchaseErrorMessage field to given value.
 `func (o *ShipmentDataAttributes) HasPurchaseErrorMessage() bool`
 
 HasPurchaseErrorMessage returns a boolean if a field has been set.
+
+### GetGetRatesErrors
+
+`func (o *ShipmentDataAttributes) GetGetRatesErrors() []map[string]interface{}`
+
+GetGetRatesErrors returns the GetRatesErrors field if non-nil, zero value otherwise.
+
+### GetGetRatesErrorsOk
+
+`func (o *ShipmentDataAttributes) GetGetRatesErrorsOk() (*[]map[string]interface{}, bool)`
+
+GetGetRatesErrorsOk returns a tuple with the GetRatesErrors field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGetRatesErrors
+
+`func (o *ShipmentDataAttributes) SetGetRatesErrors(v []map[string]interface{})`
+
+SetGetRatesErrors sets GetRatesErrors field to given value.
+
+### HasGetRatesErrors
+
+`func (o *ShipmentDataAttributes) HasGetRatesErrors() bool`
+
+HasGetRatesErrors returns a boolean if a field has been set.
 
 ### GetGetRatesStartedAt
 
