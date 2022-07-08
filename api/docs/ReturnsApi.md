@@ -368,8 +368,8 @@ import (
 )
 
 func main() {
-    returnId := "returnId_example" // string | The resource's id
     returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("returns", "XGZwpOSrWL", *openapiclient.NewReturnUpdateDataAttributes())) // ReturnUpdate | 
+    returnId := "returnId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,8 +396,8 @@ Other parameters are passed through a pointer to a apiPATCHReturnsReturnIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **returnUpdate** | [**ReturnUpdate**](ReturnUpdate.md) |  | 
+
 
 ### Return type
 

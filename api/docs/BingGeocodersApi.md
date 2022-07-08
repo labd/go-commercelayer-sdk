@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
     bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("bing_geocoders", "XGZwpOSrWL", *openapiclient.NewBingGeocoderUpdateDataAttributes())) // BingGeocoderUpdate | 
+    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHBingGeocodersBingGeoc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **bingGeocoderUpdate** | [**BingGeocoderUpdate**](BingGeocoderUpdate.md) |  | 
+
 
 ### Return type
 

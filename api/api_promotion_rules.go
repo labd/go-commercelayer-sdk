@@ -20,46 +20,15 @@ import (
 	"strings"
 )
 
-type PromotionRulesApi interface {
-
-	/*
-		GETPromotionRules List all promotion rules
-
-		List all promotion rules
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return PromotionRulesApiGETPromotionRulesRequest
-	*/
-	GETPromotionRules(ctx context.Context) PromotionRulesApiGETPromotionRulesRequest
-
-	// GETPromotionRulesExecute executes the request
-	GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*http.Response, error)
-
-	/*
-		GETPromotionRulesPromotionRuleId Retrieve a promotion rule
-
-		Retrieve a promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param promotionRuleId The resource's id
-		@return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
-	*/
-	GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
-
-	// GETPromotionRulesPromotionRuleIdExecute executes the request
-	//  @return PromotionRule
-	GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRule, *http.Response, error)
-}
-
 // PromotionRulesApiService PromotionRulesApi service
 type PromotionRulesApiService service
 
-type PromotionRulesApiGETPromotionRulesRequest struct {
+type ApiGETPromotionRulesRequest struct {
 	ctx        context.Context
-	ApiService PromotionRulesApi
+	ApiService *PromotionRulesApiService
 }
 
-func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r ApiGETPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionRulesExecute(r)
 }
 
@@ -69,17 +38,17 @@ GETPromotionRules List all promotion rules
 List all promotion rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PromotionRulesApiGETPromotionRulesRequest
+ @return ApiGETPromotionRulesRequest
 */
-func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) PromotionRulesApiGETPromotionRulesRequest {
-	return PromotionRulesApiGETPromotionRulesRequest{
+func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) ApiGETPromotionRulesRequest {
+	return ApiGETPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*http.Response, error) {
+func (a *PromotionRulesApiService) GETPromotionRulesExecute(r ApiGETPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -142,13 +111,13 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiG
 	return localVarHTTPResponse, nil
 }
 
-type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
+type ApiGETPromotionRulesPromotionRuleIdRequest struct {
 	ctx             context.Context
-	ApiService      PromotionRulesApi
+	ApiService      *PromotionRulesApiService
 	promotionRuleId string
 }
 
-func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*PromotionRule, *http.Response, error) {
+func (r ApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*PromotionRule, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesPromotionRuleIdExecute(r)
 }
 
@@ -159,10 +128,10 @@ Retrieve a promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionRuleId The resource's id
- @return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
+ @return ApiGETPromotionRulesPromotionRuleIdRequest
 */
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
-	return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest{
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) ApiGETPromotionRulesPromotionRuleIdRequest {
+	return ApiGETPromotionRulesPromotionRuleIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		promotionRuleId: promotionRuleId,
@@ -171,7 +140,7 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 
 // Execute executes the request
 //  @return PromotionRule
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRule, *http.Response, error) {
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r ApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRule, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

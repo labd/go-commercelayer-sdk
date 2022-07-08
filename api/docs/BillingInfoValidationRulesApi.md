@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
     billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("billing_info_validation_rules", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // BillingInfoValidationRuleUpdate | 
+    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHBillingInfoValidation
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **billingInfoValidationRuleUpdate** | [**BillingInfoValidationRuleUpdate**](BillingInfoValidationRuleUpdate.md) |  | 
+
 
 ### Return type
 

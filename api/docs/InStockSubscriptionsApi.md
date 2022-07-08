@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
     inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("in_stock_subscriptions", "XGZwpOSrWL", *openapiclient.NewInStockSubscriptionUpdateDataAttributes())) // InStockSubscriptionUpdate | 
+    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHInStockSubscriptionsI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **inStockSubscriptionUpdate** | [**InStockSubscriptionUpdate**](InStockSubscriptionUpdate.md) |  | 
+
 
 ### Return type
 

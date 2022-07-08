@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type AvalaraAccountsApi interface {
-
-	/*
-		DELETEAvalaraAccountsAvalaraAccountId Delete an avalara account
-
-		Delete an avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param avalaraAccountId The resource's id
-		@return AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest
-	*/
-	DELETEAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest
-
-	// DELETEAvalaraAccountsAvalaraAccountIdExecute executes the request
-	DELETEAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error)
-
-	/*
-		GETAvalaraAccounts List all avalara accounts
-
-		List all avalara accounts
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AvalaraAccountsApiGETAvalaraAccountsRequest
-	*/
-	GETAvalaraAccounts(ctx context.Context) AvalaraAccountsApiGETAvalaraAccountsRequest
-
-	// GETAvalaraAccountsExecute executes the request
-	GETAvalaraAccountsExecute(r AvalaraAccountsApiGETAvalaraAccountsRequest) (*http.Response, error)
-
-	/*
-		GETAvalaraAccountsAvalaraAccountId Retrieve an avalara account
-
-		Retrieve an avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param avalaraAccountId The resource's id
-		@return AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest
-	*/
-	GETAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest
-
-	// GETAvalaraAccountsAvalaraAccountIdExecute executes the request
-	//  @return AvalaraAccount
-	GETAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) (*AvalaraAccount, *http.Response, error)
-
-	/*
-		PATCHAvalaraAccountsAvalaraAccountId Update an avalara account
-
-		Update an avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param avalaraAccountId The resource's id
-		@return AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest
-	*/
-	PATCHAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest
-
-	// PATCHAvalaraAccountsAvalaraAccountIdExecute executes the request
-	PATCHAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error)
-
-	/*
-		POSTAvalaraAccounts Create an avalara account
-
-		Create an avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AvalaraAccountsApiPOSTAvalaraAccountsRequest
-	*/
-	POSTAvalaraAccounts(ctx context.Context) AvalaraAccountsApiPOSTAvalaraAccountsRequest
-
-	// POSTAvalaraAccountsExecute executes the request
-	POSTAvalaraAccountsExecute(r AvalaraAccountsApiPOSTAvalaraAccountsRequest) (*http.Response, error)
-}
-
 // AvalaraAccountsApiService AvalaraAccountsApi service
 type AvalaraAccountsApiService service
 
-type AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest struct {
+type ApiDELETEAvalaraAccountsAvalaraAccountIdRequest struct {
 	ctx              context.Context
-	ApiService       AvalaraAccountsApi
+	ApiService       *AvalaraAccountsApiService
 	avalaraAccountId string
 }
 
-func (r AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEAvalaraAccountsAvalaraAccountIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAvalaraAccountsAvalaraAccountIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete an avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest
+ @return ApiDELETEAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest {
-	return AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest{
+func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) ApiDELETEAvalaraAccountsAvalaraAccountIdRequest {
+	return ApiDELETEAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -123,7 +51,7 @@ func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountId(ctx co
 }
 
 // Execute executes the request
-func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error) {
+func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountIdExecute(r ApiDELETEAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type AvalaraAccountsApiGETAvalaraAccountsRequest struct {
+type ApiGETAvalaraAccountsRequest struct {
 	ctx        context.Context
-	ApiService AvalaraAccountsApi
+	ApiService *AvalaraAccountsApiService
 }
 
-func (r AvalaraAccountsApiGETAvalaraAccountsRequest) Execute() (*http.Response, error) {
+func (r ApiGETAvalaraAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountsExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETAvalaraAccounts List all avalara accounts
 List all avalara accounts
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AvalaraAccountsApiGETAvalaraAccountsRequest
+ @return ApiGETAvalaraAccountsRequest
 */
-func (a *AvalaraAccountsApiService) GETAvalaraAccounts(ctx context.Context) AvalaraAccountsApiGETAvalaraAccountsRequest {
-	return AvalaraAccountsApiGETAvalaraAccountsRequest{
+func (a *AvalaraAccountsApiService) GETAvalaraAccounts(ctx context.Context) ApiGETAvalaraAccountsRequest {
+	return ApiGETAvalaraAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsApiGETAvalaraAccountsRequest) (*http.Response, error) {
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r ApiGETAvalaraAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsA
 	return localVarHTTPResponse, nil
 }
 
-type AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest struct {
+type ApiGETAvalaraAccountsAvalaraAccountIdRequest struct {
 	ctx              context.Context
-	ApiService       AvalaraAccountsApi
+	ApiService       *AvalaraAccountsApiService
 	avalaraAccountId string
 }
 
-func (r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) Execute() (*AvalaraAccount, *http.Response, error) {
+func (r ApiGETAvalaraAccountsAvalaraAccountIdRequest) Execute() (*AvalaraAccount, *http.Response, error) {
 	return r.ApiService.GETAvalaraAccountsAvalaraAccountIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve an avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest
+ @return ApiGETAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest {
-	return AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest{
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountsAvalaraAccountIdRequest {
+	return ApiGETAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -304,7 +232,7 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx conte
 
 // Execute executes the request
 //  @return AvalaraAccount
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) (*AvalaraAccount, *http.Response, error) {
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r ApiGETAvalaraAccountsAvalaraAccountIdRequest) (*AvalaraAccount, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest struct {
+type ApiPATCHAvalaraAccountsAvalaraAccountIdRequest struct {
 	ctx                  context.Context
-	ApiService           AvalaraAccountsApi
-	avalaraAccountId     string
+	ApiService           *AvalaraAccountsApiService
 	avalaraAccountUpdate *AvalaraAccountUpdate
+	avalaraAccountId     string
 }
 
-func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) AvalaraAccountUpdate(avalaraAccountUpdate AvalaraAccountUpdate) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
+func (r ApiPATCHAvalaraAccountsAvalaraAccountIdRequest) AvalaraAccountUpdate(avalaraAccountUpdate AvalaraAccountUpdate) ApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
 	r.avalaraAccountUpdate = &avalaraAccountUpdate
 	return r
 }
 
-func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHAvalaraAccountsAvalaraAccountIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAvalaraAccountsAvalaraAccountIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update an avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest
+ @return ApiPATCHAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
-	return AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest{
+func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) ApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
+	return ApiPATCHAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -412,7 +340,7 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx con
 }
 
 // Execute executes the request
-func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error) {
+func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(r ApiPATCHAvalaraAccountsAvalaraAccountIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-type AvalaraAccountsApiPOSTAvalaraAccountsRequest struct {
+type ApiPOSTAvalaraAccountsRequest struct {
 	ctx                  context.Context
-	ApiService           AvalaraAccountsApi
+	ApiService           *AvalaraAccountsApiService
 	avalaraAccountCreate *AvalaraAccountCreate
 }
 
-func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) AvalaraAccountCreate(avalaraAccountCreate AvalaraAccountCreate) AvalaraAccountsApiPOSTAvalaraAccountsRequest {
+func (r ApiPOSTAvalaraAccountsRequest) AvalaraAccountCreate(avalaraAccountCreate AvalaraAccountCreate) ApiPOSTAvalaraAccountsRequest {
 	r.avalaraAccountCreate = &avalaraAccountCreate
 	return r
 }
 
-func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTAvalaraAccountsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTAvalaraAccountsExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTAvalaraAccounts Create an avalara account
 Create an avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AvalaraAccountsApiPOSTAvalaraAccountsRequest
+ @return ApiPOSTAvalaraAccountsRequest
 */
-func (a *AvalaraAccountsApiService) POSTAvalaraAccounts(ctx context.Context) AvalaraAccountsApiPOSTAvalaraAccountsRequest {
-	return AvalaraAccountsApiPOSTAvalaraAccountsRequest{
+func (a *AvalaraAccountsApiService) POSTAvalaraAccounts(ctx context.Context) ApiPOSTAvalaraAccountsRequest {
+	return ApiPOSTAvalaraAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccountsApiPOSTAvalaraAccountsRequest) (*http.Response, error) {
+func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r ApiPOSTAvalaraAccountsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

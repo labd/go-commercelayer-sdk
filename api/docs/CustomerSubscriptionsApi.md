@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    customerSubscriptionId := "customerSubscriptionId_example" // string | The resource's id
     customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData("customer_subscriptions", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerSubscriptionUpdate | 
+    customerSubscriptionId := "customerSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHCustomerSubscriptions
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **customerSubscriptionUpdate** | [**CustomerSubscriptionUpdate**](CustomerSubscriptionUpdate.md) |  | 
+
 
 ### Return type
 

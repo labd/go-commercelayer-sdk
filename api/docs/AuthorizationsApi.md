@@ -367,8 +367,8 @@ import (
 )
 
 func main() {
-    authorizationId := "authorizationId_example" // string | The resource's id
     authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("authorizations", "XGZwpOSrWL", *openapiclient.NewAuthorizationUpdateDataAttributes())) // AuthorizationUpdate | 
+    authorizationId := "authorizationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -395,8 +395,8 @@ Other parameters are passed through a pointer to a apiPATCHAuthorizationsAuthori
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **authorizationUpdate** | [**AuthorizationUpdate**](AuthorizationUpdate.md) |  | 
+
 
 ### Return type
 

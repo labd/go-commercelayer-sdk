@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
     taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("taxjar_accounts", "XGZwpOSrWL", *openapiclient.NewTaxjarAccountUpdateDataAttributes())) // TaxjarAccountUpdate | 
+    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHTaxjarAccountsTaxjarA
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **taxjarAccountUpdate** | [**TaxjarAccountUpdate**](TaxjarAccountUpdate.md) |  | 
+
 
 ### Return type
 

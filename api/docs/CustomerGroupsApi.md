@@ -368,8 +368,8 @@ import (
 )
 
 func main() {
-    customerGroupId := "customerGroupId_example" // string | The resource's id
     customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("customer_groups", "XGZwpOSrWL", *openapiclient.NewCustomerGroupUpdateDataAttributes())) // CustomerGroupUpdate | 
+    customerGroupId := "customerGroupId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,8 +396,8 @@ Other parameters are passed through a pointer to a apiPATCHCustomerGroupsCustome
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **customerGroupUpdate** | [**CustomerGroupUpdate**](CustomerGroupUpdate.md) |  | 
+
 
 ### Return type
 

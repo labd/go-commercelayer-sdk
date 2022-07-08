@@ -437,8 +437,8 @@ import (
 )
 
 func main() {
-    customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
     customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("customer_payment_sources", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerPaymentSourceUpdate | 
+    customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -465,8 +465,8 @@ Other parameters are passed through a pointer to a apiPATCHCustomerPaymentSource
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **customerPaymentSourceUpdate** | [**CustomerPaymentSourceUpdate**](CustomerPaymentSourceUpdate.md) |  | 
+
 
 ### Return type
 

@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type OrderCopiesApi interface {
-
-	/*
-		DELETEOrderCopiesOrderCopyId Delete an order copy
-
-		Delete an order copy
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderCopyId The resource's id
-		@return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest
-	*/
-	DELETEOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest
-
-	// DELETEOrderCopiesOrderCopyIdExecute executes the request
-	DELETEOrderCopiesOrderCopyIdExecute(r OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest) (*http.Response, error)
-
-	/*
-		GETOrderCopies List all order copies
-
-		List all order copies
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return OrderCopiesApiGETOrderCopiesRequest
-	*/
-	GETOrderCopies(ctx context.Context) OrderCopiesApiGETOrderCopiesRequest
-
-	// GETOrderCopiesExecute executes the request
-	GETOrderCopiesExecute(r OrderCopiesApiGETOrderCopiesRequest) (*http.Response, error)
-
-	/*
-		GETOrderCopiesOrderCopyId Retrieve an order copy
-
-		Retrieve an order copy
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderCopyId The resource's id
-		@return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest
-	*/
-	GETOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiGETOrderCopiesOrderCopyIdRequest
-
-	// GETOrderCopiesOrderCopyIdExecute executes the request
-	//  @return OrderCopy
-	GETOrderCopiesOrderCopyIdExecute(r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) (*OrderCopy, *http.Response, error)
-
-	/*
-		GETOrderIdOrderCopies Retrieve the order copies associated to the order
-
-		Retrieve the order copies associated to the order
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderId The resource's id
-		@return OrderCopiesApiGETOrderIdOrderCopiesRequest
-	*/
-	GETOrderIdOrderCopies(ctx context.Context, orderId string) OrderCopiesApiGETOrderIdOrderCopiesRequest
-
-	// GETOrderIdOrderCopiesExecute executes the request
-	GETOrderIdOrderCopiesExecute(r OrderCopiesApiGETOrderIdOrderCopiesRequest) (*http.Response, error)
-
-	/*
-		GETOrderSubscriptionIdOrderCopies Retrieve the order copies associated to the order subscription
-
-		Retrieve the order copies associated to the order subscription
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderSubscriptionId The resource's id
-		@return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest
-	*/
-	GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest
-
-	// GETOrderSubscriptionIdOrderCopiesExecute executes the request
-	GETOrderSubscriptionIdOrderCopiesExecute(r OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error)
-
-	/*
-		POSTOrderCopies Create an order copy
-
-		Create an order copy
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return OrderCopiesApiPOSTOrderCopiesRequest
-	*/
-	POSTOrderCopies(ctx context.Context) OrderCopiesApiPOSTOrderCopiesRequest
-
-	// POSTOrderCopiesExecute executes the request
-	POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrderCopiesRequest) (*http.Response, error)
-}
-
 // OrderCopiesApiService OrderCopiesApi service
 type OrderCopiesApiService service
 
-type OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest struct {
+type ApiDELETEOrderCopiesOrderCopyIdRequest struct {
 	ctx         context.Context
-	ApiService  OrderCopiesApi
+	ApiService  *OrderCopiesApiService
 	orderCopyId string
 }
 
-func (r OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEOrderCopiesOrderCopyIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEOrderCopiesOrderCopyIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete an order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest
+ @return ApiDELETEOrderCopiesOrderCopyIdRequest
 */
-func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest {
-	return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest{
+func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) ApiDELETEOrderCopiesOrderCopyIdRequest {
+	return ApiDELETEOrderCopiesOrderCopyIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -137,7 +51,7 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest) (*http.Response, error) {
+func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r ApiDELETEOrderCopiesOrderCopyIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,12 +115,12 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopie
 	return localVarHTTPResponse, nil
 }
 
-type OrderCopiesApiGETOrderCopiesRequest struct {
+type ApiGETOrderCopiesRequest struct {
 	ctx        context.Context
-	ApiService OrderCopiesApi
+	ApiService *OrderCopiesApiService
 }
 
-func (r OrderCopiesApiGETOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopiesExecute(r)
 }
 
@@ -216,17 +130,17 @@ GETOrderCopies List all order copies
 List all order copies
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrderCopiesApiGETOrderCopiesRequest
+ @return ApiGETOrderCopiesRequest
 */
-func (a *OrderCopiesApiService) GETOrderCopies(ctx context.Context) OrderCopiesApiGETOrderCopiesRequest {
-	return OrderCopiesApiGETOrderCopiesRequest{
+func (a *OrderCopiesApiService) GETOrderCopies(ctx context.Context) ApiGETOrderCopiesRequest {
+	return ApiGETOrderCopiesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCopiesRequest) (*http.Response, error) {
+func (a *OrderCopiesApiService) GETOrderCopiesExecute(r ApiGETOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -289,13 +203,13 @@ func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCo
 	return localVarHTTPResponse, nil
 }
 
-type OrderCopiesApiGETOrderCopiesOrderCopyIdRequest struct {
+type ApiGETOrderCopiesOrderCopyIdRequest struct {
 	ctx         context.Context
-	ApiService  OrderCopiesApi
+	ApiService  *OrderCopiesApiService
 	orderCopyId string
 }
 
-func (r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) Execute() (*OrderCopy, *http.Response, error) {
+func (r ApiGETOrderCopiesOrderCopyIdRequest) Execute() (*OrderCopy, *http.Response, error) {
 	return r.ApiService.GETOrderCopiesOrderCopyIdExecute(r)
 }
 
@@ -306,10 +220,10 @@ Retrieve an order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest
+ @return ApiGETOrderCopiesOrderCopyIdRequest
 */
-func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiGETOrderCopiesOrderCopyIdRequest {
-	return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest{
+func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) ApiGETOrderCopiesOrderCopyIdRequest {
+	return ApiGETOrderCopiesOrderCopyIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -318,7 +232,7 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, o
 
 // Execute executes the request
 //  @return OrderCopy
-func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) (*OrderCopy, *http.Response, error) {
+func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r ApiGETOrderCopiesOrderCopyIdRequest) (*OrderCopy, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -392,13 +306,13 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesAp
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type OrderCopiesApiGETOrderIdOrderCopiesRequest struct {
+type ApiGETOrderIdOrderCopiesRequest struct {
 	ctx        context.Context
-	ApiService OrderCopiesApi
+	ApiService *OrderCopiesApiService
 	orderId    string
 }
 
-func (r OrderCopiesApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdOrderCopiesExecute(r)
 }
 
@@ -409,10 +323,10 @@ Retrieve the order copies associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return OrderCopiesApiGETOrderIdOrderCopiesRequest
+ @return ApiGETOrderIdOrderCopiesRequest
 */
-func (a *OrderCopiesApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) OrderCopiesApiGETOrderIdOrderCopiesRequest {
-	return OrderCopiesApiGETOrderIdOrderCopiesRequest{
+func (a *OrderCopiesApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) ApiGETOrderIdOrderCopiesRequest {
+	return ApiGETOrderIdOrderCopiesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -420,7 +334,7 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopies(ctx context.Context, order
 }
 
 // Execute executes the request
-func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGETOrderIdOrderCopiesRequest) (*http.Response, error) {
+func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r ApiGETOrderIdOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -484,13 +398,13 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 	return localVarHTTPResponse, nil
 }
 
-type OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest struct {
+type ApiGETOrderSubscriptionIdOrderCopiesRequest struct {
 	ctx                 context.Context
-	ApiService          OrderCopiesApi
+	ApiService          *OrderCopiesApiService
 	orderSubscriptionId string
 }
 
-func (r OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderSubscriptionIdOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdOrderCopiesExecute(r)
 }
 
@@ -501,10 +415,10 @@ Retrieve the order copies associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest
+ @return ApiGETOrderSubscriptionIdOrderCopiesRequest
 */
-func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest {
-	return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest{
+func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrderCopiesRequest {
+	return ApiGETOrderSubscriptionIdOrderCopiesRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -512,7 +426,7 @@ func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Co
 }
 
 // Execute executes the request
-func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopiesExecute(r OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
+func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopiesExecute(r ApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -576,18 +490,18 @@ func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopiesExecute(r Order
 	return localVarHTTPResponse, nil
 }
 
-type OrderCopiesApiPOSTOrderCopiesRequest struct {
+type ApiPOSTOrderCopiesRequest struct {
 	ctx             context.Context
-	ApiService      OrderCopiesApi
+	ApiService      *OrderCopiesApiService
 	orderCopyCreate *OrderCopyCreate
 }
 
-func (r OrderCopiesApiPOSTOrderCopiesRequest) OrderCopyCreate(orderCopyCreate OrderCopyCreate) OrderCopiesApiPOSTOrderCopiesRequest {
+func (r ApiPOSTOrderCopiesRequest) OrderCopyCreate(orderCopyCreate OrderCopyCreate) ApiPOSTOrderCopiesRequest {
 	r.orderCopyCreate = &orderCopyCreate
 	return r
 }
 
-func (r OrderCopiesApiPOSTOrderCopiesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTOrderCopiesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTOrderCopiesExecute(r)
 }
 
@@ -597,17 +511,17 @@ POSTOrderCopies Create an order copy
 Create an order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrderCopiesApiPOSTOrderCopiesRequest
+ @return ApiPOSTOrderCopiesRequest
 */
-func (a *OrderCopiesApiService) POSTOrderCopies(ctx context.Context) OrderCopiesApiPOSTOrderCopiesRequest {
-	return OrderCopiesApiPOSTOrderCopiesRequest{
+func (a *OrderCopiesApiService) POSTOrderCopies(ctx context.Context) ApiPOSTOrderCopiesRequest {
+	return ApiPOSTOrderCopiesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrderCopiesRequest) (*http.Response, error) {
+func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r ApiPOSTOrderCopiesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

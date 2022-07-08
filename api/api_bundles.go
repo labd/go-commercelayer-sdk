@@ -20,116 +20,16 @@ import (
 	"strings"
 )
 
-type BundlesApi interface {
-
-	/*
-		DELETEBundlesBundleId Delete a bundle
-
-		Delete a bundle
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bundleId The resource's id
-		@return BundlesApiDELETEBundlesBundleIdRequest
-	*/
-	DELETEBundlesBundleId(ctx context.Context, bundleId string) BundlesApiDELETEBundlesBundleIdRequest
-
-	// DELETEBundlesBundleIdExecute executes the request
-	DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundlesBundleIdRequest) (*http.Response, error)
-
-	/*
-		GETBundles List all bundles
-
-		List all bundles
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return BundlesApiGETBundlesRequest
-	*/
-	GETBundles(ctx context.Context) BundlesApiGETBundlesRequest
-
-	// GETBundlesExecute executes the request
-	GETBundlesExecute(r BundlesApiGETBundlesRequest) (*http.Response, error)
-
-	/*
-		GETBundlesBundleId Retrieve a bundle
-
-		Retrieve a bundle
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bundleId The resource's id
-		@return BundlesApiGETBundlesBundleIdRequest
-	*/
-	GETBundlesBundleId(ctx context.Context, bundleId string) BundlesApiGETBundlesBundleIdRequest
-
-	// GETBundlesBundleIdExecute executes the request
-	//  @return Bundle
-	GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*Bundle, *http.Response, error)
-
-	/*
-		GETOrderIdAvailableFreeBundles Retrieve the available free bundles associated to the order
-
-		Retrieve the available free bundles associated to the order
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderId The resource's id
-		@return BundlesApiGETOrderIdAvailableFreeBundlesRequest
-	*/
-	GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) BundlesApiGETOrderIdAvailableFreeBundlesRequest
-
-	// GETOrderIdAvailableFreeBundlesExecute executes the request
-	GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error)
-
-	/*
-		GETSkuListIdBundles Retrieve the bundles associated to the SKU list
-
-		Retrieve the bundles associated to the SKU list
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuListId The resource's id
-		@return BundlesApiGETSkuListIdBundlesRequest
-	*/
-	GETSkuListIdBundles(ctx context.Context, skuListId string) BundlesApiGETSkuListIdBundlesRequest
-
-	// GETSkuListIdBundlesExecute executes the request
-	GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdBundlesRequest) (*http.Response, error)
-
-	/*
-		PATCHBundlesBundleId Update a bundle
-
-		Update a bundle
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bundleId The resource's id
-		@return BundlesApiPATCHBundlesBundleIdRequest
-	*/
-	PATCHBundlesBundleId(ctx context.Context, bundleId string) BundlesApiPATCHBundlesBundleIdRequest
-
-	// PATCHBundlesBundleIdExecute executes the request
-	PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*http.Response, error)
-
-	/*
-		POSTBundles Create a bundle
-
-		Create a bundle
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return BundlesApiPOSTBundlesRequest
-	*/
-	POSTBundles(ctx context.Context) BundlesApiPOSTBundlesRequest
-
-	// POSTBundlesExecute executes the request
-	POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*http.Response, error)
-}
-
 // BundlesApiService BundlesApi service
 type BundlesApiService service
 
-type BundlesApiDELETEBundlesBundleIdRequest struct {
+type ApiDELETEBundlesBundleIdRequest struct {
 	ctx        context.Context
-	ApiService BundlesApi
+	ApiService *BundlesApiService
 	bundleId   string
 }
 
-func (r BundlesApiDELETEBundlesBundleIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEBundlesBundleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBundlesBundleIdExecute(r)
 }
 
@@ -140,10 +40,10 @@ Delete a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return BundlesApiDELETEBundlesBundleIdRequest
+ @return ApiDELETEBundlesBundleIdRequest
 */
-func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) BundlesApiDELETEBundlesBundleIdRequest {
-	return BundlesApiDELETEBundlesBundleIdRequest{
+func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) ApiDELETEBundlesBundleIdRequest {
+	return ApiDELETEBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -151,7 +51,7 @@ func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId 
 }
 
 // Execute executes the request
-func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundlesBundleIdRequest) (*http.Response, error) {
+func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r ApiDELETEBundlesBundleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -215,12 +115,12 @@ func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundl
 	return localVarHTTPResponse, nil
 }
 
-type BundlesApiGETBundlesRequest struct {
+type ApiGETBundlesRequest struct {
 	ctx        context.Context
-	ApiService BundlesApi
+	ApiService *BundlesApiService
 }
 
-func (r BundlesApiGETBundlesRequest) Execute() (*http.Response, error) {
+func (r ApiGETBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundlesExecute(r)
 }
 
@@ -230,17 +130,17 @@ GETBundles List all bundles
 List all bundles
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BundlesApiGETBundlesRequest
+ @return ApiGETBundlesRequest
 */
-func (a *BundlesApiService) GETBundles(ctx context.Context) BundlesApiGETBundlesRequest {
-	return BundlesApiGETBundlesRequest{
+func (a *BundlesApiService) GETBundles(ctx context.Context) ApiGETBundlesRequest {
+	return ApiGETBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) GETBundlesExecute(r ApiGETBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -303,13 +203,13 @@ func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type BundlesApiGETBundlesBundleIdRequest struct {
+type ApiGETBundlesBundleIdRequest struct {
 	ctx        context.Context
-	ApiService BundlesApi
+	ApiService *BundlesApiService
 	bundleId   string
 }
 
-func (r BundlesApiGETBundlesBundleIdRequest) Execute() (*Bundle, *http.Response, error) {
+func (r ApiGETBundlesBundleIdRequest) Execute() (*Bundle, *http.Response, error) {
 	return r.ApiService.GETBundlesBundleIdExecute(r)
 }
 
@@ -320,10 +220,10 @@ Retrieve a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return BundlesApiGETBundlesBundleIdRequest
+ @return ApiGETBundlesBundleIdRequest
 */
-func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) BundlesApiGETBundlesBundleIdRequest {
-	return BundlesApiGETBundlesBundleIdRequest{
+func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) ApiGETBundlesBundleIdRequest {
+	return ApiGETBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -332,7 +232,7 @@ func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId str
 
 // Execute executes the request
 //  @return Bundle
-func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*Bundle, *http.Response, error) {
+func (a *BundlesApiService) GETBundlesBundleIdExecute(r ApiGETBundlesBundleIdRequest) (*Bundle, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -406,13 +306,13 @@ func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBund
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BundlesApiGETOrderIdAvailableFreeBundlesRequest struct {
+type ApiGETOrderIdAvailableFreeBundlesRequest struct {
 	ctx        context.Context
-	ApiService BundlesApi
+	ApiService *BundlesApiService
 	orderId    string
 }
 
-func (r BundlesApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableFreeBundlesExecute(r)
 }
 
@@ -423,10 +323,10 @@ Retrieve the available free bundles associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return BundlesApiGETOrderIdAvailableFreeBundlesRequest
+ @return ApiGETOrderIdAvailableFreeBundlesRequest
 */
-func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) BundlesApiGETOrderIdAvailableFreeBundlesRequest {
-	return BundlesApiGETOrderIdAvailableFreeBundlesRequest{
+func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeBundlesRequest {
+	return ApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -434,7 +334,7 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -498,13 +398,13 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGE
 	return localVarHTTPResponse, nil
 }
 
-type BundlesApiGETSkuListIdBundlesRequest struct {
+type ApiGETSkuListIdBundlesRequest struct {
 	ctx        context.Context
-	ApiService BundlesApi
+	ApiService *BundlesApiService
 	skuListId  string
 }
 
-func (r BundlesApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
+func (r ApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdBundlesExecute(r)
 }
 
@@ -515,10 +415,10 @@ Retrieve the bundles associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return BundlesApiGETSkuListIdBundlesRequest
+ @return ApiGETSkuListIdBundlesRequest
 */
-func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) BundlesApiGETSkuListIdBundlesRequest {
-	return BundlesApiGETSkuListIdBundlesRequest{
+func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) ApiGETSkuListIdBundlesRequest {
+	return ApiGETSkuListIdBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -526,7 +426,7 @@ func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId s
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -590,19 +490,19 @@ func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdB
 	return localVarHTTPResponse, nil
 }
 
-type BundlesApiPATCHBundlesBundleIdRequest struct {
+type ApiPATCHBundlesBundleIdRequest struct {
 	ctx          context.Context
-	ApiService   BundlesApi
-	bundleId     string
+	ApiService   *BundlesApiService
 	bundleUpdate *BundleUpdate
+	bundleId     string
 }
 
-func (r BundlesApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleUpdate) BundlesApiPATCHBundlesBundleIdRequest {
+func (r ApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleUpdate) ApiPATCHBundlesBundleIdRequest {
 	r.bundleUpdate = &bundleUpdate
 	return r
 }
 
-func (r BundlesApiPATCHBundlesBundleIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHBundlesBundleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHBundlesBundleIdExecute(r)
 }
 
@@ -613,10 +513,10 @@ Update a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return BundlesApiPATCHBundlesBundleIdRequest
+ @return ApiPATCHBundlesBundleIdRequest
 */
-func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) BundlesApiPATCHBundlesBundleIdRequest {
-	return BundlesApiPATCHBundlesBundleIdRequest{
+func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) ApiPATCHBundlesBundleIdRequest {
+	return ApiPATCHBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -624,7 +524,7 @@ func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId s
 }
 
 // Execute executes the request
-func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*http.Response, error) {
+func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -693,18 +593,18 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundles
 	return localVarHTTPResponse, nil
 }
 
-type BundlesApiPOSTBundlesRequest struct {
+type ApiPOSTBundlesRequest struct {
 	ctx          context.Context
-	ApiService   BundlesApi
+	ApiService   *BundlesApiService
 	bundleCreate *BundleCreate
 }
 
-func (r BundlesApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) BundlesApiPOSTBundlesRequest {
+func (r ApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) ApiPOSTBundlesRequest {
 	r.bundleCreate = &bundleCreate
 	return r
 }
 
-func (r BundlesApiPOSTBundlesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTBundlesExecute(r)
 }
 
@@ -714,17 +614,17 @@ POSTBundles Create a bundle
 Create a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BundlesApiPOSTBundlesRequest
+ @return ApiPOSTBundlesRequest
 */
-func (a *BundlesApiService) POSTBundles(ctx context.Context) BundlesApiPOSTBundlesRequest {
-	return BundlesApiPOSTBundlesRequest{
+func (a *BundlesApiService) POSTBundles(ctx context.Context) ApiPOSTBundlesRequest {
+	return ApiPOSTBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

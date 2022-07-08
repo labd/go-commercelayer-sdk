@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
     braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("braintree_gateways", "XGZwpOSrWL", *openapiclient.NewBraintreeGatewayUpdateDataAttributes())) // BraintreeGatewayUpdate | 
+    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHBraintreeGatewaysBrai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **braintreeGatewayUpdate** | [**BraintreeGatewayUpdate**](BraintreeGatewayUpdate.md) |  | 
+
 
 ### Return type
 

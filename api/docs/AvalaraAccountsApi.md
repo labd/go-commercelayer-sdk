@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
     avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("avalara_accounts", "XGZwpOSrWL", *openapiclient.NewAvalaraAccountUpdateDataAttributes())) // AvalaraAccountUpdate | 
+    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHAvalaraAccountsAvalar
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **avalaraAccountUpdate** | [**AvalaraAccountUpdate**](AvalaraAccountUpdate.md) |  | 
+
 
 ### Return type
 

@@ -19,32 +19,15 @@ import (
 	"net/url"
 )
 
-type ApplicationApi interface {
-
-	/*
-		GETApplicationApplicationId Retrieve the application
-
-		Retrieve the application
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ApplicationApiGETApplicationApplicationIdRequest
-	*/
-	GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest
-
-	// GETApplicationApplicationIdExecute executes the request
-	//  @return Application
-	GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
-}
-
 // ApplicationApiService ApplicationApi service
 type ApplicationApiService service
 
-type ApplicationApiGETApplicationApplicationIdRequest struct {
+type ApiGETApplicationApplicationIdRequest struct {
 	ctx        context.Context
-	ApiService ApplicationApi
+	ApiService *ApplicationApiService
 }
 
-func (r ApplicationApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
+func (r ApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -54,10 +37,10 @@ GETApplicationApplicationId Retrieve the application
 Retrieve the application
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApplicationApiGETApplicationApplicationIdRequest
+ @return ApiGETApplicationApplicationIdRequest
 */
-func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest {
-	return ApplicationApiGETApplicationApplicationIdRequest{
+func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest {
+	return ApiGETApplicationApplicationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -65,7 +48,7 @@ func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context)
 
 // Execute executes the request
 //  @return Application
-func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
+func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

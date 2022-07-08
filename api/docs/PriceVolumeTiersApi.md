@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
     priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("price_volume_tiers", "XGZwpOSrWL", *openapiclient.NewPriceVolumeTierUpdateDataAttributes())) // PriceVolumeTierUpdate | 
+    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHPriceVolumeTiersPrice
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **priceVolumeTierUpdate** | [**PriceVolumeTierUpdate**](PriceVolumeTierUpdate.md) |  | 
+
 
 ### Return type
 

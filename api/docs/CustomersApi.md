@@ -989,8 +989,8 @@ import (
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
     customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("customers", "XGZwpOSrWL", *openapiclient.NewCustomerUpdateDataAttributes())) // CustomerUpdate | 
+    customerId := "customerId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1017,8 +1017,8 @@ Other parameters are passed through a pointer to a apiPATCHCustomersCustomerIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **customerUpdate** | [**CustomerUpdate**](CustomerUpdate.md) |  | 
+
 
 ### Return type
 

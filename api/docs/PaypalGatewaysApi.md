@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
     paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("paypal_gateways", "XGZwpOSrWL", *openapiclient.NewPaypalGatewayUpdateDataAttributes())) // PaypalGatewayUpdate | 
+    paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHPaypalGatewaysPaypalG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **paypalGatewayUpdate** | [**PaypalGatewayUpdate**](PaypalGatewayUpdate.md) |  | 
+
 
 ### Return type
 

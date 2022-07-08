@@ -436,8 +436,8 @@ import (
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
     shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("shipments", "XGZwpOSrWL", *openapiclient.NewShipmentUpdateDataAttributes())) // ShipmentUpdate | 
+    shipmentId := "shipmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -464,8 +464,8 @@ Other parameters are passed through a pointer to a apiPATCHShipmentsShipmentIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **shipmentUpdate** | [**ShipmentUpdate**](ShipmentUpdate.md) |  | 
+
 
 ### Return type
 

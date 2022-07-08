@@ -1,0 +1,9 @@
+/api/.gitignore
+/api/.travis.yml
+/api/go.mod
+/api/go.sum
+/api/git_push.sh
+/api/.openapi-generator-ignore
+
+/api/api_has_many.go
+/api/api_has_one.go

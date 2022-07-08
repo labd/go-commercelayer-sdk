@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type ParcelLineItemsApi interface {
-
-	/*
-		DELETEParcelLineItemsParcelLineItemId Delete a parcel line item
-
-		Delete a parcel line item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelLineItemId The resource's id
-		@return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest
-	*/
-	DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest
-
-	// DELETEParcelLineItemsParcelLineItemIdExecute executes the request
-	DELETEParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error)
-
-	/*
-		GETParcelIdParcelLineItems Retrieve the parcel line items associated to the parcel
-
-		Retrieve the parcel line items associated to the parcel
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelId The resource's id
-		@return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest
-	*/
-	GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ParcelLineItemsApiGETParcelIdParcelLineItemsRequest
-
-	// GETParcelIdParcelLineItemsExecute executes the request
-	GETParcelIdParcelLineItemsExecute(r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) (*http.Response, error)
-
-	/*
-		GETParcelLineItems List all parcel line items
-
-		List all parcel line items
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ParcelLineItemsApiGETParcelLineItemsRequest
-	*/
-	GETParcelLineItems(ctx context.Context) ParcelLineItemsApiGETParcelLineItemsRequest
-
-	// GETParcelLineItemsExecute executes the request
-	GETParcelLineItemsExecute(r ParcelLineItemsApiGETParcelLineItemsRequest) (*http.Response, error)
-
-	/*
-		GETParcelLineItemsParcelLineItemId Retrieve a parcel line item
-
-		Retrieve a parcel line item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelLineItemId The resource's id
-		@return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest
-	*/
-	GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest
-
-	// GETParcelLineItemsParcelLineItemIdExecute executes the request
-	//  @return ParcelLineItem
-	GETParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) (*ParcelLineItem, *http.Response, error)
-
-	/*
-		PATCHParcelLineItemsParcelLineItemId Update a parcel line item
-
-		Update a parcel line item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelLineItemId The resource's id
-		@return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest
-	*/
-	PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest
-
-	// PATCHParcelLineItemsParcelLineItemIdExecute executes the request
-	PATCHParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) (*http.Response, error)
-
-	/*
-		POSTParcelLineItems Create a parcel line item
-
-		Create a parcel line item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ParcelLineItemsApiPOSTParcelLineItemsRequest
-	*/
-	POSTParcelLineItems(ctx context.Context) ParcelLineItemsApiPOSTParcelLineItemsRequest
-
-	// POSTParcelLineItemsExecute executes the request
-	POSTParcelLineItemsExecute(r ParcelLineItemsApiPOSTParcelLineItemsRequest) (*http.Response, error)
-}
-
 // ParcelLineItemsApiService ParcelLineItemsApi service
 type ParcelLineItemsApiService service
 
-type ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest struct {
+type ApiDELETEParcelLineItemsParcelLineItemIdRequest struct {
 	ctx              context.Context
-	ApiService       ParcelLineItemsApi
+	ApiService       *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
-func (r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest
+ @return ApiDELETEParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest {
-	return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiDELETEParcelLineItemsParcelLineItemIdRequest {
+	return ApiDELETEParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -137,7 +51,7 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx co
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute(r ApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +115,13 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ParcelLineItemsApiGETParcelIdParcelLineItemsRequest struct {
+type ApiGETParcelIdParcelLineItemsRequest struct {
 	ctx        context.Context
-	ApiService ParcelLineItemsApi
+	ApiService *ParcelLineItemsApiService
 	parcelId   string
 }
 
-func (r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdParcelLineItemsExecute(r)
 }
 
@@ -218,10 +132,10 @@ Retrieve the parcel line items associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest
+ @return ApiGETParcelIdParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ParcelLineItemsApiGETParcelIdParcelLineItemsRequest {
-	return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ApiGETParcelIdParcelLineItemsRequest {
+	return ApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -229,7 +143,7 @@ func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +207,12 @@ func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ParcelLi
 	return localVarHTTPResponse, nil
 }
 
-type ParcelLineItemsApiGETParcelLineItemsRequest struct {
+type ApiGETParcelLineItemsRequest struct {
 	ctx        context.Context
-	ApiService ParcelLineItemsApi
+	ApiService *ParcelLineItemsApiService
 }
 
-func (r ParcelLineItemsApiGETParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ApiGETParcelLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelLineItemsExecute(r)
 }
 
@@ -308,17 +222,17 @@ GETParcelLineItems List all parcel line items
 List all parcel line items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ParcelLineItemsApiGETParcelLineItemsRequest
+ @return ApiGETParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) ParcelLineItemsApiGETParcelLineItemsRequest {
-	return ParcelLineItemsApiGETParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) ApiGETParcelLineItemsRequest {
+	return ApiGETParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ParcelLineItemsApiGETParcelLineItemsRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ApiGETParcelLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +295,13 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ParcelLineItemsA
 	return localVarHTTPResponse, nil
 }
 
-type ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest struct {
+type ApiGETParcelLineItemsParcelLineItemIdRequest struct {
 	ctx              context.Context
-	ApiService       ParcelLineItemsApi
+	ApiService       *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
-func (r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) Execute() (*ParcelLineItem, *http.Response, error) {
+func (r ApiGETParcelLineItemsParcelLineItemIdRequest) Execute() (*ParcelLineItem, *http.Response, error) {
 	return r.ApiService.GETParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -398,10 +312,10 @@ Retrieve a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest
+ @return ApiGETParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest {
-	return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemsParcelLineItemIdRequest {
+	return ApiGETParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -410,7 +324,7 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx conte
 
 // Execute executes the request
 //  @return ParcelLineItem
-func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) (*ParcelLineItem, *http.Response, error) {
+func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r ApiGETParcelLineItemsParcelLineItemIdRequest) (*ParcelLineItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +398,19 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest struct {
+type ApiPATCHParcelLineItemsParcelLineItemIdRequest struct {
 	ctx                  context.Context
-	ApiService           ParcelLineItemsApi
-	parcelLineItemId     string
+	ApiService           *ParcelLineItemsApiService
 	parcelLineItemUpdate *ParcelLineItemUpdate
+	parcelLineItemId     string
 }
 
-func (r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) ParcelLineItemUpdate(parcelLineItemUpdate ParcelLineItemUpdate) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
+func (r ApiPATCHParcelLineItemsParcelLineItemIdRequest) ParcelLineItemUpdate(parcelLineItemUpdate ParcelLineItemUpdate) ApiPATCHParcelLineItemsParcelLineItemIdRequest {
 	r.parcelLineItemUpdate = &parcelLineItemUpdate
 	return r
 }
 
-func (r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest
+ @return ApiPATCHParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
-	return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiPATCHParcelLineItemsParcelLineItemIdRequest {
+	return ApiPATCHParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -518,7 +432,7 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx con
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(r ApiPATCHParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ParcelLineItemsApiPOSTParcelLineItemsRequest struct {
+type ApiPOSTParcelLineItemsRequest struct {
 	ctx                  context.Context
-	ApiService           ParcelLineItemsApi
+	ApiService           *ParcelLineItemsApiService
 	parcelLineItemCreate *ParcelLineItemCreate
 }
 
-func (r ParcelLineItemsApiPOSTParcelLineItemsRequest) ParcelLineItemCreate(parcelLineItemCreate ParcelLineItemCreate) ParcelLineItemsApiPOSTParcelLineItemsRequest {
+func (r ApiPOSTParcelLineItemsRequest) ParcelLineItemCreate(parcelLineItemCreate ParcelLineItemCreate) ApiPOSTParcelLineItemsRequest {
 	r.parcelLineItemCreate = &parcelLineItemCreate
 	return r
 }
 
-func (r ParcelLineItemsApiPOSTParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTParcelLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTParcelLineItemsExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTParcelLineItems Create a parcel line item
 Create a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ParcelLineItemsApiPOSTParcelLineItemsRequest
+ @return ApiPOSTParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) ParcelLineItemsApiPOSTParcelLineItemsRequest {
-	return ParcelLineItemsApiPOSTParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) ApiPOSTParcelLineItemsRequest {
+	return ApiPOSTParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ParcelLineItemsApiPOSTParcelLineItemsRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

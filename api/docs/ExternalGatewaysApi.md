@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
     externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("external_gateways", "XGZwpOSrWL", *openapiclient.NewExternalGatewayUpdateDataAttributes())) // ExternalGatewayUpdate | 
+    externalGatewayId := "externalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHExternalGatewaysExter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **externalGatewayUpdate** | [**ExternalGatewayUpdate**](ExternalGatewayUpdate.md) |  | 
+
 
 ### Return type
 

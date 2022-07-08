@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
     externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("external_tax_calculators", "XGZwpOSrWL", *openapiclient.NewExternalTaxCalculatorUpdateDataAttributes())) // ExternalTaxCalculatorUpdate | 
+    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHExternalTaxCalculator
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **externalTaxCalculatorUpdate** | [**ExternalTaxCalculatorUpdate**](ExternalTaxCalculatorUpdate.md) |  | 
+
 
 ### Return type
 

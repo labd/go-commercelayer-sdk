@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    shippingZoneId := "shippingZoneId_example" // string | The resource's id
     shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("shipping_zones", "XGZwpOSrWL", *openapiclient.NewShippingZoneUpdateDataAttributes())) // ShippingZoneUpdate | 
+    shippingZoneId := "shippingZoneId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHShippingZonesShipping
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **shippingZoneUpdate** | [**ShippingZoneUpdate**](ShippingZoneUpdate.md) |  | 
+
 
 ### Return type
 

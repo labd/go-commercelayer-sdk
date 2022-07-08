@@ -437,8 +437,8 @@ import (
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
     orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("order_subscriptions", "XGZwpOSrWL", *openapiclient.NewOrderSubscriptionUpdateDataAttributes())) // OrderSubscriptionUpdate | 
+    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -465,8 +465,8 @@ Other parameters are passed through a pointer to a apiPATCHOrderSubscriptionsOrd
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **orderSubscriptionUpdate** | [**OrderSubscriptionUpdate**](OrderSubscriptionUpdate.md) |  | 
+
 
 ### Return type
 

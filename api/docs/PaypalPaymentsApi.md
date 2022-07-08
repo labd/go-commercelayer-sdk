@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
     paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("paypal_payments", "XGZwpOSrWL", *openapiclient.NewPaypalPaymentUpdateDataAttributes())) // PaypalPaymentUpdate | 
+    paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHPaypalPaymentsPaypalP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **paypalPaymentUpdate** | [**PaypalPaymentUpdate**](PaypalPaymentUpdate.md) |  | 
+
 
 ### Return type
 

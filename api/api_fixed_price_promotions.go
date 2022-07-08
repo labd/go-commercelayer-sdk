@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type FixedPricePromotionsApi interface {
-
-	/*
-		DELETEFixedPricePromotionsFixedPricePromotionId Delete a fixed price promotion
-
-		Delete a fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedPricePromotionId The resource's id
-		@return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
-	*/
-	DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
-
-	// DELETEFixedPricePromotionsFixedPricePromotionIdExecute executes the request
-	DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error)
-
-	/*
-		GETFixedPricePromotions List all fixed price promotions
-
-		List all fixed price promotions
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return FixedPricePromotionsApiGETFixedPricePromotionsRequest
-	*/
-	GETFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiGETFixedPricePromotionsRequest
-
-	// GETFixedPricePromotionsExecute executes the request
-	GETFixedPricePromotionsExecute(r FixedPricePromotionsApiGETFixedPricePromotionsRequest) (*http.Response, error)
-
-	/*
-		GETFixedPricePromotionsFixedPricePromotionId Retrieve a fixed price promotion
-
-		Retrieve a fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedPricePromotionId The resource's id
-		@return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest
-	*/
-	GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest
-
-	// GETFixedPricePromotionsFixedPricePromotionIdExecute executes the request
-	//  @return FixedPricePromotion
-	GETFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotion, *http.Response, error)
-
-	/*
-		PATCHFixedPricePromotionsFixedPricePromotionId Update a fixed price promotion
-
-		Update a fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedPricePromotionId The resource's id
-		@return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
-	*/
-	PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
-
-	// PATCHFixedPricePromotionsFixedPricePromotionIdExecute executes the request
-	PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error)
-
-	/*
-		POSTFixedPricePromotions Create a fixed price promotion
-
-		Create a fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return FixedPricePromotionsApiPOSTFixedPricePromotionsRequest
-	*/
-	POSTFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiPOSTFixedPricePromotionsRequest
-
-	// POSTFixedPricePromotionsExecute executes the request
-	POSTFixedPricePromotionsExecute(r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) (*http.Response, error)
-}
-
 // FixedPricePromotionsApiService FixedPricePromotionsApi service
 type FixedPricePromotionsApiService service
 
-type FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
-	ApiService            FixedPricePromotionsApi
+	ApiService            *FixedPricePromotionsApiService
 	fixedPricePromotionId string
 }
 
-func (r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
+ @return ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
-	return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
+	return ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -123,7 +51,7 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
+func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 	return localVarHTTPResponse, nil
 }
 
-type FixedPricePromotionsApiGETFixedPricePromotionsRequest struct {
+type ApiGETFixedPricePromotionsRequest struct {
 	ctx        context.Context
-	ApiService FixedPricePromotionsApi
+	ApiService *FixedPricePromotionsApiService
 }
 
-func (r FixedPricePromotionsApiGETFixedPricePromotionsRequest) Execute() (*http.Response, error) {
+func (r ApiGETFixedPricePromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETFixedPricePromotions List all fixed price promotions
 List all fixed price promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return FixedPricePromotionsApiGETFixedPricePromotionsRequest
+ @return ApiGETFixedPricePromotionsRequest
 */
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiGETFixedPricePromotionsRequest {
-	return FixedPricePromotionsApiGETFixedPricePromotionsRequest{
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotions(ctx context.Context) ApiGETFixedPricePromotionsRequest {
+	return ApiGETFixedPricePromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedPricePromotionsApiGETFixedPricePromotionsRequest) (*http.Response, error) {
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r ApiGETFixedPricePromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedP
 	return localVarHTTPResponse, nil
 }
 
-type FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type ApiGETFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
-	ApiService            FixedPricePromotionsApi
+	ApiService            *FixedPricePromotionsApiService
 	fixedPricePromotionId string
 }
 
-func (r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*FixedPricePromotion, *http.Response, error) {
+func (r ApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*FixedPricePromotion, *http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest
+ @return ApiGETFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
-	return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
+	return ApiGETFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -304,7 +232,7 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 
 // Execute executes the request
 //  @return FixedPricePromotion
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotion, *http.Response, error) {
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r ApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotion, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                       context.Context
-	ApiService                FixedPricePromotionsApi
-	fixedPricePromotionId     string
+	ApiService                *FixedPricePromotionsApiService
 	fixedPricePromotionUpdate *FixedPricePromotionUpdate
+	fixedPricePromotionId     string
 }
 
-func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) FixedPricePromotionUpdate(fixedPricePromotionUpdate FixedPricePromotionUpdate) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
+func (r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) FixedPricePromotionUpdate(fixedPricePromotionUpdate FixedPricePromotionUpdate) ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
 	r.fixedPricePromotionUpdate = &fixedPricePromotionUpdate
 	return r
 }
 
-func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
+ @return ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
-	return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
+	return ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -412,7 +340,7 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 	return localVarHTTPResponse, nil
 }
 
-type FixedPricePromotionsApiPOSTFixedPricePromotionsRequest struct {
+type ApiPOSTFixedPricePromotionsRequest struct {
 	ctx                       context.Context
-	ApiService                FixedPricePromotionsApi
+	ApiService                *FixedPricePromotionsApiService
 	fixedPricePromotionCreate *FixedPricePromotionCreate
 }
 
-func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) FixedPricePromotionCreate(fixedPricePromotionCreate FixedPricePromotionCreate) FixedPricePromotionsApiPOSTFixedPricePromotionsRequest {
+func (r ApiPOSTFixedPricePromotionsRequest) FixedPricePromotionCreate(fixedPricePromotionCreate FixedPricePromotionCreate) ApiPOSTFixedPricePromotionsRequest {
 	r.fixedPricePromotionCreate = &fixedPricePromotionCreate
 	return r
 }
 
-func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTFixedPricePromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTFixedPricePromotionsExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTFixedPricePromotions Create a fixed price promotion
 Create a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return FixedPricePromotionsApiPOSTFixedPricePromotionsRequest
+ @return ApiPOSTFixedPricePromotionsRequest
 */
-func (a *FixedPricePromotionsApiService) POSTFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiPOSTFixedPricePromotionsRequest {
-	return FixedPricePromotionsApiPOSTFixedPricePromotionsRequest{
+func (a *FixedPricePromotionsApiService) POSTFixedPricePromotions(ctx context.Context) ApiPOSTFixedPricePromotionsRequest {
+	return ApiPOSTFixedPricePromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) (*http.Response, error) {
+func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPOSTFixedPricePromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

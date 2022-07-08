@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type WireTransfersApi interface {
-
-	/*
-		DELETEWireTransfersWireTransferId Delete a wire transfer
-
-		Delete a wire transfer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param wireTransferId The resource's id
-		@return WireTransfersApiDELETEWireTransfersWireTransferIdRequest
-	*/
-	DELETEWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiDELETEWireTransfersWireTransferIdRequest
-
-	// DELETEWireTransfersWireTransferIdExecute executes the request
-	DELETEWireTransfersWireTransferIdExecute(r WireTransfersApiDELETEWireTransfersWireTransferIdRequest) (*http.Response, error)
-
-	/*
-		GETWireTransfers List all wire transfers
-
-		List all wire transfers
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return WireTransfersApiGETWireTransfersRequest
-	*/
-	GETWireTransfers(ctx context.Context) WireTransfersApiGETWireTransfersRequest
-
-	// GETWireTransfersExecute executes the request
-	GETWireTransfersExecute(r WireTransfersApiGETWireTransfersRequest) (*http.Response, error)
-
-	/*
-		GETWireTransfersWireTransferId Retrieve a wire transfer
-
-		Retrieve a wire transfer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param wireTransferId The resource's id
-		@return WireTransfersApiGETWireTransfersWireTransferIdRequest
-	*/
-	GETWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiGETWireTransfersWireTransferIdRequest
-
-	// GETWireTransfersWireTransferIdExecute executes the request
-	//  @return WireTransfer
-	GETWireTransfersWireTransferIdExecute(r WireTransfersApiGETWireTransfersWireTransferIdRequest) (*WireTransfer, *http.Response, error)
-
-	/*
-		PATCHWireTransfersWireTransferId Update a wire transfer
-
-		Update a wire transfer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param wireTransferId The resource's id
-		@return WireTransfersApiPATCHWireTransfersWireTransferIdRequest
-	*/
-	PATCHWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiPATCHWireTransfersWireTransferIdRequest
-
-	// PATCHWireTransfersWireTransferIdExecute executes the request
-	PATCHWireTransfersWireTransferIdExecute(r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) (*http.Response, error)
-
-	/*
-		POSTWireTransfers Create a wire transfer
-
-		Create a wire transfer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return WireTransfersApiPOSTWireTransfersRequest
-	*/
-	POSTWireTransfers(ctx context.Context) WireTransfersApiPOSTWireTransfersRequest
-
-	// POSTWireTransfersExecute executes the request
-	POSTWireTransfersExecute(r WireTransfersApiPOSTWireTransfersRequest) (*http.Response, error)
-}
-
 // WireTransfersApiService WireTransfersApi service
 type WireTransfersApiService service
 
-type WireTransfersApiDELETEWireTransfersWireTransferIdRequest struct {
+type ApiDELETEWireTransfersWireTransferIdRequest struct {
 	ctx            context.Context
-	ApiService     WireTransfersApi
+	ApiService     *WireTransfersApiService
 	wireTransferId string
 }
 
-func (r WireTransfersApiDELETEWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEWireTransfersWireTransferIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return WireTransfersApiDELETEWireTransfersWireTransferIdRequest
+ @return ApiDELETEWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiDELETEWireTransfersWireTransferIdRequest {
-	return WireTransfersApiDELETEWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiDELETEWireTransfersWireTransferIdRequest {
+	return ApiDELETEWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -123,7 +51,7 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r WireTransfersApiDELETEWireTransfersWireTransferIdRequest) (*http.Response, error) {
+func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r ApiDELETEWireTransfersWireTransferIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Wir
 	return localVarHTTPResponse, nil
 }
 
-type WireTransfersApiGETWireTransfersRequest struct {
+type ApiGETWireTransfersRequest struct {
 	ctx        context.Context
-	ApiService WireTransfersApi
+	ApiService *WireTransfersApiService
 }
 
-func (r WireTransfersApiGETWireTransfersRequest) Execute() (*http.Response, error) {
+func (r ApiGETWireTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETWireTransfersExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETWireTransfers List all wire transfers
 List all wire transfers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WireTransfersApiGETWireTransfersRequest
+ @return ApiGETWireTransfersRequest
 */
-func (a *WireTransfersApiService) GETWireTransfers(ctx context.Context) WireTransfersApiGETWireTransfersRequest {
-	return WireTransfersApiGETWireTransfersRequest{
+func (a *WireTransfersApiService) GETWireTransfers(ctx context.Context) ApiGETWireTransfersRequest {
+	return ApiGETWireTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETWireTransfersRequest) (*http.Response, error) {
+func (a *WireTransfersApiService) GETWireTransfersExecute(r ApiGETWireTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETW
 	return localVarHTTPResponse, nil
 }
 
-type WireTransfersApiGETWireTransfersWireTransferIdRequest struct {
+type ApiGETWireTransfersWireTransferIdRequest struct {
 	ctx            context.Context
-	ApiService     WireTransfersApi
+	ApiService     *WireTransfersApiService
 	wireTransferId string
 }
 
-func (r WireTransfersApiGETWireTransfersWireTransferIdRequest) Execute() (*WireTransfer, *http.Response, error) {
+func (r ApiGETWireTransfersWireTransferIdRequest) Execute() (*WireTransfer, *http.Response, error) {
 	return r.ApiService.GETWireTransfersWireTransferIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return WireTransfersApiGETWireTransfersWireTransferIdRequest
+ @return ApiGETWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiGETWireTransfersWireTransferIdRequest {
-	return WireTransfersApiGETWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiGETWireTransfersWireTransferIdRequest {
+	return ApiGETWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -304,7 +232,7 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Con
 
 // Execute executes the request
 //  @return WireTransfer
-func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTransfersApiGETWireTransfersWireTransferIdRequest) (*WireTransfer, *http.Response, error) {
+func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r ApiGETWireTransfersWireTransferIdRequest) (*WireTransfer, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type WireTransfersApiPATCHWireTransfersWireTransferIdRequest struct {
+type ApiPATCHWireTransfersWireTransferIdRequest struct {
 	ctx                context.Context
-	ApiService         WireTransfersApi
-	wireTransferId     string
+	ApiService         *WireTransfersApiService
 	wireTransferUpdate *WireTransferUpdate
+	wireTransferId     string
 }
 
-func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpdate(wireTransferUpdate WireTransferUpdate) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
+func (r ApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpdate(wireTransferUpdate WireTransferUpdate) ApiPATCHWireTransfersWireTransferIdRequest {
 	r.wireTransferUpdate = &wireTransferUpdate
 	return r
 }
 
-func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHWireTransfersWireTransferIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return WireTransfersApiPATCHWireTransfersWireTransferIdRequest
+ @return ApiPATCHWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
-	return WireTransfersApiPATCHWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiPATCHWireTransfersWireTransferIdRequest {
+	return ApiPATCHWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -412,7 +340,7 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.C
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) (*http.Response, error) {
+func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiPATCHWireTransfersWireTransferIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 	return localVarHTTPResponse, nil
 }
 
-type WireTransfersApiPOSTWireTransfersRequest struct {
+type ApiPOSTWireTransfersRequest struct {
 	ctx                context.Context
-	ApiService         WireTransfersApi
+	ApiService         *WireTransfersApiService
 	wireTransferCreate *WireTransferCreate
 }
 
-func (r WireTransfersApiPOSTWireTransfersRequest) WireTransferCreate(wireTransferCreate WireTransferCreate) WireTransfersApiPOSTWireTransfersRequest {
+func (r ApiPOSTWireTransfersRequest) WireTransferCreate(wireTransferCreate WireTransferCreate) ApiPOSTWireTransfersRequest {
 	r.wireTransferCreate = &wireTransferCreate
 	return r
 }
 
-func (r WireTransfersApiPOSTWireTransfersRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTWireTransfersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTWireTransfersExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTWireTransfers Create a wire transfer
 Create a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WireTransfersApiPOSTWireTransfersRequest
+ @return ApiPOSTWireTransfersRequest
 */
-func (a *WireTransfersApiService) POSTWireTransfers(ctx context.Context) WireTransfersApiPOSTWireTransfersRequest {
-	return WireTransfersApiPOSTWireTransfersRequest{
+func (a *WireTransfersApiService) POSTWireTransfers(ctx context.Context) ApiPOSTWireTransfersRequest {
+	return ApiPOSTWireTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOSTWireTransfersRequest) (*http.Response, error) {
+func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

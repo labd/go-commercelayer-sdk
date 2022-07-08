@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type AdjustmentsApi interface {
-
-	/*
-		DELETEAdjustmentsAdjustmentId Delete an adjustment
-
-		Delete an adjustment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param adjustmentId The resource's id
-		@return AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest
-	*/
-	DELETEAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest
-
-	// DELETEAdjustmentsAdjustmentIdExecute executes the request
-	DELETEAdjustmentsAdjustmentIdExecute(r AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest) (*http.Response, error)
-
-	/*
-		GETAdjustments List all adjustments
-
-		List all adjustments
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AdjustmentsApiGETAdjustmentsRequest
-	*/
-	GETAdjustments(ctx context.Context) AdjustmentsApiGETAdjustmentsRequest
-
-	// GETAdjustmentsExecute executes the request
-	GETAdjustmentsExecute(r AdjustmentsApiGETAdjustmentsRequest) (*http.Response, error)
-
-	/*
-		GETAdjustmentsAdjustmentId Retrieve an adjustment
-
-		Retrieve an adjustment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param adjustmentId The resource's id
-		@return AdjustmentsApiGETAdjustmentsAdjustmentIdRequest
-	*/
-	GETAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiGETAdjustmentsAdjustmentIdRequest
-
-	// GETAdjustmentsAdjustmentIdExecute executes the request
-	//  @return Adjustment
-	GETAdjustmentsAdjustmentIdExecute(r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) (*Adjustment, *http.Response, error)
-
-	/*
-		PATCHAdjustmentsAdjustmentId Update an adjustment
-
-		Update an adjustment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param adjustmentId The resource's id
-		@return AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest
-	*/
-	PATCHAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest
-
-	// PATCHAdjustmentsAdjustmentIdExecute executes the request
-	PATCHAdjustmentsAdjustmentIdExecute(r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) (*http.Response, error)
-
-	/*
-		POSTAdjustments Create an adjustment
-
-		Create an adjustment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AdjustmentsApiPOSTAdjustmentsRequest
-	*/
-	POSTAdjustments(ctx context.Context) AdjustmentsApiPOSTAdjustmentsRequest
-
-	// POSTAdjustmentsExecute executes the request
-	POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjustmentsRequest) (*http.Response, error)
-}
-
 // AdjustmentsApiService AdjustmentsApi service
 type AdjustmentsApiService service
 
-type AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest struct {
+type ApiDELETEAdjustmentsAdjustmentIdRequest struct {
 	ctx          context.Context
-	ApiService   AdjustmentsApi
+	ApiService   *AdjustmentsApiService
 	adjustmentId string
 }
 
-func (r AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest
+ @return ApiDELETEAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest {
-	return AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiDELETEAdjustmentsAdjustmentIdRequest {
+	return ApiDELETEAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -123,7 +51,7 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
+func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r ApiDELETEAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r Adjustmen
 	return localVarHTTPResponse, nil
 }
 
-type AdjustmentsApiGETAdjustmentsRequest struct {
+type ApiGETAdjustmentsRequest struct {
 	ctx        context.Context
-	ApiService AdjustmentsApi
+	ApiService *AdjustmentsApiService
 }
 
-func (r AdjustmentsApiGETAdjustmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETAdjustmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdjustmentsExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETAdjustments List all adjustments
 List all adjustments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AdjustmentsApiGETAdjustmentsRequest
+ @return ApiGETAdjustmentsRequest
 */
-func (a *AdjustmentsApiService) GETAdjustments(ctx context.Context) AdjustmentsApiGETAdjustmentsRequest {
-	return AdjustmentsApiGETAdjustmentsRequest{
+func (a *AdjustmentsApiService) GETAdjustments(ctx context.Context) ApiGETAdjustmentsRequest {
+	return ApiGETAdjustmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustmentsRequest) (*http.Response, error) {
+func (a *AdjustmentsApiService) GETAdjustmentsExecute(r ApiGETAdjustmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustm
 	return localVarHTTPResponse, nil
 }
 
-type AdjustmentsApiGETAdjustmentsAdjustmentIdRequest struct {
+type ApiGETAdjustmentsAdjustmentIdRequest struct {
 	ctx          context.Context
-	ApiService   AdjustmentsApi
+	ApiService   *AdjustmentsApiService
 	adjustmentId string
 }
 
-func (r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) Execute() (*Adjustment, *http.Response, error) {
+func (r ApiGETAdjustmentsAdjustmentIdRequest) Execute() (*Adjustment, *http.Response, error) {
 	return r.ApiService.GETAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return AdjustmentsApiGETAdjustmentsAdjustmentIdRequest
+ @return ApiGETAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiGETAdjustmentsAdjustmentIdRequest {
-	return AdjustmentsApiGETAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiGETAdjustmentsAdjustmentIdRequest {
+	return ApiGETAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -304,7 +232,7 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, 
 
 // Execute executes the request
 //  @return Adjustment
-func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) (*Adjustment, *http.Response, error) {
+func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r ApiGETAdjustmentsAdjustmentIdRequest) (*Adjustment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest struct {
+type ApiPATCHAdjustmentsAdjustmentIdRequest struct {
 	ctx              context.Context
-	ApiService       AdjustmentsApi
-	adjustmentId     string
+	ApiService       *AdjustmentsApiService
 	adjustmentUpdate *AdjustmentUpdate
+	adjustmentId     string
 }
 
-func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adjustmentUpdate AdjustmentUpdate) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
+func (r ApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adjustmentUpdate AdjustmentUpdate) ApiPATCHAdjustmentsAdjustmentIdRequest {
 	r.adjustmentUpdate = &adjustmentUpdate
 	return r
 }
 
-func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest
+ @return ApiPATCHAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
-	return AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiPATCHAdjustmentsAdjustmentIdRequest {
+	return ApiPATCHAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -412,7 +340,7 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
+func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 	return localVarHTTPResponse, nil
 }
 
-type AdjustmentsApiPOSTAdjustmentsRequest struct {
+type ApiPOSTAdjustmentsRequest struct {
 	ctx              context.Context
-	ApiService       AdjustmentsApi
+	ApiService       *AdjustmentsApiService
 	adjustmentCreate *AdjustmentCreate
 }
 
-func (r AdjustmentsApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate AdjustmentCreate) AdjustmentsApiPOSTAdjustmentsRequest {
+func (r ApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate AdjustmentCreate) ApiPOSTAdjustmentsRequest {
 	r.adjustmentCreate = &adjustmentCreate
 	return r
 }
 
-func (r AdjustmentsApiPOSTAdjustmentsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTAdjustmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTAdjustmentsExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTAdjustments Create an adjustment
 Create an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AdjustmentsApiPOSTAdjustmentsRequest
+ @return ApiPOSTAdjustmentsRequest
 */
-func (a *AdjustmentsApiService) POSTAdjustments(ctx context.Context) AdjustmentsApiPOSTAdjustmentsRequest {
-	return AdjustmentsApiPOSTAdjustmentsRequest{
+func (a *AdjustmentsApiService) POSTAdjustments(ctx context.Context) ApiPOSTAdjustmentsRequest {
+	return ApiPOSTAdjustmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjustmentsRequest) (*http.Response, error) {
+func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

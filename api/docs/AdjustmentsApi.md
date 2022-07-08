@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    adjustmentId := "adjustmentId_example" // string | The resource's id
     adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("adjustments", "XGZwpOSrWL", *openapiclient.NewAdjustmentUpdateDataAttributes())) // AdjustmentUpdate | 
+    adjustmentId := "adjustmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHAdjustmentsAdjustment
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **adjustmentUpdate** | [**AdjustmentUpdate**](AdjustmentUpdate.md) |  | 
+
 
 ### Return type
 

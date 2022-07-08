@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
     manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("manual_tax_calculators", "XGZwpOSrWL", *openapiclient.NewManualTaxCalculatorUpdateDataAttributes())) // ManualTaxCalculatorUpdate | 
+    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHManualTaxCalculatorsM
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **manualTaxCalculatorUpdate** | [**ManualTaxCalculatorUpdate**](ManualTaxCalculatorUpdate.md) |  | 
+
 
 ### Return type
 

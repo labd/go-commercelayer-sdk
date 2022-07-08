@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type BingGeocodersApi interface {
-
-	/*
-		DELETEBingGeocodersBingGeocoderId Delete a bing geocoder
-
-		Delete a bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bingGeocoderId The resource's id
-		@return BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest
-	*/
-	DELETEBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest
-
-	// DELETEBingGeocodersBingGeocoderIdExecute executes the request
-	DELETEBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest) (*http.Response, error)
-
-	/*
-		GETBingGeocoders List all bing geocoders
-
-		List all bing geocoders
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return BingGeocodersApiGETBingGeocodersRequest
-	*/
-	GETBingGeocoders(ctx context.Context) BingGeocodersApiGETBingGeocodersRequest
-
-	// GETBingGeocodersExecute executes the request
-	GETBingGeocodersExecute(r BingGeocodersApiGETBingGeocodersRequest) (*http.Response, error)
-
-	/*
-		GETBingGeocodersBingGeocoderId Retrieve a bing geocoder
-
-		Retrieve a bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bingGeocoderId The resource's id
-		@return BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest
-	*/
-	GETBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest
-
-	// GETBingGeocodersBingGeocoderIdExecute executes the request
-	//  @return BingGeocoder
-	GETBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) (*BingGeocoder, *http.Response, error)
-
-	/*
-		PATCHBingGeocodersBingGeocoderId Update a bing geocoder
-
-		Update a bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bingGeocoderId The resource's id
-		@return BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest
-	*/
-	PATCHBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest
-
-	// PATCHBingGeocodersBingGeocoderIdExecute executes the request
-	PATCHBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) (*http.Response, error)
-
-	/*
-		POSTBingGeocoders Create a bing geocoder
-
-		Create a bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return BingGeocodersApiPOSTBingGeocodersRequest
-	*/
-	POSTBingGeocoders(ctx context.Context) BingGeocodersApiPOSTBingGeocodersRequest
-
-	// POSTBingGeocodersExecute executes the request
-	POSTBingGeocodersExecute(r BingGeocodersApiPOSTBingGeocodersRequest) (*http.Response, error)
-}
-
 // BingGeocodersApiService BingGeocodersApi service
 type BingGeocodersApiService service
 
-type BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest struct {
+type ApiDELETEBingGeocodersBingGeocoderIdRequest struct {
 	ctx            context.Context
-	ApiService     BingGeocodersApi
+	ApiService     *BingGeocodersApiService
 	bingGeocoderId string
 }
 
-func (r BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEBingGeocodersBingGeocoderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBingGeocodersBingGeocoderIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete a bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest
+ @return ApiDELETEBingGeocodersBingGeocoderIdRequest
 */
-func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest {
-	return BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest{
+func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) ApiDELETEBingGeocodersBingGeocoderIdRequest {
+	return ApiDELETEBingGeocodersBingGeocoderIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -123,7 +51,7 @@ func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderId(ctx context.
 }
 
 // Execute executes the request
-func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiDELETEBingGeocodersBingGeocoderIdRequest) (*http.Response, error) {
+func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderIdExecute(r ApiDELETEBingGeocodersBingGeocoderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderIdExecute(r Bin
 	return localVarHTTPResponse, nil
 }
 
-type BingGeocodersApiGETBingGeocodersRequest struct {
+type ApiGETBingGeocodersRequest struct {
 	ctx        context.Context
-	ApiService BingGeocodersApi
+	ApiService *BingGeocodersApiService
 }
 
-func (r BingGeocodersApiGETBingGeocodersRequest) Execute() (*http.Response, error) {
+func (r ApiGETBingGeocodersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBingGeocodersExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETBingGeocoders List all bing geocoders
 List all bing geocoders
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BingGeocodersApiGETBingGeocodersRequest
+ @return ApiGETBingGeocodersRequest
 */
-func (a *BingGeocodersApiService) GETBingGeocoders(ctx context.Context) BingGeocodersApiGETBingGeocodersRequest {
-	return BingGeocodersApiGETBingGeocodersRequest{
+func (a *BingGeocodersApiService) GETBingGeocoders(ctx context.Context) ApiGETBingGeocodersRequest {
+	return ApiGETBingGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BingGeocodersApiService) GETBingGeocodersExecute(r BingGeocodersApiGETBingGeocodersRequest) (*http.Response, error) {
+func (a *BingGeocodersApiService) GETBingGeocodersExecute(r ApiGETBingGeocodersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *BingGeocodersApiService) GETBingGeocodersExecute(r BingGeocodersApiGETB
 	return localVarHTTPResponse, nil
 }
 
-type BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest struct {
+type ApiGETBingGeocodersBingGeocoderIdRequest struct {
 	ctx            context.Context
-	ApiService     BingGeocodersApi
+	ApiService     *BingGeocodersApiService
 	bingGeocoderId string
 }
 
-func (r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) Execute() (*BingGeocoder, *http.Response, error) {
+func (r ApiGETBingGeocodersBingGeocoderIdRequest) Execute() (*BingGeocoder, *http.Response, error) {
 	return r.ApiService.GETBingGeocodersBingGeocoderIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve a bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest
+ @return ApiGETBingGeocodersBingGeocoderIdRequest
 */
-func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest {
-	return BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest{
+func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) ApiGETBingGeocodersBingGeocoderIdRequest {
+	return ApiGETBingGeocodersBingGeocoderIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -304,7 +232,7 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderId(ctx context.Con
 
 // Execute executes the request
 //  @return BingGeocoder
-func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) (*BingGeocoder, *http.Response, error) {
+func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r ApiGETBingGeocodersBingGeocoderIdRequest) (*BingGeocoder, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGe
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest struct {
+type ApiPATCHBingGeocodersBingGeocoderIdRequest struct {
 	ctx                context.Context
-	ApiService         BingGeocodersApi
-	bingGeocoderId     string
+	ApiService         *BingGeocodersApiService
 	bingGeocoderUpdate *BingGeocoderUpdate
+	bingGeocoderId     string
 }
 
-func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) BingGeocoderUpdate(bingGeocoderUpdate BingGeocoderUpdate) BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest {
+func (r ApiPATCHBingGeocodersBingGeocoderIdRequest) BingGeocoderUpdate(bingGeocoderUpdate BingGeocoderUpdate) ApiPATCHBingGeocodersBingGeocoderIdRequest {
 	r.bingGeocoderUpdate = &bingGeocoderUpdate
 	return r
 }
 
-func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHBingGeocodersBingGeocoderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHBingGeocodersBingGeocoderIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update a bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest
+ @return ApiPATCHBingGeocodersBingGeocoderIdRequest
 */
-func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest {
-	return BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest{
+func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderId(ctx context.Context, bingGeocoderId string) ApiPATCHBingGeocodersBingGeocoderIdRequest {
+	return ApiPATCHBingGeocodersBingGeocoderIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -412,7 +340,7 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderId(ctx context.C
 }
 
 // Execute executes the request
-func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) (*http.Response, error) {
+func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r ApiPATCHBingGeocodersBingGeocoderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r Bing
 	return localVarHTTPResponse, nil
 }
 
-type BingGeocodersApiPOSTBingGeocodersRequest struct {
+type ApiPOSTBingGeocodersRequest struct {
 	ctx                context.Context
-	ApiService         BingGeocodersApi
+	ApiService         *BingGeocodersApiService
 	bingGeocoderCreate *BingGeocoderCreate
 }
 
-func (r BingGeocodersApiPOSTBingGeocodersRequest) BingGeocoderCreate(bingGeocoderCreate BingGeocoderCreate) BingGeocodersApiPOSTBingGeocodersRequest {
+func (r ApiPOSTBingGeocodersRequest) BingGeocoderCreate(bingGeocoderCreate BingGeocoderCreate) ApiPOSTBingGeocodersRequest {
 	r.bingGeocoderCreate = &bingGeocoderCreate
 	return r
 }
 
-func (r BingGeocodersApiPOSTBingGeocodersRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTBingGeocodersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTBingGeocodersExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTBingGeocoders Create a bing geocoder
 Create a bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BingGeocodersApiPOSTBingGeocodersRequest
+ @return ApiPOSTBingGeocodersRequest
 */
-func (a *BingGeocodersApiService) POSTBingGeocoders(ctx context.Context) BingGeocodersApiPOSTBingGeocodersRequest {
-	return BingGeocodersApiPOSTBingGeocodersRequest{
+func (a *BingGeocodersApiService) POSTBingGeocoders(ctx context.Context) ApiPOSTBingGeocodersRequest {
+	return ApiPOSTBingGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOSTBingGeocodersRequest) (*http.Response, error) {
+func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r ApiPOSTBingGeocodersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    externalPromotionId := "externalPromotionId_example" // string | The resource's id
     externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("external_promotions", "XGZwpOSrWL", *openapiclient.NewExternalPromotionUpdateDataAttributes())) // ExternalPromotionUpdate | 
+    externalPromotionId := "externalPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHExternalPromotionsExt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **externalPromotionUpdate** | [**ExternalPromotionUpdate**](ExternalPromotionUpdate.md) |  | 
+
 
 ### Return type
 

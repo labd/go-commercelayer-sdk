@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    stripePaymentId := "stripePaymentId_example" // string | The resource's id
     stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData("stripe_payments", "XGZwpOSrWL", *openapiclient.NewStripePaymentUpdateDataAttributes())) // StripePaymentUpdate | 
+    stripePaymentId := "stripePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHStripePaymentsStripeP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **stripePaymentUpdate** | [**StripePaymentUpdate**](StripePaymentUpdate.md) |  | 
+
 
 ### Return type
 

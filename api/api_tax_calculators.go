@@ -20,61 +20,16 @@ import (
 	"strings"
 )
 
-type TaxCalculatorsApi interface {
-
-	/*
-		GETMarketIdTaxCalculator Retrieve the tax calculator associated to the market
-
-		Retrieve the tax calculator associated to the market
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param marketId The resource's id
-		@return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
-	*/
-	GETMarketIdTaxCalculator(ctx context.Context, marketId string) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
-
-	// GETMarketIdTaxCalculatorExecute executes the request
-	GETMarketIdTaxCalculatorExecute(r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) (*http.Response, error)
-
-	/*
-		GETTaxCalculators List all tax calculators
-
-		List all tax calculators
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return TaxCalculatorsApiGETTaxCalculatorsRequest
-	*/
-	GETTaxCalculators(ctx context.Context) TaxCalculatorsApiGETTaxCalculatorsRequest
-
-	// GETTaxCalculatorsExecute executes the request
-	GETTaxCalculatorsExecute(r TaxCalculatorsApiGETTaxCalculatorsRequest) (*http.Response, error)
-
-	/*
-		GETTaxCalculatorsTaxCalculatorId Retrieve a tax calculator
-
-		Retrieve a tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCalculatorId The resource's id
-		@return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
-	*/
-	GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
-
-	// GETTaxCalculatorsTaxCalculatorIdExecute executes the request
-	//  @return TaxCalculator
-	GETTaxCalculatorsTaxCalculatorIdExecute(r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) (*TaxCalculator, *http.Response, error)
-}
-
 // TaxCalculatorsApiService TaxCalculatorsApi service
 type TaxCalculatorsApiService service
 
-type TaxCalculatorsApiGETMarketIdTaxCalculatorRequest struct {
+type ApiGETMarketIdTaxCalculatorRequest struct {
 	ctx        context.Context
-	ApiService TaxCalculatorsApi
+	ApiService *TaxCalculatorsApiService
 	marketId   string
 }
 
-func (r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
+func (r ApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdTaxCalculatorExecute(r)
 }
 
@@ -85,10 +40,10 @@ Retrieve the tax calculator associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
+ @return ApiGETMarketIdTaxCalculatorRequest
 */
-func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest {
-	return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest{
+func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) ApiGETMarketIdTaxCalculatorRequest {
+	return ApiGETMarketIdTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -96,7 +51,7 @@ func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) (*http.Response, error) {
+func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r ApiGETMarketIdTaxCalculatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -160,12 +115,12 @@ func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculat
 	return localVarHTTPResponse, nil
 }
 
-type TaxCalculatorsApiGETTaxCalculatorsRequest struct {
+type ApiGETTaxCalculatorsRequest struct {
 	ctx        context.Context
-	ApiService TaxCalculatorsApi
+	ApiService *TaxCalculatorsApiService
 }
 
-func (r TaxCalculatorsApiGETTaxCalculatorsRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxCalculatorsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorsExecute(r)
 }
 
@@ -175,17 +130,17 @@ GETTaxCalculators List all tax calculators
 List all tax calculators
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxCalculatorsApiGETTaxCalculatorsRequest
+ @return ApiGETTaxCalculatorsRequest
 */
-func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) TaxCalculatorsApiGETTaxCalculatorsRequest {
-	return TaxCalculatorsApiGETTaxCalculatorsRequest{
+func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) ApiGETTaxCalculatorsRequest {
+	return ApiGETTaxCalculatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiGETTaxCalculatorsRequest) (*http.Response, error) {
+func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r ApiGETTaxCalculatorsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -248,13 +203,13 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiG
 	return localVarHTTPResponse, nil
 }
 
-type TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest struct {
+type ApiGETTaxCalculatorsTaxCalculatorIdRequest struct {
 	ctx             context.Context
-	ApiService      TaxCalculatorsApi
+	ApiService      *TaxCalculatorsApiService
 	taxCalculatorId string
 }
 
-func (r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) Execute() (*TaxCalculator, *http.Response, error) {
+func (r ApiGETTaxCalculatorsTaxCalculatorIdRequest) Execute() (*TaxCalculator, *http.Response, error) {
 	return r.ApiService.GETTaxCalculatorsTaxCalculatorIdExecute(r)
 }
 
@@ -265,10 +220,10 @@ Retrieve a tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
+ @return ApiGETTaxCalculatorsTaxCalculatorIdRequest
 */
-func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest {
-	return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest{
+func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorsTaxCalculatorIdRequest {
+	return ApiGETTaxCalculatorsTaxCalculatorIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -277,7 +232,7 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.
 
 // Execute executes the request
 //  @return TaxCalculator
-func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) (*TaxCalculator, *http.Response, error) {
+func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r ApiGETTaxCalculatorsTaxCalculatorIdRequest) (*TaxCalculator, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

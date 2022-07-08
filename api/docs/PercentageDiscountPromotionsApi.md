@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
     percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("percentage_discount_promotions", "XGZwpOSrWL", *openapiclient.NewPercentageDiscountPromotionUpdateDataAttributes())) // PercentageDiscountPromotionUpdate | 
+    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHPercentageDiscountPro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **percentageDiscountPromotionUpdate** | [**PercentageDiscountPromotionUpdate**](PercentageDiscountPromotionUpdate.md) |  | 
+
 
 ### Return type
 

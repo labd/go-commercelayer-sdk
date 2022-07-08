@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
     shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("shipping_weight_tiers", "XGZwpOSrWL", *openapiclient.NewShippingWeightTierUpdateDataAttributes())) // ShippingWeightTierUpdate | 
+    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHShippingWeightTiersSh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **shippingWeightTierUpdate** | [**ShippingWeightTierUpdate**](ShippingWeightTierUpdate.md) |  | 
+
 
 ### Return type
 

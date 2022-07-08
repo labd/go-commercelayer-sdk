@@ -6,6 +6,7 @@ generate:
 	openapi-generator-cli generate -i "https://data.commercelayer.app/schemas/openapi.json" \
 		--generator-name go \
 		--output api \
+		--ignore-file-override .openapi-generator-ignore \
 		--config config.yml
 
 fmt:

@@ -920,8 +920,8 @@ import (
 )
 
 func main() {
-    stockLocationId := "stockLocationId_example" // string | The resource's id
     stockLocationUpdate := *openapiclient.NewStockLocationUpdate(*openapiclient.NewStockLocationUpdateData("stock_locations", "XGZwpOSrWL", *openapiclient.NewStockLocationUpdateDataAttributes())) // StockLocationUpdate | 
+    stockLocationId := "stockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -948,8 +948,8 @@ Other parameters are passed through a pointer to a apiPATCHStockLocationsStockLo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **stockLocationUpdate** | [**StockLocationUpdate**](StockLocationUpdate.md) |  | 
+
 
 ### Return type
 

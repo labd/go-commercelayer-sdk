@@ -782,8 +782,8 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
     couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("coupon_codes_promotion_rules", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CouponCodesPromotionRuleUpdate | 
+    couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -810,8 +810,8 @@ Other parameters are passed through a pointer to a apiPATCHCouponCodesPromotionR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **couponCodesPromotionRuleUpdate** | [**CouponCodesPromotionRuleUpdate**](CouponCodesPromotionRuleUpdate.md) |  | 
+
 
 ### Return type
 

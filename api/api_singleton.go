@@ -19,46 +19,15 @@ import (
 	"net/url"
 )
 
-type SingletonApi interface {
-
-	/*
-		GETApplicationApplicationId Retrieve the application
-
-		Retrieve the application
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return SingletonApiGETApplicationApplicationIdRequest
-	*/
-	GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest
-
-	// GETApplicationApplicationIdExecute executes the request
-	//  @return Application
-	GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error)
-
-	/*
-		GETOrganizationOrganizationId Retrieve the organization
-
-		Retrieve the organization
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return SingletonApiGETOrganizationOrganizationIdRequest
-	*/
-	GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest
-
-	// GETOrganizationOrganizationIdExecute executes the request
-	//  @return Organization
-	GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
-}
-
 // SingletonApiService SingletonApi service
 type SingletonApiService service
 
-type SingletonApiGETApplicationApplicationIdRequest struct {
+type ApiGETApplicationApplicationIdRequest struct {
 	ctx        context.Context
-	ApiService SingletonApi
+	ApiService *SingletonApiService
 }
 
-func (r SingletonApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
+func (r ApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -68,10 +37,10 @@ GETApplicationApplicationId Retrieve the application
 Retrieve the application
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SingletonApiGETApplicationApplicationIdRequest
+ @return ApiGETApplicationApplicationIdRequest
 */
-func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest {
-	return SingletonApiGETApplicationApplicationIdRequest{
+func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest {
+	return ApiGETApplicationApplicationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -79,7 +48,7 @@ func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) S
 
 // Execute executes the request
 //  @return Application
-func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
+func (a *SingletonApiService) GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -152,12 +121,12 @@ func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiG
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SingletonApiGETOrganizationOrganizationIdRequest struct {
+type ApiGETOrganizationOrganizationIdRequest struct {
 	ctx        context.Context
-	ApiService SingletonApi
+	ApiService *SingletonApiService
 }
 
-func (r SingletonApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
+func (r ApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -167,10 +136,10 @@ GETOrganizationOrganizationId Retrieve the organization
 Retrieve the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SingletonApiGETOrganizationOrganizationIdRequest
+ @return ApiGETOrganizationOrganizationIdRequest
 */
-func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest {
-	return SingletonApiGETOrganizationOrganizationIdRequest{
+func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest {
+	return ApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -178,7 +147,7 @@ func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context)
 
 // Execute executes the request
 //  @return Organization
-func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
+func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

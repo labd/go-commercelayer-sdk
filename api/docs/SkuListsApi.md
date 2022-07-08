@@ -644,8 +644,8 @@ import (
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
     skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("sku_lists", "XGZwpOSrWL", *openapiclient.NewSkuListUpdateDataAttributes())) // SkuListUpdate | 
+    skuListId := "skuListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -672,8 +672,8 @@ Other parameters are passed through a pointer to a apiPATCHSkuListsSkuListIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **skuListUpdate** | [**SkuListUpdate**](SkuListUpdate.md) |  | 
+
 
 ### Return type
 

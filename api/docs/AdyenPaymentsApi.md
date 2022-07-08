@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
     adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("adyen_payments", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentUpdateDataAttributes())) // AdyenPaymentUpdate | 
+    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHAdyenPaymentsAdyenPay
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **adyenPaymentUpdate** | [**AdyenPaymentUpdate**](AdyenPaymentUpdate.md) |  | 
+
 
 ### Return type
 

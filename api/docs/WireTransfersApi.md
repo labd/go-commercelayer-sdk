@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    wireTransferId := "wireTransferId_example" // string | The resource's id
     wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("wire_transfers", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // WireTransferUpdate | 
+    wireTransferId := "wireTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHWireTransfersWireTran
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **wireTransferUpdate** | [**WireTransferUpdate**](WireTransferUpdate.md) |  | 
+
 
 ### Return type
 

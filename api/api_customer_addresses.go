@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type CustomerAddressesApi interface {
-
-	/*
-		DELETECustomerAddressesCustomerAddressId Delete a customer address
-
-		Delete a customer address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerAddressId The resource's id
-		@return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
-	*/
-	DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
-
-	// DELETECustomerAddressesCustomerAddressIdExecute executes the request
-	DELETECustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest) (*http.Response, error)
-
-	/*
-		GETCustomerAddresses List all customer addresses
-
-		List all customer addresses
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CustomerAddressesApiGETCustomerAddressesRequest
-	*/
-	GETCustomerAddresses(ctx context.Context) CustomerAddressesApiGETCustomerAddressesRequest
-
-	// GETCustomerAddressesExecute executes the request
-	GETCustomerAddressesExecute(r CustomerAddressesApiGETCustomerAddressesRequest) (*http.Response, error)
-
-	/*
-		GETCustomerAddressesCustomerAddressId Retrieve a customer address
-
-		Retrieve a customer address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerAddressId The resource's id
-		@return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
-	*/
-	GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
-
-	// GETCustomerAddressesCustomerAddressIdExecute executes the request
-	//  @return CustomerAddress
-	GETCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) (*CustomerAddress, *http.Response, error)
-
-	/*
-		GETCustomerIdCustomerAddresses Retrieve the customer addresses associated to the customer
-
-		Retrieve the customer addresses associated to the customer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerId The resource's id
-		@return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
-	*/
-	GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
-
-	// GETCustomerIdCustomerAddressesExecute executes the request
-	GETCustomerIdCustomerAddressesExecute(r CustomerAddressesApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error)
-
-	/*
-		PATCHCustomerAddressesCustomerAddressId Update a customer address
-
-		Update a customer address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerAddressId The resource's id
-		@return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
-	*/
-	PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
-
-	// PATCHCustomerAddressesCustomerAddressIdExecute executes the request
-	PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*http.Response, error)
-
-	/*
-		POSTCustomerAddresses Create a customer address
-
-		Create a customer address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CustomerAddressesApiPOSTCustomerAddressesRequest
-	*/
-	POSTCustomerAddresses(ctx context.Context) CustomerAddressesApiPOSTCustomerAddressesRequest
-
-	// POSTCustomerAddressesExecute executes the request
-	POSTCustomerAddressesExecute(r CustomerAddressesApiPOSTCustomerAddressesRequest) (*http.Response, error)
-}
-
 // CustomerAddressesApiService CustomerAddressesApi service
 type CustomerAddressesApiService service
 
-type CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest struct {
+type ApiDELETECustomerAddressesCustomerAddressIdRequest struct {
 	ctx               context.Context
-	ApiService        CustomerAddressesApi
+	ApiService        *CustomerAddressesApiService
 	customerAddressId string
 }
 
-func (r CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETECustomerAddressesCustomerAddressIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomerAddressesCustomerAddressIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
+ @return ApiDELETECustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest {
-	return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest{
+func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) ApiDELETECustomerAddressesCustomerAddressIdRequest {
+	return ApiDELETECustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -137,7 +51,7 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(c
 }
 
 // Execute executes the request
-func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest) (*http.Response, error) {
+func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdExecute(r ApiDELETECustomerAddressesCustomerAddressIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,12 +115,12 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 	return localVarHTTPResponse, nil
 }
 
-type CustomerAddressesApiGETCustomerAddressesRequest struct {
+type ApiGETCustomerAddressesRequest struct {
 	ctx        context.Context
-	ApiService CustomerAddressesApi
+	ApiService *CustomerAddressesApiService
 }
 
-func (r CustomerAddressesApiGETCustomerAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETCustomerAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressesExecute(r)
 }
 
@@ -216,17 +130,17 @@ GETCustomerAddresses List all customer addresses
 List all customer addresses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerAddressesApiGETCustomerAddressesRequest
+ @return ApiGETCustomerAddressesRequest
 */
-func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) CustomerAddressesApiGETCustomerAddressesRequest {
-	return CustomerAddressesApiGETCustomerAddressesRequest{
+func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) ApiGETCustomerAddressesRequest {
+	return ApiGETCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddressesApiGETCustomerAddressesRequest) (*http.Response, error) {
+func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r ApiGETCustomerAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -289,13 +203,13 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddr
 	return localVarHTTPResponse, nil
 }
 
-type CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest struct {
+type ApiGETCustomerAddressesCustomerAddressIdRequest struct {
 	ctx               context.Context
-	ApiService        CustomerAddressesApi
+	ApiService        *CustomerAddressesApiService
 	customerAddressId string
 }
 
-func (r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) Execute() (*CustomerAddress, *http.Response, error) {
+func (r ApiGETCustomerAddressesCustomerAddressIdRequest) Execute() (*CustomerAddress, *http.Response, error) {
 	return r.ApiService.GETCustomerAddressesCustomerAddressIdExecute(r)
 }
 
@@ -306,10 +220,10 @@ Retrieve a customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
+ @return ApiGETCustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest {
-	return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest{
+func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) ApiGETCustomerAddressesCustomerAddressIdRequest {
+	return ApiGETCustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -318,7 +232,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx 
 
 // Execute executes the request
 //  @return CustomerAddress
-func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) (*CustomerAddress, *http.Response, error) {
+func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecute(r ApiGETCustomerAddressesCustomerAddressIdRequest) (*CustomerAddress, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -392,13 +306,13 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CustomerAddressesApiGETCustomerIdCustomerAddressesRequest struct {
+type ApiGETCustomerIdCustomerAddressesRequest struct {
 	ctx        context.Context
-	ApiService CustomerAddressesApi
+	ApiService *CustomerAddressesApiService
 	customerId string
 }
 
-func (r CustomerAddressesApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerAddressesExecute(r)
 }
 
@@ -409,10 +323,10 @@ Retrieve the customer addresses associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
+ @return ApiGETCustomerIdCustomerAddressesRequest
 */
-func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest {
-	return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest{
+func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) ApiGETCustomerIdCustomerAddressesRequest {
+	return ApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -420,7 +334,7 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context
 }
 
 // Execute executes the request
-func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r CustomerAddressesApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
+func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r ApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -484,19 +398,19 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 	return localVarHTTPResponse, nil
 }
 
-type CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest struct {
+type ApiPATCHCustomerAddressesCustomerAddressIdRequest struct {
 	ctx                   context.Context
-	ApiService            CustomerAddressesApi
-	customerAddressId     string
+	ApiService            *CustomerAddressesApiService
 	customerAddressUpdate *CustomerAddressUpdate
+	customerAddressId     string
 }
 
-func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) CustomerAddressUpdate(customerAddressUpdate CustomerAddressUpdate) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
+func (r ApiPATCHCustomerAddressesCustomerAddressIdRequest) CustomerAddressUpdate(customerAddressUpdate CustomerAddressUpdate) ApiPATCHCustomerAddressesCustomerAddressIdRequest {
 	r.customerAddressUpdate = &customerAddressUpdate
 	return r
 }
 
-func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCustomerAddressesCustomerAddressIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
+ @return ApiPATCHCustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
-	return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest{
+func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) ApiPATCHCustomerAddressesCustomerAddressIdRequest {
+	return ApiPATCHCustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -518,7 +432,7 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ct
 }
 
 // Execute executes the request
-func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*http.Response, error) {
+func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r ApiPATCHCustomerAddressesCustomerAddressIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 	return localVarHTTPResponse, nil
 }
 
-type CustomerAddressesApiPOSTCustomerAddressesRequest struct {
+type ApiPOSTCustomerAddressesRequest struct {
 	ctx                   context.Context
-	ApiService            CustomerAddressesApi
+	ApiService            *CustomerAddressesApiService
 	customerAddressCreate *CustomerAddressCreate
 }
 
-func (r CustomerAddressesApiPOSTCustomerAddressesRequest) CustomerAddressCreate(customerAddressCreate CustomerAddressCreate) CustomerAddressesApiPOSTCustomerAddressesRequest {
+func (r ApiPOSTCustomerAddressesRequest) CustomerAddressCreate(customerAddressCreate CustomerAddressCreate) ApiPOSTCustomerAddressesRequest {
 	r.customerAddressCreate = &customerAddressCreate
 	return r
 }
 
-func (r CustomerAddressesApiPOSTCustomerAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTCustomerAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCustomerAddressesExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTCustomerAddresses Create a customer address
 Create a customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerAddressesApiPOSTCustomerAddressesRequest
+ @return ApiPOSTCustomerAddressesRequest
 */
-func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context) CustomerAddressesApiPOSTCustomerAddressesRequest {
-	return CustomerAddressesApiPOSTCustomerAddressesRequest{
+func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context) ApiPOSTCustomerAddressesRequest {
+	return ApiPOSTCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAddressesApiPOSTCustomerAddressesRequest) (*http.Response, error) {
+func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r ApiPOSTCustomerAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

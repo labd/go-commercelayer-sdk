@@ -20,61 +20,16 @@ import (
 	"strings"
 )
 
-type PriceTiersApi interface {
-
-	/*
-		GETPriceIdPriceTiers Retrieve the price tiers associated to the price
-
-		Retrieve the price tiers associated to the price
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceId The resource's id
-		@return PriceTiersApiGETPriceIdPriceTiersRequest
-	*/
-	GETPriceIdPriceTiers(ctx context.Context, priceId string) PriceTiersApiGETPriceIdPriceTiersRequest
-
-	// GETPriceIdPriceTiersExecute executes the request
-	GETPriceIdPriceTiersExecute(r PriceTiersApiGETPriceIdPriceTiersRequest) (*http.Response, error)
-
-	/*
-		GETPriceTiers List all price tiers
-
-		List all price tiers
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return PriceTiersApiGETPriceTiersRequest
-	*/
-	GETPriceTiers(ctx context.Context) PriceTiersApiGETPriceTiersRequest
-
-	// GETPriceTiersExecute executes the request
-	GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*http.Response, error)
-
-	/*
-		GETPriceTiersPriceTierId Retrieve a price tier
-
-		Retrieve a price tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceTierId The resource's id
-		@return PriceTiersApiGETPriceTiersPriceTierIdRequest
-	*/
-	GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) PriceTiersApiGETPriceTiersPriceTierIdRequest
-
-	// GETPriceTiersPriceTierIdExecute executes the request
-	//  @return PriceTier
-	GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*PriceTier, *http.Response, error)
-}
-
 // PriceTiersApiService PriceTiersApi service
 type PriceTiersApiService service
 
-type PriceTiersApiGETPriceIdPriceTiersRequest struct {
+type ApiGETPriceIdPriceTiersRequest struct {
 	ctx        context.Context
-	ApiService PriceTiersApi
+	ApiService *PriceTiersApiService
 	priceId    string
 }
 
-func (r PriceTiersApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdPriceTiersExecute(r)
 }
 
@@ -85,10 +40,10 @@ Retrieve the price tiers associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return PriceTiersApiGETPriceIdPriceTiersRequest
+ @return ApiGETPriceIdPriceTiersRequest
 */
-func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) PriceTiersApiGETPriceIdPriceTiersRequest {
-	return PriceTiersApiGETPriceIdPriceTiersRequest{
+func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) ApiGETPriceIdPriceTiersRequest {
+	return ApiGETPriceIdPriceTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -96,7 +51,7 @@ func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId
 }
 
 // Execute executes the request
-func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r PriceTiersApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
+func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r ApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -160,12 +115,12 @@ func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r PriceTiersApiGETPri
 	return localVarHTTPResponse, nil
 }
 
-type PriceTiersApiGETPriceTiersRequest struct {
+type ApiGETPriceTiersRequest struct {
 	ctx        context.Context
-	ApiService PriceTiersApi
+	ApiService *PriceTiersApiService
 }
 
-func (r PriceTiersApiGETPriceTiersRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceTiersExecute(r)
 }
 
@@ -175,17 +130,17 @@ GETPriceTiers List all price tiers
 List all price tiers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PriceTiersApiGETPriceTiersRequest
+ @return ApiGETPriceTiersRequest
 */
-func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiGETPriceTiersRequest {
-	return PriceTiersApiGETPriceTiersRequest{
+func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) ApiGETPriceTiersRequest {
+	return ApiGETPriceTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*http.Response, error) {
+func (a *PriceTiersApiService) GETPriceTiersExecute(r ApiGETPriceTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -248,13 +203,13 @@ func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiers
 	return localVarHTTPResponse, nil
 }
 
-type PriceTiersApiGETPriceTiersPriceTierIdRequest struct {
+type ApiGETPriceTiersPriceTierIdRequest struct {
 	ctx         context.Context
-	ApiService  PriceTiersApi
+	ApiService  *PriceTiersApiService
 	priceTierId string
 }
 
-func (r PriceTiersApiGETPriceTiersPriceTierIdRequest) Execute() (*PriceTier, *http.Response, error) {
+func (r ApiGETPriceTiersPriceTierIdRequest) Execute() (*PriceTier, *http.Response, error) {
 	return r.ApiService.GETPriceTiersPriceTierIdExecute(r)
 }
 
@@ -265,10 +220,10 @@ Retrieve a price tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceTierId The resource's id
- @return PriceTiersApiGETPriceTiersPriceTierIdRequest
+ @return ApiGETPriceTiersPriceTierIdRequest
 */
-func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) PriceTiersApiGETPriceTiersPriceTierIdRequest {
-	return PriceTiersApiGETPriceTiersPriceTierIdRequest{
+func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) ApiGETPriceTiersPriceTierIdRequest {
+	return ApiGETPriceTiersPriceTierIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceTierId: priceTierId,
@@ -277,7 +232,7 @@ func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, pri
 
 // Execute executes the request
 //  @return PriceTier
-func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*PriceTier, *http.Response, error) {
+func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r ApiGETPriceTiersPriceTierIdRequest) (*PriceTier, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

@@ -20,732 +20,16 @@ import (
 	"strings"
 )
 
-type AttachmentsApi interface {
-
-	/*
-		DELETEAttachmentsAttachmentId Delete an attachment
-
-		Delete an attachment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param attachmentId The resource's id
-		@return AttachmentsApiDELETEAttachmentsAttachmentIdRequest
-	*/
-	DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiDELETEAttachmentsAttachmentIdRequest
-
-	// DELETEAttachmentsAttachmentIdExecute executes the request
-	DELETEAttachmentsAttachmentIdExecute(r AttachmentsApiDELETEAttachmentsAttachmentIdRequest) (*http.Response, error)
-
-	/*
-		GETAttachments List all attachments
-
-		List all attachments
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AttachmentsApiGETAttachmentsRequest
-	*/
-	GETAttachments(ctx context.Context) AttachmentsApiGETAttachmentsRequest
-
-	// GETAttachmentsExecute executes the request
-	GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETAttachmentsAttachmentId Retrieve an attachment
-
-		Retrieve an attachment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param attachmentId The resource's id
-		@return AttachmentsApiGETAttachmentsAttachmentIdRequest
-	*/
-	GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiGETAttachmentsAttachmentIdRequest
-
-	// GETAttachmentsAttachmentIdExecute executes the request
-	//  @return Attachment
-	GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*Attachment, *http.Response, error)
-
-	/*
-		GETAvalaraAccountIdAttachments Retrieve the attachments associated to the avalara account
-
-		Retrieve the attachments associated to the avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param avalaraAccountId The resource's id
-		@return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
-	*/
-	GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
-
-	// GETAvalaraAccountIdAttachmentsExecute executes the request
-	GETAvalaraAccountIdAttachmentsExecute(r AttachmentsApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETBingGeocoderIdAttachments Retrieve the attachments associated to the bing geocoder
-
-		Retrieve the attachments associated to the bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bingGeocoderId The resource's id
-		@return AttachmentsApiGETBingGeocoderIdAttachmentsRequest
-	*/
-	GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) AttachmentsApiGETBingGeocoderIdAttachmentsRequest
-
-	// GETBingGeocoderIdAttachmentsExecute executes the request
-	GETBingGeocoderIdAttachmentsExecute(r AttachmentsApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETBundleIdAttachments Retrieve the attachments associated to the bundle
-
-		Retrieve the attachments associated to the bundle
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bundleId The resource's id
-		@return AttachmentsApiGETBundleIdAttachmentsRequest
-	*/
-	GETBundleIdAttachments(ctx context.Context, bundleId string) AttachmentsApiGETBundleIdAttachmentsRequest
-
-	// GETBundleIdAttachmentsExecute executes the request
-	GETBundleIdAttachmentsExecute(r AttachmentsApiGETBundleIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETCarrierAccountIdAttachments Retrieve the attachments associated to the carrier account
-
-		Retrieve the attachments associated to the carrier account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param carrierAccountId The resource's id
-		@return AttachmentsApiGETCarrierAccountIdAttachmentsRequest
-	*/
-	GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) AttachmentsApiGETCarrierAccountIdAttachmentsRequest
-
-	// GETCarrierAccountIdAttachmentsExecute executes the request
-	GETCarrierAccountIdAttachmentsExecute(r AttachmentsApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETCouponRecipientIdAttachments Retrieve the attachments associated to the coupon recipient
-
-		Retrieve the attachments associated to the coupon recipient
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param couponRecipientId The resource's id
-		@return AttachmentsApiGETCouponRecipientIdAttachmentsRequest
-	*/
-	GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) AttachmentsApiGETCouponRecipientIdAttachmentsRequest
-
-	// GETCouponRecipientIdAttachmentsExecute executes the request
-	GETCouponRecipientIdAttachmentsExecute(r AttachmentsApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETCustomerGroupIdAttachments Retrieve the attachments associated to the customer group
-
-		Retrieve the attachments associated to the customer group
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerGroupId The resource's id
-		@return AttachmentsApiGETCustomerGroupIdAttachmentsRequest
-	*/
-	GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) AttachmentsApiGETCustomerGroupIdAttachmentsRequest
-
-	// GETCustomerGroupIdAttachmentsExecute executes the request
-	GETCustomerGroupIdAttachmentsExecute(r AttachmentsApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETCustomerIdAttachments Retrieve the attachments associated to the customer
-
-		Retrieve the attachments associated to the customer
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerId The resource's id
-		@return AttachmentsApiGETCustomerIdAttachmentsRequest
-	*/
-	GETCustomerIdAttachments(ctx context.Context, customerId string) AttachmentsApiGETCustomerIdAttachmentsRequest
-
-	// GETCustomerIdAttachmentsExecute executes the request
-	GETCustomerIdAttachmentsExecute(r AttachmentsApiGETCustomerIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETDeliveryLeadTimeIdAttachments Retrieve the attachments associated to the delivery lead time
-
-		Retrieve the attachments associated to the delivery lead time
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param deliveryLeadTimeId The resource's id
-		@return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
-	*/
-	GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
-
-	// GETDeliveryLeadTimeIdAttachmentsExecute executes the request
-	GETDeliveryLeadTimeIdAttachmentsExecute(r AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETExternalPromotionIdAttachments Retrieve the attachments associated to the external promotion
-
-		Retrieve the attachments associated to the external promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param externalPromotionId The resource's id
-		@return AttachmentsApiGETExternalPromotionIdAttachmentsRequest
-	*/
-	GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) AttachmentsApiGETExternalPromotionIdAttachmentsRequest
-
-	// GETExternalPromotionIdAttachmentsExecute executes the request
-	GETExternalPromotionIdAttachmentsExecute(r AttachmentsApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETExternalTaxCalculatorIdAttachments Retrieve the attachments associated to the external tax calculator
-
-		Retrieve the attachments associated to the external tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param externalTaxCalculatorId The resource's id
-		@return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
-	*/
-	GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
-
-	// GETExternalTaxCalculatorIdAttachmentsExecute executes the request
-	GETExternalTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETFixedAmountPromotionIdAttachments Retrieve the attachments associated to the fixed amount promotion
-
-		Retrieve the attachments associated to the fixed amount promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedAmountPromotionId The resource's id
-		@return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
-	*/
-	GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
-
-	// GETFixedAmountPromotionIdAttachmentsExecute executes the request
-	GETFixedAmountPromotionIdAttachmentsExecute(r AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETFixedPricePromotionIdAttachments Retrieve the attachments associated to the fixed price promotion
-
-		Retrieve the attachments associated to the fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedPricePromotionId The resource's id
-		@return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
-	*/
-	GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
-
-	// GETFixedPricePromotionIdAttachmentsExecute executes the request
-	GETFixedPricePromotionIdAttachmentsExecute(r AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETFreeGiftPromotionIdAttachments Retrieve the attachments associated to the free gift promotion
-
-		Retrieve the attachments associated to the free gift promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param freeGiftPromotionId The resource's id
-		@return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
-	*/
-	GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
-
-	// GETFreeGiftPromotionIdAttachmentsExecute executes the request
-	GETFreeGiftPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETFreeShippingPromotionIdAttachments Retrieve the attachments associated to the free shipping promotion
-
-		Retrieve the attachments associated to the free shipping promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param freeShippingPromotionId The resource's id
-		@return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
-	*/
-	GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
-
-	// GETFreeShippingPromotionIdAttachmentsExecute executes the request
-	GETFreeShippingPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETGeocoderIdAttachments Retrieve the attachments associated to the geocoder
-
-		Retrieve the attachments associated to the geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param geocoderId The resource's id
-		@return AttachmentsApiGETGeocoderIdAttachmentsRequest
-	*/
-	GETGeocoderIdAttachments(ctx context.Context, geocoderId string) AttachmentsApiGETGeocoderIdAttachmentsRequest
-
-	// GETGeocoderIdAttachmentsExecute executes the request
-	GETGeocoderIdAttachmentsExecute(r AttachmentsApiGETGeocoderIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETGiftCardIdAttachments Retrieve the attachments associated to the gift card
-
-		Retrieve the attachments associated to the gift card
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param giftCardId The resource's id
-		@return AttachmentsApiGETGiftCardIdAttachmentsRequest
-	*/
-	GETGiftCardIdAttachments(ctx context.Context, giftCardId string) AttachmentsApiGETGiftCardIdAttachmentsRequest
-
-	// GETGiftCardIdAttachmentsExecute executes the request
-	GETGiftCardIdAttachmentsExecute(r AttachmentsApiGETGiftCardIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETGiftCardRecipientIdAttachments Retrieve the attachments associated to the gift card recipient
-
-		Retrieve the attachments associated to the gift card recipient
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param giftCardRecipientId The resource's id
-		@return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
-	*/
-	GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
-
-	// GETGiftCardRecipientIdAttachmentsExecute executes the request
-	GETGiftCardRecipientIdAttachmentsExecute(r AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETGoogleGeocoderIdAttachments Retrieve the attachments associated to the google geocoder
-
-		Retrieve the attachments associated to the google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param googleGeocoderId The resource's id
-		@return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
-	*/
-	GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
-
-	// GETGoogleGeocoderIdAttachmentsExecute executes the request
-	GETGoogleGeocoderIdAttachmentsExecute(r AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETInventoryModelIdAttachments Retrieve the attachments associated to the inventory model
-
-		Retrieve the attachments associated to the inventory model
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param inventoryModelId The resource's id
-		@return AttachmentsApiGETInventoryModelIdAttachmentsRequest
-	*/
-	GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) AttachmentsApiGETInventoryModelIdAttachmentsRequest
-
-	// GETInventoryModelIdAttachmentsExecute executes the request
-	GETInventoryModelIdAttachmentsExecute(r AttachmentsApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETManualTaxCalculatorIdAttachments Retrieve the attachments associated to the manual tax calculator
-
-		Retrieve the attachments associated to the manual tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param manualTaxCalculatorId The resource's id
-		@return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
-	*/
-	GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
-
-	// GETManualTaxCalculatorIdAttachmentsExecute executes the request
-	GETManualTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETMarketIdAttachments Retrieve the attachments associated to the market
-
-		Retrieve the attachments associated to the market
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param marketId The resource's id
-		@return AttachmentsApiGETMarketIdAttachmentsRequest
-	*/
-	GETMarketIdAttachments(ctx context.Context, marketId string) AttachmentsApiGETMarketIdAttachmentsRequest
-
-	// GETMarketIdAttachmentsExecute executes the request
-	GETMarketIdAttachmentsExecute(r AttachmentsApiGETMarketIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETMerchantIdAttachments Retrieve the attachments associated to the merchant
-
-		Retrieve the attachments associated to the merchant
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param merchantId The resource's id
-		@return AttachmentsApiGETMerchantIdAttachmentsRequest
-	*/
-	GETMerchantIdAttachments(ctx context.Context, merchantId string) AttachmentsApiGETMerchantIdAttachmentsRequest
-
-	// GETMerchantIdAttachmentsExecute executes the request
-	GETMerchantIdAttachmentsExecute(r AttachmentsApiGETMerchantIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETOrderIdAttachments Retrieve the attachments associated to the order
-
-		Retrieve the attachments associated to the order
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderId The resource's id
-		@return AttachmentsApiGETOrderIdAttachmentsRequest
-	*/
-	GETOrderIdAttachments(ctx context.Context, orderId string) AttachmentsApiGETOrderIdAttachmentsRequest
-
-	// GETOrderIdAttachmentsExecute executes the request
-	GETOrderIdAttachmentsExecute(r AttachmentsApiGETOrderIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPackageIdAttachments Retrieve the attachments associated to the package
-
-		Retrieve the attachments associated to the package
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param packageId The resource's id
-		@return AttachmentsApiGETPackageIdAttachmentsRequest
-	*/
-	GETPackageIdAttachments(ctx context.Context, packageId string) AttachmentsApiGETPackageIdAttachmentsRequest
-
-	// GETPackageIdAttachmentsExecute executes the request
-	GETPackageIdAttachmentsExecute(r AttachmentsApiGETPackageIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETParcelIdAttachments Retrieve the attachments associated to the parcel
-
-		Retrieve the attachments associated to the parcel
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelId The resource's id
-		@return AttachmentsApiGETParcelIdAttachmentsRequest
-	*/
-	GETParcelIdAttachments(ctx context.Context, parcelId string) AttachmentsApiGETParcelIdAttachmentsRequest
-
-	// GETParcelIdAttachmentsExecute executes the request
-	GETParcelIdAttachmentsExecute(r AttachmentsApiGETParcelIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPaymentMethodIdAttachments Retrieve the attachments associated to the payment method
-
-		Retrieve the attachments associated to the payment method
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param paymentMethodId The resource's id
-		@return AttachmentsApiGETPaymentMethodIdAttachmentsRequest
-	*/
-	GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) AttachmentsApiGETPaymentMethodIdAttachmentsRequest
-
-	// GETPaymentMethodIdAttachmentsExecute executes the request
-	GETPaymentMethodIdAttachmentsExecute(r AttachmentsApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPercentageDiscountPromotionIdAttachments Retrieve the attachments associated to the percentage discount promotion
-
-		Retrieve the attachments associated to the percentage discount promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param percentageDiscountPromotionId The resource's id
-		@return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
-	*/
-	GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
-
-	// GETPercentageDiscountPromotionIdAttachmentsExecute executes the request
-	GETPercentageDiscountPromotionIdAttachmentsExecute(r AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPriceIdAttachments Retrieve the attachments associated to the price
-
-		Retrieve the attachments associated to the price
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceId The resource's id
-		@return AttachmentsApiGETPriceIdAttachmentsRequest
-	*/
-	GETPriceIdAttachments(ctx context.Context, priceId string) AttachmentsApiGETPriceIdAttachmentsRequest
-
-	// GETPriceIdAttachmentsExecute executes the request
-	GETPriceIdAttachmentsExecute(r AttachmentsApiGETPriceIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPriceListIdAttachments Retrieve the attachments associated to the price list
-
-		Retrieve the attachments associated to the price list
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceListId The resource's id
-		@return AttachmentsApiGETPriceListIdAttachmentsRequest
-	*/
-	GETPriceListIdAttachments(ctx context.Context, priceListId string) AttachmentsApiGETPriceListIdAttachmentsRequest
-
-	// GETPriceListIdAttachmentsExecute executes the request
-	GETPriceListIdAttachmentsExecute(r AttachmentsApiGETPriceListIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPriceTierIdAttachments Retrieve the attachments associated to the price tier
-
-		Retrieve the attachments associated to the price tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceTierId The resource's id
-		@return AttachmentsApiGETPriceTierIdAttachmentsRequest
-	*/
-	GETPriceTierIdAttachments(ctx context.Context, priceTierId string) AttachmentsApiGETPriceTierIdAttachmentsRequest
-
-	// GETPriceTierIdAttachmentsExecute executes the request
-	GETPriceTierIdAttachmentsExecute(r AttachmentsApiGETPriceTierIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPriceVolumeTierIdAttachments Retrieve the attachments associated to the price volume tier
-
-		Retrieve the attachments associated to the price volume tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param priceVolumeTierId The resource's id
-		@return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
-	*/
-	GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
-
-	// GETPriceVolumeTierIdAttachmentsExecute executes the request
-	GETPriceVolumeTierIdAttachmentsExecute(r AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETPromotionIdAttachments Retrieve the attachments associated to the promotion
-
-		Retrieve the attachments associated to the promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param promotionId The resource's id
-		@return AttachmentsApiGETPromotionIdAttachmentsRequest
-	*/
-	GETPromotionIdAttachments(ctx context.Context, promotionId string) AttachmentsApiGETPromotionIdAttachmentsRequest
-
-	// GETPromotionIdAttachmentsExecute executes the request
-	GETPromotionIdAttachmentsExecute(r AttachmentsApiGETPromotionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETReturnIdAttachments Retrieve the attachments associated to the return
-
-		Retrieve the attachments associated to the return
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param returnId The resource's id
-		@return AttachmentsApiGETReturnIdAttachmentsRequest
-	*/
-	GETReturnIdAttachments(ctx context.Context, returnId string) AttachmentsApiGETReturnIdAttachmentsRequest
-
-	// GETReturnIdAttachmentsExecute executes the request
-	GETReturnIdAttachmentsExecute(r AttachmentsApiGETReturnIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShipmentIdAttachments Retrieve the attachments associated to the shipment
-
-		Retrieve the attachments associated to the shipment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shipmentId The resource's id
-		@return AttachmentsApiGETShipmentIdAttachmentsRequest
-	*/
-	GETShipmentIdAttachments(ctx context.Context, shipmentId string) AttachmentsApiGETShipmentIdAttachmentsRequest
-
-	// GETShipmentIdAttachmentsExecute executes the request
-	GETShipmentIdAttachmentsExecute(r AttachmentsApiGETShipmentIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShippingCategoryIdAttachments Retrieve the attachments associated to the shipping category
-
-		Retrieve the attachments associated to the shipping category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingCategoryId The resource's id
-		@return AttachmentsApiGETShippingCategoryIdAttachmentsRequest
-	*/
-	GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) AttachmentsApiGETShippingCategoryIdAttachmentsRequest
-
-	// GETShippingCategoryIdAttachmentsExecute executes the request
-	GETShippingCategoryIdAttachmentsExecute(r AttachmentsApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShippingMethodIdAttachments Retrieve the attachments associated to the shipping method
-
-		Retrieve the attachments associated to the shipping method
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingMethodId The resource's id
-		@return AttachmentsApiGETShippingMethodIdAttachmentsRequest
-	*/
-	GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) AttachmentsApiGETShippingMethodIdAttachmentsRequest
-
-	// GETShippingMethodIdAttachmentsExecute executes the request
-	GETShippingMethodIdAttachmentsExecute(r AttachmentsApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShippingMethodTierIdAttachments Retrieve the attachments associated to the shipping method tier
-
-		Retrieve the attachments associated to the shipping method tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingMethodTierId The resource's id
-		@return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
-	*/
-	GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
-
-	// GETShippingMethodTierIdAttachmentsExecute executes the request
-	GETShippingMethodTierIdAttachmentsExecute(r AttachmentsApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShippingWeightTierIdAttachments Retrieve the attachments associated to the shipping weight tier
-
-		Retrieve the attachments associated to the shipping weight tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingWeightTierId The resource's id
-		@return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
-	*/
-	GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
-
-	// GETShippingWeightTierIdAttachmentsExecute executes the request
-	GETShippingWeightTierIdAttachmentsExecute(r AttachmentsApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETShippingZoneIdAttachments Retrieve the attachments associated to the shipping zone
-
-		Retrieve the attachments associated to the shipping zone
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingZoneId The resource's id
-		@return AttachmentsApiGETShippingZoneIdAttachmentsRequest
-	*/
-	GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) AttachmentsApiGETShippingZoneIdAttachmentsRequest
-
-	// GETShippingZoneIdAttachmentsExecute executes the request
-	GETShippingZoneIdAttachmentsExecute(r AttachmentsApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETSkuIdAttachments Retrieve the attachments associated to the SKU
-
-		Retrieve the attachments associated to the SKU
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuId The resource's id
-		@return AttachmentsApiGETSkuIdAttachmentsRequest
-	*/
-	GETSkuIdAttachments(ctx context.Context, skuId string) AttachmentsApiGETSkuIdAttachmentsRequest
-
-	// GETSkuIdAttachmentsExecute executes the request
-	GETSkuIdAttachmentsExecute(r AttachmentsApiGETSkuIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETSkuOptionIdAttachments Retrieve the attachments associated to the SKU option
-
-		Retrieve the attachments associated to the SKU option
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuOptionId The resource's id
-		@return AttachmentsApiGETSkuOptionIdAttachmentsRequest
-	*/
-	GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) AttachmentsApiGETSkuOptionIdAttachmentsRequest
-
-	// GETSkuOptionIdAttachmentsExecute executes the request
-	GETSkuOptionIdAttachmentsExecute(r AttachmentsApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETStockItemIdAttachments Retrieve the attachments associated to the stock item
-
-		Retrieve the attachments associated to the stock item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockItemId The resource's id
-		@return AttachmentsApiGETStockItemIdAttachmentsRequest
-	*/
-	GETStockItemIdAttachments(ctx context.Context, stockItemId string) AttachmentsApiGETStockItemIdAttachmentsRequest
-
-	// GETStockItemIdAttachmentsExecute executes the request
-	GETStockItemIdAttachmentsExecute(r AttachmentsApiGETStockItemIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETStockLocationIdAttachments Retrieve the attachments associated to the stock location
-
-		Retrieve the attachments associated to the stock location
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockLocationId The resource's id
-		@return AttachmentsApiGETStockLocationIdAttachmentsRequest
-	*/
-	GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) AttachmentsApiGETStockLocationIdAttachmentsRequest
-
-	// GETStockLocationIdAttachmentsExecute executes the request
-	GETStockLocationIdAttachmentsExecute(r AttachmentsApiGETStockLocationIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETTaxCalculatorIdAttachments Retrieve the attachments associated to the tax calculator
-
-		Retrieve the attachments associated to the tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCalculatorId The resource's id
-		@return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
-	*/
-	GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
-
-	// GETTaxCalculatorIdAttachmentsExecute executes the request
-	GETTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETTaxCategoryIdAttachments Retrieve the attachments associated to the tax category
-
-		Retrieve the attachments associated to the tax category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCategoryId The resource's id
-		@return AttachmentsApiGETTaxCategoryIdAttachmentsRequest
-	*/
-	GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) AttachmentsApiGETTaxCategoryIdAttachmentsRequest
-
-	// GETTaxCategoryIdAttachmentsExecute executes the request
-	GETTaxCategoryIdAttachmentsExecute(r AttachmentsApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		GETTaxjarAccountIdAttachments Retrieve the attachments associated to the taxjar account
-
-		Retrieve the attachments associated to the taxjar account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxjarAccountId The resource's id
-		@return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
-	*/
-	GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
-
-	// GETTaxjarAccountIdAttachmentsExecute executes the request
-	GETTaxjarAccountIdAttachmentsExecute(r AttachmentsApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error)
-
-	/*
-		PATCHAttachmentsAttachmentId Update an attachment
-
-		Update an attachment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param attachmentId The resource's id
-		@return AttachmentsApiPATCHAttachmentsAttachmentIdRequest
-	*/
-	PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiPATCHAttachmentsAttachmentIdRequest
-
-	// PATCHAttachmentsAttachmentIdExecute executes the request
-	PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*http.Response, error)
-
-	/*
-		POSTAttachments Create an attachment
-
-		Create an attachment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AttachmentsApiPOSTAttachmentsRequest
-	*/
-	POSTAttachments(ctx context.Context) AttachmentsApiPOSTAttachmentsRequest
-
-	// POSTAttachmentsExecute executes the request
-	POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*http.Response, error)
-}
-
 // AttachmentsApiService AttachmentsApi service
 type AttachmentsApiService service
 
-type AttachmentsApiDELETEAttachmentsAttachmentIdRequest struct {
+type ApiDELETEAttachmentsAttachmentIdRequest struct {
 	ctx          context.Context
-	ApiService   AttachmentsApi
+	ApiService   *AttachmentsApiService
 	attachmentId string
 }
 
-func (r AttachmentsApiDELETEAttachmentsAttachmentIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEAttachmentsAttachmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAttachmentsAttachmentIdExecute(r)
 }
 
@@ -756,10 +40,10 @@ Delete an attachment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param attachmentId The resource's id
- @return AttachmentsApiDELETEAttachmentsAttachmentIdRequest
+ @return ApiDELETEAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiDELETEAttachmentsAttachmentIdRequest {
-	return AttachmentsApiDELETEAttachmentsAttachmentIdRequest{
+func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) ApiDELETEAttachmentsAttachmentIdRequest {
+	return ApiDELETEAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		attachmentId: attachmentId,
@@ -767,7 +51,7 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r AttachmentsApiDELETEAttachmentsAttachmentIdRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r ApiDELETEAttachmentsAttachmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -831,12 +115,12 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETAttachmentsRequest struct {
+type ApiGETAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 }
 
-func (r AttachmentsApiGETAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAttachmentsExecute(r)
 }
 
@@ -846,17 +130,17 @@ GETAttachments List all attachments
 List all attachments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AttachmentsApiGETAttachmentsRequest
+ @return ApiGETAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsApiGETAttachmentsRequest {
-	return AttachmentsApiGETAttachmentsRequest{
+func (a *AttachmentsApiService) GETAttachments(ctx context.Context) ApiGETAttachmentsRequest {
+	return ApiGETAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETAttachmentsExecute(r ApiGETAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -919,13 +203,13 @@ func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachm
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETAttachmentsAttachmentIdRequest struct {
+type ApiGETAttachmentsAttachmentIdRequest struct {
 	ctx          context.Context
-	ApiService   AttachmentsApi
+	ApiService   *AttachmentsApiService
 	attachmentId string
 }
 
-func (r AttachmentsApiGETAttachmentsAttachmentIdRequest) Execute() (*Attachment, *http.Response, error) {
+func (r ApiGETAttachmentsAttachmentIdRequest) Execute() (*Attachment, *http.Response, error) {
 	return r.ApiService.GETAttachmentsAttachmentIdExecute(r)
 }
 
@@ -936,10 +220,10 @@ Retrieve an attachment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param attachmentId The resource's id
- @return AttachmentsApiGETAttachmentsAttachmentIdRequest
+ @return ApiGETAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiGETAttachmentsAttachmentIdRequest {
-	return AttachmentsApiGETAttachmentsAttachmentIdRequest{
+func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) ApiGETAttachmentsAttachmentIdRequest {
+	return ApiGETAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		attachmentId: attachmentId,
@@ -948,7 +232,7 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, 
 
 // Execute executes the request
 //  @return Attachment
-func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*Attachment, *http.Response, error) {
+func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r ApiGETAttachmentsAttachmentIdRequest) (*Attachment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1022,13 +306,13 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETAvalaraAccountIdAttachmentsRequest struct {
+type ApiGETAvalaraAccountIdAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	avalaraAccountId string
 }
 
-func (r AttachmentsApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdAttachmentsExecute(r)
 }
 
@@ -1039,10 +323,10 @@ Retrieve the attachments associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
+ @return ApiGETAvalaraAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest {
-	return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdAttachmentsRequest {
+	return ApiGETAvalaraAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -1050,7 +334,7 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r AttachmentsApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r ApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1114,13 +398,13 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETBingGeocoderIdAttachmentsRequest struct {
+type ApiGETBingGeocoderIdAttachmentsRequest struct {
 	ctx            context.Context
-	ApiService     AttachmentsApi
+	ApiService     *AttachmentsApiService
 	bingGeocoderId string
 }
 
-func (r AttachmentsApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBingGeocoderIdAttachmentsExecute(r)
 }
 
@@ -1131,10 +415,10 @@ Retrieve the attachments associated to the bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return AttachmentsApiGETBingGeocoderIdAttachmentsRequest
+ @return ApiGETBingGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) AttachmentsApiGETBingGeocoderIdAttachmentsRequest {
-	return AttachmentsApiGETBingGeocoderIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAttachmentsRequest {
+	return ApiGETBingGeocoderIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -1142,7 +426,7 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r AttachmentsApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r ApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1206,13 +490,13 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETBundleIdAttachmentsRequest struct {
+type ApiGETBundleIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	bundleId   string
 }
 
-func (r AttachmentsApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdAttachmentsExecute(r)
 }
 
@@ -1223,10 +507,10 @@ Retrieve the attachments associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return AttachmentsApiGETBundleIdAttachmentsRequest
+ @return ApiGETBundleIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) AttachmentsApiGETBundleIdAttachmentsRequest {
-	return AttachmentsApiGETBundleIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) ApiGETBundleIdAttachmentsRequest {
+	return ApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -1234,7 +518,7 @@ func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bund
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r ApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1298,13 +582,13 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETCarrierAccountIdAttachmentsRequest struct {
+type ApiGETCarrierAccountIdAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	carrierAccountId string
 }
 
-func (r AttachmentsApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCarrierAccountIdAttachmentsExecute(r)
 }
 
@@ -1315,10 +599,10 @@ Retrieve the attachments associated to the carrier account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param carrierAccountId The resource's id
- @return AttachmentsApiGETCarrierAccountIdAttachmentsRequest
+ @return ApiGETCarrierAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) AttachmentsApiGETCarrierAccountIdAttachmentsRequest {
-	return AttachmentsApiGETCarrierAccountIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdAttachmentsRequest {
+	return ApiGETCarrierAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
@@ -1326,7 +610,7 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r AttachmentsApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r ApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1390,13 +674,13 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETCouponRecipientIdAttachmentsRequest struct {
+type ApiGETCouponRecipientIdAttachmentsRequest struct {
 	ctx               context.Context
-	ApiService        AttachmentsApi
+	ApiService        *AttachmentsApiService
 	couponRecipientId string
 }
 
-func (r AttachmentsApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponRecipientIdAttachmentsExecute(r)
 }
 
@@ -1407,10 +691,10 @@ Retrieve the attachments associated to the coupon recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponRecipientId The resource's id
- @return AttachmentsApiGETCouponRecipientIdAttachmentsRequest
+ @return ApiGETCouponRecipientIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) AttachmentsApiGETCouponRecipientIdAttachmentsRequest {
-	return AttachmentsApiGETCouponRecipientIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) ApiGETCouponRecipientIdAttachmentsRequest {
+	return ApiGETCouponRecipientIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
@@ -1418,7 +702,7 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r AttachmentsApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r ApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1482,13 +766,13 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETCustomerGroupIdAttachmentsRequest struct {
+type ApiGETCustomerGroupIdAttachmentsRequest struct {
 	ctx             context.Context
-	ApiService      AttachmentsApi
+	ApiService      *AttachmentsApiService
 	customerGroupId string
 }
 
-func (r AttachmentsApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdAttachmentsExecute(r)
 }
 
@@ -1499,10 +783,10 @@ Retrieve the attachments associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return AttachmentsApiGETCustomerGroupIdAttachmentsRequest
+ @return ApiGETCustomerGroupIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) AttachmentsApiGETCustomerGroupIdAttachmentsRequest {
-	return AttachmentsApiGETCustomerGroupIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdAttachmentsRequest {
+	return ApiGETCustomerGroupIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -1510,7 +794,7 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r AttachmentsApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r ApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1574,13 +858,13 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETCustomerIdAttachmentsRequest struct {
+type ApiGETCustomerIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	customerId string
 }
 
-func (r AttachmentsApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdAttachmentsExecute(r)
 }
 
@@ -1591,10 +875,10 @@ Retrieve the attachments associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return AttachmentsApiGETCustomerIdAttachmentsRequest
+ @return ApiGETCustomerIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) AttachmentsApiGETCustomerIdAttachmentsRequest {
-	return AttachmentsApiGETCustomerIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) ApiGETCustomerIdAttachmentsRequest {
+	return ApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -1602,7 +886,7 @@ func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, cu
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r ApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1666,13 +950,13 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
+type ApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
 	ctx                context.Context
-	ApiService         AttachmentsApi
+	ApiService         *AttachmentsApiService
 	deliveryLeadTimeId string
 }
 
-func (r AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimeIdAttachmentsExecute(r)
 }
 
@@ -1683,10 +967,10 @@ Retrieve the attachments associated to the delivery lead time
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deliveryLeadTimeId The resource's id
- @return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
+ @return ApiGETDeliveryLeadTimeIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest {
-	return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdAttachmentsRequest {
+	return ApiGETDeliveryLeadTimeIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
@@ -1694,7 +978,7 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r ApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1758,13 +1042,13 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETExternalPromotionIdAttachmentsRequest struct {
+type ApiGETExternalPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
-	ApiService          AttachmentsApi
+	ApiService          *AttachmentsApiService
 	externalPromotionId string
 }
 
-func (r AttachmentsApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdAttachmentsExecute(r)
 }
 
@@ -1775,10 +1059,10 @@ Retrieve the attachments associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return AttachmentsApiGETExternalPromotionIdAttachmentsRequest
+ @return ApiGETExternalPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) AttachmentsApiGETExternalPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETExternalPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdAttachmentsRequest {
+	return ApiGETExternalPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -1786,7 +1070,7 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r AttachmentsApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r ApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1850,13 +1134,13 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
+type ApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
 	ctx                     context.Context
-	ApiService              AttachmentsApi
+	ApiService              *AttachmentsApiService
 	externalTaxCalculatorId string
 }
 
-func (r AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -1867,10 +1151,10 @@ Retrieve the attachments associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
+ @return ApiGETExternalTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest {
-	return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdAttachmentsRequest {
+	return ApiGETExternalTaxCalculatorIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -1878,7 +1162,7 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r ApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1942,13 +1226,13 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest struct {
+type ApiGETFixedAmountPromotionIdAttachmentsRequest struct {
 	ctx                    context.Context
-	ApiService             AttachmentsApi
+	ApiService             *AttachmentsApiService
 	fixedAmountPromotionId string
 }
 
-func (r AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdAttachmentsExecute(r)
 }
 
@@ -1959,10 +1243,10 @@ Retrieve the attachments associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
+ @return ApiGETFixedAmountPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdAttachmentsRequest {
+	return ApiGETFixedAmountPromotionIdAttachmentsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -1970,7 +1254,7 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r ApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2034,13 +1318,13 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest struct {
+type ApiGETFixedPricePromotionIdAttachmentsRequest struct {
 	ctx                   context.Context
-	ApiService            AttachmentsApi
+	ApiService            *AttachmentsApiService
 	fixedPricePromotionId string
 }
 
-func (r AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdAttachmentsExecute(r)
 }
 
@@ -2051,10 +1335,10 @@ Retrieve the attachments associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
+ @return ApiGETFixedPricePromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest {
-	return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdAttachmentsRequest {
+	return ApiGETFixedPricePromotionIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -2062,7 +1346,7 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r ApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2126,13 +1410,13 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest struct {
+type ApiGETFreeGiftPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
-	ApiService          AttachmentsApi
+	ApiService          *AttachmentsApiService
 	freeGiftPromotionId string
 }
 
-func (r AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdAttachmentsExecute(r)
 }
 
@@ -2143,10 +1427,10 @@ Retrieve the attachments associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
+ @return ApiGETFreeGiftPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdAttachmentsRequest {
+	return ApiGETFreeGiftPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -2154,7 +1438,7 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r ApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2218,13 +1502,13 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest struct {
+type ApiGETFreeShippingPromotionIdAttachmentsRequest struct {
 	ctx                     context.Context
-	ApiService              AttachmentsApi
+	ApiService              *AttachmentsApiService
 	freeShippingPromotionId string
 }
 
-func (r AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdAttachmentsExecute(r)
 }
 
@@ -2235,10 +1519,10 @@ Retrieve the attachments associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
+ @return ApiGETFreeShippingPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdAttachmentsRequest {
+	return ApiGETFreeShippingPromotionIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -2246,7 +1530,7 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r ApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2310,13 +1594,13 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETGeocoderIdAttachmentsRequest struct {
+type ApiGETGeocoderIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	geocoderId string
 }
 
-func (r AttachmentsApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGeocoderIdAttachmentsExecute(r)
 }
 
@@ -2327,10 +1611,10 @@ Retrieve the attachments associated to the geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param geocoderId The resource's id
- @return AttachmentsApiGETGeocoderIdAttachmentsRequest
+ @return ApiGETGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) AttachmentsApiGETGeocoderIdAttachmentsRequest {
-	return AttachmentsApiGETGeocoderIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) ApiGETGeocoderIdAttachmentsRequest {
+	return ApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		geocoderId: geocoderId,
@@ -2338,7 +1622,7 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, ge
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r ApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2402,13 +1686,13 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETGiftCardIdAttachmentsRequest struct {
+type ApiGETGiftCardIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	giftCardId string
 }
 
-func (r AttachmentsApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdAttachmentsExecute(r)
 }
 
@@ -2419,10 +1703,10 @@ Retrieve the attachments associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return AttachmentsApiGETGiftCardIdAttachmentsRequest
+ @return ApiGETGiftCardIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) AttachmentsApiGETGiftCardIdAttachmentsRequest {
-	return AttachmentsApiGETGiftCardIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) ApiGETGiftCardIdAttachmentsRequest {
+	return ApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -2430,7 +1714,7 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, gi
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r ApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2494,13 +1778,13 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest struct {
+type ApiGETGiftCardRecipientIdAttachmentsRequest struct {
 	ctx                 context.Context
-	ApiService          AttachmentsApi
+	ApiService          *AttachmentsApiService
 	giftCardRecipientId string
 }
 
-func (r AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientIdAttachmentsExecute(r)
 }
 
@@ -2511,10 +1795,10 @@ Retrieve the attachments associated to the gift card recipient
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardRecipientId The resource's id
- @return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
+ @return ApiGETGiftCardRecipientIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest {
-	return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) ApiGETGiftCardRecipientIdAttachmentsRequest {
+	return ApiGETGiftCardRecipientIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
@@ -2522,7 +1806,7 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Co
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r ApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2586,13 +1870,13 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest struct {
+type ApiGETGoogleGeocoderIdAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	googleGeocoderId string
 }
 
-func (r AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGoogleGeocoderIdAttachmentsExecute(r)
 }
 
@@ -2603,10 +1887,10 @@ Retrieve the attachments associated to the google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
+ @return ApiGETGoogleGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest {
-	return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAttachmentsRequest {
+	return ApiGETGoogleGeocoderIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -2614,7 +1898,7 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r ApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2678,13 +1962,13 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETInventoryModelIdAttachmentsRequest struct {
+type ApiGETInventoryModelIdAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	inventoryModelId string
 }
 
-func (r AttachmentsApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryModelIdAttachmentsExecute(r)
 }
 
@@ -2695,10 +1979,10 @@ Retrieve the attachments associated to the inventory model
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryModelId The resource's id
- @return AttachmentsApiGETInventoryModelIdAttachmentsRequest
+ @return ApiGETInventoryModelIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) AttachmentsApiGETInventoryModelIdAttachmentsRequest {
-	return AttachmentsApiGETInventoryModelIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) ApiGETInventoryModelIdAttachmentsRequest {
+	return ApiGETInventoryModelIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
@@ -2706,7 +1990,7 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r AttachmentsApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r ApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2770,13 +2054,13 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest struct {
+type ApiGETManualTaxCalculatorIdAttachmentsRequest struct {
 	ctx                   context.Context
-	ApiService            AttachmentsApi
+	ApiService            *AttachmentsApiService
 	manualTaxCalculatorId string
 }
 
-func (r AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -2787,10 +2071,10 @@ Retrieve the attachments associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
+ @return ApiGETManualTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest {
-	return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdAttachmentsRequest {
+	return ApiGETManualTaxCalculatorIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -2798,7 +2082,7 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r ApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2862,13 +2146,13 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETMarketIdAttachmentsRequest struct {
+type ApiGETMarketIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	marketId   string
 }
 
-func (r AttachmentsApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdAttachmentsExecute(r)
 }
 
@@ -2879,10 +2163,10 @@ Retrieve the attachments associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return AttachmentsApiGETMarketIdAttachmentsRequest
+ @return ApiGETMarketIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId string) AttachmentsApiGETMarketIdAttachmentsRequest {
-	return AttachmentsApiGETMarketIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId string) ApiGETMarketIdAttachmentsRequest {
+	return ApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -2890,7 +2174,7 @@ func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, mark
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r ApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2954,13 +2238,13 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETMerchantIdAttachmentsRequest struct {
+type ApiGETMerchantIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	merchantId string
 }
 
-func (r AttachmentsApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMerchantIdAttachmentsExecute(r)
 }
 
@@ -2971,10 +2255,10 @@ Retrieve the attachments associated to the merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return AttachmentsApiGETMerchantIdAttachmentsRequest
+ @return ApiGETMerchantIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) AttachmentsApiGETMerchantIdAttachmentsRequest {
-	return AttachmentsApiGETMerchantIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) ApiGETMerchantIdAttachmentsRequest {
+	return ApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -2982,7 +2266,7 @@ func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, me
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r ApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3046,13 +2330,13 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETOrderIdAttachmentsRequest struct {
+type ApiGETOrderIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	orderId    string
 }
 
-func (r AttachmentsApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAttachmentsExecute(r)
 }
 
@@ -3063,10 +2347,10 @@ Retrieve the attachments associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return AttachmentsApiGETOrderIdAttachmentsRequest
+ @return ApiGETOrderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId string) AttachmentsApiGETOrderIdAttachmentsRequest {
-	return AttachmentsApiGETOrderIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId string) ApiGETOrderIdAttachmentsRequest {
+	return ApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -3074,7 +2358,7 @@ func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, order
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r ApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3138,13 +2422,13 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPackageIdAttachmentsRequest struct {
+type ApiGETPackageIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	packageId  string
 }
 
-func (r AttachmentsApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdAttachmentsExecute(r)
 }
 
@@ -3155,10 +2439,10 @@ Retrieve the attachments associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return AttachmentsApiGETPackageIdAttachmentsRequest
+ @return ApiGETPackageIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId string) AttachmentsApiGETPackageIdAttachmentsRequest {
-	return AttachmentsApiGETPackageIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId string) ApiGETPackageIdAttachmentsRequest {
+	return ApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -3166,7 +2450,7 @@ func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, pac
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r ApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3230,13 +2514,13 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETParcelIdAttachmentsRequest struct {
+type ApiGETParcelIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	parcelId   string
 }
 
-func (r AttachmentsApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdAttachmentsExecute(r)
 }
 
@@ -3247,10 +2531,10 @@ Retrieve the attachments associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return AttachmentsApiGETParcelIdAttachmentsRequest
+ @return ApiGETParcelIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) AttachmentsApiGETParcelIdAttachmentsRequest {
-	return AttachmentsApiGETParcelIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) ApiGETParcelIdAttachmentsRequest {
+	return ApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -3258,7 +2542,7 @@ func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parc
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r ApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3322,13 +2606,13 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPaymentMethodIdAttachmentsRequest struct {
+type ApiGETPaymentMethodIdAttachmentsRequest struct {
 	ctx             context.Context
-	ApiService      AttachmentsApi
+	ApiService      *AttachmentsApiService
 	paymentMethodId string
 }
 
-func (r AttachmentsApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdAttachmentsExecute(r)
 }
 
@@ -3339,10 +2623,10 @@ Retrieve the attachments associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return AttachmentsApiGETPaymentMethodIdAttachmentsRequest
+ @return ApiGETPaymentMethodIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) AttachmentsApiGETPaymentMethodIdAttachmentsRequest {
-	return AttachmentsApiGETPaymentMethodIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdAttachmentsRequest {
+	return ApiGETPaymentMethodIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -3350,7 +2634,7 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r AttachmentsApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r ApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3414,13 +2698,13 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
+type ApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
 	ctx                           context.Context
-	ApiService                    AttachmentsApi
+	ApiService                    *AttachmentsApiService
 	percentageDiscountPromotionId string
 }
 
-func (r AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdAttachmentsExecute(r)
 }
 
@@ -3431,10 +2715,10 @@ Retrieve the attachments associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
+ @return ApiGETPercentageDiscountPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdAttachmentsRequest {
+	return ApiGETPercentageDiscountPromotionIdAttachmentsRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -3442,7 +2726,7 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx 
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r ApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3506,13 +2790,13 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPriceIdAttachmentsRequest struct {
+type ApiGETPriceIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	priceId    string
 }
 
-func (r AttachmentsApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdAttachmentsExecute(r)
 }
 
@@ -3523,10 +2807,10 @@ Retrieve the attachments associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return AttachmentsApiGETPriceIdAttachmentsRequest
+ @return ApiGETPriceIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId string) AttachmentsApiGETPriceIdAttachmentsRequest {
-	return AttachmentsApiGETPriceIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId string) ApiGETPriceIdAttachmentsRequest {
+	return ApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -3534,7 +2818,7 @@ func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, price
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r ApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3598,13 +2882,13 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPriceListIdAttachmentsRequest struct {
+type ApiGETPriceListIdAttachmentsRequest struct {
 	ctx         context.Context
-	ApiService  AttachmentsApi
+	ApiService  *AttachmentsApiService
 	priceListId string
 }
 
-func (r AttachmentsApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceListIdAttachmentsExecute(r)
 }
 
@@ -3615,10 +2899,10 @@ Retrieve the attachments associated to the price list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceListId The resource's id
- @return AttachmentsApiGETPriceListIdAttachmentsRequest
+ @return ApiGETPriceListIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) AttachmentsApiGETPriceListIdAttachmentsRequest {
-	return AttachmentsApiGETPriceListIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) ApiGETPriceListIdAttachmentsRequest {
+	return ApiGETPriceListIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceListId: priceListId,
@@ -3626,7 +2910,7 @@ func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, p
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r ApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3690,13 +2974,13 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPriceTierIdAttachmentsRequest struct {
+type ApiGETPriceTierIdAttachmentsRequest struct {
 	ctx         context.Context
-	ApiService  AttachmentsApi
+	ApiService  *AttachmentsApiService
 	priceTierId string
 }
 
-func (r AttachmentsApiGETPriceTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceTierIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceTierIdAttachmentsExecute(r)
 }
 
@@ -3707,10 +2991,10 @@ Retrieve the attachments associated to the price tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceTierId The resource's id
- @return AttachmentsApiGETPriceTierIdAttachmentsRequest
+ @return ApiGETPriceTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) AttachmentsApiGETPriceTierIdAttachmentsRequest {
-	return AttachmentsApiGETPriceTierIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) ApiGETPriceTierIdAttachmentsRequest {
+	return ApiGETPriceTierIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceTierId: priceTierId,
@@ -3718,7 +3002,7 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, p
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsApiGETPriceTierIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r ApiGETPriceTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3782,13 +3066,13 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest struct {
+type ApiGETPriceVolumeTierIdAttachmentsRequest struct {
 	ctx               context.Context
-	ApiService        AttachmentsApi
+	ApiService        *AttachmentsApiService
 	priceVolumeTierId string
 }
 
-func (r AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPriceVolumeTierIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceVolumeTierIdAttachmentsExecute(r)
 }
 
@@ -3799,10 +3083,10 @@ Retrieve the attachments associated to the price volume tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceVolumeTierId The resource's id
- @return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
+ @return ApiGETPriceVolumeTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest {
-	return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) ApiGETPriceVolumeTierIdAttachmentsRequest {
+	return ApiGETPriceVolumeTierIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
@@ -3810,7 +3094,7 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r ApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3874,13 +3158,13 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETPromotionIdAttachmentsRequest struct {
+type ApiGETPromotionIdAttachmentsRequest struct {
 	ctx         context.Context
-	ApiService  AttachmentsApi
+	ApiService  *AttachmentsApiService
 	promotionId string
 }
 
-func (r AttachmentsApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdAttachmentsExecute(r)
 }
 
@@ -3891,10 +3175,10 @@ Retrieve the attachments associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return AttachmentsApiGETPromotionIdAttachmentsRequest
+ @return ApiGETPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) AttachmentsApiGETPromotionIdAttachmentsRequest {
-	return AttachmentsApiGETPromotionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) ApiGETPromotionIdAttachmentsRequest {
+	return ApiGETPromotionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -3902,7 +3186,7 @@ func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, p
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r ApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -3966,13 +3250,13 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETReturnIdAttachmentsRequest struct {
+type ApiGETReturnIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	returnId   string
 }
 
-func (r AttachmentsApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdAttachmentsExecute(r)
 }
 
@@ -3983,10 +3267,10 @@ Retrieve the attachments associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return AttachmentsApiGETReturnIdAttachmentsRequest
+ @return ApiGETReturnIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId string) AttachmentsApiGETReturnIdAttachmentsRequest {
-	return AttachmentsApiGETReturnIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId string) ApiGETReturnIdAttachmentsRequest {
+	return ApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -3994,7 +3278,7 @@ func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, retu
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r ApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4058,13 +3342,13 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShipmentIdAttachmentsRequest struct {
+type ApiGETShipmentIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	shipmentId string
 }
 
-func (r AttachmentsApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdAttachmentsExecute(r)
 }
 
@@ -4075,10 +3359,10 @@ Retrieve the attachments associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return AttachmentsApiGETShipmentIdAttachmentsRequest
+ @return ApiGETShipmentIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) AttachmentsApiGETShipmentIdAttachmentsRequest {
-	return AttachmentsApiGETShipmentIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) ApiGETShipmentIdAttachmentsRequest {
+	return ApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -4086,7 +3370,7 @@ func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r ApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4150,13 +3434,13 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShippingCategoryIdAttachmentsRequest struct {
+type ApiGETShippingCategoryIdAttachmentsRequest struct {
 	ctx                context.Context
-	ApiService         AttachmentsApi
+	ApiService         *AttachmentsApiService
 	shippingCategoryId string
 }
 
-func (r AttachmentsApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingCategoryIdAttachmentsExecute(r)
 }
 
@@ -4167,10 +3451,10 @@ Retrieve the attachments associated to the shipping category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingCategoryId The resource's id
- @return AttachmentsApiGETShippingCategoryIdAttachmentsRequest
+ @return ApiGETShippingCategoryIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) AttachmentsApiGETShippingCategoryIdAttachmentsRequest {
-	return AttachmentsApiGETShippingCategoryIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) ApiGETShippingCategoryIdAttachmentsRequest {
+	return ApiGETShippingCategoryIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
@@ -4178,7 +3462,7 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r AttachmentsApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r ApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4242,13 +3526,13 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShippingMethodIdAttachmentsRequest struct {
+type ApiGETShippingMethodIdAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	shippingMethodId string
 }
 
-func (r AttachmentsApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdAttachmentsExecute(r)
 }
 
@@ -4259,10 +3543,10 @@ Retrieve the attachments associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return AttachmentsApiGETShippingMethodIdAttachmentsRequest
+ @return ApiGETShippingMethodIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) AttachmentsApiGETShippingMethodIdAttachmentsRequest {
-	return AttachmentsApiGETShippingMethodIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdAttachmentsRequest {
+	return ApiGETShippingMethodIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -4270,7 +3554,7 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r AttachmentsApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r ApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4334,13 +3618,13 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShippingMethodTierIdAttachmentsRequest struct {
+type ApiGETShippingMethodTierIdAttachmentsRequest struct {
 	ctx                  context.Context
-	ApiService           AttachmentsApi
+	ApiService           *AttachmentsApiService
 	shippingMethodTierId string
 }
 
-func (r AttachmentsApiGETShippingMethodTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingMethodTierIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodTierIdAttachmentsExecute(r)
 }
 
@@ -4351,10 +3635,10 @@ Retrieve the attachments associated to the shipping method tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodTierId The resource's id
- @return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
+ @return ApiGETShippingMethodTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest {
-	return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) ApiGETShippingMethodTierIdAttachmentsRequest {
+	return ApiGETShippingMethodTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingMethodTierId: shippingMethodTierId,
@@ -4362,7 +3646,7 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.C
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r AttachmentsApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r ApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4426,13 +3710,13 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShippingWeightTierIdAttachmentsRequest struct {
+type ApiGETShippingWeightTierIdAttachmentsRequest struct {
 	ctx                  context.Context
-	ApiService           AttachmentsApi
+	ApiService           *AttachmentsApiService
 	shippingWeightTierId string
 }
 
-func (r AttachmentsApiGETShippingWeightTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingWeightTierIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingWeightTierIdAttachmentsExecute(r)
 }
 
@@ -4443,10 +3727,10 @@ Retrieve the attachments associated to the shipping weight tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingWeightTierId The resource's id
- @return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
+ @return ApiGETShippingWeightTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest {
-	return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) ApiGETShippingWeightTierIdAttachmentsRequest {
+	return ApiGETShippingWeightTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
@@ -4454,7 +3738,7 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.C
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r AttachmentsApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r ApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4518,13 +3802,13 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETShippingZoneIdAttachmentsRequest struct {
+type ApiGETShippingZoneIdAttachmentsRequest struct {
 	ctx            context.Context
-	ApiService     AttachmentsApi
+	ApiService     *AttachmentsApiService
 	shippingZoneId string
 }
 
-func (r AttachmentsApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingZoneIdAttachmentsExecute(r)
 }
 
@@ -4535,10 +3819,10 @@ Retrieve the attachments associated to the shipping zone
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingZoneId The resource's id
- @return AttachmentsApiGETShippingZoneIdAttachmentsRequest
+ @return ApiGETShippingZoneIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) AttachmentsApiGETShippingZoneIdAttachmentsRequest {
-	return AttachmentsApiGETShippingZoneIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) ApiGETShippingZoneIdAttachmentsRequest {
+	return ApiGETShippingZoneIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
@@ -4546,7 +3830,7 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r AttachmentsApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r ApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4610,13 +3894,13 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETSkuIdAttachmentsRequest struct {
+type ApiGETSkuIdAttachmentsRequest struct {
 	ctx        context.Context
-	ApiService AttachmentsApi
+	ApiService *AttachmentsApiService
 	skuId      string
 }
 
-func (r AttachmentsApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdAttachmentsExecute(r)
 }
 
@@ -4627,10 +3911,10 @@ Retrieve the attachments associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return AttachmentsApiGETSkuIdAttachmentsRequest
+ @return ApiGETSkuIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId string) AttachmentsApiGETSkuIdAttachmentsRequest {
-	return AttachmentsApiGETSkuIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId string) ApiGETSkuIdAttachmentsRequest {
+	return ApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -4638,7 +3922,7 @@ func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId s
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r ApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4702,13 +3986,13 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETSkuOptionIdAttachmentsRequest struct {
+type ApiGETSkuOptionIdAttachmentsRequest struct {
 	ctx         context.Context
-	ApiService  AttachmentsApi
+	ApiService  *AttachmentsApiService
 	skuOptionId string
 }
 
-func (r AttachmentsApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuOptionIdAttachmentsExecute(r)
 }
 
@@ -4719,10 +4003,10 @@ Retrieve the attachments associated to the SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return AttachmentsApiGETSkuOptionIdAttachmentsRequest
+ @return ApiGETSkuOptionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) AttachmentsApiGETSkuOptionIdAttachmentsRequest {
-	return AttachmentsApiGETSkuOptionIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdAttachmentsRequest {
+	return ApiGETSkuOptionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -4730,7 +4014,7 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r ApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4794,13 +4078,13 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETStockItemIdAttachmentsRequest struct {
+type ApiGETStockItemIdAttachmentsRequest struct {
 	ctx         context.Context
-	ApiService  AttachmentsApi
+	ApiService  *AttachmentsApiService
 	stockItemId string
 }
 
-func (r AttachmentsApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdAttachmentsExecute(r)
 }
 
@@ -4811,10 +4095,10 @@ Retrieve the attachments associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return AttachmentsApiGETStockItemIdAttachmentsRequest
+ @return ApiGETStockItemIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) AttachmentsApiGETStockItemIdAttachmentsRequest {
-	return AttachmentsApiGETStockItemIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) ApiGETStockItemIdAttachmentsRequest {
+	return ApiGETStockItemIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -4822,7 +4106,7 @@ func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r ApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4886,13 +4170,13 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETStockLocationIdAttachmentsRequest struct {
+type ApiGETStockLocationIdAttachmentsRequest struct {
 	ctx             context.Context
-	ApiService      AttachmentsApi
+	ApiService      *AttachmentsApiService
 	stockLocationId string
 }
 
-func (r AttachmentsApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdAttachmentsExecute(r)
 }
 
@@ -4903,10 +4187,10 @@ Retrieve the attachments associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return AttachmentsApiGETStockLocationIdAttachmentsRequest
+ @return ApiGETStockLocationIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) AttachmentsApiGETStockLocationIdAttachmentsRequest {
-	return AttachmentsApiGETStockLocationIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAttachmentsRequest {
+	return ApiGETStockLocationIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -4914,7 +4198,7 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r AttachmentsApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r ApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -4978,13 +4262,13 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETTaxCalculatorIdAttachmentsRequest struct {
+type ApiGETTaxCalculatorIdAttachmentsRequest struct {
 	ctx             context.Context
-	ApiService      AttachmentsApi
+	ApiService      *AttachmentsApiService
 	taxCalculatorId string
 }
 
-func (r AttachmentsApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdAttachmentsExecute(r)
 }
 
@@ -4995,10 +4279,10 @@ Retrieve the attachments associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
+ @return ApiGETTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest {
-	return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdAttachmentsRequest {
+	return ApiGETTaxCalculatorIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -5006,7 +4290,7 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r ApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5070,13 +4354,13 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETTaxCategoryIdAttachmentsRequest struct {
+type ApiGETTaxCategoryIdAttachmentsRequest struct {
 	ctx           context.Context
-	ApiService    AttachmentsApi
+	ApiService    *AttachmentsApiService
 	taxCategoryId string
 }
 
-func (r AttachmentsApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCategoryIdAttachmentsExecute(r)
 }
 
@@ -5087,10 +4371,10 @@ Retrieve the attachments associated to the tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return AttachmentsApiGETTaxCategoryIdAttachmentsRequest
+ @return ApiGETTaxCategoryIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) AttachmentsApiGETTaxCategoryIdAttachmentsRequest {
-	return AttachmentsApiGETTaxCategoryIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) ApiGETTaxCategoryIdAttachmentsRequest {
+	return ApiGETTaxCategoryIdAttachmentsRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -5098,7 +4382,7 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r AttachmentsApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r ApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5162,13 +4446,13 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiGETTaxjarAccountIdAttachmentsRequest struct {
+type ApiGETTaxjarAccountIdAttachmentsRequest struct {
 	ctx             context.Context
-	ApiService      AttachmentsApi
+	ApiService      *AttachmentsApiService
 	taxjarAccountId string
 }
 
-func (r AttachmentsApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdAttachmentsExecute(r)
 }
 
@@ -5179,10 +4463,10 @@ Retrieve the attachments associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
+ @return ApiGETTaxjarAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest {
-	return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest{
+func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdAttachmentsRequest {
+	return ApiGETTaxjarAccountIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -5190,7 +4474,7 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r AttachmentsApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r ApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -5254,19 +4538,19 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiPATCHAttachmentsAttachmentIdRequest struct {
+type ApiPATCHAttachmentsAttachmentIdRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
-	attachmentId     string
+	ApiService       *AttachmentsApiService
 	attachmentUpdate *AttachmentUpdate
+	attachmentId     string
 }
 
-func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) AttachmentUpdate(attachmentUpdate AttachmentUpdate) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
+func (r ApiPATCHAttachmentsAttachmentIdRequest) AttachmentUpdate(attachmentUpdate AttachmentUpdate) ApiPATCHAttachmentsAttachmentIdRequest {
 	r.attachmentUpdate = &attachmentUpdate
 	return r
 }
 
-func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHAttachmentsAttachmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAttachmentsAttachmentIdExecute(r)
 }
 
@@ -5277,10 +4561,10 @@ Update an attachment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param attachmentId The resource's id
- @return AttachmentsApiPATCHAttachmentsAttachmentIdRequest
+ @return ApiPATCHAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
-	return AttachmentsApiPATCHAttachmentsAttachmentIdRequest{
+func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) ApiPATCHAttachmentsAttachmentIdRequest {
+	return ApiPATCHAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		attachmentId: attachmentId,
@@ -5288,7 +4572,7 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r ApiPATCHAttachmentsAttachmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -5357,18 +4641,18 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 	return localVarHTTPResponse, nil
 }
 
-type AttachmentsApiPOSTAttachmentsRequest struct {
+type ApiPOSTAttachmentsRequest struct {
 	ctx              context.Context
-	ApiService       AttachmentsApi
+	ApiService       *AttachmentsApiService
 	attachmentCreate *AttachmentCreate
 }
 
-func (r AttachmentsApiPOSTAttachmentsRequest) AttachmentCreate(attachmentCreate AttachmentCreate) AttachmentsApiPOSTAttachmentsRequest {
+func (r ApiPOSTAttachmentsRequest) AttachmentCreate(attachmentCreate AttachmentCreate) ApiPOSTAttachmentsRequest {
 	r.attachmentCreate = &attachmentCreate
 	return r
 }
 
-func (r AttachmentsApiPOSTAttachmentsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTAttachmentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTAttachmentsExecute(r)
 }
 
@@ -5378,17 +4662,17 @@ POSTAttachments Create an attachment
 Create an attachment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AttachmentsApiPOSTAttachmentsRequest
+ @return ApiPOSTAttachmentsRequest
 */
-func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) AttachmentsApiPOSTAttachmentsRequest {
-	return AttachmentsApiPOSTAttachmentsRequest{
+func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) ApiPOSTAttachmentsRequest {
+	return ApiPOSTAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*http.Response, error) {
+func (a *AttachmentsApiService) POSTAttachmentsExecute(r ApiPOSTAttachmentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

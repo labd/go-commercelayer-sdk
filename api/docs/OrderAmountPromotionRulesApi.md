@@ -713,8 +713,8 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleId := "orderAmountPromotionRuleId_example" // string | The resource's id
     orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("order_amount_promotion_rules", "XGZwpOSrWL", *openapiclient.NewOrderAmountPromotionRuleCreateDataAttributes())) // OrderAmountPromotionRuleUpdate | 
+    orderAmountPromotionRuleId := "orderAmountPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -741,8 +741,8 @@ Other parameters are passed through a pointer to a apiPATCHOrderAmountPromotionR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **orderAmountPromotionRuleUpdate** | [**OrderAmountPromotionRuleUpdate**](OrderAmountPromotionRuleUpdate.md) |  | 
+
 
 ### Return type
 

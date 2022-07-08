@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
     braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("braintree_payments", "XGZwpOSrWL", *openapiclient.NewBraintreePaymentUpdateDataAttributes())) // BraintreePaymentUpdate | 
+    braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHBraintreePaymentsBrai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **braintreePaymentUpdate** | [**BraintreePaymentUpdate**](BraintreePaymentUpdate.md) |  | 
+
 
 ### Return type
 

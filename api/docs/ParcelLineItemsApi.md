@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
     parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("parcel_line_items", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // ParcelLineItemUpdate | 
+    parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHParcelLineItemsParcel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **parcelLineItemUpdate** | [**ParcelLineItemUpdate**](ParcelLineItemUpdate.md) |  | 
+
 
 ### Return type
 

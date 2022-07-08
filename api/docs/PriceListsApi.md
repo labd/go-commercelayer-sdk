@@ -368,8 +368,8 @@ import (
 )
 
 func main() {
-    priceListId := "priceListId_example" // string | The resource's id
     priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("price_lists", "XGZwpOSrWL", *openapiclient.NewPriceListUpdateDataAttributes())) // PriceListUpdate | 
+    priceListId := "priceListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,8 +396,8 @@ Other parameters are passed through a pointer to a apiPATCHPriceListsPriceListId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **priceListUpdate** | [**PriceListUpdate**](PriceListUpdate.md) |  | 
+
 
 ### Return type
 

@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
     adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("adyen_gateways", "XGZwpOSrWL", *openapiclient.NewAdyenGatewayUpdateDataAttributes())) // AdyenGatewayUpdate | 
+    adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHAdyenGatewaysAdyenGat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **adyenGatewayUpdate** | [**AdyenGatewayUpdate**](AdyenGatewayUpdate.md) |  | 
+
 
 ### Return type
 

@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
     freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData("free_shipping_promotions", "XGZwpOSrWL", *openapiclient.NewFreeShippingPromotionUpdateDataAttributes())) // FreeShippingPromotionUpdate | 
+    freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHFreeShippingPromotion
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **freeShippingPromotionUpdate** | [**FreeShippingPromotionUpdate**](FreeShippingPromotionUpdate.md) |  | 
+
 
 ### Return type
 

@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type CouponsApi interface {
-
-	/*
-		DELETECouponsCouponId Delete a coupon
-
-		Delete a coupon
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param couponId The resource's id
-		@return CouponsApiDELETECouponsCouponIdRequest
-	*/
-	DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest
-
-	// DELETECouponsCouponIdExecute executes the request
-	DELETECouponsCouponIdExecute(r CouponsApiDELETECouponsCouponIdRequest) (*http.Response, error)
-
-	/*
-		GETCouponCodesPromotionRuleIdCoupons Retrieve the coupons associated to the coupon codes promotion rule
-
-		Retrieve the coupons associated to the coupon codes promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param couponCodesPromotionRuleId The resource's id
-		@return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
-	*/
-	GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
-
-	// GETCouponCodesPromotionRuleIdCouponsExecute executes the request
-	GETCouponCodesPromotionRuleIdCouponsExecute(r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error)
-
-	/*
-		GETCoupons List all coupons
-
-		List all coupons
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CouponsApiGETCouponsRequest
-	*/
-	GETCoupons(ctx context.Context) CouponsApiGETCouponsRequest
-
-	// GETCouponsExecute executes the request
-	GETCouponsExecute(r CouponsApiGETCouponsRequest) (*http.Response, error)
-
-	/*
-		GETCouponsCouponId Retrieve a coupon
-
-		Retrieve a coupon
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param couponId The resource's id
-		@return CouponsApiGETCouponsCouponIdRequest
-	*/
-	GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest
-
-	// GETCouponsCouponIdExecute executes the request
-	//  @return Coupon
-	GETCouponsCouponIdExecute(r CouponsApiGETCouponsCouponIdRequest) (*Coupon, *http.Response, error)
-
-	/*
-		PATCHCouponsCouponId Update a coupon
-
-		Update a coupon
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param couponId The resource's id
-		@return CouponsApiPATCHCouponsCouponIdRequest
-	*/
-	PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest
-
-	// PATCHCouponsCouponIdExecute executes the request
-	PATCHCouponsCouponIdExecute(r CouponsApiPATCHCouponsCouponIdRequest) (*http.Response, error)
-
-	/*
-		POSTCoupons Create a coupon
-
-		Create a coupon
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CouponsApiPOSTCouponsRequest
-	*/
-	POSTCoupons(ctx context.Context) CouponsApiPOSTCouponsRequest
-
-	// POSTCouponsExecute executes the request
-	POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (*http.Response, error)
-}
-
 // CouponsApiService CouponsApi service
 type CouponsApiService service
 
-type CouponsApiDELETECouponsCouponIdRequest struct {
+type ApiDELETECouponsCouponIdRequest struct {
 	ctx        context.Context
-	ApiService CouponsApi
+	ApiService *CouponsApiService
 	couponId   string
 }
 
-func (r CouponsApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECouponsCouponIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return CouponsApiDELETECouponsCouponIdRequest
+ @return ApiDELETECouponsCouponIdRequest
 */
-func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest {
-	return CouponsApiDELETECouponsCouponIdRequest{
+func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) ApiDELETECouponsCouponIdRequest {
+	return ApiDELETECouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -137,7 +51,7 @@ func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId 
 }
 
 // Execute executes the request
-func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECouponsCouponIdRequest) (*http.Response, error) {
+func (a *CouponsApiService) DELETECouponsCouponIdExecute(r ApiDELETECouponsCouponIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +115,13 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 	return localVarHTTPResponse, nil
 }
 
-type CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
+type ApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
 	ctx                        context.Context
-	ApiService                 CouponsApi
+	ApiService                 *CouponsApiService
 	couponCodesPromotionRuleId string
 }
 
-func (r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponCodesPromotionRuleIdCouponsExecute(r)
 }
 
@@ -218,10 +132,10 @@ Retrieve the coupons associated to the coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
+ @return ApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
-func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
-	return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest{
+func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRuleIdCouponsRequest {
+	return ApiGETCouponCodesPromotionRuleIdCouponsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -229,7 +143,7 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Con
 }
 
 // Execute executes the request
-func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
+func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +207,12 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r Coupon
 	return localVarHTTPResponse, nil
 }
 
-type CouponsApiGETCouponsRequest struct {
+type ApiGETCouponsRequest struct {
 	ctx        context.Context
-	ApiService CouponsApi
+	ApiService *CouponsApiService
 }
 
-func (r CouponsApiGETCouponsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCouponsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponsExecute(r)
 }
 
@@ -308,17 +222,17 @@ GETCoupons List all coupons
 List all coupons
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponsApiGETCouponsRequest
+ @return ApiGETCouponsRequest
 */
-func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCouponsRequest {
-	return CouponsApiGETCouponsRequest{
+func (a *CouponsApiService) GETCoupons(ctx context.Context) ApiGETCouponsRequest {
+	return ApiGETCouponsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*http.Response, error) {
+func (a *CouponsApiService) GETCouponsExecute(r ApiGETCouponsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +295,13 @@ func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type CouponsApiGETCouponsCouponIdRequest struct {
+type ApiGETCouponsCouponIdRequest struct {
 	ctx        context.Context
-	ApiService CouponsApi
+	ApiService *CouponsApiService
 	couponId   string
 }
 
-func (r CouponsApiGETCouponsCouponIdRequest) Execute() (*Coupon, *http.Response, error) {
+func (r ApiGETCouponsCouponIdRequest) Execute() (*Coupon, *http.Response, error) {
 	return r.ApiService.GETCouponsCouponIdExecute(r)
 }
 
@@ -398,10 +312,10 @@ Retrieve a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return CouponsApiGETCouponsCouponIdRequest
+ @return ApiGETCouponsCouponIdRequest
 */
-func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest {
-	return CouponsApiGETCouponsCouponIdRequest{
+func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) ApiGETCouponsCouponIdRequest {
+	return ApiGETCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -410,7 +324,7 @@ func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId str
 
 // Execute executes the request
 //  @return Coupon
-func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCouponIdRequest) (*Coupon, *http.Response, error) {
+func (a *CouponsApiService) GETCouponsCouponIdExecute(r ApiGETCouponsCouponIdRequest) (*Coupon, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +398,19 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CouponsApiPATCHCouponsCouponIdRequest struct {
+type ApiPATCHCouponsCouponIdRequest struct {
 	ctx          context.Context
-	ApiService   CouponsApi
-	couponId     string
+	ApiService   *CouponsApiService
 	couponUpdate *CouponUpdate
+	couponId     string
 }
 
-func (r CouponsApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) CouponsApiPATCHCouponsCouponIdRequest {
+func (r ApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) ApiPATCHCouponsCouponIdRequest {
 	r.couponUpdate = &couponUpdate
 	return r
 }
 
-func (r CouponsApiPATCHCouponsCouponIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHCouponsCouponIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCouponsCouponIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return CouponsApiPATCHCouponsCouponIdRequest
+ @return ApiPATCHCouponsCouponIdRequest
 */
-func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest {
-	return CouponsApiPATCHCouponsCouponIdRequest{
+func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) ApiPATCHCouponsCouponIdRequest {
+	return ApiPATCHCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -518,7 +432,7 @@ func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId s
 }
 
 // Execute executes the request
-func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCouponsCouponIdRequest) (*http.Response, error) {
+func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 	return localVarHTTPResponse, nil
 }
 
-type CouponsApiPOSTCouponsRequest struct {
+type ApiPOSTCouponsRequest struct {
 	ctx          context.Context
-	ApiService   CouponsApi
+	ApiService   *CouponsApiService
 	couponCreate *CouponCreate
 }
 
-func (r CouponsApiPOSTCouponsRequest) CouponCreate(couponCreate CouponCreate) CouponsApiPOSTCouponsRequest {
+func (r ApiPOSTCouponsRequest) CouponCreate(couponCreate CouponCreate) ApiPOSTCouponsRequest {
 	r.couponCreate = &couponCreate
 	return r
 }
 
-func (r CouponsApiPOSTCouponsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTCouponsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCouponsExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTCoupons Create a coupon
 Create a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponsApiPOSTCouponsRequest
+ @return ApiPOSTCouponsRequest
 */
-func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCouponsRequest {
-	return CouponsApiPOSTCouponsRequest{
+func (a *CouponsApiService) POSTCoupons(ctx context.Context) ApiPOSTCouponsRequest {
+	return ApiPOSTCouponsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (*http.Response, error) {
+func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

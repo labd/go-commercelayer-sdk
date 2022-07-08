@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    manualGatewayId := "manualGatewayId_example" // string | The resource's id
     manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("manual_gateways", "XGZwpOSrWL", *openapiclient.NewManualGatewayUpdateDataAttributes())) // ManualGatewayUpdate | 
+    manualGatewayId := "manualGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHManualGatewaysManualG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **manualGatewayUpdate** | [**ManualGatewayUpdate**](ManualGatewayUpdate.md) |  | 
+
 
 ### Return type
 

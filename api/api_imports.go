@@ -20,74 +20,16 @@ import (
 	"strings"
 )
 
-type ImportsApi interface {
-
-	/*
-		DELETEImportsImportId Delete an import
-
-		Delete an import
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param importId The resource's id
-		@return ImportsApiDELETEImportsImportIdRequest
-	*/
-	DELETEImportsImportId(ctx context.Context, importId string) ImportsApiDELETEImportsImportIdRequest
-
-	// DELETEImportsImportIdExecute executes the request
-	DELETEImportsImportIdExecute(r ImportsApiDELETEImportsImportIdRequest) (*http.Response, error)
-
-	/*
-		GETImports List all imports
-
-		List all imports
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ImportsApiGETImportsRequest
-	*/
-	GETImports(ctx context.Context) ImportsApiGETImportsRequest
-
-	// GETImportsExecute executes the request
-	GETImportsExecute(r ImportsApiGETImportsRequest) (*http.Response, error)
-
-	/*
-		GETImportsImportId Retrieve an import
-
-		Retrieve an import
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param importId The resource's id
-		@return ImportsApiGETImportsImportIdRequest
-	*/
-	GETImportsImportId(ctx context.Context, importId string) ImportsApiGETImportsImportIdRequest
-
-	// GETImportsImportIdExecute executes the request
-	//  @return ModelImport
-	GETImportsImportIdExecute(r ImportsApiGETImportsImportIdRequest) (*ModelImport, *http.Response, error)
-
-	/*
-		POSTImports Create an import
-
-		Create an import
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ImportsApiPOSTImportsRequest
-	*/
-	POSTImports(ctx context.Context) ImportsApiPOSTImportsRequest
-
-	// POSTImportsExecute executes the request
-	POSTImportsExecute(r ImportsApiPOSTImportsRequest) (*http.Response, error)
-}
-
 // ImportsApiService ImportsApi service
 type ImportsApiService service
 
-type ImportsApiDELETEImportsImportIdRequest struct {
+type ApiDELETEImportsImportIdRequest struct {
 	ctx        context.Context
-	ApiService ImportsApi
+	ApiService *ImportsApiService
 	importId   string
 }
 
-func (r ImportsApiDELETEImportsImportIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEImportsImportIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEImportsImportIdExecute(r)
 }
 
@@ -98,10 +40,10 @@ Delete an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param importId The resource's id
- @return ImportsApiDELETEImportsImportIdRequest
+ @return ApiDELETEImportsImportIdRequest
 */
-func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ImportsApiDELETEImportsImportIdRequest {
-	return ImportsApiDELETEImportsImportIdRequest{
+func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ApiDELETEImportsImportIdRequest {
+	return ApiDELETEImportsImportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		importId:   importId,
@@ -109,7 +51,7 @@ func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId 
 }
 
 // Execute executes the request
-func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImportsImportIdRequest) (*http.Response, error) {
+func (a *ImportsApiService) DELETEImportsImportIdExecute(r ApiDELETEImportsImportIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -173,12 +115,12 @@ func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImpor
 	return localVarHTTPResponse, nil
 }
 
-type ImportsApiGETImportsRequest struct {
+type ApiGETImportsRequest struct {
 	ctx        context.Context
-	ApiService ImportsApi
+	ApiService *ImportsApiService
 }
 
-func (r ImportsApiGETImportsRequest) Execute() (*http.Response, error) {
+func (r ApiGETImportsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETImportsExecute(r)
 }
 
@@ -188,17 +130,17 @@ GETImports List all imports
 List all imports
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ImportsApiGETImportsRequest
+ @return ApiGETImportsRequest
 */
-func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImportsRequest {
-	return ImportsApiGETImportsRequest{
+func (a *ImportsApiService) GETImports(ctx context.Context) ApiGETImportsRequest {
+	return ApiGETImportsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*http.Response, error) {
+func (a *ImportsApiService) GETImportsExecute(r ApiGETImportsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -261,13 +203,13 @@ func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ImportsApiGETImportsImportIdRequest struct {
+type ApiGETImportsImportIdRequest struct {
 	ctx        context.Context
-	ApiService ImportsApi
+	ApiService *ImportsApiService
 	importId   string
 }
 
-func (r ImportsApiGETImportsImportIdRequest) Execute() (*ModelImport, *http.Response, error) {
+func (r ApiGETImportsImportIdRequest) Execute() (*ModelImport, *http.Response, error) {
 	return r.ApiService.GETImportsImportIdExecute(r)
 }
 
@@ -278,10 +220,10 @@ Retrieve an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param importId The resource's id
- @return ImportsApiGETImportsImportIdRequest
+ @return ApiGETImportsImportIdRequest
 */
-func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ImportsApiGETImportsImportIdRequest {
-	return ImportsApiGETImportsImportIdRequest{
+func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ApiGETImportsImportIdRequest {
+	return ApiGETImportsImportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		importId:   importId,
@@ -290,7 +232,7 @@ func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId str
 
 // Execute executes the request
 //  @return ModelImport
-func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImportIdRequest) (*ModelImport, *http.Response, error) {
+func (a *ImportsApiService) GETImportsImportIdExecute(r ApiGETImportsImportIdRequest) (*ModelImport, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -364,18 +306,18 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImpo
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ImportsApiPOSTImportsRequest struct {
+type ApiPOSTImportsRequest struct {
 	ctx          context.Context
-	ApiService   ImportsApi
+	ApiService   *ImportsApiService
 	importCreate *ImportCreate
 }
 
-func (r ImportsApiPOSTImportsRequest) ImportCreate(importCreate ImportCreate) ImportsApiPOSTImportsRequest {
+func (r ApiPOSTImportsRequest) ImportCreate(importCreate ImportCreate) ApiPOSTImportsRequest {
 	r.importCreate = &importCreate
 	return r
 }
 
-func (r ImportsApiPOSTImportsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTImportsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTImportsExecute(r)
 }
 
@@ -385,17 +327,17 @@ POSTImports Create an import
 Create an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ImportsApiPOSTImportsRequest
+ @return ApiPOSTImportsRequest
 */
-func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImportsRequest {
-	return ImportsApiPOSTImportsRequest{
+func (a *ImportsApiService) POSTImports(ctx context.Context) ApiPOSTImportsRequest {
+	return ApiPOSTImportsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (*http.Response, error) {
+func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

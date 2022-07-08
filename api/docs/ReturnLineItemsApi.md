@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    returnLineItemId := "returnLineItemId_example" // string | The resource's id
     returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("return_line_items", "XGZwpOSrWL", *openapiclient.NewReturnLineItemUpdateDataAttributes())) // ReturnLineItemUpdate | 
+    returnLineItemId := "returnLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHReturnLineItemsReturn
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **returnLineItemUpdate** | [**ReturnLineItemUpdate**](ReturnLineItemUpdate.md) |  | 
+
 
 ### Return type
 

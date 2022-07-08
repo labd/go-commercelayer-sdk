@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    taxRuleId := "taxRuleId_example" // string | The resource's id
     taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData("tax_rules", "XGZwpOSrWL", *openapiclient.NewTaxRuleUpdateDataAttributes())) // TaxRuleUpdate | 
+    taxRuleId := "taxRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHTaxRulesTaxRuleIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **taxRuleUpdate** | [**TaxRuleUpdate**](TaxRuleUpdate.md) |  | 
+
 
 ### Return type
 

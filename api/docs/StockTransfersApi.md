@@ -437,8 +437,8 @@ import (
 )
 
 func main() {
-    stockTransferId := "stockTransferId_example" // string | The resource's id
     stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("stock_transfers", "XGZwpOSrWL", *openapiclient.NewStockTransferUpdateDataAttributes())) // StockTransferUpdate | 
+    stockTransferId := "stockTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -465,8 +465,8 @@ Other parameters are passed through a pointer to a apiPATCHStockTransfersStockTr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **stockTransferUpdate** | [**StockTransferUpdate**](StockTransferUpdate.md) |  | 
+
 
 ### Return type
 

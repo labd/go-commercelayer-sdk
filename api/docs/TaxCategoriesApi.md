@@ -575,8 +575,8 @@ import (
 )
 
 func main() {
-    taxCategoryId := "taxCategoryId_example" // string | The resource's id
     taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("tax_categories", "XGZwpOSrWL", *openapiclient.NewTaxCategoryUpdateDataAttributes())) // TaxCategoryUpdate | 
+    taxCategoryId := "taxCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -603,8 +603,8 @@ Other parameters are passed through a pointer to a apiPATCHTaxCategoriesTaxCateg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **taxCategoryUpdate** | [**TaxCategoryUpdate**](TaxCategoryUpdate.md) |  | 
+
 
 ### Return type
 

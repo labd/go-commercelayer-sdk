@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type KlarnaGatewaysApi interface {
-
-	/*
-		DELETEKlarnaGatewaysKlarnaGatewayId Delete a klarna gateway
-
-		Delete a klarna gateway
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param klarnaGatewayId The resource's id
-		@return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
-	*/
-	DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
-
-	// DELETEKlarnaGatewaysKlarnaGatewayIdExecute executes the request
-	DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error)
-
-	/*
-		GETKlarnaGateways List all klarna gateways
-
-		List all klarna gateways
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return KlarnaGatewaysApiGETKlarnaGatewaysRequest
-	*/
-	GETKlarnaGateways(ctx context.Context) KlarnaGatewaysApiGETKlarnaGatewaysRequest
-
-	// GETKlarnaGatewaysExecute executes the request
-	GETKlarnaGatewaysExecute(r KlarnaGatewaysApiGETKlarnaGatewaysRequest) (*http.Response, error)
-
-	/*
-		GETKlarnaGatewaysKlarnaGatewayId Retrieve a klarna gateway
-
-		Retrieve a klarna gateway
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param klarnaGatewayId The resource's id
-		@return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest
-	*/
-	GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest
-
-	// GETKlarnaGatewaysKlarnaGatewayIdExecute executes the request
-	//  @return KlarnaGateway
-	GETKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGateway, *http.Response, error)
-
-	/*
-		PATCHKlarnaGatewaysKlarnaGatewayId Update a klarna gateway
-
-		Update a klarna gateway
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param klarnaGatewayId The resource's id
-		@return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
-	*/
-	PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
-
-	// PATCHKlarnaGatewaysKlarnaGatewayIdExecute executes the request
-	PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error)
-
-	/*
-		POSTKlarnaGateways Create a klarna gateway
-
-		Create a klarna gateway
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return KlarnaGatewaysApiPOSTKlarnaGatewaysRequest
-	*/
-	POSTKlarnaGateways(ctx context.Context) KlarnaGatewaysApiPOSTKlarnaGatewaysRequest
-
-	// POSTKlarnaGatewaysExecute executes the request
-	POSTKlarnaGatewaysExecute(r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) (*http.Response, error)
-}
-
 // KlarnaGatewaysApiService KlarnaGatewaysApi service
 type KlarnaGatewaysApiService service
 
-type KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
-	ApiService      KlarnaGatewaysApi
+	ApiService      *KlarnaGatewaysApiService
 	klarnaGatewayId string
 }
 
-func (r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
+ @return ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
-	return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
+	return ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -123,7 +51,7 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx conte
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
+func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type KlarnaGatewaysApiGETKlarnaGatewaysRequest struct {
+type ApiGETKlarnaGatewaysRequest struct {
 	ctx        context.Context
-	ApiService KlarnaGatewaysApi
+	ApiService *KlarnaGatewaysApiService
 }
 
-func (r KlarnaGatewaysApiGETKlarnaGatewaysRequest) Execute() (*http.Response, error) {
+func (r ApiGETKlarnaGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETKlarnaGateways List all klarna gateways
 List all klarna gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KlarnaGatewaysApiGETKlarnaGatewaysRequest
+ @return ApiGETKlarnaGatewaysRequest
 */
-func (a *KlarnaGatewaysApiService) GETKlarnaGateways(ctx context.Context) KlarnaGatewaysApiGETKlarnaGatewaysRequest {
-	return KlarnaGatewaysApiGETKlarnaGatewaysRequest{
+func (a *KlarnaGatewaysApiService) GETKlarnaGateways(ctx context.Context) ApiGETKlarnaGatewaysRequest {
+	return ApiGETKlarnaGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiGETKlarnaGatewaysRequest) (*http.Response, error) {
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r ApiGETKlarnaGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiG
 	return localVarHTTPResponse, nil
 }
 
-type KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type ApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
-	ApiService      KlarnaGatewaysApi
+	ApiService      *KlarnaGatewaysApiService
 	klarnaGatewayId string
 }
 
-func (r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*KlarnaGateway, *http.Response, error) {
+func (r ApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*KlarnaGateway, *http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest
+ @return ApiGETKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
-	return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
+	return ApiGETKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -304,7 +232,7 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.
 
 // Execute executes the request
 //  @return KlarnaGateway
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGateway, *http.Response, error) {
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r ApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGateway, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Kla
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx                 context.Context
-	ApiService          KlarnaGatewaysApi
-	klarnaGatewayId     string
+	ApiService          *KlarnaGatewaysApiService
 	klarnaGatewayUpdate *KlarnaGatewayUpdate
+	klarnaGatewayId     string
 }
 
-func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewayUpdate(klarnaGatewayUpdate KlarnaGatewayUpdate) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
+func (r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewayUpdate(klarnaGatewayUpdate KlarnaGatewayUpdate) ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
 	r.klarnaGatewayUpdate = &klarnaGatewayUpdate
 	return r
 }
 
-func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
+ @return ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
-	return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
+	return ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -412,7 +340,7 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx contex
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r K
 	return localVarHTTPResponse, nil
 }
 
-type KlarnaGatewaysApiPOSTKlarnaGatewaysRequest struct {
+type ApiPOSTKlarnaGatewaysRequest struct {
 	ctx                 context.Context
-	ApiService          KlarnaGatewaysApi
+	ApiService          *KlarnaGatewaysApiService
 	klarnaGatewayCreate *KlarnaGatewayCreate
 }
 
-func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) KlarnaGatewayCreate(klarnaGatewayCreate KlarnaGatewayCreate) KlarnaGatewaysApiPOSTKlarnaGatewaysRequest {
+func (r ApiPOSTKlarnaGatewaysRequest) KlarnaGatewayCreate(klarnaGatewayCreate KlarnaGatewayCreate) ApiPOSTKlarnaGatewaysRequest {
 	r.klarnaGatewayCreate = &klarnaGatewayCreate
 	return r
 }
 
-func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTKlarnaGatewaysRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTKlarnaGatewaysExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTKlarnaGateways Create a klarna gateway
 Create a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KlarnaGatewaysApiPOSTKlarnaGatewaysRequest
+ @return ApiPOSTKlarnaGatewaysRequest
 */
-func (a *KlarnaGatewaysApiService) POSTKlarnaGateways(ctx context.Context) KlarnaGatewaysApiPOSTKlarnaGatewaysRequest {
-	return KlarnaGatewaysApiPOSTKlarnaGatewaysRequest{
+func (a *KlarnaGatewaysApiService) POSTKlarnaGateways(ctx context.Context) ApiPOSTKlarnaGatewaysRequest {
+	return ApiPOSTKlarnaGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) (*http.Response, error) {
+func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGatewaysRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

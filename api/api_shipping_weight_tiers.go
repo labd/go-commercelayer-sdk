@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type ShippingWeightTiersApi interface {
-
-	/*
-		DELETEShippingWeightTiersShippingWeightTierId Delete a shipping weight tier
-
-		Delete a shipping weight tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingWeightTierId The resource's id
-		@return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
-	*/
-	DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
-
-	// DELETEShippingWeightTiersShippingWeightTierIdExecute executes the request
-	DELETEShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error)
-
-	/*
-		GETShippingMethodIdShippingWeightTiers Retrieve the shipping weight tiers associated to the shipping method
-
-		Retrieve the shipping weight tiers associated to the shipping method
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingMethodId The resource's id
-		@return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
-	*/
-	GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
-
-	// GETShippingMethodIdShippingWeightTiersExecute executes the request
-	GETShippingMethodIdShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error)
-
-	/*
-		GETShippingWeightTiers List all shipping weight tiers
-
-		List all shipping weight tiers
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ShippingWeightTiersApiGETShippingWeightTiersRequest
-	*/
-	GETShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiGETShippingWeightTiersRequest
-
-	// GETShippingWeightTiersExecute executes the request
-	GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*http.Response, error)
-
-	/*
-		GETShippingWeightTiersShippingWeightTierId Retrieve a shipping weight tier
-
-		Retrieve a shipping weight tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingWeightTierId The resource's id
-		@return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
-	*/
-	GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
-
-	// GETShippingWeightTiersShippingWeightTierIdExecute executes the request
-	//  @return ShippingWeightTier
-	GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*ShippingWeightTier, *http.Response, error)
-
-	/*
-		PATCHShippingWeightTiersShippingWeightTierId Update a shipping weight tier
-
-		Update a shipping weight tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shippingWeightTierId The resource's id
-		@return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
-	*/
-	PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
-
-	// PATCHShippingWeightTiersShippingWeightTierIdExecute executes the request
-	PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error)
-
-	/*
-		POSTShippingWeightTiers Create a shipping weight tier
-
-		Create a shipping weight tier
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return ShippingWeightTiersApiPOSTShippingWeightTiersRequest
-	*/
-	POSTShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiPOSTShippingWeightTiersRequest
-
-	// POSTShippingWeightTiersExecute executes the request
-	POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*http.Response, error)
-}
-
 // ShippingWeightTiersApiService ShippingWeightTiersApi service
 type ShippingWeightTiersApiService service
 
-type ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest struct {
+type ApiDELETEShippingWeightTiersShippingWeightTierIdRequest struct {
 	ctx                  context.Context
-	ApiService           ShippingWeightTiersApi
+	ApiService           *ShippingWeightTiersApiService
 	shippingWeightTierId string
 }
 
-func (r ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEShippingWeightTiersShippingWeightTierIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEShippingWeightTiersShippingWeightTierIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a shipping weight tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
+ @return ApiDELETEShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
-	return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest{
+func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
+	return ApiDELETEShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
@@ -137,7 +51,7 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 }
 
 // Execute executes the request
-func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error) {
+func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierIdExecute(r ApiDELETEShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +115,13 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 	return localVarHTTPResponse, nil
 }
 
-type ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest struct {
+type ApiGETShippingMethodIdShippingWeightTiersRequest struct {
 	ctx              context.Context
-	ApiService       ShippingWeightTiersApi
+	ApiService       *ShippingWeightTiersApiService
 	shippingMethodId string
 }
 
-func (r ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingMethodIdShippingWeightTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdShippingWeightTiersExecute(r)
 }
 
@@ -218,10 +132,10 @@ Retrieve the shipping weight tiers associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
+ @return ApiGETShippingMethodIdShippingWeightTiersRequest
 */
-func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest {
-	return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest{
+func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingWeightTiersRequest {
+	return ApiGETShippingMethodIdShippingWeightTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -229,7 +143,7 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(c
 }
 
 // Execute executes the request
-func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error) {
+func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersExecute(r ApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +207,12 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersEx
 	return localVarHTTPResponse, nil
 }
 
-type ShippingWeightTiersApiGETShippingWeightTiersRequest struct {
+type ApiGETShippingWeightTiersRequest struct {
 	ctx        context.Context
-	ApiService ShippingWeightTiersApi
+	ApiService *ShippingWeightTiersApiService
 }
 
-func (r ShippingWeightTiersApiGETShippingWeightTiersRequest) Execute() (*http.Response, error) {
+func (r ApiGETShippingWeightTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingWeightTiersExecute(r)
 }
 
@@ -308,17 +222,17 @@ GETShippingWeightTiers List all shipping weight tiers
 List all shipping weight tiers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingWeightTiersApiGETShippingWeightTiersRequest
+ @return ApiGETShippingWeightTiersRequest
 */
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiGETShippingWeightTiersRequest {
-	return ShippingWeightTiersApiGETShippingWeightTiersRequest{
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Context) ApiGETShippingWeightTiersRequest {
+	return ApiGETShippingWeightTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*http.Response, error) {
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ApiGETShippingWeightTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +295,13 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r Shipping
 	return localVarHTTPResponse, nil
 }
 
-type ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest struct {
+type ApiGETShippingWeightTiersShippingWeightTierIdRequest struct {
 	ctx                  context.Context
-	ApiService           ShippingWeightTiersApi
+	ApiService           *ShippingWeightTiersApiService
 	shippingWeightTierId string
 }
 
-func (r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) Execute() (*ShippingWeightTier, *http.Response, error) {
+func (r ApiGETShippingWeightTiersShippingWeightTierIdRequest) Execute() (*ShippingWeightTier, *http.Response, error) {
 	return r.ApiService.GETShippingWeightTiersShippingWeightTierIdExecute(r)
 }
 
@@ -398,10 +312,10 @@ Retrieve a shipping weight tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
+ @return ApiGETShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest {
-	return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest{
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ApiGETShippingWeightTiersShippingWeightTierIdRequest {
+	return ApiGETShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
@@ -410,7 +324,7 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 
 // Execute executes the request
 //  @return ShippingWeightTier
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*ShippingWeightTier, *http.Response, error) {
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ApiGETShippingWeightTiersShippingWeightTierIdRequest) (*ShippingWeightTier, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +398,19 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest struct {
+type ApiPATCHShippingWeightTiersShippingWeightTierIdRequest struct {
 	ctx                      context.Context
-	ApiService               ShippingWeightTiersApi
-	shippingWeightTierId     string
+	ApiService               *ShippingWeightTiersApiService
 	shippingWeightTierUpdate *ShippingWeightTierUpdate
+	shippingWeightTierId     string
 }
 
-func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) ShippingWeightTierUpdate(shippingWeightTierUpdate ShippingWeightTierUpdate) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
+func (r ApiPATCHShippingWeightTiersShippingWeightTierIdRequest) ShippingWeightTierUpdate(shippingWeightTierUpdate ShippingWeightTierUpdate) ApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
 	r.shippingWeightTierUpdate = &shippingWeightTierUpdate
 	return r
 }
 
-func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHShippingWeightTiersShippingWeightTierIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHShippingWeightTiersShippingWeightTierIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a shipping weight tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
+ @return ApiPATCHShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
-	return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest{
+func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
+	return ApiPATCHShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
@@ -518,7 +432,7 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 }
 
 // Execute executes the request
-func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error) {
+func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 	return localVarHTTPResponse, nil
 }
 
-type ShippingWeightTiersApiPOSTShippingWeightTiersRequest struct {
+type ApiPOSTShippingWeightTiersRequest struct {
 	ctx                      context.Context
-	ApiService               ShippingWeightTiersApi
+	ApiService               *ShippingWeightTiersApiService
 	shippingWeightTierCreate *ShippingWeightTierCreate
 }
 
-func (r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) ShippingWeightTierCreate(shippingWeightTierCreate ShippingWeightTierCreate) ShippingWeightTiersApiPOSTShippingWeightTiersRequest {
+func (r ApiPOSTShippingWeightTiersRequest) ShippingWeightTierCreate(shippingWeightTierCreate ShippingWeightTierCreate) ApiPOSTShippingWeightTiersRequest {
 	r.shippingWeightTierCreate = &shippingWeightTierCreate
 	return r
 }
 
-func (r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTShippingWeightTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTShippingWeightTiersExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTShippingWeightTiers Create a shipping weight tier
 Create a shipping weight tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingWeightTiersApiPOSTShippingWeightTiersRequest
+ @return ApiPOSTShippingWeightTiersRequest
 */
-func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiPOSTShippingWeightTiersRequest {
-	return ShippingWeightTiersApiPOSTShippingWeightTiersRequest{
+func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Context) ApiPOSTShippingWeightTiersRequest {
+	return ApiPOSTShippingWeightTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*http.Response, error) {
+func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ApiPOSTShippingWeightTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -989,8 +989,8 @@ import (
 )
 
 func main() {
-    paymentMethodId := "paymentMethodId_example" // string | The resource's id
     paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("payment_methods", "XGZwpOSrWL", *openapiclient.NewPaymentMethodUpdateDataAttributes())) // PaymentMethodUpdate | 
+    paymentMethodId := "paymentMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1017,8 +1017,8 @@ Other parameters are passed through a pointer to a apiPATCHPaymentMethodsPayment
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **paymentMethodUpdate** | [**PaymentMethodUpdate**](PaymentMethodUpdate.md) |  | 
+
 
 ### Return type
 

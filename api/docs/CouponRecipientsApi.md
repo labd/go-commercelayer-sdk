@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    couponRecipientId := "couponRecipientId_example" // string | The resource's id
     couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("coupon_recipients", "XGZwpOSrWL", *openapiclient.NewCouponRecipientUpdateDataAttributes())) // CouponRecipientUpdate | 
+    couponRecipientId := "couponRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHCouponRecipientsCoupo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **couponRecipientUpdate** | [**CouponRecipientUpdate**](CouponRecipientUpdate.md) |  | 
+
 
 ### Return type
 

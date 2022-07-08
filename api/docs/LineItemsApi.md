@@ -575,8 +575,8 @@ import (
 )
 
 func main() {
-    lineItemId := "lineItemId_example" // string | The resource's id
     lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("line_items", "XGZwpOSrWL", *openapiclient.NewLineItemUpdateDataAttributes())) // LineItemUpdate | 
+    lineItemId := "lineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -603,8 +603,8 @@ Other parameters are passed through a pointer to a apiPATCHLineItemsLineItemIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **lineItemUpdate** | [**LineItemUpdate**](LineItemUpdate.md) |  | 
+
 
 ### Return type
 

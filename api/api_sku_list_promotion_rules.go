@@ -20,186 +20,16 @@ import (
 	"strings"
 )
 
-type SkuListPromotionRulesApi interface {
-
-	/*
-		DELETESkuListPromotionRulesSkuListPromotionRuleId Delete a SKU list promotion rule
-
-		Delete a SKU list promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuListPromotionRuleId The resource's id
-		@return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest
-	*/
-	DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest
-
-	// DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute executes the request
-	DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error)
-
-	/*
-		GETExternalPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the external promotion
-
-		Retrieve the sku list promotion rule associated to the external promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param externalPromotionId The resource's id
-		@return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest
-
-	// GETExternalPromotionIdSkuListPromotionRuleExecute executes the request
-	GETExternalPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETFixedAmountPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the fixed amount promotion
-
-		Retrieve the sku list promotion rule associated to the fixed amount promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedAmountPromotionId The resource's id
-		@return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
-
-	// GETFixedAmountPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETFixedPricePromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the fixed price promotion
-
-		Retrieve the sku list promotion rule associated to the fixed price promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param fixedPricePromotionId The resource's id
-		@return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
-	*/
-	GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
-
-	// GETFixedPricePromotionIdSkuListPromotionRuleExecute executes the request
-	GETFixedPricePromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETFreeGiftPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the free gift promotion
-
-		Retrieve the sku list promotion rule associated to the free gift promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param freeGiftPromotionId The resource's id
-		@return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
-
-	// GETFreeGiftPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETFreeShippingPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the free shipping promotion
-
-		Retrieve the sku list promotion rule associated to the free shipping promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param freeShippingPromotionId The resource's id
-		@return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
-
-	// GETFreeShippingPromotionIdSkuListPromotionRuleExecute executes the request
-	GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETPercentageDiscountPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the percentage discount promotion
-
-		Retrieve the sku list promotion rule associated to the percentage discount promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param percentageDiscountPromotionId The resource's id
-		@return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
-
-	// GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute executes the request
-	GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associated to the promotion
-
-		Retrieve the sku list promotion rule associated to the promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param promotionId The resource's id
-		@return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest
-	*/
-	GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest
-
-	// GETPromotionIdSkuListPromotionRuleExecute executes the request
-	GETPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error)
-
-	/*
-		GETSkuListPromotionRules List all SKU list promotion rules
-
-		List all SKU list promotion rules
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return SkuListPromotionRulesApiGETSkuListPromotionRulesRequest
-	*/
-	GETSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiGETSkuListPromotionRulesRequest
-
-	// GETSkuListPromotionRulesExecute executes the request
-	GETSkuListPromotionRulesExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) (*http.Response, error)
-
-	/*
-		GETSkuListPromotionRulesSkuListPromotionRuleId Retrieve a SKU list promotion rule
-
-		Retrieve a SKU list promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuListPromotionRuleId The resource's id
-		@return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest
-	*/
-	GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest
-
-	// GETSkuListPromotionRulesSkuListPromotionRuleIdExecute executes the request
-	//  @return SkuListPromotionRule
-	GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*SkuListPromotionRule, *http.Response, error)
-
-	/*
-		PATCHSkuListPromotionRulesSkuListPromotionRuleId Update a SKU list promotion rule
-
-		Update a SKU list promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuListPromotionRuleId The resource's id
-		@return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest
-	*/
-	PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest
-
-	// PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute executes the request
-	PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error)
-
-	/*
-		POSTSkuListPromotionRules Create a SKU list promotion rule
-
-		Create a SKU list promotion rule
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest
-	*/
-	POSTSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest
-
-	// POSTSkuListPromotionRulesExecute executes the request
-	POSTSkuListPromotionRulesExecute(r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) (*http.Response, error)
-}
-
 // SkuListPromotionRulesApiService SkuListPromotionRulesApi service
 type SkuListPromotionRulesApiService service
 
-type SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
+type ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
 	ctx                    context.Context
-	ApiService             SkuListPromotionRulesApi
+	ApiService             *SkuListPromotionRulesApiService
 	skuListPromotionRuleId string
 }
 
-func (r SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -210,10 +40,10 @@ Delete a SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest
+ @return ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest {
-	return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest{
+func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest {
+	return ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -221,7 +51,7 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute(r ApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -285,13 +115,13 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
-	ApiService          SkuListPromotionRulesApi
+	ApiService          *SkuListPromotionRulesApiService
 	externalPromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -302,10 +132,10 @@ Retrieve the sku list promotion rule associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETExternalPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETExternalPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -313,7 +143,7 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r ApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -377,13 +207,13 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                    context.Context
-	ApiService             SkuListPromotionRulesApi
+	ApiService             *SkuListPromotionRulesApiService
 	fixedAmountPromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -394,10 +224,10 @@ Retrieve the sku list promotion rule associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -405,7 +235,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r ApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -469,13 +299,13 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
 	ctx                   context.Context
-	ApiService            SkuListPromotionRulesApi
+	ApiService            *SkuListPromotionRulesApiService
 	fixedPricePromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -486,10 +316,10 @@ Retrieve the sku list promotion rule associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
+ @return ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
+	return ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -497,7 +327,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r ApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -561,13 +391,13 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
-	ApiService          SkuListPromotionRulesApi
+	ApiService          *SkuListPromotionRulesApiService
 	freeGiftPromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -578,10 +408,10 @@ Retrieve the sku list promotion rule associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -589,7 +419,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -653,13 +483,13 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                     context.Context
-	ApiService              SkuListPromotionRulesApi
+	ApiService              *SkuListPromotionRulesApiService
 	freeShippingPromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -670,10 +500,10 @@ Retrieve the sku list promotion rule associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -681,7 +511,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r ApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -745,13 +575,13 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                           context.Context
-	ApiService                    SkuListPromotionRulesApi
+	ApiService                    *SkuListPromotionRulesApiService
 	percentageDiscountPromotionId string
 }
 
-func (r SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -762,10 +592,10 @@ Retrieve the sku list promotion rule associated to the percentage discount promo
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -773,7 +603,7 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r ApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -837,13 +667,13 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest struct {
+type ApiGETPromotionIdSkuListPromotionRuleRequest struct {
 	ctx         context.Context
-	ApiService  SkuListPromotionRulesApi
+	ApiService  *SkuListPromotionRulesApiService
 	promotionId string
 }
 
-func (r SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
+func (r ApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdSkuListPromotionRuleExecute(r)
 }
 
@@ -854,10 +684,10 @@ Retrieve the sku list promotion rule associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest
+ @return ApiGETPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest {
-	return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest{
+func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) ApiGETPromotionIdSkuListPromotionRuleRequest {
+	return ApiGETPromotionIdSkuListPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -865,7 +695,7 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExecute(r ApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -929,12 +759,12 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExec
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETSkuListPromotionRulesRequest struct {
+type ApiGETSkuListPromotionRulesRequest struct {
 	ctx        context.Context
-	ApiService SkuListPromotionRulesApi
+	ApiService *SkuListPromotionRulesApiService
 }
 
-func (r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r ApiGETSkuListPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRulesExecute(r)
 }
 
@@ -944,17 +774,17 @@ GETSkuListPromotionRules List all SKU list promotion rules
 List all SKU list promotion rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListPromotionRulesApiGETSkuListPromotionRulesRequest
+ @return ApiGETSkuListPromotionRulesRequest
 */
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiGETSkuListPromotionRulesRequest {
-	return SkuListPromotionRulesApiGETSkuListPromotionRulesRequest{
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRules(ctx context.Context) ApiGETSkuListPromotionRulesRequest {
+	return ApiGETSkuListPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r ApiGETSkuListPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1017,13 +847,13 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuL
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
+type ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
 	ctx                    context.Context
-	ApiService             SkuListPromotionRulesApi
+	ApiService             *SkuListPromotionRulesApiService
 	skuListPromotionRuleId string
 }
 
-func (r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*SkuListPromotionRule, *http.Response, error) {
+func (r ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*SkuListPromotionRule, *http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -1034,10 +864,10 @@ Retrieve a SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest
+ @return ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest {
-	return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest{
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest {
+	return ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -1046,7 +876,7 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 
 // Execute executes the request
 //  @return SkuListPromotionRule
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*SkuListPromotionRule, *http.Response, error) {
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r ApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*SkuListPromotionRule, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -1120,19 +950,19 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
+type ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
 	ctx                        context.Context
-	ApiService                 SkuListPromotionRulesApi
-	skuListPromotionRuleId     string
+	ApiService                 *SkuListPromotionRulesApiService
 	skuListPromotionRuleUpdate *SkuListPromotionRuleUpdate
+	skuListPromotionRuleId     string
 }
 
-func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate SkuListPromotionRuleUpdate) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
+func (r ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate SkuListPromotionRuleUpdate) ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	r.skuListPromotionRuleUpdate = &skuListPromotionRuleUpdate
 	return r
 }
 
-func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -1143,10 +973,10 @@ Update a SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest
+ @return ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
-	return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest{
+func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
+	return ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -1154,7 +984,7 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r ApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1223,18 +1053,18 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 	return localVarHTTPResponse, nil
 }
 
-type SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest struct {
+type ApiPOSTSkuListPromotionRulesRequest struct {
 	ctx                        context.Context
-	ApiService                 SkuListPromotionRulesApi
+	ApiService                 *SkuListPromotionRulesApiService
 	skuListPromotionRuleCreate *SkuListPromotionRuleCreate
 }
 
-func (r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) SkuListPromotionRuleCreate(skuListPromotionRuleCreate SkuListPromotionRuleCreate) SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest {
+func (r ApiPOSTSkuListPromotionRulesRequest) SkuListPromotionRuleCreate(skuListPromotionRuleCreate SkuListPromotionRuleCreate) ApiPOSTSkuListPromotionRulesRequest {
 	r.skuListPromotionRuleCreate = &skuListPromotionRuleCreate
 	return r
 }
 
-func (r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTSkuListPromotionRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTSkuListPromotionRulesExecute(r)
 }
 
@@ -1244,17 +1074,17 @@ POSTSkuListPromotionRules Create a SKU list promotion rule
 Create a SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest
+ @return ApiPOSTSkuListPromotionRulesRequest
 */
-func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest {
-	return SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest{
+func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRules(ctx context.Context) ApiPOSTSkuListPromotionRulesRequest {
+	return ApiPOSTSkuListPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) (*http.Response, error) {
+func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r ApiPOSTSkuListPromotionRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

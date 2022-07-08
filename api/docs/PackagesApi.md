@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    packageId := "packageId_example" // string | The resource's id
     packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("packages", "XGZwpOSrWL", *openapiclient.NewPackageUpdateDataAttributes())) // PackageUpdate | 
+    packageId := "packageId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHPackagesPackageIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **packageUpdate** | [**PackageUpdate**](PackageUpdate.md) |  | 
+
 
 ### Return type
 

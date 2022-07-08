@@ -437,8 +437,8 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
     deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("delivery_lead_times", "XGZwpOSrWL", *openapiclient.NewDeliveryLeadTimeUpdateDataAttributes())) // DeliveryLeadTimeUpdate | 
+    deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -465,8 +465,8 @@ Other parameters are passed through a pointer to a apiPATCHDeliveryLeadTimesDeli
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **deliveryLeadTimeUpdate** | [**DeliveryLeadTimeUpdate**](DeliveryLeadTimeUpdate.md) |  | 
+
 
 ### Return type
 

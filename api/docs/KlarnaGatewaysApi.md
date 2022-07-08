@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
     klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("klarna_gateways", "XGZwpOSrWL", *openapiclient.NewKlarnaGatewayUpdateDataAttributes())) // KlarnaGatewayUpdate | 
+    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHKlarnaGatewaysKlarnaG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **klarnaGatewayUpdate** | [**KlarnaGatewayUpdate**](KlarnaGatewayUpdate.md) |  | 
+
 
 ### Return type
 

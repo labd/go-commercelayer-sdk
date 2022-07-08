@@ -20,256 +20,16 @@ import (
 	"strings"
 )
 
-type AddressesApi interface {
-
-	/*
-		DELETEAddressesAddressId Delete an address
-
-		Delete an address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param addressId The resource's id
-		@return AddressesApiDELETEAddressesAddressIdRequest
-	*/
-	DELETEAddressesAddressId(ctx context.Context, addressId string) AddressesApiDELETEAddressesAddressIdRequest
-
-	// DELETEAddressesAddressIdExecute executes the request
-	DELETEAddressesAddressIdExecute(r AddressesApiDELETEAddressesAddressIdRequest) (*http.Response, error)
-
-	/*
-		GETAddresses List all addresses
-
-		List all addresses
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AddressesApiGETAddressesRequest
-	*/
-	GETAddresses(ctx context.Context) AddressesApiGETAddressesRequest
-
-	// GETAddressesExecute executes the request
-	GETAddressesExecute(r AddressesApiGETAddressesRequest) (*http.Response, error)
-
-	/*
-		GETAddressesAddressId Retrieve an address
-
-		Retrieve an address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param addressId The resource's id
-		@return AddressesApiGETAddressesAddressIdRequest
-	*/
-	GETAddressesAddressId(ctx context.Context, addressId string) AddressesApiGETAddressesAddressIdRequest
-
-	// GETAddressesAddressIdExecute executes the request
-	//  @return Address
-	GETAddressesAddressIdExecute(r AddressesApiGETAddressesAddressIdRequest) (*Address, *http.Response, error)
-
-	/*
-		GETBingGeocoderIdAddresses Retrieve the addresses associated to the bing geocoder
-
-		Retrieve the addresses associated to the bing geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param bingGeocoderId The resource's id
-		@return AddressesApiGETBingGeocoderIdAddressesRequest
-	*/
-	GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) AddressesApiGETBingGeocoderIdAddressesRequest
-
-	// GETBingGeocoderIdAddressesExecute executes the request
-	GETBingGeocoderIdAddressesExecute(r AddressesApiGETBingGeocoderIdAddressesRequest) (*http.Response, error)
-
-	/*
-		GETCustomerAddressIdAddress Retrieve the address associated to the customer address
-
-		Retrieve the address associated to the customer address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param customerAddressId The resource's id
-		@return AddressesApiGETCustomerAddressIdAddressRequest
-	*/
-	GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) AddressesApiGETCustomerAddressIdAddressRequest
-
-	// GETCustomerAddressIdAddressExecute executes the request
-	GETCustomerAddressIdAddressExecute(r AddressesApiGETCustomerAddressIdAddressRequest) (*http.Response, error)
-
-	/*
-		GETGeocoderIdAddresses Retrieve the addresses associated to the geocoder
-
-		Retrieve the addresses associated to the geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param geocoderId The resource's id
-		@return AddressesApiGETGeocoderIdAddressesRequest
-	*/
-	GETGeocoderIdAddresses(ctx context.Context, geocoderId string) AddressesApiGETGeocoderIdAddressesRequest
-
-	// GETGeocoderIdAddressesExecute executes the request
-	GETGeocoderIdAddressesExecute(r AddressesApiGETGeocoderIdAddressesRequest) (*http.Response, error)
-
-	/*
-		GETGoogleGeocoderIdAddresses Retrieve the addresses associated to the google geocoder
-
-		Retrieve the addresses associated to the google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param googleGeocoderId The resource's id
-		@return AddressesApiGETGoogleGeocoderIdAddressesRequest
-	*/
-	GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) AddressesApiGETGoogleGeocoderIdAddressesRequest
-
-	// GETGoogleGeocoderIdAddressesExecute executes the request
-	GETGoogleGeocoderIdAddressesExecute(r AddressesApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error)
-
-	/*
-		GETMerchantIdAddress Retrieve the address associated to the merchant
-
-		Retrieve the address associated to the merchant
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param merchantId The resource's id
-		@return AddressesApiGETMerchantIdAddressRequest
-	*/
-	GETMerchantIdAddress(ctx context.Context, merchantId string) AddressesApiGETMerchantIdAddressRequest
-
-	// GETMerchantIdAddressExecute executes the request
-	GETMerchantIdAddressExecute(r AddressesApiGETMerchantIdAddressRequest) (*http.Response, error)
-
-	/*
-		GETOrderIdBillingAddress Retrieve the billing address associated to the order
-
-		Retrieve the billing address associated to the order
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderId The resource's id
-		@return AddressesApiGETOrderIdBillingAddressRequest
-	*/
-	GETOrderIdBillingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdBillingAddressRequest
-
-	// GETOrderIdBillingAddressExecute executes the request
-	GETOrderIdBillingAddressExecute(r AddressesApiGETOrderIdBillingAddressRequest) (*http.Response, error)
-
-	/*
-		GETOrderIdShippingAddress Retrieve the shipping address associated to the order
-
-		Retrieve the shipping address associated to the order
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param orderId The resource's id
-		@return AddressesApiGETOrderIdShippingAddressRequest
-	*/
-	GETOrderIdShippingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdShippingAddressRequest
-
-	// GETOrderIdShippingAddressExecute executes the request
-	GETOrderIdShippingAddressExecute(r AddressesApiGETOrderIdShippingAddressRequest) (*http.Response, error)
-
-	/*
-		GETReturnIdDestinationAddress Retrieve the destination address associated to the return
-
-		Retrieve the destination address associated to the return
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param returnId The resource's id
-		@return AddressesApiGETReturnIdDestinationAddressRequest
-	*/
-	GETReturnIdDestinationAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdDestinationAddressRequest
-
-	// GETReturnIdDestinationAddressExecute executes the request
-	GETReturnIdDestinationAddressExecute(r AddressesApiGETReturnIdDestinationAddressRequest) (*http.Response, error)
-
-	/*
-		GETReturnIdOriginAddress Retrieve the origin address associated to the return
-
-		Retrieve the origin address associated to the return
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param returnId The resource's id
-		@return AddressesApiGETReturnIdOriginAddressRequest
-	*/
-	GETReturnIdOriginAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdOriginAddressRequest
-
-	// GETReturnIdOriginAddressExecute executes the request
-	GETReturnIdOriginAddressExecute(r AddressesApiGETReturnIdOriginAddressRequest) (*http.Response, error)
-
-	/*
-		GETShipmentIdOriginAddress Retrieve the origin address associated to the shipment
-
-		Retrieve the origin address associated to the shipment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shipmentId The resource's id
-		@return AddressesApiGETShipmentIdOriginAddressRequest
-	*/
-	GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdOriginAddressRequest
-
-	// GETShipmentIdOriginAddressExecute executes the request
-	GETShipmentIdOriginAddressExecute(r AddressesApiGETShipmentIdOriginAddressRequest) (*http.Response, error)
-
-	/*
-		GETShipmentIdShippingAddress Retrieve the shipping address associated to the shipment
-
-		Retrieve the shipping address associated to the shipment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param shipmentId The resource's id
-		@return AddressesApiGETShipmentIdShippingAddressRequest
-	*/
-	GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdShippingAddressRequest
-
-	// GETShipmentIdShippingAddressExecute executes the request
-	GETShipmentIdShippingAddressExecute(r AddressesApiGETShipmentIdShippingAddressRequest) (*http.Response, error)
-
-	/*
-		GETStockLocationIdAddress Retrieve the address associated to the stock location
-
-		Retrieve the address associated to the stock location
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockLocationId The resource's id
-		@return AddressesApiGETStockLocationIdAddressRequest
-	*/
-	GETStockLocationIdAddress(ctx context.Context, stockLocationId string) AddressesApiGETStockLocationIdAddressRequest
-
-	// GETStockLocationIdAddressExecute executes the request
-	GETStockLocationIdAddressExecute(r AddressesApiGETStockLocationIdAddressRequest) (*http.Response, error)
-
-	/*
-		PATCHAddressesAddressId Update an address
-
-		Update an address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param addressId The resource's id
-		@return AddressesApiPATCHAddressesAddressIdRequest
-	*/
-	PATCHAddressesAddressId(ctx context.Context, addressId string) AddressesApiPATCHAddressesAddressIdRequest
-
-	// PATCHAddressesAddressIdExecute executes the request
-	PATCHAddressesAddressIdExecute(r AddressesApiPATCHAddressesAddressIdRequest) (*http.Response, error)
-
-	/*
-		POSTAddresses Create an address
-
-		Create an address
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return AddressesApiPOSTAddressesRequest
-	*/
-	POSTAddresses(ctx context.Context) AddressesApiPOSTAddressesRequest
-
-	// POSTAddressesExecute executes the request
-	POSTAddressesExecute(r AddressesApiPOSTAddressesRequest) (*http.Response, error)
-}
-
 // AddressesApiService AddressesApi service
 type AddressesApiService service
 
-type AddressesApiDELETEAddressesAddressIdRequest struct {
+type ApiDELETEAddressesAddressIdRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	addressId  string
 }
 
-func (r AddressesApiDELETEAddressesAddressIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEAddressesAddressIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAddressesAddressIdExecute(r)
 }
 
@@ -280,10 +40,10 @@ Delete an address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param addressId The resource's id
- @return AddressesApiDELETEAddressesAddressIdRequest
+ @return ApiDELETEAddressesAddressIdRequest
 */
-func (a *AddressesApiService) DELETEAddressesAddressId(ctx context.Context, addressId string) AddressesApiDELETEAddressesAddressIdRequest {
-	return AddressesApiDELETEAddressesAddressIdRequest{
+func (a *AddressesApiService) DELETEAddressesAddressId(ctx context.Context, addressId string) ApiDELETEAddressesAddressIdRequest {
+	return ApiDELETEAddressesAddressIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		addressId:  addressId,
@@ -291,7 +51,7 @@ func (a *AddressesApiService) DELETEAddressesAddressId(ctx context.Context, addr
 }
 
 // Execute executes the request
-func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELETEAddressesAddressIdRequest) (*http.Response, error) {
+func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r ApiDELETEAddressesAddressIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -355,12 +115,12 @@ func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELE
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETAddressesRequest struct {
+type ApiGETAddressesRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 }
 
-func (r AddressesApiGETAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAddressesExecute(r)
 }
 
@@ -370,17 +130,17 @@ GETAddresses List all addresses
 List all addresses
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AddressesApiGETAddressesRequest
+ @return ApiGETAddressesRequest
 */
-func (a *AddressesApiService) GETAddresses(ctx context.Context) AddressesApiGETAddressesRequest {
-	return AddressesApiGETAddressesRequest{
+func (a *AddressesApiService) GETAddresses(ctx context.Context) ApiGETAddressesRequest {
+	return ApiGETAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETAddressesExecute(r ApiGETAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -443,13 +203,13 @@ func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequ
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETAddressesAddressIdRequest struct {
+type ApiGETAddressesAddressIdRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	addressId  string
 }
 
-func (r AddressesApiGETAddressesAddressIdRequest) Execute() (*Address, *http.Response, error) {
+func (r ApiGETAddressesAddressIdRequest) Execute() (*Address, *http.Response, error) {
 	return r.ApiService.GETAddressesAddressIdExecute(r)
 }
 
@@ -460,10 +220,10 @@ Retrieve an address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param addressId The resource's id
- @return AddressesApiGETAddressesAddressIdRequest
+ @return ApiGETAddressesAddressIdRequest
 */
-func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, addressId string) AddressesApiGETAddressesAddressIdRequest {
-	return AddressesApiGETAddressesAddressIdRequest{
+func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, addressId string) ApiGETAddressesAddressIdRequest {
+	return ApiGETAddressesAddressIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		addressId:  addressId,
@@ -472,7 +232,7 @@ func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, address
 
 // Execute executes the request
 //  @return Address
-func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddressesAddressIdRequest) (*Address, *http.Response, error) {
+func (a *AddressesApiService) GETAddressesAddressIdExecute(r ApiGETAddressesAddressIdRequest) (*Address, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -546,13 +306,13 @@ func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddr
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type AddressesApiGETBingGeocoderIdAddressesRequest struct {
+type ApiGETBingGeocoderIdAddressesRequest struct {
 	ctx            context.Context
-	ApiService     AddressesApi
+	ApiService     *AddressesApiService
 	bingGeocoderId string
 }
 
-func (r AddressesApiGETBingGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETBingGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBingGeocoderIdAddressesExecute(r)
 }
 
@@ -563,10 +323,10 @@ Retrieve the addresses associated to the bing geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bingGeocoderId The resource's id
- @return AddressesApiGETBingGeocoderIdAddressesRequest
+ @return ApiGETBingGeocoderIdAddressesRequest
 */
-func (a *AddressesApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) AddressesApiGETBingGeocoderIdAddressesRequest {
-	return AddressesApiGETBingGeocoderIdAddressesRequest{
+func (a *AddressesApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) ApiGETBingGeocoderIdAddressesRequest {
+	return ApiGETBingGeocoderIdAddressesRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
@@ -574,7 +334,7 @@ func (a *AddressesApiService) GETBingGeocoderIdAddresses(ctx context.Context, bi
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r ApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -638,13 +398,13 @@ func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETCustomerAddressIdAddressRequest struct {
+type ApiGETCustomerAddressIdAddressRequest struct {
 	ctx               context.Context
-	ApiService        AddressesApi
+	ApiService        *AddressesApiService
 	customerAddressId string
 }
 
-func (r AddressesApiGETCustomerAddressIdAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETCustomerAddressIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressIdAddressExecute(r)
 }
 
@@ -655,10 +415,10 @@ Retrieve the address associated to the customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return AddressesApiGETCustomerAddressIdAddressRequest
+ @return ApiGETCustomerAddressIdAddressRequest
 */
-func (a *AddressesApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) AddressesApiGETCustomerAddressIdAddressRequest {
-	return AddressesApiGETCustomerAddressIdAddressRequest{
+func (a *AddressesApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdAddressRequest {
+	return ApiGETCustomerAddressIdAddressRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -666,7 +426,7 @@ func (a *AddressesApiService) GETCustomerAddressIdAddress(ctx context.Context, c
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiGETCustomerAddressIdAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r ApiGETCustomerAddressIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -730,13 +490,13 @@ func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiG
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETGeocoderIdAddressesRequest struct {
+type ApiGETGeocoderIdAddressesRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	geocoderId string
 }
 
-func (r AddressesApiGETGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGeocoderIdAddressesExecute(r)
 }
 
@@ -747,10 +507,10 @@ Retrieve the addresses associated to the geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param geocoderId The resource's id
- @return AddressesApiGETGeocoderIdAddressesRequest
+ @return ApiGETGeocoderIdAddressesRequest
 */
-func (a *AddressesApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) AddressesApiGETGeocoderIdAddressesRequest {
-	return AddressesApiGETGeocoderIdAddressesRequest{
+func (a *AddressesApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) ApiGETGeocoderIdAddressesRequest {
+	return ApiGETGeocoderIdAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		geocoderId: geocoderId,
@@ -758,7 +518,7 @@ func (a *AddressesApiService) GETGeocoderIdAddresses(ctx context.Context, geocod
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r ApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -822,13 +582,13 @@ func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeo
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETGoogleGeocoderIdAddressesRequest struct {
+type ApiGETGoogleGeocoderIdAddressesRequest struct {
 	ctx              context.Context
-	ApiService       AddressesApi
+	ApiService       *AddressesApiService
 	googleGeocoderId string
 }
 
-func (r AddressesApiGETGoogleGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiGETGoogleGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGoogleGeocoderIdAddressesExecute(r)
 }
 
@@ -839,10 +599,10 @@ Retrieve the addresses associated to the google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return AddressesApiGETGoogleGeocoderIdAddressesRequest
+ @return ApiGETGoogleGeocoderIdAddressesRequest
 */
-func (a *AddressesApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) AddressesApiGETGoogleGeocoderIdAddressesRequest {
-	return AddressesApiGETGoogleGeocoderIdAddressesRequest{
+func (a *AddressesApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocoderIdAddressesRequest {
+	return ApiGETGoogleGeocoderIdAddressesRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -850,7 +610,7 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r ApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -914,13 +674,13 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApi
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETMerchantIdAddressRequest struct {
+type ApiGETMerchantIdAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	merchantId string
 }
 
-func (r AddressesApiGETMerchantIdAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETMerchantIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMerchantIdAddressExecute(r)
 }
 
@@ -931,10 +691,10 @@ Retrieve the address associated to the merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return AddressesApiGETMerchantIdAddressRequest
+ @return ApiGETMerchantIdAddressRequest
 */
-func (a *AddressesApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) AddressesApiGETMerchantIdAddressRequest {
-	return AddressesApiGETMerchantIdAddressRequest{
+func (a *AddressesApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) ApiGETMerchantIdAddressRequest {
+	return ApiGETMerchantIdAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -942,7 +702,7 @@ func (a *AddressesApiService) GETMerchantIdAddress(ctx context.Context, merchant
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerchantIdAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETMerchantIdAddressExecute(r ApiGETMerchantIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1006,13 +766,13 @@ func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerch
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETOrderIdBillingAddressRequest struct {
+type ApiGETOrderIdBillingAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	orderId    string
 }
 
-func (r AddressesApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdBillingAddressExecute(r)
 }
 
@@ -1023,10 +783,10 @@ Retrieve the billing address associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return AddressesApiGETOrderIdBillingAddressRequest
+ @return ApiGETOrderIdBillingAddressRequest
 */
-func (a *AddressesApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdBillingAddressRequest {
-	return AddressesApiGETOrderIdBillingAddressRequest{
+func (a *AddressesApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) ApiGETOrderIdBillingAddressRequest {
+	return ApiGETOrderIdBillingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -1034,7 +794,7 @@ func (a *AddressesApiService) GETOrderIdBillingAddress(ctx context.Context, orde
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETOrderIdBillingAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r ApiGETOrderIdBillingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1098,13 +858,13 @@ func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETO
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETOrderIdShippingAddressRequest struct {
+type ApiGETOrderIdShippingAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	orderId    string
 }
 
-func (r AddressesApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdShippingAddressExecute(r)
 }
 
@@ -1115,10 +875,10 @@ Retrieve the shipping address associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return AddressesApiGETOrderIdShippingAddressRequest
+ @return ApiGETOrderIdShippingAddressRequest
 */
-func (a *AddressesApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdShippingAddressRequest {
-	return AddressesApiGETOrderIdShippingAddressRequest{
+func (a *AddressesApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) ApiGETOrderIdShippingAddressRequest {
+	return ApiGETOrderIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -1126,7 +886,7 @@ func (a *AddressesApiService) GETOrderIdShippingAddress(ctx context.Context, ord
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGETOrderIdShippingAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r ApiGETOrderIdShippingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1190,13 +950,13 @@ func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGET
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETReturnIdDestinationAddressRequest struct {
+type ApiGETReturnIdDestinationAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	returnId   string
 }
 
-func (r AddressesApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdDestinationAddressExecute(r)
 }
 
@@ -1207,10 +967,10 @@ Retrieve the destination address associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return AddressesApiGETReturnIdDestinationAddressRequest
+ @return ApiGETReturnIdDestinationAddressRequest
 */
-func (a *AddressesApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdDestinationAddressRequest {
-	return AddressesApiGETReturnIdDestinationAddressRequest{
+func (a *AddressesApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) ApiGETReturnIdDestinationAddressRequest {
+	return ApiGETReturnIdDestinationAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -1218,7 +978,7 @@ func (a *AddressesApiService) GETReturnIdDestinationAddress(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesApiGETReturnIdDestinationAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r ApiGETReturnIdDestinationAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1282,13 +1042,13 @@ func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesAp
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETReturnIdOriginAddressRequest struct {
+type ApiGETReturnIdOriginAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	returnId   string
 }
 
-func (r AddressesApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdOriginAddressExecute(r)
 }
 
@@ -1299,10 +1059,10 @@ Retrieve the origin address associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return AddressesApiGETReturnIdOriginAddressRequest
+ @return ApiGETReturnIdOriginAddressRequest
 */
-func (a *AddressesApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdOriginAddressRequest {
-	return AddressesApiGETReturnIdOriginAddressRequest{
+func (a *AddressesApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) ApiGETReturnIdOriginAddressRequest {
+	return ApiGETReturnIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -1310,7 +1070,7 @@ func (a *AddressesApiService) GETReturnIdOriginAddress(ctx context.Context, retu
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETReturnIdOriginAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r ApiGETReturnIdOriginAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1374,13 +1134,13 @@ func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETR
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETShipmentIdOriginAddressRequest struct {
+type ApiGETShipmentIdOriginAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	shipmentId string
 }
 
-func (r AddressesApiGETShipmentIdOriginAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETShipmentIdOriginAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdOriginAddressExecute(r)
 }
 
@@ -1391,10 +1151,10 @@ Retrieve the origin address associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return AddressesApiGETShipmentIdOriginAddressRequest
+ @return ApiGETShipmentIdOriginAddressRequest
 */
-func (a *AddressesApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdOriginAddressRequest {
-	return AddressesApiGETShipmentIdOriginAddressRequest{
+func (a *AddressesApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdOriginAddressRequest {
+	return ApiGETShipmentIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -1402,7 +1162,7 @@ func (a *AddressesApiService) GETShipmentIdOriginAddress(ctx context.Context, sh
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGETShipmentIdOriginAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r ApiGETShipmentIdOriginAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1466,13 +1226,13 @@ func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGE
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETShipmentIdShippingAddressRequest struct {
+type ApiGETShipmentIdShippingAddressRequest struct {
 	ctx        context.Context
-	ApiService AddressesApi
+	ApiService *AddressesApiService
 	shipmentId string
 }
 
-func (r AddressesApiGETShipmentIdShippingAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETShipmentIdShippingAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdShippingAddressExecute(r)
 }
 
@@ -1483,10 +1243,10 @@ Retrieve the shipping address associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return AddressesApiGETShipmentIdShippingAddressRequest
+ @return ApiGETShipmentIdShippingAddressRequest
 */
-func (a *AddressesApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdShippingAddressRequest {
-	return AddressesApiGETShipmentIdShippingAddressRequest{
+func (a *AddressesApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) ApiGETShipmentIdShippingAddressRequest {
+	return ApiGETShipmentIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -1494,7 +1254,7 @@ func (a *AddressesApiService) GETShipmentIdShippingAddress(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApiGETShipmentIdShippingAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r ApiGETShipmentIdShippingAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1558,13 +1318,13 @@ func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApi
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiGETStockLocationIdAddressRequest struct {
+type ApiGETStockLocationIdAddressRequest struct {
 	ctx             context.Context
-	ApiService      AddressesApi
+	ApiService      *AddressesApiService
 	stockLocationId string
 }
 
-func (r AddressesApiGETStockLocationIdAddressRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockLocationIdAddressRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdAddressExecute(r)
 }
 
@@ -1575,10 +1335,10 @@ Retrieve the address associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return AddressesApiGETStockLocationIdAddressRequest
+ @return ApiGETStockLocationIdAddressRequest
 */
-func (a *AddressesApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) AddressesApiGETStockLocationIdAddressRequest {
-	return AddressesApiGETStockLocationIdAddressRequest{
+func (a *AddressesApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) ApiGETStockLocationIdAddressRequest {
+	return ApiGETStockLocationIdAddressRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -1586,7 +1346,7 @@ func (a *AddressesApiService) GETStockLocationIdAddress(ctx context.Context, sto
 }
 
 // Execute executes the request
-func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGETStockLocationIdAddressRequest) (*http.Response, error) {
+func (a *AddressesApiService) GETStockLocationIdAddressExecute(r ApiGETStockLocationIdAddressRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1650,19 +1410,19 @@ func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGET
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiPATCHAddressesAddressIdRequest struct {
+type ApiPATCHAddressesAddressIdRequest struct {
 	ctx           context.Context
-	ApiService    AddressesApi
-	addressId     string
+	ApiService    *AddressesApiService
 	addressUpdate *AddressUpdate
+	addressId     string
 }
 
-func (r AddressesApiPATCHAddressesAddressIdRequest) AddressUpdate(addressUpdate AddressUpdate) AddressesApiPATCHAddressesAddressIdRequest {
+func (r ApiPATCHAddressesAddressIdRequest) AddressUpdate(addressUpdate AddressUpdate) ApiPATCHAddressesAddressIdRequest {
 	r.addressUpdate = &addressUpdate
 	return r
 }
 
-func (r AddressesApiPATCHAddressesAddressIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHAddressesAddressIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHAddressesAddressIdExecute(r)
 }
 
@@ -1673,10 +1433,10 @@ Update an address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param addressId The resource's id
- @return AddressesApiPATCHAddressesAddressIdRequest
+ @return ApiPATCHAddressesAddressIdRequest
 */
-func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addressId string) AddressesApiPATCHAddressesAddressIdRequest {
-	return AddressesApiPATCHAddressesAddressIdRequest{
+func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addressId string) ApiPATCHAddressesAddressIdRequest {
+	return ApiPATCHAddressesAddressIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		addressId:  addressId,
@@ -1684,7 +1444,7 @@ func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addre
 }
 
 // Execute executes the request
-func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCHAddressesAddressIdRequest) (*http.Response, error) {
+func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r ApiPATCHAddressesAddressIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1753,18 +1513,18 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 	return localVarHTTPResponse, nil
 }
 
-type AddressesApiPOSTAddressesRequest struct {
+type ApiPOSTAddressesRequest struct {
 	ctx           context.Context
-	ApiService    AddressesApi
+	ApiService    *AddressesApiService
 	addressCreate *AddressCreate
 }
 
-func (r AddressesApiPOSTAddressesRequest) AddressCreate(addressCreate AddressCreate) AddressesApiPOSTAddressesRequest {
+func (r ApiPOSTAddressesRequest) AddressCreate(addressCreate AddressCreate) ApiPOSTAddressesRequest {
 	r.addressCreate = &addressCreate
 	return r
 }
 
-func (r AddressesApiPOSTAddressesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTAddressesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTAddressesExecute(r)
 }
 
@@ -1774,17 +1534,17 @@ POSTAddresses Create an address
 Create an address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AddressesApiPOSTAddressesRequest
+ @return ApiPOSTAddressesRequest
 */
-func (a *AddressesApiService) POSTAddresses(ctx context.Context) AddressesApiPOSTAddressesRequest {
-	return AddressesApiPOSTAddressesRequest{
+func (a *AddressesApiService) POSTAddresses(ctx context.Context) ApiPOSTAddressesRequest {
+	return ApiPOSTAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRequest) (*http.Response, error) {
+func (a *AddressesApiService) POSTAddressesExecute(r ApiPOSTAddressesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

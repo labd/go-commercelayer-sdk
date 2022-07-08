@@ -19,32 +19,15 @@ import (
 	"net/url"
 )
 
-type OrganizationApi interface {
-
-	/*
-		GETOrganizationOrganizationId Retrieve the organization
-
-		Retrieve the organization
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return OrganizationApiGETOrganizationOrganizationIdRequest
-	*/
-	GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest
-
-	// GETOrganizationOrganizationIdExecute executes the request
-	//  @return Organization
-	GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error)
-}
-
 // OrganizationApiService OrganizationApi service
 type OrganizationApiService service
 
-type OrganizationApiGETOrganizationOrganizationIdRequest struct {
+type ApiGETOrganizationOrganizationIdRequest struct {
 	ctx        context.Context
-	ApiService OrganizationApi
+	ApiService *OrganizationApiService
 }
 
-func (r OrganizationApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
+func (r ApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -54,10 +37,10 @@ GETOrganizationOrganizationId Retrieve the organization
 Retrieve the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrganizationApiGETOrganizationOrganizationIdRequest
+ @return ApiGETOrganizationOrganizationIdRequest
 */
-func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest {
-	return OrganizationApiGETOrganizationOrganizationIdRequest{
+func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest {
+	return ApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
@@ -65,7 +48,7 @@ func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Conte
 
 // Execute executes the request
 //  @return Organization
-func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
+func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

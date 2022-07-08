@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type CheckoutComPaymentsApi interface {
-
-	/*
-		DELETECheckoutComPaymentsCheckoutComPaymentId Delete a checkout.com payment
-
-		Delete a checkout.com payment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param checkoutComPaymentId The resource's id
-		@return CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest
-	*/
-	DELETECheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest
-
-	// DELETECheckoutComPaymentsCheckoutComPaymentIdExecute executes the request
-	DELETECheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error)
-
-	/*
-		GETCheckoutComGatewayIdCheckoutComPayments Retrieve the checkout com payments associated to the checkout.com gateway
-
-		Retrieve the checkout com payments associated to the checkout.com gateway
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param checkoutComGatewayId The resource's id
-		@return CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
-	*/
-	GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
-
-	// GETCheckoutComGatewayIdCheckoutComPaymentsExecute executes the request
-	GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error)
-
-	/*
-		GETCheckoutComPayments List all checkout.com payments
-
-		List all checkout.com payments
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CheckoutComPaymentsApiGETCheckoutComPaymentsRequest
-	*/
-	GETCheckoutComPayments(ctx context.Context) CheckoutComPaymentsApiGETCheckoutComPaymentsRequest
-
-	// GETCheckoutComPaymentsExecute executes the request
-	GETCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) (*http.Response, error)
-
-	/*
-		GETCheckoutComPaymentsCheckoutComPaymentId Retrieve a checkout.com payment
-
-		Retrieve a checkout.com payment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param checkoutComPaymentId The resource's id
-		@return CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest
-	*/
-	GETCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest
-
-	// GETCheckoutComPaymentsCheckoutComPaymentIdExecute executes the request
-	//  @return CheckoutComPayment
-	GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) (*CheckoutComPayment, *http.Response, error)
-
-	/*
-		PATCHCheckoutComPaymentsCheckoutComPaymentId Update a checkout.com payment
-
-		Update a checkout.com payment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param checkoutComPaymentId The resource's id
-		@return CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
-	*/
-	PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
-
-	// PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute executes the request
-	PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error)
-
-	/*
-		POSTCheckoutComPayments Create a checkout.com payment
-
-		Create a checkout.com payment
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest
-	*/
-	POSTCheckoutComPayments(ctx context.Context) CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest
-
-	// POSTCheckoutComPaymentsExecute executes the request
-	POSTCheckoutComPaymentsExecute(r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) (*http.Response, error)
-}
-
 // CheckoutComPaymentsApiService CheckoutComPaymentsApi service
 type CheckoutComPaymentsApiService service
 
-type CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest struct {
+type ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest struct {
 	ctx                  context.Context
-	ApiService           CheckoutComPaymentsApi
+	ApiService           *CheckoutComPaymentsApiService
 	checkoutComPaymentId string
 }
 
-func (r CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECheckoutComPaymentsCheckoutComPaymentIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest
+ @return ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest {
-	return CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest{
+func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest {
+	return ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -137,7 +51,7 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 }
 
 // Execute executes the request
-func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error) {
+func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentIdExecute(r ApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,13 +115,13 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 	return localVarHTTPResponse, nil
 }
 
-type CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
+type ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
 	ctx                  context.Context
-	ApiService           CheckoutComPaymentsApi
+	ApiService           *CheckoutComPaymentsApiService
 	checkoutComGatewayId string
 }
 
-func (r CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r)
 }
 
@@ -218,10 +132,10 @@ Retrieve the checkout com payments associated to the checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
+ @return ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 */
-func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
-	return CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
+func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
+	return ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -229,7 +143,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 }
 
 // Execute executes the request
-func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error) {
+func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r ApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -293,12 +207,12 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 	return localVarHTTPResponse, nil
 }
 
-type CheckoutComPaymentsApiGETCheckoutComPaymentsRequest struct {
+type ApiGETCheckoutComPaymentsRequest struct {
 	ctx        context.Context
-	ApiService CheckoutComPaymentsApi
+	ApiService *CheckoutComPaymentsApiService
 }
 
-func (r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
+func (r ApiGETCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentsExecute(r)
 }
 
@@ -308,17 +222,17 @@ GETCheckoutComPayments List all checkout.com payments
 List all checkout.com payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CheckoutComPaymentsApiGETCheckoutComPaymentsRequest
+ @return ApiGETCheckoutComPaymentsRequest
 */
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPayments(ctx context.Context) CheckoutComPaymentsApiGETCheckoutComPaymentsRequest {
-	return CheckoutComPaymentsApiGETCheckoutComPaymentsRequest{
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPayments(ctx context.Context) ApiGETCheckoutComPaymentsRequest {
+	return ApiGETCheckoutComPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) (*http.Response, error) {
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r ApiGETCheckoutComPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -381,13 +295,13 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r Checkout
 	return localVarHTTPResponse, nil
 }
 
-type CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
+type ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
 	ctx                  context.Context
-	ApiService           CheckoutComPaymentsApi
+	ApiService           *CheckoutComPaymentsApiService
 	checkoutComPaymentId string
 }
 
-func (r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*CheckoutComPayment, *http.Response, error) {
+func (r ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*CheckoutComPayment, *http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r)
 }
 
@@ -398,10 +312,10 @@ Retrieve a checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest
+ @return ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest {
-	return CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest{
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest {
+	return ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -410,7 +324,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 
 // Execute executes the request
 //  @return CheckoutComPayment
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) (*CheckoutComPayment, *http.Response, error) {
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r ApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) (*CheckoutComPayment, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -484,19 +398,19 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
+type ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
 	ctx                      context.Context
-	ApiService               CheckoutComPaymentsApi
-	checkoutComPaymentId     string
+	ApiService               *CheckoutComPaymentsApiService
 	checkoutComPaymentUpdate *CheckoutComPaymentUpdate
+	checkoutComPaymentId     string
 }
 
-func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) CheckoutComPaymentUpdate(checkoutComPaymentUpdate CheckoutComPaymentUpdate) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
+func (r ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) CheckoutComPaymentUpdate(checkoutComPaymentUpdate CheckoutComPaymentUpdate) ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
 	r.checkoutComPaymentUpdate = &checkoutComPaymentUpdate
 	return r
 }
 
-func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
+ @return ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
-	return CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest{
+func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
+	return ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -518,7 +432,7 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 }
 
 // Execute executes the request
-func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error) {
+func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r ApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 	return localVarHTTPResponse, nil
 }
 
-type CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest struct {
+type ApiPOSTCheckoutComPaymentsRequest struct {
 	ctx                      context.Context
-	ApiService               CheckoutComPaymentsApi
+	ApiService               *CheckoutComPaymentsApiService
 	checkoutComPaymentCreate *CheckoutComPaymentCreate
 }
 
-func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) CheckoutComPaymentCreate(checkoutComPaymentCreate CheckoutComPaymentCreate) CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest {
+func (r ApiPOSTCheckoutComPaymentsRequest) CheckoutComPaymentCreate(checkoutComPaymentCreate CheckoutComPaymentCreate) ApiPOSTCheckoutComPaymentsRequest {
 	r.checkoutComPaymentCreate = &checkoutComPaymentCreate
 	return r
 }
 
-func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTCheckoutComPaymentsExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTCheckoutComPayments Create a checkout.com payment
 Create a checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest
+ @return ApiPOSTCheckoutComPaymentsRequest
 */
-func (a *CheckoutComPaymentsApiService) POSTCheckoutComPayments(ctx context.Context) CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest {
-	return CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest{
+func (a *CheckoutComPaymentsApiService) POSTCheckoutComPayments(ctx context.Context) ApiPOSTCheckoutComPaymentsRequest {
+	return ApiPOSTCheckoutComPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) (*http.Response, error) {
+func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r ApiPOSTCheckoutComPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -20,130 +20,16 @@ import (
 	"strings"
 )
 
-type StockItemsApi interface {
-
-	/*
-		DELETEStockItemsStockItemId Delete a stock item
-
-		Delete a stock item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockItemId The resource's id
-		@return StockItemsApiDELETEStockItemsStockItemIdRequest
-	*/
-	DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiDELETEStockItemsStockItemIdRequest
-
-	// DELETEStockItemsStockItemIdExecute executes the request
-	DELETEStockItemsStockItemIdExecute(r StockItemsApiDELETEStockItemsStockItemIdRequest) (*http.Response, error)
-
-	/*
-		GETSkuIdStockItems Retrieve the stock items associated to the SKU
-
-		Retrieve the stock items associated to the SKU
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param skuId The resource's id
-		@return StockItemsApiGETSkuIdStockItemsRequest
-	*/
-	GETSkuIdStockItems(ctx context.Context, skuId string) StockItemsApiGETSkuIdStockItemsRequest
-
-	// GETSkuIdStockItemsExecute executes the request
-	GETSkuIdStockItemsExecute(r StockItemsApiGETSkuIdStockItemsRequest) (*http.Response, error)
-
-	/*
-		GETStockItems List all stock items
-
-		List all stock items
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return StockItemsApiGETStockItemsRequest
-	*/
-	GETStockItems(ctx context.Context) StockItemsApiGETStockItemsRequest
-
-	// GETStockItemsExecute executes the request
-	GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*http.Response, error)
-
-	/*
-		GETStockItemsStockItemId Retrieve a stock item
-
-		Retrieve a stock item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockItemId The resource's id
-		@return StockItemsApiGETStockItemsStockItemIdRequest
-	*/
-	GETStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiGETStockItemsStockItemIdRequest
-
-	// GETStockItemsStockItemIdExecute executes the request
-	//  @return StockItem
-	GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*StockItem, *http.Response, error)
-
-	/*
-		GETStockLineItemIdStockItem Retrieve the stock item associated to the stock line item
-
-		Retrieve the stock item associated to the stock line item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockLineItemId The resource's id
-		@return StockItemsApiGETStockLineItemIdStockItemRequest
-	*/
-	GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) StockItemsApiGETStockLineItemIdStockItemRequest
-
-	// GETStockLineItemIdStockItemExecute executes the request
-	GETStockLineItemIdStockItemExecute(r StockItemsApiGETStockLineItemIdStockItemRequest) (*http.Response, error)
-
-	/*
-		GETStockLocationIdStockItems Retrieve the stock items associated to the stock location
-
-		Retrieve the stock items associated to the stock location
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockLocationId The resource's id
-		@return StockItemsApiGETStockLocationIdStockItemsRequest
-	*/
-	GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) StockItemsApiGETStockLocationIdStockItemsRequest
-
-	// GETStockLocationIdStockItemsExecute executes the request
-	GETStockLocationIdStockItemsExecute(r StockItemsApiGETStockLocationIdStockItemsRequest) (*http.Response, error)
-
-	/*
-		PATCHStockItemsStockItemId Update a stock item
-
-		Update a stock item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param stockItemId The resource's id
-		@return StockItemsApiPATCHStockItemsStockItemIdRequest
-	*/
-	PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiPATCHStockItemsStockItemIdRequest
-
-	// PATCHStockItemsStockItemIdExecute executes the request
-	PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*http.Response, error)
-
-	/*
-		POSTStockItems Create a stock item
-
-		Create a stock item
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return StockItemsApiPOSTStockItemsRequest
-	*/
-	POSTStockItems(ctx context.Context) StockItemsApiPOSTStockItemsRequest
-
-	// POSTStockItemsExecute executes the request
-	POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*http.Response, error)
-}
-
 // StockItemsApiService StockItemsApi service
 type StockItemsApiService service
 
-type StockItemsApiDELETEStockItemsStockItemIdRequest struct {
+type ApiDELETEStockItemsStockItemIdRequest struct {
 	ctx         context.Context
-	ApiService  StockItemsApi
+	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
-func (r StockItemsApiDELETEStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStockItemsStockItemIdExecute(r)
 }
 
@@ -154,10 +40,10 @@ Delete a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return StockItemsApiDELETEStockItemsStockItemIdRequest
+ @return ApiDELETEStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiDELETEStockItemsStockItemIdRequest {
-	return StockItemsApiDELETEStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) ApiDELETEStockItemsStockItemIdRequest {
+	return ApiDELETEStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -165,7 +51,7 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsApiDELETEStockItemsStockItemIdRequest) (*http.Response, error) {
+func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r ApiDELETEStockItemsStockItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -229,13 +115,13 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiGETSkuIdStockItemsRequest struct {
+type ApiGETSkuIdStockItemsRequest struct {
 	ctx        context.Context
-	ApiService StockItemsApi
+	ApiService *StockItemsApiService
 	skuId      string
 }
 
-func (r StockItemsApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r ApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdStockItemsExecute(r)
 }
 
@@ -246,10 +132,10 @@ Retrieve the stock items associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return StockItemsApiGETSkuIdStockItemsRequest
+ @return ApiGETSkuIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) StockItemsApiGETSkuIdStockItemsRequest {
-	return StockItemsApiGETSkuIdStockItemsRequest{
+func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) ApiGETSkuIdStockItemsRequest {
+	return ApiGETSkuIdStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -257,7 +143,7 @@ func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId str
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuIdStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -321,12 +207,12 @@ func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuId
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiGETStockItemsRequest struct {
+type ApiGETStockItemsRequest struct {
 	ctx        context.Context
-	ApiService StockItemsApi
+	ApiService *StockItemsApiService
 }
 
-func (r StockItemsApiGETStockItemsRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemsExecute(r)
 }
 
@@ -336,17 +222,17 @@ GETStockItems List all stock items
 List all stock items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockItemsApiGETStockItemsRequest
+ @return ApiGETStockItemsRequest
 */
-func (a *StockItemsApiService) GETStockItems(ctx context.Context) StockItemsApiGETStockItemsRequest {
-	return StockItemsApiGETStockItemsRequest{
+func (a *StockItemsApiService) GETStockItems(ctx context.Context) ApiGETStockItemsRequest {
+	return ApiGETStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETStockItemsExecute(r ApiGETStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -409,13 +295,13 @@ func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItems
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiGETStockItemsStockItemIdRequest struct {
+type ApiGETStockItemsStockItemIdRequest struct {
 	ctx         context.Context
-	ApiService  StockItemsApi
+	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
-func (r StockItemsApiGETStockItemsStockItemIdRequest) Execute() (*StockItem, *http.Response, error) {
+func (r ApiGETStockItemsStockItemIdRequest) Execute() (*StockItem, *http.Response, error) {
 	return r.ApiService.GETStockItemsStockItemIdExecute(r)
 }
 
@@ -426,10 +312,10 @@ Retrieve a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return StockItemsApiGETStockItemsStockItemIdRequest
+ @return ApiGETStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiGETStockItemsStockItemIdRequest {
-	return StockItemsApiGETStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) ApiGETStockItemsStockItemIdRequest {
+	return ApiGETStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -438,7 +324,7 @@ func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, sto
 
 // Execute executes the request
 //  @return StockItem
-func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*StockItem, *http.Response, error) {
+func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r ApiGETStockItemsStockItemIdRequest) (*StockItem, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -512,13 +398,13 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type StockItemsApiGETStockLineItemIdStockItemRequest struct {
+type ApiGETStockLineItemIdStockItemRequest struct {
 	ctx             context.Context
-	ApiService      StockItemsApi
+	ApiService      *StockItemsApiService
 	stockLineItemId string
 }
 
-func (r StockItemsApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdStockItemExecute(r)
 }
 
@@ -529,10 +415,10 @@ Retrieve the stock item associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return StockItemsApiGETStockLineItemIdStockItemRequest
+ @return ApiGETStockLineItemIdStockItemRequest
 */
-func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) StockItemsApiGETStockLineItemIdStockItemRequest {
-	return StockItemsApiGETStockLineItemIdStockItemRequest{
+func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdStockItemRequest {
+	return ApiGETStockLineItemIdStockItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -540,7 +426,7 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r ApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -604,13 +490,13 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsAp
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiGETStockLocationIdStockItemsRequest struct {
+type ApiGETStockLocationIdStockItemsRequest struct {
 	ctx             context.Context
-	ApiService      StockItemsApi
+	ApiService      *StockItemsApiService
 	stockLocationId string
 }
 
-func (r StockItemsApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r ApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdStockItemsExecute(r)
 }
 
@@ -621,10 +507,10 @@ Retrieve the stock items associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return StockItemsApiGETStockLocationIdStockItemsRequest
+ @return ApiGETStockLocationIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) StockItemsApiGETStockLocationIdStockItemsRequest {
-	return StockItemsApiGETStockLocationIdStockItemsRequest{
+func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockItemsRequest {
+	return ApiGETStockLocationIdStockItemsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -632,7 +518,7 @@ func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r ApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -696,19 +582,19 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsA
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiPATCHStockItemsStockItemIdRequest struct {
+type ApiPATCHStockItemsStockItemIdRequest struct {
 	ctx             context.Context
-	ApiService      StockItemsApi
-	stockItemId     string
+	ApiService      *StockItemsApiService
 	stockItemUpdate *StockItemUpdate
+	stockItemId     string
 }
 
-func (r StockItemsApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) StockItemsApiPATCHStockItemsStockItemIdRequest {
+func (r ApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) ApiPATCHStockItemsStockItemIdRequest {
 	r.stockItemUpdate = &stockItemUpdate
 	return r
 }
 
-func (r StockItemsApiPATCHStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHStockItemsStockItemIdExecute(r)
 }
 
@@ -719,10 +605,10 @@ Update a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return StockItemsApiPATCHStockItemsStockItemIdRequest
+ @return ApiPATCHStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiPATCHStockItemsStockItemIdRequest {
-	return StockItemsApiPATCHStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) ApiPATCHStockItemsStockItemIdRequest {
+	return ApiPATCHStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -730,7 +616,7 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*http.Response, error) {
+func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStockItemsStockItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -799,18 +685,18 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApi
 	return localVarHTTPResponse, nil
 }
 
-type StockItemsApiPOSTStockItemsRequest struct {
+type ApiPOSTStockItemsRequest struct {
 	ctx             context.Context
-	ApiService      StockItemsApi
+	ApiService      *StockItemsApiService
 	stockItemCreate *StockItemCreate
 }
 
-func (r StockItemsApiPOSTStockItemsRequest) StockItemCreate(stockItemCreate StockItemCreate) StockItemsApiPOSTStockItemsRequest {
+func (r ApiPOSTStockItemsRequest) StockItemCreate(stockItemCreate StockItemCreate) ApiPOSTStockItemsRequest {
 	r.stockItemCreate = &stockItemCreate
 	return r
 }
 
-func (r StockItemsApiPOSTStockItemsRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTStockItemsExecute(r)
 }
 
@@ -820,17 +706,17 @@ POSTStockItems Create a stock item
 Create a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockItemsApiPOSTStockItemsRequest
+ @return ApiPOSTStockItemsRequest
 */
-func (a *StockItemsApiService) POSTStockItems(ctx context.Context) StockItemsApiPOSTStockItemsRequest {
-	return StockItemsApiPOSTStockItemsRequest{
+func (a *StockItemsApiService) POSTStockItems(ctx context.Context) ApiPOSTStockItemsRequest {
+	return ApiPOSTStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

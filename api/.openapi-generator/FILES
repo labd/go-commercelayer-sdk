@@ -41,8 +41,6 @@ api_geocoders.go
 api_gift_card_recipients.go
 api_gift_cards.go
 api_google_geocoders.go
-api_has_many.go
-api_has_one.go
 api_imports.go
 api_in_stock_subscriptions.go
 api_inventory_models.go

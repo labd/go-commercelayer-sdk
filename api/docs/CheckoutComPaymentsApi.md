@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
     checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("checkout_com_payments", "XGZwpOSrWL", *openapiclient.NewCheckoutComPaymentUpdateDataAttributes())) // CheckoutComPaymentUpdate | 
+    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHCheckoutComPaymentsCh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **checkoutComPaymentUpdate** | [**CheckoutComPaymentUpdate**](CheckoutComPaymentUpdate.md) |  | 
+
 
 ### Return type
 

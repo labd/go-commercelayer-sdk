@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
     klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("klarna_payments", "XGZwpOSrWL", *openapiclient.NewKlarnaPaymentUpdateDataAttributes())) // KlarnaPaymentUpdate | 
+    klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHKlarnaPaymentsKlarnaP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **klarnaPaymentUpdate** | [**KlarnaPaymentUpdate**](KlarnaPaymentUpdate.md) |  | 
+
 
 ### Return type
 

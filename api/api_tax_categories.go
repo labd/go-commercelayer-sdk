@@ -20,158 +20,16 @@ import (
 	"strings"
 )
 
-type TaxCategoriesApi interface {
-
-	/*
-		DELETETaxCategoriesTaxCategoryId Delete a tax category
-
-		Delete a tax category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCategoryId The resource's id
-		@return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest
-	*/
-	DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest
-
-	// DELETETaxCategoriesTaxCategoryIdExecute executes the request
-	DELETETaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest) (*http.Response, error)
-
-	/*
-		GETAvalaraAccountIdTaxCategories Retrieve the tax categories associated to the avalara account
-
-		Retrieve the tax categories associated to the avalara account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param avalaraAccountId The resource's id
-		@return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest
-	*/
-	GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest
-
-	// GETAvalaraAccountIdTaxCategoriesExecute executes the request
-	GETAvalaraAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		GETExternalTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the external tax calculator
-
-		Retrieve the tax categories associated to the external tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param externalTaxCalculatorId The resource's id
-		@return TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest
-	*/
-	GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest
-
-	// GETExternalTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETExternalTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		GETManualTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the manual tax calculator
-
-		Retrieve the tax categories associated to the manual tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param manualTaxCalculatorId The resource's id
-		@return TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest
-	*/
-	GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest
-
-	// GETManualTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETManualTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		GETTaxCalculatorIdTaxCategories Retrieve the tax categories associated to the tax calculator
-
-		Retrieve the tax categories associated to the tax calculator
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCalculatorId The resource's id
-		@return TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest
-	*/
-	GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest
-
-	// GETTaxCalculatorIdTaxCategoriesExecute executes the request
-	GETTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		GETTaxCategories List all tax categories
-
-		List all tax categories
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return TaxCategoriesApiGETTaxCategoriesRequest
-	*/
-	GETTaxCategories(ctx context.Context) TaxCategoriesApiGETTaxCategoriesRequest
-
-	// GETTaxCategoriesExecute executes the request
-	GETTaxCategoriesExecute(r TaxCategoriesApiGETTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		GETTaxCategoriesTaxCategoryId Retrieve a tax category
-
-		Retrieve a tax category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCategoryId The resource's id
-		@return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest
-	*/
-	GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest
-
-	// GETTaxCategoriesTaxCategoryIdExecute executes the request
-	//  @return TaxCategory
-	GETTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest) (*TaxCategory, *http.Response, error)
-
-	/*
-		GETTaxjarAccountIdTaxCategories Retrieve the tax categories associated to the taxjar account
-
-		Retrieve the tax categories associated to the taxjar account
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxjarAccountId The resource's id
-		@return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest
-	*/
-	GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest
-
-	// GETTaxjarAccountIdTaxCategoriesExecute executes the request
-	GETTaxjarAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error)
-
-	/*
-		PATCHTaxCategoriesTaxCategoryId Update a tax category
-
-		Update a tax category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param taxCategoryId The resource's id
-		@return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest
-	*/
-	PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest
-
-	// PATCHTaxCategoriesTaxCategoryIdExecute executes the request
-	PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) (*http.Response, error)
-
-	/*
-		POSTTaxCategories Create a tax category
-
-		Create a tax category
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return TaxCategoriesApiPOSTTaxCategoriesRequest
-	*/
-	POSTTaxCategories(ctx context.Context) TaxCategoriesApiPOSTTaxCategoriesRequest
-
-	// POSTTaxCategoriesExecute executes the request
-	POSTTaxCategoriesExecute(r TaxCategoriesApiPOSTTaxCategoriesRequest) (*http.Response, error)
-}
-
 // TaxCategoriesApiService TaxCategoriesApi service
 type TaxCategoriesApiService service
 
-type TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest struct {
+type ApiDELETETaxCategoriesTaxCategoryIdRequest struct {
 	ctx           context.Context
-	ApiService    TaxCategoriesApi
+	ApiService    *TaxCategoriesApiService
 	taxCategoryId string
 }
 
-func (r TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETETaxCategoriesTaxCategoryIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETETaxCategoriesTaxCategoryIdExecute(r)
 }
 
@@ -182,10 +40,10 @@ Delete a tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest
+ @return ApiDELETETaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest {
-	return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest{
+func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) ApiDELETETaxCategoriesTaxCategoryIdRequest {
+	return ApiDELETETaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -193,7 +51,7 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.C
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r ApiDELETETaxCategoriesTaxCategoryIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -257,13 +115,13 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxC
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest struct {
+type ApiGETAvalaraAccountIdTaxCategoriesRequest struct {
 	ctx              context.Context
-	ApiService       TaxCategoriesApi
+	ApiService       *TaxCategoriesApiService
 	avalaraAccountId string
 }
 
-func (r TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdTaxCategoriesExecute(r)
 }
 
@@ -274,10 +132,10 @@ Retrieve the tax categories associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest
+ @return ApiGETAvalaraAccountIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest {
-	return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdTaxCategoriesRequest {
+	return ApiGETAvalaraAccountIdTaxCategoriesRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -285,7 +143,7 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.C
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r ApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -349,13 +207,13 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxC
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
+type ApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx                     context.Context
-	ApiService              TaxCategoriesApi
+	ApiService              *TaxCategoriesApiService
 	externalTaxCalculatorId string
 }
 
-func (r TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETExternalTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -366,10 +224,10 @@ Retrieve the tax categories associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest
+ @return ApiGETExternalTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
-	return TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
+	return ApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -377,7 +235,7 @@ func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategories(ctx co
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r ApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -441,13 +299,13 @@ func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
+type ApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx                   context.Context
-	ApiService            TaxCategoriesApi
+	ApiService            *TaxCategoriesApiService
 	manualTaxCalculatorId string
 }
 
-func (r TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETManualTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -458,10 +316,10 @@ Retrieve the tax categories associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest
+ @return ApiGETManualTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest {
-	return TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxCategoriesRequest {
+	return ApiGETManualTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -469,7 +327,7 @@ func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategories(ctx cont
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r ApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -533,13 +391,13 @@ func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest struct {
+type ApiGETTaxCalculatorIdTaxCategoriesRequest struct {
 	ctx             context.Context
-	ApiService      TaxCategoriesApi
+	ApiService      *TaxCategoriesApiService
 	taxCalculatorId string
 }
 
-func (r TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxCalculatorIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdTaxCategoriesExecute(r)
 }
 
@@ -550,10 +408,10 @@ Retrieve the tax categories associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest
+ @return ApiGETTaxCalculatorIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest {
-	return TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdTaxCategoriesRequest {
+	return ApiGETTaxCalculatorIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -561,7 +419,7 @@ func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategories(ctx context.Co
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategoriesExecute(r ApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -625,12 +483,12 @@ func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategoriesExecute(r TaxCa
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETTaxCategoriesRequest struct {
+type ApiGETTaxCategoriesRequest struct {
 	ctx        context.Context
-	ApiService TaxCategoriesApi
+	ApiService *TaxCategoriesApiService
 }
 
-func (r TaxCategoriesApiGETTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCategoriesExecute(r)
 }
 
@@ -640,17 +498,17 @@ GETTaxCategories List all tax categories
 List all tax categories
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxCategoriesApiGETTaxCategoriesRequest
+ @return ApiGETTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETTaxCategories(ctx context.Context) TaxCategoriesApiGETTaxCategoriesRequest {
-	return TaxCategoriesApiGETTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETTaxCategories(ctx context.Context) ApiGETTaxCategoriesRequest {
+	return ApiGETTaxCategoriesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r ApiGETTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -713,13 +571,13 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETT
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest struct {
+type ApiGETTaxCategoriesTaxCategoryIdRequest struct {
 	ctx           context.Context
-	ApiService    TaxCategoriesApi
+	ApiService    *TaxCategoriesApiService
 	taxCategoryId string
 }
 
-func (r TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest) Execute() (*TaxCategory, *http.Response, error) {
+func (r ApiGETTaxCategoriesTaxCategoryIdRequest) Execute() (*TaxCategory, *http.Response, error) {
 	return r.ApiService.GETTaxCategoriesTaxCategoryIdExecute(r)
 }
 
@@ -730,10 +588,10 @@ Retrieve a tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest
+ @return ApiGETTaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest {
-	return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest{
+func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) ApiGETTaxCategoriesTaxCategoryIdRequest {
+	return ApiGETTaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -742,7 +600,7 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Cont
 
 // Execute executes the request
 //  @return TaxCategory
-func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest) (*TaxCategory, *http.Response, error) {
+func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r ApiGETTaxCategoriesTaxCategoryIdRequest) (*TaxCategory, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -816,13 +674,13 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCate
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest struct {
+type ApiGETTaxjarAccountIdTaxCategoriesRequest struct {
 	ctx             context.Context
-	ApiService      TaxCategoriesApi
+	ApiService      *TaxCategoriesApiService
 	taxjarAccountId string
 }
 
-func (r TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdTaxCategoriesExecute(r)
 }
 
@@ -833,10 +691,10 @@ Retrieve the tax categories associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest
+ @return ApiGETTaxjarAccountIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest {
-	return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdTaxCategoriesRequest {
+	return ApiGETTaxjarAccountIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -844,7 +702,7 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Co
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r ApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -908,19 +766,19 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCa
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest struct {
+type ApiPATCHTaxCategoriesTaxCategoryIdRequest struct {
 	ctx               context.Context
-	ApiService        TaxCategoriesApi
-	taxCategoryId     string
+	ApiService        *TaxCategoriesApiService
 	taxCategoryUpdate *TaxCategoryUpdate
+	taxCategoryId     string
 }
 
-func (r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) TaxCategoryUpdate(taxCategoryUpdate TaxCategoryUpdate) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
+func (r ApiPATCHTaxCategoriesTaxCategoryIdRequest) TaxCategoryUpdate(taxCategoryUpdate TaxCategoryUpdate) ApiPATCHTaxCategoriesTaxCategoryIdRequest {
 	r.taxCategoryUpdate = &taxCategoryUpdate
 	return r
 }
 
-func (r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHTaxCategoriesTaxCategoryIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHTaxCategoriesTaxCategoryIdExecute(r)
 }
 
@@ -931,10 +789,10 @@ Update a tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCategoryId The resource's id
- @return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest
+ @return ApiPATCHTaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
-	return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest{
+func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) ApiPATCHTaxCategoriesTaxCategoryIdRequest {
+	return ApiPATCHTaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
@@ -942,7 +800,7 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Co
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r ApiPATCHTaxCategoriesTaxCategoryIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -1011,18 +869,18 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 	return localVarHTTPResponse, nil
 }
 
-type TaxCategoriesApiPOSTTaxCategoriesRequest struct {
+type ApiPOSTTaxCategoriesRequest struct {
 	ctx               context.Context
-	ApiService        TaxCategoriesApi
+	ApiService        *TaxCategoriesApiService
 	taxCategoryCreate *TaxCategoryCreate
 }
 
-func (r TaxCategoriesApiPOSTTaxCategoriesRequest) TaxCategoryCreate(taxCategoryCreate TaxCategoryCreate) TaxCategoriesApiPOSTTaxCategoriesRequest {
+func (r ApiPOSTTaxCategoriesRequest) TaxCategoryCreate(taxCategoryCreate TaxCategoryCreate) ApiPOSTTaxCategoriesRequest {
 	r.taxCategoryCreate = &taxCategoryCreate
 	return r
 }
 
-func (r TaxCategoriesApiPOSTTaxCategoriesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTTaxCategoriesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTTaxCategoriesExecute(r)
 }
 
@@ -1032,17 +890,17 @@ POSTTaxCategories Create a tax category
 Create a tax category
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxCategoriesApiPOSTTaxCategoriesRequest
+ @return ApiPOSTTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) POSTTaxCategories(ctx context.Context) TaxCategoriesApiPOSTTaxCategoriesRequest {
-	return TaxCategoriesApiPOSTTaxCategoriesRequest{
+func (a *TaxCategoriesApiService) POSTTaxCategories(ctx context.Context) ApiPOSTTaxCategoriesRequest {
+	return ApiPOSTTaxCategoriesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r TaxCategoriesApiPOSTTaxCategoriesRequest) (*http.Response, error) {
+func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r ApiPOSTTaxCategoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

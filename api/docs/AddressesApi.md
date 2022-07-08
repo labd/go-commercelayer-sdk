@@ -1058,8 +1058,8 @@ import (
 )
 
 func main() {
-    addressId := "addressId_example" // string | The resource's id
     addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("addresses", "XGZwpOSrWL", *openapiclient.NewAddressUpdateDataAttributes())) // AddressUpdate | 
+    addressId := "addressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1086,8 +1086,8 @@ Other parameters are passed through a pointer to a apiPATCHAddressesAddressIdReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **addressUpdate** | [**AddressUpdate**](AddressUpdate.md) |  | 
+
 
 ### Return type
 

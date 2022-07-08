@@ -299,8 +299,8 @@ import (
 )
 
 func main() {
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
     externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("external_payments", "XGZwpOSrWL", *openapiclient.NewExternalPaymentUpdateDataAttributes())) // ExternalPaymentUpdate | 
+    externalPaymentId := "externalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -327,8 +327,8 @@ Other parameters are passed through a pointer to a apiPATCHExternalPaymentsExter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **externalPaymentUpdate** | [**ExternalPaymentUpdate**](ExternalPaymentUpdate.md) |  | 
+
 
 ### Return type
 

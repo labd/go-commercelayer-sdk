@@ -368,8 +368,8 @@ import (
 )
 
 func main() {
-    inventoryReturnLocationId := "inventoryReturnLocationId_example" // string | The resource's id
     inventoryReturnLocationUpdate := *openapiclient.NewInventoryReturnLocationUpdate(*openapiclient.NewInventoryReturnLocationUpdateData("inventory_return_locations", "XGZwpOSrWL", *openapiclient.NewInventoryReturnLocationUpdateDataAttributes())) // InventoryReturnLocationUpdate | 
+    inventoryReturnLocationId := "inventoryReturnLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,8 +396,8 @@ Other parameters are passed through a pointer to a apiPATCHInventoryReturnLocati
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **inventoryReturnLocationUpdate** | [**InventoryReturnLocationUpdate**](InventoryReturnLocationUpdate.md) |  | 
+
 
 ### Return type
 

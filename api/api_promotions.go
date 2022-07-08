@@ -20,46 +20,15 @@ import (
 	"strings"
 )
 
-type PromotionsApi interface {
-
-	/*
-		GETPromotions List all promotions
-
-		List all promotions
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return PromotionsApiGETPromotionsRequest
-	*/
-	GETPromotions(ctx context.Context) PromotionsApiGETPromotionsRequest
-
-	// GETPromotionsExecute executes the request
-	GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*http.Response, error)
-
-	/*
-		GETPromotionsPromotionId Retrieve a promotion
-
-		Retrieve a promotion
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param promotionId The resource's id
-		@return PromotionsApiGETPromotionsPromotionIdRequest
-	*/
-	GETPromotionsPromotionId(ctx context.Context, promotionId string) PromotionsApiGETPromotionsPromotionIdRequest
-
-	// GETPromotionsPromotionIdExecute executes the request
-	//  @return Promotion
-	GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*Promotion, *http.Response, error)
-}
-
 // PromotionsApiService PromotionsApi service
 type PromotionsApiService service
 
-type PromotionsApiGETPromotionsRequest struct {
+type ApiGETPromotionsRequest struct {
 	ctx        context.Context
-	ApiService PromotionsApi
+	ApiService *PromotionsApiService
 }
 
-func (r PromotionsApiGETPromotionsRequest) Execute() (*http.Response, error) {
+func (r ApiGETPromotionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionsExecute(r)
 }
 
@@ -69,17 +38,17 @@ GETPromotions List all promotions
 List all promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PromotionsApiGETPromotionsRequest
+ @return ApiGETPromotionsRequest
 */
-func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiGETPromotionsRequest {
-	return PromotionsApiGETPromotionsRequest{
+func (a *PromotionsApiService) GETPromotions(ctx context.Context) ApiGETPromotionsRequest {
+	return ApiGETPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*http.Response, error) {
+func (a *PromotionsApiService) GETPromotionsExecute(r ApiGETPromotionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -142,13 +111,13 @@ func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotions
 	return localVarHTTPResponse, nil
 }
 
-type PromotionsApiGETPromotionsPromotionIdRequest struct {
+type ApiGETPromotionsPromotionIdRequest struct {
 	ctx         context.Context
-	ApiService  PromotionsApi
+	ApiService  *PromotionsApiService
 	promotionId string
 }
 
-func (r PromotionsApiGETPromotionsPromotionIdRequest) Execute() (*Promotion, *http.Response, error) {
+func (r ApiGETPromotionsPromotionIdRequest) Execute() (*Promotion, *http.Response, error) {
 	return r.ApiService.GETPromotionsPromotionIdExecute(r)
 }
 
@@ -159,10 +128,10 @@ Retrieve a promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return PromotionsApiGETPromotionsPromotionIdRequest
+ @return ApiGETPromotionsPromotionIdRequest
 */
-func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, promotionId string) PromotionsApiGETPromotionsPromotionIdRequest {
-	return PromotionsApiGETPromotionsPromotionIdRequest{
+func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, promotionId string) ApiGETPromotionsPromotionIdRequest {
+	return ApiGETPromotionsPromotionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -171,7 +140,7 @@ func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, pro
 
 // Execute executes the request
 //  @return Promotion
-func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*Promotion, *http.Response, error) {
+func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r ApiGETPromotionsPromotionIdRequest) (*Promotion, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}

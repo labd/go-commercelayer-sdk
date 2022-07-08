@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    giftCardId := "giftCardId_example" // string | The resource's id
     giftCardUpdate := *openapiclient.NewGiftCardUpdate(*openapiclient.NewGiftCardUpdateData("gift_cards", "XGZwpOSrWL", *openapiclient.NewGiftCardUpdateDataAttributes())) // GiftCardUpdate | 
+    giftCardId := "giftCardId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHGiftCardsGiftCardIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **giftCardUpdate** | [**GiftCardUpdate**](GiftCardUpdate.md) |  | 
+
 
 ### Return type
 

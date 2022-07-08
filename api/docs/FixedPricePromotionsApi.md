@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
     fixedPricePromotionUpdate := *openapiclient.NewFixedPricePromotionUpdate(*openapiclient.NewFixedPricePromotionUpdateData("fixed_price_promotions", "XGZwpOSrWL", *openapiclient.NewFixedPricePromotionUpdateDataAttributes())) // FixedPricePromotionUpdate | 
+    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHFixedPricePromotionsF
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **fixedPricePromotionUpdate** | [**FixedPricePromotionUpdate**](FixedPricePromotionUpdate.md) |  | 
+
 
 ### Return type
 

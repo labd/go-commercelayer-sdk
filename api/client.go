@@ -50,215 +50,215 @@ type APIClient struct {
 
 	// API Services
 
-	AddressesApi AddressesApi
+	AddressesApi *AddressesApiService
 
-	AdjustmentsApi AdjustmentsApi
+	AdjustmentsApi *AdjustmentsApiService
 
-	AdyenGatewaysApi AdyenGatewaysApi
+	AdyenGatewaysApi *AdyenGatewaysApiService
 
-	AdyenPaymentsApi AdyenPaymentsApi
+	AdyenPaymentsApi *AdyenPaymentsApiService
 
-	ApplicationApi ApplicationApi
+	ApplicationApi *ApplicationApiService
 
-	AttachmentsApi AttachmentsApi
+	AttachmentsApi *AttachmentsApiService
 
-	AuthorizationsApi AuthorizationsApi
+	AuthorizationsApi *AuthorizationsApiService
 
-	AvalaraAccountsApi AvalaraAccountsApi
+	AvalaraAccountsApi *AvalaraAccountsApiService
 
-	BillingInfoValidationRulesApi BillingInfoValidationRulesApi
+	BillingInfoValidationRulesApi *BillingInfoValidationRulesApiService
 
-	BingGeocodersApi BingGeocodersApi
+	BingGeocodersApi *BingGeocodersApiService
 
-	BraintreeGatewaysApi BraintreeGatewaysApi
+	BraintreeGatewaysApi *BraintreeGatewaysApiService
 
-	BraintreePaymentsApi BraintreePaymentsApi
+	BraintreePaymentsApi *BraintreePaymentsApiService
 
-	BundlesApi BundlesApi
+	BundlesApi *BundlesApiService
 
-	CapturesApi CapturesApi
+	CapturesApi *CapturesApiService
 
-	CarrierAccountsApi CarrierAccountsApi
+	CarrierAccountsApi *CarrierAccountsApiService
 
-	CheckoutComGatewaysApi CheckoutComGatewaysApi
+	CheckoutComGatewaysApi *CheckoutComGatewaysApiService
 
-	CheckoutComPaymentsApi CheckoutComPaymentsApi
+	CheckoutComPaymentsApi *CheckoutComPaymentsApiService
 
-	CouponCodesPromotionRulesApi CouponCodesPromotionRulesApi
+	CouponCodesPromotionRulesApi *CouponCodesPromotionRulesApiService
 
-	CouponRecipientsApi CouponRecipientsApi
+	CouponRecipientsApi *CouponRecipientsApiService
 
-	CouponsApi CouponsApi
+	CouponsApi *CouponsApiService
 
-	CustomerAddressesApi CustomerAddressesApi
+	CustomerAddressesApi *CustomerAddressesApiService
 
-	CustomerGroupsApi CustomerGroupsApi
+	CustomerGroupsApi *CustomerGroupsApiService
 
-	CustomerPasswordResetsApi CustomerPasswordResetsApi
+	CustomerPasswordResetsApi *CustomerPasswordResetsApiService
 
-	CustomerPaymentSourcesApi CustomerPaymentSourcesApi
+	CustomerPaymentSourcesApi *CustomerPaymentSourcesApiService
 
-	CustomerSubscriptionsApi CustomerSubscriptionsApi
+	CustomerSubscriptionsApi *CustomerSubscriptionsApiService
 
-	CustomersApi CustomersApi
+	CustomersApi *CustomersApiService
 
-	DeliveryLeadTimesApi DeliveryLeadTimesApi
+	DeliveryLeadTimesApi *DeliveryLeadTimesApiService
 
-	EventCallbacksApi EventCallbacksApi
+	EventCallbacksApi *EventCallbacksApiService
 
-	EventsApi EventsApi
+	EventsApi *EventsApiService
 
-	ExternalGatewaysApi ExternalGatewaysApi
+	ExternalGatewaysApi *ExternalGatewaysApiService
 
-	ExternalPaymentsApi ExternalPaymentsApi
+	ExternalPaymentsApi *ExternalPaymentsApiService
 
-	ExternalPromotionsApi ExternalPromotionsApi
+	ExternalPromotionsApi *ExternalPromotionsApiService
 
-	ExternalTaxCalculatorsApi ExternalTaxCalculatorsApi
+	ExternalTaxCalculatorsApi *ExternalTaxCalculatorsApiService
 
-	FixedAmountPromotionsApi FixedAmountPromotionsApi
+	FixedAmountPromotionsApi *FixedAmountPromotionsApiService
 
-	FixedPricePromotionsApi FixedPricePromotionsApi
+	FixedPricePromotionsApi *FixedPricePromotionsApiService
 
-	FreeGiftPromotionsApi FreeGiftPromotionsApi
+	FreeGiftPromotionsApi *FreeGiftPromotionsApiService
 
-	FreeShippingPromotionsApi FreeShippingPromotionsApi
+	FreeShippingPromotionsApi *FreeShippingPromotionsApiService
 
-	GeocodersApi GeocodersApi
+	GeocodersApi *GeocodersApiService
 
-	GiftCardRecipientsApi GiftCardRecipientsApi
+	GiftCardRecipientsApi *GiftCardRecipientsApiService
 
-	GiftCardsApi GiftCardsApi
+	GiftCardsApi *GiftCardsApiService
 
-	GoogleGeocodersApi GoogleGeocodersApi
+	GoogleGeocodersApi *GoogleGeocodersApiService
 
-	HasManyApi HasManyApi
+	HasManyApi *HasManyApiService
 
-	HasOneApi HasOneApi
+	HasOneApi *HasOneApiService
 
-	ImportsApi ImportsApi
+	ImportsApi *ImportsApiService
 
-	InStockSubscriptionsApi InStockSubscriptionsApi
+	InStockSubscriptionsApi *InStockSubscriptionsApiService
 
-	InventoryModelsApi InventoryModelsApi
+	InventoryModelsApi *InventoryModelsApiService
 
-	InventoryReturnLocationsApi InventoryReturnLocationsApi
+	InventoryReturnLocationsApi *InventoryReturnLocationsApiService
 
-	InventoryStockLocationsApi InventoryStockLocationsApi
+	InventoryStockLocationsApi *InventoryStockLocationsApiService
 
-	KlarnaGatewaysApi KlarnaGatewaysApi
+	KlarnaGatewaysApi *KlarnaGatewaysApiService
 
-	KlarnaPaymentsApi KlarnaPaymentsApi
+	KlarnaPaymentsApi *KlarnaPaymentsApiService
 
-	LineItemOptionsApi LineItemOptionsApi
+	LineItemOptionsApi *LineItemOptionsApiService
 
-	LineItemsApi LineItemsApi
+	LineItemsApi *LineItemsApiService
 
-	ManualGatewaysApi ManualGatewaysApi
+	ManualGatewaysApi *ManualGatewaysApiService
 
-	ManualTaxCalculatorsApi ManualTaxCalculatorsApi
+	ManualTaxCalculatorsApi *ManualTaxCalculatorsApiService
 
-	MarketsApi MarketsApi
+	MarketsApi *MarketsApiService
 
-	MerchantsApi MerchantsApi
+	MerchantsApi *MerchantsApiService
 
-	OrderAmountPromotionRulesApi OrderAmountPromotionRulesApi
+	OrderAmountPromotionRulesApi *OrderAmountPromotionRulesApiService
 
-	OrderCopiesApi OrderCopiesApi
+	OrderCopiesApi *OrderCopiesApiService
 
-	OrderSubscriptionsApi OrderSubscriptionsApi
+	OrderSubscriptionsApi *OrderSubscriptionsApiService
 
-	OrderValidationRulesApi OrderValidationRulesApi
+	OrderValidationRulesApi *OrderValidationRulesApiService
 
-	OrdersApi OrdersApi
+	OrdersApi *OrdersApiService
 
-	OrganizationApi OrganizationApi
+	OrganizationApi *OrganizationApiService
 
-	PackagesApi PackagesApi
+	PackagesApi *PackagesApiService
 
-	ParcelLineItemsApi ParcelLineItemsApi
+	ParcelLineItemsApi *ParcelLineItemsApiService
 
-	ParcelsApi ParcelsApi
+	ParcelsApi *ParcelsApiService
 
-	PaymentGatewaysApi PaymentGatewaysApi
+	PaymentGatewaysApi *PaymentGatewaysApiService
 
-	PaymentMethodsApi PaymentMethodsApi
+	PaymentMethodsApi *PaymentMethodsApiService
 
-	PaypalGatewaysApi PaypalGatewaysApi
+	PaypalGatewaysApi *PaypalGatewaysApiService
 
-	PaypalPaymentsApi PaypalPaymentsApi
+	PaypalPaymentsApi *PaypalPaymentsApiService
 
-	PercentageDiscountPromotionsApi PercentageDiscountPromotionsApi
+	PercentageDiscountPromotionsApi *PercentageDiscountPromotionsApiService
 
-	PriceListsApi PriceListsApi
+	PriceListsApi *PriceListsApiService
 
-	PriceTiersApi PriceTiersApi
+	PriceTiersApi *PriceTiersApiService
 
-	PriceVolumeTiersApi PriceVolumeTiersApi
+	PriceVolumeTiersApi *PriceVolumeTiersApiService
 
-	PricesApi PricesApi
+	PricesApi *PricesApiService
 
-	PromotionRulesApi PromotionRulesApi
+	PromotionRulesApi *PromotionRulesApiService
 
-	PromotionsApi PromotionsApi
+	PromotionsApi *PromotionsApiService
 
-	RefundsApi RefundsApi
+	RefundsApi *RefundsApiService
 
-	ReturnLineItemsApi ReturnLineItemsApi
+	ReturnLineItemsApi *ReturnLineItemsApiService
 
-	ReturnsApi ReturnsApi
+	ReturnsApi *ReturnsApiService
 
-	ShipmentsApi ShipmentsApi
+	ShipmentsApi *ShipmentsApiService
 
-	ShippingCategoriesApi ShippingCategoriesApi
+	ShippingCategoriesApi *ShippingCategoriesApiService
 
-	ShippingMethodTiersApi ShippingMethodTiersApi
+	ShippingMethodTiersApi *ShippingMethodTiersApiService
 
-	ShippingMethodsApi ShippingMethodsApi
+	ShippingMethodsApi *ShippingMethodsApiService
 
-	ShippingWeightTiersApi ShippingWeightTiersApi
+	ShippingWeightTiersApi *ShippingWeightTiersApiService
 
-	ShippingZonesApi ShippingZonesApi
+	ShippingZonesApi *ShippingZonesApiService
 
-	SingletonApi SingletonApi
+	SingletonApi *SingletonApiService
 
-	SkuListItemsApi SkuListItemsApi
+	SkuListItemsApi *SkuListItemsApiService
 
-	SkuListPromotionRulesApi SkuListPromotionRulesApi
+	SkuListPromotionRulesApi *SkuListPromotionRulesApiService
 
-	SkuListsApi SkuListsApi
+	SkuListsApi *SkuListsApiService
 
-	SkuOptionsApi SkuOptionsApi
+	SkuOptionsApi *SkuOptionsApiService
 
-	SkusApi SkusApi
+	SkusApi *SkusApiService
 
-	StockItemsApi StockItemsApi
+	StockItemsApi *StockItemsApiService
 
-	StockLineItemsApi StockLineItemsApi
+	StockLineItemsApi *StockLineItemsApiService
 
-	StockLocationsApi StockLocationsApi
+	StockLocationsApi *StockLocationsApiService
 
-	StockTransfersApi StockTransfersApi
+	StockTransfersApi *StockTransfersApiService
 
-	StripeGatewaysApi StripeGatewaysApi
+	StripeGatewaysApi *StripeGatewaysApiService
 
-	StripePaymentsApi StripePaymentsApi
+	StripePaymentsApi *StripePaymentsApiService
 
-	TaxCalculatorsApi TaxCalculatorsApi
+	TaxCalculatorsApi *TaxCalculatorsApiService
 
-	TaxCategoriesApi TaxCategoriesApi
+	TaxCategoriesApi *TaxCategoriesApiService
 
-	TaxRulesApi TaxRulesApi
+	TaxRulesApi *TaxRulesApiService
 
-	TaxjarAccountsApi TaxjarAccountsApi
+	TaxjarAccountsApi *TaxjarAccountsApiService
 
-	TransactionsApi TransactionsApi
+	TransactionsApi *TransactionsApiService
 
-	VoidsApi VoidsApi
+	VoidsApi *VoidsApiService
 
-	WebhooksApi WebhooksApi
+	WebhooksApi *WebhooksApiService
 
-	WireTransfersApi WireTransfersApi
+	WireTransfersApi *WireTransfersApiService
 }
 
 type service struct {

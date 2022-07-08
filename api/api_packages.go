@@ -20,102 +20,16 @@ import (
 	"strings"
 )
 
-type PackagesApi interface {
-
-	/*
-		DELETEPackagesPackageId Delete a package
-
-		Delete a package
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param packageId The resource's id
-		@return PackagesApiDELETEPackagesPackageIdRequest
-	*/
-	DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest
-
-	// DELETEPackagesPackageIdExecute executes the request
-	DELETEPackagesPackageIdExecute(r PackagesApiDELETEPackagesPackageIdRequest) (*http.Response, error)
-
-	/*
-		GETPackages List all packages
-
-		List all packages
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return PackagesApiGETPackagesRequest
-	*/
-	GETPackages(ctx context.Context) PackagesApiGETPackagesRequest
-
-	// GETPackagesExecute executes the request
-	GETPackagesExecute(r PackagesApiGETPackagesRequest) (*http.Response, error)
-
-	/*
-		GETPackagesPackageId Retrieve a package
-
-		Retrieve a package
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param packageId The resource's id
-		@return PackagesApiGETPackagesPackageIdRequest
-	*/
-	GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest
-
-	// GETPackagesPackageIdExecute executes the request
-	//  @return ModelPackage
-	GETPackagesPackageIdExecute(r PackagesApiGETPackagesPackageIdRequest) (*ModelPackage, *http.Response, error)
-
-	/*
-		GETParcelIdPackage Retrieve the package associated to the parcel
-
-		Retrieve the package associated to the parcel
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param parcelId The resource's id
-		@return PackagesApiGETParcelIdPackageRequest
-	*/
-	GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest
-
-	// GETParcelIdPackageExecute executes the request
-	GETParcelIdPackageExecute(r PackagesApiGETParcelIdPackageRequest) (*http.Response, error)
-
-	/*
-		PATCHPackagesPackageId Update a package
-
-		Update a package
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param packageId The resource's id
-		@return PackagesApiPATCHPackagesPackageIdRequest
-	*/
-	PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest
-
-	// PATCHPackagesPackageIdExecute executes the request
-	PATCHPackagesPackageIdExecute(r PackagesApiPATCHPackagesPackageIdRequest) (*http.Response, error)
-
-	/*
-		POSTPackages Create a package
-
-		Create a package
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return PackagesApiPOSTPackagesRequest
-	*/
-	POSTPackages(ctx context.Context) PackagesApiPOSTPackagesRequest
-
-	// POSTPackagesExecute executes the request
-	POSTPackagesExecute(r PackagesApiPOSTPackagesRequest) (*http.Response, error)
-}
-
 // PackagesApiService PackagesApi service
 type PackagesApiService service
 
-type PackagesApiDELETEPackagesPackageIdRequest struct {
+type ApiDELETEPackagesPackageIdRequest struct {
 	ctx        context.Context
-	ApiService PackagesApi
+	ApiService *PackagesApiService
 	packageId  string
 }
 
-func (r PackagesApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPackagesPackageIdExecute(r)
 }
 
@@ -126,10 +40,10 @@ Delete a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return PackagesApiDELETEPackagesPackageIdRequest
+ @return ApiDELETEPackagesPackageIdRequest
 */
-func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest {
-	return PackagesApiDELETEPackagesPackageIdRequest{
+func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) ApiDELETEPackagesPackageIdRequest {
+	return ApiDELETEPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -137,7 +51,7 @@ func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packag
 }
 
 // Execute executes the request
-func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEPackagesPackageIdRequest) (*http.Response, error) {
+func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r ApiDELETEPackagesPackageIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -201,12 +115,12 @@ func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEP
 	return localVarHTTPResponse, nil
 }
 
-type PackagesApiGETPackagesRequest struct {
+type ApiGETPackagesRequest struct {
 	ctx        context.Context
-	ApiService PackagesApi
+	ApiService *PackagesApiService
 }
 
-func (r PackagesApiGETPackagesRequest) Execute() (*http.Response, error) {
+func (r ApiGETPackagesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackagesExecute(r)
 }
 
@@ -216,17 +130,17 @@ GETPackages List all packages
 List all packages
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PackagesApiGETPackagesRequest
+ @return ApiGETPackagesRequest
 */
-func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPackagesRequest {
-	return PackagesApiGETPackagesRequest{
+func (a *PackagesApiService) GETPackages(ctx context.Context) ApiGETPackagesRequest {
+	return ApiGETPackagesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest) (*http.Response, error) {
+func (a *PackagesApiService) GETPackagesExecute(r ApiGETPackagesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -289,13 +203,13 @@ func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest)
 	return localVarHTTPResponse, nil
 }
 
-type PackagesApiGETPackagesPackageIdRequest struct {
+type ApiGETPackagesPackageIdRequest struct {
 	ctx        context.Context
-	ApiService PackagesApi
+	ApiService *PackagesApiService
 	packageId  string
 }
 
-func (r PackagesApiGETPackagesPackageIdRequest) Execute() (*ModelPackage, *http.Response, error) {
+func (r ApiGETPackagesPackageIdRequest) Execute() (*ModelPackage, *http.Response, error) {
 	return r.ApiService.GETPackagesPackageIdExecute(r)
 }
 
@@ -306,10 +220,10 @@ Retrieve a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return PackagesApiGETPackagesPackageIdRequest
+ @return ApiGETPackagesPackageIdRequest
 */
-func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest {
-	return PackagesApiGETPackagesPackageIdRequest{
+func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) ApiGETPackagesPackageIdRequest {
+	return ApiGETPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -318,7 +232,7 @@ func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId
 
 // Execute executes the request
 //  @return ModelPackage
-func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackagesPackageIdRequest) (*ModelPackage, *http.Response, error) {
+func (a *PackagesApiService) GETPackagesPackageIdExecute(r ApiGETPackagesPackageIdRequest) (*ModelPackage, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -392,13 +306,13 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type PackagesApiGETParcelIdPackageRequest struct {
+type ApiGETParcelIdPackageRequest struct {
 	ctx        context.Context
-	ApiService PackagesApi
+	ApiService *PackagesApiService
 	parcelId   string
 }
 
-func (r PackagesApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
+func (r ApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdPackageExecute(r)
 }
 
@@ -409,10 +323,10 @@ Retrieve the package associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return PackagesApiGETParcelIdPackageRequest
+ @return ApiGETParcelIdPackageRequest
 */
-func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest {
-	return PackagesApiGETParcelIdPackageRequest{
+func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) ApiGETParcelIdPackageRequest {
+	return ApiGETParcelIdPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -420,7 +334,7 @@ func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId st
 }
 
 // Execute executes the request
-func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdPackageRequest) (*http.Response, error) {
+func (a *PackagesApiService) GETParcelIdPackageExecute(r ApiGETParcelIdPackageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -484,19 +398,19 @@ func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdP
 	return localVarHTTPResponse, nil
 }
 
-type PackagesApiPATCHPackagesPackageIdRequest struct {
+type ApiPATCHPackagesPackageIdRequest struct {
 	ctx           context.Context
-	ApiService    PackagesApi
-	packageId     string
+	ApiService    *PackagesApiService
 	packageUpdate *PackageUpdate
+	packageId     string
 }
 
-func (r PackagesApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) PackagesApiPATCHPackagesPackageIdRequest {
+func (r ApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) ApiPATCHPackagesPackageIdRequest {
 	r.packageUpdate = &packageUpdate
 	return r
 }
 
-func (r PackagesApiPATCHPackagesPackageIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHPackagesPackageIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHPackagesPackageIdExecute(r)
 }
 
@@ -507,10 +421,10 @@ Update a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return PackagesApiPATCHPackagesPackageIdRequest
+ @return ApiPATCHPackagesPackageIdRequest
 */
-func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest {
-	return PackagesApiPATCHPackagesPackageIdRequest{
+func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) ApiPATCHPackagesPackageIdRequest {
+	return ApiPATCHPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -518,7 +432,7 @@ func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, package
 }
 
 // Execute executes the request
-func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPackagesPackageIdRequest) (*http.Response, error) {
+func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPackageIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -587,18 +501,18 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPac
 	return localVarHTTPResponse, nil
 }
 
-type PackagesApiPOSTPackagesRequest struct {
+type ApiPOSTPackagesRequest struct {
 	ctx           context.Context
-	ApiService    PackagesApi
+	ApiService    *PackagesApiService
 	packageCreate *PackageCreate
 }
 
-func (r PackagesApiPOSTPackagesRequest) PackageCreate(packageCreate PackageCreate) PackagesApiPOSTPackagesRequest {
+func (r ApiPOSTPackagesRequest) PackageCreate(packageCreate PackageCreate) ApiPOSTPackagesRequest {
 	r.packageCreate = &packageCreate
 	return r
 }
 
-func (r PackagesApiPOSTPackagesRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTPackagesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTPackagesExecute(r)
 }
 
@@ -608,17 +522,17 @@ POSTPackages Create a package
 Create a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PackagesApiPOSTPackagesRequest
+ @return ApiPOSTPackagesRequest
 */
-func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPackagesRequest {
-	return PackagesApiPOSTPackagesRequest{
+func (a *PackagesApiService) POSTPackages(ctx context.Context) ApiPOSTPackagesRequest {
+	return ApiPOSTPackagesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PackagesApiService) POSTPackagesExecute(r PackagesApiPOSTPackagesRequest) (*http.Response, error) {
+func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

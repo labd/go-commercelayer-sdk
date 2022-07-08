@@ -368,8 +368,8 @@ import (
 )
 
 func main() {
-    bundleId := "bundleId_example" // string | The resource's id
     bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("bundles", "XGZwpOSrWL", *openapiclient.NewBundleUpdateDataAttributes())) // BundleUpdate | 
+    bundleId := "bundleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -396,8 +396,8 @@ Other parameters are passed through a pointer to a apiPATCHBundlesBundleIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **bundleUpdate** | [**BundleUpdate**](BundleUpdate.md) |  | 
+
 
 ### Return type
 

@@ -713,8 +713,8 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
     skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("sku_list_promotion_rules", "XGZwpOSrWL", *openapiclient.NewSkuListPromotionRuleCreateDataAttributes())) // SkuListPromotionRuleUpdate | 
+    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -741,8 +741,8 @@ Other parameters are passed through a pointer to a apiPATCHSkuListPromotionRules
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **skuListPromotionRuleUpdate** | [**SkuListPromotionRuleUpdate**](SkuListPromotionRuleUpdate.md) |  | 
+
 
 ### Return type
 

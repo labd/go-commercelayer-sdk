@@ -1886,8 +1886,8 @@ import (
 )
 
 func main() {
-    marketId := "marketId_example" // string | The resource's id
     marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("markets", "XGZwpOSrWL", *openapiclient.NewMarketUpdateDataAttributes())) // MarketUpdate | 
+    marketId := "marketId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1914,8 +1914,8 @@ Other parameters are passed through a pointer to a apiPATCHMarketsMarketIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **marketUpdate** | [**MarketUpdate**](MarketUpdate.md) |  | 
+
 
 ### Return type
 

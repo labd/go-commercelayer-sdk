@@ -20,88 +20,16 @@ import (
 	"strings"
 )
 
-type GoogleGeocodersApi interface {
-
-	/*
-		DELETEGoogleGeocodersGoogleGeocoderId Delete a google geocoder
-
-		Delete a google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param googleGeocoderId The resource's id
-		@return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
-	*/
-	DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
-
-	// DELETEGoogleGeocodersGoogleGeocoderIdExecute executes the request
-	DELETEGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error)
-
-	/*
-		GETGoogleGeocoders List all google geocoders
-
-		List all google geocoders
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return GoogleGeocodersApiGETGoogleGeocodersRequest
-	*/
-	GETGoogleGeocoders(ctx context.Context) GoogleGeocodersApiGETGoogleGeocodersRequest
-
-	// GETGoogleGeocodersExecute executes the request
-	GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*http.Response, error)
-
-	/*
-		GETGoogleGeocodersGoogleGeocoderId Retrieve a google geocoder
-
-		Retrieve a google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param googleGeocoderId The resource's id
-		@return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
-	*/
-	GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
-
-	// GETGoogleGeocodersGoogleGeocoderIdExecute executes the request
-	//  @return GoogleGeocoder
-	GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoder, *http.Response, error)
-
-	/*
-		PATCHGoogleGeocodersGoogleGeocoderId Update a google geocoder
-
-		Update a google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@param googleGeocoderId The resource's id
-		@return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
-	*/
-	PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
-
-	// PATCHGoogleGeocodersGoogleGeocoderIdExecute executes the request
-	PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error)
-
-	/*
-		POSTGoogleGeocoders Create a google geocoder
-
-		Create a google geocoder
-
-		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
-		@return GoogleGeocodersApiPOSTGoogleGeocodersRequest
-	*/
-	POSTGoogleGeocoders(ctx context.Context) GoogleGeocodersApiPOSTGoogleGeocodersRequest
-
-	// POSTGoogleGeocodersExecute executes the request
-	POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*http.Response, error)
-}
-
 // GoogleGeocodersApiService GoogleGeocodersApi service
 type GoogleGeocodersApiService service
 
-type GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest struct {
+type ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
-	ApiService       GoogleGeocodersApi
+	ApiService       *GoogleGeocodersApiService
 	googleGeocoderId string
 }
 
-func (r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -112,10 +40,10 @@ Delete a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
+ @return ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
-	return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
+	return ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -123,7 +51,7 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx co
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
+func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute(r ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -187,12 +115,12 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type GoogleGeocodersApiGETGoogleGeocodersRequest struct {
+type ApiGETGoogleGeocodersRequest struct {
 	ctx        context.Context
-	ApiService GoogleGeocodersApi
+	ApiService *GoogleGeocodersApiService
 }
 
-func (r GoogleGeocodersApiGETGoogleGeocodersRequest) Execute() (*http.Response, error) {
+func (r ApiGETGoogleGeocodersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersExecute(r)
 }
 
@@ -202,17 +130,17 @@ GETGoogleGeocoders List all google geocoders
 List all google geocoders
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return GoogleGeocodersApiGETGoogleGeocodersRequest
+ @return ApiGETGoogleGeocodersRequest
 */
-func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) GoogleGeocodersApiGETGoogleGeocodersRequest {
-	return GoogleGeocodersApiGETGoogleGeocodersRequest{
+func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) ApiGETGoogleGeocodersRequest {
+	return ApiGETGoogleGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*http.Response, error) {
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r ApiGETGoogleGeocodersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -275,13 +203,13 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersA
 	return localVarHTTPResponse, nil
 }
 
-type GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
+type ApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
-	ApiService       GoogleGeocodersApi
+	ApiService       *GoogleGeocodersApiService
 	googleGeocoderId string
 }
 
-func (r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GoogleGeocoder, *http.Response, error) {
+func (r ApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GoogleGeocoder, *http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -292,10 +220,10 @@ Retrieve a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
+ @return ApiGETGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest {
-	return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocodersGoogleGeocoderIdRequest {
+	return ApiGETGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -304,7 +232,7 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx conte
 
 // Execute executes the request
 //  @return GoogleGeocoder
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoder, *http.Response, error) {
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r ApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoder, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
@@ -378,19 +306,19 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest struct {
+type ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx                  context.Context
-	ApiService           GoogleGeocodersApi
-	googleGeocoderId     string
+	ApiService           *GoogleGeocodersApiService
 	googleGeocoderUpdate *GoogleGeocoderUpdate
+	googleGeocoderId     string
 }
 
-func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeocoderUpdate(googleGeocoderUpdate GoogleGeocoderUpdate) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
+func (r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeocoderUpdate(googleGeocoderUpdate GoogleGeocoderUpdate) ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
 	r.googleGeocoderUpdate = &googleGeocoderUpdate
 	return r
 }
 
-func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.PATCHGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -401,10 +329,10 @@ Update a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
+ @return ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
-	return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
+	return ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -412,7 +340,7 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx con
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPatch
 		localVarPostBody   interface{}
@@ -481,18 +409,18 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 	return localVarHTTPResponse, nil
 }
 
-type GoogleGeocodersApiPOSTGoogleGeocodersRequest struct {
+type ApiPOSTGoogleGeocodersRequest struct {
 	ctx                  context.Context
-	ApiService           GoogleGeocodersApi
+	ApiService           *GoogleGeocodersApiService
 	googleGeocoderCreate *GoogleGeocoderCreate
 }
 
-func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) GoogleGeocoderCreate(googleGeocoderCreate GoogleGeocoderCreate) GoogleGeocodersApiPOSTGoogleGeocodersRequest {
+func (r ApiPOSTGoogleGeocodersRequest) GoogleGeocoderCreate(googleGeocoderCreate GoogleGeocoderCreate) ApiPOSTGoogleGeocodersRequest {
 	r.googleGeocoderCreate = &googleGeocoderCreate
 	return r
 }
 
-func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) Execute() (*http.Response, error) {
+func (r ApiPOSTGoogleGeocodersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.POSTGoogleGeocodersExecute(r)
 }
 
@@ -502,17 +430,17 @@ POSTGoogleGeocoders Create a google geocoder
 Create a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return GoogleGeocodersApiPOSTGoogleGeocodersRequest
+ @return ApiPOSTGoogleGeocodersRequest
 */
-func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) GoogleGeocodersApiPOSTGoogleGeocodersRequest {
-	return GoogleGeocodersApiPOSTGoogleGeocodersRequest{
+func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) ApiPOSTGoogleGeocodersRequest {
+	return ApiPOSTGoogleGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*http.Response, error) {
+func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGeocodersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodPost
 		localVarPostBody   interface{}

@@ -437,8 +437,8 @@ import (
 )
 
 func main() {
-    inventoryModelId := "inventoryModelId_example" // string | The resource's id
     inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("inventory_models", "XGZwpOSrWL", *openapiclient.NewInventoryModelUpdateDataAttributes())) // InventoryModelUpdate | 
+    inventoryModelId := "inventoryModelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -465,8 +465,8 @@ Other parameters are passed through a pointer to a apiPATCHInventoryModelsInvent
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **inventoryModelUpdate** | [**InventoryModelUpdate**](InventoryModelUpdate.md) |  | 
+
 
 ### Return type
 

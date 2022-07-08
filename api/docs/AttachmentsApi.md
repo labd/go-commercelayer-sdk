@@ -3404,8 +3404,8 @@ import (
 )
 
 func main() {
-    attachmentId := "attachmentId_example" // string | The resource's id
     attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("attachments", "XGZwpOSrWL", *openapiclient.NewAttachmentUpdateDataAttributes())) // AttachmentUpdate | 
+    attachmentId := "attachmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -3432,8 +3432,8 @@ Other parameters are passed through a pointer to a apiPATCHAttachmentsAttachment
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **attachmentUpdate** | [**AttachmentUpdate**](AttachmentUpdate.md) |  | 
+
 
 ### Return type
 

@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
     checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("checkout_com_gateways", "XGZwpOSrWL", *openapiclient.NewCheckoutComGatewayUpdateDataAttributes())) // CheckoutComGatewayUpdate | 
+    checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHCheckoutComGatewaysCh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **checkoutComGatewayUpdate** | [**CheckoutComGatewayUpdate**](CheckoutComGatewayUpdate.md) |  | 
+
 
 ### Return type
 

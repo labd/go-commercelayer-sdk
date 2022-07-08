@@ -230,8 +230,8 @@ import (
 )
 
 func main() {
-    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
     stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("stripe_gateways", "XGZwpOSrWL", *openapiclient.NewStripeGatewayUpdateDataAttributes())) // StripeGatewayUpdate | 
+    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -258,8 +258,8 @@ Other parameters are passed through a pointer to a apiPATCHStripeGatewaysStripeG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
  **stripeGatewayUpdate** | [**StripeGatewayUpdate**](StripeGatewayUpdate.md) |  | 
+
 
 ### Return type
 
