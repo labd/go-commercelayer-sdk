@@ -7,3 +7,5 @@
 
 /api/api_has_many.go
 /api/api_has_one.go
+/api/api_singleton.go
+/api/client.go

@@ -83,7 +83,6 @@ api_shipping_method_tiers.go
 api_shipping_methods.go
 api_shipping_weight_tiers.go
 api_shipping_zones.go
-api_singleton.go
 api_sku_list_items.go
 api_sku_list_promotion_rules.go
 api_sku_lists.go
@@ -103,7 +102,6 @@ api_transactions.go
 api_voids.go
 api_webhooks.go
 api_wire_transfers.go
-client.go
 configuration.go
 docs/Address.md
 docs/AddressCreate.md
