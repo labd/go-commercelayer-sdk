@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockTransferCreateData struct for StockTransferCreateData
 type StockTransferCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    StockTransferCreateDataAttributes     `json:"attributes"`
-	Relationships *StockTransferCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    POSTStockTransfers201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTStockTransfers201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferCreateData instantiates a new StockTransferCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferCreateData(type_ string, attributes StockTransferCreateDataAttributes) *StockTransferCreateData {
+func NewStockTransferCreateData(type_ string, attributes POSTStockTransfers201ResponseDataAttributes) *StockTransferCreateData {
 	this := StockTransferCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *StockTransferCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferCreateData) GetAttributes() StockTransferCreateDataAttributes {
+func (o *StockTransferCreateData) GetAttributes() POSTStockTransfers201ResponseDataAttributes {
 	if o == nil {
-		var ret StockTransferCreateDataAttributes
+		var ret POSTStockTransfers201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *StockTransferCreateData) GetAttributes() StockTransferCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateData) GetAttributesOk() (*StockTransferCreateDataAttributes, bool) {
+func (o *StockTransferCreateData) GetAttributesOk() (*POSTStockTransfers201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *StockTransferCreateData) GetAttributesOk() (*StockTransferCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StockTransferCreateData) SetAttributes(v StockTransferCreateDataAttributes) {
+func (o *StockTransferCreateData) SetAttributes(v POSTStockTransfers201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockTransferCreateData) GetRelationships() StockTransferCreateDataRelationships {
+func (o *StockTransferCreateData) GetRelationships() POSTStockTransfers201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret StockTransferCreateDataRelationships
+		var ret POSTStockTransfers201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockTransferCreateData) GetRelationships() StockTransferCreateDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateData) GetRelationshipsOk() (*StockTransferCreateDataRelationships, bool) {
+func (o *StockTransferCreateData) GetRelationshipsOk() (*POSTStockTransfers201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockTransferCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given StockTransferCreateDataRelationships and assigns it to the Relationships field.
-func (o *StockTransferCreateData) SetRelationships(v StockTransferCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTStockTransfers201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *StockTransferCreateData) SetRelationships(v POSTStockTransfers201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

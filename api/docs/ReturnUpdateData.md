@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "returns"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ReturnUpdateDataAttributes**](ReturnUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PackageUpdateDataRelationships**](PackageUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHReturnsReturnId200ResponseDataAttributes**](PATCHReturnsReturnId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHPackagesPackageId200ResponseDataRelationships**](PATCHPackagesPackageId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnUpdateData
 
-`func NewReturnUpdateData(type_ string, id string, attributes ReturnUpdateDataAttributes, ) *ReturnUpdateData`
+`func NewReturnUpdateData(type_ string, id string, attributes PATCHReturnsReturnId200ResponseDataAttributes, ) *ReturnUpdateData`
 
 NewReturnUpdateData instantiates a new ReturnUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnUpdateData) GetAttributes() ReturnUpdateDataAttributes`
+`func (o *ReturnUpdateData) GetAttributes() PATCHReturnsReturnId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnUpdateData) GetAttributesOk() (*ReturnUpdateDataAttributes, bool)`
+`func (o *ReturnUpdateData) GetAttributesOk() (*PATCHReturnsReturnId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnUpdateData) SetAttributes(v ReturnUpdateDataAttributes)`
+`func (o *ReturnUpdateData) SetAttributes(v PATCHReturnsReturnId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships`
+`func (o *ReturnUpdateData) GetRelationships() PATCHPackagesPackageId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnUpdateData) GetRelationshipsOk() (*PackageUpdateDataRelationships, bool)`
+`func (o *ReturnUpdateData) GetRelationshipsOk() (*PATCHPackagesPackageId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnUpdateData) SetRelationships(v PackageUpdateDataRelationships)`
+`func (o *ReturnUpdateData) SetRelationships(v PATCHPackagesPackageId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

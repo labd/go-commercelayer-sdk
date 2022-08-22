@@ -1,6 +1,6 @@
 # \BraintreeGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETBraintreeGateways
 
-> GETBraintreeGateways(ctx).Execute()
+> GETBraintreeGateways200Response GETBraintreeGateways(ctx).Execute()
 
 List all braintree gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.GETBraintreeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETBraintreeGateways`: GETBraintreeGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.GETBraintreeGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETBraintreeGatewaysReques
 
 ### Return type
 
- (empty response body)
+[**GETBraintreeGateways200Response**](GETBraintreeGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETBraintreeGatewaysBraintreeGatewayId
 
-> BraintreeGateway GETBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).Execute()
+> GETBraintreeGatewaysBraintreeGatewayId200Response GETBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).Execute()
 
 Retrieve a braintree gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.GETBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreeGatewaysBraintreeGatewayId`: BraintreeGateway
+    // response from `GETBraintreeGatewaysBraintreeGatewayId`: GETBraintreeGatewaysBraintreeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.GETBraintreeGatewaysBraintreeGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreeGateway**](BraintreeGateway.md)
+[**GETBraintreeGatewaysBraintreeGatewayId200Response**](GETBraintreeGatewaysBraintreeGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHBraintreeGatewaysBraintreeGatewayId
 
-> PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
+> PATCHBraintreeGatewaysBraintreeGatewayId200Response PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
 
 Update a braintree gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("braintree_gateways", "XGZwpOSrWL", *openapiclient.NewBraintreeGatewayUpdateDataAttributes())) // BraintreeGatewayUpdate | 
+    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("braintree_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
     braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHBraintreeGatewaysBraintreeGatewayId`: PATCHBraintreeGatewaysBraintreeGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHBraintreeGatewaysBraintreeGatewayId200Response**](PATCHBraintreeGatewaysBraintreeGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTBraintreeGateways
 
-> POSTBraintreeGateways(ctx).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
+> POSTBraintreeGateways201Response POSTBraintreeGateways(ctx).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
 
 Create a braintree gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("braintree_gateways", *openapiclient.NewBraintreeGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
+    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("braintree_gateways", *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.POSTBraintreeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTBraintreeGateways`: POSTBraintreeGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.POSTBraintreeGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBraintreeGateways201Response**](POSTBraintreeGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_amount_promotion_rules"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**OrderAmountPromotionRuleCreateDataAttributes**](OrderAmountPromotionRuleCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTOrderAmountPromotionRules201ResponseDataAttributes**](POSTOrderAmountPromotionRules201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**GETOrderAmountPromotionRules200ResponseDataInnerRelationships**](GETOrderAmountPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleUpdateData
 
-`func NewOrderAmountPromotionRuleUpdateData(type_ string, id string, attributes OrderAmountPromotionRuleCreateDataAttributes, ) *OrderAmountPromotionRuleUpdateData`
+`func NewOrderAmountPromotionRuleUpdateData(type_ string, id string, attributes POSTOrderAmountPromotionRules201ResponseDataAttributes, ) *OrderAmountPromotionRuleUpdateData`
 
 NewOrderAmountPromotionRuleUpdateData instantiates a new OrderAmountPromotionRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() OrderAmountPromotionRuleCreateDataAttributes`
+`func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() POSTOrderAmountPromotionRules201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*OrderAmountPromotionRuleCreateDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*POSTOrderAmountPromotionRules201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v OrderAmountPromotionRuleCreateDataAttributes)`
+`func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v POSTOrderAmountPromotionRules201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromotionRuleDataRelationships`
+`func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool)`
+`func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v OrderAmountPromotionRuleDataRelationships)`
+`func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

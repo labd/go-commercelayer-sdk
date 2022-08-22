@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PercentageDiscountPromotionCreateData struct for PercentageDiscountPromotionCreateData
 type PercentageDiscountPromotionCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    PercentageDiscountPromotionCreateDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships     `json:"relationships,omitempty"`
+	Type          string                                                                      `json:"type"`
+	Attributes    POSTPercentageDiscountPromotions201ResponseDataAttributes                   `json:"attributes"`
+	Relationships *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionCreateData instantiates a new PercentageDiscountPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionCreateData(type_ string, attributes PercentageDiscountPromotionCreateDataAttributes) *PercentageDiscountPromotionCreateData {
+func NewPercentageDiscountPromotionCreateData(type_ string, attributes POSTPercentageDiscountPromotions201ResponseDataAttributes) *PercentageDiscountPromotionCreateData {
 	this := PercentageDiscountPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PercentageDiscountPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionCreateData) GetAttributes() PercentageDiscountPromotionCreateDataAttributes {
+func (o *PercentageDiscountPromotionCreateData) GetAttributes() POSTPercentageDiscountPromotions201ResponseDataAttributes {
 	if o == nil {
-		var ret PercentageDiscountPromotionCreateDataAttributes
+		var ret POSTPercentageDiscountPromotions201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PercentageDiscountPromotionCreateData) GetAttributes() PercentageDiscou
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*PercentageDiscountPromotionCreateDataAttributes, bool) {
+func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*POSTPercentageDiscountPromotions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*PercentageDi
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionCreateData) SetAttributes(v PercentageDiscountPromotionCreateDataAttributes) {
+func (o *PercentageDiscountPromotionCreateData) SetAttributes(v POSTPercentageDiscountPromotions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PercentageDiscountPromotionCreateData) GetRelationships() FixedPricePromotionUpdateDataRelationships {
+func (o *PercentageDiscountPromotionCreateData) GetRelationships() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret FixedPricePromotionUpdateDataRelationships
+		var ret PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PercentageDiscountPromotionCreateData) GetRelationships() FixedPricePro
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionCreateData) GetRelationshipsOk() (*FixedPricePromotionUpdateDataRelationships, bool) {
+func (o *PercentageDiscountPromotionCreateData) GetRelationshipsOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PercentageDiscountPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given FixedPricePromotionUpdateDataRelationships and assigns it to the Relationships field.
-func (o *PercentageDiscountPromotionCreateData) SetRelationships(v FixedPricePromotionUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PercentageDiscountPromotionCreateData) SetRelationships(v PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

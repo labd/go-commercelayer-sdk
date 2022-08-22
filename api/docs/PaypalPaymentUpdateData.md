@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "paypal_payments"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PaypalPaymentUpdateDataAttributes**](PaypalPaymentUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes**](PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaypalPaymentUpdateData
 
-`func NewPaypalPaymentUpdateData(type_ string, id string, attributes PaypalPaymentUpdateDataAttributes, ) *PaypalPaymentUpdateData`
+`func NewPaypalPaymentUpdateData(type_ string, id string, attributes PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, ) *PaypalPaymentUpdateData`
 
 NewPaypalPaymentUpdateData instantiates a new PaypalPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PaypalPaymentUpdateData) GetAttributes() PaypalPaymentUpdateDataAttributes`
+`func (o *PaypalPaymentUpdateData) GetAttributes() PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PaypalPaymentUpdateDataAttributes, bool)`
+`func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaypalPaymentUpdateData) SetAttributes(v PaypalPaymentUpdateDataAttributes)`
+`func (o *PaypalPaymentUpdateData) SetAttributes(v PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PaypalPaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships`
+`func (o *PaypalPaymentUpdateData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaypalPaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool)`
+`func (o *PaypalPaymentUpdateData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaypalPaymentUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelationships)`
+`func (o *PaypalPaymentUpdateData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

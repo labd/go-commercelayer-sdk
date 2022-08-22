@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // PriceVolumeTiersApiService PriceVolumeTiersApi service
 type PriceVolumeTiersApiService service
 
-type ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest struct {
+type PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest struct {
 	ctx               context.Context
 	ApiService        *PriceVolumeTiersApiService
 	priceVolumeTierId string
 }
 
-func (r ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*http.Response, error) {
+func (r PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPriceVolumeTiersPriceVolumeTierIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a price volume tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceVolumeTierId The resource's id
- @return ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest
+ @return PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest
 */
-func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest {
-	return ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest{
+func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest {
+	return PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
@@ -51,7 +51,7 @@ func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierId(ctx
 }
 
 // Execute executes the request
-func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierIdExecute(r ApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest) (*http.Response, error) {
+func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierIdExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceIdPriceVolumeTiersRequest struct {
+type PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest struct {
 	ctx        context.Context
 	ApiService *PriceVolumeTiersApiService
 	priceId    string
 }
 
-func (r ApiGETPriceIdPriceVolumeTiersRequest) Execute() (*http.Response, error) {
+func (r PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdPriceVolumeTiersExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the price volume tiers associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdPriceVolumeTiersRequest
+ @return PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest
 */
-func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) ApiGETPriceIdPriceVolumeTiersRequest {
-	return ApiGETPriceIdPriceVolumeTiersRequest{
+func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest {
+	return PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -143,7 +143,7 @@ func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiers(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiersExecute(r ApiGETPriceIdPriceVolumeTiersRequest) (*http.Response, error) {
+func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiersExecute(r PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiersExecute(r ApiGETP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceVolumeTiersRequest struct {
+type PriceVolumeTiersApiGETPriceVolumeTiersRequest struct {
 	ctx        context.Context
 	ApiService *PriceVolumeTiersApiService
 }
 
-func (r ApiGETPriceVolumeTiersRequest) Execute() (*http.Response, error) {
+func (r PriceVolumeTiersApiGETPriceVolumeTiersRequest) Execute() (*GETPriceVolumeTiers200Response, *http.Response, error) {
 	return r.ApiService.GETPriceVolumeTiersExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETPriceVolumeTiers List all price volume tiers
 List all price volume tiers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPriceVolumeTiersRequest
+ @return PriceVolumeTiersApiGETPriceVolumeTiersRequest
 */
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiers(ctx context.Context) ApiGETPriceVolumeTiersRequest {
-	return ApiGETPriceVolumeTiersRequest{
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiers(ctx context.Context) PriceVolumeTiersApiGETPriceVolumeTiersRequest {
+	return PriceVolumeTiersApiGETPriceVolumeTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r ApiGETPriceVolumeTiersRequest) (*http.Response, error) {
+//  @return GETPriceVolumeTiers200Response
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r PriceVolumeTiersApiGETPriceVolumeTiersRequest) (*GETPriceVolumeTiers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPriceVolumeTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.GETPriceVolumeTiers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers"
@@ -260,7 +262,7 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r ApiGETPriceVol
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r ApiGETPriceVol
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r ApiGETPriceVol
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPriceVolumeTiersPriceVolumeTierIdRequest struct {
+type PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest struct {
 	ctx               context.Context
 	ApiService        *PriceVolumeTiersApiService
 	priceVolumeTierId string
 }
 
-func (r ApiGETPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*PriceVolumeTier, *http.Response, error) {
+func (r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*GETPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	return r.ApiService.GETPriceVolumeTiersPriceVolumeTierIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a price volume tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceVolumeTierId The resource's id
- @return ApiGETPriceVolumeTiersPriceVolumeTierIdRequest
+ @return PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest
 */
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) ApiGETPriceVolumeTiersPriceVolumeTierIdRequest {
-	return ApiGETPriceVolumeTiersPriceVolumeTierIdRequest{
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest {
+	return PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
@@ -323,13 +334,13 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx co
 }
 
 // Execute executes the request
-//  @return PriceVolumeTier
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute(r ApiGETPriceVolumeTiersPriceVolumeTierIdRequest) (*PriceVolumeTier, *http.Response, error) {
+//  @return GETPriceVolumeTiersPriceVolumeTierId200Response
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) (*GETPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceVolumeTier
+		localVarReturnValue *GETPriceVolumeTiersPriceVolumeTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.GETPriceVolumeTiersPriceVolumeTierId")
@@ -398,19 +409,19 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest struct {
+type PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest struct {
 	ctx                   context.Context
 	ApiService            *PriceVolumeTiersApiService
 	priceVolumeTierUpdate *PriceVolumeTierUpdate
 	priceVolumeTierId     string
 }
 
-func (r ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) PriceVolumeTierUpdate(priceVolumeTierUpdate PriceVolumeTierUpdate) ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
+func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) PriceVolumeTierUpdate(priceVolumeTierUpdate PriceVolumeTierUpdate) PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
 	r.priceVolumeTierUpdate = &priceVolumeTierUpdate
 	return r
 }
 
-func (r ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*http.Response, error) {
+func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*PATCHPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	return r.ApiService.PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a price volume tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceVolumeTierId The resource's id
- @return ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest
+ @return PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest
 */
-func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
-	return ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest{
+func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
+	return PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
@@ -432,16 +443,18 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx 
 }
 
 // Execute executes the request
-func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r ApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) (*http.Response, error) {
+//  @return PATCHPriceVolumeTiersPriceVolumeTierId200Response
+func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) (*PATCHPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPriceVolumeTiersPriceVolumeTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.PATCHPriceVolumeTiersPriceVolumeTierId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}"
@@ -451,7 +464,7 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.priceVolumeTierUpdate == nil {
-		return nil, reportError("priceVolumeTierUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("priceVolumeTierUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 	localVarPostBody = r.priceVolumeTierUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTPriceVolumeTiersRequest struct {
+type PriceVolumeTiersApiPOSTPriceVolumeTiersRequest struct {
 	ctx                   context.Context
 	ApiService            *PriceVolumeTiersApiService
 	priceVolumeTierCreate *PriceVolumeTierCreate
 }
 
-func (r ApiPOSTPriceVolumeTiersRequest) PriceVolumeTierCreate(priceVolumeTierCreate PriceVolumeTierCreate) ApiPOSTPriceVolumeTiersRequest {
+func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) PriceVolumeTierCreate(priceVolumeTierCreate PriceVolumeTierCreate) PriceVolumeTiersApiPOSTPriceVolumeTiersRequest {
 	r.priceVolumeTierCreate = &priceVolumeTierCreate
 	return r
 }
 
-func (r ApiPOSTPriceVolumeTiersRequest) Execute() (*http.Response, error) {
+func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) Execute() (*POSTPriceVolumeTiers201Response, *http.Response, error) {
 	return r.ApiService.POSTPriceVolumeTiersExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTPriceVolumeTiers Create a price volume tier
 Create a price volume tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTPriceVolumeTiersRequest
+ @return PriceVolumeTiersApiPOSTPriceVolumeTiersRequest
 */
-func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiers(ctx context.Context) ApiPOSTPriceVolumeTiersRequest {
-	return ApiPOSTPriceVolumeTiersRequest{
+func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiers(ctx context.Context) PriceVolumeTiersApiPOSTPriceVolumeTiersRequest {
+	return PriceVolumeTiersApiPOSTPriceVolumeTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r ApiPOSTPriceVolumeTiersRequest) (*http.Response, error) {
+//  @return POSTPriceVolumeTiers201Response
+func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) (*POSTPriceVolumeTiers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPriceVolumeTiers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.POSTPriceVolumeTiers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers"
@@ -550,7 +574,7 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r ApiPOSTPriceV
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.priceVolumeTierCreate == nil {
-		return nil, reportError("priceVolumeTierCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("priceVolumeTierCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r ApiPOSTPriceV
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r ApiPOSTPriceV
 	localVarPostBody = r.priceVolumeTierCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r ApiPOSTPriceV
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

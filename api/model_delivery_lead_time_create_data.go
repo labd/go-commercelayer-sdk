@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // DeliveryLeadTimeCreateData struct for DeliveryLeadTimeCreateData
 type DeliveryLeadTimeCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    DeliveryLeadTimeCreateDataAttributes     `json:"attributes"`
-	Relationships *DeliveryLeadTimeCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    POSTDeliveryLeadTimes201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTDeliveryLeadTimes201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewDeliveryLeadTimeCreateData instantiates a new DeliveryLeadTimeCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliveryLeadTimeCreateData(type_ string, attributes DeliveryLeadTimeCreateDataAttributes) *DeliveryLeadTimeCreateData {
+func NewDeliveryLeadTimeCreateData(type_ string, attributes POSTDeliveryLeadTimes201ResponseDataAttributes) *DeliveryLeadTimeCreateData {
 	this := DeliveryLeadTimeCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *DeliveryLeadTimeCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *DeliveryLeadTimeCreateData) GetAttributes() DeliveryLeadTimeCreateDataAttributes {
+func (o *DeliveryLeadTimeCreateData) GetAttributes() POSTDeliveryLeadTimes201ResponseDataAttributes {
 	if o == nil {
-		var ret DeliveryLeadTimeCreateDataAttributes
+		var ret POSTDeliveryLeadTimes201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *DeliveryLeadTimeCreateData) GetAttributes() DeliveryLeadTimeCreateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeCreateData) GetAttributesOk() (*DeliveryLeadTimeCreateDataAttributes, bool) {
+func (o *DeliveryLeadTimeCreateData) GetAttributesOk() (*POSTDeliveryLeadTimes201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *DeliveryLeadTimeCreateData) GetAttributesOk() (*DeliveryLeadTimeCreateD
 }
 
 // SetAttributes sets field value
-func (o *DeliveryLeadTimeCreateData) SetAttributes(v DeliveryLeadTimeCreateDataAttributes) {
+func (o *DeliveryLeadTimeCreateData) SetAttributes(v POSTDeliveryLeadTimes201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *DeliveryLeadTimeCreateData) GetRelationships() DeliveryLeadTimeCreateDataRelationships {
+func (o *DeliveryLeadTimeCreateData) GetRelationships() POSTDeliveryLeadTimes201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret DeliveryLeadTimeCreateDataRelationships
+		var ret POSTDeliveryLeadTimes201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *DeliveryLeadTimeCreateData) GetRelationships() DeliveryLeadTimeCreateDa
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeCreateData) GetRelationshipsOk() (*DeliveryLeadTimeCreateDataRelationships, bool) {
+func (o *DeliveryLeadTimeCreateData) GetRelationshipsOk() (*POSTDeliveryLeadTimes201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *DeliveryLeadTimeCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given DeliveryLeadTimeCreateDataRelationships and assigns it to the Relationships field.
-func (o *DeliveryLeadTimeCreateData) SetRelationships(v DeliveryLeadTimeCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTDeliveryLeadTimes201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *DeliveryLeadTimeCreateData) SetRelationships(v POSTDeliveryLeadTimes201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

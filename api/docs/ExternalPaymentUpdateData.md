@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "external_payments"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ExternalPaymentUpdateDataAttributes**](ExternalPaymentUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes**](PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPaymentUpdateData
 
-`func NewExternalPaymentUpdateData(type_ string, id string, attributes ExternalPaymentUpdateDataAttributes, ) *ExternalPaymentUpdateData`
+`func NewExternalPaymentUpdateData(type_ string, id string, attributes PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes, ) *ExternalPaymentUpdateData`
 
 NewExternalPaymentUpdateData instantiates a new ExternalPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPaymentUpdateData) GetAttributes() ExternalPaymentUpdateDataAttributes`
+`func (o *ExternalPaymentUpdateData) GetAttributes() PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPaymentUpdateData) GetAttributesOk() (*ExternalPaymentUpdateDataAttributes, bool)`
+`func (o *ExternalPaymentUpdateData) GetAttributesOk() (*PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPaymentUpdateData) SetAttributes(v ExternalPaymentUpdateDataAttributes)`
+`func (o *ExternalPaymentUpdateData) SetAttributes(v PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ExternalPaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships`
+`func (o *ExternalPaymentUpdateData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalPaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool)`
+`func (o *ExternalPaymentUpdateData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalPaymentUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelationships)`
+`func (o *ExternalPaymentUpdateData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

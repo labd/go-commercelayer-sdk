@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // AdyenPaymentsApiService AdyenPaymentsApi service
 type AdyenPaymentsApiService service
 
-type ApiDELETEAdyenPaymentsAdyenPaymentIdRequest struct {
+type AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenPaymentsApiService
 	adyenPaymentId string
 }
 
-func (r ApiDELETEAdyenPaymentsAdyenPaymentIdRequest) Execute() (*http.Response, error) {
+func (r AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAdyenPaymentsAdyenPaymentIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiDELETEAdyenPaymentsAdyenPaymentIdRequest
+ @return AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest
 */
-func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) ApiDELETEAdyenPaymentsAdyenPaymentIdRequest {
-	return ApiDELETEAdyenPaymentsAdyenPaymentIdRequest{
+func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest {
+	return AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -51,7 +51,7 @@ func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentId(ctx context.
 }
 
 // Execute executes the request
-func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentIdExecute(r ApiDELETEAdyenPaymentsAdyenPaymentIdRequest) (*http.Response, error) {
+func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentIdExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
+type AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenPaymentsApiService
 	adyenGatewayId string
 }
 
-func (r ApiGETAdyenGatewayIdAdyenPaymentsRequest) Execute() (*http.Response, error) {
+func (r AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenGatewayIdAdyenPaymentsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the adyen payments associated to the adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiGETAdyenGatewayIdAdyenPaymentsRequest
+ @return AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest
 */
-func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewayIdAdyenPaymentsRequest {
-	return ApiGETAdyenGatewayIdAdyenPaymentsRequest{
+func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest {
+	return AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -143,7 +143,7 @@ func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Con
 }
 
 // Execute executes the request
-func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r ApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
+func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenPaymentsRequest struct {
+type AdyenPaymentsApiGETAdyenPaymentsRequest struct {
 	ctx        context.Context
 	ApiService *AdyenPaymentsApiService
 }
 
-func (r ApiGETAdyenPaymentsRequest) Execute() (*http.Response, error) {
+func (r AdyenPaymentsApiGETAdyenPaymentsRequest) Execute() (*GETAdyenPayments200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenPaymentsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETAdyenPayments List all adyen payments
 List all adyen payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAdyenPaymentsRequest
+ @return AdyenPaymentsApiGETAdyenPaymentsRequest
 */
-func (a *AdyenPaymentsApiService) GETAdyenPayments(ctx context.Context) ApiGETAdyenPaymentsRequest {
-	return ApiGETAdyenPaymentsRequest{
+func (a *AdyenPaymentsApiService) GETAdyenPayments(ctx context.Context) AdyenPaymentsApiGETAdyenPaymentsRequest {
+	return AdyenPaymentsApiGETAdyenPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r ApiGETAdyenPaymentsRequest) (*http.Response, error) {
+//  @return GETAdyenPayments200Response
+func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r AdyenPaymentsApiGETAdyenPaymentsRequest) (*GETAdyenPayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenPayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.GETAdyenPayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_payments"
@@ -260,7 +262,7 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r ApiGETAdyenPaymentsR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r ApiGETAdyenPaymentsR
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r ApiGETAdyenPaymentsR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenPaymentsAdyenPaymentIdRequest struct {
+type AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenPaymentsApiService
 	adyenPaymentId string
 }
 
-func (r ApiGETAdyenPaymentsAdyenPaymentIdRequest) Execute() (*AdyenPayment, *http.Response, error) {
+func (r AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest) Execute() (*GETAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenPaymentsAdyenPaymentIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve an adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiGETAdyenPaymentsAdyenPaymentIdRequest
+ @return AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest
 */
-func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentsAdyenPaymentIdRequest {
-	return ApiGETAdyenPaymentsAdyenPaymentIdRequest{
+func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest {
+	return AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -323,13 +334,13 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return AdyenPayment
-func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentIdExecute(r ApiGETAdyenPaymentsAdyenPaymentIdRequest) (*AdyenPayment, *http.Response, error) {
+//  @return GETAdyenPaymentsAdyenPaymentId200Response
+func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest) (*GETAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenPayment
+		localVarReturnValue *GETAdyenPaymentsAdyenPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.GETAdyenPaymentsAdyenPaymentId")
@@ -398,19 +409,19 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentIdExecute(r ApiGET
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHAdyenPaymentsAdyenPaymentIdRequest struct {
+type AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest struct {
 	ctx                context.Context
 	ApiService         *AdyenPaymentsApiService
 	adyenPaymentUpdate *AdyenPaymentUpdate
 	adyenPaymentId     string
 }
 
-func (r ApiPATCHAdyenPaymentsAdyenPaymentIdRequest) AdyenPaymentUpdate(adyenPaymentUpdate AdyenPaymentUpdate) ApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
+func (r AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest) AdyenPaymentUpdate(adyenPaymentUpdate AdyenPaymentUpdate) AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
 	r.adyenPaymentUpdate = &adyenPaymentUpdate
 	return r
 }
 
-func (r ApiPATCHAdyenPaymentsAdyenPaymentIdRequest) Execute() (*http.Response, error) {
+func (r AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest) Execute() (*PATCHAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAdyenPaymentsAdyenPaymentIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update an adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiPATCHAdyenPaymentsAdyenPaymentIdRequest
+ @return AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest
 */
-func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) ApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
-	return ApiPATCHAdyenPaymentsAdyenPaymentIdRequest{
+func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
+	return AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -432,16 +443,18 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r ApiPATCHAdyenPaymentsAdyenPaymentIdRequest) (*http.Response, error) {
+//  @return PATCHAdyenPaymentsAdyenPaymentId200Response
+func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest) (*PATCHAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAdyenPaymentsAdyenPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.PATCHAdyenPaymentsAdyenPaymentId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}"
@@ -451,7 +464,7 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r ApiP
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adyenPaymentUpdate == nil {
-		return nil, reportError("adyenPaymentUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adyenPaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r ApiP
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r ApiP
 	localVarPostBody = r.adyenPaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r ApiP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTAdyenPaymentsRequest struct {
+type AdyenPaymentsApiPOSTAdyenPaymentsRequest struct {
 	ctx                context.Context
 	ApiService         *AdyenPaymentsApiService
 	adyenPaymentCreate *AdyenPaymentCreate
 }
 
-func (r ApiPOSTAdyenPaymentsRequest) AdyenPaymentCreate(adyenPaymentCreate AdyenPaymentCreate) ApiPOSTAdyenPaymentsRequest {
+func (r AdyenPaymentsApiPOSTAdyenPaymentsRequest) AdyenPaymentCreate(adyenPaymentCreate AdyenPaymentCreate) AdyenPaymentsApiPOSTAdyenPaymentsRequest {
 	r.adyenPaymentCreate = &adyenPaymentCreate
 	return r
 }
 
-func (r ApiPOSTAdyenPaymentsRequest) Execute() (*http.Response, error) {
+func (r AdyenPaymentsApiPOSTAdyenPaymentsRequest) Execute() (*POSTAdyenPayments201Response, *http.Response, error) {
 	return r.ApiService.POSTAdyenPaymentsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTAdyenPayments Create an adyen payment
 Create an adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTAdyenPaymentsRequest
+ @return AdyenPaymentsApiPOSTAdyenPaymentsRequest
 */
-func (a *AdyenPaymentsApiService) POSTAdyenPayments(ctx context.Context) ApiPOSTAdyenPaymentsRequest {
-	return ApiPOSTAdyenPaymentsRequest{
+func (a *AdyenPaymentsApiService) POSTAdyenPayments(ctx context.Context) AdyenPaymentsApiPOSTAdyenPaymentsRequest {
+	return AdyenPaymentsApiPOSTAdyenPaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r ApiPOSTAdyenPaymentsRequest) (*http.Response, error) {
+//  @return POSTAdyenPayments201Response
+func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r AdyenPaymentsApiPOSTAdyenPaymentsRequest) (*POSTAdyenPayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAdyenPayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.POSTAdyenPayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_payments"
@@ -550,7 +574,7 @@ func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r ApiPOSTAdyenPayment
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adyenPaymentCreate == nil {
-		return nil, reportError("adyenPaymentCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adyenPaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r ApiPOSTAdyenPayment
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r ApiPOSTAdyenPayment
 	localVarPostBody = r.adyenPaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r ApiPOSTAdyenPayment
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxCategoryCreateData struct for TaxCategoryCreateData
 type TaxCategoryCreateData struct {
 	// The resource's type
-	Type          string                              `json:"type"`
-	Attributes    TaxCategoryCreateDataAttributes     `json:"attributes"`
-	Relationships *TaxCategoryCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTTaxCategories201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTTaxCategories201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryCreateData instantiates a new TaxCategoryCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryCreateData(type_ string, attributes TaxCategoryCreateDataAttributes) *TaxCategoryCreateData {
+func NewTaxCategoryCreateData(type_ string, attributes POSTTaxCategories201ResponseDataAttributes) *TaxCategoryCreateData {
 	this := TaxCategoryCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *TaxCategoryCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryCreateData) GetAttributes() TaxCategoryCreateDataAttributes {
+func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategories201ResponseDataAttributes {
 	if o == nil {
-		var ret TaxCategoryCreateDataAttributes
+		var ret POSTTaxCategories201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *TaxCategoryCreateData) GetAttributes() TaxCategoryCreateDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateData) GetAttributesOk() (*TaxCategoryCreateDataAttributes, bool) {
+func (o *TaxCategoryCreateData) GetAttributesOk() (*POSTTaxCategories201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *TaxCategoryCreateData) GetAttributesOk() (*TaxCategoryCreateDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryCreateData) SetAttributes(v TaxCategoryCreateDataAttributes) {
+func (o *TaxCategoryCreateData) SetAttributes(v POSTTaxCategories201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCategoryCreateData) GetRelationships() TaxCategoryCreateDataRelationships {
+func (o *TaxCategoryCreateData) GetRelationships() POSTTaxCategories201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret TaxCategoryCreateDataRelationships
+		var ret POSTTaxCategories201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxCategoryCreateData) GetRelationships() TaxCategoryCreateDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateData) GetRelationshipsOk() (*TaxCategoryCreateDataRelationships, bool) {
+func (o *TaxCategoryCreateData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxCategoryCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given TaxCategoryCreateDataRelationships and assigns it to the Relationships field.
-func (o *TaxCategoryCreateData) SetRelationships(v TaxCategoryCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTTaxCategories201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *TaxCategoryCreateData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // GiftCardData struct for GiftCardData
 type GiftCardData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    GiftCardDataAttributes     `json:"attributes"`
-	Relationships *GiftCardDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    GETGiftCards200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETGiftCards200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardData instantiates a new GiftCardData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardData(type_ string, attributes GiftCardDataAttributes) *GiftCardData {
+func NewGiftCardData(type_ string, attributes GETGiftCards200ResponseDataInnerAttributes) *GiftCardData {
 	this := GiftCardData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *GiftCardData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardData) GetAttributes() GiftCardDataAttributes {
+func (o *GiftCardData) GetAttributes() GETGiftCards200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GiftCardDataAttributes
+		var ret GETGiftCards200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *GiftCardData) GetAttributes() GiftCardDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardData) GetAttributesOk() (*GiftCardDataAttributes, bool) {
+func (o *GiftCardData) GetAttributesOk() (*GETGiftCards200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *GiftCardData) GetAttributesOk() (*GiftCardDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *GiftCardData) SetAttributes(v GiftCardDataAttributes) {
+func (o *GiftCardData) SetAttributes(v GETGiftCards200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GiftCardData) GetRelationships() GiftCardDataRelationships {
+func (o *GiftCardData) GetRelationships() GETGiftCards200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GiftCardDataRelationships
+		var ret GETGiftCards200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *GiftCardData) GetRelationships() GiftCardDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardData) GetRelationshipsOk() (*GiftCardDataRelationships, bool) {
+func (o *GiftCardData) GetRelationshipsOk() (*GETGiftCards200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *GiftCardData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GiftCardDataRelationships and assigns it to the Relationships field.
-func (o *GiftCardData) SetRelationships(v GiftCardDataRelationships) {
+// SetRelationships gets a reference to the given GETGiftCards200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *GiftCardData) SetRelationships(v GETGiftCards200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -1,6 +1,6 @@
 # \AdjustmentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETAdjustments
 
-> GETAdjustments(ctx).Execute()
+> GETAdjustments200Response GETAdjustments(ctx).Execute()
 
 List all adjustments
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.GETAdjustments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAdjustments`: GETAdjustments200Response
+    fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.GETAdjustments`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETAdjustmentsRequest stru
 
 ### Return type
 
- (empty response body)
+[**GETAdjustments200Response**](GETAdjustments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETAdjustmentsAdjustmentId
 
-> Adjustment GETAdjustmentsAdjustmentId(ctx, adjustmentId).Execute()
+> GETAdjustmentsAdjustmentId200Response GETAdjustmentsAdjustmentId(ctx, adjustmentId).Execute()
 
 Retrieve an adjustment
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.GETAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdjustmentsAdjustmentId`: Adjustment
+    // response from `GETAdjustmentsAdjustmentId`: GETAdjustmentsAdjustmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.GETAdjustmentsAdjustmentId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Adjustment**](Adjustment.md)
+[**GETAdjustmentsAdjustmentId200Response**](GETAdjustmentsAdjustmentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHAdjustmentsAdjustmentId
 
-> PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
+> PATCHAdjustmentsAdjustmentId200Response PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
 
 Update an adjustment
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("adjustments", "XGZwpOSrWL", *openapiclient.NewAdjustmentUpdateDataAttributes())) // AdjustmentUpdate | 
+    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("adjustments", "XGZwpOSrWL", *openapiclient.NewPATCHAdjustmentsAdjustmentId200ResponseDataAttributes())) // AdjustmentUpdate | 
     adjustmentId := "adjustmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.PATCHAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAdjustmentsAdjustmentId`: PATCHAdjustmentsAdjustmentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.PATCHAdjustmentsAdjustmentId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAdjustmentsAdjustmentId200Response**](PATCHAdjustmentsAdjustmentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTAdjustments
 
-> POSTAdjustments(ctx).AdjustmentCreate(adjustmentCreate).Execute()
+> POSTAdjustments201Response POSTAdjustments(ctx).AdjustmentCreate(adjustmentCreate).Execute()
 
 Create an adjustment
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("adjustments", *openapiclient.NewAdjustmentCreateDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
+    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("adjustments", *openapiclient.NewPOSTAdjustments201ResponseDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.POSTAdjustments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTAdjustments`: POSTAdjustments201Response
+    fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.POSTAdjustments`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTAdjustments201Response**](POSTAdjustments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

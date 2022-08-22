@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShipmentData struct for ShipmentData
 type ShipmentData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    ShipmentDataAttributes     `json:"attributes"`
-	Relationships *ShipmentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    GETShipments200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETShipments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewShipmentData instantiates a new ShipmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShipmentData(type_ string, attributes ShipmentDataAttributes) *ShipmentData {
+func NewShipmentData(type_ string, attributes GETShipments200ResponseDataInnerAttributes) *ShipmentData {
 	this := ShipmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ShipmentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShipmentData) GetAttributes() ShipmentDataAttributes {
+func (o *ShipmentData) GetAttributes() GETShipments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShipmentDataAttributes
+		var ret GETShipments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ShipmentData) GetAttributes() ShipmentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShipmentData) GetAttributesOk() (*ShipmentDataAttributes, bool) {
+func (o *ShipmentData) GetAttributesOk() (*GETShipments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ShipmentData) GetAttributesOk() (*ShipmentDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *ShipmentData) SetAttributes(v ShipmentDataAttributes) {
+func (o *ShipmentData) SetAttributes(v GETShipments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShipmentData) GetRelationships() ShipmentDataRelationships {
+func (o *ShipmentData) GetRelationships() GETShipments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShipmentDataRelationships
+		var ret GETShipments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShipmentData) GetRelationships() ShipmentDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShipmentData) GetRelationshipsOk() (*ShipmentDataRelationships, bool) {
+func (o *ShipmentData) GetRelationshipsOk() (*GETShipments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShipmentData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShipmentDataRelationships and assigns it to the Relationships field.
-func (o *ShipmentData) SetRelationships(v ShipmentDataRelationships) {
+// SetRelationships gets a reference to the given GETShipments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ShipmentData) SetRelationships(v GETShipments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

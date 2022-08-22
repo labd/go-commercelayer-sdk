@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_password_resets"]
-**Attributes** | [**CustomerPasswordResetCreateDataAttributes**](CustomerPasswordResetCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTCustomerPasswordResets201ResponseDataAttributes**](POSTCustomerPasswordResets201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPasswordResetCreateData
 
-`func NewCustomerPasswordResetCreateData(type_ string, attributes CustomerPasswordResetCreateDataAttributes, ) *CustomerPasswordResetCreateData`
+`func NewCustomerPasswordResetCreateData(type_ string, attributes POSTCustomerPasswordResets201ResponseDataAttributes, ) *CustomerPasswordResetCreateData`
 
 NewCustomerPasswordResetCreateData instantiates a new CustomerPasswordResetCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPasswordResetCreateData) GetAttributes() CustomerPasswordResetCreateDataAttributes`
+`func (o *CustomerPasswordResetCreateData) GetAttributes() POSTCustomerPasswordResets201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPasswordResetCreateData) GetAttributesOk() (*CustomerPasswordResetCreateDataAttributes, bool)`
+`func (o *CustomerPasswordResetCreateData) GetAttributesOk() (*POSTCustomerPasswordResets201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPasswordResetCreateData) SetAttributes(v CustomerPasswordResetCreateDataAttributes)`
+`func (o *CustomerPasswordResetCreateData) SetAttributes(v POSTCustomerPasswordResets201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,12 +23,12 @@ import (
 // AuthorizationsApiService AuthorizationsApi service
 type AuthorizationsApiService service
 
-type ApiGETAuthorizationsRequest struct {
+type AuthorizationsApiGETAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
 }
 
-func (r ApiGETAuthorizationsRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsRequest) Execute() (*GETAuthorizations200Response, *http.Response, error) {
 	return r.ApiService.GETAuthorizationsExecute(r)
 }
 
@@ -38,26 +38,28 @@ GETAuthorizations List all authorizations
 List all authorizations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAuthorizationsRequest
+ @return AuthorizationsApiGETAuthorizationsRequest
 */
-func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) ApiGETAuthorizationsRequest {
-	return ApiGETAuthorizationsRequest{
+func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) AuthorizationsApiGETAuthorizationsRequest {
+	return AuthorizationsApiGETAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizationsRequest) (*http.Response, error) {
+//  @return GETAuthorizations200Response
+func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*GETAuthorizations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAuthorizations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizations")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/authorizations"
@@ -76,7 +78,7 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizatio
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -85,19 +87,19 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizatio
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -105,19 +107,28 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r ApiGETAuthorizatio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationsAuthorizationIdRequest struct {
+type AuthorizationsApiGETAuthorizationsAuthorizationIdRequest struct {
 	ctx             context.Context
 	ApiService      *AuthorizationsApiService
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationsAuthorizationIdRequest) Execute() (*Authorization, *http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) Execute() (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	return r.ApiService.GETAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -128,10 +139,10 @@ Retrieve an authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationsAuthorizationIdRequest
+ @return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiGETAuthorizationsAuthorizationIdRequest {
-	return ApiGETAuthorizationsAuthorizationIdRequest{
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
+	return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -139,13 +150,13 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.
 }
 
 // Execute executes the request
-//  @return Authorization
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r ApiGETAuthorizationsAuthorizationIdRequest) (*Authorization, *http.Response, error) {
+//  @return GETAuthorizationsAuthorizationId200Response
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Authorization
+		localVarReturnValue *GETAuthorizationsAuthorizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizationsAuthorizationId")
@@ -214,13 +225,13 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdReferenceAuthorizationRequest struct {
+type AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
 	captureId  string
 }
 
-func (r ApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdReferenceAuthorizationExecute(r)
 }
 
@@ -231,10 +242,10 @@ Retrieve the reference authorization associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdReferenceAuthorizationRequest
+ @return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) ApiGETCaptureIdReferenceAuthorizationRequest {
-	return ApiGETCaptureIdReferenceAuthorizationRequest{
+func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
+	return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -242,7 +253,7 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r ApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -306,13 +317,13 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAuthorizationsRequest struct {
+type AuthorizationsApiGETOrderIdAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAuthorizationsExecute(r)
 }
 
@@ -323,10 +334,10 @@ Retrieve the authorizations associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAuthorizationsRequest
+ @return AuthorizationsApiGETOrderIdAuthorizationsRequest
 */
-func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) ApiGETOrderIdAuthorizationsRequest {
-	return ApiGETOrderIdAuthorizationsRequest{
+func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest {
+	return AuthorizationsApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -334,7 +345,7 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r AuthorizationsApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -398,13 +409,13 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r ApiGETOrder
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidIdReferenceAuthorizationRequest struct {
+type AuthorizationsApiGETVoidIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
 	voidId     string
 }
 
-func (r ApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETVoidIdReferenceAuthorizationExecute(r)
 }
 
@@ -415,10 +426,10 @@ Retrieve the reference authorization associated to the void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidIdReferenceAuthorizationRequest
+ @return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) ApiGETVoidIdReferenceAuthorizationRequest {
-	return ApiGETVoidIdReferenceAuthorizationRequest{
+func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
+	return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -426,7 +437,7 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.C
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r ApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
+func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -490,19 +501,19 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHAuthorizationsAuthorizationIdRequest struct {
+type AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest struct {
 	ctx                 context.Context
 	ApiService          *AuthorizationsApiService
 	authorizationUpdate *AuthorizationUpdate
 	authorizationId     string
 }
 
-func (r ApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) ApiPATCHAuthorizationsAuthorizationIdRequest {
+func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
 	r.authorizationUpdate = &authorizationUpdate
 	return r
 }
 
-func (r ApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*http.Response, error) {
+func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -513,10 +524,10 @@ Update an authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiPATCHAuthorizationsAuthorizationIdRequest
+ @return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) ApiPATCHAuthorizationsAuthorizationIdRequest {
-	return ApiPATCHAuthorizationsAuthorizationIdRequest{
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
+	return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -524,16 +535,18 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx contex
 }
 
 // Execute executes the request
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r ApiPATCHAuthorizationsAuthorizationIdRequest) (*http.Response, error) {
+//  @return PATCHAuthorizationsAuthorizationId200Response
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAuthorizationsAuthorizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.PATCHAuthorizationsAuthorizationId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}"
@@ -543,7 +556,7 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.authorizationUpdate == nil {
-		return nil, reportError("authorizationUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("authorizationUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -556,7 +569,7 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -567,19 +580,19 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 	localVarPostBody = r.authorizationUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -587,8 +600,17 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "klarna_payments"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**KlarnaPaymentUpdateDataAttributes**](KlarnaPaymentUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes**](PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaPaymentUpdateData
 
-`func NewKlarnaPaymentUpdateData(type_ string, id string, attributes KlarnaPaymentUpdateDataAttributes, ) *KlarnaPaymentUpdateData`
+`func NewKlarnaPaymentUpdateData(type_ string, id string, attributes PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentUpdateData`
 
 NewKlarnaPaymentUpdateData instantiates a new KlarnaPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *KlarnaPaymentUpdateData) GetAttributes() KlarnaPaymentUpdateDataAttributes`
+`func (o *KlarnaPaymentUpdateData) GetAttributes() PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*KlarnaPaymentUpdateDataAttributes, bool)`
+`func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaPaymentUpdateData) SetAttributes(v KlarnaPaymentUpdateDataAttributes)`
+`func (o *KlarnaPaymentUpdateData) SetAttributes(v PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *KlarnaPaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships`
+`func (o *KlarnaPaymentUpdateData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *KlarnaPaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool)`
+`func (o *KlarnaPaymentUpdateData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *KlarnaPaymentUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelationships)`
+`func (o *KlarnaPaymentUpdateData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

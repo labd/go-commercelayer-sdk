@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "external_promotions"]
-**Attributes** | [**ExternalPromotionCreateDataAttributes**](ExternalPromotionCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTExternalPromotions201ResponseDataAttributes**](POSTExternalPromotions201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTExternalPromotions201ResponseDataRelationships**](POSTExternalPromotions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotionCreateData
 
-`func NewExternalPromotionCreateData(type_ string, attributes ExternalPromotionCreateDataAttributes, ) *ExternalPromotionCreateData`
+`func NewExternalPromotionCreateData(type_ string, attributes POSTExternalPromotions201ResponseDataAttributes, ) *ExternalPromotionCreateData`
 
 NewExternalPromotionCreateData instantiates a new ExternalPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPromotionCreateData) GetAttributes() ExternalPromotionCreateDataAttributes`
+`func (o *ExternalPromotionCreateData) GetAttributes() POSTExternalPromotions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPromotionCreateData) GetAttributesOk() (*ExternalPromotionCreateDataAttributes, bool)`
+`func (o *ExternalPromotionCreateData) GetAttributesOk() (*POSTExternalPromotions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPromotionCreateData) SetAttributes(v ExternalPromotionCreateDataAttributes)`
+`func (o *ExternalPromotionCreateData) SetAttributes(v POSTExternalPromotions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ExternalPromotionCreateData) GetRelationships() ExternalPromotionCreateDataRelationships`
+`func (o *ExternalPromotionCreateData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool)`
+`func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalPromotionCreateData) SetRelationships(v ExternalPromotionCreateDataRelationships)`
+`func (o *ExternalPromotionCreateData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

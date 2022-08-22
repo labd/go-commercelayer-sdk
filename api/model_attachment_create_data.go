@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AttachmentCreateData struct for AttachmentCreateData
 type AttachmentCreateData struct {
 	// The resource's type
-	Type          string                             `json:"type"`
-	Attributes    AttachmentCreateDataAttributes     `json:"attributes"`
-	Relationships *AttachmentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    POSTAttachments201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTAttachments201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentCreateData instantiates a new AttachmentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateData(type_ string, attributes AttachmentCreateDataAttributes) *AttachmentCreateData {
+func NewAttachmentCreateData(type_ string, attributes POSTAttachments201ResponseDataAttributes) *AttachmentCreateData {
 	this := AttachmentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AttachmentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentCreateData) GetAttributes() AttachmentCreateDataAttributes {
+func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAttributes {
 	if o == nil {
-		var ret AttachmentCreateDataAttributes
+		var ret POSTAttachments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AttachmentCreateData) GetAttributes() AttachmentCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetAttributesOk() (*AttachmentCreateDataAttributes, bool) {
+func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AttachmentCreateData) GetAttributesOk() (*AttachmentCreateDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *AttachmentCreateData) SetAttributes(v AttachmentCreateDataAttributes) {
+func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationships {
+func (o *AttachmentCreateData) GetRelationships() POSTAttachments201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AttachmentCreateDataRelationships
+		var ret POSTAttachments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetRelationshipsOk() (*AttachmentCreateDataRelationships, bool) {
+func (o *AttachmentCreateData) GetRelationshipsOk() (*POSTAttachments201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AttachmentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AttachmentCreateDataRelationships and assigns it to the Relationships field.
-func (o *AttachmentCreateData) SetRelationships(v AttachmentCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAttachments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *AttachmentCreateData) SetRelationships(v POSTAttachments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

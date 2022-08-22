@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "gift_cards"]
-**Attributes** | [**GiftCardDataAttributes**](GiftCardDataAttributes.md) |  | 
-**Relationships** | Pointer to [**GiftCardDataRelationships**](GiftCardDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETGiftCards200ResponseDataInnerAttributes**](GETGiftCards200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETGiftCards200ResponseDataInnerRelationships**](GETGiftCards200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGiftCardData
 
-`func NewGiftCardData(type_ string, attributes GiftCardDataAttributes, ) *GiftCardData`
+`func NewGiftCardData(type_ string, attributes GETGiftCards200ResponseDataInnerAttributes, ) *GiftCardData`
 
 NewGiftCardData instantiates a new GiftCardData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *GiftCardData) GetAttributes() GiftCardDataAttributes`
+`func (o *GiftCardData) GetAttributes() GETGiftCards200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GiftCardData) GetAttributesOk() (*GiftCardDataAttributes, bool)`
+`func (o *GiftCardData) GetAttributesOk() (*GETGiftCards200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GiftCardData) SetAttributes(v GiftCardDataAttributes)`
+`func (o *GiftCardData) SetAttributes(v GETGiftCards200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *GiftCardData) GetRelationships() GiftCardDataRelationships`
+`func (o *GiftCardData) GetRelationships() GETGiftCards200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GiftCardData) GetRelationshipsOk() (*GiftCardDataRelationships, bool)`
+`func (o *GiftCardData) GetRelationshipsOk() (*GETGiftCards200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GiftCardData) SetRelationships(v GiftCardDataRelationships)`
+`func (o *GiftCardData) SetRelationships(v GETGiftCards200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

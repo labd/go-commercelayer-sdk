@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "orders"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**OrderUpdateDataAttributes**](OrderUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**OrderCreateDataRelationships**](OrderCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHOrdersOrderId200ResponseDataAttributes**](PATCHOrdersOrderId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTOrders201ResponseDataRelationships**](POSTOrders201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderUpdateData
 
-`func NewOrderUpdateData(type_ string, id string, attributes OrderUpdateDataAttributes, ) *OrderUpdateData`
+`func NewOrderUpdateData(type_ string, id string, attributes PATCHOrdersOrderId200ResponseDataAttributes, ) *OrderUpdateData`
 
 NewOrderUpdateData instantiates a new OrderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *OrderUpdateData) GetAttributes() OrderUpdateDataAttributes`
+`func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderUpdateData) GetAttributesOk() (*OrderUpdateDataAttributes, bool)`
+`func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderUpdateData) SetAttributes(v OrderUpdateDataAttributes)`
+`func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *OrderUpdateData) GetRelationships() OrderCreateDataRelationships`
+`func (o *OrderUpdateData) GetRelationships() POSTOrders201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderUpdateData) GetRelationshipsOk() (*OrderCreateDataRelationships, bool)`
+`func (o *OrderUpdateData) GetRelationshipsOk() (*POSTOrders201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderUpdateData) SetRelationships(v OrderCreateDataRelationships)`
+`func (o *OrderUpdateData) SetRelationships(v POSTOrders201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "sku_list_promotion_rules"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**SkuListPromotionRuleCreateDataAttributes**](SkuListPromotionRuleCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**SkuListPromotionRuleUpdateDataRelationships**](SkuListPromotionRuleUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships**](PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListPromotionRuleUpdateData
 
-`func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes SkuListPromotionRuleCreateDataAttributes, ) *SkuListPromotionRuleUpdateData`
+`func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes POSTSkuListPromotionRules201ResponseDataAttributes, ) *SkuListPromotionRuleUpdateData`
 
 NewSkuListPromotionRuleUpdateData instantiates a new SkuListPromotionRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCreateDataAttributes`
+`func (o *SkuListPromotionRuleUpdateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRuleCreateDataAttributes, bool)`
+`func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*POSTSkuListPromotionRules201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListPromotionRuleUpdateData) SetAttributes(v SkuListPromotionRuleCreateDataAttributes)`
+`func (o *SkuListPromotionRuleUpdateData) SetAttributes(v POSTSkuListPromotionRules201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *SkuListPromotionRuleUpdateData) GetRelationships() SkuListPromotionRuleUpdateDataRelationships`
+`func (o *SkuListPromotionRuleUpdateData) GetRelationships() PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*SkuListPromotionRuleUpdateDataRelationships, bool)`
+`func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuListPromotionRuleUpdateData) SetRelationships(v SkuListPromotionRuleUpdateDataRelationships)`
+`func (o *SkuListPromotionRuleUpdateData) SetRelationships(v PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

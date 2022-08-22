@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ManualGatewayData struct for ManualGatewayData
 type ManualGatewayData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    ManualGatewayDataAttributes     `json:"attributes"`
-	Relationships *ManualGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETManualGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETManualGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayData instantiates a new ManualGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayData(type_ string, attributes ManualGatewayDataAttributes) *ManualGatewayData {
+func NewManualGatewayData(type_ string, attributes GETManualGateways200ResponseDataInnerAttributes) *ManualGatewayData {
 	this := ManualGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ManualGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualGatewayData) GetAttributes() ManualGatewayDataAttributes {
+func (o *ManualGatewayData) GetAttributes() GETManualGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ManualGatewayDataAttributes
+		var ret GETManualGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ManualGatewayData) GetAttributes() ManualGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayData) GetAttributesOk() (*ManualGatewayDataAttributes, bool) {
+func (o *ManualGatewayData) GetAttributesOk() (*GETManualGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ManualGatewayData) GetAttributesOk() (*ManualGatewayDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *ManualGatewayData) SetAttributes(v ManualGatewayDataAttributes) {
+func (o *ManualGatewayData) SetAttributes(v GETManualGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ManualGatewayData) GetRelationships() ManualGatewayDataRelationships {
+func (o *ManualGatewayData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ManualGatewayDataRelationships
+		var ret GETManualGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ManualGatewayData) GetRelationships() ManualGatewayDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayData) GetRelationshipsOk() (*ManualGatewayDataRelationships, bool) {
+func (o *ManualGatewayData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ManualGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ManualGatewayDataRelationships and assigns it to the Relationships field.
-func (o *ManualGatewayData) SetRelationships(v ManualGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETManualGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ManualGatewayData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

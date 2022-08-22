@@ -1,6 +1,6 @@
 # \FreeGiftPromotionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETFreeGiftPromotions
 
-> GETFreeGiftPromotions(ctx).Execute()
+> GETFreeGiftPromotions200Response GETFreeGiftPromotions(ctx).Execute()
 
 List all free gift promotions
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.GETFreeGiftPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETFreeGiftPromotions`: GETFreeGiftPromotions200Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.GETFreeGiftPromotions`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETFreeGiftPromotionsReque
 
 ### Return type
 
- (empty response body)
+[**GETFreeGiftPromotions200Response**](GETFreeGiftPromotions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETFreeGiftPromotionsFreeGiftPromotionId
 
-> FreeGiftPromotion GETFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).Execute()
+> GETFreeGiftPromotionsFreeGiftPromotionId200Response GETFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).Execute()
 
 Retrieve a free gift promotion
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.GETFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeGiftPromotionsFreeGiftPromotionId`: FreeGiftPromotion
+    // response from `GETFreeGiftPromotionsFreeGiftPromotionId`: GETFreeGiftPromotionsFreeGiftPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.GETFreeGiftPromotionsFreeGiftPromotionId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeGiftPromotion**](FreeGiftPromotion.md)
+[**GETFreeGiftPromotionsFreeGiftPromotionId200Response**](GETFreeGiftPromotionsFreeGiftPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHFreeGiftPromotionsFreeGiftPromotionId
 
-> PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
+> PATCHFreeGiftPromotionsFreeGiftPromotionId200Response PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
 
 Update a free gift promotion
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("free_gift_promotions", "XGZwpOSrWL", *openapiclient.NewFreeGiftPromotionUpdateDataAttributes())) // FreeGiftPromotionUpdate | 
+    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("free_gift_promotions", "XGZwpOSrWL", *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes())) // FreeGiftPromotionUpdate | 
     freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHFreeGiftPromotionsFreeGiftPromotionId`: PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHFreeGiftPromotionsFreeGiftPromotionId200Response**](PATCHFreeGiftPromotionsFreeGiftPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTFreeGiftPromotions
 
-> POSTFreeGiftPromotions(ctx).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
+> POSTFreeGiftPromotions201Response POSTFreeGiftPromotions(ctx).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
 
 Create a free gift promotion
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("free_gift_promotions", *openapiclient.NewFreeGiftPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
+    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("free_gift_promotions", *openapiclient.NewPOSTFreeGiftPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.POSTFreeGiftPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTFreeGiftPromotions`: POSTFreeGiftPromotions201Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.POSTFreeGiftPromotions`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTFreeGiftPromotions201Response**](POSTFreeGiftPromotions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

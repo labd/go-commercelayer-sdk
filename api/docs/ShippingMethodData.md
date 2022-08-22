@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "shipping_methods"]
-**Attributes** | [**ShippingMethodDataAttributes**](ShippingMethodDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ShippingMethodDataRelationships**](ShippingMethodDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETShippingMethods200ResponseDataInnerAttributes**](GETShippingMethods200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETShippingMethods200ResponseDataInnerRelationships**](GETShippingMethods200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodData
 
-`func NewShippingMethodData(type_ string, attributes ShippingMethodDataAttributes, ) *ShippingMethodData`
+`func NewShippingMethodData(type_ string, attributes GETShippingMethods200ResponseDataInnerAttributes, ) *ShippingMethodData`
 
 NewShippingMethodData instantiates a new ShippingMethodData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingMethodData) GetAttributes() ShippingMethodDataAttributes`
+`func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodData) GetAttributesOk() (*ShippingMethodDataAttributes, bool)`
+`func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodData) SetAttributes(v ShippingMethodDataAttributes)`
+`func (o *ShippingMethodData) SetAttributes(v GETShippingMethods200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ShippingMethodData) GetRelationships() ShippingMethodDataRelationships`
+`func (o *ShippingMethodData) GetRelationships() GETShippingMethods200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ShippingMethodData) GetRelationshipsOk() (*ShippingMethodDataRelationships, bool)`
+`func (o *ShippingMethodData) GetRelationshipsOk() (*GETShippingMethods200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ShippingMethodData) SetRelationships(v ShippingMethodDataRelationships)`
+`func (o *ShippingMethodData) SetRelationships(v GETShippingMethods200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

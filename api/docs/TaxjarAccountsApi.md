@@ -1,6 +1,6 @@
 # \TaxjarAccountsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETTaxjarAccounts
 
-> GETTaxjarAccounts(ctx).Execute()
+> GETTaxjarAccounts200Response GETTaxjarAccounts(ctx).Execute()
 
 List all taxjar accounts
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.GETTaxjarAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETTaxjarAccounts`: GETTaxjarAccounts200Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.GETTaxjarAccounts`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETTaxjarAccountsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETTaxjarAccounts200Response**](GETTaxjarAccounts200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETTaxjarAccountsTaxjarAccountId
 
-> TaxjarAccount GETTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).Execute()
+> GETTaxjarAccountsTaxjarAccountId200Response GETTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).Execute()
 
 Retrieve a taxjar account
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.GETTaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxjarAccountsTaxjarAccountId`: TaxjarAccount
+    // response from `GETTaxjarAccountsTaxjarAccountId`: GETTaxjarAccountsTaxjarAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.GETTaxjarAccountsTaxjarAccountId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxjarAccount**](TaxjarAccount.md)
+[**GETTaxjarAccountsTaxjarAccountId200Response**](GETTaxjarAccountsTaxjarAccountId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHTaxjarAccountsTaxjarAccountId
 
-> PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
+> PATCHTaxjarAccountsTaxjarAccountId200Response PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
 
 Update a taxjar account
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("taxjar_accounts", "XGZwpOSrWL", *openapiclient.NewTaxjarAccountUpdateDataAttributes())) // TaxjarAccountUpdate | 
+    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("taxjar_accounts", "XGZwpOSrWL", *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes())) // TaxjarAccountUpdate | 
     taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHTaxjarAccountsTaxjarAccountId`: PATCHTaxjarAccountsTaxjarAccountId200Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHTaxjarAccountsTaxjarAccountId200Response**](PATCHTaxjarAccountsTaxjarAccountId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTTaxjarAccounts
 
-> POSTTaxjarAccounts(ctx).TaxjarAccountCreate(taxjarAccountCreate).Execute()
+> POSTTaxjarAccounts201Response POSTTaxjarAccounts(ctx).TaxjarAccountCreate(taxjarAccountCreate).Execute()
 
 Create a taxjar account
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("taxjar_accounts", *openapiclient.NewTaxjarAccountCreateDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
+    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("taxjar_accounts", *openapiclient.NewPOSTTaxjarAccounts201ResponseDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.POSTTaxjarAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTTaxjarAccounts`: POSTTaxjarAccounts201Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.POSTTaxjarAccounts`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTTaxjarAccounts201Response**](POSTTaxjarAccounts201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

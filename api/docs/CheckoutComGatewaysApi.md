@@ -1,6 +1,6 @@
 # \CheckoutComGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETCheckoutComGateways
 
-> GETCheckoutComGateways(ctx).Execute()
+> GETCheckoutComGateways200Response GETCheckoutComGateways(ctx).Execute()
 
 List all checkout.com gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.GETCheckoutComGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCheckoutComGateways`: GETCheckoutComGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.GETCheckoutComGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETCheckoutComGatewaysRequ
 
 ### Return type
 
- (empty response body)
+[**GETCheckoutComGateways200Response**](GETCheckoutComGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETCheckoutComGatewaysCheckoutComGatewayId
 
-> CheckoutComGateway GETCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).Execute()
+> GETCheckoutComGatewaysCheckoutComGatewayId200Response GETCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).Execute()
 
 Retrieve a checkout.com gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.GETCheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComGatewaysCheckoutComGatewayId`: CheckoutComGateway
+    // response from `GETCheckoutComGatewaysCheckoutComGatewayId`: GETCheckoutComGatewaysCheckoutComGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.GETCheckoutComGatewaysCheckoutComGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckoutComGateway**](CheckoutComGateway.md)
+[**GETCheckoutComGatewaysCheckoutComGatewayId200Response**](GETCheckoutComGatewaysCheckoutComGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHCheckoutComGatewaysCheckoutComGatewayId
 
-> PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
+> PATCHCheckoutComGatewaysCheckoutComGatewayId200Response PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
 
 Update a checkout.com gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("checkout_com_gateways", "XGZwpOSrWL", *openapiclient.NewCheckoutComGatewayUpdateDataAttributes())) // CheckoutComGatewayUpdate | 
+    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("checkout_com_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes())) // CheckoutComGatewayUpdate | 
     checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCheckoutComGatewaysCheckoutComGatewayId`: PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCheckoutComGatewaysCheckoutComGatewayId200Response**](PATCHCheckoutComGatewaysCheckoutComGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTCheckoutComGateways
 
-> POSTCheckoutComGateways(ctx).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
+> POSTCheckoutComGateways201Response POSTCheckoutComGateways(ctx).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
 
 Create a checkout.com gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("checkout_com_gateways", *openapiclient.NewCheckoutComGatewayCreateDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
+    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("checkout_com_gateways", *openapiclient.NewPOSTCheckoutComGateways201ResponseDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.POSTCheckoutComGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCheckoutComGateways`: POSTCheckoutComGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.POSTCheckoutComGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCheckoutComGateways201Response**](POSTCheckoutComGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

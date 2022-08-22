@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_calculators"]
-**Attributes** | [**ManualTaxCalculatorDataAttributes**](ManualTaxCalculatorDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETManualTaxCalculators200ResponseDataInnerAttributes**](GETManualTaxCalculators200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationships**](GETAvalaraAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCalculatorData
 
-`func NewTaxCalculatorData(type_ string, attributes ManualTaxCalculatorDataAttributes, ) *TaxCalculatorData`
+`func NewTaxCalculatorData(type_ string, attributes GETManualTaxCalculators200ResponseDataInnerAttributes, ) *TaxCalculatorData`
 
 NewTaxCalculatorData instantiates a new TaxCalculatorData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCalculatorData) GetAttributes() ManualTaxCalculatorDataAttributes`
+`func (o *TaxCalculatorData) GetAttributes() GETManualTaxCalculators200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCalculatorData) GetAttributesOk() (*ManualTaxCalculatorDataAttributes, bool)`
+`func (o *TaxCalculatorData) GetAttributesOk() (*GETManualTaxCalculators200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCalculatorData) SetAttributes(v ManualTaxCalculatorDataAttributes)`
+`func (o *TaxCalculatorData) SetAttributes(v GETManualTaxCalculators200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *TaxCalculatorData) GetRelationships() AvalaraAccountDataRelationships`
+`func (o *TaxCalculatorData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxCalculatorData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool)`
+`func (o *TaxCalculatorData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxCalculatorData) SetRelationships(v AvalaraAccountDataRelationships)`
+`func (o *TaxCalculatorData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

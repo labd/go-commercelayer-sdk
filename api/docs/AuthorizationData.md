@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "authorizations"]
-**Attributes** | [**AuthorizationDataAttributes**](AuthorizationDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AuthorizationDataRelationships**](AuthorizationDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETAuthorizations200ResponseDataInnerAttributes**](GETAuthorizations200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationships**](GETAuthorizations200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAuthorizationData
 
-`func NewAuthorizationData(type_ string, attributes AuthorizationDataAttributes, ) *AuthorizationData`
+`func NewAuthorizationData(type_ string, attributes GETAuthorizations200ResponseDataInnerAttributes, ) *AuthorizationData`
 
 NewAuthorizationData instantiates a new AuthorizationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AuthorizationData) GetAttributes() AuthorizationDataAttributes`
+`func (o *AuthorizationData) GetAttributes() GETAuthorizations200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AuthorizationData) GetAttributesOk() (*AuthorizationDataAttributes, bool)`
+`func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizations200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AuthorizationData) SetAttributes(v AuthorizationDataAttributes)`
+`func (o *AuthorizationData) SetAttributes(v GETAuthorizations200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *AuthorizationData) GetRelationships() AuthorizationDataRelationships`
+`func (o *AuthorizationData) GetRelationships() GETAuthorizations200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AuthorizationData) GetRelationshipsOk() (*AuthorizationDataRelationships, bool)`
+`func (o *AuthorizationData) GetRelationshipsOk() (*GETAuthorizations200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AuthorizationData) SetRelationships(v AuthorizationDataRelationships)`
+`func (o *AuthorizationData) SetRelationships(v GETAuthorizations200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

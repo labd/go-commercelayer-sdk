@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // VoidsApiService VoidsApi service
 type VoidsApiService service
 
-type ApiGETAuthorizationIdVoidsRequest struct {
+type VoidsApiGETAuthorizationIdVoidsRequest struct {
 	ctx             context.Context
 	ApiService      *VoidsApiService
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
+func (r VoidsApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationIdVoidsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Retrieve the voids associated to the authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationIdVoidsRequest
+ @return VoidsApiGETAuthorizationIdVoidsRequest
 */
-func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) ApiGETAuthorizationIdVoidsRequest {
-	return ApiGETAuthorizationIdVoidsRequest{
+func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) VoidsApiGETAuthorizationIdVoidsRequest {
+	return VoidsApiGETAuthorizationIdVoidsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -51,7 +51,7 @@ func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authoriza
 }
 
 // Execute executes the request
-func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r ApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
+func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r ApiGETAuthorizationId
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdVoidsRequest struct {
+type VoidsApiGETOrderIdVoidsRequest struct {
 	ctx        context.Context
 	ApiService *VoidsApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
+func (r VoidsApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdVoidsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the voids associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdVoidsRequest
+ @return VoidsApiGETOrderIdVoidsRequest
 */
-func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) ApiGETOrderIdVoidsRequest {
-	return ApiGETOrderIdVoidsRequest{
+func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) VoidsApiGETOrderIdVoidsRequest {
+	return VoidsApiGETOrderIdVoidsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -143,7 +143,7 @@ func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) A
 }
 
 // Execute executes the request
-func (a *VoidsApiService) GETOrderIdVoidsExecute(r ApiGETOrderIdVoidsRequest) (*http.Response, error) {
+func (a *VoidsApiService) GETOrderIdVoidsExecute(r VoidsApiGETOrderIdVoidsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *VoidsApiService) GETOrderIdVoidsExecute(r ApiGETOrderIdVoidsRequest) (*
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidsRequest struct {
+type VoidsApiGETVoidsRequest struct {
 	ctx        context.Context
 	ApiService *VoidsApiService
 }
 
-func (r ApiGETVoidsRequest) Execute() (*http.Response, error) {
+func (r VoidsApiGETVoidsRequest) Execute() (*GETVoids200Response, *http.Response, error) {
 	return r.ApiService.GETVoidsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETVoids List all voids
 List all voids
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETVoidsRequest
+ @return VoidsApiGETVoidsRequest
 */
-func (a *VoidsApiService) GETVoids(ctx context.Context) ApiGETVoidsRequest {
-	return ApiGETVoidsRequest{
+func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest {
+	return VoidsApiGETVoidsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *VoidsApiService) GETVoidsExecute(r ApiGETVoidsRequest) (*http.Response, error) {
+//  @return GETVoids200Response
+func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETVoids200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoids")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/voids"
@@ -260,7 +262,7 @@ func (a *VoidsApiService) GETVoidsExecute(r ApiGETVoidsRequest) (*http.Response,
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *VoidsApiService) GETVoidsExecute(r ApiGETVoidsRequest) (*http.Response,
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *VoidsApiService) GETVoidsExecute(r ApiGETVoidsRequest) (*http.Response,
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETVoidsVoidIdRequest struct {
+type VoidsApiGETVoidsVoidIdRequest struct {
 	ctx        context.Context
 	ApiService *VoidsApiService
 	voidId     string
 }
 
-func (r ApiGETVoidsVoidIdRequest) Execute() (*Void, *http.Response, error) {
+func (r VoidsApiGETVoidsVoidIdRequest) Execute() (*GETVoidsVoidId200Response, *http.Response, error) {
 	return r.ApiService.GETVoidsVoidIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidsVoidIdRequest
+ @return VoidsApiGETVoidsVoidIdRequest
 */
-func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) ApiGETVoidsVoidIdRequest {
-	return ApiGETVoidsVoidIdRequest{
+func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) VoidsApiGETVoidsVoidIdRequest {
+	return VoidsApiGETVoidsVoidIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -323,13 +334,13 @@ func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) Api
 }
 
 // Execute executes the request
-//  @return Void
-func (a *VoidsApiService) GETVoidsVoidIdExecute(r ApiGETVoidsVoidIdRequest) (*Void, *http.Response, error) {
+//  @return GETVoidsVoidId200Response
+func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest) (*GETVoidsVoidId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Void
+		localVarReturnValue *GETVoidsVoidId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoidsVoidId")

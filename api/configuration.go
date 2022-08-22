@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -105,6 +105,10 @@ func NewConfiguration() *Configuration {
 		UserAgent:     "OpenAPI-Generator/1.0.0/go",
 		Debug:         false,
 		Servers: ServerConfigurations{
+			{
+				URL:         "https://{{organization-slug}}.commercelayer.io/api",
+				Description: "API",
+			},
 			{
 				URL:         "https://core.commercelayer.io/users/sign_in",
 				Description: "Sign in",

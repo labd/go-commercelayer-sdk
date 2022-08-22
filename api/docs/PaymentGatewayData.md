@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "payment_gateways"]
-**Attributes** | [**KlarnaGatewayDataAttributes**](KlarnaGatewayDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ManualGatewayDataRelationships**](ManualGatewayDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETKlarnaGateways200ResponseDataInnerAttributes**](GETKlarnaGateways200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETManualGateways200ResponseDataInnerRelationships**](GETManualGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentGatewayData
 
-`func NewPaymentGatewayData(type_ string, attributes KlarnaGatewayDataAttributes, ) *PaymentGatewayData`
+`func NewPaymentGatewayData(type_ string, attributes GETKlarnaGateways200ResponseDataInnerAttributes, ) *PaymentGatewayData`
 
 NewPaymentGatewayData instantiates a new PaymentGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PaymentGatewayData) GetAttributes() KlarnaGatewayDataAttributes`
+`func (o *PaymentGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaymentGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, bool)`
+`func (o *PaymentGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaymentGatewayData) SetAttributes(v KlarnaGatewayDataAttributes)`
+`func (o *PaymentGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PaymentGatewayData) GetRelationships() ManualGatewayDataRelationships`
+`func (o *PaymentGatewayData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaymentGatewayData) GetRelationshipsOk() (*ManualGatewayDataRelationships, bool)`
+`func (o *PaymentGatewayData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaymentGatewayData) SetRelationships(v ManualGatewayDataRelationships)`
+`func (o *PaymentGatewayData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

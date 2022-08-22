@@ -1,6 +1,6 @@
 # \PackagesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 ## GETPackages
 
-> GETPackages(ctx).Execute()
+> GETPackages200Response GETPackages(ctx).Execute()
 
 List all packages
 
@@ -110,6 +110,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETPackages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPackages`: GETPackages200Response
+    fmt.Fprintf(os.Stdout, "Response from `PackagesApi.GETPackages`: %v\n", resp)
 }
 ```
 
@@ -124,16 +126,16 @@ Other parameters are passed through a pointer to a apiGETPackagesRequest struct 
 
 ### Return type
 
- (empty response body)
+[**GETPackages200Response**](GETPackages200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -142,7 +144,7 @@ No authorization required
 
 ## GETPackagesPackageId
 
-> ModelPackage GETPackagesPackageId(ctx, packageId).Execute()
+> GETPackagesPackageId200Response GETPackagesPackageId(ctx, packageId).Execute()
 
 Retrieve a package
 
@@ -170,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPackagesPackageId`: ModelPackage
+    // response from `GETPackagesPackageId`: GETPackagesPackageId200Response
     fmt.Fprintf(os.Stdout, "Response from `PackagesApi.GETPackagesPackageId`: %v\n", resp)
 }
 ```
@@ -194,11 +196,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelPackage**](ModelPackage.md)
+[**GETPackagesPackageId200Response**](GETPackagesPackageId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHPackagesPackageId
 
-> PATCHPackagesPackageId(ctx, packageId).PackageUpdate(packageUpdate).Execute()
+> PATCHPackagesPackageId200Response PATCHPackagesPackageId(ctx, packageId).PackageUpdate(packageUpdate).Execute()
 
 Update a package
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("packages", "XGZwpOSrWL", *openapiclient.NewPackageUpdateDataAttributes())) // PackageUpdate | 
+    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("packages", "XGZwpOSrWL", *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
     packageId := "packageId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.PATCHPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPackagesPackageId`: PATCHPackagesPackageId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PackagesApi.PATCHPackagesPackageId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPackagesPackageId200Response**](PATCHPackagesPackageId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTPackages
 
-> POSTPackages(ctx).PackageCreate(packageCreate).Execute()
+> POSTPackages201Response POSTPackages(ctx).PackageCreate(packageCreate).Execute()
 
 Create a package
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("packages", *openapiclient.NewPackageCreateDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
+    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("packages", *openapiclient.NewPOSTPackages201ResponseDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.POSTPackages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPackages`: POSTPackages201Response
+    fmt.Fprintf(os.Stdout, "Response from `PackagesApi.POSTPackages`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPackages201Response**](POSTPackages201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

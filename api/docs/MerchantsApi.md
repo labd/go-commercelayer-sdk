@@ -1,6 +1,6 @@
 # \MerchantsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETMerchants
 
-> GETMerchants(ctx).Execute()
+> GETMerchants200Response GETMerchants(ctx).Execute()
 
 List all merchants
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETMerchants``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETMerchants`: GETMerchants200Response
+    fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.GETMerchants`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETMerchantsRequest struct
 
 ### Return type
 
- (empty response body)
+[**GETMerchants200Response**](GETMerchants200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETMerchantsMerchantId
 
-> Merchant GETMerchantsMerchantId(ctx, merchantId).Execute()
+> GETMerchantsMerchantId200Response GETMerchantsMerchantId(ctx, merchantId).Execute()
 
 Retrieve a merchant
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMerchantsMerchantId`: Merchant
+    // response from `GETMerchantsMerchantId`: GETMerchantsMerchantId200Response
     fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.GETMerchantsMerchantId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Merchant**](Merchant.md)
+[**GETMerchantsMerchantId200Response**](GETMerchantsMerchantId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHMerchantsMerchantId
 
-> PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
+> PATCHMerchantsMerchantId200Response PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
 
 Update a merchant
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("merchants", "XGZwpOSrWL", *openapiclient.NewMerchantUpdateDataAttributes())) // MerchantUpdate | 
+    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("merchants", "XGZwpOSrWL", *openapiclient.NewPATCHMerchantsMerchantId200ResponseDataAttributes())) // MerchantUpdate | 
     merchantId := "merchantId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.PATCHMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHMerchantsMerchantId`: PATCHMerchantsMerchantId200Response
+    fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.PATCHMerchantsMerchantId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHMerchantsMerchantId200Response**](PATCHMerchantsMerchantId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTMerchants
 
-> POSTMerchants(ctx).MerchantCreate(merchantCreate).Execute()
+> POSTMerchants201Response POSTMerchants(ctx).MerchantCreate(merchantCreate).Execute()
 
 Create a merchant
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("merchants", *openapiclient.NewMerchantCreateDataAttributes("The Brand Inc."))) // MerchantCreate | 
+    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("merchants", *openapiclient.NewPOSTMerchants201ResponseDataAttributes("The Brand Inc."))) // MerchantCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.POSTMerchants``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTMerchants`: POSTMerchants201Response
+    fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.POSTMerchants`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTMerchants201Response**](POSTMerchants201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

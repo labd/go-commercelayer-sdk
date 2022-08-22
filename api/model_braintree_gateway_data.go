@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BraintreeGatewayData struct for BraintreeGatewayData
 type BraintreeGatewayData struct {
 	// The resource's type
-	Type          string                             `json:"type"`
-	Attributes    BraintreeGatewayDataAttributes     `json:"attributes"`
-	Relationships *BraintreeGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    GETBraintreeGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayData(type_ string, attributes BraintreeGatewayDataAttributes) *BraintreeGatewayData {
+func NewBraintreeGatewayData(type_ string, attributes GETBraintreeGateways200ResponseDataInnerAttributes) *BraintreeGatewayData {
 	this := BraintreeGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *BraintreeGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreeGatewayData) GetAttributes() BraintreeGatewayDataAttributes {
+func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BraintreeGatewayDataAttributes
+		var ret GETBraintreeGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *BraintreeGatewayData) GetAttributes() BraintreeGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayData) GetAttributesOk() (*BraintreeGatewayDataAttributes, bool) {
+func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *BraintreeGatewayData) GetAttributesOk() (*BraintreeGatewayDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *BraintreeGatewayData) SetAttributes(v BraintreeGatewayDataAttributes) {
+func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationships {
+func (o *BraintreeGatewayData) GetRelationships() GETBraintreeGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret BraintreeGatewayDataRelationships
+		var ret GETBraintreeGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayData) GetRelationshipsOk() (*BraintreeGatewayDataRelationships, bool) {
+func (o *BraintreeGatewayData) GetRelationshipsOk() (*GETBraintreeGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BraintreeGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BraintreeGatewayDataRelationships and assigns it to the Relationships field.
-func (o *BraintreeGatewayData) SetRelationships(v BraintreeGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETBraintreeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *BraintreeGatewayData) SetRelationships(v GETBraintreeGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

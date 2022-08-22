@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "bing_geocoders"]
-**Attributes** | [**BingGeocoderDataAttributes**](BingGeocoderDataAttributes.md) |  | 
-**Relationships** | Pointer to [**BingGeocoderDataRelationships**](BingGeocoderDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETBingGeocoders200ResponseDataInnerAttributes**](GETBingGeocoders200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETBingGeocoders200ResponseDataInnerRelationships**](GETBingGeocoders200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBingGeocoderData
 
-`func NewBingGeocoderData(type_ string, attributes BingGeocoderDataAttributes, ) *BingGeocoderData`
+`func NewBingGeocoderData(type_ string, attributes GETBingGeocoders200ResponseDataInnerAttributes, ) *BingGeocoderData`
 
 NewBingGeocoderData instantiates a new BingGeocoderData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BingGeocoderData) GetAttributes() BingGeocoderDataAttributes`
+`func (o *BingGeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BingGeocoderData) GetAttributesOk() (*BingGeocoderDataAttributes, bool)`
+`func (o *BingGeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BingGeocoderData) SetAttributes(v BingGeocoderDataAttributes)`
+`func (o *BingGeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *BingGeocoderData) GetRelationships() BingGeocoderDataRelationships`
+`func (o *BingGeocoderData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BingGeocoderData) GetRelationshipsOk() (*BingGeocoderDataRelationships, bool)`
+`func (o *BingGeocoderData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BingGeocoderData) SetRelationships(v BingGeocoderDataRelationships)`
+`func (o *BingGeocoderData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

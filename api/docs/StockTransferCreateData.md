@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_transfers"]
-**Attributes** | [**StockTransferCreateDataAttributes**](StockTransferCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**StockTransferCreateDataRelationships**](StockTransferCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTStockTransfers201ResponseDataAttributes**](POSTStockTransfers201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTStockTransfers201ResponseDataRelationships**](POSTStockTransfers201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockTransferCreateData
 
-`func NewStockTransferCreateData(type_ string, attributes StockTransferCreateDataAttributes, ) *StockTransferCreateData`
+`func NewStockTransferCreateData(type_ string, attributes POSTStockTransfers201ResponseDataAttributes, ) *StockTransferCreateData`
 
 NewStockTransferCreateData instantiates a new StockTransferCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StockTransferCreateData) GetAttributes() StockTransferCreateDataAttributes`
+`func (o *StockTransferCreateData) GetAttributes() POSTStockTransfers201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockTransferCreateData) GetAttributesOk() (*StockTransferCreateDataAttributes, bool)`
+`func (o *StockTransferCreateData) GetAttributesOk() (*POSTStockTransfers201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockTransferCreateData) SetAttributes(v StockTransferCreateDataAttributes)`
+`func (o *StockTransferCreateData) SetAttributes(v POSTStockTransfers201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StockTransferCreateData) GetRelationships() StockTransferCreateDataRelationships`
+`func (o *StockTransferCreateData) GetRelationships() POSTStockTransfers201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockTransferCreateData) GetRelationshipsOk() (*StockTransferCreateDataRelationships, bool)`
+`func (o *StockTransferCreateData) GetRelationshipsOk() (*POSTStockTransfers201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockTransferCreateData) SetRelationships(v StockTransferCreateDataRelationships)`
+`func (o *StockTransferCreateData) SetRelationships(v POSTStockTransfers201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

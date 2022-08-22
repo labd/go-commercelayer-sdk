@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // CustomerPasswordResetsApiService CustomerPasswordResetsApi service
 type CustomerPasswordResetsApiService service
 
-type ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest struct {
+type CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomerPasswordResetsApiService
 	customerPasswordResetId string
 }
 
-func (r ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*http.Response, error) {
+func (r CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomerPasswordResetsCustomerPasswordResetIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest
+ @return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest
 */
-func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest {
-	return ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest{
+func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest {
+	return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -51,7 +51,7 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 }
 
 // Execute executes the request
-func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetIdExecute(r ApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest) (*http.Response, error) {
+func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPasswordResetsRequest struct {
+type CustomerPasswordResetsApiGETCustomerPasswordResetsRequest struct {
 	ctx        context.Context
 	ApiService *CustomerPasswordResetsApiService
 }
 
-func (r ApiGETCustomerPasswordResetsRequest) Execute() (*http.Response, error) {
+func (r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) Execute() (*GETCustomerPasswordResets200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETCustomerPasswordResets List all customer password resets
 List all customer password resets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCustomerPasswordResetsRequest
+ @return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest
 */
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context.Context) ApiGETCustomerPasswordResetsRequest {
-	return ApiGETCustomerPasswordResetsRequest{
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiGETCustomerPasswordResetsRequest {
+	return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r ApiGETCustomerPasswordResetsRequest) (*http.Response, error) {
+//  @return GETCustomerPasswordResets200Response
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) (*GETCustomerPasswordResets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomerPasswordResets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResets")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets"
@@ -168,7 +170,7 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r Ap
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r Ap
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
+type CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomerPasswordResetsApiService
 	customerPasswordResetId string
 }
 
-func (r ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*CustomerPasswordReset, *http.Response, error) {
+func (r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest
+ @return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest
 */
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest {
-	return ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest{
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest {
+	return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -231,13 +242,13 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 }
 
 // Execute executes the request
-//  @return CustomerPasswordReset
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r ApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*CustomerPasswordReset, *http.Response, error) {
+//  @return GETCustomerPasswordResetsCustomerPasswordResetId200Response
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerPasswordReset
+		localVarReturnValue *GETCustomerPasswordResetsCustomerPasswordResetId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResetsCustomerPasswordResetId")
@@ -306,19 +317,19 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
+type CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *CustomerPasswordResetsApiService
 	customerPasswordResetUpdate *CustomerPasswordResetUpdate
 	customerPasswordResetId     string
 }
 
-func (r ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) CustomerPasswordResetUpdate(customerPasswordResetUpdate CustomerPasswordResetUpdate) ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
+func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) CustomerPasswordResetUpdate(customerPasswordResetUpdate CustomerPasswordResetUpdate) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
 	r.customerPasswordResetUpdate = &customerPasswordResetUpdate
 	return r
 }
 
-func (r ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*http.Response, error) {
+func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
+ @return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
 */
-func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
-	return ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest{
+func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
+	return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -340,16 +351,18 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 }
 
 // Execute executes the request
-func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r ApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*http.Response, error) {
+//  @return PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
+func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.PATCHCustomerPasswordResetsCustomerPasswordResetId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}"
@@ -359,7 +372,7 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.customerPasswordResetUpdate == nil {
-		return nil, reportError("customerPasswordResetUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("customerPasswordResetUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 	localVarPostBody = r.customerPasswordResetUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTCustomerPasswordResetsRequest struct {
+type CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest struct {
 	ctx                         context.Context
 	ApiService                  *CustomerPasswordResetsApiService
 	customerPasswordResetCreate *CustomerPasswordResetCreate
 }
 
-func (r ApiPOSTCustomerPasswordResetsRequest) CustomerPasswordResetCreate(customerPasswordResetCreate CustomerPasswordResetCreate) ApiPOSTCustomerPasswordResetsRequest {
+func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) CustomerPasswordResetCreate(customerPasswordResetCreate CustomerPasswordResetCreate) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
 	r.customerPasswordResetCreate = &customerPasswordResetCreate
 	return r
 }
 
-func (r ApiPOSTCustomerPasswordResetsRequest) Execute() (*http.Response, error) {
+func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) Execute() (*POSTCustomerPasswordResets201Response, *http.Response, error) {
 	return r.ApiService.POSTCustomerPasswordResetsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTCustomerPasswordResets Create a customer password reset
 Create a customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCustomerPasswordResetsRequest
+ @return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest
 */
-func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx context.Context) ApiPOSTCustomerPasswordResetsRequest {
-	return ApiPOSTCustomerPasswordResetsRequest{
+func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
+	return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r ApiPOSTCustomerPasswordResetsRequest) (*http.Response, error) {
+//  @return POSTCustomerPasswordResets201Response
+func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) (*POSTCustomerPasswordResets201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCustomerPasswordResets201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.POSTCustomerPasswordResets")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets"
@@ -458,7 +482,7 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.customerPasswordResetCreate == nil {
-		return nil, reportError("customerPasswordResetCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("customerPasswordResetCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r A
 	localVarPostBody = r.customerPasswordResetCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "adyen_gateways"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**AdyenGatewayUpdateDataAttributes**](AdyenGatewayUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenGatewayCreateDataRelationships**](AdyenGatewayCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes**](PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTAdyenGateways201ResponseDataRelationships**](POSTAdyenGateways201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenGatewayUpdateData
 
-`func NewAdyenGatewayUpdateData(type_ string, id string, attributes AdyenGatewayUpdateDataAttributes, ) *AdyenGatewayUpdateData`
+`func NewAdyenGatewayUpdateData(type_ string, id string, attributes PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes, ) *AdyenGatewayUpdateData`
 
 NewAdyenGatewayUpdateData instantiates a new AdyenGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AdyenGatewayUpdateData) GetAttributes() AdyenGatewayUpdateDataAttributes`
+`func (o *AdyenGatewayUpdateData) GetAttributes() PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdyenGatewayUpdateData) GetAttributesOk() (*AdyenGatewayUpdateDataAttributes, bool)`
+`func (o *AdyenGatewayUpdateData) GetAttributesOk() (*PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdyenGatewayUpdateData) SetAttributes(v AdyenGatewayUpdateDataAttributes)`
+`func (o *AdyenGatewayUpdateData) SetAttributes(v PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *AdyenGatewayUpdateData) GetRelationships() AdyenGatewayCreateDataRelationships`
+`func (o *AdyenGatewayUpdateData) GetRelationships() POSTAdyenGateways201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*AdyenGatewayCreateDataRelationships, bool)`
+`func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*POSTAdyenGateways201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AdyenGatewayUpdateData) SetRelationships(v AdyenGatewayCreateDataRelationships)`
+`func (o *AdyenGatewayUpdateData) SetRelationships(v POSTAdyenGateways201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

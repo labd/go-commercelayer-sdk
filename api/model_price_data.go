@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceData struct for PriceData
 type PriceData struct {
 	// The resource's type
-	Type          string                  `json:"type"`
-	Attributes    PriceDataAttributes     `json:"attributes"`
-	Relationships *PriceDataRelationships `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    GETPrices200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETPrices200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceData instantiates a new PriceData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceData(type_ string, attributes PriceDataAttributes) *PriceData {
+func NewPriceData(type_ string, attributes GETPrices200ResponseDataInnerAttributes) *PriceData {
 	this := PriceData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PriceData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceData) GetAttributes() PriceDataAttributes {
+func (o *PriceData) GetAttributes() GETPrices200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PriceDataAttributes
+		var ret GETPrices200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PriceData) GetAttributes() PriceDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceData) GetAttributesOk() (*PriceDataAttributes, bool) {
+func (o *PriceData) GetAttributesOk() (*GETPrices200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PriceData) GetAttributesOk() (*PriceDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *PriceData) SetAttributes(v PriceDataAttributes) {
+func (o *PriceData) SetAttributes(v GETPrices200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceData) GetRelationships() PriceDataRelationships {
+func (o *PriceData) GetRelationships() GETPrices200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PriceDataRelationships
+		var ret GETPrices200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PriceData) GetRelationships() PriceDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceData) GetRelationshipsOk() (*PriceDataRelationships, bool) {
+func (o *PriceData) GetRelationshipsOk() (*GETPrices200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PriceData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PriceDataRelationships and assigns it to the Relationships field.
-func (o *PriceData) SetRelationships(v PriceDataRelationships) {
+// SetRelationships gets a reference to the given GETPrices200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PriceData) SetRelationships(v GETPrices200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

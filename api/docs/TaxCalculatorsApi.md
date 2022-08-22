@@ -1,6 +1,6 @@
 # \TaxCalculatorsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## GETTaxCalculators
 
-> GETTaxCalculators(ctx).Execute()
+> GETTaxCalculators200Response GETTaxCalculators(ctx).Execute()
 
 List all tax calculators
 
@@ -107,6 +107,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCalculatorsApi.GETTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETTaxCalculators`: GETTaxCalculators200Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxCalculatorsApi.GETTaxCalculators`: %v\n", resp)
 }
 ```
 
@@ -121,16 +123,16 @@ Other parameters are passed through a pointer to a apiGETTaxCalculatorsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETTaxCalculators200Response**](GETTaxCalculators200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -139,7 +141,7 @@ No authorization required
 
 ## GETTaxCalculatorsTaxCalculatorId
 
-> TaxCalculator GETTaxCalculatorsTaxCalculatorId(ctx, taxCalculatorId).Execute()
+> GETTaxCalculatorsTaxCalculatorId200Response GETTaxCalculatorsTaxCalculatorId(ctx, taxCalculatorId).Execute()
 
 Retrieve a tax calculator
 
@@ -167,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCalculatorsApi.GETTaxCalculatorsTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCalculatorsTaxCalculatorId`: TaxCalculator
+    // response from `GETTaxCalculatorsTaxCalculatorId`: GETTaxCalculatorsTaxCalculatorId200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxCalculatorsApi.GETTaxCalculatorsTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -191,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxCalculator**](TaxCalculator.md)
+[**GETTaxCalculatorsTaxCalculatorId200Response**](GETTaxCalculatorsTaxCalculatorId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

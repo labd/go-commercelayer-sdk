@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockLocationData struct for StockLocationData
 type StockLocationData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    StockLocationDataAttributes     `json:"attributes"`
-	Relationships *StockLocationDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETStockLocations200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETStockLocations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockLocationData instantiates a new StockLocationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLocationData(type_ string, attributes StockLocationDataAttributes) *StockLocationData {
+func NewStockLocationData(type_ string, attributes GETStockLocations200ResponseDataInnerAttributes) *StockLocationData {
 	this := StockLocationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *StockLocationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockLocationData) GetAttributes() StockLocationDataAttributes {
+func (o *StockLocationData) GetAttributes() GETStockLocations200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StockLocationDataAttributes
+		var ret GETStockLocations200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *StockLocationData) GetAttributes() StockLocationDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockLocationData) GetAttributesOk() (*StockLocationDataAttributes, bool) {
+func (o *StockLocationData) GetAttributesOk() (*GETStockLocations200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *StockLocationData) GetAttributesOk() (*StockLocationDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StockLocationData) SetAttributes(v StockLocationDataAttributes) {
+func (o *StockLocationData) SetAttributes(v GETStockLocations200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockLocationData) GetRelationships() StockLocationDataRelationships {
+func (o *StockLocationData) GetRelationships() GETStockLocations200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret StockLocationDataRelationships
+		var ret GETStockLocations200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockLocationData) GetRelationships() StockLocationDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLocationData) GetRelationshipsOk() (*StockLocationDataRelationships, bool) {
+func (o *StockLocationData) GetRelationshipsOk() (*GETStockLocations200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockLocationData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given StockLocationDataRelationships and assigns it to the Relationships field.
-func (o *StockLocationData) SetRelationships(v StockLocationDataRelationships) {
+// SetRelationships gets a reference to the given GETStockLocations200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *StockLocationData) SetRelationships(v GETStockLocations200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // WireTransferData struct for WireTransferData
 type WireTransferData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships    `json:"relationships,omitempty"`
+	Type          string                                                        `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes   `json:"attributes"`
+	Relationships *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewWireTransferData instantiates a new WireTransferData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *WireTransferData {
+func NewWireTransferData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *WireTransferData {
 	this := WireTransferData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *WireTransferData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *WireTransferData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *WireTransferData) GetAttributes() BillingInfoValidationRuleDataAttribut
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *WireTransferData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *WireTransferData) GetAttributesOk() (*BillingInfoValidationRuleDataAttr
 }
 
 // SetAttributes sets field value
-func (o *WireTransferData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *WireTransferData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *WireTransferData) GetRelationships() AdyenPaymentUpdateDataRelationships {
+func (o *WireTransferData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentUpdateDataRelationships
+		var ret PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *WireTransferData) GetRelationships() AdyenPaymentUpdateDataRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WireTransferData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
+func (o *WireTransferData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *WireTransferData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentUpdateDataRelationships and assigns it to the Relationships field.
-func (o *WireTransferData) SetRelationships(v AdyenPaymentUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *WireTransferData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

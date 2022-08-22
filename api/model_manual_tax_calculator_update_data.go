@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ManualTaxCalculatorUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    ManualTaxCalculatorUpdateDataAttributes     `json:"attributes"`
-	Relationships *ManualTaxCalculatorCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                  `json:"id"`
+	Attributes    PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTManualTaxCalculators201ResponseDataRelationships                   `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorUpdateData instantiates a new ManualTaxCalculatorUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes ManualTaxCalculatorUpdateDataAttributes) *ManualTaxCalculatorUpdateData {
+func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) *ManualTaxCalculatorUpdateData {
 	this := ManualTaxCalculatorUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *ManualTaxCalculatorUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualTaxCalculatorUpdateData) GetAttributes() ManualTaxCalculatorUpdateDataAttributes {
+func (o *ManualTaxCalculatorUpdateData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes {
 	if o == nil {
-		var ret ManualTaxCalculatorUpdateDataAttributes
+		var ret PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *ManualTaxCalculatorUpdateData) GetAttributes() ManualTaxCalculatorUpdat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*ManualTaxCalculatorUpdateDataAttributes, bool) {
+func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*ManualTaxCalculatorU
 }
 
 // SetAttributes sets field value
-func (o *ManualTaxCalculatorUpdateData) SetAttributes(v ManualTaxCalculatorUpdateDataAttributes) {
+func (o *ManualTaxCalculatorUpdateData) SetAttributes(v PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorUpdateData) GetRelationships() ManualTaxCalculatorCreateDataRelationships {
+func (o *ManualTaxCalculatorUpdateData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ManualTaxCalculatorCreateDataRelationships
+		var ret POSTManualTaxCalculators201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ManualTaxCalculatorUpdateData) GetRelationships() ManualTaxCalculatorCr
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*ManualTaxCalculatorCreateDataRelationships, bool) {
+func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ManualTaxCalculatorUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ManualTaxCalculatorCreateDataRelationships and assigns it to the Relationships field.
-func (o *ManualTaxCalculatorUpdateData) SetRelationships(v ManualTaxCalculatorCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTManualTaxCalculators201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ManualTaxCalculatorUpdateData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

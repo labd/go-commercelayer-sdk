@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalPromotionCreateData struct for ExternalPromotionCreateData
 type ExternalPromotionCreateData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    ExternalPromotionCreateDataAttributes     `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    POSTExternalPromotions201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTExternalPromotions201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionCreateData instantiates a new ExternalPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionCreateData(type_ string, attributes ExternalPromotionCreateDataAttributes) *ExternalPromotionCreateData {
+func NewExternalPromotionCreateData(type_ string, attributes POSTExternalPromotions201ResponseDataAttributes) *ExternalPromotionCreateData {
 	this := ExternalPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ExternalPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPromotionCreateData) GetAttributes() ExternalPromotionCreateDataAttributes {
+func (o *ExternalPromotionCreateData) GetAttributes() POSTExternalPromotions201ResponseDataAttributes {
 	if o == nil {
-		var ret ExternalPromotionCreateDataAttributes
+		var ret POSTExternalPromotions201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ExternalPromotionCreateData) GetAttributes() ExternalPromotionCreateDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionCreateData) GetAttributesOk() (*ExternalPromotionCreateDataAttributes, bool) {
+func (o *ExternalPromotionCreateData) GetAttributesOk() (*POSTExternalPromotions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ExternalPromotionCreateData) GetAttributesOk() (*ExternalPromotionCreat
 }
 
 // SetAttributes sets field value
-func (o *ExternalPromotionCreateData) SetAttributes(v ExternalPromotionCreateDataAttributes) {
+func (o *ExternalPromotionCreateData) SetAttributes(v POSTExternalPromotions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalPromotionCreateData) GetRelationships() ExternalPromotionCreateDataRelationships {
+func (o *ExternalPromotionCreateData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ExternalPromotionCreateDataRelationships
+		var ret POSTExternalPromotions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ExternalPromotionCreateData) GetRelationships() ExternalPromotionCreate
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool) {
+func (o *ExternalPromotionCreateData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ExternalPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExternalPromotionCreateDataRelationships and assigns it to the Relationships field.
-func (o *ExternalPromotionCreateData) SetRelationships(v ExternalPromotionCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTExternalPromotions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ExternalPromotionCreateData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

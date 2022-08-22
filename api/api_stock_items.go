@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // StockItemsApiService StockItemsApi service
 type StockItemsApiService service
 
-type ApiDELETEStockItemsStockItemIdRequest struct {
+type StockItemsApiDELETEStockItemsStockItemIdRequest struct {
 	ctx         context.Context
 	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
-func (r ApiDELETEStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiDELETEStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStockItemsStockItemIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiDELETEStockItemsStockItemIdRequest
+ @return StockItemsApiDELETEStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) ApiDELETEStockItemsStockItemIdRequest {
-	return ApiDELETEStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiDELETEStockItemsStockItemIdRequest {
+	return StockItemsApiDELETEStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -51,7 +51,7 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r ApiDELETEStockItemsStockItemIdRequest) (*http.Response, error) {
+func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsApiDELETEStockItemsStockItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r ApiDELETESto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdStockItemsRequest struct {
+type StockItemsApiGETSkuIdStockItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockItemsApiService
 	skuId      string
 }
 
-func (r ApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdStockItemsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the stock items associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdStockItemsRequest
+ @return StockItemsApiGETSkuIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) ApiGETSkuIdStockItemsRequest {
-	return ApiGETSkuIdStockItemsRequest{
+func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) StockItemsApiGETSkuIdStockItemsRequest {
+	return StockItemsApiGETSkuIdStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -143,7 +143,7 @@ func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId str
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r ApiGETSkuIdStockItems
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemsRequest struct {
+type StockItemsApiGETStockItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockItemsApiService
 }
 
-func (r ApiGETStockItemsRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiGETStockItemsRequest) Execute() (*GETStockItems200Response, *http.Response, error) {
 	return r.ApiService.GETStockItemsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETStockItems List all stock items
 List all stock items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStockItemsRequest
+ @return StockItemsApiGETStockItemsRequest
 */
-func (a *StockItemsApiService) GETStockItems(ctx context.Context) ApiGETStockItemsRequest {
-	return ApiGETStockItemsRequest{
+func (a *StockItemsApiService) GETStockItems(ctx context.Context) StockItemsApiGETStockItemsRequest {
+	return StockItemsApiGETStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockItemsExecute(r ApiGETStockItemsRequest) (*http.Response, error) {
+//  @return GETStockItems200Response
+func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*GETStockItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStockItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_items"
@@ -260,7 +262,7 @@ func (a *StockItemsApiService) GETStockItemsExecute(r ApiGETStockItemsRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *StockItemsApiService) GETStockItemsExecute(r ApiGETStockItemsRequest) (
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *StockItemsApiService) GETStockItemsExecute(r ApiGETStockItemsRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemsStockItemIdRequest struct {
+type StockItemsApiGETStockItemsStockItemIdRequest struct {
 	ctx         context.Context
 	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
-func (r ApiGETStockItemsStockItemIdRequest) Execute() (*StockItem, *http.Response, error) {
+func (r StockItemsApiGETStockItemsStockItemIdRequest) Execute() (*GETStockItemsStockItemId200Response, *http.Response, error) {
 	return r.ApiService.GETStockItemsStockItemIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemsStockItemIdRequest
+ @return StockItemsApiGETStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) ApiGETStockItemsStockItemIdRequest {
-	return ApiGETStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiGETStockItemsStockItemIdRequest {
+	return StockItemsApiGETStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -323,13 +334,13 @@ func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, sto
 }
 
 // Execute executes the request
-//  @return StockItem
-func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r ApiGETStockItemsStockItemIdRequest) (*StockItem, *http.Response, error) {
+//  @return GETStockItemsStockItemId200Response
+func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*GETStockItemsStockItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockItem
+		localVarReturnValue *GETStockItemsStockItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItemsStockItemId")
@@ -398,13 +409,13 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r ApiGETStockItem
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemIdStockItemRequest struct {
+type StockItemsApiGETStockLineItemIdStockItemRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLineItemIdStockItemExecute(r)
 }
 
@@ -415,10 +426,10 @@ Retrieve the stock item associated to the stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemIdStockItemRequest
+ @return StockItemsApiGETStockLineItemIdStockItemRequest
 */
-func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) ApiGETStockLineItemIdStockItemRequest {
-	return ApiGETStockLineItemIdStockItemRequest{
+func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) StockItemsApiGETStockLineItemIdStockItemRequest {
+	return StockItemsApiGETStockLineItemIdStockItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -426,7 +437,7 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r ApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -490,13 +501,13 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r ApiGETStockL
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationIdStockItemsRequest struct {
+type StockItemsApiGETStockLocationIdStockItemsRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockLocationIdStockItemsExecute(r)
 }
 
@@ -507,10 +518,10 @@ Retrieve the stock items associated to the stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationIdStockItemsRequest
+ @return StockItemsApiGETStockLocationIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) ApiGETStockLocationIdStockItemsRequest {
-	return ApiGETStockLocationIdStockItemsRequest{
+func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) StockItemsApiGETStockLocationIdStockItemsRequest {
+	return StockItemsApiGETStockLocationIdStockItemsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -518,7 +529,7 @@ func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r ApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
+func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -582,19 +593,19 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r ApiGETStock
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHStockItemsStockItemIdRequest struct {
+type StockItemsApiPATCHStockItemsStockItemIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
 	stockItemUpdate *StockItemUpdate
 	stockItemId     string
 }
 
-func (r ApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) ApiPATCHStockItemsStockItemIdRequest {
+func (r StockItemsApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) StockItemsApiPATCHStockItemsStockItemIdRequest {
 	r.stockItemUpdate = &stockItemUpdate
 	return r
 }
 
-func (r ApiPATCHStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiPATCHStockItemsStockItemIdRequest) Execute() (*PATCHStockItemsStockItemId200Response, *http.Response, error) {
 	return r.ApiService.PATCHStockItemsStockItemIdExecute(r)
 }
 
@@ -605,10 +616,10 @@ Update a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiPATCHStockItemsStockItemIdRequest
+ @return StockItemsApiPATCHStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) ApiPATCHStockItemsStockItemIdRequest {
-	return ApiPATCHStockItemsStockItemIdRequest{
+func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiPATCHStockItemsStockItemIdRequest {
+	return StockItemsApiPATCHStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -616,16 +627,18 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStockItemsStockItemIdRequest) (*http.Response, error) {
+//  @return PATCHStockItemsStockItemId200Response
+func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*PATCHStockItemsStockItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHStockItemsStockItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.PATCHStockItemsStockItemId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}"
@@ -635,7 +648,7 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStock
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stockItemUpdate == nil {
-		return nil, reportError("stockItemUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stockItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -648,7 +661,7 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStock
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -659,19 +672,19 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStock
 	localVarPostBody = r.stockItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -679,24 +692,33 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r ApiPATCHStock
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTStockItemsRequest struct {
+type StockItemsApiPOSTStockItemsRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
 	stockItemCreate *StockItemCreate
 }
 
-func (r ApiPOSTStockItemsRequest) StockItemCreate(stockItemCreate StockItemCreate) ApiPOSTStockItemsRequest {
+func (r StockItemsApiPOSTStockItemsRequest) StockItemCreate(stockItemCreate StockItemCreate) StockItemsApiPOSTStockItemsRequest {
 	r.stockItemCreate = &stockItemCreate
 	return r
 }
 
-func (r ApiPOSTStockItemsRequest) Execute() (*http.Response, error) {
+func (r StockItemsApiPOSTStockItemsRequest) Execute() (*POSTStockItems201Response, *http.Response, error) {
 	return r.ApiService.POSTStockItemsExecute(r)
 }
 
@@ -706,26 +728,28 @@ POSTStockItems Create a stock item
 Create a stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStockItemsRequest
+ @return StockItemsApiPOSTStockItemsRequest
 */
-func (a *StockItemsApiService) POSTStockItems(ctx context.Context) ApiPOSTStockItemsRequest {
-	return ApiPOSTStockItemsRequest{
+func (a *StockItemsApiService) POSTStockItems(ctx context.Context) StockItemsApiPOSTStockItemsRequest {
+	return StockItemsApiPOSTStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest) (*http.Response, error) {
+//  @return POSTStockItems201Response
+func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*POSTStockItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTStockItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.POSTStockItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_items"
@@ -734,7 +758,7 @@ func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stockItemCreate == nil {
-		return nil, reportError("stockItemCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stockItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -747,7 +771,7 @@ func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest)
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -758,19 +782,19 @@ func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest)
 	localVarPostBody = r.stockItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -778,8 +802,17 @@ func (a *StockItemsApiService) POSTStockItemsExecute(r ApiPOSTStockItemsRequest)
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

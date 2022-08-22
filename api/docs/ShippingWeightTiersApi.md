@@ -1,6 +1,6 @@
 # \ShippingWeightTiersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETShippingWeightTiers
 
-> GETShippingWeightTiers(ctx).Execute()
+> GETShippingWeightTiers200Response GETShippingWeightTiers(ctx).Execute()
 
 List all shipping weight tiers
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.GETShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETShippingWeightTiers`: GETShippingWeightTiers200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.GETShippingWeightTiers`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETShippingWeightTiersRequ
 
 ### Return type
 
- (empty response body)
+[**GETShippingWeightTiers200Response**](GETShippingWeightTiers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETShippingWeightTiersShippingWeightTierId
 
-> ShippingWeightTier GETShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).Execute()
+> GETShippingWeightTiersShippingWeightTierId200Response GETShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).Execute()
 
 Retrieve a shipping weight tier
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.GETShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingWeightTiersShippingWeightTierId`: ShippingWeightTier
+    // response from `GETShippingWeightTiersShippingWeightTierId`: GETShippingWeightTiersShippingWeightTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.GETShippingWeightTiersShippingWeightTierId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingWeightTier**](ShippingWeightTier.md)
+[**GETShippingWeightTiersShippingWeightTierId200Response**](GETShippingWeightTiersShippingWeightTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHShippingWeightTiersShippingWeightTierId
 
-> PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
+> PATCHShippingWeightTiersShippingWeightTierId200Response PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
 
 Update a shipping weight tier
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("shipping_weight_tiers", "XGZwpOSrWL", *openapiclient.NewShippingWeightTierUpdateDataAttributes())) // ShippingWeightTierUpdate | 
+    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("shipping_weight_tiers", "XGZwpOSrWL", *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes())) // ShippingWeightTierUpdate | 
     shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHShippingWeightTiersShippingWeightTierId`: PATCHShippingWeightTiersShippingWeightTierId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHShippingWeightTiersShippingWeightTierId200Response**](PATCHShippingWeightTiersShippingWeightTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTShippingWeightTiers
 
-> POSTShippingWeightTiers(ctx).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
+> POSTShippingWeightTiers201Response POSTShippingWeightTiers(ctx).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
 
 Create a shipping weight tier
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("shipping_weight_tiers", *openapiclient.NewShippingWeightTierCreateDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
+    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("shipping_weight_tiers", *openapiclient.NewPOSTShippingWeightTiers201ResponseDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.POSTShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTShippingWeightTiers`: POSTShippingWeightTiers201Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.POSTShippingWeightTiers`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTShippingWeightTiers201Response**](POSTShippingWeightTiers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

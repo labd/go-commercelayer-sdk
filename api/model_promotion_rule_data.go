@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PromotionRuleData struct for PromotionRuleData
 type PromotionRuleData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes    `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                         `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes    `json:"attributes"`
+	Relationships *GETOrderAmountPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPromotionRuleData instantiates a new PromotionRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPromotionRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *PromotionRuleData {
+func NewPromotionRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *PromotionRuleData {
 	this := PromotionRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PromotionRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PromotionRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *PromotionRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PromotionRuleData) GetAttributes() BillingInfoValidationRuleDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PromotionRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *PromotionRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PromotionRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAtt
 }
 
 // SetAttributes sets field value
-func (o *PromotionRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *PromotionRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PromotionRuleData) GetRelationships() OrderAmountPromotionRuleDataRelationships {
+func (o *PromotionRuleData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderAmountPromotionRuleDataRelationships
+		var ret GETOrderAmountPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PromotionRuleData) GetRelationships() OrderAmountPromotionRuleDataRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PromotionRuleData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool) {
+func (o *PromotionRuleData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PromotionRuleData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderAmountPromotionRuleDataRelationships and assigns it to the Relationships field.
-func (o *PromotionRuleData) SetRelationships(v OrderAmountPromotionRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETOrderAmountPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PromotionRuleData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

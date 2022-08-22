@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "line_items"]
-**Attributes** | [**LineItemDataAttributes**](LineItemDataAttributes.md) |  | 
-**Relationships** | Pointer to [**LineItemDataRelationships**](LineItemDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETLineItems200ResponseDataInnerAttributes**](GETLineItems200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETLineItems200ResponseDataInnerRelationships**](GETLineItems200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemData
 
-`func NewLineItemData(type_ string, attributes LineItemDataAttributes, ) *LineItemData`
+`func NewLineItemData(type_ string, attributes GETLineItems200ResponseDataInnerAttributes, ) *LineItemData`
 
 NewLineItemData instantiates a new LineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *LineItemData) GetAttributes() LineItemDataAttributes`
+`func (o *LineItemData) GetAttributes() GETLineItems200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemData) GetAttributesOk() (*LineItemDataAttributes, bool)`
+`func (o *LineItemData) GetAttributesOk() (*GETLineItems200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemData) SetAttributes(v LineItemDataAttributes)`
+`func (o *LineItemData) SetAttributes(v GETLineItems200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *LineItemData) GetRelationships() LineItemDataRelationships`
+`func (o *LineItemData) GetRelationships() GETLineItems200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *LineItemData) GetRelationshipsOk() (*LineItemDataRelationships, bool)`
+`func (o *LineItemData) GetRelationshipsOk() (*GETLineItems200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *LineItemData) SetRelationships(v LineItemDataRelationships)`
+`func (o *LineItemData) SetRelationships(v GETLineItems200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

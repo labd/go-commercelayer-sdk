@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_transfers"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**StockTransferUpdateDataAttributes**](StockTransferUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**StockTransferUpdateDataRelationships**](StockTransferUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHStockTransfersStockTransferId200ResponseDataAttributes**](PATCHStockTransfersStockTransferId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHStockTransfersStockTransferId200ResponseDataRelationships**](PATCHStockTransfersStockTransferId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockTransferUpdateData
 
-`func NewStockTransferUpdateData(type_ string, id string, attributes StockTransferUpdateDataAttributes, ) *StockTransferUpdateData`
+`func NewStockTransferUpdateData(type_ string, id string, attributes PATCHStockTransfersStockTransferId200ResponseDataAttributes, ) *StockTransferUpdateData`
 
 NewStockTransferUpdateData instantiates a new StockTransferUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StockTransferUpdateData) GetAttributes() StockTransferUpdateDataAttributes`
+`func (o *StockTransferUpdateData) GetAttributes() PATCHStockTransfersStockTransferId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockTransferUpdateData) GetAttributesOk() (*StockTransferUpdateDataAttributes, bool)`
+`func (o *StockTransferUpdateData) GetAttributesOk() (*PATCHStockTransfersStockTransferId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockTransferUpdateData) SetAttributes(v StockTransferUpdateDataAttributes)`
+`func (o *StockTransferUpdateData) SetAttributes(v PATCHStockTransfersStockTransferId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StockTransferUpdateData) GetRelationships() StockTransferUpdateDataRelationships`
+`func (o *StockTransferUpdateData) GetRelationships() PATCHStockTransfersStockTransferId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockTransferUpdateData) GetRelationshipsOk() (*StockTransferUpdateDataRelationships, bool)`
+`func (o *StockTransferUpdateData) GetRelationshipsOk() (*PATCHStockTransfersStockTransferId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockTransferUpdateData) SetRelationships(v StockTransferUpdateDataRelationships)`
+`func (o *StockTransferUpdateData) SetRelationships(v PATCHStockTransfersStockTransferId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "transactions"]
-**Attributes** | [**RefundDataAttributes**](RefundDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETRefunds200ResponseDataInnerAttributes**](GETRefunds200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTransactionData
 
-`func NewTransactionData(type_ string, attributes RefundDataAttributes, ) *TransactionData`
+`func NewTransactionData(type_ string, attributes GETRefunds200ResponseDataInnerAttributes, ) *TransactionData`
 
 NewTransactionData instantiates a new TransactionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TransactionData) GetAttributes() RefundDataAttributes`
+`func (o *TransactionData) GetAttributes() GETRefunds200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TransactionData) GetAttributesOk() (*RefundDataAttributes, bool)`
+`func (o *TransactionData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TransactionData) SetAttributes(v RefundDataAttributes)`
+`func (o *TransactionData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *TransactionData) GetRelationships() AdyenPaymentUpdateDataRelationships`
+`func (o *TransactionData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TransactionData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool)`
+`func (o *TransactionData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TransactionData) SetRelationships(v AdyenPaymentUpdateDataRelationships)`
+`func (o *TransactionData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

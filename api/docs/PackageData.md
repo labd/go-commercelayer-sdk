@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "packages"]
-**Attributes** | [**PackageDataAttributes**](PackageDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETPackages200ResponseDataInnerRelationships**](GETPackages200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageData
 
-`func NewPackageData(type_ string, attributes PackageDataAttributes, ) *PackageData`
+`func NewPackageData(type_ string, attributes GETPackages200ResponseDataInnerAttributes, ) *PackageData`
 
 NewPackageData instantiates a new PackageData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PackageData) GetAttributes() PackageDataAttributes`
+`func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageData) GetAttributesOk() (*PackageDataAttributes, bool)`
+`func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageData) SetAttributes(v PackageDataAttributes)`
+`func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PackageData) GetRelationships() PackageDataRelationships`
+`func (o *PackageData) GetRelationships() GETPackages200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PackageData) GetRelationshipsOk() (*PackageDataRelationships, bool)`
+`func (o *PackageData) GetRelationshipsOk() (*GETPackages200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PackageData) SetRelationships(v PackageDataRelationships)`
+`func (o *PackageData) SetRelationships(v GETPackages200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

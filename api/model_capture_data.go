@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CaptureData struct for CaptureData
 type CaptureData struct {
 	// The resource's type
-	Type          string                    `json:"type"`
-	Attributes    CaptureDataAttributes     `json:"attributes"`
-	Relationships *CaptureDataRelationships `json:"relationships,omitempty"`
+	Type          string                                        `json:"type"`
+	Attributes    GETCaptures200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETCaptures200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewCaptureData instantiates a new CaptureData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCaptureData(type_ string, attributes CaptureDataAttributes) *CaptureData {
+func NewCaptureData(type_ string, attributes GETCaptures200ResponseDataInnerAttributes) *CaptureData {
 	this := CaptureData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CaptureData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CaptureData) GetAttributes() CaptureDataAttributes {
+func (o *CaptureData) GetAttributes() GETCaptures200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CaptureDataAttributes
+		var ret GETCaptures200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CaptureData) GetAttributes() CaptureDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CaptureData) GetAttributesOk() (*CaptureDataAttributes, bool) {
+func (o *CaptureData) GetAttributesOk() (*GETCaptures200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CaptureData) GetAttributesOk() (*CaptureDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *CaptureData) SetAttributes(v CaptureDataAttributes) {
+func (o *CaptureData) SetAttributes(v GETCaptures200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CaptureData) GetRelationships() CaptureDataRelationships {
+func (o *CaptureData) GetRelationships() GETCaptures200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CaptureDataRelationships
+		var ret GETCaptures200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CaptureData) GetRelationships() CaptureDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CaptureData) GetRelationshipsOk() (*CaptureDataRelationships, bool) {
+func (o *CaptureData) GetRelationshipsOk() (*GETCaptures200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CaptureData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CaptureDataRelationships and assigns it to the Relationships field.
-func (o *CaptureData) SetRelationships(v CaptureDataRelationships) {
+// SetRelationships gets a reference to the given GETCaptures200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CaptureData) SetRelationships(v GETCaptures200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

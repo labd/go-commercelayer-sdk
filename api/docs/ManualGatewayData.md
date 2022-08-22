@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "manual_gateways"]
-**Attributes** | [**ManualGatewayDataAttributes**](ManualGatewayDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ManualGatewayDataRelationships**](ManualGatewayDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETManualGateways200ResponseDataInnerAttributes**](GETManualGateways200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETManualGateways200ResponseDataInnerRelationships**](GETManualGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewManualGatewayData
 
-`func NewManualGatewayData(type_ string, attributes ManualGatewayDataAttributes, ) *ManualGatewayData`
+`func NewManualGatewayData(type_ string, attributes GETManualGateways200ResponseDataInnerAttributes, ) *ManualGatewayData`
 
 NewManualGatewayData instantiates a new ManualGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ManualGatewayData) GetAttributes() ManualGatewayDataAttributes`
+`func (o *ManualGatewayData) GetAttributes() GETManualGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualGatewayData) GetAttributesOk() (*ManualGatewayDataAttributes, bool)`
+`func (o *ManualGatewayData) GetAttributesOk() (*GETManualGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualGatewayData) SetAttributes(v ManualGatewayDataAttributes)`
+`func (o *ManualGatewayData) SetAttributes(v GETManualGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ManualGatewayData) GetRelationships() ManualGatewayDataRelationships`
+`func (o *ManualGatewayData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ManualGatewayData) GetRelationshipsOk() (*ManualGatewayDataRelationships, bool)`
+`func (o *ManualGatewayData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ManualGatewayData) SetRelationships(v ManualGatewayDataRelationships)`
+`func (o *ManualGatewayData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

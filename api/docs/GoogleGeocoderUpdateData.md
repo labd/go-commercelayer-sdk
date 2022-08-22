@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "google_geocoders"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**GoogleGeocoderUpdateDataAttributes**](GoogleGeocoderUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes**](PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewGoogleGeocoderUpdateData
 
-`func NewGoogleGeocoderUpdateData(type_ string, id string, attributes GoogleGeocoderUpdateDataAttributes, ) *GoogleGeocoderUpdateData`
+`func NewGoogleGeocoderUpdateData(type_ string, id string, attributes PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes, ) *GoogleGeocoderUpdateData`
 
 NewGoogleGeocoderUpdateData instantiates a new GoogleGeocoderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *GoogleGeocoderUpdateData) GetAttributes() GoogleGeocoderUpdateDataAttributes`
+`func (o *GoogleGeocoderUpdateData) GetAttributes() PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*GoogleGeocoderUpdateDataAttributes, bool)`
+`func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GoogleGeocoderUpdateData) SetAttributes(v GoogleGeocoderUpdateDataAttributes)`
+`func (o *GoogleGeocoderUpdateData) SetAttributes(v PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

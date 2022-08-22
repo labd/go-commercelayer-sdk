@@ -1,6 +1,6 @@
 # \SkuListsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -482,7 +482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -496,7 +496,7 @@ No authorization required
 
 ## GETSkuLists
 
-> GETSkuLists(ctx).Execute()
+> GETSkuLists200Response GETSkuLists(ctx).Execute()
 
 List all SKU lists
 
@@ -523,6 +523,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETSkuLists`: GETSkuLists200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.GETSkuLists`: %v\n", resp)
 }
 ```
 
@@ -537,16 +539,16 @@ Other parameters are passed through a pointer to a apiGETSkuListsRequest struct 
 
 ### Return type
 
- (empty response body)
+[**GETSkuLists200Response**](GETSkuLists200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -555,7 +557,7 @@ No authorization required
 
 ## GETSkuListsSkuListId
 
-> SkuList GETSkuListsSkuListId(ctx, skuListId).Execute()
+> GETSkuListsSkuListId200Response GETSkuListsSkuListId(ctx, skuListId).Execute()
 
 Retrieve a SKU list
 
@@ -583,7 +585,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListsSkuListId`: SkuList
+    // response from `GETSkuListsSkuListId`: GETSkuListsSkuListId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.GETSkuListsSkuListId`: %v\n", resp)
 }
 ```
@@ -607,11 +609,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuList**](SkuList.md)
+[**GETSkuListsSkuListId200Response**](GETSkuListsSkuListId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -625,7 +627,7 @@ No authorization required
 
 ## PATCHSkuListsSkuListId
 
-> PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
+> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
 
 Update a SKU list
 
@@ -644,7 +646,7 @@ import (
 )
 
 func main() {
-    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("sku_lists", "XGZwpOSrWL", *openapiclient.NewSkuListUpdateDataAttributes())) // SkuListUpdate | 
+    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("sku_lists", "XGZwpOSrWL", *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
     skuListId := "skuListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -654,6 +656,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.PATCHSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHSkuListsSkuListId`: PATCHSkuListsSkuListId200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.PATCHSkuListsSkuListId`: %v\n", resp)
 }
 ```
 
@@ -677,16 +681,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHSkuListsSkuListId200Response**](PATCHSkuListsSkuListId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -695,7 +699,7 @@ No authorization required
 
 ## POSTSkuLists
 
-> POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
+> POSTSkuLists201Response POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
 
 Create a SKU list
 
@@ -714,7 +718,7 @@ import (
 )
 
 func main() {
-    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("sku_lists", *openapiclient.NewSkuListCreateDataAttributes("Personal list"))) // SkuListCreate | 
+    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("sku_lists", *openapiclient.NewPOSTSkuLists201ResponseDataAttributes("Personal list"))) // SkuListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -723,6 +727,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.POSTSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTSkuLists`: POSTSkuLists201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.POSTSkuLists`: %v\n", resp)
 }
 ```
 
@@ -741,16 +747,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkuLists201Response**](POSTSkuLists201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

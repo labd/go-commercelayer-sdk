@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // LineItemOptionsApiService LineItemOptionsApi service
 type LineItemOptionsApiService service
 
-type ApiDELETELineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       *LineItemOptionsApiService
 	lineItemOptionId string
 }
 
-func (r ApiDELETELineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETELineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiDELETELineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiDELETELineItemOptionsLineItemOptionIdRequest {
-	return ApiDELETELineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -51,7 +51,7 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx co
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute(r ApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdLineItemOptionsRequest struct {
+type LineItemOptionsApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService *LineItemOptionsApiService
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdLineItemOptionsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the line item options associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdLineItemOptionsRequest
+ @return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) ApiGETLineItemIdLineItemOptionsRequest {
-	return ApiGETLineItemIdLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest {
+	return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -143,7 +143,7 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Con
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r ApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
+func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionsRequest struct {
+type LineItemOptionsApiGETLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService *LineItemOptionsApiService
 }
 
-func (r ApiGETLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsRequest) Execute() (*GETLineItemOptions200Response, *http.Response, error) {
 	return r.ApiService.GETLineItemOptionsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETLineItemOptions List all line item options
 List all line item options
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETLineItemOptionsRequest
+ @return LineItemOptionsApiGETLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) ApiGETLineItemOptionsRequest {
-	return ApiGETLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) LineItemOptionsApiGETLineItemOptionsRequest {
+	return LineItemOptionsApiGETLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOptionsRequest) (*http.Response, error) {
+//  @return GETLineItemOptions200Response
+func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*GETLineItemOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETLineItemOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.GETLineItemOptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/line_item_options"
@@ -260,7 +262,7 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOp
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOp
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r ApiGETLineItemOp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       *LineItemOptionsApiService
 	lineItemOptionId string
 }
 
-func (r ApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*LineItemOption, *http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	return r.ApiService.GETLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiGETLineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionsLineItemOptionIdRequest {
-	return ApiGETLineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -323,13 +334,13 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx conte
 }
 
 // Execute executes the request
-//  @return LineItemOption
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r ApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOption, *http.Response, error) {
+//  @return GETLineItemOptionsLineItemOptionId200Response
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *LineItemOption
+		localVarReturnValue *GETLineItemOptionsLineItemOptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.GETLineItemOptionsLineItemOptionId")
@@ -398,19 +409,19 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHLineItemOptionsLineItemOptionIdRequest struct {
+type LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest struct {
 	ctx                  context.Context
 	ApiService           *LineItemOptionsApiService
 	lineItemOptionUpdate *LineItemOptionUpdate
 	lineItemOptionId     string
 }
 
-func (r ApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemOptionUpdate(lineItemOptionUpdate LineItemOptionUpdate) ApiPATCHLineItemOptionsLineItemOptionIdRequest {
+func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemOptionUpdate(lineItemOptionUpdate LineItemOptionUpdate) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
 	r.lineItemOptionUpdate = &lineItemOptionUpdate
 	return r
 }
 
-func (r ApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*PATCHLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiPATCHLineItemOptionsLineItemOptionIdRequest
+ @return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) ApiPATCHLineItemOptionsLineItemOptionIdRequest {
-	return ApiPATCHLineItemOptionsLineItemOptionIdRequest{
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
+	return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -432,16 +443,18 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx con
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r ApiPATCHLineItemOptionsLineItemOptionIdRequest) (*http.Response, error) {
+//  @return PATCHLineItemOptionsLineItemOptionId200Response
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*PATCHLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHLineItemOptionsLineItemOptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.PATCHLineItemOptionsLineItemOptionId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}"
@@ -451,7 +464,7 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.lineItemOptionUpdate == nil {
-		return nil, reportError("lineItemOptionUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("lineItemOptionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 	localVarPostBody = r.lineItemOptionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTLineItemOptionsRequest struct {
+type LineItemOptionsApiPOSTLineItemOptionsRequest struct {
 	ctx                  context.Context
 	ApiService           *LineItemOptionsApiService
 	lineItemOptionCreate *LineItemOptionCreate
 }
 
-func (r ApiPOSTLineItemOptionsRequest) LineItemOptionCreate(lineItemOptionCreate LineItemOptionCreate) ApiPOSTLineItemOptionsRequest {
+func (r LineItemOptionsApiPOSTLineItemOptionsRequest) LineItemOptionCreate(lineItemOptionCreate LineItemOptionCreate) LineItemOptionsApiPOSTLineItemOptionsRequest {
 	r.lineItemOptionCreate = &lineItemOptionCreate
 	return r
 }
 
-func (r ApiPOSTLineItemOptionsRequest) Execute() (*http.Response, error) {
+func (r LineItemOptionsApiPOSTLineItemOptionsRequest) Execute() (*POSTLineItemOptions201Response, *http.Response, error) {
 	return r.ApiService.POSTLineItemOptionsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTLineItemOptions Create a line item option
 Create a line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTLineItemOptionsRequest
+ @return LineItemOptionsApiPOSTLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) ApiPOSTLineItemOptionsRequest {
-	return ApiPOSTLineItemOptionsRequest{
+func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) LineItemOptionsApiPOSTLineItemOptionsRequest {
+	return LineItemOptionsApiPOSTLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItemOptionsRequest) (*http.Response, error) {
+//  @return POSTLineItemOptions201Response
+func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*POSTLineItemOptions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTLineItemOptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.POSTLineItemOptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/line_item_options"
@@ -550,7 +574,7 @@ func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItem
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.lineItemOptionCreate == nil {
-		return nil, reportError("lineItemOptionCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("lineItemOptionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItem
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItem
 	localVarPostBody = r.lineItemOptionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r ApiPOSTLineItem
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

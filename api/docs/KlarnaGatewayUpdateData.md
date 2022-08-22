@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "klarna_gateways"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**KlarnaGatewayUpdateDataAttributes**](KlarnaGatewayUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**KlarnaGatewayCreateDataRelationships**](KlarnaGatewayCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes**](PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTKlarnaGateways201ResponseDataRelationships**](POSTKlarnaGateways201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaGatewayUpdateData
 
-`func NewKlarnaGatewayUpdateData(type_ string, id string, attributes KlarnaGatewayUpdateDataAttributes, ) *KlarnaGatewayUpdateData`
+`func NewKlarnaGatewayUpdateData(type_ string, id string, attributes PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, ) *KlarnaGatewayUpdateData`
 
 NewKlarnaGatewayUpdateData instantiates a new KlarnaGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *KlarnaGatewayUpdateData) GetAttributes() KlarnaGatewayUpdateDataAttributes`
+`func (o *KlarnaGatewayUpdateData) GetAttributes() PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*KlarnaGatewayUpdateDataAttributes, bool)`
+`func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaGatewayUpdateData) SetAttributes(v KlarnaGatewayUpdateDataAttributes)`
+`func (o *KlarnaGatewayUpdateData) SetAttributes(v PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *KlarnaGatewayUpdateData) GetRelationships() KlarnaGatewayCreateDataRelationships`
+`func (o *KlarnaGatewayUpdateData) GetRelationships() POSTKlarnaGateways201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *KlarnaGatewayUpdateData) GetRelationshipsOk() (*KlarnaGatewayCreateDataRelationships, bool)`
+`func (o *KlarnaGatewayUpdateData) GetRelationshipsOk() (*POSTKlarnaGateways201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *KlarnaGatewayUpdateData) SetRelationships(v KlarnaGatewayCreateDataRelationships)`
+`func (o *KlarnaGatewayUpdateData) SetRelationships(v POSTKlarnaGateways201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

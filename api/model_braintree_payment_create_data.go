@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BraintreePaymentCreateData struct for BraintreePaymentCreateData
 type BraintreePaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    BraintreePaymentCreateDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTBraintreePayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTAdyenPayments201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentCreateData instantiates a new BraintreePaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentCreateData(type_ string, attributes BraintreePaymentCreateDataAttributes) *BraintreePaymentCreateData {
+func NewBraintreePaymentCreateData(type_ string, attributes POSTBraintreePayments201ResponseDataAttributes) *BraintreePaymentCreateData {
 	this := BraintreePaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *BraintreePaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreePaymentCreateData) GetAttributes() BraintreePaymentCreateDataAttributes {
+func (o *BraintreePaymentCreateData) GetAttributes() POSTBraintreePayments201ResponseDataAttributes {
 	if o == nil {
-		var ret BraintreePaymentCreateDataAttributes
+		var ret POSTBraintreePayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *BraintreePaymentCreateData) GetAttributes() BraintreePaymentCreateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentCreateData) GetAttributesOk() (*BraintreePaymentCreateDataAttributes, bool) {
+func (o *BraintreePaymentCreateData) GetAttributesOk() (*POSTBraintreePayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *BraintreePaymentCreateData) GetAttributesOk() (*BraintreePaymentCreateD
 }
 
 // SetAttributes sets field value
-func (o *BraintreePaymentCreateData) SetAttributes(v BraintreePaymentCreateDataAttributes) {
+func (o *BraintreePaymentCreateData) SetAttributes(v POSTBraintreePayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BraintreePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
+func (o *BraintreePaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentCreateDataRelationships
+		var ret POSTAdyenPayments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BraintreePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
+func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BraintreePaymentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentCreateDataRelationships and assigns it to the Relationships field.
-func (o *BraintreePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *BraintreePaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

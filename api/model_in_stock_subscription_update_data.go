@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type InStockSubscriptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    InStockSubscriptionUpdateDataAttributes     `json:"attributes"`
-	Relationships *InStockSubscriptionUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                      `json:"id"`
+	Attributes    PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewInStockSubscriptionUpdateData instantiates a new InStockSubscriptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionUpdateData(type_ string, id string, attributes InStockSubscriptionUpdateDataAttributes) *InStockSubscriptionUpdateData {
+func NewInStockSubscriptionUpdateData(type_ string, id string, attributes PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) *InStockSubscriptionUpdateData {
 	this := InStockSubscriptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *InStockSubscriptionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InStockSubscriptionUpdateData) GetAttributes() InStockSubscriptionUpdateDataAttributes {
+func (o *InStockSubscriptionUpdateData) GetAttributes() PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret InStockSubscriptionUpdateDataAttributes
+		var ret PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *InStockSubscriptionUpdateData) GetAttributes() InStockSubscriptionUpdat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateData) GetAttributesOk() (*InStockSubscriptionUpdateDataAttributes, bool) {
+func (o *InStockSubscriptionUpdateData) GetAttributesOk() (*PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *InStockSubscriptionUpdateData) GetAttributesOk() (*InStockSubscriptionU
 }
 
 // SetAttributes sets field value
-func (o *InStockSubscriptionUpdateData) SetAttributes(v InStockSubscriptionUpdateDataAttributes) {
+func (o *InStockSubscriptionUpdateData) SetAttributes(v PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionUpdateDataRelationships {
+func (o *InStockSubscriptionUpdateData) GetRelationships() PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret InStockSubscriptionUpdateDataRelationships
+		var ret PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionUp
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*InStockSubscriptionUpdateDataRelationships, bool) {
+func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *InStockSubscriptionUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given InStockSubscriptionUpdateDataRelationships and assigns it to the Relationships field.
-func (o *InStockSubscriptionUpdateData) SetRelationships(v InStockSubscriptionUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *InStockSubscriptionUpdateData) SetRelationships(v PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

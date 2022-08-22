@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "return_line_items"]
-**Attributes** | [**ReturnLineItemDataAttributes**](ReturnLineItemDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ReturnLineItemDataRelationships**](ReturnLineItemDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETReturnLineItems200ResponseDataInnerAttributes**](GETReturnLineItems200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETReturnLineItems200ResponseDataInnerRelationships**](GETReturnLineItems200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnLineItemData
 
-`func NewReturnLineItemData(type_ string, attributes ReturnLineItemDataAttributes, ) *ReturnLineItemData`
+`func NewReturnLineItemData(type_ string, attributes GETReturnLineItems200ResponseDataInnerAttributes, ) *ReturnLineItemData`
 
 NewReturnLineItemData instantiates a new ReturnLineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnLineItemData) GetAttributes() ReturnLineItemDataAttributes`
+`func (o *ReturnLineItemData) GetAttributes() GETReturnLineItems200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnLineItemData) GetAttributesOk() (*ReturnLineItemDataAttributes, bool)`
+`func (o *ReturnLineItemData) GetAttributesOk() (*GETReturnLineItems200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnLineItemData) SetAttributes(v ReturnLineItemDataAttributes)`
+`func (o *ReturnLineItemData) SetAttributes(v GETReturnLineItems200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ReturnLineItemData) GetRelationships() ReturnLineItemDataRelationships`
+`func (o *ReturnLineItemData) GetRelationships() GETReturnLineItems200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnLineItemData) GetRelationshipsOk() (*ReturnLineItemDataRelationships, bool)`
+`func (o *ReturnLineItemData) GetRelationshipsOk() (*GETReturnLineItems200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnLineItemData) SetRelationships(v ReturnLineItemDataRelationships)`
+`func (o *ReturnLineItemData) SetRelationships(v GETReturnLineItems200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

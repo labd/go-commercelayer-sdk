@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "prices"]
-**Attributes** | [**PriceDataAttributes**](PriceDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PriceDataRelationships**](PriceDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETPrices200ResponseDataInnerAttributes**](GETPrices200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETPrices200ResponseDataInnerRelationships**](GETPrices200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceData
 
-`func NewPriceData(type_ string, attributes PriceDataAttributes, ) *PriceData`
+`func NewPriceData(type_ string, attributes GETPrices200ResponseDataInnerAttributes, ) *PriceData`
 
 NewPriceData instantiates a new PriceData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PriceData) GetAttributes() PriceDataAttributes`
+`func (o *PriceData) GetAttributes() GETPrices200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceData) GetAttributesOk() (*PriceDataAttributes, bool)`
+`func (o *PriceData) GetAttributesOk() (*GETPrices200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceData) SetAttributes(v PriceDataAttributes)`
+`func (o *PriceData) SetAttributes(v GETPrices200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PriceData) GetRelationships() PriceDataRelationships`
+`func (o *PriceData) GetRelationships() GETPrices200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceData) GetRelationshipsOk() (*PriceDataRelationships, bool)`
+`func (o *PriceData) GetRelationshipsOk() (*GETPrices200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceData) SetRelationships(v PriceDataRelationships)`
+`func (o *PriceData) SetRelationships(v GETPrices200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

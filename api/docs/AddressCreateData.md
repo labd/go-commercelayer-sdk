@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "addresses"]
-**Attributes** | [**AddressCreateDataAttributes**](AddressCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AddressDataRelationships**](AddressDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTAddresses201ResponseDataAttributes**](POSTAddresses201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**GETAddresses200ResponseDataInnerRelationships**](GETAddresses200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAddressCreateData
 
-`func NewAddressCreateData(type_ string, attributes AddressCreateDataAttributes, ) *AddressCreateData`
+`func NewAddressCreateData(type_ string, attributes POSTAddresses201ResponseDataAttributes, ) *AddressCreateData`
 
 NewAddressCreateData instantiates a new AddressCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AddressCreateData) GetAttributes() AddressCreateDataAttributes`
+`func (o *AddressCreateData) GetAttributes() POSTAddresses201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AddressCreateData) GetAttributesOk() (*AddressCreateDataAttributes, bool)`
+`func (o *AddressCreateData) GetAttributesOk() (*POSTAddresses201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AddressCreateData) SetAttributes(v AddressCreateDataAttributes)`
+`func (o *AddressCreateData) SetAttributes(v POSTAddresses201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *AddressCreateData) GetRelationships() AddressDataRelationships`
+`func (o *AddressCreateData) GetRelationships() GETAddresses200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AddressCreateData) GetRelationshipsOk() (*AddressDataRelationships, bool)`
+`func (o *AddressCreateData) GetRelationshipsOk() (*GETAddresses200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AddressCreateData) SetRelationships(v AddressDataRelationships)`
+`func (o *AddressCreateData) SetRelationships(v GETAddresses200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

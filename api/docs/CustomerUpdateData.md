@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customers"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**CustomerUpdateDataAttributes**](CustomerUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CustomerCreateDataRelationships**](CustomerCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHCustomersCustomerId200ResponseDataAttributes**](PATCHCustomersCustomerId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTCustomers201ResponseDataRelationships**](POSTCustomers201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerUpdateData
 
-`func NewCustomerUpdateData(type_ string, id string, attributes CustomerUpdateDataAttributes, ) *CustomerUpdateData`
+`func NewCustomerUpdateData(type_ string, id string, attributes PATCHCustomersCustomerId200ResponseDataAttributes, ) *CustomerUpdateData`
 
 NewCustomerUpdateData instantiates a new CustomerUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerUpdateData) GetAttributes() CustomerUpdateDataAttributes`
+`func (o *CustomerUpdateData) GetAttributes() PATCHCustomersCustomerId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerUpdateData) GetAttributesOk() (*CustomerUpdateDataAttributes, bool)`
+`func (o *CustomerUpdateData) GetAttributesOk() (*PATCHCustomersCustomerId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerUpdateData) SetAttributes(v CustomerUpdateDataAttributes)`
+`func (o *CustomerUpdateData) SetAttributes(v PATCHCustomersCustomerId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CustomerUpdateData) GetRelationships() CustomerCreateDataRelationships`
+`func (o *CustomerUpdateData) GetRelationships() POSTCustomers201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerUpdateData) GetRelationshipsOk() (*CustomerCreateDataRelationships, bool)`
+`func (o *CustomerUpdateData) GetRelationshipsOk() (*POSTCustomers201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerUpdateData) SetRelationships(v CustomerCreateDataRelationships)`
+`func (o *CustomerUpdateData) SetRelationships(v POSTCustomers201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ImportCreateData struct for ImportCreateData
 type ImportCreateData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    ImportCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}     `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTImports201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}               `json:"relationships,omitempty"`
 }
 
 // NewImportCreateData instantiates a new ImportCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewImportCreateData(type_ string, attributes ImportCreateDataAttributes) *ImportCreateData {
+func NewImportCreateData(type_ string, attributes POSTImports201ResponseDataAttributes) *ImportCreateData {
 	this := ImportCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ImportCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ImportCreateData) GetAttributes() ImportCreateDataAttributes {
+func (o *ImportCreateData) GetAttributes() POSTImports201ResponseDataAttributes {
 	if o == nil {
-		var ret ImportCreateDataAttributes
+		var ret POSTImports201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ImportCreateData) GetAttributes() ImportCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ImportCreateData) GetAttributesOk() (*ImportCreateDataAttributes, bool) {
+func (o *ImportCreateData) GetAttributesOk() (*POSTImports201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *ImportCreateData) GetAttributesOk() (*ImportCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ImportCreateData) SetAttributes(v ImportCreateDataAttributes) {
+func (o *ImportCreateData) SetAttributes(v POSTImports201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

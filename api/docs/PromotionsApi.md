@@ -1,6 +1,6 @@
 # \PromotionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETPromotions
 
-> GETPromotions(ctx).Execute()
+> GETPromotions200Response GETPromotions(ctx).Execute()
 
 List all promotions
 
@@ -38,6 +38,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionsApi.GETPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPromotions`: GETPromotions200Response
+    fmt.Fprintf(os.Stdout, "Response from `PromotionsApi.GETPromotions`: %v\n", resp)
 }
 ```
 
@@ -52,16 +54,16 @@ Other parameters are passed through a pointer to a apiGETPromotionsRequest struc
 
 ### Return type
 
- (empty response body)
+[**GETPromotions200Response**](GETPromotions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -70,7 +72,7 @@ No authorization required
 
 ## GETPromotionsPromotionId
 
-> Promotion GETPromotionsPromotionId(ctx, promotionId).Execute()
+> GETPromotionsPromotionId200Response GETPromotionsPromotionId(ctx, promotionId).Execute()
 
 Retrieve a promotion
 
@@ -98,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionsApi.GETPromotionsPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionsPromotionId`: Promotion
+    // response from `GETPromotionsPromotionId`: GETPromotionsPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionsApi.GETPromotionsPromotionId`: %v\n", resp)
 }
 ```
@@ -122,11 +124,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Promotion**](Promotion.md)
+[**GETPromotionsPromotionId200Response**](GETPromotionsPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

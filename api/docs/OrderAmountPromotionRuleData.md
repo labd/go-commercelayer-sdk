@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_amount_promotion_rules"]
-**Attributes** | [**OrderAmountPromotionRuleDataAttributes**](OrderAmountPromotionRuleDataAttributes.md) |  | 
-**Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETOrderAmountPromotionRules200ResponseDataInnerAttributes**](GETOrderAmountPromotionRules200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETOrderAmountPromotionRules200ResponseDataInnerRelationships**](GETOrderAmountPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleData
 
-`func NewOrderAmountPromotionRuleData(type_ string, attributes OrderAmountPromotionRuleDataAttributes, ) *OrderAmountPromotionRuleData`
+`func NewOrderAmountPromotionRuleData(type_ string, attributes GETOrderAmountPromotionRules200ResponseDataInnerAttributes, ) *OrderAmountPromotionRuleData`
 
 NewOrderAmountPromotionRuleData instantiates a new OrderAmountPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleData) GetAttributes() OrderAmountPromotionRuleDataAttributes`
+`func (o *OrderAmountPromotionRuleData) GetAttributes() GETOrderAmountPromotionRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*OrderAmountPromotionRuleDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*GETOrderAmountPromotionRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleData) SetAttributes(v OrderAmountPromotionRuleDataAttributes)`
+`func (o *OrderAmountPromotionRuleData) SetAttributes(v GETOrderAmountPromotionRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *OrderAmountPromotionRuleData) GetRelationships() OrderAmountPromotionRuleDataRelationships`
+`func (o *OrderAmountPromotionRuleData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderAmountPromotionRuleData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool)`
+`func (o *OrderAmountPromotionRuleData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderAmountPromotionRuleData) SetRelationships(v OrderAmountPromotionRuleDataRelationships)`
+`func (o *OrderAmountPromotionRuleData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

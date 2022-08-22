@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdyenGatewayData struct for AdyenGatewayData
 type AdyenGatewayData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    AdyenGatewayDataAttributes     `json:"attributes"`
-	Relationships *AdyenGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETAdyenGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETAdyenGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayData instantiates a new AdyenGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayData(type_ string, attributes AdyenGatewayDataAttributes) *AdyenGatewayData {
+func NewAdyenGatewayData(type_ string, attributes GETAdyenGateways200ResponseDataInnerAttributes) *AdyenGatewayData {
 	this := AdyenGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AdyenGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayData) GetAttributes() AdyenGatewayDataAttributes {
+func (o *AdyenGatewayData) GetAttributes() GETAdyenGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret AdyenGatewayDataAttributes
+		var ret GETAdyenGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AdyenGatewayData) GetAttributes() AdyenGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayData) GetAttributesOk() (*AdyenGatewayDataAttributes, bool) {
+func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AdyenGatewayData) GetAttributesOk() (*AdyenGatewayDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayData) SetAttributes(v AdyenGatewayDataAttributes) {
+func (o *AdyenGatewayData) SetAttributes(v GETAdyenGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AdyenGatewayData) GetRelationships() AdyenGatewayDataRelationships {
+func (o *AdyenGatewayData) GetRelationships() GETAdyenGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenGatewayDataRelationships
+		var ret GETAdyenGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AdyenGatewayData) GetRelationships() AdyenGatewayDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayData) GetRelationshipsOk() (*AdyenGatewayDataRelationships, bool) {
+func (o *AdyenGatewayData) GetRelationshipsOk() (*GETAdyenGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AdyenGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenGatewayDataRelationships and assigns it to the Relationships field.
-func (o *AdyenGatewayData) SetRelationships(v AdyenGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *AdyenGatewayData) SetRelationships(v GETAdyenGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

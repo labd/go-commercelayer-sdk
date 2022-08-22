@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ReturnLineItemData struct for ReturnLineItemData
 type ReturnLineItemData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    ReturnLineItemDataAttributes     `json:"attributes"`
-	Relationships *ReturnLineItemDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETReturnLineItems200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETReturnLineItems200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemData instantiates a new ReturnLineItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemData(type_ string, attributes ReturnLineItemDataAttributes) *ReturnLineItemData {
+func NewReturnLineItemData(type_ string, attributes GETReturnLineItems200ResponseDataInnerAttributes) *ReturnLineItemData {
 	this := ReturnLineItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ReturnLineItemData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnLineItemData) GetAttributes() ReturnLineItemDataAttributes {
+func (o *ReturnLineItemData) GetAttributes() GETReturnLineItems200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ReturnLineItemDataAttributes
+		var ret GETReturnLineItems200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ReturnLineItemData) GetAttributes() ReturnLineItemDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemData) GetAttributesOk() (*ReturnLineItemDataAttributes, bool) {
+func (o *ReturnLineItemData) GetAttributesOk() (*GETReturnLineItems200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ReturnLineItemData) GetAttributesOk() (*ReturnLineItemDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *ReturnLineItemData) SetAttributes(v ReturnLineItemDataAttributes) {
+func (o *ReturnLineItemData) SetAttributes(v GETReturnLineItems200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnLineItemData) GetRelationships() ReturnLineItemDataRelationships {
+func (o *ReturnLineItemData) GetRelationships() GETReturnLineItems200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ReturnLineItemDataRelationships
+		var ret GETReturnLineItems200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ReturnLineItemData) GetRelationships() ReturnLineItemDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemData) GetRelationshipsOk() (*ReturnLineItemDataRelationships, bool) {
+func (o *ReturnLineItemData) GetRelationshipsOk() (*GETReturnLineItems200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ReturnLineItemData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ReturnLineItemDataRelationships and assigns it to the Relationships field.
-func (o *ReturnLineItemData) SetRelationships(v ReturnLineItemDataRelationships) {
+// SetRelationships gets a reference to the given GETReturnLineItems200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ReturnLineItemData) SetRelationships(v GETReturnLineItems200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

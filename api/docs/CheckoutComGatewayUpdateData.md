@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "checkout_com_gateways"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**CheckoutComGatewayUpdateDataAttributes**](CheckoutComGatewayUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CheckoutComGatewayCreateDataRelationships**](CheckoutComGatewayCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes**](PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTCheckoutComGateways201ResponseDataRelationships**](POSTCheckoutComGateways201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComGatewayUpdateData
 
-`func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes CheckoutComGatewayUpdateDataAttributes, ) *CheckoutComGatewayUpdateData`
+`func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, ) *CheckoutComGatewayUpdateData`
 
 NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateDataAttributes`
+`func (o *CheckoutComGatewayUpdateData) GetAttributes() PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpdateDataAttributes, bool)`
+`func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComGatewayUpdateData) SetAttributes(v CheckoutComGatewayUpdateDataAttributes)`
+`func (o *CheckoutComGatewayUpdateData) SetAttributes(v PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CheckoutComGatewayUpdateData) GetRelationships() CheckoutComGatewayCreateDataRelationships`
+`func (o *CheckoutComGatewayUpdateData) GetRelationships() POSTCheckoutComGateways201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CheckoutComGatewayUpdateData) GetRelationshipsOk() (*CheckoutComGatewayCreateDataRelationships, bool)`
+`func (o *CheckoutComGatewayUpdateData) GetRelationshipsOk() (*POSTCheckoutComGateways201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CheckoutComGatewayUpdateData) SetRelationships(v CheckoutComGatewayCreateDataRelationships)`
+`func (o *CheckoutComGatewayUpdateData) SetRelationships(v POSTCheckoutComGateways201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

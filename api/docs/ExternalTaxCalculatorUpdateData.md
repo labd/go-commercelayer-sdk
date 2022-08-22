@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "external_tax_calculators"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ExternalTaxCalculatorUpdateDataAttributes**](ExternalTaxCalculatorUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes**](PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalTaxCalculatorUpdateData
 
-`func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes ExternalTaxCalculatorUpdateDataAttributes, ) *ExternalTaxCalculatorUpdateData`
+`func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes, ) *ExternalTaxCalculatorUpdateData`
 
 NewExternalTaxCalculatorUpdateData instantiates a new ExternalTaxCalculatorUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalTaxCalculatorUpdateData) GetAttributes() ExternalTaxCalculatorUpdateDataAttributes`
+`func (o *ExternalTaxCalculatorUpdateData) GetAttributes() PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*ExternalTaxCalculatorUpdateDataAttributes, bool)`
+`func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v ExternalTaxCalculatorUpdateDataAttributes)`
+`func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ExternalTaxCalculatorUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships`
+`func (o *ExternalTaxCalculatorUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool)`
+`func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships)`
+`func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

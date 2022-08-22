@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxCategoryData struct for TaxCategoryData
 type TaxCategoryData struct {
 	// The resource's type
-	Type          string                        `json:"type"`
-	Attributes    TaxCategoryDataAttributes     `json:"attributes"`
-	Relationships *TaxCategoryDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETTaxCategories200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETTaxCategories200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryData instantiates a new TaxCategoryData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryData(type_ string, attributes TaxCategoryDataAttributes) *TaxCategoryData {
+func NewTaxCategoryData(type_ string, attributes GETTaxCategories200ResponseDataInnerAttributes) *TaxCategoryData {
 	this := TaxCategoryData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *TaxCategoryData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryData) GetAttributes() TaxCategoryDataAttributes {
+func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret TaxCategoryDataAttributes
+		var ret GETTaxCategories200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *TaxCategoryData) GetAttributes() TaxCategoryDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryData) GetAttributesOk() (*TaxCategoryDataAttributes, bool) {
+func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *TaxCategoryData) GetAttributesOk() (*TaxCategoryDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryData) SetAttributes(v TaxCategoryDataAttributes) {
+func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCategoryData) GetRelationships() TaxCategoryDataRelationships {
+func (o *TaxCategoryData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret TaxCategoryDataRelationships
+		var ret GETTaxCategories200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxCategoryData) GetRelationships() TaxCategoryDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryData) GetRelationshipsOk() (*TaxCategoryDataRelationships, bool) {
+func (o *TaxCategoryData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxCategoryData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given TaxCategoryDataRelationships and assigns it to the Relationships field.
-func (o *TaxCategoryData) SetRelationships(v TaxCategoryDataRelationships) {
+// SetRelationships gets a reference to the given GETTaxCategories200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *TaxCategoryData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

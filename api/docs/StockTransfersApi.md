@@ -1,6 +1,6 @@
 # \StockTransfersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -289,7 +289,7 @@ No authorization required
 
 ## GETStockTransfers
 
-> GETStockTransfers(ctx).Execute()
+> GETStockTransfers200Response GETStockTransfers(ctx).Execute()
 
 List all stock transfers
 
@@ -316,6 +316,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETStockTransfers`: GETStockTransfers200Response
+    fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.GETStockTransfers`: %v\n", resp)
 }
 ```
 
@@ -330,16 +332,16 @@ Other parameters are passed through a pointer to a apiGETStockTransfersRequest s
 
 ### Return type
 
- (empty response body)
+[**GETStockTransfers200Response**](GETStockTransfers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -348,7 +350,7 @@ No authorization required
 
 ## GETStockTransfersStockTransferId
 
-> StockTransfer GETStockTransfersStockTransferId(ctx, stockTransferId).Execute()
+> GETStockTransfersStockTransferId200Response GETStockTransfersStockTransferId(ctx, stockTransferId).Execute()
 
 Retrieve a stock transfer
 
@@ -376,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockTransfersStockTransferId`: StockTransfer
+    // response from `GETStockTransfersStockTransferId`: GETStockTransfersStockTransferId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.GETStockTransfersStockTransferId`: %v\n", resp)
 }
 ```
@@ -400,11 +402,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockTransfer**](StockTransfer.md)
+[**GETStockTransfersStockTransferId200Response**](GETStockTransfersStockTransferId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHStockTransfersStockTransferId
 
-> PATCHStockTransfersStockTransferId(ctx, stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
+> PATCHStockTransfersStockTransferId200Response PATCHStockTransfersStockTransferId(ctx, stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
 
 Update a stock transfer
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("stock_transfers", "XGZwpOSrWL", *openapiclient.NewStockTransferUpdateDataAttributes())) // StockTransferUpdate | 
+    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("stock_transfers", "XGZwpOSrWL", *openapiclient.NewPATCHStockTransfersStockTransferId200ResponseDataAttributes())) // StockTransferUpdate | 
     stockTransferId := "stockTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.PATCHStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHStockTransfersStockTransferId`: PATCHStockTransfersStockTransferId200Response
+    fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.PATCHStockTransfersStockTransferId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHStockTransfersStockTransferId200Response**](PATCHStockTransfersStockTransferId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTStockTransfers
 
-> POSTStockTransfers(ctx).StockTransferCreate(stockTransferCreate).Execute()
+> POSTStockTransfers201Response POSTStockTransfers(ctx).StockTransferCreate(stockTransferCreate).Execute()
 
 Create a stock transfer
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("stock_transfers", *openapiclient.NewStockTransferCreateDataAttributes(int32(2)))) // StockTransferCreate | 
+    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("stock_transfers", *openapiclient.NewPOSTStockTransfers201ResponseDataAttributes(int32(2)))) // StockTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.POSTStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTStockTransfers`: POSTStockTransfers201Response
+    fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.POSTStockTransfers`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTStockTransfers201Response**](POSTStockTransfers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

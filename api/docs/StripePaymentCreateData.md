@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stripe_payments"]
-**Attributes** | [**StripePaymentCreateDataAttributes**](StripePaymentCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTStripePayments201ResponseDataAttributes**](POSTStripePayments201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTAdyenPayments201ResponseDataRelationships**](POSTAdyenPayments201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripePaymentCreateData
 
-`func NewStripePaymentCreateData(type_ string, attributes StripePaymentCreateDataAttributes, ) *StripePaymentCreateData`
+`func NewStripePaymentCreateData(type_ string, attributes POSTStripePayments201ResponseDataAttributes, ) *StripePaymentCreateData`
 
 NewStripePaymentCreateData instantiates a new StripePaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StripePaymentCreateData) GetAttributes() StripePaymentCreateDataAttributes`
+`func (o *StripePaymentCreateData) GetAttributes() POSTStripePayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripePaymentCreateData) GetAttributesOk() (*StripePaymentCreateDataAttributes, bool)`
+`func (o *StripePaymentCreateData) GetAttributesOk() (*POSTStripePayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripePaymentCreateData) SetAttributes(v StripePaymentCreateDataAttributes)`
+`func (o *StripePaymentCreateData) SetAttributes(v POSTStripePayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StripePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships`
+`func (o *StripePaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StripePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool)`
+`func (o *StripePaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StripePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships)`
+`func (o *StripePaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaypalPaymentCreateData struct for PaypalPaymentCreateData
 type PaypalPaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    PaypalPaymentCreateDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTPaypalPayments201ResponseDataAttributes    `json:"attributes"`
+	Relationships *POSTAdyenPayments201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaypalPaymentCreateData instantiates a new PaypalPaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalPaymentCreateData(type_ string, attributes PaypalPaymentCreateDataAttributes) *PaypalPaymentCreateData {
+func NewPaypalPaymentCreateData(type_ string, attributes POSTPaypalPayments201ResponseDataAttributes) *PaypalPaymentCreateData {
 	this := PaypalPaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PaypalPaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalPaymentCreateData) GetAttributes() PaypalPaymentCreateDataAttributes {
+func (o *PaypalPaymentCreateData) GetAttributes() POSTPaypalPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret PaypalPaymentCreateDataAttributes
+		var ret POSTPaypalPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PaypalPaymentCreateData) GetAttributes() PaypalPaymentCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentCreateData) GetAttributesOk() (*PaypalPaymentCreateDataAttributes, bool) {
+func (o *PaypalPaymentCreateData) GetAttributesOk() (*POSTPaypalPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PaypalPaymentCreateData) GetAttributesOk() (*PaypalPaymentCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *PaypalPaymentCreateData) SetAttributes(v PaypalPaymentCreateDataAttributes) {
+func (o *PaypalPaymentCreateData) SetAttributes(v POSTPaypalPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaypalPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
+func (o *PaypalPaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentCreateDataRelationships
+		var ret POSTAdyenPayments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PaypalPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
+func (o *PaypalPaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PaypalPaymentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentCreateDataRelationships and assigns it to the Relationships field.
-func (o *PaypalPaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PaypalPaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ShipmentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                           `json:"id"`
-	Attributes    ShipmentUpdateDataAttributes     `json:"attributes"`
-	Relationships *ShipmentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                `json:"id"`
+	Attributes    PATCHShipmentsShipmentId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHShipmentsShipmentId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewShipmentUpdateData instantiates a new ShipmentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShipmentUpdateData(type_ string, id string, attributes ShipmentUpdateDataAttributes) *ShipmentUpdateData {
+func NewShipmentUpdateData(type_ string, id string, attributes PATCHShipmentsShipmentId200ResponseDataAttributes) *ShipmentUpdateData {
 	this := ShipmentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *ShipmentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShipmentUpdateData) GetAttributes() ShipmentUpdateDataAttributes {
+func (o *ShipmentUpdateData) GetAttributes() PATCHShipmentsShipmentId200ResponseDataAttributes {
 	if o == nil {
-		var ret ShipmentUpdateDataAttributes
+		var ret PATCHShipmentsShipmentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *ShipmentUpdateData) GetAttributes() ShipmentUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShipmentUpdateData) GetAttributesOk() (*ShipmentUpdateDataAttributes, bool) {
+func (o *ShipmentUpdateData) GetAttributesOk() (*PATCHShipmentsShipmentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *ShipmentUpdateData) GetAttributesOk() (*ShipmentUpdateDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *ShipmentUpdateData) SetAttributes(v ShipmentUpdateDataAttributes) {
+func (o *ShipmentUpdateData) SetAttributes(v PATCHShipmentsShipmentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShipmentUpdateData) GetRelationships() ShipmentUpdateDataRelationships {
+func (o *ShipmentUpdateData) GetRelationships() PATCHShipmentsShipmentId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShipmentUpdateDataRelationships
+		var ret PATCHShipmentsShipmentId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ShipmentUpdateData) GetRelationships() ShipmentUpdateDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShipmentUpdateData) GetRelationshipsOk() (*ShipmentUpdateDataRelationships, bool) {
+func (o *ShipmentUpdateData) GetRelationshipsOk() (*PATCHShipmentsShipmentId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ShipmentUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShipmentUpdateDataRelationships and assigns it to the Relationships field.
-func (o *ShipmentUpdateData) SetRelationships(v ShipmentUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHShipmentsShipmentId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ShipmentUpdateData) SetRelationships(v PATCHShipmentsShipmentId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

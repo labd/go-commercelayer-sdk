@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AddressCreateData struct for AddressCreateData
 type AddressCreateData struct {
 	// The resource's type
-	Type          string                      `json:"type"`
-	Attributes    AddressCreateDataAttributes `json:"attributes"`
-	Relationships *AddressDataRelationships   `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTAddresses201ResponseDataAttributes         `json:"attributes"`
+	Relationships *GETAddresses200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewAddressCreateData instantiates a new AddressCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressCreateData(type_ string, attributes AddressCreateDataAttributes) *AddressCreateData {
+func NewAddressCreateData(type_ string, attributes POSTAddresses201ResponseDataAttributes) *AddressCreateData {
 	this := AddressCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AddressCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AddressCreateData) GetAttributes() AddressCreateDataAttributes {
+func (o *AddressCreateData) GetAttributes() POSTAddresses201ResponseDataAttributes {
 	if o == nil {
-		var ret AddressCreateDataAttributes
+		var ret POSTAddresses201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AddressCreateData) GetAttributes() AddressCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AddressCreateData) GetAttributesOk() (*AddressCreateDataAttributes, bool) {
+func (o *AddressCreateData) GetAttributesOk() (*POSTAddresses201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AddressCreateData) GetAttributesOk() (*AddressCreateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *AddressCreateData) SetAttributes(v AddressCreateDataAttributes) {
+func (o *AddressCreateData) SetAttributes(v POSTAddresses201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AddressCreateData) GetRelationships() AddressDataRelationships {
+func (o *AddressCreateData) GetRelationships() GETAddresses200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AddressDataRelationships
+		var ret GETAddresses200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AddressCreateData) GetRelationships() AddressDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddressCreateData) GetRelationshipsOk() (*AddressDataRelationships, bool) {
+func (o *AddressCreateData) GetRelationshipsOk() (*GETAddresses200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AddressCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AddressDataRelationships and assigns it to the Relationships field.
-func (o *AddressCreateData) SetRelationships(v AddressDataRelationships) {
+// SetRelationships gets a reference to the given GETAddresses200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *AddressCreateData) SetRelationships(v GETAddresses200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,12 +23,12 @@ import (
 // OrderValidationRulesApiService OrderValidationRulesApi service
 type OrderValidationRulesApiService service
 
-type ApiGETOrderValidationRulesRequest struct {
+type OrderValidationRulesApiGETOrderValidationRulesRequest struct {
 	ctx        context.Context
 	ApiService *OrderValidationRulesApiService
 }
 
-func (r ApiGETOrderValidationRulesRequest) Execute() (*http.Response, error) {
+func (r OrderValidationRulesApiGETOrderValidationRulesRequest) Execute() (*GETOrderValidationRules200Response, *http.Response, error) {
 	return r.ApiService.GETOrderValidationRulesExecute(r)
 }
 
@@ -38,26 +38,28 @@ GETOrderValidationRules List all order validation rules
 List all order validation rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrderValidationRulesRequest
+ @return OrderValidationRulesApiGETOrderValidationRulesRequest
 */
-func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Context) ApiGETOrderValidationRulesRequest {
-	return ApiGETOrderValidationRulesRequest{
+func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Context) OrderValidationRulesApiGETOrderValidationRulesRequest {
+	return OrderValidationRulesApiGETOrderValidationRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r ApiGETOrderValidationRulesRequest) (*http.Response, error) {
+//  @return GETOrderValidationRules200Response
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderValidationRulesApiGETOrderValidationRulesRequest) (*GETOrderValidationRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrderValidationRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules"
@@ -76,7 +78,7 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r ApiGET
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -85,19 +87,19 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r ApiGET
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -105,19 +107,28 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r ApiGET
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETOrderValidationRulesOrderValidationRuleIdRequest struct {
+type OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest struct {
 	ctx                   context.Context
 	ApiService            *OrderValidationRulesApiService
 	orderValidationRuleId string
 }
 
-func (r ApiGETOrderValidationRulesOrderValidationRuleIdRequest) Execute() (*OrderValidationRule, *http.Response, error) {
+func (r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) Execute() (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETOrderValidationRulesOrderValidationRuleIdExecute(r)
 }
 
@@ -128,10 +139,10 @@ Retrieve an order validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderValidationRuleId The resource's id
- @return ApiGETOrderValidationRulesOrderValidationRuleIdRequest
+ @return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest
 */
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId string) ApiGETOrderValidationRulesOrderValidationRuleIdRequest {
-	return ApiGETOrderValidationRulesOrderValidationRuleIdRequest{
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId string) OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest {
+	return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		orderValidationRuleId: orderValidationRuleId,
@@ -139,13 +150,13 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 }
 
 // Execute executes the request
-//  @return OrderValidationRule
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r ApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*OrderValidationRule, *http.Response, error) {
+//  @return GETOrderValidationRulesOrderValidationRuleId200Response
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderValidationRule
+		localVarReturnValue *GETOrderValidationRulesOrderValidationRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRulesOrderValidationRuleId")

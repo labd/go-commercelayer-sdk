@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // InStockSubscriptionData struct for InStockSubscriptionData
 type InStockSubscriptionData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    InStockSubscriptionDataAttributes     `json:"attributes"`
-	Relationships *InStockSubscriptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                    `json:"type"`
+	Attributes    GETInStockSubscriptions200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETInStockSubscriptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewInStockSubscriptionData instantiates a new InStockSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionData(type_ string, attributes InStockSubscriptionDataAttributes) *InStockSubscriptionData {
+func NewInStockSubscriptionData(type_ string, attributes GETInStockSubscriptions200ResponseDataInnerAttributes) *InStockSubscriptionData {
 	this := InStockSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *InStockSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InStockSubscriptionData) GetAttributes() InStockSubscriptionDataAttributes {
+func (o *InStockSubscriptionData) GetAttributes() GETInStockSubscriptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret InStockSubscriptionDataAttributes
+		var ret GETInStockSubscriptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *InStockSubscriptionData) GetAttributes() InStockSubscriptionDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionData) GetAttributesOk() (*InStockSubscriptionDataAttributes, bool) {
+func (o *InStockSubscriptionData) GetAttributesOk() (*GETInStockSubscriptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *InStockSubscriptionData) GetAttributesOk() (*InStockSubscriptionDataAtt
 }
 
 // SetAttributes sets field value
-func (o *InStockSubscriptionData) SetAttributes(v InStockSubscriptionDataAttributes) {
+func (o *InStockSubscriptionData) SetAttributes(v GETInStockSubscriptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InStockSubscriptionData) GetRelationships() InStockSubscriptionDataRelationships {
+func (o *InStockSubscriptionData) GetRelationships() GETInStockSubscriptions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret InStockSubscriptionDataRelationships
+		var ret GETInStockSubscriptions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *InStockSubscriptionData) GetRelationships() InStockSubscriptionDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionData) GetRelationshipsOk() (*InStockSubscriptionDataRelationships, bool) {
+func (o *InStockSubscriptionData) GetRelationshipsOk() (*GETInStockSubscriptions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *InStockSubscriptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given InStockSubscriptionDataRelationships and assigns it to the Relationships field.
-func (o *InStockSubscriptionData) SetRelationships(v InStockSubscriptionDataRelationships) {
+// SetRelationships gets a reference to the given GETInStockSubscriptions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *InStockSubscriptionData) SetRelationships(v GETInStockSubscriptions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

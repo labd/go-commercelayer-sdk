@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AttachmentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                         `json:"id"`
-	Attributes    AttachmentUpdateDataAttributes `json:"attributes"`
-	Relationships *AttachmentDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                                `json:"id"`
+	Attributes    PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *GETAttachments200ResponseDataInnerRelationships      `json:"relationships,omitempty"`
 }
 
 // NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentUpdateData(type_ string, id string, attributes AttachmentUpdateDataAttributes) *AttachmentUpdateData {
+func NewAttachmentUpdateData(type_ string, id string, attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes) *AttachmentUpdateData {
 	this := AttachmentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *AttachmentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentUpdateData) GetAttributes() AttachmentUpdateDataAttributes {
+func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentId200ResponseDataAttributes {
 	if o == nil {
-		var ret AttachmentUpdateDataAttributes
+		var ret PATCHAttachmentsAttachmentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *AttachmentUpdateData) GetAttributes() AttachmentUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentUpdateData) GetAttributesOk() (*AttachmentUpdateDataAttributes, bool) {
+func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *AttachmentUpdateData) GetAttributesOk() (*AttachmentUpdateDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *AttachmentUpdateData) SetAttributes(v AttachmentUpdateDataAttributes) {
+func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentUpdateData) GetRelationships() AttachmentDataRelationships {
+func (o *AttachmentUpdateData) GetRelationships() GETAttachments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AttachmentDataRelationships
+		var ret GETAttachments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *AttachmentUpdateData) GetRelationships() AttachmentDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentDataRelationships, bool) {
+func (o *AttachmentUpdateData) GetRelationshipsOk() (*GETAttachments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *AttachmentUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AttachmentDataRelationships and assigns it to the Relationships field.
-func (o *AttachmentUpdateData) SetRelationships(v AttachmentDataRelationships) {
+// SetRelationships gets a reference to the given GETAttachments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *AttachmentUpdateData) SetRelationships(v GETAttachments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

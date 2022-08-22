@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**TaxCategoryUpdateDataAttributes**](TaxCategoryUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**TaxCategoryUpdateDataRelationships**](TaxCategoryUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes**](PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships**](PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryUpdateData
 
-`func NewTaxCategoryUpdateData(type_ string, id string, attributes TaxCategoryUpdateDataAttributes, ) *TaxCategoryUpdateData`
+`func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, ) *TaxCategoryUpdateData`
 
 NewTaxCategoryUpdateData instantiates a new TaxCategoryUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes`
+`func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttributes, bool)`
+`func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryUpdateData) SetAttributes(v TaxCategoryUpdateDataAttributes)`
+`func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *TaxCategoryUpdateData) GetRelationships() TaxCategoryUpdateDataRelationships`
+`func (o *TaxCategoryUpdateData) GetRelationships() PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*TaxCategoryUpdateDataRelationships, bool)`
+`func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxCategoryUpdateData) SetRelationships(v TaxCategoryUpdateDataRelationships)`
+`func (o *TaxCategoryUpdateData) SetRelationships(v PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

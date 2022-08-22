@@ -1,6 +1,6 @@
 # \PaymentMethodsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -555,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -623,7 +623,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -691,7 +691,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -705,7 +705,7 @@ No authorization required
 
 ## GETPaymentMethods
 
-> GETPaymentMethods(ctx).Execute()
+> GETPaymentMethods200Response GETPaymentMethods(ctx).Execute()
 
 List all payment methods
 
@@ -732,6 +732,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPaymentMethods`: GETPaymentMethods200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.GETPaymentMethods`: %v\n", resp)
 }
 ```
 
@@ -746,16 +748,16 @@ Other parameters are passed through a pointer to a apiGETPaymentMethodsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETPaymentMethods200Response**](GETPaymentMethods200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -764,7 +766,7 @@ No authorization required
 
 ## GETPaymentMethodsPaymentMethodId
 
-> PaymentMethod GETPaymentMethodsPaymentMethodId(ctx, paymentMethodId).Execute()
+> GETPaymentMethodsPaymentMethodId200Response GETPaymentMethodsPaymentMethodId(ctx, paymentMethodId).Execute()
 
 Retrieve a payment method
 
@@ -792,7 +794,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaymentMethodsPaymentMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentMethodsPaymentMethodId`: PaymentMethod
+    // response from `GETPaymentMethodsPaymentMethodId`: GETPaymentMethodsPaymentMethodId200Response
     fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.GETPaymentMethodsPaymentMethodId`: %v\n", resp)
 }
 ```
@@ -816,11 +818,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentMethod**](PaymentMethod.md)
+[**GETPaymentMethodsPaymentMethodId200Response**](GETPaymentMethodsPaymentMethodId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -888,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -956,7 +958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -970,7 +972,7 @@ No authorization required
 
 ## PATCHPaymentMethodsPaymentMethodId
 
-> PATCHPaymentMethodsPaymentMethodId(ctx, paymentMethodId).PaymentMethodUpdate(paymentMethodUpdate).Execute()
+> PATCHPaymentMethodsPaymentMethodId200Response PATCHPaymentMethodsPaymentMethodId(ctx, paymentMethodId).PaymentMethodUpdate(paymentMethodUpdate).Execute()
 
 Update a payment method
 
@@ -989,7 +991,7 @@ import (
 )
 
 func main() {
-    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("payment_methods", "XGZwpOSrWL", *openapiclient.NewPaymentMethodUpdateDataAttributes())) // PaymentMethodUpdate | 
+    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("payment_methods", "XGZwpOSrWL", *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
     paymentMethodId := "paymentMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -999,6 +1001,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.PATCHPaymentMethodsPaymentMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPaymentMethodsPaymentMethodId`: PATCHPaymentMethodsPaymentMethodId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.PATCHPaymentMethodsPaymentMethodId`: %v\n", resp)
 }
 ```
 
@@ -1022,16 +1026,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPaymentMethodsPaymentMethodId200Response**](PATCHPaymentMethodsPaymentMethodId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1040,7 +1044,7 @@ No authorization required
 
 ## POSTPaymentMethods
 
-> POSTPaymentMethods(ctx).PaymentMethodCreate(paymentMethodCreate).Execute()
+> POSTPaymentMethods201Response POSTPaymentMethods(ctx).PaymentMethodCreate(paymentMethodCreate).Execute()
 
 Create a payment method
 
@@ -1059,7 +1063,7 @@ import (
 )
 
 func main() {
-    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("payment_methods", *openapiclient.NewPaymentMethodCreateDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
+    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("payment_methods", *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1068,6 +1072,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.POSTPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPaymentMethods`: POSTPaymentMethods201Response
+    fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.POSTPaymentMethods`: %v\n", resp)
 }
 ```
 
@@ -1086,16 +1092,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPaymentMethods201Response**](POSTPaymentMethods201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

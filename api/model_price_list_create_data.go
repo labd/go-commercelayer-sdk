@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceListCreateData struct for PriceListCreateData
 type PriceListCreateData struct {
 	// The resource's type
-	Type          string                        `json:"type"`
-	Attributes    PriceListCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}        `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    POSTPriceLists201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                  `json:"relationships,omitempty"`
 }
 
 // NewPriceListCreateData instantiates a new PriceListCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceListCreateData(type_ string, attributes PriceListCreateDataAttributes) *PriceListCreateData {
+func NewPriceListCreateData(type_ string, attributes POSTPriceLists201ResponseDataAttributes) *PriceListCreateData {
 	this := PriceListCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PriceListCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceListCreateData) GetAttributes() PriceListCreateDataAttributes {
+func (o *PriceListCreateData) GetAttributes() POSTPriceLists201ResponseDataAttributes {
 	if o == nil {
-		var ret PriceListCreateDataAttributes
+		var ret POSTPriceLists201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PriceListCreateData) GetAttributes() PriceListCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceListCreateData) GetAttributesOk() (*PriceListCreateDataAttributes, bool) {
+func (o *PriceListCreateData) GetAttributesOk() (*POSTPriceLists201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +88,7 @@ func (o *PriceListCreateData) GetAttributesOk() (*PriceListCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *PriceListCreateData) SetAttributes(v PriceListCreateDataAttributes) {
+func (o *PriceListCreateData) SetAttributes(v POSTPriceLists201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

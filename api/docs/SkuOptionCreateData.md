@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "sku_options"]
-**Attributes** | [**SkuOptionCreateDataAttributes**](SkuOptionCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTSkuOptions201ResponseDataAttributes**](POSTSkuOptions201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationships**](GETBillingInfoValidationRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuOptionCreateData
 
-`func NewSkuOptionCreateData(type_ string, attributes SkuOptionCreateDataAttributes, ) *SkuOptionCreateData`
+`func NewSkuOptionCreateData(type_ string, attributes POSTSkuOptions201ResponseDataAttributes, ) *SkuOptionCreateData`
 
 NewSkuOptionCreateData instantiates a new SkuOptionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuOptionCreateData) GetAttributes() SkuOptionCreateDataAttributes`
+`func (o *SkuOptionCreateData) GetAttributes() POSTSkuOptions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuOptionCreateData) GetAttributesOk() (*SkuOptionCreateDataAttributes, bool)`
+`func (o *SkuOptionCreateData) GetAttributesOk() (*POSTSkuOptions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuOptionCreateData) SetAttributes(v SkuOptionCreateDataAttributes)`
+`func (o *SkuOptionCreateData) SetAttributes(v POSTSkuOptions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *SkuOptionCreateData) GetRelationships() BillingInfoValidationRuleDataRelationships`
+`func (o *SkuOptionCreateData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuOptionCreateData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool)`
+`func (o *SkuOptionCreateData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuOptionCreateData) SetRelationships(v BillingInfoValidationRuleDataRelationships)`
+`func (o *SkuOptionCreateData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

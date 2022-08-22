@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type SkuListPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                       `json:"id"`
-	Attributes    SkuListPromotionRuleCreateDataAttributes     `json:"attributes"`
-	Relationships *SkuListPromotionRuleUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                        `json:"id"`
+	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes                            `json:"attributes"`
+	Relationships *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleUpdateData instantiates a new SkuListPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes SkuListPromotionRuleCreateDataAttributes) *SkuListPromotionRuleUpdateData {
+func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes POSTSkuListPromotionRules201ResponseDataAttributes) *SkuListPromotionRuleUpdateData {
 	this := SkuListPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *SkuListPromotionRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCreateDataAttributes {
+func (o *SkuListPromotionRuleUpdateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuListPromotionRuleCreateDataAttributes
+		var ret POSTSkuListPromotionRules201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCre
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRuleCreateDataAttributes, bool) {
+func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*POSTSkuListPromotionRules201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRul
 }
 
 // SetAttributes sets field value
-func (o *SkuListPromotionRuleUpdateData) SetAttributes(v SkuListPromotionRuleCreateDataAttributes) {
+func (o *SkuListPromotionRuleUpdateData) SetAttributes(v POSTSkuListPromotionRules201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuListPromotionRuleUpdateData) GetRelationships() SkuListPromotionRuleUpdateDataRelationships {
+func (o *SkuListPromotionRuleUpdateData) GetRelationships() PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret SkuListPromotionRuleUpdateDataRelationships
+		var ret PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *SkuListPromotionRuleUpdateData) GetRelationships() SkuListPromotionRule
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*SkuListPromotionRuleUpdateDataRelationships, bool) {
+func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *SkuListPromotionRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given SkuListPromotionRuleUpdateDataRelationships and assigns it to the Relationships field.
-func (o *SkuListPromotionRuleUpdateData) SetRelationships(v SkuListPromotionRuleUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *SkuListPromotionRuleUpdateData) SetRelationships(v PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

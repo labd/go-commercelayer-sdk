@@ -1,6 +1,6 @@
 # \ParcelsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -221,7 +221,7 @@ No authorization required
 
 ## GETParcels
 
-> GETParcels(ctx).Execute()
+> GETParcels200Response GETParcels(ctx).Execute()
 
 List all parcels
 
@@ -248,6 +248,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETParcels`: GETParcels200Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.GETParcels`: %v\n", resp)
 }
 ```
 
@@ -262,16 +264,16 @@ Other parameters are passed through a pointer to a apiGETParcelsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETParcels200Response**](GETParcels200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -280,7 +282,7 @@ No authorization required
 
 ## GETParcelsParcelId
 
-> Parcel GETParcelsParcelId(ctx, parcelId).Execute()
+> GETParcelsParcelId200Response GETParcelsParcelId(ctx, parcelId).Execute()
 
 Retrieve a parcel
 
@@ -308,7 +310,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcelsParcelId`: Parcel
+    // response from `GETParcelsParcelId`: GETParcelsParcelId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.GETParcelsParcelId`: %v\n", resp)
 }
 ```
@@ -332,11 +334,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Parcel**](Parcel.md)
+[**GETParcelsParcelId200Response**](GETParcelsParcelId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHParcelsParcelId
 
-> PATCHParcelsParcelId(ctx, parcelId).ParcelUpdate(parcelUpdate).Execute()
+> PATCHParcelsParcelId200Response PATCHParcelsParcelId(ctx, parcelId).ParcelUpdate(parcelUpdate).Execute()
 
 Update a parcel
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("parcels", "XGZwpOSrWL", *openapiclient.NewParcelUpdateDataAttributes())) // ParcelUpdate | 
+    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("parcels", "XGZwpOSrWL", *openapiclient.NewPATCHParcelsParcelId200ResponseDataAttributes())) // ParcelUpdate | 
     parcelId := "parcelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.PATCHParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHParcelsParcelId`: PATCHParcelsParcelId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.PATCHParcelsParcelId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHParcelsParcelId200Response**](PATCHParcelsParcelId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTParcels
 
-> POSTParcels(ctx).ParcelCreate(parcelCreate).Execute()
+> POSTParcels201Response POSTParcels(ctx).ParcelCreate(parcelCreate).Execute()
 
 Create a parcel
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("parcels", *openapiclient.NewParcelCreateDataAttributes(float32(1000.0), "gr"))) // ParcelCreate | 
+    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("parcels", *openapiclient.NewPOSTParcels201ResponseDataAttributes(float32(1000.0), "gr"))) // ParcelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.POSTParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTParcels`: POSTParcels201Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.POSTParcels`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTParcels201Response**](POSTParcels201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

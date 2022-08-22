@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BundleData struct for BundleData
 type BundleData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    BundleDataAttributes     `json:"attributes"`
-	Relationships *BundleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    GETBundles200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETBundles200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewBundleData instantiates a new BundleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleData(type_ string, attributes BundleDataAttributes) *BundleData {
+func NewBundleData(type_ string, attributes GETBundles200ResponseDataInnerAttributes) *BundleData {
 	this := BundleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *BundleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BundleData) GetAttributes() BundleDataAttributes {
+func (o *BundleData) GetAttributes() GETBundles200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BundleDataAttributes
+		var ret GETBundles200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *BundleData) GetAttributes() BundleDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BundleData) GetAttributesOk() (*BundleDataAttributes, bool) {
+func (o *BundleData) GetAttributesOk() (*GETBundles200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *BundleData) GetAttributesOk() (*BundleDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *BundleData) SetAttributes(v BundleDataAttributes) {
+func (o *BundleData) SetAttributes(v GETBundles200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BundleData) GetRelationships() BundleDataRelationships {
+func (o *BundleData) GetRelationships() GETBundles200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret BundleDataRelationships
+		var ret GETBundles200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BundleData) GetRelationships() BundleDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleData) GetRelationshipsOk() (*BundleDataRelationships, bool) {
+func (o *BundleData) GetRelationshipsOk() (*GETBundles200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BundleData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BundleDataRelationships and assigns it to the Relationships field.
-func (o *BundleData) SetRelationships(v BundleDataRelationships) {
+// SetRelationships gets a reference to the given GETBundles200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *BundleData) SetRelationships(v GETBundles200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

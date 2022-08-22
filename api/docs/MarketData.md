@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "markets"]
-**Attributes** | [**MarketDataAttributes**](MarketDataAttributes.md) |  | 
-**Relationships** | Pointer to [**MarketDataRelationships**](MarketDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETMarkets200ResponseDataInnerAttributes**](GETMarkets200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETMarkets200ResponseDataInnerRelationships**](GETMarkets200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMarketData
 
-`func NewMarketData(type_ string, attributes MarketDataAttributes, ) *MarketData`
+`func NewMarketData(type_ string, attributes GETMarkets200ResponseDataInnerAttributes, ) *MarketData`
 
 NewMarketData instantiates a new MarketData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *MarketData) GetAttributes() MarketDataAttributes`
+`func (o *MarketData) GetAttributes() GETMarkets200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MarketData) GetAttributesOk() (*MarketDataAttributes, bool)`
+`func (o *MarketData) GetAttributesOk() (*GETMarkets200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MarketData) SetAttributes(v MarketDataAttributes)`
+`func (o *MarketData) SetAttributes(v GETMarkets200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *MarketData) GetRelationships() MarketDataRelationships`
+`func (o *MarketData) GetRelationships() GETMarkets200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *MarketData) GetRelationshipsOk() (*MarketDataRelationships, bool)`
+`func (o *MarketData) GetRelationshipsOk() (*GETMarkets200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *MarketData) SetRelationships(v MarketDataRelationships)`
+`func (o *MarketData) SetRelationships(v GETMarkets200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

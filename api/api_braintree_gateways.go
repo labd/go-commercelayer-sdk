@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // BraintreeGatewaysApiService BraintreeGatewaysApi service
 type BraintreeGatewaysApiService service
 
-type ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         *BraintreeGatewaysApiService
 	braintreeGatewayId string
 }
 
-func (r ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -51,7 +51,7 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayId(
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r ApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
+func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiDELETEBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewaysRequest struct {
+type BraintreeGatewaysApiGETBraintreeGatewaysRequest struct {
 	ctx        context.Context
 	ApiService *BraintreeGatewaysApiService
 }
 
-func (r ApiGETBraintreeGatewaysRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiGETBraintreeGatewaysRequest) Execute() (*GETBraintreeGateways200Response, *http.Response, error) {
 	return r.ApiService.GETBraintreeGatewaysExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETBraintreeGateways List all braintree gateways
 List all braintree gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETBraintreeGatewaysRequest
+ @return BraintreeGatewaysApiGETBraintreeGatewaysRequest
 */
-func (a *BraintreeGatewaysApiService) GETBraintreeGateways(ctx context.Context) ApiGETBraintreeGatewaysRequest {
-	return ApiGETBraintreeGatewaysRequest{
+func (a *BraintreeGatewaysApiService) GETBraintreeGateways(ctx context.Context) BraintreeGatewaysApiGETBraintreeGatewaysRequest {
+	return BraintreeGatewaysApiGETBraintreeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraintreeGatewaysRequest) (*http.Response, error) {
+//  @return GETBraintreeGateways200Response
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r BraintreeGatewaysApiGETBraintreeGatewaysRequest) (*GETBraintreeGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETBraintreeGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreeGatewaysApiService.GETBraintreeGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways"
@@ -168,7 +170,7 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraint
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraint
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r ApiGETBraint
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         *BraintreeGatewaysApiService
 	braintreeGatewayId string
 }
 
-func (r ApiGETBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*BraintreeGateway, *http.Response, error) {
+func (r BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*GETBraintreeGatewaysBraintreeGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiGETBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiGETBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -231,13 +242,13 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayId(ctx
 }
 
 // Execute executes the request
-//  @return BraintreeGateway
-func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExecute(r ApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*BraintreeGateway, *http.Response, error) {
+//  @return GETBraintreeGatewaysBraintreeGatewayId200Response
+func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiGETBraintreeGatewaysBraintreeGatewayIdRequest) (*GETBraintreeGatewaysBraintreeGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BraintreeGateway
+		localVarReturnValue *GETBraintreeGatewaysBraintreeGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreeGatewaysApiService.GETBraintreeGatewaysBraintreeGatewayId")
@@ -306,19 +317,19 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest struct {
+type BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest struct {
 	ctx                    context.Context
 	ApiService             *BraintreeGatewaysApiService
 	braintreeGatewayUpdate *BraintreeGatewayUpdate
 	braintreeGatewayId     string
 }
 
-func (r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) BraintreeGatewayUpdate(braintreeGatewayUpdate BraintreeGatewayUpdate) ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
+func (r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) BraintreeGatewayUpdate(braintreeGatewayUpdate BraintreeGatewayUpdate) BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
 	r.braintreeGatewayUpdate = &braintreeGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) Execute() (*PATCHBraintreeGatewaysBraintreeGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
+ @return BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest
 */
-func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
-	return ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest{
+func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(ctx context.Context, braintreeGatewayId string) BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest {
+	return BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -340,16 +351,18 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayId(c
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r ApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*http.Response, error) {
+//  @return PATCHBraintreeGatewaysBraintreeGatewayId200Response
+func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdExecute(r BraintreeGatewaysApiPATCHBraintreeGatewaysBraintreeGatewayIdRequest) (*PATCHBraintreeGatewaysBraintreeGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHBraintreeGatewaysBraintreeGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreeGatewaysApiService.PATCHBraintreeGatewaysBraintreeGatewayId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}"
@@ -359,7 +372,7 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.braintreeGatewayUpdate == nil {
-		return nil, reportError("braintreeGatewayUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("braintreeGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 	localVarPostBody = r.braintreeGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTBraintreeGatewaysRequest struct {
+type BraintreeGatewaysApiPOSTBraintreeGatewaysRequest struct {
 	ctx                    context.Context
 	ApiService             *BraintreeGatewaysApiService
 	braintreeGatewayCreate *BraintreeGatewayCreate
 }
 
-func (r ApiPOSTBraintreeGatewaysRequest) BraintreeGatewayCreate(braintreeGatewayCreate BraintreeGatewayCreate) ApiPOSTBraintreeGatewaysRequest {
+func (r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) BraintreeGatewayCreate(braintreeGatewayCreate BraintreeGatewayCreate) BraintreeGatewaysApiPOSTBraintreeGatewaysRequest {
 	r.braintreeGatewayCreate = &braintreeGatewayCreate
 	return r
 }
 
-func (r ApiPOSTBraintreeGatewaysRequest) Execute() (*http.Response, error) {
+func (r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) Execute() (*POSTBraintreeGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTBraintreeGatewaysExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTBraintreeGateways Create a braintree gateway
 Create a braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTBraintreeGatewaysRequest
+ @return BraintreeGatewaysApiPOSTBraintreeGatewaysRequest
 */
-func (a *BraintreeGatewaysApiService) POSTBraintreeGateways(ctx context.Context) ApiPOSTBraintreeGatewaysRequest {
-	return ApiPOSTBraintreeGatewaysRequest{
+func (a *BraintreeGatewaysApiService) POSTBraintreeGateways(ctx context.Context) BraintreeGatewaysApiPOSTBraintreeGatewaysRequest {
+	return BraintreeGatewaysApiPOSTBraintreeGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBraintreeGatewaysRequest) (*http.Response, error) {
+//  @return POSTBraintreeGateways201Response
+func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r BraintreeGatewaysApiPOSTBraintreeGatewaysRequest) (*POSTBraintreeGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTBraintreeGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreeGatewaysApiService.POSTBraintreeGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways"
@@ -458,7 +482,7 @@ func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBrai
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.braintreeGatewayCreate == nil {
-		return nil, reportError("braintreeGatewayCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("braintreeGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBrai
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBrai
 	localVarPostBody = r.braintreeGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r ApiPOSTBrai
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

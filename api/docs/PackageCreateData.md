@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "packages"]
-**Attributes** | [**PackageCreateDataAttributes**](PackageCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PackageCreateDataRelationships**](PackageCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTPackages201ResponseDataAttributes**](POSTPackages201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTPackages201ResponseDataRelationships**](POSTPackages201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageCreateData
 
-`func NewPackageCreateData(type_ string, attributes PackageCreateDataAttributes, ) *PackageCreateData`
+`func NewPackageCreateData(type_ string, attributes POSTPackages201ResponseDataAttributes, ) *PackageCreateData`
 
 NewPackageCreateData instantiates a new PackageCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PackageCreateData) GetAttributes() PackageCreateDataAttributes`
+`func (o *PackageCreateData) GetAttributes() POSTPackages201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageCreateData) GetAttributesOk() (*PackageCreateDataAttributes, bool)`
+`func (o *PackageCreateData) GetAttributesOk() (*POSTPackages201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageCreateData) SetAttributes(v PackageCreateDataAttributes)`
+`func (o *PackageCreateData) SetAttributes(v POSTPackages201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PackageCreateData) GetRelationships() PackageCreateDataRelationships`
+`func (o *PackageCreateData) GetRelationships() POSTPackages201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PackageCreateData) GetRelationshipsOk() (*PackageCreateDataRelationships, bool)`
+`func (o *PackageCreateData) GetRelationshipsOk() (*POSTPackages201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PackageCreateData) SetRelationships(v PackageCreateDataRelationships)`
+`func (o *PackageCreateData) SetRelationships(v POSTPackages201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

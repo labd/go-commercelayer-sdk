@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ReturnLineItemCreateData struct for ReturnLineItemCreateData
 type ReturnLineItemCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    ReturnLineItemCreateDataAttributes     `json:"attributes"`
-	Relationships *ReturnLineItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTReturnLineItems201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTReturnLineItems201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemCreateData instantiates a new ReturnLineItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreateData(type_ string, attributes ReturnLineItemCreateDataAttributes) *ReturnLineItemCreateData {
+func NewReturnLineItemCreateData(type_ string, attributes POSTReturnLineItems201ResponseDataAttributes) *ReturnLineItemCreateData {
 	this := ReturnLineItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ReturnLineItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnLineItemCreateData) GetAttributes() ReturnLineItemCreateDataAttributes {
+func (o *ReturnLineItemCreateData) GetAttributes() POSTReturnLineItems201ResponseDataAttributes {
 	if o == nil {
-		var ret ReturnLineItemCreateDataAttributes
+		var ret POSTReturnLineItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ReturnLineItemCreateData) GetAttributes() ReturnLineItemCreateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateData) GetAttributesOk() (*ReturnLineItemCreateDataAttributes, bool) {
+func (o *ReturnLineItemCreateData) GetAttributesOk() (*POSTReturnLineItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ReturnLineItemCreateData) GetAttributesOk() (*ReturnLineItemCreateDataA
 }
 
 // SetAttributes sets field value
-func (o *ReturnLineItemCreateData) SetAttributes(v ReturnLineItemCreateDataAttributes) {
+func (o *ReturnLineItemCreateData) SetAttributes(v POSTReturnLineItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnLineItemCreateData) GetRelationships() ReturnLineItemCreateDataRelationships {
+func (o *ReturnLineItemCreateData) GetRelationships() POSTReturnLineItems201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ReturnLineItemCreateDataRelationships
+		var ret POSTReturnLineItems201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ReturnLineItemCreateData) GetRelationships() ReturnLineItemCreateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateData) GetRelationshipsOk() (*ReturnLineItemCreateDataRelationships, bool) {
+func (o *ReturnLineItemCreateData) GetRelationshipsOk() (*POSTReturnLineItems201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ReturnLineItemCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ReturnLineItemCreateDataRelationships and assigns it to the Relationships field.
-func (o *ReturnLineItemCreateData) SetRelationships(v ReturnLineItemCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTReturnLineItems201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ReturnLineItemCreateData) SetRelationships(v POSTReturnLineItems201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

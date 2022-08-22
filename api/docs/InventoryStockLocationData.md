@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "inventory_stock_locations"]
-**Attributes** | [**InventoryStockLocationDataAttributes**](InventoryStockLocationDataAttributes.md) |  | 
-**Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETInventoryStockLocations200ResponseDataInnerAttributes**](GETInventoryStockLocations200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETInventoryReturnLocations200ResponseDataInnerRelationships**](GETInventoryReturnLocations200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryStockLocationData
 
-`func NewInventoryStockLocationData(type_ string, attributes InventoryStockLocationDataAttributes, ) *InventoryStockLocationData`
+`func NewInventoryStockLocationData(type_ string, attributes GETInventoryStockLocations200ResponseDataInnerAttributes, ) *InventoryStockLocationData`
 
 NewInventoryStockLocationData instantiates a new InventoryStockLocationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryStockLocationData) GetAttributes() InventoryStockLocationDataAttributes`
+`func (o *InventoryStockLocationData) GetAttributes() GETInventoryStockLocations200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryStockLocationData) GetAttributesOk() (*InventoryStockLocationDataAttributes, bool)`
+`func (o *InventoryStockLocationData) GetAttributesOk() (*GETInventoryStockLocations200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryStockLocationData) SetAttributes(v InventoryStockLocationDataAttributes)`
+`func (o *InventoryStockLocationData) SetAttributes(v GETInventoryStockLocations200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *InventoryStockLocationData) GetRelationships() InventoryReturnLocationDataRelationships`
+`func (o *InventoryStockLocationData) GetRelationships() GETInventoryReturnLocations200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *InventoryStockLocationData) GetRelationshipsOk() (*InventoryReturnLocationDataRelationships, bool)`
+`func (o *InventoryStockLocationData) GetRelationshipsOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *InventoryStockLocationData) SetRelationships(v InventoryReturnLocationDataRelationships)`
+`func (o *InventoryStockLocationData) SetRelationships(v GETInventoryReturnLocations200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

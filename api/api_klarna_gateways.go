@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // KlarnaGatewaysApiService KlarnaGatewaysApi service
 type KlarnaGatewaysApiService service
 
-type ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *KlarnaGatewaysApiService
 	klarnaGatewayId string
 }
 
-func (r ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
+func (r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
+ @return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
-	return ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
+	return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -51,7 +51,7 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx conte
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r ApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
+func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaGatewaysRequest struct {
+type KlarnaGatewaysApiGETKlarnaGatewaysRequest struct {
 	ctx        context.Context
 	ApiService *KlarnaGatewaysApiService
 }
 
-func (r ApiGETKlarnaGatewaysRequest) Execute() (*http.Response, error) {
+func (r KlarnaGatewaysApiGETKlarnaGatewaysRequest) Execute() (*GETKlarnaGateways200Response, *http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETKlarnaGateways List all klarna gateways
 List all klarna gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETKlarnaGatewaysRequest
+ @return KlarnaGatewaysApiGETKlarnaGatewaysRequest
 */
-func (a *KlarnaGatewaysApiService) GETKlarnaGateways(ctx context.Context) ApiGETKlarnaGatewaysRequest {
-	return ApiGETKlarnaGatewaysRequest{
+func (a *KlarnaGatewaysApiService) GETKlarnaGateways(ctx context.Context) KlarnaGatewaysApiGETKlarnaGatewaysRequest {
+	return KlarnaGatewaysApiGETKlarnaGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r ApiGETKlarnaGatewaysRequest) (*http.Response, error) {
+//  @return GETKlarnaGateways200Response
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiGETKlarnaGatewaysRequest) (*GETKlarnaGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETKlarnaGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.GETKlarnaGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways"
@@ -168,7 +170,7 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r ApiGETKlarnaGatewa
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r ApiGETKlarnaGatewa
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r ApiGETKlarnaGatewa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *KlarnaGatewaysApiService
 	klarnaGatewayId string
 }
 
-func (r ApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*KlarnaGateway, *http.Response, error) {
+func (r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*GETKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return ApiGETKlarnaGatewaysKlarnaGatewayIdRequest
+ @return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
-	return ApiGETKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
+	return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -231,13 +242,13 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.
 }
 
 // Execute executes the request
-//  @return KlarnaGateway
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r ApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGateway, *http.Response, error) {
+//  @return GETKlarnaGatewaysKlarnaGatewayId200Response
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*GETKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *KlarnaGateway
+		localVarReturnValue *GETKlarnaGatewaysKlarnaGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.GETKlarnaGatewaysKlarnaGatewayId")
@@ -306,19 +317,19 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest struct {
+type KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx                 context.Context
 	ApiService          *KlarnaGatewaysApiService
 	klarnaGatewayUpdate *KlarnaGatewayUpdate
 	klarnaGatewayId     string
 }
 
-func (r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewayUpdate(klarnaGatewayUpdate KlarnaGatewayUpdate) ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
+func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewayUpdate(klarnaGatewayUpdate KlarnaGatewayUpdate) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
 	r.klarnaGatewayUpdate = &klarnaGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
+func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*PATCHKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaGatewayId The resource's id
- @return ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
+ @return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
-	return ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest{
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
+	return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
@@ -340,16 +351,18 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx contex
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r ApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*http.Response, error) {
+//  @return PATCHKlarnaGatewaysKlarnaGatewayId200Response
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*PATCHKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHKlarnaGatewaysKlarnaGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.PATCHKlarnaGatewaysKlarnaGatewayId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
@@ -359,7 +372,7 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.klarnaGatewayUpdate == nil {
-		return nil, reportError("klarnaGatewayUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("klarnaGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r A
 	localVarPostBody = r.klarnaGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTKlarnaGatewaysRequest struct {
+type KlarnaGatewaysApiPOSTKlarnaGatewaysRequest struct {
 	ctx                 context.Context
 	ApiService          *KlarnaGatewaysApiService
 	klarnaGatewayCreate *KlarnaGatewayCreate
 }
 
-func (r ApiPOSTKlarnaGatewaysRequest) KlarnaGatewayCreate(klarnaGatewayCreate KlarnaGatewayCreate) ApiPOSTKlarnaGatewaysRequest {
+func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) KlarnaGatewayCreate(klarnaGatewayCreate KlarnaGatewayCreate) KlarnaGatewaysApiPOSTKlarnaGatewaysRequest {
 	r.klarnaGatewayCreate = &klarnaGatewayCreate
 	return r
 }
 
-func (r ApiPOSTKlarnaGatewaysRequest) Execute() (*http.Response, error) {
+func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) Execute() (*POSTKlarnaGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTKlarnaGatewaysExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTKlarnaGateways Create a klarna gateway
 Create a klarna gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTKlarnaGatewaysRequest
+ @return KlarnaGatewaysApiPOSTKlarnaGatewaysRequest
 */
-func (a *KlarnaGatewaysApiService) POSTKlarnaGateways(ctx context.Context) ApiPOSTKlarnaGatewaysRequest {
-	return ApiPOSTKlarnaGatewaysRequest{
+func (a *KlarnaGatewaysApiService) POSTKlarnaGateways(ctx context.Context) KlarnaGatewaysApiPOSTKlarnaGatewaysRequest {
+	return KlarnaGatewaysApiPOSTKlarnaGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGatewaysRequest) (*http.Response, error) {
+//  @return POSTKlarnaGateways201Response
+func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) (*POSTKlarnaGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTKlarnaGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.POSTKlarnaGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways"
@@ -458,7 +482,7 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGate
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.klarnaGatewayCreate == nil {
-		return nil, reportError("klarnaGatewayCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("klarnaGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGate
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGate
 	localVarPostBody = r.klarnaGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r ApiPOSTKlarnaGate
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

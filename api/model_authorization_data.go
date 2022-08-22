@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AuthorizationData struct for AuthorizationData
 type AuthorizationData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    AuthorizationDataAttributes     `json:"attributes"`
-	Relationships *AuthorizationDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETAuthorizations200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETAuthorizations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationData instantiates a new AuthorizationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationData(type_ string, attributes AuthorizationDataAttributes) *AuthorizationData {
+func NewAuthorizationData(type_ string, attributes GETAuthorizations200ResponseDataInnerAttributes) *AuthorizationData {
 	this := AuthorizationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AuthorizationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AuthorizationData) GetAttributes() AuthorizationDataAttributes {
+func (o *AuthorizationData) GetAttributes() GETAuthorizations200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret AuthorizationDataAttributes
+		var ret GETAuthorizations200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AuthorizationData) GetAttributes() AuthorizationDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationData) GetAttributesOk() (*AuthorizationDataAttributes, bool) {
+func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizations200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AuthorizationData) GetAttributesOk() (*AuthorizationDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *AuthorizationData) SetAttributes(v AuthorizationDataAttributes) {
+func (o *AuthorizationData) SetAttributes(v GETAuthorizations200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AuthorizationData) GetRelationships() AuthorizationDataRelationships {
+func (o *AuthorizationData) GetRelationships() GETAuthorizations200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AuthorizationDataRelationships
+		var ret GETAuthorizations200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AuthorizationData) GetRelationships() AuthorizationDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthorizationData) GetRelationshipsOk() (*AuthorizationDataRelationships, bool) {
+func (o *AuthorizationData) GetRelationshipsOk() (*GETAuthorizations200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AuthorizationData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AuthorizationDataRelationships and assigns it to the Relationships field.
-func (o *AuthorizationData) SetRelationships(v AuthorizationDataRelationships) {
+// SetRelationships gets a reference to the given GETAuthorizations200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *AuthorizationData) SetRelationships(v GETAuthorizations200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdyenPaymentCreateData struct for AdyenPaymentCreateData
 type AdyenPaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    AdyenPaymentCreateDataAttributes     `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTAdyenPayments201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenPaymentCreateData instantiates a new AdyenPaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes) *AdyenPaymentCreateData {
+func NewAdyenPaymentCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *AdyenPaymentCreateData {
 	this := AdyenPaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AdyenPaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenPaymentCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *AdyenPaymentCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AdyenPaymentCreateData) GetAttributes() AdyenPaymentCreateDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *AdyenPaymentCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AdyenPaymentCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttri
 }
 
 // SetAttributes sets field value
-func (o *AdyenPaymentCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *AdyenPaymentCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AdyenPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
+func (o *AdyenPaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentCreateDataRelationships
+		var ret POSTAdyenPayments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AdyenPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelati
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
+func (o *AdyenPaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AdyenPaymentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentCreateDataRelationships and assigns it to the Relationships field.
-func (o *AdyenPaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *AdyenPaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

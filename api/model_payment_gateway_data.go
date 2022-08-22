@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaymentGatewayData struct for PaymentGatewayData
 type PaymentGatewayData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    KlarnaGatewayDataAttributes     `json:"attributes"`
-	Relationships *ManualGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETManualGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaymentGatewayData instantiates a new PaymentGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentGatewayData(type_ string, attributes KlarnaGatewayDataAttributes) *PaymentGatewayData {
+func NewPaymentGatewayData(type_ string, attributes GETKlarnaGateways200ResponseDataInnerAttributes) *PaymentGatewayData {
 	this := PaymentGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PaymentGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaymentGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
+func (o *PaymentGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret KlarnaGatewayDataAttributes
+		var ret GETKlarnaGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PaymentGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaymentGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, bool) {
+func (o *PaymentGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PaymentGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, bo
 }
 
 // SetAttributes sets field value
-func (o *PaymentGatewayData) SetAttributes(v KlarnaGatewayDataAttributes) {
+func (o *PaymentGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaymentGatewayData) GetRelationships() ManualGatewayDataRelationships {
+func (o *PaymentGatewayData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ManualGatewayDataRelationships
+		var ret GETManualGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PaymentGatewayData) GetRelationships() ManualGatewayDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentGatewayData) GetRelationshipsOk() (*ManualGatewayDataRelationships, bool) {
+func (o *PaymentGatewayData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PaymentGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ManualGatewayDataRelationships and assigns it to the Relationships field.
-func (o *PaymentGatewayData) SetRelationships(v ManualGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETManualGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PaymentGatewayData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

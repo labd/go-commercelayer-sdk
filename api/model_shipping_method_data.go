@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingMethodData struct for ShippingMethodData
 type ShippingMethodData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    ShippingMethodDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETShippingMethods200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETShippingMethods200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodData instantiates a new ShippingMethodData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodData(type_ string, attributes ShippingMethodDataAttributes) *ShippingMethodData {
+func NewShippingMethodData(type_ string, attributes GETShippingMethods200ResponseDataInnerAttributes) *ShippingMethodData {
 	this := ShippingMethodData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ShippingMethodData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingMethodData) GetAttributes() ShippingMethodDataAttributes {
+func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShippingMethodDataAttributes
+		var ret GETShippingMethods200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ShippingMethodData) GetAttributes() ShippingMethodDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodData) GetAttributesOk() (*ShippingMethodDataAttributes, bool) {
+func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ShippingMethodData) GetAttributesOk() (*ShippingMethodDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *ShippingMethodData) SetAttributes(v ShippingMethodDataAttributes) {
+func (o *ShippingMethodData) SetAttributes(v GETShippingMethods200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingMethodData) GetRelationships() ShippingMethodDataRelationships {
+func (o *ShippingMethodData) GetRelationships() GETShippingMethods200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingMethodDataRelationships
+		var ret GETShippingMethods200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShippingMethodData) GetRelationships() ShippingMethodDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodData) GetRelationshipsOk() (*ShippingMethodDataRelationships, bool) {
+func (o *ShippingMethodData) GetRelationshipsOk() (*GETShippingMethods200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShippingMethodData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingMethodDataRelationships and assigns it to the Relationships field.
-func (o *ShippingMethodData) SetRelationships(v ShippingMethodDataRelationships) {
+// SetRelationships gets a reference to the given GETShippingMethods200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ShippingMethodData) SetRelationships(v GETShippingMethods200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

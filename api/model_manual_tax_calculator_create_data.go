@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ManualTaxCalculatorCreateData struct for ManualTaxCalculatorCreateData
 type ManualTaxCalculatorCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    ManualTaxCalculatorCreateDataAttributes     `json:"attributes"`
-	Relationships *ManualTaxCalculatorCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    POSTManualTaxCalculators201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTManualTaxCalculators201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorCreateData instantiates a new ManualTaxCalculatorCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorCreateData(type_ string, attributes ManualTaxCalculatorCreateDataAttributes) *ManualTaxCalculatorCreateData {
+func NewManualTaxCalculatorCreateData(type_ string, attributes POSTManualTaxCalculators201ResponseDataAttributes) *ManualTaxCalculatorCreateData {
 	this := ManualTaxCalculatorCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ManualTaxCalculatorCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualTaxCalculatorCreateData) GetAttributes() ManualTaxCalculatorCreateDataAttributes {
+func (o *ManualTaxCalculatorCreateData) GetAttributes() POSTManualTaxCalculators201ResponseDataAttributes {
 	if o == nil {
-		var ret ManualTaxCalculatorCreateDataAttributes
+		var ret POSTManualTaxCalculators201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ManualTaxCalculatorCreateData) GetAttributes() ManualTaxCalculatorCreat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*ManualTaxCalculatorCreateDataAttributes, bool) {
+func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*POSTManualTaxCalculators201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*ManualTaxCalculatorC
 }
 
 // SetAttributes sets field value
-func (o *ManualTaxCalculatorCreateData) SetAttributes(v ManualTaxCalculatorCreateDataAttributes) {
+func (o *ManualTaxCalculatorCreateData) SetAttributes(v POSTManualTaxCalculators201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorCreateData) GetRelationships() ManualTaxCalculatorCreateDataRelationships {
+func (o *ManualTaxCalculatorCreateData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ManualTaxCalculatorCreateDataRelationships
+		var ret POSTManualTaxCalculators201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ManualTaxCalculatorCreateData) GetRelationships() ManualTaxCalculatorCr
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorCreateData) GetRelationshipsOk() (*ManualTaxCalculatorCreateDataRelationships, bool) {
+func (o *ManualTaxCalculatorCreateData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ManualTaxCalculatorCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ManualTaxCalculatorCreateDataRelationships and assigns it to the Relationships field.
-func (o *ManualTaxCalculatorCreateData) SetRelationships(v ManualTaxCalculatorCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTManualTaxCalculators201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ManualTaxCalculatorCreateData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

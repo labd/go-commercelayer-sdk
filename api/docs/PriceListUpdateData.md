@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "price_lists"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PriceListUpdateDataAttributes**](PriceListUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHPriceListsPriceListId200ResponseDataAttributes**](PATCHPriceListsPriceListId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewPriceListUpdateData
 
-`func NewPriceListUpdateData(type_ string, id string, attributes PriceListUpdateDataAttributes, ) *PriceListUpdateData`
+`func NewPriceListUpdateData(type_ string, id string, attributes PATCHPriceListsPriceListId200ResponseDataAttributes, ) *PriceListUpdateData`
 
 NewPriceListUpdateData instantiates a new PriceListUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PriceListUpdateData) GetAttributes() PriceListUpdateDataAttributes`
+`func (o *PriceListUpdateData) GetAttributes() PATCHPriceListsPriceListId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceListUpdateData) GetAttributesOk() (*PriceListUpdateDataAttributes, bool)`
+`func (o *PriceListUpdateData) GetAttributesOk() (*PATCHPriceListsPriceListId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceListUpdateData) SetAttributes(v PriceListUpdateDataAttributes)`
+`func (o *PriceListUpdateData) SetAttributes(v PATCHPriceListsPriceListId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

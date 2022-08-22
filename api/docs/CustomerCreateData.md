@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customers"]
-**Attributes** | [**CustomerCreateDataAttributes**](CustomerCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CustomerCreateDataRelationships**](CustomerCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTCustomers201ResponseDataAttributes**](POSTCustomers201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTCustomers201ResponseDataRelationships**](POSTCustomers201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerCreateData
 
-`func NewCustomerCreateData(type_ string, attributes CustomerCreateDataAttributes, ) *CustomerCreateData`
+`func NewCustomerCreateData(type_ string, attributes POSTCustomers201ResponseDataAttributes, ) *CustomerCreateData`
 
 NewCustomerCreateData instantiates a new CustomerCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerCreateData) GetAttributes() CustomerCreateDataAttributes`
+`func (o *CustomerCreateData) GetAttributes() POSTCustomers201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerCreateData) GetAttributesOk() (*CustomerCreateDataAttributes, bool)`
+`func (o *CustomerCreateData) GetAttributesOk() (*POSTCustomers201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerCreateData) SetAttributes(v CustomerCreateDataAttributes)`
+`func (o *CustomerCreateData) SetAttributes(v POSTCustomers201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CustomerCreateData) GetRelationships() CustomerCreateDataRelationships`
+`func (o *CustomerCreateData) GetRelationships() POSTCustomers201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerCreateData) GetRelationshipsOk() (*CustomerCreateDataRelationships, bool)`
+`func (o *CustomerCreateData) GetRelationshipsOk() (*POSTCustomers201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerCreateData) SetRelationships(v CustomerCreateDataRelationships)`
+`func (o *CustomerCreateData) SetRelationships(v POSTCustomers201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

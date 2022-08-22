@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // AdjustmentsApiService AdjustmentsApi service
 type AdjustmentsApiService service
 
-type ApiDELETEAdjustmentsAdjustmentIdRequest struct {
+type AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest struct {
 	ctx          context.Context
 	ApiService   *AdjustmentsApiService
 	adjustmentId string
 }
 
-func (r ApiDELETEAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
+func (r AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return ApiDELETEAdjustmentsAdjustmentIdRequest
+ @return AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiDELETEAdjustmentsAdjustmentIdRequest {
-	return ApiDELETEAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest {
+	return AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -51,7 +51,7 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentId(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r ApiDELETEAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
+func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r AdjustmentsApiDELETEAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r ApiDELETE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdjustmentsRequest struct {
+type AdjustmentsApiGETAdjustmentsRequest struct {
 	ctx        context.Context
 	ApiService *AdjustmentsApiService
 }
 
-func (r ApiGETAdjustmentsRequest) Execute() (*http.Response, error) {
+func (r AdjustmentsApiGETAdjustmentsRequest) Execute() (*GETAdjustments200Response, *http.Response, error) {
 	return r.ApiService.GETAdjustmentsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETAdjustments List all adjustments
 List all adjustments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAdjustmentsRequest
+ @return AdjustmentsApiGETAdjustmentsRequest
 */
-func (a *AdjustmentsApiService) GETAdjustments(ctx context.Context) ApiGETAdjustmentsRequest {
-	return ApiGETAdjustmentsRequest{
+func (a *AdjustmentsApiService) GETAdjustments(ctx context.Context) AdjustmentsApiGETAdjustmentsRequest {
+	return AdjustmentsApiGETAdjustmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) GETAdjustmentsExecute(r ApiGETAdjustmentsRequest) (*http.Response, error) {
+//  @return GETAdjustments200Response
+func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustmentsRequest) (*GETAdjustments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdjustments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.GETAdjustments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adjustments"
@@ -168,7 +170,7 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r ApiGETAdjustmentsRequest
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r ApiGETAdjustmentsRequest
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r ApiGETAdjustmentsRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETAdjustmentsAdjustmentIdRequest struct {
+type AdjustmentsApiGETAdjustmentsAdjustmentIdRequest struct {
 	ctx          context.Context
 	ApiService   *AdjustmentsApiService
 	adjustmentId string
 }
 
-func (r ApiGETAdjustmentsAdjustmentIdRequest) Execute() (*Adjustment, *http.Response, error) {
+func (r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) Execute() (*GETAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	return r.ApiService.GETAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return ApiGETAdjustmentsAdjustmentIdRequest
+ @return AdjustmentsApiGETAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiGETAdjustmentsAdjustmentIdRequest {
-	return ApiGETAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiGETAdjustmentsAdjustmentIdRequest {
+	return AdjustmentsApiGETAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -231,13 +242,13 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return Adjustment
-func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r ApiGETAdjustmentsAdjustmentIdRequest) (*Adjustment, *http.Response, error) {
+//  @return GETAdjustmentsAdjustmentId200Response
+func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) (*GETAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Adjustment
+		localVarReturnValue *GETAdjustmentsAdjustmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.GETAdjustmentsAdjustmentId")
@@ -306,19 +317,19 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r ApiGETAdjust
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHAdjustmentsAdjustmentIdRequest struct {
+type AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest struct {
 	ctx              context.Context
 	ApiService       *AdjustmentsApiService
 	adjustmentUpdate *AdjustmentUpdate
 	adjustmentId     string
 }
 
-func (r ApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adjustmentUpdate AdjustmentUpdate) ApiPATCHAdjustmentsAdjustmentIdRequest {
+func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adjustmentUpdate AdjustmentUpdate) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
 	r.adjustmentUpdate = &adjustmentUpdate
 	return r
 }
 
-func (r ApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*http.Response, error) {
+func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*PATCHAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adjustmentId The resource's id
- @return ApiPATCHAdjustmentsAdjustmentIdRequest
+ @return AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest
 */
-func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) ApiPATCHAdjustmentsAdjustmentIdRequest {
-	return ApiPATCHAdjustmentsAdjustmentIdRequest{
+func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context, adjustmentId string) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
+	return AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
 		adjustmentId: adjustmentId,
@@ -340,16 +351,18 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAdjustmentsAdjustmentIdRequest) (*http.Response, error) {
+//  @return PATCHAdjustmentsAdjustmentId200Response
+func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) (*PATCHAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAdjustmentsAdjustmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.PATCHAdjustmentsAdjustmentId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
@@ -359,7 +372,7 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAd
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adjustmentUpdate == nil {
-		return nil, reportError("adjustmentUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adjustmentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAd
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAd
 	localVarPostBody = r.adjustmentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r ApiPATCHAd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTAdjustmentsRequest struct {
+type AdjustmentsApiPOSTAdjustmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AdjustmentsApiService
 	adjustmentCreate *AdjustmentCreate
 }
 
-func (r ApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate AdjustmentCreate) ApiPOSTAdjustmentsRequest {
+func (r AdjustmentsApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate AdjustmentCreate) AdjustmentsApiPOSTAdjustmentsRequest {
 	r.adjustmentCreate = &adjustmentCreate
 	return r
 }
 
-func (r ApiPOSTAdjustmentsRequest) Execute() (*http.Response, error) {
+func (r AdjustmentsApiPOSTAdjustmentsRequest) Execute() (*POSTAdjustments201Response, *http.Response, error) {
 	return r.ApiService.POSTAdjustmentsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTAdjustments Create an adjustment
 Create an adjustment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTAdjustmentsRequest
+ @return AdjustmentsApiPOSTAdjustmentsRequest
 */
-func (a *AdjustmentsApiService) POSTAdjustments(ctx context.Context) ApiPOSTAdjustmentsRequest {
-	return ApiPOSTAdjustmentsRequest{
+func (a *AdjustmentsApiService) POSTAdjustments(ctx context.Context) AdjustmentsApiPOSTAdjustmentsRequest {
+	return AdjustmentsApiPOSTAdjustmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsRequest) (*http.Response, error) {
+//  @return POSTAdjustments201Response
+func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjustmentsRequest) (*POSTAdjustments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAdjustments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.POSTAdjustments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adjustments"
@@ -458,7 +482,7 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsReque
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adjustmentCreate == nil {
-		return nil, reportError("adjustmentCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adjustmentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsReque
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsReque
 	localVarPostBody = r.adjustmentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r ApiPOSTAdjustmentsReque
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "manual_gateways"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ManualGatewayUpdateDataAttributes**](ManualGatewayUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHManualGatewaysManualGatewayId200ResponseDataAttributes**](PATCHManualGatewaysManualGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewManualGatewayUpdateData
 
-`func NewManualGatewayUpdateData(type_ string, id string, attributes ManualGatewayUpdateDataAttributes, ) *ManualGatewayUpdateData`
+`func NewManualGatewayUpdateData(type_ string, id string, attributes PATCHManualGatewaysManualGatewayId200ResponseDataAttributes, ) *ManualGatewayUpdateData`
 
 NewManualGatewayUpdateData instantiates a new ManualGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ManualGatewayUpdateData) GetAttributes() ManualGatewayUpdateDataAttributes`
+`func (o *ManualGatewayUpdateData) GetAttributes() PATCHManualGatewaysManualGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualGatewayUpdateData) GetAttributesOk() (*ManualGatewayUpdateDataAttributes, bool)`
+`func (o *ManualGatewayUpdateData) GetAttributesOk() (*PATCHManualGatewaysManualGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualGatewayUpdateData) SetAttributes(v ManualGatewayUpdateDataAttributes)`
+`func (o *ManualGatewayUpdateData) SetAttributes(v PATCHManualGatewaysManualGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

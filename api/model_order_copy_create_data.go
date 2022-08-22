@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderCopyCreateData struct for OrderCopyCreateData
 type OrderCopyCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    OrderCopyCreateDataAttributes     `json:"attributes"`
-	Relationships *OrderCopyCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    POSTOrderCopies201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTOrderCopies201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderCopyCreateData instantiates a new OrderCopyCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyCreateData(type_ string, attributes OrderCopyCreateDataAttributes) *OrderCopyCreateData {
+func NewOrderCopyCreateData(type_ string, attributes POSTOrderCopies201ResponseDataAttributes) *OrderCopyCreateData {
 	this := OrderCopyCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *OrderCopyCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderCopyCreateData) GetAttributes() OrderCopyCreateDataAttributes {
+func (o *OrderCopyCreateData) GetAttributes() POSTOrderCopies201ResponseDataAttributes {
 	if o == nil {
-		var ret OrderCopyCreateDataAttributes
+		var ret POSTOrderCopies201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *OrderCopyCreateData) GetAttributes() OrderCopyCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyCreateData) GetAttributesOk() (*OrderCopyCreateDataAttributes, bool) {
+func (o *OrderCopyCreateData) GetAttributesOk() (*POSTOrderCopies201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *OrderCopyCreateData) GetAttributesOk() (*OrderCopyCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *OrderCopyCreateData) SetAttributes(v OrderCopyCreateDataAttributes) {
+func (o *OrderCopyCreateData) SetAttributes(v POSTOrderCopies201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderCopyCreateData) GetRelationships() OrderCopyCreateDataRelationships {
+func (o *OrderCopyCreateData) GetRelationships() POSTOrderCopies201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderCopyCreateDataRelationships
+		var ret POSTOrderCopies201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderCopyCreateData) GetRelationships() OrderCopyCreateDataRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCopyCreateData) GetRelationshipsOk() (*OrderCopyCreateDataRelationships, bool) {
+func (o *OrderCopyCreateData) GetRelationshipsOk() (*POSTOrderCopies201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderCopyCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderCopyCreateDataRelationships and assigns it to the Relationships field.
-func (o *OrderCopyCreateData) SetRelationships(v OrderCopyCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTOrderCopies201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *OrderCopyCreateData) SetRelationships(v POSTOrderCopies201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

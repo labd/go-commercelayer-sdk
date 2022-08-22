@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CouponCodesPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    AdyenPaymentCreateDataAttributes           `json:"attributes"`
-	Relationships *CouponCodesPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                         `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes                     `json:"attributes"`
+	Relationships *GETCouponCodesPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponCodesPromotionRuleUpdateData instantiates a new CouponCodesPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *CouponCodesPromotionRuleUpdateData {
+func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *CouponCodesPromotionRuleUpdateData {
 	this := CouponCodesPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *CouponCodesPromotionRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() AdyenPaymentCreateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*AdyenPaymentCre
 }
 
 // SetAttributes sets field value
-func (o *CouponCodesPromotionRuleUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *CouponCodesPromotionRuleUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() CouponCodesPromotionRuleDataRelationships {
+func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CouponCodesPromotionRuleDataRelationships
+		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() CouponCodesPromo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*CouponCodesPromotionRuleDataRelationships, bool) {
+func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CouponCodesPromotionRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CouponCodesPromotionRuleDataRelationships and assigns it to the Relationships field.
-func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v CouponCodesPromotionRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

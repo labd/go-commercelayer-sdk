@@ -1,6 +1,6 @@
 # \ImportsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -81,7 +81,7 @@ No authorization required
 
 ## GETImports
 
-> GETImports(ctx).Execute()
+> GETImports200Response GETImports(ctx).Execute()
 
 List all imports
 
@@ -108,6 +108,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.GETImports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETImports`: GETImports200Response
+    fmt.Fprintf(os.Stdout, "Response from `ImportsApi.GETImports`: %v\n", resp)
 }
 ```
 
@@ -122,16 +124,16 @@ Other parameters are passed through a pointer to a apiGETImportsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETImports200Response**](GETImports200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +142,7 @@ No authorization required
 
 ## GETImportsImportId
 
-> ModelImport GETImportsImportId(ctx, importId).Execute()
+> GETImportsImportId200Response GETImportsImportId(ctx, importId).Execute()
 
 Retrieve an import
 
@@ -168,7 +170,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.GETImportsImportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETImportsImportId`: ModelImport
+    // response from `GETImportsImportId`: GETImportsImportId200Response
     fmt.Fprintf(os.Stdout, "Response from `ImportsApi.GETImportsImportId`: %v\n", resp)
 }
 ```
@@ -192,11 +194,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelImport**](ModelImport.md)
+[**GETImportsImportId200Response**](GETImportsImportId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -210,7 +212,7 @@ No authorization required
 
 ## POSTImports
 
-> POSTImports(ctx).ImportCreate(importCreate).Execute()
+> POSTImports201Response POSTImports(ctx).ImportCreate(importCreate).Execute()
 
 Create an import
 
@@ -229,7 +231,7 @@ import (
 )
 
 func main() {
-    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("imports", *openapiclient.NewImportCreateDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
+    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("imports", *openapiclient.NewPOSTImports201ResponseDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -238,6 +240,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.POSTImports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTImports`: POSTImports201Response
+    fmt.Fprintf(os.Stdout, "Response from `ImportsApi.POSTImports`: %v\n", resp)
 }
 ```
 
@@ -256,16 +260,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTImports201Response**](POSTImports201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

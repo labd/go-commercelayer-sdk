@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PriceVolumeTierUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                  `json:"id"`
-	Attributes    PriceVolumeTierUpdateDataAttributes     `json:"attributes"`
-	Relationships *PriceVolumeTierUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                              `json:"id"`
+	Attributes    PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierUpdateData instantiates a new PriceVolumeTierUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierUpdateData(type_ string, id string, attributes PriceVolumeTierUpdateDataAttributes) *PriceVolumeTierUpdateData {
+func NewPriceVolumeTierUpdateData(type_ string, id string, attributes PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) *PriceVolumeTierUpdateData {
 	this := PriceVolumeTierUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *PriceVolumeTierUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceVolumeTierUpdateData) GetAttributes() PriceVolumeTierUpdateDataAttributes {
+func (o *PriceVolumeTierUpdateData) GetAttributes() PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes {
 	if o == nil {
-		var ret PriceVolumeTierUpdateDataAttributes
+		var ret PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *PriceVolumeTierUpdateData) GetAttributes() PriceVolumeTierUpdateDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierUpdateData) GetAttributesOk() (*PriceVolumeTierUpdateDataAttributes, bool) {
+func (o *PriceVolumeTierUpdateData) GetAttributesOk() (*PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *PriceVolumeTierUpdateData) GetAttributesOk() (*PriceVolumeTierUpdateDat
 }
 
 // SetAttributes sets field value
-func (o *PriceVolumeTierUpdateData) SetAttributes(v PriceVolumeTierUpdateDataAttributes) {
+func (o *PriceVolumeTierUpdateData) SetAttributes(v PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceVolumeTierUpdateData) GetRelationships() PriceVolumeTierUpdateDataRelationships {
+func (o *PriceVolumeTierUpdateData) GetRelationships() PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PriceVolumeTierUpdateDataRelationships
+		var ret PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *PriceVolumeTierUpdateData) GetRelationships() PriceVolumeTierUpdateData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierUpdateData) GetRelationshipsOk() (*PriceVolumeTierUpdateDataRelationships, bool) {
+func (o *PriceVolumeTierUpdateData) GetRelationshipsOk() (*PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *PriceVolumeTierUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PriceVolumeTierUpdateDataRelationships and assigns it to the Relationships field.
-func (o *PriceVolumeTierUpdateData) SetRelationships(v PriceVolumeTierUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PriceVolumeTierUpdateData) SetRelationships(v PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

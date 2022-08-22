@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type StockTransferUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                `json:"id"`
-	Attributes    StockTransferUpdateDataAttributes     `json:"attributes"`
-	Relationships *StockTransferUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHStockTransfersStockTransferId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHStockTransfersStockTransferId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferUpdateData instantiates a new StockTransferUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferUpdateData(type_ string, id string, attributes StockTransferUpdateDataAttributes) *StockTransferUpdateData {
+func NewStockTransferUpdateData(type_ string, id string, attributes PATCHStockTransfersStockTransferId200ResponseDataAttributes) *StockTransferUpdateData {
 	this := StockTransferUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *StockTransferUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferUpdateData) GetAttributes() StockTransferUpdateDataAttributes {
+func (o *StockTransferUpdateData) GetAttributes() PATCHStockTransfersStockTransferId200ResponseDataAttributes {
 	if o == nil {
-		var ret StockTransferUpdateDataAttributes
+		var ret PATCHStockTransfersStockTransferId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *StockTransferUpdateData) GetAttributes() StockTransferUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferUpdateData) GetAttributesOk() (*StockTransferUpdateDataAttributes, bool) {
+func (o *StockTransferUpdateData) GetAttributesOk() (*PATCHStockTransfersStockTransferId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *StockTransferUpdateData) GetAttributesOk() (*StockTransferUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StockTransferUpdateData) SetAttributes(v StockTransferUpdateDataAttributes) {
+func (o *StockTransferUpdateData) SetAttributes(v PATCHStockTransfersStockTransferId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockTransferUpdateData) GetRelationships() StockTransferUpdateDataRelationships {
+func (o *StockTransferUpdateData) GetRelationships() PATCHStockTransfersStockTransferId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret StockTransferUpdateDataRelationships
+		var ret PATCHStockTransfersStockTransferId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *StockTransferUpdateData) GetRelationships() StockTransferUpdateDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferUpdateData) GetRelationshipsOk() (*StockTransferUpdateDataRelationships, bool) {
+func (o *StockTransferUpdateData) GetRelationshipsOk() (*PATCHStockTransfersStockTransferId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *StockTransferUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given StockTransferUpdateDataRelationships and assigns it to the Relationships field.
-func (o *StockTransferUpdateData) SetRelationships(v StockTransferUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHStockTransfersStockTransferId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *StockTransferUpdateData) SetRelationships(v PATCHStockTransfersStockTransferId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

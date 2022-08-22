@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_line_items"]
-**Attributes** | [**StockLineItemDataAttributes**](StockLineItemDataAttributes.md) |  | 
-**Relationships** | Pointer to [**StockLineItemDataRelationships**](StockLineItemDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETStockLineItems200ResponseDataInnerAttributes**](GETStockLineItems200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETStockLineItems200ResponseDataInnerRelationships**](GETStockLineItems200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockLineItemData
 
-`func NewStockLineItemData(type_ string, attributes StockLineItemDataAttributes, ) *StockLineItemData`
+`func NewStockLineItemData(type_ string, attributes GETStockLineItems200ResponseDataInnerAttributes, ) *StockLineItemData`
 
 NewStockLineItemData instantiates a new StockLineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StockLineItemData) GetAttributes() StockLineItemDataAttributes`
+`func (o *StockLineItemData) GetAttributes() GETStockLineItems200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockLineItemData) GetAttributesOk() (*StockLineItemDataAttributes, bool)`
+`func (o *StockLineItemData) GetAttributesOk() (*GETStockLineItems200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockLineItemData) SetAttributes(v StockLineItemDataAttributes)`
+`func (o *StockLineItemData) SetAttributes(v GETStockLineItems200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StockLineItemData) GetRelationships() StockLineItemDataRelationships`
+`func (o *StockLineItemData) GetRelationships() GETStockLineItems200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockLineItemData) GetRelationshipsOk() (*StockLineItemDataRelationships, bool)`
+`func (o *StockLineItemData) GetRelationshipsOk() (*GETStockLineItems200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockLineItemData) SetRelationships(v StockLineItemDataRelationships)`
+`func (o *StockLineItemData) SetRelationships(v GETStockLineItems200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

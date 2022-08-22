@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerPasswordResetData struct for CustomerPasswordResetData
 type CustomerPasswordResetData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    CustomerPasswordResetDataAttributes     `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                      `json:"type"`
+	Attributes    GETCustomerPasswordResets200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetData(type_ string, attributes CustomerPasswordResetDataAttributes) *CustomerPasswordResetData {
+func NewCustomerPasswordResetData(type_ string, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes) *CustomerPasswordResetData {
 	this := CustomerPasswordResetData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CustomerPasswordResetData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPasswordResetData) GetAttributes() CustomerPasswordResetDataAttributes {
+func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CustomerPasswordResetDataAttributes
+		var ret GETCustomerPasswordResets200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CustomerPasswordResetData) GetAttributes() CustomerPasswordResetDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetData) GetAttributesOk() (*CustomerPasswordResetDataAttributes, bool) {
+func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CustomerPasswordResetData) GetAttributesOk() (*CustomerPasswordResetDat
 }
 
 // SetAttributes sets field value
-func (o *CustomerPasswordResetData) SetAttributes(v CustomerPasswordResetDataAttributes) {
+func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetDataRelationships {
+func (o *CustomerPasswordResetData) GetRelationships() GETCustomerPasswordResets200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerPasswordResetDataRelationships
+		var ret GETCustomerPasswordResets200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool) {
+func (o *CustomerPasswordResetData) GetRelationshipsOk() (*GETCustomerPasswordResets200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CustomerPasswordResetData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerPasswordResetDataRelationships and assigns it to the Relationships field.
-func (o *CustomerPasswordResetData) SetRelationships(v CustomerPasswordResetDataRelationships) {
+// SetRelationships gets a reference to the given GETCustomerPasswordResets200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CustomerPasswordResetData) SetRelationships(v GETCustomerPasswordResets200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -1,6 +1,6 @@
 # \ManualGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETManualGateways
 
-> GETManualGateways(ctx).Execute()
+> GETManualGateways200Response GETManualGateways(ctx).Execute()
 
 List all manual gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.GETManualGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETManualGateways`: GETManualGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.GETManualGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETManualGatewaysRequest s
 
 ### Return type
 
- (empty response body)
+[**GETManualGateways200Response**](GETManualGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETManualGatewaysManualGatewayId
 
-> ManualGateway GETManualGatewaysManualGatewayId(ctx, manualGatewayId).Execute()
+> GETManualGatewaysManualGatewayId200Response GETManualGatewaysManualGatewayId(ctx, manualGatewayId).Execute()
 
 Retrieve a manual gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.GETManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualGatewaysManualGatewayId`: ManualGateway
+    // response from `GETManualGatewaysManualGatewayId`: GETManualGatewaysManualGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.GETManualGatewaysManualGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualGateway**](ManualGateway.md)
+[**GETManualGatewaysManualGatewayId200Response**](GETManualGatewaysManualGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHManualGatewaysManualGatewayId
 
-> PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
+> PATCHManualGatewaysManualGatewayId200Response PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
 
 Update a manual gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("manual_gateways", "XGZwpOSrWL", *openapiclient.NewManualGatewayUpdateDataAttributes())) // ManualGatewayUpdate | 
+    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("manual_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
     manualGatewayId := "manualGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.PATCHManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHManualGatewaysManualGatewayId`: PATCHManualGatewaysManualGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.PATCHManualGatewaysManualGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHManualGatewaysManualGatewayId200Response**](PATCHManualGatewaysManualGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTManualGateways
 
-> POSTManualGateways(ctx).ManualGatewayCreate(manualGatewayCreate).Execute()
+> POSTManualGateways201Response POSTManualGateways(ctx).ManualGatewayCreate(manualGatewayCreate).Execute()
 
 Create a manual gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("manual_gateways", *openapiclient.NewManualGatewayCreateDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
+    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("manual_gateways", *openapiclient.NewPOSTManualGateways201ResponseDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.POSTManualGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTManualGateways`: POSTManualGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.POSTManualGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTManualGateways201Response**](POSTManualGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

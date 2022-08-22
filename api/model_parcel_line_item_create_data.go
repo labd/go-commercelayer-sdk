@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ParcelLineItemCreateData struct for ParcelLineItemCreateData
 type ParcelLineItemCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    ParcelLineItemCreateDataAttributes     `json:"attributes"`
-	Relationships *ParcelLineItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTParcelLineItems201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTParcelLineItems201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelLineItemCreateData instantiates a new ParcelLineItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemCreateData(type_ string, attributes ParcelLineItemCreateDataAttributes) *ParcelLineItemCreateData {
+func NewParcelLineItemCreateData(type_ string, attributes POSTParcelLineItems201ResponseDataAttributes) *ParcelLineItemCreateData {
 	this := ParcelLineItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ParcelLineItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelLineItemCreateData) GetAttributes() ParcelLineItemCreateDataAttributes {
+func (o *ParcelLineItemCreateData) GetAttributes() POSTParcelLineItems201ResponseDataAttributes {
 	if o == nil {
-		var ret ParcelLineItemCreateDataAttributes
+		var ret POSTParcelLineItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ParcelLineItemCreateData) GetAttributes() ParcelLineItemCreateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreateData) GetAttributesOk() (*ParcelLineItemCreateDataAttributes, bool) {
+func (o *ParcelLineItemCreateData) GetAttributesOk() (*POSTParcelLineItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ParcelLineItemCreateData) GetAttributesOk() (*ParcelLineItemCreateDataA
 }
 
 // SetAttributes sets field value
-func (o *ParcelLineItemCreateData) SetAttributes(v ParcelLineItemCreateDataAttributes) {
+func (o *ParcelLineItemCreateData) SetAttributes(v POSTParcelLineItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ParcelLineItemCreateData) GetRelationships() ParcelLineItemCreateDataRelationships {
+func (o *ParcelLineItemCreateData) GetRelationships() POSTParcelLineItems201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ParcelLineItemCreateDataRelationships
+		var ret POSTParcelLineItems201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ParcelLineItemCreateData) GetRelationships() ParcelLineItemCreateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*ParcelLineItemCreateDataRelationships, bool) {
+func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*POSTParcelLineItems201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ParcelLineItemCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ParcelLineItemCreateDataRelationships and assigns it to the Relationships field.
-func (o *ParcelLineItemCreateData) SetRelationships(v ParcelLineItemCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTParcelLineItems201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ParcelLineItemCreateData) SetRelationships(v POSTParcelLineItems201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

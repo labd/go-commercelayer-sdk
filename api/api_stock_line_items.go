@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // StockLineItemsApiService StockLineItemsApi service
 type StockLineItemsApiService service
 
-type ApiGETLineItemIdStockLineItemsRequest struct {
+type StockLineItemsApiGETLineItemIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockLineItemsApiService
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
+func (r StockLineItemsApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdStockLineItemsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Retrieve the stock line items associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdStockLineItemsRequest
+ @return StockLineItemsApiGETLineItemIdStockLineItemsRequest
 */
-func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) ApiGETLineItemIdStockLineItemsRequest {
-	return ApiGETLineItemIdStockLineItemsRequest{
+func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) StockLineItemsApiGETLineItemIdStockLineItemsRequest {
+	return StockLineItemsApiGETLineItemIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -51,7 +51,7 @@ func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r ApiGETLineItemIdStockLineItemsRequest) (*http.Response, error) {
+func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r StockLineItemsApiGETLineItemIdStockLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r ApiGETLi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemIdStockLineItemRequest struct {
+type StockLineItemsApiGETParcelLineItemIdStockLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *StockLineItemsApiService
 	parcelLineItemId string
 }
 
-func (r ApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
+func (r StockLineItemsApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelLineItemIdStockLineItemExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the stock line item associated to the parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiGETParcelLineItemIdStockLineItemRequest
+ @return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest
 */
-func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemIdStockLineItemRequest {
-	return ApiGETParcelLineItemIdStockLineItemRequest{
+func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) StockLineItemsApiGETParcelLineItemIdStockLineItemRequest {
+	return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -143,7 +143,7 @@ func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.
 }
 
 // Execute executes the request
-func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r ApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error) {
+func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r StockLineItemsApiGETParcelLineItemIdStockLineItemRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockLineItemsRequest struct {
+type StockLineItemsApiGETShipmentIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockLineItemsApiService
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
+func (r StockLineItemsApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockLineItemsExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the stock line items associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockLineItemsRequest
+ @return StockLineItemsApiGETShipmentIdStockLineItemsRequest
 */
-func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLineItemsRequest {
-	return ApiGETShipmentIdStockLineItemsRequest{
+func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) StockLineItemsApiGETShipmentIdStockLineItemsRequest {
+	return StockLineItemsApiGETShipmentIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -235,7 +235,7 @@ func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *StockLineItemsApiService) GETShipmentIdStockLineItemsExecute(r ApiGETShipmentIdStockLineItemsRequest) (*http.Response, error) {
+func (a *StockLineItemsApiService) GETShipmentIdStockLineItemsExecute(r StockLineItemsApiGETShipmentIdStockLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,12 +299,12 @@ func (a *StockLineItemsApiService) GETShipmentIdStockLineItemsExecute(r ApiGETSh
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemsRequest struct {
+type StockLineItemsApiGETStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockLineItemsApiService
 }
 
-func (r ApiGETStockLineItemsRequest) Execute() (*http.Response, error) {
+func (r StockLineItemsApiGETStockLineItemsRequest) Execute() (*GETStockLineItems200Response, *http.Response, error) {
 	return r.ApiService.GETStockLineItemsExecute(r)
 }
 
@@ -314,26 +314,28 @@ GETStockLineItems List all stock line items
 List all stock line items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStockLineItemsRequest
+ @return StockLineItemsApiGETStockLineItemsRequest
 */
-func (a *StockLineItemsApiService) GETStockLineItems(ctx context.Context) ApiGETStockLineItemsRequest {
-	return ApiGETStockLineItemsRequest{
+func (a *StockLineItemsApiService) GETStockLineItems(ctx context.Context) StockLineItemsApiGETStockLineItemsRequest {
+	return StockLineItemsApiGETStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockLineItemsApiService) GETStockLineItemsExecute(r ApiGETStockLineItemsRequest) (*http.Response, error) {
+//  @return GETStockLineItems200Response
+func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiGETStockLineItemsRequest) (*GETStockLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStockLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLineItemsApiService.GETStockLineItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_line_items"
@@ -352,7 +354,7 @@ func (a *StockLineItemsApiService) GETStockLineItemsExecute(r ApiGETStockLineIte
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -361,19 +363,19 @@ func (a *StockLineItemsApiService) GETStockLineItemsExecute(r ApiGETStockLineIte
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -381,19 +383,28 @@ func (a *StockLineItemsApiService) GETStockLineItemsExecute(r ApiGETStockLineIte
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockLineItemsStockLineItemIdRequest struct {
+type StockLineItemsApiGETStockLineItemsStockLineItemIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockLineItemsApiService
 	stockLineItemId string
 }
 
-func (r ApiGETStockLineItemsStockLineItemIdRequest) Execute() (*StockLineItem, *http.Response, error) {
+func (r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) Execute() (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
 	return r.ApiService.GETStockLineItemsStockLineItemIdExecute(r)
 }
 
@@ -404,10 +415,10 @@ Retrieve a stock line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLineItemId The resource's id
- @return ApiGETStockLineItemsStockLineItemIdRequest
+ @return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest
 */
-func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.Context, stockLineItemId string) ApiGETStockLineItemsStockLineItemIdRequest {
-	return ApiGETStockLineItemsStockLineItemIdRequest{
+func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.Context, stockLineItemId string) StockLineItemsApiGETStockLineItemsStockLineItemIdRequest {
+	return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
@@ -415,13 +426,13 @@ func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.
 }
 
 // Execute executes the request
-//  @return StockLineItem
-func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r ApiGETStockLineItemsStockLineItemIdRequest) (*StockLineItem, *http.Response, error) {
+//  @return GETStockLineItemsStockLineItemId200Response
+func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLineItem
+		localVarReturnValue *GETStockLineItemsStockLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLineItemsApiService.GETStockLineItemsStockLineItemId")

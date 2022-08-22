@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stripe_gateways"]
-**Attributes** | [**StripeGatewayDataAttributes**](StripeGatewayDataAttributes.md) |  | 
-**Relationships** | Pointer to [**StripeGatewayDataRelationships**](StripeGatewayDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETStripeGateways200ResponseDataInnerAttributes**](GETStripeGateways200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETStripeGateways200ResponseDataInnerRelationships**](GETStripeGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripeGatewayData
 
-`func NewStripeGatewayData(type_ string, attributes StripeGatewayDataAttributes, ) *StripeGatewayData`
+`func NewStripeGatewayData(type_ string, attributes GETStripeGateways200ResponseDataInnerAttributes, ) *StripeGatewayData`
 
 NewStripeGatewayData instantiates a new StripeGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StripeGatewayData) GetAttributes() StripeGatewayDataAttributes`
+`func (o *StripeGatewayData) GetAttributes() GETStripeGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripeGatewayData) GetAttributesOk() (*StripeGatewayDataAttributes, bool)`
+`func (o *StripeGatewayData) GetAttributesOk() (*GETStripeGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripeGatewayData) SetAttributes(v StripeGatewayDataAttributes)`
+`func (o *StripeGatewayData) SetAttributes(v GETStripeGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StripeGatewayData) GetRelationships() StripeGatewayDataRelationships`
+`func (o *StripeGatewayData) GetRelationships() GETStripeGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StripeGatewayData) GetRelationshipsOk() (*StripeGatewayDataRelationships, bool)`
+`func (o *StripeGatewayData) GetRelationshipsOk() (*GETStripeGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StripeGatewayData) SetRelationships(v StripeGatewayDataRelationships)`
+`func (o *StripeGatewayData) SetRelationships(v GETStripeGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

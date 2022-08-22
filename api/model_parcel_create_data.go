@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ParcelCreateData struct for ParcelCreateData
 type ParcelCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    ParcelCreateDataAttributes     `json:"attributes"`
-	Relationships *ParcelCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    POSTParcels201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTParcels201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelCreateData instantiates a new ParcelCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreateData(type_ string, attributes ParcelCreateDataAttributes) *ParcelCreateData {
+func NewParcelCreateData(type_ string, attributes POSTParcels201ResponseDataAttributes) *ParcelCreateData {
 	this := ParcelCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ParcelCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelCreateData) GetAttributes() ParcelCreateDataAttributes {
+func (o *ParcelCreateData) GetAttributes() POSTParcels201ResponseDataAttributes {
 	if o == nil {
-		var ret ParcelCreateDataAttributes
+		var ret POSTParcels201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ParcelCreateData) GetAttributes() ParcelCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool) {
+func (o *ParcelCreateData) GetAttributesOk() (*POSTParcels201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ParcelCreateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ParcelCreateData) SetAttributes(v ParcelCreateDataAttributes) {
+func (o *ParcelCreateData) SetAttributes(v POSTParcels201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ParcelCreateData) GetRelationships() ParcelCreateDataRelationships {
+func (o *ParcelCreateData) GetRelationships() POSTParcels201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ParcelCreateDataRelationships
+		var ret POSTParcels201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ParcelCreateData) GetRelationships() ParcelCreateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateData) GetRelationshipsOk() (*ParcelCreateDataRelationships, bool) {
+func (o *ParcelCreateData) GetRelationshipsOk() (*POSTParcels201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ParcelCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ParcelCreateDataRelationships and assigns it to the Relationships field.
-func (o *ParcelCreateData) SetRelationships(v ParcelCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTParcels201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ParcelCreateData) SetRelationships(v POSTParcels201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

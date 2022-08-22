@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CouponCreateData struct for CouponCreateData
 type CouponCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    CouponCreateDataAttributes     `json:"attributes"`
-	Relationships *CouponCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    POSTCoupons201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTCoupons201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponCreateData instantiates a new CouponCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCreateData(type_ string, attributes CouponCreateDataAttributes) *CouponCreateData {
+func NewCouponCreateData(type_ string, attributes POSTCoupons201ResponseDataAttributes) *CouponCreateData {
 	this := CouponCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CouponCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponCreateData) GetAttributes() CouponCreateDataAttributes {
+func (o *CouponCreateData) GetAttributes() POSTCoupons201ResponseDataAttributes {
 	if o == nil {
-		var ret CouponCreateDataAttributes
+		var ret POSTCoupons201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CouponCreateData) GetAttributes() CouponCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponCreateData) GetAttributesOk() (*CouponCreateDataAttributes, bool) {
+func (o *CouponCreateData) GetAttributesOk() (*POSTCoupons201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CouponCreateData) GetAttributesOk() (*CouponCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *CouponCreateData) SetAttributes(v CouponCreateDataAttributes) {
+func (o *CouponCreateData) SetAttributes(v POSTCoupons201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponCreateData) GetRelationships() CouponCreateDataRelationships {
+func (o *CouponCreateData) GetRelationships() POSTCoupons201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CouponCreateDataRelationships
+		var ret POSTCoupons201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CouponCreateData) GetRelationships() CouponCreateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCreateData) GetRelationshipsOk() (*CouponCreateDataRelationships, bool) {
+func (o *CouponCreateData) GetRelationshipsOk() (*POSTCoupons201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CouponCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CouponCreateDataRelationships and assigns it to the Relationships field.
-func (o *CouponCreateData) SetRelationships(v CouponCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTCoupons201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *CouponCreateData) SetRelationships(v POSTCoupons201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

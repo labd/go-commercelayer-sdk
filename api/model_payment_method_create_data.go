@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaymentMethodCreateData struct for PaymentMethodCreateData
 type PaymentMethodCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    PaymentMethodCreateDataAttributes     `json:"attributes"`
-	Relationships *PaymentMethodCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    POSTPaymentMethods201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTPaymentMethods201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaymentMethodCreateData instantiates a new PaymentMethodCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentMethodCreateData(type_ string, attributes PaymentMethodCreateDataAttributes) *PaymentMethodCreateData {
+func NewPaymentMethodCreateData(type_ string, attributes POSTPaymentMethods201ResponseDataAttributes) *PaymentMethodCreateData {
 	this := PaymentMethodCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PaymentMethodCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaymentMethodCreateData) GetAttributes() PaymentMethodCreateDataAttributes {
+func (o *PaymentMethodCreateData) GetAttributes() POSTPaymentMethods201ResponseDataAttributes {
 	if o == nil {
-		var ret PaymentMethodCreateDataAttributes
+		var ret POSTPaymentMethods201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PaymentMethodCreateData) GetAttributes() PaymentMethodCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodCreateData) GetAttributesOk() (*PaymentMethodCreateDataAttributes, bool) {
+func (o *PaymentMethodCreateData) GetAttributesOk() (*POSTPaymentMethods201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PaymentMethodCreateData) GetAttributesOk() (*PaymentMethodCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *PaymentMethodCreateData) SetAttributes(v PaymentMethodCreateDataAttributes) {
+func (o *PaymentMethodCreateData) SetAttributes(v POSTPaymentMethods201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaymentMethodCreateData) GetRelationships() PaymentMethodCreateDataRelationships {
+func (o *PaymentMethodCreateData) GetRelationships() POSTPaymentMethods201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PaymentMethodCreateDataRelationships
+		var ret POSTPaymentMethods201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PaymentMethodCreateData) GetRelationships() PaymentMethodCreateDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodCreateData) GetRelationshipsOk() (*PaymentMethodCreateDataRelationships, bool) {
+func (o *PaymentMethodCreateData) GetRelationshipsOk() (*POSTPaymentMethods201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PaymentMethodCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PaymentMethodCreateDataRelationships and assigns it to the Relationships field.
-func (o *PaymentMethodCreateData) SetRelationships(v PaymentMethodCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTPaymentMethods201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PaymentMethodCreateData) SetRelationships(v POSTPaymentMethods201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerGroupData struct for CustomerGroupData
 type CustomerGroupData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    CustomerGroupDataAttributes     `json:"attributes"`
-	Relationships *CustomerGroupDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETCustomerGroups200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETCustomerGroups200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerGroupData instantiates a new CustomerGroupData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerGroupData(type_ string, attributes CustomerGroupDataAttributes) *CustomerGroupData {
+func NewCustomerGroupData(type_ string, attributes GETCustomerGroups200ResponseDataInnerAttributes) *CustomerGroupData {
 	this := CustomerGroupData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CustomerGroupData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerGroupData) GetAttributes() CustomerGroupDataAttributes {
+func (o *CustomerGroupData) GetAttributes() GETCustomerGroups200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CustomerGroupDataAttributes
+		var ret GETCustomerGroups200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CustomerGroupData) GetAttributes() CustomerGroupDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupData) GetAttributesOk() (*CustomerGroupDataAttributes, bool) {
+func (o *CustomerGroupData) GetAttributesOk() (*GETCustomerGroups200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CustomerGroupData) GetAttributesOk() (*CustomerGroupDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *CustomerGroupData) SetAttributes(v CustomerGroupDataAttributes) {
+func (o *CustomerGroupData) SetAttributes(v GETCustomerGroups200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerGroupData) GetRelationships() CustomerGroupDataRelationships {
+func (o *CustomerGroupData) GetRelationships() GETCustomerGroups200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerGroupDataRelationships
+		var ret GETCustomerGroups200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CustomerGroupData) GetRelationships() CustomerGroupDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupData) GetRelationshipsOk() (*CustomerGroupDataRelationships, bool) {
+func (o *CustomerGroupData) GetRelationshipsOk() (*GETCustomerGroups200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CustomerGroupData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerGroupDataRelationships and assigns it to the Relationships field.
-func (o *CustomerGroupData) SetRelationships(v CustomerGroupDataRelationships) {
+// SetRelationships gets a reference to the given GETCustomerGroups200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CustomerGroupData) SetRelationships(v GETCustomerGroups200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

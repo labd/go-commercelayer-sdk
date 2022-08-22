@@ -1,6 +1,6 @@
 # \PaypalPaymentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETPaypalPayments
 
-> GETPaypalPayments(ctx).Execute()
+> GETPaypalPayments200Response GETPaypalPayments(ctx).Execute()
 
 List all paypal payments
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.GETPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPaypalPayments`: GETPaypalPayments200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.GETPaypalPayments`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETPaypalPaymentsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETPaypalPayments200Response**](GETPaypalPayments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETPaypalPaymentsPaypalPaymentId
 
-> PaypalPayment GETPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).Execute()
+> GETPaypalPaymentsPaypalPaymentId200Response GETPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).Execute()
 
 Retrieve a paypal payment
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.GETPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalPaymentsPaypalPaymentId`: PaypalPayment
+    // response from `GETPaypalPaymentsPaypalPaymentId`: GETPaypalPaymentsPaypalPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.GETPaypalPaymentsPaypalPaymentId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaypalPayment**](PaypalPayment.md)
+[**GETPaypalPaymentsPaypalPaymentId200Response**](GETPaypalPaymentsPaypalPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHPaypalPaymentsPaypalPaymentId
 
-> PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
+> PATCHPaypalPaymentsPaypalPaymentId200Response PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
 
 Update a paypal payment
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("paypal_payments", "XGZwpOSrWL", *openapiclient.NewPaypalPaymentUpdateDataAttributes())) // PaypalPaymentUpdate | 
+    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("paypal_payments", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes())) // PaypalPaymentUpdate | 
     paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPaypalPaymentsPaypalPaymentId`: PATCHPaypalPaymentsPaypalPaymentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPaypalPaymentsPaypalPaymentId200Response**](PATCHPaypalPaymentsPaypalPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTPaypalPayments
 
-> POSTPaypalPayments(ctx).PaypalPaymentCreate(paypalPaymentCreate).Execute()
+> POSTPaypalPayments201Response POSTPaypalPayments(ctx).PaypalPaymentCreate(paypalPaymentCreate).Execute()
 
 Create a paypal payment
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("paypal_payments", *openapiclient.NewPaypalPaymentCreateDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
+    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("paypal_payments", *openapiclient.NewPOSTPaypalPayments201ResponseDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.POSTPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPaypalPayments`: POSTPaypalPayments201Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.POSTPaypalPayments`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPaypalPayments201Response**](POSTPaypalPayments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

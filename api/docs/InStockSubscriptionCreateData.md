@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "in_stock_subscriptions"]
-**Attributes** | [**InStockSubscriptionCreateDataAttributes**](InStockSubscriptionCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**InStockSubscriptionCreateDataRelationships**](InStockSubscriptionCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTInStockSubscriptions201ResponseDataAttributes**](POSTInStockSubscriptions201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTInStockSubscriptions201ResponseDataRelationships**](POSTInStockSubscriptions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInStockSubscriptionCreateData
 
-`func NewInStockSubscriptionCreateData(type_ string, attributes InStockSubscriptionCreateDataAttributes, ) *InStockSubscriptionCreateData`
+`func NewInStockSubscriptionCreateData(type_ string, attributes POSTInStockSubscriptions201ResponseDataAttributes, ) *InStockSubscriptionCreateData`
 
 NewInStockSubscriptionCreateData instantiates a new InStockSubscriptionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InStockSubscriptionCreateData) GetAttributes() InStockSubscriptionCreateDataAttributes`
+`func (o *InStockSubscriptionCreateData) GetAttributes() POSTInStockSubscriptions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InStockSubscriptionCreateData) GetAttributesOk() (*InStockSubscriptionCreateDataAttributes, bool)`
+`func (o *InStockSubscriptionCreateData) GetAttributesOk() (*POSTInStockSubscriptions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InStockSubscriptionCreateData) SetAttributes(v InStockSubscriptionCreateDataAttributes)`
+`func (o *InStockSubscriptionCreateData) SetAttributes(v POSTInStockSubscriptions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *InStockSubscriptionCreateData) GetRelationships() InStockSubscriptionCreateDataRelationships`
+`func (o *InStockSubscriptionCreateData) GetRelationships() POSTInStockSubscriptions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *InStockSubscriptionCreateData) GetRelationshipsOk() (*InStockSubscriptionCreateDataRelationships, bool)`
+`func (o *InStockSubscriptionCreateData) GetRelationshipsOk() (*POSTInStockSubscriptions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *InStockSubscriptionCreateData) SetRelationships(v InStockSubscriptionCreateDataRelationships)`
+`func (o *InStockSubscriptionCreateData) SetRelationships(v POSTInStockSubscriptions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

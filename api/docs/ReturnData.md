@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "returns"]
-**Attributes** | [**ReturnDataAttributes**](ReturnDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ReturnDataRelationships**](ReturnDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETReturns200ResponseDataInnerAttributes**](GETReturns200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETReturns200ResponseDataInnerRelationships**](GETReturns200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnData
 
-`func NewReturnData(type_ string, attributes ReturnDataAttributes, ) *ReturnData`
+`func NewReturnData(type_ string, attributes GETReturns200ResponseDataInnerAttributes, ) *ReturnData`
 
 NewReturnData instantiates a new ReturnData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnData) GetAttributes() ReturnDataAttributes`
+`func (o *ReturnData) GetAttributes() GETReturns200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnData) GetAttributesOk() (*ReturnDataAttributes, bool)`
+`func (o *ReturnData) GetAttributesOk() (*GETReturns200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnData) SetAttributes(v ReturnDataAttributes)`
+`func (o *ReturnData) SetAttributes(v GETReturns200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ReturnData) GetRelationships() ReturnDataRelationships`
+`func (o *ReturnData) GetRelationships() GETReturns200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnData) GetRelationshipsOk() (*ReturnDataRelationships, bool)`
+`func (o *ReturnData) GetRelationshipsOk() (*GETReturns200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnData) SetRelationships(v ReturnDataRelationships)`
+`func (o *ReturnData) SetRelationships(v GETReturns200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

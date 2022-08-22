@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "inventory_return_locations"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**InventoryReturnLocationUpdateDataAttributes**](InventoryReturnLocationUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes**](PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**GETInventoryReturnLocations200ResponseDataInnerRelationships**](GETInventoryReturnLocations200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryReturnLocationUpdateData
 
-`func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes InventoryReturnLocationUpdateDataAttributes, ) *InventoryReturnLocationUpdateData`
+`func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, ) *InventoryReturnLocationUpdateData`
 
 NewInventoryReturnLocationUpdateData instantiates a new InventoryReturnLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryReturnLocationUpdateData) GetAttributes() InventoryReturnLocationUpdateDataAttributes`
+`func (o *InventoryReturnLocationUpdateData) GetAttributes() PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryReturnLocationUpdateData) GetAttributesOk() (*InventoryReturnLocationUpdateDataAttributes, bool)`
+`func (o *InventoryReturnLocationUpdateData) GetAttributesOk() (*PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryReturnLocationUpdateData) SetAttributes(v InventoryReturnLocationUpdateDataAttributes)`
+`func (o *InventoryReturnLocationUpdateData) SetAttributes(v PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *InventoryReturnLocationUpdateData) GetRelationships() InventoryReturnLocationDataRelationships`
+`func (o *InventoryReturnLocationUpdateData) GetRelationships() GETInventoryReturnLocations200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *InventoryReturnLocationUpdateData) GetRelationshipsOk() (*InventoryReturnLocationDataRelationships, bool)`
+`func (o *InventoryReturnLocationUpdateData) GetRelationshipsOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *InventoryReturnLocationUpdateData) SetRelationships(v InventoryReturnLocationDataRelationships)`
+`func (o *InventoryReturnLocationUpdateData) SetRelationships(v GETInventoryReturnLocations200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

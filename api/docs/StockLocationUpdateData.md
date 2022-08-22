@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_locations"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**StockLocationUpdateDataAttributes**](StockLocationUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**MerchantUpdateDataRelationships**](MerchantUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHStockLocationsStockLocationId200ResponseDataAttributes**](PATCHStockLocationsStockLocationId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHMerchantsMerchantId200ResponseDataRelationships**](PATCHMerchantsMerchantId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockLocationUpdateData
 
-`func NewStockLocationUpdateData(type_ string, id string, attributes StockLocationUpdateDataAttributes, ) *StockLocationUpdateData`
+`func NewStockLocationUpdateData(type_ string, id string, attributes PATCHStockLocationsStockLocationId200ResponseDataAttributes, ) *StockLocationUpdateData`
 
 NewStockLocationUpdateData instantiates a new StockLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StockLocationUpdateData) GetAttributes() StockLocationUpdateDataAttributes`
+`func (o *StockLocationUpdateData) GetAttributes() PATCHStockLocationsStockLocationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockLocationUpdateData) GetAttributesOk() (*StockLocationUpdateDataAttributes, bool)`
+`func (o *StockLocationUpdateData) GetAttributesOk() (*PATCHStockLocationsStockLocationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockLocationUpdateData) SetAttributes(v StockLocationUpdateDataAttributes)`
+`func (o *StockLocationUpdateData) SetAttributes(v PATCHStockLocationsStockLocationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *StockLocationUpdateData) GetRelationships() MerchantUpdateDataRelationships`
+`func (o *StockLocationUpdateData) GetRelationships() PATCHMerchantsMerchantId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockLocationUpdateData) GetRelationshipsOk() (*MerchantUpdateDataRelationships, bool)`
+`func (o *StockLocationUpdateData) GetRelationshipsOk() (*PATCHMerchantsMerchantId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockLocationUpdateData) SetRelationships(v MerchantUpdateDataRelationships)`
+`func (o *StockLocationUpdateData) SetRelationships(v PATCHMerchantsMerchantId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

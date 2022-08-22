@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxjarAccountData struct for TaxjarAccountData
 type TaxjarAccountData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    ManualTaxCalculatorDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships  `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountData instantiates a new TaxjarAccountData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountData(type_ string, attributes ManualTaxCalculatorDataAttributes) *TaxjarAccountData {
+func NewTaxjarAccountData(type_ string, attributes GETManualTaxCalculators200ResponseDataInnerAttributes) *TaxjarAccountData {
 	this := TaxjarAccountData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *TaxjarAccountData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxjarAccountData) GetAttributes() ManualTaxCalculatorDataAttributes {
+func (o *TaxjarAccountData) GetAttributes() GETManualTaxCalculators200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ManualTaxCalculatorDataAttributes
+		var ret GETManualTaxCalculators200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *TaxjarAccountData) GetAttributes() ManualTaxCalculatorDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountData) GetAttributesOk() (*ManualTaxCalculatorDataAttributes, bool) {
+func (o *TaxjarAccountData) GetAttributesOk() (*GETManualTaxCalculators200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *TaxjarAccountData) GetAttributesOk() (*ManualTaxCalculatorDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *TaxjarAccountData) SetAttributes(v ManualTaxCalculatorDataAttributes) {
+func (o *TaxjarAccountData) SetAttributes(v GETManualTaxCalculators200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
+func (o *TaxjarAccountData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AvalaraAccountDataRelationships
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool) {
+func (o *TaxjarAccountData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxjarAccountData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountDataRelationships and assigns it to the Relationships field.
-func (o *TaxjarAccountData) SetRelationships(v AvalaraAccountDataRelationships) {
+// SetRelationships gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *TaxjarAccountData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

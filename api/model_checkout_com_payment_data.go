@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CheckoutComPaymentData struct for CheckoutComPaymentData
 type CheckoutComPaymentData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    CheckoutComPaymentDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships   `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETCheckoutComPayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComPaymentData instantiates a new CheckoutComPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentData(type_ string, attributes CheckoutComPaymentDataAttributes) *CheckoutComPaymentData {
+func NewCheckoutComPaymentData(type_ string, attributes GETCheckoutComPayments200ResponseDataInnerAttributes) *CheckoutComPaymentData {
 	this := CheckoutComPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CheckoutComPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComPaymentData) GetAttributes() CheckoutComPaymentDataAttributes {
+func (o *CheckoutComPaymentData) GetAttributes() GETCheckoutComPayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CheckoutComPaymentDataAttributes
+		var ret GETCheckoutComPayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CheckoutComPaymentData) GetAttributes() CheckoutComPaymentDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentData) GetAttributesOk() (*CheckoutComPaymentDataAttributes, bool) {
+func (o *CheckoutComPaymentData) GetAttributesOk() (*GETCheckoutComPayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CheckoutComPaymentData) GetAttributesOk() (*CheckoutComPaymentDataAttri
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComPaymentData) SetAttributes(v CheckoutComPaymentDataAttributes) {
+func (o *CheckoutComPaymentData) SetAttributes(v GETCheckoutComPayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CheckoutComPaymentData) GetRelationships() AdyenPaymentDataRelationships {
+func (o *CheckoutComPaymentData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentDataRelationships
+		var ret GETAdyenPayments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CheckoutComPaymentData) GetRelationships() AdyenPaymentDataRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
+func (o *CheckoutComPaymentData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CheckoutComPaymentData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentDataRelationships and assigns it to the Relationships field.
-func (o *CheckoutComPaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
+// SetRelationships gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CheckoutComPaymentData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

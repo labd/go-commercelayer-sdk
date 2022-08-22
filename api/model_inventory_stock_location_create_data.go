@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // InventoryStockLocationCreateData struct for InventoryStockLocationCreateData
 type InventoryStockLocationCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    InventoryStockLocationCreateDataAttributes      `json:"attributes"`
-	Relationships *InventoryReturnLocationCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                    `json:"type"`
+	Attributes    POSTInventoryStockLocations201ResponseDataAttributes      `json:"attributes"`
+	Relationships *POSTInventoryReturnLocations201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewInventoryStockLocationCreateData instantiates a new InventoryStockLocationCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryStockLocationCreateData(type_ string, attributes InventoryStockLocationCreateDataAttributes) *InventoryStockLocationCreateData {
+func NewInventoryStockLocationCreateData(type_ string, attributes POSTInventoryStockLocations201ResponseDataAttributes) *InventoryStockLocationCreateData {
 	this := InventoryStockLocationCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *InventoryStockLocationCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InventoryStockLocationCreateData) GetAttributes() InventoryStockLocationCreateDataAttributes {
+func (o *InventoryStockLocationCreateData) GetAttributes() POSTInventoryStockLocations201ResponseDataAttributes {
 	if o == nil {
-		var ret InventoryStockLocationCreateDataAttributes
+		var ret POSTInventoryStockLocations201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *InventoryStockLocationCreateData) GetAttributes() InventoryStockLocatio
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationCreateData) GetAttributesOk() (*InventoryStockLocationCreateDataAttributes, bool) {
+func (o *InventoryStockLocationCreateData) GetAttributesOk() (*POSTInventoryStockLocations201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *InventoryStockLocationCreateData) GetAttributesOk() (*InventoryStockLoc
 }
 
 // SetAttributes sets field value
-func (o *InventoryStockLocationCreateData) SetAttributes(v InventoryStockLocationCreateDataAttributes) {
+func (o *InventoryStockLocationCreateData) SetAttributes(v POSTInventoryStockLocations201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InventoryStockLocationCreateData) GetRelationships() InventoryReturnLocationCreateDataRelationships {
+func (o *InventoryStockLocationCreateData) GetRelationships() POSTInventoryReturnLocations201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret InventoryReturnLocationCreateDataRelationships
+		var ret POSTInventoryReturnLocations201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *InventoryStockLocationCreateData) GetRelationships() InventoryReturnLoc
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationCreateData) GetRelationshipsOk() (*InventoryReturnLocationCreateDataRelationships, bool) {
+func (o *InventoryStockLocationCreateData) GetRelationshipsOk() (*POSTInventoryReturnLocations201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *InventoryStockLocationCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given InventoryReturnLocationCreateDataRelationships and assigns it to the Relationships field.
-func (o *InventoryStockLocationCreateData) SetRelationships(v InventoryReturnLocationCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTInventoryReturnLocations201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *InventoryStockLocationCreateData) SetRelationships(v POSTInventoryReturnLocations201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

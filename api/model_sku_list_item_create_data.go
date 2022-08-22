@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuListItemCreateData struct for SkuListItemCreateData
 type SkuListItemCreateData struct {
 	// The resource's type
-	Type          string                              `json:"type"`
-	Attributes    SkuListItemCreateDataAttributes     `json:"attributes"`
-	Relationships *SkuListItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                        `json:"type"`
+	Attributes    POSTSkuListItems201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTSkuListItems201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListItemCreateData instantiates a new SkuListItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemCreateData(type_ string, attributes SkuListItemCreateDataAttributes) *SkuListItemCreateData {
+func NewSkuListItemCreateData(type_ string, attributes POSTSkuListItems201ResponseDataAttributes) *SkuListItemCreateData {
 	this := SkuListItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *SkuListItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListItemCreateData) GetAttributes() SkuListItemCreateDataAttributes {
+func (o *SkuListItemCreateData) GetAttributes() POSTSkuListItems201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuListItemCreateDataAttributes
+		var ret POSTSkuListItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *SkuListItemCreateData) GetAttributes() SkuListItemCreateDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemCreateData) GetAttributesOk() (*SkuListItemCreateDataAttributes, bool) {
+func (o *SkuListItemCreateData) GetAttributesOk() (*POSTSkuListItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *SkuListItemCreateData) GetAttributesOk() (*SkuListItemCreateDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *SkuListItemCreateData) SetAttributes(v SkuListItemCreateDataAttributes) {
+func (o *SkuListItemCreateData) SetAttributes(v POSTSkuListItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuListItemCreateData) GetRelationships() SkuListItemCreateDataRelationships {
+func (o *SkuListItemCreateData) GetRelationships() POSTSkuListItems201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret SkuListItemCreateDataRelationships
+		var ret POSTSkuListItems201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *SkuListItemCreateData) GetRelationships() SkuListItemCreateDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListItemCreateData) GetRelationshipsOk() (*SkuListItemCreateDataRelationships, bool) {
+func (o *SkuListItemCreateData) GetRelationshipsOk() (*POSTSkuListItems201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *SkuListItemCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given SkuListItemCreateDataRelationships and assigns it to the Relationships field.
-func (o *SkuListItemCreateData) SetRelationships(v SkuListItemCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTSkuListItems201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *SkuListItemCreateData) SetRelationships(v POSTSkuListItems201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -1,6 +1,6 @@
 # \SkuOptionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ No authorization required
 
 ## GETSkuOptions
 
-> GETSkuOptions(ctx).Execute()
+> GETSkuOptions200Response GETSkuOptions(ctx).Execute()
 
 List all SKU options
 
@@ -247,6 +247,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETSkuOptions`: GETSkuOptions200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.GETSkuOptions`: %v\n", resp)
 }
 ```
 
@@ -261,16 +263,16 @@ Other parameters are passed through a pointer to a apiGETSkuOptionsRequest struc
 
 ### Return type
 
- (empty response body)
+[**GETSkuOptions200Response**](GETSkuOptions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -279,7 +281,7 @@ No authorization required
 
 ## GETSkuOptionsSkuOptionId
 
-> SkuOption GETSkuOptionsSkuOptionId(ctx, skuOptionId).Execute()
+> GETSkuOptionsSkuOptionId200Response GETSkuOptionsSkuOptionId(ctx, skuOptionId).Execute()
 
 Retrieve a SKU option
 
@@ -307,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuOptionsSkuOptionId`: SkuOption
+    // response from `GETSkuOptionsSkuOptionId`: GETSkuOptionsSkuOptionId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.GETSkuOptionsSkuOptionId`: %v\n", resp)
 }
 ```
@@ -331,11 +333,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuOption**](SkuOption.md)
+[**GETSkuOptionsSkuOptionId200Response**](GETSkuOptionsSkuOptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHSkuOptionsSkuOptionId
 
-> PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
+> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
 
 Update a SKU option
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("sku_options", "XGZwpOSrWL", *openapiclient.NewSkuOptionUpdateDataAttributes())) // SkuOptionUpdate | 
+    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("sku_options", "XGZwpOSrWL", *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
     skuOptionId := "skuOptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.PATCHSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHSkuOptionsSkuOptionId`: PATCHSkuOptionsSkuOptionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.PATCHSkuOptionsSkuOptionId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHSkuOptionsSkuOptionId200Response**](PATCHSkuOptionsSkuOptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTSkuOptions
 
-> POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
+> POSTSkuOptions201Response POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
 
 Create a SKU option
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("sku_options", *openapiclient.NewSkuOptionCreateDataAttributes("Embossing"))) // SkuOptionCreate | 
+    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("sku_options", *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes("Embossing"))) // SkuOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.POSTSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTSkuOptions`: POSTSkuOptions201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.POSTSkuOptions`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkuOptions201Response**](POSTSkuOptions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \InventoryModelsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## GETInventoryModels
 
-> GETInventoryModels(ctx).Execute()
+> GETInventoryModels200Response GETInventoryModels(ctx).Execute()
 
 List all inventory models
 
@@ -112,6 +112,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETInventoryModels`: GETInventoryModels200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.GETInventoryModels`: %v\n", resp)
 }
 ```
 
@@ -126,16 +128,16 @@ Other parameters are passed through a pointer to a apiGETInventoryModelsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETInventoryModels200Response**](GETInventoryModels200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -144,7 +146,7 @@ No authorization required
 
 ## GETInventoryModelsInventoryModelId
 
-> InventoryModel GETInventoryModelsInventoryModelId(ctx, inventoryModelId).Execute()
+> GETInventoryModelsInventoryModelId200Response GETInventoryModelsInventoryModelId(ctx, inventoryModelId).Execute()
 
 Retrieve an inventory model
 
@@ -172,7 +174,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryModelsInventoryModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryModelsInventoryModelId`: InventoryModel
+    // response from `GETInventoryModelsInventoryModelId`: GETInventoryModelsInventoryModelId200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.GETInventoryModelsInventoryModelId`: %v\n", resp)
 }
 ```
@@ -196,11 +198,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryModel**](InventoryModel.md)
+[**GETInventoryModelsInventoryModelId200Response**](GETInventoryModelsInventoryModelId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -268,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHInventoryModelsInventoryModelId
 
-> PATCHInventoryModelsInventoryModelId(ctx, inventoryModelId).InventoryModelUpdate(inventoryModelUpdate).Execute()
+> PATCHInventoryModelsInventoryModelId200Response PATCHInventoryModelsInventoryModelId(ctx, inventoryModelId).InventoryModelUpdate(inventoryModelUpdate).Execute()
 
 Update an inventory model
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("inventory_models", "XGZwpOSrWL", *openapiclient.NewInventoryModelUpdateDataAttributes())) // InventoryModelUpdate | 
+    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("inventory_models", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributes())) // InventoryModelUpdate | 
     inventoryModelId := "inventoryModelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.PATCHInventoryModelsInventoryModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHInventoryModelsInventoryModelId`: PATCHInventoryModelsInventoryModelId200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.PATCHInventoryModelsInventoryModelId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHInventoryModelsInventoryModelId200Response**](PATCHInventoryModelsInventoryModelId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTInventoryModels
 
-> POSTInventoryModels(ctx).InventoryModelCreate(inventoryModelCreate).Execute()
+> POSTInventoryModels201Response POSTInventoryModels(ctx).InventoryModelCreate(inventoryModelCreate).Execute()
 
 Create an inventory model
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("inventory_models", *openapiclient.NewInventoryModelCreateDataAttributes("EU Inventory Model", "split_shipments"))) // InventoryModelCreate | 
+    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("inventory_models", *openapiclient.NewPOSTInventoryModels201ResponseDataAttributes("EU Inventory Model"))) // InventoryModelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.POSTInventoryModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTInventoryModels`: POSTInventoryModels201Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.POSTInventoryModels`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTInventoryModels201Response**](POSTInventoryModels201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

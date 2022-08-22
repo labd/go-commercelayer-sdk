@@ -1,6 +1,6 @@
 # \KlarnaPaymentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETKlarnaPayments
 
-> GETKlarnaPayments(ctx).Execute()
+> GETKlarnaPayments200Response GETKlarnaPayments(ctx).Execute()
 
 List all klarna payments
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.GETKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETKlarnaPayments`: GETKlarnaPayments200Response
+    fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.GETKlarnaPayments`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETKlarnaPaymentsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETKlarnaPayments200Response**](GETKlarnaPayments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETKlarnaPaymentsKlarnaPaymentId
 
-> KlarnaPayment GETKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).Execute()
+> GETKlarnaPaymentsKlarnaPaymentId200Response GETKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).Execute()
 
 Retrieve a klarna payment
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.GETKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETKlarnaPaymentsKlarnaPaymentId`: KlarnaPayment
+    // response from `GETKlarnaPaymentsKlarnaPaymentId`: GETKlarnaPaymentsKlarnaPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.GETKlarnaPaymentsKlarnaPaymentId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KlarnaPayment**](KlarnaPayment.md)
+[**GETKlarnaPaymentsKlarnaPaymentId200Response**](GETKlarnaPaymentsKlarnaPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHKlarnaPaymentsKlarnaPaymentId
 
-> PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
+> PATCHKlarnaPaymentsKlarnaPaymentId200Response PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
 
 Update a klarna payment
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("klarna_payments", "XGZwpOSrWL", *openapiclient.NewKlarnaPaymentUpdateDataAttributes())) // KlarnaPaymentUpdate | 
+    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("klarna_payments", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes())) // KlarnaPaymentUpdate | 
     klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHKlarnaPaymentsKlarnaPaymentId`: PATCHKlarnaPaymentsKlarnaPaymentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHKlarnaPaymentsKlarnaPaymentId200Response**](PATCHKlarnaPaymentsKlarnaPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTKlarnaPayments
 
-> POSTKlarnaPayments(ctx).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
+> POSTKlarnaPayments201Response POSTKlarnaPayments(ctx).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
 
 Create a klarna payment
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("klarna_payments", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // KlarnaPaymentCreate | 
+    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("klarna_payments", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // KlarnaPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.POSTKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTKlarnaPayments`: POSTKlarnaPayments201Response
+    fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.POSTKlarnaPayments`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTKlarnaPayments201Response**](POSTKlarnaPayments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

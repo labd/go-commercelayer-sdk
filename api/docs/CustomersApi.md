@@ -1,6 +1,6 @@
 # \CustomersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -215,7 +215,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -501,7 +501,7 @@ No authorization required
 
 ## GETCustomers
 
-> GETCustomers(ctx).Execute()
+> GETCustomers200Response GETCustomers(ctx).Execute()
 
 List all customers
 
@@ -528,6 +528,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETCustomers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCustomers`: GETCustomers200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomersApi.GETCustomers`: %v\n", resp)
 }
 ```
 
@@ -542,16 +544,16 @@ Other parameters are passed through a pointer to a apiGETCustomersRequest struct
 
 ### Return type
 
- (empty response body)
+[**GETCustomers200Response**](GETCustomers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -560,7 +562,7 @@ No authorization required
 
 ## GETCustomersCustomerId
 
-> Customer GETCustomersCustomerId(ctx, customerId).Execute()
+> GETCustomersCustomerId200Response GETCustomersCustomerId(ctx, customerId).Execute()
 
 Retrieve a customer
 
@@ -588,7 +590,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETCustomersCustomerId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomersCustomerId`: Customer
+    // response from `GETCustomersCustomerId`: GETCustomersCustomerId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomersApi.GETCustomersCustomerId`: %v\n", resp)
 }
 ```
@@ -612,11 +614,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Customer**](Customer.md)
+[**GETCustomersCustomerId200Response**](GETCustomersCustomerId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -684,7 +686,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -752,7 +754,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -820,7 +822,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -888,7 +890,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -956,7 +958,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -970,7 +972,7 @@ No authorization required
 
 ## PATCHCustomersCustomerId
 
-> PATCHCustomersCustomerId(ctx, customerId).CustomerUpdate(customerUpdate).Execute()
+> PATCHCustomersCustomerId200Response PATCHCustomersCustomerId(ctx, customerId).CustomerUpdate(customerUpdate).Execute()
 
 Update a customer
 
@@ -989,7 +991,7 @@ import (
 )
 
 func main() {
-    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("customers", "XGZwpOSrWL", *openapiclient.NewCustomerUpdateDataAttributes())) // CustomerUpdate | 
+    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("customers", "XGZwpOSrWL", *openapiclient.NewPATCHCustomersCustomerId200ResponseDataAttributes())) // CustomerUpdate | 
     customerId := "customerId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -999,6 +1001,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.PATCHCustomersCustomerId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCustomersCustomerId`: PATCHCustomersCustomerId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomersApi.PATCHCustomersCustomerId`: %v\n", resp)
 }
 ```
 
@@ -1022,16 +1026,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCustomersCustomerId200Response**](PATCHCustomersCustomerId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1040,7 +1044,7 @@ No authorization required
 
 ## POSTCustomers
 
-> POSTCustomers(ctx).CustomerCreate(customerCreate).Execute()
+> POSTCustomers201Response POSTCustomers(ctx).CustomerCreate(customerCreate).Execute()
 
 Create a customer
 
@@ -1059,7 +1063,7 @@ import (
 )
 
 func main() {
-    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("customers", *openapiclient.NewCustomerCreateDataAttributes("john@example.com"))) // CustomerCreate | 
+    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("customers", *openapiclient.NewPOSTCustomers201ResponseDataAttributes("john@example.com"))) // CustomerCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1068,6 +1072,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.POSTCustomers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCustomers`: POSTCustomers201Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomersApi.POSTCustomers`: %v\n", resp)
 }
 ```
 
@@ -1086,16 +1092,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCustomers201Response**](POSTCustomers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

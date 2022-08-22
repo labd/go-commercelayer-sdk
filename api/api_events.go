@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // EventsApiService EventsApi service
 type EventsApiService service
 
-type ApiGETCustomerAddressIdEventsRequest struct {
+type EventsApiGETCustomerAddressIdEventsRequest struct {
 	ctx               context.Context
 	ApiService        *EventsApiService
 	customerAddressId string
 }
 
-func (r ApiGETCustomerAddressIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETCustomerAddressIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerAddressIdEventsExecute(r)
 }
 
@@ -40,10 +40,10 @@ Retrieve the events associated to the customer address
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerAddressId The resource's id
- @return ApiGETCustomerAddressIdEventsRequest
+ @return EventsApiGETCustomerAddressIdEventsRequest
 */
-func (a *EventsApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) ApiGETCustomerAddressIdEventsRequest {
-	return ApiGETCustomerAddressIdEventsRequest{
+func (a *EventsApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) EventsApiGETCustomerAddressIdEventsRequest {
+	return EventsApiGETCustomerAddressIdEventsRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		customerAddressId: customerAddressId,
@@ -51,7 +51,7 @@ func (a *EventsApiService) GETCustomerAddressIdEvents(ctx context.Context, custo
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETCustomerAddressIdEventsExecute(r ApiGETCustomerAddressIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETCustomerAddressIdEventsExecute(r EventsApiGETCustomerAddressIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *EventsApiService) GETCustomerAddressIdEventsExecute(r ApiGETCustomerAdd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdEventsRequest struct {
+type EventsApiGETCustomerIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	customerId string
 }
 
-func (r ApiGETCustomerIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETCustomerIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdEventsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the events associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdEventsRequest
+ @return EventsApiGETCustomerIdEventsRequest
 */
-func (a *EventsApiService) GETCustomerIdEvents(ctx context.Context, customerId string) ApiGETCustomerIdEventsRequest {
-	return ApiGETCustomerIdEventsRequest{
+func (a *EventsApiService) GETCustomerIdEvents(ctx context.Context, customerId string) EventsApiGETCustomerIdEventsRequest {
+	return EventsApiGETCustomerIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -143,7 +143,7 @@ func (a *EventsApiService) GETCustomerIdEvents(ctx context.Context, customerId s
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETCustomerIdEventsExecute(r ApiGETCustomerIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETCustomerIdEventsExecute(r EventsApiGETCustomerIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *EventsApiService) GETCustomerIdEventsExecute(r ApiGETCustomerIdEventsRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPasswordResetIdEventsRequest struct {
+type EventsApiGETCustomerPasswordResetIdEventsRequest struct {
 	ctx                     context.Context
 	ApiService              *EventsApiService
 	customerPasswordResetId string
 }
 
-func (r ApiGETCustomerPasswordResetIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETCustomerPasswordResetIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetIdEventsExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the events associated to the customer password reset
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPasswordResetId The resource's id
- @return ApiGETCustomerPasswordResetIdEventsRequest
+ @return EventsApiGETCustomerPasswordResetIdEventsRequest
 */
-func (a *EventsApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) ApiGETCustomerPasswordResetIdEventsRequest {
-	return ApiGETCustomerPasswordResetIdEventsRequest{
+func (a *EventsApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) EventsApiGETCustomerPasswordResetIdEventsRequest {
+	return EventsApiGETCustomerPasswordResetIdEventsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
@@ -235,7 +235,7 @@ func (a *EventsApiService) GETCustomerPasswordResetIdEvents(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETCustomerPasswordResetIdEventsExecute(r ApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETCustomerPasswordResetIdEventsExecute(r EventsApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,13 +299,13 @@ func (a *EventsApiService) GETCustomerPasswordResetIdEventsExecute(r ApiGETCusto
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerSubscriptionIdEventsRequest struct {
+type EventsApiGETCustomerSubscriptionIdEventsRequest struct {
 	ctx                    context.Context
 	ApiService             *EventsApiService
 	customerSubscriptionId string
 }
 
-func (r ApiGETCustomerSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETCustomerSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionIdEventsExecute(r)
 }
 
@@ -316,10 +316,10 @@ Retrieve the events associated to the customer subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerSubscriptionId The resource's id
- @return ApiGETCustomerSubscriptionIdEventsRequest
+ @return EventsApiGETCustomerSubscriptionIdEventsRequest
 */
-func (a *EventsApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) ApiGETCustomerSubscriptionIdEventsRequest {
-	return ApiGETCustomerSubscriptionIdEventsRequest{
+func (a *EventsApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) EventsApiGETCustomerSubscriptionIdEventsRequest {
+	return EventsApiGETCustomerSubscriptionIdEventsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
@@ -327,7 +327,7 @@ func (a *EventsApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETCustomerSubscriptionIdEventsExecute(r ApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETCustomerSubscriptionIdEventsExecute(r EventsApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -391,12 +391,12 @@ func (a *EventsApiService) GETCustomerSubscriptionIdEventsExecute(r ApiGETCustom
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETEventsRequest struct {
+type EventsApiGETEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 }
 
-func (r ApiGETEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETEventsRequest) Execute() (*GETEvents200Response, *http.Response, error) {
 	return r.ApiService.GETEventsExecute(r)
 }
 
@@ -406,26 +406,28 @@ GETEvents List all events
 List all events
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETEventsRequest
+ @return EventsApiGETEventsRequest
 */
-func (a *EventsApiService) GETEvents(ctx context.Context) ApiGETEventsRequest {
-	return ApiGETEventsRequest{
+func (a *EventsApiService) GETEvents(ctx context.Context) EventsApiGETEventsRequest {
+	return EventsApiGETEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETEventsExecute(r ApiGETEventsRequest) (*http.Response, error) {
+//  @return GETEvents200Response
+func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*GETEvents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEvents")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/events"
@@ -444,7 +446,7 @@ func (a *EventsApiService) GETEventsExecute(r ApiGETEventsRequest) (*http.Respon
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -453,19 +455,19 @@ func (a *EventsApiService) GETEventsExecute(r ApiGETEventsRequest) (*http.Respon
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -473,19 +475,28 @@ func (a *EventsApiService) GETEventsExecute(r ApiGETEventsRequest) (*http.Respon
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETEventsEventIdRequest struct {
+type EventsApiGETEventsEventIdRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	eventId    string
 }
 
-func (r ApiGETEventsEventIdRequest) Execute() (*Event, *http.Response, error) {
+func (r EventsApiGETEventsEventIdRequest) Execute() (*GETEventsEventId200Response, *http.Response, error) {
 	return r.ApiService.GETEventsEventIdExecute(r)
 }
 
@@ -496,10 +507,10 @@ Retrieve an event
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param eventId The resource's id
- @return ApiGETEventsEventIdRequest
+ @return EventsApiGETEventsEventIdRequest
 */
-func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string) ApiGETEventsEventIdRequest {
-	return ApiGETEventsEventIdRequest{
+func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string) EventsApiGETEventsEventIdRequest {
+	return EventsApiGETEventsEventIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		eventId:    eventId,
@@ -507,13 +518,13 @@ func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string)
 }
 
 // Execute executes the request
-//  @return Event
-func (a *EventsApiService) GETEventsEventIdExecute(r ApiGETEventsEventIdRequest) (*Event, *http.Response, error) {
+//  @return GETEventsEventId200Response
+func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*GETEventsEventId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Event
+		localVarReturnValue *GETEventsEventId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEventsEventId")
@@ -582,13 +593,13 @@ func (a *EventsApiService) GETEventsEventIdExecute(r ApiGETEventsEventIdRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardIdEventsRequest struct {
+type EventsApiGETGiftCardIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	giftCardId string
 }
 
-func (r ApiGETGiftCardIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETGiftCardIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdEventsExecute(r)
 }
 
@@ -599,10 +610,10 @@ Retrieve the events associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardIdEventsRequest
+ @return EventsApiGETGiftCardIdEventsRequest
 */
-func (a *EventsApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) ApiGETGiftCardIdEventsRequest {
-	return ApiGETGiftCardIdEventsRequest{
+func (a *EventsApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) EventsApiGETGiftCardIdEventsRequest {
+	return EventsApiGETGiftCardIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -610,7 +621,7 @@ func (a *EventsApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId s
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETGiftCardIdEventsExecute(r ApiGETGiftCardIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETGiftCardIdEventsExecute(r EventsApiGETGiftCardIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -674,13 +685,13 @@ func (a *EventsApiService) GETGiftCardIdEventsExecute(r ApiGETGiftCardIdEventsRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETImportIdEventsRequest struct {
+type EventsApiGETImportIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	importId   string
 }
 
-func (r ApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETImportIdEventsExecute(r)
 }
 
@@ -691,10 +702,10 @@ Retrieve the events associated to the import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param importId The resource's id
- @return ApiGETImportIdEventsRequest
+ @return EventsApiGETImportIdEventsRequest
 */
-func (a *EventsApiService) GETImportIdEvents(ctx context.Context, importId string) ApiGETImportIdEventsRequest {
-	return ApiGETImportIdEventsRequest{
+func (a *EventsApiService) GETImportIdEvents(ctx context.Context, importId string) EventsApiGETImportIdEventsRequest {
+	return EventsApiGETImportIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		importId:   importId,
@@ -702,7 +713,7 @@ func (a *EventsApiService) GETImportIdEvents(ctx context.Context, importId strin
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETImportIdEventsExecute(r ApiGETImportIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETImportIdEventsExecute(r EventsApiGETImportIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -766,13 +777,13 @@ func (a *EventsApiService) GETImportIdEventsExecute(r ApiGETImportIdEventsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdEventsRequest struct {
+type EventsApiGETInStockSubscriptionIdEventsRequest struct {
 	ctx                   context.Context
 	ApiService            *EventsApiService
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETInStockSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdEventsExecute(r)
 }
 
@@ -783,10 +794,10 @@ Retrieve the events associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdEventsRequest
+ @return EventsApiGETInStockSubscriptionIdEventsRequest
 */
-func (a *EventsApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdEventsRequest {
-	return ApiGETInStockSubscriptionIdEventsRequest{
+func (a *EventsApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) EventsApiGETInStockSubscriptionIdEventsRequest {
+	return EventsApiGETInStockSubscriptionIdEventsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -794,7 +805,7 @@ func (a *EventsApiService) GETInStockSubscriptionIdEvents(ctx context.Context, i
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETInStockSubscriptionIdEventsExecute(r ApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETInStockSubscriptionIdEventsExecute(r EventsApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -858,13 +869,13 @@ func (a *EventsApiService) GETInStockSubscriptionIdEventsExecute(r ApiGETInStock
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdEventsRequest struct {
+type EventsApiGETOrderCopyIdEventsRequest struct {
 	ctx         context.Context
 	ApiService  *EventsApiService
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETOrderCopyIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdEventsExecute(r)
 }
 
@@ -875,10 +886,10 @@ Retrieve the events associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdEventsRequest
+ @return EventsApiGETOrderCopyIdEventsRequest
 */
-func (a *EventsApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdEventsRequest {
-	return ApiGETOrderCopyIdEventsRequest{
+func (a *EventsApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) EventsApiGETOrderCopyIdEventsRequest {
+	return EventsApiGETOrderCopyIdEventsRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -886,7 +897,7 @@ func (a *EventsApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETOrderCopyIdEventsExecute(r ApiGETOrderCopyIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETOrderCopyIdEventsExecute(r EventsApiGETOrderCopyIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -950,13 +961,13 @@ func (a *EventsApiService) GETOrderCopyIdEventsExecute(r ApiGETOrderCopyIdEvents
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdEventsRequest struct {
+type EventsApiGETOrderIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdEventsExecute(r)
 }
 
@@ -967,10 +978,10 @@ Retrieve the events associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdEventsRequest
+ @return EventsApiGETOrderIdEventsRequest
 */
-func (a *EventsApiService) GETOrderIdEvents(ctx context.Context, orderId string) ApiGETOrderIdEventsRequest {
-	return ApiGETOrderIdEventsRequest{
+func (a *EventsApiService) GETOrderIdEvents(ctx context.Context, orderId string) EventsApiGETOrderIdEventsRequest {
+	return EventsApiGETOrderIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -978,7 +989,7 @@ func (a *EventsApiService) GETOrderIdEvents(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETOrderIdEventsExecute(r ApiGETOrderIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETOrderIdEventsExecute(r EventsApiGETOrderIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1042,13 +1053,13 @@ func (a *EventsApiService) GETOrderIdEventsExecute(r ApiGETOrderIdEventsRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdEventsRequest struct {
+type EventsApiGETOrderSubscriptionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          *EventsApiService
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETOrderSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdEventsExecute(r)
 }
 
@@ -1059,10 +1070,10 @@ Retrieve the events associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdEventsRequest
+ @return EventsApiGETOrderSubscriptionIdEventsRequest
 */
-func (a *EventsApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdEventsRequest {
-	return ApiGETOrderSubscriptionIdEventsRequest{
+func (a *EventsApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) EventsApiGETOrderSubscriptionIdEventsRequest {
+	return EventsApiGETOrderSubscriptionIdEventsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -1070,7 +1081,7 @@ func (a *EventsApiService) GETOrderSubscriptionIdEvents(ctx context.Context, ord
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETOrderSubscriptionIdEventsExecute(r ApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETOrderSubscriptionIdEventsExecute(r EventsApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1134,13 +1145,13 @@ func (a *EventsApiService) GETOrderSubscriptionIdEventsExecute(r ApiGETOrderSubs
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdEventsRequest struct {
+type EventsApiGETParcelIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	parcelId   string
 }
 
-func (r ApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdEventsExecute(r)
 }
 
@@ -1151,10 +1162,10 @@ Retrieve the events associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdEventsRequest
+ @return EventsApiGETParcelIdEventsRequest
 */
-func (a *EventsApiService) GETParcelIdEvents(ctx context.Context, parcelId string) ApiGETParcelIdEventsRequest {
-	return ApiGETParcelIdEventsRequest{
+func (a *EventsApiService) GETParcelIdEvents(ctx context.Context, parcelId string) EventsApiGETParcelIdEventsRequest {
+	return EventsApiGETParcelIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -1162,7 +1173,7 @@ func (a *EventsApiService) GETParcelIdEvents(ctx context.Context, parcelId strin
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETParcelIdEventsExecute(r ApiGETParcelIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETParcelIdEventsExecute(r EventsApiGETParcelIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1226,13 +1237,13 @@ func (a *EventsApiService) GETParcelIdEventsExecute(r ApiGETParcelIdEventsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundIdEventsRequest struct {
+type EventsApiGETRefundIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	refundId   string
 }
 
-func (r ApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETRefundIdEventsExecute(r)
 }
 
@@ -1243,10 +1254,10 @@ Retrieve the events associated to the refund
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param refundId The resource's id
- @return ApiGETRefundIdEventsRequest
+ @return EventsApiGETRefundIdEventsRequest
 */
-func (a *EventsApiService) GETRefundIdEvents(ctx context.Context, refundId string) ApiGETRefundIdEventsRequest {
-	return ApiGETRefundIdEventsRequest{
+func (a *EventsApiService) GETRefundIdEvents(ctx context.Context, refundId string) EventsApiGETRefundIdEventsRequest {
+	return EventsApiGETRefundIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		refundId:   refundId,
@@ -1254,7 +1265,7 @@ func (a *EventsApiService) GETRefundIdEvents(ctx context.Context, refundId strin
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETRefundIdEventsExecute(r ApiGETRefundIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETRefundIdEventsExecute(r EventsApiGETRefundIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1318,13 +1329,13 @@ func (a *EventsApiService) GETRefundIdEventsExecute(r ApiGETRefundIdEventsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdEventsRequest struct {
+type EventsApiGETReturnIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	returnId   string
 }
 
-func (r ApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdEventsExecute(r)
 }
 
@@ -1335,10 +1346,10 @@ Retrieve the events associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdEventsRequest
+ @return EventsApiGETReturnIdEventsRequest
 */
-func (a *EventsApiService) GETReturnIdEvents(ctx context.Context, returnId string) ApiGETReturnIdEventsRequest {
-	return ApiGETReturnIdEventsRequest{
+func (a *EventsApiService) GETReturnIdEvents(ctx context.Context, returnId string) EventsApiGETReturnIdEventsRequest {
+	return EventsApiGETReturnIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -1346,7 +1357,7 @@ func (a *EventsApiService) GETReturnIdEvents(ctx context.Context, returnId strin
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETReturnIdEventsExecute(r ApiGETReturnIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETReturnIdEventsExecute(r EventsApiGETReturnIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1410,13 +1421,13 @@ func (a *EventsApiService) GETReturnIdEventsExecute(r ApiGETReturnIdEventsReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdEventsRequest struct {
+type EventsApiGETShipmentIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *EventsApiService
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETShipmentIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdEventsExecute(r)
 }
 
@@ -1427,10 +1438,10 @@ Retrieve the events associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdEventsRequest
+ @return EventsApiGETShipmentIdEventsRequest
 */
-func (a *EventsApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) ApiGETShipmentIdEventsRequest {
-	return ApiGETShipmentIdEventsRequest{
+func (a *EventsApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) EventsApiGETShipmentIdEventsRequest {
+	return EventsApiGETShipmentIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -1438,7 +1449,7 @@ func (a *EventsApiService) GETShipmentIdEvents(ctx context.Context, shipmentId s
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETShipmentIdEventsExecute(r ApiGETShipmentIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETShipmentIdEventsExecute(r EventsApiGETShipmentIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1502,13 +1513,13 @@ func (a *EventsApiService) GETShipmentIdEventsExecute(r ApiGETShipmentIdEventsRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdEventsRequest struct {
+type EventsApiGETStockTransferIdEventsRequest struct {
 	ctx             context.Context
 	ApiService      *EventsApiService
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdEventsRequest) Execute() (*http.Response, error) {
+func (r EventsApiGETStockTransferIdEventsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdEventsExecute(r)
 }
 
@@ -1519,10 +1530,10 @@ Retrieve the events associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdEventsRequest
+ @return EventsApiGETStockTransferIdEventsRequest
 */
-func (a *EventsApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) ApiGETStockTransferIdEventsRequest {
-	return ApiGETStockTransferIdEventsRequest{
+func (a *EventsApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) EventsApiGETStockTransferIdEventsRequest {
+	return EventsApiGETStockTransferIdEventsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -1530,7 +1541,7 @@ func (a *EventsApiService) GETStockTransferIdEvents(ctx context.Context, stockTr
 }
 
 // Execute executes the request
-func (a *EventsApiService) GETStockTransferIdEventsExecute(r ApiGETStockTransferIdEventsRequest) (*http.Response, error) {
+func (a *EventsApiService) GETStockTransferIdEventsExecute(r EventsApiGETStockTransferIdEventsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // InStockSubscriptionsApiService InStockSubscriptionsApi service
 type InStockSubscriptionsApiService service
 
-type ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *InStockSubscriptionsApiService
 	inStockSubscriptionId string
 }
 
-func (r ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -51,7 +51,7 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r ApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
+func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionsRequest struct {
+type InStockSubscriptionsApiGETInStockSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService *InStockSubscriptionsApiService
 }
 
-func (r ApiGETInStockSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsRequest) Execute() (*GETInStockSubscriptions200Response, *http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETInStockSubscriptions List all in stock subscriptions
 List all in stock subscriptions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETInStockSubscriptionsRequest
+ @return InStockSubscriptionsApiGETInStockSubscriptionsRequest
 */
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) ApiGETInStockSubscriptionsRequest {
-	return ApiGETInStockSubscriptionsRequest{
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiGETInStockSubscriptionsRequest {
+	return InStockSubscriptionsApiGETInStockSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGETInStockSubscriptionsRequest) (*http.Response, error) {
+//  @return GETInStockSubscriptions200Response
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*GETInStockSubscriptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETInStockSubscriptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions"
@@ -168,7 +170,7 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGET
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGET
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r ApiGET
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *InStockSubscriptionsApiService
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*InStockSubscription, *http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -231,13 +242,13 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 }
 
 // Execute executes the request
-//  @return InStockSubscription
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r ApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscription, *http.Response, error) {
+//  @return GETInStockSubscriptionsInStockSubscriptionId200Response
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *InStockSubscription
+		localVarReturnValue *GETInStockSubscriptionsInStockSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptionsInStockSubscriptionId")
@@ -306,19 +317,19 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest struct {
+type InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest struct {
 	ctx                       context.Context
 	ApiService                *InStockSubscriptionsApiService
 	inStockSubscriptionUpdate *InStockSubscriptionUpdate
 	inStockSubscriptionId     string
 }
 
-func (r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) InStockSubscriptionUpdate(inStockSubscriptionUpdate InStockSubscriptionUpdate) ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
+func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) InStockSubscriptionUpdate(inStockSubscriptionUpdate InStockSubscriptionUpdate) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
 	r.inStockSubscriptionUpdate = &inStockSubscriptionUpdate
 	return r
 }
 
-func (r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
+ @return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
 */
-func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
-	return ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
+func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
+	return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -340,16 +351,18 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r ApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
+//  @return PATCHInStockSubscriptionsInStockSubscriptionId200Response
+func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHInStockSubscriptionsInStockSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.PATCHInStockSubscriptionsInStockSubscriptionId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}"
@@ -359,7 +372,7 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.inStockSubscriptionUpdate == nil {
-		return nil, reportError("inStockSubscriptionUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("inStockSubscriptionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 	localVarPostBody = r.inStockSubscriptionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTInStockSubscriptionsRequest struct {
+type InStockSubscriptionsApiPOSTInStockSubscriptionsRequest struct {
 	ctx                       context.Context
 	ApiService                *InStockSubscriptionsApiService
 	inStockSubscriptionCreate *InStockSubscriptionCreate
 }
 
-func (r ApiPOSTInStockSubscriptionsRequest) InStockSubscriptionCreate(inStockSubscriptionCreate InStockSubscriptionCreate) ApiPOSTInStockSubscriptionsRequest {
+func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) InStockSubscriptionCreate(inStockSubscriptionCreate InStockSubscriptionCreate) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
 	r.inStockSubscriptionCreate = &inStockSubscriptionCreate
 	return r
 }
 
-func (r ApiPOSTInStockSubscriptionsRequest) Execute() (*http.Response, error) {
+func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) Execute() (*POSTInStockSubscriptions201Response, *http.Response, error) {
 	return r.ApiService.POSTInStockSubscriptionsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTInStockSubscriptions Create an in stock subscription
 Create an in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTInStockSubscriptionsRequest
+ @return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
 */
-func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) ApiPOSTInStockSubscriptionsRequest {
-	return ApiPOSTInStockSubscriptionsRequest{
+func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
+	return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPOSTInStockSubscriptionsRequest) (*http.Response, error) {
+//  @return POSTInStockSubscriptions201Response
+func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*POSTInStockSubscriptions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTInStockSubscriptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.POSTInStockSubscriptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions"
@@ -458,7 +482,7 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPO
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.inStockSubscriptionCreate == nil {
-		return nil, reportError("inStockSubscriptionCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("inStockSubscriptionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPO
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPO
 	localVarPostBody = r.inStockSubscriptionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r ApiPO
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

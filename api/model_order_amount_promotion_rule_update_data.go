@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type OrderAmountPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                       `json:"id"`
-	Attributes    OrderAmountPromotionRuleCreateDataAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                                         `json:"id"`
+	Attributes    POSTOrderAmountPromotionRules201ResponseDataAttributes         `json:"attributes"`
+	Relationships *GETOrderAmountPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleUpdateData instantiates a new OrderAmountPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleUpdateData(type_ string, id string, attributes OrderAmountPromotionRuleCreateDataAttributes) *OrderAmountPromotionRuleUpdateData {
+func NewOrderAmountPromotionRuleUpdateData(type_ string, id string, attributes POSTOrderAmountPromotionRules201ResponseDataAttributes) *OrderAmountPromotionRuleUpdateData {
 	this := OrderAmountPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *OrderAmountPromotionRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() OrderAmountPromotionRuleCreateDataAttributes {
+func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() POSTOrderAmountPromotionRules201ResponseDataAttributes {
 	if o == nil {
-		var ret OrderAmountPromotionRuleCreateDataAttributes
+		var ret POSTOrderAmountPromotionRules201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() OrderAmountPromotio
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*OrderAmountPromotionRuleCreateDataAttributes, bool) {
+func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*POSTOrderAmountPromotionRules201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*OrderAmountProm
 }
 
 // SetAttributes sets field value
-func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v OrderAmountPromotionRuleCreateDataAttributes) {
+func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v POSTOrderAmountPromotionRules201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromotionRuleDataRelationships {
+func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderAmountPromotionRuleDataRelationships
+		var ret GETOrderAmountPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool) {
+func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *OrderAmountPromotionRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderAmountPromotionRuleDataRelationships and assigns it to the Relationships field.
-func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v OrderAmountPromotionRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETOrderAmountPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

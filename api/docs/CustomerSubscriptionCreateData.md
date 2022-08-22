@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_subscriptions"]
-**Attributes** | [**CustomerSubscriptionCreateDataAttributes**](CustomerSubscriptionCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTCustomerSubscriptions201ResponseDataAttributes**](POSTCustomerSubscriptions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCustomerSubscriptionCreateData
 
-`func NewCustomerSubscriptionCreateData(type_ string, attributes CustomerSubscriptionCreateDataAttributes, ) *CustomerSubscriptionCreateData`
+`func NewCustomerSubscriptionCreateData(type_ string, attributes POSTCustomerSubscriptions201ResponseDataAttributes, ) *CustomerSubscriptionCreateData`
 
 NewCustomerSubscriptionCreateData instantiates a new CustomerSubscriptionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerSubscriptionCreateData) GetAttributes() CustomerSubscriptionCreateDataAttributes`
+`func (o *CustomerSubscriptionCreateData) GetAttributes() POSTCustomerSubscriptions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerSubscriptionCreateData) GetAttributesOk() (*CustomerSubscriptionCreateDataAttributes, bool)`
+`func (o *CustomerSubscriptionCreateData) GetAttributesOk() (*POSTCustomerSubscriptions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerSubscriptionCreateData) SetAttributes(v CustomerSubscriptionCreateDataAttributes)`
+`func (o *CustomerSubscriptionCreateData) SetAttributes(v POSTCustomerSubscriptions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

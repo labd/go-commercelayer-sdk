@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_password_resets"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**CustomerPasswordResetUpdateDataAttributes**](CustomerPasswordResetUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes**](PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPasswordResetUpdateData
 
-`func NewCustomerPasswordResetUpdateData(type_ string, id string, attributes CustomerPasswordResetUpdateDataAttributes, ) *CustomerPasswordResetUpdateData`
+`func NewCustomerPasswordResetUpdateData(type_ string, id string, attributes PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, ) *CustomerPasswordResetUpdateData`
 
 NewCustomerPasswordResetUpdateData instantiates a new CustomerPasswordResetUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPasswordResetUpdateData) GetAttributes() CustomerPasswordResetUpdateDataAttributes`
+`func (o *CustomerPasswordResetUpdateData) GetAttributes() PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPasswordResetUpdateData) GetAttributesOk() (*CustomerPasswordResetUpdateDataAttributes, bool)`
+`func (o *CustomerPasswordResetUpdateData) GetAttributesOk() (*PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPasswordResetUpdateData) SetAttributes(v CustomerPasswordResetUpdateDataAttributes)`
+`func (o *CustomerPasswordResetUpdateData) SetAttributes(v PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

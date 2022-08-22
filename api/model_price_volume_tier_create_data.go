@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceVolumeTierCreateData struct for PriceVolumeTierCreateData
 type PriceVolumeTierCreateData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    PriceVolumeTierCreateDataAttributes     `json:"attributes"`
-	Relationships *PriceVolumeTierCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                            `json:"type"`
+	Attributes    POSTPriceVolumeTiers201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTPriceVolumeTiers201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierCreateData instantiates a new PriceVolumeTierCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierCreateData(type_ string, attributes PriceVolumeTierCreateDataAttributes) *PriceVolumeTierCreateData {
+func NewPriceVolumeTierCreateData(type_ string, attributes POSTPriceVolumeTiers201ResponseDataAttributes) *PriceVolumeTierCreateData {
 	this := PriceVolumeTierCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PriceVolumeTierCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceVolumeTierCreateData) GetAttributes() PriceVolumeTierCreateDataAttributes {
+func (o *PriceVolumeTierCreateData) GetAttributes() POSTPriceVolumeTiers201ResponseDataAttributes {
 	if o == nil {
-		var ret PriceVolumeTierCreateDataAttributes
+		var ret POSTPriceVolumeTiers201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PriceVolumeTierCreateData) GetAttributes() PriceVolumeTierCreateDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreateData) GetAttributesOk() (*PriceVolumeTierCreateDataAttributes, bool) {
+func (o *PriceVolumeTierCreateData) GetAttributesOk() (*POSTPriceVolumeTiers201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PriceVolumeTierCreateData) GetAttributesOk() (*PriceVolumeTierCreateDat
 }
 
 // SetAttributes sets field value
-func (o *PriceVolumeTierCreateData) SetAttributes(v PriceVolumeTierCreateDataAttributes) {
+func (o *PriceVolumeTierCreateData) SetAttributes(v POSTPriceVolumeTiers201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceVolumeTierCreateData) GetRelationships() PriceVolumeTierCreateDataRelationships {
+func (o *PriceVolumeTierCreateData) GetRelationships() POSTPriceVolumeTiers201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PriceVolumeTierCreateDataRelationships
+		var ret POSTPriceVolumeTiers201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PriceVolumeTierCreateData) GetRelationships() PriceVolumeTierCreateData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreateData) GetRelationshipsOk() (*PriceVolumeTierCreateDataRelationships, bool) {
+func (o *PriceVolumeTierCreateData) GetRelationshipsOk() (*POSTPriceVolumeTiers201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PriceVolumeTierCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PriceVolumeTierCreateDataRelationships and assigns it to the Relationships field.
-func (o *PriceVolumeTierCreateData) SetRelationships(v PriceVolumeTierCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTPriceVolumeTiers201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PriceVolumeTierCreateData) SetRelationships(v POSTPriceVolumeTiers201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

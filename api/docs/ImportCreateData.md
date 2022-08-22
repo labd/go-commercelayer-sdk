@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "imports"]
-**Attributes** | [**ImportCreateDataAttributes**](ImportCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTImports201ResponseDataAttributes**](POSTImports201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewImportCreateData
 
-`func NewImportCreateData(type_ string, attributes ImportCreateDataAttributes, ) *ImportCreateData`
+`func NewImportCreateData(type_ string, attributes POSTImports201ResponseDataAttributes, ) *ImportCreateData`
 
 NewImportCreateData instantiates a new ImportCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ImportCreateData) GetAttributes() ImportCreateDataAttributes`
+`func (o *ImportCreateData) GetAttributes() POSTImports201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ImportCreateData) GetAttributesOk() (*ImportCreateDataAttributes, bool)`
+`func (o *ImportCreateData) GetAttributesOk() (*POSTImports201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ImportCreateData) SetAttributes(v ImportCreateDataAttributes)`
+`func (o *ImportCreateData) SetAttributes(v POSTImports201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

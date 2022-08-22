@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerPaymentSourceCreateData struct for CustomerPaymentSourceCreateData
 type CustomerPaymentSourceCreateData struct {
 	// The resource's type
-	Type          string                                        `json:"type"`
-	Attributes    AdyenPaymentCreateDataAttributes              `json:"attributes"`
-	Relationships *CustomerPaymentSourceCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes              `json:"attributes"`
+	Relationships *POSTCustomerPaymentSources201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceCreateData instantiates a new CustomerPaymentSourceCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes) *CustomerPaymentSourceCreateData {
+func NewCustomerPaymentSourceCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerPaymentSourceCreateData {
 	this := CustomerPaymentSourceCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CustomerPaymentSourceCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CustomerPaymentSourceCreateData) GetAttributes() AdyenPaymentCreateData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*AdyenPaymentCreate
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *CustomerPaymentSourceCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerPaymentSourceCreateData) GetRelationships() CustomerPaymentSourceCreateDataRelationships {
+func (o *CustomerPaymentSourceCreateData) GetRelationships() POSTCustomerPaymentSources201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerPaymentSourceCreateDataRelationships
+		var ret POSTCustomerPaymentSources201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CustomerPaymentSourceCreateData) GetRelationships() CustomerPaymentSour
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateData) GetRelationshipsOk() (*CustomerPaymentSourceCreateDataRelationships, bool) {
+func (o *CustomerPaymentSourceCreateData) GetRelationshipsOk() (*POSTCustomerPaymentSources201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CustomerPaymentSourceCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerPaymentSourceCreateDataRelationships and assigns it to the Relationships field.
-func (o *CustomerPaymentSourceCreateData) SetRelationships(v CustomerPaymentSourceCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTCustomerPaymentSources201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *CustomerPaymentSourceCreateData) SetRelationships(v POSTCustomerPaymentSources201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

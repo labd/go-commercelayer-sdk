@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "billing_info_validation_rules"]
-**Attributes** | [**BillingInfoValidationRuleDataAttributes**](BillingInfoValidationRuleDataAttributes.md) |  | 
-**Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationships**](GETBillingInfoValidationRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleData
 
-`func NewBillingInfoValidationRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes, ) *BillingInfoValidationRuleData`
+`func NewBillingInfoValidationRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes, ) *BillingInfoValidationRuleData`
 
 NewBillingInfoValidationRuleData instantiates a new BillingInfoValidationRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BillingInfoValidationRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes`
+`func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BillingInfoValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool)`
+`func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BillingInfoValidationRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes)`
+`func (o *BillingInfoValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *BillingInfoValidationRuleData) GetRelationships() BillingInfoValidationRuleDataRelationships`
+`func (o *BillingInfoValidationRuleData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BillingInfoValidationRuleData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool)`
+`func (o *BillingInfoValidationRuleData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BillingInfoValidationRuleData) SetRelationships(v BillingInfoValidationRuleDataRelationships)`
+`func (o *BillingInfoValidationRuleData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ShippingMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                 `json:"id"`
-	Attributes    ShippingMethodUpdateDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTShippingMethods201ResponseDataRelationships              `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodUpdateData(type_ string, id string, attributes ShippingMethodUpdateDataAttributes) *ShippingMethodUpdateData {
+func NewShippingMethodUpdateData(type_ string, id string, attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) *ShippingMethodUpdateData {
 	this := ShippingMethodUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *ShippingMethodUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingMethodUpdateData) GetAttributes() ShippingMethodUpdateDataAttributes {
+func (o *ShippingMethodUpdateData) GetAttributes() PATCHShippingMethodsShippingMethodId200ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingMethodUpdateDataAttributes
+		var ret PATCHShippingMethodsShippingMethodId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *ShippingMethodUpdateData) GetAttributes() ShippingMethodUpdateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdateData) GetAttributesOk() (*ShippingMethodUpdateDataAttributes, bool) {
+func (o *ShippingMethodUpdateData) GetAttributesOk() (*PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *ShippingMethodUpdateData) GetAttributesOk() (*ShippingMethodUpdateDataA
 }
 
 // SetAttributes sets field value
-func (o *ShippingMethodUpdateData) SetAttributes(v ShippingMethodUpdateDataAttributes) {
+func (o *ShippingMethodUpdateData) SetAttributes(v PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodCreateDataRelationships {
+func (o *ShippingMethodUpdateData) GetRelationships() POSTShippingMethods201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingMethodCreateDataRelationships
+		var ret POSTShippingMethods201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodCreateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*ShippingMethodCreateDataRelationships, bool) {
+func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*POSTShippingMethods201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ShippingMethodUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingMethodCreateDataRelationships and assigns it to the Relationships field.
-func (o *ShippingMethodUpdateData) SetRelationships(v ShippingMethodCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTShippingMethods201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ShippingMethodUpdateData) SetRelationships(v POSTShippingMethods201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

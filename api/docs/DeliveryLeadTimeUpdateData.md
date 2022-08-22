@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "delivery_lead_times"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**DeliveryLeadTimeUpdateDataAttributes**](DeliveryLeadTimeUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**DeliveryLeadTimeUpdateDataRelationships**](DeliveryLeadTimeUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeliveryLeadTimeUpdateData
 
-`func NewDeliveryLeadTimeUpdateData(type_ string, id string, attributes DeliveryLeadTimeUpdateDataAttributes, ) *DeliveryLeadTimeUpdateData`
+`func NewDeliveryLeadTimeUpdateData(type_ string, id string, attributes PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, ) *DeliveryLeadTimeUpdateData`
 
 NewDeliveryLeadTimeUpdateData instantiates a new DeliveryLeadTimeUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *DeliveryLeadTimeUpdateData) GetAttributes() DeliveryLeadTimeUpdateDataAttributes`
+`func (o *DeliveryLeadTimeUpdateData) GetAttributes() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *DeliveryLeadTimeUpdateData) GetAttributesOk() (*DeliveryLeadTimeUpdateDataAttributes, bool)`
+`func (o *DeliveryLeadTimeUpdateData) GetAttributesOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *DeliveryLeadTimeUpdateData) SetAttributes(v DeliveryLeadTimeUpdateDataAttributes)`
+`func (o *DeliveryLeadTimeUpdateData) SetAttributes(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *DeliveryLeadTimeUpdateData) GetRelationships() DeliveryLeadTimeUpdateDataRelationships`
+`func (o *DeliveryLeadTimeUpdateData) GetRelationships() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *DeliveryLeadTimeUpdateData) GetRelationshipsOk() (*DeliveryLeadTimeUpdateDataRelationships, bool)`
+`func (o *DeliveryLeadTimeUpdateData) GetRelationshipsOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *DeliveryLeadTimeUpdateData) SetRelationships(v DeliveryLeadTimeUpdateDataRelationships)`
+`func (o *DeliveryLeadTimeUpdateData) SetRelationships(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

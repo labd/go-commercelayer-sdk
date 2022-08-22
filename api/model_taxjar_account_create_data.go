@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxjarAccountCreateData struct for TaxjarAccountCreateData
 type TaxjarAccountCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    TaxjarAccountCreateDataAttributes      `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTTaxjarAccounts201ResponseDataAttributes      `json:"attributes"`
+	Relationships *POSTAvalaraAccounts201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountCreateData instantiates a new TaxjarAccountCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountCreateData(type_ string, attributes TaxjarAccountCreateDataAttributes) *TaxjarAccountCreateData {
+func NewTaxjarAccountCreateData(type_ string, attributes POSTTaxjarAccounts201ResponseDataAttributes) *TaxjarAccountCreateData {
 	this := TaxjarAccountCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *TaxjarAccountCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxjarAccountCreateData) GetAttributes() TaxjarAccountCreateDataAttributes {
+func (o *TaxjarAccountCreateData) GetAttributes() POSTTaxjarAccounts201ResponseDataAttributes {
 	if o == nil {
-		var ret TaxjarAccountCreateDataAttributes
+		var ret POSTTaxjarAccounts201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *TaxjarAccountCreateData) GetAttributes() TaxjarAccountCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountCreateData) GetAttributesOk() (*TaxjarAccountCreateDataAttributes, bool) {
+func (o *TaxjarAccountCreateData) GetAttributesOk() (*POSTTaxjarAccounts201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *TaxjarAccountCreateData) GetAttributesOk() (*TaxjarAccountCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *TaxjarAccountCreateData) SetAttributes(v TaxjarAccountCreateDataAttributes) {
+func (o *TaxjarAccountCreateData) SetAttributes(v POSTTaxjarAccounts201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxjarAccountCreateData) GetRelationships() AvalaraAccountCreateDataRelationships {
+func (o *TaxjarAccountCreateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AvalaraAccountCreateDataRelationships
+		var ret POSTAvalaraAccounts201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxjarAccountCreateData) GetRelationships() AvalaraAccountCreateDataRel
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountCreateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
+func (o *TaxjarAccountCreateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxjarAccountCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountCreateDataRelationships and assigns it to the Relationships field.
-func (o *TaxjarAccountCreateData) SetRelationships(v AvalaraAccountCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *TaxjarAccountCreateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

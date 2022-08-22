@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "organization"]
-**Attributes** | [**OrganizationDataAttributes**](OrganizationDataAttributes.md) |  | 
+**Attributes** | [**GETOrganizationOrganizationId200ResponseDataAttributes**](GETOrganizationOrganizationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewOrganizationData
 
-`func NewOrganizationData(type_ string, attributes OrganizationDataAttributes, ) *OrganizationData`
+`func NewOrganizationData(type_ string, attributes GETOrganizationOrganizationId200ResponseDataAttributes, ) *OrganizationData`
 
 NewOrganizationData instantiates a new OrganizationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrganizationData) GetAttributes() OrganizationDataAttributes`
+`func (o *OrganizationData) GetAttributes() GETOrganizationOrganizationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrganizationData) GetAttributesOk() (*OrganizationDataAttributes, bool)`
+`func (o *OrganizationData) GetAttributesOk() (*GETOrganizationOrganizationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrganizationData) SetAttributes(v OrganizationDataAttributes)`
+`func (o *OrganizationData) SetAttributes(v GETOrganizationOrganizationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

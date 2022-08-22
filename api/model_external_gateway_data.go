@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalGatewayData struct for ExternalGatewayData
 type ExternalGatewayData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    ExternalGatewayDataAttributes     `json:"attributes"`
-	Relationships *ExternalGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETExternalGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETExternalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayData instantiates a new ExternalGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayData(type_ string, attributes ExternalGatewayDataAttributes) *ExternalGatewayData {
+func NewExternalGatewayData(type_ string, attributes GETExternalGateways200ResponseDataInnerAttributes) *ExternalGatewayData {
 	this := ExternalGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ExternalGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalGatewayData) GetAttributes() ExternalGatewayDataAttributes {
+func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ExternalGatewayDataAttributes
+		var ret GETExternalGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ExternalGatewayData) GetAttributes() ExternalGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayData) GetAttributesOk() (*ExternalGatewayDataAttributes, bool) {
+func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ExternalGatewayData) GetAttributesOk() (*ExternalGatewayDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *ExternalGatewayData) SetAttributes(v ExternalGatewayDataAttributes) {
+func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationships {
+func (o *ExternalGatewayData) GetRelationships() GETExternalGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ExternalGatewayDataRelationships
+		var ret GETExternalGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayData) GetRelationshipsOk() (*ExternalGatewayDataRelationships, bool) {
+func (o *ExternalGatewayData) GetRelationshipsOk() (*GETExternalGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ExternalGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExternalGatewayDataRelationships and assigns it to the Relationships field.
-func (o *ExternalGatewayData) SetRelationships(v ExternalGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETExternalGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ExternalGatewayData) SetRelationships(v GETExternalGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

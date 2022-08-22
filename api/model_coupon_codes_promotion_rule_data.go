@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CouponCodesPromotionRuleData struct for CouponCodesPromotionRuleData
 type CouponCodesPromotionRuleData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes    `json:"attributes"`
-	Relationships *CouponCodesPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                         `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes    `json:"attributes"`
+	Relationships *GETCouponCodesPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponCodesPromotionRuleData instantiates a new CouponCodesPromotionRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *CouponCodesPromotionRuleData {
+func NewCouponCodesPromotionRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *CouponCodesPromotionRuleData {
 	this := CouponCodesPromotionRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *CouponCodesPromotionRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponCodesPromotionRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *CouponCodesPromotionRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *CouponCodesPromotionRuleData) GetAttributes() BillingInfoValidationRule
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *CouponCodesPromotionRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *CouponCodesPromotionRuleData) GetAttributesOk() (*BillingInfoValidation
 }
 
 // SetAttributes sets field value
-func (o *CouponCodesPromotionRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *CouponCodesPromotionRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponCodesPromotionRuleData) GetRelationships() CouponCodesPromotionRuleDataRelationships {
+func (o *CouponCodesPromotionRuleData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CouponCodesPromotionRuleDataRelationships
+		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CouponCodesPromotionRuleData) GetRelationships() CouponCodesPromotionRu
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleData) GetRelationshipsOk() (*CouponCodesPromotionRuleDataRelationships, bool) {
+func (o *CouponCodesPromotionRuleData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CouponCodesPromotionRuleData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CouponCodesPromotionRuleDataRelationships and assigns it to the Relationships field.
-func (o *CouponCodesPromotionRuleData) SetRelationships(v CouponCodesPromotionRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *CouponCodesPromotionRuleData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "captures"]
-**Attributes** | [**CaptureDataAttributes**](CaptureDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CaptureDataRelationships**](CaptureDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETCaptures200ResponseDataInnerAttributes**](GETCaptures200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETCaptures200ResponseDataInnerRelationships**](GETCaptures200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCaptureData
 
-`func NewCaptureData(type_ string, attributes CaptureDataAttributes, ) *CaptureData`
+`func NewCaptureData(type_ string, attributes GETCaptures200ResponseDataInnerAttributes, ) *CaptureData`
 
 NewCaptureData instantiates a new CaptureData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CaptureData) GetAttributes() CaptureDataAttributes`
+`func (o *CaptureData) GetAttributes() GETCaptures200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CaptureData) GetAttributesOk() (*CaptureDataAttributes, bool)`
+`func (o *CaptureData) GetAttributesOk() (*GETCaptures200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CaptureData) SetAttributes(v CaptureDataAttributes)`
+`func (o *CaptureData) SetAttributes(v GETCaptures200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CaptureData) GetRelationships() CaptureDataRelationships`
+`func (o *CaptureData) GetRelationships() GETCaptures200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CaptureData) GetRelationshipsOk() (*CaptureDataRelationships, bool)`
+`func (o *CaptureData) GetRelationshipsOk() (*GETCaptures200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CaptureData) SetRelationships(v CaptureDataRelationships)`
+`func (o *CaptureData) SetRelationships(v GETCaptures200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

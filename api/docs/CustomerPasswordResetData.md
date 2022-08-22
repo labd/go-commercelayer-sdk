@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_password_resets"]
-**Attributes** | [**CustomerPasswordResetDataAttributes**](CustomerPasswordResetDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETCustomerPasswordResets200ResponseDataInnerAttributes**](GETCustomerPasswordResets200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETCustomerPasswordResets200ResponseDataInnerRelationships**](GETCustomerPasswordResets200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPasswordResetData
 
-`func NewCustomerPasswordResetData(type_ string, attributes CustomerPasswordResetDataAttributes, ) *CustomerPasswordResetData`
+`func NewCustomerPasswordResetData(type_ string, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes, ) *CustomerPasswordResetData`
 
 NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPasswordResetData) GetAttributes() CustomerPasswordResetDataAttributes`
+`func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPasswordResetData) GetAttributesOk() (*CustomerPasswordResetDataAttributes, bool)`
+`func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPasswordResetData) SetAttributes(v CustomerPasswordResetDataAttributes)`
+`func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetDataRelationships`
+`func (o *CustomerPasswordResetData) GetRelationships() GETCustomerPasswordResets200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerPasswordResetData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool)`
+`func (o *CustomerPasswordResetData) GetRelationshipsOk() (*GETCustomerPasswordResets200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerPasswordResetData) SetRelationships(v CustomerPasswordResetDataRelationships)`
+`func (o *CustomerPasswordResetData) SetRelationships(v GETCustomerPasswordResets200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

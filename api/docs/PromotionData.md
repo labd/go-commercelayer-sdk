@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "promotions"]
-**Attributes** | [**FreeShippingPromotionDataAttributes**](FreeShippingPromotionDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETFreeShippingPromotions200ResponseDataInnerAttributes**](GETFreeShippingPromotions200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETExternalPromotions200ResponseDataInnerRelationships**](GETExternalPromotions200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPromotionData
 
-`func NewPromotionData(type_ string, attributes FreeShippingPromotionDataAttributes, ) *PromotionData`
+`func NewPromotionData(type_ string, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes, ) *PromotionData`
 
 NewPromotionData instantiates a new PromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PromotionData) GetAttributes() FreeShippingPromotionDataAttributes`
+`func (o *PromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PromotionData) GetAttributesOk() (*FreeShippingPromotionDataAttributes, bool)`
+`func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PromotionData) SetAttributes(v FreeShippingPromotionDataAttributes)`
+`func (o *PromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PromotionData) GetRelationships() ExternalPromotionDataRelationships`
+`func (o *PromotionData) GetRelationships() GETExternalPromotions200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool)`
+`func (o *PromotionData) GetRelationshipsOk() (*GETExternalPromotions200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PromotionData) SetRelationships(v ExternalPromotionDataRelationships)`
+`func (o *PromotionData) SetRelationships(v GETExternalPromotions200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

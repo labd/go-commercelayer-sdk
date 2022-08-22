@@ -1,6 +1,6 @@
 # \AvalaraAccountsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETAvalaraAccounts
 
-> GETAvalaraAccounts(ctx).Execute()
+> GETAvalaraAccounts200Response GETAvalaraAccounts(ctx).Execute()
 
 List all avalara accounts
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.GETAvalaraAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAvalaraAccounts`: GETAvalaraAccounts200Response
+    fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.GETAvalaraAccounts`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETAvalaraAccountsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETAvalaraAccounts200Response**](GETAvalaraAccounts200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETAvalaraAccountsAvalaraAccountId
 
-> AvalaraAccount GETAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).Execute()
+> GETAvalaraAccountsAvalaraAccountId200Response GETAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).Execute()
 
 Retrieve an avalara account
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.GETAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAvalaraAccountsAvalaraAccountId`: AvalaraAccount
+    // response from `GETAvalaraAccountsAvalaraAccountId`: GETAvalaraAccountsAvalaraAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.GETAvalaraAccountsAvalaraAccountId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AvalaraAccount**](AvalaraAccount.md)
+[**GETAvalaraAccountsAvalaraAccountId200Response**](GETAvalaraAccountsAvalaraAccountId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHAvalaraAccountsAvalaraAccountId
 
-> PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
+> PATCHAvalaraAccountsAvalaraAccountId200Response PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
 
 Update an avalara account
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("avalara_accounts", "XGZwpOSrWL", *openapiclient.NewAvalaraAccountUpdateDataAttributes())) // AvalaraAccountUpdate | 
+    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("avalara_accounts", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
     avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAvalaraAccountsAvalaraAccountId`: PATCHAvalaraAccountsAvalaraAccountId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAvalaraAccountsAvalaraAccountId200Response**](PATCHAvalaraAccountsAvalaraAccountId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTAvalaraAccounts
 
-> POSTAvalaraAccounts(ctx).AvalaraAccountCreate(avalaraAccountCreate).Execute()
+> POSTAvalaraAccounts201Response POSTAvalaraAccounts(ctx).AvalaraAccountCreate(avalaraAccountCreate).Execute()
 
 Create an avalara account
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("avalara_accounts", *openapiclient.NewAvalaraAccountCreateDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
+    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("avalara_accounts", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.POSTAvalaraAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTAvalaraAccounts`: POSTAvalaraAccounts201Response
+    fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.POSTAvalaraAccounts`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTAvalaraAccounts201Response**](POSTAvalaraAccounts201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AdyenGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    AdyenGatewayUpdateDataAttributes     `json:"attributes"`
-	Relationships *AdyenGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                    `json:"id"`
+	Attributes    PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTAdyenGateways201ResponseDataRelationships            `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayUpdateData instantiates a new AdyenGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayUpdateData(type_ string, id string, attributes AdyenGatewayUpdateDataAttributes) *AdyenGatewayUpdateData {
+func NewAdyenGatewayUpdateData(type_ string, id string, attributes PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) *AdyenGatewayUpdateData {
 	this := AdyenGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *AdyenGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayUpdateData) GetAttributes() AdyenGatewayUpdateDataAttributes {
+func (o *AdyenGatewayUpdateData) GetAttributes() PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenGatewayUpdateDataAttributes
+		var ret PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *AdyenGatewayUpdateData) GetAttributes() AdyenGatewayUpdateDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayUpdateData) GetAttributesOk() (*AdyenGatewayUpdateDataAttributes, bool) {
+func (o *AdyenGatewayUpdateData) GetAttributesOk() (*PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *AdyenGatewayUpdateData) GetAttributesOk() (*AdyenGatewayUpdateDataAttri
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayUpdateData) SetAttributes(v AdyenGatewayUpdateDataAttributes) {
+func (o *AdyenGatewayUpdateData) SetAttributes(v PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AdyenGatewayUpdateData) GetRelationships() AdyenGatewayCreateDataRelationships {
+func (o *AdyenGatewayUpdateData) GetRelationships() POSTAdyenGateways201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenGatewayCreateDataRelationships
+		var ret POSTAdyenGateways201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *AdyenGatewayUpdateData) GetRelationships() AdyenGatewayCreateDataRelati
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*AdyenGatewayCreateDataRelationships, bool) {
+func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*POSTAdyenGateways201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *AdyenGatewayUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenGatewayCreateDataRelationships and assigns it to the Relationships field.
-func (o *AdyenGatewayUpdateData) SetRelationships(v AdyenGatewayCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAdyenGateways201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *AdyenGatewayUpdateData) SetRelationships(v POSTAdyenGateways201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

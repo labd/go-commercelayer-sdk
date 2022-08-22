@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PackageCreateData struct for PackageCreateData
 type PackageCreateData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    PackageCreateDataAttributes     `json:"attributes"`
-	Relationships *PackageCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    POSTPackages201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTPackages201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageCreateData instantiates a new PackageCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageCreateData(type_ string, attributes PackageCreateDataAttributes) *PackageCreateData {
+func NewPackageCreateData(type_ string, attributes POSTPackages201ResponseDataAttributes) *PackageCreateData {
 	this := PackageCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PackageCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PackageCreateData) GetAttributes() PackageCreateDataAttributes {
+func (o *PackageCreateData) GetAttributes() POSTPackages201ResponseDataAttributes {
 	if o == nil {
-		var ret PackageCreateDataAttributes
+		var ret POSTPackages201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PackageCreateData) GetAttributes() PackageCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PackageCreateData) GetAttributesOk() (*PackageCreateDataAttributes, bool) {
+func (o *PackageCreateData) GetAttributesOk() (*POSTPackages201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PackageCreateData) GetAttributesOk() (*PackageCreateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *PackageCreateData) SetAttributes(v PackageCreateDataAttributes) {
+func (o *PackageCreateData) SetAttributes(v POSTPackages201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PackageCreateData) GetRelationships() PackageCreateDataRelationships {
+func (o *PackageCreateData) GetRelationships() POSTPackages201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PackageCreateDataRelationships
+		var ret POSTPackages201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PackageCreateData) GetRelationships() PackageCreateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PackageCreateData) GetRelationshipsOk() (*PackageCreateDataRelationships, bool) {
+func (o *PackageCreateData) GetRelationshipsOk() (*POSTPackages201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PackageCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PackageCreateDataRelationships and assigns it to the Relationships field.
-func (o *PackageCreateData) SetRelationships(v PackageCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTPackages201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PackageCreateData) SetRelationships(v POSTPackages201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

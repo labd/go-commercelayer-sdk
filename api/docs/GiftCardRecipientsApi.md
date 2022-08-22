@@ -1,6 +1,6 @@
 # \GiftCardRecipientsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETGiftCardRecipients
 
-> GETGiftCardRecipients(ctx).Execute()
+> GETGiftCardRecipients200Response GETGiftCardRecipients(ctx).Execute()
 
 List all gift card recipients
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.GETGiftCardRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETGiftCardRecipients`: GETGiftCardRecipients200Response
+    fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.GETGiftCardRecipients`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETGiftCardRecipientsReque
 
 ### Return type
 
- (empty response body)
+[**GETGiftCardRecipients200Response**](GETGiftCardRecipients200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETGiftCardRecipientsGiftCardRecipientId
 
-> GiftCardRecipient GETGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).Execute()
+> GETGiftCardRecipientsGiftCardRecipientId200Response GETGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).Execute()
 
 Retrieve a gift card recipient
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.GETGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGiftCardRecipientsGiftCardRecipientId`: GiftCardRecipient
+    // response from `GETGiftCardRecipientsGiftCardRecipientId`: GETGiftCardRecipientsGiftCardRecipientId200Response
     fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.GETGiftCardRecipientsGiftCardRecipientId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftCardRecipient**](GiftCardRecipient.md)
+[**GETGiftCardRecipientsGiftCardRecipientId200Response**](GETGiftCardRecipientsGiftCardRecipientId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHGiftCardRecipientsGiftCardRecipientId
 
-> PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
+> PATCHGiftCardRecipientsGiftCardRecipientId200Response PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
 
 Update a gift card recipient
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("gift_card_recipients", "XGZwpOSrWL", *openapiclient.NewCouponRecipientUpdateDataAttributes())) // GiftCardRecipientUpdate | 
+    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("gift_card_recipients", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // GiftCardRecipientUpdate | 
     giftCardRecipientId := "giftCardRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHGiftCardRecipientsGiftCardRecipientId`: PATCHGiftCardRecipientsGiftCardRecipientId200Response
+    fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHGiftCardRecipientsGiftCardRecipientId200Response**](PATCHGiftCardRecipientsGiftCardRecipientId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTGiftCardRecipients
 
-> POSTGiftCardRecipients(ctx).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
+> POSTGiftCardRecipients201Response POSTGiftCardRecipients(ctx).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
 
 Create a gift card recipient
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("gift_card_recipients", *openapiclient.NewCouponRecipientCreateDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
+    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("gift_card_recipients", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.POSTGiftCardRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTGiftCardRecipients`: POSTGiftCardRecipients201Response
+    fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.POSTGiftCardRecipients`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTGiftCardRecipients201Response**](POSTGiftCardRecipients201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

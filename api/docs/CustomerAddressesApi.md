@@ -1,6 +1,6 @@
 # \CustomerAddressesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 ## GETCustomerAddresses
 
-> GETCustomerAddresses(ctx).Execute()
+> GETCustomerAddresses200Response GETCustomerAddresses(ctx).Execute()
 
 List all customer addresses
 
@@ -110,6 +110,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.GETCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCustomerAddresses`: GETCustomerAddresses200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.GETCustomerAddresses`: %v\n", resp)
 }
 ```
 
@@ -124,16 +126,16 @@ Other parameters are passed through a pointer to a apiGETCustomerAddressesReques
 
 ### Return type
 
- (empty response body)
+[**GETCustomerAddresses200Response**](GETCustomerAddresses200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -142,7 +144,7 @@ No authorization required
 
 ## GETCustomerAddressesCustomerAddressId
 
-> CustomerAddress GETCustomerAddressesCustomerAddressId(ctx, customerAddressId).Execute()
+> GETCustomerAddressesCustomerAddressId200Response GETCustomerAddressesCustomerAddressId(ctx, customerAddressId).Execute()
 
 Retrieve a customer address
 
@@ -170,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.GETCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerAddressesCustomerAddressId`: CustomerAddress
+    // response from `GETCustomerAddressesCustomerAddressId`: GETCustomerAddressesCustomerAddressId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.GETCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
@@ -194,11 +196,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerAddress**](CustomerAddress.md)
+[**GETCustomerAddressesCustomerAddressId200Response**](GETCustomerAddressesCustomerAddressId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHCustomerAddressesCustomerAddressId
 
-> PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
+> PATCHCustomerAddressesCustomerAddressId200Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
 
 Update a customer address
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData("customer_addresses", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerAddressUpdate | 
+    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData("customer_addresses", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressUpdate | 
     customerAddressId := "customerAddressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCustomerAddressesCustomerAddressId`: PATCHCustomerAddressesCustomerAddressId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCustomerAddressesCustomerAddressId200Response**](PATCHCustomerAddressesCustomerAddressId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTCustomerAddresses
 
-> POSTCustomerAddresses(ctx).CustomerAddressCreate(customerAddressCreate).Execute()
+> POSTCustomerAddresses201Response POSTCustomerAddresses(ctx).CustomerAddressCreate(customerAddressCreate).Execute()
 
 Create a customer address
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData("customer_addresses", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerAddressCreate | 
+    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData("customer_addresses", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.POSTCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCustomerAddresses`: POSTCustomerAddresses201Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.POSTCustomerAddresses`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCustomerAddresses201Response**](POSTCustomerAddresses201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \StockLineItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -136,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -204,7 +204,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ No authorization required
 
 ## GETStockLineItems
 
-> GETStockLineItems(ctx).Execute()
+> GETStockLineItems200Response GETStockLineItems(ctx).Execute()
 
 List all stock line items
 
@@ -245,6 +245,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLineItemsApi.GETStockLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETStockLineItems`: GETStockLineItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `StockLineItemsApi.GETStockLineItems`: %v\n", resp)
 }
 ```
 
@@ -259,16 +261,16 @@ Other parameters are passed through a pointer to a apiGETStockLineItemsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETStockLineItems200Response**](GETStockLineItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -277,7 +279,7 @@ No authorization required
 
 ## GETStockLineItemsStockLineItemId
 
-> StockLineItem GETStockLineItemsStockLineItemId(ctx, stockLineItemId).Execute()
+> GETStockLineItemsStockLineItemId200Response GETStockLineItemsStockLineItemId(ctx, stockLineItemId).Execute()
 
 Retrieve a stock line item
 
@@ -305,7 +307,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLineItemsApi.GETStockLineItemsStockLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockLineItemsStockLineItemId`: StockLineItem
+    // response from `GETStockLineItemsStockLineItemId`: GETStockLineItemsStockLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLineItemsApi.GETStockLineItemsStockLineItemId`: %v\n", resp)
 }
 ```
@@ -329,11 +331,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockLineItem**](StockLineItem.md)
+[**GETStockLineItemsStockLineItemId200Response**](GETStockLineItemsStockLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

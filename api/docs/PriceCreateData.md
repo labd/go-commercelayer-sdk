@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "prices"]
-**Attributes** | [**PriceCreateDataAttributes**](PriceCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PriceCreateDataRelationships**](PriceCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTPrices201ResponseDataAttributes**](POSTPrices201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTPrices201ResponseDataRelationships**](POSTPrices201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceCreateData
 
-`func NewPriceCreateData(type_ string, attributes PriceCreateDataAttributes, ) *PriceCreateData`
+`func NewPriceCreateData(type_ string, attributes POSTPrices201ResponseDataAttributes, ) *PriceCreateData`
 
 NewPriceCreateData instantiates a new PriceCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PriceCreateData) GetAttributes() PriceCreateDataAttributes`
+`func (o *PriceCreateData) GetAttributes() POSTPrices201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceCreateData) GetAttributesOk() (*PriceCreateDataAttributes, bool)`
+`func (o *PriceCreateData) GetAttributesOk() (*POSTPrices201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceCreateData) SetAttributes(v PriceCreateDataAttributes)`
+`func (o *PriceCreateData) SetAttributes(v POSTPrices201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PriceCreateData) GetRelationships() PriceCreateDataRelationships`
+`func (o *PriceCreateData) GetRelationships() POSTPrices201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceCreateData) GetRelationshipsOk() (*PriceCreateDataRelationships, bool)`
+`func (o *PriceCreateData) GetRelationshipsOk() (*POSTPrices201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceCreateData) SetRelationships(v PriceCreateDataRelationships)`
+`func (o *PriceCreateData) SetRelationships(v POSTPrices201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

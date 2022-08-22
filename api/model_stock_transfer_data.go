@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockTransferData struct for StockTransferData
 type StockTransferData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    StockTransferDataAttributes     `json:"attributes"`
-	Relationships *StockTransferDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETStockTransfers200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETStockTransfers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferData instantiates a new StockTransferData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferData(type_ string, attributes StockTransferDataAttributes) *StockTransferData {
+func NewStockTransferData(type_ string, attributes GETStockTransfers200ResponseDataInnerAttributes) *StockTransferData {
 	this := StockTransferData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *StockTransferData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferData) GetAttributes() StockTransferDataAttributes {
+func (o *StockTransferData) GetAttributes() GETStockTransfers200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StockTransferDataAttributes
+		var ret GETStockTransfers200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *StockTransferData) GetAttributes() StockTransferDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferData) GetAttributesOk() (*StockTransferDataAttributes, bool) {
+func (o *StockTransferData) GetAttributesOk() (*GETStockTransfers200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *StockTransferData) GetAttributesOk() (*StockTransferDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StockTransferData) SetAttributes(v StockTransferDataAttributes) {
+func (o *StockTransferData) SetAttributes(v GETStockTransfers200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockTransferData) GetRelationships() StockTransferDataRelationships {
+func (o *StockTransferData) GetRelationships() GETStockTransfers200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret StockTransferDataRelationships
+		var ret GETStockTransfers200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockTransferData) GetRelationships() StockTransferDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferData) GetRelationshipsOk() (*StockTransferDataRelationships, bool) {
+func (o *StockTransferData) GetRelationshipsOk() (*GETStockTransfers200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockTransferData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given StockTransferDataRelationships and assigns it to the Relationships field.
-func (o *StockTransferData) SetRelationships(v StockTransferDataRelationships) {
+// SetRelationships gets a reference to the given GETStockTransfers200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *StockTransferData) SetRelationships(v GETStockTransfers200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

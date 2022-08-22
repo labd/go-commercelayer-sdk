@@ -1,6 +1,6 @@
 # \MarketsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -296,7 +296,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -568,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -704,7 +704,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -772,7 +772,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -840,7 +840,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -908,7 +908,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -976,7 +976,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1058,7 +1058,7 @@ No authorization required
 
 ## GETMarkets
 
-> GETMarkets(ctx).Execute()
+> GETMarkets200Response GETMarkets(ctx).Execute()
 
 List all markets
 
@@ -1085,6 +1085,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETMarkets`: GETMarkets200Response
+    fmt.Fprintf(os.Stdout, "Response from `MarketsApi.GETMarkets`: %v\n", resp)
 }
 ```
 
@@ -1099,16 +1101,16 @@ Other parameters are passed through a pointer to a apiGETMarketsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETMarkets200Response**](GETMarkets200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1117,7 +1119,7 @@ No authorization required
 
 ## GETMarketsMarketId
 
-> Market GETMarketsMarketId(ctx, marketId).Execute()
+> GETMarketsMarketId200Response GETMarketsMarketId(ctx, marketId).Execute()
 
 Retrieve a market
 
@@ -1145,7 +1147,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETMarketsMarketId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMarketsMarketId`: Market
+    // response from `GETMarketsMarketId`: GETMarketsMarketId200Response
     fmt.Fprintf(os.Stdout, "Response from `MarketsApi.GETMarketsMarketId`: %v\n", resp)
 }
 ```
@@ -1169,11 +1171,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Market**](Market.md)
+[**GETMarketsMarketId200Response**](GETMarketsMarketId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1241,7 +1243,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1309,7 +1311,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1377,7 +1379,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1445,7 +1447,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1513,7 +1515,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1581,7 +1583,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1649,7 +1651,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1717,7 +1719,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1785,7 +1787,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1853,7 +1855,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1867,7 +1869,7 @@ No authorization required
 
 ## PATCHMarketsMarketId
 
-> PATCHMarketsMarketId(ctx, marketId).MarketUpdate(marketUpdate).Execute()
+> PATCHMarketsMarketId200Response PATCHMarketsMarketId(ctx, marketId).MarketUpdate(marketUpdate).Execute()
 
 Update a market
 
@@ -1886,7 +1888,7 @@ import (
 )
 
 func main() {
-    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("markets", "XGZwpOSrWL", *openapiclient.NewMarketUpdateDataAttributes())) // MarketUpdate | 
+    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("markets", "XGZwpOSrWL", *openapiclient.NewPATCHMarketsMarketId200ResponseDataAttributes())) // MarketUpdate | 
     marketId := "marketId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1896,6 +1898,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.PATCHMarketsMarketId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHMarketsMarketId`: PATCHMarketsMarketId200Response
+    fmt.Fprintf(os.Stdout, "Response from `MarketsApi.PATCHMarketsMarketId`: %v\n", resp)
 }
 ```
 
@@ -1919,16 +1923,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHMarketsMarketId200Response**](PATCHMarketsMarketId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1937,7 +1941,7 @@ No authorization required
 
 ## POSTMarkets
 
-> POSTMarkets(ctx).MarketCreate(marketCreate).Execute()
+> POSTMarkets201Response POSTMarkets(ctx).MarketCreate(marketCreate).Execute()
 
 Create a market
 
@@ -1956,7 +1960,7 @@ import (
 )
 
 func main() {
-    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("markets", *openapiclient.NewMarketCreateDataAttributes("EU Market"))) // MarketCreate | 
+    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("markets", *openapiclient.NewPOSTMarkets201ResponseDataAttributes("EU Market"))) // MarketCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1965,6 +1969,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.POSTMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTMarkets`: POSTMarkets201Response
+    fmt.Fprintf(os.Stdout, "Response from `MarketsApi.POSTMarkets`: %v\n", resp)
 }
 ```
 
@@ -1983,16 +1989,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTMarkets201Response**](POSTMarkets201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PercentageDiscountPromotionData struct for PercentageDiscountPromotionData
 type PercentageDiscountPromotionData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    PercentageDiscountPromotionDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships     `json:"relationships,omitempty"`
+	Type          string                                                        `json:"type"`
+	Attributes    GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships     `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionData(type_ string, attributes PercentageDiscountPromotionDataAttributes) *PercentageDiscountPromotionData {
+func NewPercentageDiscountPromotionData(type_ string, attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes) *PercentageDiscountPromotionData {
 	this := PercentageDiscountPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *PercentageDiscountPromotionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountPromotionDataAttributes {
+func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PercentageDiscountPromotionDataAttributes
+		var ret GETPercentageDiscountPromotions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountProm
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscountPromotionDataAttributes, bool) {
+func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscount
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionData) SetAttributes(v PercentageDiscountPromotionDataAttributes) {
+func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships {
+func (o *PercentageDiscountPromotionData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret FixedPricePromotionDataRelationships
+		var ret GETFixedPricePromotions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotion
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
+func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PercentageDiscountPromotionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given FixedPricePromotionDataRelationships and assigns it to the Relationships field.
-func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotionDataRelationships) {
+// SetRelationships gets a reference to the given GETFixedPricePromotions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PercentageDiscountPromotionData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

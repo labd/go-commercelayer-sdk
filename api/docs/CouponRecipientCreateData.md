@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "coupon_recipients"]
-**Attributes** | [**CouponRecipientCreateDataAttributes**](CouponRecipientCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTCouponRecipients201ResponseDataAttributes**](POSTCouponRecipients201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTCouponRecipients201ResponseDataRelationships**](POSTCouponRecipients201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponRecipientCreateData
 
-`func NewCouponRecipientCreateData(type_ string, attributes CouponRecipientCreateDataAttributes, ) *CouponRecipientCreateData`
+`func NewCouponRecipientCreateData(type_ string, attributes POSTCouponRecipients201ResponseDataAttributes, ) *CouponRecipientCreateData`
 
 NewCouponRecipientCreateData instantiates a new CouponRecipientCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponRecipientCreateData) GetAttributes() CouponRecipientCreateDataAttributes`
+`func (o *CouponRecipientCreateData) GetAttributes() POSTCouponRecipients201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponRecipientCreateData) GetAttributesOk() (*CouponRecipientCreateDataAttributes, bool)`
+`func (o *CouponRecipientCreateData) GetAttributesOk() (*POSTCouponRecipients201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponRecipientCreateData) SetAttributes(v CouponRecipientCreateDataAttributes)`
+`func (o *CouponRecipientCreateData) SetAttributes(v POSTCouponRecipients201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CouponRecipientCreateData) GetRelationships() CouponRecipientCreateDataRelationships`
+`func (o *CouponRecipientCreateData) GetRelationships() POSTCouponRecipients201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CouponRecipientCreateData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool)`
+`func (o *CouponRecipientCreateData) GetRelationshipsOk() (*POSTCouponRecipients201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CouponRecipientCreateData) SetRelationships(v CouponRecipientCreateDataRelationships)`
+`func (o *CouponRecipientCreateData) SetRelationships(v POSTCouponRecipients201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

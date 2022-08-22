@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "percentage_discount_promotions"]
-**Attributes** | [**PercentageDiscountPromotionDataAttributes**](PercentageDiscountPromotionDataAttributes.md) |  | 
-**Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETPercentageDiscountPromotions200ResponseDataInnerAttributes**](GETPercentageDiscountPromotions200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETFixedPricePromotions200ResponseDataInnerRelationships**](GETFixedPricePromotions200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPercentageDiscountPromotionData
 
-`func NewPercentageDiscountPromotionData(type_ string, attributes PercentageDiscountPromotionDataAttributes, ) *PercentageDiscountPromotionData`
+`func NewPercentageDiscountPromotionData(type_ string, attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes, ) *PercentageDiscountPromotionData`
 
 NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountPromotionDataAttributes`
+`func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscountPromotionDataAttributes, bool)`
+`func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PercentageDiscountPromotionData) SetAttributes(v PercentageDiscountPromotionDataAttributes)`
+`func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships`
+`func (o *PercentageDiscountPromotionData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool)`
+`func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotionDataRelationships)`
+`func (o *PercentageDiscountPromotionData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type KlarnaGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                `json:"id"`
-	Attributes    KlarnaGatewayUpdateDataAttributes     `json:"attributes"`
-	Relationships *KlarnaGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTKlarnaGateways201ResponseDataRelationships             `json:"relationships,omitempty"`
 }
 
 // NewKlarnaGatewayUpdateData instantiates a new KlarnaGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaGatewayUpdateData(type_ string, id string, attributes KlarnaGatewayUpdateDataAttributes) *KlarnaGatewayUpdateData {
+func NewKlarnaGatewayUpdateData(type_ string, id string, attributes PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) *KlarnaGatewayUpdateData {
 	this := KlarnaGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *KlarnaGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaGatewayUpdateData) GetAttributes() KlarnaGatewayUpdateDataAttributes {
+func (o *KlarnaGatewayUpdateData) GetAttributes() PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret KlarnaGatewayUpdateDataAttributes
+		var ret PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *KlarnaGatewayUpdateData) GetAttributes() KlarnaGatewayUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*KlarnaGatewayUpdateDataAttributes, bool) {
+func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*KlarnaGatewayUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *KlarnaGatewayUpdateData) SetAttributes(v KlarnaGatewayUpdateDataAttributes) {
+func (o *KlarnaGatewayUpdateData) SetAttributes(v PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *KlarnaGatewayUpdateData) GetRelationships() KlarnaGatewayCreateDataRelationships {
+func (o *KlarnaGatewayUpdateData) GetRelationships() POSTKlarnaGateways201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret KlarnaGatewayCreateDataRelationships
+		var ret POSTKlarnaGateways201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *KlarnaGatewayUpdateData) GetRelationships() KlarnaGatewayCreateDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayUpdateData) GetRelationshipsOk() (*KlarnaGatewayCreateDataRelationships, bool) {
+func (o *KlarnaGatewayUpdateData) GetRelationshipsOk() (*POSTKlarnaGateways201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *KlarnaGatewayUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given KlarnaGatewayCreateDataRelationships and assigns it to the Relationships field.
-func (o *KlarnaGatewayUpdateData) SetRelationships(v KlarnaGatewayCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTKlarnaGateways201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *KlarnaGatewayUpdateData) SetRelationships(v POSTKlarnaGateways201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

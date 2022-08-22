@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingWeightTierCreateData struct for ShippingWeightTierCreateData
 type ShippingWeightTierCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    ShippingWeightTierCreateDataAttributes     `json:"attributes"`
-	Relationships *ShippingWeightTierCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    POSTShippingWeightTiers201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTShippingWeightTiers201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierCreateData instantiates a new ShippingWeightTierCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierCreateData(type_ string, attributes ShippingWeightTierCreateDataAttributes) *ShippingWeightTierCreateData {
+func NewShippingWeightTierCreateData(type_ string, attributes POSTShippingWeightTiers201ResponseDataAttributes) *ShippingWeightTierCreateData {
 	this := ShippingWeightTierCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ShippingWeightTierCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingWeightTierCreateData) GetAttributes() ShippingWeightTierCreateDataAttributes {
+func (o *ShippingWeightTierCreateData) GetAttributes() POSTShippingWeightTiers201ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingWeightTierCreateDataAttributes
+		var ret POSTShippingWeightTiers201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ShippingWeightTierCreateData) GetAttributes() ShippingWeightTierCreateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreateData) GetAttributesOk() (*ShippingWeightTierCreateDataAttributes, bool) {
+func (o *ShippingWeightTierCreateData) GetAttributesOk() (*POSTShippingWeightTiers201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ShippingWeightTierCreateData) GetAttributesOk() (*ShippingWeightTierCre
 }
 
 // SetAttributes sets field value
-func (o *ShippingWeightTierCreateData) SetAttributes(v ShippingWeightTierCreateDataAttributes) {
+func (o *ShippingWeightTierCreateData) SetAttributes(v POSTShippingWeightTiers201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingWeightTierCreateData) GetRelationships() ShippingWeightTierCreateDataRelationships {
+func (o *ShippingWeightTierCreateData) GetRelationships() POSTShippingWeightTiers201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingWeightTierCreateDataRelationships
+		var ret POSTShippingWeightTiers201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShippingWeightTierCreateData) GetRelationships() ShippingWeightTierCrea
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreateData) GetRelationshipsOk() (*ShippingWeightTierCreateDataRelationships, bool) {
+func (o *ShippingWeightTierCreateData) GetRelationshipsOk() (*POSTShippingWeightTiers201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShippingWeightTierCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingWeightTierCreateDataRelationships and assigns it to the Relationships field.
-func (o *ShippingWeightTierCreateData) SetRelationships(v ShippingWeightTierCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTShippingWeightTiers201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ShippingWeightTierCreateData) SetRelationships(v POSTShippingWeightTiers201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

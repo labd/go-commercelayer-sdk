@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type TaxCategoryUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                              `json:"id"`
-	Attributes    TaxCategoryUpdateDataAttributes     `json:"attributes"`
-	Relationships *TaxCategoryUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                       `json:"id"`
+	Attributes    PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryUpdateData instantiates a new TaxCategoryUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryUpdateData(type_ string, id string, attributes TaxCategoryUpdateDataAttributes) *TaxCategoryUpdateData {
+func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) *TaxCategoryUpdateData {
 	this := TaxCategoryUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *TaxCategoryUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes {
+func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes {
 	if o == nil {
-		var ret TaxCategoryUpdateDataAttributes
+		var ret PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttributes, bool) {
+func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryUpdateData) SetAttributes(v TaxCategoryUpdateDataAttributes) {
+func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCategoryUpdateData) GetRelationships() TaxCategoryUpdateDataRelationships {
+func (o *TaxCategoryUpdateData) GetRelationships() PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret TaxCategoryUpdateDataRelationships
+		var ret PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *TaxCategoryUpdateData) GetRelationships() TaxCategoryUpdateDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*TaxCategoryUpdateDataRelationships, bool) {
+func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *TaxCategoryUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given TaxCategoryUpdateDataRelationships and assigns it to the Relationships field.
-func (o *TaxCategoryUpdateData) SetRelationships(v TaxCategoryUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *TaxCategoryUpdateData) SetRelationships(v PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

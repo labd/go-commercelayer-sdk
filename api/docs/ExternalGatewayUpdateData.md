@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "external_gateways"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ExternalGatewayUpdateDataAttributes**](ExternalGatewayUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes**](PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayUpdateData
 
-`func NewExternalGatewayUpdateData(type_ string, id string, attributes ExternalGatewayUpdateDataAttributes, ) *ExternalGatewayUpdateData`
+`func NewExternalGatewayUpdateData(type_ string, id string, attributes PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, ) *ExternalGatewayUpdateData`
 
 NewExternalGatewayUpdateData instantiates a new ExternalGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalGatewayUpdateData) GetAttributes() ExternalGatewayUpdateDataAttributes`
+`func (o *ExternalGatewayUpdateData) GetAttributes() PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayUpdateData) GetAttributesOk() (*ExternalGatewayUpdateDataAttributes, bool)`
+`func (o *ExternalGatewayUpdateData) GetAttributesOk() (*PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayUpdateData) SetAttributes(v ExternalGatewayUpdateDataAttributes)`
+`func (o *ExternalGatewayUpdateData) SetAttributes(v PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

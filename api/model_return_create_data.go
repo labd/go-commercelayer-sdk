@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ReturnCreateData struct for ReturnCreateData
 type ReturnCreateData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    AdyenPaymentCreateDataAttributes `json:"attributes"`
-	Relationships *ReturnCreateDataRelationships   `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTReturns201ResponseDataRelationships   `json:"relationships,omitempty"`
 }
 
 // NewReturnCreateData instantiates a new ReturnCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes) *ReturnCreateData {
+func NewReturnCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *ReturnCreateData {
 	this := ReturnCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ReturnCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *ReturnCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ReturnCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *ReturnCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ReturnCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *ReturnCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *ReturnCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnCreateData) GetRelationships() ReturnCreateDataRelationships {
+func (o *ReturnCreateData) GetRelationships() POSTReturns201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ReturnCreateDataRelationships
+		var ret POSTReturns201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ReturnCreateData) GetRelationships() ReturnCreateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnCreateData) GetRelationshipsOk() (*ReturnCreateDataRelationships, bool) {
+func (o *ReturnCreateData) GetRelationshipsOk() (*POSTReturns201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ReturnCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ReturnCreateDataRelationships and assigns it to the Relationships field.
-func (o *ReturnCreateData) SetRelationships(v ReturnCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTReturns201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ReturnCreateData) SetRelationships(v POSTReturns201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

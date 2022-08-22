@@ -1,6 +1,6 @@
 # \WebhooksApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ No authorization required
 
 ## GETWebhooks
 
-> GETWebhooks(ctx).Execute()
+> GETWebhooks200Response GETWebhooks(ctx).Execute()
 
 List all webhooks
 
@@ -247,6 +247,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETWebhooks`: GETWebhooks200Response
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GETWebhooks`: %v\n", resp)
 }
 ```
 
@@ -261,16 +263,16 @@ Other parameters are passed through a pointer to a apiGETWebhooksRequest struct 
 
 ### Return type
 
- (empty response body)
+[**GETWebhooks200Response**](GETWebhooks200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -279,7 +281,7 @@ No authorization required
 
 ## GETWebhooksWebhookId
 
-> Webhook GETWebhooksWebhookId(ctx, webhookId).Execute()
+> GETWebhooksWebhookId200Response GETWebhooksWebhookId(ctx, webhookId).Execute()
 
 Retrieve a webhook
 
@@ -307,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWebhooksWebhookId`: Webhook
+    // response from `GETWebhooksWebhookId`: GETWebhooksWebhookId200Response
     fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GETWebhooksWebhookId`: %v\n", resp)
 }
 ```
@@ -331,11 +333,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Webhook**](Webhook.md)
+[**GETWebhooksWebhookId200Response**](GETWebhooksWebhookId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHWebhooksWebhookId
 
-> PATCHWebhooksWebhookId(ctx, webhookId).WebhookUpdate(webhookUpdate).Execute()
+> PATCHWebhooksWebhookId200Response PATCHWebhooksWebhookId(ctx, webhookId).WebhookUpdate(webhookUpdate).Execute()
 
 Update a webhook
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("webhooks", "XGZwpOSrWL", *openapiclient.NewWebhookUpdateDataAttributes())) // WebhookUpdate | 
+    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("webhooks", "XGZwpOSrWL", *openapiclient.NewPATCHWebhooksWebhookId200ResponseDataAttributes())) // WebhookUpdate | 
     webhookId := "webhookId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PATCHWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHWebhooksWebhookId`: PATCHWebhooksWebhookId200Response
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.PATCHWebhooksWebhookId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHWebhooksWebhookId200Response**](PATCHWebhooksWebhookId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTWebhooks
 
-> POSTWebhooks(ctx).WebhookCreate(webhookCreate).Execute()
+> POSTWebhooks201Response POSTWebhooks(ctx).WebhookCreate(webhookCreate).Execute()
 
 Create a webhook
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("webhooks", *openapiclient.NewWebhookCreateDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
+    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("webhooks", *openapiclient.NewPOSTWebhooks201ResponseDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.POSTWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTWebhooks`: POSTWebhooks201Response
+    fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.POSTWebhooks`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTWebhooks201Response**](POSTWebhooks201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \PriceVolumeTiersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETPriceVolumeTiers
 
-> GETPriceVolumeTiers(ctx).Execute()
+> GETPriceVolumeTiers200Response GETPriceVolumeTiers(ctx).Execute()
 
 List all price volume tiers
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.GETPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPriceVolumeTiers`: GETPriceVolumeTiers200Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.GETPriceVolumeTiers`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETPriceVolumeTiersRequest
 
 ### Return type
 
- (empty response body)
+[**GETPriceVolumeTiers200Response**](GETPriceVolumeTiers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETPriceVolumeTiersPriceVolumeTierId
 
-> PriceVolumeTier GETPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).Execute()
+> GETPriceVolumeTiersPriceVolumeTierId200Response GETPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).Execute()
 
 Retrieve a price volume tier
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.GETPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceVolumeTiersPriceVolumeTierId`: PriceVolumeTier
+    // response from `GETPriceVolumeTiersPriceVolumeTierId`: GETPriceVolumeTiersPriceVolumeTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.GETPriceVolumeTiersPriceVolumeTierId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceVolumeTier**](PriceVolumeTier.md)
+[**GETPriceVolumeTiersPriceVolumeTierId200Response**](GETPriceVolumeTiersPriceVolumeTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHPriceVolumeTiersPriceVolumeTierId
 
-> PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
+> PATCHPriceVolumeTiersPriceVolumeTierId200Response PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
 
 Update a price volume tier
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("price_volume_tiers", "XGZwpOSrWL", *openapiclient.NewPriceVolumeTierUpdateDataAttributes())) // PriceVolumeTierUpdate | 
+    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("price_volume_tiers", "XGZwpOSrWL", *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes())) // PriceVolumeTierUpdate | 
     priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPriceVolumeTiersPriceVolumeTierId`: PATCHPriceVolumeTiersPriceVolumeTierId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPriceVolumeTiersPriceVolumeTierId200Response**](PATCHPriceVolumeTiersPriceVolumeTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTPriceVolumeTiers
 
-> POSTPriceVolumeTiers(ctx).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
+> POSTPriceVolumeTiers201Response POSTPriceVolumeTiers(ctx).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
 
 Create a price volume tier
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("price_volume_tiers", *openapiclient.NewPriceVolumeTierCreateDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
+    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("price_volume_tiers", *openapiclient.NewPOSTPriceVolumeTiers201ResponseDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.POSTPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPriceVolumeTiers`: POSTPriceVolumeTiers201Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.POSTPriceVolumeTiers`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPriceVolumeTiers201Response**](POSTPriceVolumeTiers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

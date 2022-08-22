@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type OrderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                        `json:"id"`
-	Attributes    OrderUpdateDataAttributes     `json:"attributes"`
-	Relationships *OrderCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                      `json:"id"`
+	Attributes    PATCHOrdersOrderId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTOrders201ResponseDataRelationships     `json:"relationships,omitempty"`
 }
 
 // NewOrderUpdateData instantiates a new OrderUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderUpdateData(type_ string, id string, attributes OrderUpdateDataAttributes) *OrderUpdateData {
+func NewOrderUpdateData(type_ string, id string, attributes PATCHOrdersOrderId200ResponseDataAttributes) *OrderUpdateData {
 	this := OrderUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *OrderUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderUpdateData) GetAttributes() OrderUpdateDataAttributes {
+func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderId200ResponseDataAttributes {
 	if o == nil {
-		var ret OrderUpdateDataAttributes
+		var ret PATCHOrdersOrderId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *OrderUpdateData) GetAttributes() OrderUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderUpdateData) GetAttributesOk() (*OrderUpdateDataAttributes, bool) {
+func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *OrderUpdateData) GetAttributesOk() (*OrderUpdateDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *OrderUpdateData) SetAttributes(v OrderUpdateDataAttributes) {
+func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderUpdateData) GetRelationships() OrderCreateDataRelationships {
+func (o *OrderUpdateData) GetRelationships() POSTOrders201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderCreateDataRelationships
+		var ret POSTOrders201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *OrderUpdateData) GetRelationships() OrderCreateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderUpdateData) GetRelationshipsOk() (*OrderCreateDataRelationships, bool) {
+func (o *OrderUpdateData) GetRelationshipsOk() (*POSTOrders201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *OrderUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderCreateDataRelationships and assigns it to the Relationships field.
-func (o *OrderUpdateData) SetRelationships(v OrderCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTOrders201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *OrderUpdateData) SetRelationships(v POSTOrders201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

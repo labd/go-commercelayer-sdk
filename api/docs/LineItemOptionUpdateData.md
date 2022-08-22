@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**LineItemOptionUpdateDataAttributes**](LineItemOptionUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**LineItemOptionUpdateDataRelationships**](LineItemOptionUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes**](PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships**](PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionUpdateData
 
-`func NewLineItemOptionUpdateData(type_ string, id string, attributes LineItemOptionUpdateDataAttributes, ) *LineItemOptionUpdateData`
+`func NewLineItemOptionUpdateData(type_ string, id string, attributes PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes, ) *LineItemOptionUpdateData`
 
 NewLineItemOptionUpdateData instantiates a new LineItemOptionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *LineItemOptionUpdateData) GetAttributes() LineItemOptionUpdateDataAttributes`
+`func (o *LineItemOptionUpdateData) GetAttributes() PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemOptionUpdateData) GetAttributesOk() (*LineItemOptionUpdateDataAttributes, bool)`
+`func (o *LineItemOptionUpdateData) GetAttributesOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemOptionUpdateData) SetAttributes(v LineItemOptionUpdateDataAttributes)`
+`func (o *LineItemOptionUpdateData) SetAttributes(v PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *LineItemOptionUpdateData) GetRelationships() LineItemOptionUpdateDataRelationships`
+`func (o *LineItemOptionUpdateData) GetRelationships() PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*LineItemOptionUpdateDataRelationships, bool)`
+`func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *LineItemOptionUpdateData) SetRelationships(v LineItemOptionUpdateDataRelationships)`
+`func (o *LineItemOptionUpdateData) SetRelationships(v PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

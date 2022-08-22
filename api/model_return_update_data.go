@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ReturnUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                          `json:"id"`
-	Attributes    ReturnUpdateDataAttributes      `json:"attributes"`
-	Relationships *PackageUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                              `json:"id"`
+	Attributes    PATCHReturnsReturnId200ResponseDataAttributes       `json:"attributes"`
+	Relationships *PATCHPackagesPackageId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewReturnUpdateData instantiates a new ReturnUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnUpdateData(type_ string, id string, attributes ReturnUpdateDataAttributes) *ReturnUpdateData {
+func NewReturnUpdateData(type_ string, id string, attributes PATCHReturnsReturnId200ResponseDataAttributes) *ReturnUpdateData {
 	this := ReturnUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *ReturnUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnUpdateData) GetAttributes() ReturnUpdateDataAttributes {
+func (o *ReturnUpdateData) GetAttributes() PATCHReturnsReturnId200ResponseDataAttributes {
 	if o == nil {
-		var ret ReturnUpdateDataAttributes
+		var ret PATCHReturnsReturnId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *ReturnUpdateData) GetAttributes() ReturnUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnUpdateData) GetAttributesOk() (*ReturnUpdateDataAttributes, bool) {
+func (o *ReturnUpdateData) GetAttributesOk() (*PATCHReturnsReturnId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *ReturnUpdateData) GetAttributesOk() (*ReturnUpdateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ReturnUpdateData) SetAttributes(v ReturnUpdateDataAttributes) {
+func (o *ReturnUpdateData) SetAttributes(v PATCHReturnsReturnId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships {
+func (o *ReturnUpdateData) GetRelationships() PATCHPackagesPackageId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PackageUpdateDataRelationships
+		var ret PATCHPackagesPackageId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnUpdateData) GetRelationshipsOk() (*PackageUpdateDataRelationships, bool) {
+func (o *ReturnUpdateData) GetRelationshipsOk() (*PATCHPackagesPackageId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ReturnUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PackageUpdateDataRelationships and assigns it to the Relationships field.
-func (o *ReturnUpdateData) SetRelationships(v PackageUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHPackagesPackageId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *ReturnUpdateData) SetRelationships(v PATCHPackagesPackageId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

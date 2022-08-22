@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // KlarnaGatewayData struct for KlarnaGatewayData
 type KlarnaGatewayData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    KlarnaGatewayDataAttributes     `json:"attributes"`
-	Relationships *KlarnaGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETKlarnaGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewKlarnaGatewayData instantiates a new KlarnaGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaGatewayData(type_ string, attributes KlarnaGatewayDataAttributes) *KlarnaGatewayData {
+func NewKlarnaGatewayData(type_ string, attributes GETKlarnaGateways200ResponseDataInnerAttributes) *KlarnaGatewayData {
 	this := KlarnaGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *KlarnaGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
+func (o *KlarnaGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret KlarnaGatewayDataAttributes
+		var ret GETKlarnaGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *KlarnaGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, bool) {
+func (o *KlarnaGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *KlarnaGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *KlarnaGatewayData) SetAttributes(v KlarnaGatewayDataAttributes) {
+func (o *KlarnaGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *KlarnaGatewayData) GetRelationships() KlarnaGatewayDataRelationships {
+func (o *KlarnaGatewayData) GetRelationships() GETKlarnaGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret KlarnaGatewayDataRelationships
+		var ret GETKlarnaGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *KlarnaGatewayData) GetRelationships() KlarnaGatewayDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayData) GetRelationshipsOk() (*KlarnaGatewayDataRelationships, bool) {
+func (o *KlarnaGatewayData) GetRelationshipsOk() (*GETKlarnaGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *KlarnaGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given KlarnaGatewayDataRelationships and assigns it to the Relationships field.
-func (o *KlarnaGatewayData) SetRelationships(v KlarnaGatewayDataRelationships) {
+// SetRelationships gets a reference to the given GETKlarnaGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *KlarnaGatewayData) SetRelationships(v GETKlarnaGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

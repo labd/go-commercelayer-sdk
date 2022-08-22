@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "sku_options"]
-**Attributes** | [**SkuOptionDataAttributes**](SkuOptionDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CarrierAccountDataRelationships**](CarrierAccountDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETSkuOptions200ResponseDataInnerAttributes**](GETSkuOptions200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETCarrierAccounts200ResponseDataInnerRelationships**](GETCarrierAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuOptionData
 
-`func NewSkuOptionData(type_ string, attributes SkuOptionDataAttributes, ) *SkuOptionData`
+`func NewSkuOptionData(type_ string, attributes GETSkuOptions200ResponseDataInnerAttributes, ) *SkuOptionData`
 
 NewSkuOptionData instantiates a new SkuOptionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuOptionData) GetAttributes() SkuOptionDataAttributes`
+`func (o *SkuOptionData) GetAttributes() GETSkuOptions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuOptionData) GetAttributesOk() (*SkuOptionDataAttributes, bool)`
+`func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuOptionData) SetAttributes(v SkuOptionDataAttributes)`
+`func (o *SkuOptionData) SetAttributes(v GETSkuOptions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *SkuOptionData) GetRelationships() CarrierAccountDataRelationships`
+`func (o *SkuOptionData) GetRelationships() GETCarrierAccounts200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuOptionData) GetRelationshipsOk() (*CarrierAccountDataRelationships, bool)`
+`func (o *SkuOptionData) GetRelationshipsOk() (*GETCarrierAccounts200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuOptionData) SetRelationships(v CarrierAccountDataRelationships)`
+`func (o *SkuOptionData) SetRelationships(v GETCarrierAccounts200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CheckoutComGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    CheckoutComGatewayUpdateDataAttributes     `json:"attributes"`
-	Relationships *CheckoutComGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                `json:"id"`
+	Attributes    PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTCheckoutComGateways201ResponseDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes CheckoutComGatewayUpdateDataAttributes) *CheckoutComGatewayUpdateData {
+func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) *CheckoutComGatewayUpdateData {
 	this := CheckoutComGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *CheckoutComGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateDataAttributes {
+func (o *CheckoutComGatewayUpdateData) GetAttributes() PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret CheckoutComGatewayUpdateDataAttributes
+		var ret PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpdateDataAttributes, bool) {
+func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpd
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComGatewayUpdateData) SetAttributes(v CheckoutComGatewayUpdateDataAttributes) {
+func (o *CheckoutComGatewayUpdateData) SetAttributes(v PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CheckoutComGatewayUpdateData) GetRelationships() CheckoutComGatewayCreateDataRelationships {
+func (o *CheckoutComGatewayUpdateData) GetRelationships() POSTCheckoutComGateways201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CheckoutComGatewayCreateDataRelationships
+		var ret POSTCheckoutComGateways201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CheckoutComGatewayUpdateData) GetRelationships() CheckoutComGatewayCrea
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayUpdateData) GetRelationshipsOk() (*CheckoutComGatewayCreateDataRelationships, bool) {
+func (o *CheckoutComGatewayUpdateData) GetRelationshipsOk() (*POSTCheckoutComGateways201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CheckoutComGatewayUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CheckoutComGatewayCreateDataRelationships and assigns it to the Relationships field.
-func (o *CheckoutComGatewayUpdateData) SetRelationships(v CheckoutComGatewayCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTCheckoutComGateways201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *CheckoutComGatewayUpdateData) SetRelationships(v POSTCheckoutComGateways201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

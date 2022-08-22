@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AttachmentData struct for AttachmentData
 type AttachmentData struct {
 	// The resource's type
-	Type          string                       `json:"type"`
-	Attributes    AttachmentDataAttributes     `json:"attributes"`
-	Relationships *AttachmentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    GETAttachments200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETAttachments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentData instantiates a new AttachmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentData(type_ string, attributes AttachmentDataAttributes) *AttachmentData {
+func NewAttachmentData(type_ string, attributes GETAttachments200ResponseDataInnerAttributes) *AttachmentData {
 	this := AttachmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *AttachmentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentData) GetAttributes() AttachmentDataAttributes {
+func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret AttachmentDataAttributes
+		var ret GETAttachments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *AttachmentData) GetAttributes() AttachmentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentData) GetAttributesOk() (*AttachmentDataAttributes, bool) {
+func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *AttachmentData) GetAttributesOk() (*AttachmentDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *AttachmentData) SetAttributes(v AttachmentDataAttributes) {
+func (o *AttachmentData) SetAttributes(v GETAttachments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentData) GetRelationships() AttachmentDataRelationships {
+func (o *AttachmentData) GetRelationships() GETAttachments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AttachmentDataRelationships
+		var ret GETAttachments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AttachmentData) GetRelationships() AttachmentDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentData) GetRelationshipsOk() (*AttachmentDataRelationships, bool) {
+func (o *AttachmentData) GetRelationshipsOk() (*GETAttachments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AttachmentData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AttachmentDataRelationships and assigns it to the Relationships field.
-func (o *AttachmentData) SetRelationships(v AttachmentDataRelationships) {
+// SetRelationships gets a reference to the given GETAttachments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *AttachmentData) SetRelationships(v GETAttachments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

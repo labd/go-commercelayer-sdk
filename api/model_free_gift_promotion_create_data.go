@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // FreeGiftPromotionCreateData struct for FreeGiftPromotionCreateData
 type FreeGiftPromotionCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    FreeGiftPromotionCreateDataAttributes       `json:"attributes"`
-	Relationships *FixedPricePromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    POSTFreeGiftPromotions201ResponseDataAttributes       `json:"attributes"`
+	Relationships *POSTFixedPricePromotions201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFreeGiftPromotionCreateData instantiates a new FreeGiftPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeGiftPromotionCreateData(type_ string, attributes FreeGiftPromotionCreateDataAttributes) *FreeGiftPromotionCreateData {
+func NewFreeGiftPromotionCreateData(type_ string, attributes POSTFreeGiftPromotions201ResponseDataAttributes) *FreeGiftPromotionCreateData {
 	this := FreeGiftPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *FreeGiftPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FreeGiftPromotionCreateData) GetAttributes() FreeGiftPromotionCreateDataAttributes {
+func (o *FreeGiftPromotionCreateData) GetAttributes() POSTFreeGiftPromotions201ResponseDataAttributes {
 	if o == nil {
-		var ret FreeGiftPromotionCreateDataAttributes
+		var ret POSTFreeGiftPromotions201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *FreeGiftPromotionCreateData) GetAttributes() FreeGiftPromotionCreateDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionCreateData) GetAttributesOk() (*FreeGiftPromotionCreateDataAttributes, bool) {
+func (o *FreeGiftPromotionCreateData) GetAttributesOk() (*POSTFreeGiftPromotions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *FreeGiftPromotionCreateData) GetAttributesOk() (*FreeGiftPromotionCreat
 }
 
 // SetAttributes sets field value
-func (o *FreeGiftPromotionCreateData) SetAttributes(v FreeGiftPromotionCreateDataAttributes) {
+func (o *FreeGiftPromotionCreateData) SetAttributes(v POSTFreeGiftPromotions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FreeGiftPromotionCreateData) GetRelationships() FixedPricePromotionCreateDataRelationships {
+func (o *FreeGiftPromotionCreateData) GetRelationships() POSTFixedPricePromotions201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret FixedPricePromotionCreateDataRelationships
+		var ret POSTFixedPricePromotions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *FreeGiftPromotionCreateData) GetRelationships() FixedPricePromotionCrea
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionCreateData) GetRelationshipsOk() (*FixedPricePromotionCreateDataRelationships, bool) {
+func (o *FreeGiftPromotionCreateData) GetRelationshipsOk() (*POSTFixedPricePromotions201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *FreeGiftPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given FixedPricePromotionCreateDataRelationships and assigns it to the Relationships field.
-func (o *FreeGiftPromotionCreateData) SetRelationships(v FixedPricePromotionCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTFixedPricePromotions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *FreeGiftPromotionCreateData) SetRelationships(v POSTFixedPricePromotions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

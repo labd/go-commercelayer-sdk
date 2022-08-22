@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type SkuUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                      `json:"id"`
-	Attributes    SkuUpdateDataAttributes     `json:"attributes"`
-	Relationships *SkuUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                      `json:"id"`
+	Attributes    PATCHSkusSkuId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHSkusSkuId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuUpdateData instantiates a new SkuUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuUpdateData(type_ string, id string, attributes SkuUpdateDataAttributes) *SkuUpdateData {
+func NewSkuUpdateData(type_ string, id string, attributes PATCHSkusSkuId200ResponseDataAttributes) *SkuUpdateData {
 	this := SkuUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *SkuUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuUpdateData) GetAttributes() SkuUpdateDataAttributes {
+func (o *SkuUpdateData) GetAttributes() PATCHSkusSkuId200ResponseDataAttributes {
 	if o == nil {
-		var ret SkuUpdateDataAttributes
+		var ret PATCHSkusSkuId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *SkuUpdateData) GetAttributes() SkuUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuUpdateData) GetAttributesOk() (*SkuUpdateDataAttributes, bool) {
+func (o *SkuUpdateData) GetAttributesOk() (*PATCHSkusSkuId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *SkuUpdateData) GetAttributesOk() (*SkuUpdateDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *SkuUpdateData) SetAttributes(v SkuUpdateDataAttributes) {
+func (o *SkuUpdateData) SetAttributes(v PATCHSkusSkuId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuUpdateData) GetRelationships() SkuUpdateDataRelationships {
+func (o *SkuUpdateData) GetRelationships() PATCHSkusSkuId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret SkuUpdateDataRelationships
+		var ret PATCHSkusSkuId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *SkuUpdateData) GetRelationships() SkuUpdateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuUpdateData) GetRelationshipsOk() (*SkuUpdateDataRelationships, bool) {
+func (o *SkuUpdateData) GetRelationshipsOk() (*PATCHSkusSkuId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *SkuUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given SkuUpdateDataRelationships and assigns it to the Relationships field.
-func (o *SkuUpdateData) SetRelationships(v SkuUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHSkusSkuId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *SkuUpdateData) SetRelationships(v PATCHSkusSkuId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

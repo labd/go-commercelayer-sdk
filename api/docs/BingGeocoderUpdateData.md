@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "bing_geocoders"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**BingGeocoderUpdateDataAttributes**](BingGeocoderUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes**](PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewBingGeocoderUpdateData
 
-`func NewBingGeocoderUpdateData(type_ string, id string, attributes BingGeocoderUpdateDataAttributes, ) *BingGeocoderUpdateData`
+`func NewBingGeocoderUpdateData(type_ string, id string, attributes PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes, ) *BingGeocoderUpdateData`
 
 NewBingGeocoderUpdateData instantiates a new BingGeocoderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *BingGeocoderUpdateData) GetAttributes() BingGeocoderUpdateDataAttributes`
+`func (o *BingGeocoderUpdateData) GetAttributes() PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BingGeocoderUpdateData) GetAttributesOk() (*BingGeocoderUpdateDataAttributes, bool)`
+`func (o *BingGeocoderUpdateData) GetAttributesOk() (*PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BingGeocoderUpdateData) SetAttributes(v BingGeocoderUpdateDataAttributes)`
+`func (o *BingGeocoderUpdateData) SetAttributes(v PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

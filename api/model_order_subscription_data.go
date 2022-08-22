@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderSubscriptionData struct for OrderSubscriptionData
 type OrderSubscriptionData struct {
 	// The resource's type
-	Type          string                              `json:"type"`
-	Attributes    OrderSubscriptionDataAttributes     `json:"attributes"`
-	Relationships *OrderSubscriptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    GETOrderSubscriptions200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETOrderSubscriptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionData instantiates a new OrderSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionData(type_ string, attributes OrderSubscriptionDataAttributes) *OrderSubscriptionData {
+func NewOrderSubscriptionData(type_ string, attributes GETOrderSubscriptions200ResponseDataInnerAttributes) *OrderSubscriptionData {
 	this := OrderSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *OrderSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderSubscriptionData) GetAttributes() OrderSubscriptionDataAttributes {
+func (o *OrderSubscriptionData) GetAttributes() GETOrderSubscriptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret OrderSubscriptionDataAttributes
+		var ret GETOrderSubscriptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *OrderSubscriptionData) GetAttributes() OrderSubscriptionDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionData) GetAttributesOk() (*OrderSubscriptionDataAttributes, bool) {
+func (o *OrderSubscriptionData) GetAttributesOk() (*GETOrderSubscriptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *OrderSubscriptionData) GetAttributesOk() (*OrderSubscriptionDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *OrderSubscriptionData) SetAttributes(v OrderSubscriptionDataAttributes) {
+func (o *OrderSubscriptionData) SetAttributes(v GETOrderSubscriptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderSubscriptionData) GetRelationships() OrderSubscriptionDataRelationships {
+func (o *OrderSubscriptionData) GetRelationships() GETOrderSubscriptions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderSubscriptionDataRelationships
+		var ret GETOrderSubscriptions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderSubscriptionData) GetRelationships() OrderSubscriptionDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionData) GetRelationshipsOk() (*OrderSubscriptionDataRelationships, bool) {
+func (o *OrderSubscriptionData) GetRelationshipsOk() (*GETOrderSubscriptions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderSubscriptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderSubscriptionDataRelationships and assigns it to the Relationships field.
-func (o *OrderSubscriptionData) SetRelationships(v OrderSubscriptionDataRelationships) {
+// SetRelationships gets a reference to the given GETOrderSubscriptions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *OrderSubscriptionData) SetRelationships(v GETOrderSubscriptions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

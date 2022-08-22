@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BingGeocoderData struct for BingGeocoderData
 type BingGeocoderData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    BingGeocoderDataAttributes     `json:"attributes"`
-	Relationships *BingGeocoderDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETBingGeocoders200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETBingGeocoders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewBingGeocoderData instantiates a new BingGeocoderData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBingGeocoderData(type_ string, attributes BingGeocoderDataAttributes) *BingGeocoderData {
+func NewBingGeocoderData(type_ string, attributes GETBingGeocoders200ResponseDataInnerAttributes) *BingGeocoderData {
 	this := BingGeocoderData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *BingGeocoderData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BingGeocoderData) GetAttributes() BingGeocoderDataAttributes {
+func (o *BingGeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BingGeocoderDataAttributes
+		var ret GETBingGeocoders200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *BingGeocoderData) GetAttributes() BingGeocoderDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderData) GetAttributesOk() (*BingGeocoderDataAttributes, bool) {
+func (o *BingGeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *BingGeocoderData) GetAttributesOk() (*BingGeocoderDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *BingGeocoderData) SetAttributes(v BingGeocoderDataAttributes) {
+func (o *BingGeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BingGeocoderData) GetRelationships() BingGeocoderDataRelationships {
+func (o *BingGeocoderData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret BingGeocoderDataRelationships
+		var ret GETBingGeocoders200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BingGeocoderData) GetRelationships() BingGeocoderDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderData) GetRelationshipsOk() (*BingGeocoderDataRelationships, bool) {
+func (o *BingGeocoderData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BingGeocoderData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BingGeocoderDataRelationships and assigns it to the Relationships field.
-func (o *BingGeocoderData) SetRelationships(v BingGeocoderDataRelationships) {
+// SetRelationships gets a reference to the given GETBingGeocoders200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *BingGeocoderData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "braintree_gateways"]
-**Attributes** | [**BraintreeGatewayDataAttributes**](BraintreeGatewayDataAttributes.md) |  | 
-**Relationships** | Pointer to [**BraintreeGatewayDataRelationships**](BraintreeGatewayDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETBraintreeGateways200ResponseDataInnerAttributes**](GETBraintreeGateways200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETBraintreeGateways200ResponseDataInnerRelationships**](GETBraintreeGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreeGatewayData
 
-`func NewBraintreeGatewayData(type_ string, attributes BraintreeGatewayDataAttributes, ) *BraintreeGatewayData`
+`func NewBraintreeGatewayData(type_ string, attributes GETBraintreeGateways200ResponseDataInnerAttributes, ) *BraintreeGatewayData`
 
 NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreeGatewayData) GetAttributes() BraintreeGatewayDataAttributes`
+`func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreeGatewayData) GetAttributesOk() (*BraintreeGatewayDataAttributes, bool)`
+`func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreeGatewayData) SetAttributes(v BraintreeGatewayDataAttributes)`
+`func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationships`
+`func (o *BraintreeGatewayData) GetRelationships() GETBraintreeGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BraintreeGatewayData) GetRelationshipsOk() (*BraintreeGatewayDataRelationships, bool)`
+`func (o *BraintreeGatewayData) GetRelationshipsOk() (*GETBraintreeGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BraintreeGatewayData) SetRelationships(v BraintreeGatewayDataRelationships)`
+`func (o *BraintreeGatewayData) SetRelationships(v GETBraintreeGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

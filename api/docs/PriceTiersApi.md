@@ -1,6 +1,6 @@
 # \PriceTiersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## GETPriceTiers
 
-> GETPriceTiers(ctx).Execute()
+> GETPriceTiers200Response GETPriceTiers(ctx).Execute()
 
 List all price tiers
 
@@ -107,6 +107,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceTiersApi.GETPriceTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPriceTiers`: GETPriceTiers200Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceTiersApi.GETPriceTiers`: %v\n", resp)
 }
 ```
 
@@ -121,16 +123,16 @@ Other parameters are passed through a pointer to a apiGETPriceTiersRequest struc
 
 ### Return type
 
- (empty response body)
+[**GETPriceTiers200Response**](GETPriceTiers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -139,7 +141,7 @@ No authorization required
 
 ## GETPriceTiersPriceTierId
 
-> PriceTier GETPriceTiersPriceTierId(ctx, priceTierId).Execute()
+> GETPriceTiersPriceTierId200Response GETPriceTiersPriceTierId(ctx, priceTierId).Execute()
 
 Retrieve a price tier
 
@@ -167,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceTiersApi.GETPriceTiersPriceTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceTiersPriceTierId`: PriceTier
+    // response from `GETPriceTiersPriceTierId`: GETPriceTiersPriceTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceTiersApi.GETPriceTiersPriceTierId`: %v\n", resp)
 }
 ```
@@ -191,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceTier**](PriceTier.md)
+[**GETPriceTiersPriceTierId200Response**](GETPriceTiersPriceTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "manual_tax_calculators"]
-**Attributes** | [**ManualTaxCalculatorDataAttributes**](ManualTaxCalculatorDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ManualTaxCalculatorDataRelationships**](ManualTaxCalculatorDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETManualTaxCalculators200ResponseDataInnerAttributes**](GETManualTaxCalculators200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETManualTaxCalculators200ResponseDataInnerRelationships**](GETManualTaxCalculators200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewManualTaxCalculatorData
 
-`func NewManualTaxCalculatorData(type_ string, attributes ManualTaxCalculatorDataAttributes, ) *ManualTaxCalculatorData`
+`func NewManualTaxCalculatorData(type_ string, attributes GETManualTaxCalculators200ResponseDataInnerAttributes, ) *ManualTaxCalculatorData`
 
 NewManualTaxCalculatorData instantiates a new ManualTaxCalculatorData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ManualTaxCalculatorData) GetAttributes() ManualTaxCalculatorDataAttributes`
+`func (o *ManualTaxCalculatorData) GetAttributes() GETManualTaxCalculators200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualTaxCalculatorData) GetAttributesOk() (*ManualTaxCalculatorDataAttributes, bool)`
+`func (o *ManualTaxCalculatorData) GetAttributesOk() (*GETManualTaxCalculators200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualTaxCalculatorData) SetAttributes(v ManualTaxCalculatorDataAttributes)`
+`func (o *ManualTaxCalculatorData) SetAttributes(v GETManualTaxCalculators200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ManualTaxCalculatorData) GetRelationships() ManualTaxCalculatorDataRelationships`
+`func (o *ManualTaxCalculatorData) GetRelationships() GETManualTaxCalculators200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ManualTaxCalculatorData) GetRelationshipsOk() (*ManualTaxCalculatorDataRelationships, bool)`
+`func (o *ManualTaxCalculatorData) GetRelationshipsOk() (*GETManualTaxCalculators200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ManualTaxCalculatorData) SetRelationships(v ManualTaxCalculatorDataRelationships)`
+`func (o *ManualTaxCalculatorData) SetRelationships(v GETManualTaxCalculators200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

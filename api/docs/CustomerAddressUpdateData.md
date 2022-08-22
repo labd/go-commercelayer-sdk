@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "customer_addresses"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CustomerAddressUpdateDataRelationships**](CustomerAddressUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships**](PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerAddressUpdateData
 
-`func NewCustomerAddressUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes, ) *CustomerAddressUpdateData`
+`func NewCustomerAddressUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CustomerAddressUpdateData`
 
 NewCustomerAddressUpdateData instantiates a new CustomerAddressUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerAddressUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes`
+`func (o *CustomerAddressUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerAddressUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
+`func (o *CustomerAddressUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerAddressUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
+`func (o *CustomerAddressUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateDataRelationships`
+`func (o *CustomerAddressUpdateData) GetRelationships() PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressUpdateDataRelationships, bool)`
+`func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressUpdateDataRelationships)`
+`func (o *CustomerAddressUpdateData) SetRelationships(v PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

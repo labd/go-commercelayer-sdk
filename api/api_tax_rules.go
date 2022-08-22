@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // TaxRulesApiService TaxRulesApi service
 type TaxRulesApiService service
 
-type ApiDELETETaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiDELETETaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService *TaxRulesApiService
 	taxRuleId  string
 }
 
-func (r ApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETETaxRulesTaxRuleIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiDELETETaxRulesTaxRuleIdRequest
+ @return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiDELETETaxRulesTaxRuleIdRequest {
-	return ApiDELETETaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
+	return TaxRulesApiDELETETaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -51,7 +51,7 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRul
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r ApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r ApiDELETETaxRulesT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdTaxRulesRequest struct {
+type TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest struct {
 	ctx                   context.Context
 	ApiService            *TaxRulesApiService
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdTaxRulesExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the tax rules associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdTaxRulesRequest
+ @return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 */
-func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdTaxRulesRequest {
-	return ApiGETManualTaxCalculatorIdTaxRulesRequest{
+func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
+	return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -143,7 +143,7 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
+func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r ApiGETMan
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRulesRequest struct {
+type TaxRulesApiGETTaxRulesRequest struct {
 	ctx        context.Context
 	ApiService *TaxRulesApiService
 }
 
-func (r ApiGETTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiGETTaxRulesRequest) Execute() (*GETTaxRules200Response, *http.Response, error) {
 	return r.ApiService.GETTaxRulesExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETTaxRules List all tax rules
 List all tax rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETTaxRulesRequest
+ @return TaxRulesApiGETTaxRulesRequest
 */
-func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) ApiGETTaxRulesRequest {
-	return ApiGETTaxRulesRequest{
+func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxRulesRequest {
+	return TaxRulesApiGETTaxRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.Response, error) {
+//  @return GETTaxRules200Response
+func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*GETTaxRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTaxRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tax_rules"
@@ -260,7 +262,7 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r ApiGETTaxRulesRequest) (*http.
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiGETTaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService *TaxRulesApiService
 	taxRuleId  string
 }
 
-func (r ApiGETTaxRulesTaxRuleIdRequest) Execute() (*TaxRule, *http.Response, error) {
+func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiGETTaxRulesTaxRuleIdRequest
+ @return TaxRulesApiGETTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiGETTaxRulesTaxRuleIdRequest {
-	return ApiGETTaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
+	return TaxRulesApiGETTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -323,13 +334,13 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId
 }
 
 // Execute executes the request
-//  @return TaxRule
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r ApiGETTaxRulesTaxRuleIdRequest) (*TaxRule, *http.Response, error) {
+//  @return GETTaxRulesTaxRuleId200Response
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxRule
+		localVarReturnValue *GETTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRulesTaxRuleId")
@@ -398,19 +409,19 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r ApiGETTaxRulesTaxRule
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHTaxRulesTaxRuleIdRequest struct {
+type TaxRulesApiPATCHTaxRulesTaxRuleIdRequest struct {
 	ctx           context.Context
 	ApiService    *TaxRulesApiService
 	taxRuleUpdate *TaxRuleUpdate
 	taxRuleId     string
 }
 
-func (r ApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) ApiPATCHTaxRulesTaxRuleIdRequest {
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
 	r.taxRuleUpdate = &taxRuleUpdate
 	return r
 }
 
-func (r ApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiPATCHTaxRulesTaxRuleIdRequest
+ @return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) ApiPATCHTaxRulesTaxRuleIdRequest {
-	return ApiPATCHTaxRulesTaxRuleIdRequest{
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
+	return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -432,16 +443,18 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRule
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTaxRuleIdRequest) (*http.Response, error) {
+//  @return PATCHTaxRulesTaxRuleId200Response
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.PATCHTaxRulesTaxRuleId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
@@ -451,7 +464,7 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTax
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.taxRuleUpdate == nil {
-		return nil, reportError("taxRuleUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("taxRuleUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTax
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTax
 	localVarPostBody = r.taxRuleUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r ApiPATCHTaxRulesTax
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTTaxRulesRequest struct {
+type TaxRulesApiPOSTTaxRulesRequest struct {
 	ctx           context.Context
 	ApiService    *TaxRulesApiService
 	taxRuleCreate *TaxRuleCreate
 }
 
-func (r ApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreate) ApiPOSTTaxRulesRequest {
+func (r TaxRulesApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreate) TaxRulesApiPOSTTaxRulesRequest {
 	r.taxRuleCreate = &taxRuleCreate
 	return r
 }
 
-func (r ApiPOSTTaxRulesRequest) Execute() (*http.Response, error) {
+func (r TaxRulesApiPOSTTaxRulesRequest) Execute() (*POSTTaxRules201Response, *http.Response, error) {
 	return r.ApiService.POSTTaxRulesExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTTaxRules Create a tax rule
 Create a tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTTaxRulesRequest
+ @return TaxRulesApiPOSTTaxRulesRequest
 */
-func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) ApiPOSTTaxRulesRequest {
-	return ApiPOSTTaxRulesRequest{
+func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTaxRulesRequest {
+	return TaxRulesApiPOSTTaxRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*http.Response, error) {
+//  @return POSTTaxRules201Response
+func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*POSTTaxRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTTaxRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.POSTTaxRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/tax_rules"
@@ -550,7 +574,7 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.taxRuleCreate == nil {
-		return nil, reportError("taxRuleCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("taxRuleCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*htt
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*htt
 	localVarPostBody = r.taxRuleCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r ApiPOSTTaxRulesRequest) (*htt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

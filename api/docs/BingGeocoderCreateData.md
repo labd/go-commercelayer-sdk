@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "bing_geocoders"]
-**Attributes** | [**BingGeocoderCreateDataAttributes**](BingGeocoderCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTBingGeocoders201ResponseDataAttributes**](POSTBingGeocoders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewBingGeocoderCreateData
 
-`func NewBingGeocoderCreateData(type_ string, attributes BingGeocoderCreateDataAttributes, ) *BingGeocoderCreateData`
+`func NewBingGeocoderCreateData(type_ string, attributes POSTBingGeocoders201ResponseDataAttributes, ) *BingGeocoderCreateData`
 
 NewBingGeocoderCreateData instantiates a new BingGeocoderCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BingGeocoderCreateData) GetAttributes() BingGeocoderCreateDataAttributes`
+`func (o *BingGeocoderCreateData) GetAttributes() POSTBingGeocoders201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BingGeocoderCreateData) GetAttributesOk() (*BingGeocoderCreateDataAttributes, bool)`
+`func (o *BingGeocoderCreateData) GetAttributesOk() (*POSTBingGeocoders201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BingGeocoderCreateData) SetAttributes(v BingGeocoderCreateDataAttributes)`
+`func (o *BingGeocoderCreateData) SetAttributes(v POSTBingGeocoders201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

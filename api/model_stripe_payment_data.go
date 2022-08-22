@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StripePaymentData struct for StripePaymentData
 type StripePaymentData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    StripePaymentDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETStripePayments200ResponseDataInnerAttributes    `json:"attributes"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentData instantiates a new StripePaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripePaymentData(type_ string, attributes StripePaymentDataAttributes) *StripePaymentData {
+func NewStripePaymentData(type_ string, attributes GETStripePayments200ResponseDataInnerAttributes) *StripePaymentData {
 	this := StripePaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *StripePaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripePaymentData) GetAttributes() StripePaymentDataAttributes {
+func (o *StripePaymentData) GetAttributes() GETStripePayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StripePaymentDataAttributes
+		var ret GETStripePayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *StripePaymentData) GetAttributes() StripePaymentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripePaymentData) GetAttributesOk() (*StripePaymentDataAttributes, bool) {
+func (o *StripePaymentData) GetAttributesOk() (*GETStripePayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *StripePaymentData) GetAttributesOk() (*StripePaymentDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StripePaymentData) SetAttributes(v StripePaymentDataAttributes) {
+func (o *StripePaymentData) SetAttributes(v GETStripePayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StripePaymentData) GetRelationships() AdyenPaymentDataRelationships {
+func (o *StripePaymentData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentDataRelationships
+		var ret GETAdyenPayments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StripePaymentData) GetRelationships() AdyenPaymentDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StripePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
+func (o *StripePaymentData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StripePaymentData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentDataRelationships and assigns it to the Relationships field.
-func (o *StripePaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
+// SetRelationships gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *StripePaymentData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

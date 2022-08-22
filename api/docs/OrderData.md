@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "orders"]
-**Attributes** | [**OrderDataAttributes**](OrderDataAttributes.md) |  | 
-**Relationships** | Pointer to [**OrderDataRelationships**](OrderDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETOrders200ResponseDataInnerAttributes**](GETOrders200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETOrders200ResponseDataInnerRelationships**](GETOrders200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderData
 
-`func NewOrderData(type_ string, attributes OrderDataAttributes, ) *OrderData`
+`func NewOrderData(type_ string, attributes GETOrders200ResponseDataInnerAttributes, ) *OrderData`
 
 NewOrderData instantiates a new OrderData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderData) GetAttributes() OrderDataAttributes`
+`func (o *OrderData) GetAttributes() GETOrders200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderData) GetAttributesOk() (*OrderDataAttributes, bool)`
+`func (o *OrderData) GetAttributesOk() (*GETOrders200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderData) SetAttributes(v OrderDataAttributes)`
+`func (o *OrderData) SetAttributes(v GETOrders200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *OrderData) GetRelationships() OrderDataRelationships`
+`func (o *OrderData) GetRelationships() GETOrders200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderData) GetRelationshipsOk() (*OrderDataRelationships, bool)`
+`func (o *OrderData) GetRelationshipsOk() (*GETOrders200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderData) SetRelationships(v OrderDataRelationships)`
+`func (o *OrderData) SetRelationships(v GETOrders200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

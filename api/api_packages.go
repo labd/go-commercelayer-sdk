@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // PackagesApiService PackagesApi service
 type PackagesApiService service
 
-type ApiDELETEPackagesPackageIdRequest struct {
+type PackagesApiDELETEPackagesPackageIdRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
 	packageId  string
 }
 
-func (r ApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
+func (r PackagesApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEPackagesPackageIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiDELETEPackagesPackageIdRequest
+ @return PackagesApiDELETEPackagesPackageIdRequest
 */
-func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) ApiDELETEPackagesPackageIdRequest {
-	return ApiDELETEPackagesPackageIdRequest{
+func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest {
+	return PackagesApiDELETEPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -51,7 +51,7 @@ func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packag
 }
 
 // Execute executes the request
-func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r ApiDELETEPackagesPackageIdRequest) (*http.Response, error) {
+func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEPackagesPackageIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r ApiDELETEPackagesP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackagesRequest struct {
+type PackagesApiGETPackagesRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
 }
 
-func (r ApiGETPackagesRequest) Execute() (*http.Response, error) {
+func (r PackagesApiGETPackagesRequest) Execute() (*GETPackages200Response, *http.Response, error) {
 	return r.ApiService.GETPackagesExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETPackages List all packages
 List all packages
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPackagesRequest
+ @return PackagesApiGETPackagesRequest
 */
-func (a *PackagesApiService) GETPackages(ctx context.Context) ApiGETPackagesRequest {
-	return ApiGETPackagesRequest{
+func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPackagesRequest {
+	return PackagesApiGETPackagesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PackagesApiService) GETPackagesExecute(r ApiGETPackagesRequest) (*http.Response, error) {
+//  @return GETPackages200Response
+func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest) (*GETPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.GETPackages")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/packages"
@@ -168,7 +170,7 @@ func (a *PackagesApiService) GETPackagesExecute(r ApiGETPackagesRequest) (*http.
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *PackagesApiService) GETPackagesExecute(r ApiGETPackagesRequest) (*http.
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *PackagesApiService) GETPackagesExecute(r ApiGETPackagesRequest) (*http.
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPackagesPackageIdRequest struct {
+type PackagesApiGETPackagesPackageIdRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
 	packageId  string
 }
 
-func (r ApiGETPackagesPackageIdRequest) Execute() (*ModelPackage, *http.Response, error) {
+func (r PackagesApiGETPackagesPackageIdRequest) Execute() (*GETPackagesPackageId200Response, *http.Response, error) {
 	return r.ApiService.GETPackagesPackageIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackagesPackageIdRequest
+ @return PackagesApiGETPackagesPackageIdRequest
 */
-func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) ApiGETPackagesPackageIdRequest {
-	return ApiGETPackagesPackageIdRequest{
+func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest {
+	return PackagesApiGETPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -231,13 +242,13 @@ func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId
 }
 
 // Execute executes the request
-//  @return ModelPackage
-func (a *PackagesApiService) GETPackagesPackageIdExecute(r ApiGETPackagesPackageIdRequest) (*ModelPackage, *http.Response, error) {
+//  @return GETPackagesPackageId200Response
+func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackagesPackageIdRequest) (*GETPackagesPackageId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ModelPackage
+		localVarReturnValue *GETPackagesPackageId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.GETPackagesPackageId")
@@ -306,13 +317,13 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r ApiGETPackagesPackage
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdPackageRequest struct {
+type PackagesApiGETParcelIdPackageRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
 	parcelId   string
 }
 
-func (r ApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
+func (r PackagesApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdPackageExecute(r)
 }
 
@@ -323,10 +334,10 @@ Retrieve the package associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdPackageRequest
+ @return PackagesApiGETParcelIdPackageRequest
 */
-func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) ApiGETParcelIdPackageRequest {
-	return ApiGETParcelIdPackageRequest{
+func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest {
+	return PackagesApiGETParcelIdPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -334,7 +345,7 @@ func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId st
 }
 
 // Execute executes the request
-func (a *PackagesApiService) GETParcelIdPackageExecute(r ApiGETParcelIdPackageRequest) (*http.Response, error) {
+func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdPackageRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -398,19 +409,19 @@ func (a *PackagesApiService) GETParcelIdPackageExecute(r ApiGETParcelIdPackageRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHPackagesPackageIdRequest struct {
+type PackagesApiPATCHPackagesPackageIdRequest struct {
 	ctx           context.Context
 	ApiService    *PackagesApiService
 	packageUpdate *PackageUpdate
 	packageId     string
 }
 
-func (r ApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) ApiPATCHPackagesPackageIdRequest {
+func (r PackagesApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) PackagesApiPATCHPackagesPackageIdRequest {
 	r.packageUpdate = &packageUpdate
 	return r
 }
 
-func (r ApiPATCHPackagesPackageIdRequest) Execute() (*http.Response, error) {
+func (r PackagesApiPATCHPackagesPackageIdRequest) Execute() (*PATCHPackagesPackageId200Response, *http.Response, error) {
 	return r.ApiService.PATCHPackagesPackageIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiPATCHPackagesPackageIdRequest
+ @return PackagesApiPATCHPackagesPackageIdRequest
 */
-func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) ApiPATCHPackagesPackageIdRequest {
-	return ApiPATCHPackagesPackageIdRequest{
+func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest {
+	return PackagesApiPATCHPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -432,16 +443,18 @@ func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, package
 }
 
 // Execute executes the request
-func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPackageIdRequest) (*http.Response, error) {
+//  @return PATCHPackagesPackageId200Response
+func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPackagesPackageIdRequest) (*PATCHPackagesPackageId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPackagesPackageId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.PATCHPackagesPackageId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}"
@@ -451,7 +464,7 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPac
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.packageUpdate == nil {
-		return nil, reportError("packageUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("packageUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPac
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPac
 	localVarPostBody = r.packageUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r ApiPATCHPackagesPac
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTPackagesRequest struct {
+type PackagesApiPOSTPackagesRequest struct {
 	ctx           context.Context
 	ApiService    *PackagesApiService
 	packageCreate *PackageCreate
 }
 
-func (r ApiPOSTPackagesRequest) PackageCreate(packageCreate PackageCreate) ApiPOSTPackagesRequest {
+func (r PackagesApiPOSTPackagesRequest) PackageCreate(packageCreate PackageCreate) PackagesApiPOSTPackagesRequest {
 	r.packageCreate = &packageCreate
 	return r
 }
 
-func (r ApiPOSTPackagesRequest) Execute() (*http.Response, error) {
+func (r PackagesApiPOSTPackagesRequest) Execute() (*POSTPackages201Response, *http.Response, error) {
 	return r.ApiService.POSTPackagesExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTPackages Create a package
 Create a package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTPackagesRequest
+ @return PackagesApiPOSTPackagesRequest
 */
-func (a *PackagesApiService) POSTPackages(ctx context.Context) ApiPOSTPackagesRequest {
-	return ApiPOSTPackagesRequest{
+func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPackagesRequest {
+	return PackagesApiPOSTPackagesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*http.Response, error) {
+//  @return POSTPackages201Response
+func (a *PackagesApiService) POSTPackagesExecute(r PackagesApiPOSTPackagesRequest) (*POSTPackages201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPackages201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.POSTPackages")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/packages"
@@ -550,7 +574,7 @@ func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.packageCreate == nil {
-		return nil, reportError("packageCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("packageCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*htt
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*htt
 	localVarPostBody = r.packageCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *PackagesApiService) POSTPackagesExecute(r ApiPOSTPackagesRequest) (*htt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

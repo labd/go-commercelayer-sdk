@@ -1,6 +1,6 @@
 # \TransactionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETTransactions
 
-> GETTransactions(ctx).Execute()
+> GETTransactions200Response GETTransactions(ctx).Execute()
 
 List all transactions
 
@@ -38,6 +38,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TransactionsApi.GETTransactions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETTransactions`: GETTransactions200Response
+    fmt.Fprintf(os.Stdout, "Response from `TransactionsApi.GETTransactions`: %v\n", resp)
 }
 ```
 
@@ -52,16 +54,16 @@ Other parameters are passed through a pointer to a apiGETTransactionsRequest str
 
 ### Return type
 
- (empty response body)
+[**GETTransactions200Response**](GETTransactions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -70,7 +72,7 @@ No authorization required
 
 ## GETTransactionsTransactionId
 
-> Transaction GETTransactionsTransactionId(ctx, transactionId).Execute()
+> GETTransactionsTransactionId200Response GETTransactionsTransactionId(ctx, transactionId).Execute()
 
 Retrieve a transaction
 
@@ -98,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TransactionsApi.GETTransactionsTransactionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTransactionsTransactionId`: Transaction
+    // response from `GETTransactionsTransactionId`: GETTransactionsTransactionId200Response
     fmt.Fprintf(os.Stdout, "Response from `TransactionsApi.GETTransactionsTransactionId`: %v\n", resp)
 }
 ```
@@ -122,11 +124,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Transaction**](Transaction.md)
+[**GETTransactionsTransactionId200Response**](GETTransactionsTransactionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

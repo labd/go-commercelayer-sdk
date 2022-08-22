@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // MerchantsApiService MerchantsApi service
 type MerchantsApiService service
 
-type ApiDELETEMerchantsMerchantIdRequest struct {
+type MerchantsApiDELETEMerchantsMerchantIdRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
 	merchantId string
 }
 
-func (r ApiDELETEMerchantsMerchantIdRequest) Execute() (*http.Response, error) {
+func (r MerchantsApiDELETEMerchantsMerchantIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEMerchantsMerchantIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return ApiDELETEMerchantsMerchantIdRequest
+ @return MerchantsApiDELETEMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId string) ApiDELETEMerchantsMerchantIdRequest {
-	return ApiDELETEMerchantsMerchantIdRequest{
+func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiDELETEMerchantsMerchantIdRequest {
+	return MerchantsApiDELETEMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -51,7 +51,7 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, mer
 }
 
 // Execute executes the request
-func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r ApiDELETEMerchantsMerchantIdRequest) (*http.Response, error) {
+func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDELETEMerchantsMerchantIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r ApiDELETEMercha
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketIdMerchantRequest struct {
+type MerchantsApiGETMarketIdMerchantRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
 	marketId   string
 }
 
-func (r ApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
+func (r MerchantsApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETMarketIdMerchantExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the merchant associated to the market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketIdMerchantRequest
+ @return MerchantsApiGETMarketIdMerchantRequest
 */
-func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId string) ApiGETMarketIdMerchantRequest {
-	return ApiGETMarketIdMerchantRequest{
+func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId string) MerchantsApiGETMarketIdMerchantRequest {
+	return MerchantsApiGETMarketIdMerchantRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -143,7 +143,7 @@ func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId 
 }
 
 // Execute executes the request
-func (a *MerchantsApiService) GETMarketIdMerchantExecute(r ApiGETMarketIdMerchantRequest) (*http.Response, error) {
+func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarketIdMerchantRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r ApiGETMarketIdMerchan
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMerchantsRequest struct {
+type MerchantsApiGETMerchantsRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
 }
 
-func (r ApiGETMerchantsRequest) Execute() (*http.Response, error) {
+func (r MerchantsApiGETMerchantsRequest) Execute() (*GETMerchants200Response, *http.Response, error) {
 	return r.ApiService.GETMerchantsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETMerchants List all merchants
 List all merchants
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETMerchantsRequest
+ @return MerchantsApiGETMerchantsRequest
 */
-func (a *MerchantsApiService) GETMerchants(ctx context.Context) ApiGETMerchantsRequest {
-	return ApiGETMerchantsRequest{
+func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETMerchantsRequest {
+	return MerchantsApiGETMerchantsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MerchantsApiService) GETMerchantsExecute(r ApiGETMerchantsRequest) (*http.Response, error) {
+//  @return GETMerchants200Response
+func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequest) (*GETMerchants200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETMerchants200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchants")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/merchants"
@@ -260,7 +262,7 @@ func (a *MerchantsApiService) GETMerchantsExecute(r ApiGETMerchantsRequest) (*ht
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *MerchantsApiService) GETMerchantsExecute(r ApiGETMerchantsRequest) (*ht
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *MerchantsApiService) GETMerchantsExecute(r ApiGETMerchantsRequest) (*ht
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETMerchantsMerchantIdRequest struct {
+type MerchantsApiGETMerchantsMerchantIdRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
 	merchantId string
 }
 
-func (r ApiGETMerchantsMerchantIdRequest) Execute() (*Merchant, *http.Response, error) {
+func (r MerchantsApiGETMerchantsMerchantIdRequest) Execute() (*GETMerchantsMerchantId200Response, *http.Response, error) {
 	return r.ApiService.GETMerchantsMerchantIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return ApiGETMerchantsMerchantIdRequest
+ @return MerchantsApiGETMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId string) ApiGETMerchantsMerchantIdRequest {
-	return ApiGETMerchantsMerchantIdRequest{
+func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiGETMerchantsMerchantIdRequest {
+	return MerchantsApiGETMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -323,13 +334,13 @@ func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, mercha
 }
 
 // Execute executes the request
-//  @return Merchant
-func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r ApiGETMerchantsMerchantIdRequest) (*Merchant, *http.Response, error) {
+//  @return GETMerchantsMerchantId200Response
+func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMerchantsMerchantIdRequest) (*GETMerchantsMerchantId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Merchant
+		localVarReturnValue *GETMerchantsMerchantId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchantsMerchantId")
@@ -398,19 +409,19 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r ApiGETMerchantsMer
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHMerchantsMerchantIdRequest struct {
+type MerchantsApiPATCHMerchantsMerchantIdRequest struct {
 	ctx            context.Context
 	ApiService     *MerchantsApiService
 	merchantUpdate *MerchantUpdate
 	merchantId     string
 }
 
-func (r ApiPATCHMerchantsMerchantIdRequest) MerchantUpdate(merchantUpdate MerchantUpdate) ApiPATCHMerchantsMerchantIdRequest {
+func (r MerchantsApiPATCHMerchantsMerchantIdRequest) MerchantUpdate(merchantUpdate MerchantUpdate) MerchantsApiPATCHMerchantsMerchantIdRequest {
 	r.merchantUpdate = &merchantUpdate
 	return r
 }
 
-func (r ApiPATCHMerchantsMerchantIdRequest) Execute() (*http.Response, error) {
+func (r MerchantsApiPATCHMerchantsMerchantIdRequest) Execute() (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
 	return r.ApiService.PATCHMerchantsMerchantIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param merchantId The resource's id
- @return ApiPATCHMerchantsMerchantIdRequest
+ @return MerchantsApiPATCHMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId string) ApiPATCHMerchantsMerchantIdRequest {
-	return ApiPATCHMerchantsMerchantIdRequest{
+func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiPATCHMerchantsMerchantIdRequest {
+	return MerchantsApiPATCHMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		merchantId: merchantId,
@@ -432,16 +443,18 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merc
 }
 
 // Execute executes the request
-func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r ApiPATCHMerchantsMerchantIdRequest) (*http.Response, error) {
+//  @return PATCHMerchantsMerchantId200Response
+func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATCHMerchantsMerchantIdRequest) (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHMerchantsMerchantId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.PATCHMerchantsMerchantId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
@@ -451,7 +464,7 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r ApiPATCHMerchant
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.merchantUpdate == nil {
-		return nil, reportError("merchantUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("merchantUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r ApiPATCHMerchant
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r ApiPATCHMerchant
 	localVarPostBody = r.merchantUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r ApiPATCHMerchant
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTMerchantsRequest struct {
+type MerchantsApiPOSTMerchantsRequest struct {
 	ctx            context.Context
 	ApiService     *MerchantsApiService
 	merchantCreate *MerchantCreate
 }
 
-func (r ApiPOSTMerchantsRequest) MerchantCreate(merchantCreate MerchantCreate) ApiPOSTMerchantsRequest {
+func (r MerchantsApiPOSTMerchantsRequest) MerchantCreate(merchantCreate MerchantCreate) MerchantsApiPOSTMerchantsRequest {
 	r.merchantCreate = &merchantCreate
 	return r
 }
 
-func (r ApiPOSTMerchantsRequest) Execute() (*http.Response, error) {
+func (r MerchantsApiPOSTMerchantsRequest) Execute() (*POSTMerchants201Response, *http.Response, error) {
 	return r.ApiService.POSTMerchantsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTMerchants Create a merchant
 Create a merchant
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTMerchantsRequest
+ @return MerchantsApiPOSTMerchantsRequest
 */
-func (a *MerchantsApiService) POSTMerchants(ctx context.Context) ApiPOSTMerchantsRequest {
-	return ApiPOSTMerchantsRequest{
+func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOSTMerchantsRequest {
+	return MerchantsApiPOSTMerchantsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MerchantsApiService) POSTMerchantsExecute(r ApiPOSTMerchantsRequest) (*http.Response, error) {
+//  @return POSTMerchants201Response
+func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRequest) (*POSTMerchants201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTMerchants201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.POSTMerchants")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/merchants"
@@ -550,7 +574,7 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r ApiPOSTMerchantsRequest) (*
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.merchantCreate == nil {
-		return nil, reportError("merchantCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("merchantCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r ApiPOSTMerchantsRequest) (*
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r ApiPOSTMerchantsRequest) (*
 	localVarPostBody = r.merchantCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r ApiPOSTMerchantsRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

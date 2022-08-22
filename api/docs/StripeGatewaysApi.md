@@ -1,6 +1,6 @@
 # \StripeGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETStripeGateways
 
-> GETStripeGateways(ctx).Execute()
+> GETStripeGateways200Response GETStripeGateways(ctx).Execute()
 
 List all stripe gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.GETStripeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETStripeGateways`: GETStripeGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.GETStripeGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETStripeGatewaysRequest s
 
 ### Return type
 
- (empty response body)
+[**GETStripeGateways200Response**](GETStripeGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETStripeGatewaysStripeGatewayId
 
-> StripeGateway GETStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).Execute()
+> GETStripeGatewaysStripeGatewayId200Response GETStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).Execute()
 
 Retrieve a stripe gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.GETStripeGatewaysStripeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStripeGatewaysStripeGatewayId`: StripeGateway
+    // response from `GETStripeGatewaysStripeGatewayId`: GETStripeGatewaysStripeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.GETStripeGatewaysStripeGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripeGateway**](StripeGateway.md)
+[**GETStripeGatewaysStripeGatewayId200Response**](GETStripeGatewaysStripeGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHStripeGatewaysStripeGatewayId
 
-> PATCHStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).StripeGatewayUpdate(stripeGatewayUpdate).Execute()
+> PATCHStripeGatewaysStripeGatewayId200Response PATCHStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).StripeGatewayUpdate(stripeGatewayUpdate).Execute()
 
 Update a stripe gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("stripe_gateways", "XGZwpOSrWL", *openapiclient.NewStripeGatewayUpdateDataAttributes())) // StripeGatewayUpdate | 
+    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("stripe_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
     stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.PATCHStripeGatewaysStripeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHStripeGatewaysStripeGatewayId`: PATCHStripeGatewaysStripeGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.PATCHStripeGatewaysStripeGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHStripeGatewaysStripeGatewayId200Response**](PATCHStripeGatewaysStripeGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTStripeGateways
 
-> POSTStripeGateways(ctx).StripeGatewayCreate(stripeGatewayCreate).Execute()
+> POSTStripeGateways201Response POSTStripeGateways(ctx).StripeGatewayCreate(stripeGatewayCreate).Execute()
 
 Create a stripe gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("stripe_gateways", *openapiclient.NewStripeGatewayCreateDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
+    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("stripe_gateways", *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.POSTStripeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTStripeGateways`: POSTStripeGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.POSTStripeGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTStripeGateways201Response**](POSTStripeGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

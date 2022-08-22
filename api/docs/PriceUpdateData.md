@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "prices"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PriceUpdateDataAttributes**](PriceUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PriceUpdateDataRelationships**](PriceUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHPricesPriceId200ResponseDataAttributes**](PATCHPricesPriceId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHPricesPriceId200ResponseDataRelationships**](PATCHPricesPriceId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceUpdateData
 
-`func NewPriceUpdateData(type_ string, id string, attributes PriceUpdateDataAttributes, ) *PriceUpdateData`
+`func NewPriceUpdateData(type_ string, id string, attributes PATCHPricesPriceId200ResponseDataAttributes, ) *PriceUpdateData`
 
 NewPriceUpdateData instantiates a new PriceUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PriceUpdateData) GetAttributes() PriceUpdateDataAttributes`
+`func (o *PriceUpdateData) GetAttributes() PATCHPricesPriceId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceUpdateData) GetAttributesOk() (*PriceUpdateDataAttributes, bool)`
+`func (o *PriceUpdateData) GetAttributesOk() (*PATCHPricesPriceId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceUpdateData) SetAttributes(v PriceUpdateDataAttributes)`
+`func (o *PriceUpdateData) SetAttributes(v PATCHPricesPriceId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PriceUpdateData) GetRelationships() PriceUpdateDataRelationships`
+`func (o *PriceUpdateData) GetRelationships() PATCHPricesPriceId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceUpdateData) GetRelationshipsOk() (*PriceUpdateDataRelationships, bool)`
+`func (o *PriceUpdateData) GetRelationshipsOk() (*PATCHPricesPriceId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceUpdateData) SetRelationships(v PriceUpdateDataRelationships)`
+`func (o *PriceUpdateData) SetRelationships(v PATCHPricesPriceId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

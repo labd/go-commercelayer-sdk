@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuData struct for SkuData
 type SkuData struct {
 	// The resource's type
-	Type          string                `json:"type"`
-	Attributes    SkuDataAttributes     `json:"attributes"`
-	Relationships *SkuDataRelationships `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    GETSkus200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETSkus200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuData instantiates a new SkuData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuData(type_ string, attributes SkuDataAttributes) *SkuData {
+func NewSkuData(type_ string, attributes GETSkus200ResponseDataInnerAttributes) *SkuData {
 	this := SkuData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *SkuData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuData) GetAttributes() SkuDataAttributes {
+func (o *SkuData) GetAttributes() GETSkus200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret SkuDataAttributes
+		var ret GETSkus200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *SkuData) GetAttributes() SkuDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuData) GetAttributesOk() (*SkuDataAttributes, bool) {
+func (o *SkuData) GetAttributesOk() (*GETSkus200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *SkuData) GetAttributesOk() (*SkuDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *SkuData) SetAttributes(v SkuDataAttributes) {
+func (o *SkuData) SetAttributes(v GETSkus200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuData) GetRelationships() SkuDataRelationships {
+func (o *SkuData) GetRelationships() GETSkus200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret SkuDataRelationships
+		var ret GETSkus200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *SkuData) GetRelationships() SkuDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuData) GetRelationshipsOk() (*SkuDataRelationships, bool) {
+func (o *SkuData) GetRelationshipsOk() (*GETSkus200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *SkuData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given SkuDataRelationships and assigns it to the Relationships field.
-func (o *SkuData) SetRelationships(v SkuDataRelationships) {
+// SetRelationships gets a reference to the given GETSkus200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *SkuData) SetRelationships(v GETSkus200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

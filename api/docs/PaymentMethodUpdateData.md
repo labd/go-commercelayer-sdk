@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PaymentMethodUpdateDataAttributes**](PaymentMethodUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PaymentMethodUpdateDataRelationships**](PaymentMethodUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes**](PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships**](PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentMethodUpdateData
 
-`func NewPaymentMethodUpdateData(type_ string, id string, attributes PaymentMethodUpdateDataAttributes, ) *PaymentMethodUpdateData`
+`func NewPaymentMethodUpdateData(type_ string, id string, attributes PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, ) *PaymentMethodUpdateData`
 
 NewPaymentMethodUpdateData instantiates a new PaymentMethodUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PaymentMethodUpdateData) GetAttributes() PaymentMethodUpdateDataAttributes`
+`func (o *PaymentMethodUpdateData) GetAttributes() PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaymentMethodUpdateData) GetAttributesOk() (*PaymentMethodUpdateDataAttributes, bool)`
+`func (o *PaymentMethodUpdateData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaymentMethodUpdateData) SetAttributes(v PaymentMethodUpdateDataAttributes)`
+`func (o *PaymentMethodUpdateData) SetAttributes(v PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PaymentMethodUpdateData) GetRelationships() PaymentMethodUpdateDataRelationships`
+`func (o *PaymentMethodUpdateData) GetRelationships() PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PaymentMethodUpdateDataRelationships, bool)`
+`func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaymentMethodUpdateData) SetRelationships(v PaymentMethodUpdateDataRelationships)`
+`func (o *PaymentMethodUpdateData) SetRelationships(v PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

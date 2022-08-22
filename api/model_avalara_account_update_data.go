@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AvalaraAccountUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                 `json:"id"`
-	Attributes    AvalaraAccountUpdateDataAttributes     `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTAvalaraAccounts201ResponseDataRelationships              `json:"relationships,omitempty"`
 }
 
 // NewAvalaraAccountUpdateData instantiates a new AvalaraAccountUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvalaraAccountUpdateData(type_ string, id string, attributes AvalaraAccountUpdateDataAttributes) *AvalaraAccountUpdateData {
+func NewAvalaraAccountUpdateData(type_ string, id string, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes) *AvalaraAccountUpdateData {
 	this := AvalaraAccountUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *AvalaraAccountUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AvalaraAccountUpdateData) GetAttributes() AvalaraAccountUpdateDataAttributes {
+func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes {
 	if o == nil {
-		var ret AvalaraAccountUpdateDataAttributes
+		var ret PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *AvalaraAccountUpdateData) GetAttributes() AvalaraAccountUpdateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountUpdateData) GetAttributesOk() (*AvalaraAccountUpdateDataAttributes, bool) {
+func (o *AvalaraAccountUpdateData) GetAttributesOk() (*PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *AvalaraAccountUpdateData) GetAttributesOk() (*AvalaraAccountUpdateDataA
 }
 
 // SetAttributes sets field value
-func (o *AvalaraAccountUpdateData) SetAttributes(v AvalaraAccountUpdateDataAttributes) {
+func (o *AvalaraAccountUpdateData) SetAttributes(v PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AvalaraAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships {
+func (o *AvalaraAccountUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AvalaraAccountCreateDataRelationships
+		var ret POSTAvalaraAccounts201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *AvalaraAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
+func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *AvalaraAccountUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountCreateDataRelationships and assigns it to the Relationships field.
-func (o *AvalaraAccountUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *AvalaraAccountUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -1,6 +1,6 @@
 # \OrderValidationRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETOrderValidationRules
 
-> GETOrderValidationRules(ctx).Execute()
+> GETOrderValidationRules200Response GETOrderValidationRules(ctx).Execute()
 
 List all order validation rules
 
@@ -38,6 +38,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderValidationRulesApi.GETOrderValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETOrderValidationRules`: GETOrderValidationRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderValidationRulesApi.GETOrderValidationRules`: %v\n", resp)
 }
 ```
 
@@ -52,16 +54,16 @@ Other parameters are passed through a pointer to a apiGETOrderValidationRulesReq
 
 ### Return type
 
- (empty response body)
+[**GETOrderValidationRules200Response**](GETOrderValidationRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -70,7 +72,7 @@ No authorization required
 
 ## GETOrderValidationRulesOrderValidationRuleId
 
-> OrderValidationRule GETOrderValidationRulesOrderValidationRuleId(ctx, orderValidationRuleId).Execute()
+> GETOrderValidationRulesOrderValidationRuleId200Response GETOrderValidationRulesOrderValidationRuleId(ctx, orderValidationRuleId).Execute()
 
 Retrieve an order validation rule
 
@@ -98,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderValidationRulesApi.GETOrderValidationRulesOrderValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderValidationRulesOrderValidationRuleId`: OrderValidationRule
+    // response from `GETOrderValidationRulesOrderValidationRuleId`: GETOrderValidationRulesOrderValidationRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `OrderValidationRulesApi.GETOrderValidationRulesOrderValidationRuleId`: %v\n", resp)
 }
 ```
@@ -122,11 +124,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderValidationRule**](OrderValidationRule.md)
+[**GETOrderValidationRulesOrderValidationRuleId200Response**](GETOrderValidationRulesOrderValidationRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

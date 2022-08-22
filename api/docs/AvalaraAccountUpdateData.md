@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "avalara_accounts"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**AvalaraAccountUpdateDataAttributes**](AvalaraAccountUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes**](PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAvalaraAccountUpdateData
 
-`func NewAvalaraAccountUpdateData(type_ string, id string, attributes AvalaraAccountUpdateDataAttributes, ) *AvalaraAccountUpdateData`
+`func NewAvalaraAccountUpdateData(type_ string, id string, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, ) *AvalaraAccountUpdateData`
 
 NewAvalaraAccountUpdateData instantiates a new AvalaraAccountUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AvalaraAccountUpdateData) GetAttributes() AvalaraAccountUpdateDataAttributes`
+`func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AvalaraAccountUpdateData) GetAttributesOk() (*AvalaraAccountUpdateDataAttributes, bool)`
+`func (o *AvalaraAccountUpdateData) GetAttributesOk() (*PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AvalaraAccountUpdateData) SetAttributes(v AvalaraAccountUpdateDataAttributes)`
+`func (o *AvalaraAccountUpdateData) SetAttributes(v PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *AvalaraAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships`
+`func (o *AvalaraAccountUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool)`
+`func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AvalaraAccountUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships)`
+`func (o *AvalaraAccountUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

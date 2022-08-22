@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // EventCallbackData struct for EventCallbackData
 type EventCallbackData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    EventCallbackDataAttributes     `json:"attributes"`
-	Relationships *EventCallbackDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETEventCallbacks200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETEventCallbacks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewEventCallbackData instantiates a new EventCallbackData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventCallbackData(type_ string, attributes EventCallbackDataAttributes) *EventCallbackData {
+func NewEventCallbackData(type_ string, attributes GETEventCallbacks200ResponseDataInnerAttributes) *EventCallbackData {
 	this := EventCallbackData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *EventCallbackData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *EventCallbackData) GetAttributes() EventCallbackDataAttributes {
+func (o *EventCallbackData) GetAttributes() GETEventCallbacks200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret EventCallbackDataAttributes
+		var ret GETEventCallbacks200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *EventCallbackData) GetAttributes() EventCallbackDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetAttributesOk() (*EventCallbackDataAttributes, bool) {
+func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacks200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *EventCallbackData) GetAttributesOk() (*EventCallbackDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *EventCallbackData) SetAttributes(v EventCallbackDataAttributes) {
+func (o *EventCallbackData) SetAttributes(v GETEventCallbacks200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships {
+func (o *EventCallbackData) GetRelationships() GETEventCallbacks200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret EventCallbackDataRelationships
+		var ret GETEventCallbacks200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetRelationshipsOk() (*EventCallbackDataRelationships, bool) {
+func (o *EventCallbackData) GetRelationshipsOk() (*GETEventCallbacks200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *EventCallbackData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given EventCallbackDataRelationships and assigns it to the Relationships field.
-func (o *EventCallbackData) SetRelationships(v EventCallbackDataRelationships) {
+// SetRelationships gets a reference to the given GETEventCallbacks200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *EventCallbackData) SetRelationships(v GETEventCallbacks200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

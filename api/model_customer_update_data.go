@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CustomerUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                           `json:"id"`
-	Attributes    CustomerUpdateDataAttributes     `json:"attributes"`
-	Relationships *CustomerCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                            `json:"id"`
+	Attributes    PATCHCustomersCustomerId200ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTCustomers201ResponseDataRelationships        `json:"relationships,omitempty"`
 }
 
 // NewCustomerUpdateData instantiates a new CustomerUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerUpdateData(type_ string, id string, attributes CustomerUpdateDataAttributes) *CustomerUpdateData {
+func NewCustomerUpdateData(type_ string, id string, attributes PATCHCustomersCustomerId200ResponseDataAttributes) *CustomerUpdateData {
 	this := CustomerUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *CustomerUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerUpdateData) GetAttributes() CustomerUpdateDataAttributes {
+func (o *CustomerUpdateData) GetAttributes() PATCHCustomersCustomerId200ResponseDataAttributes {
 	if o == nil {
-		var ret CustomerUpdateDataAttributes
+		var ret PATCHCustomersCustomerId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *CustomerUpdateData) GetAttributes() CustomerUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerUpdateData) GetAttributesOk() (*CustomerUpdateDataAttributes, bool) {
+func (o *CustomerUpdateData) GetAttributesOk() (*PATCHCustomersCustomerId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *CustomerUpdateData) GetAttributesOk() (*CustomerUpdateDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *CustomerUpdateData) SetAttributes(v CustomerUpdateDataAttributes) {
+func (o *CustomerUpdateData) SetAttributes(v PATCHCustomersCustomerId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerUpdateData) GetRelationships() CustomerCreateDataRelationships {
+func (o *CustomerUpdateData) GetRelationships() POSTCustomers201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerCreateDataRelationships
+		var ret POSTCustomers201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CustomerUpdateData) GetRelationships() CustomerCreateDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerUpdateData) GetRelationshipsOk() (*CustomerCreateDataRelationships, bool) {
+func (o *CustomerUpdateData) GetRelationshipsOk() (*POSTCustomers201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CustomerUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerCreateDataRelationships and assigns it to the Relationships field.
-func (o *CustomerUpdateData) SetRelationships(v CustomerCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTCustomers201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *CustomerUpdateData) SetRelationships(v POSTCustomers201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

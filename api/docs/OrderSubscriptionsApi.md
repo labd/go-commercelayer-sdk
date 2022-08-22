@@ -1,6 +1,6 @@
 # \OrderSubscriptionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -275,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -289,7 +289,7 @@ No authorization required
 
 ## GETOrderSubscriptions
 
-> GETOrderSubscriptions(ctx).Execute()
+> GETOrderSubscriptions200Response GETOrderSubscriptions(ctx).Execute()
 
 List all order subscriptions
 
@@ -316,6 +316,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETOrderSubscriptions`: GETOrderSubscriptions200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.GETOrderSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -330,16 +332,16 @@ Other parameters are passed through a pointer to a apiGETOrderSubscriptionsReque
 
 ### Return type
 
- (empty response body)
+[**GETOrderSubscriptions200Response**](GETOrderSubscriptions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -348,7 +350,7 @@ No authorization required
 
 ## GETOrderSubscriptionsOrderSubscriptionId
 
-> OrderSubscription GETOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).Execute()
+> GETOrderSubscriptionsOrderSubscriptionId200Response GETOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).Execute()
 
 Retrieve an order subscription
 
@@ -376,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderSubscriptionsOrderSubscriptionId`: OrderSubscription
+    // response from `GETOrderSubscriptionsOrderSubscriptionId`: GETOrderSubscriptionsOrderSubscriptionId200Response
     fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.GETOrderSubscriptionsOrderSubscriptionId`: %v\n", resp)
 }
 ```
@@ -400,11 +402,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderSubscription**](OrderSubscription.md)
+[**GETOrderSubscriptionsOrderSubscriptionId200Response**](GETOrderSubscriptionsOrderSubscriptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHOrderSubscriptionsOrderSubscriptionId
 
-> PATCHOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).OrderSubscriptionUpdate(orderSubscriptionUpdate).Execute()
+> PATCHOrderSubscriptionsOrderSubscriptionId200Response PATCHOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).OrderSubscriptionUpdate(orderSubscriptionUpdate).Execute()
 
 Update an order subscription
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("order_subscriptions", "XGZwpOSrWL", *openapiclient.NewOrderSubscriptionUpdateDataAttributes())) // OrderSubscriptionUpdate | 
+    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("order_subscriptions", "XGZwpOSrWL", *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
     orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.PATCHOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHOrderSubscriptionsOrderSubscriptionId`: PATCHOrderSubscriptionsOrderSubscriptionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.PATCHOrderSubscriptionsOrderSubscriptionId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHOrderSubscriptionsOrderSubscriptionId200Response**](PATCHOrderSubscriptionsOrderSubscriptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTOrderSubscriptions
 
-> POSTOrderSubscriptions(ctx).OrderSubscriptionCreate(orderSubscriptionCreate).Execute()
+> POSTOrderSubscriptions201Response POSTOrderSubscriptions(ctx).OrderSubscriptionCreate(orderSubscriptionCreate).Execute()
 
 Create an order subscription
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("order_subscriptions", *openapiclient.NewOrderSubscriptionCreateDataAttributes("monthly"))) // OrderSubscriptionCreate | 
+    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("order_subscriptions", *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes("monthly"))) // OrderSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.POSTOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTOrderSubscriptions`: POSTOrderSubscriptions201Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.POSTOrderSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTOrderSubscriptions201Response**](POSTOrderSubscriptions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

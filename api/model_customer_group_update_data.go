@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CustomerGroupUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                            `json:"id"`
-	Attributes    CustomerGroupUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}            `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
 }
 
 // NewCustomerGroupUpdateData instantiates a new CustomerGroupUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerGroupUpdateData(type_ string, id string, attributes CustomerGroupUpdateDataAttributes) *CustomerGroupUpdateData {
+func NewCustomerGroupUpdateData(type_ string, id string, attributes PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes) *CustomerGroupUpdateData {
 	this := CustomerGroupUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *CustomerGroupUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerGroupUpdateData) GetAttributes() CustomerGroupUpdateDataAttributes {
+func (o *CustomerGroupUpdateData) GetAttributes() PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes {
 	if o == nil {
-		var ret CustomerGroupUpdateDataAttributes
+		var ret PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *CustomerGroupUpdateData) GetAttributes() CustomerGroupUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupUpdateData) GetAttributesOk() (*CustomerGroupUpdateDataAttributes, bool) {
+func (o *CustomerGroupUpdateData) GetAttributesOk() (*PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +115,7 @@ func (o *CustomerGroupUpdateData) GetAttributesOk() (*CustomerGroupUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *CustomerGroupUpdateData) SetAttributes(v CustomerGroupUpdateDataAttributes) {
+func (o *CustomerGroupUpdateData) SetAttributes(v PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

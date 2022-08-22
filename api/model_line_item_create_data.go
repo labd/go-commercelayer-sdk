@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // LineItemCreateData struct for LineItemCreateData
 type LineItemCreateData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    LineItemCreateDataAttributes     `json:"attributes"`
-	Relationships *LineItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTLineItems201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTLineItems201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemCreateData instantiates a new LineItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemCreateData(type_ string, attributes LineItemCreateDataAttributes) *LineItemCreateData {
+func NewLineItemCreateData(type_ string, attributes POSTLineItems201ResponseDataAttributes) *LineItemCreateData {
 	this := LineItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *LineItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemCreateData) GetAttributes() LineItemCreateDataAttributes {
+func (o *LineItemCreateData) GetAttributes() POSTLineItems201ResponseDataAttributes {
 	if o == nil {
-		var ret LineItemCreateDataAttributes
+		var ret POSTLineItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *LineItemCreateData) GetAttributes() LineItemCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateData) GetAttributesOk() (*LineItemCreateDataAttributes, bool) {
+func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *LineItemCreateData) GetAttributesOk() (*LineItemCreateDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *LineItemCreateData) SetAttributes(v LineItemCreateDataAttributes) {
+func (o *LineItemCreateData) SetAttributes(v POSTLineItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *LineItemCreateData) GetRelationships() LineItemCreateDataRelationships {
+func (o *LineItemCreateData) GetRelationships() POSTLineItems201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret LineItemCreateDataRelationships
+		var ret POSTLineItems201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *LineItemCreateData) GetRelationships() LineItemCreateDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateData) GetRelationshipsOk() (*LineItemCreateDataRelationships, bool) {
+func (o *LineItemCreateData) GetRelationshipsOk() (*POSTLineItems201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *LineItemCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given LineItemCreateDataRelationships and assigns it to the Relationships field.
-func (o *LineItemCreateData) SetRelationships(v LineItemCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTLineItems201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *LineItemCreateData) SetRelationships(v POSTLineItems201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -1,6 +1,6 @@
 # \OrderAmountPromotionRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -429,7 +429,7 @@ No authorization required
 
 ## GETOrderAmountPromotionRules
 
-> GETOrderAmountPromotionRules(ctx).Execute()
+> GETOrderAmountPromotionRules200Response GETOrderAmountPromotionRules(ctx).Execute()
 
 List all order amount promotion rules
 
@@ -456,6 +456,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETOrderAmountPromotionRules`: GETOrderAmountPromotionRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -470,16 +472,16 @@ Other parameters are passed through a pointer to a apiGETOrderAmountPromotionRul
 
 ### Return type
 
- (empty response body)
+[**GETOrderAmountPromotionRules200Response**](GETOrderAmountPromotionRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +490,7 @@ No authorization required
 
 ## GETOrderAmountPromotionRulesOrderAmountPromotionRuleId
 
-> OrderAmountPromotionRule GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).Execute()
+> GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).Execute()
 
 Retrieve an order amount promotion rule
 
@@ -516,7 +518,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: OrderAmountPromotionRule
+    // response from `GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -540,11 +542,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderAmountPromotionRule**](OrderAmountPromotionRule.md)
+[**GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response**](GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -612,7 +614,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -680,7 +682,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -694,7 +696,7 @@ No authorization required
 
 ## PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId
 
-> PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
+> PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
 
 Update an order amount promotion rule
 
@@ -713,7 +715,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("order_amount_promotion_rules", "XGZwpOSrWL", *openapiclient.NewOrderAmountPromotionRuleCreateDataAttributes())) // OrderAmountPromotionRuleUpdate | 
+    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("order_amount_promotion_rules", "XGZwpOSrWL", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleUpdate | 
     orderAmountPromotionRuleId := "orderAmountPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -723,6 +725,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: %v\n", resp)
 }
 ```
 
@@ -746,16 +750,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -764,7 +768,7 @@ No authorization required
 
 ## POSTOrderAmountPromotionRules
 
-> POSTOrderAmountPromotionRules(ctx).OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate).Execute()
+> POSTOrderAmountPromotionRules201Response POSTOrderAmountPromotionRules(ctx).OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate).Execute()
 
 Create an order amount promotion rule
 
@@ -783,7 +787,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("order_amount_promotion_rules", *openapiclient.NewOrderAmountPromotionRuleCreateDataAttributes())) // OrderAmountPromotionRuleCreate | 
+    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("order_amount_promotion_rules", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -792,6 +796,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.POSTOrderAmountPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTOrderAmountPromotionRules`: POSTOrderAmountPromotionRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.POSTOrderAmountPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -810,16 +816,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTOrderAmountPromotionRules201Response**](POSTOrderAmountPromotionRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \CustomerPasswordResetsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETCustomerPasswordResets
 
-> GETCustomerPasswordResets(ctx).Execute()
+> GETCustomerPasswordResets200Response GETCustomerPasswordResets(ctx).Execute()
 
 List all customer password resets
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.GETCustomerPasswordResets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCustomerPasswordResets`: GETCustomerPasswordResets200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.GETCustomerPasswordResets`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETCustomerPasswordResetsR
 
 ### Return type
 
- (empty response body)
+[**GETCustomerPasswordResets200Response**](GETCustomerPasswordResets200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETCustomerPasswordResetsCustomerPasswordResetId
 
-> CustomerPasswordReset GETCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).Execute()
+> GETCustomerPasswordResetsCustomerPasswordResetId200Response GETCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).Execute()
 
 Retrieve a customer password reset
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.GETCustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPasswordResetsCustomerPasswordResetId`: CustomerPasswordReset
+    // response from `GETCustomerPasswordResetsCustomerPasswordResetId`: GETCustomerPasswordResetsCustomerPasswordResetId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.GETCustomerPasswordResetsCustomerPasswordResetId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerPasswordReset**](CustomerPasswordReset.md)
+[**GETCustomerPasswordResetsCustomerPasswordResetId200Response**](GETCustomerPasswordResetsCustomerPasswordResetId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHCustomerPasswordResetsCustomerPasswordResetId
 
-> PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
+> PATCHCustomerPasswordResetsCustomerPasswordResetId200Response PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
 
 Update a customer password reset
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("customer_password_resets", "XGZwpOSrWL", *openapiclient.NewCustomerPasswordResetUpdateDataAttributes())) // CustomerPasswordResetUpdate | 
+    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("customer_password_resets", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes())) // CustomerPasswordResetUpdate | 
     customerPasswordResetId := "customerPasswordResetId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCustomerPasswordResetsCustomerPasswordResetId`: PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCustomerPasswordResetsCustomerPasswordResetId200Response**](PATCHCustomerPasswordResetsCustomerPasswordResetId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTCustomerPasswordResets
 
-> POSTCustomerPasswordResets(ctx).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
+> POSTCustomerPasswordResets201Response POSTCustomerPasswordResets(ctx).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
 
 Create a customer password reset
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("customer_password_resets", *openapiclient.NewCustomerPasswordResetCreateDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
+    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("customer_password_resets", *openapiclient.NewPOSTCustomerPasswordResets201ResponseDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.POSTCustomerPasswordResets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCustomerPasswordResets`: POSTCustomerPasswordResets201Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.POSTCustomerPasswordResets`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCustomerPasswordResets201Response**](POSTCustomerPasswordResets201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

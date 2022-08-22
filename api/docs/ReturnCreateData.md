@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "returns"]
-**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ReturnCreateDataRelationships**](ReturnCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTReturns201ResponseDataRelationships**](POSTReturns201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnCreateData
 
-`func NewReturnCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *ReturnCreateData`
+`func NewReturnCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *ReturnCreateData`
 
 NewReturnCreateData instantiates a new ReturnCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
+`func (o *ReturnCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
+`func (o *ReturnCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
+`func (o *ReturnCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ReturnCreateData) GetRelationships() ReturnCreateDataRelationships`
+`func (o *ReturnCreateData) GetRelationships() POSTReturns201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnCreateData) GetRelationshipsOk() (*ReturnCreateDataRelationships, bool)`
+`func (o *ReturnCreateData) GetRelationshipsOk() (*POSTReturns201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnCreateData) SetRelationships(v ReturnCreateDataRelationships)`
+`func (o *ReturnCreateData) SetRelationships(v POSTReturns201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

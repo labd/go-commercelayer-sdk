@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // FreeShippingPromotionCreateData struct for FreeShippingPromotionCreateData
 type FreeShippingPromotionCreateData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    FreeShippingPromotionCreateDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    POSTFreeShippingPromotions201ResponseDataAttributes `json:"attributes"`
+	Relationships *POSTExternalPromotions201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFreeShippingPromotionCreateData instantiates a new FreeShippingPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeShippingPromotionCreateData(type_ string, attributes FreeShippingPromotionCreateDataAttributes) *FreeShippingPromotionCreateData {
+func NewFreeShippingPromotionCreateData(type_ string, attributes POSTFreeShippingPromotions201ResponseDataAttributes) *FreeShippingPromotionCreateData {
 	this := FreeShippingPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *FreeShippingPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FreeShippingPromotionCreateData) GetAttributes() FreeShippingPromotionCreateDataAttributes {
+func (o *FreeShippingPromotionCreateData) GetAttributes() POSTFreeShippingPromotions201ResponseDataAttributes {
 	if o == nil {
-		var ret FreeShippingPromotionCreateDataAttributes
+		var ret POSTFreeShippingPromotions201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *FreeShippingPromotionCreateData) GetAttributes() FreeShippingPromotionC
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionCreateData) GetAttributesOk() (*FreeShippingPromotionCreateDataAttributes, bool) {
+func (o *FreeShippingPromotionCreateData) GetAttributesOk() (*POSTFreeShippingPromotions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *FreeShippingPromotionCreateData) GetAttributesOk() (*FreeShippingPromot
 }
 
 // SetAttributes sets field value
-func (o *FreeShippingPromotionCreateData) SetAttributes(v FreeShippingPromotionCreateDataAttributes) {
+func (o *FreeShippingPromotionCreateData) SetAttributes(v POSTFreeShippingPromotions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FreeShippingPromotionCreateData) GetRelationships() ExternalPromotionCreateDataRelationships {
+func (o *FreeShippingPromotionCreateData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ExternalPromotionCreateDataRelationships
+		var ret POSTExternalPromotions201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *FreeShippingPromotionCreateData) GetRelationships() ExternalPromotionCr
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionCreateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool) {
+func (o *FreeShippingPromotionCreateData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *FreeShippingPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExternalPromotionCreateDataRelationships and assigns it to the Relationships field.
-func (o *FreeShippingPromotionCreateData) SetRelationships(v ExternalPromotionCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTExternalPromotions201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *FreeShippingPromotionCreateData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

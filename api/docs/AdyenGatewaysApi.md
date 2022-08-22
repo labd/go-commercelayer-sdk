@@ -1,6 +1,6 @@
 # \AdyenGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETAdyenGateways
 
-> GETAdyenGateways(ctx).Execute()
+> GETAdyenGateways200Response GETAdyenGateways(ctx).Execute()
 
 List all adyen gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.GETAdyenGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAdyenGateways`: GETAdyenGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.GETAdyenGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETAdyenGatewaysRequest st
 
 ### Return type
 
- (empty response body)
+[**GETAdyenGateways200Response**](GETAdyenGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETAdyenGatewaysAdyenGatewayId
 
-> AdyenGateway GETAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).Execute()
+> GETAdyenGatewaysAdyenGatewayId200Response GETAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).Execute()
 
 Retrieve an adyen gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.GETAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdyenGatewaysAdyenGatewayId`: AdyenGateway
+    // response from `GETAdyenGatewaysAdyenGatewayId`: GETAdyenGatewaysAdyenGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.GETAdyenGatewaysAdyenGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdyenGateway**](AdyenGateway.md)
+[**GETAdyenGatewaysAdyenGatewayId200Response**](GETAdyenGatewaysAdyenGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHAdyenGatewaysAdyenGatewayId
 
-> PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
+> PATCHAdyenGatewaysAdyenGatewayId200Response PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
 
 Update an adyen gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("adyen_gateways", "XGZwpOSrWL", *openapiclient.NewAdyenGatewayUpdateDataAttributes())) // AdyenGatewayUpdate | 
+    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("adyen_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes())) // AdyenGatewayUpdate | 
     adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAdyenGatewaysAdyenGatewayId`: PATCHAdyenGatewaysAdyenGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAdyenGatewaysAdyenGatewayId200Response**](PATCHAdyenGatewaysAdyenGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTAdyenGateways
 
-> POSTAdyenGateways(ctx).AdyenGatewayCreate(adyenGatewayCreate).Execute()
+> POSTAdyenGateways201Response POSTAdyenGateways(ctx).AdyenGatewayCreate(adyenGatewayCreate).Execute()
 
 Create an adyen gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("adyen_gateways", *openapiclient.NewAdyenGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
+    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("adyen_gateways", *openapiclient.NewPOSTAdyenGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.POSTAdyenGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTAdyenGateways`: POSTAdyenGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.POSTAdyenGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTAdyenGateways201Response**](POSTAdyenGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

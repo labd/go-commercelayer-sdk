@@ -1,6 +1,6 @@
 # \SkuListItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETSkuListItems
 
-> GETSkuListItems(ctx).Execute()
+> GETSkuListItems200Response GETSkuListItems(ctx).Execute()
 
 List all SKU list items
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.GETSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETSkuListItems`: GETSkuListItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.GETSkuListItems`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETSkuListItemsRequest str
 
 ### Return type
 
- (empty response body)
+[**GETSkuListItems200Response**](GETSkuListItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETSkuListItemsSkuListItemId
 
-> SkuListItem GETSkuListItemsSkuListItemId(ctx, skuListItemId).Execute()
+> GETSkuListItemsSkuListItemId200Response GETSkuListItemsSkuListItemId(ctx, skuListItemId).Execute()
 
 Retrieve a SKU list item
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.GETSkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListItemsSkuListItemId`: SkuListItem
+    // response from `GETSkuListItemsSkuListItemId`: GETSkuListItemsSkuListItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.GETSkuListItemsSkuListItemId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListItem**](SkuListItem.md)
+[**GETSkuListItemsSkuListItemId200Response**](GETSkuListItemsSkuListItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHSkuListItemsSkuListItemId
 
-> PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
+> PATCHSkuListItemsSkuListItemId200Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
 
 Update a SKU list item
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    skuListItemUpdate := *openapiclient.NewSkuListItemUpdate(*openapiclient.NewSkuListItemUpdateData("sku_list_items", "XGZwpOSrWL", *openapiclient.NewSkuListItemCreateDataAttributes())) // SkuListItemUpdate | 
+    skuListItemUpdate := *openapiclient.NewSkuListItemUpdate(*openapiclient.NewSkuListItemUpdateData("sku_list_items", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemUpdate | 
     skuListItemId := "skuListItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.PATCHSkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHSkuListItemsSkuListItemId`: PATCHSkuListItemsSkuListItemId200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.PATCHSkuListItemsSkuListItemId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHSkuListItemsSkuListItemId200Response**](PATCHSkuListItemsSkuListItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTSkuListItems
 
-> POSTSkuListItems(ctx).SkuListItemCreate(skuListItemCreate).Execute()
+> POSTSkuListItems201Response POSTSkuListItems(ctx).SkuListItemCreate(skuListItemCreate).Execute()
 
 Create a SKU list item
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    skuListItemCreate := *openapiclient.NewSkuListItemCreate(*openapiclient.NewSkuListItemCreateData("sku_list_items", *openapiclient.NewSkuListItemCreateDataAttributes())) // SkuListItemCreate | 
+    skuListItemCreate := *openapiclient.NewSkuListItemCreate(*openapiclient.NewSkuListItemCreateData("sku_list_items", *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.POSTSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTSkuListItems`: POSTSkuListItems201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.POSTSkuListItems`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkuListItems201Response**](POSTSkuListItems201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

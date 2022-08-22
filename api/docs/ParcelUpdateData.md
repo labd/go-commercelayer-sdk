@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "parcels"]
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ParcelUpdateDataAttributes**](ParcelUpdateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**ParcelUpdateDataRelationships**](ParcelUpdateDataRelationships.md) |  | [optional] 
+**Attributes** | [**PATCHParcelsParcelId200ResponseDataAttributes**](PATCHParcelsParcelId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PATCHParcelsParcelId200ResponseDataRelationships**](PATCHParcelsParcelId200ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelUpdateData
 
-`func NewParcelUpdateData(type_ string, id string, attributes ParcelUpdateDataAttributes, ) *ParcelUpdateData`
+`func NewParcelUpdateData(type_ string, id string, attributes PATCHParcelsParcelId200ResponseDataAttributes, ) *ParcelUpdateData`
 
 NewParcelUpdateData instantiates a new ParcelUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,40 +70,40 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ParcelUpdateData) GetAttributes() ParcelUpdateDataAttributes`
+`func (o *ParcelUpdateData) GetAttributes() PATCHParcelsParcelId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelUpdateData) GetAttributesOk() (*ParcelUpdateDataAttributes, bool)`
+`func (o *ParcelUpdateData) GetAttributesOk() (*PATCHParcelsParcelId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelUpdateData) SetAttributes(v ParcelUpdateDataAttributes)`
+`func (o *ParcelUpdateData) SetAttributes(v PATCHParcelsParcelId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ParcelUpdateData) GetRelationships() ParcelUpdateDataRelationships`
+`func (o *ParcelUpdateData) GetRelationships() PATCHParcelsParcelId200ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ParcelUpdateData) GetRelationshipsOk() (*ParcelUpdateDataRelationships, bool)`
+`func (o *ParcelUpdateData) GetRelationshipsOk() (*PATCHParcelsParcelId200ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ParcelUpdateData) SetRelationships(v ParcelUpdateDataRelationships)`
+`func (o *ParcelUpdateData) SetRelationships(v PATCHParcelsParcelId200ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

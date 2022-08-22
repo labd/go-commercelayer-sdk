@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // OrdersApiService OrdersApi service
 type OrdersApiService service
 
-type ApiDELETEOrdersOrderIdRequest struct {
+type OrdersApiDELETEOrdersOrderIdRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	orderId    string
 }
 
-func (r ApiDELETEOrdersOrderIdRequest) Execute() (*http.Response, error) {
+func (r OrdersApiDELETEOrdersOrderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEOrdersOrderIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiDELETEOrdersOrderIdRequest
+ @return OrdersApiDELETEOrdersOrderIdRequest
 */
-func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId string) ApiDELETEOrdersOrderIdRequest {
-	return ApiDELETEOrdersOrderIdRequest{
+func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId string) OrdersApiDELETEOrdersOrderIdRequest {
+	return OrdersApiDELETEOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -51,7 +51,7 @@ func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId stri
 }
 
 // Execute executes the request
-func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r ApiDELETEOrdersOrderIdRequest) (*http.Response, error) {
+func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r ApiDELETEOrdersOrderIdRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenPaymentIdOrderRequest struct {
+type OrdersApiGETAdyenPaymentIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *OrdersApiService
 	adyenPaymentId string
 }
 
-func (r ApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAdyenPaymentIdOrderExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the order associated to the adyen payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenPaymentId The resource's id
- @return ApiGETAdyenPaymentIdOrderRequest
+ @return OrdersApiGETAdyenPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) ApiGETAdyenPaymentIdOrderRequest {
-	return ApiGETAdyenPaymentIdOrderRequest{
+func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) OrdersApiGETAdyenPaymentIdOrderRequest {
+	return OrdersApiGETAdyenPaymentIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
@@ -143,7 +143,7 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaym
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r ApiGETAdyenPaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r ApiGETAdyenPaymentIdO
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAuthorizationIdOrderRequest struct {
+type OrdersApiGETAuthorizationIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
 	authorizationId string
 }
 
-func (r ApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAuthorizationIdOrderExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the order associated to the authorization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param authorizationId The resource's id
- @return ApiGETAuthorizationIdOrderRequest
+ @return OrdersApiGETAuthorizationIdOrderRequest
 */
-func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) ApiGETAuthorizationIdOrderRequest {
-	return ApiGETAuthorizationIdOrderRequest{
+func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) OrdersApiGETAuthorizationIdOrderRequest {
+	return OrdersApiGETAuthorizationIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		authorizationId: authorizationId,
@@ -235,7 +235,7 @@ func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authoriz
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r ApiGETAuthorizationIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthorizationIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,13 +299,13 @@ func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r ApiGETAuthorizationI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentIdOrderRequest struct {
+type OrdersApiGETBraintreePaymentIdOrderRequest struct {
 	ctx                context.Context
 	ApiService         *OrdersApiService
 	braintreePaymentId string
 }
 
-func (r ApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreePaymentIdOrderExecute(r)
 }
 
@@ -316,10 +316,10 @@ Retrieve the order associated to the braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiGETBraintreePaymentIdOrderRequest
+ @return OrdersApiGETBraintreePaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentIdOrderRequest {
-	return ApiGETBraintreePaymentIdOrderRequest{
+func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) OrdersApiGETBraintreePaymentIdOrderRequest {
+	return OrdersApiGETBraintreePaymentIdOrderRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -327,7 +327,7 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, brain
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r ApiGETBraintreePaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBraintreePaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -391,13 +391,13 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r ApiGETBraintreePa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCaptureIdOrderRequest struct {
+type OrdersApiGETCaptureIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	captureId  string
 }
 
-func (r ApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCaptureIdOrderExecute(r)
 }
 
@@ -408,10 +408,10 @@ Retrieve the order associated to the capture
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param captureId The resource's id
- @return ApiGETCaptureIdOrderRequest
+ @return OrdersApiGETCaptureIdOrderRequest
 */
-func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId string) ApiGETCaptureIdOrderRequest {
-	return ApiGETCaptureIdOrderRequest{
+func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId string) OrdersApiGETCaptureIdOrderRequest {
+	return OrdersApiGETCaptureIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		captureId:  captureId,
@@ -419,7 +419,7 @@ func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId stri
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETCaptureIdOrderExecute(r ApiGETCaptureIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -483,13 +483,13 @@ func (a *OrdersApiService) GETCaptureIdOrderExecute(r ApiGETCaptureIdOrderReques
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComPaymentIdOrderRequest struct {
+type OrdersApiGETCheckoutComPaymentIdOrderRequest struct {
 	ctx                  context.Context
 	ApiService           *OrdersApiService
 	checkoutComPaymentId string
 }
 
-func (r ApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentIdOrderExecute(r)
 }
 
@@ -500,10 +500,10 @@ Retrieve the order associated to the checkout.com payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComPaymentId The resource's id
- @return ApiGETCheckoutComPaymentIdOrderRequest
+ @return OrdersApiGETCheckoutComPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) ApiGETCheckoutComPaymentIdOrderRequest {
-	return ApiGETCheckoutComPaymentIdOrderRequest{
+func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) OrdersApiGETCheckoutComPaymentIdOrderRequest {
+	return OrdersApiGETCheckoutComPaymentIdOrderRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
@@ -511,7 +511,7 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, che
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r ApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -575,13 +575,13 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r ApiGETCheckoutC
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdOrdersRequest struct {
+type OrdersApiGETCustomerIdOrdersRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	customerId string
 }
 
-func (r ApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdOrdersExecute(r)
 }
 
@@ -592,10 +592,10 @@ Retrieve the orders associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdOrdersRequest
+ @return OrdersApiGETCustomerIdOrdersRequest
 */
-func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId string) ApiGETCustomerIdOrdersRequest {
-	return ApiGETCustomerIdOrdersRequest{
+func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId string) OrdersApiGETCustomerIdOrdersRequest {
+	return OrdersApiGETCustomerIdOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -603,7 +603,7 @@ func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId s
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETCustomerIdOrdersExecute(r ApiGETCustomerIdOrdersRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOrdersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -667,13 +667,13 @@ func (a *OrdersApiService) GETCustomerIdOrdersExecute(r ApiGETCustomerIdOrdersRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdOrderRequest struct {
+type OrdersApiGETExternalPaymentIdOrderRequest struct {
 	ctx               context.Context
 	ApiService        *OrdersApiService
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdOrderExecute(r)
 }
 
@@ -684,10 +684,10 @@ Retrieve the order associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdOrderRequest
+ @return OrdersApiGETExternalPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdOrderRequest {
-	return ApiGETExternalPaymentIdOrderRequest{
+func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) OrdersApiGETExternalPaymentIdOrderRequest {
+	return OrdersApiGETExternalPaymentIdOrderRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -695,7 +695,7 @@ func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, extern
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r ApiGETExternalPaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExternalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -759,13 +759,13 @@ func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r ApiGETExternalPaym
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETKlarnaPaymentIdOrderRequest struct {
+type OrdersApiGETKlarnaPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
 	klarnaPaymentId string
 }
 
-func (r ApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETKlarnaPaymentIdOrderExecute(r)
 }
 
@@ -776,10 +776,10 @@ Retrieve the order associated to the klarna payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param klarnaPaymentId The resource's id
- @return ApiGETKlarnaPaymentIdOrderRequest
+ @return OrdersApiGETKlarnaPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) ApiGETKlarnaPaymentIdOrderRequest {
-	return ApiGETKlarnaPaymentIdOrderRequest{
+func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) OrdersApiGETKlarnaPaymentIdOrderRequest {
+	return OrdersApiGETKlarnaPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		klarnaPaymentId: klarnaPaymentId,
@@ -787,7 +787,7 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPa
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r ApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -851,13 +851,13 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r ApiGETKlarnaPaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemIdOrderRequest struct {
+type OrdersApiGETLineItemIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	lineItemId string
 }
 
-func (r ApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemIdOrderExecute(r)
 }
 
@@ -868,10 +868,10 @@ Retrieve the order associated to the line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemId The resource's id
- @return ApiGETLineItemIdOrderRequest
+ @return OrdersApiGETLineItemIdOrderRequest
 */
-func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) ApiGETLineItemIdOrderRequest {
-	return ApiGETLineItemIdOrderRequest{
+func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) OrdersApiGETLineItemIdOrderRequest {
+	return OrdersApiGETLineItemIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		lineItemId: lineItemId,
@@ -879,7 +879,7 @@ func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId st
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETLineItemIdOrderExecute(r ApiGETLineItemIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -943,13 +943,13 @@ func (a *OrdersApiService) GETLineItemIdOrderExecute(r ApiGETLineItemIdOrderRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdSourceOrderRequest struct {
+type OrdersApiGETOrderCopyIdSourceOrderRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdSourceOrderExecute(r)
 }
 
@@ -960,10 +960,10 @@ Retrieve the source order associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdSourceOrderRequest
+ @return OrdersApiGETOrderCopyIdSourceOrderRequest
 */
-func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdSourceOrderRequest {
-	return ApiGETOrderCopyIdSourceOrderRequest{
+func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdSourceOrderRequest {
+	return OrdersApiGETOrderCopyIdSourceOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -971,7 +971,7 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderC
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r ApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1035,13 +1035,13 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r ApiGETOrderCopyIdS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderCopyIdTargetOrderRequest struct {
+type OrdersApiGETOrderCopyIdTargetOrderRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
 	orderCopyId string
 }
 
-func (r ApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderCopyIdTargetOrderExecute(r)
 }
 
@@ -1052,10 +1052,10 @@ Retrieve the target order associated to the order copy
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderCopyId The resource's id
- @return ApiGETOrderCopyIdTargetOrderRequest
+ @return OrdersApiGETOrderCopyIdTargetOrderRequest
 */
-func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) ApiGETOrderCopyIdTargetOrderRequest {
-	return ApiGETOrderCopyIdTargetOrderRequest{
+func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdTargetOrderRequest {
+	return OrdersApiGETOrderCopyIdTargetOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		orderCopyId: orderCopyId,
@@ -1063,7 +1063,7 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderC
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r ApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1127,13 +1127,13 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r ApiGETOrderCopyIdT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdOrdersRequest struct {
+type OrdersApiGETOrderSubscriptionIdOrdersRequest struct {
 	ctx                 context.Context
 	ApiService          *OrdersApiService
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdOrdersExecute(r)
 }
 
@@ -1144,10 +1144,10 @@ Retrieve the orders associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdOrdersRequest
+ @return OrdersApiGETOrderSubscriptionIdOrdersRequest
 */
-func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdOrdersRequest {
-	return ApiGETOrderSubscriptionIdOrdersRequest{
+func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdOrdersRequest {
+	return OrdersApiGETOrderSubscriptionIdOrdersRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -1155,7 +1155,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, ord
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r ApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1219,13 +1219,13 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r ApiGETOrderSubs
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdSourceOrderRequest struct {
+type OrdersApiGETOrderSubscriptionIdSourceOrderRequest struct {
 	ctx                 context.Context
 	ApiService          *OrdersApiService
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdSourceOrderExecute(r)
 }
 
@@ -1236,10 +1236,10 @@ Retrieve the source order associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdSourceOrderRequest
+ @return OrdersApiGETOrderSubscriptionIdSourceOrderRequest
 */
-func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdSourceOrderRequest {
-	return ApiGETOrderSubscriptionIdSourceOrderRequest{
+func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdSourceOrderRequest {
+	return OrdersApiGETOrderSubscriptionIdSourceOrderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -1247,7 +1247,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r ApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r OrdersApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1311,12 +1311,12 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r ApiGETOrde
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrdersRequest struct {
+type OrdersApiGETOrdersRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 }
 
-func (r ApiGETOrdersRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETOrdersRequest) Execute() (*GETOrders200Response, *http.Response, error) {
 	return r.ApiService.GETOrdersExecute(r)
 }
 
@@ -1326,26 +1326,28 @@ GETOrders List all orders
 List all orders
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrdersRequest
+ @return OrdersApiGETOrdersRequest
 */
-func (a *OrdersApiService) GETOrders(ctx context.Context) ApiGETOrdersRequest {
-	return ApiGETOrdersRequest{
+func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequest {
+	return OrdersApiGETOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETOrdersExecute(r ApiGETOrdersRequest) (*http.Response, error) {
+//  @return GETOrders200Response
+func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOrders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrders")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/orders"
@@ -1364,7 +1366,7 @@ func (a *OrdersApiService) GETOrdersExecute(r ApiGETOrdersRequest) (*http.Respon
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1373,19 +1375,19 @@ func (a *OrdersApiService) GETOrdersExecute(r ApiGETOrdersRequest) (*http.Respon
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -1393,19 +1395,28 @@ func (a *OrdersApiService) GETOrdersExecute(r ApiGETOrdersRequest) (*http.Respon
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETOrdersOrderIdRequest struct {
+type OrdersApiGETOrdersOrderIdRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	orderId    string
 }
 
-func (r ApiGETOrdersOrderIdRequest) Execute() (*Order, *http.Response, error) {
+func (r OrdersApiGETOrdersOrderIdRequest) Execute() (*GETOrdersOrderId200Response, *http.Response, error) {
 	return r.ApiService.GETOrdersOrderIdExecute(r)
 }
 
@@ -1416,10 +1427,10 @@ Retrieve an order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrdersOrderIdRequest
+ @return OrdersApiGETOrdersOrderIdRequest
 */
-func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string) ApiGETOrdersOrderIdRequest {
-	return ApiGETOrdersOrderIdRequest{
+func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string) OrdersApiGETOrdersOrderIdRequest {
+	return OrdersApiGETOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -1427,13 +1438,13 @@ func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-//  @return Order
-func (a *OrdersApiService) GETOrdersOrderIdExecute(r ApiGETOrdersOrderIdRequest) (*Order, *http.Response, error) {
+//  @return GETOrdersOrderId200Response
+func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRequest) (*GETOrdersOrderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Order
+		localVarReturnValue *GETOrdersOrderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrdersOrderId")
@@ -1502,13 +1513,13 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r ApiGETOrdersOrderIdRequest)
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPaypalPaymentIdOrderRequest struct {
+type OrdersApiGETPaypalPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
 	paypalPaymentId string
 }
 
-func (r ApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaypalPaymentIdOrderExecute(r)
 }
 
@@ -1519,10 +1530,10 @@ Retrieve the order associated to the paypal payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paypalPaymentId The resource's id
- @return ApiGETPaypalPaymentIdOrderRequest
+ @return OrdersApiGETPaypalPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) ApiGETPaypalPaymentIdOrderRequest {
-	return ApiGETPaypalPaymentIdOrderRequest{
+func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) OrdersApiGETPaypalPaymentIdOrderRequest {
+	return OrdersApiGETPaypalPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paypalPaymentId: paypalPaymentId,
@@ -1530,7 +1541,7 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPa
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r ApiGETPaypalPaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1594,13 +1605,13 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r ApiGETPaypalPaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETRefundIdOrderRequest struct {
+type OrdersApiGETRefundIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	refundId   string
 }
 
-func (r ApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETRefundIdOrderExecute(r)
 }
 
@@ -1611,10 +1622,10 @@ Retrieve the order associated to the refund
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param refundId The resource's id
- @return ApiGETRefundIdOrderRequest
+ @return OrdersApiGETRefundIdOrderRequest
 */
-func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string) ApiGETRefundIdOrderRequest {
-	return ApiGETRefundIdOrderRequest{
+func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string) OrdersApiGETRefundIdOrderRequest {
+	return OrdersApiGETRefundIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		refundId:   refundId,
@@ -1622,7 +1633,7 @@ func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETRefundIdOrderExecute(r ApiGETRefundIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1686,13 +1697,13 @@ func (a *OrdersApiService) GETRefundIdOrderExecute(r ApiGETRefundIdOrderRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdOrderRequest struct {
+type OrdersApiGETReturnIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	returnId   string
 }
 
-func (r ApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdOrderExecute(r)
 }
 
@@ -1703,10 +1714,10 @@ Retrieve the order associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdOrderRequest
+ @return OrdersApiGETReturnIdOrderRequest
 */
-func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string) ApiGETReturnIdOrderRequest {
-	return ApiGETReturnIdOrderRequest{
+func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string) OrdersApiGETReturnIdOrderRequest {
+	return OrdersApiGETReturnIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -1714,7 +1725,7 @@ func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETReturnIdOrderExecute(r ApiGETReturnIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1778,13 +1789,13 @@ func (a *OrdersApiService) GETReturnIdOrderExecute(r ApiGETReturnIdOrderRequest)
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdOrderRequest struct {
+type OrdersApiGETShipmentIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdOrderExecute(r)
 }
 
@@ -1795,10 +1806,10 @@ Retrieve the order associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdOrderRequest
+ @return OrdersApiGETShipmentIdOrderRequest
 */
-func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) ApiGETShipmentIdOrderRequest {
-	return ApiGETShipmentIdOrderRequest{
+func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) OrdersApiGETShipmentIdOrderRequest {
+	return OrdersApiGETShipmentIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -1806,7 +1817,7 @@ func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId st
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETShipmentIdOrderExecute(r ApiGETShipmentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1870,13 +1881,13 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r ApiGETShipmentIdOrderRequ
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentIdOrderRequest struct {
+type OrdersApiGETStripePaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripePaymentIdOrderExecute(r)
 }
 
@@ -1887,10 +1898,10 @@ Retrieve the order associated to the stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentIdOrderRequest
+ @return OrdersApiGETStripePaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) ApiGETStripePaymentIdOrderRequest {
-	return ApiGETStripePaymentIdOrderRequest{
+func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) OrdersApiGETStripePaymentIdOrderRequest {
+	return OrdersApiGETStripePaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -1898,7 +1909,7 @@ func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePa
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r ApiGETStripePaymentIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePaymentIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1962,13 +1973,13 @@ func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r ApiGETStripePaymentI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTransactionIdOrderRequest struct {
+type OrdersApiGETTransactionIdOrderRequest struct {
 	ctx           context.Context
 	ApiService    *OrdersApiService
 	transactionId string
 }
 
-func (r ApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTransactionIdOrderExecute(r)
 }
 
@@ -1979,10 +1990,10 @@ Retrieve the order associated to the transaction
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param transactionId The resource's id
- @return ApiGETTransactionIdOrderRequest
+ @return OrdersApiGETTransactionIdOrderRequest
 */
-func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) ApiGETTransactionIdOrderRequest {
-	return ApiGETTransactionIdOrderRequest{
+func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) OrdersApiGETTransactionIdOrderRequest {
+	return OrdersApiGETTransactionIdOrderRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		transactionId: transactionId,
@@ -1990,7 +2001,7 @@ func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactio
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETTransactionIdOrderExecute(r ApiGETTransactionIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactionIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2054,13 +2065,13 @@ func (a *OrdersApiService) GETTransactionIdOrderExecute(r ApiGETTransactionIdOrd
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETVoidIdOrderRequest struct {
+type OrdersApiGETVoidIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
 	voidId     string
 }
 
-func (r ApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETVoidIdOrderExecute(r)
 }
 
@@ -2071,10 +2082,10 @@ Retrieve the order associated to the void
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param voidId The resource's id
- @return ApiGETVoidIdOrderRequest
+ @return OrdersApiGETVoidIdOrderRequest
 */
-func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) ApiGETVoidIdOrderRequest {
-	return ApiGETVoidIdOrderRequest{
+func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) OrdersApiGETVoidIdOrderRequest {
+	return OrdersApiGETVoidIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
 		voidId:     voidId,
@@ -2082,7 +2093,7 @@ func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) Ap
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETVoidIdOrderExecute(r ApiGETVoidIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2146,13 +2157,13 @@ func (a *OrdersApiService) GETVoidIdOrderExecute(r ApiGETVoidIdOrderRequest) (*h
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWireTransferIdOrderRequest struct {
+type OrdersApiGETWireTransferIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *OrdersApiService
 	wireTransferId string
 }
 
-func (r ApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
+func (r OrdersApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETWireTransferIdOrderExecute(r)
 }
 
@@ -2163,10 +2174,10 @@ Retrieve the order associated to the wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return ApiGETWireTransferIdOrderRequest
+ @return OrdersApiGETWireTransferIdOrderRequest
 */
-func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) ApiGETWireTransferIdOrderRequest {
-	return ApiGETWireTransferIdOrderRequest{
+func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) OrdersApiGETWireTransferIdOrderRequest {
+	return OrdersApiGETWireTransferIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -2174,7 +2185,7 @@ func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTrans
 }
 
 // Execute executes the request
-func (a *OrdersApiService) GETWireTransferIdOrderExecute(r ApiGETWireTransferIdOrderRequest) (*http.Response, error) {
+func (a *OrdersApiService) GETWireTransferIdOrderExecute(r OrdersApiGETWireTransferIdOrderRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2238,19 +2249,19 @@ func (a *OrdersApiService) GETWireTransferIdOrderExecute(r ApiGETWireTransferIdO
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHOrdersOrderIdRequest struct {
+type OrdersApiPATCHOrdersOrderIdRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
 	orderUpdate *OrderUpdate
 	orderId     string
 }
 
-func (r ApiPATCHOrdersOrderIdRequest) OrderUpdate(orderUpdate OrderUpdate) ApiPATCHOrdersOrderIdRequest {
+func (r OrdersApiPATCHOrdersOrderIdRequest) OrderUpdate(orderUpdate OrderUpdate) OrdersApiPATCHOrdersOrderIdRequest {
 	r.orderUpdate = &orderUpdate
 	return r
 }
 
-func (r ApiPATCHOrdersOrderIdRequest) Execute() (*http.Response, error) {
+func (r OrdersApiPATCHOrdersOrderIdRequest) Execute() (*PATCHOrdersOrderId200Response, *http.Response, error) {
 	return r.ApiService.PATCHOrdersOrderIdExecute(r)
 }
 
@@ -2261,10 +2272,10 @@ Update an order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiPATCHOrdersOrderIdRequest
+ @return OrdersApiPATCHOrdersOrderIdRequest
 */
-func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId string) ApiPATCHOrdersOrderIdRequest {
-	return ApiPATCHOrdersOrderIdRequest{
+func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId string) OrdersApiPATCHOrdersOrderIdRequest {
+	return OrdersApiPATCHOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -2272,16 +2283,18 @@ func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r ApiPATCHOrdersOrderIdRequest) (*http.Response, error) {
+//  @return PATCHOrdersOrderId200Response
+func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrderIdRequest) (*PATCHOrdersOrderId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHOrdersOrderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.PATCHOrdersOrderId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}"
@@ -2291,7 +2304,7 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r ApiPATCHOrdersOrderIdRequ
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.orderUpdate == nil {
-		return nil, reportError("orderUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("orderUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2304,7 +2317,7 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r ApiPATCHOrdersOrderIdRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -2315,19 +2328,19 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r ApiPATCHOrdersOrderIdRequ
 	localVarPostBody = r.orderUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -2335,24 +2348,33 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r ApiPATCHOrdersOrderIdRequ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTOrdersRequest struct {
+type OrdersApiPOSTOrdersRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
 	orderCreate *OrderCreate
 }
 
-func (r ApiPOSTOrdersRequest) OrderCreate(orderCreate OrderCreate) ApiPOSTOrdersRequest {
+func (r OrdersApiPOSTOrdersRequest) OrderCreate(orderCreate OrderCreate) OrdersApiPOSTOrdersRequest {
 	r.orderCreate = &orderCreate
 	return r
 }
 
-func (r ApiPOSTOrdersRequest) Execute() (*http.Response, error) {
+func (r OrdersApiPOSTOrdersRequest) Execute() (*POSTOrders201Response, *http.Response, error) {
 	return r.ApiService.POSTOrdersExecute(r)
 }
 
@@ -2362,26 +2384,28 @@ POSTOrders Create an order
 Create an order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTOrdersRequest
+ @return OrdersApiPOSTOrdersRequest
 */
-func (a *OrdersApiService) POSTOrders(ctx context.Context) ApiPOSTOrdersRequest {
-	return ApiPOSTOrdersRequest{
+func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRequest {
+	return OrdersApiPOSTOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *OrdersApiService) POSTOrdersExecute(r ApiPOSTOrdersRequest) (*http.Response, error) {
+//  @return POSTOrders201Response
+func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*POSTOrders201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTOrders201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.POSTOrders")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/orders"
@@ -2390,7 +2414,7 @@ func (a *OrdersApiService) POSTOrdersExecute(r ApiPOSTOrdersRequest) (*http.Resp
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.orderCreate == nil {
-		return nil, reportError("orderCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("orderCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2403,7 +2427,7 @@ func (a *OrdersApiService) POSTOrdersExecute(r ApiPOSTOrdersRequest) (*http.Resp
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -2414,19 +2438,19 @@ func (a *OrdersApiService) POSTOrdersExecute(r ApiPOSTOrdersRequest) (*http.Resp
 	localVarPostBody = r.orderCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -2434,8 +2458,17 @@ func (a *OrdersApiService) POSTOrdersExecute(r ApiPOSTOrdersRequest) (*http.Resp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

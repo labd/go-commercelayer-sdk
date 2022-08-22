@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderValidationRuleData struct for OrderValidationRuleData
 type OrderValidationRuleData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes     `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                          `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderValidationRuleData instantiates a new OrderValidationRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderValidationRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *OrderValidationRuleData {
+func NewOrderValidationRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *OrderValidationRuleData {
 	this := OrderValidationRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *OrderValidationRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderValidationRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *OrderValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *OrderValidationRuleData) GetAttributes() BillingInfoValidationRuleDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *OrderValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *OrderValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleD
 }
 
 // SetAttributes sets field value
-func (o *OrderValidationRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *OrderValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderValidationRuleData) GetRelationships() BillingInfoValidationRuleDataRelationships {
+func (o *OrderValidationRuleData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret BillingInfoValidationRuleDataRelationships
+		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderValidationRuleData) GetRelationships() BillingInfoValidationRuleDa
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderValidationRuleData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
+func (o *OrderValidationRuleData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderValidationRuleData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
-func (o *OrderValidationRuleData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *OrderValidationRuleData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

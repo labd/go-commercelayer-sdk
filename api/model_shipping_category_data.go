@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingCategoryData struct for ShippingCategoryData
 type ShippingCategoryData struct {
 	// The resource's type
-	Type          string                             `json:"type"`
-	Attributes    ShippingCategoryDataAttributes     `json:"attributes"`
-	Relationships *ShippingCategoryDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    GETShippingCategories200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETShippingCategories200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingCategoryData instantiates a new ShippingCategoryData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryData(type_ string, attributes ShippingCategoryDataAttributes) *ShippingCategoryData {
+func NewShippingCategoryData(type_ string, attributes GETShippingCategories200ResponseDataInnerAttributes) *ShippingCategoryData {
 	this := ShippingCategoryData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ShippingCategoryData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingCategoryData) GetAttributes() ShippingCategoryDataAttributes {
+func (o *ShippingCategoryData) GetAttributes() GETShippingCategories200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShippingCategoryDataAttributes
+		var ret GETShippingCategories200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ShippingCategoryData) GetAttributes() ShippingCategoryDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryData) GetAttributesOk() (*ShippingCategoryDataAttributes, bool) {
+func (o *ShippingCategoryData) GetAttributesOk() (*GETShippingCategories200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ShippingCategoryData) GetAttributesOk() (*ShippingCategoryDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *ShippingCategoryData) SetAttributes(v ShippingCategoryDataAttributes) {
+func (o *ShippingCategoryData) SetAttributes(v GETShippingCategories200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingCategoryData) GetRelationships() ShippingCategoryDataRelationships {
+func (o *ShippingCategoryData) GetRelationships() GETShippingCategories200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingCategoryDataRelationships
+		var ret GETShippingCategories200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShippingCategoryData) GetRelationships() ShippingCategoryDataRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryData) GetRelationshipsOk() (*ShippingCategoryDataRelationships, bool) {
+func (o *ShippingCategoryData) GetRelationshipsOk() (*GETShippingCategories200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShippingCategoryData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingCategoryDataRelationships and assigns it to the Relationships field.
-func (o *ShippingCategoryData) SetRelationships(v ShippingCategoryDataRelationships) {
+// SetRelationships gets a reference to the given GETShippingCategories200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ShippingCategoryData) SetRelationships(v GETShippingCategories200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

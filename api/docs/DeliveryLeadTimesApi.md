@@ -1,6 +1,6 @@
 # \DeliveryLeadTimesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -85,7 +85,7 @@ No authorization required
 
 ## GETDeliveryLeadTimes
 
-> GETDeliveryLeadTimes(ctx).Execute()
+> GETDeliveryLeadTimes200Response GETDeliveryLeadTimes(ctx).Execute()
 
 List all delivery lead times
 
@@ -112,6 +112,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETDeliveryLeadTimes`: GETDeliveryLeadTimes200Response
+    fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.GETDeliveryLeadTimes`: %v\n", resp)
 }
 ```
 
@@ -126,16 +128,16 @@ Other parameters are passed through a pointer to a apiGETDeliveryLeadTimesReques
 
 ### Return type
 
- (empty response body)
+[**GETDeliveryLeadTimes200Response**](GETDeliveryLeadTimes200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -144,7 +146,7 @@ No authorization required
 
 ## GETDeliveryLeadTimesDeliveryLeadTimeId
 
-> DeliveryLeadTime GETDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).Execute()
+> GETDeliveryLeadTimesDeliveryLeadTimeId200Response GETDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).Execute()
 
 Retrieve a delivery lead time
 
@@ -172,7 +174,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETDeliveryLeadTimesDeliveryLeadTimeId`: DeliveryLeadTime
+    // response from `GETDeliveryLeadTimesDeliveryLeadTimeId`: GETDeliveryLeadTimesDeliveryLeadTimeId200Response
     fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.GETDeliveryLeadTimesDeliveryLeadTimeId`: %v\n", resp)
 }
 ```
@@ -196,11 +198,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeliveryLeadTime**](DeliveryLeadTime.md)
+[**GETDeliveryLeadTimesDeliveryLeadTimeId200Response**](GETDeliveryLeadTimesDeliveryLeadTimeId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -268,7 +270,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHDeliveryLeadTimesDeliveryLeadTimeId
 
-> PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
+> PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
 
 Update a delivery lead time
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("delivery_lead_times", "XGZwpOSrWL", *openapiclient.NewDeliveryLeadTimeUpdateDataAttributes())) // DeliveryLeadTimeUpdate | 
+    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("delivery_lead_times", "XGZwpOSrWL", *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes())) // DeliveryLeadTimeUpdate | 
     deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHDeliveryLeadTimesDeliveryLeadTimeId`: PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
+    fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTDeliveryLeadTimes
 
-> POSTDeliveryLeadTimes(ctx).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
+> POSTDeliveryLeadTimes201Response POSTDeliveryLeadTimes(ctx).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
 
 Create a delivery lead time
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("delivery_lead_times", *openapiclient.NewDeliveryLeadTimeCreateDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
+    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("delivery_lead_times", *openapiclient.NewPOSTDeliveryLeadTimes201ResponseDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.POSTDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTDeliveryLeadTimes`: POSTDeliveryLeadTimes201Response
+    fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.POSTDeliveryLeadTimes`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTDeliveryLeadTimes201Response**](POSTDeliveryLeadTimes201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

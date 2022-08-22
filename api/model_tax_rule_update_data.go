@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type TaxRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                      `json:"id"`
-	Attributes    TaxRuleUpdateDataAttributes `json:"attributes"`
-	Relationships *TaxRuleDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                          `json:"id"`
+	Attributes    PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *GETTaxRules200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleUpdateData instantiates a new TaxRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleUpdateData(type_ string, id string, attributes TaxRuleUpdateDataAttributes) *TaxRuleUpdateData {
+func NewTaxRuleUpdateData(type_ string, id string, attributes PATCHTaxRulesTaxRuleId200ResponseDataAttributes) *TaxRuleUpdateData {
 	this := TaxRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *TaxRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxRuleUpdateData) GetAttributes() TaxRuleUpdateDataAttributes {
+func (o *TaxRuleUpdateData) GetAttributes() PATCHTaxRulesTaxRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret TaxRuleUpdateDataAttributes
+		var ret PATCHTaxRulesTaxRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *TaxRuleUpdateData) GetAttributes() TaxRuleUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdateData) GetAttributesOk() (*TaxRuleUpdateDataAttributes, bool) {
+func (o *TaxRuleUpdateData) GetAttributesOk() (*PATCHTaxRulesTaxRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *TaxRuleUpdateData) GetAttributesOk() (*TaxRuleUpdateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *TaxRuleUpdateData) SetAttributes(v TaxRuleUpdateDataAttributes) {
+func (o *TaxRuleUpdateData) SetAttributes(v PATCHTaxRulesTaxRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxRuleUpdateData) GetRelationships() TaxRuleDataRelationships {
+func (o *TaxRuleUpdateData) GetRelationships() GETTaxRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret TaxRuleDataRelationships
+		var ret GETTaxRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *TaxRuleUpdateData) GetRelationships() TaxRuleDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdateData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool) {
+func (o *TaxRuleUpdateData) GetRelationshipsOk() (*GETTaxRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *TaxRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given TaxRuleDataRelationships and assigns it to the Relationships field.
-func (o *TaxRuleUpdateData) SetRelationships(v TaxRuleDataRelationships) {
+// SetRelationships gets a reference to the given GETTaxRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *TaxRuleUpdateData) SetRelationships(v GETTaxRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

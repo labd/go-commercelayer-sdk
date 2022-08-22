@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CustomerAddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                  `json:"id"`
-	Attributes    AdyenPaymentCreateDataAttributes        `json:"attributes"`
-	Relationships *CustomerAddressUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                               `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes                           `json:"attributes"`
+	Relationships *PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressUpdateData instantiates a new CustomerAddressUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *CustomerAddressUpdateData {
+func NewCustomerAddressUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerAddressUpdateData {
 	this := CustomerAddressUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *CustomerAddressUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerAddressUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *CustomerAddressUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *CustomerAddressUpdateData) GetAttributes() AdyenPaymentCreateDataAttrib
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *CustomerAddressUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *CustomerAddressUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAt
 }
 
 // SetAttributes sets field value
-func (o *CustomerAddressUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *CustomerAddressUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateDataRelationships {
+func (o *CustomerAddressUpdateData) GetRelationships() PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CustomerAddressUpdateDataRelationships
+		var ret PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressUpdateDataRelationships, bool) {
+func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CustomerAddressUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CustomerAddressUpdateDataRelationships and assigns it to the Relationships field.
-func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *CustomerAddressUpdateData) SetRelationships(v PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

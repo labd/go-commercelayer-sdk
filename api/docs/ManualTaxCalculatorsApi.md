@@ -1,6 +1,6 @@
 # \ManualTaxCalculatorsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 ## GETManualTaxCalculators
 
-> GETManualTaxCalculators(ctx).Execute()
+> GETManualTaxCalculators200Response GETManualTaxCalculators(ctx).Execute()
 
 List all manual tax calculators
 
@@ -110,6 +110,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETManualTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETManualTaxCalculators`: GETManualTaxCalculators200Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.GETManualTaxCalculators`: %v\n", resp)
 }
 ```
 
@@ -124,16 +126,16 @@ Other parameters are passed through a pointer to a apiGETManualTaxCalculatorsReq
 
 ### Return type
 
- (empty response body)
+[**GETManualTaxCalculators200Response**](GETManualTaxCalculators200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -142,7 +144,7 @@ No authorization required
 
 ## GETManualTaxCalculatorsManualTaxCalculatorId
 
-> ManualTaxCalculator GETManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).Execute()
+> GETManualTaxCalculatorsManualTaxCalculatorId200Response GETManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).Execute()
 
 Retrieve a manual tax calculator
 
@@ -170,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualTaxCalculatorsManualTaxCalculatorId`: ManualTaxCalculator
+    // response from `GETManualTaxCalculatorsManualTaxCalculatorId`: GETManualTaxCalculatorsManualTaxCalculatorId200Response
     fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.GETManualTaxCalculatorsManualTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -194,11 +196,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualTaxCalculator**](ManualTaxCalculator.md)
+[**GETManualTaxCalculatorsManualTaxCalculatorId200Response**](GETManualTaxCalculatorsManualTaxCalculatorId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHManualTaxCalculatorsManualTaxCalculatorId
 
-> PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate).Execute()
+> PATCHManualTaxCalculatorsManualTaxCalculatorId200Response PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate).Execute()
 
 Update a manual tax calculator
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("manual_tax_calculators", "XGZwpOSrWL", *openapiclient.NewManualTaxCalculatorUpdateDataAttributes())) // ManualTaxCalculatorUpdate | 
+    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("manual_tax_calculators", "XGZwpOSrWL", *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
     manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.PATCHManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHManualTaxCalculatorsManualTaxCalculatorId`: PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.PATCHManualTaxCalculatorsManualTaxCalculatorId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHManualTaxCalculatorsManualTaxCalculatorId200Response**](PATCHManualTaxCalculatorsManualTaxCalculatorId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTManualTaxCalculators
 
-> POSTManualTaxCalculators(ctx).ManualTaxCalculatorCreate(manualTaxCalculatorCreate).Execute()
+> POSTManualTaxCalculators201Response POSTManualTaxCalculators(ctx).ManualTaxCalculatorCreate(manualTaxCalculatorCreate).Execute()
 
 Create a manual tax calculator
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("manual_tax_calculators", *openapiclient.NewManualTaxCalculatorCreateDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
+    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("manual_tax_calculators", *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.POSTManualTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTManualTaxCalculators`: POSTManualTaxCalculators201Response
+    fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.POSTManualTaxCalculators`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTManualTaxCalculators201Response**](POSTManualTaxCalculators201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

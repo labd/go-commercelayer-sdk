@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "checkout_com_payments"]
-**Attributes** | [**CheckoutComPaymentDataAttributes**](CheckoutComPaymentDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETCheckoutComPayments200ResponseDataInnerAttributes**](GETCheckoutComPayments200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationships**](GETAdyenPayments200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComPaymentData
 
-`func NewCheckoutComPaymentData(type_ string, attributes CheckoutComPaymentDataAttributes, ) *CheckoutComPaymentData`
+`func NewCheckoutComPaymentData(type_ string, attributes GETCheckoutComPayments200ResponseDataInnerAttributes, ) *CheckoutComPaymentData`
 
 NewCheckoutComPaymentData instantiates a new CheckoutComPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComPaymentData) GetAttributes() CheckoutComPaymentDataAttributes`
+`func (o *CheckoutComPaymentData) GetAttributes() GETCheckoutComPayments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComPaymentData) GetAttributesOk() (*CheckoutComPaymentDataAttributes, bool)`
+`func (o *CheckoutComPaymentData) GetAttributesOk() (*GETCheckoutComPayments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComPaymentData) SetAttributes(v CheckoutComPaymentDataAttributes)`
+`func (o *CheckoutComPaymentData) SetAttributes(v GETCheckoutComPayments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *CheckoutComPaymentData) GetRelationships() AdyenPaymentDataRelationships`
+`func (o *CheckoutComPaymentData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CheckoutComPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool)`
+`func (o *CheckoutComPaymentData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CheckoutComPaymentData) SetRelationships(v AdyenPaymentDataRelationships)`
+`func (o *CheckoutComPaymentData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

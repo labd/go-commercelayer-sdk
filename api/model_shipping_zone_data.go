@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingZoneData struct for ShippingZoneData
 type ShippingZoneData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    ShippingZoneDataAttributes     `json:"attributes"`
-	Relationships *ShippingZoneDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETShippingZones200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETShippingZones200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingZoneData instantiates a new ShippingZoneData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZoneData(type_ string, attributes ShippingZoneDataAttributes) *ShippingZoneData {
+func NewShippingZoneData(type_ string, attributes GETShippingZones200ResponseDataInnerAttributes) *ShippingZoneData {
 	this := ShippingZoneData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *ShippingZoneData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingZoneData) GetAttributes() ShippingZoneDataAttributes {
+func (o *ShippingZoneData) GetAttributes() GETShippingZones200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShippingZoneDataAttributes
+		var ret GETShippingZones200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *ShippingZoneData) GetAttributes() ShippingZoneDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneData) GetAttributesOk() (*ShippingZoneDataAttributes, bool) {
+func (o *ShippingZoneData) GetAttributesOk() (*GETShippingZones200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *ShippingZoneData) GetAttributesOk() (*ShippingZoneDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ShippingZoneData) SetAttributes(v ShippingZoneDataAttributes) {
+func (o *ShippingZoneData) SetAttributes(v GETShippingZones200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingZoneData) GetRelationships() ShippingZoneDataRelationships {
+func (o *ShippingZoneData) GetRelationships() GETShippingZones200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ShippingZoneDataRelationships
+		var ret GETShippingZones200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShippingZoneData) GetRelationships() ShippingZoneDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneData) GetRelationshipsOk() (*ShippingZoneDataRelationships, bool) {
+func (o *ShippingZoneData) GetRelationshipsOk() (*GETShippingZones200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShippingZoneData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ShippingZoneDataRelationships and assigns it to the Relationships field.
-func (o *ShippingZoneData) SetRelationships(v ShippingZoneDataRelationships) {
+// SetRelationships gets a reference to the given GETShippingZones200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *ShippingZoneData) SetRelationships(v GETShippingZones200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // LineItemOptionData struct for LineItemOptionData
 type LineItemOptionData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    LineItemOptionDataAttributes     `json:"attributes"`
-	Relationships *LineItemOptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETLineItemOptions200ResponseDataInnerAttributes     `json:"attributes"`
+	Relationships *GETLineItemOptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionData instantiates a new LineItemOptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionData(type_ string, attributes LineItemOptionDataAttributes) *LineItemOptionData {
+func NewLineItemOptionData(type_ string, attributes GETLineItemOptions200ResponseDataInnerAttributes) *LineItemOptionData {
 	this := LineItemOptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *LineItemOptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemOptionData) GetAttributes() LineItemOptionDataAttributes {
+func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret LineItemOptionDataAttributes
+		var ret GETLineItemOptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *LineItemOptionData) GetAttributes() LineItemOptionDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionData) GetAttributesOk() (*LineItemOptionDataAttributes, bool) {
+func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *LineItemOptionData) GetAttributesOk() (*LineItemOptionDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *LineItemOptionData) SetAttributes(v LineItemOptionDataAttributes) {
+func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *LineItemOptionData) GetRelationships() LineItemOptionDataRelationships {
+func (o *LineItemOptionData) GetRelationships() GETLineItemOptions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret LineItemOptionDataRelationships
+		var ret GETLineItemOptions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *LineItemOptionData) GetRelationships() LineItemOptionDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionData) GetRelationshipsOk() (*LineItemOptionDataRelationships, bool) {
+func (o *LineItemOptionData) GetRelationshipsOk() (*GETLineItemOptions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *LineItemOptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given LineItemOptionDataRelationships and assigns it to the Relationships field.
-func (o *LineItemOptionData) SetRelationships(v LineItemOptionDataRelationships) {
+// SetRelationships gets a reference to the given GETLineItemOptions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *LineItemOptionData) SetRelationships(v GETLineItemOptions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

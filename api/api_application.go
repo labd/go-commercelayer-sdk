@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -22,12 +22,12 @@ import (
 // ApplicationApiService ApplicationApi service
 type ApplicationApiService service
 
-type ApiGETApplicationApplicationIdRequest struct {
+type ApplicationApiGETApplicationApplicationIdRequest struct {
 	ctx        context.Context
 	ApiService *ApplicationApiService
 }
 
-func (r ApiGETApplicationApplicationIdRequest) Execute() (*Application, *http.Response, error) {
+func (r ApplicationApiGETApplicationApplicationIdRequest) Execute() (*GETApplicationApplicationId200Response, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -37,23 +37,23 @@ GETApplicationApplicationId Retrieve the application
 Retrieve the application
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETApplicationApplicationIdRequest
+ @return ApplicationApiGETApplicationApplicationIdRequest
 */
-func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApiGETApplicationApplicationIdRequest {
-	return ApiGETApplicationApplicationIdRequest{
+func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest {
+	return ApplicationApiGETApplicationApplicationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Application
-func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApiGETApplicationApplicationIdRequest) (*Application, *http.Response, error) {
+//  @return GETApplicationApplicationId200Response
+func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Application
+		localVarReturnValue *GETApplicationApplicationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.GETApplicationApplicationId")

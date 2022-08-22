@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type MarketUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                         `json:"id"`
-	Attributes    MarketUpdateDataAttributes     `json:"attributes"`
-	Relationships *MarketUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                            `json:"id"`
+	Attributes    PATCHMarketsMarketId200ResponseDataAttributes     `json:"attributes"`
+	Relationships *PATCHMarketsMarketId200ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMarketUpdateData instantiates a new MarketUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMarketUpdateData(type_ string, id string, attributes MarketUpdateDataAttributes) *MarketUpdateData {
+func NewMarketUpdateData(type_ string, id string, attributes PATCHMarketsMarketId200ResponseDataAttributes) *MarketUpdateData {
 	this := MarketUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -96,9 +96,9 @@ func (o *MarketUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MarketUpdateData) GetAttributes() MarketUpdateDataAttributes {
+func (o *MarketUpdateData) GetAttributes() PATCHMarketsMarketId200ResponseDataAttributes {
 	if o == nil {
-		var ret MarketUpdateDataAttributes
+		var ret PATCHMarketsMarketId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +107,7 @@ func (o *MarketUpdateData) GetAttributes() MarketUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateData) GetAttributesOk() (*MarketUpdateDataAttributes, bool) {
+func (o *MarketUpdateData) GetAttributesOk() (*PATCHMarketsMarketId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,14 +115,14 @@ func (o *MarketUpdateData) GetAttributesOk() (*MarketUpdateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *MarketUpdateData) SetAttributes(v MarketUpdateDataAttributes) {
+func (o *MarketUpdateData) SetAttributes(v PATCHMarketsMarketId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MarketUpdateData) GetRelationships() MarketUpdateDataRelationships {
+func (o *MarketUpdateData) GetRelationships() PATCHMarketsMarketId200ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret MarketUpdateDataRelationships
+		var ret PATCHMarketsMarketId200ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *MarketUpdateData) GetRelationships() MarketUpdateDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateData) GetRelationshipsOk() (*MarketUpdateDataRelationships, bool) {
+func (o *MarketUpdateData) GetRelationshipsOk() (*PATCHMarketsMarketId200ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *MarketUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given MarketUpdateDataRelationships and assigns it to the Relationships field.
-func (o *MarketUpdateData) SetRelationships(v MarketUpdateDataRelationships) {
+// SetRelationships gets a reference to the given PATCHMarketsMarketId200ResponseDataRelationships and assigns it to the Relationships field.
+func (o *MarketUpdateData) SetRelationships(v PATCHMarketsMarketId200ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

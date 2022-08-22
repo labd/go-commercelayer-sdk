@@ -1,6 +1,9 @@
 .DEFAULT_GOAL := build
 
-build: tools/openapi-generator-cli generate fmt
+build: tools/openapi-generator-cli clean generate fmt
+
+clean:
+	rm -rf api/
 
 generate:
 	openapi-generator-cli generate -i "https://data.commercelayer.app/schemas/openapi.json" \

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "braintree_payments"]
-**Attributes** | [**BraintreePaymentCreateDataAttributes**](BraintreePaymentCreateDataAttributes.md) |  | 
-**Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
+**Attributes** | [**POSTBraintreePayments201ResponseDataAttributes**](POSTBraintreePayments201ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**POSTAdyenPayments201ResponseDataRelationships**](POSTAdyenPayments201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreePaymentCreateData
 
-`func NewBraintreePaymentCreateData(type_ string, attributes BraintreePaymentCreateDataAttributes, ) *BraintreePaymentCreateData`
+`func NewBraintreePaymentCreateData(type_ string, attributes POSTBraintreePayments201ResponseDataAttributes, ) *BraintreePaymentCreateData`
 
 NewBraintreePaymentCreateData instantiates a new BraintreePaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreePaymentCreateData) GetAttributes() BraintreePaymentCreateDataAttributes`
+`func (o *BraintreePaymentCreateData) GetAttributes() POSTBraintreePayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreePaymentCreateData) GetAttributesOk() (*BraintreePaymentCreateDataAttributes, bool)`
+`func (o *BraintreePaymentCreateData) GetAttributesOk() (*POSTBraintreePayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreePaymentCreateData) SetAttributes(v BraintreePaymentCreateDataAttributes)`
+`func (o *BraintreePaymentCreateData) SetAttributes(v POSTBraintreePayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *BraintreePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships`
+`func (o *BraintreePaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool)`
+`func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BraintreePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships)`
+`func (o *BraintreePaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

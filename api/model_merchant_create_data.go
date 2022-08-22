@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 2.7.3
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // MerchantCreateData struct for MerchantCreateData
 type MerchantCreateData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    MerchantCreateDataAttributes     `json:"attributes"`
-	Relationships *MerchantCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTMerchants201ResponseDataAttributes     `json:"attributes"`
+	Relationships *POSTMerchants201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMerchantCreateData instantiates a new MerchantCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantCreateData(type_ string, attributes MerchantCreateDataAttributes) *MerchantCreateData {
+func NewMerchantCreateData(type_ string, attributes POSTMerchants201ResponseDataAttributes) *MerchantCreateData {
 	this := MerchantCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -69,9 +69,9 @@ func (o *MerchantCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MerchantCreateData) GetAttributes() MerchantCreateDataAttributes {
+func (o *MerchantCreateData) GetAttributes() POSTMerchants201ResponseDataAttributes {
 	if o == nil {
-		var ret MerchantCreateDataAttributes
+		var ret POSTMerchants201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *MerchantCreateData) GetAttributes() MerchantCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MerchantCreateData) GetAttributesOk() (*MerchantCreateDataAttributes, bool) {
+func (o *MerchantCreateData) GetAttributesOk() (*POSTMerchants201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *MerchantCreateData) GetAttributesOk() (*MerchantCreateDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *MerchantCreateData) SetAttributes(v MerchantCreateDataAttributes) {
+func (o *MerchantCreateData) SetAttributes(v POSTMerchants201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MerchantCreateData) GetRelationships() MerchantCreateDataRelationships {
+func (o *MerchantCreateData) GetRelationships() POSTMerchants201ResponseDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret MerchantCreateDataRelationships
+		var ret POSTMerchants201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *MerchantCreateData) GetRelationships() MerchantCreateDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantCreateData) GetRelationshipsOk() (*MerchantCreateDataRelationships, bool) {
+func (o *MerchantCreateData) GetRelationshipsOk() (*POSTMerchants201ResponseDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *MerchantCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given MerchantCreateDataRelationships and assigns it to the Relationships field.
-func (o *MerchantCreateData) SetRelationships(v MerchantCreateDataRelationships) {
+// SetRelationships gets a reference to the given POSTMerchants201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *MerchantCreateData) SetRelationships(v POSTMerchants201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 

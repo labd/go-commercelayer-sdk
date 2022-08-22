@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_rules"]
-**Attributes** | [**TaxRuleDataAttributes**](TaxRuleDataAttributes.md) |  | 
-**Relationships** | Pointer to [**TaxRuleDataRelationships**](TaxRuleDataRelationships.md) |  | [optional] 
+**Attributes** | [**GETTaxRules200ResponseDataInnerAttributes**](GETTaxRules200ResponseDataInnerAttributes.md) |  | 
+**Relationships** | Pointer to [**GETTaxRules200ResponseDataInnerRelationships**](GETTaxRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxRuleData
 
-`func NewTaxRuleData(type_ string, attributes TaxRuleDataAttributes, ) *TaxRuleData`
+`func NewTaxRuleData(type_ string, attributes GETTaxRules200ResponseDataInnerAttributes, ) *TaxRuleData`
 
 NewTaxRuleData instantiates a new TaxRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxRuleData) GetAttributes() TaxRuleDataAttributes`
+`func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxRuleData) GetAttributesOk() (*TaxRuleDataAttributes, bool)`
+`func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxRuleData) SetAttributes(v TaxRuleDataAttributes)`
+`func (o *TaxRuleData) SetAttributes(v GETTaxRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *TaxRuleData) GetRelationships() TaxRuleDataRelationships`
+`func (o *TaxRuleData) GetRelationships() GETTaxRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxRuleData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool)`
+`func (o *TaxRuleData) GetRelationshipsOk() (*GETTaxRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxRuleData) SetRelationships(v TaxRuleDataRelationships)`
+`func (o *TaxRuleData) SetRelationships(v GETTaxRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 
