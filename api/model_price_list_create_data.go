@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PriceListCreateData struct for PriceListCreateData
 type PriceListCreateData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    POSTPriceLists201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                  `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTPriceLists201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{} `json:"relationships,omitempty"`
 }
 
 // NewPriceListCreateData instantiates a new PriceListCreateData object
@@ -173,3 +173,5 @@ func (v *NullablePriceListCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // RefundsApiService RefundsApi service
 type RefundsApiService service
 
 type RefundsApiGETCaptureIdRefundsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RefundsApiService
-	captureId  string
+	captureId string
 }
 
 func (r RefundsApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Retrieve the refunds associated to the capture
 func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) RefundsApiGETCaptureIdRefundsRequest {
 	return RefundsApiGETCaptureIdRefundsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		captureId:  captureId,
+		ctx: ctx,
+		captureId: captureId,
 	}
 }
 
 // Execute executes the request
 func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdRefundsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RefundsApiService.GETCaptureIdRefunds")
@@ -116,9 +117,9 @@ func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdR
 }
 
 type RefundsApiGETOrderIdRefundsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RefundsApiService
-	orderId    string
+	orderId string
 }
 
 func (r RefundsApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
@@ -137,17 +138,17 @@ Retrieve the refunds associated to the order
 func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId string) RefundsApiGETOrderIdRefundsRequest {
 	return RefundsApiGETOrderIdRefundsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *RefundsApiService) GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefundsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RefundsApiService.GETOrderIdRefunds")
@@ -208,7 +209,7 @@ func (a *RefundsApiService) GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefun
 }
 
 type RefundsApiGETRefundsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RefundsApiService
 }
 
@@ -227,7 +228,7 @@ List all refunds
 func (a *RefundsApiService) GETRefunds(ctx context.Context) RefundsApiGETRefundsRequest {
 	return RefundsApiGETRefundsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *RefundsApiService) GETRefunds(ctx context.Context) RefundsApiGETRefunds
 //  @return GETRefunds200Response
 func (a *RefundsApiService) GETRefundsExecute(r RefundsApiGETRefundsRequest) (*GETRefunds200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETRefunds200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETRefunds200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RefundsApiService.GETRefunds")
@@ -307,9 +308,9 @@ func (a *RefundsApiService) GETRefundsExecute(r RefundsApiGETRefundsRequest) (*G
 }
 
 type RefundsApiGETRefundsRefundIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *RefundsApiService
-	refundId   string
+	refundId string
 }
 
 func (r RefundsApiGETRefundsRefundIdRequest) Execute() (*GETRefundsRefundId200Response, *http.Response, error) {
@@ -328,8 +329,8 @@ Retrieve a refund
 func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId string) RefundsApiGETRefundsRefundIdRequest {
 	return RefundsApiGETRefundsRefundIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		refundId:   refundId,
+		ctx: ctx,
+		refundId: refundId,
 	}
 }
 
@@ -337,10 +338,10 @@ func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId str
 //  @return GETRefundsRefundId200Response
 func (a *RefundsApiService) GETRefundsRefundIdExecute(r RefundsApiGETRefundsRefundIdRequest) (*GETRefundsRefundId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETRefundsRefundId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETRefundsRefundId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RefundsApiService.GETRefundsRefundId")

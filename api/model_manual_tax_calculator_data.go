@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ManualTaxCalculatorData struct for ManualTaxCalculatorData
 type ManualTaxCalculatorData struct {
 	// The resource's type
-	Type          string                                                    `json:"type"`
-	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETManualTaxCalculators200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ManualTaxCalculatorDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorData instantiates a new ManualTaxCalculatorData object
@@ -93,9 +93,9 @@ func (o *ManualTaxCalculatorData) SetAttributes(v GETManualTaxCalculators200Resp
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorData) GetRelationships() GETManualTaxCalculators200ResponseDataInnerRelationships {
+func (o *ManualTaxCalculatorData) GetRelationships() ManualTaxCalculatorDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETManualTaxCalculators200ResponseDataInnerRelationships
+		var ret ManualTaxCalculatorDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ManualTaxCalculatorData) GetRelationships() GETManualTaxCalculators200R
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorData) GetRelationshipsOk() (*GETManualTaxCalculators200ResponseDataInnerRelationships, bool) {
+func (o *ManualTaxCalculatorData) GetRelationshipsOk() (*ManualTaxCalculatorDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ManualTaxCalculatorData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETManualTaxCalculators200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *ManualTaxCalculatorData) SetRelationships(v GETManualTaxCalculators200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given ManualTaxCalculatorDataRelationships and assigns it to the Relationships field.
+func (o *ManualTaxCalculatorData) SetRelationships(v ManualTaxCalculatorDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableManualTaxCalculatorData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

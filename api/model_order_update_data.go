@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type OrderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    PATCHOrdersOrderId200ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTOrders201ResponseDataRelationships     `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHOrdersOrderId200ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderUpdateData instantiates a new OrderUpdateData object
@@ -120,9 +120,9 @@ func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderId200ResponseDataAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderUpdateData) GetRelationships() POSTOrders201ResponseDataRelationships {
+func (o *OrderUpdateData) GetRelationships() OrderCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTOrders201ResponseDataRelationships
+		var ret OrderCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *OrderUpdateData) GetRelationships() POSTOrders201ResponseDataRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderUpdateData) GetRelationshipsOk() (*POSTOrders201ResponseDataRelationships, bool) {
+func (o *OrderUpdateData) GetRelationshipsOk() (*OrderCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *OrderUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTOrders201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *OrderUpdateData) SetRelationships(v POSTOrders201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given OrderCreateDataRelationships and assigns it to the Relationships field.
+func (o *OrderUpdateData) SetRelationships(v OrderCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableOrderUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

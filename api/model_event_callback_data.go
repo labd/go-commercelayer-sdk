@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // EventCallbackData struct for EventCallbackData
 type EventCallbackData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETEventCallbacks200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETEventCallbacks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *EventCallbackDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewEventCallbackData instantiates a new EventCallbackData object
@@ -93,9 +93,9 @@ func (o *EventCallbackData) SetAttributes(v GETEventCallbacks200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *EventCallbackData) GetRelationships() GETEventCallbacks200ResponseDataInnerRelationships {
+func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETEventCallbacks200ResponseDataInnerRelationships
+		var ret EventCallbackDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *EventCallbackData) GetRelationships() GETEventCallbacks200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetRelationshipsOk() (*GETEventCallbacks200ResponseDataInnerRelationships, bool) {
+func (o *EventCallbackData) GetRelationshipsOk() (*EventCallbackDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *EventCallbackData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETEventCallbacks200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *EventCallbackData) SetRelationships(v GETEventCallbacks200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given EventCallbackDataRelationships and assigns it to the Relationships field.
+func (o *EventCallbackData) SetRelationships(v EventCallbackDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableEventCallbackData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

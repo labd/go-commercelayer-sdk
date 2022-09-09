@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // CouponCodesPromotionRulesApiService CouponCodesPromotionRulesApi service
 type CouponCodesPromotionRulesApiService service
 
 type CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
-	ctx                        context.Context
-	ApiService                 *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	couponCodesPromotionRuleId string
 }
 
@@ -44,8 +45,8 @@ Delete a coupon codes promotion rule
 */
 func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
 	return CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiDELETECouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId")
@@ -116,7 +117,7 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 }
 
 type CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CouponCodesPromotionRulesApiService
 }
 
@@ -135,7 +136,7 @@ List all coupon codes promotion rules
 func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest {
 	return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRules(ctx c
 //  @return GETCouponCodesPromotionRules200Response
 func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesRequest) (*GETCouponCodesPromotionRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCouponCodesPromotionRules200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCouponCodesPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETCouponCodesPromotionRules")
@@ -215,8 +216,8 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecut
 }
 
 type CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
-	ctx                        context.Context
-	ApiService                 *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	couponCodesPromotionRuleId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a coupon codes promotion rule
 */
 func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
 	return CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 //  @return GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
 func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiGETCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETCouponCodesPromotionRulesCouponCodesPromotionRuleId")
@@ -318,9 +319,9 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 }
 
 type CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CouponCodesPromotionRulesApiService
-	couponId   string
+	couponId string
 }
 
 func (r CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -339,17 +340,17 @@ Retrieve the promotion rule associated to the coupon
 func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest{
 		ApiService: a,
-		ctx:        ctx,
-		couponId:   couponId,
+		ctx: ctx,
+		couponId: couponId,
 	}
 }
 
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r CouponCodesPromotionRulesApiGETCouponIdPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETCouponIdPromotionRule")
@@ -410,8 +411,8 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r 
 }
 
 type CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                 context.Context
-	ApiService          *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	externalPromotionId string
 }
 
@@ -430,8 +431,8 @@ Retrieve the coupon codes promotion rule associated to the external promotion
 */
 func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -439,9 +440,9 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETExternalPromotionIdCouponCodesPromotionRule")
@@ -502,8 +503,8 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 }
 
 type CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                    context.Context
-	ApiService             *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	fixedAmountPromotionId string
 }
 
@@ -522,8 +523,8 @@ Retrieve the coupon codes promotion rule associated to the fixed amount promotio
 */
 func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -531,9 +532,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETFixedAmountPromotionIdCouponCodesPromotionRule")
@@ -594,8 +595,8 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 }
 
 type CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                   context.Context
-	ApiService            *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	fixedPricePromotionId string
 }
 
@@ -614,8 +615,8 @@ Retrieve the coupon codes promotion rule associated to the fixed price promotion
 */
 func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -623,9 +624,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETFixedPricePromotionIdCouponCodesPromotionRule")
@@ -686,8 +687,8 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 }
 
 type CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                 context.Context
-	ApiService          *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	freeGiftPromotionId string
 }
 
@@ -706,8 +707,8 @@ Retrieve the coupon codes promotion rule associated to the free gift promotion
 */
 func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -715,9 +716,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETFreeGiftPromotionIdCouponCodesPromotionRule")
@@ -778,8 +779,8 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 }
 
 type CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                     context.Context
-	ApiService              *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	freeShippingPromotionId string
 }
 
@@ -798,8 +799,8 @@ Retrieve the coupon codes promotion rule associated to the free shipping promoti
 */
 func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -807,9 +808,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETFreeShippingPromotionIdCouponCodesPromotionRule")
@@ -870,8 +871,8 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 }
 
 type CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx                           context.Context
-	ApiService                    *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	percentageDiscountPromotionId string
 }
 
@@ -890,8 +891,8 @@ Retrieve the coupon codes promotion rule associated to the percentage discount p
 */
 func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:                    a,
-		ctx:                           ctx,
+		ApiService: a,
+		ctx: ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -899,9 +900,9 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETPercentageDiscountPromotionIdCouponCodesPromotionRule")
@@ -962,8 +963,8 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 }
 
 type CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
-	ctx         context.Context
-	ApiService  *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	promotionId string
 }
 
@@ -982,8 +983,8 @@ Retrieve the coupon codes promotion rule associated to the promotion
 */
 func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest {
 	return CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		promotionId: promotionId,
 	}
 }
@@ -991,9 +992,9 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 // Execute executes the request
 func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r CouponCodesPromotionRulesApiGETPromotionIdCouponCodesPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.GETPromotionIdCouponCodesPromotionRule")
@@ -1054,10 +1055,10 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 }
 
 type CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest struct {
-	ctx                            context.Context
-	ApiService                     *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	couponCodesPromotionRuleUpdate *CouponCodesPromotionRuleUpdate
-	couponCodesPromotionRuleId     string
+	couponCodesPromotionRuleId string
 }
 
 func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate CouponCodesPromotionRuleUpdate) CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
@@ -1065,7 +1066,7 @@ func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPro
 	return r
 }
 
-func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response, *http.Response, error) {
+func (r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) Execute() (*POSTCouponCodesPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r)
 }
 
@@ -1080,20 +1081,20 @@ Update a coupon codes promotion rule
 */
 func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx context.Context, couponCodesPromotionRuleId string) CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest {
 	return CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
 	}
 }
 
 // Execute executes the request
-//  @return PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
-func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response, *http.Response, error) {
+//  @return POSTCouponCodesPromotionRules201Response
+func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdExecute(r CouponCodesPromotionRulesApiPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest) (*POSTCouponCodesPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCouponCodesPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId")
@@ -1168,8 +1169,8 @@ func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCoup
 }
 
 type CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest struct {
-	ctx                            context.Context
-	ApiService                     *CouponCodesPromotionRulesApiService
+	ctx context.Context
+	ApiService *CouponCodesPromotionRulesApiService
 	couponCodesPromotionRuleCreate *CouponCodesPromotionRuleCreate
 }
 
@@ -1193,7 +1194,7 @@ Create a coupon codes promotion rule
 func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRules(ctx context.Context) CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest {
 	return CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1201,10 +1202,10 @@ func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRules(ctx 
 //  @return POSTCouponCodesPromotionRules201Response
 func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRulesExecute(r CouponCodesPromotionRulesApiPOSTCouponCodesPromotionRulesRequest) (*POSTCouponCodesPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTCouponCodesPromotionRules201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCouponCodesPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponCodesPromotionRulesApiService.POSTCouponCodesPromotionRules")

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHExternalPaymentsExternalPaymentId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                          `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                           `json:"links,omitempty"`
-	Attributes    *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships    `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHExternalPaymentsExternalPaymentId200ResponseData instantiates a new PATCHExternalPaymentsExternalPaymentId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) SetAttributes(v 
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships {
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) GetRelationships() GETExternalPayments200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships
+		var ret GETExternalPayments200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) GetRelationships
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool) {
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) GetRelationshipsOk() (*GETExternalPayments200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) HasRelationships
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETExternalPayments200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseData) SetRelationships(v GETExternalPayments200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHExternalPaymentsExternalPaymentId200ResponseData) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

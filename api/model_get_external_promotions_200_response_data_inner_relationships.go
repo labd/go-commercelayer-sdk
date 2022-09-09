@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,12 +17,12 @@ import (
 
 // GETExternalPromotions200ResponseDataInnerRelationships struct for GETExternalPromotions200ResponseDataInnerRelationships
 type GETExternalPromotions200ResponseDataInnerRelationships struct {
-	Market                   *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets                     `json:"market,omitempty"`
-	PromotionRules           *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules           `json:"promotion_rules,omitempty"`
-	OrderAmountPromotionRule *GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
-	SkuListPromotionRule     *GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
-	CouponCodesPromotionRule *GETCoupons200ResponseDataInnerRelationshipsPromotionRule                       `json:"coupon_codes_promotion_rule,omitempty"`
-	Attachments              *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments                 `json:"attachments,omitempty"`
+	Market *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"market,omitempty"`
+	PromotionRules *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"promotion_rules,omitempty"`
+	OrderAmountPromotionRule *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"order_amount_promotion_rule,omitempty"`
+	SkuListPromotionRule *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku_list_promotion_rule,omitempty"`
+	CouponCodesPromotionRule *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"coupon_codes_promotion_rule,omitempty"`
+	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
 }
 
 // NewGETExternalPromotions200ResponseDataInnerRelationships instantiates a new GETExternalPromotions200ResponseDataInnerRelationships object
@@ -43,9 +43,9 @@ func NewGETExternalPromotions200ResponseDataInnerRelationshipsWithDefaults() *GE
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetMarket() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Market == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Market
@@ -53,7 +53,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetMarket() GET
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetMarketOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasMarket() boo
 	return false
 }
 
-// SetMarket gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets and assigns it to the Market field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetMarket(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) {
+// SetMarket gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Market field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Market = &v
 }
 
 // GetPromotionRules returns the PromotionRules field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetPromotionRules() GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetPromotionRules() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.PromotionRules == nil {
-		var ret GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.PromotionRules
@@ -85,7 +85,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetPromotionRul
 
 // GetPromotionRulesOk returns a tuple with the PromotionRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetPromotionRulesOk() (*GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetPromotionRulesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.PromotionRules == nil {
 		return nil, false
 	}
@@ -101,15 +101,15 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasPromotionRul
 	return false
 }
 
-// SetPromotionRules gets a reference to the given GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules and assigns it to the PromotionRules field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetPromotionRules(v GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) {
+// SetPromotionRules gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the PromotionRules field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetPromotionRules(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.PromotionRules = &v
 }
 
 // GetOrderAmountPromotionRule returns the OrderAmountPromotionRule field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetOrderAmountPromotionRule() GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetOrderAmountPromotionRule() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.OrderAmountPromotionRule == nil {
-		var ret GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.OrderAmountPromotionRule
@@ -117,7 +117,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetOrderAmountP
 
 // GetOrderAmountPromotionRuleOk returns a tuple with the OrderAmountPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetOrderAmountPromotionRuleOk() (*GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetOrderAmountPromotionRuleOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.OrderAmountPromotionRule == nil {
 		return nil, false
 	}
@@ -133,15 +133,15 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasOrderAmountP
 	return false
 }
 
-// SetOrderAmountPromotionRule gets a reference to the given GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule and assigns it to the OrderAmountPromotionRule field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetOrderAmountPromotionRule(v GETExternalPromotions200ResponseDataInnerRelationshipsOrderAmountPromotionRule) {
+// SetOrderAmountPromotionRule gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the OrderAmountPromotionRule field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetOrderAmountPromotionRule(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.OrderAmountPromotionRule = &v
 }
 
 // GetSkuListPromotionRule returns the SkuListPromotionRule field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetSkuListPromotionRule() GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetSkuListPromotionRule() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.SkuListPromotionRule == nil {
-		var ret GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.SkuListPromotionRule
@@ -149,7 +149,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetSkuListPromo
 
 // GetSkuListPromotionRuleOk returns a tuple with the SkuListPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetSkuListPromotionRuleOk() (*GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetSkuListPromotionRuleOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.SkuListPromotionRule == nil {
 		return nil, false
 	}
@@ -165,15 +165,15 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasSkuListPromo
 	return false
 }
 
-// SetSkuListPromotionRule gets a reference to the given GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule and assigns it to the SkuListPromotionRule field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetSkuListPromotionRule(v GETExternalPromotions200ResponseDataInnerRelationshipsSkuListPromotionRule) {
+// SetSkuListPromotionRule gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the SkuListPromotionRule field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetSkuListPromotionRule(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.SkuListPromotionRule = &v
 }
 
 // GetCouponCodesPromotionRule returns the CouponCodesPromotionRule field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetCouponCodesPromotionRule() GETCoupons200ResponseDataInnerRelationshipsPromotionRule {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetCouponCodesPromotionRule() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.CouponCodesPromotionRule == nil {
-		var ret GETCoupons200ResponseDataInnerRelationshipsPromotionRule
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.CouponCodesPromotionRule
@@ -181,7 +181,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetCouponCodesP
 
 // GetCouponCodesPromotionRuleOk returns a tuple with the CouponCodesPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetCouponCodesPromotionRuleOk() (*GETCoupons200ResponseDataInnerRelationshipsPromotionRule, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetCouponCodesPromotionRuleOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.CouponCodesPromotionRule == nil {
 		return nil, false
 	}
@@ -197,15 +197,15 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasCouponCodesP
 	return false
 }
 
-// SetCouponCodesPromotionRule gets a reference to the given GETCoupons200ResponseDataInnerRelationshipsPromotionRule and assigns it to the CouponCodesPromotionRule field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetCouponCodesPromotionRule(v GETCoupons200ResponseDataInnerRelationshipsPromotionRule) {
+// SetCouponCodesPromotionRule gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the CouponCodesPromotionRule field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetCouponCodesPromotionRule(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.CouponCodesPromotionRule = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Attachments == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Attachments
@@ -213,7 +213,7 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetAttachments(
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -229,8 +229,8 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationships) HasAttachments(
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Attachments = &v
 }
 
@@ -292,3 +292,5 @@ func (v *NullableGETExternalPromotions200ResponseDataInnerRelationships) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

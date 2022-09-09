@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "taxjar_accounts"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes**](PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationships**](GETAvalaraAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
+`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
+`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
+`func (o *PATCHTaxjarAccountsTaxjarAccountId200ResponseData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

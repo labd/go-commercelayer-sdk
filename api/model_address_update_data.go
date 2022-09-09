@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type AddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                           `json:"id"`
-	Attributes    PATCHAddressesAddressId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GETAddresses200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHAddressesAddressId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AddressDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAddressUpdateData instantiates a new AddressUpdateData object
@@ -120,9 +120,9 @@ func (o *AddressUpdateData) SetAttributes(v PATCHAddressesAddressId200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AddressUpdateData) GetRelationships() GETAddresses200ResponseDataInnerRelationships {
+func (o *AddressUpdateData) GetRelationships() AddressDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAddresses200ResponseDataInnerRelationships
+		var ret AddressDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *AddressUpdateData) GetRelationships() GETAddresses200ResponseDataInnerR
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddressUpdateData) GetRelationshipsOk() (*GETAddresses200ResponseDataInnerRelationships, bool) {
+func (o *AddressUpdateData) GetRelationshipsOk() (*AddressDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *AddressUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAddresses200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *AddressUpdateData) SetRelationships(v GETAddresses200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given AddressDataRelationships and assigns it to the Relationships field.
+func (o *AddressUpdateData) SetRelationships(v AddressDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableAddressUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

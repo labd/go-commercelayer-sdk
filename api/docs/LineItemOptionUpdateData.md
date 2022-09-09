@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes**](PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships**](PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**LineItemOptionUpdateDataRelationships**](LineItemOptionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *LineItemOptionUpdateData) GetRelationships() PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships`
+`func (o *LineItemOptionUpdateData) GetRelationships() LineItemOptionUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships, bool)`
+`func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*LineItemOptionUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *LineItemOptionUpdateData) SetRelationships(v PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships)`
+`func (o *LineItemOptionUpdateData) SetRelationships(v LineItemOptionUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

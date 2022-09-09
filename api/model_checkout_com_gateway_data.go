@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // CheckoutComGatewayData struct for CheckoutComGatewayData
 type CheckoutComGatewayData struct {
 	// The resource's type
-	Type          string                                                   `json:"type"`
-	Attributes    GETCheckoutComGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETCheckoutComGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETCheckoutComGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayData instantiates a new CheckoutComGatewayData object
@@ -93,9 +93,9 @@ func (o *CheckoutComGatewayData) SetAttributes(v GETCheckoutComGateways200Respon
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CheckoutComGatewayData) GetRelationships() GETCheckoutComGateways200ResponseDataInnerRelationships {
+func (o *CheckoutComGatewayData) GetRelationships() CheckoutComGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCheckoutComGateways200ResponseDataInnerRelationships
+		var ret CheckoutComGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CheckoutComGatewayData) GetRelationships() GETCheckoutComGateways200Res
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayData) GetRelationshipsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationships, bool) {
+func (o *CheckoutComGatewayData) GetRelationshipsOk() (*CheckoutComGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CheckoutComGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCheckoutComGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *CheckoutComGatewayData) SetRelationships(v GETCheckoutComGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given CheckoutComGatewayDataRelationships and assigns it to the Relationships field.
+func (o *CheckoutComGatewayData) SetRelationships(v CheckoutComGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableCheckoutComGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

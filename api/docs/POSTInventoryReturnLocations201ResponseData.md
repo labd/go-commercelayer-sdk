@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "inventory_return_locations"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTInventoryReturnLocations201ResponseDataAttributes**](POSTInventoryReturnLocations201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTInventoryReturnLocations201ResponseDataRelationships**](POSTInventoryReturnLocations201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETInventoryReturnLocations200ResponseDataInnerRelationships**](GETInventoryReturnLocations200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTInventoryReturnLocations201ResponseData) GetRelationships() POSTInventoryReturnLocations201ResponseDataRelationships`
+`func (o *POSTInventoryReturnLocations201ResponseData) GetRelationships() GETInventoryReturnLocations200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTInventoryReturnLocations201ResponseData) GetRelationshipsOk() (*POSTInventoryReturnLocations201ResponseDataRelationships, bool)`
+`func (o *POSTInventoryReturnLocations201ResponseData) GetRelationshipsOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTInventoryReturnLocations201ResponseData) SetRelationships(v POSTInventoryReturnLocations201ResponseDataRelationships)`
+`func (o *POSTInventoryReturnLocations201ResponseData) SetRelationships(v GETInventoryReturnLocations200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

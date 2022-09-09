@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "refunds"]
 **Attributes** | [**GETRefunds200ResponseDataInnerAttributes**](GETRefunds200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETRefunds200ResponseDataInnerRelationships**](GETRefunds200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**RefundDataRelationships**](RefundDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *RefundData) GetRelationships() GETRefunds200ResponseDataInnerRelationships`
+`func (o *RefundData) GetRelationships() RefundDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *RefundData) GetRelationshipsOk() (*GETRefunds200ResponseDataInnerRelationships, bool)`
+`func (o *RefundData) GetRelationshipsOk() (*RefundDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *RefundData) SetRelationships(v GETRefunds200ResponseDataInnerRelationships)`
+`func (o *RefundData) SetRelationships(v RefundDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

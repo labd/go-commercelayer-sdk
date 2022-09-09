@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // CustomerAddressesApiService CustomerAddressesApi service
 type CustomerAddressesApiService service
 
 type CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest struct {
-	ctx               context.Context
-	ApiService        *CustomerAddressesApiService
+	ctx context.Context
+	ApiService *CustomerAddressesApiService
 	customerAddressId string
 }
 
@@ -44,8 +45,8 @@ Delete a customer address
 */
 func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(c
 // Execute executes the request
 func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.DELETECustomerAddressesCustomerAddressId")
@@ -116,7 +117,7 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 }
 
 type CustomerAddressesApiGETCustomerAddressesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CustomerAddressesApiService
 }
 
@@ -135,7 +136,7 @@ List all customer addresses
 func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) CustomerAddressesApiGETCustomerAddressesRequest {
 	return CustomerAddressesApiGETCustomerAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) 
 //  @return GETCustomerAddresses200Response
 func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddressesApiGETCustomerAddressesRequest) (*GETCustomerAddresses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCustomerAddresses200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCustomerAddresses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.GETCustomerAddresses")
@@ -215,8 +216,8 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddr
 }
 
 type CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest struct {
-	ctx               context.Context
-	ApiService        *CustomerAddressesApiService
+	ctx context.Context
+	ApiService *CustomerAddressesApiService
 	customerAddressId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a customer address
 */
 func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx 
 //  @return GETCustomerAddressesCustomerAddressId200Response
 func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) (*GETCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCustomerAddressesCustomerAddressId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCustomerAddressesCustomerAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.GETCustomerAddressesCustomerAddressId")
@@ -318,7 +319,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 }
 
 type CustomerAddressesApiGETCustomerIdCustomerAddressesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CustomerAddressesApiService
 	customerId string
 }
@@ -339,7 +340,7 @@ Retrieve the customer addresses associated to the customer
 func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest {
 	return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		customerId: customerId,
 	}
 }
@@ -347,9 +348,9 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context
 // Execute executes the request
 func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r CustomerAddressesApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.GETCustomerIdCustomerAddresses")
@@ -410,10 +411,10 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 }
 
 type CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest struct {
-	ctx                   context.Context
-	ApiService            *CustomerAddressesApiService
+	ctx context.Context
+	ApiService *CustomerAddressesApiService
 	customerAddressUpdate *CustomerAddressUpdate
-	customerAddressId     string
+	customerAddressId string
 }
 
 func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) CustomerAddressUpdate(customerAddressUpdate CustomerAddressUpdate) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
@@ -421,7 +422,7 @@ func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Cust
 	return r
 }
 
-func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*PATCHCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
+func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*POSTCustomerAddresses201Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerAddressesCustomerAddressIdExecute(r)
 }
 
@@ -436,20 +437,20 @@ Update a customer address
 */
 func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerAddressId: customerAddressId,
 	}
 }
 
 // Execute executes the request
-//  @return PATCHCustomerAddressesCustomerAddressId200Response
-func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*PATCHCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
+//  @return POSTCustomerAddresses201Response
+func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*POSTCustomerAddresses201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHCustomerAddressesCustomerAddressId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCustomerAddresses201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.PATCHCustomerAddressesCustomerAddressId")
@@ -524,8 +525,8 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 }
 
 type CustomerAddressesApiPOSTCustomerAddressesRequest struct {
-	ctx                   context.Context
-	ApiService            *CustomerAddressesApiService
+	ctx context.Context
+	ApiService *CustomerAddressesApiService
 	customerAddressCreate *CustomerAddressCreate
 }
 
@@ -549,7 +550,7 @@ Create a customer address
 func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context) CustomerAddressesApiPOSTCustomerAddressesRequest {
 	return CustomerAddressesApiPOSTCustomerAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -557,10 +558,10 @@ func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context)
 //  @return POSTCustomerAddresses201Response
 func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAddressesApiPOSTCustomerAddressesRequest) (*POSTCustomerAddresses201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTCustomerAddresses201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCustomerAddresses201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.POSTCustomerAddresses")

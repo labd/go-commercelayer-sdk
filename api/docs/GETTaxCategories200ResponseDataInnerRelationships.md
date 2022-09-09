@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Sku** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
-**TaxCalculator** | Pointer to [**GETTaxCategories200ResponseDataInnerRelationshipsTaxCalculator**](GETTaxCategories200ResponseDataInnerRelationshipsTaxCalculator.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
+**Sku** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**TaxCalculator** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSku
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSku() GETBundles200ResponseDataInnerRelationshipsSkus`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSkuOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetSku(v GETBundles200ResponseDataInnerRelationshipsSkus)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSku sets Sku field to given value.
 
@@ -54,20 +54,20 @@ HasSku returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculator() GETTaxCategories200ResponseDataInnerRelationshipsTaxCalculator`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculator() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetTaxCalculator returns the TaxCalculator field if non-nil, zero value otherwise.
 
 ### GetTaxCalculatorOk
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETTaxCategories200ResponseDataInnerRelationshipsTaxCalculator, bool)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetTaxCalculatorOk returns a tuple with the TaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCalculator
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetTaxCalculator(v GETTaxCategories200ResponseDataInnerRelationshipsTaxCalculator)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetTaxCalculator(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetTaxCalculator sets TaxCalculator field to given value.
 
@@ -79,20 +79,20 @@ HasTaxCalculator returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
+`func (o *GETTaxCategories200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetAttachments sets Attachments field to given value.
 

@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHWireTransfersWireTransferId
 
-> PATCHWireTransfersWireTransferId200Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
+> POSTWireTransfers201Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
 
 Update a wire transfer
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.PATCHWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHWireTransfersWireTransferId`: PATCHWireTransfersWireTransferId200Response
+    // response from `PATCHWireTransfersWireTransferId`: POSTWireTransfers201Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.PATCHWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHWireTransfersWireTransferId200Response**](PATCHWireTransfersWireTransferId200Response.md)
+[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
 
 ### Authorization
 

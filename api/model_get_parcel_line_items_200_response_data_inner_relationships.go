@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,10 +17,9 @@ import (
 
 // GETParcelLineItems200ResponseDataInnerRelationships struct for GETParcelLineItems200ResponseDataInnerRelationships
 type GETParcelLineItems200ResponseDataInnerRelationships struct {
-	Parcel        *GETPackages200ResponseDataInnerRelationshipsParcels         `json:"parcel,omitempty"`
-	StockLineItem *GETLineItems200ResponseDataInnerRelationshipsStockLineItems `json:"stock_line_item,omitempty"`
-	// Deprecated
-	ShipmentLineItem *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems `json:"shipment_line_item,omitempty"`
+	Parcel *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"parcel,omitempty"`
+	StockLineItem *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"stock_line_item,omitempty"`
+	ShipmentLineItem *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"shipment_line_item,omitempty"`
 }
 
 // NewGETParcelLineItems200ResponseDataInnerRelationships instantiates a new GETParcelLineItems200ResponseDataInnerRelationships object
@@ -41,9 +40,9 @@ func NewGETParcelLineItems200ResponseDataInnerRelationshipsWithDefaults() *GETPa
 }
 
 // GetParcel returns the Parcel field value if set, zero value otherwise.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetParcel() GETPackages200ResponseDataInnerRelationshipsParcels {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetParcel() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Parcel == nil {
-		var ret GETPackages200ResponseDataInnerRelationshipsParcels
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Parcel
@@ -51,7 +50,7 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetParcel() GETPac
 
 // GetParcelOk returns a tuple with the Parcel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetParcelOk() (*GETPackages200ResponseDataInnerRelationshipsParcels, bool) {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetParcelOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Parcel == nil {
 		return nil, false
 	}
@@ -67,15 +66,15 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) HasParcel() bool {
 	return false
 }
 
-// SetParcel gets a reference to the given GETPackages200ResponseDataInnerRelationshipsParcels and assigns it to the Parcel field.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetParcel(v GETPackages200ResponseDataInnerRelationshipsParcels) {
+// SetParcel gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Parcel field.
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetParcel(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Parcel = &v
 }
 
 // GetStockLineItem returns the StockLineItem field value if set, zero value otherwise.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetStockLineItem() GETLineItems200ResponseDataInnerRelationshipsStockLineItems {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetStockLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.StockLineItem == nil {
-		var ret GETLineItems200ResponseDataInnerRelationshipsStockLineItems
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.StockLineItem
@@ -83,7 +82,7 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetStockLineItem()
 
 // GetStockLineItemOk returns a tuple with the StockLineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetStockLineItemOk() (*GETLineItems200ResponseDataInnerRelationshipsStockLineItems, bool) {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetStockLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.StockLineItem == nil {
 		return nil, false
 	}
@@ -99,16 +98,15 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) HasStockLineItem()
 	return false
 }
 
-// SetStockLineItem gets a reference to the given GETLineItems200ResponseDataInnerRelationshipsStockLineItems and assigns it to the StockLineItem field.
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetStockLineItem(v GETLineItems200ResponseDataInnerRelationshipsStockLineItems) {
+// SetStockLineItem gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the StockLineItem field.
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetStockLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.StockLineItem = &v
 }
 
 // GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
-// Deprecated
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetShipmentLineItem() GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetShipmentLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.ShipmentLineItem == nil {
-		var ret GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.ShipmentLineItem
@@ -116,8 +114,7 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetShipmentLineIte
 
 // GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// Deprecated
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetShipmentLineItemOk() (*GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems, bool) {
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) GetShipmentLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.ShipmentLineItem == nil {
 		return nil, false
 	}
@@ -133,9 +130,8 @@ func (o *GETParcelLineItems200ResponseDataInnerRelationships) HasShipmentLineIte
 	return false
 }
 
-// SetShipmentLineItem gets a reference to the given GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems and assigns it to the ShipmentLineItem field.
-// Deprecated
-func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetShipmentLineItem(v GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) {
+// SetShipmentLineItem gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the ShipmentLineItem field.
+func (o *GETParcelLineItems200ResponseDataInnerRelationships) SetShipmentLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.ShipmentLineItem = &v
 }
 
@@ -188,3 +184,5 @@ func (v *NullableGETParcelLineItems200ResponseDataInnerRelationships) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // CustomerCreateData struct for CustomerCreateData
 type CustomerCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTCustomers201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTCustomers201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTCustomers201ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerCreateData instantiates a new CustomerCreateData object
@@ -93,9 +93,9 @@ func (o *CustomerCreateData) SetAttributes(v POSTCustomers201ResponseDataAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerCreateData) GetRelationships() POSTCustomers201ResponseDataRelationships {
+func (o *CustomerCreateData) GetRelationships() CustomerCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTCustomers201ResponseDataRelationships
+		var ret CustomerCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CustomerCreateData) GetRelationships() POSTCustomers201ResponseDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerCreateData) GetRelationshipsOk() (*POSTCustomers201ResponseDataRelationships, bool) {
+func (o *CustomerCreateData) GetRelationshipsOk() (*CustomerCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CustomerCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCustomers201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *CustomerCreateData) SetRelationships(v POSTCustomers201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given CustomerCreateDataRelationships and assigns it to the Relationships field.
+func (o *CustomerCreateData) SetRelationships(v CustomerCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableCustomerCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

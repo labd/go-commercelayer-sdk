@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // TransactionData struct for TransactionData
 type TransactionData struct {
 	// The resource's type
-	Type          string                                                        `json:"type"`
-	Attributes    GETRefunds200ResponseDataInnerAttributes                      `json:"attributes"`
-	Relationships *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTransactionData instantiates a new TransactionData object
@@ -93,9 +93,9 @@ func (o *TransactionData) SetAttributes(v GETRefunds200ResponseDataInnerAttribut
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TransactionData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships {
+func (o *TransactionData) GetRelationships() AdyenPaymentUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships
+		var ret AdyenPaymentUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TransactionData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TransactionData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool) {
+func (o *TransactionData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TransactionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *TransactionData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AdyenPaymentUpdateDataRelationships and assigns it to the Relationships field.
+func (o *TransactionData) SetRelationships(v AdyenPaymentUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableTransactionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

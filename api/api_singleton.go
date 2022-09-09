@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -19,11 +19,12 @@ import (
 	"net/url"
 )
 
+
 // SingletonApiService SingletonApi service
 type SingletonApiService service
 
 type SingletonApiGETApplicationApplicationIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SingletonApiService
 }
 
@@ -42,7 +43,7 @@ Retrieve the application
 func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest {
 	return SingletonApiGETApplicationApplicationIdRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -50,10 +51,10 @@ func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) S
 //  @return GETApplicationApplicationId200Response
 func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETApplicationApplicationId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETApplicationApplicationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingletonApiService.GETApplicationApplicationId")
@@ -122,7 +123,7 @@ func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiG
 }
 
 type SingletonApiGETOrganizationOrganizationIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SingletonApiService
 }
 
@@ -141,7 +142,7 @@ Retrieve the organization
 func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest {
 	return SingletonApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -149,10 +150,10 @@ func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context)
 //  @return GETOrganizationOrganizationId200Response
 func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETOrganizationOrganizationId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETOrganizationOrganizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SingletonApiService.GETOrganizationOrganizationId")

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "bundles"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTBundles201ResponseDataAttributes**](POSTBundles201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTBundles201ResponseDataRelationships**](POSTBundles201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETBundles200ResponseDataInnerRelationships**](GETBundles200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTBundles201ResponseData) GetRelationships() POSTBundles201ResponseDataRelationships`
+`func (o *POSTBundles201ResponseData) GetRelationships() GETBundles200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTBundles201ResponseData) GetRelationshipsOk() (*POSTBundles201ResponseDataRelationships, bool)`
+`func (o *POSTBundles201ResponseData) GetRelationshipsOk() (*GETBundles200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTBundles201ResponseData) SetRelationships(v POSTBundles201ResponseDataRelationships)`
+`func (o *POSTBundles201ResponseData) SetRelationships(v GETBundles200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "gift_card_recipients"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes**](PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCouponRecipients201ResponseDataRelationships**](POSTCouponRecipients201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationships**](GETCouponRecipients200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) GetRelationships() POSTCouponRecipients201ResponseDataRelationships`
+`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) GetRelationships() GETCouponRecipients200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) GetRelationshipsOk() (*POSTCouponRecipients201ResponseDataRelationships, bool)`
+`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) GetRelationshipsOk() (*GETCouponRecipients200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) SetRelationships(v POSTCouponRecipients201ResponseDataRelationships)`
+`func (o *PATCHGiftCardRecipientsGiftCardRecipientId200ResponseData) SetRelationships(v GETCouponRecipients200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

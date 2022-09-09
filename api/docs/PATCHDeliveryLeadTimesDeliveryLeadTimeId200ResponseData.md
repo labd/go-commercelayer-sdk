@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "delivery_lead_times"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationships**](GETDeliveryLeadTimes200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationships() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships`
+`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationships() GETDeliveryLeadTimes200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationshipsOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships, bool)`
+`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationshipsOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) SetRelationships(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships)`
+`func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) SetRelationships(v GETDeliveryLeadTimes200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // OrderAmountPromotionRulesApiService OrderAmountPromotionRulesApi service
 type OrderAmountPromotionRulesApiService service
 
 type OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
-	ctx                        context.Context
-	ApiService                 *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	orderAmountPromotionRuleId string
 }
 
@@ -44,8 +45,8 @@ Delete an order amount promotion rule
 */
 func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -116,8 +117,8 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 }
 
 type OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                 context.Context
-	ApiService          *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	externalPromotionId string
 }
 
@@ -136,8 +137,8 @@ Retrieve the order amount promotion rule associated to the external promotion
 */
 func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETExternalPromotionIdOrderAmountPromotionRule")
@@ -208,8 +209,8 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 }
 
 type OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                    context.Context
-	ApiService             *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	fixedAmountPromotionId string
 }
 
@@ -228,8 +229,8 @@ Retrieve the order amount promotion rule associated to the fixed amount promotio
 */
 func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETFixedAmountPromotionIdOrderAmountPromotionRule")
@@ -300,8 +301,8 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 }
 
 type OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                   context.Context
-	ApiService            *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	fixedPricePromotionId string
 }
 
@@ -320,8 +321,8 @@ Retrieve the order amount promotion rule associated to the fixed price promotion
 */
 func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -329,9 +330,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETFixedPricePromotionIdOrderAmountPromotionRule")
@@ -392,8 +393,8 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 }
 
 type OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                 context.Context
-	ApiService          *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	freeGiftPromotionId string
 }
 
@@ -412,8 +413,8 @@ Retrieve the order amount promotion rule associated to the free gift promotion
 */
 func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -421,9 +422,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETFreeGiftPromotionIdOrderAmountPromotionRule")
@@ -484,8 +485,8 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 }
 
 type OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                     context.Context
-	ApiService              *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	freeShippingPromotionId string
 }
 
@@ -504,8 +505,8 @@ Retrieve the order amount promotion rule associated to the free shipping promoti
 */
 func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -513,9 +514,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETFreeShippingPromotionIdOrderAmountPromotionRule")
@@ -576,7 +577,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 }
 
 type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrderAmountPromotionRulesApiService
 }
 
@@ -595,7 +596,7 @@ List all order amount promotion rules
 func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest {
 	return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -603,10 +604,10 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRules(ctx c
 //  @return GETOrderAmountPromotionRules200Response
 func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) (*GETOrderAmountPromotionRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETOrderAmountPromotionRules200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETOrderAmountPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETOrderAmountPromotionRules")
@@ -675,8 +676,8 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecut
 }
 
 type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
-	ctx                        context.Context
-	ApiService                 *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	orderAmountPromotionRuleId string
 }
 
@@ -695,8 +696,8 @@ Retrieve an order amount promotion rule
 */
 func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
 	}
 }
@@ -705,10 +706,10 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 //  @return GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
 func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -778,8 +779,8 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 }
 
 type OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx                           context.Context
-	ApiService                    *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	percentageDiscountPromotionId string
 }
 
@@ -798,8 +799,8 @@ Retrieve the order amount promotion rule associated to the percentage discount p
 */
 func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:                    a,
-		ctx:                           ctx,
+		ApiService: a,
+		ctx: ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -807,9 +808,9 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETPercentageDiscountPromotionIdOrderAmountPromotionRule")
@@ -870,8 +871,8 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 }
 
 type OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
-	ctx         context.Context
-	ApiService  *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	promotionId string
 }
 
@@ -890,8 +891,8 @@ Retrieve the order amount promotion rule associated to the promotion
 */
 func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		promotionId: promotionId,
 	}
 }
@@ -899,9 +900,9 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 // Execute executes the request
 func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETPromotionIdOrderAmountPromotionRule")
@@ -962,10 +963,10 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 }
 
 type OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
-	ctx                            context.Context
-	ApiService                     *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	orderAmountPromotionRuleUpdate *OrderAmountPromotionRuleUpdate
-	orderAmountPromotionRuleId     string
+	orderAmountPromotionRuleId string
 }
 
 func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate OrderAmountPromotionRuleUpdate) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
@@ -973,7 +974,7 @@ func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPro
 	return r
 }
 
-func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -988,20 +989,20 @@ Update an order amount promotion rule
 */
 func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
-		ApiService:                 a,
-		ctx:                        ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderAmountPromotionRuleId: orderAmountPromotionRuleId,
 	}
 }
 
 // Execute executes the request
-//  @return PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
+//  @return POSTOrderAmountPromotionRules201Response
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTOrderAmountPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -1076,8 +1077,8 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 }
 
 type OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest struct {
-	ctx                            context.Context
-	ApiService                     *OrderAmountPromotionRulesApiService
+	ctx context.Context
+	ApiService *OrderAmountPromotionRulesApiService
 	orderAmountPromotionRuleCreate *OrderAmountPromotionRuleCreate
 }
 
@@ -1101,7 +1102,7 @@ Create an order amount promotion rule
 func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRules(ctx context.Context) OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest {
 	return OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1109,10 +1110,10 @@ func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRules(ctx 
 //  @return POSTOrderAmountPromotionRules201Response
 func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTOrderAmountPromotionRules201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTOrderAmountPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.POSTOrderAmountPromotionRules")

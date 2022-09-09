@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "parcel_line_items"]
 **Attributes** | [**POSTParcelLineItems201ResponseDataAttributes**](POSTParcelLineItems201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTParcelLineItems201ResponseDataRelationships**](POSTParcelLineItems201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ParcelLineItemCreateDataRelationships**](ParcelLineItemCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ParcelLineItemCreateData) GetRelationships() POSTParcelLineItems201ResponseDataRelationships`
+`func (o *ParcelLineItemCreateData) GetRelationships() ParcelLineItemCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*POSTParcelLineItems201ResponseDataRelationships, bool)`
+`func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*ParcelLineItemCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ParcelLineItemCreateData) SetRelationships(v POSTParcelLineItems201ResponseDataRelationships)`
+`func (o *ParcelLineItemCreateData) SetRelationships(v ParcelLineItemCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

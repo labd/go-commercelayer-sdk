@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ParcelLineItemCreateData struct for ParcelLineItemCreateData
 type ParcelLineItemCreateData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    POSTParcelLineItems201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTParcelLineItems201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTParcelLineItems201ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelLineItemCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelLineItemCreateData instantiates a new ParcelLineItemCreateData object
@@ -93,9 +93,9 @@ func (o *ParcelLineItemCreateData) SetAttributes(v POSTParcelLineItems201Respons
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ParcelLineItemCreateData) GetRelationships() POSTParcelLineItems201ResponseDataRelationships {
+func (o *ParcelLineItemCreateData) GetRelationships() ParcelLineItemCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTParcelLineItems201ResponseDataRelationships
+		var ret ParcelLineItemCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ParcelLineItemCreateData) GetRelationships() POSTParcelLineItems201Resp
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*POSTParcelLineItems201ResponseDataRelationships, bool) {
+func (o *ParcelLineItemCreateData) GetRelationshipsOk() (*ParcelLineItemCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ParcelLineItemCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTParcelLineItems201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ParcelLineItemCreateData) SetRelationships(v POSTParcelLineItems201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given ParcelLineItemCreateDataRelationships and assigns it to the Relationships field.
+func (o *ParcelLineItemCreateData) SetRelationships(v ParcelLineItemCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableParcelLineItemCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

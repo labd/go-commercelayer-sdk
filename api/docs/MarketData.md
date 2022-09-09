@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "markets"]
 **Attributes** | [**GETMarkets200ResponseDataInnerAttributes**](GETMarkets200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETMarkets200ResponseDataInnerRelationships**](GETMarkets200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**MarketDataRelationships**](MarketDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *MarketData) GetRelationships() GETMarkets200ResponseDataInnerRelationships`
+`func (o *MarketData) GetRelationships() MarketDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *MarketData) GetRelationshipsOk() (*GETMarkets200ResponseDataInnerRelationships, bool)`
+`func (o *MarketData) GetRelationshipsOk() (*MarketDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *MarketData) SetRelationships(v GETMarkets200ResponseDataInnerRelationships)`
+`func (o *MarketData) SetRelationships(v MarketDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

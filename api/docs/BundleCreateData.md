@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "bundles"]
 **Attributes** | [**POSTBundles201ResponseDataAttributes**](POSTBundles201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTBundles201ResponseDataRelationships**](POSTBundles201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BundleCreateDataRelationships**](BundleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BundleCreateData) GetRelationships() POSTBundles201ResponseDataRelationships`
+`func (o *BundleCreateData) GetRelationships() BundleCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BundleCreateData) GetRelationshipsOk() (*POSTBundles201ResponseDataRelationships, bool)`
+`func (o *BundleCreateData) GetRelationshipsOk() (*BundleCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BundleCreateData) SetRelationships(v POSTBundles201ResponseDataRelationships)`
+`func (o *BundleCreateData) SetRelationships(v BundleCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

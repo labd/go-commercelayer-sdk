@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PromotionRuleData struct for PromotionRuleData
 type PromotionRuleData struct {
 	// The resource's type
-	Type          string                                                         `json:"type"`
-	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes    `json:"attributes"`
-	Relationships *GETOrderAmountPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPromotionRuleData instantiates a new PromotionRuleData object
@@ -93,9 +93,9 @@ func (o *PromotionRuleData) SetAttributes(v GETBillingInfoValidationRules200Resp
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PromotionRuleData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships {
+func (o *PromotionRuleData) GetRelationships() OrderAmountPromotionRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETOrderAmountPromotionRules200ResponseDataInnerRelationships
+		var ret OrderAmountPromotionRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PromotionRuleData) GetRelationships() GETOrderAmountPromotionRules200Re
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PromotionRuleData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool) {
+func (o *PromotionRuleData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PromotionRuleData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETOrderAmountPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PromotionRuleData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given OrderAmountPromotionRuleDataRelationships and assigns it to the Relationships field.
+func (o *PromotionRuleData) SetRelationships(v OrderAmountPromotionRuleDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePromotionRuleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

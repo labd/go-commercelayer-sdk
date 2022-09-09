@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCouponCodesPromotionRules200ResponseDataInnerRelationships struct for GETCouponCodesPromotionRules200ResponseDataInnerRelationships
 type GETCouponCodesPromotionRules200ResponseDataInnerRelationships struct {
-	Promotion *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion `json:"promotion,omitempty"`
-	Coupons   *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons   `json:"coupons,omitempty"`
+	Promotion *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"promotion,omitempty"`
+	Coupons *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"coupons,omitempty"`
 }
 
 // NewGETCouponCodesPromotionRules200ResponseDataInnerRelationships instantiates a new GETCouponCodesPromotionRules200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETCouponCodesPromotionRules200ResponseDataInnerRelationshipsWithDefault
 }
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Promotion == nil {
-		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Promotion
@@ -49,7 +49,7 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetPromo
 
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion, bool) {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Promotion == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) HasPromo
 	return false
 }
 
-// SetPromotion gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion and assigns it to the Promotion field.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion) {
+// SetPromotion gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Promotion field.
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Promotion = &v
 }
 
 // GetCoupons returns the Coupons field value if set, zero value otherwise.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetCoupons() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetCoupons() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Coupons == nil {
-		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Coupons
@@ -81,7 +81,7 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetCoupo
 
 // GetCouponsOk returns a tuple with the Coupons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetCouponsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons, bool) {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) GetCouponsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Coupons == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) HasCoupo
 	return false
 }
 
-// SetCoupons gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons and assigns it to the Coupons field.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) SetCoupons(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) {
+// SetCoupons gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Coupons field.
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationships) SetCoupons(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Coupons = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETCouponCodesPromotionRules200ResponseDataInnerRelationships) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

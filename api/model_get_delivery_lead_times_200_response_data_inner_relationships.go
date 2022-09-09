@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,9 @@ import (
 
 // GETDeliveryLeadTimes200ResponseDataInnerRelationships struct for GETDeliveryLeadTimes200ResponseDataInnerRelationships
 type GETDeliveryLeadTimes200ResponseDataInnerRelationships struct {
-	StockLocation  *GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation  `json:"stock_location,omitempty"`
-	ShippingMethod *GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod `json:"shipping_method,omitempty"`
-	Attachments    *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments      `json:"attachments,omitempty"`
+	StockLocation *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"stock_location,omitempty"`
+	ShippingMethod *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"shipping_method,omitempty"`
+	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
 }
 
 // NewGETDeliveryLeadTimes200ResponseDataInnerRelationships instantiates a new GETDeliveryLeadTimes200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETDeliveryLeadTimes200ResponseDataInnerRelationshipsWithDefaults() *GET
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocation() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocation() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.StockLocation == nil {
-		var ret GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.StockLocation
@@ -50,7 +50,7 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocation
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocationOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation, bool) {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocationOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) HasStockLocation
 	return false
 }
 
-// SetStockLocation gets a reference to the given GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetStockLocation(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the StockLocation field.
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetStockLocation(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.StockLocation = &v
 }
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethod() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethod() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.ShippingMethod == nil {
-		var ret GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.ShippingMethod
@@ -82,7 +82,7 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMetho
 
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod, bool) {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.ShippingMethod == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) HasShippingMetho
 	return false
 }
 
-// SetShippingMethod gets a reference to the given GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod and assigns it to the ShippingMethod field.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetShippingMethod(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod) {
+// SetShippingMethod gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the ShippingMethod field.
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetShippingMethod(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.ShippingMethod = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Attachments == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Attachments
@@ -114,7 +114,7 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachments()
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) HasAttachments()
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
-func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
+func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Attachments = &v
 }
 
@@ -184,3 +184,5 @@ func (v *NullableGETDeliveryLeadTimes200ResponseDataInnerRelationships) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

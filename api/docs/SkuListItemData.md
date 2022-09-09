@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "sku_list_items"]
 **Attributes** | [**GETSkuListItems200ResponseDataInnerAttributes**](GETSkuListItems200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETSkuListItems200ResponseDataInnerRelationships**](GETSkuListItems200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**SkuListItemDataRelationships**](SkuListItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *SkuListItemData) GetRelationships() GETSkuListItems200ResponseDataInnerRelationships`
+`func (o *SkuListItemData) GetRelationships() SkuListItemDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuListItemData) GetRelationshipsOk() (*GETSkuListItems200ResponseDataInnerRelationships, bool)`
+`func (o *SkuListItemData) GetRelationshipsOk() (*SkuListItemDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuListItemData) SetRelationships(v GETSkuListItems200ResponseDataInnerRelationships)`
+`func (o *SkuListItemData) SetRelationships(v SkuListItemDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

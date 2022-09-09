@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // CustomerPasswordResetData struct for CustomerPasswordResetData
 type CustomerPasswordResetData struct {
 	// The resource's type
-	Type          string                                                      `json:"type"`
-	Attributes    GETCustomerPasswordResets200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETCustomerPasswordResets200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
@@ -93,9 +93,9 @@ func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerPasswordResetData) GetRelationships() GETCustomerPasswordResets200ResponseDataInnerRelationships {
+func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCustomerPasswordResets200ResponseDataInnerRelationships
+		var ret CustomerPasswordResetDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CustomerPasswordResetData) GetRelationships() GETCustomerPasswordResets
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetData) GetRelationshipsOk() (*GETCustomerPasswordResets200ResponseDataInnerRelationships, bool) {
+func (o *CustomerPasswordResetData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CustomerPasswordResetData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCustomerPasswordResets200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *CustomerPasswordResetData) SetRelationships(v GETCustomerPasswordResets200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given CustomerPasswordResetDataRelationships and assigns it to the Relationships field.
+func (o *CustomerPasswordResetData) SetRelationships(v CustomerPasswordResetDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableCustomerPasswordResetData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

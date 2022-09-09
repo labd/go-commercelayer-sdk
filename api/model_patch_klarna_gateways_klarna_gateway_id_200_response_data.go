@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
-	Attributes    *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTKlarnaGateways201ResponseDataRelationships              `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETKlarnaGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseData instantiates a new PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) SetAttributes(v PATC
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) GetRelationships() POSTKlarnaGateways201ResponseDataRelationships {
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) GetRelationships() GETKlarnaGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTKlarnaGateways201ResponseDataRelationships
+		var ret GETKlarnaGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) GetRelationships() P
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) GetRelationshipsOk() (*POSTKlarnaGateways201ResponseDataRelationships, bool) {
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) GetRelationshipsOk() (*GETKlarnaGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) HasRelationships() b
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTKlarnaGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) SetRelationships(v POSTKlarnaGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETKlarnaGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) SetRelationships(v GETKlarnaGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTKlarnaGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                         `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks          `json:"links,omitempty"`
-	Attributes    *POSTKlarnaGateways201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTKlarnaGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTKlarnaGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETKlarnaGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTKlarnaGateways201ResponseData instantiates a new POSTKlarnaGateways201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTKlarnaGateways201ResponseData) SetAttributes(v POSTKlarnaGateways20
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTKlarnaGateways201ResponseData) GetRelationships() POSTKlarnaGateways201ResponseDataRelationships {
+func (o *POSTKlarnaGateways201ResponseData) GetRelationships() GETKlarnaGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTKlarnaGateways201ResponseDataRelationships
+		var ret GETKlarnaGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTKlarnaGateways201ResponseData) GetRelationships() POSTKlarnaGateway
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTKlarnaGateways201ResponseData) GetRelationshipsOk() (*POSTKlarnaGateways201ResponseDataRelationships, bool) {
+func (o *POSTKlarnaGateways201ResponseData) GetRelationshipsOk() (*GETKlarnaGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTKlarnaGateways201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTKlarnaGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTKlarnaGateways201ResponseData) SetRelationships(v POSTKlarnaGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETKlarnaGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTKlarnaGateways201ResponseData) SetRelationships(v GETKlarnaGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTKlarnaGateways201ResponseData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

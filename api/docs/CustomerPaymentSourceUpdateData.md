@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "customer_payment_sources"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**GETCustomerPaymentSources200ResponseDataInnerRelationships**](GETCustomerPaymentSources200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CustomerPaymentSourceUpdateData) GetRelationships() GETCustomerPaymentSources200ResponseDataInnerRelationships`
+`func (o *CustomerPaymentSourceUpdateData) GetRelationships() CustomerPaymentSourceDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CustomerPaymentSourceUpdateData) GetRelationshipsOk() (*GETCustomerPaymentSources200ResponseDataInnerRelationships, bool)`
+`func (o *CustomerPaymentSourceUpdateData) GetRelationshipsOk() (*CustomerPaymentSourceDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CustomerPaymentSourceUpdateData) SetRelationships(v GETCustomerPaymentSources200ResponseDataInnerRelationships)`
+`func (o *CustomerPaymentSourceUpdateData) SetRelationships(v CustomerPaymentSourceDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

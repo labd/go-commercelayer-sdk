@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type AttachmentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                `json:"id"`
-	Attributes    PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GETAttachments200ResponseDataInnerRelationships      `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
@@ -120,9 +120,9 @@ func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200Re
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentUpdateData) GetRelationships() GETAttachments200ResponseDataInnerRelationships {
+func (o *AttachmentUpdateData) GetRelationships() AttachmentDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAttachments200ResponseDataInnerRelationships
+		var ret AttachmentDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *AttachmentUpdateData) GetRelationships() GETAttachments200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentUpdateData) GetRelationshipsOk() (*GETAttachments200ResponseDataInnerRelationships, bool) {
+func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *AttachmentUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAttachments200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *AttachmentUpdateData) SetRelationships(v GETAttachments200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given AttachmentDataRelationships and assigns it to the Relationships field.
+func (o *AttachmentUpdateData) SetRelationships(v AttachmentDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableAttachmentUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

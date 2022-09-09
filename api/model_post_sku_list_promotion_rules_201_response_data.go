@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTSkuListPromotionRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
-	Attributes    *POSTSkuListPromotionRules201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTSkuListPromotionRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETSkuListPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTSkuListPromotionRules201ResponseData instantiates a new POSTSkuListPromotionRules201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTSkuListPromotionRules201ResponseData) SetAttributes(v POSTSkuListPr
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTSkuListPromotionRules201ResponseData) GetRelationships() POSTSkuListPromotionRules201ResponseDataRelationships {
+func (o *POSTSkuListPromotionRules201ResponseData) GetRelationships() GETSkuListPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTSkuListPromotionRules201ResponseDataRelationships
+		var ret GETSkuListPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTSkuListPromotionRules201ResponseData) GetRelationships() POSTSkuLis
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuListPromotionRules201ResponseData) GetRelationshipsOk() (*POSTSkuListPromotionRules201ResponseDataRelationships, bool) {
+func (o *POSTSkuListPromotionRules201ResponseData) GetRelationshipsOk() (*GETSkuListPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTSkuListPromotionRules201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTSkuListPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTSkuListPromotionRules201ResponseData) SetRelationships(v POSTSkuListPromotionRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETSkuListPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTSkuListPromotionRules201ResponseData) SetRelationships(v GETSkuListPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTSkuListPromotionRules201ResponseData) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

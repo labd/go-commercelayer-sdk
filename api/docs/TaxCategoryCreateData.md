@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
 **Attributes** | [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTTaxCategories201ResponseDataRelationships**](POSTTaxCategories201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**TaxCategoryCreateDataRelationships**](TaxCategoryCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *TaxCategoryCreateData) GetRelationships() POSTTaxCategories201ResponseDataRelationships`
+`func (o *TaxCategoryCreateData) GetRelationships() TaxCategoryCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxCategoryCreateData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool)`
+`func (o *TaxCategoryCreateData) GetRelationshipsOk() (*TaxCategoryCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxCategoryCreateData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships)`
+`func (o *TaxCategoryCreateData) SetRelationships(v TaxCategoryCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

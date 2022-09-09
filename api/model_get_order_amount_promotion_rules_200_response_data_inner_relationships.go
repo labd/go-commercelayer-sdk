@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // GETOrderAmountPromotionRules200ResponseDataInnerRelationships struct for GETOrderAmountPromotionRules200ResponseDataInnerRelationships
 type GETOrderAmountPromotionRules200ResponseDataInnerRelationships struct {
-	Promotion *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion `json:"promotion,omitempty"`
+	Promotion *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"promotion,omitempty"`
 }
 
 // NewGETOrderAmountPromotionRules200ResponseDataInnerRelationships instantiates a new GETOrderAmountPromotionRules200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETOrderAmountPromotionRules200ResponseDataInnerRelationshipsWithDefault
 }
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
-func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion {
+func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Promotion == nil {
-		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Promotion
@@ -48,7 +48,7 @@ func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) GetPromo
 
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion, bool) {
+func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Promotion == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) HasPromo
 	return false
 }
 
-// SetPromotion gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion and assigns it to the Promotion field.
-func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion) {
+// SetPromotion gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Promotion field.
+func (o *GETOrderAmountPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Promotion = &v
 }
 
@@ -112,3 +112,5 @@ func (v *NullableGETOrderAmountPromotionRules200ResponseDataInnerRelationships) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

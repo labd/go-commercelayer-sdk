@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "skus"]
 **Attributes** | [**POSTSkus201ResponseDataAttributes**](POSTSkus201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTSkus201ResponseDataRelationships**](POSTSkus201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**SkuCreateDataRelationships**](SkuCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *SkuCreateData) GetRelationships() POSTSkus201ResponseDataRelationships`
+`func (o *SkuCreateData) GetRelationships() SkuCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuCreateData) GetRelationshipsOk() (*POSTSkus201ResponseDataRelationships, bool)`
+`func (o *SkuCreateData) GetRelationshipsOk() (*SkuCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuCreateData) SetRelationships(v POSTSkus201ResponseDataRelationships)`
+`func (o *SkuCreateData) SetRelationships(v SkuCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "markets"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHMarketsMarketId200ResponseDataAttributes**](PATCHMarketsMarketId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**PATCHMarketsMarketId200ResponseDataRelationships**](PATCHMarketsMarketId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETMarkets200ResponseDataInnerRelationships**](GETMarkets200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHMarketsMarketId200ResponseData) GetRelationships() PATCHMarketsMarketId200ResponseDataRelationships`
+`func (o *PATCHMarketsMarketId200ResponseData) GetRelationships() GETMarkets200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHMarketsMarketId200ResponseData) GetRelationshipsOk() (*PATCHMarketsMarketId200ResponseDataRelationships, bool)`
+`func (o *PATCHMarketsMarketId200ResponseData) GetRelationshipsOk() (*GETMarkets200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHMarketsMarketId200ResponseData) SetRelationships(v PATCHMarketsMarketId200ResponseDataRelationships)`
+`func (o *PATCHMarketsMarketId200ResponseData) SetRelationships(v GETMarkets200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

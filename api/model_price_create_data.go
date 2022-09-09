@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PriceCreateData struct for PriceCreateData
 type PriceCreateData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    POSTPrices201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTPrices201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTPrices201ResponseDataAttributes `json:"attributes"`
+	Relationships *PriceCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceCreateData instantiates a new PriceCreateData object
@@ -93,9 +93,9 @@ func (o *PriceCreateData) SetAttributes(v POSTPrices201ResponseDataAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceCreateData) GetRelationships() POSTPrices201ResponseDataRelationships {
+func (o *PriceCreateData) GetRelationships() PriceCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTPrices201ResponseDataRelationships
+		var ret PriceCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PriceCreateData) GetRelationships() POSTPrices201ResponseDataRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceCreateData) GetRelationshipsOk() (*POSTPrices201ResponseDataRelationships, bool) {
+func (o *PriceCreateData) GetRelationshipsOk() (*PriceCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PriceCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTPrices201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PriceCreateData) SetRelationships(v POSTPrices201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given PriceCreateDataRelationships and assigns it to the Relationships field.
+func (o *PriceCreateData) SetRelationships(v PriceCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePriceCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

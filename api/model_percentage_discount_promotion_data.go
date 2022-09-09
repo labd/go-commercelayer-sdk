@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PercentageDiscountPromotionData struct for PercentageDiscountPromotionData
 type PercentageDiscountPromotionData struct {
 	// The resource's type
-	Type          string                                                        `json:"type"`
-	Attributes    GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships     `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
@@ -93,9 +93,9 @@ func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountP
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PercentageDiscountPromotionData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships {
+func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETFixedPricePromotions200ResponseDataInnerRelationships
+		var ret FixedPricePromotionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PercentageDiscountPromotionData) GetRelationships() GETFixedPricePromot
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool) {
+func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PercentageDiscountPromotionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETFixedPricePromotions200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PercentageDiscountPromotionData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given FixedPricePromotionDataRelationships and assigns it to the Relationships field.
+func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotionDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePercentageDiscountPromotionData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

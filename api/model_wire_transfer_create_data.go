@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // WireTransferCreateData struct for WireTransferCreateData
 type WireTransferCreateData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTAdyenPayments201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewWireTransferCreateData instantiates a new WireTransferCreateData object
@@ -93,9 +93,9 @@ func (o *WireTransferCreateData) SetAttributes(v POSTAdyenPayments201ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *WireTransferCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
+func (o *WireTransferCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAdyenPayments201ResponseDataRelationships
+		var ret AdyenPaymentCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *WireTransferCreateData) GetRelationships() POSTAdyenPayments201Response
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WireTransferCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
+func (o *WireTransferCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *WireTransferCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *WireTransferCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AdyenPaymentCreateDataRelationships and assigns it to the Relationships field.
+func (o *WireTransferCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableWireTransferCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,10 +17,10 @@ import (
 
 // GETInStockSubscriptions200ResponseDataInnerRelationships struct for GETInStockSubscriptions200ResponseDataInnerRelationships
 type GETInStockSubscriptions200ResponseDataInnerRelationships struct {
-	Market   *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets   `json:"market,omitempty"`
-	Customer *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer `json:"customer,omitempty"`
-	Sku      *GETBundles200ResponseDataInnerRelationshipsSkus              `json:"sku,omitempty"`
-	Events   *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents  `json:"events,omitempty"`
+	Market *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"market,omitempty"`
+	Customer *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"customer,omitempty"`
+	Sku *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku,omitempty"`
+	Events *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"events,omitempty"`
 }
 
 // NewGETInStockSubscriptions200ResponseDataInnerRelationships instantiates a new GETInStockSubscriptions200ResponseDataInnerRelationships object
@@ -41,9 +41,9 @@ func NewGETInStockSubscriptions200ResponseDataInnerRelationshipsWithDefaults() *
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetMarket() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Market == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Market
@@ -51,7 +51,7 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetMarket() G
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetMarketOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool) {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -67,15 +67,15 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) HasMarket() b
 	return false
 }
 
-// SetMarket gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets and assigns it to the Market field.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetMarket(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) {
+// SetMarket gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Market field.
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Market = &v
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetCustomer() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetCustomer() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Customer == nil {
-		var ret GETCouponRecipients200ResponseDataInnerRelationshipsCustomer
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Customer
@@ -83,7 +83,7 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetCustomer()
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetCustomerOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool) {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetCustomerOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -99,15 +99,15 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) HasCustomer()
 	return false
 }
 
-// SetCustomer gets a reference to the given GETCouponRecipients200ResponseDataInnerRelationshipsCustomer and assigns it to the Customer field.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetCustomer(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer) {
+// SetCustomer gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Customer field.
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetCustomer(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Customer = &v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetSku() GETBundles200ResponseDataInnerRelationshipsSkus {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Sku == nil {
-		var ret GETBundles200ResponseDataInnerRelationshipsSkus
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Sku
@@ -115,7 +115,7 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetSku() GETB
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetSkuOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool) {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -131,15 +131,15 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) HasSku() bool
 	return false
 }
 
-// SetSku gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkus and assigns it to the Sku field.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetSku(v GETBundles200ResponseDataInnerRelationshipsSkus) {
+// SetSku gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Sku field.
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Sku = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Events == nil {
-		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Events
@@ -147,7 +147,7 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEvents() G
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -163,8 +163,8 @@ func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) HasEvents() b
 	return false
 }
 
-// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
-func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
+// SetEvents gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Events field.
+func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Events = &v
 }
 
@@ -220,3 +220,5 @@ func (v *NullableGETInStockSubscriptions200ResponseDataInnerRelationships) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

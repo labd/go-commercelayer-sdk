@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "imports"]
 **Attributes** | [**GETImports200ResponseDataInnerAttributes**](GETImports200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETImports200ResponseDataInnerRelationships**](GETImports200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ImportDataRelationships**](ImportDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ImportData) GetRelationships() GETImports200ResponseDataInnerRelationships`
+`func (o *ImportData) GetRelationships() ImportDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ImportData) GetRelationshipsOk() (*GETImports200ResponseDataInnerRelationships, bool)`
+`func (o *ImportData) GetRelationshipsOk() (*ImportDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ImportData) SetRelationships(v GETImports200ResponseDataInnerRelationships)`
+`func (o *ImportData) SetRelationships(v ImportDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

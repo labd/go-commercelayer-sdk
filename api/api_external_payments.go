@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // ExternalPaymentsApiService ExternalPaymentsApi service
 type ExternalPaymentsApiService service
 
 type ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest struct {
-	ctx               context.Context
-	ApiService        *ExternalPaymentsApiService
+	ctx context.Context
+	ApiService *ExternalPaymentsApiService
 	externalPaymentId string
 }
 
@@ -44,8 +45,8 @@ Delete an external payment
 */
 func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPaymentId: externalPaymentId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx
 // Execute executes the request
 func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.DELETEExternalPaymentsExternalPaymentId")
@@ -116,8 +117,8 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExec
 }
 
 type ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest struct {
-	ctx               context.Context
-	ApiService        *ExternalPaymentsApiService
+	ctx context.Context
+	ApiService *ExternalPaymentsApiService
 	externalGatewayId string
 }
 
@@ -136,8 +137,8 @@ Retrieve the external payments associated to the external gateway
 */
 func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest {
 	return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalGatewayId: externalGatewayId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx co
 // Execute executes the request
 func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute(r ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.GETExternalGatewayIdExternalPayments")
@@ -208,7 +209,7 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute
 }
 
 type ExternalPaymentsApiGETExternalPaymentsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ExternalPaymentsApiService
 }
 
@@ -227,7 +228,7 @@ List all external payments
 func (a *ExternalPaymentsApiService) GETExternalPayments(ctx context.Context) ExternalPaymentsApiGETExternalPaymentsRequest {
 	return ExternalPaymentsApiGETExternalPaymentsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *ExternalPaymentsApiService) GETExternalPayments(ctx context.Context) Ex
 //  @return GETExternalPayments200Response
 func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ExternalPaymentsApiGETExternalPaymentsRequest) (*GETExternalPayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETExternalPayments200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETExternalPayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.GETExternalPayments")
@@ -307,8 +308,8 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ExternalPaymen
 }
 
 type ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest struct {
-	ctx               context.Context
-	ApiService        *ExternalPaymentsApiService
+	ctx context.Context
+	ApiService *ExternalPaymentsApiService
 	externalPaymentId string
 }
 
@@ -327,8 +328,8 @@ Retrieve an external payment
 */
 func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPaymentId: externalPaymentId,
 	}
 }
@@ -337,10 +338,10 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx co
 //  @return GETExternalPaymentsExternalPaymentId200Response
 func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest) (*GETExternalPaymentsExternalPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETExternalPaymentsExternalPaymentId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETExternalPaymentsExternalPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.GETExternalPaymentsExternalPaymentId")
@@ -410,10 +411,10 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute
 }
 
 type ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest struct {
-	ctx                   context.Context
-	ApiService            *ExternalPaymentsApiService
+	ctx context.Context
+	ApiService *ExternalPaymentsApiService
 	externalPaymentUpdate *ExternalPaymentUpdate
-	externalPaymentId     string
+	externalPaymentId string
 }
 
 func (r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) ExternalPaymentUpdate(externalPaymentUpdate ExternalPaymentUpdate) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
@@ -436,8 +437,8 @@ Update an external payment
 */
 func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPaymentId: externalPaymentId,
 	}
 }
@@ -446,10 +447,10 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx 
 //  @return PATCHExternalPaymentsExternalPaymentId200Response
 func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecute(r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) (*PATCHExternalPaymentsExternalPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHExternalPaymentsExternalPaymentId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHExternalPaymentsExternalPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.PATCHExternalPaymentsExternalPaymentId")
@@ -524,8 +525,8 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 }
 
 type ExternalPaymentsApiPOSTExternalPaymentsRequest struct {
-	ctx                   context.Context
-	ApiService            *ExternalPaymentsApiService
+	ctx context.Context
+	ApiService *ExternalPaymentsApiService
 	externalPaymentCreate *ExternalPaymentCreate
 }
 
@@ -549,7 +550,7 @@ Create an external payment
 func (a *ExternalPaymentsApiService) POSTExternalPayments(ctx context.Context) ExternalPaymentsApiPOSTExternalPaymentsRequest {
 	return ExternalPaymentsApiPOSTExternalPaymentsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -557,10 +558,10 @@ func (a *ExternalPaymentsApiService) POSTExternalPayments(ctx context.Context) E
 //  @return POSTExternalPayments201Response
 func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ExternalPaymentsApiPOSTExternalPaymentsRequest) (*POSTExternalPayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTExternalPayments201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTExternalPayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPaymentsApiService.POSTExternalPayments")

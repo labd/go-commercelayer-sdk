@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets**](GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets.md) |  | [optional] 
-**SourceOrder** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationshipsOrder**](GETAdyenPayments200ResponseDataInnerRelationshipsOrder.md) |  | [optional] 
-**Customer** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationshipsCustomer**](GETCouponRecipients200ResponseDataInnerRelationshipsCustomer.md) |  | [optional] 
-**OrderCopies** | Pointer to [**GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies**](GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies.md) |  | [optional] 
-**Orders** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationshipsOrder**](GETAdyenPayments200ResponseDataInnerRelationshipsOrder.md) |  | [optional] 
-**Events** | Pointer to [**GETCustomerAddresses200ResponseDataInnerRelationshipsEvents**](GETCustomerAddresses200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
+**Market** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**SourceOrder** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Customer** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**OrderCopies** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Orders** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Events** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetMarket() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetMarketOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetMarket(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetMarket sets Market field to given value.
 
@@ -57,20 +57,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetSourceOrder
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetSourceOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetSourceOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSourceOrder returns the SourceOrder field if non-nil, zero value otherwise.
 
 ### GetSourceOrderOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetSourceOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetSourceOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSourceOrderOk returns a tuple with the SourceOrder field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSourceOrder
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetSourceOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetSourceOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSourceOrder sets SourceOrder field to given value.
 
@@ -82,20 +82,20 @@ HasSourceOrder returns a boolean if a field has been set.
 
 ### GetCustomer
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetCustomer() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetCustomer() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetCustomerOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetCustomerOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetCustomer(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetCustomer(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetCustomer sets Customer field to given value.
 
@@ -107,20 +107,20 @@ HasCustomer returns a boolean if a field has been set.
 
 ### GetOrderCopies
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrderCopies() GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrderCopies() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetOrderCopies returns the OrderCopies field if non-nil, zero value otherwise.
 
 ### GetOrderCopiesOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrderCopiesOk() (*GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrderCopiesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetOrderCopiesOk returns a tuple with the OrderCopies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrderCopies
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetOrderCopies(v GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetOrderCopies(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetOrderCopies sets OrderCopies field to given value.
 
@@ -132,20 +132,20 @@ HasOrderCopies returns a boolean if a field has been set.
 
 ### GetOrders
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrders() GETAdyenPayments200ResponseDataInnerRelationshipsOrder`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrders() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetOrders returns the Orders field if non-nil, zero value otherwise.
 
 ### GetOrdersOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrdersOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetOrdersOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetOrdersOk returns a tuple with the Orders field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrders
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetOrders(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetOrders(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetOrders sets Orders field to given value.
 
@@ -157,20 +157,20 @@ HasOrders returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetEvents sets Events field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PaypalGatewayData struct for PaypalGatewayData
 type PaypalGatewayData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETPaypalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PaypalGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayData instantiates a new PaypalGatewayData object
@@ -93,9 +93,9 @@ func (o *PaypalGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaypalGatewayData) GetRelationships() GETPaypalGateways200ResponseDataInnerRelationships {
+func (o *PaypalGatewayData) GetRelationships() PaypalGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETPaypalGateways200ResponseDataInnerRelationships
+		var ret PaypalGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PaypalGatewayData) GetRelationships() GETPaypalGateways200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayData) GetRelationshipsOk() (*GETPaypalGateways200ResponseDataInnerRelationships, bool) {
+func (o *PaypalGatewayData) GetRelationshipsOk() (*PaypalGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PaypalGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETPaypalGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PaypalGatewayData) SetRelationships(v GETPaypalGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given PaypalGatewayDataRelationships and assigns it to the Relationships field.
+func (o *PaypalGatewayData) SetRelationships(v PaypalGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePaypalGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

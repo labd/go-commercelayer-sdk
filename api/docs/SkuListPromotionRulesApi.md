@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListPromotionRulesSkuListPromotionRuleId
 
-> PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
+> POSTSkuListPromotionRules201Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
 
 Update a SKU list promotion rule
 
@@ -725,7 +725,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response
+    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: POSTSkuListPromotionRules201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response**](PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response.md)
+[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
 
 ### Authorization
 

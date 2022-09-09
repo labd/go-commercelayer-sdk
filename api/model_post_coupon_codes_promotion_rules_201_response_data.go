@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTCouponCodesPromotionRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                    `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes                `json:"attributes,omitempty"`
-	Relationships *POSTCouponCodesPromotionRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCouponCodesPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTCouponCodesPromotionRules201ResponseData instantiates a new POSTCouponCodesPromotionRules201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTCouponCodesPromotionRules201ResponseData) SetAttributes(v POSTAdyen
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTCouponCodesPromotionRules201ResponseData) GetRelationships() POSTCouponCodesPromotionRules201ResponseDataRelationships {
+func (o *POSTCouponCodesPromotionRules201ResponseData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTCouponCodesPromotionRules201ResponseDataRelationships
+		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTCouponCodesPromotionRules201ResponseData) GetRelationships() POSTCo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCouponCodesPromotionRules201ResponseData) GetRelationshipsOk() (*POSTCouponCodesPromotionRules201ResponseDataRelationships, bool) {
+func (o *POSTCouponCodesPromotionRules201ResponseData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTCouponCodesPromotionRules201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCouponCodesPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTCouponCodesPromotionRules201ResponseData) SetRelationships(v POSTCouponCodesPromotionRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTCouponCodesPromotionRules201ResponseData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTCouponCodesPromotionRules201ResponseData) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

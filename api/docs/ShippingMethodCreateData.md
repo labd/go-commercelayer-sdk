@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "shipping_methods"]
 **Attributes** | [**POSTShippingMethods201ResponseDataAttributes**](POSTShippingMethods201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTShippingMethods201ResponseDataRelationships**](POSTShippingMethods201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ShippingMethodCreateDataRelationships**](ShippingMethodCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ShippingMethodCreateData) GetRelationships() POSTShippingMethods201ResponseDataRelationships`
+`func (o *ShippingMethodCreateData) GetRelationships() ShippingMethodCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ShippingMethodCreateData) GetRelationshipsOk() (*POSTShippingMethods201ResponseDataRelationships, bool)`
+`func (o *ShippingMethodCreateData) GetRelationshipsOk() (*ShippingMethodCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ShippingMethodCreateData) SetRelationships(v POSTShippingMethods201ResponseDataRelationships)`
+`func (o *ShippingMethodCreateData) SetRelationships(v ShippingMethodCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

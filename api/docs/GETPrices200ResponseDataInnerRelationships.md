@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PriceList** | Pointer to [**GETMarkets200ResponseDataInnerRelationshipsPriceList**](GETMarkets200ResponseDataInnerRelationshipsPriceList.md) |  | [optional] 
-**Sku** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
-**PriceTiers** | Pointer to [**GETPrices200ResponseDataInnerRelationshipsPriceTiers**](GETPrices200ResponseDataInnerRelationshipsPriceTiers.md) |  | [optional] 
-**PriceVolumeTiers** | Pointer to [**GETPrices200ResponseDataInnerRelationshipsPriceVolumeTiers**](GETPrices200ResponseDataInnerRelationshipsPriceVolumeTiers.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
+**PriceList** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Sku** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**PriceTiers** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**PriceVolumeTiers** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPriceList
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceList() GETMarkets200ResponseDataInnerRelationshipsPriceList`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceList() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetPriceList returns the PriceList field if non-nil, zero value otherwise.
 
 ### GetPriceListOk
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceListOk() (*GETMarkets200ResponseDataInnerRelationshipsPriceList, bool)`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetPriceListOk returns a tuple with the PriceList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceList
 
-`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceList(v GETMarkets200ResponseDataInnerRelationshipsPriceList)`
+`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetPriceList sets PriceList field to given value.
 
@@ -56,20 +56,20 @@ HasPriceList returns a boolean if a field has been set.
 
 ### GetSku
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetSku() GETBundles200ResponseDataInnerRelationshipsSkus`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetSkuOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool)`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *GETPrices200ResponseDataInnerRelationships) SetSku(v GETBundles200ResponseDataInnerRelationshipsSkus)`
+`func (o *GETPrices200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSku sets Sku field to given value.
 
@@ -81,20 +81,20 @@ HasSku returns a boolean if a field has been set.
 
 ### GetPriceTiers
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceTiers() GETPrices200ResponseDataInnerRelationshipsPriceTiers`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceTiers() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
 
 ### GetPriceTiersOk
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceTiersOk() (*GETPrices200ResponseDataInnerRelationshipsPriceTiers, bool)`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceTiersOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceTiers
 
-`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceTiers(v GETPrices200ResponseDataInnerRelationshipsPriceTiers)`
+`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceTiers(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetPriceTiers sets PriceTiers field to given value.
 
@@ -106,20 +106,20 @@ HasPriceTiers returns a boolean if a field has been set.
 
 ### GetPriceVolumeTiers
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceVolumeTiers() GETPrices200ResponseDataInnerRelationshipsPriceVolumeTiers`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceVolumeTiers() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetPriceVolumeTiers returns the PriceVolumeTiers field if non-nil, zero value otherwise.
 
 ### GetPriceVolumeTiersOk
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceVolumeTiersOk() (*GETPrices200ResponseDataInnerRelationshipsPriceVolumeTiers, bool)`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetPriceVolumeTiersOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetPriceVolumeTiersOk returns a tuple with the PriceVolumeTiers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceVolumeTiers
 
-`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceVolumeTiers(v GETPrices200ResponseDataInnerRelationshipsPriceVolumeTiers)`
+`func (o *GETPrices200ResponseDataInnerRelationships) SetPriceVolumeTiers(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetPriceVolumeTiers sets PriceVolumeTiers field to given value.
 
@@ -131,20 +131,20 @@ HasPriceVolumeTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETPrices200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
+`func (o *GETPrices200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETPrices200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
+`func (o *GETPrices200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetAttachments sets Attachments field to given value.
 

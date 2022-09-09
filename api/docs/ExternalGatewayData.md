@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "external_gateways"]
 **Attributes** | [**GETExternalGateways200ResponseDataInnerAttributes**](GETExternalGateways200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETExternalGateways200ResponseDataInnerRelationships**](GETExternalGateways200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ExternalGatewayDataRelationships**](ExternalGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ExternalGatewayData) GetRelationships() GETExternalGateways200ResponseDataInnerRelationships`
+`func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalGatewayData) GetRelationshipsOk() (*GETExternalGateways200ResponseDataInnerRelationships, bool)`
+`func (o *ExternalGatewayData) GetRelationshipsOk() (*ExternalGatewayDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalGatewayData) SetRelationships(v GETExternalGateways200ResponseDataInnerRelationships)`
+`func (o *ExternalGatewayData) SetRelationships(v ExternalGatewayDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

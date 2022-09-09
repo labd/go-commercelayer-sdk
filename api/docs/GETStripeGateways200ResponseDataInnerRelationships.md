@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**StripePayments** | Pointer to [**GETStripeGateways200ResponseDataInnerRelationshipsStripePayments**](GETStripeGateways200ResponseDataInnerRelationshipsStripePayments.md) |  | [optional] 
+**StripePayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetStripePayments
 
-`func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePayments() GETStripeGateways200ResponseDataInnerRelationshipsStripePayments`
+`func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetStripePayments returns the StripePayments field if non-nil, zero value otherwise.
 
 ### GetStripePaymentsOk
 
-`func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePaymentsOk() (*GETStripeGateways200ResponseDataInnerRelationshipsStripePayments, bool)`
+`func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetStripePaymentsOk returns a tuple with the StripePayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStripePayments
 
-`func (o *GETStripeGateways200ResponseDataInnerRelationships) SetStripePayments(v GETStripeGateways200ResponseDataInnerRelationshipsStripePayments)`
+`func (o *GETStripeGateways200ResponseDataInnerRelationships) SetStripePayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetStripePayments sets StripePayments field to given value.
 

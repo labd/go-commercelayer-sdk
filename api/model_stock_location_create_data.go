@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StockLocationCreateData struct for StockLocationCreateData
 type StockLocationCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    POSTStockLocations201ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTMerchants201ResponseDataRelationships  `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTStockLocations201ResponseDataAttributes `json:"attributes"`
+	Relationships *MerchantCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockLocationCreateData instantiates a new StockLocationCreateData object
@@ -93,9 +93,9 @@ func (o *StockLocationCreateData) SetAttributes(v POSTStockLocations201ResponseD
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockLocationCreateData) GetRelationships() POSTMerchants201ResponseDataRelationships {
+func (o *StockLocationCreateData) GetRelationships() MerchantCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTMerchants201ResponseDataRelationships
+		var ret MerchantCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockLocationCreateData) GetRelationships() POSTMerchants201ResponseDat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLocationCreateData) GetRelationshipsOk() (*POSTMerchants201ResponseDataRelationships, bool) {
+func (o *StockLocationCreateData) GetRelationshipsOk() (*MerchantCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockLocationCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTMerchants201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *StockLocationCreateData) SetRelationships(v POSTMerchants201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given MerchantCreateDataRelationships and assigns it to the Relationships field.
+func (o *StockLocationCreateData) SetRelationships(v MerchantCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStockLocationCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

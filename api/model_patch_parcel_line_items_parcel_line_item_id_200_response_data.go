@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHParcelLineItemsParcelLineItemId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                     `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks      `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETParcelLineItems200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHParcelLineItemsParcelLineItemId200ResponseData instantiates a new PATCHParcelLineItemsParcelLineItemId200ResponseData object
@@ -176,17 +176,17 @@ func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetAttributes(v PO
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationships() map[string]interface{} {
+func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationships() GETParcelLineItems200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret GETParcelLineItems200ResponseDataInnerRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationshipsOk() (*GETParcelLineItems200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,9 +202,9 @@ func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) HasRelationships()
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given GETParcelLineItems200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetRelationships(v GETParcelLineItems200ResponseDataInnerRelationships) {
+	o.Relationships = &v
 }
 
 func (o PATCHParcelLineItemsParcelLineItemId200ResponseData) MarshalJSON() ([]byte, error) {
@@ -262,3 +262,5 @@ func (v *NullablePATCHParcelLineItemsParcelLineItemId200ResponseData) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

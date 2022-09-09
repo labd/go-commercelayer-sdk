@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "inventory_models"]
 **Attributes** | [**GETInventoryModels200ResponseDataInnerAttributes**](GETInventoryModels200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETInventoryModels200ResponseDataInnerRelationships**](GETInventoryModels200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**InventoryModelDataRelationships**](InventoryModelDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *InventoryModelData) GetRelationships() GETInventoryModels200ResponseDataInnerRelationships`
+`func (o *InventoryModelData) GetRelationships() InventoryModelDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *InventoryModelData) GetRelationshipsOk() (*GETInventoryModels200ResponseDataInnerRelationships, bool)`
+`func (o *InventoryModelData) GetRelationshipsOk() (*InventoryModelDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *InventoryModelData) SetRelationships(v GETInventoryModels200ResponseDataInnerRelationships)`
+`func (o *InventoryModelData) SetRelationships(v InventoryModelDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

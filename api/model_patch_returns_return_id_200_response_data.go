@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHReturnsReturnId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                             `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
-	Attributes    *PATCHReturnsReturnId200ResponseDataAttributes      `json:"attributes,omitempty"`
-	Relationships *PATCHPackagesPackageId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHReturnsReturnId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETReturns200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHReturnsReturnId200ResponseData instantiates a new PATCHReturnsReturnId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHReturnsReturnId200ResponseData) SetAttributes(v PATCHReturnsReturn
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHReturnsReturnId200ResponseData) GetRelationships() PATCHPackagesPackageId200ResponseDataRelationships {
+func (o *PATCHReturnsReturnId200ResponseData) GetRelationships() GETReturns200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHPackagesPackageId200ResponseDataRelationships
+		var ret GETReturns200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHReturnsReturnId200ResponseData) GetRelationships() PATCHPackagesPa
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHReturnsReturnId200ResponseData) GetRelationshipsOk() (*PATCHPackagesPackageId200ResponseDataRelationships, bool) {
+func (o *PATCHReturnsReturnId200ResponseData) GetRelationshipsOk() (*GETReturns200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHReturnsReturnId200ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHPackagesPackageId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHReturnsReturnId200ResponseData) SetRelationships(v PATCHPackagesPackageId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETReturns200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHReturnsReturnId200ResponseData) SetRelationships(v GETReturns200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHReturnsReturnId200ResponseData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "bundles"]
 **Attributes** | [**GETBundles200ResponseDataInnerAttributes**](GETBundles200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETBundles200ResponseDataInnerRelationships**](GETBundles200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BundleDataRelationships**](BundleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BundleData) GetRelationships() GETBundles200ResponseDataInnerRelationships`
+`func (o *BundleData) GetRelationships() BundleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BundleData) GetRelationshipsOk() (*GETBundles200ResponseDataInnerRelationships, bool)`
+`func (o *BundleData) GetRelationshipsOk() (*BundleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BundleData) SetRelationships(v GETBundles200ResponseDataInnerRelationships)`
+`func (o *BundleData) SetRelationships(v BundleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

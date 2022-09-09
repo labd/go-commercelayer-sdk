@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_amount_promotion_rules"]
 **Attributes** | [**POSTOrderAmountPromotionRules201ResponseDataAttributes**](POSTOrderAmountPromotionRules201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataRelationships**](POSTOrderAmountPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**OrderAmountPromotionRuleCreateDataRelationships**](OrderAmountPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *OrderAmountPromotionRuleCreateData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships`
+`func (o *OrderAmountPromotionRuleCreateData) GetRelationships() OrderAmountPromotionRuleCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderAmountPromotionRuleCreateData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool)`
+`func (o *OrderAmountPromotionRuleCreateData) GetRelationshipsOk() (*OrderAmountPromotionRuleCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderAmountPromotionRuleCreateData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships)`
+`func (o *OrderAmountPromotionRuleCreateData) SetRelationships(v OrderAmountPromotionRuleCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

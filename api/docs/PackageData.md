@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "packages"]
 **Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETPackages200ResponseDataInnerRelationships**](GETPackages200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PackageData) GetRelationships() GETPackages200ResponseDataInnerRelationships`
+`func (o *PackageData) GetRelationships() PackageDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PackageData) GetRelationshipsOk() (*GETPackages200ResponseDataInnerRelationships, bool)`
+`func (o *PackageData) GetRelationshipsOk() (*PackageDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PackageData) SetRelationships(v GETPackages200ResponseDataInnerRelationships)`
+`func (o *PackageData) SetRelationships(v PackageDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

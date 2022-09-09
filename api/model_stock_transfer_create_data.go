@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StockTransferCreateData struct for StockTransferCreateData
 type StockTransferCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    POSTStockTransfers201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTStockTransfers201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTStockTransfers201ResponseDataAttributes `json:"attributes"`
+	Relationships *StockTransferCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferCreateData instantiates a new StockTransferCreateData object
@@ -93,9 +93,9 @@ func (o *StockTransferCreateData) SetAttributes(v POSTStockTransfers201ResponseD
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockTransferCreateData) GetRelationships() POSTStockTransfers201ResponseDataRelationships {
+func (o *StockTransferCreateData) GetRelationships() StockTransferCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTStockTransfers201ResponseDataRelationships
+		var ret StockTransferCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockTransferCreateData) GetRelationships() POSTStockTransfers201Respon
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateData) GetRelationshipsOk() (*POSTStockTransfers201ResponseDataRelationships, bool) {
+func (o *StockTransferCreateData) GetRelationshipsOk() (*StockTransferCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockTransferCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTStockTransfers201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *StockTransferCreateData) SetRelationships(v POSTStockTransfers201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given StockTransferCreateDataRelationships and assigns it to the Relationships field.
+func (o *StockTransferCreateData) SetRelationships(v StockTransferCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStockTransferCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

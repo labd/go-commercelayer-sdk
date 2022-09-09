@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // StockTransfersApiService StockTransfersApi service
 type StockTransfersApiService service
 
 type StockTransfersApiDELETEStockTransfersStockTransferIdRequest struct {
-	ctx             context.Context
-	ApiService      *StockTransfersApiService
+	ctx context.Context
+	ApiService *StockTransfersApiService
 	stockTransferId string
 }
 
@@ -44,8 +45,8 @@ Delete a stock transfer
 */
 func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiDELETEStockTransfersStockTransferIdRequest {
 	return StockTransfersApiDELETEStockTransfersStockTransferIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx conte
 // Execute executes the request
 func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r StockTransfersApiDELETEStockTransfersStockTransferIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.DELETEStockTransfersStockTransferId")
@@ -116,7 +117,7 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 }
 
 type StockTransfersApiGETLineItemIdStockTransfersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *StockTransfersApiService
 	lineItemId string
 }
@@ -137,7 +138,7 @@ Retrieve the stock transfers associated to the line item
 func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) StockTransfersApiGETLineItemIdStockTransfersRequest {
 	return StockTransfersApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Conte
 // Execute executes the request
 func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTransfersApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETLineItemIdStockTransfers")
@@ -208,7 +209,7 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 }
 
 type StockTransfersApiGETShipmentIdStockTransfersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *StockTransfersApiService
 	shipmentId string
 }
@@ -229,7 +230,7 @@ Retrieve the stock transfers associated to the shipment
 func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) StockTransfersApiGETShipmentIdStockTransfersRequest {
 	return StockTransfersApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Conte
 // Execute executes the request
 func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTransfersApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETShipmentIdStockTransfers")
@@ -300,8 +301,8 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 }
 
 type StockTransfersApiGETStockLocationIdStockTransfersRequest struct {
-	ctx             context.Context
-	ApiService      *StockTransfersApiService
+	ctx context.Context
+	ApiService *StockTransfersApiService
 	stockLocationId string
 }
 
@@ -320,8 +321,8 @@ Retrieve the stock transfers associated to the stock location
 */
 func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) StockTransfersApiGETStockLocationIdStockTransfersRequest {
 	return StockTransfersApiGETStockLocationIdStockTransfersRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -329,9 +330,9 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.
 // Execute executes the request
 func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r StockTransfersApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETStockLocationIdStockTransfers")
@@ -392,7 +393,7 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Sto
 }
 
 type StockTransfersApiGETStockTransfersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *StockTransfersApiService
 }
 
@@ -411,7 +412,7 @@ List all stock transfers
 func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockTransfersApiGETStockTransfersRequest {
 	return StockTransfersApiGETStockTransfersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -419,10 +420,10 @@ func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockT
 //  @return GETStockTransfers200Response
 func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*GETStockTransfers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETStockTransfers200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETStockTransfers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETStockTransfers")
@@ -491,8 +492,8 @@ func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiG
 }
 
 type StockTransfersApiGETStockTransfersStockTransferIdRequest struct {
-	ctx             context.Context
-	ApiService      *StockTransfersApiService
+	ctx context.Context
+	ApiService *StockTransfersApiService
 	stockTransferId string
 }
 
@@ -511,8 +512,8 @@ Retrieve a stock transfer
 */
 func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiGETStockTransfersStockTransferIdRequest {
 	return StockTransfersApiGETStockTransfersStockTransferIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -521,10 +522,10 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.
 //  @return GETStockTransfersStockTransferId200Response
 func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*GETStockTransfersStockTransferId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETStockTransfersStockTransferId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETStockTransfersStockTransferId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETStockTransfersStockTransferId")
@@ -594,10 +595,10 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 }
 
 type StockTransfersApiPATCHStockTransfersStockTransferIdRequest struct {
-	ctx                 context.Context
-	ApiService          *StockTransfersApiService
+	ctx context.Context
+	ApiService *StockTransfersApiService
 	stockTransferUpdate *StockTransferUpdate
-	stockTransferId     string
+	stockTransferId string
 }
 
 func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) StockTransferUpdate(stockTransferUpdate StockTransferUpdate) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
@@ -620,8 +621,8 @@ Update a stock transfer
 */
 func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
 	return StockTransfersApiPATCHStockTransfersStockTransferIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -630,10 +631,10 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx contex
 //  @return PATCHStockTransfersStockTransferId200Response
 func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*PATCHStockTransfersStockTransferId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHStockTransfersStockTransferId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHStockTransfersStockTransferId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.PATCHStockTransfersStockTransferId")
@@ -708,8 +709,8 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 }
 
 type StockTransfersApiPOSTStockTransfersRequest struct {
-	ctx                 context.Context
-	ApiService          *StockTransfersApiService
+	ctx context.Context
+	ApiService *StockTransfersApiService
 	stockTransferCreate *StockTransferCreate
 }
 
@@ -733,7 +734,7 @@ Create a stock transfer
 func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) StockTransfersApiPOSTStockTransfersRequest {
 	return StockTransfersApiPOSTStockTransfersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -741,10 +742,10 @@ func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) Stock
 //  @return POSTStockTransfers201Response
 func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*POSTStockTransfers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTStockTransfers201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTStockTransfers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.POSTStockTransfers")

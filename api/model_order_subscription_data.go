@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // OrderSubscriptionData struct for OrderSubscriptionData
 type OrderSubscriptionData struct {
 	// The resource's type
-	Type          string                                                  `json:"type"`
-	Attributes    GETOrderSubscriptions200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETOrderSubscriptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETOrderSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionData instantiates a new OrderSubscriptionData object
@@ -93,9 +93,9 @@ func (o *OrderSubscriptionData) SetAttributes(v GETOrderSubscriptions200Response
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderSubscriptionData) GetRelationships() GETOrderSubscriptions200ResponseDataInnerRelationships {
+func (o *OrderSubscriptionData) GetRelationships() OrderSubscriptionDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETOrderSubscriptions200ResponseDataInnerRelationships
+		var ret OrderSubscriptionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderSubscriptionData) GetRelationships() GETOrderSubscriptions200Respo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionData) GetRelationshipsOk() (*GETOrderSubscriptions200ResponseDataInnerRelationships, bool) {
+func (o *OrderSubscriptionData) GetRelationshipsOk() (*OrderSubscriptionDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderSubscriptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETOrderSubscriptions200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *OrderSubscriptionData) SetRelationships(v GETOrderSubscriptions200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given OrderSubscriptionDataRelationships and assigns it to the Relationships field.
+func (o *OrderSubscriptionData) SetRelationships(v OrderSubscriptionDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableOrderSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

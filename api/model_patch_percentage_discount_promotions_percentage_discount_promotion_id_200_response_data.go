@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDa
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                                                  `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                                   `json:"links,omitempty"`
-	Attributes    *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships              `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData instantiates a new PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationships() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships {
+func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships
+		var ret GETFixedPricePromotions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationshipsOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships, bool) {
+func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) SetRelationships(v PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETFixedPricePromotions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHPercentageDiscountPromotionsPercentageDiscountPromotionId2
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

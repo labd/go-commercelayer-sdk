@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
+> POSTCouponCodesPromotionRules201Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
 
 Update a coupon codes promotion rule
 
@@ -794,7 +794,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
+    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: POSTCouponCodesPromotionRules201Response
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response**](PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response.md)
+[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
 
 ### Authorization
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "sku_list_promotion_rules"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTSkuListPromotionRules201ResponseDataRelationships**](POSTSkuListPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETSkuListPromotionRules200ResponseDataInnerRelationships**](GETSkuListPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTSkuListPromotionRules201ResponseData) GetRelationships() POSTSkuListPromotionRules201ResponseDataRelationships`
+`func (o *POSTSkuListPromotionRules201ResponseData) GetRelationships() GETSkuListPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTSkuListPromotionRules201ResponseData) GetRelationshipsOk() (*POSTSkuListPromotionRules201ResponseDataRelationships, bool)`
+`func (o *POSTSkuListPromotionRules201ResponseData) GetRelationshipsOk() (*GETSkuListPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTSkuListPromotionRules201ResponseData) SetRelationships(v POSTSkuListPromotionRules201ResponseDataRelationships)`
+`func (o *POSTSkuListPromotionRules201ResponseData) SetRelationships(v GETSkuListPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "events"]
 **Attributes** | [**GETEvents200ResponseDataInnerAttributes**](GETEvents200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETEvents200ResponseDataInnerRelationships**](GETEvents200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**EventDataRelationships**](EventDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *EventData) GetRelationships() GETEvents200ResponseDataInnerRelationships`
+`func (o *EventData) GetRelationships() EventDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *EventData) GetRelationshipsOk() (*GETEvents200ResponseDataInnerRelationships, bool)`
+`func (o *EventData) GetRelationshipsOk() (*EventDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *EventData) SetRelationships(v GETEvents200ResponseDataInnerRelationships)`
+`func (o *EventData) SetRelationships(v EventDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

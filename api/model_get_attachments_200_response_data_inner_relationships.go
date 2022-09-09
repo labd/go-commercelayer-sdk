@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // GETAttachments200ResponseDataInnerRelationships struct for GETAttachments200ResponseDataInnerRelationships
 type GETAttachments200ResponseDataInnerRelationships struct {
-	Attachable *GETAttachments200ResponseDataInnerRelationshipsAttachable `json:"attachable,omitempty"`
+	Attachable *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"attachable,omitempty"`
 }
 
 // NewGETAttachments200ResponseDataInnerRelationships instantiates a new GETAttachments200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETAttachments200ResponseDataInnerRelationshipsWithDefaults() *GETAttach
 }
 
 // GetAttachable returns the Attachable field value if set, zero value otherwise.
-func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachable() GETAttachments200ResponseDataInnerRelationshipsAttachable {
+func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachable() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Attachable == nil {
-		var ret GETAttachments200ResponseDataInnerRelationshipsAttachable
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Attachable
@@ -48,7 +48,7 @@ func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachable() GETAtt
 
 // GetAttachableOk returns a tuple with the Attachable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachableOk() (*GETAttachments200ResponseDataInnerRelationshipsAttachable, bool) {
+func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachableOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Attachable == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETAttachments200ResponseDataInnerRelationships) HasAttachable() bool {
 	return false
 }
 
-// SetAttachable gets a reference to the given GETAttachments200ResponseDataInnerRelationshipsAttachable and assigns it to the Attachable field.
-func (o *GETAttachments200ResponseDataInnerRelationships) SetAttachable(v GETAttachments200ResponseDataInnerRelationshipsAttachable) {
+// SetAttachable gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Attachable field.
+func (o *GETAttachments200ResponseDataInnerRelationships) SetAttachable(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Attachable = &v
 }
 
@@ -112,3 +112,5 @@ func (v *NullableGETAttachments200ResponseDataInnerRelationships) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

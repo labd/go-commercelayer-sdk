@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type GETPercentageDiscountPromotions200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                        `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
-	Attributes    *GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships      `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewGETPercentageDiscountPromotions200ResponseDataInner instantiates a new GETPercentageDiscountPromotions200ResponseDataInner object
@@ -262,3 +262,5 @@ func (v *NullableGETPercentageDiscountPromotions200ResponseDataInner) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

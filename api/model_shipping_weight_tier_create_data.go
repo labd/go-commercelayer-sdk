@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ShippingWeightTierCreateData struct for ShippingWeightTierCreateData
 type ShippingWeightTierCreateData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    POSTShippingWeightTiers201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTShippingWeightTiers201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTShippingWeightTiers201ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingWeightTierCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierCreateData instantiates a new ShippingWeightTierCreateData object
@@ -93,9 +93,9 @@ func (o *ShippingWeightTierCreateData) SetAttributes(v POSTShippingWeightTiers20
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingWeightTierCreateData) GetRelationships() POSTShippingWeightTiers201ResponseDataRelationships {
+func (o *ShippingWeightTierCreateData) GetRelationships() ShippingWeightTierCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTShippingWeightTiers201ResponseDataRelationships
+		var ret ShippingWeightTierCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ShippingWeightTierCreateData) GetRelationships() POSTShippingWeightTier
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreateData) GetRelationshipsOk() (*POSTShippingWeightTiers201ResponseDataRelationships, bool) {
+func (o *ShippingWeightTierCreateData) GetRelationshipsOk() (*ShippingWeightTierCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ShippingWeightTierCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTShippingWeightTiers201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ShippingWeightTierCreateData) SetRelationships(v POSTShippingWeightTiers201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given ShippingWeightTierCreateDataRelationships and assigns it to the Relationships field.
+func (o *ShippingWeightTierCreateData) SetRelationships(v ShippingWeightTierCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableShippingWeightTierCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

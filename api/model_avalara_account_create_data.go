@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // AvalaraAccountCreateData struct for AvalaraAccountCreateData
 type AvalaraAccountCreateData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    POSTAvalaraAccounts201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTAvalaraAccounts201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTAvalaraAccounts201ResponseDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAvalaraAccountCreateData instantiates a new AvalaraAccountCreateData object
@@ -93,9 +93,9 @@ func (o *AvalaraAccountCreateData) SetAttributes(v POSTAvalaraAccounts201Respons
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AvalaraAccountCreateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships {
+func (o *AvalaraAccountCreateData) GetRelationships() AvalaraAccountCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAvalaraAccounts201ResponseDataRelationships
+		var ret AvalaraAccountCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AvalaraAccountCreateData) GetRelationships() POSTAvalaraAccounts201Resp
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountCreateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool) {
+func (o *AvalaraAccountCreateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AvalaraAccountCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *AvalaraAccountCreateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AvalaraAccountCreateDataRelationships and assigns it to the Relationships field.
+func (o *AvalaraAccountCreateData) SetRelationships(v AvalaraAccountCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableAvalaraAccountCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

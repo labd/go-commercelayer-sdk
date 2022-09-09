@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StockLineItemData struct for StockLineItemData
 type StockLineItemData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETStockLineItems200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETStockLineItems200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETStockLineItems200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StockLineItemDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockLineItemData instantiates a new StockLineItemData object
@@ -93,9 +93,9 @@ func (o *StockLineItemData) SetAttributes(v GETStockLineItems200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockLineItemData) GetRelationships() GETStockLineItems200ResponseDataInnerRelationships {
+func (o *StockLineItemData) GetRelationships() StockLineItemDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETStockLineItems200ResponseDataInnerRelationships
+		var ret StockLineItemDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockLineItemData) GetRelationships() GETStockLineItems200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLineItemData) GetRelationshipsOk() (*GETStockLineItems200ResponseDataInnerRelationships, bool) {
+func (o *StockLineItemData) GetRelationshipsOk() (*StockLineItemDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockLineItemData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETStockLineItems200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *StockLineItemData) SetRelationships(v GETStockLineItems200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given StockLineItemDataRelationships and assigns it to the Relationships field.
+func (o *StockLineItemData) SetRelationships(v StockLineItemDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStockLineItemData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

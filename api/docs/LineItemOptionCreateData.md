@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
 **Attributes** | [**POSTLineItemOptions201ResponseDataAttributes**](POSTLineItemOptions201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTLineItemOptions201ResponseDataRelationships**](POSTLineItemOptions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**LineItemOptionCreateDataRelationships**](LineItemOptionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *LineItemOptionCreateData) GetRelationships() POSTLineItemOptions201ResponseDataRelationships`
+`func (o *LineItemOptionCreateData) GetRelationships() LineItemOptionCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *LineItemOptionCreateData) GetRelationshipsOk() (*POSTLineItemOptions201ResponseDataRelationships, bool)`
+`func (o *LineItemOptionCreateData) GetRelationshipsOk() (*LineItemOptionCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *LineItemOptionCreateData) SetRelationships(v POSTLineItemOptions201ResponseDataRelationships)`
+`func (o *LineItemOptionCreateData) SetRelationships(v LineItemOptionCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

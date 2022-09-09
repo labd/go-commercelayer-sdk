@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // PaypalGatewaysApiService PaypalGatewaysApi service
 type PaypalGatewaysApiService service
 
 type PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest struct {
-	ctx             context.Context
-	ApiService      *PaypalGatewaysApiService
+	ctx context.Context
+	ApiService *PaypalGatewaysApiService
 	paypalGatewayId string
 }
 
@@ -44,8 +45,8 @@ Delete a paypal gateway
 */
 func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx conte
 // Execute executes the request
 func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalGatewaysApiService.DELETEPaypalGatewaysPaypalGatewayId")
@@ -116,7 +117,7 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r 
 }
 
 type PaypalGatewaysApiGETPaypalGatewaysRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PaypalGatewaysApiService
 }
 
@@ -135,7 +136,7 @@ List all paypal gateways
 func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) PaypalGatewaysApiGETPaypalGatewaysRequest {
 	return PaypalGatewaysApiGETPaypalGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) Paypal
 //  @return GETPaypalGateways200Response
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiGETPaypalGatewaysRequest) (*GETPaypalGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPaypalGateways200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPaypalGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalGatewaysApiService.GETPaypalGateways")
@@ -215,8 +216,8 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiG
 }
 
 type PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest struct {
-	ctx             context.Context
-	ApiService      *PaypalGatewaysApiService
+	ctx context.Context
+	ApiService *PaypalGatewaysApiService
 	paypalGatewayId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a paypal gateway
 */
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.
 //  @return GETPaypalGatewaysPaypalGatewayId200Response
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) (*GETPaypalGatewaysPaypalGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPaypalGatewaysPaypalGatewayId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPaypalGatewaysPaypalGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalGatewaysApiService.GETPaypalGatewaysPaypalGatewayId")
@@ -318,10 +319,10 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r Pay
 }
 
 type PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest struct {
-	ctx                 context.Context
-	ApiService          *PaypalGatewaysApiService
+	ctx context.Context
+	ApiService *PaypalGatewaysApiService
 	paypalGatewayUpdate *PaypalGatewayUpdate
-	paypalGatewayId     string
+	paypalGatewayId string
 }
 
 func (r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) PaypalGatewayUpdate(paypalGatewayUpdate PaypalGatewayUpdate) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
@@ -344,8 +345,8 @@ Update a paypal gateway
 */
 func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -354,10 +355,10 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx contex
 //  @return PATCHPaypalGatewaysPaypalGatewayId200Response
 func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*PATCHPaypalGatewaysPaypalGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHPaypalGatewaysPaypalGatewayId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHPaypalGatewaysPaypalGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalGatewaysApiService.PATCHPaypalGatewaysPaypalGatewayId")
@@ -432,8 +433,8 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r P
 }
 
 type PaypalGatewaysApiPOSTPaypalGatewaysRequest struct {
-	ctx                 context.Context
-	ApiService          *PaypalGatewaysApiService
+	ctx context.Context
+	ApiService *PaypalGatewaysApiService
 	paypalGatewayCreate *PaypalGatewayCreate
 }
 
@@ -457,7 +458,7 @@ Create a paypal gateway
 func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
 	return PaypalGatewaysApiPOSTPaypalGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -465,10 +466,10 @@ func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) Paypa
 //  @return POSTPaypalGateways201Response
 func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApiPOSTPaypalGatewaysRequest) (*POSTPaypalGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTPaypalGateways201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTPaypalGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalGatewaysApiService.POSTPaypalGateways")

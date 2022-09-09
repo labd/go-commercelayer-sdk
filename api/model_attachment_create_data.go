@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // AttachmentCreateData struct for AttachmentCreateData
 type AttachmentCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    POSTAttachments201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTAttachments201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTAttachments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentCreateData instantiates a new AttachmentCreateData object
@@ -93,9 +93,9 @@ func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAtt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentCreateData) GetRelationships() POSTAttachments201ResponseDataRelationships {
+func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAttachments201ResponseDataRelationships
+		var ret AttachmentCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AttachmentCreateData) GetRelationships() POSTAttachments201ResponseData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetRelationshipsOk() (*POSTAttachments201ResponseDataRelationships, bool) {
+func (o *AttachmentCreateData) GetRelationshipsOk() (*AttachmentCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AttachmentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAttachments201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *AttachmentCreateData) SetRelationships(v POSTAttachments201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AttachmentCreateDataRelationships and assigns it to the Relationships field.
+func (o *AttachmentCreateData) SetRelationships(v AttachmentCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableAttachmentCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

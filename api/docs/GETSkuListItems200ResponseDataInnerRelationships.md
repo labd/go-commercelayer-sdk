@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SkuList** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkuList**](GETBundles200ResponseDataInnerRelationshipsSkuList.md) |  | [optional] 
-**Sku** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
+**SkuList** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Sku** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSkuList
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETBundles200ResponseDataInnerRelationshipsSkuList`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSkuList returns the SkuList field if non-nil, zero value otherwise.
 
 ### GetSkuListOk
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETBundles200ResponseDataInnerRelationshipsSkuList, bool)`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSkuListOk returns a tuple with the SkuList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuList
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETBundles200ResponseDataInnerRelationshipsSkuList)`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSkuList sets SkuList field to given value.
 
@@ -53,20 +53,20 @@ HasSkuList returns a boolean if a field has been set.
 
 ### GetSku
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETBundles200ResponseDataInnerRelationshipsSkus`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool)`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETBundles200ResponseDataInnerRelationshipsSkus)`
+`func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSku sets Sku field to given value.
 

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "percentage_discount_promotions"]
 **Attributes** | [**GETPercentageDiscountPromotions200ResponseDataInnerAttributes**](GETPercentageDiscountPromotions200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETFixedPricePromotions200ResponseDataInnerRelationships**](GETFixedPricePromotions200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PercentageDiscountPromotionData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships`
+`func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool)`
+`func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PercentageDiscountPromotionData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships)`
+`func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotionDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

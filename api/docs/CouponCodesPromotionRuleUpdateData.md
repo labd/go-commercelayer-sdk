@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "coupon_codes_promotion_rules"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**GETCouponCodesPromotionRules200ResponseDataInnerRelationships**](GETCouponCodesPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CouponCodesPromotionRuleDataRelationships**](CouponCodesPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships`
+`func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() CouponCodesPromotionRuleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool)`
+`func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*CouponCodesPromotionRuleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships)`
+`func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v CouponCodesPromotionRuleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

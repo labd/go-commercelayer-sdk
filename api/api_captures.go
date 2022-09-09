@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // CapturesApiService CapturesApi service
 type CapturesApiService service
 
 type CapturesApiGETAuthorizationIdCapturesRequest struct {
-	ctx             context.Context
-	ApiService      *CapturesApiService
+	ctx context.Context
+	ApiService *CapturesApiService
 	authorizationId string
 }
 
@@ -44,8 +45,8 @@ Retrieve the captures associated to the authorization
 */
 func (a *CapturesApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) CapturesApiGETAuthorizationIdCapturesRequest {
 	return CapturesApiGETAuthorizationIdCapturesRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *CapturesApiService) GETAuthorizationIdCaptures(ctx context.Context, aut
 // Execute executes the request
 func (a *CapturesApiService) GETAuthorizationIdCapturesExecute(r CapturesApiGETAuthorizationIdCapturesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.GETAuthorizationIdCaptures")
@@ -116,7 +117,7 @@ func (a *CapturesApiService) GETAuthorizationIdCapturesExecute(r CapturesApiGETA
 }
 
 type CapturesApiGETCapturesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CapturesApiService
 }
 
@@ -135,7 +136,7 @@ List all captures
 func (a *CapturesApiService) GETCaptures(ctx context.Context) CapturesApiGETCapturesRequest {
 	return CapturesApiGETCapturesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *CapturesApiService) GETCaptures(ctx context.Context) CapturesApiGETCapt
 //  @return GETCaptures200Response
 func (a *CapturesApiService) GETCapturesExecute(r CapturesApiGETCapturesRequest) (*GETCaptures200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCaptures200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCaptures200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.GETCaptures")
@@ -215,9 +216,9 @@ func (a *CapturesApiService) GETCapturesExecute(r CapturesApiGETCapturesRequest)
 }
 
 type CapturesApiGETCapturesCaptureIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CapturesApiService
-	captureId  string
+	captureId string
 }
 
 func (r CapturesApiGETCapturesCaptureIdRequest) Execute() (*GETCapturesCaptureId200Response, *http.Response, error) {
@@ -236,8 +237,8 @@ Retrieve a capture
 func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId string) CapturesApiGETCapturesCaptureIdRequest {
 	return CapturesApiGETCapturesCaptureIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		captureId:  captureId,
+		ctx: ctx,
+		captureId: captureId,
 	}
 }
 
@@ -245,10 +246,10 @@ func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId
 //  @return GETCapturesCaptureId200Response
 func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapturesCaptureIdRequest) (*GETCapturesCaptureId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCapturesCaptureId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCapturesCaptureId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.GETCapturesCaptureId")
@@ -318,9 +319,9 @@ func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapture
 }
 
 type CapturesApiGETOrderIdCapturesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CapturesApiService
-	orderId    string
+	orderId string
 }
 
 func (r CapturesApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
@@ -339,17 +340,17 @@ Retrieve the captures associated to the order
 func (a *CapturesApiService) GETOrderIdCaptures(ctx context.Context, orderId string) CapturesApiGETOrderIdCapturesRequest {
 	return CapturesApiGETOrderIdCapturesRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *CapturesApiService) GETOrderIdCapturesExecute(r CapturesApiGETOrderIdCapturesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.GETOrderIdCaptures")
@@ -410,9 +411,9 @@ func (a *CapturesApiService) GETOrderIdCapturesExecute(r CapturesApiGETOrderIdCa
 }
 
 type CapturesApiGETRefundIdReferenceCaptureRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CapturesApiService
-	refundId   string
+	refundId string
 }
 
 func (r CapturesApiGETRefundIdReferenceCaptureRequest) Execute() (*http.Response, error) {
@@ -431,17 +432,17 @@ Retrieve the reference capture associated to the refund
 func (a *CapturesApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) CapturesApiGETRefundIdReferenceCaptureRequest {
 	return CapturesApiGETRefundIdReferenceCaptureRequest{
 		ApiService: a,
-		ctx:        ctx,
-		refundId:   refundId,
+		ctx: ctx,
+		refundId: refundId,
 	}
 }
 
 // Execute executes the request
 func (a *CapturesApiService) GETRefundIdReferenceCaptureExecute(r CapturesApiGETRefundIdReferenceCaptureRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.GETRefundIdReferenceCapture")
@@ -502,10 +503,10 @@ func (a *CapturesApiService) GETRefundIdReferenceCaptureExecute(r CapturesApiGET
 }
 
 type CapturesApiPATCHCapturesCaptureIdRequest struct {
-	ctx           context.Context
-	ApiService    *CapturesApiService
+	ctx context.Context
+	ApiService *CapturesApiService
 	captureUpdate *CaptureUpdate
-	captureId     string
+	captureId string
 }
 
 func (r CapturesApiPATCHCapturesCaptureIdRequest) CaptureUpdate(captureUpdate CaptureUpdate) CapturesApiPATCHCapturesCaptureIdRequest {
@@ -529,8 +530,8 @@ Update a capture
 func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, captureId string) CapturesApiPATCHCapturesCaptureIdRequest {
 	return CapturesApiPATCHCapturesCaptureIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		captureId:  captureId,
+		ctx: ctx,
+		captureId: captureId,
 	}
 }
 
@@ -538,10 +539,10 @@ func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, capture
 //  @return PATCHCapturesCaptureId200Response
 func (a *CapturesApiService) PATCHCapturesCaptureIdExecute(r CapturesApiPATCHCapturesCaptureIdRequest) (*PATCHCapturesCaptureId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHCapturesCaptureId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHCapturesCaptureId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CapturesApiService.PATCHCapturesCaptureId")

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "event_callbacks"]
 **Attributes** | [**GETEventCallbacks200ResponseDataInnerAttributes**](GETEventCallbacks200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETEventCallbacks200ResponseDataInnerRelationships**](GETEventCallbacks200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**EventCallbackDataRelationships**](EventCallbackDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *EventCallbackData) GetRelationships() GETEventCallbacks200ResponseDataInnerRelationships`
+`func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *EventCallbackData) GetRelationshipsOk() (*GETEventCallbacks200ResponseDataInnerRelationships, bool)`
+`func (o *EventCallbackData) GetRelationshipsOk() (*EventCallbackDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *EventCallbackData) SetRelationships(v GETEventCallbacks200ResponseDataInnerRelationships)`
+`func (o *EventCallbackData) SetRelationships(v EventCallbackDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

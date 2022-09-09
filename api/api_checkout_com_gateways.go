@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // CheckoutComGatewaysApiService CheckoutComGatewaysApi service
 type CheckoutComGatewaysApiService service
 
 type CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest struct {
-	ctx                  context.Context
-	ApiService           *CheckoutComGatewaysApiService
+	ctx context.Context
+	ApiService *CheckoutComGatewaysApiService
 	checkoutComGatewayId string
 }
 
@@ -44,8 +45,8 @@ Delete a checkout.com gateway
 */
 func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest{
-		ApiService:           a,
-		ctx:                  ctx,
+		ApiService: a,
+		ctx: ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 // Execute executes the request
 func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.DELETECheckoutComGatewaysCheckoutComGatewayId")
@@ -116,7 +117,7 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 }
 
 type CheckoutComGatewaysApiGETCheckoutComGatewaysRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CheckoutComGatewaysApiService
 }
 
@@ -135,7 +136,7 @@ List all checkout.com gateways
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiGETCheckoutComGatewaysRequest {
 	return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Conte
 //  @return GETCheckoutComGateways200Response
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysRequest) (*GETCheckoutComGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCheckoutComGateways200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCheckoutComGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.GETCheckoutComGateways")
@@ -215,8 +216,8 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r Checkout
 }
 
 type CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
-	ctx                  context.Context
-	ApiService           *CheckoutComGatewaysApiService
+	ctx context.Context
+	ApiService *CheckoutComGatewaysApiService
 	checkoutComGatewayId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a checkout.com gateway
 */
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest{
-		ApiService:           a,
-		ctx:                  ctx,
+		ApiService: a,
+		ctx: ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 //  @return GETCheckoutComGatewaysCheckoutComGatewayId200Response
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) (*GETCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCheckoutComGatewaysCheckoutComGatewayId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCheckoutComGatewaysCheckoutComGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.GETCheckoutComGatewaysCheckoutComGatewayId")
@@ -318,10 +319,10 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 }
 
 type CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
-	ctx                      context.Context
-	ApiService               *CheckoutComGatewaysApiService
+	ctx context.Context
+	ApiService *CheckoutComGatewaysApiService
 	checkoutComGatewayUpdate *CheckoutComGatewayUpdate
-	checkoutComGatewayId     string
+	checkoutComGatewayId string
 }
 
 func (r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) CheckoutComGatewayUpdate(checkoutComGatewayUpdate CheckoutComGatewayUpdate) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
@@ -344,8 +345,8 @@ Update a checkout.com gateway
 */
 func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest{
-		ApiService:           a,
-		ctx:                  ctx,
+		ApiService: a,
+		ctx: ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -354,10 +355,10 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 //  @return PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
 func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) (*PATCHCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.PATCHCheckoutComGatewaysCheckoutComGatewayId")
@@ -432,8 +433,8 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 }
 
 type CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest struct {
-	ctx                      context.Context
-	ApiService               *CheckoutComGatewaysApiService
+	ctx context.Context
+	ApiService *CheckoutComGatewaysApiService
 	checkoutComGatewayCreate *CheckoutComGatewayCreate
 }
 
@@ -457,7 +458,7 @@ Create a checkout.com gateway
 func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
 	return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -465,10 +466,10 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Cont
 //  @return POSTCheckoutComGateways201Response
 func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) (*POSTCheckoutComGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTCheckoutComGateways201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCheckoutComGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.POSTCheckoutComGateways")

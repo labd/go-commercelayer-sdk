@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type CustomerAddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                               `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes                           `json:"attributes"`
-	Relationships *PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerAddressUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressUpdateData instantiates a new CustomerAddressUpdateData object
@@ -120,9 +120,9 @@ func (o *CustomerAddressUpdateData) SetAttributes(v POSTAdyenPayments201Response
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerAddressUpdateData) GetRelationships() PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships {
+func (o *CustomerAddressUpdateData) GetRelationships() CustomerAddressUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships
+		var ret CustomerAddressUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CustomerAddressUpdateData) GetRelationships() PATCHCustomerAddressesCus
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships, bool) {
+func (o *CustomerAddressUpdateData) GetRelationshipsOk() (*CustomerAddressUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CustomerAddressUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *CustomerAddressUpdateData) SetRelationships(v PATCHCustomerAddressesCustomerAddressId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given CustomerAddressUpdateDataRelationships and assigns it to the Relationships field.
+func (o *CustomerAddressUpdateData) SetRelationships(v CustomerAddressUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableCustomerAddressUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

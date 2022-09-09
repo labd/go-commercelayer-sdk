@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "manual_tax_calculators"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes**](PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTManualTaxCalculators201ResponseDataRelationships**](POSTManualTaxCalculators201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ManualTaxCalculatorCreateDataRelationships**](ManualTaxCalculatorCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ManualTaxCalculatorUpdateData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships`
+`func (o *ManualTaxCalculatorUpdateData) GetRelationships() ManualTaxCalculatorCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool)`
+`func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*ManualTaxCalculatorCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ManualTaxCalculatorUpdateData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships)`
+`func (o *ManualTaxCalculatorUpdateData) SetRelationships(v ManualTaxCalculatorCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

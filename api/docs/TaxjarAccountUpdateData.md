@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "taxjar_accounts"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes**](PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *TaxjarAccountUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
+`func (o *TaxjarAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxjarAccountUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
+`func (o *TaxjarAccountUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxjarAccountUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
+`func (o *TaxjarAccountUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

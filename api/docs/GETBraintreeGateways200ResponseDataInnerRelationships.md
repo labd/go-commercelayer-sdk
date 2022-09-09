@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**BraintreePayments** | Pointer to [**GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments**](GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments.md) |  | [optional] 
+**BraintreePayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetBraintreePayments
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePayments() GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetBraintreePayments returns the BraintreePayments field if non-nil, zero value otherwise.
 
 ### GetBraintreePaymentsOk
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePaymentsOk() (*GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments, bool)`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetBraintreePaymentsOk returns a tuple with the BraintreePayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBraintreePayments
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) SetBraintreePayments(v GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments)`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationships) SetBraintreePayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetBraintreePayments sets BraintreePayments field to given value.
 

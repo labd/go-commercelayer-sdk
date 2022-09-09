@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes**](PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships**](PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PaymentMethodUpdateDataRelationships**](PaymentMethodUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PaymentMethodUpdateData) GetRelationships() PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships`
+`func (o *PaymentMethodUpdateData) GetRelationships() PaymentMethodUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships, bool)`
+`func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PaymentMethodUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaymentMethodUpdateData) SetRelationships(v PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships)`
+`func (o *PaymentMethodUpdateData) SetRelationships(v PaymentMethodUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

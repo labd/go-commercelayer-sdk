@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ReturnData struct for ReturnData
 type ReturnData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    GETReturns200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETReturns200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETReturns200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ReturnDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewReturnData instantiates a new ReturnData object
@@ -93,9 +93,9 @@ func (o *ReturnData) SetAttributes(v GETReturns200ResponseDataInnerAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ReturnData) GetRelationships() GETReturns200ResponseDataInnerRelationships {
+func (o *ReturnData) GetRelationships() ReturnDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETReturns200ResponseDataInnerRelationships
+		var ret ReturnDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ReturnData) GetRelationships() GETReturns200ResponseDataInnerRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnData) GetRelationshipsOk() (*GETReturns200ResponseDataInnerRelationships, bool) {
+func (o *ReturnData) GetRelationshipsOk() (*ReturnDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ReturnData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETReturns200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *ReturnData) SetRelationships(v GETReturns200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given ReturnDataRelationships and assigns it to the Relationships field.
+func (o *ReturnData) SetRelationships(v ReturnDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableReturnData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

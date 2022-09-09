@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type PriceVolumeTierUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                              `json:"id"`
-	Attributes    PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PriceVolumeTierUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierUpdateData instantiates a new PriceVolumeTierUpdateData object
@@ -120,9 +120,9 @@ func (o *PriceVolumeTierUpdateData) SetAttributes(v PATCHPriceVolumeTiersPriceVo
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceVolumeTierUpdateData) GetRelationships() PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships {
+func (o *PriceVolumeTierUpdateData) GetRelationships() PriceVolumeTierUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships
+		var ret PriceVolumeTierUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *PriceVolumeTierUpdateData) GetRelationships() PATCHPriceVolumeTiersPric
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierUpdateData) GetRelationshipsOk() (*PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships, bool) {
+func (o *PriceVolumeTierUpdateData) GetRelationshipsOk() (*PriceVolumeTierUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *PriceVolumeTierUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PriceVolumeTierUpdateData) SetRelationships(v PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given PriceVolumeTierUpdateDataRelationships and assigns it to the Relationships field.
+func (o *PriceVolumeTierUpdateData) SetRelationships(v PriceVolumeTierUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullablePriceVolumeTierUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

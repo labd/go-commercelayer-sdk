@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "external_tax_calculators"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes**](PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAvalaraAccounts201ResponseDataRelationships**](POSTAvalaraAccounts201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ExternalTaxCalculatorUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships`
+`func (o *ExternalTaxCalculatorUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool)`
+`func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships)`
+`func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

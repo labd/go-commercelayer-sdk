@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "tax_categories"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes**](PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships**](PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETTaxCategories200ResponseDataInnerRelationships**](GETTaxCategories200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationships() PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships`
+`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationshipsOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships, bool)`
+`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetRelationships(v PATCHTaxCategoriesTaxCategoryId200ResponseDataRelationships)`
+`func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

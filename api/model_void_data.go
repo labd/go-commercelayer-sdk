@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // VoidData struct for VoidData
 type VoidData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    GETRefunds200ResponseDataInnerAttributes   `json:"attributes"`
-	Relationships *GETVoids200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *VoidDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewVoidData instantiates a new VoidData object
@@ -93,9 +93,9 @@ func (o *VoidData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *VoidData) GetRelationships() GETVoids200ResponseDataInnerRelationships {
+func (o *VoidData) GetRelationships() VoidDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETVoids200ResponseDataInnerRelationships
+		var ret VoidDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *VoidData) GetRelationships() GETVoids200ResponseDataInnerRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *VoidData) GetRelationshipsOk() (*GETVoids200ResponseDataInnerRelationships, bool) {
+func (o *VoidData) GetRelationshipsOk() (*VoidDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *VoidData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETVoids200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *VoidData) SetRelationships(v GETVoids200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given VoidDataRelationships and assigns it to the Relationships field.
+func (o *VoidData) SetRelationships(v VoidDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableVoidData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

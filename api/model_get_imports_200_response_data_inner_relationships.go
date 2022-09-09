@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // GETImports200ResponseDataInnerRelationships struct for GETImports200ResponseDataInnerRelationships
 type GETImports200ResponseDataInnerRelationships struct {
-	Events *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents `json:"events,omitempty"`
+	Events *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"events,omitempty"`
 }
 
 // NewGETImports200ResponseDataInnerRelationships instantiates a new GETImports200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETImports200ResponseDataInnerRelationshipsWithDefaults() *GETImports200
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETImports200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
+func (o *GETImports200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Events == nil {
-		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Events
@@ -48,7 +48,7 @@ func (o *GETImports200ResponseDataInnerRelationships) GetEvents() GETCustomerAdd
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETImports200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
+func (o *GETImports200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETImports200ResponseDataInnerRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
-func (o *GETImports200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
+// SetEvents gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Events field.
+func (o *GETImports200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Events = &v
 }
 
@@ -112,3 +112,5 @@ func (v *NullableGETImports200ResponseDataInnerRelationships) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

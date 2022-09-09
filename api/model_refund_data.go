@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // RefundData struct for RefundData
 type RefundData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    GETRefunds200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETRefunds200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *RefundDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewRefundData instantiates a new RefundData object
@@ -93,9 +93,9 @@ func (o *RefundData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *RefundData) GetRelationships() GETRefunds200ResponseDataInnerRelationships {
+func (o *RefundData) GetRelationships() RefundDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETRefunds200ResponseDataInnerRelationships
+		var ret RefundDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *RefundData) GetRelationships() GETRefunds200ResponseDataInnerRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RefundData) GetRelationshipsOk() (*GETRefunds200ResponseDataInnerRelationships, bool) {
+func (o *RefundData) GetRelationshipsOk() (*RefundDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *RefundData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETRefunds200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *RefundData) SetRelationships(v GETRefunds200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given RefundDataRelationships and assigns it to the Relationships field.
+func (o *RefundData) SetRelationships(v RefundDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableRefundData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

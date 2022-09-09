@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type CouponCodesPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                         `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes                     `json:"attributes"`
-	Relationships *GETCouponCodesPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponCodesPromotionRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponCodesPromotionRuleUpdateData instantiates a new CouponCodesPromotionRuleUpdateData object
@@ -120,9 +120,9 @@ func (o *CouponCodesPromotionRuleUpdateData) SetAttributes(v POSTAdyenPayments20
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships {
+func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() CouponCodesPromotionRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationships
+		var ret CouponCodesPromotionRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CouponCodesPromotionRuleUpdateData) GetRelationships() GETCouponCodesPr
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool) {
+func (o *CouponCodesPromotionRuleUpdateData) GetRelationshipsOk() (*CouponCodesPromotionRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CouponCodesPromotionRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given CouponCodesPromotionRuleDataRelationships and assigns it to the Relationships field.
+func (o *CouponCodesPromotionRuleUpdateData) SetRelationships(v CouponCodesPromotionRuleDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableCouponCodesPromotionRuleUpdateData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

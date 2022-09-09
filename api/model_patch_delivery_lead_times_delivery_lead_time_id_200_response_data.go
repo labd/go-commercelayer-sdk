@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                               `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                `json:"links,omitempty"`
-	Attributes    *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETDeliveryLeadTimes200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData instantiates a new PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) SetAttributes(
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationships() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships {
+func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationships() GETDeliveryLeadTimes200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships
+		var ret GETDeliveryLeadTimes200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationshi
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationshipsOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships, bool) {
+func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) GetRelationshipsOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) HasRelationshi
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) SetRelationships(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETDeliveryLeadTimes200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) SetRelationships(v GETDeliveryLeadTimes200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

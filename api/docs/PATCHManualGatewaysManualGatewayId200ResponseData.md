@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "manual_gateways"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHManualGatewaysManualGatewayId200ResponseDataAttributes**](PATCHManualGatewaysManualGatewayId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to [**GETManualGateways200ResponseDataInnerRelationships**](GETManualGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) GetRelationships() map[string]interface{}`
+`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) SetRelationships(v map[string]interface{})`
+`func (o *PATCHManualGatewaysManualGatewayId200ResponseData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

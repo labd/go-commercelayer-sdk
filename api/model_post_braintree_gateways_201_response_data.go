@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTBraintreeGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                            `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
-	Attributes    *POSTBraintreeGateways201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTBraintreeGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTBraintreeGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTBraintreeGateways201ResponseData instantiates a new POSTBraintreeGateways201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTBraintreeGateways201ResponseData) SetAttributes(v POSTBraintreeGate
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseData) GetRelationships() POSTBraintreeGateways201ResponseDataRelationships {
+func (o *POSTBraintreeGateways201ResponseData) GetRelationships() GETBraintreeGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTBraintreeGateways201ResponseDataRelationships
+		var ret GETBraintreeGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTBraintreeGateways201ResponseData) GetRelationships() POSTBraintreeG
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseData) GetRelationshipsOk() (*POSTBraintreeGateways201ResponseDataRelationships, bool) {
+func (o *POSTBraintreeGateways201ResponseData) GetRelationshipsOk() (*GETBraintreeGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTBraintreeGateways201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTBraintreeGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTBraintreeGateways201ResponseData) SetRelationships(v POSTBraintreeGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETBraintreeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTBraintreeGateways201ResponseData) SetRelationships(v GETBraintreeGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTBraintreeGateways201ResponseData) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

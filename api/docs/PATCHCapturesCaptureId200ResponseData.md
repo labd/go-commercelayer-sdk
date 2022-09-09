@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "captures"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHCapturesCaptureId200ResponseDataAttributes**](PATCHCapturesCaptureId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to [**GETCaptures200ResponseDataInnerRelationships**](GETCaptures200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHCapturesCaptureId200ResponseData) GetRelationships() map[string]interface{}`
+`func (o *PATCHCapturesCaptureId200ResponseData) GetRelationships() GETCaptures200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHCapturesCaptureId200ResponseData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *PATCHCapturesCaptureId200ResponseData) GetRelationshipsOk() (*GETCaptures200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHCapturesCaptureId200ResponseData) SetRelationships(v map[string]interface{})`
+`func (o *PATCHCapturesCaptureId200ResponseData) SetRelationships(v GETCaptures200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

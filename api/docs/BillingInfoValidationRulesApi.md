@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
+> POSTBillingInfoValidationRules201Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
 
 Update a billing info validation rule
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: POSTBillingInfoValidationRules201Response
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response.md)
+[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
 
 ### Authorization
 

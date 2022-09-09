@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // FreeGiftPromotionCreateData struct for FreeGiftPromotionCreateData
 type FreeGiftPromotionCreateData struct {
 	// The resource's type
-	Type          string                                                `json:"type"`
-	Attributes    POSTFreeGiftPromotions201ResponseDataAttributes       `json:"attributes"`
-	Relationships *POSTFixedPricePromotions201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTFreeGiftPromotions201ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFreeGiftPromotionCreateData instantiates a new FreeGiftPromotionCreateData object
@@ -93,9 +93,9 @@ func (o *FreeGiftPromotionCreateData) SetAttributes(v POSTFreeGiftPromotions201R
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FreeGiftPromotionCreateData) GetRelationships() POSTFixedPricePromotions201ResponseDataRelationships {
+func (o *FreeGiftPromotionCreateData) GetRelationships() FixedPricePromotionCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTFixedPricePromotions201ResponseDataRelationships
+		var ret FixedPricePromotionCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *FreeGiftPromotionCreateData) GetRelationships() POSTFixedPricePromotion
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionCreateData) GetRelationshipsOk() (*POSTFixedPricePromotions201ResponseDataRelationships, bool) {
+func (o *FreeGiftPromotionCreateData) GetRelationshipsOk() (*FixedPricePromotionCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *FreeGiftPromotionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTFixedPricePromotions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *FreeGiftPromotionCreateData) SetRelationships(v POSTFixedPricePromotions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given FixedPricePromotionCreateDataRelationships and assigns it to the Relationships field.
+func (o *FreeGiftPromotionCreateData) SetRelationships(v FixedPricePromotionCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableFreeGiftPromotionCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

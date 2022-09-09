@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "addresses"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHAddressesAddressId200ResponseDataAttributes**](PATCHAddressesAddressId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**GETAddresses200ResponseDataInnerRelationships**](GETAddresses200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AddressDataRelationships**](AddressDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *AddressUpdateData) GetRelationships() GETAddresses200ResponseDataInnerRelationships`
+`func (o *AddressUpdateData) GetRelationships() AddressDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AddressUpdateData) GetRelationshipsOk() (*GETAddresses200ResponseDataInnerRelationships, bool)`
+`func (o *AddressUpdateData) GetRelationshipsOk() (*AddressDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AddressUpdateData) SetRelationships(v GETAddresses200ResponseDataInnerRelationships)`
+`func (o *AddressUpdateData) SetRelationships(v AddressDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

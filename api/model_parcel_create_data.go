@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ParcelCreateData struct for ParcelCreateData
 type ParcelCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    POSTParcels201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTParcels201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTParcels201ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelCreateData instantiates a new ParcelCreateData object
@@ -93,9 +93,9 @@ func (o *ParcelCreateData) SetAttributes(v POSTParcels201ResponseDataAttributes)
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ParcelCreateData) GetRelationships() POSTParcels201ResponseDataRelationships {
+func (o *ParcelCreateData) GetRelationships() ParcelCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTParcels201ResponseDataRelationships
+		var ret ParcelCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ParcelCreateData) GetRelationships() POSTParcels201ResponseDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateData) GetRelationshipsOk() (*POSTParcels201ResponseDataRelationships, bool) {
+func (o *ParcelCreateData) GetRelationshipsOk() (*ParcelCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ParcelCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTParcels201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ParcelCreateData) SetRelationships(v POSTParcels201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given ParcelCreateDataRelationships and assigns it to the Relationships field.
+func (o *ParcelCreateData) SetRelationships(v ParcelCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableParcelCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "packages"]
 **Attributes** | [**POSTPackages201ResponseDataAttributes**](POSTPackages201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTPackages201ResponseDataRelationships**](POSTPackages201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PackageCreateDataRelationships**](PackageCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PackageCreateData) GetRelationships() POSTPackages201ResponseDataRelationships`
+`func (o *PackageCreateData) GetRelationships() PackageCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PackageCreateData) GetRelationshipsOk() (*POSTPackages201ResponseDataRelationships, bool)`
+`func (o *PackageCreateData) GetRelationshipsOk() (*PackageCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PackageCreateData) SetRelationships(v POSTPackages201ResponseDataRelationships)`
+`func (o *PackageCreateData) SetRelationships(v PackageCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

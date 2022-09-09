@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHAdyenGatewaysAdyenGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                    `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
-	Attributes    *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTAdyenGateways201ResponseDataRelationships             `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHAdyenGatewaysAdyenGatewayId200ResponseData instantiates a new PATCHAdyenGatewaysAdyenGatewayId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) SetAttributes(v PATCHA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) GetRelationships() POSTAdyenGateways201ResponseDataRelationships {
+func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) GetRelationships() GETAdyenGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAdyenGateways201ResponseDataRelationships
+		var ret GETAdyenGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) GetRelationships() POS
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) GetRelationshipsOk() (*POSTAdyenGateways201ResponseDataRelationships, bool) {
+func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) GetRelationshipsOk() (*GETAdyenGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) HasRelationships() boo
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAdyenGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) SetRelationships(v POSTAdyenGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseData) SetRelationships(v GETAdyenGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHAdyenGatewaysAdyenGatewayId200ResponseData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // InventoryModelCreateData struct for InventoryModelCreateData
 type InventoryModelCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{} `json:"relationships,omitempty"`
 }
 
 // NewInventoryModelCreateData instantiates a new InventoryModelCreateData object
@@ -173,3 +173,5 @@ func (v *NullableInventoryModelCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

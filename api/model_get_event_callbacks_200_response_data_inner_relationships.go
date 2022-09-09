@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // GETEventCallbacks200ResponseDataInnerRelationships struct for GETEventCallbacks200ResponseDataInnerRelationships
 type GETEventCallbacks200ResponseDataInnerRelationships struct {
-	Webhook *GETEventCallbacks200ResponseDataInnerRelationshipsWebhook `json:"webhook,omitempty"`
+	Webhook *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"webhook,omitempty"`
 }
 
 // NewGETEventCallbacks200ResponseDataInnerRelationships instantiates a new GETEventCallbacks200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETEventCallbacks200ResponseDataInnerRelationshipsWithDefaults() *GETEve
 }
 
 // GetWebhook returns the Webhook field value if set, zero value otherwise.
-func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhook() GETEventCallbacks200ResponseDataInnerRelationshipsWebhook {
+func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhook() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Webhook == nil {
-		var ret GETEventCallbacks200ResponseDataInnerRelationshipsWebhook
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Webhook
@@ -48,7 +48,7 @@ func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhook() GETEve
 
 // GetWebhookOk returns a tuple with the Webhook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhookOk() (*GETEventCallbacks200ResponseDataInnerRelationshipsWebhook, bool) {
+func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhookOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Webhook == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETEventCallbacks200ResponseDataInnerRelationships) HasWebhook() bool {
 	return false
 }
 
-// SetWebhook gets a reference to the given GETEventCallbacks200ResponseDataInnerRelationshipsWebhook and assigns it to the Webhook field.
-func (o *GETEventCallbacks200ResponseDataInnerRelationships) SetWebhook(v GETEventCallbacks200ResponseDataInnerRelationshipsWebhook) {
+// SetWebhook gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Webhook field.
+func (o *GETEventCallbacks200ResponseDataInnerRelationships) SetWebhook(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Webhook = &v
 }
 
@@ -112,3 +112,5 @@ func (v *NullableGETEventCallbacks200ResponseDataInnerRelationships) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

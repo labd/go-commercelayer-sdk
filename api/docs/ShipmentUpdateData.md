@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "shipments"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHShipmentsShipmentId200ResponseDataAttributes**](PATCHShipmentsShipmentId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHShipmentsShipmentId200ResponseDataRelationships**](PATCHShipmentsShipmentId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ShipmentUpdateDataRelationships**](ShipmentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ShipmentUpdateData) GetRelationships() PATCHShipmentsShipmentId200ResponseDataRelationships`
+`func (o *ShipmentUpdateData) GetRelationships() ShipmentUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ShipmentUpdateData) GetRelationshipsOk() (*PATCHShipmentsShipmentId200ResponseDataRelationships, bool)`
+`func (o *ShipmentUpdateData) GetRelationshipsOk() (*ShipmentUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ShipmentUpdateData) SetRelationships(v PATCHShipmentsShipmentId200ResponseDataRelationships)`
+`func (o *ShipmentUpdateData) SetRelationships(v ShipmentUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

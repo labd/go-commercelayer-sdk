@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "orders"]
 **Attributes** | [**GETOrders200ResponseDataInnerAttributes**](GETOrders200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETOrders200ResponseDataInnerRelationships**](GETOrders200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**OrderDataRelationships**](OrderDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *OrderData) GetRelationships() GETOrders200ResponseDataInnerRelationships`
+`func (o *OrderData) GetRelationships() OrderDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderData) GetRelationshipsOk() (*GETOrders200ResponseDataInnerRelationships, bool)`
+`func (o *OrderData) GetRelationshipsOk() (*OrderDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderData) SetRelationships(v GETOrders200ResponseDataInnerRelationships)`
+`func (o *OrderData) SetRelationships(v OrderDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

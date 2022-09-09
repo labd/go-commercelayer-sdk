@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type StockItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                  `json:"id"`
-	Attributes    PATCHStockItemsStockItemId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHStockItemsStockItemId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHStockItemsStockItemId200ResponseDataAttributes `json:"attributes"`
+	Relationships *StockItemUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockItemUpdateData instantiates a new StockItemUpdateData object
@@ -120,9 +120,9 @@ func (o *StockItemUpdateData) SetAttributes(v PATCHStockItemsStockItemId200Respo
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockItemUpdateData) GetRelationships() PATCHStockItemsStockItemId200ResponseDataRelationships {
+func (o *StockItemUpdateData) GetRelationships() StockItemUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHStockItemsStockItemId200ResponseDataRelationships
+		var ret StockItemUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *StockItemUpdateData) GetRelationships() PATCHStockItemsStockItemId200Re
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockItemUpdateData) GetRelationshipsOk() (*PATCHStockItemsStockItemId200ResponseDataRelationships, bool) {
+func (o *StockItemUpdateData) GetRelationshipsOk() (*StockItemUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *StockItemUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHStockItemsStockItemId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *StockItemUpdateData) SetRelationships(v PATCHStockItemsStockItemId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given StockItemUpdateDataRelationships and assigns it to the Relationships field.
+func (o *StockItemUpdateData) SetRelationships(v StockItemUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableStockItemUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

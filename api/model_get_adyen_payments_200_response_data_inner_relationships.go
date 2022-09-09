@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETAdyenPayments200ResponseDataInnerRelationships struct for GETAdyenPayments200ResponseDataInnerRelationships
 type GETAdyenPayments200ResponseDataInnerRelationships struct {
-	Order          *GETAdyenPayments200ResponseDataInnerRelationshipsOrder          `json:"order,omitempty"`
-	PaymentGateway *GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
+	Order *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"order,omitempty"`
+	PaymentGateway *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"payment_gateway,omitempty"`
 }
 
 // NewGETAdyenPayments200ResponseDataInnerRelationships instantiates a new GETAdyenPayments200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETAdyenPayments200ResponseDataInnerRelationshipsWithDefaults() *GETAdye
 }
 
 // GetOrder returns the Order field value if set, zero value otherwise.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder {
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Order == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationshipsOrder
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Order
@@ -49,7 +49,7 @@ func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetOrder() GETAdyenP
 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool) {
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Order == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETAdyenPayments200ResponseDataInnerRelationships) HasOrder() bool {
 	return false
 }
 
-// SetOrder gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsOrder and assigns it to the Order field.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder) {
+// SetOrder gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Order field.
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Order = &v
 }
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway {
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.PaymentGateway == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.PaymentGateway
@@ -81,7 +81,7 @@ func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetPaymentGateway() 
 
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway, bool) {
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.PaymentGateway == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETAdyenPayments200ResponseDataInnerRelationships) HasPaymentGateway() 
 	return false
 }
 
-// SetPaymentGateway gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway and assigns it to the PaymentGateway field.
-func (o *GETAdyenPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway) {
+// SetPaymentGateway gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the PaymentGateway field.
+func (o *GETAdyenPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.PaymentGateway = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETAdyenPayments200ResponseDataInnerRelationships) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

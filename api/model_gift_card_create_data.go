@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // GiftCardCreateData struct for GiftCardCreateData
 type GiftCardCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTGiftCards201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTGiftCards201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTGiftCards201ResponseDataAttributes `json:"attributes"`
+	Relationships *GiftCardCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardCreateData instantiates a new GiftCardCreateData object
@@ -93,9 +93,9 @@ func (o *GiftCardCreateData) SetAttributes(v POSTGiftCards201ResponseDataAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GiftCardCreateData) GetRelationships() POSTGiftCards201ResponseDataRelationships {
+func (o *GiftCardCreateData) GetRelationships() GiftCardCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTGiftCards201ResponseDataRelationships
+		var ret GiftCardCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *GiftCardCreateData) GetRelationships() POSTGiftCards201ResponseDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreateData) GetRelationshipsOk() (*POSTGiftCards201ResponseDataRelationships, bool) {
+func (o *GiftCardCreateData) GetRelationshipsOk() (*GiftCardCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *GiftCardCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTGiftCards201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GiftCardCreateData) SetRelationships(v POSTGiftCards201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GiftCardCreateDataRelationships and assigns it to the Relationships field.
+func (o *GiftCardCreateData) SetRelationships(v GiftCardCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableGiftCardCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

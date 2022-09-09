@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type TaxRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                          `json:"id"`
-	Attributes    PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GETTaxRules200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *TaxRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleUpdateData instantiates a new TaxRuleUpdateData object
@@ -120,9 +120,9 @@ func (o *TaxRuleUpdateData) SetAttributes(v PATCHTaxRulesTaxRuleId200ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxRuleUpdateData) GetRelationships() GETTaxRules200ResponseDataInnerRelationships {
+func (o *TaxRuleUpdateData) GetRelationships() TaxRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETTaxRules200ResponseDataInnerRelationships
+		var ret TaxRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *TaxRuleUpdateData) GetRelationships() GETTaxRules200ResponseDataInnerRe
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdateData) GetRelationshipsOk() (*GETTaxRules200ResponseDataInnerRelationships, bool) {
+func (o *TaxRuleUpdateData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *TaxRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETTaxRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *TaxRuleUpdateData) SetRelationships(v GETTaxRules200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given TaxRuleDataRelationships and assigns it to the Relationships field.
+func (o *TaxRuleUpdateData) SetRelationships(v TaxRuleDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableTaxRuleUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

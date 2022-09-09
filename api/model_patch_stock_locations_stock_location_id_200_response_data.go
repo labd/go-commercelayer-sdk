@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHStockLocationsStockLocationId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
-	Attributes    *PATCHStockLocationsStockLocationId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *PATCHMerchantsMerchantId200ResponseDataRelationships        `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHStockLocationsStockLocationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETStockLocations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHStockLocationsStockLocationId200ResponseData instantiates a new PATCHStockLocationsStockLocationId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHStockLocationsStockLocationId200ResponseData) SetAttributes(v PATC
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHStockLocationsStockLocationId200ResponseData) GetRelationships() PATCHMerchantsMerchantId200ResponseDataRelationships {
+func (o *PATCHStockLocationsStockLocationId200ResponseData) GetRelationships() GETStockLocations200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHMerchantsMerchantId200ResponseDataRelationships
+		var ret GETStockLocations200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHStockLocationsStockLocationId200ResponseData) GetRelationships() P
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStockLocationsStockLocationId200ResponseData) GetRelationshipsOk() (*PATCHMerchantsMerchantId200ResponseDataRelationships, bool) {
+func (o *PATCHStockLocationsStockLocationId200ResponseData) GetRelationshipsOk() (*GETStockLocations200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHStockLocationsStockLocationId200ResponseData) HasRelationships() b
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHMerchantsMerchantId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHStockLocationsStockLocationId200ResponseData) SetRelationships(v PATCHMerchantsMerchantId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETStockLocations200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHStockLocationsStockLocationId200ResponseData) SetRelationships(v GETStockLocations200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHStockLocationsStockLocationId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

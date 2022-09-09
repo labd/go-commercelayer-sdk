@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,9 @@ import (
 
 // GETExternalPayments200ResponseDataInnerRelationships struct for GETExternalPayments200ResponseDataInnerRelationships
 type GETExternalPayments200ResponseDataInnerRelationships struct {
-	Order          *GETAdyenPayments200ResponseDataInnerRelationshipsOrder              `json:"order,omitempty"`
-	PaymentGateway *GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway     `json:"payment_gateway,omitempty"`
-	Wallet         *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources `json:"wallet,omitempty"`
+	Order *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"order,omitempty"`
+	PaymentGateway *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"payment_gateway,omitempty"`
+	Wallet *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"wallet,omitempty"`
 }
 
 // NewGETExternalPayments200ResponseDataInnerRelationships instantiates a new GETExternalPayments200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETExternalPayments200ResponseDataInnerRelationshipsWithDefaults() *GETE
 }
 
 // GetOrder returns the Order field value if set, zero value otherwise.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Order == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationshipsOrder
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Order
@@ -50,7 +50,7 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrder() GETAdy
 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool) {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Order == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) HasOrder() bool {
 	return false
 }
 
-// SetOrder gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsOrder and assigns it to the Order field.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder) {
+// SetOrder gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Order field.
+func (o *GETExternalPayments200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Order = &v
 }
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.PaymentGateway == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.PaymentGateway
@@ -82,7 +82,7 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGateway
 
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway, bool) {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.PaymentGateway == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) HasPaymentGateway
 	return false
 }
 
-// SetPaymentGateway gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway and assigns it to the PaymentGateway field.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway) {
+// SetPaymentGateway gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the PaymentGateway field.
+func (o *GETExternalPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.PaymentGateway = &v
 }
 
 // GetWallet returns the Wallet field value if set, zero value otherwise.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWallet() GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWallet() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Wallet == nil {
-		var ret GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Wallet
@@ -114,7 +114,7 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWallet() GETCu
 
 // GetWalletOk returns a tuple with the Wallet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWalletOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources, bool) {
+func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWalletOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Wallet == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETExternalPayments200ResponseDataInnerRelationships) HasWallet() bool 
 	return false
 }
 
-// SetWallet gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources and assigns it to the Wallet field.
-func (o *GETExternalPayments200ResponseDataInnerRelationships) SetWallet(v GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) {
+// SetWallet gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Wallet field.
+func (o *GETExternalPayments200ResponseDataInnerRelationships) SetWallet(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Wallet = &v
 }
 
@@ -184,3 +184,5 @@ func (v *NullableGETExternalPayments200ResponseDataInnerRelationships) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

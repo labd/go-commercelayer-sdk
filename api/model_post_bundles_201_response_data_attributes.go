@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -27,10 +27,6 @@ type POSTBundles201ResponseDataAttributes struct {
 	Description *string `json:"description,omitempty"`
 	// The URL of an image that represents the bundle.
 	ImageUrl *string `json:"image_url,omitempty"`
-	// Indicates if the bundle doesn't generate shipments.
-	DoNotShip *bool `json:"do_not_ship,omitempty"`
-	// Indicates if the bundle doesn't track the stock inventory.
-	DoNotTrack *bool `json:"do_not_track,omitempty"`
 	// The bundle price amount for the associated market, in cents.
 	PriceAmountCents int32 `json:"price_amount_cents"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
@@ -210,70 +206,6 @@ func (o *POSTBundles201ResponseDataAttributes) HasImageUrl() bool {
 // SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
 func (o *POSTBundles201ResponseDataAttributes) SetImageUrl(v string) {
 	o.ImageUrl = &v
-}
-
-// GetDoNotShip returns the DoNotShip field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetDoNotShip() bool {
-	if o == nil || o.DoNotShip == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DoNotShip
-}
-
-// GetDoNotShipOk returns a tuple with the DoNotShip field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetDoNotShipOk() (*bool, bool) {
-	if o == nil || o.DoNotShip == nil {
-		return nil, false
-	}
-	return o.DoNotShip, true
-}
-
-// HasDoNotShip returns a boolean if a field has been set.
-func (o *POSTBundles201ResponseDataAttributes) HasDoNotShip() bool {
-	if o != nil && o.DoNotShip != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDoNotShip gets a reference to the given bool and assigns it to the DoNotShip field.
-func (o *POSTBundles201ResponseDataAttributes) SetDoNotShip(v bool) {
-	o.DoNotShip = &v
-}
-
-// GetDoNotTrack returns the DoNotTrack field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetDoNotTrack() bool {
-	if o == nil || o.DoNotTrack == nil {
-		var ret bool
-		return ret
-	}
-	return *o.DoNotTrack
-}
-
-// GetDoNotTrackOk returns a tuple with the DoNotTrack field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetDoNotTrackOk() (*bool, bool) {
-	if o == nil || o.DoNotTrack == nil {
-		return nil, false
-	}
-	return o.DoNotTrack, true
-}
-
-// HasDoNotTrack returns a boolean if a field has been set.
-func (o *POSTBundles201ResponseDataAttributes) HasDoNotTrack() bool {
-	if o != nil && o.DoNotTrack != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetDoNotTrack gets a reference to the given bool and assigns it to the DoNotTrack field.
-func (o *POSTBundles201ResponseDataAttributes) SetDoNotTrack(v bool) {
-	o.DoNotTrack = &v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value
@@ -501,12 +433,6 @@ func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.ImageUrl != nil {
 		toSerialize["image_url"] = o.ImageUrl
 	}
-	if o.DoNotShip != nil {
-		toSerialize["do_not_ship"] = o.DoNotShip
-	}
-	if o.DoNotTrack != nil {
-		toSerialize["do_not_track"] = o.DoNotTrack
-	}
 	if true {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
 	}
@@ -566,3 +492,5 @@ func (v *NullablePOSTBundles201ResponseDataAttributes) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

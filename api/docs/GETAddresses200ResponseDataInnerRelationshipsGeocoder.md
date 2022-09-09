@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "geocoders"]
-**Id** | **string** | The resource&#39;s id | 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
+**Data** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderData**](GETAddresses200ResponseDataInnerRelationshipsGeocoderData.md) |  | [optional] 
 
 ## Methods
 
 ### NewGETAddresses200ResponseDataInnerRelationshipsGeocoder
 
-`func NewGETAddresses200ResponseDataInnerRelationshipsGeocoder(type_ string, id string, ) *GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func NewGETAddresses200ResponseDataInnerRelationshipsGeocoder() *GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 NewGETAddresses200ResponseDataInnerRelationshipsGeocoder instantiates a new GETAddresses200ResponseDataInnerRelationshipsGeocoder object
 This constructor will assign default values to properties that have it defined,
@@ -26,45 +26,55 @@ NewGETAddresses200ResponseDataInnerRelationshipsGeocoderWithDefaults instantiate
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetLinks
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetType() string`
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetLinks() GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetLinks returns the Links field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetLinksOk
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetTypeOk() (*string, bool)`
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetLinksOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetLinks
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetType(v string)`
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetLinks(v GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks)`
 
-SetType sets Type field to given value.
+SetLinks sets Links field to given value.
 
+### HasLinks
 
-### GetId
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) HasLinks() bool`
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetId() string`
+HasLinks returns a boolean if a field has been set.
 
-GetId returns the Id field if non-nil, zero value otherwise.
+### GetData
 
-### GetIdOk
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetData() GETAddresses200ResponseDataInnerRelationshipsGeocoderData`
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetIdOk() (*string, bool)`
+GetData returns the Data field if non-nil, zero value otherwise.
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+### GetDataOk
+
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetDataOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoderData, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetData
 
-`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetId(v string)`
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetData(v GETAddresses200ResponseDataInnerRelationshipsGeocoderData)`
 
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
+### HasData
+
+`func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

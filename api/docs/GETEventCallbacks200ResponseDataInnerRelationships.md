@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Webhook** | Pointer to [**GETEventCallbacks200ResponseDataInnerRelationshipsWebhook**](GETEventCallbacks200ResponseDataInnerRelationshipsWebhook.md) |  | [optional] 
+**Webhook** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetWebhook
 
-`func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhook() GETEventCallbacks200ResponseDataInnerRelationshipsWebhook`
+`func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhook() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetWebhook returns the Webhook field if non-nil, zero value otherwise.
 
 ### GetWebhookOk
 
-`func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhookOk() (*GETEventCallbacks200ResponseDataInnerRelationshipsWebhook, bool)`
+`func (o *GETEventCallbacks200ResponseDataInnerRelationships) GetWebhookOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetWebhookOk returns a tuple with the Webhook field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWebhook
 
-`func (o *GETEventCallbacks200ResponseDataInnerRelationships) SetWebhook(v GETEventCallbacks200ResponseDataInnerRelationshipsWebhook)`
+`func (o *GETEventCallbacks200ResponseDataInnerRelationships) SetWebhook(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetWebhook sets Webhook field to given value.
 

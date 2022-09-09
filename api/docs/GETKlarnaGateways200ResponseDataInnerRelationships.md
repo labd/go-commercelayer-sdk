@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**KlarnaPayments** | Pointer to [**GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments**](GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments.md) |  | [optional] 
+**KlarnaPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetKlarnaPayments
 
-`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPayments() GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments`
+`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetKlarnaPayments returns the KlarnaPayments field if non-nil, zero value otherwise.
 
 ### GetKlarnaPaymentsOk
 
-`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPaymentsOk() (*GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments, bool)`
+`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetKlarnaPaymentsOk returns a tuple with the KlarnaPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKlarnaPayments
 
-`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) SetKlarnaPayments(v GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments)`
+`func (o *GETKlarnaGateways200ResponseDataInnerRelationships) SetKlarnaPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetKlarnaPayments sets KlarnaPayments field to given value.
 

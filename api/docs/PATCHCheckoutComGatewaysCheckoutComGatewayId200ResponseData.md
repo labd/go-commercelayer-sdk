@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "checkout_com_gateways"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes**](PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCheckoutComGateways201ResponseDataRelationships**](POSTCheckoutComGateways201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETCheckoutComGateways200ResponseDataInnerRelationships**](GETCheckoutComGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationships() POSTCheckoutComGateways201ResponseDataRelationships`
+`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationships() GETCheckoutComGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationshipsOk() (*POSTCheckoutComGateways201ResponseDataRelationships, bool)`
+`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationshipsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) SetRelationships(v POSTCheckoutComGateways201ResponseDataRelationships)`
+`func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) SetRelationships(v GETCheckoutComGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

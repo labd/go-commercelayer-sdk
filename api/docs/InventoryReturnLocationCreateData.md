@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "inventory_return_locations"]
 **Attributes** | [**POSTInventoryReturnLocations201ResponseDataAttributes**](POSTInventoryReturnLocations201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTInventoryReturnLocations201ResponseDataRelationships**](POSTInventoryReturnLocations201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**InventoryReturnLocationCreateDataRelationships**](InventoryReturnLocationCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *InventoryReturnLocationCreateData) GetRelationships() POSTInventoryReturnLocations201ResponseDataRelationships`
+`func (o *InventoryReturnLocationCreateData) GetRelationships() InventoryReturnLocationCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *InventoryReturnLocationCreateData) GetRelationshipsOk() (*POSTInventoryReturnLocations201ResponseDataRelationships, bool)`
+`func (o *InventoryReturnLocationCreateData) GetRelationshipsOk() (*InventoryReturnLocationCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *InventoryReturnLocationCreateData) SetRelationships(v POSTInventoryReturnLocations201ResponseDataRelationships)`
+`func (o *InventoryReturnLocationCreateData) SetRelationships(v InventoryReturnLocationCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

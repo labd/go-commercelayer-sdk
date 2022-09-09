@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // ParcelLineItemsApiService ParcelLineItemsApi service
 type ParcelLineItemsApiService service
 
 type ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest struct {
-	ctx              context.Context
-	ApiService       *ParcelLineItemsApiService
+	ctx context.Context
+	ApiService *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
@@ -44,8 +45,8 @@ Delete a parcel line item
 */
 func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest {
 	return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		parcelLineItemId: parcelLineItemId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx co
 // Execute executes the request
 func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.DELETEParcelLineItemsParcelLineItemId")
@@ -116,9 +117,9 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute
 }
 
 type ParcelLineItemsApiGETParcelIdParcelLineItemsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ParcelLineItemsApiService
-	parcelId   string
+	parcelId string
 }
 
 func (r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
@@ -137,17 +138,17 @@ Retrieve the parcel line items associated to the parcel
 func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ParcelLineItemsApiGETParcelIdParcelLineItemsRequest {
 	return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		parcelId:   parcelId,
+		ctx: ctx,
+		parcelId: parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.GETParcelIdParcelLineItems")
@@ -208,7 +209,7 @@ func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ParcelLi
 }
 
 type ParcelLineItemsApiGETParcelLineItemsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ParcelLineItemsApiService
 }
 
@@ -227,7 +228,7 @@ List all parcel line items
 func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) ParcelLineItemsApiGETParcelLineItemsRequest {
 	return ParcelLineItemsApiGETParcelLineItemsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) Parc
 //  @return GETParcelLineItems200Response
 func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ParcelLineItemsApiGETParcelLineItemsRequest) (*GETParcelLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETParcelLineItems200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETParcelLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.GETParcelLineItems")
@@ -307,8 +308,8 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ParcelLineItemsA
 }
 
 type ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest struct {
-	ctx              context.Context
-	ApiService       *ParcelLineItemsApiService
+	ctx context.Context
+	ApiService *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
@@ -327,8 +328,8 @@ Retrieve a parcel line item
 */
 func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest {
 	return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		parcelLineItemId: parcelLineItemId,
 	}
 }
@@ -337,10 +338,10 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx conte
 //  @return GETParcelLineItemsParcelLineItemId200Response
 func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) (*GETParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETParcelLineItemsParcelLineItemId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETParcelLineItemsParcelLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.GETParcelLineItemsParcelLineItemId")
@@ -410,10 +411,10 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r 
 }
 
 type ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest struct {
-	ctx                  context.Context
-	ApiService           *ParcelLineItemsApiService
+	ctx context.Context
+	ApiService *ParcelLineItemsApiService
 	parcelLineItemUpdate *ParcelLineItemUpdate
-	parcelLineItemId     string
+	parcelLineItemId string
 }
 
 func (r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) ParcelLineItemUpdate(parcelLineItemUpdate ParcelLineItemUpdate) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
@@ -436,8 +437,8 @@ Update a parcel line item
 */
 func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
 	return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		parcelLineItemId: parcelLineItemId,
 	}
 }
@@ -446,10 +447,10 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx con
 //  @return PATCHParcelLineItemsParcelLineItemId200Response
 func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) (*PATCHParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHParcelLineItemsParcelLineItemId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHParcelLineItemsParcelLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.PATCHParcelLineItemsParcelLineItemId")
@@ -524,8 +525,8 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 }
 
 type ParcelLineItemsApiPOSTParcelLineItemsRequest struct {
-	ctx                  context.Context
-	ApiService           *ParcelLineItemsApiService
+	ctx context.Context
+	ApiService *ParcelLineItemsApiService
 	parcelLineItemCreate *ParcelLineItemCreate
 }
 
@@ -549,7 +550,7 @@ Create a parcel line item
 func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) ParcelLineItemsApiPOSTParcelLineItemsRequest {
 	return ParcelLineItemsApiPOSTParcelLineItemsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -557,10 +558,10 @@ func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) Par
 //  @return POSTParcelLineItems201Response
 func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ParcelLineItemsApiPOSTParcelLineItemsRequest) (*POSTParcelLineItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTParcelLineItems201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTParcelLineItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.POSTParcelLineItems")

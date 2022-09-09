@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
-**Id** | **string** | The resource&#39;s id | 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
+**Data** | Pointer to [**[]GETAddresses200ResponseDataInnerRelationshipsGeocoderData**](GETAddresses200ResponseDataInnerRelationshipsGeocoderData.md) |  | [optional] 
 
 ## Methods
 
 ### NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 
-`func NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods(type_ string, id string, ) *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods() *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods instantiates a new GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods object
 This constructor will assign default values to properties that have it defined,
@@ -26,45 +26,55 @@ NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsWithDefaults i
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetLinks
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetType() string`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetLinks() GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetLinks returns the Links field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetLinksOk
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetTypeOk() (*string, bool)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetLinksOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetLinks
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetType(v string)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetLinks(v GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks)`
 
-SetType sets Type field to given value.
+SetLinks sets Links field to given value.
 
+### HasLinks
 
-### GetId
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) HasLinks() bool`
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetId() string`
+HasLinks returns a boolean if a field has been set.
 
-GetId returns the Id field if non-nil, zero value otherwise.
+### GetData
 
-### GetIdOk
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetData() []GETAddresses200ResponseDataInnerRelationshipsGeocoderData`
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetIdOk() (*string, bool)`
+GetData returns the Data field if non-nil, zero value otherwise.
 
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+### GetDataOk
+
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetDataOk() (*[]GETAddresses200ResponseDataInnerRelationshipsGeocoderData, bool)`
+
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetId
+### SetData
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetId(v string)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetData(v []GETAddresses200ResponseDataInnerRelationshipsGeocoderData)`
 
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
+### HasData
+
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type ExternalTaxCalculatorUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                      `json:"id"`
-	Attributes    PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTAvalaraAccounts201ResponseDataRelationships                            `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorUpdateData instantiates a new ExternalTaxCalculatorUpdateData object
@@ -120,9 +120,9 @@ func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v PATCHExternalTaxCalcul
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalTaxCalculatorUpdateData) GetRelationships() POSTAvalaraAccounts201ResponseDataRelationships {
+func (o *ExternalTaxCalculatorUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAvalaraAccounts201ResponseDataRelationships
+		var ret AvalaraAccountCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ExternalTaxCalculatorUpdateData) GetRelationships() POSTAvalaraAccounts
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*POSTAvalaraAccounts201ResponseDataRelationships, bool) {
+func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ExternalTaxCalculatorUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAvalaraAccounts201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v POSTAvalaraAccounts201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AvalaraAccountCreateDataRelationships and assigns it to the Relationships field.
+func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableExternalTaxCalculatorUpdateData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

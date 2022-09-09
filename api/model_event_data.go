@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // EventData struct for EventData
 type EventData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    GETEvents200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETEvents200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETEvents200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *EventDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewEventData instantiates a new EventData object
@@ -93,9 +93,9 @@ func (o *EventData) SetAttributes(v GETEvents200ResponseDataInnerAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *EventData) GetRelationships() GETEvents200ResponseDataInnerRelationships {
+func (o *EventData) GetRelationships() EventDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETEvents200ResponseDataInnerRelationships
+		var ret EventDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *EventData) GetRelationships() GETEvents200ResponseDataInnerRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *EventData) GetRelationshipsOk() (*GETEvents200ResponseDataInnerRelationships, bool) {
+func (o *EventData) GetRelationshipsOk() (*EventDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *EventData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETEvents200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *EventData) SetRelationships(v GETEvents200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given EventDataRelationships and assigns it to the Relationships field.
+func (o *EventData) SetRelationships(v EventDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableEventData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

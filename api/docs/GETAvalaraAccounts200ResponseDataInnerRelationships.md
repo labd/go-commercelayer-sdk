@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxCategories** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories**](GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories.md) |  | [optional] 
-**Markets** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets**](GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
+**TaxCategories** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Markets** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTaxCategories
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetTaxCategories() GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetTaxCategories() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetTaxCategories returns the TaxCategories field if non-nil, zero value otherwise.
 
 ### GetTaxCategoriesOk
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetTaxCategoriesOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories, bool)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetTaxCategoriesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetTaxCategoriesOk returns a tuple with the TaxCategories field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCategories
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetTaxCategories(v GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetTaxCategories(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetTaxCategories sets TaxCategories field to given value.
 
@@ -54,20 +54,20 @@ HasTaxCategories returns a boolean if a field has been set.
 
 ### GetMarkets
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetMarkets() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetMarkets() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetMarkets returns the Markets field if non-nil, zero value otherwise.
 
 ### GetMarketsOk
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetMarketsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetMarketsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetMarketsOk returns a tuple with the Markets field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarkets
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetMarkets(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetMarkets(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetMarkets sets Markets field to given value.
 
@@ -79,20 +79,20 @@ HasMarkets returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
+`func (o *GETAvalaraAccounts200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetAttachments sets Attachments field to given value.
 

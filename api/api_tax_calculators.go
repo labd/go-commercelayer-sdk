@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // TaxCalculatorsApiService TaxCalculatorsApi service
 type TaxCalculatorsApiService service
 
 type TaxCalculatorsApiGETMarketIdTaxCalculatorRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *TaxCalculatorsApiService
-	marketId   string
+	marketId string
 }
 
 func (r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Retrieve the tax calculator associated to the market
 func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest {
 	return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest{
 		ApiService: a,
-		ctx:        ctx,
-		marketId:   marketId,
+		ctx: ctx,
+		marketId: marketId,
 	}
 }
 
 // Execute executes the request
 func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCalculatorsApiService.GETMarketIdTaxCalculator")
@@ -116,7 +117,7 @@ func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculat
 }
 
 type TaxCalculatorsApiGETTaxCalculatorsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *TaxCalculatorsApiService
 }
 
@@ -135,7 +136,7 @@ List all tax calculators
 func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) TaxCalculatorsApiGETTaxCalculatorsRequest {
 	return TaxCalculatorsApiGETTaxCalculatorsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) TaxCal
 //  @return GETTaxCalculators200Response
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiGETTaxCalculatorsRequest) (*GETTaxCalculators200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETTaxCalculators200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETTaxCalculators200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCalculatorsApiService.GETTaxCalculators")
@@ -215,8 +216,8 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiG
 }
 
 type TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest struct {
-	ctx             context.Context
-	ApiService      *TaxCalculatorsApiService
+	ctx context.Context
+	ApiService *TaxCalculatorsApiService
 	taxCalculatorId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a tax calculator
 */
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest {
 	return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.
 //  @return GETTaxCalculatorsTaxCalculatorId200Response
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) (*GETTaxCalculatorsTaxCalculatorId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETTaxCalculatorsTaxCalculatorId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETTaxCalculatorsTaxCalculatorId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCalculatorsApiService.GETTaxCalculatorsTaxCalculatorId")

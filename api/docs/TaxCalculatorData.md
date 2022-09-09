@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_calculators"]
 **Attributes** | [**GETManualTaxCalculators200ResponseDataInnerAttributes**](GETManualTaxCalculators200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationships**](GETAvalaraAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *TaxCalculatorData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships`
+`func (o *TaxCalculatorData) GetRelationships() AvalaraAccountDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxCalculatorData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool)`
+`func (o *TaxCalculatorData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxCalculatorData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships)`
+`func (o *TaxCalculatorData) SetRelationships(v AvalaraAccountDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

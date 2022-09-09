@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // OrderCopyData struct for OrderCopyData
 type OrderCopyData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETOrderCopies200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETOrderCopies200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETOrderCopies200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderCopyDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderCopyData instantiates a new OrderCopyData object
@@ -93,9 +93,9 @@ func (o *OrderCopyData) SetAttributes(v GETOrderCopies200ResponseDataInnerAttrib
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderCopyData) GetRelationships() GETOrderCopies200ResponseDataInnerRelationships {
+func (o *OrderCopyData) GetRelationships() OrderCopyDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETOrderCopies200ResponseDataInnerRelationships
+		var ret OrderCopyDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderCopyData) GetRelationships() GETOrderCopies200ResponseDataInnerRel
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCopyData) GetRelationshipsOk() (*GETOrderCopies200ResponseDataInnerRelationships, bool) {
+func (o *OrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderCopyData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETOrderCopies200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *OrderCopyData) SetRelationships(v GETOrderCopies200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given OrderCopyDataRelationships and assigns it to the Relationships field.
+func (o *OrderCopyData) SetRelationships(v OrderCopyDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableOrderCopyData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

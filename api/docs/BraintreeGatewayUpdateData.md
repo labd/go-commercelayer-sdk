@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "braintree_gateways"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes**](PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTBraintreeGateways201ResponseDataRelationships**](POSTBraintreeGateways201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BraintreeGatewayCreateDataRelationships**](BraintreeGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BraintreeGatewayUpdateData) GetRelationships() POSTBraintreeGateways201ResponseDataRelationships`
+`func (o *BraintreeGatewayUpdateData) GetRelationships() BraintreeGatewayCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BraintreeGatewayUpdateData) GetRelationshipsOk() (*POSTBraintreeGateways201ResponseDataRelationships, bool)`
+`func (o *BraintreeGatewayUpdateData) GetRelationshipsOk() (*BraintreeGatewayCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BraintreeGatewayUpdateData) SetRelationships(v POSTBraintreeGateways201ResponseDataRelationships)`
+`func (o *BraintreeGatewayUpdateData) SetRelationships(v BraintreeGatewayCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

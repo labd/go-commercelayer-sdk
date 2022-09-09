@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LineItem** | Pointer to [**GETLineItemOptions200ResponseDataInnerRelationshipsLineItem**](GETLineItemOptions200ResponseDataInnerRelationshipsLineItem.md) |  | [optional] 
-**SkuOption** | Pointer to [**GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption**](GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption.md) |  | [optional] 
+**LineItem** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**SkuOption** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLineItem
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItem() GETLineItemOptions200ResponseDataInnerRelationshipsLineItem`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetLineItem returns the LineItem field if non-nil, zero value otherwise.
 
 ### GetLineItemOk
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItemOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsLineItem, bool)`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetLineItemOk returns a tuple with the LineItem field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLineItem
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetLineItem(v GETLineItemOptions200ResponseDataInnerRelationshipsLineItem)`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetLineItem sets LineItem field to given value.
 
@@ -53,20 +53,20 @@ HasLineItem returns a boolean if a field has been set.
 
 ### GetSkuOption
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOption() GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOption() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetSkuOption returns the SkuOption field if non-nil, zero value otherwise.
 
 ### GetSkuOptionOk
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOptionOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption, bool)`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOptionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetSkuOptionOk returns a tuple with the SkuOption field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuOption
 
-`func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetSkuOption(v GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption)`
+`func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetSkuOption(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetSkuOption sets SkuOption field to given value.
 

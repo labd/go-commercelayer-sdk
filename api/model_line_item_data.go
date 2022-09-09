@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // LineItemData struct for LineItemData
 type LineItemData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    GETLineItems200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETLineItems200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETLineItems200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *LineItemDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemData instantiates a new LineItemData object
@@ -93,9 +93,9 @@ func (o *LineItemData) SetAttributes(v GETLineItems200ResponseDataInnerAttribute
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *LineItemData) GetRelationships() GETLineItems200ResponseDataInnerRelationships {
+func (o *LineItemData) GetRelationships() LineItemDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETLineItems200ResponseDataInnerRelationships
+		var ret LineItemDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *LineItemData) GetRelationships() GETLineItems200ResponseDataInnerRelati
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemData) GetRelationshipsOk() (*GETLineItems200ResponseDataInnerRelationships, bool) {
+func (o *LineItemData) GetRelationshipsOk() (*LineItemDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *LineItemData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETLineItems200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *LineItemData) SetRelationships(v GETLineItems200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given LineItemDataRelationships and assigns it to the Relationships field.
+func (o *LineItemData) SetRelationships(v LineItemDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableLineItemData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

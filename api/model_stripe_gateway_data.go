@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StripeGatewayData struct for StripeGatewayData
 type StripeGatewayData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETStripeGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETStripeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETStripeGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StripeGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStripeGatewayData instantiates a new StripeGatewayData object
@@ -93,9 +93,9 @@ func (o *StripeGatewayData) SetAttributes(v GETStripeGateways200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StripeGatewayData) GetRelationships() GETStripeGateways200ResponseDataInnerRelationships {
+func (o *StripeGatewayData) GetRelationships() StripeGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETStripeGateways200ResponseDataInnerRelationships
+		var ret StripeGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StripeGatewayData) GetRelationships() GETStripeGateways200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayData) GetRelationshipsOk() (*GETStripeGateways200ResponseDataInnerRelationships, bool) {
+func (o *StripeGatewayData) GetRelationshipsOk() (*StripeGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StripeGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETStripeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *StripeGatewayData) SetRelationships(v GETStripeGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given StripeGatewayDataRelationships and assigns it to the Relationships field.
+func (o *StripeGatewayData) SetRelationships(v StripeGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStripeGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

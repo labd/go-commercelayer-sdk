@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "stock_locations"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHStockLocationsStockLocationId200ResponseDataAttributes**](PATCHStockLocationsStockLocationId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHMerchantsMerchantId200ResponseDataRelationships**](PATCHMerchantsMerchantId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**MerchantUpdateDataRelationships**](MerchantUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *StockLocationUpdateData) GetRelationships() PATCHMerchantsMerchantId200ResponseDataRelationships`
+`func (o *StockLocationUpdateData) GetRelationships() MerchantUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockLocationUpdateData) GetRelationshipsOk() (*PATCHMerchantsMerchantId200ResponseDataRelationships, bool)`
+`func (o *StockLocationUpdateData) GetRelationshipsOk() (*MerchantUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockLocationUpdateData) SetRelationships(v PATCHMerchantsMerchantId200ResponseDataRelationships)`
+`func (o *StockLocationUpdateData) SetRelationships(v MerchantUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

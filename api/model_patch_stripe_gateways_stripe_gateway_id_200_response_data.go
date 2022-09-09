@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHStripeGatewaysStripeGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
-	Attributes    *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                                       `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETStripeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHStripeGatewaysStripeGatewayId200ResponseData instantiates a new PATCHStripeGatewaysStripeGatewayId200ResponseData object
@@ -176,17 +176,17 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetAttributes(v PATC
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationships() map[string]interface{} {
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationships() GETStripeGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret GETStripeGateways200ResponseDataInnerRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationshipsOk() (*GETStripeGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,9 +202,9 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasRelationships() b
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given GETStripeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetRelationships(v GETStripeGateways200ResponseDataInnerRelationships) {
+	o.Relationships = &v
 }
 
 func (o PATCHStripeGatewaysStripeGatewayId200ResponseData) MarshalJSON() ([]byte, error) {
@@ -262,3 +262,5 @@ func (v *NullablePATCHStripeGatewaysStripeGatewayId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

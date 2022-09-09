@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type ShippingMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                        `json:"id"`
-	Attributes    PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTShippingMethods201ResponseDataRelationships              `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingMethodCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
@@ -120,9 +120,9 @@ func (o *ShippingMethodUpdateData) SetAttributes(v PATCHShippingMethodsShippingM
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ShippingMethodUpdateData) GetRelationships() POSTShippingMethods201ResponseDataRelationships {
+func (o *ShippingMethodUpdateData) GetRelationships() ShippingMethodCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTShippingMethods201ResponseDataRelationships
+		var ret ShippingMethodCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ShippingMethodUpdateData) GetRelationships() POSTShippingMethods201Resp
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*POSTShippingMethods201ResponseDataRelationships, bool) {
+func (o *ShippingMethodUpdateData) GetRelationshipsOk() (*ShippingMethodCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ShippingMethodUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTShippingMethods201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ShippingMethodUpdateData) SetRelationships(v POSTShippingMethods201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given ShippingMethodCreateDataRelationships and assigns it to the Relationships field.
+func (o *ShippingMethodUpdateData) SetRelationships(v ShippingMethodCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableShippingMethodUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

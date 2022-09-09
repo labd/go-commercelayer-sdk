@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "fixed_amount_promotions"]
 **Attributes** | [**POSTFixedAmountPromotions201ResponseDataAttributes**](POSTFixedAmountPromotions201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTExternalPromotions201ResponseDataRelationships**](POSTExternalPromotions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *FixedAmountPromotionCreateData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships`
+`func (o *FixedAmountPromotionCreateData) GetRelationships() ExternalPromotionCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *FixedAmountPromotionCreateData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool)`
+`func (o *FixedAmountPromotionCreateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *FixedAmountPromotionCreateData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships)`
+`func (o *FixedAmountPromotionCreateData) SetRelationships(v ExternalPromotionCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

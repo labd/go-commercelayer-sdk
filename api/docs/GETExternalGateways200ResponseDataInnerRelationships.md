@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**ExternalPayments** | Pointer to [**GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments**](GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments.md) |  | [optional] 
+**ExternalPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetExternalPayments
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPayments() GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments`
+`func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetExternalPayments returns the ExternalPayments field if non-nil, zero value otherwise.
 
 ### GetExternalPaymentsOk
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPaymentsOk() (*GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments, bool)`
+`func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetExternalPaymentsOk returns a tuple with the ExternalPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetExternalPayments
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationships) SetExternalPayments(v GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments)`
+`func (o *GETExternalGateways200ResponseDataInnerRelationships) SetExternalPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetExternalPayments sets ExternalPayments field to given value.
 

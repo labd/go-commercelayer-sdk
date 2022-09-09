@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "prices"]
 **Attributes** | [**POSTPrices201ResponseDataAttributes**](POSTPrices201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTPrices201ResponseDataRelationships**](POSTPrices201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PriceCreateDataRelationships**](PriceCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PriceCreateData) GetRelationships() POSTPrices201ResponseDataRelationships`
+`func (o *PriceCreateData) GetRelationships() PriceCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceCreateData) GetRelationshipsOk() (*POSTPrices201ResponseDataRelationships, bool)`
+`func (o *PriceCreateData) GetRelationshipsOk() (*PriceCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceCreateData) SetRelationships(v POSTPrices201ResponseDataRelationships)`
+`func (o *PriceCreateData) SetRelationships(v PriceCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "shipping_methods"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHShippingMethodsShippingMethodId200ResponseDataAttributes**](PATCHShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTShippingMethods201ResponseDataRelationships**](POSTShippingMethods201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETShippingMethods200ResponseDataInnerRelationships**](GETShippingMethods200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationships() POSTShippingMethods201ResponseDataRelationships`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationships() GETShippingMethods200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationshipsOk() (*POSTShippingMethods201ResponseDataRelationships, bool)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationshipsOk() (*GETShippingMethods200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetRelationships(v POSTShippingMethods201ResponseDataRelationships)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetRelationships(v GETShippingMethods200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

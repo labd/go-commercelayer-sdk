@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type InventoryStockLocationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                        `json:"id"`
-	Attributes    PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GETInventoryReturnLocations200ResponseDataInnerRelationships                 `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes `json:"attributes"`
+	Relationships *InventoryReturnLocationDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewInventoryStockLocationUpdateData instantiates a new InventoryStockLocationUpdateData object
@@ -120,9 +120,9 @@ func (o *InventoryStockLocationUpdateData) SetAttributes(v PATCHInventoryStockLo
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InventoryStockLocationUpdateData) GetRelationships() GETInventoryReturnLocations200ResponseDataInnerRelationships {
+func (o *InventoryStockLocationUpdateData) GetRelationships() InventoryReturnLocationDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETInventoryReturnLocations200ResponseDataInnerRelationships
+		var ret InventoryReturnLocationDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *InventoryStockLocationUpdateData) GetRelationships() GETInventoryReturn
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationUpdateData) GetRelationshipsOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationships, bool) {
+func (o *InventoryStockLocationUpdateData) GetRelationshipsOk() (*InventoryReturnLocationDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *InventoryStockLocationUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETInventoryReturnLocations200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *InventoryStockLocationUpdateData) SetRelationships(v GETInventoryReturnLocations200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given InventoryReturnLocationDataRelationships and assigns it to the Relationships field.
+func (o *InventoryStockLocationUpdateData) SetRelationships(v InventoryReturnLocationDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableInventoryStockLocationUpdateData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

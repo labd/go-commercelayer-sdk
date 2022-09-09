@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationshipsOrder**](GETAdyenPayments200ResponseDataInnerRelationshipsOrder.md) |  | [optional] 
-**PaymentGateway** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway**](GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway.md) |  | [optional] 
-**Wallet** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources**](GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources.md) |  | [optional] 
+**Order** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**PaymentGateway** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Wallet** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrder
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetOrder returns the Order field if non-nil, zero value otherwise.
 
 ### GetOrderOk
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetOrderOk returns a tuple with the Order field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrder
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetOrder sets Order field to given value.
 
@@ -54,20 +54,20 @@ HasOrder returns a boolean if a field has been set.
 
 ### GetPaymentGateway
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGateway() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetPaymentGateway returns the PaymentGateway field if non-nil, zero value otherwise.
 
 ### GetPaymentGatewayOk
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway, bool)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetPaymentGatewayOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetPaymentGatewayOk returns a tuple with the PaymentGateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentGateway
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAdyenPayments200ResponseDataInnerRelationshipsPaymentGateway)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetPaymentGateway(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetPaymentGateway sets PaymentGateway field to given value.
 
@@ -79,20 +79,20 @@ HasPaymentGateway returns a boolean if a field has been set.
 
 ### GetWallet
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWallet() GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWallet() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetWallet returns the Wallet field if non-nil, zero value otherwise.
 
 ### GetWalletOk
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWalletOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources, bool)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) GetWalletOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetWalletOk returns a tuple with the Wallet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWallet
 
-`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetWallet(v GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources)`
+`func (o *GETExternalPayments200ResponseDataInnerRelationships) SetWallet(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetWallet sets Wallet field to given value.
 

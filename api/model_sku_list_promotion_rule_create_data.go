@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // SkuListPromotionRuleCreateData struct for SkuListPromotionRuleCreateData
 type SkuListPromotionRuleCreateData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTSkuListPromotionRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuListPromotionRuleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleCreateData instantiates a new SkuListPromotionRuleCreateData object
@@ -93,9 +93,9 @@ func (o *SkuListPromotionRuleCreateData) SetAttributes(v POSTSkuListPromotionRul
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuListPromotionRuleCreateData) GetRelationships() POSTSkuListPromotionRules201ResponseDataRelationships {
+func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRuleCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTSkuListPromotionRules201ResponseDataRelationships
+		var ret SkuListPromotionRuleCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *SkuListPromotionRuleCreateData) GetRelationships() POSTSkuListPromotion
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*POSTSkuListPromotionRules201ResponseDataRelationships, bool) {
+func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotionRuleCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *SkuListPromotionRuleCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTSkuListPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *SkuListPromotionRuleCreateData) SetRelationships(v POSTSkuListPromotionRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given SkuListPromotionRuleCreateDataRelationships and assigns it to the Relationships field.
+func (o *SkuListPromotionRuleCreateData) SetRelationships(v SkuListPromotionRuleCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableSkuListPromotionRuleCreateData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

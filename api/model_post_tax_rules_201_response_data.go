@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTTaxRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                   `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks    `json:"links,omitempty"`
-	Attributes    *POSTTaxRules201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTTaxRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTTaxRules201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETTaxRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTTaxRules201ResponseData instantiates a new POSTTaxRules201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTTaxRules201ResponseData) SetAttributes(v POSTTaxRules201ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTTaxRules201ResponseData) GetRelationships() POSTTaxRules201ResponseDataRelationships {
+func (o *POSTTaxRules201ResponseData) GetRelationships() GETTaxRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTTaxRules201ResponseDataRelationships
+		var ret GETTaxRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTTaxRules201ResponseData) GetRelationships() POSTTaxRules201Response
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTTaxRules201ResponseData) GetRelationshipsOk() (*POSTTaxRules201ResponseDataRelationships, bool) {
+func (o *POSTTaxRules201ResponseData) GetRelationshipsOk() (*GETTaxRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTTaxRules201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTTaxRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTTaxRules201ResponseData) SetRelationships(v POSTTaxRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETTaxRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTTaxRules201ResponseData) SetRelationships(v GETTaxRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTTaxRules201ResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // TaxCalculatorData struct for TaxCalculatorData
 type TaxCalculatorData struct {
 	// The resource's type
-	Type          string                                                `json:"type"`
-	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AvalaraAccountDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCalculatorData instantiates a new TaxCalculatorData object
@@ -93,9 +93,9 @@ func (o *TaxCalculatorData) SetAttributes(v GETManualTaxCalculators200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCalculatorData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships {
+func (o *TaxCalculatorData) GetRelationships() AvalaraAccountDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationships
+		var ret AvalaraAccountDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxCalculatorData) GetRelationships() GETAvalaraAccounts200ResponseData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCalculatorData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool) {
+func (o *TaxCalculatorData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxCalculatorData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *TaxCalculatorData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given AvalaraAccountDataRelationships and assigns it to the Relationships field.
+func (o *TaxCalculatorData) SetRelationships(v AvalaraAccountDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableTaxCalculatorData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // AuthorizationData struct for AuthorizationData
 type AuthorizationData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETAuthorizations200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETAuthorizations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETAuthorizations200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AuthorizationDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationData instantiates a new AuthorizationData object
@@ -93,9 +93,9 @@ func (o *AuthorizationData) SetAttributes(v GETAuthorizations200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AuthorizationData) GetRelationships() GETAuthorizations200ResponseDataInnerRelationships {
+func (o *AuthorizationData) GetRelationships() AuthorizationDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAuthorizations200ResponseDataInnerRelationships
+		var ret AuthorizationDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AuthorizationData) GetRelationships() GETAuthorizations200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AuthorizationData) GetRelationshipsOk() (*GETAuthorizations200ResponseDataInnerRelationships, bool) {
+func (o *AuthorizationData) GetRelationshipsOk() (*AuthorizationDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AuthorizationData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAuthorizations200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *AuthorizationData) SetRelationships(v GETAuthorizations200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given AuthorizationDataRelationships and assigns it to the Relationships field.
+func (o *AuthorizationData) SetRelationships(v AuthorizationDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableAuthorizationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

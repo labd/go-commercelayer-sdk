@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type ParcelUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHParcelsParcelId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHParcelsParcelId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHParcelsParcelId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelUpdateData instantiates a new ParcelUpdateData object
@@ -120,9 +120,9 @@ func (o *ParcelUpdateData) SetAttributes(v PATCHParcelsParcelId200ResponseDataAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ParcelUpdateData) GetRelationships() PATCHParcelsParcelId200ResponseDataRelationships {
+func (o *ParcelUpdateData) GetRelationships() ParcelUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHParcelsParcelId200ResponseDataRelationships
+		var ret ParcelUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *ParcelUpdateData) GetRelationships() PATCHParcelsParcelId200ResponseDat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ParcelUpdateData) GetRelationshipsOk() (*PATCHParcelsParcelId200ResponseDataRelationships, bool) {
+func (o *ParcelUpdateData) GetRelationshipsOk() (*ParcelUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *ParcelUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHParcelsParcelId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *ParcelUpdateData) SetRelationships(v PATCHParcelsParcelId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given ParcelUpdateDataRelationships and assigns it to the Relationships field.
+func (o *ParcelUpdateData) SetRelationships(v ParcelUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableParcelUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

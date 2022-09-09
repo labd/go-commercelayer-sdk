@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_copies"]
 **Attributes** | [**GETOrderCopies200ResponseDataInnerAttributes**](GETOrderCopies200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETOrderCopies200ResponseDataInnerRelationships**](GETOrderCopies200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**OrderCopyDataRelationships**](OrderCopyDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *OrderCopyData) GetRelationships() GETOrderCopies200ResponseDataInnerRelationships`
+`func (o *OrderCopyData) GetRelationships() OrderCopyDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderCopyData) GetRelationshipsOk() (*GETOrderCopies200ResponseDataInnerRelationships, bool)`
+`func (o *OrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderCopyData) SetRelationships(v GETOrderCopies200ResponseDataInnerRelationships)`
+`func (o *OrderCopyData) SetRelationships(v OrderCopyDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

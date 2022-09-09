@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type BillingInfoValidationRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                          `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes                      `json:"attributes"`
-	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBillingInfoValidationRuleUpdateData instantiates a new BillingInfoValidationRuleUpdateData object
@@ -120,9 +120,9 @@ func (o *BillingInfoValidationRuleUpdateData) SetAttributes(v POSTAdyenPayments2
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BillingInfoValidationRuleUpdateData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships {
+func (o *BillingInfoValidationRuleUpdateData) GetRelationships() BillingInfoValidationRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationships
+		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *BillingInfoValidationRuleUpdateData) GetRelationships() GETBillingInfoV
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleUpdateData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool) {
+func (o *BillingInfoValidationRuleUpdateData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *BillingInfoValidationRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *BillingInfoValidationRuleUpdateData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
+func (o *BillingInfoValidationRuleUpdateData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableBillingInfoValidationRuleUpdateData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

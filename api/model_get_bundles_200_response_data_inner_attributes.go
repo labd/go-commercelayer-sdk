@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -27,9 +27,9 @@ type GETBundles200ResponseDataInnerAttributes struct {
 	Description *string `json:"description,omitempty"`
 	// The URL of an image that represents the bundle.
 	ImageUrl *string `json:"image_url,omitempty"`
-	// Indicates if the bundle doesn't generate shipments.
+	// Indicates if the bundle doesn't generate shipments (all sku_list's SKUs must be do_not_ship).
 	DoNotShip *bool `json:"do_not_ship,omitempty"`
-	// Indicates if the bundle doesn't track the stock inventory.
+	// Indicates if the bundle doesn't track the stock inventory (all sku_list's SKUs must be do_not_track).
 	DoNotTrack *bool `json:"do_not_track,omitempty"`
 	// The bundle price amount for the associated market, in cents.
 	PriceAmountCents *int32 `json:"price_amount_cents,omitempty"`
@@ -816,3 +816,5 @@ func (v *NullableGETBundles200ResponseDataInnerAttributes) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

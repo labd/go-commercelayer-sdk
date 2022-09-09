@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "braintree_payments"]
 **Attributes** | [**POSTBraintreePayments201ResponseDataAttributes**](POSTBraintreePayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAdyenPayments201ResponseDataRelationships**](POSTAdyenPayments201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BraintreePaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships`
+`func (o *BraintreePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool)`
+`func (o *BraintreePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BraintreePaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships)`
+`func (o *BraintreePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

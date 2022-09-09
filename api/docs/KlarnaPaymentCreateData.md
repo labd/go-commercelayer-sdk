@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "klarna_payments"]
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAdyenPayments201ResponseDataRelationships**](POSTAdyenPayments201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *KlarnaPaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships`
+`func (o *KlarnaPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *KlarnaPaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool)`
+`func (o *KlarnaPaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *KlarnaPaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships)`
+`func (o *KlarnaPaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

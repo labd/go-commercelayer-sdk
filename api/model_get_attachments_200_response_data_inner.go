@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type GETAttachments200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                          `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks           `json:"links,omitempty"`
-	Attributes    *GETAttachments200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *GETAttachments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
 	Relationships *GETAttachments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -262,3 +262,5 @@ func (v *NullableGETAttachments200ResponseDataInner) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

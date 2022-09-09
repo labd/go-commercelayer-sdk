@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // OrderSubscriptionCreateData struct for OrderSubscriptionCreateData
 type OrderSubscriptionCreateData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    POSTOrderSubscriptions201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTOrderSubscriptions201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTOrderSubscriptions201ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionCreateData instantiates a new OrderSubscriptionCreateData object
@@ -93,9 +93,9 @@ func (o *OrderSubscriptionCreateData) SetAttributes(v POSTOrderSubscriptions201R
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderSubscriptionCreateData) GetRelationships() POSTOrderSubscriptions201ResponseDataRelationships {
+func (o *OrderSubscriptionCreateData) GetRelationships() OrderSubscriptionCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTOrderSubscriptions201ResponseDataRelationships
+		var ret OrderSubscriptionCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *OrderSubscriptionCreateData) GetRelationships() POSTOrderSubscriptions2
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionCreateData) GetRelationshipsOk() (*POSTOrderSubscriptions201ResponseDataRelationships, bool) {
+func (o *OrderSubscriptionCreateData) GetRelationshipsOk() (*OrderSubscriptionCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *OrderSubscriptionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTOrderSubscriptions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *OrderSubscriptionCreateData) SetRelationships(v POSTOrderSubscriptions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given OrderSubscriptionCreateDataRelationships and assigns it to the Relationships field.
+func (o *OrderSubscriptionCreateData) SetRelationships(v OrderSubscriptionCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableOrderSubscriptionCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // SkuOptionCreateData struct for SkuOptionCreateData
 type SkuOptionCreateData struct {
 	// The resource's type
-	Type          string                                                          `json:"type"`
-	Attributes    POSTSkuOptions201ResponseDataAttributes                         `json:"attributes"`
-	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTSkuOptions201ResponseDataAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionCreateData instantiates a new SkuOptionCreateData object
@@ -93,9 +93,9 @@ func (o *SkuOptionCreateData) SetAttributes(v POSTSkuOptions201ResponseDataAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuOptionCreateData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships {
+func (o *SkuOptionCreateData) GetRelationships() BillingInfoValidationRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationships
+		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *SkuOptionCreateData) GetRelationships() GETBillingInfoValidationRules20
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuOptionCreateData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool) {
+func (o *SkuOptionCreateData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *SkuOptionCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *SkuOptionCreateData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
+func (o *SkuOptionCreateData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableSkuOptionCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

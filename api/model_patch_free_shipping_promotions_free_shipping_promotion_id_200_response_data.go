@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                       `json:"links,omitempty"`
-	Attributes    *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTExternalPromotions201ResponseDataRelationships                          `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData instantiates a new PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships {
+func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationships() GETExternalPromotions200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTExternalPromotions201ResponseDataRelationships
+		var ret GETExternalPromotions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetR
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool) {
+func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) GetRelationshipsOk() (*GETExternalPromotions200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) HasR
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTExternalPromotions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETExternalPromotions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData) SetRelationships(v GETExternalPromotions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

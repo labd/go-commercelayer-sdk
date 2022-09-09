@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "order_subscriptions"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTOrderSubscriptions201ResponseDataAttributes**](POSTOrderSubscriptions201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationships**](POSTOrderSubscriptions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETOrderSubscriptions200ResponseDataInnerRelationships**](GETOrderSubscriptions200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTOrderSubscriptions201ResponseData) GetRelationships() POSTOrderSubscriptions201ResponseDataRelationships`
+`func (o *POSTOrderSubscriptions201ResponseData) GetRelationships() GETOrderSubscriptions200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTOrderSubscriptions201ResponseData) GetRelationshipsOk() (*POSTOrderSubscriptions201ResponseDataRelationships, bool)`
+`func (o *POSTOrderSubscriptions201ResponseData) GetRelationshipsOk() (*GETOrderSubscriptions200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTOrderSubscriptions201ResponseData) SetRelationships(v POSTOrderSubscriptions201ResponseDataRelationships)`
+`func (o *POSTOrderSubscriptions201ResponseData) SetRelationships(v GETOrderSubscriptions200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

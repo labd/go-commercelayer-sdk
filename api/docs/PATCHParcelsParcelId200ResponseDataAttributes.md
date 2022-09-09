@@ -15,6 +15,10 @@ Name | Type | Description | Notes
 **RestrictionType** | Pointer to **string** | Describes if your parcel requires any special treatment or quarantine when entering the country. Can be one of &#39;none&#39;, &#39;other&#39;, &#39;quarantine&#39;, or &#39;sanitary_phytosanitary_inspection&#39;. | [optional] 
 **RestrictionComments** | Pointer to **string** | If you specify &#39;other&#39; in the restriction type, you must supply a brief description of what is required. | [optional] 
 **CustomsInfoRequired** | Pointer to **bool** | Indicates if the parcel requires customs info to get the shipping rates. | [optional] 
+**ShippingLabelUrl** | Pointer to **string** | The shipping label url, ready to be downloaded and printed. | [optional] 
+**ShippingLabelFileType** | Pointer to **string** | The shipping label file type. One of &#39;application/pdf&#39;, &#39;application/zpl&#39;, &#39;application/epl2&#39;, or &#39;image/png&#39;. | [optional] 
+**ShippingLabelSize** | Pointer to **string** | The shipping label size. | [optional] 
+**ShippingLabelResolution** | Pointer to **string** | The shipping label resolution. | [optional] 
 **TrackingNumber** | Pointer to **string** | The tracking number associated to this parcel. | [optional] 
 **TrackingStatus** | Pointer to **string** | The tracking status for this parcel, automatically updated in real time by the shipping carrier. | [optional] 
 **TrackingStatusDetail** | Pointer to **string** | Additional information about the tracking status, automatically updated in real time by the shipping carrier. | [optional] 
@@ -320,6 +324,106 @@ SetCustomsInfoRequired sets CustomsInfoRequired field to given value.
 `func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsInfoRequired() bool`
 
 HasCustomsInfoRequired returns a boolean if a field has been set.
+
+### GetShippingLabelUrl
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrl() string`
+
+GetShippingLabelUrl returns the ShippingLabelUrl field if non-nil, zero value otherwise.
+
+### GetShippingLabelUrlOk
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() (*string, bool)`
+
+GetShippingLabelUrlOk returns a tuple with the ShippingLabelUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingLabelUrl
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelUrl(v string)`
+
+SetShippingLabelUrl sets ShippingLabelUrl field to given value.
+
+### HasShippingLabelUrl
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelUrl() bool`
+
+HasShippingLabelUrl returns a boolean if a field has been set.
+
+### GetShippingLabelFileType
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType() string`
+
+GetShippingLabelFileType returns the ShippingLabelFileType field if non-nil, zero value otherwise.
+
+### GetShippingLabelFileTypeOk
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileTypeOk() (*string, bool)`
+
+GetShippingLabelFileTypeOk returns a tuple with the ShippingLabelFileType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingLabelFileType
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelFileType(v string)`
+
+SetShippingLabelFileType sets ShippingLabelFileType field to given value.
+
+### HasShippingLabelFileType
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelFileType() bool`
+
+HasShippingLabelFileType returns a boolean if a field has been set.
+
+### GetShippingLabelSize
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSize() string`
+
+GetShippingLabelSize returns the ShippingLabelSize field if non-nil, zero value otherwise.
+
+### GetShippingLabelSizeOk
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk() (*string, bool)`
+
+GetShippingLabelSizeOk returns a tuple with the ShippingLabelSize field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingLabelSize
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelSize(v string)`
+
+SetShippingLabelSize sets ShippingLabelSize field to given value.
+
+### HasShippingLabelSize
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelSize() bool`
+
+HasShippingLabelSize returns a boolean if a field has been set.
+
+### GetShippingLabelResolution
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolution() string`
+
+GetShippingLabelResolution returns the ShippingLabelResolution field if non-nil, zero value otherwise.
+
+### GetShippingLabelResolutionOk
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolutionOk() (*string, bool)`
+
+GetShippingLabelResolutionOk returns a tuple with the ShippingLabelResolution field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShippingLabelResolution
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelResolution(v string)`
+
+SetShippingLabelResolution sets ShippingLabelResolution field to given value.
+
+### HasShippingLabelResolution
+
+`func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelResolution() bool`
+
+HasShippingLabelResolution returns a boolean if a field has been set.
 
 ### GetTrackingNumber
 

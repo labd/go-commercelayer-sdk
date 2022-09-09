@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LastEventCallbacks** | Pointer to [**GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks**](GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks.md) |  | [optional] 
-**Webhooks** | Pointer to [**GETEventCallbacks200ResponseDataInnerRelationshipsWebhook**](GETEventCallbacks200ResponseDataInnerRelationshipsWebhook.md) |  | [optional] 
+**LastEventCallbacks** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Webhooks** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLastEventCallbacks
 
-`func (o *GETEvents200ResponseDataInnerRelationships) GetLastEventCallbacks() GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks`
+`func (o *GETEvents200ResponseDataInnerRelationships) GetLastEventCallbacks() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetLastEventCallbacks returns the LastEventCallbacks field if non-nil, zero value otherwise.
 
 ### GetLastEventCallbacksOk
 
-`func (o *GETEvents200ResponseDataInnerRelationships) GetLastEventCallbacksOk() (*GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks, bool)`
+`func (o *GETEvents200ResponseDataInnerRelationships) GetLastEventCallbacksOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLastEventCallbacks
 
-`func (o *GETEvents200ResponseDataInnerRelationships) SetLastEventCallbacks(v GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks)`
+`func (o *GETEvents200ResponseDataInnerRelationships) SetLastEventCallbacks(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetLastEventCallbacks sets LastEventCallbacks field to given value.
 
@@ -53,20 +53,20 @@ HasLastEventCallbacks returns a boolean if a field has been set.
 
 ### GetWebhooks
 
-`func (o *GETEvents200ResponseDataInnerRelationships) GetWebhooks() GETEventCallbacks200ResponseDataInnerRelationshipsWebhook`
+`func (o *GETEvents200ResponseDataInnerRelationships) GetWebhooks() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetWebhooks returns the Webhooks field if non-nil, zero value otherwise.
 
 ### GetWebhooksOk
 
-`func (o *GETEvents200ResponseDataInnerRelationships) GetWebhooksOk() (*GETEventCallbacks200ResponseDataInnerRelationshipsWebhook, bool)`
+`func (o *GETEvents200ResponseDataInnerRelationships) GetWebhooksOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetWebhooksOk returns a tuple with the Webhooks field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetWebhooks
 
-`func (o *GETEvents200ResponseDataInnerRelationships) SetWebhooks(v GETEventCallbacks200ResponseDataInnerRelationshipsWebhook)`
+`func (o *GETEvents200ResponseDataInnerRelationships) SetWebhooks(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetWebhooks sets Webhooks field to given value.
 

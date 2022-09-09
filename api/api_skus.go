@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // SkusApiService SkusApi service
 type SkusApiService service
 
 type SkusApiDELETESkusSkuIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	skuId      string
+	skuId string
 }
 
 func (r SkusApiDELETESkusSkuIdRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Delete a SKU
 func (a *SkusApiService) DELETESkusSkuId(ctx context.Context, skuId string) SkusApiDELETESkusSkuIdRequest {
 	return SkusApiDELETESkusSkuIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		skuId:      skuId,
+		ctx: ctx,
+		skuId: skuId,
 	}
 }
 
 // Execute executes the request
 func (a *SkusApiService) DELETESkusSkuIdExecute(r SkusApiDELETESkusSkuIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.DELETESkusSkuId")
@@ -116,9 +117,9 @@ func (a *SkusApiService) DELETESkusSkuIdExecute(r SkusApiDELETESkusSkuIdRequest)
 }
 
 type SkusApiGETBundleIdSkusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	bundleId   string
+	bundleId string
 }
 
 func (r SkusApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
@@ -137,17 +138,17 @@ Retrieve the skus associated to the bundle
 func (a *SkusApiService) GETBundleIdSkus(ctx context.Context, bundleId string) SkusApiGETBundleIdSkusRequest {
 	return SkusApiGETBundleIdSkusRequest{
 		ApiService: a,
-		ctx:        ctx,
-		bundleId:   bundleId,
+		ctx: ctx,
+		bundleId: bundleId,
 	}
 }
 
 // Execute executes the request
 func (a *SkusApiService) GETBundleIdSkusExecute(r SkusApiGETBundleIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETBundleIdSkus")
@@ -208,8 +209,8 @@ func (a *SkusApiService) GETBundleIdSkusExecute(r SkusApiGETBundleIdSkusRequest)
 }
 
 type SkusApiGETFixedPricePromotionIdSkusRequest struct {
-	ctx                   context.Context
-	ApiService            *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	fixedPricePromotionId string
 }
 
@@ -228,8 +229,8 @@ Retrieve the skus associated to the fixed price promotion
 */
 func (a *SkusApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) SkusApiGETFixedPricePromotionIdSkusRequest {
 	return SkusApiGETFixedPricePromotionIdSkusRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *SkusApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixed
 // Execute executes the request
 func (a *SkusApiService) GETFixedPricePromotionIdSkusExecute(r SkusApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETFixedPricePromotionIdSkus")
@@ -300,8 +301,8 @@ func (a *SkusApiService) GETFixedPricePromotionIdSkusExecute(r SkusApiGETFixedPr
 }
 
 type SkusApiGETFreeGiftPromotionIdSkusRequest struct {
-	ctx                 context.Context
-	ApiService          *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	freeGiftPromotionId string
 }
 
@@ -320,8 +321,8 @@ Retrieve the skus associated to the free gift promotion
 */
 func (a *SkusApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) SkusApiGETFreeGiftPromotionIdSkusRequest {
 	return SkusApiGETFreeGiftPromotionIdSkusRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -329,9 +330,9 @@ func (a *SkusApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGif
 // Execute executes the request
 func (a *SkusApiService) GETFreeGiftPromotionIdSkusExecute(r SkusApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETFreeGiftPromotionIdSkus")
@@ -392,8 +393,8 @@ func (a *SkusApiService) GETFreeGiftPromotionIdSkusExecute(r SkusApiGETFreeGiftP
 }
 
 type SkusApiGETInStockSubscriptionIdSkuRequest struct {
-	ctx                   context.Context
-	ApiService            *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	inStockSubscriptionId string
 }
 
@@ -412,8 +413,8 @@ Retrieve the sku associated to the in stock subscription
 */
 func (a *SkusApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) SkusApiGETInStockSubscriptionIdSkuRequest {
 	return SkusApiGETInStockSubscriptionIdSkuRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -421,9 +422,9 @@ func (a *SkusApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStoc
 // Execute executes the request
 func (a *SkusApiService) GETInStockSubscriptionIdSkuExecute(r SkusApiGETInStockSubscriptionIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETInStockSubscriptionIdSku")
@@ -484,9 +485,9 @@ func (a *SkusApiService) GETInStockSubscriptionIdSkuExecute(r SkusApiGETInStockS
 }
 
 type SkusApiGETOrderIdAvailableFreeSkusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	orderId    string
+	orderId string
 }
 
 func (r SkusApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
@@ -505,17 +506,17 @@ Retrieve the available free skus associated to the order
 func (a *SkusApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) SkusApiGETOrderIdAvailableFreeSkusRequest {
 	return SkusApiGETOrderIdAvailableFreeSkusRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *SkusApiService) GETOrderIdAvailableFreeSkusExecute(r SkusApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETOrderIdAvailableFreeSkus")
@@ -576,8 +577,8 @@ func (a *SkusApiService) GETOrderIdAvailableFreeSkusExecute(r SkusApiGETOrderIdA
 }
 
 type SkusApiGETPercentageDiscountPromotionIdSkusRequest struct {
-	ctx                           context.Context
-	ApiService                    *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	percentageDiscountPromotionId string
 }
 
@@ -596,8 +597,8 @@ Retrieve the skus associated to the percentage discount promotion
 */
 func (a *SkusApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) SkusApiGETPercentageDiscountPromotionIdSkusRequest {
 	return SkusApiGETPercentageDiscountPromotionIdSkusRequest{
-		ApiService:                    a,
-		ctx:                           ctx,
+		ApiService: a,
+		ctx: ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -605,9 +606,9 @@ func (a *SkusApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Contex
 // Execute executes the request
 func (a *SkusApiService) GETPercentageDiscountPromotionIdSkusExecute(r SkusApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETPercentageDiscountPromotionIdSkus")
@@ -668,9 +669,9 @@ func (a *SkusApiService) GETPercentageDiscountPromotionIdSkusExecute(r SkusApiGE
 }
 
 type SkusApiGETPriceIdSkuRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	priceId    string
+	priceId string
 }
 
 func (r SkusApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
@@ -689,17 +690,17 @@ Retrieve the sku associated to the price
 func (a *SkusApiService) GETPriceIdSku(ctx context.Context, priceId string) SkusApiGETPriceIdSkuRequest {
 	return SkusApiGETPriceIdSkuRequest{
 		ApiService: a,
-		ctx:        ctx,
-		priceId:    priceId,
+		ctx: ctx,
+		priceId: priceId,
 	}
 }
 
 // Execute executes the request
 func (a *SkusApiService) GETPriceIdSkuExecute(r SkusApiGETPriceIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETPriceIdSku")
@@ -760,8 +761,8 @@ func (a *SkusApiService) GETPriceIdSkuExecute(r SkusApiGETPriceIdSkuRequest) (*h
 }
 
 type SkusApiGETShippingCategoryIdSkusRequest struct {
-	ctx                context.Context
-	ApiService         *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	shippingCategoryId string
 }
 
@@ -780,8 +781,8 @@ Retrieve the skus associated to the shipping category
 */
 func (a *SkusApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) SkusApiGETShippingCategoryIdSkusRequest {
 	return SkusApiGETShippingCategoryIdSkusRequest{
-		ApiService:         a,
-		ctx:                ctx,
+		ApiService: a,
+		ctx: ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -789,9 +790,9 @@ func (a *SkusApiService) GETShippingCategoryIdSkus(ctx context.Context, shipping
 // Execute executes the request
 func (a *SkusApiService) GETShippingCategoryIdSkusExecute(r SkusApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETShippingCategoryIdSkus")
@@ -852,9 +853,9 @@ func (a *SkusApiService) GETShippingCategoryIdSkusExecute(r SkusApiGETShippingCa
 }
 
 type SkusApiGETSkuListIdSkusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	skuListId  string
+	skuListId string
 }
 
 func (r SkusApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
@@ -873,17 +874,17 @@ Retrieve the skus associated to the SKU list
 func (a *SkusApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) SkusApiGETSkuListIdSkusRequest {
 	return SkusApiGETSkuListIdSkusRequest{
 		ApiService: a,
-		ctx:        ctx,
-		skuListId:  skuListId,
+		ctx: ctx,
+		skuListId: skuListId,
 	}
 }
 
 // Execute executes the request
 func (a *SkusApiService) GETSkuListIdSkusExecute(r SkusApiGETSkuListIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkuListIdSkus")
@@ -944,8 +945,8 @@ func (a *SkusApiService) GETSkuListIdSkusExecute(r SkusApiGETSkuListIdSkusReques
 }
 
 type SkusApiGETSkuListItemIdSkuRequest struct {
-	ctx           context.Context
-	ApiService    *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	skuListItemId string
 }
 
@@ -964,8 +965,8 @@ Retrieve the sku associated to the SKU list item
 */
 func (a *SkusApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) SkusApiGETSkuListItemIdSkuRequest {
 	return SkusApiGETSkuListItemIdSkuRequest{
-		ApiService:    a,
-		ctx:           ctx,
+		ApiService: a,
+		ctx: ctx,
 		skuListItemId: skuListItemId,
 	}
 }
@@ -973,9 +974,9 @@ func (a *SkusApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId 
 // Execute executes the request
 func (a *SkusApiService) GETSkuListItemIdSkuExecute(r SkusApiGETSkuListItemIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkuListItemIdSku")
@@ -1036,8 +1037,8 @@ func (a *SkusApiService) GETSkuListItemIdSkuExecute(r SkusApiGETSkuListItemIdSku
 }
 
 type SkusApiGETSkuListPromotionRuleIdSkusRequest struct {
-	ctx                    context.Context
-	ApiService             *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	skuListPromotionRuleId string
 }
 
@@ -1056,8 +1057,8 @@ Retrieve the skus associated to the SKU list promotion rule
 */
 func (a *SkusApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) SkusApiGETSkuListPromotionRuleIdSkusRequest {
 	return SkusApiGETSkuListPromotionRuleIdSkusRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
 	}
 }
@@ -1065,9 +1066,9 @@ func (a *SkusApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuL
 // Execute executes the request
 func (a *SkusApiService) GETSkuListPromotionRuleIdSkusExecute(r SkusApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkuListPromotionRuleIdSkus")
@@ -1128,7 +1129,7 @@ func (a *SkusApiService) GETSkuListPromotionRuleIdSkusExecute(r SkusApiGETSkuLis
 }
 
 type SkusApiGETSkusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
 }
 
@@ -1147,7 +1148,7 @@ List all SKUs
 func (a *SkusApiService) GETSkus(ctx context.Context) SkusApiGETSkusRequest {
 	return SkusApiGETSkusRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1155,10 +1156,10 @@ func (a *SkusApiService) GETSkus(ctx context.Context) SkusApiGETSkusRequest {
 //  @return GETSkus200Response
 func (a *SkusApiService) GETSkusExecute(r SkusApiGETSkusRequest) (*GETSkus200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETSkus200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETSkus200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkus")
@@ -1227,9 +1228,9 @@ func (a *SkusApiService) GETSkusExecute(r SkusApiGETSkusRequest) (*GETSkus200Res
 }
 
 type SkusApiGETSkusSkuIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	skuId      string
+	skuId string
 }
 
 func (r SkusApiGETSkusSkuIdRequest) Execute() (*GETSkusSkuId200Response, *http.Response, error) {
@@ -1248,8 +1249,8 @@ Retrieve a SKU
 func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) SkusApiGETSkusSkuIdRequest {
 	return SkusApiGETSkusSkuIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		skuId:      skuId,
+		ctx: ctx,
+		skuId: skuId,
 	}
 }
 
@@ -1257,10 +1258,10 @@ func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) SkusApi
 //  @return GETSkusSkuId200Response
 func (a *SkusApiService) GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*GETSkusSkuId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETSkusSkuId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETSkusSkuId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkusSkuId")
@@ -1330,8 +1331,8 @@ func (a *SkusApiService) GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*GET
 }
 
 type SkusApiGETStockItemIdSkuRequest struct {
-	ctx         context.Context
-	ApiService  *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	stockItemId string
 }
 
@@ -1350,8 +1351,8 @@ Retrieve the sku associated to the stock item
 */
 func (a *SkusApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) SkusApiGETStockItemIdSkuRequest {
 	return SkusApiGETStockItemIdSkuRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -1359,9 +1360,9 @@ func (a *SkusApiService) GETStockItemIdSku(ctx context.Context, stockItemId stri
 // Execute executes the request
 func (a *SkusApiService) GETStockItemIdSkuExecute(r SkusApiGETStockItemIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETStockItemIdSku")
@@ -1422,8 +1423,8 @@ func (a *SkusApiService) GETStockItemIdSkuExecute(r SkusApiGETStockItemIdSkuRequ
 }
 
 type SkusApiGETStockTransferIdSkuRequest struct {
-	ctx             context.Context
-	ApiService      *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	stockTransferId string
 }
 
@@ -1442,8 +1443,8 @@ Retrieve the sku associated to the stock transfer
 */
 func (a *SkusApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) SkusApiGETStockTransferIdSkuRequest {
 	return SkusApiGETStockTransferIdSkuRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -1451,9 +1452,9 @@ func (a *SkusApiService) GETStockTransferIdSku(ctx context.Context, stockTransfe
 // Execute executes the request
 func (a *SkusApiService) GETStockTransferIdSkuExecute(r SkusApiGETStockTransferIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETStockTransferIdSku")
@@ -1514,8 +1515,8 @@ func (a *SkusApiService) GETStockTransferIdSkuExecute(r SkusApiGETStockTransferI
 }
 
 type SkusApiGETTaxCategoryIdSkuRequest struct {
-	ctx           context.Context
-	ApiService    *SkusApiService
+	ctx context.Context
+	ApiService *SkusApiService
 	taxCategoryId string
 }
 
@@ -1534,8 +1535,8 @@ Retrieve the sku associated to the tax category
 */
 func (a *SkusApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) SkusApiGETTaxCategoryIdSkuRequest {
 	return SkusApiGETTaxCategoryIdSkuRequest{
-		ApiService:    a,
-		ctx:           ctx,
+		ApiService: a,
+		ctx: ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -1543,9 +1544,9 @@ func (a *SkusApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId 
 // Execute executes the request
 func (a *SkusApiService) GETTaxCategoryIdSkuExecute(r SkusApiGETTaxCategoryIdSkuRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETTaxCategoryIdSku")
@@ -1606,10 +1607,10 @@ func (a *SkusApiService) GETTaxCategoryIdSkuExecute(r SkusApiGETTaxCategoryIdSku
 }
 
 type SkusApiPATCHSkusSkuIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	skuUpdate  *SkuUpdate
-	skuId      string
+	skuUpdate *SkuUpdate
+	skuId string
 }
 
 func (r SkusApiPATCHSkusSkuIdRequest) SkuUpdate(skuUpdate SkuUpdate) SkusApiPATCHSkusSkuIdRequest {
@@ -1633,8 +1634,8 @@ Update a SKU
 func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) SkusApiPATCHSkusSkuIdRequest {
 	return SkusApiPATCHSkusSkuIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		skuId:      skuId,
+		ctx: ctx,
+		skuId: skuId,
 	}
 }
 
@@ -1642,10 +1643,10 @@ func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) SkusA
 //  @return PATCHSkusSkuId200Response
 func (a *SkusApiService) PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (*PATCHSkusSkuId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHSkusSkuId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHSkusSkuId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.PATCHSkusSkuId")
@@ -1720,9 +1721,9 @@ func (a *SkusApiService) PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (
 }
 
 type SkusApiPOSTSkusRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *SkusApiService
-	skuCreate  *SkuCreate
+	skuCreate *SkuCreate
 }
 
 func (r SkusApiPOSTSkusRequest) SkuCreate(skuCreate SkuCreate) SkusApiPOSTSkusRequest {
@@ -1745,7 +1746,7 @@ Create a SKU
 func (a *SkusApiService) POSTSkus(ctx context.Context) SkusApiPOSTSkusRequest {
 	return SkusApiPOSTSkusRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1753,10 +1754,10 @@ func (a *SkusApiService) POSTSkus(ctx context.Context) SkusApiPOSTSkusRequest {
 //  @return POSTSkus201Response
 func (a *SkusApiService) POSTSkusExecute(r SkusApiPOSTSkusRequest) (*POSTSkus201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTSkus201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTSkus201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.POSTSkus")

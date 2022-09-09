@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTExternalGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                        `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks         `json:"links,omitempty"`
-	Attributes    *POSTExternalGateways201ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                         `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTExternalGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTExternalGateways201ResponseData instantiates a new POSTExternalGateways201ResponseData object
@@ -176,17 +176,17 @@ func (o *POSTExternalGateways201ResponseData) SetAttributes(v POSTExternalGatewa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTExternalGateways201ResponseData) GetRelationships() map[string]interface{} {
+func (o *POSTExternalGateways201ResponseData) GetRelationships() GETExternalGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret GETExternalGateways200ResponseDataInnerRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExternalGateways201ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *POSTExternalGateways201ResponseData) GetRelationshipsOk() (*GETExternalGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,9 +202,9 @@ func (o *POSTExternalGateways201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *POSTExternalGateways201ResponseData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given GETExternalGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTExternalGateways201ResponseData) SetRelationships(v GETExternalGateways200ResponseDataInnerRelationships) {
+	o.Relationships = &v
 }
 
 func (o POSTExternalGateways201ResponseData) MarshalJSON() ([]byte, error) {
@@ -262,3 +262,5 @@ func (v *NullablePOSTExternalGateways201ResponseData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

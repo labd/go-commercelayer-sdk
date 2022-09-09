@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETReturnLineItems200ResponseDataInnerRelationships struct for GETReturnLineItems200ResponseDataInnerRelationships
 type GETReturnLineItems200ResponseDataInnerRelationships struct {
-	Return   *GETCustomers200ResponseDataInnerRelationshipsReturns        `json:"return,omitempty"`
-	LineItem *GETLineItemOptions200ResponseDataInnerRelationshipsLineItem `json:"line_item,omitempty"`
+	Return *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"return,omitempty"`
+	LineItem *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"line_item,omitempty"`
 }
 
 // NewGETReturnLineItems200ResponseDataInnerRelationships instantiates a new GETReturnLineItems200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETReturnLineItems200ResponseDataInnerRelationshipsWithDefaults() *GETRe
 }
 
 // GetReturn returns the Return field value if set, zero value otherwise.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetReturn() GETCustomers200ResponseDataInnerRelationshipsReturns {
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetReturn() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Return == nil {
-		var ret GETCustomers200ResponseDataInnerRelationshipsReturns
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Return
@@ -49,7 +49,7 @@ func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetReturn() GETCus
 
 // GetReturnOk returns a tuple with the Return field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetReturnOk() (*GETCustomers200ResponseDataInnerRelationshipsReturns, bool) {
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetReturnOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Return == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETReturnLineItems200ResponseDataInnerRelationships) HasReturn() bool {
 	return false
 }
 
-// SetReturn gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsReturns and assigns it to the Return field.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) SetReturn(v GETCustomers200ResponseDataInnerRelationshipsReturns) {
+// SetReturn gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Return field.
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) SetReturn(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Return = &v
 }
 
 // GetLineItem returns the LineItem field value if set, zero value otherwise.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetLineItem() GETLineItemOptions200ResponseDataInnerRelationshipsLineItem {
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.LineItem == nil {
-		var ret GETLineItemOptions200ResponseDataInnerRelationshipsLineItem
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.LineItem
@@ -81,7 +81,7 @@ func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetLineItem() GETL
 
 // GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetLineItemOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsLineItem, bool) {
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) GetLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.LineItem == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETReturnLineItems200ResponseDataInnerRelationships) HasLineItem() bool
 	return false
 }
 
-// SetLineItem gets a reference to the given GETLineItemOptions200ResponseDataInnerRelationshipsLineItem and assigns it to the LineItem field.
-func (o *GETReturnLineItems200ResponseDataInnerRelationships) SetLineItem(v GETLineItemOptions200ResponseDataInnerRelationshipsLineItem) {
+// SetLineItem gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the LineItem field.
+func (o *GETReturnLineItems200ResponseDataInnerRelationships) SetLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.LineItem = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETReturnLineItems200ResponseDataInnerRelationships) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

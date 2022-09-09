@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "price_volume_tiers"]
 **Attributes** | [**GETPriceTiers200ResponseDataInnerAttributes**](GETPriceTiers200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETPriceTiers200ResponseDataInnerRelationships**](GETPriceTiers200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PriceTierDataRelationships**](PriceTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PriceVolumeTierData) GetRelationships() GETPriceTiers200ResponseDataInnerRelationships`
+`func (o *PriceVolumeTierData) GetRelationships() PriceTierDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceVolumeTierData) GetRelationshipsOk() (*GETPriceTiers200ResponseDataInnerRelationships, bool)`
+`func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceTierDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceVolumeTierData) SetRelationships(v GETPriceTiers200ResponseDataInnerRelationships)`
+`func (o *PriceVolumeTierData) SetRelationships(v PriceTierDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

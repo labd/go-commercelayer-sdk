@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -39,6 +39,14 @@ type PATCHParcelsParcelId200ResponseDataAttributes struct {
 	RestrictionComments *string `json:"restriction_comments,omitempty"`
 	// Indicates if the parcel requires customs info to get the shipping rates.
 	CustomsInfoRequired *bool `json:"customs_info_required,omitempty"`
+	// The shipping label url, ready to be downloaded and printed.
+	ShippingLabelUrl *string `json:"shipping_label_url,omitempty"`
+	// The shipping label file type. One of 'application/pdf', 'application/zpl', 'application/epl2', or 'image/png'.
+	ShippingLabelFileType *string `json:"shipping_label_file_type,omitempty"`
+	// The shipping label size.
+	ShippingLabelSize *string `json:"shipping_label_size,omitempty"`
+	// The shipping label resolution.
+	ShippingLabelResolution *string `json:"shipping_label_resolution,omitempty"`
 	// The tracking number associated to this parcel.
 	TrackingNumber *string `json:"tracking_number,omitempty"`
 	// The tracking status for this parcel, automatically updated in real time by the shipping carrier.
@@ -432,6 +440,134 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsInfoRequired(v
 	o.CustomsInfoRequired = &v
 }
 
+// GetShippingLabelUrl returns the ShippingLabelUrl field value if set, zero value otherwise.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrl() string {
+	if o == nil || o.ShippingLabelUrl == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShippingLabelUrl
+}
+
+// GetShippingLabelUrlOk returns a tuple with the ShippingLabelUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() (*string, bool) {
+	if o == nil || o.ShippingLabelUrl == nil {
+		return nil, false
+	}
+	return o.ShippingLabelUrl, true
+}
+
+// HasShippingLabelUrl returns a boolean if a field has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelUrl() bool {
+	if o != nil && o.ShippingLabelUrl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingLabelUrl gets a reference to the given string and assigns it to the ShippingLabelUrl field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelUrl(v string) {
+	o.ShippingLabelUrl = &v
+}
+
+// GetShippingLabelFileType returns the ShippingLabelFileType field value if set, zero value otherwise.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType() string {
+	if o == nil || o.ShippingLabelFileType == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShippingLabelFileType
+}
+
+// GetShippingLabelFileTypeOk returns a tuple with the ShippingLabelFileType field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileTypeOk() (*string, bool) {
+	if o == nil || o.ShippingLabelFileType == nil {
+		return nil, false
+	}
+	return o.ShippingLabelFileType, true
+}
+
+// HasShippingLabelFileType returns a boolean if a field has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelFileType() bool {
+	if o != nil && o.ShippingLabelFileType != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingLabelFileType gets a reference to the given string and assigns it to the ShippingLabelFileType field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelFileType(v string) {
+	o.ShippingLabelFileType = &v
+}
+
+// GetShippingLabelSize returns the ShippingLabelSize field value if set, zero value otherwise.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSize() string {
+	if o == nil || o.ShippingLabelSize == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShippingLabelSize
+}
+
+// GetShippingLabelSizeOk returns a tuple with the ShippingLabelSize field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk() (*string, bool) {
+	if o == nil || o.ShippingLabelSize == nil {
+		return nil, false
+	}
+	return o.ShippingLabelSize, true
+}
+
+// HasShippingLabelSize returns a boolean if a field has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelSize() bool {
+	if o != nil && o.ShippingLabelSize != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingLabelSize gets a reference to the given string and assigns it to the ShippingLabelSize field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelSize(v string) {
+	o.ShippingLabelSize = &v
+}
+
+// GetShippingLabelResolution returns the ShippingLabelResolution field value if set, zero value otherwise.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolution() string {
+	if o == nil || o.ShippingLabelResolution == nil {
+		var ret string
+		return ret
+	}
+	return *o.ShippingLabelResolution
+}
+
+// GetShippingLabelResolutionOk returns a tuple with the ShippingLabelResolution field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolutionOk() (*string, bool) {
+	if o == nil || o.ShippingLabelResolution == nil {
+		return nil, false
+	}
+	return o.ShippingLabelResolution, true
+}
+
+// HasShippingLabelResolution returns a boolean if a field has been set.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelResolution() bool {
+	if o != nil && o.ShippingLabelResolution != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetShippingLabelResolution gets a reference to the given string and assigns it to the ShippingLabelResolution field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelResolution(v string) {
+	o.ShippingLabelResolution = &v
+}
+
 // GetTrackingNumber returns the TrackingNumber field value if set, zero value otherwise.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumber() string {
 	if o == nil || o.TrackingNumber == nil {
@@ -819,6 +955,18 @@ func (o PATCHParcelsParcelId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.CustomsInfoRequired != nil {
 		toSerialize["customs_info_required"] = o.CustomsInfoRequired
 	}
+	if o.ShippingLabelUrl != nil {
+		toSerialize["shipping_label_url"] = o.ShippingLabelUrl
+	}
+	if o.ShippingLabelFileType != nil {
+		toSerialize["shipping_label_file_type"] = o.ShippingLabelFileType
+	}
+	if o.ShippingLabelSize != nil {
+		toSerialize["shipping_label_size"] = o.ShippingLabelSize
+	}
+	if o.ShippingLabelResolution != nil {
+		toSerialize["shipping_label_resolution"] = o.ShippingLabelResolution
+	}
 	if o.TrackingNumber != nil {
 		toSerialize["tracking_number"] = o.TrackingNumber
 	}
@@ -890,3 +1038,5 @@ func (v *NullablePATCHParcelsParcelId200ResponseDataAttributes) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

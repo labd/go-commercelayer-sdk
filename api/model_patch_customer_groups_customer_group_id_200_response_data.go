@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHCustomerGroupsCustomerGroupId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
-	Attributes    *PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                                       `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCustomerGroups200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHCustomerGroupsCustomerGroupId200ResponseData instantiates a new PATCHCustomerGroupsCustomerGroupId200ResponseData object
@@ -176,17 +176,17 @@ func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) SetAttributes(v PATC
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) GetRelationships() map[string]interface{} {
+func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) GetRelationships() GETCustomerGroups200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret GETCustomerGroups200ResponseDataInnerRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) GetRelationshipsOk() (*GETCustomerGroups200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,9 +202,9 @@ func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) HasRelationships() b
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given GETCustomerGroups200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHCustomerGroupsCustomerGroupId200ResponseData) SetRelationships(v GETCustomerGroups200ResponseDataInnerRelationships) {
+	o.Relationships = &v
 }
 
 func (o PATCHCustomerGroupsCustomerGroupId200ResponseData) MarshalJSON() ([]byte, error) {
@@ -262,3 +262,5 @@ func (v *NullablePATCHCustomerGroupsCustomerGroupId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

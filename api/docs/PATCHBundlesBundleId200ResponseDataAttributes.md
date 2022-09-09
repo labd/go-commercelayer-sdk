@@ -9,8 +9,6 @@ Name | Type | Description | Notes
 **CurrencyCode** | Pointer to **string** | The international 3-letter currency code as defined by the ISO 4217 standard. | [optional] 
 **Description** | Pointer to **string** | An internal description of the bundle. | [optional] 
 **ImageUrl** | Pointer to **string** | The URL of an image that represents the bundle. | [optional] 
-**DoNotShip** | Pointer to **bool** | Indicates if the bundle doesn&#39;t generate shipments. | [optional] 
-**DoNotTrack** | Pointer to **bool** | Indicates if the bundle doesn&#39;t track the stock inventory. | [optional] 
 **PriceAmountCents** | Pointer to **int32** | The bundle price amount for the associated market, in cents. | [optional] 
 **CompareAtAmountCents** | Pointer to **int32** | The compared price amount, in cents. Useful to display a percentage discount. | [optional] 
 **ComputePriceAmount** | Pointer to **bool** | Send this attribute if you want to compute the price_amount_cents as the sum of the prices of the bundle SKUs for the market. | [optional] 
@@ -162,56 +160,6 @@ SetImageUrl sets ImageUrl field to given value.
 `func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasImageUrl() bool`
 
 HasImageUrl returns a boolean if a field has been set.
-
-### GetDoNotShip
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDoNotShip() bool`
-
-GetDoNotShip returns the DoNotShip field if non-nil, zero value otherwise.
-
-### GetDoNotShipOk
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDoNotShipOk() (*bool, bool)`
-
-GetDoNotShipOk returns a tuple with the DoNotShip field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDoNotShip
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) SetDoNotShip(v bool)`
-
-SetDoNotShip sets DoNotShip field to given value.
-
-### HasDoNotShip
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasDoNotShip() bool`
-
-HasDoNotShip returns a boolean if a field has been set.
-
-### GetDoNotTrack
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDoNotTrack() bool`
-
-GetDoNotTrack returns the DoNotTrack field if non-nil, zero value otherwise.
-
-### GetDoNotTrackOk
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDoNotTrackOk() (*bool, bool)`
-
-GetDoNotTrackOk returns a tuple with the DoNotTrack field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDoNotTrack
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) SetDoNotTrack(v bool)`
-
-SetDoNotTrack sets DoNotTrack field to given value.
-
-### HasDoNotTrack
-
-`func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasDoNotTrack() bool`
-
-HasDoNotTrack returns a boolean if a field has been set.
 
 ### GetPriceAmountCents
 

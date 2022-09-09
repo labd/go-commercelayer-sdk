@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCheckoutComGateways200ResponseDataInnerRelationships struct for GETCheckoutComGateways200ResponseDataInnerRelationships
 type GETCheckoutComGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods      *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods            `json:"payment_methods,omitempty"`
-	CheckoutComPayments *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments `json:"checkout_com_payments,omitempty"`
+	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	CheckoutComPayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"checkout_com_payments,omitempty"`
 }
 
 // NewGETCheckoutComGateways200ResponseDataInnerRelationships instantiates a new GETCheckoutComGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) SetPaymentMeth
 }
 
 // GetCheckoutComPayments returns the CheckoutComPayments field value if set, zero value otherwise.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPayments() GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments {
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.CheckoutComPayments == nil {
-		var ret GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.CheckoutComPayments
@@ -81,7 +81,7 @@ func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutCom
 
 // GetCheckoutComPaymentsOk returns a tuple with the CheckoutComPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPaymentsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments, bool) {
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.CheckoutComPayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) HasCheckoutCom
 	return false
 }
 
-// SetCheckoutComPayments gets a reference to the given GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments and assigns it to the CheckoutComPayments field.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) SetCheckoutComPayments(v GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) {
+// SetCheckoutComPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the CheckoutComPayments field.
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) SetCheckoutComPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.CheckoutComPayments = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETCheckoutComGateways200ResponseDataInnerRelationships) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

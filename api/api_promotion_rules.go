@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,12 @@ import (
 	"strings"
 )
 
+
 // PromotionRulesApiService PromotionRulesApi service
 type PromotionRulesApiService service
 
 type PromotionRulesApiGETPromotionRulesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PromotionRulesApiService
 }
 
@@ -43,7 +44,7 @@ List all promotion rules
 func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) PromotionRulesApiGETPromotionRulesRequest {
 	return PromotionRulesApiGETPromotionRulesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -51,10 +52,10 @@ func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) Promot
 //  @return GETPromotionRules200Response
 func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*GETPromotionRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPromotionRules200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRules")
@@ -123,8 +124,8 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiG
 }
 
 type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
-	ctx             context.Context
-	ApiService      *PromotionRulesApiService
+	ctx context.Context
+	ApiService *PromotionRulesApiService
 	promotionRuleId string
 }
 
@@ -143,8 +144,8 @@ Retrieve a promotion rule
 */
 func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
 	return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		promotionRuleId: promotionRuleId,
 	}
 }
@@ -153,10 +154,10 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 //  @return GETPromotionRulesPromotionRuleId200Response
 func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPromotionRulesPromotionRuleId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPromotionRulesPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRulesPromotionRuleId")

@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stripe_payments"]
 **Attributes** | [**GETStripePayments200ResponseDataInnerAttributes**](GETStripePayments200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationships**](GETAdyenPayments200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *StripePaymentData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships`
+`func (o *StripePaymentData) GetRelationships() AdyenPaymentDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StripePaymentData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool)`
+`func (o *StripePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StripePaymentData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships)`
+`func (o *StripePaymentData) SetRelationships(v AdyenPaymentDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

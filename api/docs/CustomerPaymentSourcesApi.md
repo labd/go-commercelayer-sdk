@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerPaymentSourcesCustomerPaymentSourceId
 
-> PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
+> POSTCustomerPaymentSources201Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
 
 Update a customer payment source
 
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response
+    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: POSTCustomerPaymentSources201Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response**](PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response.md)
+[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // CarrierAccountData struct for CarrierAccountData
 type CarrierAccountData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    GETCarrierAccounts200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETCarrierAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETCarrierAccounts200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CarrierAccountDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountData instantiates a new CarrierAccountData object
@@ -93,9 +93,9 @@ func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataIn
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CarrierAccountData) GetRelationships() GETCarrierAccounts200ResponseDataInnerRelationships {
+func (o *CarrierAccountData) GetRelationships() CarrierAccountDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCarrierAccounts200ResponseDataInnerRelationships
+		var ret CarrierAccountDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *CarrierAccountData) GetRelationships() GETCarrierAccounts200ResponseDat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CarrierAccountData) GetRelationshipsOk() (*GETCarrierAccounts200ResponseDataInnerRelationships, bool) {
+func (o *CarrierAccountData) GetRelationshipsOk() (*CarrierAccountDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *CarrierAccountData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCarrierAccounts200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *CarrierAccountData) SetRelationships(v GETCarrierAccounts200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given CarrierAccountDataRelationships and assigns it to the Relationships field.
+func (o *CarrierAccountData) SetRelationships(v CarrierAccountDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableCarrierAccountData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

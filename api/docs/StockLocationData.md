@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_locations"]
 **Attributes** | [**GETStockLocations200ResponseDataInnerAttributes**](GETStockLocations200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETStockLocations200ResponseDataInnerRelationships**](GETStockLocations200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**StockLocationDataRelationships**](StockLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *StockLocationData) GetRelationships() GETStockLocations200ResponseDataInnerRelationships`
+`func (o *StockLocationData) GetRelationships() StockLocationDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockLocationData) GetRelationshipsOk() (*GETStockLocations200ResponseDataInnerRelationships, bool)`
+`func (o *StockLocationData) GetRelationshipsOk() (*StockLocationDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockLocationData) SetRelationships(v GETStockLocations200ResponseDataInnerRelationships)`
+`func (o *StockLocationData) SetRelationships(v StockLocationDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

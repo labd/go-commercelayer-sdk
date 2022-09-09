@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // OrdersApiService OrdersApi service
 type OrdersApiService service
 
 type OrdersApiDELETEOrdersOrderIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	orderId    string
+	orderId string
 }
 
 func (r OrdersApiDELETEOrdersOrderIdRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Delete an order
 func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId string) OrdersApiDELETEOrdersOrderIdRequest {
 	return OrdersApiDELETEOrdersOrderIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrderIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.DELETEOrdersOrderId")
@@ -116,8 +117,8 @@ func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrd
 }
 
 type OrdersApiGETAdyenPaymentIdOrderRequest struct {
-	ctx            context.Context
-	ApiService     *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	adyenPaymentId string
 }
 
@@ -136,8 +137,8 @@ Retrieve the order associated to the adyen payment
 */
 func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) OrdersApiGETAdyenPaymentIdOrderRequest {
 	return OrdersApiGETAdyenPaymentIdOrderRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		adyenPaymentId: adyenPaymentId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaym
 // Execute executes the request
 func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETAdyenPaymentIdOrder")
@@ -208,8 +209,8 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaym
 }
 
 type OrdersApiGETAuthorizationIdOrderRequest struct {
-	ctx             context.Context
-	ApiService      *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	authorizationId string
 }
 
@@ -228,8 +229,8 @@ Retrieve the order associated to the authorization
 */
 func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) OrdersApiGETAuthorizationIdOrderRequest {
 	return OrdersApiGETAuthorizationIdOrderRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authoriz
 // Execute executes the request
 func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthorizationIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETAuthorizationIdOrder")
@@ -300,8 +301,8 @@ func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthoriz
 }
 
 type OrdersApiGETBraintreePaymentIdOrderRequest struct {
-	ctx                context.Context
-	ApiService         *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	braintreePaymentId string
 }
 
@@ -320,8 +321,8 @@ Retrieve the order associated to the braintree payment
 */
 func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) OrdersApiGETBraintreePaymentIdOrderRequest {
 	return OrdersApiGETBraintreePaymentIdOrderRequest{
-		ApiService:         a,
-		ctx:                ctx,
+		ApiService: a,
+		ctx: ctx,
 		braintreePaymentId: braintreePaymentId,
 	}
 }
@@ -329,9 +330,9 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, brain
 // Execute executes the request
 func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBraintreePaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETBraintreePaymentIdOrder")
@@ -392,9 +393,9 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBrain
 }
 
 type OrdersApiGETCaptureIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	captureId  string
+	captureId string
 }
 
 func (r OrdersApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
@@ -413,17 +414,17 @@ Retrieve the order associated to the capture
 func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId string) OrdersApiGETCaptureIdOrderRequest {
 	return OrdersApiGETCaptureIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
-		captureId:  captureId,
+		ctx: ctx,
+		captureId: captureId,
 	}
 }
 
 // Execute executes the request
 func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETCaptureIdOrder")
@@ -484,8 +485,8 @@ func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrder
 }
 
 type OrdersApiGETCheckoutComPaymentIdOrderRequest struct {
-	ctx                  context.Context
-	ApiService           *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	checkoutComPaymentId string
 }
 
@@ -504,8 +505,8 @@ Retrieve the order associated to the checkout.com payment
 */
 func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) OrdersApiGETCheckoutComPaymentIdOrderRequest {
 	return OrdersApiGETCheckoutComPaymentIdOrderRequest{
-		ApiService:           a,
-		ctx:                  ctx,
+		ApiService: a,
+		ctx: ctx,
 		checkoutComPaymentId: checkoutComPaymentId,
 	}
 }
@@ -513,9 +514,9 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, che
 // Execute executes the request
 func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETCheckoutComPaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETCheckoutComPaymentIdOrder")
@@ -576,7 +577,7 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETChe
 }
 
 type OrdersApiGETCustomerIdOrdersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
 	customerId string
 }
@@ -597,7 +598,7 @@ Retrieve the orders associated to the customer
 func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId string) OrdersApiGETCustomerIdOrdersRequest {
 	return OrdersApiGETCustomerIdOrdersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		customerId: customerId,
 	}
 }
@@ -605,9 +606,9 @@ func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId s
 // Execute executes the request
 func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOrdersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETCustomerIdOrders")
@@ -668,8 +669,8 @@ func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOr
 }
 
 type OrdersApiGETExternalPaymentIdOrderRequest struct {
-	ctx               context.Context
-	ApiService        *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	externalPaymentId string
 }
 
@@ -688,8 +689,8 @@ Retrieve the order associated to the external payment
 */
 func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) OrdersApiGETExternalPaymentIdOrderRequest {
 	return OrdersApiGETExternalPaymentIdOrderRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPaymentId: externalPaymentId,
 	}
 }
@@ -697,9 +698,9 @@ func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, extern
 // Execute executes the request
 func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExternalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETExternalPaymentIdOrder")
@@ -760,8 +761,8 @@ func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExtern
 }
 
 type OrdersApiGETKlarnaPaymentIdOrderRequest struct {
-	ctx             context.Context
-	ApiService      *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	klarnaPaymentId string
 }
 
@@ -780,8 +781,8 @@ Retrieve the order associated to the klarna payment
 */
 func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) OrdersApiGETKlarnaPaymentIdOrderRequest {
 	return OrdersApiGETKlarnaPaymentIdOrderRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		klarnaPaymentId: klarnaPaymentId,
 	}
 }
@@ -789,9 +790,9 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPa
 // Execute executes the request
 func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETKlarnaPaymentIdOrder")
@@ -852,7 +853,7 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPa
 }
 
 type OrdersApiGETLineItemIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
 	lineItemId string
 }
@@ -873,7 +874,7 @@ Retrieve the order associated to the line item
 func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) OrdersApiGETLineItemIdOrderRequest {
 	return OrdersApiGETLineItemIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -881,9 +882,9 @@ func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId st
 // Execute executes the request
 func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETLineItemIdOrder")
@@ -944,8 +945,8 @@ func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrd
 }
 
 type OrdersApiGETOrderCopyIdSourceOrderRequest struct {
-	ctx         context.Context
-	ApiService  *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderCopyId string
 }
 
@@ -964,8 +965,8 @@ Retrieve the source order associated to the order copy
 */
 func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdSourceOrderRequest {
 	return OrdersApiGETOrderCopyIdSourceOrderRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderCopyId: orderCopyId,
 	}
 }
@@ -973,9 +974,9 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderC
 // Execute executes the request
 func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderCopyIdSourceOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderCopyIdSourceOrder")
@@ -1036,8 +1037,8 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderC
 }
 
 type OrdersApiGETOrderCopyIdTargetOrderRequest struct {
-	ctx         context.Context
-	ApiService  *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderCopyId string
 }
 
@@ -1056,8 +1057,8 @@ Retrieve the target order associated to the order copy
 */
 func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdTargetOrderRequest {
 	return OrdersApiGETOrderCopyIdTargetOrderRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderCopyId: orderCopyId,
 	}
 }
@@ -1065,9 +1066,9 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderC
 // Execute executes the request
 func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderCopyIdTargetOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderCopyIdTargetOrder")
@@ -1128,8 +1129,8 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderC
 }
 
 type OrdersApiGETOrderSubscriptionIdOrdersRequest struct {
-	ctx                 context.Context
-	ApiService          *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderSubscriptionId string
 }
 
@@ -1148,8 +1149,8 @@ Retrieve the orders associated to the order subscription
 */
 func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdOrdersRequest {
 	return OrdersApiGETOrderSubscriptionIdOrdersRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -1157,9 +1158,9 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, ord
 // Execute executes the request
 func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderSubscriptionIdOrders")
@@ -1220,8 +1221,8 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrd
 }
 
 type OrdersApiGETOrderSubscriptionIdSourceOrderRequest struct {
-	ctx                 context.Context
-	ApiService          *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderSubscriptionId string
 }
 
@@ -1240,8 +1241,8 @@ Retrieve the source order associated to the order subscription
 */
 func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdSourceOrderRequest {
 	return OrdersApiGETOrderSubscriptionIdSourceOrderRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -1249,9 +1250,9 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context
 // Execute executes the request
 func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r OrdersApiGETOrderSubscriptionIdSourceOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderSubscriptionIdSourceOrder")
@@ -1312,7 +1313,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r OrdersApiG
 }
 
 type OrdersApiGETOrdersRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
 }
 
@@ -1331,7 +1332,7 @@ List all orders
 func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequest {
 	return OrdersApiGETOrdersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1339,10 +1340,10 @@ func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequ
 //  @return GETOrders200Response
 func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOrders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETOrders200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETOrders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrders")
@@ -1411,9 +1412,9 @@ func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOr
 }
 
 type OrdersApiGETOrdersOrderIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	orderId    string
+	orderId string
 }
 
 func (r OrdersApiGETOrdersOrderIdRequest) Execute() (*GETOrdersOrderId200Response, *http.Response, error) {
@@ -1432,8 +1433,8 @@ Retrieve an order
 func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string) OrdersApiGETOrdersOrderIdRequest {
 	return OrdersApiGETOrdersOrderIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
@@ -1441,10 +1442,10 @@ func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string)
 //  @return GETOrdersOrderId200Response
 func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRequest) (*GETOrdersOrderId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETOrdersOrderId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETOrdersOrderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrdersOrderId")
@@ -1514,8 +1515,8 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRe
 }
 
 type OrdersApiGETPaypalPaymentIdOrderRequest struct {
-	ctx             context.Context
-	ApiService      *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	paypalPaymentId string
 }
 
@@ -1534,8 +1535,8 @@ Retrieve the order associated to the paypal payment
 */
 func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) OrdersApiGETPaypalPaymentIdOrderRequest {
 	return OrdersApiGETPaypalPaymentIdOrderRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		paypalPaymentId: paypalPaymentId,
 	}
 }
@@ -1543,9 +1544,9 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPa
 // Execute executes the request
 func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETPaypalPaymentIdOrder")
@@ -1606,9 +1607,9 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPa
 }
 
 type OrdersApiGETRefundIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	refundId   string
+	refundId string
 }
 
 func (r OrdersApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
@@ -1627,17 +1628,17 @@ Retrieve the order associated to the refund
 func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string) OrdersApiGETRefundIdOrderRequest {
 	return OrdersApiGETRefundIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
-		refundId:   refundId,
+		ctx: ctx,
+		refundId: refundId,
 	}
 }
 
 // Execute executes the request
 func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETRefundIdOrder")
@@ -1698,9 +1699,9 @@ func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRe
 }
 
 type OrdersApiGETReturnIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	returnId   string
+	returnId string
 }
 
 func (r OrdersApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
@@ -1719,17 +1720,17 @@ Retrieve the order associated to the return
 func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string) OrdersApiGETReturnIdOrderRequest {
 	return OrdersApiGETReturnIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
-		returnId:   returnId,
+		ctx: ctx,
+		returnId: returnId,
 	}
 }
 
 // Execute executes the request
 func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETReturnIdOrder")
@@ -1790,7 +1791,7 @@ func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRe
 }
 
 type OrdersApiGETShipmentIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
 	shipmentId string
 }
@@ -1811,7 +1812,7 @@ Retrieve the order associated to the shipment
 func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) OrdersApiGETShipmentIdOrderRequest {
 	return OrdersApiGETShipmentIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -1819,9 +1820,9 @@ func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId st
 // Execute executes the request
 func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETShipmentIdOrder")
@@ -1882,8 +1883,8 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrd
 }
 
 type OrdersApiGETStripePaymentIdOrderRequest struct {
-	ctx             context.Context
-	ApiService      *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	stripePaymentId string
 }
 
@@ -1902,8 +1903,8 @@ Retrieve the order associated to the stripe payment
 */
 func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) OrdersApiGETStripePaymentIdOrderRequest {
 	return OrdersApiGETStripePaymentIdOrderRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stripePaymentId: stripePaymentId,
 	}
 }
@@ -1911,9 +1912,9 @@ func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePa
 // Execute executes the request
 func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePaymentIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETStripePaymentIdOrder")
@@ -1974,8 +1975,8 @@ func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePa
 }
 
 type OrdersApiGETTransactionIdOrderRequest struct {
-	ctx           context.Context
-	ApiService    *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	transactionId string
 }
 
@@ -1994,8 +1995,8 @@ Retrieve the order associated to the transaction
 */
 func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) OrdersApiGETTransactionIdOrderRequest {
 	return OrdersApiGETTransactionIdOrderRequest{
-		ApiService:    a,
-		ctx:           ctx,
+		ApiService: a,
+		ctx: ctx,
 		transactionId: transactionId,
 	}
 }
@@ -2003,9 +2004,9 @@ func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactio
 // Execute executes the request
 func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactionIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETTransactionIdOrder")
@@ -2066,9 +2067,9 @@ func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactio
 }
 
 type OrdersApiGETVoidIdOrderRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *OrdersApiService
-	voidId     string
+	voidId string
 }
 
 func (r OrdersApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
@@ -2087,17 +2088,17 @@ Retrieve the order associated to the void
 func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) OrdersApiGETVoidIdOrderRequest {
 	return OrdersApiGETVoidIdOrderRequest{
 		ApiService: a,
-		ctx:        ctx,
-		voidId:     voidId,
+		ctx: ctx,
+		voidId: voidId,
 	}
 }
 
 // Execute executes the request
 func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETVoidIdOrder")
@@ -2158,8 +2159,8 @@ func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderReques
 }
 
 type OrdersApiGETWireTransferIdOrderRequest struct {
-	ctx            context.Context
-	ApiService     *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	wireTransferId string
 }
 
@@ -2178,8 +2179,8 @@ Retrieve the order associated to the wire transfer
 */
 func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) OrdersApiGETWireTransferIdOrderRequest {
 	return OrdersApiGETWireTransferIdOrderRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		wireTransferId: wireTransferId,
 	}
 }
@@ -2187,9 +2188,9 @@ func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTrans
 // Execute executes the request
 func (a *OrdersApiService) GETWireTransferIdOrderExecute(r OrdersApiGETWireTransferIdOrderRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETWireTransferIdOrder")
@@ -2250,10 +2251,10 @@ func (a *OrdersApiService) GETWireTransferIdOrderExecute(r OrdersApiGETWireTrans
 }
 
 type OrdersApiPATCHOrdersOrderIdRequest struct {
-	ctx         context.Context
-	ApiService  *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderUpdate *OrderUpdate
-	orderId     string
+	orderId string
 }
 
 func (r OrdersApiPATCHOrdersOrderIdRequest) OrderUpdate(orderUpdate OrderUpdate) OrdersApiPATCHOrdersOrderIdRequest {
@@ -2277,8 +2278,8 @@ Update an order
 func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId string) OrdersApiPATCHOrdersOrderIdRequest {
 	return OrdersApiPATCHOrdersOrderIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
@@ -2286,10 +2287,10 @@ func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId strin
 //  @return PATCHOrdersOrderId200Response
 func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrderIdRequest) (*PATCHOrdersOrderId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHOrdersOrderId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHOrdersOrderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.PATCHOrdersOrderId")
@@ -2364,8 +2365,8 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrder
 }
 
 type OrdersApiPOSTOrdersRequest struct {
-	ctx         context.Context
-	ApiService  *OrdersApiService
+	ctx context.Context
+	ApiService *OrdersApiService
 	orderCreate *OrderCreate
 }
 
@@ -2389,7 +2390,7 @@ Create an order
 func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRequest {
 	return OrdersApiPOSTOrdersRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2397,10 +2398,10 @@ func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRe
 //  @return POSTOrders201Response
 func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*POSTOrders201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTOrders201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTOrders201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.POSTOrders")

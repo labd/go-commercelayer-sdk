@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type PaymentMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                          `json:"id"`
-	Attributes    PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PaymentMethodUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaymentMethodUpdateData instantiates a new PaymentMethodUpdateData object
@@ -120,9 +120,9 @@ func (o *PaymentMethodUpdateData) SetAttributes(v PATCHPaymentMethodsPaymentMeth
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaymentMethodUpdateData) GetRelationships() PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships {
+func (o *PaymentMethodUpdateData) GetRelationships() PaymentMethodUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships
+		var ret PaymentMethodUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *PaymentMethodUpdateData) GetRelationships() PATCHPaymentMethodsPaymentM
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships, bool) {
+func (o *PaymentMethodUpdateData) GetRelationshipsOk() (*PaymentMethodUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *PaymentMethodUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PaymentMethodUpdateData) SetRelationships(v PATCHPaymentMethodsPaymentMethodId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given PaymentMethodUpdateDataRelationships and assigns it to the Relationships field.
+func (o *PaymentMethodUpdateData) SetRelationships(v PaymentMethodUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullablePaymentMethodUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

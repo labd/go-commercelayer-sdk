@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type PaypalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{} `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayUpdateData instantiates a new PaypalGatewayUpdateData object
@@ -203,3 +203,5 @@ func (v *NullablePaypalGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

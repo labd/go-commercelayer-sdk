@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTBillingInfoValidationRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                     `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                      `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes                 `json:"attributes,omitempty"`
-	Relationships *POSTBillingInfoValidationRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTBillingInfoValidationRules201ResponseData instantiates a new POSTBillingInfoValidationRules201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTBillingInfoValidationRules201ResponseData) SetAttributes(v POSTAdye
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTBillingInfoValidationRules201ResponseData) GetRelationships() POSTBillingInfoValidationRules201ResponseDataRelationships {
+func (o *POSTBillingInfoValidationRules201ResponseData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTBillingInfoValidationRules201ResponseDataRelationships
+		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTBillingInfoValidationRules201ResponseData) GetRelationships() POSTB
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBillingInfoValidationRules201ResponseData) GetRelationshipsOk() (*POSTBillingInfoValidationRules201ResponseDataRelationships, bool) {
+func (o *POSTBillingInfoValidationRules201ResponseData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTBillingInfoValidationRules201ResponseData) HasRelationships() bool 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTBillingInfoValidationRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTBillingInfoValidationRules201ResponseData) SetRelationships(v POSTBillingInfoValidationRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTBillingInfoValidationRules201ResponseData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTBillingInfoValidationRules201ResponseData) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

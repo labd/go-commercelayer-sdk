@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "fixed_price_promotions"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes**](PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships**](PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETFixedPricePromotions200ResponseDataInnerRelationships**](GETFixedPricePromotions200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationships() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships`
+`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationshipsOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships, bool)`
+`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) SetRelationships(v PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships)`
+`func (o *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

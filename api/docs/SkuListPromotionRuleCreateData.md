@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "sku_list_promotion_rules"]
 **Attributes** | [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTSkuListPromotionRules201ResponseDataRelationships**](POSTSkuListPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**SkuListPromotionRuleCreateDataRelationships**](SkuListPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *SkuListPromotionRuleCreateData) GetRelationships() POSTSkuListPromotionRules201ResponseDataRelationships`
+`func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRuleCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*POSTSkuListPromotionRules201ResponseDataRelationships, bool)`
+`func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotionRuleCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuListPromotionRuleCreateData) SetRelationships(v POSTSkuListPromotionRules201ResponseDataRelationships)`
+`func (o *SkuListPromotionRuleCreateData) SetRelationships(v SkuListPromotionRuleCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

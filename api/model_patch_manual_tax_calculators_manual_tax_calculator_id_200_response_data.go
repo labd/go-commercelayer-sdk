@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                                  `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                   `json:"links,omitempty"`
-	Attributes    *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTManualTaxCalculators201ResponseDataRelationships                    `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETManualTaxCalculators200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData instantiates a new PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetAttri
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships {
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() GETManualTaxCalculators200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTManualTaxCalculators201ResponseDataRelationships
+		var ret GETManualTaxCalculators200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool) {
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*GETManualTaxCalculators200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasRelat
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTManualTaxCalculators201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETManualTaxCalculators200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v GETManualTaxCalculators200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

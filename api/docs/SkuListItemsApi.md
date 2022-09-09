@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListItemsSkuListItemId
 
-> PATCHSkuListItemsSkuListItemId200Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
+> POSTSkuListItems201Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
 
 Update a SKU list item
 
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.PATCHSkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListItemsSkuListItemId`: PATCHSkuListItemsSkuListItemId200Response
+    // response from `PATCHSkuListItemsSkuListItemId`: POSTSkuListItems201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.PATCHSkuListItemsSkuListItemId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHSkuListItemsSkuListItemId200Response**](PATCHSkuListItemsSkuListItemId200Response.md)
+[**POSTSkuListItems201Response**](POSTSkuListItems201Response.md)
 
 ### Authorization
 

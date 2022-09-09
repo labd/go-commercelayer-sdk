@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type GETTaxjarAccounts200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
-	Attributes    *GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewGETTaxjarAccounts200ResponseDataInner instantiates a new GETTaxjarAccounts200ResponseDataInner object
@@ -262,3 +262,5 @@ func (v *NullableGETTaxjarAccounts200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId
 
-> PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
+> POSTOrderAmountPromotionRules201Response PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
 
 Update an order amount promotion rule
 
@@ -725,7 +725,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+    // response from `PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: POSTOrderAmountPromotionRules201Response
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response.md)
+[**POSTOrderAmountPromotionRules201Response**](POSTOrderAmountPromotionRules201Response.md)
 
 ### Authorization
 

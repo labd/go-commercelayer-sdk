@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHBingGeocodersBingGeocoderId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                    `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
-	Attributes    *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                                     `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBingGeocoders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHBingGeocodersBingGeocoderId200ResponseData instantiates a new PATCHBingGeocodersBingGeocoderId200ResponseData object
@@ -176,17 +176,17 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) SetAttributes(v PATCHB
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) GetRelationships() map[string]interface{} {
+func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret GETBingGeocoders200ResponseDataInnerRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,9 +202,9 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) HasRelationships() boo
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given GETBingGeocoders200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHBingGeocodersBingGeocoderId200ResponseData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships) {
+	o.Relationships = &v
 }
 
 func (o PATCHBingGeocodersBingGeocoderId200ResponseData) MarshalJSON() ([]byte, error) {
@@ -262,3 +262,5 @@ func (v *NullablePATCHBingGeocodersBingGeocoderId200ResponseData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

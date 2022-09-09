@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // TaxCategoryData struct for TaxCategoryData
 type TaxCategoryData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
-	Attributes    GETTaxCategories200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETTaxCategories200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETTaxCategories200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *TaxCategoryDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryData instantiates a new TaxCategoryData object
@@ -93,9 +93,9 @@ func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCategoryData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships {
+func (o *TaxCategoryData) GetRelationships() TaxCategoryDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETTaxCategories200ResponseDataInnerRelationships
+		var ret TaxCategoryDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxCategoryData) GetRelationships() GETTaxCategories200ResponseDataInne
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool) {
+func (o *TaxCategoryData) GetRelationshipsOk() (*TaxCategoryDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxCategoryData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETTaxCategories200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *TaxCategoryData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given TaxCategoryDataRelationships and assigns it to the Relationships field.
+func (o *TaxCategoryData) SetRelationships(v TaxCategoryDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableTaxCategoryData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

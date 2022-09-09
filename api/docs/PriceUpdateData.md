@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "prices"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHPricesPriceId200ResponseDataAttributes**](PATCHPricesPriceId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHPricesPriceId200ResponseDataRelationships**](PATCHPricesPriceId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PriceUpdateDataRelationships**](PriceUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PriceUpdateData) GetRelationships() PATCHPricesPriceId200ResponseDataRelationships`
+`func (o *PriceUpdateData) GetRelationships() PriceUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceUpdateData) GetRelationshipsOk() (*PATCHPricesPriceId200ResponseDataRelationships, bool)`
+`func (o *PriceUpdateData) GetRelationshipsOk() (*PriceUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceUpdateData) SetRelationships(v PATCHPricesPriceId200ResponseDataRelationships)`
+`func (o *PriceUpdateData) SetRelationships(v PriceUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

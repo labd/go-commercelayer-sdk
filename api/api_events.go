@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // EventsApiService EventsApi service
 type EventsApiService service
 
 type EventsApiGETCustomerAddressIdEventsRequest struct {
-	ctx               context.Context
-	ApiService        *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	customerAddressId string
 }
 
@@ -44,8 +45,8 @@ Retrieve the events associated to the customer address
 */
 func (a *EventsApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) EventsApiGETCustomerAddressIdEventsRequest {
 	return EventsApiGETCustomerAddressIdEventsRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *EventsApiService) GETCustomerAddressIdEvents(ctx context.Context, custo
 // Execute executes the request
 func (a *EventsApiService) GETCustomerAddressIdEventsExecute(r EventsApiGETCustomerAddressIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETCustomerAddressIdEvents")
@@ -116,7 +117,7 @@ func (a *EventsApiService) GETCustomerAddressIdEventsExecute(r EventsApiGETCusto
 }
 
 type EventsApiGETCustomerIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
 	customerId string
 }
@@ -137,7 +138,7 @@ Retrieve the events associated to the customer
 func (a *EventsApiService) GETCustomerIdEvents(ctx context.Context, customerId string) EventsApiGETCustomerIdEventsRequest {
 	return EventsApiGETCustomerIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		customerId: customerId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *EventsApiService) GETCustomerIdEvents(ctx context.Context, customerId s
 // Execute executes the request
 func (a *EventsApiService) GETCustomerIdEventsExecute(r EventsApiGETCustomerIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETCustomerIdEvents")
@@ -208,8 +209,8 @@ func (a *EventsApiService) GETCustomerIdEventsExecute(r EventsApiGETCustomerIdEv
 }
 
 type EventsApiGETCustomerPasswordResetIdEventsRequest struct {
-	ctx                     context.Context
-	ApiService              *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	customerPasswordResetId string
 }
 
@@ -228,8 +229,8 @@ Retrieve the events associated to the customer password reset
 */
 func (a *EventsApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) EventsApiGETCustomerPasswordResetIdEventsRequest {
 	return EventsApiGETCustomerPasswordResetIdEventsRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *EventsApiService) GETCustomerPasswordResetIdEvents(ctx context.Context,
 // Execute executes the request
 func (a *EventsApiService) GETCustomerPasswordResetIdEventsExecute(r EventsApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETCustomerPasswordResetIdEvents")
@@ -300,8 +301,8 @@ func (a *EventsApiService) GETCustomerPasswordResetIdEventsExecute(r EventsApiGE
 }
 
 type EventsApiGETCustomerSubscriptionIdEventsRequest struct {
-	ctx                    context.Context
-	ApiService             *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	customerSubscriptionId string
 }
 
@@ -320,8 +321,8 @@ Retrieve the events associated to the customer subscription
 */
 func (a *EventsApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) EventsApiGETCustomerSubscriptionIdEventsRequest {
 	return EventsApiGETCustomerSubscriptionIdEventsRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerSubscriptionId: customerSubscriptionId,
 	}
 }
@@ -329,9 +330,9 @@ func (a *EventsApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, 
 // Execute executes the request
 func (a *EventsApiService) GETCustomerSubscriptionIdEventsExecute(r EventsApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETCustomerSubscriptionIdEvents")
@@ -392,7 +393,7 @@ func (a *EventsApiService) GETCustomerSubscriptionIdEventsExecute(r EventsApiGET
 }
 
 type EventsApiGETEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
 }
 
@@ -411,7 +412,7 @@ List all events
 func (a *EventsApiService) GETEvents(ctx context.Context) EventsApiGETEventsRequest {
 	return EventsApiGETEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -419,10 +420,10 @@ func (a *EventsApiService) GETEvents(ctx context.Context) EventsApiGETEventsRequ
 //  @return GETEvents200Response
 func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*GETEvents200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETEvents200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEvents")
@@ -491,9 +492,9 @@ func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*GETEv
 }
 
 type EventsApiGETEventsEventIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	eventId    string
+	eventId string
 }
 
 func (r EventsApiGETEventsEventIdRequest) Execute() (*GETEventsEventId200Response, *http.Response, error) {
@@ -512,8 +513,8 @@ Retrieve an event
 func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string) EventsApiGETEventsEventIdRequest {
 	return EventsApiGETEventsEventIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		eventId:    eventId,
+		ctx: ctx,
+		eventId: eventId,
 	}
 }
 
@@ -521,10 +522,10 @@ func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string)
 //  @return GETEventsEventId200Response
 func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*GETEventsEventId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETEventsEventId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETEventsEventId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEventsEventId")
@@ -594,7 +595,7 @@ func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRe
 }
 
 type EventsApiGETGiftCardIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
 	giftCardId string
 }
@@ -615,7 +616,7 @@ Retrieve the events associated to the gift card
 func (a *EventsApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) EventsApiGETGiftCardIdEventsRequest {
 	return EventsApiGETGiftCardIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -623,9 +624,9 @@ func (a *EventsApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId s
 // Execute executes the request
 func (a *EventsApiService) GETGiftCardIdEventsExecute(r EventsApiGETGiftCardIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETGiftCardIdEvents")
@@ -686,9 +687,9 @@ func (a *EventsApiService) GETGiftCardIdEventsExecute(r EventsApiGETGiftCardIdEv
 }
 
 type EventsApiGETImportIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	importId   string
+	importId string
 }
 
 func (r EventsApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
@@ -707,17 +708,17 @@ Retrieve the events associated to the import
 func (a *EventsApiService) GETImportIdEvents(ctx context.Context, importId string) EventsApiGETImportIdEventsRequest {
 	return EventsApiGETImportIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		importId:   importId,
+		ctx: ctx,
+		importId: importId,
 	}
 }
 
 // Execute executes the request
 func (a *EventsApiService) GETImportIdEventsExecute(r EventsApiGETImportIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETImportIdEvents")
@@ -778,8 +779,8 @@ func (a *EventsApiService) GETImportIdEventsExecute(r EventsApiGETImportIdEvents
 }
 
 type EventsApiGETInStockSubscriptionIdEventsRequest struct {
-	ctx                   context.Context
-	ApiService            *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	inStockSubscriptionId string
 }
 
@@ -798,8 +799,8 @@ Retrieve the events associated to the in stock subscription
 */
 func (a *EventsApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) EventsApiGETInStockSubscriptionIdEventsRequest {
 	return EventsApiGETInStockSubscriptionIdEventsRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -807,9 +808,9 @@ func (a *EventsApiService) GETInStockSubscriptionIdEvents(ctx context.Context, i
 // Execute executes the request
 func (a *EventsApiService) GETInStockSubscriptionIdEventsExecute(r EventsApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETInStockSubscriptionIdEvents")
@@ -870,8 +871,8 @@ func (a *EventsApiService) GETInStockSubscriptionIdEventsExecute(r EventsApiGETI
 }
 
 type EventsApiGETOrderCopyIdEventsRequest struct {
-	ctx         context.Context
-	ApiService  *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	orderCopyId string
 }
 
@@ -890,8 +891,8 @@ Retrieve the events associated to the order copy
 */
 func (a *EventsApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) EventsApiGETOrderCopyIdEventsRequest {
 	return EventsApiGETOrderCopyIdEventsRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderCopyId: orderCopyId,
 	}
 }
@@ -899,9 +900,9 @@ func (a *EventsApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId
 // Execute executes the request
 func (a *EventsApiService) GETOrderCopyIdEventsExecute(r EventsApiGETOrderCopyIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETOrderCopyIdEvents")
@@ -962,9 +963,9 @@ func (a *EventsApiService) GETOrderCopyIdEventsExecute(r EventsApiGETOrderCopyId
 }
 
 type EventsApiGETOrderIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	orderId    string
+	orderId string
 }
 
 func (r EventsApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
@@ -983,17 +984,17 @@ Retrieve the events associated to the order
 func (a *EventsApiService) GETOrderIdEvents(ctx context.Context, orderId string) EventsApiGETOrderIdEventsRequest {
 	return EventsApiGETOrderIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *EventsApiService) GETOrderIdEventsExecute(r EventsApiGETOrderIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETOrderIdEvents")
@@ -1054,8 +1055,8 @@ func (a *EventsApiService) GETOrderIdEventsExecute(r EventsApiGETOrderIdEventsRe
 }
 
 type EventsApiGETOrderSubscriptionIdEventsRequest struct {
-	ctx                 context.Context
-	ApiService          *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	orderSubscriptionId string
 }
 
@@ -1074,8 +1075,8 @@ Retrieve the events associated to the order subscription
 */
 func (a *EventsApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) EventsApiGETOrderSubscriptionIdEventsRequest {
 	return EventsApiGETOrderSubscriptionIdEventsRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -1083,9 +1084,9 @@ func (a *EventsApiService) GETOrderSubscriptionIdEvents(ctx context.Context, ord
 // Execute executes the request
 func (a *EventsApiService) GETOrderSubscriptionIdEventsExecute(r EventsApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETOrderSubscriptionIdEvents")
@@ -1146,9 +1147,9 @@ func (a *EventsApiService) GETOrderSubscriptionIdEventsExecute(r EventsApiGETOrd
 }
 
 type EventsApiGETParcelIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	parcelId   string
+	parcelId string
 }
 
 func (r EventsApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
@@ -1167,17 +1168,17 @@ Retrieve the events associated to the parcel
 func (a *EventsApiService) GETParcelIdEvents(ctx context.Context, parcelId string) EventsApiGETParcelIdEventsRequest {
 	return EventsApiGETParcelIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		parcelId:   parcelId,
+		ctx: ctx,
+		parcelId: parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *EventsApiService) GETParcelIdEventsExecute(r EventsApiGETParcelIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETParcelIdEvents")
@@ -1238,9 +1239,9 @@ func (a *EventsApiService) GETParcelIdEventsExecute(r EventsApiGETParcelIdEvents
 }
 
 type EventsApiGETRefundIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	refundId   string
+	refundId string
 }
 
 func (r EventsApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
@@ -1259,17 +1260,17 @@ Retrieve the events associated to the refund
 func (a *EventsApiService) GETRefundIdEvents(ctx context.Context, refundId string) EventsApiGETRefundIdEventsRequest {
 	return EventsApiGETRefundIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		refundId:   refundId,
+		ctx: ctx,
+		refundId: refundId,
 	}
 }
 
 // Execute executes the request
 func (a *EventsApiService) GETRefundIdEventsExecute(r EventsApiGETRefundIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETRefundIdEvents")
@@ -1330,9 +1331,9 @@ func (a *EventsApiService) GETRefundIdEventsExecute(r EventsApiGETRefundIdEvents
 }
 
 type EventsApiGETReturnIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
-	returnId   string
+	returnId string
 }
 
 func (r EventsApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
@@ -1351,17 +1352,17 @@ Retrieve the events associated to the return
 func (a *EventsApiService) GETReturnIdEvents(ctx context.Context, returnId string) EventsApiGETReturnIdEventsRequest {
 	return EventsApiGETReturnIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		returnId:   returnId,
+		ctx: ctx,
+		returnId: returnId,
 	}
 }
 
 // Execute executes the request
 func (a *EventsApiService) GETReturnIdEventsExecute(r EventsApiGETReturnIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETReturnIdEvents")
@@ -1422,7 +1423,7 @@ func (a *EventsApiService) GETReturnIdEventsExecute(r EventsApiGETReturnIdEvents
 }
 
 type EventsApiGETShipmentIdEventsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *EventsApiService
 	shipmentId string
 }
@@ -1443,7 +1444,7 @@ Retrieve the events associated to the shipment
 func (a *EventsApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) EventsApiGETShipmentIdEventsRequest {
 	return EventsApiGETShipmentIdEventsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -1451,9 +1452,9 @@ func (a *EventsApiService) GETShipmentIdEvents(ctx context.Context, shipmentId s
 // Execute executes the request
 func (a *EventsApiService) GETShipmentIdEventsExecute(r EventsApiGETShipmentIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETShipmentIdEvents")
@@ -1514,8 +1515,8 @@ func (a *EventsApiService) GETShipmentIdEventsExecute(r EventsApiGETShipmentIdEv
 }
 
 type EventsApiGETStockTransferIdEventsRequest struct {
-	ctx             context.Context
-	ApiService      *EventsApiService
+	ctx context.Context
+	ApiService *EventsApiService
 	stockTransferId string
 }
 
@@ -1534,8 +1535,8 @@ Retrieve the events associated to the stock transfer
 */
 func (a *EventsApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) EventsApiGETStockTransferIdEventsRequest {
 	return EventsApiGETStockTransferIdEventsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -1543,9 +1544,9 @@ func (a *EventsApiService) GETStockTransferIdEvents(ctx context.Context, stockTr
 // Execute executes the request
 func (a *EventsApiService) GETStockTransferIdEventsExecute(r EventsApiGETStockTransferIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETStockTransferIdEvents")

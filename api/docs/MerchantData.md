@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "merchants"]
 **Attributes** | [**GETMerchants200ResponseDataInnerAttributes**](GETMerchants200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETMerchants200ResponseDataInnerRelationships**](GETMerchants200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**MerchantDataRelationships**](MerchantDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *MerchantData) GetRelationships() GETMerchants200ResponseDataInnerRelationships`
+`func (o *MerchantData) GetRelationships() MerchantDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *MerchantData) GetRelationshipsOk() (*GETMerchants200ResponseDataInnerRelationships, bool)`
+`func (o *MerchantData) GetRelationshipsOk() (*MerchantDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *MerchantData) SetRelationships(v GETMerchants200ResponseDataInnerRelationships)`
+`func (o *MerchantData) SetRelationships(v MerchantDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

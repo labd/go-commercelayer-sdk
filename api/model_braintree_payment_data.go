@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // BraintreePaymentData struct for BraintreePaymentData
 type BraintreePaymentData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
-	Attributes    GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentData instantiates a new BraintreePaymentData object
@@ -93,9 +93,9 @@ func (o *BraintreePaymentData) SetAttributes(v GETBraintreePayments200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BraintreePaymentData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships {
+func (o *BraintreePaymentData) GetRelationships() AdyenPaymentDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationships
+		var ret AdyenPaymentDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BraintreePaymentData) GetRelationships() GETAdyenPayments200ResponseDat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool) {
+func (o *BraintreePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BraintreePaymentData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *BraintreePaymentData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given AdyenPaymentDataRelationships and assigns it to the Relationships field.
+func (o *BraintreePaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableBraintreePaymentData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

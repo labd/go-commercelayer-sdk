@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "manual_tax_calculators"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes**](PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTManualTaxCalculators201ResponseDataRelationships**](POSTManualTaxCalculators201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETManualTaxCalculators200ResponseDataInnerRelationships**](GETManualTaxCalculators200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships`
+`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() GETManualTaxCalculators200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool)`
+`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*GETManualTaxCalculators200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships)`
+`func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v GETManualTaxCalculators200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

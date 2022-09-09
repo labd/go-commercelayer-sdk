@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "stock_items"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHStockItemsStockItemId200ResponseDataAttributes**](PATCHStockItemsStockItemId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHStockItemsStockItemId200ResponseDataRelationships**](PATCHStockItemsStockItemId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**StockItemUpdateDataRelationships**](StockItemUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *StockItemUpdateData) GetRelationships() PATCHStockItemsStockItemId200ResponseDataRelationships`
+`func (o *StockItemUpdateData) GetRelationships() StockItemUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockItemUpdateData) GetRelationshipsOk() (*PATCHStockItemsStockItemId200ResponseDataRelationships, bool)`
+`func (o *StockItemUpdateData) GetRelationshipsOk() (*StockItemUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockItemUpdateData) SetRelationships(v PATCHStockItemsStockItemId200ResponseDataRelationships)`
+`func (o *StockItemUpdateData) SetRelationships(v StockItemUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

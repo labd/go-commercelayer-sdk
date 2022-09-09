@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,11 +20,12 @@ import (
 	"strings"
 )
 
+
 // PromotionsApiService PromotionsApi service
 type PromotionsApiService service
 
 type PromotionsApiGETPromotionsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *PromotionsApiService
 }
 
@@ -43,7 +44,7 @@ List all promotions
 func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiGETPromotionsRequest {
 	return PromotionsApiGETPromotionsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -51,10 +52,10 @@ func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiG
 //  @return GETPromotions200Response
 func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*GETPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPromotions200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionsApiService.GETPromotions")
@@ -123,8 +124,8 @@ func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotions
 }
 
 type PromotionsApiGETPromotionsPromotionIdRequest struct {
-	ctx         context.Context
-	ApiService  *PromotionsApiService
+	ctx context.Context
+	ApiService *PromotionsApiService
 	promotionId string
 }
 
@@ -143,8 +144,8 @@ Retrieve a promotion
 */
 func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, promotionId string) PromotionsApiGETPromotionsPromotionIdRequest {
 	return PromotionsApiGETPromotionsPromotionIdRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		promotionId: promotionId,
 	}
 }
@@ -153,10 +154,10 @@ func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, pro
 //  @return GETPromotionsPromotionId200Response
 func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*GETPromotionsPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETPromotionsPromotionId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETPromotionsPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionsApiService.GETPromotionsPromotionId")

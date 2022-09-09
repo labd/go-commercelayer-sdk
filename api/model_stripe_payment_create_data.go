@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StripePaymentCreateData struct for StripePaymentCreateData
 type StripePaymentCreateData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    POSTStripePayments201ResponseDataAttributes    `json:"attributes"`
-	Relationships *POSTAdyenPayments201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTStripePayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentCreateData instantiates a new StripePaymentCreateData object
@@ -93,9 +93,9 @@ func (o *StripePaymentCreateData) SetAttributes(v POSTStripePayments201ResponseD
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StripePaymentCreateData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
+func (o *StripePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAdyenPayments201ResponseDataRelationships
+		var ret AdyenPaymentCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StripePaymentCreateData) GetRelationships() POSTAdyenPayments201Respons
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StripePaymentCreateData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
+func (o *StripePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StripePaymentCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *StripePaymentCreateData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AdyenPaymentCreateDataRelationships and assigns it to the Relationships field.
+func (o *StripePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStripePaymentCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

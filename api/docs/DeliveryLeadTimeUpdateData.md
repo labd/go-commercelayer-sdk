@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "delivery_lead_times"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**DeliveryLeadTimeUpdateDataRelationships**](DeliveryLeadTimeUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *DeliveryLeadTimeUpdateData) GetRelationships() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships`
+`func (o *DeliveryLeadTimeUpdateData) GetRelationships() DeliveryLeadTimeUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *DeliveryLeadTimeUpdateData) GetRelationshipsOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships, bool)`
+`func (o *DeliveryLeadTimeUpdateData) GetRelationshipsOk() (*DeliveryLeadTimeUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *DeliveryLeadTimeUpdateData) SetRelationships(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataRelationships)`
+`func (o *DeliveryLeadTimeUpdateData) SetRelationships(v DeliveryLeadTimeUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

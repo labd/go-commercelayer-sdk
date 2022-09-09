@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "webhooks"]
 **Attributes** | [**GETWebhooks200ResponseDataInnerAttributes**](GETWebhooks200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETWebhooks200ResponseDataInnerRelationships**](GETWebhooks200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**WebhookDataRelationships**](WebhookDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *WebhookData) GetRelationships() GETWebhooks200ResponseDataInnerRelationships`
+`func (o *WebhookData) GetRelationships() WebhookDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *WebhookData) GetRelationshipsOk() (*GETWebhooks200ResponseDataInnerRelationships, bool)`
+`func (o *WebhookData) GetRelationshipsOk() (*WebhookDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *WebhookData) SetRelationships(v GETWebhooks200ResponseDataInnerRelationships)`
+`func (o *WebhookData) SetRelationships(v WebhookDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

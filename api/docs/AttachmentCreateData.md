@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "attachments"]
 **Attributes** | [**POSTAttachments201ResponseDataAttributes**](POSTAttachments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAttachments201ResponseDataRelationships**](POSTAttachments201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AttachmentCreateDataRelationships**](AttachmentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *AttachmentCreateData) GetRelationships() POSTAttachments201ResponseDataRelationships`
+`func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AttachmentCreateData) GetRelationshipsOk() (*POSTAttachments201ResponseDataRelationships, bool)`
+`func (o *AttachmentCreateData) GetRelationshipsOk() (*AttachmentCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AttachmentCreateData) SetRelationships(v POSTAttachments201ResponseDataRelationships)`
+`func (o *AttachmentCreateData) SetRelationships(v AttachmentCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets**](GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets.md) |  | [optional] 
+**Market** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets`
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool)`
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets)`
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetMarket sets Market field to given value.
 

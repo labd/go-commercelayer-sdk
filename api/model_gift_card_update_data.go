@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type GiftCardUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTGiftCards201ResponseDataRelationships        `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes"`
+	Relationships *GiftCardCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardUpdateData instantiates a new GiftCardUpdateData object
@@ -120,9 +120,9 @@ func (o *GiftCardUpdateData) SetAttributes(v PATCHGiftCardsGiftCardId200Response
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GiftCardUpdateData) GetRelationships() POSTGiftCards201ResponseDataRelationships {
+func (o *GiftCardUpdateData) GetRelationships() GiftCardCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTGiftCards201ResponseDataRelationships
+		var ret GiftCardCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *GiftCardUpdateData) GetRelationships() POSTGiftCards201ResponseDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardUpdateData) GetRelationshipsOk() (*POSTGiftCards201ResponseDataRelationships, bool) {
+func (o *GiftCardUpdateData) GetRelationshipsOk() (*GiftCardCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *GiftCardUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTGiftCards201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *GiftCardUpdateData) SetRelationships(v POSTGiftCards201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GiftCardCreateDataRelationships and assigns it to the Relationships field.
+func (o *GiftCardUpdateData) SetRelationships(v GiftCardCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableGiftCardUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PackageData struct for PackageData
 type PackageData struct {
 	// The resource's type
-	Type          string                                        `json:"type"`
-	Attributes    GETPackages200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETPackages200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETPackages200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PackageDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageData instantiates a new PackageData object
@@ -93,9 +93,9 @@ func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes)
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PackageData) GetRelationships() GETPackages200ResponseDataInnerRelationships {
+func (o *PackageData) GetRelationships() PackageDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETPackages200ResponseDataInnerRelationships
+		var ret PackageDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PackageData) GetRelationships() GETPackages200ResponseDataInnerRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PackageData) GetRelationshipsOk() (*GETPackages200ResponseDataInnerRelationships, bool) {
+func (o *PackageData) GetRelationshipsOk() (*PackageDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PackageData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETPackages200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PackageData) SetRelationships(v GETPackages200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given PackageDataRelationships and assigns it to the Relationships field.
+func (o *PackageData) SetRelationships(v PackageDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePackageData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

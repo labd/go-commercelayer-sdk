@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "inventory_models"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHInventoryModelsInventoryModelId200ResponseDataAttributes**](PATCHInventoryModelsInventoryModelId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to [**GETInventoryModels200ResponseDataInnerRelationships**](GETInventoryModels200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) GetRelationships() map[string]interface{}`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) GetRelationships() GETInventoryModels200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) GetRelationshipsOk() (*GETInventoryModels200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) SetRelationships(v map[string]interface{})`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseData) SetRelationships(v GETInventoryModels200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

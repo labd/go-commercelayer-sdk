@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**CheckoutComPayments** | Pointer to [**GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments**](GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments.md) |  | [optional] 
+**CheckoutComPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetCheckoutComPayments
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPayments() GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
 
 GetCheckoutComPayments returns the CheckoutComPayments field if non-nil, zero value otherwise.
 
 ### GetCheckoutComPaymentsOk
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPaymentsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments, bool)`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) GetCheckoutComPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
 
 GetCheckoutComPaymentsOk returns a tuple with the CheckoutComPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCheckoutComPayments
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) SetCheckoutComPayments(v GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments)`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationships) SetCheckoutComPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
 
 SetCheckoutComPayments sets CheckoutComPayments field to given value.
 

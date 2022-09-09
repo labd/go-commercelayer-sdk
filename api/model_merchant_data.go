@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // MerchantData struct for MerchantData
 type MerchantData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    GETMerchants200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETMerchants200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETMerchants200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *MerchantDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMerchantData instantiates a new MerchantData object
@@ -93,9 +93,9 @@ func (o *MerchantData) SetAttributes(v GETMerchants200ResponseDataInnerAttribute
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MerchantData) GetRelationships() GETMerchants200ResponseDataInnerRelationships {
+func (o *MerchantData) GetRelationships() MerchantDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETMerchants200ResponseDataInnerRelationships
+		var ret MerchantDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *MerchantData) GetRelationships() GETMerchants200ResponseDataInnerRelati
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantData) GetRelationshipsOk() (*GETMerchants200ResponseDataInnerRelationships, bool) {
+func (o *MerchantData) GetRelationshipsOk() (*MerchantDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *MerchantData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETMerchants200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *MerchantData) SetRelationships(v GETMerchants200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given MerchantDataRelationships and assigns it to the Relationships field.
+func (o *MerchantData) SetRelationships(v MerchantDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableMerchantData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

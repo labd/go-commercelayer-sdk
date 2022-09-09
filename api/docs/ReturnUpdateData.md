@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "returns"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHReturnsReturnId200ResponseDataAttributes**](PATCHReturnsReturnId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHPackagesPackageId200ResponseDataRelationships**](PATCHPackagesPackageId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PackageUpdateDataRelationships**](PackageUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ReturnUpdateData) GetRelationships() PATCHPackagesPackageId200ResponseDataRelationships`
+`func (o *ReturnUpdateData) GetRelationships() PackageUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnUpdateData) GetRelationshipsOk() (*PATCHPackagesPackageId200ResponseDataRelationships, bool)`
+`func (o *ReturnUpdateData) GetRelationshipsOk() (*PackageUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnUpdateData) SetRelationships(v PATCHPackagesPackageId200ResponseDataRelationships)`
+`func (o *ReturnUpdateData) SetRelationships(v PackageUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

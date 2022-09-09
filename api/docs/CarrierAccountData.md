@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "carrier_accounts"]
 **Attributes** | [**GETCarrierAccounts200ResponseDataInnerAttributes**](GETCarrierAccounts200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETCarrierAccounts200ResponseDataInnerRelationships**](GETCarrierAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CarrierAccountDataRelationships**](CarrierAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CarrierAccountData) GetRelationships() GETCarrierAccounts200ResponseDataInnerRelationships`
+`func (o *CarrierAccountData) GetRelationships() CarrierAccountDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CarrierAccountData) GetRelationshipsOk() (*GETCarrierAccounts200ResponseDataInnerRelationships, bool)`
+`func (o *CarrierAccountData) GetRelationshipsOk() (*CarrierAccountDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CarrierAccountData) SetRelationships(v GETCarrierAccounts200ResponseDataInnerRelationships)`
+`func (o *CarrierAccountData) SetRelationships(v CarrierAccountDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

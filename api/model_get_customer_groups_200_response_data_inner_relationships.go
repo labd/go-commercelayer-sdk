@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,9 @@ import (
 
 // GETCustomerGroups200ResponseDataInnerRelationships struct for GETCustomerGroups200ResponseDataInnerRelationships
 type GETCustomerGroups200ResponseDataInnerRelationships struct {
-	Customers   *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer   `json:"customers,omitempty"`
-	Markets     *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets     `json:"markets,omitempty"`
-	Attachments *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments `json:"attachments,omitempty"`
+	Customers *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"customers,omitempty"`
+	Markets *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"markets,omitempty"`
+	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
 }
 
 // NewGETCustomerGroups200ResponseDataInnerRelationships instantiates a new GETCustomerGroups200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETCustomerGroups200ResponseDataInnerRelationshipsWithDefaults() *GETCus
 }
 
 // GetCustomers returns the Customers field value if set, zero value otherwise.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetCustomers() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetCustomers() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Customers == nil {
-		var ret GETCouponRecipients200ResponseDataInnerRelationshipsCustomer
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Customers
@@ -50,7 +50,7 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetCustomers() GETC
 
 // GetCustomersOk returns a tuple with the Customers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetCustomersOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool) {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetCustomersOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Customers == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) HasCustomers() bool
 	return false
 }
 
-// SetCustomers gets a reference to the given GETCouponRecipients200ResponseDataInnerRelationshipsCustomer and assigns it to the Customers field.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetCustomers(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer) {
+// SetCustomers gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Customers field.
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetCustomers(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Customers = &v
 }
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetMarkets() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetMarkets() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Markets == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Markets
@@ -82,7 +82,7 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetMarkets() GETAva
 
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetMarketsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool) {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetMarketsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Markets == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) HasMarkets() bool {
 	return false
 }
 
-// SetMarkets gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets and assigns it to the Markets field.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetMarkets(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) {
+// SetMarkets gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Markets field.
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetMarkets(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Markets = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Attachments == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Attachments
@@ -114,7 +114,7 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetAttachments() GE
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETCustomerGroups200ResponseDataInnerRelationships) HasAttachments() bo
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
-func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
+func (o *GETCustomerGroups200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Attachments = &v
 }
 
@@ -184,3 +184,5 @@ func (v *NullableGETCustomerGroups200ResponseDataInnerRelationships) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

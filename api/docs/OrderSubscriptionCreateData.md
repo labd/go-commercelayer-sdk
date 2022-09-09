@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_subscriptions"]
 **Attributes** | [**POSTOrderSubscriptions201ResponseDataAttributes**](POSTOrderSubscriptions201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTOrderSubscriptions201ResponseDataRelationships**](POSTOrderSubscriptions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**OrderSubscriptionCreateDataRelationships**](OrderSubscriptionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *OrderSubscriptionCreateData) GetRelationships() POSTOrderSubscriptions201ResponseDataRelationships`
+`func (o *OrderSubscriptionCreateData) GetRelationships() OrderSubscriptionCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderSubscriptionCreateData) GetRelationshipsOk() (*POSTOrderSubscriptions201ResponseDataRelationships, bool)`
+`func (o *OrderSubscriptionCreateData) GetRelationshipsOk() (*OrderSubscriptionCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderSubscriptionCreateData) SetRelationships(v POSTOrderSubscriptions201ResponseDataRelationships)`
+`func (o *OrderSubscriptionCreateData) SetRelationships(v OrderSubscriptionCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

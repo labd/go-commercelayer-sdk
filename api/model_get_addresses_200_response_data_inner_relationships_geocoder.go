@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // GETAddresses200ResponseDataInnerRelationshipsGeocoder struct for GETAddresses200ResponseDataInnerRelationshipsGeocoder
 type GETAddresses200ResponseDataInnerRelationshipsGeocoder struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks `json:"links,omitempty"`
+	Data *GETAddresses200ResponseDataInnerRelationshipsGeocoderData `json:"data,omitempty"`
 }
 
 // NewGETAddresses200ResponseDataInnerRelationshipsGeocoder instantiates a new GETAddresses200ResponseDataInnerRelationshipsGeocoder object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGETAddresses200ResponseDataInnerRelationshipsGeocoder(type_ string, id string) *GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func NewGETAddresses200ResponseDataInnerRelationshipsGeocoder() *GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	this := GETAddresses200ResponseDataInnerRelationshipsGeocoder{}
-	this.Type = type_
-	this.Id = id
 	return &this
 }
 
@@ -39,66 +35,80 @@ func NewGETAddresses200ResponseDataInnerRelationshipsGeocoder(type_ string, id s
 // but it doesn't guarantee that properties required by API are set
 func NewGETAddresses200ResponseDataInnerRelationshipsGeocoderWithDefaults() *GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	this := GETAddresses200ResponseDataInnerRelationshipsGeocoder{}
-	var type_ string = "geocoders"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetType() string {
-	if o == nil {
-		var ret string
+// GetLinks returns the Links field value if set, zero value otherwise.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetLinks() GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks
 		return ret
 	}
-
-	return o.Type
+	return *o.Links
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetTypeOk() (*string, bool) {
-	if o == nil {
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetLinksOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return o.Links, true
 }
 
-// SetType sets field value
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetType(v string) {
-	o.Type = v
+// HasLinks returns a boolean if a field has been set.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) HasLinks() bool {
+	if o != nil && o.Links != nil {
+		return true
+	}
+
+	return false
 }
 
-// GetId returns the Id field value
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetId() string {
-	if o == nil {
-		var ret string
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks and assigns it to the Links field.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetLinks(v GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks) {
+	o.Links = &v
+}
+
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetData() GETAddresses200ResponseDataInnerRelationshipsGeocoderData {
+	if o == nil || o.Data == nil {
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoderData
 		return ret
 	}
-
-	return o.Id
+	return *o.Data
 }
 
-// GetIdOk returns a tuple with the Id field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetIdOk() (*string, bool) {
-	if o == nil {
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) GetDataOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoderData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Id, true
+	return o.Data, true
 }
 
-// SetId sets field value
-func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetId(v string) {
-	o.Id = v
+// HasData returns a boolean if a field has been set.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoderData and assigns it to the Data field.
+func (o *GETAddresses200ResponseDataInnerRelationshipsGeocoder) SetData(v GETAddresses200ResponseDataInnerRelationshipsGeocoderData) {
+	o.Data = &v
 }
 
 func (o GETAddresses200ResponseDataInnerRelationshipsGeocoder) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
+	if o.Links != nil {
+		toSerialize["links"] = o.Links
 	}
-	if true {
-		toSerialize["id"] = o.Id
+	if o.Data != nil {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }
@@ -138,3 +148,5 @@ func (v *NullableGETAddresses200ResponseDataInnerRelationshipsGeocoder) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // WebhookData struct for WebhookData
 type WebhookData struct {
 	// The resource's type
-	Type          string                                        `json:"type"`
-	Attributes    GETWebhooks200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETWebhooks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETWebhooks200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *WebhookDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewWebhookData instantiates a new WebhookData object
@@ -93,9 +93,9 @@ func (o *WebhookData) SetAttributes(v GETWebhooks200ResponseDataInnerAttributes)
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *WebhookData) GetRelationships() GETWebhooks200ResponseDataInnerRelationships {
+func (o *WebhookData) GetRelationships() WebhookDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETWebhooks200ResponseDataInnerRelationships
+		var ret WebhookDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *WebhookData) GetRelationships() GETWebhooks200ResponseDataInnerRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WebhookData) GetRelationshipsOk() (*GETWebhooks200ResponseDataInnerRelationships, bool) {
+func (o *WebhookData) GetRelationshipsOk() (*WebhookDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *WebhookData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETWebhooks200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *WebhookData) SetRelationships(v GETWebhooks200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given WebhookDataRelationships and assigns it to the Relationships field.
+func (o *WebhookData) SetRelationships(v WebhookDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableWebhookData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "tax_categories"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTTaxCategories201ResponseDataRelationships**](POSTTaxCategories201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETTaxCategories200ResponseDataInnerRelationships**](GETTaxCategories200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTTaxCategories201ResponseData) GetRelationships() POSTTaxCategories201ResponseDataRelationships`
+`func (o *POSTTaxCategories201ResponseData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTTaxCategories201ResponseData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTTaxCategories201ResponseData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships)`
+`func (o *POSTTaxCategories201ResponseData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

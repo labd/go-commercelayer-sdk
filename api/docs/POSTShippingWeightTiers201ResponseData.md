@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "shipping_weight_tiers"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTShippingWeightTiers201ResponseDataAttributes**](POSTShippingWeightTiers201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTShippingWeightTiers201ResponseDataRelationships**](POSTShippingWeightTiers201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETShippingMethodTiers200ResponseDataInnerRelationships**](GETShippingMethodTiers200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTShippingWeightTiers201ResponseData) GetRelationships() POSTShippingWeightTiers201ResponseDataRelationships`
+`func (o *POSTShippingWeightTiers201ResponseData) GetRelationships() GETShippingMethodTiers200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTShippingWeightTiers201ResponseData) GetRelationshipsOk() (*POSTShippingWeightTiers201ResponseDataRelationships, bool)`
+`func (o *POSTShippingWeightTiers201ResponseData) GetRelationshipsOk() (*GETShippingMethodTiers200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTShippingWeightTiers201ResponseData) SetRelationships(v POSTShippingWeightTiers201ResponseDataRelationships)`
+`func (o *POSTShippingWeightTiers201ResponseData) SetRelationships(v GETShippingMethodTiers200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

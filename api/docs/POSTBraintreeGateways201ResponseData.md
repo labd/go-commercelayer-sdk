@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "braintree_gateways"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTBraintreeGateways201ResponseDataAttributes**](POSTBraintreeGateways201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTBraintreeGateways201ResponseDataRelationships**](POSTBraintreeGateways201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETBraintreeGateways200ResponseDataInnerRelationships**](GETBraintreeGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTBraintreeGateways201ResponseData) GetRelationships() POSTBraintreeGateways201ResponseDataRelationships`
+`func (o *POSTBraintreeGateways201ResponseData) GetRelationships() GETBraintreeGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTBraintreeGateways201ResponseData) GetRelationshipsOk() (*POSTBraintreeGateways201ResponseDataRelationships, bool)`
+`func (o *POSTBraintreeGateways201ResponseData) GetRelationshipsOk() (*GETBraintreeGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTBraintreeGateways201ResponseData) SetRelationships(v POSTBraintreeGateways201ResponseDataRelationships)`
+`func (o *POSTBraintreeGateways201ResponseData) SetRelationships(v GETBraintreeGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

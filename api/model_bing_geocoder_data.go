@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // BingGeocoderData struct for BingGeocoderData
 type BingGeocoderData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
-	Attributes    GETBingGeocoders200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETBingGeocoders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETBingGeocoders200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BingGeocoderDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBingGeocoderData instantiates a new BingGeocoderData object
@@ -93,9 +93,9 @@ func (o *BingGeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BingGeocoderData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships {
+func (o *BingGeocoderData) GetRelationships() BingGeocoderDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETBingGeocoders200ResponseDataInnerRelationships
+		var ret BingGeocoderDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BingGeocoderData) GetRelationships() GETBingGeocoders200ResponseDataInn
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool) {
+func (o *BingGeocoderData) GetRelationshipsOk() (*BingGeocoderDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BingGeocoderData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETBingGeocoders200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *BingGeocoderData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given BingGeocoderDataRelationships and assigns it to the Relationships field.
+func (o *BingGeocoderData) SetRelationships(v BingGeocoderDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableBingGeocoderData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

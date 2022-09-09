@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // ManualGatewaysApiService ManualGatewaysApi service
 type ManualGatewaysApiService service
 
 type ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest struct {
-	ctx             context.Context
-	ApiService      *ManualGatewaysApiService
+	ctx context.Context
+	ApiService *ManualGatewaysApiService
 	manualGatewayId string
 }
 
@@ -44,8 +45,8 @@ Delete a manual gateway
 */
 func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		manualGatewayId: manualGatewayId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayId(ctx conte
 // Execute executes the request
 func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayIdExecute(r ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualGatewaysApiService.DELETEManualGatewaysManualGatewayId")
@@ -116,7 +117,7 @@ func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayIdExecute(r 
 }
 
 type ManualGatewaysApiGETManualGatewaysRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *ManualGatewaysApiService
 }
 
@@ -135,7 +136,7 @@ List all manual gateways
 func (a *ManualGatewaysApiService) GETManualGateways(ctx context.Context) ManualGatewaysApiGETManualGatewaysRequest {
 	return ManualGatewaysApiGETManualGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *ManualGatewaysApiService) GETManualGateways(ctx context.Context) Manual
 //  @return GETManualGateways200Response
 func (a *ManualGatewaysApiService) GETManualGatewaysExecute(r ManualGatewaysApiGETManualGatewaysRequest) (*GETManualGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETManualGateways200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETManualGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualGatewaysApiService.GETManualGateways")
@@ -215,8 +216,8 @@ func (a *ManualGatewaysApiService) GETManualGatewaysExecute(r ManualGatewaysApiG
 }
 
 type ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest struct {
-	ctx             context.Context
-	ApiService      *ManualGatewaysApiService
+	ctx context.Context
+	ApiService *ManualGatewaysApiService
 	manualGatewayId string
 }
 
@@ -235,8 +236,8 @@ Retrieve a manual gateway
 */
 func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		manualGatewayId: manualGatewayId,
 	}
 }
@@ -245,10 +246,10 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.
 //  @return GETManualGatewaysManualGatewayId200Response
 func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest) (*GETManualGatewaysManualGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETManualGatewaysManualGatewayId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETManualGatewaysManualGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualGatewaysApiService.GETManualGatewaysManualGatewayId")
@@ -318,10 +319,10 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r Man
 }
 
 type ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest struct {
-	ctx                 context.Context
-	ApiService          *ManualGatewaysApiService
+	ctx context.Context
+	ApiService *ManualGatewaysApiService
 	manualGatewayUpdate *ManualGatewayUpdate
-	manualGatewayId     string
+	manualGatewayId string
 }
 
 func (r ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest) ManualGatewayUpdate(manualGatewayUpdate ManualGatewayUpdate) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
@@ -344,8 +345,8 @@ Update a manual gateway
 */
 func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		manualGatewayId: manualGatewayId,
 	}
 }
@@ -354,10 +355,10 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx contex
 //  @return PATCHManualGatewaysManualGatewayId200Response
 func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest) (*PATCHManualGatewaysManualGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHManualGatewaysManualGatewayId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHManualGatewaysManualGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualGatewaysApiService.PATCHManualGatewaysManualGatewayId")
@@ -432,8 +433,8 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r M
 }
 
 type ManualGatewaysApiPOSTManualGatewaysRequest struct {
-	ctx                 context.Context
-	ApiService          *ManualGatewaysApiService
+	ctx context.Context
+	ApiService *ManualGatewaysApiService
 	manualGatewayCreate *ManualGatewayCreate
 }
 
@@ -457,7 +458,7 @@ Create a manual gateway
 func (a *ManualGatewaysApiService) POSTManualGateways(ctx context.Context) ManualGatewaysApiPOSTManualGatewaysRequest {
 	return ManualGatewaysApiPOSTManualGatewaysRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -465,10 +466,10 @@ func (a *ManualGatewaysApiService) POSTManualGateways(ctx context.Context) Manua
 //  @return POSTManualGateways201Response
 func (a *ManualGatewaysApiService) POSTManualGatewaysExecute(r ManualGatewaysApiPOSTManualGatewaysRequest) (*POSTManualGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTManualGateways201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTManualGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualGatewaysApiService.POSTManualGateways")

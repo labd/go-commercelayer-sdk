@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type FixedPricePromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                      `json:"id"`
-	Attributes    PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionUpdateData instantiates a new FixedPricePromotionUpdateData object
@@ -120,9 +120,9 @@ func (o *FixedPricePromotionUpdateData) SetAttributes(v PATCHFixedPricePromotion
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FixedPricePromotionUpdateData) GetRelationships() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships {
+func (o *FixedPricePromotionUpdateData) GetRelationships() FixedPricePromotionUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships
+		var ret FixedPricePromotionUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *FixedPricePromotionUpdateData) GetRelationships() PATCHFixedPricePromot
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionUpdateData) GetRelationshipsOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships, bool) {
+func (o *FixedPricePromotionUpdateData) GetRelationshipsOk() (*FixedPricePromotionUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *FixedPricePromotionUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *FixedPricePromotionUpdateData) SetRelationships(v PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given FixedPricePromotionUpdateDataRelationships and assigns it to the Relationships field.
+func (o *FixedPricePromotionUpdateData) SetRelationships(v FixedPricePromotionUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableFixedPricePromotionUpdateData) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

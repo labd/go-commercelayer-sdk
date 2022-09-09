@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "billing_info_validation_rules"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationships**](GETBillingInfoValidationRules200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *BillingInfoValidationRuleUpdateData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships`
+`func (o *BillingInfoValidationRuleUpdateData) GetRelationships() BillingInfoValidationRuleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *BillingInfoValidationRuleUpdateData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool)`
+`func (o *BillingInfoValidationRuleUpdateData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *BillingInfoValidationRuleUpdateData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships)`
+`func (o *BillingInfoValidationRuleUpdateData) SetRelationships(v BillingInfoValidationRuleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

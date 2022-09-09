@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // BraintreeGatewayData struct for BraintreeGatewayData
 type BraintreeGatewayData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    GETBraintreeGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETBraintreeGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
@@ -93,9 +93,9 @@ func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGateways200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BraintreeGatewayData) GetRelationships() GETBraintreeGateways200ResponseDataInnerRelationships {
+func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETBraintreeGateways200ResponseDataInnerRelationships
+		var ret BraintreeGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BraintreeGatewayData) GetRelationships() GETBraintreeGateways200Respons
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayData) GetRelationshipsOk() (*GETBraintreeGateways200ResponseDataInnerRelationships, bool) {
+func (o *BraintreeGatewayData) GetRelationshipsOk() (*BraintreeGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BraintreeGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETBraintreeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *BraintreeGatewayData) SetRelationships(v GETBraintreeGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given BraintreeGatewayDataRelationships and assigns it to the Relationships field.
+func (o *BraintreeGatewayData) SetRelationships(v BraintreeGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableBraintreeGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

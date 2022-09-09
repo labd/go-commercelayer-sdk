@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "external_promotions"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes**](PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTExternalPromotions201ResponseDataRelationships**](POSTExternalPromotions201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ExternalPromotionUpdateData) GetRelationships() POSTExternalPromotions201ResponseDataRelationships`
+`func (o *ExternalPromotionUpdateData) GetRelationships() ExternalPromotionCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ExternalPromotionUpdateData) GetRelationshipsOk() (*POSTExternalPromotions201ResponseDataRelationships, bool)`
+`func (o *ExternalPromotionUpdateData) GetRelationshipsOk() (*ExternalPromotionCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ExternalPromotionUpdateData) SetRelationships(v POSTExternalPromotions201ResponseDataRelationships)`
+`func (o *ExternalPromotionUpdateData) SetRelationships(v ExternalPromotionCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

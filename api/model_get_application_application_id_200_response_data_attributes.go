@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -19,7 +19,7 @@ import (
 type GETApplicationApplicationId200ResponseDataAttributes struct {
 	// The application's internal name.
 	Name *string `json:"name,omitempty"`
-	// The application's kind, can be one of: 'sales_channel', 'checkout', 'contentful', 'datocms', 'sanity', 'cli', 'integration', 'webapp', 'zapier', or 'channel'
+	// The application's kind, can be one of: 'sales_channel', 'integration' and 'webapp'.
 	Kind *string `json:"kind,omitempty"`
 	// Indicates if the application has public access.
 	PublicAccess *bool `json:"public_access,omitempty"`
@@ -483,3 +483,5 @@ func (v *NullableGETApplicationApplicationId200ResponseDataAttributes) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

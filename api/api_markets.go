@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // MarketsApiService MarketsApi service
 type MarketsApiService service
 
 type MarketsApiDELETEMarketsMarketIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
-	marketId   string
+	marketId string
 }
 
 func (r MarketsApiDELETEMarketsMarketIdRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Delete a market
 func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId string) MarketsApiDELETEMarketsMarketIdRequest {
 	return MarketsApiDELETEMarketsMarketIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		marketId:   marketId,
+		ctx: ctx,
+		marketId: marketId,
 	}
 }
 
 // Execute executes the request
 func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarketsMarketIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.DELETEMarketsMarketId")
@@ -116,8 +117,8 @@ func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarke
 }
 
 type MarketsApiGETAvalaraAccountIdMarketsRequest struct {
-	ctx              context.Context
-	ApiService       *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	avalaraAccountId string
 }
 
@@ -136,8 +137,8 @@ Retrieve the markets associated to the avalara account
 */
 func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) MarketsApiGETAvalaraAccountIdMarketsRequest {
 	return MarketsApiGETAvalaraAccountIdMarketsRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, aval
 // Execute executes the request
 func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETAvalaraAccountIdMarkets")
@@ -208,8 +209,8 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAva
 }
 
 type MarketsApiGETBillingInfoValidationRuleIdMarketRequest struct {
-	ctx                         context.Context
-	ApiService                  *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	billingInfoValidationRuleId string
 }
 
@@ -228,8 +229,8 @@ Retrieve the market associated to the billing info validation rule
 */
 func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) MarketsApiGETBillingInfoValidationRuleIdMarketRequest {
 	return MarketsApiGETBillingInfoValidationRuleIdMarketRequest{
-		ApiService:                  a,
-		ctx:                         ctx,
+		ApiService: a,
+		ctx: ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
 	}
 }
@@ -237,9 +238,9 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Con
 // Execute executes the request
 func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r MarketsApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETBillingInfoValidationRuleIdMarket")
@@ -300,9 +301,9 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r Market
 }
 
 type MarketsApiGETBundleIdMarketRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
-	bundleId   string
+	bundleId string
 }
 
 func (r MarketsApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
@@ -321,17 +322,17 @@ Retrieve the market associated to the bundle
 func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId string) MarketsApiGETBundleIdMarketRequest {
 	return MarketsApiGETBundleIdMarketRequest{
 		ApiService: a,
-		ctx:        ctx,
-		bundleId:   bundleId,
+		ctx: ctx,
+		bundleId: bundleId,
 	}
 }
 
 // Execute executes the request
 func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETBundleIdMarket")
@@ -392,8 +393,8 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMark
 }
 
 type MarketsApiGETCarrierAccountIdMarketRequest struct {
-	ctx              context.Context
-	ApiService       *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	carrierAccountId string
 }
 
@@ -412,8 +413,8 @@ Retrieve the market associated to the carrier account
 */
 func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) MarketsApiGETCarrierAccountIdMarketRequest {
 	return MarketsApiGETCarrierAccountIdMarketRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		carrierAccountId: carrierAccountId,
 	}
 }
@@ -421,9 +422,9 @@ func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carri
 // Execute executes the request
 func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarrierAccountIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETCarrierAccountIdMarket")
@@ -484,8 +485,8 @@ func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarr
 }
 
 type MarketsApiGETCustomerGroupIdMarketsRequest struct {
-	ctx             context.Context
-	ApiService      *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	customerGroupId string
 }
 
@@ -504,8 +505,8 @@ Retrieve the markets associated to the customer group
 */
 func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) MarketsApiGETCustomerGroupIdMarketsRequest {
 	return MarketsApiGETCustomerGroupIdMarketsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -513,9 +514,9 @@ func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, custo
 // Execute executes the request
 func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETCustomerGroupIdMarkets")
@@ -576,8 +577,8 @@ func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCust
 }
 
 type MarketsApiGETExternalPromotionIdMarketRequest struct {
-	ctx                 context.Context
-	ApiService          *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	externalPromotionId string
 }
 
@@ -596,8 +597,8 @@ Retrieve the market associated to the external promotion
 */
 func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) MarketsApiGETExternalPromotionIdMarketRequest {
 	return MarketsApiGETExternalPromotionIdMarketRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -605,9 +606,9 @@ func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, ex
 // Execute executes the request
 func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETExternalPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETExternalPromotionIdMarket")
@@ -668,8 +669,8 @@ func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETE
 }
 
 type MarketsApiGETExternalTaxCalculatorIdMarketsRequest struct {
-	ctx                     context.Context
-	ApiService              *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	externalTaxCalculatorId string
 }
 
@@ -688,8 +689,8 @@ Retrieve the markets associated to the external tax calculator
 */
 func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) MarketsApiGETExternalTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETExternalTaxCalculatorIdMarketsRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -697,9 +698,9 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Contex
 // Execute executes the request
 func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETExternalTaxCalculatorIdMarkets")
@@ -760,8 +761,8 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsAp
 }
 
 type MarketsApiGETFixedAmountPromotionIdMarketRequest struct {
-	ctx                    context.Context
-	ApiService             *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	fixedAmountPromotionId string
 }
 
@@ -780,8 +781,8 @@ Retrieve the market associated to the fixed amount promotion
 */
 func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) MarketsApiGETFixedAmountPromotionIdMarketRequest {
 	return MarketsApiGETFixedAmountPromotionIdMarketRequest{
-		ApiService:             a,
-		ctx:                    ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -789,9 +790,9 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context,
 // Execute executes the request
 func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETFixedAmountPromotionIdMarket")
@@ -852,8 +853,8 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiG
 }
 
 type MarketsApiGETFixedPricePromotionIdMarketRequest struct {
-	ctx                   context.Context
-	ApiService            *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	fixedPricePromotionId string
 }
 
@@ -872,8 +873,8 @@ Retrieve the market associated to the fixed price promotion
 */
 func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) MarketsApiGETFixedPricePromotionIdMarketRequest {
 	return MarketsApiGETFixedPricePromotionIdMarketRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -881,9 +882,9 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, 
 // Execute executes the request
 func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETFixedPricePromotionIdMarket")
@@ -944,8 +945,8 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGE
 }
 
 type MarketsApiGETFreeGiftPromotionIdMarketRequest struct {
-	ctx                 context.Context
-	ApiService          *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	freeGiftPromotionId string
 }
 
@@ -964,8 +965,8 @@ Retrieve the market associated to the free gift promotion
 */
 func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) MarketsApiGETFreeGiftPromotionIdMarketRequest {
 	return MarketsApiGETFreeGiftPromotionIdMarketRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -973,9 +974,9 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, fr
 // Execute executes the request
 func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETFreeGiftPromotionIdMarket")
@@ -1036,8 +1037,8 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETF
 }
 
 type MarketsApiGETFreeShippingPromotionIdMarketRequest struct {
-	ctx                     context.Context
-	ApiService              *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	freeShippingPromotionId string
 }
 
@@ -1056,8 +1057,8 @@ Retrieve the market associated to the free shipping promotion
 */
 func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) MarketsApiGETFreeShippingPromotionIdMarketRequest {
 	return MarketsApiGETFreeShippingPromotionIdMarketRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -1065,9 +1066,9 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context
 // Execute executes the request
 func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETFreeShippingPromotionIdMarket")
@@ -1128,7 +1129,7 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApi
 }
 
 type MarketsApiGETGiftCardIdMarketRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
 	giftCardId string
 }
@@ -1149,7 +1150,7 @@ Retrieve the market associated to the gift card
 func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) MarketsApiGETGiftCardIdMarketRequest {
 	return MarketsApiGETGiftCardIdMarketRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -1157,9 +1158,9 @@ func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId 
 // Execute executes the request
 func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETGiftCardIdMarket")
@@ -1220,8 +1221,8 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardId
 }
 
 type MarketsApiGETInStockSubscriptionIdMarketRequest struct {
-	ctx                   context.Context
-	ApiService            *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	inStockSubscriptionId string
 }
 
@@ -1240,8 +1241,8 @@ Retrieve the market associated to the in stock subscription
 */
 func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) MarketsApiGETInStockSubscriptionIdMarketRequest {
 	return MarketsApiGETInStockSubscriptionIdMarketRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -1249,9 +1250,9 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, 
 // Execute executes the request
 func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETInStockSubscriptionIdMarket")
@@ -1312,8 +1313,8 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGE
 }
 
 type MarketsApiGETManualTaxCalculatorIdMarketsRequest struct {
-	ctx                   context.Context
-	ApiService            *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	manualTaxCalculatorId string
 }
 
@@ -1332,8 +1333,8 @@ Retrieve the markets associated to the manual tax calculator
 */
 func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) MarketsApiGETManualTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETManualTaxCalculatorIdMarketsRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -1341,9 +1342,9 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context,
 // Execute executes the request
 func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r MarketsApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETManualTaxCalculatorIdMarkets")
@@ -1404,7 +1405,7 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r MarketsApiG
 }
 
 type MarketsApiGETMarketsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
 }
 
@@ -1423,7 +1424,7 @@ List all markets
 func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarketsRequest {
 	return MarketsApiGETMarketsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1431,10 +1432,10 @@ func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarkets
 //  @return GETMarkets200Response
 func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*GETMarkets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETMarkets200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETMarkets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarkets")
@@ -1503,9 +1504,9 @@ func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*G
 }
 
 type MarketsApiGETMarketsMarketIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
-	marketId   string
+	marketId string
 }
 
 func (r MarketsApiGETMarketsMarketIdRequest) Execute() (*GETMarketsMarketId200Response, *http.Response, error) {
@@ -1524,8 +1525,8 @@ Retrieve a market
 func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId string) MarketsApiGETMarketsMarketIdRequest {
 	return MarketsApiGETMarketsMarketIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		marketId:   marketId,
+		ctx: ctx,
+		marketId: marketId,
 	}
 }
 
@@ -1533,10 +1534,10 @@ func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId str
 //  @return GETMarketsMarketId200Response
 func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMarketIdRequest) (*GETMarketsMarketId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETMarketsMarketId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarketsMarketId")
@@ -1606,9 +1607,9 @@ func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMark
 }
 
 type MarketsApiGETOrderIdMarketRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *MarketsApiService
-	orderId    string
+	orderId string
 }
 
 func (r MarketsApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
@@ -1627,17 +1628,17 @@ Retrieve the market associated to the order
 func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string) MarketsApiGETOrderIdMarketRequest {
 	return MarketsApiGETOrderIdMarketRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETOrderIdMarket")
@@ -1698,8 +1699,8 @@ func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarket
 }
 
 type MarketsApiGETOrderSubscriptionIdMarketRequest struct {
-	ctx                 context.Context
-	ApiService          *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	orderSubscriptionId string
 }
 
@@ -1718,8 +1719,8 @@ Retrieve the market associated to the order subscription
 */
 func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) MarketsApiGETOrderSubscriptionIdMarketRequest {
 	return MarketsApiGETOrderSubscriptionIdMarketRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -1727,9 +1728,9 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, or
 // Execute executes the request
 func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETOrderSubscriptionIdMarket")
@@ -1790,8 +1791,8 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETO
 }
 
 type MarketsApiGETOrderValidationRuleIdMarketRequest struct {
-	ctx                   context.Context
-	ApiService            *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	orderValidationRuleId string
 }
 
@@ -1810,8 +1811,8 @@ Retrieve the market associated to the order validation rule
 */
 func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) MarketsApiGETOrderValidationRuleIdMarketRequest {
 	return MarketsApiGETOrderValidationRuleIdMarketRequest{
-		ApiService:            a,
-		ctx:                   ctx,
+		ApiService: a,
+		ctx: ctx,
 		orderValidationRuleId: orderValidationRuleId,
 	}
 }
@@ -1819,9 +1820,9 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, 
 // Execute executes the request
 func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETOrderValidationRuleIdMarket")
@@ -1882,8 +1883,8 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGE
 }
 
 type MarketsApiGETPaymentMethodIdMarketRequest struct {
-	ctx             context.Context
-	ApiService      *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	paymentMethodId string
 }
 
@@ -1902,8 +1903,8 @@ Retrieve the market associated to the payment method
 */
 func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) MarketsApiGETPaymentMethodIdMarketRequest {
 	return MarketsApiGETPaymentMethodIdMarketRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -1911,9 +1912,9 @@ func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymen
 // Execute executes the request
 func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPaymentMethodIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETPaymentMethodIdMarket")
@@ -1974,8 +1975,8 @@ func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPayme
 }
 
 type MarketsApiGETPercentageDiscountPromotionIdMarketRequest struct {
-	ctx                           context.Context
-	ApiService                    *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	percentageDiscountPromotionId string
 }
 
@@ -1994,8 +1995,8 @@ Retrieve the market associated to the percentage discount promotion
 */
 func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) MarketsApiGETPercentageDiscountPromotionIdMarketRequest {
 	return MarketsApiGETPercentageDiscountPromotionIdMarketRequest{
-		ApiService:                    a,
-		ctx:                           ctx,
+		ApiService: a,
+		ctx: ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -2003,9 +2004,9 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.C
 // Execute executes the request
 func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r MarketsApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETPercentageDiscountPromotionIdMarket")
@@ -2066,8 +2067,8 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r Mark
 }
 
 type MarketsApiGETPromotionIdMarketRequest struct {
-	ctx         context.Context
-	ApiService  *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	promotionId string
 }
 
@@ -2086,8 +2087,8 @@ Retrieve the market associated to the promotion
 */
 func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) MarketsApiGETPromotionIdMarketRequest {
 	return MarketsApiGETPromotionIdMarketRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		promotionId: promotionId,
 	}
 }
@@ -2095,9 +2096,9 @@ func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionI
 // Execute executes the request
 func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETPromotionIdMarket")
@@ -2158,8 +2159,8 @@ func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotion
 }
 
 type MarketsApiGETShippingMethodIdMarketRequest struct {
-	ctx              context.Context
-	ApiService       *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	shippingMethodId string
 }
 
@@ -2178,8 +2179,8 @@ Retrieve the market associated to the shipping method
 */
 func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) MarketsApiGETShippingMethodIdMarketRequest {
 	return MarketsApiGETShippingMethodIdMarketRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -2187,9 +2188,9 @@ func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shipp
 // Execute executes the request
 func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShippingMethodIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETShippingMethodIdMarket")
@@ -2250,8 +2251,8 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShip
 }
 
 type MarketsApiGETSkuOptionIdMarketRequest struct {
-	ctx         context.Context
-	ApiService  *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	skuOptionId string
 }
 
@@ -2270,8 +2271,8 @@ Retrieve the market associated to the SKU option
 */
 func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) MarketsApiGETSkuOptionIdMarketRequest {
 	return MarketsApiGETSkuOptionIdMarketRequest{
-		ApiService:  a,
-		ctx:         ctx,
+		ApiService: a,
+		ctx: ctx,
 		skuOptionId: skuOptionId,
 	}
 }
@@ -2279,9 +2280,9 @@ func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionI
 // Execute executes the request
 func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOptionIdMarketRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETSkuOptionIdMarket")
@@ -2342,8 +2343,8 @@ func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOption
 }
 
 type MarketsApiGETTaxCalculatorIdMarketsRequest struct {
-	ctx             context.Context
-	ApiService      *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	taxCalculatorId string
 }
 
@@ -2362,8 +2363,8 @@ Retrieve the markets associated to the tax calculator
 */
 func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) MarketsApiGETTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETTaxCalculatorIdMarketsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -2371,9 +2372,9 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCa
 // Execute executes the request
 func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETTaxCalculatorIdMarkets")
@@ -2434,8 +2435,8 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxC
 }
 
 type MarketsApiGETTaxjarAccountIdMarketsRequest struct {
-	ctx             context.Context
-	ApiService      *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	taxjarAccountId string
 }
 
@@ -2454,8 +2455,8 @@ Retrieve the markets associated to the taxjar account
 */
 func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) MarketsApiGETTaxjarAccountIdMarketsRequest {
 	return MarketsApiGETTaxjarAccountIdMarketsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -2463,9 +2464,9 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxja
 // Execute executes the request
 func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r MarketsApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETTaxjarAccountIdMarkets")
@@ -2526,10 +2527,10 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r MarketsApiGETTaxj
 }
 
 type MarketsApiPATCHMarketsMarketIdRequest struct {
-	ctx          context.Context
-	ApiService   *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	marketUpdate *MarketUpdate
-	marketId     string
+	marketId string
 }
 
 func (r MarketsApiPATCHMarketsMarketIdRequest) MarketUpdate(marketUpdate MarketUpdate) MarketsApiPATCHMarketsMarketIdRequest {
@@ -2553,8 +2554,8 @@ Update a market
 func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId string) MarketsApiPATCHMarketsMarketIdRequest {
 	return MarketsApiPATCHMarketsMarketIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		marketId:   marketId,
+		ctx: ctx,
+		marketId: marketId,
 	}
 }
 
@@ -2562,10 +2563,10 @@ func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId s
 //  @return PATCHMarketsMarketId200Response
 func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarketsMarketIdRequest) (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHMarketsMarketId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.PATCHMarketsMarketId")
@@ -2640,8 +2641,8 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarkets
 }
 
 type MarketsApiPOSTMarketsRequest struct {
-	ctx          context.Context
-	ApiService   *MarketsApiService
+	ctx context.Context
+	ApiService *MarketsApiService
 	marketCreate *MarketCreate
 }
 
@@ -2665,7 +2666,7 @@ Create a market
 func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarketsRequest {
 	return MarketsApiPOSTMarketsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -2673,10 +2674,10 @@ func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarke
 //  @return POSTMarkets201Response
 func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (*POSTMarkets201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTMarkets201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTMarkets201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.POSTMarkets")

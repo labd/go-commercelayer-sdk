@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type CouponUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                        `json:"id"`
-	Attributes    PATCHCouponsCouponId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GETCoupons200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHCouponsCouponId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponUpdateData instantiates a new CouponUpdateData object
@@ -120,9 +120,9 @@ func (o *CouponUpdateData) SetAttributes(v PATCHCouponsCouponId200ResponseDataAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponUpdateData) GetRelationships() GETCoupons200ResponseDataInnerRelationships {
+func (o *CouponUpdateData) GetRelationships() CouponDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCoupons200ResponseDataInnerRelationships
+		var ret CouponDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CouponUpdateData) GetRelationships() GETCoupons200ResponseDataInnerRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponUpdateData) GetRelationshipsOk() (*GETCoupons200ResponseDataInnerRelationships, bool) {
+func (o *CouponUpdateData) GetRelationshipsOk() (*CouponDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CouponUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCoupons200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *CouponUpdateData) SetRelationships(v GETCoupons200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given CouponDataRelationships and assigns it to the Relationships field.
+func (o *CouponUpdateData) SetRelationships(v CouponDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableCouponUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

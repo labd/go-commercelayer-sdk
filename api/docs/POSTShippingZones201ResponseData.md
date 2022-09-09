@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "shipping_zones"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTShippingZones201ResponseDataAttributes**](POSTShippingZones201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to [**GETShippingZones200ResponseDataInnerRelationships**](GETShippingZones200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTShippingZones201ResponseData) GetRelationships() map[string]interface{}`
+`func (o *POSTShippingZones201ResponseData) GetRelationships() GETShippingZones200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTShippingZones201ResponseData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *POSTShippingZones201ResponseData) GetRelationshipsOk() (*GETShippingZones200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTShippingZones201ResponseData) SetRelationships(v map[string]interface{})`
+`func (o *POSTShippingZones201ResponseData) SetRelationships(v GETShippingZones200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PaymentGatewayData struct for PaymentGatewayData
 type PaymentGatewayData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETManualGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ManualGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaymentGatewayData instantiates a new PaymentGatewayData object
@@ -93,9 +93,9 @@ func (o *PaymentGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInn
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaymentGatewayData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships {
+func (o *PaymentGatewayData) GetRelationships() ManualGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETManualGateways200ResponseDataInnerRelationships
+		var ret ManualGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PaymentGatewayData) GetRelationships() GETManualGateways200ResponseData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentGatewayData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool) {
+func (o *PaymentGatewayData) GetRelationshipsOk() (*ManualGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PaymentGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETManualGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PaymentGatewayData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given ManualGatewayDataRelationships and assigns it to the Relationships field.
+func (o *PaymentGatewayData) SetRelationships(v ManualGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePaymentGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETSkuListItems200ResponseDataInnerRelationships struct for GETSkuListItems200ResponseDataInnerRelationships
 type GETSkuListItems200ResponseDataInnerRelationships struct {
-	SkuList *GETBundles200ResponseDataInnerRelationshipsSkuList `json:"sku_list,omitempty"`
-	Sku     *GETBundles200ResponseDataInnerRelationshipsSkus    `json:"sku,omitempty"`
+	SkuList *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku_list,omitempty"`
+	Sku *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku,omitempty"`
 }
 
 // NewGETSkuListItems200ResponseDataInnerRelationships instantiates a new GETSkuListItems200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETSkuListItems200ResponseDataInnerRelationshipsWithDefaults() *GETSkuLi
 }
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETBundles200ResponseDataInnerRelationshipsSkuList {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.SkuList == nil {
-		var ret GETBundles200ResponseDataInnerRelationshipsSkuList
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.SkuList
@@ -49,7 +49,7 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETBundl
 
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETBundles200ResponseDataInnerRelationshipsSkuList, bool) {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.SkuList == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) HasSkuList() bool {
 	return false
 }
 
-// SetSkuList gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkuList and assigns it to the SkuList field.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETBundles200ResponseDataInnerRelationshipsSkuList) {
+// SetSkuList gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the SkuList field.
+func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.SkuList = &v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETBundles200ResponseDataInnerRelationshipsSkus {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Sku == nil {
-		var ret GETBundles200ResponseDataInnerRelationshipsSkus
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Sku
@@ -81,7 +81,7 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETBundles20
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool) {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkus and assigns it to the Sku field.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETBundles200ResponseDataInnerRelationshipsSkus) {
+// SetSku gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Sku field.
+func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Sku = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETSkuListItems200ResponseDataInnerRelationships) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

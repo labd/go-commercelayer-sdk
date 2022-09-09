@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "return_line_items"]
 **Attributes** | [**GETReturnLineItems200ResponseDataInnerAttributes**](GETReturnLineItems200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETReturnLineItems200ResponseDataInnerRelationships**](GETReturnLineItems200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**ReturnLineItemDataRelationships**](ReturnLineItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ReturnLineItemData) GetRelationships() GETReturnLineItems200ResponseDataInnerRelationships`
+`func (o *ReturnLineItemData) GetRelationships() ReturnLineItemDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnLineItemData) GetRelationshipsOk() (*GETReturnLineItems200ResponseDataInnerRelationships, bool)`
+`func (o *ReturnLineItemData) GetRelationshipsOk() (*ReturnLineItemDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnLineItemData) SetRelationships(v GETReturnLineItems200ResponseDataInnerRelationships)`
+`func (o *ReturnLineItemData) SetRelationships(v ReturnLineItemDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

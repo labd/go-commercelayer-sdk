@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // ExternalGatewayData struct for ExternalGatewayData
 type ExternalGatewayData struct {
 	// The resource's type
-	Type          string                                                `json:"type"`
-	Attributes    GETExternalGateways200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETExternalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETExternalGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExternalGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayData instantiates a new ExternalGatewayData object
@@ -93,9 +93,9 @@ func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseData
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalGatewayData) GetRelationships() GETExternalGateways200ResponseDataInnerRelationships {
+func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETExternalGateways200ResponseDataInnerRelationships
+		var ret ExternalGatewayDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *ExternalGatewayData) GetRelationships() GETExternalGateways200ResponseD
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayData) GetRelationshipsOk() (*GETExternalGateways200ResponseDataInnerRelationships, bool) {
+func (o *ExternalGatewayData) GetRelationshipsOk() (*ExternalGatewayDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *ExternalGatewayData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETExternalGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *ExternalGatewayData) SetRelationships(v GETExternalGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given ExternalGatewayDataRelationships and assigns it to the Relationships field.
+func (o *ExternalGatewayData) SetRelationships(v ExternalGatewayDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableExternalGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

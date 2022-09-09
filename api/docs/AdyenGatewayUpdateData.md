@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "adyen_gateways"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes**](PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTAdyenGateways201ResponseDataRelationships**](POSTAdyenGateways201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AdyenGatewayCreateDataRelationships**](AdyenGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *AdyenGatewayUpdateData) GetRelationships() POSTAdyenGateways201ResponseDataRelationships`
+`func (o *AdyenGatewayUpdateData) GetRelationships() AdyenGatewayCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*POSTAdyenGateways201ResponseDataRelationships, bool)`
+`func (o *AdyenGatewayUpdateData) GetRelationshipsOk() (*AdyenGatewayCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *AdyenGatewayUpdateData) SetRelationships(v POSTAdyenGateways201ResponseDataRelationships)`
+`func (o *AdyenGatewayUpdateData) SetRelationships(v AdyenGatewayCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

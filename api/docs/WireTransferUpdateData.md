@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | [default to "wire_transfers"]
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *WireTransferUpdateData) GetRelationships() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships`
+`func (o *WireTransferUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *WireTransferUpdateData) GetRelationshipsOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships, bool)`
+`func (o *WireTransferUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *WireTransferUpdateData) SetRelationships(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataRelationships)`
+`func (o *WireTransferUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // KlarnaGatewayCreateData struct for KlarnaGatewayCreateData
 type KlarnaGatewayCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    POSTKlarnaGateways201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTKlarnaGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTKlarnaGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *KlarnaGatewayCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewKlarnaGatewayCreateData instantiates a new KlarnaGatewayCreateData object
@@ -93,9 +93,9 @@ func (o *KlarnaGatewayCreateData) SetAttributes(v POSTKlarnaGateways201ResponseD
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *KlarnaGatewayCreateData) GetRelationships() POSTKlarnaGateways201ResponseDataRelationships {
+func (o *KlarnaGatewayCreateData) GetRelationships() KlarnaGatewayCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTKlarnaGateways201ResponseDataRelationships
+		var ret KlarnaGatewayCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *KlarnaGatewayCreateData) GetRelationships() POSTKlarnaGateways201Respon
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayCreateData) GetRelationshipsOk() (*POSTKlarnaGateways201ResponseDataRelationships, bool) {
+func (o *KlarnaGatewayCreateData) GetRelationshipsOk() (*KlarnaGatewayCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *KlarnaGatewayCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTKlarnaGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *KlarnaGatewayCreateData) SetRelationships(v POSTKlarnaGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given KlarnaGatewayCreateDataRelationships and assigns it to the Relationships field.
+func (o *KlarnaGatewayCreateData) SetRelationships(v KlarnaGatewayCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableKlarnaGatewayCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

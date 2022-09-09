@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // StockLocationData struct for StockLocationData
 type StockLocationData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETStockLocations200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETStockLocations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETStockLocations200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StockLocationDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockLocationData instantiates a new StockLocationData object
@@ -93,9 +93,9 @@ func (o *StockLocationData) SetAttributes(v GETStockLocations200ResponseDataInne
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *StockLocationData) GetRelationships() GETStockLocations200ResponseDataInnerRelationships {
+func (o *StockLocationData) GetRelationships() StockLocationDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETStockLocations200ResponseDataInnerRelationships
+		var ret StockLocationDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *StockLocationData) GetRelationships() GETStockLocations200ResponseDataI
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockLocationData) GetRelationshipsOk() (*GETStockLocations200ResponseDataInnerRelationships, bool) {
+func (o *StockLocationData) GetRelationshipsOk() (*StockLocationDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *StockLocationData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETStockLocations200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *StockLocationData) SetRelationships(v GETStockLocations200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given StockLocationDataRelationships and assigns it to the Relationships field.
+func (o *StockLocationData) SetRelationships(v StockLocationDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableStockLocationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

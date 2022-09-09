@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHGiftCardsGiftCardId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                            `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
-	Attributes    *PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTGiftCards201ResponseDataRelationships         `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETGiftCards200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHGiftCardsGiftCardId200ResponseData instantiates a new PATCHGiftCardsGiftCardId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHGiftCardsGiftCardId200ResponseData) SetAttributes(v PATCHGiftCards
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseData) GetRelationships() POSTGiftCards201ResponseDataRelationships {
+func (o *PATCHGiftCardsGiftCardId200ResponseData) GetRelationships() GETGiftCards200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTGiftCards201ResponseDataRelationships
+		var ret GETGiftCards200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseData) GetRelationships() POSTGiftCar
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseData) GetRelationshipsOk() (*POSTGiftCards201ResponseDataRelationships, bool) {
+func (o *PATCHGiftCardsGiftCardId200ResponseData) GetRelationshipsOk() (*GETGiftCards200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHGiftCardsGiftCardId200ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTGiftCards201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHGiftCardsGiftCardId200ResponseData) SetRelationships(v POSTGiftCards201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETGiftCards200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHGiftCardsGiftCardId200ResponseData) SetRelationships(v GETGiftCards200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHGiftCardsGiftCardId200ResponseData) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

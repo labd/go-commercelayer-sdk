@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type MerchantUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                `json:"id"`
-	Attributes    PATCHMerchantsMerchantId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHMerchantsMerchantId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHMerchantsMerchantId200ResponseDataAttributes `json:"attributes"`
+	Relationships *MerchantUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMerchantUpdateData instantiates a new MerchantUpdateData object
@@ -120,9 +120,9 @@ func (o *MerchantUpdateData) SetAttributes(v PATCHMerchantsMerchantId200Response
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MerchantUpdateData) GetRelationships() PATCHMerchantsMerchantId200ResponseDataRelationships {
+func (o *MerchantUpdateData) GetRelationships() MerchantUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHMerchantsMerchantId200ResponseDataRelationships
+		var ret MerchantUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *MerchantUpdateData) GetRelationships() PATCHMerchantsMerchantId200Respo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantUpdateData) GetRelationshipsOk() (*PATCHMerchantsMerchantId200ResponseDataRelationships, bool) {
+func (o *MerchantUpdateData) GetRelationshipsOk() (*MerchantUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *MerchantUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHMerchantsMerchantId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *MerchantUpdateData) SetRelationships(v PATCHMerchantsMerchantId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given MerchantUpdateDataRelationships and assigns it to the Relationships field.
+func (o *MerchantUpdateData) SetRelationships(v MerchantUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableMerchantUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

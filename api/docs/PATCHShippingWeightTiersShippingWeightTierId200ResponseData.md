@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "shipping_weight_tiers"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes**](PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**PATCHShipmentsShipmentId200ResponseDataRelationships**](PATCHShipmentsShipmentId200ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETShippingMethodTiers200ResponseDataInnerRelationships**](GETShippingMethodTiers200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) GetRelationships() PATCHShipmentsShipmentId200ResponseDataRelationships`
+`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) GetRelationships() GETShippingMethodTiers200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) GetRelationshipsOk() (*PATCHShipmentsShipmentId200ResponseDataRelationships, bool)`
+`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) GetRelationshipsOk() (*GETShippingMethodTiers200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) SetRelationships(v PATCHShipmentsShipmentId200ResponseDataRelationships)`
+`func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseData) SetRelationships(v GETShippingMethodTiers200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

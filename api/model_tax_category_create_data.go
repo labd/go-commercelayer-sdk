@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // TaxCategoryCreateData struct for TaxCategoryCreateData
 type TaxCategoryCreateData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    POSTTaxCategories201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTTaxCategories201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTTaxCategories201ResponseDataAttributes `json:"attributes"`
+	Relationships *TaxCategoryCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryCreateData instantiates a new TaxCategoryCreateData object
@@ -93,9 +93,9 @@ func (o *TaxCategoryCreateData) SetAttributes(v POSTTaxCategories201ResponseData
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxCategoryCreateData) GetRelationships() POSTTaxCategories201ResponseDataRelationships {
+func (o *TaxCategoryCreateData) GetRelationships() TaxCategoryCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTTaxCategories201ResponseDataRelationships
+		var ret TaxCategoryCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *TaxCategoryCreateData) GetRelationships() POSTTaxCategories201ResponseD
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool) {
+func (o *TaxCategoryCreateData) GetRelationshipsOk() (*TaxCategoryCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *TaxCategoryCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTTaxCategories201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *TaxCategoryCreateData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given TaxCategoryCreateDataRelationships and assigns it to the Relationships field.
+func (o *TaxCategoryCreateData) SetRelationships(v TaxCategoryCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableTaxCategoryCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

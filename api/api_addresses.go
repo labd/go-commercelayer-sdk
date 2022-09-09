@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,13 +20,14 @@ import (
 	"strings"
 )
 
+
 // AddressesApiService AddressesApi service
 type AddressesApiService service
 
 type AddressesApiDELETEAddressesAddressIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	addressId  string
+	addressId string
 }
 
 func (r AddressesApiDELETEAddressesAddressIdRequest) Execute() (*http.Response, error) {
@@ -45,17 +46,17 @@ Delete an address
 func (a *AddressesApiService) DELETEAddressesAddressId(ctx context.Context, addressId string) AddressesApiDELETEAddressesAddressIdRequest {
 	return AddressesApiDELETEAddressesAddressIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		addressId:  addressId,
+		ctx: ctx,
+		addressId: addressId,
 	}
 }
 
 // Execute executes the request
 func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELETEAddressesAddressIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.DELETEAddressesAddressId")
@@ -116,7 +117,7 @@ func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELE
 }
 
 type AddressesApiGETAddressesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
 }
 
@@ -135,7 +136,7 @@ List all addresses
 func (a *AddressesApiService) GETAddresses(ctx context.Context) AddressesApiGETAddressesRequest {
 	return AddressesApiGETAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -143,10 +144,10 @@ func (a *AddressesApiService) GETAddresses(ctx context.Context) AddressesApiGETA
 //  @return GETAddresses200Response
 func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequest) (*GETAddresses200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETAddresses200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETAddresses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETAddresses")
@@ -215,9 +216,9 @@ func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequ
 }
 
 type AddressesApiGETAddressesAddressIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	addressId  string
+	addressId string
 }
 
 func (r AddressesApiGETAddressesAddressIdRequest) Execute() (*GETAddressesAddressId200Response, *http.Response, error) {
@@ -236,8 +237,8 @@ Retrieve an address
 func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, addressId string) AddressesApiGETAddressesAddressIdRequest {
 	return AddressesApiGETAddressesAddressIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		addressId:  addressId,
+		ctx: ctx,
+		addressId: addressId,
 	}
 }
 
@@ -245,10 +246,10 @@ func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, address
 //  @return GETAddressesAddressId200Response
 func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddressesAddressIdRequest) (*GETAddressesAddressId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETAddressesAddressId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETAddressesAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETAddressesAddressId")
@@ -318,8 +319,8 @@ func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddr
 }
 
 type AddressesApiGETBingGeocoderIdAddressesRequest struct {
-	ctx            context.Context
-	ApiService     *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	bingGeocoderId string
 }
 
@@ -338,8 +339,8 @@ Retrieve the addresses associated to the bing geocoder
 */
 func (a *AddressesApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) AddressesApiGETBingGeocoderIdAddressesRequest {
 	return AddressesApiGETBingGeocoderIdAddressesRequest{
-		ApiService:     a,
-		ctx:            ctx,
+		ApiService: a,
+		ctx: ctx,
 		bingGeocoderId: bingGeocoderId,
 	}
 }
@@ -347,9 +348,9 @@ func (a *AddressesApiService) GETBingGeocoderIdAddresses(ctx context.Context, bi
 // Execute executes the request
 func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETBingGeocoderIdAddresses")
@@ -410,8 +411,8 @@ func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGE
 }
 
 type AddressesApiGETCustomerAddressIdAddressRequest struct {
-	ctx               context.Context
-	ApiService        *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	customerAddressId string
 }
 
@@ -430,8 +431,8 @@ Retrieve the address associated to the customer address
 */
 func (a *AddressesApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) AddressesApiGETCustomerAddressIdAddressRequest {
 	return AddressesApiGETCustomerAddressIdAddressRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -439,9 +440,9 @@ func (a *AddressesApiService) GETCustomerAddressIdAddress(ctx context.Context, c
 // Execute executes the request
 func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiGETCustomerAddressIdAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETCustomerAddressIdAddress")
@@ -502,7 +503,7 @@ func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiG
 }
 
 type AddressesApiGETGeocoderIdAddressesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
 	geocoderId string
 }
@@ -523,7 +524,7 @@ Retrieve the addresses associated to the geocoder
 func (a *AddressesApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) AddressesApiGETGeocoderIdAddressesRequest {
 	return AddressesApiGETGeocoderIdAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		geocoderId: geocoderId,
 	}
 }
@@ -531,9 +532,9 @@ func (a *AddressesApiService) GETGeocoderIdAddresses(ctx context.Context, geocod
 // Execute executes the request
 func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETGeocoderIdAddresses")
@@ -594,8 +595,8 @@ func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeo
 }
 
 type AddressesApiGETGoogleGeocoderIdAddressesRequest struct {
-	ctx              context.Context
-	ApiService       *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	googleGeocoderId string
 }
 
@@ -614,8 +615,8 @@ Retrieve the addresses associated to the google geocoder
 */
 func (a *AddressesApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) AddressesApiGETGoogleGeocoderIdAddressesRequest {
 	return AddressesApiGETGoogleGeocoderIdAddressesRequest{
-		ApiService:       a,
-		ctx:              ctx,
+		ApiService: a,
+		ctx: ctx,
 		googleGeocoderId: googleGeocoderId,
 	}
 }
@@ -623,9 +624,9 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, 
 // Execute executes the request
 func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETGoogleGeocoderIdAddresses")
@@ -686,7 +687,7 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApi
 }
 
 type AddressesApiGETMerchantIdAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
 	merchantId string
 }
@@ -707,7 +708,7 @@ Retrieve the address associated to the merchant
 func (a *AddressesApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) AddressesApiGETMerchantIdAddressRequest {
 	return AddressesApiGETMerchantIdAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		merchantId: merchantId,
 	}
 }
@@ -715,9 +716,9 @@ func (a *AddressesApiService) GETMerchantIdAddress(ctx context.Context, merchant
 // Execute executes the request
 func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerchantIdAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETMerchantIdAddress")
@@ -778,9 +779,9 @@ func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerch
 }
 
 type AddressesApiGETOrderIdBillingAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	orderId    string
+	orderId string
 }
 
 func (r AddressesApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
@@ -799,17 +800,17 @@ Retrieve the billing address associated to the order
 func (a *AddressesApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdBillingAddressRequest {
 	return AddressesApiGETOrderIdBillingAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETOrderIdBillingAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETOrderIdBillingAddress")
@@ -870,9 +871,9 @@ func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETO
 }
 
 type AddressesApiGETOrderIdShippingAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	orderId    string
+	orderId string
 }
 
 func (r AddressesApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
@@ -891,17 +892,17 @@ Retrieve the shipping address associated to the order
 func (a *AddressesApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) AddressesApiGETOrderIdShippingAddressRequest {
 	return AddressesApiGETOrderIdShippingAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGETOrderIdShippingAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETOrderIdShippingAddress")
@@ -962,9 +963,9 @@ func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGET
 }
 
 type AddressesApiGETReturnIdDestinationAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	returnId   string
+	returnId string
 }
 
 func (r AddressesApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
@@ -983,17 +984,17 @@ Retrieve the destination address associated to the return
 func (a *AddressesApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdDestinationAddressRequest {
 	return AddressesApiGETReturnIdDestinationAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
-		returnId:   returnId,
+		ctx: ctx,
+		returnId: returnId,
 	}
 }
 
 // Execute executes the request
 func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesApiGETReturnIdDestinationAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETReturnIdDestinationAddress")
@@ -1054,9 +1055,9 @@ func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesAp
 }
 
 type AddressesApiGETReturnIdOriginAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
-	returnId   string
+	returnId string
 }
 
 func (r AddressesApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
@@ -1075,17 +1076,17 @@ Retrieve the origin address associated to the return
 func (a *AddressesApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) AddressesApiGETReturnIdOriginAddressRequest {
 	return AddressesApiGETReturnIdOriginAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
-		returnId:   returnId,
+		ctx: ctx,
+		returnId: returnId,
 	}
 }
 
 // Execute executes the request
 func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETReturnIdOriginAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETReturnIdOriginAddress")
@@ -1146,7 +1147,7 @@ func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETR
 }
 
 type AddressesApiGETShipmentIdOriginAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
 	shipmentId string
 }
@@ -1167,7 +1168,7 @@ Retrieve the origin address associated to the shipment
 func (a *AddressesApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdOriginAddressRequest {
 	return AddressesApiGETShipmentIdOriginAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -1175,9 +1176,9 @@ func (a *AddressesApiService) GETShipmentIdOriginAddress(ctx context.Context, sh
 // Execute executes the request
 func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGETShipmentIdOriginAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETShipmentIdOriginAddress")
@@ -1238,7 +1239,7 @@ func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGE
 }
 
 type AddressesApiGETShipmentIdShippingAddressRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *AddressesApiService
 	shipmentId string
 }
@@ -1259,7 +1260,7 @@ Retrieve the shipping address associated to the shipment
 func (a *AddressesApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) AddressesApiGETShipmentIdShippingAddressRequest {
 	return AddressesApiGETShipmentIdShippingAddressRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -1267,9 +1268,9 @@ func (a *AddressesApiService) GETShipmentIdShippingAddress(ctx context.Context, 
 // Execute executes the request
 func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApiGETShipmentIdShippingAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETShipmentIdShippingAddress")
@@ -1330,8 +1331,8 @@ func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApi
 }
 
 type AddressesApiGETStockLocationIdAddressRequest struct {
-	ctx             context.Context
-	ApiService      *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	stockLocationId string
 }
 
@@ -1350,8 +1351,8 @@ Retrieve the address associated to the stock location
 */
 func (a *AddressesApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) AddressesApiGETStockLocationIdAddressRequest {
 	return AddressesApiGETStockLocationIdAddressRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -1359,9 +1360,9 @@ func (a *AddressesApiService) GETStockLocationIdAddress(ctx context.Context, sto
 // Execute executes the request
 func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGETStockLocationIdAddressRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETStockLocationIdAddress")
@@ -1422,10 +1423,10 @@ func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGET
 }
 
 type AddressesApiPATCHAddressesAddressIdRequest struct {
-	ctx           context.Context
-	ApiService    *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	addressUpdate *AddressUpdate
-	addressId     string
+	addressId string
 }
 
 func (r AddressesApiPATCHAddressesAddressIdRequest) AddressUpdate(addressUpdate AddressUpdate) AddressesApiPATCHAddressesAddressIdRequest {
@@ -1449,8 +1450,8 @@ Update an address
 func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addressId string) AddressesApiPATCHAddressesAddressIdRequest {
 	return AddressesApiPATCHAddressesAddressIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		addressId:  addressId,
+		ctx: ctx,
+		addressId: addressId,
 	}
 }
 
@@ -1458,10 +1459,10 @@ func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addre
 //  @return PATCHAddressesAddressId200Response
 func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCHAddressesAddressIdRequest) (*PATCHAddressesAddressId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHAddressesAddressId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHAddressesAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.PATCHAddressesAddressId")
@@ -1536,8 +1537,8 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 }
 
 type AddressesApiPOSTAddressesRequest struct {
-	ctx           context.Context
-	ApiService    *AddressesApiService
+	ctx context.Context
+	ApiService *AddressesApiService
 	addressCreate *AddressCreate
 }
 
@@ -1561,7 +1562,7 @@ Create an address
 func (a *AddressesApiService) POSTAddresses(ctx context.Context) AddressesApiPOSTAddressesRequest {
 	return AddressesApiPOSTAddressesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -1569,10 +1570,10 @@ func (a *AddressesApiService) POSTAddresses(ctx context.Context) AddressesApiPOS
 //  @return POSTAddresses201Response
 func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRequest) (*POSTAddresses201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTAddresses201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTAddresses201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.POSTAddresses")

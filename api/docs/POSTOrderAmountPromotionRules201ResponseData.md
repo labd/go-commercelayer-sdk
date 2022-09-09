@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "order_amount_promotion_rules"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataAttributes**](POSTOrderAmountPromotionRules201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataRelationships**](POSTOrderAmountPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETOrderAmountPromotionRules200ResponseDataInnerRelationships**](GETOrderAmountPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships`
+`func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool)`
+`func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTOrderAmountPromotionRules201ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships)`
+`func (o *POSTOrderAmountPromotionRules201ResponseData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PromotionRule** | Pointer to [**GETCoupons200ResponseDataInnerRelationshipsPromotionRule**](GETCoupons200ResponseDataInnerRelationshipsPromotionRule.md) |  | [optional] 
+**PromotionRule** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotionRule
 
-`func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRule() GETCoupons200ResponseDataInnerRelationshipsPromotionRule`
+`func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRule() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetPromotionRule returns the PromotionRule field if non-nil, zero value otherwise.
 
 ### GetPromotionRuleOk
 
-`func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRuleOk() (*GETCoupons200ResponseDataInnerRelationshipsPromotionRule, bool)`
+`func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRuleOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetPromotionRuleOk returns a tuple with the PromotionRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotionRule
 
-`func (o *GETCoupons200ResponseDataInnerRelationships) SetPromotionRule(v GETCoupons200ResponseDataInnerRelationshipsPromotionRule)`
+`func (o *GETCoupons200ResponseDataInnerRelationships) SetPromotionRule(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetPromotionRule sets PromotionRule field to given value.
 

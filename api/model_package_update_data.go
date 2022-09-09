@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type PackageUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                              `json:"id"`
-	Attributes    PATCHPackagesPackageId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHPackagesPackageId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHPackagesPackageId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PackageUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageUpdateData instantiates a new PackageUpdateData object
@@ -120,9 +120,9 @@ func (o *PackageUpdateData) SetAttributes(v PATCHPackagesPackageId200ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PackageUpdateData) GetRelationships() PATCHPackagesPackageId200ResponseDataRelationships {
+func (o *PackageUpdateData) GetRelationships() PackageUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHPackagesPackageId200ResponseDataRelationships
+		var ret PackageUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *PackageUpdateData) GetRelationships() PATCHPackagesPackageId200Response
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PackageUpdateData) GetRelationshipsOk() (*PATCHPackagesPackageId200ResponseDataRelationships, bool) {
+func (o *PackageUpdateData) GetRelationshipsOk() (*PackageUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *PackageUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHPackagesPackageId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PackageUpdateData) SetRelationships(v PATCHPackagesPackageId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given PackageUpdateDataRelationships and assigns it to the Relationships field.
+func (o *PackageUpdateData) SetRelationships(v PackageUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullablePackageUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

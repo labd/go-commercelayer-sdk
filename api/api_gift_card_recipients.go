@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // GiftCardRecipientsApiService GiftCardRecipientsApi service
 type GiftCardRecipientsApiService service
 
 type GiftCardRecipientsApiDELETEGiftCardRecipientsGiftCardRecipientIdRequest struct {
-	ctx                 context.Context
-	ApiService          *GiftCardRecipientsApiService
+	ctx context.Context
+	ApiService *GiftCardRecipientsApiService
 	giftCardRecipientId string
 }
 
@@ -44,8 +45,8 @@ Delete a gift card recipient
 */
 func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipientId(ctx context.Context, giftCardRecipientId string) GiftCardRecipientsApiDELETEGiftCardRecipientsGiftCardRecipientIdRequest {
 	return GiftCardRecipientsApiDELETEGiftCardRecipientsGiftCardRecipientIdRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipient
 // Execute executes the request
 func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiDELETEGiftCardRecipientsGiftCardRecipientIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.DELETEGiftCardRecipientsGiftCardRecipientId")
@@ -116,7 +117,7 @@ func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipient
 }
 
 type GiftCardRecipientsApiGETGiftCardIdGiftCardRecipientRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *GiftCardRecipientsApiService
 	giftCardId string
 }
@@ -137,7 +138,7 @@ Retrieve the gift card recipient associated to the gift card
 func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) GiftCardRecipientsApiGETGiftCardIdGiftCardRecipientRequest {
 	return GiftCardRecipientsApiGETGiftCardIdGiftCardRecipientRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipient(ctx contex
 // Execute executes the request
 func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipientExecute(r GiftCardRecipientsApiGETGiftCardIdGiftCardRecipientRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.GETGiftCardIdGiftCardRecipient")
@@ -208,7 +209,7 @@ func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipientExecute(r G
 }
 
 type GiftCardRecipientsApiGETGiftCardRecipientsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *GiftCardRecipientsApiService
 }
 
@@ -227,7 +228,7 @@ List all gift card recipients
 func (a *GiftCardRecipientsApiService) GETGiftCardRecipients(ctx context.Context) GiftCardRecipientsApiGETGiftCardRecipientsRequest {
 	return GiftCardRecipientsApiGETGiftCardRecipientsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipients(ctx context.Context
 //  @return GETGiftCardRecipients200Response
 func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsExecute(r GiftCardRecipientsApiGETGiftCardRecipientsRequest) (*GETGiftCardRecipients200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETGiftCardRecipients200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETGiftCardRecipients200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.GETGiftCardRecipients")
@@ -307,8 +308,8 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsExecute(r GiftCardRe
 }
 
 type GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest struct {
-	ctx                 context.Context
-	ApiService          *GiftCardRecipientsApiService
+	ctx context.Context
+	ApiService *GiftCardRecipientsApiService
 	giftCardRecipientId string
 }
 
@@ -327,8 +328,8 @@ Retrieve a gift card recipient
 */
 func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientId(ctx context.Context, giftCardRecipientId string) GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest {
 	return GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -337,10 +338,10 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientId(
 //  @return GETGiftCardRecipientsGiftCardRecipientId200Response
 func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest) (*GETGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETGiftCardRecipientsGiftCardRecipientId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETGiftCardRecipientsGiftCardRecipientId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.GETGiftCardRecipientsGiftCardRecipientId")
@@ -410,10 +411,10 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdE
 }
 
 type GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest struct {
-	ctx                     context.Context
-	ApiService              *GiftCardRecipientsApiService
+	ctx context.Context
+	ApiService *GiftCardRecipientsApiService
 	giftCardRecipientUpdate *GiftCardRecipientUpdate
-	giftCardRecipientId     string
+	giftCardRecipientId string
 }
 
 func (r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) GiftCardRecipientUpdate(giftCardRecipientUpdate GiftCardRecipientUpdate) GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest {
@@ -436,8 +437,8 @@ Update a gift card recipient
 */
 func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientId(ctx context.Context, giftCardRecipientId string) GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest {
 	return GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest{
-		ApiService:          a,
-		ctx:                 ctx,
+		ApiService: a,
+		ctx: ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -446,10 +447,10 @@ func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientI
 //  @return PATCHGiftCardRecipientsGiftCardRecipientId200Response
 func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) (*PATCHGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHGiftCardRecipientsGiftCardRecipientId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHGiftCardRecipientsGiftCardRecipientId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.PATCHGiftCardRecipientsGiftCardRecipientId")
@@ -524,8 +525,8 @@ func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientI
 }
 
 type GiftCardRecipientsApiPOSTGiftCardRecipientsRequest struct {
-	ctx                     context.Context
-	ApiService              *GiftCardRecipientsApiService
+	ctx context.Context
+	ApiService *GiftCardRecipientsApiService
 	giftCardRecipientCreate *GiftCardRecipientCreate
 }
 
@@ -549,7 +550,7 @@ Create a gift card recipient
 func (a *GiftCardRecipientsApiService) POSTGiftCardRecipients(ctx context.Context) GiftCardRecipientsApiPOSTGiftCardRecipientsRequest {
 	return GiftCardRecipientsApiPOSTGiftCardRecipientsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -557,10 +558,10 @@ func (a *GiftCardRecipientsApiService) POSTGiftCardRecipients(ctx context.Contex
 //  @return POSTGiftCardRecipients201Response
 func (a *GiftCardRecipientsApiService) POSTGiftCardRecipientsExecute(r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) (*POSTGiftCardRecipients201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTGiftCardRecipients201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTGiftCardRecipients201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.POSTGiftCardRecipients")

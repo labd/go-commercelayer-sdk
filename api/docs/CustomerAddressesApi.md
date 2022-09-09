@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerAddressesCustomerAddressId
 
-> PATCHCustomerAddressesCustomerAddressId200Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
+> POSTCustomerAddresses201Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
 
 Update a customer address
 
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerAddressesCustomerAddressId`: PATCHCustomerAddressesCustomerAddressId200Response
+    // response from `PATCHCustomerAddressesCustomerAddressId`: POSTCustomerAddresses201Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCustomerAddressesCustomerAddressId200Response**](PATCHCustomerAddressesCustomerAddressId200Response.md)
+[**POSTCustomerAddresses201Response**](POSTCustomerAddresses201Response.md)
 
 ### Authorization
 

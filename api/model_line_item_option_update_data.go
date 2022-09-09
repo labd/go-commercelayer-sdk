@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type LineItemOptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                            `json:"id"`
-	Attributes    PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *LineItemOptionUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionUpdateData instantiates a new LineItemOptionUpdateData object
@@ -120,9 +120,9 @@ func (o *LineItemOptionUpdateData) SetAttributes(v PATCHLineItemOptionsLineItemO
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *LineItemOptionUpdateData) GetRelationships() PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships {
+func (o *LineItemOptionUpdateData) GetRelationships() LineItemOptionUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships
+		var ret LineItemOptionUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *LineItemOptionUpdateData) GetRelationships() PATCHLineItemOptionsLineIt
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships, bool) {
+func (o *LineItemOptionUpdateData) GetRelationshipsOk() (*LineItemOptionUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *LineItemOptionUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *LineItemOptionUpdateData) SetRelationships(v PATCHLineItemOptionsLineItemOptionId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given LineItemOptionUpdateDataRelationships and assigns it to the Relationships field.
+func (o *LineItemOptionUpdateData) SetRelationships(v LineItemOptionUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableLineItemOptionUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

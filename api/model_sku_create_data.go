@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // SkuCreateData struct for SkuCreateData
 type SkuCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    POSTSkus201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTSkus201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTSkus201ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuCreateData instantiates a new SkuCreateData object
@@ -93,9 +93,9 @@ func (o *SkuCreateData) SetAttributes(v POSTSkus201ResponseDataAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuCreateData) GetRelationships() POSTSkus201ResponseDataRelationships {
+func (o *SkuCreateData) GetRelationships() SkuCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTSkus201ResponseDataRelationships
+		var ret SkuCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *SkuCreateData) GetRelationships() POSTSkus201ResponseDataRelationships 
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuCreateData) GetRelationshipsOk() (*POSTSkus201ResponseDataRelationships, bool) {
+func (o *SkuCreateData) GetRelationshipsOk() (*SkuCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *SkuCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTSkus201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *SkuCreateData) SetRelationships(v POSTSkus201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given SkuCreateDataRelationships and assigns it to the Relationships field.
+func (o *SkuCreateData) SetRelationships(v SkuCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableSkuCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

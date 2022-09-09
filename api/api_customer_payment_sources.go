@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // CustomerPaymentSourcesApiService CustomerPaymentSourcesApi service
 type CustomerPaymentSourcesApiService service
 
 type CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
-	ctx                     context.Context
-	ApiService              *CustomerPaymentSourcesApiService
+	ctx context.Context
+	ApiService *CustomerPaymentSourcesApiService
 	customerPaymentSourceId string
 }
 
@@ -44,8 +45,8 @@ Delete a customer payment source
 */
 func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest {
 	return CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerP
 // Execute executes the request
 func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.DELETECustomerPaymentSourcesCustomerPaymentSourceId")
@@ -116,7 +117,7 @@ func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerP
 }
 
 type CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CustomerPaymentSourcesApiService
 	customerId string
 }
@@ -137,7 +138,7 @@ Retrieve the customer payment sources associated to the customer
 func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest {
 	return CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 		customerId: customerId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSources(c
 // Execute executes the request
 func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETCustomerIdCustomerPaymentSources")
@@ -208,7 +209,7 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSourcesEx
 }
 
 type CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CustomerPaymentSourcesApiService
 }
 
@@ -227,7 +228,7 @@ List all customer payment sources
 func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSources(ctx context.Context) CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest {
 	return CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSources(ctx context
 //  @return GETCustomerPaymentSources200Response
 func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest) (*GETCustomerPaymentSources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCustomerPaymentSources200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCustomerPaymentSources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETCustomerPaymentSources")
@@ -307,8 +308,8 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r Cu
 }
 
 type CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
-	ctx                     context.Context
-	ApiService              *CustomerPaymentSourcesApiService
+	ctx context.Context
+	ApiService *CustomerPaymentSourcesApiService
 	customerPaymentSourceId string
 }
 
@@ -327,8 +328,8 @@ Retrieve a customer payment source
 */
 func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
 	return CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
 	}
 }
@@ -337,10 +338,10 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaym
 //  @return GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
 func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*GETCustomerPaymentSourcesCustomerPaymentSourceId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETCustomerPaymentSourcesCustomerPaymentSourceId")
@@ -410,8 +411,8 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaym
 }
 
 type CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest struct {
-	ctx               context.Context
-	ApiService        *CustomerPaymentSourcesApiService
+	ctx context.Context
+	ApiService *CustomerPaymentSourcesApiService
 	externalPaymentId string
 }
 
@@ -430,8 +431,8 @@ Retrieve the wallet associated to the external payment
 */
 func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest {
 	return CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest{
-		ApiService:        a,
-		ctx:               ctx,
+		ApiService: a,
+		ctx: ctx,
 		externalPaymentId: externalPaymentId,
 	}
 }
@@ -439,9 +440,9 @@ func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWallet(ctx contex
 // Execute executes the request
 func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWalletExecute(r CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETExternalPaymentIdWallet")
@@ -502,9 +503,9 @@ func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWalletExecute(r C
 }
 
 type CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *CustomerPaymentSourcesApiService
-	orderId    string
+	orderId string
 }
 
 func (r CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
@@ -523,17 +524,17 @@ Retrieve the available customer payment sources associated to the order
 func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
 	return CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETOrderIdAvailableCustomerPaymentSources")
@@ -594,10 +595,10 @@ func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSou
 }
 
 type CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
-	ctx                         context.Context
-	ApiService                  *CustomerPaymentSourcesApiService
+	ctx context.Context
+	ApiService *CustomerPaymentSourcesApiService
 	customerPaymentSourceUpdate *CustomerPaymentSourceUpdate
-	customerPaymentSourceId     string
+	customerPaymentSourceId string
 }
 
 func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) CustomerPaymentSourceUpdate(customerPaymentSourceUpdate CustomerPaymentSourceUpdate) CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
@@ -605,7 +606,7 @@ func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourc
 	return r
 }
 
-func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response, *http.Response, error) {
+func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r)
 }
 
@@ -620,20 +621,20 @@ Update a customer payment source
 */
 func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
 	return CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
-		ApiService:              a,
-		ctx:                     ctx,
+		ApiService: a,
+		ctx: ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
 	}
 }
 
 // Execute executes the request
-//  @return PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response
-func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response, *http.Response, error) {
+//  @return POSTCustomerPaymentSources201Response
+func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCustomerPaymentSources201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.PATCHCustomerPaymentSourcesCustomerPaymentSourceId")
@@ -708,8 +709,8 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 }
 
 type CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest struct {
-	ctx                         context.Context
-	ApiService                  *CustomerPaymentSourcesApiService
+	ctx context.Context
+	ApiService *CustomerPaymentSourcesApiService
 	customerPaymentSourceCreate *CustomerPaymentSourceCreate
 }
 
@@ -733,7 +734,7 @@ Create a customer payment source
 func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSources(ctx context.Context) CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest {
 	return CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -741,10 +742,10 @@ func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSources(ctx contex
 //  @return POSTCustomerPaymentSources201Response
 func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest) (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTCustomerPaymentSources201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTCustomerPaymentSources201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.POSTCustomerPaymentSources")

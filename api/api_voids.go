@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // VoidsApiService VoidsApi service
 type VoidsApiService service
 
 type VoidsApiGETAuthorizationIdVoidsRequest struct {
-	ctx             context.Context
-	ApiService      *VoidsApiService
+	ctx context.Context
+	ApiService *VoidsApiService
 	authorizationId string
 }
 
@@ -44,8 +45,8 @@ Retrieve the voids associated to the authorization
 */
 func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) VoidsApiGETAuthorizationIdVoidsRequest {
 	return VoidsApiGETAuthorizationIdVoidsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authoriza
 // Execute executes the request
 func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETAuthorizationIdVoids")
@@ -116,9 +117,9 @@ func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizat
 }
 
 type VoidsApiGETOrderIdVoidsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VoidsApiService
-	orderId    string
+	orderId string
 }
 
 func (r VoidsApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
@@ -137,17 +138,17 @@ Retrieve the voids associated to the order
 func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) VoidsApiGETOrderIdVoidsRequest {
 	return VoidsApiGETOrderIdVoidsRequest{
 		ApiService: a,
-		ctx:        ctx,
-		orderId:    orderId,
+		ctx: ctx,
+		orderId: orderId,
 	}
 }
 
 // Execute executes the request
 func (a *VoidsApiService) GETOrderIdVoidsExecute(r VoidsApiGETOrderIdVoidsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETOrderIdVoids")
@@ -208,7 +209,7 @@ func (a *VoidsApiService) GETOrderIdVoidsExecute(r VoidsApiGETOrderIdVoidsReques
 }
 
 type VoidsApiGETVoidsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VoidsApiService
 }
 
@@ -227,7 +228,7 @@ List all voids
 func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest {
 	return VoidsApiGETVoidsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest 
 //  @return GETVoids200Response
 func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETVoids200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETVoids200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoids")
@@ -307,9 +308,9 @@ func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids2
 }
 
 type VoidsApiGETVoidsVoidIdRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *VoidsApiService
-	voidId     string
+	voidId string
 }
 
 func (r VoidsApiGETVoidsVoidIdRequest) Execute() (*GETVoidsVoidId200Response, *http.Response, error) {
@@ -328,8 +329,8 @@ Retrieve a void
 func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) VoidsApiGETVoidsVoidIdRequest {
 	return VoidsApiGETVoidsVoidIdRequest{
 		ApiService: a,
-		ctx:        ctx,
-		voidId:     voidId,
+		ctx: ctx,
+		voidId: voidId,
 	}
 }
 
@@ -337,10 +338,10 @@ func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) Voi
 //  @return GETVoidsVoidId200Response
 func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest) (*GETVoidsVoidId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETVoidsVoidId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETVoidsVoidId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoidsVoidId")

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type MarketUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHMarketsMarketId200ResponseDataAttributes     `json:"attributes"`
-	Relationships *PATCHMarketsMarketId200ResponseDataRelationships `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHMarketsMarketId200ResponseDataAttributes `json:"attributes"`
+	Relationships *MarketUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMarketUpdateData instantiates a new MarketUpdateData object
@@ -120,9 +120,9 @@ func (o *MarketUpdateData) SetAttributes(v PATCHMarketsMarketId200ResponseDataAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MarketUpdateData) GetRelationships() PATCHMarketsMarketId200ResponseDataRelationships {
+func (o *MarketUpdateData) GetRelationships() MarketUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret PATCHMarketsMarketId200ResponseDataRelationships
+		var ret MarketUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *MarketUpdateData) GetRelationships() PATCHMarketsMarketId200ResponseDat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateData) GetRelationshipsOk() (*PATCHMarketsMarketId200ResponseDataRelationships, bool) {
+func (o *MarketUpdateData) GetRelationshipsOk() (*MarketUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *MarketUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given PATCHMarketsMarketId200ResponseDataRelationships and assigns it to the Relationships field.
-func (o *MarketUpdateData) SetRelationships(v PATCHMarketsMarketId200ResponseDataRelationships) {
+// SetRelationships gets a reference to the given MarketUpdateDataRelationships and assigns it to the Relationships field.
+func (o *MarketUpdateData) SetRelationships(v MarketUpdateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableMarketUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // GETBillingInfoValidationRules200ResponseDataInnerRelationships struct for GETBillingInfoValidationRules200ResponseDataInnerRelationships
 type GETBillingInfoValidationRules200ResponseDataInnerRelationships struct {
-	Market *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets `json:"market,omitempty"`
+	Market *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"market,omitempty"`
 }
 
 // NewGETBillingInfoValidationRules200ResponseDataInnerRelationships instantiates a new GETBillingInfoValidationRules200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETBillingInfoValidationRules200ResponseDataInnerRelationshipsWithDefaul
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets {
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Market == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Market
@@ -48,7 +48,7 @@ func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMark
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets, bool) {
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) HasMark
 	return false
 }
 
-// SetMarket gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets and assigns it to the Market field.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) {
+// SetMarket gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Market field.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Market = &v
 }
 
@@ -112,3 +112,5 @@ func (v *NullableGETBillingInfoValidationRules200ResponseDataInnerRelationships)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

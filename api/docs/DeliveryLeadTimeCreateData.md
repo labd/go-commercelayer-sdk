@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "delivery_lead_times"]
 **Attributes** | [**POSTDeliveryLeadTimes201ResponseDataAttributes**](POSTDeliveryLeadTimes201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTDeliveryLeadTimes201ResponseDataRelationships**](POSTDeliveryLeadTimes201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**DeliveryLeadTimeCreateDataRelationships**](DeliveryLeadTimeCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *DeliveryLeadTimeCreateData) GetRelationships() POSTDeliveryLeadTimes201ResponseDataRelationships`
+`func (o *DeliveryLeadTimeCreateData) GetRelationships() DeliveryLeadTimeCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *DeliveryLeadTimeCreateData) GetRelationshipsOk() (*POSTDeliveryLeadTimes201ResponseDataRelationships, bool)`
+`func (o *DeliveryLeadTimeCreateData) GetRelationshipsOk() (*DeliveryLeadTimeCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *DeliveryLeadTimeCreateData) SetRelationships(v POSTDeliveryLeadTimes201ResponseDataRelationships)`
+`func (o *DeliveryLeadTimeCreateData) SetRelationships(v DeliveryLeadTimeCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

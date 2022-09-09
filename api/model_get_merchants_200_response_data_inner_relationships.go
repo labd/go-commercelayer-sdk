@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETMerchants200ResponseDataInnerRelationships struct for GETMerchants200ResponseDataInnerRelationships
 type GETMerchants200ResponseDataInnerRelationships struct {
-	Address     *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses     `json:"address,omitempty"`
-	Attachments *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments `json:"attachments,omitempty"`
+	Address *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"address,omitempty"`
+	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
 }
 
 // NewGETMerchants200ResponseDataInnerRelationships instantiates a new GETMerchants200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETMerchants200ResponseDataInnerRelationshipsWithDefaults() *GETMerchant
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
-func (o *GETMerchants200ResponseDataInnerRelationships) GetAddress() GETBingGeocoders200ResponseDataInnerRelationshipsAddresses {
+func (o *GETMerchants200ResponseDataInnerRelationships) GetAddress() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.Address == nil {
-		var ret GETBingGeocoders200ResponseDataInnerRelationshipsAddresses
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.Address
@@ -49,7 +49,7 @@ func (o *GETMerchants200ResponseDataInnerRelationships) GetAddress() GETBingGeoc
 
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETMerchants200ResponseDataInnerRelationships) GetAddressOk() (*GETBingGeocoders200ResponseDataInnerRelationshipsAddresses, bool) {
+func (o *GETMerchants200ResponseDataInnerRelationships) GetAddressOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.Address == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETMerchants200ResponseDataInnerRelationships) HasAddress() bool {
 	return false
 }
 
-// SetAddress gets a reference to the given GETBingGeocoders200ResponseDataInnerRelationshipsAddresses and assigns it to the Address field.
-func (o *GETMerchants200ResponseDataInnerRelationships) SetAddress(v GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) {
+// SetAddress gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Address field.
+func (o *GETMerchants200ResponseDataInnerRelationships) SetAddress(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.Address = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETMerchants200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+func (o *GETMerchants200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
 	if o == nil || o.Attachments == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 		return ret
 	}
 	return *o.Attachments
@@ -81,7 +81,7 @@ func (o *GETMerchants200ResponseDataInnerRelationships) GetAttachments() GETAval
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETMerchants200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+func (o *GETMerchants200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETMerchants200ResponseDataInnerRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
-func (o *GETMerchants200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
+func (o *GETMerchants200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
 	o.Attachments = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETMerchants200ResponseDataInnerRelationships) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

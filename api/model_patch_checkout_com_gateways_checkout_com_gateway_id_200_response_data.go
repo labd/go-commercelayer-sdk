@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                                `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                 `json:"links,omitempty"`
-	Attributes    *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTCheckoutComGateways201ResponseDataRelationships                   `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCheckoutComGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData instantiates a new PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData object
@@ -176,9 +176,9 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) SetAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationships() POSTCheckoutComGateways201ResponseDataRelationships {
+func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationships() GETCheckoutComGateways200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTCheckoutComGateways201ResponseDataRelationships
+		var ret GETCheckoutComGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelatio
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationshipsOk() (*POSTCheckoutComGateways201ResponseDataRelationships, bool) {
+func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) GetRelationshipsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) HasRelatio
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCheckoutComGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) SetRelationships(v POSTCheckoutComGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETCheckoutComGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) SetRelationships(v GETCheckoutComGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

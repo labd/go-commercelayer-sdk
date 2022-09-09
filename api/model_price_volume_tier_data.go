@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // PriceVolumeTierData struct for PriceVolumeTierData
 type PriceVolumeTierData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETPriceTiers200ResponseDataInnerAttributes     `json:"attributes"`
-	Relationships *GETPriceTiers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes GETPriceTiers200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PriceTierDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierData instantiates a new PriceVolumeTierData object
@@ -93,9 +93,9 @@ func (o *PriceVolumeTierData) SetAttributes(v GETPriceTiers200ResponseDataInnerA
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PriceVolumeTierData) GetRelationships() GETPriceTiers200ResponseDataInnerRelationships {
+func (o *PriceVolumeTierData) GetRelationships() PriceTierDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETPriceTiers200ResponseDataInnerRelationships
+		var ret PriceTierDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *PriceVolumeTierData) GetRelationships() GETPriceTiers200ResponseDataInn
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierData) GetRelationshipsOk() (*GETPriceTiers200ResponseDataInnerRelationships, bool) {
+func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceTierDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *PriceVolumeTierData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETPriceTiers200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PriceVolumeTierData) SetRelationships(v GETPriceTiers200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given PriceTierDataRelationships and assigns it to the Relationships field.
+func (o *PriceVolumeTierData) SetRelationships(v PriceTierDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullablePriceVolumeTierData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

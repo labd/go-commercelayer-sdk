@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type CouponRecipientUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                          `json:"id"`
-	Attributes    PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
-	Relationships *POSTCouponRecipients201ResponseDataRelationships               `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponRecipientCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCouponRecipientUpdateData instantiates a new CouponRecipientUpdateData object
@@ -120,9 +120,9 @@ func (o *CouponRecipientUpdateData) SetAttributes(v PATCHCouponRecipientsCouponR
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponRecipientUpdateData) GetRelationships() POSTCouponRecipients201ResponseDataRelationships {
+func (o *CouponRecipientUpdateData) GetRelationships() CouponRecipientCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTCouponRecipients201ResponseDataRelationships
+		var ret CouponRecipientCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -130,7 +130,7 @@ func (o *CouponRecipientUpdateData) GetRelationships() POSTCouponRecipients201Re
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientUpdateData) GetRelationshipsOk() (*POSTCouponRecipients201ResponseDataRelationships, bool) {
+func (o *CouponRecipientUpdateData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -146,8 +146,8 @@ func (o *CouponRecipientUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCouponRecipients201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *CouponRecipientUpdateData) SetRelationships(v POSTCouponRecipients201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given CouponRecipientCreateDataRelationships and assigns it to the Relationships field.
+func (o *CouponRecipientUpdateData) SetRelationships(v CouponRecipientCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -203,3 +203,5 @@ func (v *NullableCouponRecipientUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

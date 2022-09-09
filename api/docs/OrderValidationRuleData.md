@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "order_validation_rules"]
 **Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationships**](GETBillingInfoValidationRules200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *OrderValidationRuleData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships`
+`func (o *OrderValidationRuleData) GetRelationships() BillingInfoValidationRuleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *OrderValidationRuleData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool)`
+`func (o *OrderValidationRuleData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *OrderValidationRuleData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships)`
+`func (o *OrderValidationRuleData) SetRelationships(v BillingInfoValidationRuleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

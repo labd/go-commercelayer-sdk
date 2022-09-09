@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The application&#39;s internal name. | [optional] 
-**Kind** | Pointer to **string** | The application&#39;s kind, can be one of: &#39;sales_channel&#39;, &#39;checkout&#39;, &#39;contentful&#39;, &#39;datocms&#39;, &#39;sanity&#39;, &#39;cli&#39;, &#39;integration&#39;, &#39;webapp&#39;, &#39;zapier&#39;, or &#39;channel&#39; | [optional] 
+**Kind** | Pointer to **string** | The application&#39;s kind, can be one of: &#39;sales_channel&#39;, &#39;integration&#39; and &#39;webapp&#39;. | [optional] 
 **PublicAccess** | Pointer to **bool** | Indicates if the application has public access. | [optional] 
 **RedirectUri** | Pointer to **string** | The application&#39;s redirect URI. | [optional] 
 **Scopes** | Pointer to **string** | The application&#39;s scopes. | [optional] 

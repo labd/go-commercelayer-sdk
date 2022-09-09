@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ManualTaxCalculator** | Pointer to [**GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator**](GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator.md) |  | [optional] 
+**ManualTaxCalculator** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetManualTaxCalculator
 
-`func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculator() GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator`
+`func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculator() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
 
 GetManualTaxCalculator returns the ManualTaxCalculator field if non-nil, zero value otherwise.
 
 ### GetManualTaxCalculatorOk
 
-`func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculatorOk() (*GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator, bool)`
+`func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculatorOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
 
 GetManualTaxCalculatorOk returns a tuple with the ManualTaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetManualTaxCalculator
 
-`func (o *GETTaxRules200ResponseDataInnerRelationships) SetManualTaxCalculator(v GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator)`
+`func (o *GETTaxRules200ResponseDataInnerRelationships) SetManualTaxCalculator(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
 
 SetManualTaxCalculator sets ManualTaxCalculator field to given value.
 

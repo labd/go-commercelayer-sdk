@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "tax_rules"]
 **Attributes** | [**GETTaxRules200ResponseDataInnerAttributes**](GETTaxRules200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETTaxRules200ResponseDataInnerRelationships**](GETTaxRules200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**TaxRuleDataRelationships**](TaxRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *TaxRuleData) GetRelationships() GETTaxRules200ResponseDataInnerRelationships`
+`func (o *TaxRuleData) GetRelationships() TaxRuleDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *TaxRuleData) GetRelationshipsOk() (*GETTaxRules200ResponseDataInnerRelationships, bool)`
+`func (o *TaxRuleData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *TaxRuleData) SetRelationships(v GETTaxRules200ResponseDataInnerRelationships)`
+`func (o *TaxRuleData) SetRelationships(v TaxRuleDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

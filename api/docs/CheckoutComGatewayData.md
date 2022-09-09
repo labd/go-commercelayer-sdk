@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "checkout_com_gateways"]
 **Attributes** | [**GETCheckoutComGateways200ResponseDataInnerAttributes**](GETCheckoutComGateways200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETCheckoutComGateways200ResponseDataInnerRelationships**](GETCheckoutComGateways200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CheckoutComGatewayDataRelationships**](CheckoutComGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CheckoutComGatewayData) GetRelationships() GETCheckoutComGateways200ResponseDataInnerRelationships`
+`func (o *CheckoutComGatewayData) GetRelationships() CheckoutComGatewayDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CheckoutComGatewayData) GetRelationshipsOk() (*GETCheckoutComGateways200ResponseDataInnerRelationships, bool)`
+`func (o *CheckoutComGatewayData) GetRelationshipsOk() (*CheckoutComGatewayDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CheckoutComGatewayData) SetRelationships(v GETCheckoutComGateways200ResponseDataInnerRelationships)`
+`func (o *CheckoutComGatewayData) SetRelationships(v CheckoutComGatewayDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTOrders201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                 `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks  `json:"links,omitempty"`
-	Attributes    *POSTOrders201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTOrders201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTOrders201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETOrders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTOrders201ResponseData instantiates a new POSTOrders201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTOrders201ResponseData) SetAttributes(v POSTOrders201ResponseDataAtt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseData) GetRelationships() POSTOrders201ResponseDataRelationships {
+func (o *POSTOrders201ResponseData) GetRelationships() GETOrders200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTOrders201ResponseDataRelationships
+		var ret GETOrders200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTOrders201ResponseData) GetRelationships() POSTOrders201ResponseData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseData) GetRelationshipsOk() (*POSTOrders201ResponseDataRelationships, bool) {
+func (o *POSTOrders201ResponseData) GetRelationshipsOk() (*GETOrders200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTOrders201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTOrders201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTOrders201ResponseData) SetRelationships(v POSTOrders201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETOrders200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTOrders201ResponseData) SetRelationships(v GETOrders200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTOrders201ResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

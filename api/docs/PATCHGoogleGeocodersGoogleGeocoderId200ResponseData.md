@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "google_geocoders"]
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes**](PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to [**GETBingGeocoders200ResponseDataInnerRelationships**](GETBingGeocoders200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) GetRelationships() map[string]interface{}`
+`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) SetRelationships(v map[string]interface{})`
+`func (o *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

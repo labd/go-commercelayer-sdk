@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,12 +20,13 @@ import (
 	"strings"
 )
 
+
 // KlarnaPaymentsApiService KlarnaPaymentsApi service
 type KlarnaPaymentsApiService service
 
 type KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest struct {
-	ctx             context.Context
-	ApiService      *KlarnaPaymentsApiService
+	ctx context.Context
+	ApiService *KlarnaPaymentsApiService
 	klarnaPaymentId string
 }
 
@@ -44,8 +45,8 @@ Delete a klarna payment
 */
 func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		klarnaPaymentId: klarnaPaymentId,
 	}
 }
@@ -53,9 +54,9 @@ func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentId(ctx conte
 // Execute executes the request
 func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentIdExecute(r KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodDelete
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodDelete
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.DELETEKlarnaPaymentsKlarnaPaymentId")
@@ -116,8 +117,8 @@ func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentIdExecute(r 
 }
 
 type KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
-	ctx             context.Context
-	ApiService      *KlarnaPaymentsApiService
+	ctx context.Context
+	ApiService *KlarnaPaymentsApiService
 	klarnaGatewayId string
 }
 
@@ -136,8 +137,8 @@ Retrieve the klarna payments associated to the klarna gateway
 */
 func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		klarnaGatewayId: klarnaGatewayId,
 	}
 }
@@ -145,9 +146,9 @@ func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.
 // Execute executes the request
 func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.GETKlarnaGatewayIdKlarnaPayments")
@@ -208,7 +209,7 @@ func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r Kla
 }
 
 type KlarnaPaymentsApiGETKlarnaPaymentsRequest struct {
-	ctx        context.Context
+	ctx context.Context
 	ApiService *KlarnaPaymentsApiService
 }
 
@@ -227,7 +228,7 @@ List all klarna payments
 func (a *KlarnaPaymentsApiService) GETKlarnaPayments(ctx context.Context) KlarnaPaymentsApiGETKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiGETKlarnaPaymentsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -235,10 +236,10 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPayments(ctx context.Context) Klarna
 //  @return GETKlarnaPayments200Response
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsExecute(r KlarnaPaymentsApiGETKlarnaPaymentsRequest) (*GETKlarnaPayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETKlarnaPayments200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETKlarnaPayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.GETKlarnaPayments")
@@ -307,8 +308,8 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsExecute(r KlarnaPaymentsApiG
 }
 
 type KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest struct {
-	ctx             context.Context
-	ApiService      *KlarnaPaymentsApiService
+	ctx context.Context
+	ApiService *KlarnaPaymentsApiService
 	klarnaPaymentId string
 }
 
@@ -327,8 +328,8 @@ Retrieve a klarna payment
 */
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		klarnaPaymentId: klarnaPaymentId,
 	}
 }
@@ -337,10 +338,10 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentId(ctx context.
 //  @return GETKlarnaPaymentsKlarnaPaymentId200Response
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest) (*GETKlarnaPaymentsKlarnaPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodGet
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *GETKlarnaPaymentsKlarnaPaymentId200Response
+		localVarHTTPMethod   = http.MethodGet
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *GETKlarnaPaymentsKlarnaPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.GETKlarnaPaymentsKlarnaPaymentId")
@@ -410,10 +411,10 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r Kla
 }
 
 type KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest struct {
-	ctx                 context.Context
-	ApiService          *KlarnaPaymentsApiService
+	ctx context.Context
+	ApiService *KlarnaPaymentsApiService
 	klarnaPaymentUpdate *KlarnaPaymentUpdate
-	klarnaPaymentId     string
+	klarnaPaymentId string
 }
 
 func (r KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest) KlarnaPaymentUpdate(klarnaPaymentUpdate KlarnaPaymentUpdate) KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest {
@@ -436,8 +437,8 @@ Update a klarna payment
 */
 func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest{
-		ApiService:      a,
-		ctx:             ctx,
+		ApiService: a,
+		ctx: ctx,
 		klarnaPaymentId: klarnaPaymentId,
 	}
 }
@@ -446,10 +447,10 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentId(ctx contex
 //  @return PATCHKlarnaPaymentsKlarnaPaymentId200Response
 func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest) (*PATCHKlarnaPaymentsKlarnaPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPatch
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *PATCHKlarnaPaymentsKlarnaPaymentId200Response
+		localVarHTTPMethod   = http.MethodPatch
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *PATCHKlarnaPaymentsKlarnaPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.PATCHKlarnaPaymentsKlarnaPaymentId")
@@ -524,8 +525,8 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r K
 }
 
 type KlarnaPaymentsApiPOSTKlarnaPaymentsRequest struct {
-	ctx                 context.Context
-	ApiService          *KlarnaPaymentsApiService
+	ctx context.Context
+	ApiService *KlarnaPaymentsApiService
 	klarnaPaymentCreate *KlarnaPaymentCreate
 }
 
@@ -549,7 +550,7 @@ Create a klarna payment
 func (a *KlarnaPaymentsApiService) POSTKlarnaPayments(ctx context.Context) KlarnaPaymentsApiPOSTKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiPOSTKlarnaPaymentsRequest{
 		ApiService: a,
-		ctx:        ctx,
+		ctx: ctx,
 	}
 }
 
@@ -557,10 +558,10 @@ func (a *KlarnaPaymentsApiService) POSTKlarnaPayments(ctx context.Context) Klarn
 //  @return POSTKlarnaPayments201Response
 func (a *KlarnaPaymentsApiService) POSTKlarnaPaymentsExecute(r KlarnaPaymentsApiPOSTKlarnaPaymentsRequest) (*POSTKlarnaPayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod  = http.MethodPost
-		localVarPostBody    interface{}
-		formFiles           []formFile
-		localVarReturnValue *POSTKlarnaPayments201Response
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		localVarReturnValue  *POSTKlarnaPayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaPaymentsApiService.POSTKlarnaPayments")

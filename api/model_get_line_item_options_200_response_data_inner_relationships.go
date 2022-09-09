@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETLineItemOptions200ResponseDataInnerRelationships struct for GETLineItemOptions200ResponseDataInnerRelationships
 type GETLineItemOptions200ResponseDataInnerRelationships struct {
-	LineItem  *GETLineItemOptions200ResponseDataInnerRelationshipsLineItem  `json:"line_item,omitempty"`
-	SkuOption *GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption `json:"sku_option,omitempty"`
+	LineItem *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"line_item,omitempty"`
+	SkuOption *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku_option,omitempty"`
 }
 
 // NewGETLineItemOptions200ResponseDataInnerRelationships instantiates a new GETLineItemOptions200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETLineItemOptions200ResponseDataInnerRelationshipsWithDefaults() *GETLi
 }
 
 // GetLineItem returns the LineItem field value if set, zero value otherwise.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItem() GETLineItemOptions200ResponseDataInnerRelationshipsLineItem {
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.LineItem == nil {
-		var ret GETLineItemOptions200ResponseDataInnerRelationshipsLineItem
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.LineItem
@@ -49,7 +49,7 @@ func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItem() GETL
 
 // GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItemOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsLineItem, bool) {
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.LineItem == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETLineItemOptions200ResponseDataInnerRelationships) HasLineItem() bool
 	return false
 }
 
-// SetLineItem gets a reference to the given GETLineItemOptions200ResponseDataInnerRelationshipsLineItem and assigns it to the LineItem field.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetLineItem(v GETLineItemOptions200ResponseDataInnerRelationshipsLineItem) {
+// SetLineItem gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the LineItem field.
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.LineItem = &v
 }
 
 // GetSkuOption returns the SkuOption field value if set, zero value otherwise.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOption() GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption {
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOption() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.SkuOption == nil {
-		var ret GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.SkuOption
@@ -81,7 +81,7 @@ func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOption() GET
 
 // GetSkuOptionOk returns a tuple with the SkuOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOptionOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption, bool) {
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) GetSkuOptionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.SkuOption == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETLineItemOptions200ResponseDataInnerRelationships) HasSkuOption() boo
 	return false
 }
 
-// SetSkuOption gets a reference to the given GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption and assigns it to the SkuOption field.
-func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetSkuOption(v GETLineItemOptions200ResponseDataInnerRelationshipsSkuOption) {
+// SetSkuOption gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the SkuOption field.
+func (o *GETLineItemOptions200ResponseDataInnerRelationships) SetSkuOption(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.SkuOption = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETLineItemOptions200ResponseDataInnerRelationships) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

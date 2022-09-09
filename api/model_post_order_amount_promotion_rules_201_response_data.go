@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTOrderAmountPromotionRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                    `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
-	Attributes    *POSTOrderAmountPromotionRules201ResponseDataAttributes    `json:"attributes,omitempty"`
-	Relationships *POSTOrderAmountPromotionRules201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTOrderAmountPromotionRules201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETOrderAmountPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTOrderAmountPromotionRules201ResponseData instantiates a new POSTOrderAmountPromotionRules201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTOrderAmountPromotionRules201ResponseData) SetAttributes(v POSTOrder
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships {
+func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTOrderAmountPromotionRules201ResponseDataRelationships
+		var ret GETOrderAmountPromotionRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationships() POSTOr
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool) {
+func (o *POSTOrderAmountPromotionRules201ResponseData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTOrderAmountPromotionRules201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTOrderAmountPromotionRules201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTOrderAmountPromotionRules201ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETOrderAmountPromotionRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTOrderAmountPromotionRules201ResponseData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTOrderAmountPromotionRules201ResponseData) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

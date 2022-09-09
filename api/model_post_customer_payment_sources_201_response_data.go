@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type POSTCustomerPaymentSources201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                 `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                  `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes             `json:"attributes,omitempty"`
-	Relationships *POSTCustomerPaymentSources201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type *string `json:"type,omitempty"`
+	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
+	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCustomerPaymentSources200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTCustomerPaymentSources201ResponseData instantiates a new POSTCustomerPaymentSources201ResponseData object
@@ -176,9 +176,9 @@ func (o *POSTCustomerPaymentSources201ResponseData) SetAttributes(v POSTAdyenPay
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTCustomerPaymentSources201ResponseData) GetRelationships() POSTCustomerPaymentSources201ResponseDataRelationships {
+func (o *POSTCustomerPaymentSources201ResponseData) GetRelationships() GETCustomerPaymentSources200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTCustomerPaymentSources201ResponseDataRelationships
+		var ret GETCustomerPaymentSources200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -186,7 +186,7 @@ func (o *POSTCustomerPaymentSources201ResponseData) GetRelationships() POSTCusto
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCustomerPaymentSources201ResponseData) GetRelationshipsOk() (*POSTCustomerPaymentSources201ResponseDataRelationships, bool) {
+func (o *POSTCustomerPaymentSources201ResponseData) GetRelationshipsOk() (*GETCustomerPaymentSources200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -202,8 +202,8 @@ func (o *POSTCustomerPaymentSources201ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTCustomerPaymentSources201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTCustomerPaymentSources201ResponseData) SetRelationships(v POSTCustomerPaymentSources201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETCustomerPaymentSources200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTCustomerPaymentSources201ResponseData) SetRelationships(v GETCustomerPaymentSources200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
@@ -262,3 +262,5 @@ func (v *NullablePOSTCustomerPaymentSources201ResponseData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

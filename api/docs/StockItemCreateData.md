@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "stock_items"]
 **Attributes** | [**POSTStockItems201ResponseDataAttributes**](POSTStockItems201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTStockItems201ResponseDataRelationships**](POSTStockItems201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**StockItemCreateDataRelationships**](StockItemCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *StockItemCreateData) GetRelationships() POSTStockItems201ResponseDataRelationships`
+`func (o *StockItemCreateData) GetRelationships() StockItemCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *StockItemCreateData) GetRelationshipsOk() (*POSTStockItems201ResponseDataRelationships, bool)`
+`func (o *StockItemCreateData) GetRelationshipsOk() (*StockItemCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *StockItemCreateData) SetRelationships(v POSTStockItems201ResponseDataRelationships)`
+`func (o *StockItemCreateData) SetRelationships(v StockItemCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

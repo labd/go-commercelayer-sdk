@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // MarketCreateData struct for MarketCreateData
 type MarketCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    POSTMarkets201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTMarkets201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTMarkets201ResponseDataAttributes `json:"attributes"`
+	Relationships *MarketCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMarketCreateData instantiates a new MarketCreateData object
@@ -93,9 +93,9 @@ func (o *MarketCreateData) SetAttributes(v POSTMarkets201ResponseDataAttributes)
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *MarketCreateData) GetRelationships() POSTMarkets201ResponseDataRelationships {
+func (o *MarketCreateData) GetRelationships() MarketCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTMarkets201ResponseDataRelationships
+		var ret MarketCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *MarketCreateData) GetRelationships() POSTMarkets201ResponseDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketCreateData) GetRelationshipsOk() (*POSTMarkets201ResponseDataRelationships, bool) {
+func (o *MarketCreateData) GetRelationshipsOk() (*MarketCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *MarketCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTMarkets201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *MarketCreateData) SetRelationships(v POSTMarkets201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given MarketCreateDataRelationships and assigns it to the Relationships field.
+func (o *MarketCreateData) SetRelationships(v MarketCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableMarketCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

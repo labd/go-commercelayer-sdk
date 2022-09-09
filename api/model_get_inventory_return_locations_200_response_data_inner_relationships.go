@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETInventoryReturnLocations200ResponseDataInnerRelationships struct for GETInventoryReturnLocations200ResponseDataInnerRelationships
 type GETInventoryReturnLocations200ResponseDataInnerRelationships struct {
-	StockLocation  *GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation         `json:"stock_location,omitempty"`
-	InventoryModel *GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel `json:"inventory_model,omitempty"`
+	StockLocation *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"stock_location,omitempty"`
+	InventoryModel *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"inventory_model,omitempty"`
 }
 
 // NewGETInventoryReturnLocations200ResponseDataInnerRelationships instantiates a new GETInventoryReturnLocations200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETInventoryReturnLocations200ResponseDataInnerRelationshipsWithDefaults
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocation() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation {
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocation() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.StockLocation == nil {
-		var ret GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.StockLocation
@@ -49,7 +49,7 @@ func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockL
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocationOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation, bool) {
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocationOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) HasStockL
 	return false
 }
 
-// SetStockLocation gets a reference to the given GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetStockLocation(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the StockLocation field.
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetStockLocation(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.StockLocation = &v
 }
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModel() GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel {
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModel() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
 	if o == nil || o.InventoryModel == nil {
-		var ret GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel
+		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
 		return ret
 	}
 	return *o.InventoryModel
@@ -81,7 +81,7 @@ func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInvent
 
 // GetInventoryModelOk returns a tuple with the InventoryModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel, bool) {
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
 	if o == nil || o.InventoryModel == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) HasInvent
 	return false
 }
 
-// SetInventoryModel gets a reference to the given GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel and assigns it to the InventoryModel field.
-func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetInventoryModel(v GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel) {
+// SetInventoryModel gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the InventoryModel field.
+func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetInventoryModel(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
 	o.InventoryModel = &v
 }
 
@@ -148,3 +148,5 @@ func (v *NullableGETInventoryReturnLocations200ResponseDataInnerRelationships) U
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

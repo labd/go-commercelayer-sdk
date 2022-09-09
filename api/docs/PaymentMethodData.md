@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
 **Attributes** | [**GETPaymentMethods200ResponseDataInnerAttributes**](GETPaymentMethods200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**GETPaymentMethods200ResponseDataInnerRelationships**](GETPaymentMethods200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**PaymentMethodDataRelationships**](PaymentMethodDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PaymentMethodData) GetRelationships() GETPaymentMethods200ResponseDataInnerRelationships`
+`func (o *PaymentMethodData) GetRelationships() PaymentMethodDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaymentMethodData) GetRelationshipsOk() (*GETPaymentMethods200ResponseDataInnerRelationships, bool)`
+`func (o *PaymentMethodData) GetRelationshipsOk() (*PaymentMethodDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaymentMethodData) SetRelationships(v GETPaymentMethods200ResponseDataInnerRelationships)`
+`func (o *PaymentMethodData) SetRelationships(v PaymentMethodDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

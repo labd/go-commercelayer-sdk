@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -20,9 +20,9 @@ type SkuListItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                    `json:"id"`
-	Attributes    POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
+	Id string `json:"id"`
+	Attributes POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{} `json:"relationships,omitempty"`
 }
 
 // NewSkuListItemUpdateData instantiates a new SkuListItemUpdateData object
@@ -203,3 +203,5 @@ func (v *NullableSkuListItemUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

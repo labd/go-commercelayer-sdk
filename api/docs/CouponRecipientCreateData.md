@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | [default to "coupon_recipients"]
 **Attributes** | [**POSTCouponRecipients201ResponseDataAttributes**](POSTCouponRecipients201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**POSTCouponRecipients201ResponseDataRelationships**](POSTCouponRecipients201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CouponRecipientCreateData) GetRelationships() POSTCouponRecipients201ResponseDataRelationships`
+`func (o *CouponRecipientCreateData) GetRelationships() CouponRecipientCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CouponRecipientCreateData) GetRelationshipsOk() (*POSTCouponRecipients201ResponseDataRelationships, bool)`
+`func (o *CouponRecipientCreateData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CouponRecipientCreateData) SetRelationships(v POSTCouponRecipients201ResponseDataRelationships)`
+`func (o *CouponRecipientCreateData) SetRelationships(v CouponRecipientCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

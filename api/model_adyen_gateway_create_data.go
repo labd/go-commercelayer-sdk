@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // AdyenGatewayCreateData struct for AdyenGatewayCreateData
 type AdyenGatewayCreateData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    POSTAdyenGateways201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTAdyenGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTAdyenGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenGatewayCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayCreateData instantiates a new AdyenGatewayCreateData object
@@ -93,9 +93,9 @@ func (o *AdyenGatewayCreateData) SetAttributes(v POSTAdyenGateways201ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AdyenGatewayCreateData) GetRelationships() POSTAdyenGateways201ResponseDataRelationships {
+func (o *AdyenGatewayCreateData) GetRelationships() AdyenGatewayCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTAdyenGateways201ResponseDataRelationships
+		var ret AdyenGatewayCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *AdyenGatewayCreateData) GetRelationships() POSTAdyenGateways201Response
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayCreateData) GetRelationshipsOk() (*POSTAdyenGateways201ResponseDataRelationships, bool) {
+func (o *AdyenGatewayCreateData) GetRelationshipsOk() (*AdyenGatewayCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *AdyenGatewayCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAdyenGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *AdyenGatewayCreateData) SetRelationships(v POSTAdyenGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given AdyenGatewayCreateDataRelationships and assigns it to the Relationships field.
+func (o *AdyenGatewayCreateData) SetRelationships(v AdyenGatewayCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableAdyenGatewayCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+

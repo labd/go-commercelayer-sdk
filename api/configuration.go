@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -78,9 +78,9 @@ type ServerVariable struct {
 
 // ServerConfiguration stores the information about a server
 type ServerConfiguration struct {
-	URL         string
+	URL string
 	Description string
-	Variables   map[string]ServerVariable
+	Variables map[string]ServerVariable
 }
 
 // ServerConfigurations stores multiple ServerConfiguration items
@@ -101,24 +101,25 @@ type Configuration struct {
 // NewConfiguration returns a new Configuration object
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
-		DefaultHeader: make(map[string]string),
-		UserAgent:     "OpenAPI-Generator/1.0.0/go",
-		Debug:         false,
-		Servers: ServerConfigurations{
+		DefaultHeader:    make(map[string]string),
+		UserAgent:        "OpenAPI-Generator/1.0.0/go",
+		Debug:            false,
+		Servers:          ServerConfigurations{
 			{
-				URL:         "https://{{organization-slug}}.commercelayer.io/api",
+				URL: "https://{{your-organization-slug}}.commercelayer.io/api",
 				Description: "API",
 			},
 			{
-				URL:         "https://core.commercelayer.io/users/sign_in",
+				URL: "https://core.commercelayer.io/users/sign_in",
 				Description: "Sign in",
 			},
 			{
-				URL:         "https://docs.commercelayer.io/api",
+				URL: "https://docs.commercelayer.io/api",
 				Description: "API reference",
 			},
 		},
-		OperationServers: map[string]ServerConfigurations{},
+		OperationServers: map[string]ServerConfigurations{
+		},
 	}
 	return cfg
 }

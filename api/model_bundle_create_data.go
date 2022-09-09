@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.7.3
+API version: 3.0.0
 Contact: support@commercelayer.io
 */
 
@@ -18,9 +18,9 @@ import (
 // BundleCreateData struct for BundleCreateData
 type BundleCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    POSTBundles201ResponseDataAttributes     `json:"attributes"`
-	Relationships *POSTBundles201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type string `json:"type"`
+	Attributes POSTBundles201ResponseDataAttributes `json:"attributes"`
+	Relationships *BundleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBundleCreateData instantiates a new BundleCreateData object
@@ -93,9 +93,9 @@ func (o *BundleCreateData) SetAttributes(v POSTBundles201ResponseDataAttributes)
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *BundleCreateData) GetRelationships() POSTBundles201ResponseDataRelationships {
+func (o *BundleCreateData) GetRelationships() BundleCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret POSTBundles201ResponseDataRelationships
+		var ret BundleCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +103,7 @@ func (o *BundleCreateData) GetRelationships() POSTBundles201ResponseDataRelation
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleCreateData) GetRelationshipsOk() (*POSTBundles201ResponseDataRelationships, bool) {
+func (o *BundleCreateData) GetRelationshipsOk() (*BundleCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +119,8 @@ func (o *BundleCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTBundles201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *BundleCreateData) SetRelationships(v POSTBundles201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given BundleCreateDataRelationships and assigns it to the Relationships field.
+func (o *BundleCreateData) SetRelationships(v BundleCreateDataRelationships) {
 	o.Relationships = &v
 }
 
@@ -173,3 +173,5 @@ func (v *NullableBundleCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
+
+
