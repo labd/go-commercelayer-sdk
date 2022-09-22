@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("adyen_payments", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes())) // AdyenPaymentUpdate | 
+    adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes())) // AdyenPaymentUpdate | 
     adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    adyenPaymentCreate := *openapiclient.NewAdyenPaymentCreate(*openapiclient.NewAdyenPaymentCreateData("adyen_payments", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // AdyenPaymentCreate | 
+    adyenPaymentCreate := *openapiclient.NewAdyenPaymentCreate(*openapiclient.NewAdyenPaymentCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // AdyenPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -335,5 +335,3 @@ func (v *NullableGETManualTaxCalculators200ResponseDataInnerAttributes) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

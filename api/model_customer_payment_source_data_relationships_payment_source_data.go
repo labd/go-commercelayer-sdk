@@ -29,8 +29,6 @@ type CustomerPaymentSourceDataRelationshipsPaymentSourceData struct {
 // will change when the set of required properties is changed
 func NewCustomerPaymentSourceDataRelationshipsPaymentSourceData() *CustomerPaymentSourceDataRelationshipsPaymentSourceData {
 	this := CustomerPaymentSourceDataRelationshipsPaymentSourceData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewCustomerPaymentSourceDataRelationshipsPaymentSourceData() *CustomerPayme
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerPaymentSourceDataRelationshipsPaymentSourceDataWithDefaults() *CustomerPaymentSourceDataRelationshipsPaymentSourceData {
 	this := CustomerPaymentSourceDataRelationshipsPaymentSourceData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableCustomerPaymentSourceDataRelationshipsPaymentSourceData) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,10 +17,10 @@ import (
 
 // OrderCopyDataRelationships struct for OrderCopyDataRelationships
 type OrderCopyDataRelationships struct {
-	SourceOrder *AdyenPaymentDataRelationshipsOrder `json:"source_order,omitempty"`
-	TargetOrder *AdyenPaymentDataRelationshipsOrder `json:"target_order,omitempty"`
+	SourceOrder       *AdyenPaymentDataRelationshipsOrder          `json:"source_order,omitempty"`
+	TargetOrder       *AdyenPaymentDataRelationshipsOrder          `json:"target_order,omitempty"`
 	OrderSubscription *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscription,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Events            *CustomerAddressDataRelationshipsEvents      `json:"events,omitempty"`
 }
 
 // NewOrderCopyDataRelationships instantiates a new OrderCopyDataRelationships object
@@ -220,5 +220,3 @@ func (v *NullableOrderCopyDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

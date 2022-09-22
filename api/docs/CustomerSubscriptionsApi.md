@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData("customer_subscriptions", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
+    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
     customerSubscriptionId := "customerSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData("customer_subscriptions", *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes("john@example.com"))) // CustomerSubscriptionCreate | 
+    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData("Type_example", *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes("john@example.com"))) // CustomerSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

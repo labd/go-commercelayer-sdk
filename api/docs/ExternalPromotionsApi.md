@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("external_promotions", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes())) // ExternalPromotionUpdate | 
+    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes())) // ExternalPromotionUpdate | 
     externalPromotionId := "externalPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("external_promotions", *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
+    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("Type_example", *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

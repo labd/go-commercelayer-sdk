@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "markets"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETMarkets200ResponseDataInnerAttributes**](GETMarkets200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketDataRelationships**](MarketDataRelationships.md) |  | [optional] 
 

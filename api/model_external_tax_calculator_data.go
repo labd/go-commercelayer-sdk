@@ -18,9 +18,9 @@ import (
 // ExternalTaxCalculatorData struct for ExternalTaxCalculatorData
 type ExternalTaxCalculatorData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AvalaraAccountDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorData instantiates a new ExternalTaxCalculatorData object
@@ -39,8 +39,6 @@ func NewExternalTaxCalculatorData(type_ string, attributes GETExternalTaxCalcula
 // but it doesn't guarantee that properties required by API are set
 func NewExternalTaxCalculatorDataWithDefaults() *ExternalTaxCalculatorData {
 	this := ExternalTaxCalculatorData{}
-	var type_ string = "external_tax_calculators"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableExternalTaxCalculatorData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

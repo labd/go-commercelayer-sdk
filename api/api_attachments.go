@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // AttachmentsApiService AttachmentsApi service
 type AttachmentsApiService service
 
 type AttachmentsApiDELETEAttachmentsAttachmentIdRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx          context.Context
+	ApiService   *AttachmentsApiService
 	attachmentId string
 }
 
@@ -45,8 +44,8 @@ Delete an attachment
 */
 func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiDELETEAttachmentsAttachmentIdRequest {
 	return AttachmentsApiDELETEAttachmentsAttachmentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		attachmentId: attachmentId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r AttachmentsApiDELETEAttachmentsAttachmentIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.DELETEAttachmentsAttachmentId")
@@ -117,7 +116,7 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 }
 
 type AttachmentsApiGETAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 }
 
@@ -136,7 +135,7 @@ List all attachments
 func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsApiGETAttachmentsRequest {
 	return AttachmentsApiGETAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsA
 //  @return GETAttachments200Response
 func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*GETAttachments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAttachments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAttachments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAttachments")
@@ -216,8 +215,8 @@ func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachm
 }
 
 type AttachmentsApiGETAttachmentsAttachmentIdRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx          context.Context
+	ApiService   *AttachmentsApiService
 	attachmentId string
 }
 
@@ -236,8 +235,8 @@ Retrieve an attachment
 */
 func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiGETAttachmentsAttachmentIdRequest {
 	return AttachmentsApiGETAttachmentsAttachmentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		attachmentId: attachmentId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, 
 //  @return GETAttachmentsAttachmentId200Response
 func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*GETAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAttachmentsAttachmentId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAttachmentsAttachmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAttachmentsAttachmentId")
@@ -319,8 +318,8 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 }
 
 type AttachmentsApiGETAvalaraAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	avalaraAccountId string
 }
 
@@ -339,8 +338,8 @@ Retrieve the attachments associated to the avalara account
 */
 func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest {
 	return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -348,9 +347,9 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r AttachmentsApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAvalaraAccountIdAttachments")
@@ -411,8 +410,8 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 }
 
 type AttachmentsApiGETBingGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx            context.Context
+	ApiService     *AttachmentsApiService
 	bingGeocoderId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the attachments associated to the bing geocoder
 */
 func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) AttachmentsApiGETBingGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETBingGeocoderIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context
 // Execute executes the request
 func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r AttachmentsApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETBingGeocoderIdAttachments")
@@ -503,9 +502,9 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 }
 
 type AttachmentsApiGETBundleIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	bundleId string
+	bundleId   string
 }
 
 func (r AttachmentsApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -524,17 +523,17 @@ Retrieve the attachments associated to the bundle
 func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) AttachmentsApiGETBundleIdAttachmentsRequest {
 	return AttachmentsApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		bundleId: bundleId,
+		ctx:        ctx,
+		bundleId:   bundleId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETBundleIdAttachments")
@@ -595,8 +594,8 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 }
 
 type AttachmentsApiGETCarrierAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	carrierAccountId string
 }
 
@@ -615,8 +614,8 @@ Retrieve the attachments associated to the carrier account
 */
 func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) AttachmentsApiGETCarrierAccountIdAttachmentsRequest {
 	return AttachmentsApiGETCarrierAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
 	}
 }
@@ -624,9 +623,9 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r AttachmentsApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETCarrierAccountIdAttachments")
@@ -687,8 +686,8 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 }
 
 type AttachmentsApiGETCouponRecipientIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx               context.Context
+	ApiService        *AttachmentsApiService
 	couponRecipientId string
 }
 
@@ -707,8 +706,8 @@ Retrieve the attachments associated to the coupon recipient
 */
 func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) AttachmentsApiGETCouponRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETCouponRecipientIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
 	}
 }
@@ -716,9 +715,9 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Cont
 // Execute executes the request
 func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r AttachmentsApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETCouponRecipientIdAttachments")
@@ -779,8 +778,8 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 }
 
 type AttachmentsApiGETCustomerGroupIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
 	customerGroupId string
 }
 
@@ -799,8 +798,8 @@ Retrieve the attachments associated to the customer group
 */
 func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) AttachmentsApiGETCustomerGroupIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerGroupIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -808,9 +807,9 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r AttachmentsApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETCustomerGroupIdAttachments")
@@ -871,7 +870,7 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiGETCustomerIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 	customerId string
 }
@@ -892,7 +891,7 @@ Retrieve the attachments associated to the customer
 func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) AttachmentsApiGETCustomerIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -900,9 +899,9 @@ func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, cu
 // Execute executes the request
 func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETCustomerIdAttachments")
@@ -963,8 +962,8 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 }
 
 type AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                context.Context
+	ApiService         *AttachmentsApiService
 	deliveryLeadTimeId string
 }
 
@@ -983,8 +982,8 @@ Retrieve the attachments associated to the delivery lead time
 */
 func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest {
 	return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -992,9 +991,9 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Con
 // Execute executes the request
 func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETDeliveryLeadTimeIdAttachments")
@@ -1055,8 +1054,8 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 }
 
 type AttachmentsApiGETExternalPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                 context.Context
+	ApiService          *AttachmentsApiService
 	externalPromotionId string
 }
 
@@ -1075,8 +1074,8 @@ Retrieve the attachments associated to the external promotion
 */
 func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) AttachmentsApiGETExternalPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETExternalPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -1084,9 +1083,9 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Co
 // Execute executes the request
 func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r AttachmentsApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETExternalPromotionIdAttachments")
@@ -1147,8 +1146,8 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 }
 
 type AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                     context.Context
+	ApiService              *AttachmentsApiService
 	externalTaxCalculatorId string
 }
 
@@ -1167,8 +1166,8 @@ Retrieve the attachments associated to the external tax calculator
 */
 func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -1176,9 +1175,9 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETExternalTaxCalculatorIdAttachments")
@@ -1239,8 +1238,8 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 }
 
 type AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                    context.Context
+	ApiService             *AttachmentsApiService
 	fixedAmountPromotionId string
 }
 
@@ -1259,8 +1258,8 @@ Retrieve the attachments associated to the fixed amount promotion
 */
 func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -1268,9 +1267,9 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context
 // Execute executes the request
 func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETFixedAmountPromotionIdAttachments")
@@ -1331,8 +1330,8 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 }
 
 type AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                   context.Context
+	ApiService            *AttachmentsApiService
 	fixedPricePromotionId string
 }
 
@@ -1351,8 +1350,8 @@ Retrieve the attachments associated to the fixed price promotion
 */
 func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -1360,9 +1359,9 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.
 // Execute executes the request
 func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETFixedPricePromotionIdAttachments")
@@ -1423,8 +1422,8 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 }
 
 type AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                 context.Context
+	ApiService          *AttachmentsApiService
 	freeGiftPromotionId string
 }
 
@@ -1443,8 +1442,8 @@ Retrieve the attachments associated to the free gift promotion
 */
 func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -1452,9 +1451,9 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Co
 // Execute executes the request
 func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETFreeGiftPromotionIdAttachments")
@@ -1515,8 +1514,8 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 }
 
 type AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                     context.Context
+	ApiService              *AttachmentsApiService
 	freeShippingPromotionId string
 }
 
@@ -1535,8 +1534,8 @@ Retrieve the attachments associated to the free shipping promotion
 */
 func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -1544,9 +1543,9 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETFreeShippingPromotionIdAttachments")
@@ -1607,7 +1606,7 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 }
 
 type AttachmentsApiGETGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 	geocoderId string
 }
@@ -1628,7 +1627,7 @@ Retrieve the attachments associated to the geocoder
 func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) AttachmentsApiGETGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		geocoderId: geocoderId,
 	}
 }
@@ -1636,9 +1635,9 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, ge
 // Execute executes the request
 func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETGeocoderIdAttachments")
@@ -1699,7 +1698,7 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 }
 
 type AttachmentsApiGETGiftCardIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 	giftCardId string
 }
@@ -1720,7 +1719,7 @@ Retrieve the attachments associated to the gift card
 func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) AttachmentsApiGETGiftCardIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -1728,9 +1727,9 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, gi
 // Execute executes the request
 func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETGiftCardIdAttachments")
@@ -1791,8 +1790,8 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 }
 
 type AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                 context.Context
+	ApiService          *AttachmentsApiService
 	giftCardRecipientId string
 }
 
@@ -1811,8 +1810,8 @@ Retrieve the attachments associated to the gift card recipient
 */
 func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -1820,9 +1819,9 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Co
 // Execute executes the request
 func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETGiftCardRecipientIdAttachments")
@@ -1883,8 +1882,8 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 }
 
 type AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	googleGeocoderId string
 }
 
@@ -1903,8 +1902,8 @@ Retrieve the attachments associated to the google geocoder
 */
 func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
 	}
 }
@@ -1912,9 +1911,9 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETGoogleGeocoderIdAttachments")
@@ -1975,8 +1974,8 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 }
 
 type AttachmentsApiGETInventoryModelIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	inventoryModelId string
 }
 
@@ -1995,8 +1994,8 @@ Retrieve the attachments associated to the inventory model
 */
 func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) AttachmentsApiGETInventoryModelIdAttachmentsRequest {
 	return AttachmentsApiGETInventoryModelIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
 	}
 }
@@ -2004,9 +2003,9 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r AttachmentsApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETInventoryModelIdAttachments")
@@ -2067,8 +2066,8 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 }
 
 type AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                   context.Context
+	ApiService            *AttachmentsApiService
 	manualTaxCalculatorId string
 }
 
@@ -2087,8 +2086,8 @@ Retrieve the attachments associated to the manual tax calculator
 */
 func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -2096,9 +2095,9 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.
 // Execute executes the request
 func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETManualTaxCalculatorIdAttachments")
@@ -2159,9 +2158,9 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 }
 
 type AttachmentsApiGETMarketIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	marketId string
+	marketId   string
 }
 
 func (r AttachmentsApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2180,17 +2179,17 @@ Retrieve the attachments associated to the market
 func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId string) AttachmentsApiGETMarketIdAttachmentsRequest {
 	return AttachmentsApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		marketId: marketId,
+		ctx:        ctx,
+		marketId:   marketId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETMarketIdAttachments")
@@ -2251,7 +2250,7 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 }
 
 type AttachmentsApiGETMerchantIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 	merchantId string
 }
@@ -2272,7 +2271,7 @@ Retrieve the attachments associated to the merchant
 func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) AttachmentsApiGETMerchantIdAttachmentsRequest {
 	return AttachmentsApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		merchantId: merchantId,
 	}
 }
@@ -2280,9 +2279,9 @@ func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, me
 // Execute executes the request
 func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETMerchantIdAttachments")
@@ -2343,9 +2342,9 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 }
 
 type AttachmentsApiGETOrderIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	orderId string
+	orderId    string
 }
 
 func (r AttachmentsApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2364,17 +2363,17 @@ Retrieve the attachments associated to the order
 func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId string) AttachmentsApiGETOrderIdAttachmentsRequest {
 	return AttachmentsApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETOrderIdAttachments")
@@ -2435,9 +2434,9 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 }
 
 type AttachmentsApiGETPackageIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	packageId string
+	packageId  string
 }
 
 func (r AttachmentsApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2456,17 +2455,17 @@ Retrieve the attachments associated to the package
 func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId string) AttachmentsApiGETPackageIdAttachmentsRequest {
 	return AttachmentsApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPackageIdAttachments")
@@ -2527,9 +2526,9 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 }
 
 type AttachmentsApiGETParcelIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r AttachmentsApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2548,17 +2547,17 @@ Retrieve the attachments associated to the parcel
 func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) AttachmentsApiGETParcelIdAttachmentsRequest {
 	return AttachmentsApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETParcelIdAttachments")
@@ -2619,8 +2618,8 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 }
 
 type AttachmentsApiGETPaymentMethodIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
 	paymentMethodId string
 }
 
@@ -2639,8 +2638,8 @@ Retrieve the attachments associated to the payment method
 */
 func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) AttachmentsApiGETPaymentMethodIdAttachmentsRequest {
 	return AttachmentsApiGETPaymentMethodIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -2648,9 +2647,9 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r AttachmentsApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPaymentMethodIdAttachments")
@@ -2711,8 +2710,8 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                           context.Context
+	ApiService                    *AttachmentsApiService
 	percentageDiscountPromotionId string
 }
 
@@ -2731,8 +2730,8 @@ Retrieve the attachments associated to the percentage discount promotion
 */
 func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -2740,9 +2739,9 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx 
 // Execute executes the request
 func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPercentageDiscountPromotionIdAttachments")
@@ -2803,9 +2802,9 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 }
 
 type AttachmentsApiGETPriceIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	priceId string
+	priceId    string
 }
 
 func (r AttachmentsApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2824,17 +2823,17 @@ Retrieve the attachments associated to the price
 func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId string) AttachmentsApiGETPriceIdAttachmentsRequest {
 	return AttachmentsApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPriceIdAttachments")
@@ -2895,8 +2894,8 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 }
 
 type AttachmentsApiGETPriceListIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx         context.Context
+	ApiService  *AttachmentsApiService
 	priceListId string
 }
 
@@ -2915,8 +2914,8 @@ Retrieve the attachments associated to the price list
 */
 func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) AttachmentsApiGETPriceListIdAttachmentsRequest {
 	return AttachmentsApiGETPriceListIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceListId: priceListId,
 	}
 }
@@ -2924,9 +2923,9 @@ func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, p
 // Execute executes the request
 func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPriceListIdAttachments")
@@ -2987,8 +2986,8 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 }
 
 type AttachmentsApiGETPriceTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx         context.Context
+	ApiService  *AttachmentsApiService
 	priceTierId string
 }
 
@@ -3007,8 +3006,8 @@ Retrieve the attachments associated to the price tier
 */
 func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) AttachmentsApiGETPriceTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceTierId: priceTierId,
 	}
 }
@@ -3016,9 +3015,9 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, p
 // Execute executes the request
 func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsApiGETPriceTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPriceTierIdAttachments")
@@ -3079,8 +3078,8 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 }
 
 type AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx               context.Context
+	ApiService        *AttachmentsApiService
 	priceVolumeTierId string
 }
 
@@ -3099,8 +3098,8 @@ Retrieve the attachments associated to the price volume tier
 */
 func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
 	}
 }
@@ -3108,9 +3107,9 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Cont
 // Execute executes the request
 func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPriceVolumeTierIdAttachments")
@@ -3171,8 +3170,8 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 }
 
 type AttachmentsApiGETPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx         context.Context
+	ApiService  *AttachmentsApiService
 	promotionId string
 }
 
@@ -3191,8 +3190,8 @@ Retrieve the attachments associated to the promotion
 */
 func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) AttachmentsApiGETPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		promotionId: promotionId,
 	}
 }
@@ -3200,9 +3199,9 @@ func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, p
 // Execute executes the request
 func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPromotionIdAttachments")
@@ -3263,9 +3262,9 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 }
 
 type AttachmentsApiGETReturnIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	returnId string
+	returnId   string
 }
 
 func (r AttachmentsApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3284,17 +3283,17 @@ Retrieve the attachments associated to the return
 func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId string) AttachmentsApiGETReturnIdAttachmentsRequest {
 	return AttachmentsApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		returnId: returnId,
+		ctx:        ctx,
+		returnId:   returnId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETReturnIdAttachments")
@@ -3355,7 +3354,7 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 }
 
 type AttachmentsApiGETShipmentIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
 	shipmentId string
 }
@@ -3376,7 +3375,7 @@ Retrieve the attachments associated to the shipment
 func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) AttachmentsApiGETShipmentIdAttachmentsRequest {
 	return AttachmentsApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -3384,9 +3383,9 @@ func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, sh
 // Execute executes the request
 func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShipmentIdAttachments")
@@ -3447,8 +3446,8 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 }
 
 type AttachmentsApiGETShippingCategoryIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                context.Context
+	ApiService         *AttachmentsApiService
 	shippingCategoryId string
 }
 
@@ -3467,8 +3466,8 @@ Retrieve the attachments associated to the shipping category
 */
 func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) AttachmentsApiGETShippingCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETShippingCategoryIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -3476,9 +3475,9 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Con
 // Execute executes the request
 func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r AttachmentsApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShippingCategoryIdAttachments")
@@ -3539,8 +3538,8 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 }
 
 type AttachmentsApiGETShippingMethodIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	shippingMethodId string
 }
 
@@ -3559,8 +3558,8 @@ Retrieve the attachments associated to the shipping method
 */
 func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) AttachmentsApiGETShippingMethodIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -3568,9 +3567,9 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r AttachmentsApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShippingMethodIdAttachments")
@@ -3631,8 +3630,8 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 }
 
 type AttachmentsApiGETShippingMethodTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                  context.Context
+	ApiService           *AttachmentsApiService
 	shippingMethodTierId string
 }
 
@@ -3651,8 +3650,8 @@ Retrieve the attachments associated to the shipping method tier
 */
 func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingMethodTierId: shippingMethodTierId,
 	}
 }
@@ -3660,9 +3659,9 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.C
 // Execute executes the request
 func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r AttachmentsApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShippingMethodTierIdAttachments")
@@ -3723,8 +3722,8 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 }
 
 type AttachmentsApiGETShippingWeightTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx                  context.Context
+	ApiService           *AttachmentsApiService
 	shippingWeightTierId string
 }
 
@@ -3743,8 +3742,8 @@ Retrieve the attachments associated to the shipping weight tier
 */
 func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -3752,9 +3751,9 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.C
 // Execute executes the request
 func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r AttachmentsApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShippingWeightTierIdAttachments")
@@ -3815,8 +3814,8 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 }
 
 type AttachmentsApiGETShippingZoneIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx            context.Context
+	ApiService     *AttachmentsApiService
 	shippingZoneId string
 }
 
@@ -3835,8 +3834,8 @@ Retrieve the attachments associated to the shipping zone
 */
 func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) AttachmentsApiGETShippingZoneIdAttachmentsRequest {
 	return AttachmentsApiGETShippingZoneIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
 	}
 }
@@ -3844,9 +3843,9 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context
 // Execute executes the request
 func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r AttachmentsApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETShippingZoneIdAttachments")
@@ -3907,9 +3906,9 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 }
 
 type AttachmentsApiGETSkuIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AttachmentsApiService
-	skuId string
+	skuId      string
 }
 
 func (r AttachmentsApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3928,17 +3927,17 @@ Retrieve the attachments associated to the SKU
 func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId string) AttachmentsApiGETSkuIdAttachmentsRequest {
 	return AttachmentsApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETSkuIdAttachments")
@@ -3999,8 +3998,8 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 }
 
 type AttachmentsApiGETSkuOptionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx         context.Context
+	ApiService  *AttachmentsApiService
 	skuOptionId string
 }
 
@@ -4019,8 +4018,8 @@ Retrieve the attachments associated to the SKU option
 */
 func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) AttachmentsApiGETSkuOptionIdAttachmentsRequest {
 	return AttachmentsApiGETSkuOptionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		skuOptionId: skuOptionId,
 	}
 }
@@ -4028,9 +4027,9 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, s
 // Execute executes the request
 func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETSkuOptionIdAttachments")
@@ -4091,8 +4090,8 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 }
 
 type AttachmentsApiGETStockItemIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx         context.Context
+	ApiService  *AttachmentsApiService
 	stockItemId string
 }
 
@@ -4111,8 +4110,8 @@ Retrieve the attachments associated to the stock item
 */
 func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) AttachmentsApiGETStockItemIdAttachmentsRequest {
 	return AttachmentsApiGETStockItemIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -4120,9 +4119,9 @@ func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, s
 // Execute executes the request
 func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETStockItemIdAttachments")
@@ -4183,8 +4182,8 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 }
 
 type AttachmentsApiGETStockLocationIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
 	stockLocationId string
 }
 
@@ -4203,8 +4202,8 @@ Retrieve the attachments associated to the stock location
 */
 func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) AttachmentsApiGETStockLocationIdAttachmentsRequest {
 	return AttachmentsApiGETStockLocationIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -4212,9 +4211,9 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r AttachmentsApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETStockLocationIdAttachments")
@@ -4275,8 +4274,8 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiGETTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
 	taxCalculatorId string
 }
 
@@ -4295,8 +4294,8 @@ Retrieve the attachments associated to the tax calculator
 */
 func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -4304,9 +4303,9 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r AttachmentsApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETTaxCalculatorIdAttachments")
@@ -4367,8 +4366,8 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiGETTaxCategoryIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx           context.Context
+	ApiService    *AttachmentsApiService
 	taxCategoryId string
 }
 
@@ -4387,8 +4386,8 @@ Retrieve the attachments associated to the tax category
 */
 func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) AttachmentsApiGETTaxCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCategoryIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -4396,9 +4395,9 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context,
 // Execute executes the request
 func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r AttachmentsApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETTaxCategoryIdAttachments")
@@ -4459,8 +4458,8 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 }
 
 type AttachmentsApiGETTaxjarAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx             context.Context
+	ApiService      *AttachmentsApiService
 	taxjarAccountId string
 }
 
@@ -4479,8 +4478,8 @@ Retrieve the attachments associated to the taxjar account
 */
 func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest {
 	return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -4488,9 +4487,9 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r AttachmentsApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETTaxjarAccountIdAttachments")
@@ -4551,10 +4550,10 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiPATCHAttachmentsAttachmentIdRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	attachmentUpdate *AttachmentUpdate
-	attachmentId string
+	attachmentId     string
 }
 
 func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) AttachmentUpdate(attachmentUpdate AttachmentUpdate) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
@@ -4577,8 +4576,8 @@ Update an attachment
 */
 func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
 	return AttachmentsApiPATCHAttachmentsAttachmentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:   a,
+		ctx:          ctx,
 		attachmentId: attachmentId,
 	}
 }
@@ -4587,10 +4586,10 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context
 //  @return PATCHAttachmentsAttachmentId200Response
 func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*PATCHAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHAttachmentsAttachmentId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAttachmentsAttachmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.PATCHAttachmentsAttachmentId")
@@ -4665,8 +4664,8 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 }
 
 type AttachmentsApiPOSTAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *AttachmentsApiService
+	ctx              context.Context
+	ApiService       *AttachmentsApiService
 	attachmentCreate *AttachmentCreate
 }
 
@@ -4690,7 +4689,7 @@ Create an attachment
 func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) AttachmentsApiPOSTAttachmentsRequest {
 	return AttachmentsApiPOSTAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -4698,10 +4697,10 @@ func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) Attachments
 //  @return POSTAttachments201Response
 func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*POSTAttachments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTAttachments201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAttachments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.POSTAttachments")

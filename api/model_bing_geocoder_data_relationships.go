@@ -17,7 +17,7 @@ import (
 
 // BingGeocoderDataRelationships struct for BingGeocoderDataRelationships
 type BingGeocoderDataRelationships struct {
-	Addresses *BingGeocoderDataRelationshipsAddresses `json:"addresses,omitempty"`
+	Addresses   *BingGeocoderDataRelationshipsAddresses     `json:"addresses,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableBingGeocoderDataRelationships) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

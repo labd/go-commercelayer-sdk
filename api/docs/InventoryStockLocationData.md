@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "inventory_stock_locations"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETInventoryStockLocations200ResponseDataInnerAttributes**](GETInventoryStockLocations200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
 

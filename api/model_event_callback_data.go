@@ -18,9 +18,9 @@ import (
 // EventCallbackData struct for EventCallbackData
 type EventCallbackData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *EventCallbackDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *EventCallbackDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewEventCallbackData instantiates a new EventCallbackData object
@@ -39,8 +39,6 @@ func NewEventCallbackData(type_ string, attributes GETEventCallbacks200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewEventCallbackDataWithDefaults() *EventCallbackData {
 	this := EventCallbackData{}
-	var type_ string = "event_callbacks"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableEventCallbackData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

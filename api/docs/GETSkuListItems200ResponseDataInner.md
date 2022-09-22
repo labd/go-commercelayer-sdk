@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "sku_list_items"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETSkuListItems200ResponseDataInnerAttributes**](GETSkuListItems200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETSkuListItems200ResponseDataInnerRelationships**](GETSkuListItems200ResponseDataInnerRelationships.md) |  | [optional] 

@@ -18,7 +18,7 @@ import (
 // SkuListItemDataRelationships struct for SkuListItemDataRelationships
 type SkuListItemDataRelationships struct {
 	SkuList *BundleDataRelationshipsSkuList `json:"sku_list,omitempty"`
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
+	Sku     *BundleDataRelationshipsSkus    `json:"sku,omitempty"`
 }
 
 // NewSkuListItemDataRelationships instantiates a new SkuListItemDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableSkuListItemDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

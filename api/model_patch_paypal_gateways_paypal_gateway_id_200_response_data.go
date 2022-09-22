@@ -20,10 +20,10 @@ type PATCHPaypalGatewaysPaypalGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETPaypalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETPaypalGateways200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHPaypalGatewaysPaypalGatewayId200ResponseData instantiates a new PATCHPaypalGatewaysPaypalGatewayId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHPaypalGatewaysPaypalGatewayId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHPaypalGatewaysPaypalGatewayId200ResponseData() *PATCHPaypalGatewaysPaypalGatewayId200ResponseData {
 	this := PATCHPaypalGatewaysPaypalGatewayId200ResponseData{}
-	var type_ string = "paypal_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHPaypalGatewaysPaypalGatewayId200ResponseData() *PATCHPaypalGateways
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataWithDefaults() *PATCHPaypalGatewaysPaypalGatewayId200ResponseData {
 	this := PATCHPaypalGatewaysPaypalGatewayId200ResponseData{}
-	var type_ string = "paypal_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHPaypalGatewaysPaypalGatewayId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

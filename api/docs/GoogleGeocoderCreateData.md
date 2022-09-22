@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "google_geocoders"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTGoogleGeocoders201ResponseDataAttributes**](POSTGoogleGeocoders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

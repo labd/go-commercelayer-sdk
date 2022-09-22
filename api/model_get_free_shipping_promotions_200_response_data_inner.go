@@ -20,10 +20,10 @@ type GETFreeShippingPromotions200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                   `json:"links,omitempty"`
+	Attributes    *GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalPromotions200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewGETFreeShippingPromotions200ResponseDataInner instantiates a new GETFreeShippingPromotions200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETFreeShippingPromotions200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETFreeShippingPromotions200ResponseDataInner() *GETFreeShippingPromotions200ResponseDataInner {
 	this := GETFreeShippingPromotions200ResponseDataInner{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETFreeShippingPromotions200ResponseDataInner() *GETFreeShippingPromotio
 // but it doesn't guarantee that properties required by API are set
 func NewGETFreeShippingPromotions200ResponseDataInnerWithDefaults() *GETFreeShippingPromotions200ResponseDataInner {
 	this := GETFreeShippingPromotions200ResponseDataInner{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETFreeShippingPromotions200ResponseDataInner) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

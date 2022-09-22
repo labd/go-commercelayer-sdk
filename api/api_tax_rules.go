@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // TaxRulesApiService TaxRulesApi service
 type TaxRulesApiService service
 
 type TaxRulesApiDELETETaxRulesTaxRuleIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TaxRulesApiService
-	taxRuleId string
+	taxRuleId  string
 }
 
 func (r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete a tax rule
 func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
 	return TaxRulesApiDELETETaxRulesTaxRuleIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		taxRuleId: taxRuleId,
+		ctx:        ctx,
+		taxRuleId:  taxRuleId,
 	}
 }
 
 // Execute executes the request
 func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.DELETETaxRulesTaxRuleId")
@@ -117,8 +116,8 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 }
 
 type TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest struct {
-	ctx context.Context
-	ApiService *TaxRulesApiService
+	ctx                   context.Context
+	ApiService            *TaxRulesApiService
 	manualTaxCalculatorId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the tax rules associated to the manual tax calculator
 */
 func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
 	return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Contex
 // Execute executes the request
 func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETManualTaxCalculatorIdTaxRules")
@@ -209,7 +208,7 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesA
 }
 
 type TaxRulesApiGETTaxRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TaxRulesApiService
 }
 
@@ -228,7 +227,7 @@ List all tax rules
 func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxRulesRequest {
 	return TaxRulesApiGETTaxRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxR
 //  @return GETTaxRules200Response
 func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*GETTaxRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTaxRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTaxRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRules")
@@ -308,9 +307,9 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest)
 }
 
 type TaxRulesApiGETTaxRulesTaxRuleIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TaxRulesApiService
-	taxRuleId string
+	taxRuleId  string
 }
 
 func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
@@ -329,8 +328,8 @@ Retrieve a tax rule
 func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiGETTaxRulesTaxRuleIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		taxRuleId: taxRuleId,
+		ctx:        ctx,
+		taxRuleId:  taxRuleId,
 	}
 }
 
@@ -338,10 +337,10 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId
 //  @return GETTaxRulesTaxRuleId200Response
 func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTaxRulesTaxRuleId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRulesTaxRuleId")
@@ -411,10 +410,10 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 }
 
 type TaxRulesApiPATCHTaxRulesTaxRuleIdRequest struct {
-	ctx context.Context
-	ApiService *TaxRulesApiService
+	ctx           context.Context
+	ApiService    *TaxRulesApiService
 	taxRuleUpdate *TaxRuleUpdate
-	taxRuleId string
+	taxRuleId     string
 }
 
 func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
@@ -438,8 +437,8 @@ Update a tax rule
 func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		taxRuleId: taxRuleId,
+		ctx:        ctx,
+		taxRuleId:  taxRuleId,
 	}
 }
 
@@ -447,10 +446,10 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRule
 //  @return PATCHTaxRulesTaxRuleId200Response
 func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHTaxRulesTaxRuleId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.PATCHTaxRulesTaxRuleId")
@@ -525,8 +524,8 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 }
 
 type TaxRulesApiPOSTTaxRulesRequest struct {
-	ctx context.Context
-	ApiService *TaxRulesApiService
+	ctx           context.Context
+	ApiService    *TaxRulesApiService
 	taxRuleCreate *TaxRuleCreate
 }
 
@@ -550,7 +549,7 @@ Create a tax rule
 func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTaxRulesRequest {
 	return TaxRulesApiPOSTTaxRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTa
 //  @return POSTTaxRules201Response
 func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*POSTTaxRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTTaxRules201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTTaxRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.POSTTaxRules")

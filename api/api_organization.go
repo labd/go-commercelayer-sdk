@@ -19,12 +19,11 @@ import (
 	"net/url"
 )
 
-
 // OrganizationApiService OrganizationApi service
 type OrganizationApiService service
 
 type OrganizationApiGETOrganizationOrganizationIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OrganizationApiService
 }
 
@@ -43,7 +42,7 @@ Retrieve the organization
 func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest {
 	return OrganizationApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -51,10 +50,10 @@ func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Conte
 //  @return GETOrganizationOrganizationId200Response
 func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETOrganizationOrganizationId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrganizationOrganizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationApiService.GETOrganizationOrganizationId")

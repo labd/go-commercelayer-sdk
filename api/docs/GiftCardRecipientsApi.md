@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("gift_card_recipients", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // GiftCardRecipientUpdate | 
+    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // GiftCardRecipientUpdate | 
     giftCardRecipientId := "giftCardRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("gift_card_recipients", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
+    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("Type_example", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

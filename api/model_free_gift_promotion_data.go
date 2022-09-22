@@ -18,9 +18,9 @@ import (
 // FreeGiftPromotionData struct for FreeGiftPromotionData
 type FreeGiftPromotionData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETFreeGiftPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETFreeGiftPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships               `json:"relationships,omitempty"`
 }
 
 // NewFreeGiftPromotionData instantiates a new FreeGiftPromotionData object
@@ -39,8 +39,6 @@ func NewFreeGiftPromotionData(type_ string, attributes GETFreeGiftPromotions200R
 // but it doesn't guarantee that properties required by API are set
 func NewFreeGiftPromotionDataWithDefaults() *FreeGiftPromotionData {
 	this := FreeGiftPromotionData{}
-	var type_ string = "free_gift_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableFreeGiftPromotionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

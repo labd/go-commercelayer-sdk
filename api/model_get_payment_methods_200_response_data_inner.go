@@ -20,9 +20,9 @@ type GETPaymentMethods200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETPaymentMethods200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *GETPaymentMethods200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETPaymentMethods200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETPaymentMethods200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETPaymentMethods200ResponseDataInner() *GETPaymentMethods200ResponseDataInner {
 	this := GETPaymentMethods200ResponseDataInner{}
-	var type_ string = "payment_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETPaymentMethods200ResponseDataInner() *GETPaymentMethods200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewGETPaymentMethods200ResponseDataInnerWithDefaults() *GETPaymentMethods200ResponseDataInner {
 	this := GETPaymentMethods200ResponseDataInner{}
-	var type_ string = "payment_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETPaymentMethods200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

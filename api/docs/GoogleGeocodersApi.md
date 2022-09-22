@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    googleGeocoderUpdate := *openapiclient.NewGoogleGeocoderUpdate(*openapiclient.NewGoogleGeocoderUpdateData("google_geocoders", "XGZwpOSrWL", *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes())) // GoogleGeocoderUpdate | 
+    googleGeocoderUpdate := *openapiclient.NewGoogleGeocoderUpdate(*openapiclient.NewGoogleGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes())) // GoogleGeocoderUpdate | 
     googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    googleGeocoderCreate := *openapiclient.NewGoogleGeocoderCreate(*openapiclient.NewGoogleGeocoderCreateData("google_geocoders", *openapiclient.NewPOSTGoogleGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // GoogleGeocoderCreate | 
+    googleGeocoderCreate := *openapiclient.NewGoogleGeocoderCreate(*openapiclient.NewGoogleGeocoderCreateData("Type_example", *openapiclient.NewPOSTGoogleGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // GoogleGeocoderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

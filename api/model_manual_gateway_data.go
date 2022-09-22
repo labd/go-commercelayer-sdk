@@ -18,9 +18,9 @@ import (
 // ManualGatewayData struct for ManualGatewayData
 type ManualGatewayData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETManualGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ManualGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETManualGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ManualGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayData instantiates a new ManualGatewayData object
@@ -39,8 +39,6 @@ func NewManualGatewayData(type_ string, attributes GETManualGateways200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewManualGatewayDataWithDefaults() *ManualGatewayData {
 	this := ManualGatewayData{}
-	var type_ string = "manual_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableManualGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

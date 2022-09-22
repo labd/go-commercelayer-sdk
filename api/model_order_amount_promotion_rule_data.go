@@ -18,9 +18,9 @@ import (
 // OrderAmountPromotionRuleData struct for OrderAmountPromotionRuleData
 type OrderAmountPromotionRuleData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETOrderAmountPromotionRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                     `json:"type"`
+	Attributes    GETOrderAmountPromotionRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleData instantiates a new OrderAmountPromotionRuleData object
@@ -39,8 +39,6 @@ func NewOrderAmountPromotionRuleData(type_ string, attributes GETOrderAmountProm
 // but it doesn't guarantee that properties required by API are set
 func NewOrderAmountPromotionRuleDataWithDefaults() *OrderAmountPromotionRuleData {
 	this := OrderAmountPromotionRuleData{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableOrderAmountPromotionRuleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

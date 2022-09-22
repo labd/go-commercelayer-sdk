@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "checkout_com_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCheckoutComGateways200ResponseDataInnerAttributes**](GETCheckoutComGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CheckoutComGatewayDataRelationships**](CheckoutComGatewayDataRelationships.md) |  | [optional] 
 

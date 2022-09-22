@@ -922,7 +922,7 @@ import (
 )
 
 func main() {
-    stockLocationUpdate := *openapiclient.NewStockLocationUpdate(*openapiclient.NewStockLocationUpdateData("stock_locations", "XGZwpOSrWL", *openapiclient.NewPATCHStockLocationsStockLocationId200ResponseDataAttributes())) // StockLocationUpdate | 
+    stockLocationUpdate := *openapiclient.NewStockLocationUpdate(*openapiclient.NewStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockLocationsStockLocationId200ResponseDataAttributes())) // StockLocationUpdate | 
     stockLocationId := "stockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -994,7 +994,7 @@ import (
 )
 
 func main() {
-    stockLocationCreate := *openapiclient.NewStockLocationCreate(*openapiclient.NewStockLocationCreateData("stock_locations", *openapiclient.NewPOSTStockLocations201ResponseDataAttributes("Primary warehouse"))) // StockLocationCreate | 
+    stockLocationCreate := *openapiclient.NewStockLocationCreate(*openapiclient.NewStockLocationCreateData("Type_example", *openapiclient.NewPOSTStockLocations201ResponseDataAttributes("Primary warehouse"))) // StockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

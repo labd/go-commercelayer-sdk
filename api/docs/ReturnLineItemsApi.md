@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("return_line_items", "XGZwpOSrWL", *openapiclient.NewPATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes())) // ReturnLineItemUpdate | 
+    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes())) // ReturnLineItemUpdate | 
     returnLineItemId := "returnLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("return_line_items", *openapiclient.NewPOSTReturnLineItems201ResponseDataAttributes(int32(4)))) // ReturnLineItemCreate | 
+    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("Type_example", *openapiclient.NewPOSTReturnLineItems201ResponseDataAttributes(int32(4)))) // ReturnLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

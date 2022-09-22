@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_locations"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTStockLocations201ResponseDataAttributes**](POSTStockLocations201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantCreateDataRelationships**](MerchantCreateDataRelationships.md) |  | [optional] 
 

@@ -29,8 +29,6 @@ type AddressDataRelationshipsGeocoderData struct {
 // will change when the set of required properties is changed
 func NewAddressDataRelationshipsGeocoderData() *AddressDataRelationshipsGeocoderData {
 	this := AddressDataRelationshipsGeocoderData{}
-	var type_ string = "geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewAddressDataRelationshipsGeocoderData() *AddressDataRelationshipsGeocoder
 // but it doesn't guarantee that properties required by API are set
 func NewAddressDataRelationshipsGeocoderDataWithDefaults() *AddressDataRelationshipsGeocoderData {
 	this := AddressDataRelationshipsGeocoderData{}
-	var type_ string = "geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableAddressDataRelationshipsGeocoderData) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

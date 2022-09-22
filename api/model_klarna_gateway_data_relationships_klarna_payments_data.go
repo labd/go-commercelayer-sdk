@@ -29,8 +29,6 @@ type KlarnaGatewayDataRelationshipsKlarnaPaymentsData struct {
 // will change when the set of required properties is changed
 func NewKlarnaGatewayDataRelationshipsKlarnaPaymentsData() *KlarnaGatewayDataRelationshipsKlarnaPaymentsData {
 	this := KlarnaGatewayDataRelationshipsKlarnaPaymentsData{}
-	var type_ string = "klarna_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewKlarnaGatewayDataRelationshipsKlarnaPaymentsData() *KlarnaGatewayDataRel
 // but it doesn't guarantee that properties required by API are set
 func NewKlarnaGatewayDataRelationshipsKlarnaPaymentsDataWithDefaults() *KlarnaGatewayDataRelationshipsKlarnaPaymentsData {
 	this := KlarnaGatewayDataRelationshipsKlarnaPaymentsData{}
-	var type_ string = "klarna_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableKlarnaGatewayDataRelationshipsKlarnaPaymentsData) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

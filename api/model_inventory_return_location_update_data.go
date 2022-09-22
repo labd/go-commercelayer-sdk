@@ -20,9 +20,9 @@ type InventoryReturnLocationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes `json:"attributes"`
-	Relationships *InventoryReturnLocationDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                          `json:"id"`
+	Attributes    PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes `json:"attributes"`
+	Relationships *InventoryReturnLocationDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewInventoryReturnLocationUpdateData instantiates a new InventoryReturnLocationUpdateData object
@@ -42,8 +42,6 @@ func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes PA
 // but it doesn't guarantee that properties required by API are set
 func NewInventoryReturnLocationUpdateDataWithDefaults() *InventoryReturnLocationUpdateData {
 	this := InventoryReturnLocationUpdateData{}
-	var type_ string = "inventory_return_locations"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableInventoryReturnLocationUpdateData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

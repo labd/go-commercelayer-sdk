@@ -17,8 +17,8 @@ import (
 
 // GETCustomerPasswordResets200ResponseDataInnerRelationships struct for GETCustomerPasswordResets200ResponseDataInnerRelationships
 type GETCustomerPasswordResets200ResponseDataInnerRelationships struct {
-	Customer *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"customer,omitempty"`
-	Events *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"events,omitempty"`
+	Customer *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer `json:"customer,omitempty"`
+	Events   *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents  `json:"events,omitempty"`
 }
 
 // NewGETCustomerPasswordResets200ResponseDataInnerRelationships instantiates a new GETCustomerPasswordResets200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETCustomerPasswordResets200ResponseDataInnerRelationshipsWithDefaults()
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetCustomer() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetCustomer() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer {
 	if o == nil || o.Customer == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCouponRecipients200ResponseDataInnerRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -49,7 +49,7 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetCustomer
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetCustomerOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetCustomerOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) HasCustomer
 	return false
 }
 
-// SetCustomer gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Customer field.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetCustomer(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetCustomer gets a reference to the given GETCouponRecipients200ResponseDataInnerRelationshipsCustomer and assigns it to the Customer field.
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetCustomer(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer) {
 	o.Customer = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -81,7 +81,7 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents()
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) HasEvents()
 	return false
 }
 
-// SetEvents gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Events field.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETCustomerPasswordResets200ResponseDataInnerRelationships) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

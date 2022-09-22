@@ -29,8 +29,6 @@ type EventCallbackDataRelationshipsWebhookData struct {
 // will change when the set of required properties is changed
 func NewEventCallbackDataRelationshipsWebhookData() *EventCallbackDataRelationshipsWebhookData {
 	this := EventCallbackDataRelationshipsWebhookData{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewEventCallbackDataRelationshipsWebhookData() *EventCallbackDataRelationsh
 // but it doesn't guarantee that properties required by API are set
 func NewEventCallbackDataRelationshipsWebhookDataWithDefaults() *EventCallbackDataRelationshipsWebhookData {
 	this := EventCallbackDataRelationshipsWebhookData{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableEventCallbackDataRelationshipsWebhookData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

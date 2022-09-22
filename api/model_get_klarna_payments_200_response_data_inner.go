@@ -20,9 +20,9 @@ type GETKlarnaPayments200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETKlarnaPayments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
+	Attributes    *GETKlarnaPayments200ResponseDataInnerAttributes   `json:"attributes,omitempty"`
 	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETKlarnaPayments200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETKlarnaPayments200ResponseDataInner() *GETKlarnaPayments200ResponseDataInner {
 	this := GETKlarnaPayments200ResponseDataInner{}
-	var type_ string = "klarna_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETKlarnaPayments200ResponseDataInner() *GETKlarnaPayments200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewGETKlarnaPayments200ResponseDataInnerWithDefaults() *GETKlarnaPayments200ResponseDataInner {
 	this := GETKlarnaPayments200ResponseDataInner{}
-	var type_ string = "klarna_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETKlarnaPayments200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

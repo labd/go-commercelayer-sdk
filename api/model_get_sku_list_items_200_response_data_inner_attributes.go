@@ -409,5 +409,3 @@ func (v *NullableGETSkuListItems200ResponseDataInnerAttributes) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

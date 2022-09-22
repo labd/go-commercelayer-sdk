@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "packages"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHPackagesPackageId200ResponseDataAttributes**](PATCHPackagesPackageId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETPackages200ResponseDataInnerRelationships**](GETPackages200ResponseDataInnerRelationships.md) |  | [optional] 

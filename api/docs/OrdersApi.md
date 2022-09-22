@@ -1681,7 +1681,7 @@ import (
 )
 
 func main() {
-    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("orders", "XGZwpOSrWL", *openapiclient.NewPATCHOrdersOrderId200ResponseDataAttributes())) // OrderUpdate | 
+    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrdersOrderId200ResponseDataAttributes())) // OrderUpdate | 
     orderId := "orderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1753,7 +1753,7 @@ import (
 )
 
 func main() {
-    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("orders", *openapiclient.NewPOSTOrders201ResponseDataAttributes())) // OrderCreate | 
+    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("Type_example", *openapiclient.NewPOSTOrders201ResponseDataAttributes())) // OrderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

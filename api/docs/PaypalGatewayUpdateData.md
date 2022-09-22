@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "paypal_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes**](PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 

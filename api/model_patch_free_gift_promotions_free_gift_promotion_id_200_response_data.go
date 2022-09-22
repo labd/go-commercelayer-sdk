@@ -20,10 +20,10 @@ type PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                               `json:"links,omitempty"`
+	Attributes    *PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships            `json:"relationships,omitempty"`
 }
 
 // NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData instantiates a new PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData() *PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData {
 	this := PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData{}
-	var type_ string = "free_gift_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData() *PATCHFreeGi
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataWithDefaults() *PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData {
 	this := PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData{}
-	var type_ string = "free_gift_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseData) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

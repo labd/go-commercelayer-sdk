@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "imports"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTImports201ResponseDataAttributes**](POSTImports201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

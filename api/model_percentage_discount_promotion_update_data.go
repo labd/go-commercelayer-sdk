@@ -20,9 +20,9 @@ type PercentageDiscountPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                                  `json:"id"`
+	Attributes    PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships                                             `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionUpdateData instantiates a new PercentageDiscountPromotionUpdateData object
@@ -42,8 +42,6 @@ func NewPercentageDiscountPromotionUpdateData(type_ string, id string, attribute
 // but it doesn't guarantee that properties required by API are set
 func NewPercentageDiscountPromotionUpdateDataWithDefaults() *PercentageDiscountPromotionUpdateData {
 	this := PercentageDiscountPromotionUpdateData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullablePercentageDiscountPromotionUpdateData) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

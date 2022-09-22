@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "checkout_com_payments"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETCheckoutComPayments200ResponseDataInnerAttributes**](GETCheckoutComPayments200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationships**](GETAdyenPayments200ResponseDataInnerRelationships.md) |  | [optional] 

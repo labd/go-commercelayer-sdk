@@ -20,9 +20,9 @@ type POSTManualGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTManualGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *POSTManualGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETManualGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTManualGateways201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTManualGateways201ResponseData() *POSTManualGateways201ResponseData {
 	this := POSTManualGateways201ResponseData{}
-	var type_ string = "manual_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTManualGateways201ResponseData() *POSTManualGateways201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTManualGateways201ResponseDataWithDefaults() *POSTManualGateways201ResponseData {
 	this := POSTManualGateways201ResponseData{}
-	var type_ string = "manual_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTManualGateways201ResponseData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("stock_transfers", "XGZwpOSrWL", *openapiclient.NewPATCHStockTransfersStockTransferId200ResponseDataAttributes())) // StockTransferUpdate | 
+    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockTransfersStockTransferId200ResponseDataAttributes())) // StockTransferUpdate | 
     stockTransferId := "stockTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("stock_transfers", *openapiclient.NewPOSTStockTransfers201ResponseDataAttributes(int32(2)))) // StockTransferCreate | 
+    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("Type_example", *openapiclient.NewPOSTStockTransfers201ResponseDataAttributes(int32(2)))) // StockTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

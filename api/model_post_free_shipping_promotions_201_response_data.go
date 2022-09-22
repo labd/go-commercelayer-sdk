@@ -20,9 +20,9 @@ type POSTFreeShippingPromotions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTFreeShippingPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                 `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                  `json:"links,omitempty"`
+	Attributes    *POSTFreeShippingPromotions201ResponseDataAttributes    `json:"attributes,omitempty"`
 	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTFreeShippingPromotions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTFreeShippingPromotions201ResponseData() *POSTFreeShippingPromotions201ResponseData {
 	this := POSTFreeShippingPromotions201ResponseData{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTFreeShippingPromotions201ResponseData() *POSTFreeShippingPromotions2
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTFreeShippingPromotions201ResponseDataWithDefaults() *POSTFreeShippingPromotions201ResponseData {
 	this := POSTFreeShippingPromotions201ResponseData{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTFreeShippingPromotions201ResponseData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

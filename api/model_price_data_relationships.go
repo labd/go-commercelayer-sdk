@@ -17,11 +17,11 @@ import (
 
 // PriceDataRelationships struct for PriceDataRelationships
 type PriceDataRelationships struct {
-	PriceList *MarketDataRelationshipsPriceList `json:"price_list,omitempty"`
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
-	PriceTiers *PriceDataRelationshipsPriceTiers `json:"price_tiers,omitempty"`
-	PriceVolumeTiers *PriceDataRelationshipsPriceVolumeTiers `json:"price_volume_tiers,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	PriceList        *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
+	Sku              *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
+	PriceTiers       *PriceDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
+	PriceVolumeTiers *PriceDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
+	Attachments      *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewPriceDataRelationships instantiates a new PriceDataRelationships object
@@ -256,5 +256,3 @@ func (v *NullablePriceDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

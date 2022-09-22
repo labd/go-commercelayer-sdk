@@ -20,9 +20,9 @@ type ExternalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                          `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayUpdateData instantiates a new ExternalGatewayUpdateData object
@@ -42,8 +42,6 @@ func NewExternalGatewayUpdateData(type_ string, id string, attributes PATCHExter
 // but it doesn't guarantee that properties required by API are set
 func NewExternalGatewayUpdateDataWithDefaults() *ExternalGatewayUpdateData {
 	this := ExternalGatewayUpdateData{}
-	var type_ string = "external_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableExternalGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

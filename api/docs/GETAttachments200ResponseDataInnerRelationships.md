@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attachable** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Attachable** | Pointer to [**GETAttachments200ResponseDataInnerRelationshipsAttachable**](GETAttachments200ResponseDataInnerRelationshipsAttachable.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttachable
 
-`func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachable() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachable() GETAttachments200ResponseDataInnerRelationshipsAttachable`
 
 GetAttachable returns the Attachable field if non-nil, zero value otherwise.
 
 ### GetAttachableOk
 
-`func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachableOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETAttachments200ResponseDataInnerRelationships) GetAttachableOk() (*GETAttachments200ResponseDataInnerRelationshipsAttachable, bool)`
 
 GetAttachableOk returns a tuple with the Attachable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachable
 
-`func (o *GETAttachments200ResponseDataInnerRelationships) SetAttachable(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETAttachments200ResponseDataInnerRelationships) SetAttachable(v GETAttachments200ResponseDataInnerRelationshipsAttachable)`
 
 SetAttachable sets Attachable field to given value.
 

@@ -19,12 +19,11 @@ import (
 	"net/url"
 )
 
-
 // ApplicationApiService ApplicationApi service
 type ApplicationApiService service
 
 type ApplicationApiGETApplicationApplicationIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ApplicationApiService
 }
 
@@ -43,7 +42,7 @@ Retrieve the application
 func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest {
 	return ApplicationApiGETApplicationApplicationIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -51,10 +50,10 @@ func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context)
 //  @return GETApplicationApplicationId200Response
 func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETApplicationApplicationId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETApplicationApplicationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.GETApplicationApplicationId")

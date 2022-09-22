@@ -18,7 +18,7 @@ import (
 // AdyenGatewayDataRelationships struct for AdyenGatewayDataRelationships
 type AdyenGatewayDataRelationships struct {
 	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	AdyenPayments *AdyenGatewayDataRelationshipsAdyenPayments `json:"adyen_payments,omitempty"`
+	AdyenPayments  *AdyenGatewayDataRelationshipsAdyenPayments  `json:"adyen_payments,omitempty"`
 }
 
 // NewAdyenGatewayDataRelationships instantiates a new AdyenGatewayDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableAdyenGatewayDataRelationships) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "payment_gateways"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETKlarnaGateways200ResponseDataInnerAttributes**](GETKlarnaGateways200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETManualGateways200ResponseDataInnerRelationships**](GETManualGateways200ResponseDataInnerRelationships.md) |  | [optional] 

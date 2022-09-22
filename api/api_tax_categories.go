@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // TaxCategoriesApiService TaxCategoriesApi service
 type TaxCategoriesApiService service
 
 type TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx           context.Context
+	ApiService    *TaxCategoriesApiService
 	taxCategoryId string
 }
 
@@ -45,8 +44,8 @@ Delete a tax category
 */
 func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.C
 // Execute executes the request
 func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.DELETETaxCategoriesTaxCategoryId")
@@ -117,8 +116,8 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxC
 }
 
 type TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx              context.Context
+	ApiService       *TaxCategoriesApiService
 	avalaraAccountId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the tax categories associated to the avalara account
 */
 func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.C
 // Execute executes the request
 func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETAvalaraAccountIdTaxCategories")
@@ -209,8 +208,8 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxC
 }
 
 type TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx                     context.Context
+	ApiService              *TaxCategoriesApiService
 	externalTaxCalculatorId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the tax categories associated to the external tax calculator
 */
 func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategories(ctx co
 // Execute executes the request
 func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETExternalTaxCalculatorIdTaxCategories")
@@ -301,8 +300,8 @@ func (a *TaxCategoriesApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute
 }
 
 type TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx                   context.Context
+	ApiService            *TaxCategoriesApiService
 	manualTaxCalculatorId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the tax categories associated to the manual tax calculator
 */
 func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategories(ctx cont
 // Execute executes the request
 func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETManualTaxCalculatorIdTaxCategories")
@@ -393,8 +392,8 @@ func (a *TaxCategoriesApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r
 }
 
 type TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx             context.Context
+	ApiService      *TaxCategoriesApiService
 	taxCalculatorId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the tax categories associated to the tax calculator
 */
 func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategories(ctx context.Co
 // Execute executes the request
 func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETTaxCalculatorIdTaxCategories")
@@ -485,7 +484,7 @@ func (a *TaxCategoriesApiService) GETTaxCalculatorIdTaxCategoriesExecute(r TaxCa
 }
 
 type TaxCategoriesApiGETTaxCategoriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TaxCategoriesApiService
 }
 
@@ -504,7 +503,7 @@ List all tax categories
 func (a *TaxCategoriesApiService) GETTaxCategories(ctx context.Context) TaxCategoriesApiGETTaxCategoriesRequest {
 	return TaxCategoriesApiGETTaxCategoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -512,10 +511,10 @@ func (a *TaxCategoriesApiService) GETTaxCategories(ctx context.Context) TaxCateg
 //  @return GETTaxCategories200Response
 func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETTaxCategoriesRequest) (*GETTaxCategories200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTaxCategories200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTaxCategories200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETTaxCategories")
@@ -584,8 +583,8 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETT
 }
 
 type TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx           context.Context
+	ApiService    *TaxCategoriesApiService
 	taxCategoryId string
 }
 
@@ -604,8 +603,8 @@ Retrieve a tax category
 */
 func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -614,10 +613,10 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Cont
 //  @return GETTaxCategoriesTaxCategoryId200Response
 func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest) (*GETTaxCategoriesTaxCategoryId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTaxCategoriesTaxCategoryId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTaxCategoriesTaxCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETTaxCategoriesTaxCategoryId")
@@ -687,8 +686,8 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCate
 }
 
 type TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx             context.Context
+	ApiService      *TaxCategoriesApiService
 	taxjarAccountId string
 }
 
@@ -707,8 +706,8 @@ Retrieve the tax categories associated to the taxjar account
 */
 func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -716,9 +715,9 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Co
 // Execute executes the request
 func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.GETTaxjarAccountIdTaxCategories")
@@ -779,10 +778,10 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCa
 }
 
 type TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx               context.Context
+	ApiService        *TaxCategoriesApiService
 	taxCategoryUpdate *TaxCategoryUpdate
-	taxCategoryId string
+	taxCategoryId     string
 }
 
 func (r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) TaxCategoryUpdate(taxCategoryUpdate TaxCategoryUpdate) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
@@ -805,8 +804,8 @@ Update a tax category
 */
 func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -815,10 +814,10 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Co
 //  @return PATCHTaxCategoriesTaxCategoryId200Response
 func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) (*PATCHTaxCategoriesTaxCategoryId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHTaxCategoriesTaxCategoryId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHTaxCategoriesTaxCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.PATCHTaxCategoriesTaxCategoryId")
@@ -893,8 +892,8 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 }
 
 type TaxCategoriesApiPOSTTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *TaxCategoriesApiService
+	ctx               context.Context
+	ApiService        *TaxCategoriesApiService
 	taxCategoryCreate *TaxCategoryCreate
 }
 
@@ -918,7 +917,7 @@ Create a tax category
 func (a *TaxCategoriesApiService) POSTTaxCategories(ctx context.Context) TaxCategoriesApiPOSTTaxCategoriesRequest {
 	return TaxCategoriesApiPOSTTaxCategoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -926,10 +925,10 @@ func (a *TaxCategoriesApiService) POSTTaxCategories(ctx context.Context) TaxCate
 //  @return POSTTaxCategories201Response
 func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r TaxCategoriesApiPOSTTaxCategoriesRequest) (*POSTTaxCategories201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTTaxCategories201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTTaxCategories201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxCategoriesApiService.POSTTaxCategories")

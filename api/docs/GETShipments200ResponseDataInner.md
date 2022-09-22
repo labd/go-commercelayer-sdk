@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "shipments"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETShipments200ResponseDataInnerAttributes**](GETShipments200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETShipments200ResponseDataInnerRelationships**](GETShipments200ResponseDataInnerRelationships.md) |  | [optional] 

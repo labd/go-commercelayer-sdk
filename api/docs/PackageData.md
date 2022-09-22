@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "packages"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
 

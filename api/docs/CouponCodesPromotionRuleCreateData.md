@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupon_codes_promotion_rules"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCodesPromotionRuleCreateDataRelationships**](CouponCodesPromotionRuleCreateDataRelationships.md) |  | [optional] 
 

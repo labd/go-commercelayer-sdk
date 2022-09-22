@@ -18,7 +18,7 @@ import (
 // ShippingMethodTierDataRelationships struct for ShippingMethodTierDataRelationships
 type ShippingMethodTierDataRelationships struct {
 	ShippingMethod *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Attachments    *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
 }
 
 // NewShippingMethodTierDataRelationships instantiates a new ShippingMethodTierDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableShippingMethodTierDataRelationships) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

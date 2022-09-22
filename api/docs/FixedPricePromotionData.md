@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "fixed_price_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETFixedPricePromotions200ResponseDataInnerAttributes**](GETFixedPricePromotions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 

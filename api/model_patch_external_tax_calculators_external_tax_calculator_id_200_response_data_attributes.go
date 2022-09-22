@@ -261,5 +261,3 @@ func (v *NullablePATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

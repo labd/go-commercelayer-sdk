@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Skus** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**SkuListItems** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**Bundles** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Skus** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
+**SkuListItems** | Pointer to [**GETSkuLists200ResponseDataInnerRelationshipsSkuListItems**](GETSkuLists200ResponseDataInnerRelationshipsSkuListItems.md) |  | [optional] 
+**Bundles** | Pointer to [**GETSkuLists200ResponseDataInnerRelationshipsBundles**](GETSkuLists200ResponseDataInnerRelationshipsBundles.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSkus
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkus() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkus() GETBundles200ResponseDataInnerRelationshipsSkus`
 
 GetSkus returns the Skus field if non-nil, zero value otherwise.
 
 ### GetSkusOk
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkusOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkusOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool)`
 
 GetSkusOk returns a tuple with the Skus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkus
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkus(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkus(v GETBundles200ResponseDataInnerRelationshipsSkus)`
 
 SetSkus sets Skus field to given value.
 
@@ -54,20 +54,20 @@ HasSkus returns a boolean if a field has been set.
 
 ### GetSkuListItems
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItems() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItems() GETSkuLists200ResponseDataInnerRelationshipsSkuListItems`
 
 GetSkuListItems returns the SkuListItems field if non-nil, zero value otherwise.
 
 ### GetSkuListItemsOk
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItemsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItemsOk() (*GETSkuLists200ResponseDataInnerRelationshipsSkuListItems, bool)`
 
 GetSkuListItemsOk returns a tuple with the SkuListItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuListItems
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkuListItems(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkuListItems(v GETSkuLists200ResponseDataInnerRelationshipsSkuListItems)`
 
 SetSkuListItems sets SkuListItems field to given value.
 
@@ -79,20 +79,20 @@ HasSkuListItems returns a boolean if a field has been set.
 
 ### GetBundles
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundles() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundles() GETSkuLists200ResponseDataInnerRelationshipsBundles`
 
 GetBundles returns the Bundles field if non-nil, zero value otherwise.
 
 ### GetBundlesOk
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundlesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundlesOk() (*GETSkuLists200ResponseDataInnerRelationshipsBundles, bool)`
 
 GetBundlesOk returns a tuple with the Bundles field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBundles
 
-`func (o *GETSkuLists200ResponseDataInnerRelationships) SetBundles(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETSkuLists200ResponseDataInnerRelationships) SetBundles(v GETSkuLists200ResponseDataInnerRelationshipsBundles)`
 
 SetBundles sets Bundles field to given value.
 

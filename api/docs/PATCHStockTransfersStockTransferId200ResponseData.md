@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "stock_transfers"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHStockTransfersStockTransferId200ResponseDataAttributes**](PATCHStockTransfersStockTransferId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETStockTransfers200ResponseDataInnerRelationships**](GETStockTransfers200ResponseDataInnerRelationships.md) |  | [optional] 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "price_volume_tiers"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes**](PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceVolumeTierUpdateDataRelationships**](PriceVolumeTierUpdateDataRelationships.md) |  | [optional] 

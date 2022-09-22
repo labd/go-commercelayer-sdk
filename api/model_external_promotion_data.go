@@ -18,9 +18,9 @@ import (
 // ExternalPromotionData struct for ExternalPromotionData
 type ExternalPromotionData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETExternalPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETExternalPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionData instantiates a new ExternalPromotionData object
@@ -39,8 +39,6 @@ func NewExternalPromotionData(type_ string, attributes GETExternalPromotions200R
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPromotionDataWithDefaults() *ExternalPromotionData {
 	this := ExternalPromotionData{}
-	var type_ string = "external_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableExternalPromotionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

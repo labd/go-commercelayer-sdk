@@ -20,9 +20,9 @@ type InventoryModelUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHInventoryModelsInventoryModelId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHInventoryModelsInventoryModelId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                        `json:"relationships,omitempty"`
 }
 
 // NewInventoryModelUpdateData instantiates a new InventoryModelUpdateData object
@@ -42,8 +42,6 @@ func NewInventoryModelUpdateData(type_ string, id string, attributes PATCHInvent
 // but it doesn't guarantee that properties required by API are set
 func NewInventoryModelUpdateDataWithDefaults() *InventoryModelUpdateData {
 	this := InventoryModelUpdateData{}
-	var type_ string = "inventory_models"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableInventoryModelUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

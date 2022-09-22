@@ -112,5 +112,3 @@ func (v *NullableGETPercentageDiscountPromotionsPercentageDiscountPromotionId200
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

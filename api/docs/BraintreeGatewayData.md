@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "braintree_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETBraintreeGateways200ResponseDataInnerAttributes**](GETBraintreeGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**BraintreeGatewayDataRelationships**](BraintreeGatewayDataRelationships.md) |  | [optional] 
 

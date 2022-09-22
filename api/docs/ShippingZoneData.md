@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_zones"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETShippingZones200ResponseDataInnerAttributes**](GETShippingZones200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingZoneDataRelationships**](ShippingZoneDataRelationships.md) |  | [optional] 
 

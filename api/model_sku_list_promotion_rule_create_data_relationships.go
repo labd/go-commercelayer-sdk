@@ -18,7 +18,7 @@ import (
 // SkuListPromotionRuleCreateDataRelationships struct for SkuListPromotionRuleCreateDataRelationships
 type SkuListPromotionRuleCreateDataRelationships struct {
 	Promotion CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion"`
-	SkuList *BundleDataRelationshipsSkuList `json:"sku_list,omitempty"`
+	SkuList   *BundleDataRelationshipsSkuList                    `json:"sku_list,omitempty"`
 }
 
 // NewSkuListPromotionRuleCreateDataRelationships instantiates a new SkuListPromotionRuleCreateDataRelationships object
@@ -141,5 +141,3 @@ func (v *NullableSkuListPromotionRuleCreateDataRelationships) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

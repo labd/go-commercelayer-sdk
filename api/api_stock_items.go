@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // StockItemsApiService StockItemsApi service
 type StockItemsApiService service
 
 type StockItemsApiDELETEStockItemsStockItemIdRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx         context.Context
+	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
@@ -45,8 +44,8 @@ Delete a stock item
 */
 func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiDELETEStockItemsStockItemIdRequest {
 	return StockItemsApiDELETEStockItemsStockItemIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, 
 // Execute executes the request
 func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsApiDELETEStockItemsStockItemIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.DELETEStockItemsStockItemId")
@@ -117,9 +116,9 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 }
 
 type StockItemsApiGETSkuIdStockItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *StockItemsApiService
-	skuId string
+	skuId      string
 }
 
 func (r StockItemsApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -138,17 +137,17 @@ Retrieve the stock items associated to the SKU
 func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) StockItemsApiGETSkuIdStockItemsRequest {
 	return StockItemsApiGETSkuIdStockItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuIdStockItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETSkuIdStockItems")
@@ -209,7 +208,7 @@ func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuId
 }
 
 type StockItemsApiGETStockItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *StockItemsApiService
 }
 
@@ -228,7 +227,7 @@ List all stock items
 func (a *StockItemsApiService) GETStockItems(ctx context.Context) StockItemsApiGETStockItemsRequest {
 	return StockItemsApiGETStockItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *StockItemsApiService) GETStockItems(ctx context.Context) StockItemsApiG
 //  @return GETStockItems200Response
 func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*GETStockItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETStockItems200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStockItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItems")
@@ -308,8 +307,8 @@ func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItems
 }
 
 type StockItemsApiGETStockItemsStockItemIdRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx         context.Context
+	ApiService  *StockItemsApiService
 	stockItemId string
 }
 
@@ -328,8 +327,8 @@ Retrieve a stock item
 */
 func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiGETStockItemsStockItemIdRequest {
 	return StockItemsApiGETStockItemsStockItemIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, sto
 //  @return GETStockItemsStockItemId200Response
 func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*GETStockItemsStockItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETStockItemsStockItemId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStockItemsStockItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItemsStockItemId")
@@ -411,8 +410,8 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGE
 }
 
 type StockItemsApiGETStockLineItemIdStockItemRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx             context.Context
+	ApiService      *StockItemsApiService
 	stockLineItemId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the stock item associated to the stock line item
 */
 func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) StockItemsApiGETStockLineItemIdStockItemRequest {
 	return StockItemsApiGETStockLineItemIdStockItemRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, 
 // Execute executes the request
 func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsApiGETStockLineItemIdStockItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockLineItemIdStockItem")
@@ -503,8 +502,8 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsAp
 }
 
 type StockItemsApiGETStockLocationIdStockItemsRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx             context.Context
+	ApiService      *StockItemsApiService
 	stockLocationId string
 }
 
@@ -523,8 +522,8 @@ Retrieve the stock items associated to the stock location
 */
 func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) StockItemsApiGETStockLocationIdStockItemsRequest {
 	return StockItemsApiGETStockLocationIdStockItemsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -532,9 +531,9 @@ func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context,
 // Execute executes the request
 func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockLocationIdStockItems")
@@ -595,10 +594,10 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsA
 }
 
 type StockItemsApiPATCHStockItemsStockItemIdRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx             context.Context
+	ApiService      *StockItemsApiService
 	stockItemUpdate *StockItemUpdate
-	stockItemId string
+	stockItemId     string
 }
 
 func (r StockItemsApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) StockItemsApiPATCHStockItemsStockItemIdRequest {
@@ -621,8 +620,8 @@ Update a stock item
 */
 func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiPATCHStockItemsStockItemIdRequest {
 	return StockItemsApiPATCHStockItemsStockItemIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -631,10 +630,10 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, s
 //  @return PATCHStockItemsStockItemId200Response
 func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*PATCHStockItemsStockItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHStockItemsStockItemId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHStockItemsStockItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.PATCHStockItemsStockItemId")
@@ -709,8 +708,8 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApi
 }
 
 type StockItemsApiPOSTStockItemsRequest struct {
-	ctx context.Context
-	ApiService *StockItemsApiService
+	ctx             context.Context
+	ApiService      *StockItemsApiService
 	stockItemCreate *StockItemCreate
 }
 
@@ -734,7 +733,7 @@ Create a stock item
 func (a *StockItemsApiService) POSTStockItems(ctx context.Context) StockItemsApiPOSTStockItemsRequest {
 	return StockItemsApiPOSTStockItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -742,10 +741,10 @@ func (a *StockItemsApiService) POSTStockItems(ctx context.Context) StockItemsApi
 //  @return POSTStockItems201Response
 func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*POSTStockItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTStockItems201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTStockItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.POSTStockItems")

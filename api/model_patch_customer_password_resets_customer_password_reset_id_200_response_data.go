@@ -20,10 +20,10 @@ type PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                       `json:"links,omitempty"`
+	Attributes    *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData instantiates a new PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData() *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData {
 	this := PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData{}
-	var type_ string = "customer_password_resets"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData() *PAT
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataWithDefaults() *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData {
 	this := PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseData{}
-	var type_ string = "customer_password_resets"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

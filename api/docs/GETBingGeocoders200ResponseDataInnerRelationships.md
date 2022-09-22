@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Addresses** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Addresses** | Pointer to [**GETBingGeocoders200ResponseDataInnerRelationshipsAddresses**](GETBingGeocoders200ResponseDataInnerRelationshipsAddresses.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddresses
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAddresses() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAddresses() GETBingGeocoders200ResponseDataInnerRelationshipsAddresses`
 
 GetAddresses returns the Addresses field if non-nil, zero value otherwise.
 
 ### GetAddressesOk
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAddressesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAddressesOk() (*GETBingGeocoders200ResponseDataInnerRelationshipsAddresses, bool)`
 
 GetAddressesOk returns a tuple with the Addresses field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddresses
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) SetAddresses(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) SetAddresses(v GETBingGeocoders200ResponseDataInnerRelationshipsAddresses)`
 
 SetAddresses sets Addresses field to given value.
 
@@ -53,20 +53,20 @@ HasAddresses returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETBingGeocoders200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETBingGeocoders200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

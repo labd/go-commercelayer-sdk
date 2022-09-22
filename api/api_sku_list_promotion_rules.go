@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // SkuListPromotionRulesApiService SkuListPromotionRulesApi service
 type SkuListPromotionRulesApiService service
 
 type SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                    context.Context
+	ApiService             *SkuListPromotionRulesApiService
 	skuListPromotionRuleId string
 }
 
@@ -45,8 +44,8 @@ Delete a SKU list promotion rule
 */
 func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.DELETESkuListPromotionRulesSkuListPromotionRuleId")
@@ -117,8 +116,8 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 }
 
 type SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                 context.Context
+	ApiService          *SkuListPromotionRulesApiService
 	externalPromotionId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the sku list promotion rule associated to the external promotion
 */
 func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETExternalPromotionIdSkuListPromotionRule")
@@ -209,8 +208,8 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 }
 
 type SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                    context.Context
+	ApiService             *SkuListPromotionRulesApiService
 	fixedAmountPromotionId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the sku list promotion rule associated to the fixed amount promotion
 */
 func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETFixedAmountPromotionIdSkuListPromotionRule")
@@ -301,8 +300,8 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 }
 
 type SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                   context.Context
+	ApiService            *SkuListPromotionRulesApiService
 	fixedPricePromotionId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the sku list promotion rule associated to the fixed price promotion
 */
 func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETFixedPricePromotionIdSkuListPromotionRule")
@@ -393,8 +392,8 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 }
 
 type SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                 context.Context
+	ApiService          *SkuListPromotionRulesApiService
 	freeGiftPromotionId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the sku list promotion rule associated to the free gift promotion
 */
 func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETFreeGiftPromotionIdSkuListPromotionRule")
@@ -485,8 +484,8 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 }
 
 type SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                     context.Context
+	ApiService              *SkuListPromotionRulesApiService
 	freeShippingPromotionId string
 }
 
@@ -505,8 +504,8 @@ Retrieve the sku list promotion rule associated to the free shipping promotion
 */
 func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -514,9 +513,9 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETFreeShippingPromotionIdSkuListPromotionRule")
@@ -577,8 +576,8 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 }
 
 type SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                           context.Context
+	ApiService                    *SkuListPromotionRulesApiService
 	percentageDiscountPromotionId string
 }
 
@@ -597,8 +596,8 @@ Retrieve the sku list promotion rule associated to the percentage discount promo
 */
 func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -606,9 +605,9 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETPercentageDiscountPromotionIdSkuListPromotionRule")
@@ -669,8 +668,8 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 }
 
 type SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx         context.Context
+	ApiService  *SkuListPromotionRulesApiService
 	promotionId string
 }
 
@@ -689,8 +688,8 @@ Retrieve the sku list promotion rule associated to the promotion
 */
 func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		promotionId: promotionId,
 	}
 }
@@ -698,9 +697,9 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx
 // Execute executes the request
 func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExecute(r SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETPromotionIdSkuListPromotionRule")
@@ -761,7 +760,7 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExec
 }
 
 type SkuListPromotionRulesApiGETSkuListPromotionRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *SkuListPromotionRulesApiService
 }
 
@@ -780,7 +779,7 @@ List all SKU list promotion rules
 func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiGETSkuListPromotionRulesRequest {
 	return SkuListPromotionRulesApiGETSkuListPromotionRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -788,10 +787,10 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRules(ctx context.C
 //  @return GETSkuListPromotionRules200Response
 func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) (*GETSkuListPromotionRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETSkuListPromotionRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETSkuListPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETSkuListPromotionRules")
@@ -860,8 +859,8 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuL
 }
 
 type SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                    context.Context
+	ApiService             *SkuListPromotionRulesApiService
 	skuListPromotionRuleId string
 }
 
@@ -880,8 +879,8 @@ Retrieve a SKU list promotion rule
 */
 func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
 	}
 }
@@ -890,10 +889,10 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 //  @return GETSkuListPromotionRulesSkuListPromotionRuleId200Response
 func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*GETSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETSkuListPromotionRulesSkuListPromotionRuleId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETSkuListPromotionRulesSkuListPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETSkuListPromotionRulesSkuListPromotionRuleId")
@@ -963,10 +962,10 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 }
 
 type SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                        context.Context
+	ApiService                 *SkuListPromotionRulesApiService
 	skuListPromotionRuleUpdate *SkuListPromotionRuleUpdate
-	skuListPromotionRuleId string
+	skuListPromotionRuleId     string
 }
 
 func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate SkuListPromotionRuleUpdate) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
@@ -989,8 +988,8 @@ Update a SKU list promotion rule
 */
 func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
 	}
 }
@@ -999,10 +998,10 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 //  @return POSTSkuListPromotionRules201Response
 func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTSkuListPromotionRules201Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuListPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleId")
@@ -1077,8 +1076,8 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 }
 
 type SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest struct {
-	ctx context.Context
-	ApiService *SkuListPromotionRulesApiService
+	ctx                        context.Context
+	ApiService                 *SkuListPromotionRulesApiService
 	skuListPromotionRuleCreate *SkuListPromotionRuleCreate
 }
 
@@ -1102,7 +1101,7 @@ Create a SKU list promotion rule
 func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRules(ctx context.Context) SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest {
 	return SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1110,10 +1109,10 @@ func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRules(ctx context.
 //  @return POSTSkuListPromotionRules201Response
 func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTSkuListPromotionRules201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuListPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.POSTSkuListPromotionRules")

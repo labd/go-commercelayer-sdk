@@ -1198,7 +1198,7 @@ import (
 )
 
 func main() {
-    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("skus", "XGZwpOSrWL", *openapiclient.NewPATCHSkusSkuId200ResponseDataAttributes())) // SkuUpdate | 
+    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkusSkuId200ResponseDataAttributes())) // SkuUpdate | 
     skuId := "skuId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1270,7 +1270,7 @@ import (
 )
 
 func main() {
-    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("skus", *openapiclient.NewPOSTSkus201ResponseDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
+    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("Type_example", *openapiclient.NewPOSTSkus201ResponseDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

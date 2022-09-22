@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("klarna_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes())) // KlarnaGatewayUpdate | 
+    klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes())) // KlarnaGatewayUpdate | 
     klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    klarnaGatewayCreate := *openapiclient.NewKlarnaGatewayCreate(*openapiclient.NewKlarnaGatewayCreateData("klarna_gateways", *openapiclient.NewPOSTKlarnaGateways201ResponseDataAttributes("US payment gateway", "EU", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // KlarnaGatewayCreate | 
+    klarnaGatewayCreate := *openapiclient.NewKlarnaGatewayCreate(*openapiclient.NewKlarnaGatewayCreateData("Type_example", *openapiclient.NewPOSTKlarnaGateways201ResponseDataAttributes("US payment gateway", "EU", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // KlarnaGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

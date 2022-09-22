@@ -20,9 +20,9 @@ type GETSkuListItems200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETSkuListItems200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                           `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks            `json:"links,omitempty"`
+	Attributes    *GETSkuListItems200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETSkuListItems200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETSkuListItems200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETSkuListItems200ResponseDataInner() *GETSkuListItems200ResponseDataInner {
 	this := GETSkuListItems200ResponseDataInner{}
-	var type_ string = "sku_list_items"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETSkuListItems200ResponseDataInner() *GETSkuListItems200ResponseDataInn
 // but it doesn't guarantee that properties required by API are set
 func NewGETSkuListItems200ResponseDataInnerWithDefaults() *GETSkuListItems200ResponseDataInner {
 	this := GETSkuListItems200ResponseDataInner{}
-	var type_ string = "sku_list_items"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETSkuListItems200ResponseDataInner) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

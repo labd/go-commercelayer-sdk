@@ -18,7 +18,7 @@ import (
 // ParcelUpdateDataRelationships struct for ParcelUpdateDataRelationships
 type ParcelUpdateDataRelationships struct {
 	Shipment *OrderDataRelationshipsShipments `json:"shipment,omitempty"`
-	Package *ParcelDataRelationshipsPackage `json:"package,omitempty"`
+	Package  *ParcelDataRelationshipsPackage  `json:"package,omitempty"`
 }
 
 // NewParcelUpdateDataRelationships instantiates a new ParcelUpdateDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableParcelUpdateDataRelationships) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

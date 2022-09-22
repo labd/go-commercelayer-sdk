@@ -18,7 +18,7 @@ import (
 // GETAddresses200ResponseDataInnerRelationshipsGeocoder struct for GETAddresses200ResponseDataInnerRelationshipsGeocoder
 type GETAddresses200ResponseDataInnerRelationshipsGeocoder struct {
 	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks `json:"links,omitempty"`
-	Data *GETAddresses200ResponseDataInnerRelationshipsGeocoderData `json:"data,omitempty"`
+	Data  *GETAddresses200ResponseDataInnerRelationshipsGeocoderData  `json:"data,omitempty"`
 }
 
 // NewGETAddresses200ResponseDataInnerRelationshipsGeocoder instantiates a new GETAddresses200ResponseDataInnerRelationshipsGeocoder object
@@ -148,5 +148,3 @@ func (v *NullableGETAddresses200ResponseDataInnerRelationshipsGeocoder) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

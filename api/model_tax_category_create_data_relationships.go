@@ -17,7 +17,7 @@ import (
 
 // TaxCategoryCreateDataRelationships struct for TaxCategoryCreateDataRelationships
 type TaxCategoryCreateDataRelationships struct {
-	Sku BundleDataRelationshipsSkus `json:"sku"`
+	Sku           BundleDataRelationshipsSkus               `json:"sku"`
 	TaxCalculator TaxCategoryDataRelationshipsTaxCalculator `json:"tax_calculator"`
 }
 
@@ -134,5 +134,3 @@ func (v *NullableTaxCategoryCreateDataRelationships) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

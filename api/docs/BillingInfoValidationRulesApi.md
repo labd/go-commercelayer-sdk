@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("billing_info_validation_rules", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleUpdate | 
+    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleUpdate | 
     billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("billing_info_validation_rules", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleCreate | 
+    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

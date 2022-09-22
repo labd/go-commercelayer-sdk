@@ -18,7 +18,7 @@ import (
 // LineItemCreateDataRelationships struct for LineItemCreateDataRelationships
 type LineItemCreateDataRelationships struct {
 	Order AdyenPaymentDataRelationshipsOrder `json:"order"`
-	Item *LineItemDataRelationshipsItem `json:"item,omitempty"`
+	Item  *LineItemDataRelationshipsItem     `json:"item,omitempty"`
 }
 
 // NewLineItemCreateDataRelationships instantiates a new LineItemCreateDataRelationships object
@@ -141,5 +141,3 @@ func (v *NullableLineItemCreateDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

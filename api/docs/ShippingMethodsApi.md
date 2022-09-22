@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("shipping_methods", "XGZwpOSrWL", *openapiclient.NewPATCHShippingMethodsShippingMethodId200ResponseDataAttributes())) // ShippingMethodUpdate | 
+    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingMethodsShippingMethodId200ResponseDataAttributes())) // ShippingMethodUpdate | 
     shippingMethodId := "shippingMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("shipping_methods", *openapiclient.NewPOSTShippingMethods201ResponseDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
+    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("Type_example", *openapiclient.NewPOSTShippingMethods201ResponseDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

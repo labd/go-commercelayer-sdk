@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // HasManyApiService HasManyApi service
 type HasManyApiService service
 
 type HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx            context.Context
+	ApiService     *HasManyApiService
 	adyenGatewayId string
 }
 
@@ -45,8 +44,8 @@ Retrieve the adyen payments associated to the adyen gateway
 */
 func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest {
 	return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAdyenGatewayIdAdyenPayments")
@@ -117,8 +116,8 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETAdyenGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx            context.Context
+	ApiService     *HasManyApiService
 	adyenGatewayId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the payment methods associated to the adyen gateway
 */
 func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAdyenGatewayIdPaymentMethods")
@@ -209,8 +208,8 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiG
 }
 
 type HasManyApiGETAuthorizationIdCapturesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	authorizationId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the captures associated to the authorization
 */
 func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdCapturesRequest {
 	return HasManyApiGETAuthorizationIdCapturesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, auth
 // Execute executes the request
 func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAuthorizationIdCapturesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAuthorizationIdCaptures")
@@ -301,8 +300,8 @@ func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAut
 }
 
 type HasManyApiGETAuthorizationIdVoidsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	authorizationId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the voids associated to the authorization
 */
 func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdVoidsRequest {
 	return HasManyApiGETAuthorizationIdVoidsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authori
 // Execute executes the request
 func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthorizationIdVoidsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAuthorizationIdVoids")
@@ -393,8 +392,8 @@ func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthor
 }
 
 type HasManyApiGETAvalaraAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	avalaraAccountId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the attachments associated to the avalara account
 */
 func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdAttachmentsRequest {
 	return HasManyApiGETAvalaraAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGETAvalaraAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAvalaraAccountIdAttachments")
@@ -485,8 +484,8 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETAvalaraAccountIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	avalaraAccountId string
 }
 
@@ -505,8 +504,8 @@ Retrieve the markets associated to the avalara account
 */
 func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdMarketsRequest {
 	return HasManyApiGETAvalaraAccountIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -514,9 +513,9 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, aval
 // Execute executes the request
 func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAvalaraAccountIdMarkets")
@@ -577,8 +576,8 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAva
 }
 
 type HasManyApiGETAvalaraAccountIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	avalaraAccountId string
 }
 
@@ -597,8 +596,8 @@ Retrieve the tax categories associated to the avalara account
 */
 func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdTaxCategoriesRequest {
 	return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
 	}
 }
@@ -606,9 +605,9 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApiGETAvalaraAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAvalaraAccountIdTaxCategories")
@@ -669,8 +668,8 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApi
 }
 
 type HasManyApiGETBingGeocoderIdAddressesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx            context.Context
+	ApiService     *HasManyApiService
 	bingGeocoderId string
 }
 
@@ -689,8 +688,8 @@ Retrieve the addresses associated to the bing geocoder
 */
 func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAddressesRequest {
 	return HasManyApiGETBingGeocoderIdAddressesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
 	}
 }
@@ -698,9 +697,9 @@ func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bing
 // Execute executes the request
 func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBingGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBingGeocoderIdAddresses")
@@ -761,8 +760,8 @@ func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBin
 }
 
 type HasManyApiGETBingGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx            context.Context
+	ApiService     *HasManyApiService
 	bingGeocoderId string
 }
 
@@ -781,8 +780,8 @@ Retrieve the attachments associated to the bing geocoder
 */
 func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAttachmentsRequest {
 	return HasManyApiGETBingGeocoderIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		bingGeocoderId: bingGeocoderId,
 	}
 }
@@ -790,9 +789,9 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bi
 // Execute executes the request
 func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETBingGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBingGeocoderIdAttachments")
@@ -853,8 +852,8 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETB
 }
 
 type HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                context.Context
+	ApiService         *HasManyApiService
 	braintreeGatewayId string
 }
 
@@ -873,8 +872,8 @@ Retrieve the braintree payments associated to the braintree gateway
 */
 func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest {
 	return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
 	}
 }
@@ -882,9 +881,9 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.C
 // Execute executes the request
 func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBraintreeGatewayIdBraintreePayments")
@@ -945,8 +944,8 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasM
 }
 
 type HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                context.Context
+	ApiService         *HasManyApiService
 	braintreeGatewayId string
 }
 
@@ -965,8 +964,8 @@ Retrieve the payment methods associated to the braintree gateway
 */
 func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
 	}
 }
@@ -974,9 +973,9 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Cont
 // Execute executes the request
 func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBraintreeGatewayIdPaymentMethods")
@@ -1037,9 +1036,9 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasMany
 }
 
 type HasManyApiGETBundleIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	bundleId string
+	bundleId   string
 }
 
 func (r HasManyApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1058,17 +1057,17 @@ Retrieve the attachments associated to the bundle
 func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) HasManyApiGETBundleIdAttachmentsRequest {
 	return HasManyApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		bundleId: bundleId,
+		ctx:        ctx,
+		bundleId:   bundleId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBundleIdAttachments")
@@ -1129,9 +1128,9 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleI
 }
 
 type HasManyApiGETBundleIdSkusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	bundleId string
+	bundleId   string
 }
 
 func (r HasManyApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
@@ -1150,17 +1149,17 @@ Retrieve the skus associated to the bundle
 func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId string) HasManyApiGETBundleIdSkusRequest {
 	return HasManyApiGETBundleIdSkusRequest{
 		ApiService: a,
-		ctx: ctx,
-		bundleId: bundleId,
+		ctx:        ctx,
+		bundleId:   bundleId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETBundleIdSkus")
@@ -1221,9 +1220,9 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRe
 }
 
 type HasManyApiGETCaptureIdRefundsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	captureId string
+	captureId  string
 }
 
 func (r HasManyApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
@@ -1242,17 +1241,17 @@ Retrieve the refunds associated to the capture
 func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) HasManyApiGETCaptureIdRefundsRequest {
 	return HasManyApiGETCaptureIdRefundsRequest{
 		ApiService: a,
-		ctx: ctx,
-		captureId: captureId,
+		ctx:        ctx,
+		captureId:  captureId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdRefundsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCaptureIdRefunds")
@@ -1313,8 +1312,8 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdR
 }
 
 type HasManyApiGETCarrierAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	carrierAccountId string
 }
 
@@ -1333,8 +1332,8 @@ Retrieve the attachments associated to the carrier account
 */
 func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) HasManyApiGETCarrierAccountIdAttachmentsRequest {
 	return HasManyApiGETCarrierAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
 	}
 }
@@ -1342,9 +1341,9 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGETCarrierAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCarrierAccountIdAttachments")
@@ -1405,8 +1404,8 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                  context.Context
+	ApiService           *HasManyApiService
 	checkoutComGatewayId string
 }
 
@@ -1425,8 +1424,8 @@ Retrieve the checkout com payments associated to the checkout.com gateway
 */
 func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
 	return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -1434,9 +1433,9 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx conte
 // Execute executes the request
 func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCheckoutComGatewayIdCheckoutComPayments")
@@ -1497,8 +1496,8 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r 
 }
 
 type HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                  context.Context
+	ApiService           *HasManyApiService
 	checkoutComGatewayId string
 }
 
@@ -1517,8 +1516,8 @@ Retrieve the payment methods associated to the checkout.com gateway
 */
 func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -1526,9 +1525,9 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Co
 // Execute executes the request
 func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCheckoutComGatewayIdPaymentMethods")
@@ -1589,8 +1588,8 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasMa
 }
 
 type HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                        context.Context
+	ApiService                 *HasManyApiService
 	couponCodesPromotionRuleId string
 }
 
@@ -1609,8 +1608,8 @@ Retrieve the coupons associated to the coupon codes promotion rule
 */
 func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest {
 	return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                 a,
+		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
 	}
 }
@@ -1618,9 +1617,9 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Con
 // Execute executes the request
 func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponCodesPromotionRuleIdCoupons")
@@ -1681,8 +1680,8 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasMan
 }
 
 type HasManyApiGETCouponRecipientIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx               context.Context
+	ApiService        *HasManyApiService
 	couponRecipientId string
 }
 
@@ -1701,8 +1700,8 @@ Retrieve the attachments associated to the coupon recipient
 */
 func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) HasManyApiGETCouponRecipientIdAttachmentsRequest {
 	return HasManyApiGETCouponRecipientIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
 	}
 }
@@ -1710,9 +1709,9 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiGETCouponRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCouponRecipientIdAttachments")
@@ -1773,8 +1772,8 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiG
 }
 
 type HasManyApiGETCustomerAddressIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx               context.Context
+	ApiService        *HasManyApiService
 	customerAddressId string
 }
 
@@ -1793,8 +1792,8 @@ Retrieve the events associated to the customer address
 */
 func (a *HasManyApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) HasManyApiGETCustomerAddressIdEventsRequest {
 	return HasManyApiGETCustomerAddressIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -1802,9 +1801,9 @@ func (a *HasManyApiService) GETCustomerAddressIdEvents(ctx context.Context, cust
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCustomerAddressIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerAddressIdEvents")
@@ -1865,8 +1864,8 @@ func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCus
 }
 
 type HasManyApiGETCustomerGroupIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	customerGroupId string
 }
 
@@ -1885,8 +1884,8 @@ Retrieve the attachments associated to the customer group
 */
 func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdAttachmentsRequest {
 	return HasManyApiGETCustomerGroupIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -1894,9 +1893,9 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, c
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGETCustomerGroupIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerGroupIdAttachments")
@@ -1957,8 +1956,8 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGET
 }
 
 type HasManyApiGETCustomerGroupIdCustomersRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	customerGroupId string
 }
 
@@ -1977,8 +1976,8 @@ Retrieve the customers associated to the customer group
 */
 func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdCustomersRequest {
 	return HasManyApiGETCustomerGroupIdCustomersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -1986,9 +1985,9 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, cus
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerGroupIdCustomers")
@@ -2049,8 +2048,8 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCu
 }
 
 type HasManyApiGETCustomerGroupIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	customerGroupId string
 }
 
@@ -2069,8 +2068,8 @@ Retrieve the markets associated to the customer group
 */
 func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdMarketsRequest {
 	return HasManyApiGETCustomerGroupIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -2078,9 +2077,9 @@ func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, custo
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerGroupIdMarkets")
@@ -2141,7 +2140,7 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCust
 }
 
 type HasManyApiGETCustomerIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2162,7 +2161,7 @@ Retrieve the attachments associated to the customer
 func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) HasManyApiGETCustomerIdAttachmentsRequest {
 	return HasManyApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2170,9 +2169,9 @@ func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, custom
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCustomerIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdAttachments")
@@ -2233,7 +2232,7 @@ func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCusto
 }
 
 type HasManyApiGETCustomerIdCustomerAddressesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2254,7 +2253,7 @@ Retrieve the customer addresses associated to the customer
 func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerAddressesRequest {
 	return HasManyApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2262,9 +2261,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGETCustomerIdCustomerAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdCustomerAddresses")
@@ -2325,7 +2324,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGE
 }
 
 type HasManyApiGETCustomerIdCustomerPaymentSourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2346,7 +2345,7 @@ Retrieve the customer payment sources associated to the customer
 func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerPaymentSourcesRequest {
 	return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2354,9 +2353,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Cont
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasManyApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdCustomerPaymentSources")
@@ -2417,7 +2416,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasMany
 }
 
 type HasManyApiGETCustomerIdCustomerSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2438,7 +2437,7 @@ Retrieve the customer subscriptions associated to the customer
 func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerSubscriptionsRequest {
 	return HasManyApiGETCustomerIdCustomerSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2446,9 +2445,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Conte
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyApiGETCustomerIdCustomerSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdCustomerSubscriptions")
@@ -2509,7 +2508,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyA
 }
 
 type HasManyApiGETCustomerIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2530,7 +2529,7 @@ Retrieve the events associated to the customer
 func (a *HasManyApiService) GETCustomerIdEvents(ctx context.Context, customerId string) HasManyApiGETCustomerIdEventsRequest {
 	return HasManyApiGETCustomerIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2538,9 +2537,9 @@ func (a *HasManyApiService) GETCustomerIdEvents(ctx context.Context, customerId 
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdEvents")
@@ -2601,7 +2600,7 @@ func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerId
 }
 
 type HasManyApiGETCustomerIdOrderSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2622,7 +2621,7 @@ Retrieve the order subscriptions associated to the customer
 func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrderSubscriptionsRequest {
 	return HasManyApiGETCustomerIdOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2630,9 +2629,9 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdOrderSubscriptions")
@@ -2693,7 +2692,7 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiG
 }
 
 type HasManyApiGETCustomerIdOrdersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2714,7 +2713,7 @@ Retrieve the orders associated to the customer
 func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrdersRequest {
 	return HasManyApiGETCustomerIdOrdersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2722,9 +2721,9 @@ func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId 
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerIdOrdersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdOrders")
@@ -2785,7 +2784,7 @@ func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerId
 }
 
 type HasManyApiGETCustomerIdReturnsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	customerId string
 }
@@ -2806,7 +2805,7 @@ Retrieve the returns associated to the customer
 func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId string) HasManyApiGETCustomerIdReturnsRequest {
 	return HasManyApiGETCustomerIdReturnsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -2814,9 +2813,9 @@ func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerIdReturnsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerIdReturns")
@@ -2877,8 +2876,8 @@ func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerI
 }
 
 type HasManyApiGETCustomerPasswordResetIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                     context.Context
+	ApiService              *HasManyApiService
 	customerPasswordResetId string
 }
 
@@ -2897,8 +2896,8 @@ Retrieve the events associated to the customer password reset
 */
 func (a *HasManyApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) HasManyApiGETCustomerPasswordResetIdEventsRequest {
 	return HasManyApiGETCustomerPasswordResetIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -2906,9 +2905,9 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEvents(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApiGETCustomerPasswordResetIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerPasswordResetIdEvents")
@@ -2969,8 +2968,8 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApi
 }
 
 type HasManyApiGETCustomerSubscriptionIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                    context.Context
+	ApiService             *HasManyApiService
 	customerSubscriptionId string
 }
 
@@ -2989,8 +2988,8 @@ Retrieve the events associated to the customer subscription
 */
 func (a *HasManyApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) HasManyApiGETCustomerSubscriptionIdEventsRequest {
 	return HasManyApiGETCustomerSubscriptionIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
 	}
 }
@@ -2998,9 +2997,9 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEvents(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiGETCustomerSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETCustomerSubscriptionIdEvents")
@@ -3061,8 +3060,8 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiG
 }
 
 type HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                context.Context
+	ApiService         *HasManyApiService
 	deliveryLeadTimeId string
 }
 
@@ -3081,8 +3080,8 @@ Retrieve the attachments associated to the delivery lead time
 */
 func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest {
 	return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -3090,9 +3089,9 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETDeliveryLeadTimeIdAttachments")
@@ -3153,9 +3152,9 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApi
 }
 
 type HasManyApiGETEventIdLastEventCallbacksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	eventId string
+	eventId    string
 }
 
 func (r HasManyApiGETEventIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -3174,17 +3173,17 @@ Retrieve the last event callbacks associated to the event
 func (a *HasManyApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId string) HasManyApiGETEventIdLastEventCallbacksRequest {
 	return HasManyApiGETEventIdLastEventCallbacksRequest{
 		ApiService: a,
-		ctx: ctx,
-		eventId: eventId,
+		ctx:        ctx,
+		eventId:    eventId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETEventIdLastEventCallbacksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETEventIdLastEventCallbacks")
@@ -3245,9 +3244,9 @@ func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETE
 }
 
 type HasManyApiGETEventIdWebhooksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	eventId string
+	eventId    string
 }
 
 func (r HasManyApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
@@ -3266,17 +3265,17 @@ Retrieve the webhooks associated to the event
 func (a *HasManyApiService) GETEventIdWebhooks(ctx context.Context, eventId string) HasManyApiGETEventIdWebhooksRequest {
 	return HasManyApiGETEventIdWebhooksRequest{
 		ApiService: a,
-		ctx: ctx,
-		eventId: eventId,
+		ctx:        ctx,
+		eventId:    eventId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebhooksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETEventIdWebhooks")
@@ -3337,8 +3336,8 @@ func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebh
 }
 
 type HasManyApiGETExternalGatewayIdExternalPaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx               context.Context
+	ApiService        *HasManyApiService
 	externalGatewayId string
 }
 
@@ -3357,8 +3356,8 @@ Retrieve the external payments associated to the external gateway
 */
 func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdExternalPaymentsRequest {
 	return HasManyApiGETExternalGatewayIdExternalPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
 	}
 }
@@ -3366,9 +3365,9 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Con
 // Execute executes the request
 func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasManyApiGETExternalGatewayIdExternalPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalGatewayIdExternalPayments")
@@ -3429,8 +3428,8 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasMan
 }
 
 type HasManyApiGETExternalGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx               context.Context
+	ApiService        *HasManyApiService
 	externalGatewayId string
 }
 
@@ -3449,8 +3448,8 @@ Retrieve the payment methods associated to the external gateway
 */
 func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETExternalGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
 	}
 }
@@ -3458,9 +3457,9 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Conte
 // Execute executes the request
 func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalGatewayIdPaymentMethods")
@@ -3521,8 +3520,8 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyA
 }
 
 type HasManyApiGETExternalPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	externalPromotionId string
 }
 
@@ -3541,8 +3540,8 @@ Retrieve the attachments associated to the external promotion
 */
 func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) HasManyApiGETExternalPromotionIdAttachmentsRequest {
 	return HasManyApiGETExternalPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -3550,9 +3549,9 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyApiGETExternalPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalPromotionIdAttachments")
@@ -3613,8 +3612,8 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyAp
 }
 
 type HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                     context.Context
+	ApiService              *HasManyApiService
 	externalTaxCalculatorId string
 }
 
@@ -3633,8 +3632,8 @@ Retrieve the attachments associated to the external tax calculator
 */
 func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -3642,9 +3641,9 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Co
 // Execute executes the request
 func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalTaxCalculatorIdAttachments")
@@ -3705,8 +3704,8 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasMa
 }
 
 type HasManyApiGETExternalTaxCalculatorIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                     context.Context
+	ApiService              *HasManyApiService
 	externalTaxCalculatorId string
 }
 
@@ -3725,8 +3724,8 @@ Retrieve the markets associated to the external tax calculator
 */
 func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETExternalTaxCalculatorIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -3734,9 +3733,9 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalTaxCalculatorIdMarkets")
@@ -3797,8 +3796,8 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyAp
 }
 
 type HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                     context.Context
+	ApiService              *HasManyApiService
 	externalTaxCalculatorId string
 }
 
@@ -3817,8 +3816,8 @@ Retrieve the tax categories associated to the external tax calculator
 */
 func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest {
 	return HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
 	}
 }
@@ -3826,9 +3825,9 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategories(ctx context.
 // Execute executes the request
 func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETExternalTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExternalTaxCalculatorIdTaxCategories")
@@ -3889,8 +3888,8 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdTaxCategoriesExecute(r Has
 }
 
 type HasManyApiGETFixedAmountPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                    context.Context
+	ApiService             *HasManyApiService
 	fixedAmountPromotionId string
 }
 
@@ -3909,8 +3908,8 @@ Retrieve the attachments associated to the fixed amount promotion
 */
 func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) HasManyApiGETFixedAmountPromotionIdAttachmentsRequest {
 	return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -3918,9 +3917,9 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Con
 // Execute executes the request
 func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasManyApiGETFixedAmountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedAmountPromotionIdAttachments")
@@ -3981,8 +3980,8 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasMan
 }
 
 type HasManyApiGETFixedPricePromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	fixedPricePromotionId string
 }
 
@@ -4001,8 +4000,8 @@ Retrieve the attachments associated to the fixed price promotion
 */
 func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdAttachmentsRequest {
 	return HasManyApiGETFixedPricePromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -4010,9 +4009,9 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Cont
 // Execute executes the request
 func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasManyApiGETFixedPricePromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedPricePromotionIdAttachments")
@@ -4073,8 +4072,8 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasMany
 }
 
 type HasManyApiGETFixedPricePromotionIdSkusRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	fixedPricePromotionId string
 }
 
@@ -4093,8 +4092,8 @@ Retrieve the skus associated to the fixed price promotion
 */
 func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdSkusRequest {
 	return HasManyApiGETFixedPricePromotionIdSkusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
 	}
 }
@@ -4102,9 +4101,9 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fi
 // Execute executes the request
 func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETFixedPricePromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFixedPricePromotionIdSkus")
@@ -4165,8 +4164,8 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETF
 }
 
 type HasManyApiGETFreeGiftPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	freeGiftPromotionId string
 }
 
@@ -4185,8 +4184,8 @@ Retrieve the attachments associated to the free gift promotion
 */
 func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdAttachmentsRequest {
 	return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -4194,9 +4193,9 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyApiGETFreeGiftPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeGiftPromotionIdAttachments")
@@ -4257,8 +4256,8 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyAp
 }
 
 type HasManyApiGETFreeGiftPromotionIdSkusRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	freeGiftPromotionId string
 }
 
@@ -4277,8 +4276,8 @@ Retrieve the skus associated to the free gift promotion
 */
 func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdSkusRequest {
 	return HasManyApiGETFreeGiftPromotionIdSkusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -4286,9 +4285,9 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, free
 // Execute executes the request
 func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFreeGiftPromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeGiftPromotionIdSkus")
@@ -4349,8 +4348,8 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFre
 }
 
 type HasManyApiGETFreeShippingPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                     context.Context
+	ApiService              *HasManyApiService
 	freeShippingPromotionId string
 }
 
@@ -4369,8 +4368,8 @@ Retrieve the attachments associated to the free shipping promotion
 */
 func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) HasManyApiGETFreeShippingPromotionIdAttachmentsRequest {
 	return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -4378,9 +4377,9 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Co
 // Execute executes the request
 func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasManyApiGETFreeShippingPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeShippingPromotionIdAttachments")
@@ -4441,7 +4440,7 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasMa
 }
 
 type HasManyApiGETGeocoderIdAddressesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	geocoderId string
 }
@@ -4462,7 +4461,7 @@ Retrieve the addresses associated to the geocoder
 func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAddressesRequest {
 	return HasManyApiGETGeocoderIdAddressesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		geocoderId: geocoderId,
 	}
 }
@@ -4470,9 +4469,9 @@ func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoder
 // Execute executes the request
 func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGeocoderIdAddresses")
@@ -4533,7 +4532,7 @@ func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocode
 }
 
 type HasManyApiGETGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	geocoderId string
 }
@@ -4554,7 +4553,7 @@ Retrieve the attachments associated to the geocoder
 func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAttachmentsRequest {
 	return HasManyApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		geocoderId: geocoderId,
 	}
 }
@@ -4562,9 +4561,9 @@ func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocod
 // Execute executes the request
 func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGeocoderIdAttachments")
@@ -4625,7 +4624,7 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeoco
 }
 
 type HasManyApiGETGiftCardIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	giftCardId string
 }
@@ -4646,7 +4645,7 @@ Retrieve the attachments associated to the gift card
 func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdAttachmentsRequest {
 	return HasManyApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -4654,9 +4653,9 @@ func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCa
 // Execute executes the request
 func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftCardIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardIdAttachments")
@@ -4717,7 +4716,7 @@ func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftC
 }
 
 type HasManyApiGETGiftCardIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	giftCardId string
 }
@@ -4738,7 +4737,7 @@ Retrieve the events associated to the gift card
 func (a *HasManyApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdEventsRequest {
 	return HasManyApiGETGiftCardIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		giftCardId: giftCardId,
 	}
 }
@@ -4746,9 +4745,9 @@ func (a *HasManyApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId 
 // Execute executes the request
 func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardIdEvents")
@@ -4809,8 +4808,8 @@ func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardId
 }
 
 type HasManyApiGETGiftCardRecipientIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	giftCardRecipientId string
 }
 
@@ -4829,8 +4828,8 @@ Retrieve the attachments associated to the gift card recipient
 */
 func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) HasManyApiGETGiftCardRecipientIdAttachmentsRequest {
 	return HasManyApiGETGiftCardRecipientIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -4838,9 +4837,9 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyApiGETGiftCardRecipientIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGiftCardRecipientIdAttachments")
@@ -4901,8 +4900,8 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyAp
 }
 
 type HasManyApiGETGoogleGeocoderIdAddressesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	googleGeocoderId string
 }
 
@@ -4921,8 +4920,8 @@ Retrieve the addresses associated to the google geocoder
 */
 func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAddressesRequest {
 	return HasManyApiGETGoogleGeocoderIdAddressesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
 	}
 }
@@ -4930,9 +4929,9 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, go
 // Execute executes the request
 func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETGoogleGeocoderIdAddressesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGoogleGeocoderIdAddresses")
@@ -4993,8 +4992,8 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETG
 }
 
 type HasManyApiGETGoogleGeocoderIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	googleGeocoderId string
 }
 
@@ -5013,8 +5012,8 @@ Retrieve the attachments associated to the google geocoder
 */
 func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAttachmentsRequest {
 	return HasManyApiGETGoogleGeocoderIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
 	}
 }
@@ -5022,9 +5021,9 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGETGoogleGeocoderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETGoogleGeocoderIdAttachments")
@@ -5085,9 +5084,9 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETImportIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	importId string
+	importId   string
 }
 
 func (r HasManyApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
@@ -5106,17 +5105,17 @@ Retrieve the events associated to the import
 func (a *HasManyApiService) GETImportIdEvents(ctx context.Context, importId string) HasManyApiGETImportIdEventsRequest {
 	return HasManyApiGETImportIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		importId: importId,
+		ctx:        ctx,
+		importId:   importId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETImportIdEvents")
@@ -5177,8 +5176,8 @@ func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEven
 }
 
 type HasManyApiGETInStockSubscriptionIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	inStockSubscriptionId string
 }
 
@@ -5197,8 +5196,8 @@ Retrieve the events associated to the in stock subscription
 */
 func (a *HasManyApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) HasManyApiGETInStockSubscriptionIdEventsRequest {
 	return HasManyApiGETInStockSubscriptionIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -5206,9 +5205,9 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEvents(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGETInStockSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInStockSubscriptionIdEvents")
@@ -5269,8 +5268,8 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETInventoryModelIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	inventoryModelId string
 }
 
@@ -5289,8 +5288,8 @@ Retrieve the attachments associated to the inventory model
 */
 func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdAttachmentsRequest {
 	return HasManyApiGETInventoryModelIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
 	}
 }
@@ -5298,9 +5297,9 @@ func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGETInventoryModelIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryModelIdAttachments")
@@ -5361,8 +5360,8 @@ func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	inventoryModelId string
 }
 
@@ -5381,8 +5380,8 @@ Retrieve the inventory return locations associated to the inventory model
 */
 func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest {
 	return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
 	}
 }
@@ -5390,9 +5389,9 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx cont
 // Execute executes the request
 func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryModelIdInventoryReturnLocations")
@@ -5453,8 +5452,8 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r
 }
 
 type HasManyApiGETInventoryModelIdInventoryStockLocationsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	inventoryModelId string
 }
 
@@ -5473,8 +5472,8 @@ Retrieve the inventory stock locations associated to the inventory model
 */
 func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryStockLocationsRequest {
 	return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
 	}
 }
@@ -5482,9 +5481,9 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx conte
 // Execute executes the request
 func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r HasManyApiGETInventoryModelIdInventoryStockLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETInventoryModelIdInventoryStockLocations")
@@ -5545,8 +5544,8 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 }
 
 type HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	klarnaGatewayId string
 }
 
@@ -5565,8 +5564,8 @@ Retrieve the klarna payments associated to the klarna gateway
 */
 func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
 	return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
 	}
 }
@@ -5574,9 +5573,9 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETKlarnaGatewayIdKlarnaPayments")
@@ -5637,8 +5636,8 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApi
 }
 
 type HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	klarnaGatewayId string
 }
 
@@ -5657,8 +5656,8 @@ Retrieve the payment methods associated to the klarna gateway
 */
 func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
 	}
 }
@@ -5666,9 +5665,9 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETKlarnaGatewayIdPaymentMethods")
@@ -5729,7 +5728,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApi
 }
 
 type HasManyApiGETLineItemIdLineItemOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	lineItemId string
 }
@@ -5750,7 +5749,7 @@ Retrieve the line item options associated to the line item
 func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdLineItemOptionsRequest {
 	return HasManyApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -5758,9 +5757,9 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, li
 // Execute executes the request
 func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETLineItemIdLineItemOptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdLineItemOptions")
@@ -5821,7 +5820,7 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETL
 }
 
 type HasManyApiGETLineItemIdStockLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	lineItemId string
 }
@@ -5842,7 +5841,7 @@ Retrieve the stock line items associated to the line item
 func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockLineItemsRequest {
 	return HasManyApiGETLineItemIdStockLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -5850,9 +5849,9 @@ func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lin
 // Execute executes the request
 func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLineItemIdStockLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdStockLineItems")
@@ -5913,7 +5912,7 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLi
 }
 
 type HasManyApiGETLineItemIdStockTransfersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	lineItemId string
 }
@@ -5934,7 +5933,7 @@ Retrieve the stock transfers associated to the line item
 func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockTransfersRequest {
 	return HasManyApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -5942,9 +5941,9 @@ func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lin
 // Execute executes the request
 func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLineItemIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETLineItemIdStockTransfers")
@@ -6005,8 +6004,8 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLi
 }
 
 type HasManyApiGETManualGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	manualGatewayId string
 }
 
@@ -6025,8 +6024,8 @@ Retrieve the payment methods associated to the manual gateway
 */
 func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) HasManyApiGETManualGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETManualGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		manualGatewayId: manualGatewayId,
 	}
 }
@@ -6034,9 +6033,9 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualGatewayIdPaymentMethods")
@@ -6097,8 +6096,8 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApi
 }
 
 type HasManyApiGETManualTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	manualTaxCalculatorId string
 }
 
@@ -6117,8 +6116,8 @@ Retrieve the attachments associated to the manual tax calculator
 */
 func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -6126,9 +6125,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Cont
 // Execute executes the request
 func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasManyApiGETManualTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualTaxCalculatorIdAttachments")
@@ -6189,8 +6188,8 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasMany
 }
 
 type HasManyApiGETManualTaxCalculatorIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	manualTaxCalculatorId string
 }
 
@@ -6209,8 +6208,8 @@ Retrieve the markets associated to the manual tax calculator
 */
 func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETManualTaxCalculatorIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -6218,9 +6217,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualTaxCalculatorIdMarkets")
@@ -6281,8 +6280,8 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiG
 }
 
 type HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	manualTaxCalculatorId string
 }
 
@@ -6301,8 +6300,8 @@ Retrieve the tax categories associated to the manual tax calculator
 */
 func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest {
 	return HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -6310,9 +6309,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategories(ctx context.Co
 // Execute executes the request
 func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETManualTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualTaxCalculatorIdTaxCategories")
@@ -6373,8 +6372,8 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxCategoriesExecute(r HasMa
 }
 
 type HasManyApiGETManualTaxCalculatorIdTaxRulesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                   context.Context
+	ApiService            *HasManyApiService
 	manualTaxCalculatorId string
 }
 
@@ -6393,8 +6392,8 @@ Retrieve the tax rules associated to the manual tax calculator
 */
 func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxRulesRequest {
 	return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
 	}
 }
@@ -6402,9 +6401,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApiGETManualTaxCalculatorIdTaxRulesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETManualTaxCalculatorIdTaxRules")
@@ -6465,9 +6464,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApi
 }
 
 type HasManyApiGETMarketIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	marketId string
+	marketId   string
 }
 
 func (r HasManyApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -6486,17 +6485,17 @@ Retrieve the attachments associated to the market
 func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId string) HasManyApiGETMarketIdAttachmentsRequest {
 	return HasManyApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		marketId: marketId,
+		ctx:        ctx,
+		marketId:   marketId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETMarketIdAttachments")
@@ -6557,7 +6556,7 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketI
 }
 
 type HasManyApiGETMerchantIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	merchantId string
 }
@@ -6578,7 +6577,7 @@ Retrieve the attachments associated to the merchant
 func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) HasManyApiGETMerchantIdAttachmentsRequest {
 	return HasManyApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		merchantId: merchantId,
 	}
 }
@@ -6586,9 +6585,9 @@ func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, mercha
 // Execute executes the request
 func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerchantIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETMerchantIdAttachments")
@@ -6649,8 +6648,8 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerch
 }
 
 type HasManyApiGETOrderCopyIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	orderCopyId string
 }
 
@@ -6669,8 +6668,8 @@ Retrieve the events associated to the order copy
 */
 func (a *HasManyApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) HasManyApiGETOrderCopyIdEventsRequest {
 	return HasManyApiGETOrderCopyIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		orderCopyId: orderCopyId,
 	}
 }
@@ -6678,9 +6677,9 @@ func (a *HasManyApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyI
 // Execute executes the request
 func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopyIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderCopyIdEvents")
@@ -6741,9 +6740,9 @@ func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopy
 }
 
 type HasManyApiGETOrderIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -6762,17 +6761,17 @@ Retrieve the attachments associated to the order
 func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId string) HasManyApiGETOrderIdAttachmentsRequest {
 	return HasManyApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAttachments")
@@ -6833,9 +6832,9 @@ func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdA
 }
 
 type HasManyApiGETOrderIdAuthorizationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
@@ -6854,17 +6853,17 @@ Retrieve the authorizations associated to the order
 func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) HasManyApiGETOrderIdAuthorizationsRequest {
 	return HasManyApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAuthorizations")
@@ -6925,9 +6924,9 @@ func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrder
 }
 
 type HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
@@ -6946,17 +6945,17 @@ Retrieve the available customer payment sources associated to the order
 func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
 	return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAvailableCustomerPaymentSources")
@@ -7017,9 +7016,9 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r H
 }
 
 type HasManyApiGETOrderIdAvailableFreeBundlesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
@@ -7038,17 +7037,17 @@ Retrieve the available free bundles associated to the order
 func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeBundlesRequest {
 	return HasManyApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAvailableFreeBundles")
@@ -7109,9 +7108,9 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGE
 }
 
 type HasManyApiGETOrderIdAvailableFreeSkusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
@@ -7130,17 +7129,17 @@ Retrieve the available free skus associated to the order
 func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeSkusRequest {
 	return HasManyApiGETOrderIdAvailableFreeSkusRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOrderIdAvailableFreeSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAvailableFreeSkus")
@@ -7201,9 +7200,9 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOr
 }
 
 type HasManyApiGETOrderIdAvailablePaymentMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -7222,17 +7221,17 @@ Retrieve the available payment methods associated to the order
 func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailablePaymentMethodsRequest {
 	return HasManyApiGETOrderIdAvailablePaymentMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdAvailablePaymentMethods")
@@ -7293,9 +7292,9 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyAp
 }
 
 type HasManyApiGETOrderIdCapturesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
@@ -7314,17 +7313,17 @@ Retrieve the captures associated to the order
 func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId string) HasManyApiGETOrderIdCapturesRequest {
 	return HasManyApiGETOrderIdCapturesRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapturesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdCaptures")
@@ -7385,9 +7384,9 @@ func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapt
 }
 
 type HasManyApiGETOrderIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
@@ -7406,17 +7405,17 @@ Retrieve the events associated to the order
 func (a *HasManyApiService) GETOrderIdEvents(ctx context.Context, orderId string) HasManyApiGETOrderIdEventsRequest {
 	return HasManyApiGETOrderIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdEvents")
@@ -7477,9 +7476,9 @@ func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEvents
 }
 
 type HasManyApiGETOrderIdLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdLineItemsRequest) Execute() (*http.Response, error) {
@@ -7498,17 +7497,17 @@ Retrieve the line items associated to the order
 func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId string) HasManyApiGETOrderIdLineItemsRequest {
 	return HasManyApiGETOrderIdLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdLineItems")
@@ -7569,9 +7568,9 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLin
 }
 
 type HasManyApiGETOrderIdOrderCopiesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
@@ -7590,17 +7589,17 @@ Retrieve the order copies associated to the order
 func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderCopiesRequest {
 	return HasManyApiGETOrderIdOrderCopiesRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdOrderCopiesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdOrderCopies")
@@ -7661,9 +7660,9 @@ func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdO
 }
 
 type HasManyApiGETOrderIdOrderSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -7682,17 +7681,17 @@ Retrieve the order subscriptions associated to the order
 func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderSubscriptionsRequest {
 	return HasManyApiGETOrderIdOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdOrderSubscriptions")
@@ -7753,9 +7752,9 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETO
 }
 
 type HasManyApiGETOrderIdRefundsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
@@ -7774,17 +7773,17 @@ Retrieve the refunds associated to the order
 func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId string) HasManyApiGETOrderIdRefundsRequest {
 	return HasManyApiGETOrderIdRefundsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefundsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdRefunds")
@@ -7845,9 +7844,9 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefun
 }
 
 type HasManyApiGETOrderIdShipmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
@@ -7866,17 +7865,17 @@ Retrieve the shipments associated to the order
 func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId string) HasManyApiGETOrderIdShipmentsRequest {
 	return HasManyApiGETOrderIdShipmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShipmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdShipments")
@@ -7937,9 +7936,9 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShi
 }
 
 type HasManyApiGETOrderIdVoidsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId string
+	orderId    string
 }
 
 func (r HasManyApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
@@ -7958,17 +7957,17 @@ Retrieve the voids associated to the order
 func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId string) HasManyApiGETOrderIdVoidsRequest {
 	return HasManyApiGETOrderIdVoidsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdVoids")
@@ -8029,8 +8028,8 @@ func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRe
 }
 
 type HasManyApiGETOrderSubscriptionIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	orderSubscriptionId string
 }
 
@@ -8049,8 +8048,8 @@ Retrieve the events associated to the order subscription
 */
 func (a *HasManyApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdEventsRequest {
 	return HasManyApiGETOrderSubscriptionIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -8058,9 +8057,9 @@ func (a *HasManyApiService) GETOrderSubscriptionIdEvents(ctx context.Context, or
 // Execute executes the request
 func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETOrderSubscriptionIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdEvents")
@@ -8121,8 +8120,8 @@ func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETO
 }
 
 type HasManyApiGETOrderSubscriptionIdOrderCopiesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	orderSubscriptionId string
 }
 
@@ -8141,8 +8140,8 @@ Retrieve the order copies associated to the order subscription
 */
 func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrderCopiesRequest {
 	return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -8150,9 +8149,9 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdOrderCopies")
@@ -8213,8 +8212,8 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyAp
 }
 
 type HasManyApiGETOrderSubscriptionIdOrdersRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                 context.Context
+	ApiService          *HasManyApiService
 	orderSubscriptionId string
 }
 
@@ -8233,8 +8232,8 @@ Retrieve the orders associated to the order subscription
 */
 func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrdersRequest {
 	return HasManyApiGETOrderSubscriptionIdOrdersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -8242,9 +8241,9 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, or
 // Execute executes the request
 func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETOrderSubscriptionIdOrdersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdOrders")
@@ -8305,9 +8304,9 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETO
 }
 
 type HasManyApiGETPackageIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	packageId string
+	packageId  string
 }
 
 func (r HasManyApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -8326,17 +8325,17 @@ Retrieve the attachments associated to the package
 func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, packageId string) HasManyApiGETPackageIdAttachmentsRequest {
 	return HasManyApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackageIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPackageIdAttachments")
@@ -8397,9 +8396,9 @@ func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackag
 }
 
 type HasManyApiGETPackageIdParcelsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	packageId string
+	packageId  string
 }
 
 func (r HasManyApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
@@ -8418,17 +8417,17 @@ Retrieve the parcels associated to the package
 func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId string) HasManyApiGETPackageIdParcelsRequest {
 	return HasManyApiGETPackageIdParcelsRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdParcelsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPackageIdParcels")
@@ -8489,9 +8488,9 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdP
 }
 
 type HasManyApiGETParcelIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r HasManyApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -8510,17 +8509,17 @@ Retrieve the attachments associated to the parcel
 func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) HasManyApiGETParcelIdAttachmentsRequest {
 	return HasManyApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelIdAttachments")
@@ -8581,9 +8580,9 @@ func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelI
 }
 
 type HasManyApiGETParcelIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r HasManyApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
@@ -8602,17 +8601,17 @@ Retrieve the events associated to the parcel
 func (a *HasManyApiService) GETParcelIdEvents(ctx context.Context, parcelId string) HasManyApiGETParcelIdEventsRequest {
 	return HasManyApiGETParcelIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelIdEvents")
@@ -8673,9 +8672,9 @@ func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEven
 }
 
 type HasManyApiGETParcelIdParcelLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r HasManyApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
@@ -8694,17 +8693,17 @@ Retrieve the parcel line items associated to the parcel
 func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) HasManyApiGETParcelIdParcelLineItemsRequest {
 	return HasManyApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETParcelIdParcelLineItems")
@@ -8765,8 +8764,8 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETPar
 }
 
 type HasManyApiGETPaymentGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	paymentGatewayId string
 }
 
@@ -8785,8 +8784,8 @@ Retrieve the payment methods associated to the payment gateway
 */
 func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) HasManyApiGETPaymentGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		paymentGatewayId: paymentGatewayId,
 	}
 }
@@ -8794,9 +8793,9 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Contex
 // Execute executes the request
 func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaymentGatewayIdPaymentMethods")
@@ -8857,8 +8856,8 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyAp
 }
 
 type HasManyApiGETPaymentMethodIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	paymentMethodId string
 }
 
@@ -8877,8 +8876,8 @@ Retrieve the attachments associated to the payment method
 */
 func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) HasManyApiGETPaymentMethodIdAttachmentsRequest {
 	return HasManyApiGETPaymentMethodIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -8886,9 +8885,9 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, p
 // Execute executes the request
 func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGETPaymentMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaymentMethodIdAttachments")
@@ -8949,8 +8948,8 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGET
 }
 
 type HasManyApiGETPaypalGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	paypalGatewayId string
 }
 
@@ -8969,8 +8968,8 @@ Retrieve the payment methods associated to the paypal gateway
 */
 func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -8978,9 +8977,9 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaypalGatewayIdPaymentMethods")
@@ -9041,8 +9040,8 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApi
 }
 
 type HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	paypalGatewayId string
 }
 
@@ -9061,8 +9060,8 @@ Retrieve the paypal payments associated to the paypal gateway
 */
 func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest {
 	return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -9070,9 +9069,9 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPaypalGatewayIdPaypalPayments")
@@ -9133,8 +9132,8 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApi
 }
 
 type HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                           context.Context
+	ApiService                    *HasManyApiService
 	percentageDiscountPromotionId string
 }
 
@@ -9153,8 +9152,8 @@ Retrieve the attachments associated to the percentage discount promotion
 */
 func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest {
 	return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -9162,9 +9161,9 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx cont
 // Execute executes the request
 func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPercentageDiscountPromotionIdAttachments")
@@ -9225,8 +9224,8 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 }
 
 type HasManyApiGETPercentageDiscountPromotionIdSkusRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                           context.Context
+	ApiService                    *HasManyApiService
 	percentageDiscountPromotionId string
 }
 
@@ -9245,8 +9244,8 @@ Retrieve the skus associated to the percentage discount promotion
 */
 func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdSkusRequest {
 	return HasManyApiGETPercentageDiscountPromotionIdSkusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -9254,9 +9253,9 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Con
 // Execute executes the request
 func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasManyApiGETPercentageDiscountPromotionIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPercentageDiscountPromotionIdSkus")
@@ -9317,9 +9316,9 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasMan
 }
 
 type HasManyApiGETPriceIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId string
+	priceId    string
 }
 
 func (r HasManyApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -9338,17 +9337,17 @@ Retrieve the attachments associated to the price
 func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId string) HasManyApiGETPriceIdAttachmentsRequest {
 	return HasManyApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdAttachments")
@@ -9409,9 +9408,9 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdA
 }
 
 type HasManyApiGETPriceIdPriceTiersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId string
+	priceId    string
 }
 
 func (r HasManyApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
@@ -9430,17 +9429,17 @@ Retrieve the price tiers associated to the price
 func (a *HasManyApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceTiersRequest {
 	return HasManyApiGETPriceIdPriceTiersRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdPriceTiers")
@@ -9501,9 +9500,9 @@ func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPr
 }
 
 type HasManyApiGETPriceIdPriceVolumeTiersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId string
+	priceId    string
 }
 
 func (r HasManyApiGETPriceIdPriceVolumeTiersRequest) Execute() (*http.Response, error) {
@@ -9522,17 +9521,17 @@ Retrieve the price volume tiers associated to the price
 func (a *HasManyApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceVolumeTiersRequest {
 	return HasManyApiGETPriceIdPriceVolumeTiersRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPriceIdPriceVolumeTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdPriceVolumeTiers")
@@ -9593,8 +9592,8 @@ func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPri
 }
 
 type HasManyApiGETPriceListIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	priceListId string
 }
 
@@ -9613,8 +9612,8 @@ Retrieve the attachments associated to the price list
 */
 func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) HasManyApiGETPriceListIdAttachmentsRequest {
 	return HasManyApiGETPriceListIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceListId: priceListId,
 	}
 }
@@ -9622,9 +9621,9 @@ func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, price
 // Execute executes the request
 func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPriceListIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListIdAttachments")
@@ -9685,8 +9684,8 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPric
 }
 
 type HasManyApiGETPriceListIdPricesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	priceListId string
 }
 
@@ -9705,8 +9704,8 @@ Retrieve the prices associated to the price list
 */
 func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) HasManyApiGETPriceListIdPricesRequest {
 	return HasManyApiGETPriceListIdPricesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceListId: priceListId,
 	}
 }
@@ -9714,9 +9713,9 @@ func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListI
 // Execute executes the request
 func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceListIdPricesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceListIdPrices")
@@ -9777,8 +9776,8 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceList
 }
 
 type HasManyApiGETPriceTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	priceTierId string
 }
 
@@ -9797,8 +9796,8 @@ Retrieve the attachments associated to the price tier
 */
 func (a *HasManyApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) HasManyApiGETPriceTierIdAttachmentsRequest {
 	return HasManyApiGETPriceTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceTierId: priceTierId,
 	}
 }
@@ -9806,9 +9805,9 @@ func (a *HasManyApiService) GETPriceTierIdAttachments(ctx context.Context, price
 // Execute executes the request
 func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPriceTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceTierIdAttachments")
@@ -9869,8 +9868,8 @@ func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPric
 }
 
 type HasManyApiGETPriceVolumeTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx               context.Context
+	ApiService        *HasManyApiService
 	priceVolumeTierId string
 }
 
@@ -9889,8 +9888,8 @@ Retrieve the attachments associated to the price volume tier
 */
 func (a *HasManyApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) HasManyApiGETPriceVolumeTierIdAttachmentsRequest {
 	return HasManyApiGETPriceVolumeTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
 	}
 }
@@ -9898,9 +9897,9 @@ func (a *HasManyApiService) GETPriceVolumeTierIdAttachments(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiGETPriceVolumeTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceVolumeTierIdAttachments")
@@ -9961,8 +9960,8 @@ func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiG
 }
 
 type HasManyApiGETPromotionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	promotionId string
 }
 
@@ -9981,8 +9980,8 @@ Retrieve the attachments associated to the promotion
 */
 func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) HasManyApiGETPromotionIdAttachmentsRequest {
 	return HasManyApiGETPromotionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		promotionId: promotionId,
 	}
 }
@@ -9990,9 +9989,9 @@ func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promo
 // Execute executes the request
 func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETPromotionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionIdAttachments")
@@ -10053,9 +10052,9 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETProm
 }
 
 type HasManyApiGETRefundIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	refundId string
+	refundId   string
 }
 
 func (r HasManyApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
@@ -10074,17 +10073,17 @@ Retrieve the events associated to the refund
 func (a *HasManyApiService) GETRefundIdEvents(ctx context.Context, refundId string) HasManyApiGETRefundIdEventsRequest {
 	return HasManyApiGETRefundIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		refundId: refundId,
+		ctx:        ctx,
+		refundId:   refundId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETRefundIdEvents")
@@ -10145,9 +10144,9 @@ func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEven
 }
 
 type HasManyApiGETReturnIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId string
+	returnId   string
 }
 
 func (r HasManyApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10166,17 +10165,17 @@ Retrieve the attachments associated to the return
 func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId string) HasManyApiGETReturnIdAttachmentsRequest {
 	return HasManyApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		returnId: returnId,
+		ctx:        ctx,
+		returnId:   returnId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdAttachments")
@@ -10237,9 +10236,9 @@ func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnI
 }
 
 type HasManyApiGETReturnIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId string
+	returnId   string
 }
 
 func (r HasManyApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
@@ -10258,17 +10257,17 @@ Retrieve the events associated to the return
 func (a *HasManyApiService) GETReturnIdEvents(ctx context.Context, returnId string) HasManyApiGETReturnIdEventsRequest {
 	return HasManyApiGETReturnIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
-		returnId: returnId,
+		ctx:        ctx,
+		returnId:   returnId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdEvents")
@@ -10329,9 +10328,9 @@ func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEven
 }
 
 type HasManyApiGETReturnIdReturnLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId string
+	returnId   string
 }
 
 func (r HasManyApiGETReturnIdReturnLineItemsRequest) Execute() (*http.Response, error) {
@@ -10350,17 +10349,17 @@ Retrieve the return line items associated to the return
 func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId string) HasManyApiGETReturnIdReturnLineItemsRequest {
 	return HasManyApiGETReturnIdReturnLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		returnId: returnId,
+		ctx:        ctx,
+		returnId:   returnId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETReturnIdReturnLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETReturnIdReturnLineItems")
@@ -10421,7 +10420,7 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETRet
 }
 
 type HasManyApiGETShipmentIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10442,7 +10441,7 @@ Retrieve the attachments associated to the shipment
 func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAttachmentsRequest {
 	return HasManyApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10450,9 +10449,9 @@ func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipme
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipmentIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdAttachments")
@@ -10513,7 +10512,7 @@ func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipm
 }
 
 type HasManyApiGETShipmentIdAvailableShippingMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10534,7 +10533,7 @@ Retrieve the available shipping methods associated to the shipment
 func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAvailableShippingMethodsRequest {
 	return HasManyApiGETShipmentIdAvailableShippingMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10542,9 +10541,9 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Co
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasManyApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdAvailableShippingMethods")
@@ -10605,7 +10604,7 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasMa
 }
 
 type HasManyApiGETShipmentIdCarrierAccountsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10626,7 +10625,7 @@ Retrieve the carrier accounts associated to the shipment
 func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdCarrierAccountsRequest {
 	return HasManyApiGETShipmentIdCarrierAccountsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10634,9 +10633,9 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, sh
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETShipmentIdCarrierAccountsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdCarrierAccounts")
@@ -10697,7 +10696,7 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETS
 }
 
 type HasManyApiGETShipmentIdEventsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10718,7 +10717,7 @@ Retrieve the events associated to the shipment
 func (a *HasManyApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdEventsRequest {
 	return HasManyApiGETShipmentIdEventsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10726,9 +10725,9 @@ func (a *HasManyApiService) GETShipmentIdEvents(ctx context.Context, shipmentId 
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdEvents")
@@ -10789,7 +10788,7 @@ func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentId
 }
 
 type HasManyApiGETShipmentIdParcelsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10810,7 +10809,7 @@ Retrieve the parcels associated to the shipment
 func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdParcelsRequest {
 	return HasManyApiGETShipmentIdParcelsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10818,9 +10817,9 @@ func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentIdParcelsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdParcels")
@@ -10881,7 +10880,7 @@ func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentI
 }
 
 type HasManyApiGETShipmentIdStockLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10902,7 +10901,7 @@ Retrieve the stock line items associated to the shipment
 func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockLineItemsRequest {
 	return HasManyApiGETShipmentIdStockLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -10910,9 +10909,9 @@ func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shi
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETShipmentIdStockLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdStockLineItems")
@@ -10973,7 +10972,7 @@ func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETSh
 }
 
 type HasManyApiGETShipmentIdStockTransfersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
 	shipmentId string
 }
@@ -10994,7 +10993,7 @@ Retrieve the stock transfers associated to the shipment
 func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockTransfersRequest {
 	return HasManyApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -11002,9 +11001,9 @@ func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shi
 // Execute executes the request
 func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETShipmentIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShipmentIdStockTransfers")
@@ -11065,8 +11064,8 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETSh
 }
 
 type HasManyApiGETShippingCategoryIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                context.Context
+	ApiService         *HasManyApiService
 	shippingCategoryId string
 }
 
@@ -11085,8 +11084,8 @@ Retrieve the attachments associated to the shipping category
 */
 func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdAttachmentsRequest {
 	return HasManyApiGETShippingCategoryIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -11094,9 +11093,9 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApiGETShippingCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingCategoryIdAttachments")
@@ -11157,8 +11156,8 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApi
 }
 
 type HasManyApiGETShippingCategoryIdSkusRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                context.Context
+	ApiService         *HasManyApiService
 	shippingCategoryId string
 }
 
@@ -11177,8 +11176,8 @@ Retrieve the skus associated to the shipping category
 */
 func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdSkusRequest {
 	return HasManyApiGETShippingCategoryIdSkusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -11186,9 +11185,9 @@ func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shipp
 // Execute executes the request
 func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShippingCategoryIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingCategoryIdSkus")
@@ -11249,8 +11248,8 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShip
 }
 
 type HasManyApiGETShippingMethodIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	shippingMethodId string
 }
 
@@ -11269,8 +11268,8 @@ Retrieve the attachments associated to the shipping method
 */
 func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdAttachmentsRequest {
 	return HasManyApiGETShippingMethodIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -11278,9 +11277,9 @@ func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, 
 // Execute executes the request
 func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGETShippingMethodIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdAttachments")
@@ -11341,8 +11340,8 @@ func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGE
 }
 
 type HasManyApiGETShippingMethodIdShippingMethodTiersRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	shippingMethodId string
 }
 
@@ -11361,8 +11360,8 @@ Retrieve the shipping method tiers associated to the shipping method
 */
 func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingMethodTiersRequest {
 	return HasManyApiGETShippingMethodIdShippingMethodTiersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -11370,9 +11369,9 @@ func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiers(ctx context.C
 // Execute executes the request
 func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasManyApiGETShippingMethodIdShippingMethodTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdShippingMethodTiers")
@@ -11433,8 +11432,8 @@ func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasM
 }
 
 type HasManyApiGETShippingMethodIdShippingWeightTiersRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx              context.Context
+	ApiService       *HasManyApiService
 	shippingMethodId string
 }
 
@@ -11453,8 +11452,8 @@ Retrieve the shipping weight tiers associated to the shipping method
 */
 func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingWeightTiersRequest {
 	return HasManyApiGETShippingMethodIdShippingWeightTiersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -11462,9 +11461,9 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiers(ctx context.C
 // Execute executes the request
 func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasManyApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodIdShippingWeightTiers")
@@ -11525,8 +11524,8 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasM
 }
 
 type HasManyApiGETShippingMethodTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                  context.Context
+	ApiService           *HasManyApiService
 	shippingMethodTierId string
 }
 
@@ -11545,8 +11544,8 @@ Retrieve the attachments associated to the shipping method tier
 */
 func (a *HasManyApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) HasManyApiGETShippingMethodTierIdAttachmentsRequest {
 	return HasManyApiGETShippingMethodTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingMethodTierId: shippingMethodTierId,
 	}
 }
@@ -11554,9 +11553,9 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyApiGETShippingMethodTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingMethodTierIdAttachments")
@@ -11617,8 +11616,8 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyA
 }
 
 type HasManyApiGETShippingWeightTierIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                  context.Context
+	ApiService           *HasManyApiService
 	shippingWeightTierId string
 }
 
@@ -11637,8 +11636,8 @@ Retrieve the attachments associated to the shipping weight tier
 */
 func (a *HasManyApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) HasManyApiGETShippingWeightTierIdAttachmentsRequest {
 	return HasManyApiGETShippingWeightTierIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -11646,9 +11645,9 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachments(ctx context.Conte
 // Execute executes the request
 func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyApiGETShippingWeightTierIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingWeightTierIdAttachments")
@@ -11709,8 +11708,8 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyA
 }
 
 type HasManyApiGETShippingZoneIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx            context.Context
+	ApiService     *HasManyApiService
 	shippingZoneId string
 }
 
@@ -11729,8 +11728,8 @@ Retrieve the attachments associated to the shipping zone
 */
 func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) HasManyApiGETShippingZoneIdAttachmentsRequest {
 	return HasManyApiGETShippingZoneIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
 	}
 }
@@ -11738,9 +11737,9 @@ func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, sh
 // Execute executes the request
 func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETShippingZoneIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETShippingZoneIdAttachments")
@@ -11801,9 +11800,9 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETS
 }
 
 type HasManyApiGETSkuIdAttachmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId string
+	skuId      string
 }
 
 func (r HasManyApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -11822,17 +11821,17 @@ Retrieve the attachments associated to the SKU
 func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId string) HasManyApiGETSkuIdAttachmentsRequest {
 	return HasManyApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdAttachments")
@@ -11893,9 +11892,9 @@ func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttac
 }
 
 type HasManyApiGETSkuIdDeliveryLeadTimesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId string
+	skuId      string
 }
 
 func (r HasManyApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
@@ -11914,17 +11913,17 @@ Retrieve the delivery lead times associated to the SKU
 func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) HasManyApiGETSkuIdDeliveryLeadTimesRequest {
 	return HasManyApiGETSkuIdDeliveryLeadTimesRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdDeliveryLeadTimes")
@@ -11985,9 +11984,9 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuI
 }
 
 type HasManyApiGETSkuIdPricesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId string
+	skuId      string
 }
 
 func (r HasManyApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
@@ -12006,17 +12005,17 @@ Retrieve the prices associated to the SKU
 func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId string) HasManyApiGETSkuIdPricesRequest {
 	return HasManyApiGETSkuIdPricesRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdPrices")
@@ -12077,9 +12076,9 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequ
 }
 
 type HasManyApiGETSkuIdSkuOptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId string
+	skuId      string
 }
 
 func (r HasManyApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
@@ -12098,17 +12097,17 @@ Retrieve the sku options associated to the SKU
 func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) HasManyApiGETSkuIdSkuOptionsRequest {
 	return HasManyApiGETSkuIdSkuOptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdSkuOptions")
@@ -12169,9 +12168,9 @@ func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOpt
 }
 
 type HasManyApiGETSkuIdStockItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId string
+	skuId      string
 }
 
 func (r HasManyApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -12190,17 +12189,17 @@ Retrieve the stock items associated to the SKU
 func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId string) HasManyApiGETSkuIdStockItemsRequest {
 	return HasManyApiGETSkuIdStockItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuIdStockItems")
@@ -12261,9 +12260,9 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockI
 }
 
 type HasManyApiGETSkuListIdBundlesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId string
+	skuListId  string
 }
 
 func (r HasManyApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
@@ -12282,17 +12281,17 @@ Retrieve the bundles associated to the SKU list
 func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) HasManyApiGETSkuListIdBundlesRequest {
 	return HasManyApiGETSkuListIdBundlesRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuListId: skuListId,
+		ctx:        ctx,
+		skuListId:  skuListId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdBundlesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListIdBundles")
@@ -12353,9 +12352,9 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdB
 }
 
 type HasManyApiGETSkuListIdSkuListItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId string
+	skuListId  string
 }
 
 func (r HasManyApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
@@ -12374,17 +12373,17 @@ Retrieve the sku list items associated to the SKU list
 func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkuListItemsRequest {
 	return HasManyApiGETSkuListIdSkuListItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuListId: skuListId,
+		ctx:        ctx,
+		skuListId:  skuListId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuListIdSkuListItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListIdSkuListItems")
@@ -12445,9 +12444,9 @@ func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuLi
 }
 
 type HasManyApiGETSkuListIdSkusRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId string
+	skuListId  string
 }
 
 func (r HasManyApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
@@ -12466,17 +12465,17 @@ Retrieve the skus associated to the SKU list
 func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkusRequest {
 	return HasManyApiGETSkuListIdSkusRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuListId: skuListId,
+		ctx:        ctx,
+		skuListId:  skuListId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListIdSkus")
@@ -12537,8 +12536,8 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkus
 }
 
 type HasManyApiGETSkuListPromotionRuleIdSkusRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx                    context.Context
+	ApiService             *HasManyApiService
 	skuListPromotionRuleId string
 }
 
@@ -12557,8 +12556,8 @@ Retrieve the skus associated to the SKU list promotion rule
 */
 func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) HasManyApiGETSkuListPromotionRuleIdSkusRequest {
 	return HasManyApiGETSkuListPromotionRuleIdSkusRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
 	}
 }
@@ -12566,9 +12565,9 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, s
 // Execute executes the request
 func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGETSkuListPromotionRuleIdSkusRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuListPromotionRuleIdSkus")
@@ -12629,8 +12628,8 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGET
 }
 
 type HasManyApiGETSkuOptionIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	skuOptionId string
 }
 
@@ -12649,8 +12648,8 @@ Retrieve the attachments associated to the SKU option
 */
 func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) HasManyApiGETSkuOptionIdAttachmentsRequest {
 	return HasManyApiGETSkuOptionIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		skuOptionId: skuOptionId,
 	}
 }
@@ -12658,9 +12657,9 @@ func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOp
 // Execute executes the request
 func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuOptionIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSkuOptionIdAttachments")
@@ -12721,8 +12720,8 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuO
 }
 
 type HasManyApiGETStockItemIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx         context.Context
+	ApiService  *HasManyApiService
 	stockItemId string
 }
 
@@ -12741,8 +12740,8 @@ Retrieve the attachments associated to the stock item
 */
 func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) HasManyApiGETStockItemIdAttachmentsRequest {
 	return HasManyApiGETStockItemIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		stockItemId: stockItemId,
 	}
 }
@@ -12750,9 +12749,9 @@ func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stock
 // Execute executes the request
 func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStockItemIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockItemIdAttachments")
@@ -12813,8 +12812,8 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStoc
 }
 
 type HasManyApiGETStockLocationIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockLocationId string
 }
 
@@ -12833,8 +12832,8 @@ Retrieve the attachments associated to the stock location
 */
 func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdAttachmentsRequest {
 	return HasManyApiGETStockLocationIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -12842,9 +12841,9 @@ func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, s
 // Execute executes the request
 func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGETStockLocationIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdAttachments")
@@ -12905,8 +12904,8 @@ func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGET
 }
 
 type HasManyApiGETStockLocationIdInventoryReturnLocationsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockLocationId string
 }
 
@@ -12925,8 +12924,8 @@ Retrieve the inventory return locations associated to the stock location
 */
 func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryReturnLocationsRequest {
 	return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -12934,9 +12933,9 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx conte
 // Execute executes the request
 func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r HasManyApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdInventoryReturnLocations")
@@ -12997,8 +12996,8 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r 
 }
 
 type HasManyApiGETStockLocationIdInventoryStockLocationsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockLocationId string
 }
 
@@ -13017,8 +13016,8 @@ Retrieve the inventory stock locations associated to the stock location
 */
 func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryStockLocationsRequest {
 	return HasManyApiGETStockLocationIdInventoryStockLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -13026,9 +13025,9 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx contex
 // Execute executes the request
 func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r HasManyApiGETStockLocationIdInventoryStockLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdInventoryStockLocations")
@@ -13089,8 +13088,8 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r H
 }
 
 type HasManyApiGETStockLocationIdStockItemsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockLocationId string
 }
 
@@ -13109,8 +13108,8 @@ Retrieve the stock items associated to the stock location
 */
 func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockItemsRequest {
 	return HasManyApiGETStockLocationIdStockItemsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -13118,9 +13117,9 @@ func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, st
 // Execute executes the request
 func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETStockLocationIdStockItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdStockItems")
@@ -13181,8 +13180,8 @@ func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETS
 }
 
 type HasManyApiGETStockLocationIdStockTransfersRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockLocationId string
 }
 
@@ -13201,8 +13200,8 @@ Retrieve the stock transfers associated to the stock location
 */
 func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockTransfersRequest {
 	return HasManyApiGETStockLocationIdStockTransfersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -13210,9 +13209,9 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApiGETStockLocationIdStockTransfersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockLocationIdStockTransfers")
@@ -13273,8 +13272,8 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApi
 }
 
 type HasManyApiGETStockTransferIdEventsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stockTransferId string
 }
 
@@ -13293,8 +13292,8 @@ Retrieve the events associated to the stock transfer
 */
 func (a *HasManyApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) HasManyApiGETStockTransferIdEventsRequest {
 	return HasManyApiGETStockTransferIdEventsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -13302,9 +13301,9 @@ func (a *HasManyApiService) GETStockTransferIdEvents(ctx context.Context, stockT
 // Execute executes the request
 func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStockTransferIdEventsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStockTransferIdEvents")
@@ -13365,8 +13364,8 @@ func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStock
 }
 
 type HasManyApiGETStripeGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stripeGatewayId string
 }
 
@@ -13385,8 +13384,8 @@ Retrieve the payment methods associated to the stripe gateway
 */
 func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETStripeGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
 	}
 }
@@ -13394,9 +13393,9 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStripeGatewayIdPaymentMethods")
@@ -13457,8 +13456,8 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApi
 }
 
 type HasManyApiGETStripeGatewayIdStripePaymentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	stripeGatewayId string
 }
 
@@ -13477,8 +13476,8 @@ Retrieve the stripe payments associated to the stripe gateway
 */
 func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdStripePaymentsRequest {
 	return HasManyApiGETStripeGatewayIdStripePaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
 	}
 }
@@ -13486,9 +13485,9 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context
 // Execute executes the request
 func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETStripeGatewayIdStripePayments")
@@ -13549,8 +13548,8 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApi
 }
 
 type HasManyApiGETTaxCalculatorIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxCalculatorId string
 }
 
@@ -13569,8 +13568,8 @@ Retrieve the attachments associated to the tax calculator
 */
 func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETTaxCalculatorIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -13578,9 +13577,9 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, t
 // Execute executes the request
 func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGETTaxCalculatorIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCalculatorIdAttachments")
@@ -13641,8 +13640,8 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGET
 }
 
 type HasManyApiGETTaxCalculatorIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxCalculatorId string
 }
 
@@ -13661,8 +13660,8 @@ Retrieve the markets associated to the tax calculator
 */
 func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETTaxCalculatorIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -13670,9 +13669,9 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCa
 // Execute executes the request
 func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCalculatorIdMarkets")
@@ -13733,8 +13732,8 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxC
 }
 
 type HasManyApiGETTaxCalculatorIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxCalculatorId string
 }
 
@@ -13753,8 +13752,8 @@ Retrieve the tax categories associated to the tax calculator
 */
 func (a *HasManyApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdTaxCategoriesRequest {
 	return HasManyApiGETTaxCalculatorIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
 	}
 }
@@ -13762,9 +13761,9 @@ func (a *HasManyApiService) GETTaxCalculatorIdTaxCategories(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETTaxCalculatorIdTaxCategoriesExecute(r HasManyApiGETTaxCalculatorIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCalculatorIdTaxCategories")
@@ -13825,8 +13824,8 @@ func (a *HasManyApiService) GETTaxCalculatorIdTaxCategoriesExecute(r HasManyApiG
 }
 
 type HasManyApiGETTaxCategoryIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx           context.Context
+	ApiService    *HasManyApiService
 	taxCategoryId string
 }
 
@@ -13845,8 +13844,8 @@ Retrieve the attachments associated to the tax category
 */
 func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) HasManyApiGETTaxCategoryIdAttachmentsRequest {
 	return HasManyApiGETTaxCategoryIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		taxCategoryId: taxCategoryId,
 	}
 }
@@ -13854,9 +13853,9 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, tax
 // Execute executes the request
 func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTaxCategoryIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxCategoryIdAttachments")
@@ -13917,8 +13916,8 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTa
 }
 
 type HasManyApiGETTaxjarAccountIdAttachmentsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxjarAccountId string
 }
 
@@ -13937,8 +13936,8 @@ Retrieve the attachments associated to the taxjar account
 */
 func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdAttachmentsRequest {
 	return HasManyApiGETTaxjarAccountIdAttachmentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -13946,9 +13945,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, t
 // Execute executes the request
 func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGETTaxjarAccountIdAttachmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxjarAccountIdAttachments")
@@ -14009,8 +14008,8 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGET
 }
 
 type HasManyApiGETTaxjarAccountIdMarketsRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxjarAccountId string
 }
 
@@ -14029,8 +14028,8 @@ Retrieve the markets associated to the taxjar account
 */
 func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdMarketsRequest {
 	return HasManyApiGETTaxjarAccountIdMarketsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -14038,9 +14037,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxja
 // Execute executes the request
 func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxjarAccountIdMarkets")
@@ -14101,8 +14100,8 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxj
 }
 
 type HasManyApiGETTaxjarAccountIdTaxCategoriesRequest struct {
-	ctx context.Context
-	ApiService *HasManyApiService
+	ctx             context.Context
+	ApiService      *HasManyApiService
 	taxjarAccountId string
 }
 
@@ -14121,8 +14120,8 @@ Retrieve the tax categories associated to the taxjar account
 */
 func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdTaxCategoriesRequest {
 	return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
 	}
 }
@@ -14130,9 +14129,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context,
 // Execute executes the request
 func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiGETTaxjarAccountIdTaxCategoriesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETTaxjarAccountIdTaxCategories")
@@ -14193,9 +14192,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiG
 }
 
 type HasManyApiGETWebhookIdLastEventCallbacksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *HasManyApiService
-	webhookId string
+	webhookId  string
 }
 
 func (r HasManyApiGETWebhookIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -14214,17 +14213,17 @@ Retrieve the last event callbacks associated to the webhook
 func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) HasManyApiGETWebhookIdLastEventCallbacksRequest {
 	return HasManyApiGETWebhookIdLastEventCallbacksRequest{
 		ApiService: a,
-		ctx: ctx,
-		webhookId: webhookId,
+		ctx:        ctx,
+		webhookId:  webhookId,
 	}
 }
 
 // Execute executes the request
 func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r HasManyApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETWebhookIdLastEventCallbacks")

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "delivery_lead_times"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationships**](GETDeliveryLeadTimes200ResponseDataInnerRelationships.md) |  | [optional] 

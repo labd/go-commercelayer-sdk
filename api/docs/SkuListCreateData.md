@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "sku_lists"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuLists201ResponseDataAttributes**](POSTSkuLists201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

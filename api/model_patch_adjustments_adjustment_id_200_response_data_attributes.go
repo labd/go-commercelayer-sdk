@@ -298,5 +298,3 @@ func (v *NullablePATCHAdjustmentsAdjustmentId200ResponseDataAttributes) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

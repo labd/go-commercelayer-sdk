@@ -112,5 +112,3 @@ func (v *NullableGETTaxjarAccountsTaxjarAccountId200Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

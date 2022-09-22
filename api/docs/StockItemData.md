@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETStockItems200ResponseDataInnerAttributes**](GETStockItems200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemDataRelationships**](StockItemDataRelationships.md) |  | [optional] 
 

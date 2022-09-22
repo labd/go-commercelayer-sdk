@@ -217,5 +217,3 @@ func (v *NullablePOSTCustomerPasswordResets201ResponseDataAttributes) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

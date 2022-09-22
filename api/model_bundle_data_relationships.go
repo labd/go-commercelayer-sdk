@@ -17,9 +17,9 @@ import (
 
 // BundleDataRelationships struct for BundleDataRelationships
 type BundleDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	SkuList *BundleDataRelationshipsSkuList `json:"sku_list,omitempty"`
-	Skus *BundleDataRelationshipsSkus `json:"skus,omitempty"`
+	Market      *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
+	SkuList     *BundleDataRelationshipsSkuList             `json:"sku_list,omitempty"`
+	Skus        *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -220,5 +220,3 @@ func (v *NullableBundleDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

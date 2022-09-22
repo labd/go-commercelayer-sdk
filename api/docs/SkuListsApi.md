@@ -646,7 +646,7 @@ import (
 )
 
 func main() {
-    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("sku_lists", "XGZwpOSrWL", *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
+    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
     skuListId := "skuListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -718,7 +718,7 @@ import (
 )
 
 func main() {
-    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("sku_lists", *openapiclient.NewPOSTSkuLists201ResponseDataAttributes("Personal list"))) // SkuListCreate | 
+    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("Type_example", *openapiclient.NewPOSTSkuLists201ResponseDataAttributes("Personal list"))) // SkuListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

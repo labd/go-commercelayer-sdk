@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryCreateDataRelationships**](TaxCategoryCreateDataRelationships.md) |  | [optional] 
 

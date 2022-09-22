@@ -372,5 +372,3 @@ func (v *NullablePATCHLineItemsLineItemId200ResponseDataAttributes) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

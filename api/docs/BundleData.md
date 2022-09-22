@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "bundles"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETBundles200ResponseDataInnerAttributes**](GETBundles200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**BundleDataRelationships**](BundleDataRelationships.md) |  | [optional] 
 

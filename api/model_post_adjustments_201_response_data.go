@@ -20,10 +20,10 @@ type POSTAdjustments201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTAdjustments201ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          *string                                   `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks    `json:"links,omitempty"`
+	Attributes    *POSTAdjustments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
 }
 
 // NewPOSTAdjustments201ResponseData instantiates a new POSTAdjustments201ResponseData object
@@ -32,8 +32,6 @@ type POSTAdjustments201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTAdjustments201ResponseData() *POSTAdjustments201ResponseData {
 	this := POSTAdjustments201ResponseData{}
-	var type_ string = "adjustments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTAdjustments201ResponseData() *POSTAdjustments201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTAdjustments201ResponseDataWithDefaults() *POSTAdjustments201ResponseData {
 	this := POSTAdjustments201ResponseData{}
-	var type_ string = "adjustments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTAdjustments201ResponseData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

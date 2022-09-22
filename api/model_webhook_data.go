@@ -18,9 +18,9 @@ import (
 // WebhookData struct for WebhookData
 type WebhookData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETWebhooks200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *WebhookDataRelationships `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    GETWebhooks200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *WebhookDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewWebhookData instantiates a new WebhookData object
@@ -39,8 +39,6 @@ func NewWebhookData(type_ string, attributes GETWebhooks200ResponseDataInnerAttr
 // but it doesn't guarantee that properties required by API are set
 func NewWebhookDataWithDefaults() *WebhookData {
 	this := WebhookData{}
-	var type_ string = "webhooks"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableWebhookData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

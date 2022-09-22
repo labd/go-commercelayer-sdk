@@ -29,8 +29,6 @@ type StripeGatewayDataRelationshipsStripePaymentsData struct {
 // will change when the set of required properties is changed
 func NewStripeGatewayDataRelationshipsStripePaymentsData() *StripeGatewayDataRelationshipsStripePaymentsData {
 	this := StripeGatewayDataRelationshipsStripePaymentsData{}
-	var type_ string = "stripe_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewStripeGatewayDataRelationshipsStripePaymentsData() *StripeGatewayDataRel
 // but it doesn't guarantee that properties required by API are set
 func NewStripeGatewayDataRelationshipsStripePaymentsDataWithDefaults() *StripeGatewayDataRelationshipsStripePaymentsData {
 	this := StripeGatewayDataRelationshipsStripePaymentsData{}
-	var type_ string = "stripe_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableStripeGatewayDataRelationshipsStripePaymentsData) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

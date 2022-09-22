@@ -20,9 +20,9 @@ type POSTInventoryModels201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTInventoryModels201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *POSTInventoryModels201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETInventoryModels200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTInventoryModels201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTInventoryModels201ResponseData() *POSTInventoryModels201ResponseData {
 	this := POSTInventoryModels201ResponseData{}
-	var type_ string = "inventory_models"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTInventoryModels201ResponseData() *POSTInventoryModels201ResponseData
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTInventoryModels201ResponseDataWithDefaults() *POSTInventoryModels201ResponseData {
 	this := POSTInventoryModels201ResponseData{}
-	var type_ string = "inventory_models"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTInventoryModels201ResponseData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

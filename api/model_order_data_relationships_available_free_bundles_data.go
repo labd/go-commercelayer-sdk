@@ -29,8 +29,6 @@ type OrderDataRelationshipsAvailableFreeBundlesData struct {
 // will change when the set of required properties is changed
 func NewOrderDataRelationshipsAvailableFreeBundlesData() *OrderDataRelationshipsAvailableFreeBundlesData {
 	this := OrderDataRelationshipsAvailableFreeBundlesData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewOrderDataRelationshipsAvailableFreeBundlesData() *OrderDataRelationships
 // but it doesn't guarantee that properties required by API are set
 func NewOrderDataRelationshipsAvailableFreeBundlesDataWithDefaults() *OrderDataRelationshipsAvailableFreeBundlesData {
 	this := OrderDataRelationshipsAvailableFreeBundlesData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableOrderDataRelationshipsAvailableFreeBundlesData) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

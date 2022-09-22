@@ -18,9 +18,9 @@ import (
 // ShippingCategoryCreateData struct for ShippingCategoryCreateData
 type ShippingCategoryCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTShippingCategories201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    POSTShippingCategories201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                          `json:"relationships,omitempty"`
 }
 
 // NewShippingCategoryCreateData instantiates a new ShippingCategoryCreateData object
@@ -39,8 +39,6 @@ func NewShippingCategoryCreateData(type_ string, attributes POSTShippingCategori
 // but it doesn't guarantee that properties required by API are set
 func NewShippingCategoryCreateDataWithDefaults() *ShippingCategoryCreateData {
 	this := ShippingCategoryCreateData{}
-	var type_ string = "shipping_categories"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableShippingCategoryCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

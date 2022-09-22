@@ -20,9 +20,9 @@ type GETCaptures200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETCaptures200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                       `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
+	Attributes    *GETCaptures200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETCaptures200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETCaptures200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETCaptures200ResponseDataInner() *GETCaptures200ResponseDataInner {
 	this := GETCaptures200ResponseDataInner{}
-	var type_ string = "captures"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETCaptures200ResponseDataInner() *GETCaptures200ResponseDataInner {
 // but it doesn't guarantee that properties required by API are set
 func NewGETCaptures200ResponseDataInnerWithDefaults() *GETCaptures200ResponseDataInner {
 	this := GETCaptures200ResponseDataInner{}
-	var type_ string = "captures"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETCaptures200ResponseDataInner) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

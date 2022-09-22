@@ -18,9 +18,9 @@ import (
 // TaxRuleCreateData struct for TaxRuleCreateData
 type TaxRuleCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTTaxRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxRuleCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                `json:"type"`
+	Attributes    POSTTaxRules201ResponseDataAttributes `json:"attributes"`
+	Relationships *TaxRuleCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleCreateData instantiates a new TaxRuleCreateData object
@@ -39,8 +39,6 @@ func NewTaxRuleCreateData(type_ string, attributes POSTTaxRules201ResponseDataAt
 // but it doesn't guarantee that properties required by API are set
 func NewTaxRuleCreateDataWithDefaults() *TaxRuleCreateData {
 	this := TaxRuleCreateData{}
-	var type_ string = "tax_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableTaxRuleCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,8 +29,6 @@ type ReturnDataRelationshipsReturnLineItemsData struct {
 // will change when the set of required properties is changed
 func NewReturnDataRelationshipsReturnLineItemsData() *ReturnDataRelationshipsReturnLineItemsData {
 	this := ReturnDataRelationshipsReturnLineItemsData{}
-	var type_ string = "return_line_items"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewReturnDataRelationshipsReturnLineItemsData() *ReturnDataRelationshipsRet
 // but it doesn't guarantee that properties required by API are set
 func NewReturnDataRelationshipsReturnLineItemsDataWithDefaults() *ReturnDataRelationshipsReturnLineItemsData {
 	this := ReturnDataRelationshipsReturnLineItemsData{}
-	var type_ string = "return_line_items"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableReturnDataRelationshipsReturnLineItemsData) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

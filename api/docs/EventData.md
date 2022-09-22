@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "events"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETEvents200ResponseDataInnerAttributes**](GETEvents200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**EventDataRelationships**](EventDataRelationships.md) |  | [optional] 
 

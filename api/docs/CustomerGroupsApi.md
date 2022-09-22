@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("customer_groups", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes())) // CustomerGroupUpdate | 
+    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes())) // CustomerGroupUpdate | 
     customerGroupId := "customerGroupId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData("customer_groups", *openapiclient.NewPOSTCustomerGroups201ResponseDataAttributes("VIP"))) // CustomerGroupCreate | 
+    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData("Type_example", *openapiclient.NewPOSTCustomerGroups201ResponseDataAttributes("VIP"))) // CustomerGroupCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

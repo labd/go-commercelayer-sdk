@@ -17,12 +17,12 @@ import (
 
 // FixedPricePromotionCreateDataRelationships struct for FixedPricePromotionCreateDataRelationships
 type FixedPricePromotionCreateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	PromotionRules *ExternalPromotionDataRelationshipsPromotionRules `json:"promotion_rules,omitempty"`
+	Market                   *AvalaraAccountDataRelationshipsMarkets                     `json:"market,omitempty"`
+	PromotionRules           *ExternalPromotionDataRelationshipsPromotionRules           `json:"promotion_rules,omitempty"`
 	OrderAmountPromotionRule *ExternalPromotionDataRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
-	SkuListPromotionRule *ExternalPromotionDataRelationshipsSkuListPromotionRule `json:"sku_list_promotion_rule,omitempty"`
-	CouponCodesPromotionRule *CouponDataRelationshipsPromotionRule `json:"coupon_codes_promotion_rule,omitempty"`
-	SkuList BundleDataRelationshipsSkuList `json:"sku_list"`
+	SkuListPromotionRule     *ExternalPromotionDataRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
+	CouponCodesPromotionRule *CouponDataRelationshipsPromotionRule                       `json:"coupon_codes_promotion_rule,omitempty"`
+	SkuList                  BundleDataRelationshipsSkuList                              `json:"sku_list"`
 }
 
 // NewFixedPricePromotionCreateDataRelationships instantiates a new FixedPricePromotionCreateDataRelationships object
@@ -285,5 +285,3 @@ func (v *NullableFixedPricePromotionCreateDataRelationships) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

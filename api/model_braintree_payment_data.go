@@ -18,9 +18,9 @@ import (
 // BraintreePaymentData struct for BraintreePaymentData
 type BraintreePaymentData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentData instantiates a new BraintreePaymentData object
@@ -39,8 +39,6 @@ func NewBraintreePaymentData(type_ string, attributes GETBraintreePayments200Res
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreePaymentDataWithDefaults() *BraintreePaymentData {
 	this := BraintreePaymentData{}
-	var type_ string = "braintree_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableBraintreePaymentData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

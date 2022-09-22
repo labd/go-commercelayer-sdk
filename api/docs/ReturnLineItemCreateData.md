@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "return_line_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTReturnLineItems201ResponseDataAttributes**](POSTReturnLineItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnLineItemCreateDataRelationships**](ReturnLineItemCreateDataRelationships.md) |  | [optional] 
 

@@ -298,5 +298,3 @@ func (v *NullablePOSTInStockSubscriptions201ResponseDataAttributes) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

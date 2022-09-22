@@ -17,7 +17,7 @@ import (
 
 // GETBillingInfoValidationRules200ResponseDataInnerRelationships struct for GETBillingInfoValidationRules200ResponseDataInnerRelationships
 type GETBillingInfoValidationRules200ResponseDataInnerRelationships struct {
-	Market *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"market,omitempty"`
+	Market *GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket `json:"market,omitempty"`
 }
 
 // NewGETBillingInfoValidationRules200ResponseDataInnerRelationships instantiates a new GETBillingInfoValidationRules200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETBillingInfoValidationRules200ResponseDataInnerRelationshipsWithDefaul
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarket() GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -48,7 +48,7 @@ func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMark
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetMarketOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) HasMark
 	return false
 }
 
-// SetMarket gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Market field.
-func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetMarket gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket and assigns it to the Market field.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMarket(v GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket) {
 	o.Market = &v
 }
 
@@ -112,5 +112,3 @@ func (v *NullableGETBillingInfoValidationRules200ResponseDataInnerRelationships)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

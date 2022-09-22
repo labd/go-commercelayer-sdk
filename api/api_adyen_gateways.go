@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // AdyenGatewaysApiService AdyenGatewaysApi service
 type AdyenGatewaysApiService service
 
 type AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenGatewaysApiService
+	ctx            context.Context
+	ApiService     *AdyenGatewaysApiService
 	adyenGatewayId string
 }
 
@@ -45,8 +44,8 @@ Delete an adyen gateway
 */
 func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.
 // Execute executes the request
 func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.DELETEAdyenGatewaysAdyenGatewayId")
@@ -117,7 +116,7 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Ady
 }
 
 type AdyenGatewaysApiGETAdyenGatewaysRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AdyenGatewaysApiService
 }
 
@@ -136,7 +135,7 @@ List all adyen gateways
 func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) AdyenGatewaysApiGETAdyenGatewaysRequest {
 	return AdyenGatewaysApiGETAdyenGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) AdyenGat
 //  @return GETAdyenGateways200Response
 func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*GETAdyenGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAdyenGateways200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGateways")
@@ -216,8 +215,8 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETA
 }
 
 type AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenGatewaysApiService
+	ctx            context.Context
+	ApiService     *AdyenGatewaysApiService
 	adyenGatewayId string
 }
 
@@ -236,8 +235,8 @@ Retrieve an adyen gateway
 */
 func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Con
 //  @return GETAdyenGatewaysAdyenGatewayId200Response
 func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAdyenGatewaysAdyenGatewayId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGatewaysAdyenGatewayId")
@@ -319,10 +318,10 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 }
 
 type AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenGatewaysApiService
+	ctx                context.Context
+	ApiService         *AdyenGatewaysApiService
 	adyenGatewayUpdate *AdyenGatewayUpdate
-	adyenGatewayId string
+	adyenGatewayId     string
 }
 
 func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
@@ -345,8 +344,8 @@ Update an adyen gateway
 */
 func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.C
 //  @return PATCHAdyenGatewaysAdyenGatewayId200Response
 func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*PATCHAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHAdyenGatewaysAdyenGatewayId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.PATCHAdyenGatewaysAdyenGatewayId")
@@ -433,8 +432,8 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 }
 
 type AdyenGatewaysApiPOSTAdyenGatewaysRequest struct {
-	ctx context.Context
-	ApiService *AdyenGatewaysApiService
+	ctx                context.Context
+	ApiService         *AdyenGatewaysApiService
 	adyenGatewayCreate *AdyenGatewayCreate
 }
 
@@ -458,7 +457,7 @@ Create an adyen gateway
 func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
 	return AdyenGatewaysApiPOSTAdyenGatewaysRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) AdyenGa
 //  @return POSTAdyenGateways201Response
 func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*POSTAdyenGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTAdyenGateways201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAdyenGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.POSTAdyenGateways")

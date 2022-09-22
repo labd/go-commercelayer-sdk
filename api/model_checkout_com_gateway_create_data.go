@@ -18,9 +18,9 @@ import (
 // CheckoutComGatewayCreateData struct for CheckoutComGatewayCreateData
 type CheckoutComGatewayCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTCheckoutComGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships *CheckoutComGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTCheckoutComGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayCreateData instantiates a new CheckoutComGatewayCreateData object
@@ -39,8 +39,6 @@ func NewCheckoutComGatewayCreateData(type_ string, attributes POSTCheckoutComGat
 // but it doesn't guarantee that properties required by API are set
 func NewCheckoutComGatewayCreateDataWithDefaults() *CheckoutComGatewayCreateData {
 	this := CheckoutComGatewayCreateData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCheckoutComGatewayCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

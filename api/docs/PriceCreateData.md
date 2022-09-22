@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "prices"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTPrices201ResponseDataAttributes**](POSTPrices201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceCreateDataRelationships**](PriceCreateDataRelationships.md) |  | [optional] 
 

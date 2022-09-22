@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAdyenGateways200ResponseDataInnerAttributes**](GETAdyenGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenGatewayDataRelationships**](AdyenGatewayDataRelationships.md) |  | [optional] 
 

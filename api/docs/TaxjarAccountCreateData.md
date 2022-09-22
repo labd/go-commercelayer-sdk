@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "taxjar_accounts"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTTaxjarAccounts201ResponseDataAttributes**](POSTTaxjarAccounts201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 

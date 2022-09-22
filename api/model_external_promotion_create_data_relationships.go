@@ -17,11 +17,11 @@ import (
 
 // ExternalPromotionCreateDataRelationships struct for ExternalPromotionCreateDataRelationships
 type ExternalPromotionCreateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	PromotionRules *ExternalPromotionDataRelationshipsPromotionRules `json:"promotion_rules,omitempty"`
+	Market                   *AvalaraAccountDataRelationshipsMarkets                     `json:"market,omitempty"`
+	PromotionRules           *ExternalPromotionDataRelationshipsPromotionRules           `json:"promotion_rules,omitempty"`
 	OrderAmountPromotionRule *ExternalPromotionDataRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
-	SkuListPromotionRule *ExternalPromotionDataRelationshipsSkuListPromotionRule `json:"sku_list_promotion_rule,omitempty"`
-	CouponCodesPromotionRule *CouponDataRelationshipsPromotionRule `json:"coupon_codes_promotion_rule,omitempty"`
+	SkuListPromotionRule     *ExternalPromotionDataRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
+	CouponCodesPromotionRule *CouponDataRelationshipsPromotionRule                       `json:"coupon_codes_promotion_rule,omitempty"`
 }
 
 // NewExternalPromotionCreateDataRelationships instantiates a new ExternalPromotionCreateDataRelationships object
@@ -256,5 +256,3 @@ func (v *NullableExternalPromotionCreateDataRelationships) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // AdyenPaymentsApiService AdyenPaymentsApi service
 type AdyenPaymentsApiService service
 
 type AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenPaymentsApiService
+	ctx            context.Context
+	ApiService     *AdyenPaymentsApiService
 	adyenPaymentId string
 }
 
@@ -45,8 +44,8 @@ Delete an adyen payment
 */
 func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest {
 	return AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentId(ctx context.
 // Execute executes the request
 func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiDELETEAdyenPaymentsAdyenPaymentIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.DELETEAdyenPaymentsAdyenPaymentId")
@@ -117,8 +116,8 @@ func (a *AdyenPaymentsApiService) DELETEAdyenPaymentsAdyenPaymentIdExecute(r Ady
 }
 
 type AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
-	ctx context.Context
-	ApiService *AdyenPaymentsApiService
+	ctx            context.Context
+	ApiService     *AdyenPaymentsApiService
 	adyenGatewayId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the adyen payments associated to the adyen gateway
 */
 func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest {
 	return AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Con
 // Execute executes the request
 func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r AdyenPaymentsApiGETAdyenGatewayIdAdyenPaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.GETAdyenGatewayIdAdyenPayments")
@@ -209,7 +208,7 @@ func (a *AdyenPaymentsApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r AdyenP
 }
 
 type AdyenPaymentsApiGETAdyenPaymentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AdyenPaymentsApiService
 }
 
@@ -228,7 +227,7 @@ List all adyen payments
 func (a *AdyenPaymentsApiService) GETAdyenPayments(ctx context.Context) AdyenPaymentsApiGETAdyenPaymentsRequest {
 	return AdyenPaymentsApiGETAdyenPaymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *AdyenPaymentsApiService) GETAdyenPayments(ctx context.Context) AdyenPay
 //  @return GETAdyenPayments200Response
 func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r AdyenPaymentsApiGETAdyenPaymentsRequest) (*GETAdyenPayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAdyenPayments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenPayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.GETAdyenPayments")
@@ -308,8 +307,8 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsExecute(r AdyenPaymentsApiGETA
 }
 
 type AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenPaymentsApiService
+	ctx            context.Context
+	ApiService     *AdyenPaymentsApiService
 	adyenPaymentId string
 }
 
@@ -328,8 +327,8 @@ Retrieve an adyen payment
 */
 func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest {
 	return AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentId(ctx context.Con
 //  @return GETAdyenPaymentsAdyenPaymentId200Response
 func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiGETAdyenPaymentsAdyenPaymentIdRequest) (*GETAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAdyenPaymentsAdyenPaymentId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenPaymentsAdyenPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.GETAdyenPaymentsAdyenPaymentId")
@@ -411,10 +410,10 @@ func (a *AdyenPaymentsApiService) GETAdyenPaymentsAdyenPaymentIdExecute(r AdyenP
 }
 
 type AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest struct {
-	ctx context.Context
-	ApiService *AdyenPaymentsApiService
+	ctx                context.Context
+	ApiService         *AdyenPaymentsApiService
 	adyenPaymentUpdate *AdyenPaymentUpdate
-	adyenPaymentId string
+	adyenPaymentId     string
 }
 
 func (r AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest) AdyenPaymentUpdate(adyenPaymentUpdate AdyenPaymentUpdate) AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
@@ -437,8 +436,8 @@ Update an adyen payment
 */
 func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentId(ctx context.Context, adyenPaymentId string) AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest {
 	return AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenPaymentId: adyenPaymentId,
 	}
 }
@@ -447,10 +446,10 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentId(ctx context.C
 //  @return PATCHAdyenPaymentsAdyenPaymentId200Response
 func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r AdyenPaymentsApiPATCHAdyenPaymentsAdyenPaymentIdRequest) (*PATCHAdyenPaymentsAdyenPaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHAdyenPaymentsAdyenPaymentId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAdyenPaymentsAdyenPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.PATCHAdyenPaymentsAdyenPaymentId")
@@ -525,8 +524,8 @@ func (a *AdyenPaymentsApiService) PATCHAdyenPaymentsAdyenPaymentIdExecute(r Adye
 }
 
 type AdyenPaymentsApiPOSTAdyenPaymentsRequest struct {
-	ctx context.Context
-	ApiService *AdyenPaymentsApiService
+	ctx                context.Context
+	ApiService         *AdyenPaymentsApiService
 	adyenPaymentCreate *AdyenPaymentCreate
 }
 
@@ -550,7 +549,7 @@ Create an adyen payment
 func (a *AdyenPaymentsApiService) POSTAdyenPayments(ctx context.Context) AdyenPaymentsApiPOSTAdyenPaymentsRequest {
 	return AdyenPaymentsApiPOSTAdyenPaymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *AdyenPaymentsApiService) POSTAdyenPayments(ctx context.Context) AdyenPa
 //  @return POSTAdyenPayments201Response
 func (a *AdyenPaymentsApiService) POSTAdyenPaymentsExecute(r AdyenPaymentsApiPOSTAdyenPaymentsRequest) (*POSTAdyenPayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTAdyenPayments201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAdyenPayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenPaymentsApiService.POSTAdyenPayments")

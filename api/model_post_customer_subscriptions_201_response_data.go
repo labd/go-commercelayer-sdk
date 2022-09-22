@@ -20,9 +20,9 @@ type POSTCustomerSubscriptions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTCustomerSubscriptions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                     `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                      `json:"links,omitempty"`
+	Attributes    *POSTCustomerSubscriptions201ResponseDataAttributes         `json:"attributes,omitempty"`
 	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTCustomerSubscriptions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTCustomerSubscriptions201ResponseData() *POSTCustomerSubscriptions201ResponseData {
 	this := POSTCustomerSubscriptions201ResponseData{}
-	var type_ string = "customer_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTCustomerSubscriptions201ResponseData() *POSTCustomerSubscriptions201
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTCustomerSubscriptions201ResponseDataWithDefaults() *POSTCustomerSubscriptions201ResponseData {
 	this := POSTCustomerSubscriptions201ResponseData{}
-	var type_ string = "customer_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTCustomerSubscriptions201ResponseData) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "parcel_line_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTParcelLineItems201ResponseDataAttributes**](POSTParcelLineItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelLineItemCreateDataRelationships**](ParcelLineItemCreateDataRelationships.md) |  | [optional] 
 

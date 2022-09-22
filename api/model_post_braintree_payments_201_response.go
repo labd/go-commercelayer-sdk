@@ -112,5 +112,3 @@ func (v *NullablePOSTBraintreePayments201Response) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

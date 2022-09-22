@@ -20,9 +20,9 @@ type POSTAdyenGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTAdyenGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
+	Attributes    *POSTAdyenGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETAdyenGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTAdyenGateways201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTAdyenGateways201ResponseData() *POSTAdyenGateways201ResponseData {
 	this := POSTAdyenGateways201ResponseData{}
-	var type_ string = "adyen_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTAdyenGateways201ResponseData() *POSTAdyenGateways201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTAdyenGateways201ResponseDataWithDefaults() *POSTAdyenGateways201ResponseData {
 	this := POSTAdyenGateways201ResponseData{}
-	var type_ string = "adyen_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTAdyenGateways201ResponseData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

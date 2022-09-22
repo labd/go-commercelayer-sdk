@@ -20,9 +20,9 @@ type POSTLineItemOptions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTLineItemOptions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *POSTLineItemOptions201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETLineItemOptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTLineItemOptions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTLineItemOptions201ResponseData() *POSTLineItemOptions201ResponseData {
 	this := POSTLineItemOptions201ResponseData{}
-	var type_ string = "line_item_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTLineItemOptions201ResponseData() *POSTLineItemOptions201ResponseData
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTLineItemOptions201ResponseDataWithDefaults() *POSTLineItemOptions201ResponseData {
 	this := POSTLineItemOptions201ResponseData{}
-	var type_ string = "line_item_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTLineItemOptions201ResponseData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

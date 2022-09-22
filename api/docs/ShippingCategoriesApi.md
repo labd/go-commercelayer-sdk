@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("shipping_categories", "XGZwpOSrWL", *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
+    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
     shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("shipping_categories", *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
+    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("Type_example", *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

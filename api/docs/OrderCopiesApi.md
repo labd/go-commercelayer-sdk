@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("order_copies", *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
+    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("Type_example", *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

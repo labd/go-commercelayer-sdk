@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "price_tiers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETPriceTiers200ResponseDataInnerAttributes**](GETPriceTiers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceTierDataRelationships**](PriceTierDataRelationships.md) |  | [optional] 
 

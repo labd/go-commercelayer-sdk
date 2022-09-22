@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("authorizations", "XGZwpOSrWL", *openapiclient.NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes())) // AuthorizationUpdate | 
+    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes())) // AuthorizationUpdate | 
     authorizationId := "authorizationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()

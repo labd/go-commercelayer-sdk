@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // InventoryReturnLocationsApiService InventoryReturnLocationsApi service
 type InventoryReturnLocationsApiService service
 
 type InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx                       context.Context
+	ApiService                *InventoryReturnLocationsApiService
 	inventoryReturnLocationId string
 }
 
@@ -45,8 +44,8 @@ Delete an inventory return location
 */
 func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 // Execute executes the request
 func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.DELETEInventoryReturnLocationsInventoryReturnLocationId")
@@ -117,8 +116,8 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 }
 
 type InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx              context.Context
+	ApiService       *InventoryReturnLocationsApiService
 	inventoryModelId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the inventory return locations associated to the inventory model
 */
 func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		inventoryModelId: inventoryModelId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 // Execute executes the request
 func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.GETInventoryModelIdInventoryReturnLocations")
@@ -209,7 +208,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 }
 
 type InventoryReturnLocationsApiGETInventoryReturnLocationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *InventoryReturnLocationsApiService
 }
 
@@ -228,7 +227,7 @@ List all inventory return locations
 func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiGETInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiGETInventoryReturnLocationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocations(ctx con
 //  @return GETInventoryReturnLocations200Response
 func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsRequest) (*GETInventoryReturnLocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETInventoryReturnLocations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETInventoryReturnLocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.GETInventoryReturnLocations")
@@ -308,8 +307,8 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(
 }
 
 type InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx                       context.Context
+	ApiService                *InventoryReturnLocationsApiService
 	inventoryReturnLocationId string
 }
 
@@ -328,8 +327,8 @@ Retrieve an inventory return location
 */
 func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 //  @return GETInventoryReturnLocationsInventoryReturnLocationId200Response
 func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) (*GETInventoryReturnLocationsInventoryReturnLocationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETInventoryReturnLocationsInventoryReturnLocationId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETInventoryReturnLocationsInventoryReturnLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.GETInventoryReturnLocationsInventoryReturnLocationId")
@@ -411,8 +410,8 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 }
 
 type InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx             context.Context
+	ApiService      *InventoryReturnLocationsApiService
 	stockLocationId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the inventory return locations associated to the stock location
 */
 func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLocationId: stockLocationId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 // Execute executes the request
 func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocationsExecute(r InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.GETStockLocationIdInventoryReturnLocations")
@@ -503,10 +502,10 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 }
 
 type InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx                           context.Context
+	ApiService                    *InventoryReturnLocationsApiService
 	inventoryReturnLocationUpdate *InventoryReturnLocationUpdate
-	inventoryReturnLocationId string
+	inventoryReturnLocationId     string
 }
 
 func (r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) InventoryReturnLocationUpdate(inventoryReturnLocationUpdate InventoryReturnLocationUpdate) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
@@ -529,8 +528,8 @@ Update an inventory return location
 */
 func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                a,
+		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
 	}
 }
@@ -539,10 +538,10 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 //  @return PATCHInventoryReturnLocationsInventoryReturnLocationId200Response
 func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationIdExecute(r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) (*PATCHInventoryReturnLocationsInventoryReturnLocationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHInventoryReturnLocationsInventoryReturnLocationId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHInventoryReturnLocationsInventoryReturnLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.PATCHInventoryReturnLocationsInventoryReturnLocationId")
@@ -617,8 +616,8 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 }
 
 type InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest struct {
-	ctx context.Context
-	ApiService *InventoryReturnLocationsApiService
+	ctx                           context.Context
+	ApiService                    *InventoryReturnLocationsApiService
 	inventoryReturnLocationCreate *InventoryReturnLocationCreate
 }
 
@@ -642,7 +641,7 @@ Create an inventory return location
 func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocations(ctx context.Context) InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -650,10 +649,10 @@ func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocations(ctx co
 //  @return POSTInventoryReturnLocations201Response
 func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocationsExecute(r InventoryReturnLocationsApiPOSTInventoryReturnLocationsRequest) (*POSTInventoryReturnLocations201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTInventoryReturnLocations201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTInventoryReturnLocations201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryReturnLocationsApiService.POSTInventoryReturnLocations")

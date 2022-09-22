@@ -29,8 +29,6 @@ type GiftCardDataRelationshipsGiftCardRecipientData struct {
 // will change when the set of required properties is changed
 func NewGiftCardDataRelationshipsGiftCardRecipientData() *GiftCardDataRelationshipsGiftCardRecipientData {
 	this := GiftCardDataRelationshipsGiftCardRecipientData{}
-	var type_ string = "gift_card_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewGiftCardDataRelationshipsGiftCardRecipientData() *GiftCardDataRelationsh
 // but it doesn't guarantee that properties required by API are set
 func NewGiftCardDataRelationshipsGiftCardRecipientDataWithDefaults() *GiftCardDataRelationshipsGiftCardRecipientData {
 	this := GiftCardDataRelationshipsGiftCardRecipientData{}
-	var type_ string = "gift_card_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableGiftCardDataRelationshipsGiftCardRecipientData) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

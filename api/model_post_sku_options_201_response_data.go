@@ -20,9 +20,9 @@ type POSTSkuOptions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTSkuOptions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *POSTSkuOptions201ResponseDataAttributes             `json:"attributes,omitempty"`
 	Relationships *GETCarrierAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTSkuOptions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTSkuOptions201ResponseData() *POSTSkuOptions201ResponseData {
 	this := POSTSkuOptions201ResponseData{}
-	var type_ string = "sku_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTSkuOptions201ResponseData() *POSTSkuOptions201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTSkuOptions201ResponseDataWithDefaults() *POSTSkuOptions201ResponseData {
 	this := POSTSkuOptions201ResponseData{}
-	var type_ string = "sku_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTSkuOptions201ResponseData) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

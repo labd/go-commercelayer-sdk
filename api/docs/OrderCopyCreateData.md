@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_copies"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTOrderCopies201ResponseDataAttributes**](POSTOrderCopies201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCopyCreateDataRelationships**](OrderCopyCreateDataRelationships.md) |  | [optional] 
 

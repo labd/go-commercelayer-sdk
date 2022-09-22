@@ -372,5 +372,3 @@ func (v *NullableGETInventoryStockLocations200ResponseDataInnerAttributes) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

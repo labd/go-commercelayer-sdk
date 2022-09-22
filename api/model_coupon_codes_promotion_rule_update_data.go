@@ -20,8 +20,8 @@ type CouponCodesPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Id            string                                     `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
 	Relationships *CouponCodesPromotionRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -42,8 +42,6 @@ func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes P
 // but it doesn't guarantee that properties required by API are set
 func NewCouponCodesPromotionRuleUpdateDataWithDefaults() *CouponCodesPromotionRuleUpdateData {
 	this := CouponCodesPromotionRuleUpdateData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableCouponCodesPromotionRuleUpdateData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

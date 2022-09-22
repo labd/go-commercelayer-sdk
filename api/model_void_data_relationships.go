@@ -17,7 +17,7 @@ import (
 
 // VoidDataRelationships struct for VoidDataRelationships
 type VoidDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
+	Order                  *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
 	ReferenceAuthorization *CaptureDataRelationshipsReferenceAuthorization `json:"reference_authorization,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableVoidDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

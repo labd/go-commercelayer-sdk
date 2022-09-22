@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("wire_transfers", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferUpdate | 
+    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferUpdate | 
     wireTransferId := "wireTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("wire_transfers", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferCreate | 
+    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("order_subscriptions", "XGZwpOSrWL", *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
+    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
     orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("order_subscriptions", *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes("monthly"))) // OrderSubscriptionCreate | 
+    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("Type_example", *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes("monthly"))) // OrderSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

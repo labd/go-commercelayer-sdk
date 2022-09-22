@@ -17,9 +17,9 @@ import (
 
 // CaptureDataRelationships struct for CaptureDataRelationships
 type CaptureDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
+	Order                  *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
 	ReferenceAuthorization *CaptureDataRelationshipsReferenceAuthorization `json:"reference_authorization,omitempty"`
-	Refunds *CaptureDataRelationshipsRefunds `json:"refunds,omitempty"`
+	Refunds                *CaptureDataRelationshipsRefunds                `json:"refunds,omitempty"`
 }
 
 // NewCaptureDataRelationships instantiates a new CaptureDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableCaptureDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

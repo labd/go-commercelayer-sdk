@@ -557,5 +557,3 @@ func (v *NullableGETFreeShippingPromotions200ResponseDataInnerAttributes) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

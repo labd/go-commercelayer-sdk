@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("packages", "XGZwpOSrWL", *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
+    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
     packageId := "packageId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("packages", *openapiclient.NewPOSTPackages201ResponseDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
+    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("Type_example", *openapiclient.NewPOSTPackages201ResponseDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

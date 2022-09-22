@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "refunds"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETRefunds200ResponseDataInnerAttributes**](GETRefunds200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**RefundDataRelationships**](RefundDataRelationships.md) |  | [optional] 
 

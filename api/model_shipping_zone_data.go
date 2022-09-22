@@ -18,9 +18,9 @@ import (
 // ShippingZoneData struct for ShippingZoneData
 type ShippingZoneData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETShippingZones200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ShippingZoneDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    GETShippingZones200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ShippingZoneDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewShippingZoneData instantiates a new ShippingZoneData object
@@ -39,8 +39,6 @@ func NewShippingZoneData(type_ string, attributes GETShippingZones200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewShippingZoneDataWithDefaults() *ShippingZoneData {
 	this := ShippingZoneData{}
-	var type_ string = "shipping_zones"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableShippingZoneData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

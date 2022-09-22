@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "sku_list_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETSkuListItems200ResponseDataInnerAttributes**](GETSkuListItems200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListItemDataRelationships**](SkuListItemDataRelationships.md) |  | [optional] 
 

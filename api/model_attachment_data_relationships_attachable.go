@@ -19,35 +19,35 @@ import (
 // AttachmentDataRelationshipsAttachable - struct for AttachmentDataRelationshipsAttachable
 type AttachmentDataRelationshipsAttachable struct {
 	BillingInfoValidationRule *BillingInfoValidationRule
-	Bundle *Bundle
-	CarrierAccount *CarrierAccount
-	Customer *Customer
-	CustomerGroup *CustomerGroup
-	DeliveryLeadTime *DeliveryLeadTime
-	Geocoder *Geocoder
-	GiftCard *GiftCard
-	GiftCardRecipient *GiftCardRecipient
-	InventoryModel *InventoryModel
-	Market *Market
-	Merchant *Merchant
-	ModelPackage *ModelPackage
-	ModelReturn *ModelReturn
-	Order *Order
-	Parcel *Parcel
-	PaymentMethod *PaymentMethod
-	Price *Price
-	PriceList *PriceList
-	Promotion *Promotion
-	Shipment *Shipment
-	ShippingCategory *ShippingCategory
-	ShippingMethod *ShippingMethod
-	ShippingZone *ShippingZone
-	Sku *Sku
-	SkuOption *SkuOption
-	StockItem *StockItem
-	StockLocation *StockLocation
-	TaxCalculator *TaxCalculator
-	TaxCategory *TaxCategory
+	Bundle                    *Bundle
+	CarrierAccount            *CarrierAccount
+	Customer                  *Customer
+	CustomerGroup             *CustomerGroup
+	DeliveryLeadTime          *DeliveryLeadTime
+	Geocoder                  *Geocoder
+	GiftCard                  *GiftCard
+	GiftCardRecipient         *GiftCardRecipient
+	InventoryModel            *InventoryModel
+	Market                    *Market
+	Merchant                  *Merchant
+	ModelPackage              *ModelPackage
+	ModelReturn               *ModelReturn
+	Order                     *Order
+	Parcel                    *Parcel
+	PaymentMethod             *PaymentMethod
+	Price                     *Price
+	PriceList                 *PriceList
+	Promotion                 *Promotion
+	Shipment                  *Shipment
+	ShippingCategory          *ShippingCategory
+	ShippingMethod            *ShippingMethod
+	ShippingZone              *ShippingZone
+	Sku                       *Sku
+	SkuOption                 *SkuOption
+	StockItem                 *StockItem
+	StockLocation             *StockLocation
+	TaxCalculator             *TaxCalculator
+	TaxCategory               *TaxCategory
 }
 
 // BillingInfoValidationRuleAsAttachmentDataRelationshipsAttachable is a convenience function that returns BillingInfoValidationRule wrapped in AttachmentDataRelationshipsAttachable
@@ -259,7 +259,6 @@ func TaxCategoryAsAttachmentDataRelationshipsAttachable(v *TaxCategory) Attachme
 		TaxCategory: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *AttachmentDataRelationshipsAttachable) UnmarshalJSON(data []byte) error {
@@ -822,7 +821,7 @@ func (src AttachmentDataRelationshipsAttachable) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *AttachmentDataRelationshipsAttachable) GetActualInstance() (interface{}) {
+func (obj *AttachmentDataRelationshipsAttachable) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -985,5 +984,3 @@ func (v *NullableAttachmentDataRelationshipsAttachable) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

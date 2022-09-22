@@ -17,7 +17,7 @@ import (
 
 // StripeGatewayDataRelationships struct for StripeGatewayDataRelationships
 type StripeGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
 	StripePayments *StripeGatewayDataRelationshipsStripePayments `json:"stripe_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableStripeGatewayDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

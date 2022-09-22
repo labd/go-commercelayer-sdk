@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "captures"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCaptures200ResponseDataInnerAttributes**](GETCaptures200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CaptureDataRelationships**](CaptureDataRelationships.md) |  | [optional] 
 

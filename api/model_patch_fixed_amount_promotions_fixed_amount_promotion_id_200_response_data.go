@@ -20,10 +20,10 @@ type PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                    `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                     `json:"links,omitempty"`
+	Attributes    *PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalPromotions200ResponseDataInnerRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData instantiates a new PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData() *PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData {
 	this := PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData{}
-	var type_ string = "fixed_amount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData() *PATCH
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataWithDefaults() *PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData {
 	this := PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData{}
-	var type_ string = "fixed_amount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseData
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

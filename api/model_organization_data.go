@@ -18,9 +18,9 @@ import (
 // OrganizationData struct for OrganizationData
 type OrganizationData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETOrganizationOrganizationId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    GETOrganizationOrganizationId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                 `json:"relationships,omitempty"`
 }
 
 // NewOrganizationData instantiates a new OrganizationData object
@@ -39,8 +39,6 @@ func NewOrganizationData(type_ string, attributes GETOrganizationOrganizationId2
 // but it doesn't guarantee that properties required by API are set
 func NewOrganizationDataWithDefaults() *OrganizationData {
 	this := OrganizationData{}
-	var type_ string = "organization"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableOrganizationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

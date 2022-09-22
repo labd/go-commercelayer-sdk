@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "coupon_codes_promotion_rules"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
 
 ## Methods

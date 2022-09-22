@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // StripePaymentsApiService StripePaymentsApi service
 type StripePaymentsApiService service
 
 type StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest struct {
-	ctx context.Context
-	ApiService *StripePaymentsApiService
+	ctx             context.Context
+	ApiService      *StripePaymentsApiService
 	stripePaymentId string
 }
 
@@ -45,8 +44,8 @@ Delete a stripe payment
 */
 func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx conte
 // Execute executes the request
 func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.DELETEStripePaymentsStripePaymentId")
@@ -117,8 +116,8 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 }
 
 type StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest struct {
-	ctx context.Context
-	ApiService *StripePaymentsApiService
+	ctx             context.Context
+	ApiService      *StripePaymentsApiService
 	stripeGatewayId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the stripe payments associated to the stripe gateway
 */
 func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest {
 	return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.
 // Execute executes the request
 func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.GETStripeGatewayIdStripePayments")
@@ -209,7 +208,7 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r Str
 }
 
 type StripePaymentsApiGETStripePaymentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *StripePaymentsApiService
 }
 
@@ -228,7 +227,7 @@ List all stripe payments
 func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) StripePaymentsApiGETStripePaymentsRequest {
 	return StripePaymentsApiGETStripePaymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) Stripe
 //  @return GETStripePayments200Response
 func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiGETStripePaymentsRequest) (*GETStripePayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETStripePayments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStripePayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.GETStripePayments")
@@ -308,8 +307,8 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiG
 }
 
 type StripePaymentsApiGETStripePaymentsStripePaymentIdRequest struct {
-	ctx context.Context
-	ApiService *StripePaymentsApiService
+	ctx             context.Context
+	ApiService      *StripePaymentsApiService
 	stripePaymentId string
 }
 
@@ -328,8 +327,8 @@ Retrieve a stripe payment
 */
 func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.
 //  @return GETStripePaymentsStripePaymentId200Response
 func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) (*GETStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETStripePaymentsStripePaymentId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStripePaymentsStripePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.GETStripePaymentsStripePaymentId")
@@ -411,10 +410,10 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Str
 }
 
 type StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest struct {
-	ctx context.Context
-	ApiService *StripePaymentsApiService
+	ctx                 context.Context
+	ApiService          *StripePaymentsApiService
 	stripePaymentUpdate *StripePaymentUpdate
-	stripePaymentId string
+	stripePaymentId     string
 }
 
 func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
@@ -437,8 +436,8 @@ Update a stripe payment
 */
 func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
 	}
 }
@@ -447,10 +446,10 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx contex
 //  @return PATCHStripePaymentsStripePaymentId200Response
 func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) (*PATCHStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHStripePaymentsStripePaymentId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHStripePaymentsStripePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.PATCHStripePaymentsStripePaymentId")
@@ -525,8 +524,8 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r S
 }
 
 type StripePaymentsApiPOSTStripePaymentsRequest struct {
-	ctx context.Context
-	ApiService *StripePaymentsApiService
+	ctx                 context.Context
+	ApiService          *StripePaymentsApiService
 	stripePaymentCreate *StripePaymentCreate
 }
 
@@ -550,7 +549,7 @@ Create a stripe payment
 func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) StripePaymentsApiPOSTStripePaymentsRequest {
 	return StripePaymentsApiPOSTStripePaymentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) Strip
 //  @return POSTStripePayments201Response
 func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApiPOSTStripePaymentsRequest) (*POSTStripePayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTStripePayments201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTStripePayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.POSTStripePayments")

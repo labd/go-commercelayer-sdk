@@ -18,9 +18,9 @@ import (
 // OrderSubscriptionData struct for OrderSubscriptionData
 type OrderSubscriptionData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETOrderSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *OrderSubscriptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETOrderSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionData instantiates a new OrderSubscriptionData object
@@ -39,8 +39,6 @@ func NewOrderSubscriptionData(type_ string, attributes GETOrderSubscriptions200R
 // but it doesn't guarantee that properties required by API are set
 func NewOrderSubscriptionDataWithDefaults() *OrderSubscriptionData {
 	this := OrderSubscriptionData{}
-	var type_ string = "order_subscriptions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableOrderSubscriptionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

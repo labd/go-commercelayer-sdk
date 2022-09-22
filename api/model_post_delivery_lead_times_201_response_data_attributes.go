@@ -247,5 +247,3 @@ func (v *NullablePOSTDeliveryLeadTimes201ResponseDataAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("price_volume_tiers", "XGZwpOSrWL", *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes())) // PriceVolumeTierUpdate | 
+    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes())) // PriceVolumeTierUpdate | 
     priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("price_volume_tiers", *openapiclient.NewPOSTPriceVolumeTiers201ResponseDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
+    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("Type_example", *openapiclient.NewPOSTPriceVolumeTiers201ResponseDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

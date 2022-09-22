@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // CustomerPasswordResetsApiService CustomerPasswordResetsApi service
 type CustomerPasswordResetsApiService service
 
 type CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest struct {
-	ctx context.Context
-	ApiService *CustomerPasswordResetsApiService
+	ctx                     context.Context
+	ApiService              *CustomerPasswordResetsApiService
 	customerPasswordResetId string
 }
 
@@ -45,8 +44,8 @@ Delete a customer password reset
 */
 func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 // Execute executes the request
 func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.DELETECustomerPasswordResetsCustomerPasswordResetId")
@@ -117,7 +116,7 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 }
 
 type CustomerPasswordResetsApiGETCustomerPasswordResetsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomerPasswordResetsApiService
 }
 
@@ -136,7 +135,7 @@ List all customer password resets
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiGETCustomerPasswordResetsRequest {
 	return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context
 //  @return GETCustomerPasswordResets200Response
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) (*GETCustomerPasswordResets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCustomerPasswordResets200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomerPasswordResets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResets")
@@ -216,8 +215,8 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r Cu
 }
 
 type CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
-	ctx context.Context
-	ApiService *CustomerPasswordResetsApiService
+	ctx                     context.Context
+	ApiService              *CustomerPasswordResetsApiService
 	customerPasswordResetId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a customer password reset
 */
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 //  @return GETCustomerPasswordResetsCustomerPasswordResetId200Response
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCustomerPasswordResetsCustomerPasswordResetId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomerPasswordResetsCustomerPasswordResetId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResetsCustomerPasswordResetId")
@@ -319,10 +318,10 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 }
 
 type CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
-	ctx context.Context
-	ApiService *CustomerPasswordResetsApiService
+	ctx                         context.Context
+	ApiService                  *CustomerPasswordResetsApiService
 	customerPasswordResetUpdate *CustomerPasswordResetUpdate
-	customerPasswordResetId string
+	customerPasswordResetId     string
 }
 
 func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) CustomerPasswordResetUpdate(customerPasswordResetUpdate CustomerPasswordResetUpdate) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
@@ -345,8 +344,8 @@ Update a customer password reset
 */
 func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 //  @return PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
 func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.PATCHCustomerPasswordResetsCustomerPasswordResetId")
@@ -433,8 +432,8 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 }
 
 type CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest struct {
-	ctx context.Context
-	ApiService *CustomerPasswordResetsApiService
+	ctx                         context.Context
+	ApiService                  *CustomerPasswordResetsApiService
 	customerPasswordResetCreate *CustomerPasswordResetCreate
 }
 
@@ -458,7 +457,7 @@ Create a customer password reset
 func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
 	return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx contex
 //  @return POSTCustomerPasswordResets201Response
 func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) (*POSTCustomerPasswordResets201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTCustomerPasswordResets201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCustomerPasswordResets201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.POSTCustomerPasswordResets")

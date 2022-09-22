@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("avalara_accounts", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
+    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
     avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("avalara_accounts", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
+    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("Type_example", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

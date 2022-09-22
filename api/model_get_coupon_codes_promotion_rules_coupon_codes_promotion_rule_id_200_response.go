@@ -112,5 +112,3 @@ func (v *NullableGETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Respon
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

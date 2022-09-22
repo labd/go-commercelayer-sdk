@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETShipments200ResponseDataInnerAttributes**](GETShipments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShipmentDataRelationships**](ShipmentDataRelationships.md) |  | [optional] 
 

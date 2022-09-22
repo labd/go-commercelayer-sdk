@@ -1888,7 +1888,7 @@ import (
 )
 
 func main() {
-    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("markets", "XGZwpOSrWL", *openapiclient.NewPATCHMarketsMarketId200ResponseDataAttributes())) // MarketUpdate | 
+    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHMarketsMarketId200ResponseDataAttributes())) // MarketUpdate | 
     marketId := "marketId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1960,7 +1960,7 @@ import (
 )
 
 func main() {
-    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("markets", *openapiclient.NewPOSTMarkets201ResponseDataAttributes("EU Market"))) // MarketCreate | 
+    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("Type_example", *openapiclient.NewPOSTMarkets201ResponseDataAttributes("EU Market"))) // MarketCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

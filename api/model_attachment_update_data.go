@@ -20,9 +20,9 @@ type AttachmentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AttachmentDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                `json:"id"`
+	Attributes    PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentDataRelationships                          `json:"relationships,omitempty"`
 }
 
 // NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
@@ -42,8 +42,6 @@ func NewAttachmentUpdateData(type_ string, id string, attributes PATCHAttachment
 // but it doesn't guarantee that properties required by API are set
 func NewAttachmentUpdateDataWithDefaults() *AttachmentUpdateData {
 	this := AttachmentUpdateData{}
-	var type_ string = "attachments"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableAttachmentUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

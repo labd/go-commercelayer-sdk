@@ -17,7 +17,7 @@ import (
 
 // ExternalGatewayDataRelationships struct for ExternalGatewayDataRelationships
 type ExternalGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods   *AdyenGatewayDataRelationshipsPaymentMethods      `json:"payment_methods,omitempty"`
 	ExternalPayments *ExternalGatewayDataRelationshipsExternalPayments `json:"external_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableExternalGatewayDataRelationships) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

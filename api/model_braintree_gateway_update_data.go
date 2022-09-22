@@ -20,9 +20,9 @@ type BraintreeGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BraintreeGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                            `json:"id"`
+	Attributes    PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayCreateDataRelationships                          `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayUpdateData instantiates a new BraintreeGatewayUpdateData object
@@ -42,8 +42,6 @@ func NewBraintreeGatewayUpdateData(type_ string, id string, attributes PATCHBrai
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreeGatewayUpdateDataWithDefaults() *BraintreeGatewayUpdateData {
 	this := BraintreeGatewayUpdateData{}
-	var type_ string = "braintree_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableBraintreeGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

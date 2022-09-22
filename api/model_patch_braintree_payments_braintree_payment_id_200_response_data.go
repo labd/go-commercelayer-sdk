@@ -20,10 +20,10 @@ type PATCHBraintreePaymentsBraintreePaymentId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                             `json:"links,omitempty"`
+	Attributes    *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewPATCHBraintreePaymentsBraintreePaymentId200ResponseData instantiates a new PATCHBraintreePaymentsBraintreePaymentId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHBraintreePaymentsBraintreePaymentId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHBraintreePaymentsBraintreePaymentId200ResponseData() *PATCHBraintreePaymentsBraintreePaymentId200ResponseData {
 	this := PATCHBraintreePaymentsBraintreePaymentId200ResponseData{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHBraintreePaymentsBraintreePaymentId200ResponseData() *PATCHBraintre
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataWithDefaults() *PATCHBraintreePaymentsBraintreePaymentId200ResponseData {
 	this := PATCHBraintreePaymentsBraintreePaymentId200ResponseData{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHBraintreePaymentsBraintreePaymentId200ResponseData) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 
 // GETTransactions200ResponseDataInnerRelationships struct for GETTransactions200ResponseDataInnerRelationships
 type GETTransactions200ResponseDataInnerRelationships struct {
-	Order *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"order,omitempty"`
+	Order *GETAdyenPayments200ResponseDataInnerRelationshipsOrder `json:"order,omitempty"`
 }
 
 // NewGETTransactions200ResponseDataInnerRelationships instantiates a new GETTransactions200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETTransactions200ResponseDataInnerRelationshipsWithDefaults() *GETTrans
 }
 
 // GetOrder returns the Order field value if set, zero value otherwise.
-func (o *GETTransactions200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETTransactions200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder {
 	if o == nil || o.Order == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETAdyenPayments200ResponseDataInnerRelationshipsOrder
 		return ret
 	}
 	return *o.Order
@@ -48,7 +48,7 @@ func (o *GETTransactions200ResponseDataInnerRelationships) GetOrder() GETAddress
 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTransactions200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETTransactions200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool) {
 	if o == nil || o.Order == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETTransactions200ResponseDataInnerRelationships) HasOrder() bool {
 	return false
 }
 
-// SetOrder gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Order field.
-func (o *GETTransactions200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetOrder gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsOrder and assigns it to the Order field.
+func (o *GETTransactions200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder) {
 	o.Order = &v
 }
 
@@ -112,5 +112,3 @@ func (v *NullableGETTransactions200ResponseDataInnerRelationships) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

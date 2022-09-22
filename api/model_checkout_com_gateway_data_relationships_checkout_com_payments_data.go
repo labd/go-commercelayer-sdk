@@ -29,8 +29,6 @@ type CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData struct {
 // will change when the set of required properties is changed
 func NewCheckoutComGatewayDataRelationshipsCheckoutComPaymentsData() *CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData {
 	this := CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewCheckoutComGatewayDataRelationshipsCheckoutComPaymentsData() *CheckoutCo
 // but it doesn't guarantee that properties required by API are set
 func NewCheckoutComGatewayDataRelationshipsCheckoutComPaymentsDataWithDefaults() *CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData {
 	this := CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableCheckoutComGatewayDataRelationshipsCheckoutComPaymentsData) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

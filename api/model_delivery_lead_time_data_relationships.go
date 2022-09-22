@@ -17,9 +17,9 @@ import (
 
 // DeliveryLeadTimeDataRelationships struct for DeliveryLeadTimeDataRelationships
 type DeliveryLeadTimeDataRelationships struct {
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	StockLocation  *DeliveryLeadTimeDataRelationshipsStockLocation  `json:"stock_location,omitempty"`
 	ShippingMethod *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Attachments    *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
 }
 
 // NewDeliveryLeadTimeDataRelationships instantiates a new DeliveryLeadTimeDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableDeliveryLeadTimeDataRelationships) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

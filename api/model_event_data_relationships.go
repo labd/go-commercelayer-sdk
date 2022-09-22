@@ -18,7 +18,7 @@ import (
 // EventDataRelationships struct for EventDataRelationships
 type EventDataRelationships struct {
 	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
-	Webhooks *EventCallbackDataRelationshipsWebhook `json:"webhooks,omitempty"`
+	Webhooks           *EventCallbackDataRelationshipsWebhook    `json:"webhooks,omitempty"`
 }
 
 // NewEventDataRelationships instantiates a new EventDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableEventDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -29,8 +29,6 @@ type AttachmentDataRelationshipsAttachableData struct {
 // will change when the set of required properties is changed
 func NewAttachmentDataRelationshipsAttachableData() *AttachmentDataRelationshipsAttachableData {
 	this := AttachmentDataRelationshipsAttachableData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewAttachmentDataRelationshipsAttachableData() *AttachmentDataRelationships
 // but it doesn't guarantee that properties required by API are set
 func NewAttachmentDataRelationshipsAttachableDataWithDefaults() *AttachmentDataRelationshipsAttachableData {
 	this := AttachmentDataRelationshipsAttachableData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableAttachmentDataRelationshipsAttachableData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

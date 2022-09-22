@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "klarna_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETKlarnaPayments200ResponseDataInnerAttributes**](GETKlarnaPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 

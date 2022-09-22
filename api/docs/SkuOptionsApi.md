@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("sku_options", "XGZwpOSrWL", *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
+    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
     skuOptionId := "skuOptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("sku_options", *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes("Embossing"))) // SkuOptionCreate | 
+    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("Type_example", *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes("Embossing"))) // SkuOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

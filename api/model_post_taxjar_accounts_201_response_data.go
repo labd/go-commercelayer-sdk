@@ -20,9 +20,9 @@ type POSTTaxjarAccounts201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTTaxjarAccounts201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *POSTTaxjarAccounts201ResponseDataAttributes         `json:"attributes,omitempty"`
 	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTTaxjarAccounts201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTTaxjarAccounts201ResponseData() *POSTTaxjarAccounts201ResponseData {
 	this := POSTTaxjarAccounts201ResponseData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTTaxjarAccounts201ResponseData() *POSTTaxjarAccounts201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTTaxjarAccounts201ResponseDataWithDefaults() *POSTTaxjarAccounts201ResponseData {
 	this := POSTTaxjarAccounts201ResponseData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTTaxjarAccounts201ResponseData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

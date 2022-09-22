@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // WebhooksApiService WebhooksApi service
 type WebhooksApiService service
 
 type WebhooksApiDELETEWebhooksWebhookIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WebhooksApiService
-	webhookId string
+	webhookId  string
 }
 
 func (r WebhooksApiDELETEWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete a webhook
 func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiDELETEWebhooksWebhookIdRequest {
 	return WebhooksApiDELETEWebhooksWebhookIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		webhookId: webhookId,
+		ctx:        ctx,
+		webhookId:  webhookId,
 	}
 }
 
 // Execute executes the request
 func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEWebhooksWebhookIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.DELETEWebhooksWebhookId")
@@ -117,8 +116,8 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 }
 
 type WebhooksApiGETEventCallbackIdWebhookRequest struct {
-	ctx context.Context
-	ApiService *WebhooksApiService
+	ctx             context.Context
+	ApiService      *WebhooksApiService
 	eventCallbackId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the webhook associated to the event callback
 */
 func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) WebhooksApiGETEventCallbackIdWebhookRequest {
 	return WebhooksApiGETEventCallbackIdWebhookRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		eventCallbackId: eventCallbackId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, even
 // Execute executes the request
 func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEventCallbackIdWebhookRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GETEventCallbackIdWebhook")
@@ -209,9 +208,9 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 }
 
 type WebhooksApiGETEventIdWebhooksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WebhooksApiService
-	eventId string
+	eventId    string
 }
 
 func (r WebhooksApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
@@ -230,17 +229,17 @@ Retrieve the webhooks associated to the event
 func (a *WebhooksApiService) GETEventIdWebhooks(ctx context.Context, eventId string) WebhooksApiGETEventIdWebhooksRequest {
 	return WebhooksApiGETEventIdWebhooksRequest{
 		ApiService: a,
-		ctx: ctx,
-		eventId: eventId,
+		ctx:        ctx,
+		eventId:    eventId,
 	}
 }
 
 // Execute executes the request
 func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWebhooksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GETEventIdWebhooks")
@@ -301,7 +300,7 @@ func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWe
 }
 
 type WebhooksApiGETWebhooksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WebhooksApiService
 }
 
@@ -320,7 +319,7 @@ List all webhooks
 func (a *WebhooksApiService) GETWebhooks(ctx context.Context) WebhooksApiGETWebhooksRequest {
 	return WebhooksApiGETWebhooksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -328,10 +327,10 @@ func (a *WebhooksApiService) GETWebhooks(ctx context.Context) WebhooksApiGETWebh
 //  @return GETWebhooks200Response
 func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest) (*GETWebhooks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETWebhooks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETWebhooks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GETWebhooks")
@@ -400,9 +399,9 @@ func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest)
 }
 
 type WebhooksApiGETWebhooksWebhookIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *WebhooksApiService
-	webhookId string
+	webhookId  string
 }
 
 func (r WebhooksApiGETWebhooksWebhookIdRequest) Execute() (*GETWebhooksWebhookId200Response, *http.Response, error) {
@@ -421,8 +420,8 @@ Retrieve a webhook
 func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiGETWebhooksWebhookIdRequest {
 	return WebhooksApiGETWebhooksWebhookIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		webhookId: webhookId,
+		ctx:        ctx,
+		webhookId:  webhookId,
 	}
 }
 
@@ -430,10 +429,10 @@ func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId
 //  @return GETWebhooksWebhookId200Response
 func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhooksWebhookIdRequest) (*GETWebhooksWebhookId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETWebhooksWebhookId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETWebhooksWebhookId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.GETWebhooksWebhookId")
@@ -503,10 +502,10 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhook
 }
 
 type WebhooksApiPATCHWebhooksWebhookIdRequest struct {
-	ctx context.Context
-	ApiService *WebhooksApiService
+	ctx           context.Context
+	ApiService    *WebhooksApiService
 	webhookUpdate *WebhookUpdate
-	webhookId string
+	webhookId     string
 }
 
 func (r WebhooksApiPATCHWebhooksWebhookIdRequest) WebhookUpdate(webhookUpdate WebhookUpdate) WebhooksApiPATCHWebhooksWebhookIdRequest {
@@ -530,8 +529,8 @@ Update a webhook
 func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiPATCHWebhooksWebhookIdRequest {
 	return WebhooksApiPATCHWebhooksWebhookIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		webhookId: webhookId,
+		ctx:        ctx,
+		webhookId:  webhookId,
 	}
 }
 
@@ -539,10 +538,10 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhook
 //  @return PATCHWebhooksWebhookId200Response
 func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWebhooksWebhookIdRequest) (*PATCHWebhooksWebhookId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHWebhooksWebhookId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHWebhooksWebhookId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.PATCHWebhooksWebhookId")
@@ -617,8 +616,8 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWeb
 }
 
 type WebhooksApiPOSTWebhooksRequest struct {
-	ctx context.Context
-	ApiService *WebhooksApiService
+	ctx           context.Context
+	ApiService    *WebhooksApiService
 	webhookCreate *WebhookCreate
 }
 
@@ -642,7 +641,7 @@ Create a webhook
 func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) WebhooksApiPOSTWebhooksRequest {
 	return WebhooksApiPOSTWebhooksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -650,10 +649,10 @@ func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) WebhooksApiPOSTWe
 //  @return POSTWebhooks201Response
 func (a *WebhooksApiService) POSTWebhooksExecute(r WebhooksApiPOSTWebhooksRequest) (*POSTWebhooks201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTWebhooks201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTWebhooks201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WebhooksApiService.POSTWebhooks")

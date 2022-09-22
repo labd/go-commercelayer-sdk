@@ -715,7 +715,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("sku_list_promotion_rules", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleUpdate | 
+    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleUpdate | 
     skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -787,7 +787,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("sku_list_promotion_rules", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleCreate | 
+    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

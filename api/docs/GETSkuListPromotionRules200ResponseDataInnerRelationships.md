@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Promotion** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**SkuList** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**Skus** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Promotion** | Pointer to [**GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion**](GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion.md) |  | [optional] 
+**SkuList** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkuList**](GETBundles200ResponseDataInnerRelationshipsSkuList.md) |  | [optional] 
+**Skus** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotion
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion`
 
 GetPromotion returns the Promotion field if non-nil, zero value otherwise.
 
 ### GetPromotionOk
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion, bool)`
 
 GetPromotionOk returns a tuple with the Promotion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotion
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion)`
 
 SetPromotion sets Promotion field to given value.
 
@@ -54,20 +54,20 @@ HasPromotion returns a boolean if a field has been set.
 
 ### GetSkuList
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuList() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuList() GETBundles200ResponseDataInnerRelationshipsSkuList`
 
 GetSkuList returns the SkuList field if non-nil, zero value otherwise.
 
 ### GetSkuListOk
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuListOk() (*GETBundles200ResponseDataInnerRelationshipsSkuList, bool)`
 
 GetSkuListOk returns a tuple with the SkuList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuList
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkuList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkuList(v GETBundles200ResponseDataInnerRelationshipsSkuList)`
 
 SetSkuList sets SkuList field to given value.
 
@@ -79,20 +79,20 @@ HasSkuList returns a boolean if a field has been set.
 
 ### GetSkus
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkus() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkus() GETBundles200ResponseDataInnerRelationshipsSkus`
 
 GetSkus returns the Skus field if non-nil, zero value otherwise.
 
 ### GetSkusOk
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkusOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkusOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool)`
 
 GetSkusOk returns a tuple with the Skus field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkus
 
-`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkus(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkus(v GETBundles200ResponseDataInnerRelationshipsSkus)`
 
 SetSkus sets Skus field to given value.
 

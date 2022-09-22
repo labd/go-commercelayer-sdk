@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // LineItemsApiService LineItemsApi service
 type LineItemsApiService service
 
 type LineItemsApiDELETELineItemsLineItemIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LineItemsApiService
 	lineItemId string
 }
@@ -46,7 +45,7 @@ Delete a line item
 func (a *LineItemsApiService) DELETELineItemsLineItemId(ctx context.Context, lineItemId string) LineItemsApiDELETELineItemsLineItemIdRequest {
 	return LineItemsApiDELETELineItemsLineItemIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *LineItemsApiService) DELETELineItemsLineItemId(ctx context.Context, lin
 // Execute executes the request
 func (a *LineItemsApiService) DELETELineItemsLineItemIdExecute(r LineItemsApiDELETELineItemsLineItemIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.DELETELineItemsLineItemId")
@@ -117,8 +116,8 @@ func (a *LineItemsApiService) DELETELineItemsLineItemIdExecute(r LineItemsApiDEL
 }
 
 type LineItemsApiGETLineItemOptionIdLineItemRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx              context.Context
+	ApiService       *LineItemsApiService
 	lineItemOptionId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the line item associated to the line item option
 */
 func (a *LineItemsApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) LineItemsApiGETLineItemOptionIdLineItemRequest {
 	return LineItemsApiGETLineItemOptionIdLineItemRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *LineItemsApiService) GETLineItemOptionIdLineItem(ctx context.Context, l
 // Execute executes the request
 func (a *LineItemsApiService) GETLineItemOptionIdLineItemExecute(r LineItemsApiGETLineItemOptionIdLineItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETLineItemOptionIdLineItem")
@@ -209,7 +208,7 @@ func (a *LineItemsApiService) GETLineItemOptionIdLineItemExecute(r LineItemsApiG
 }
 
 type LineItemsApiGETLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LineItemsApiService
 }
 
@@ -228,7 +227,7 @@ List all line items
 func (a *LineItemsApiService) GETLineItems(ctx context.Context) LineItemsApiGETLineItemsRequest {
 	return LineItemsApiGETLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *LineItemsApiService) GETLineItems(ctx context.Context) LineItemsApiGETL
 //  @return GETLineItems200Response
 func (a *LineItemsApiService) GETLineItemsExecute(r LineItemsApiGETLineItemsRequest) (*GETLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETLineItems200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETLineItems")
@@ -308,7 +307,7 @@ func (a *LineItemsApiService) GETLineItemsExecute(r LineItemsApiGETLineItemsRequ
 }
 
 type LineItemsApiGETLineItemsLineItemIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LineItemsApiService
 	lineItemId string
 }
@@ -329,7 +328,7 @@ Retrieve a line item
 func (a *LineItemsApiService) GETLineItemsLineItemId(ctx context.Context, lineItemId string) LineItemsApiGETLineItemsLineItemIdRequest {
 	return LineItemsApiGETLineItemsLineItemIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *LineItemsApiService) GETLineItemsLineItemId(ctx context.Context, lineIt
 //  @return GETLineItemsLineItemId200Response
 func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLineItemsLineItemIdRequest) (*GETLineItemsLineItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETLineItemsLineItemId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETLineItemsLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETLineItemsLineItemId")
@@ -411,9 +410,9 @@ func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLin
 }
 
 type LineItemsApiGETOrderIdLineItemsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *LineItemsApiService
-	orderId string
+	orderId    string
 }
 
 func (r LineItemsApiGETOrderIdLineItemsRequest) Execute() (*http.Response, error) {
@@ -432,17 +431,17 @@ Retrieve the line items associated to the order
 func (a *LineItemsApiService) GETOrderIdLineItems(ctx context.Context, orderId string) LineItemsApiGETOrderIdLineItemsRequest {
 	return LineItemsApiGETOrderIdLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *LineItemsApiService) GETOrderIdLineItemsExecute(r LineItemsApiGETOrderIdLineItemsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETOrderIdLineItems")
@@ -503,8 +502,8 @@ func (a *LineItemsApiService) GETOrderIdLineItemsExecute(r LineItemsApiGETOrderI
 }
 
 type LineItemsApiGETReturnLineItemIdLineItemRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx              context.Context
+	ApiService       *LineItemsApiService
 	returnLineItemId string
 }
 
@@ -523,8 +522,8 @@ Retrieve the line item associated to the return line item
 */
 func (a *LineItemsApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) LineItemsApiGETReturnLineItemIdLineItemRequest {
 	return LineItemsApiGETReturnLineItemIdLineItemRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		returnLineItemId: returnLineItemId,
 	}
 }
@@ -532,9 +531,9 @@ func (a *LineItemsApiService) GETReturnLineItemIdLineItem(ctx context.Context, r
 // Execute executes the request
 func (a *LineItemsApiService) GETReturnLineItemIdLineItemExecute(r LineItemsApiGETReturnLineItemIdLineItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETReturnLineItemIdLineItem")
@@ -595,8 +594,8 @@ func (a *LineItemsApiService) GETReturnLineItemIdLineItemExecute(r LineItemsApiG
 }
 
 type LineItemsApiGETStockLineItemIdLineItemRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx             context.Context
+	ApiService      *LineItemsApiService
 	stockLineItemId string
 }
 
@@ -615,8 +614,8 @@ Retrieve the line item associated to the stock line item
 */
 func (a *LineItemsApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) LineItemsApiGETStockLineItemIdLineItemRequest {
 	return LineItemsApiGETStockLineItemIdLineItemRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
 	}
 }
@@ -624,9 +623,9 @@ func (a *LineItemsApiService) GETStockLineItemIdLineItem(ctx context.Context, st
 // Execute executes the request
 func (a *LineItemsApiService) GETStockLineItemIdLineItemExecute(r LineItemsApiGETStockLineItemIdLineItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETStockLineItemIdLineItem")
@@ -687,8 +686,8 @@ func (a *LineItemsApiService) GETStockLineItemIdLineItemExecute(r LineItemsApiGE
 }
 
 type LineItemsApiGETStockTransferIdLineItemRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx             context.Context
+	ApiService      *LineItemsApiService
 	stockTransferId string
 }
 
@@ -707,8 +706,8 @@ Retrieve the line item associated to the stock transfer
 */
 func (a *LineItemsApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) LineItemsApiGETStockTransferIdLineItemRequest {
 	return LineItemsApiGETStockTransferIdLineItemRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -716,9 +715,9 @@ func (a *LineItemsApiService) GETStockTransferIdLineItem(ctx context.Context, st
 // Execute executes the request
 func (a *LineItemsApiService) GETStockTransferIdLineItemExecute(r LineItemsApiGETStockTransferIdLineItemRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETStockTransferIdLineItem")
@@ -779,10 +778,10 @@ func (a *LineItemsApiService) GETStockTransferIdLineItemExecute(r LineItemsApiGE
 }
 
 type LineItemsApiPATCHLineItemsLineItemIdRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx            context.Context
+	ApiService     *LineItemsApiService
 	lineItemUpdate *LineItemUpdate
-	lineItemId string
+	lineItemId     string
 }
 
 func (r LineItemsApiPATCHLineItemsLineItemIdRequest) LineItemUpdate(lineItemUpdate LineItemUpdate) LineItemsApiPATCHLineItemsLineItemIdRequest {
@@ -806,7 +805,7 @@ Update a line item
 func (a *LineItemsApiService) PATCHLineItemsLineItemId(ctx context.Context, lineItemId string) LineItemsApiPATCHLineItemsLineItemIdRequest {
 	return LineItemsApiPATCHLineItemsLineItemIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		lineItemId: lineItemId,
 	}
 }
@@ -815,10 +814,10 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemId(ctx context.Context, line
 //  @return PATCHLineItemsLineItemId200Response
 func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATCHLineItemsLineItemIdRequest) (*PATCHLineItemsLineItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHLineItemsLineItemId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHLineItemsLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.PATCHLineItemsLineItemId")
@@ -893,8 +892,8 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATC
 }
 
 type LineItemsApiPOSTLineItemsRequest struct {
-	ctx context.Context
-	ApiService *LineItemsApiService
+	ctx            context.Context
+	ApiService     *LineItemsApiService
 	lineItemCreate *LineItemCreate
 }
 
@@ -918,7 +917,7 @@ Create a line item
 func (a *LineItemsApiService) POSTLineItems(ctx context.Context) LineItemsApiPOSTLineItemsRequest {
 	return LineItemsApiPOSTLineItemsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -926,10 +925,10 @@ func (a *LineItemsApiService) POSTLineItems(ctx context.Context) LineItemsApiPOS
 //  @return POSTLineItems201Response
 func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRequest) (*POSTLineItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTLineItems201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTLineItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.POSTLineItems")

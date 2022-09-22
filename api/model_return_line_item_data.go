@@ -18,9 +18,9 @@ import (
 // ReturnLineItemData struct for ReturnLineItemData
 type ReturnLineItemData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETReturnLineItems200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ReturnLineItemDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    GETReturnLineItems200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ReturnLineItemDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemData instantiates a new ReturnLineItemData object
@@ -39,8 +39,6 @@ func NewReturnLineItemData(type_ string, attributes GETReturnLineItems200Respons
 // but it doesn't guarantee that properties required by API are set
 func NewReturnLineItemDataWithDefaults() *ReturnLineItemData {
 	this := ReturnLineItemData{}
-	var type_ string = "return_line_items"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableReturnLineItemData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

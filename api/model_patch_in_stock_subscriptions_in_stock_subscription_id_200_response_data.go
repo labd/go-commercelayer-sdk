@@ -20,10 +20,10 @@ type PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETInStockSubscriptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                   `json:"links,omitempty"`
+	Attributes    *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETInStockSubscriptions200ResponseDataInnerRelationships                `json:"relationships,omitempty"`
 }
 
 // NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseData instantiates a new PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseData() *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData {
 	this := PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData{}
-	var type_ string = "in_stock_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseData() *PATCHIn
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataWithDefaults() *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData {
 	this := PATCHInStockSubscriptionsInStockSubscriptionId200ResponseData{}
-	var type_ string = "in_stock_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHInStockSubscriptionsInStockSubscriptionId200ResponseData) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

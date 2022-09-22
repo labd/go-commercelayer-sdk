@@ -17,15 +17,15 @@ import (
 
 // CustomerDataRelationships struct for CustomerDataRelationships
 type CustomerDataRelationships struct {
-	CustomerGroup *CustomerDataRelationshipsCustomerGroup `json:"customer_group,omitempty"`
-	CustomerAddresses *CustomerDataRelationshipsCustomerAddresses `json:"customer_addresses,omitempty"`
+	CustomerGroup          *CustomerDataRelationshipsCustomerGroup          `json:"customer_group,omitempty"`
+	CustomerAddresses      *CustomerDataRelationshipsCustomerAddresses      `json:"customer_addresses,omitempty"`
 	CustomerPaymentSources *CustomerDataRelationshipsCustomerPaymentSources `json:"customer_payment_sources,omitempty"`
-	CustomerSubscriptions *CustomerDataRelationshipsCustomerSubscriptions `json:"customer_subscriptions,omitempty"`
-	Orders *AdyenPaymentDataRelationshipsOrder `json:"orders,omitempty"`
-	OrderSubscriptions *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscriptions,omitempty"`
-	Returns *CustomerDataRelationshipsReturns `json:"returns,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	CustomerSubscriptions  *CustomerDataRelationshipsCustomerSubscriptions  `json:"customer_subscriptions,omitempty"`
+	Orders                 *AdyenPaymentDataRelationshipsOrder              `json:"orders,omitempty"`
+	OrderSubscriptions     *CustomerDataRelationshipsOrderSubscriptions     `json:"order_subscriptions,omitempty"`
+	Returns                *CustomerDataRelationshipsReturns                `json:"returns,omitempty"`
+	Attachments            *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
+	Events                 *CustomerAddressDataRelationshipsEvents          `json:"events,omitempty"`
 }
 
 // NewCustomerDataRelationships instantiates a new CustomerDataRelationships object
@@ -400,5 +400,3 @@ func (v *NullableCustomerDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -112,5 +112,3 @@ func (v *NullableGETCustomerSubscriptionsCustomerSubscriptionId200Response) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

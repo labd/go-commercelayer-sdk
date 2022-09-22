@@ -112,5 +112,3 @@ func (v *NullableGETInStockSubscriptionsInStockSubscriptionId200Response) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

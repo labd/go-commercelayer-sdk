@@ -20,10 +20,10 @@ type GETWireTransfers200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETTransactions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETTransactions200ResponseDataInnerRelationships            `json:"relationships,omitempty"`
 }
 
 // NewGETWireTransfers200ResponseDataInner instantiates a new GETWireTransfers200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETWireTransfers200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETWireTransfers200ResponseDataInner() *GETWireTransfers200ResponseDataInner {
 	this := GETWireTransfers200ResponseDataInner{}
-	var type_ string = "wire_transfers"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETWireTransfers200ResponseDataInner() *GETWireTransfers200ResponseDataI
 // but it doesn't guarantee that properties required by API are set
 func NewGETWireTransfers200ResponseDataInnerWithDefaults() *GETWireTransfers200ResponseDataInner {
 	this := GETWireTransfers200ResponseDataInner{}
-	var type_ string = "wire_transfers"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETWireTransfers200ResponseDataInner) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

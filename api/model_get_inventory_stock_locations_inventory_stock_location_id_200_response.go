@@ -112,5 +112,3 @@ func (v *NullableGETInventoryStockLocationsInventoryStockLocationId200Response) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

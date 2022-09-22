@@ -105,5 +105,3 @@ func (v *NullableExternalPromotionDataRelationshipsPromotionRules) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

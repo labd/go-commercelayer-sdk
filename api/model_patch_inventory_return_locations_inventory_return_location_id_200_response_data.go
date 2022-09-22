@@ -20,10 +20,10 @@ type PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData struc
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETInventoryReturnLocations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                          `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                           `json:"links,omitempty"`
+	Attributes    *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETInventoryReturnLocations200ResponseDataInnerRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData instantiates a new PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData struc
 // will change when the set of required properties is changed
 func NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData() *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData {
 	this := PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData{}
-	var type_ string = "inventory_return_locations"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData() 
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataWithDefaults() *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData {
 	this := PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseData{}
-	var type_ string = "inventory_return_locations"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHInventoryReturnLocationsInventoryReturnLocationId200Respon
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

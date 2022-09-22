@@ -112,5 +112,3 @@ func (v *NullablePOSTCheckoutComGateways201Response) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

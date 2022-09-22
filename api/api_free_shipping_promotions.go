@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // FreeShippingPromotionsApiService FreeShippingPromotionsApi service
 type FreeShippingPromotionsApiService service
 
 type FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeShippingPromotionsApiService
+	ctx                     context.Context
+	ApiService              *FreeShippingPromotionsApiService
 	freeShippingPromotionId string
 }
 
@@ -45,8 +44,8 @@ Delete a free shipping promotion
 */
 func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 // Execute executes the request
 func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.DELETEFreeShippingPromotionsFreeShippingPromotionId")
@@ -117,7 +116,7 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 }
 
 type FreeShippingPromotionsApiGETFreeShippingPromotionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *FreeShippingPromotionsApiService
 }
 
@@ -136,7 +135,7 @@ List all free shipping promotions
 func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiGETFreeShippingPromotionsRequest {
 	return FreeShippingPromotionsApiGETFreeShippingPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotions(ctx context
 //  @return GETFreeShippingPromotions200Response
 func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) (*GETFreeShippingPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFreeShippingPromotions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFreeShippingPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.GETFreeShippingPromotions")
@@ -216,8 +215,8 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r Fr
 }
 
 type FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeShippingPromotionsApiService
+	ctx                     context.Context
+	ApiService              *FreeShippingPromotionsApiService
 	freeShippingPromotionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a free shipping promotion
 */
 func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 //  @return GETFreeShippingPromotionsFreeShippingPromotionId200Response
 func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*GETFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFreeShippingPromotionsFreeShippingPromotionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFreeShippingPromotionsFreeShippingPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.GETFreeShippingPromotionsFreeShippingPromotionId")
@@ -319,10 +318,10 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 }
 
 type FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeShippingPromotionsApiService
+	ctx                         context.Context
+	ApiService                  *FreeShippingPromotionsApiService
 	freeShippingPromotionUpdate *FreeShippingPromotionUpdate
-	freeShippingPromotionId string
+	freeShippingPromotionId     string
 }
 
 func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) FreeShippingPromotionUpdate(freeShippingPromotionUpdate FreeShippingPromotionUpdate) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
@@ -345,8 +344,8 @@ Update a free shipping promotion
 */
 func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 //  @return PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
 func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*PATCHFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.PATCHFreeShippingPromotionsFreeShippingPromotionId")
@@ -433,8 +432,8 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 }
 
 type FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest struct {
-	ctx context.Context
-	ApiService *FreeShippingPromotionsApiService
+	ctx                         context.Context
+	ApiService                  *FreeShippingPromotionsApiService
 	freeShippingPromotionCreate *FreeShippingPromotionCreate
 }
 
@@ -458,7 +457,7 @@ Create a free shipping promotion
 func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotions(ctx context.Context) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest {
 	return FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotions(ctx contex
 //  @return POSTFreeShippingPromotions201Response
 func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) (*POSTFreeShippingPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTFreeShippingPromotions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTFreeShippingPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.POSTFreeShippingPromotions")

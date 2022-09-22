@@ -18,7 +18,7 @@ import (
 // ManualTaxCalculatorCreateDataRelationships struct for ManualTaxCalculatorCreateDataRelationships
 type ManualTaxCalculatorCreateDataRelationships struct {
 	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
-	TaxRules *ManualTaxCalculatorDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
+	TaxRules      *ManualTaxCalculatorDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
 }
 
 // NewManualTaxCalculatorCreateDataRelationships instantiates a new ManualTaxCalculatorCreateDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableManualTaxCalculatorCreateDataRelationships) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type FreeShippingPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                      `json:"id"`
+	Attributes    PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewFreeShippingPromotionUpdateData instantiates a new FreeShippingPromotionUpdateData object
@@ -42,8 +42,6 @@ func NewFreeShippingPromotionUpdateData(type_ string, id string, attributes PATC
 // but it doesn't guarantee that properties required by API are set
 func NewFreeShippingPromotionUpdateDataWithDefaults() *FreeShippingPromotionUpdateData {
 	this := FreeShippingPromotionUpdateData{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableFreeShippingPromotionUpdateData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

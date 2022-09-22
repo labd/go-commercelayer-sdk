@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("tax_categories", "XGZwpOSrWL", *openapiclient.NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes())) // TaxCategoryUpdate | 
+    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes())) // TaxCategoryUpdate | 
     taxCategoryId := "taxCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("tax_categories", *openapiclient.NewPOSTTaxCategories201ResponseDataAttributes("31000"))) // TaxCategoryCreate | 
+    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("Type_example", *openapiclient.NewPOSTTaxCategories201ResponseDataAttributes("31000"))) // TaxCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

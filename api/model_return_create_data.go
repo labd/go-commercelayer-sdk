@@ -18,9 +18,9 @@ import (
 // ReturnCreateData struct for ReturnCreateData
 type ReturnCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *ReturnCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *ReturnCreateDataRelationships             `json:"relationships,omitempty"`
 }
 
 // NewReturnCreateData instantiates a new ReturnCreateData object
@@ -39,8 +39,6 @@ func NewReturnCreateData(type_ string, attributes POSTAdyenPayments201ResponseDa
 // but it doesn't guarantee that properties required by API are set
 func NewReturnCreateDataWithDefaults() *ReturnCreateData {
 	this := ReturnCreateData{}
-	var type_ string = "returns"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableReturnCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,9 +18,9 @@ import (
 // BillingInfoValidationRuleData struct for BillingInfoValidationRuleData
 type BillingInfoValidationRuleData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                      `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewBillingInfoValidationRuleData instantiates a new BillingInfoValidationRuleData object
@@ -39,8 +39,6 @@ func NewBillingInfoValidationRuleData(type_ string, attributes GETBillingInfoVal
 // but it doesn't guarantee that properties required by API are set
 func NewBillingInfoValidationRuleDataWithDefaults() *BillingInfoValidationRuleData {
 	this := BillingInfoValidationRuleData{}
-	var type_ string = "billing_info_validation_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableBillingInfoValidationRuleData) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

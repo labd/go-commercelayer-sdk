@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "percentage_discount_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETPercentageDiscountPromotions200ResponseDataInnerAttributes**](GETPercentageDiscountPromotions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 

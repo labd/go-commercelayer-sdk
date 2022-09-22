@@ -20,10 +20,10 @@ type PATCHLineItemOptionsLineItemOptionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETLineItemOptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETLineItemOptions200ResponseDataInnerRelationships           `json:"relationships,omitempty"`
 }
 
 // NewPATCHLineItemOptionsLineItemOptionId200ResponseData instantiates a new PATCHLineItemOptionsLineItemOptionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHLineItemOptionsLineItemOptionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHLineItemOptionsLineItemOptionId200ResponseData() *PATCHLineItemOptionsLineItemOptionId200ResponseData {
 	this := PATCHLineItemOptionsLineItemOptionId200ResponseData{}
-	var type_ string = "line_item_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHLineItemOptionsLineItemOptionId200ResponseData() *PATCHLineItemOpti
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHLineItemOptionsLineItemOptionId200ResponseDataWithDefaults() *PATCHLineItemOptionsLineItemOptionId200ResponseData {
 	this := PATCHLineItemOptionsLineItemOptionId200ResponseData{}
-	var type_ string = "line_item_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHLineItemOptionsLineItemOptionId200ResponseData) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

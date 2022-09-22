@@ -20,9 +20,9 @@ type SkuListItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                    `json:"id"`
+	Attributes    POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
 }
 
 // NewSkuListItemUpdateData instantiates a new SkuListItemUpdateData object
@@ -42,8 +42,6 @@ func NewSkuListItemUpdateData(type_ string, id string, attributes POSTSkuListIte
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListItemUpdateDataWithDefaults() *SkuListItemUpdateData {
 	this := SkuListItemUpdateData{}
-	var type_ string = "sku_list_items"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableSkuListItemUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

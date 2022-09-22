@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_methods"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETShippingMethods200ResponseDataInnerAttributes**](GETShippingMethods200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodDataRelationships**](ShippingMethodDataRelationships.md) |  | [optional] 
 

@@ -18,9 +18,9 @@ import (
 // CarrierAccountData struct for CarrierAccountData
 type CarrierAccountData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETCarrierAccounts200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CarrierAccountDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    GETCarrierAccounts200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CarrierAccountDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountData instantiates a new CarrierAccountData object
@@ -39,8 +39,6 @@ func NewCarrierAccountData(type_ string, attributes GETCarrierAccounts200Respons
 // but it doesn't guarantee that properties required by API are set
 func NewCarrierAccountDataWithDefaults() *CarrierAccountData {
 	this := CarrierAccountData{}
-	var type_ string = "carrier_accounts"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCarrierAccountData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 
 // GETExternalGateways200ResponseDataInnerRelationships struct for GETExternalGateways200ResponseDataInnerRelationships
 type GETExternalGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	ExternalPayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"external_payments,omitempty"`
+	PaymentMethods   *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods      `json:"payment_methods,omitempty"`
+	ExternalPayments *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments `json:"external_payments,omitempty"`
 }
 
 // NewGETExternalGateways200ResponseDataInnerRelationships instantiates a new GETExternalGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETExternalGateways200ResponseDataInnerRelationships) SetPaymentMethods
 }
 
 // GetExternalPayments returns the ExternalPayments field value if set, zero value otherwise.
-func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPayments() GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments {
 	if o == nil || o.ExternalPayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments
 		return ret
 	}
 	return *o.ExternalPayments
@@ -81,7 +81,7 @@ func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPaymen
 
 // GetExternalPaymentsOk returns a tuple with the ExternalPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETExternalGateways200ResponseDataInnerRelationships) GetExternalPaymentsOk() (*GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments, bool) {
 	if o == nil || o.ExternalPayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETExternalGateways200ResponseDataInnerRelationships) HasExternalPaymen
 	return false
 }
 
-// SetExternalPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the ExternalPayments field.
-func (o *GETExternalGateways200ResponseDataInnerRelationships) SetExternalPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetExternalPayments gets a reference to the given GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments and assigns it to the ExternalPayments field.
+func (o *GETExternalGateways200ResponseDataInnerRelationships) SetExternalPayments(v GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) {
 	o.ExternalPayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETExternalGateways200ResponseDataInnerRelationships) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

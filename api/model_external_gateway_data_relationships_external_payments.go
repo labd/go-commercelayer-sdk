@@ -105,5 +105,3 @@ func (v *NullableExternalGatewayDataRelationshipsExternalPayments) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

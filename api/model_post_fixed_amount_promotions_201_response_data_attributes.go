@@ -374,5 +374,3 @@ func (v *NullablePOSTFixedAmountPromotions201ResponseDataAttributes) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

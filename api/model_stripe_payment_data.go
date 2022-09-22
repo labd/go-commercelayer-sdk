@@ -18,9 +18,9 @@ import (
 // StripePaymentData struct for StripePaymentData
 type StripePaymentData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETStripePayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETStripePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentData instantiates a new StripePaymentData object
@@ -39,8 +39,6 @@ func NewStripePaymentData(type_ string, attributes GETStripePayments200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewStripePaymentDataWithDefaults() *StripePaymentData {
 	this := StripePaymentData{}
-	var type_ string = "stripe_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableStripePaymentData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

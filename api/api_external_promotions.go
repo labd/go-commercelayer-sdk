@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // ExternalPromotionsApiService ExternalPromotionsApi service
 type ExternalPromotionsApiService service
 
 type ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *ExternalPromotionsApiService
+	ctx                 context.Context
+	ApiService          *ExternalPromotionsApiService
 	externalPromotionId string
 }
 
@@ -45,8 +44,8 @@ Delete an external promotion
 */
 func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotion
 // Execute executes the request
 func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotionIdExecute(r ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPromotionsApiService.DELETEExternalPromotionsExternalPromotionId")
@@ -117,7 +116,7 @@ func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotion
 }
 
 type ExternalPromotionsApiGETExternalPromotionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ExternalPromotionsApiService
 }
 
@@ -136,7 +135,7 @@ List all external promotions
 func (a *ExternalPromotionsApiService) GETExternalPromotions(ctx context.Context) ExternalPromotionsApiGETExternalPromotionsRequest {
 	return ExternalPromotionsApiGETExternalPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *ExternalPromotionsApiService) GETExternalPromotions(ctx context.Context
 //  @return GETExternalPromotions200Response
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExecute(r ExternalPromotionsApiGETExternalPromotionsRequest) (*GETExternalPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETExternalPromotions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETExternalPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPromotionsApiService.GETExternalPromotions")
@@ -216,8 +215,8 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExecute(r ExternalPr
 }
 
 type ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *ExternalPromotionsApiService
+	ctx                 context.Context
+	ApiService          *ExternalPromotionsApiService
 	externalPromotionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve an external promotion
 */
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(
 //  @return GETExternalPromotionsExternalPromotionId200Response
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionIdExecute(r ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest) (*GETExternalPromotionsExternalPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETExternalPromotionsExternalPromotionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETExternalPromotionsExternalPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPromotionsApiService.GETExternalPromotionsExternalPromotionId")
@@ -319,10 +318,10 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionIdE
 }
 
 type ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *ExternalPromotionsApiService
+	ctx                     context.Context
+	ApiService              *ExternalPromotionsApiService
 	externalPromotionUpdate *ExternalPromotionUpdate
-	externalPromotionId string
+	externalPromotionId     string
 }
 
 func (r ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest) ExternalPromotionUpdate(externalPromotionUpdate ExternalPromotionUpdate) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
@@ -345,8 +344,8 @@ Update an external promotion
 */
 func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionI
 //  @return PATCHExternalPromotionsExternalPromotionId200Response
 func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionIdExecute(r ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest) (*PATCHExternalPromotionsExternalPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHExternalPromotionsExternalPromotionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHExternalPromotionsExternalPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPromotionsApiService.PATCHExternalPromotionsExternalPromotionId")
@@ -433,8 +432,8 @@ func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionI
 }
 
 type ExternalPromotionsApiPOSTExternalPromotionsRequest struct {
-	ctx context.Context
-	ApiService *ExternalPromotionsApiService
+	ctx                     context.Context
+	ApiService              *ExternalPromotionsApiService
 	externalPromotionCreate *ExternalPromotionCreate
 }
 
@@ -458,7 +457,7 @@ Create an external promotion
 func (a *ExternalPromotionsApiService) POSTExternalPromotions(ctx context.Context) ExternalPromotionsApiPOSTExternalPromotionsRequest {
 	return ExternalPromotionsApiPOSTExternalPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *ExternalPromotionsApiService) POSTExternalPromotions(ctx context.Contex
 //  @return POSTExternalPromotions201Response
 func (a *ExternalPromotionsApiService) POSTExternalPromotionsExecute(r ExternalPromotionsApiPOSTExternalPromotionsRequest) (*POSTExternalPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTExternalPromotions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTExternalPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalPromotionsApiService.POSTExternalPromotions")

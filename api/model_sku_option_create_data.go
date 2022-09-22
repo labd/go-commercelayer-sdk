@@ -18,8 +18,8 @@ import (
 // SkuOptionCreateData struct for SkuOptionCreateData
 type SkuOptionCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTSkuOptions201ResponseDataAttributes `json:"attributes"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTSkuOptions201ResponseDataAttributes     `json:"attributes"`
 	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -39,8 +39,6 @@ func NewSkuOptionCreateData(type_ string, attributes POSTSkuOptions201ResponseDa
 // but it doesn't guarantee that properties required by API are set
 func NewSkuOptionCreateDataWithDefaults() *SkuOptionCreateData {
 	this := SkuOptionCreateData{}
-	var type_ string = "sku_options"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableSkuOptionCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

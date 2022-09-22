@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // TransactionsApiService TransactionsApi service
 type TransactionsApiService service
 
 type TransactionsApiGETTransactionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *TransactionsApiService
 }
 
@@ -44,7 +43,7 @@ List all transactions
 func (a *TransactionsApiService) GETTransactions(ctx context.Context) TransactionsApiGETTransactionsRequest {
 	return TransactionsApiGETTransactionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -52,10 +51,10 @@ func (a *TransactionsApiService) GETTransactions(ctx context.Context) Transactio
 //  @return GETTransactions200Response
 func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*GETTransactions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTransactions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTransactions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionsApiService.GETTransactions")
@@ -124,8 +123,8 @@ func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTran
 }
 
 type TransactionsApiGETTransactionsTransactionIdRequest struct {
-	ctx context.Context
-	ApiService *TransactionsApiService
+	ctx           context.Context
+	ApiService    *TransactionsApiService
 	transactionId string
 }
 
@@ -144,8 +143,8 @@ Retrieve a transaction
 */
 func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId string) TransactionsApiGETTransactionsTransactionIdRequest {
 	return TransactionsApiGETTransactionsTransactionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:    a,
+		ctx:           ctx,
 		transactionId: transactionId,
 	}
 }
@@ -154,10 +153,10 @@ func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Contex
 //  @return GETTransactionsTransactionId200Response
 func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*GETTransactionsTransactionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETTransactionsTransactionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETTransactionsTransactionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionsApiService.GETTransactionsTransactionId")

@@ -18,16 +18,16 @@ import (
 
 // LineItemDataRelationshipsItem - struct for LineItemDataRelationshipsItem
 type LineItemDataRelationshipsItem struct {
-	Adjustment *Adjustment
-	Bundle *Bundle
-	ExternalPromotion *ExternalPromotion
-	FixedAmountPromotion *FixedAmountPromotion
-	FreeShippingPromotion *FreeShippingPromotion
-	GiftCard *GiftCard
-	PaymentMethod *PaymentMethod
+	Adjustment                  *Adjustment
+	Bundle                      *Bundle
+	ExternalPromotion           *ExternalPromotion
+	FixedAmountPromotion        *FixedAmountPromotion
+	FreeShippingPromotion       *FreeShippingPromotion
+	GiftCard                    *GiftCard
+	PaymentMethod               *PaymentMethod
 	PercentageDiscountPromotion *PercentageDiscountPromotion
-	Shipment *Shipment
-	Sku *Sku
+	Shipment                    *Shipment
+	Sku                         *Sku
 }
 
 // AdjustmentAsLineItemDataRelationshipsItem is a convenience function that returns Adjustment wrapped in LineItemDataRelationshipsItem
@@ -99,7 +99,6 @@ func SkuAsLineItemDataRelationshipsItem(v *Sku) LineItemDataRelationshipsItem {
 		Sku: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *LineItemDataRelationshipsItem) UnmarshalJSON(data []byte) error {
@@ -302,7 +301,7 @@ func (src LineItemDataRelationshipsItem) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *LineItemDataRelationshipsItem) GetActualInstance() (interface{}) {
+func (obj *LineItemDataRelationshipsItem) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -385,5 +384,3 @@ func (v *NullableLineItemDataRelationshipsItem) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

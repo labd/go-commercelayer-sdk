@@ -298,5 +298,3 @@ func (v *NullableGETBillingInfoValidationRules200ResponseDataInnerAttributes) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

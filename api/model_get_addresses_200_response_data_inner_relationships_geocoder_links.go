@@ -150,5 +150,3 @@ func (v *NullableGETAddresses200ResponseDataInnerRelationshipsGeocoderLinks) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

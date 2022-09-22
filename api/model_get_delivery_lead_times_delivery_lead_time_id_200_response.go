@@ -112,5 +112,3 @@ func (v *NullableGETDeliveryLeadTimesDeliveryLeadTimeId200Response) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

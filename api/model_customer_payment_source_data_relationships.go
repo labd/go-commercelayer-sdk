@@ -17,7 +17,7 @@ import (
 
 // CustomerPaymentSourceDataRelationships struct for CustomerPaymentSourceDataRelationships
 type CustomerPaymentSourceDataRelationships struct {
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
+	Customer      *CouponRecipientDataRelationshipsCustomer            `json:"customer,omitempty"`
 	PaymentSource *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableCustomerPaymentSourceDataRelationships) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

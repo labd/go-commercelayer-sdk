@@ -29,8 +29,6 @@ type ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData struct {
 // will change when the set of required properties is changed
 func NewExternalPromotionDataRelationshipsOrderAmountPromotionRuleData() *ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData {
 	this := ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewExternalPromotionDataRelationshipsOrderAmountPromotionRuleData() *Extern
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPromotionDataRelationshipsOrderAmountPromotionRuleDataWithDefaults() *ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData {
 	this := ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableExternalPromotionDataRelationshipsOrderAmountPromotionRuleData)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

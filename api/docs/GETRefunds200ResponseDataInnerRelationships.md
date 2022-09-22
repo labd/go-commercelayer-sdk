@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**ReferenceCapture** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**Events** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Order** | Pointer to [**GETAdyenPayments200ResponseDataInnerRelationshipsOrder**](GETAdyenPayments200ResponseDataInnerRelationshipsOrder.md) |  | [optional] 
+**ReferenceCapture** | Pointer to [**GETRefunds200ResponseDataInnerRelationshipsReferenceCapture**](GETRefunds200ResponseDataInnerRelationshipsReferenceCapture.md) |  | [optional] 
+**Events** | Pointer to [**GETCustomerAddresses200ResponseDataInnerRelationshipsEvents**](GETCustomerAddresses200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrder
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder`
 
 GetOrder returns the Order field if non-nil, zero value otherwise.
 
 ### GetOrderOk
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool)`
 
 GetOrderOk returns a tuple with the Order field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrder
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder)`
 
 SetOrder sets Order field to given value.
 
@@ -54,20 +54,20 @@ HasOrder returns a boolean if a field has been set.
 
 ### GetReferenceCapture
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetReferenceCapture() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetReferenceCapture() GETRefunds200ResponseDataInnerRelationshipsReferenceCapture`
 
 GetReferenceCapture returns the ReferenceCapture field if non-nil, zero value otherwise.
 
 ### GetReferenceCaptureOk
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetReferenceCaptureOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetReferenceCaptureOk() (*GETRefunds200ResponseDataInnerRelationshipsReferenceCapture, bool)`
 
 GetReferenceCaptureOk returns a tuple with the ReferenceCapture field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceCapture
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) SetReferenceCapture(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) SetReferenceCapture(v GETRefunds200ResponseDataInnerRelationshipsReferenceCapture)`
 
 SetReferenceCapture sets ReferenceCapture field to given value.
 
@@ -79,20 +79,20 @@ HasReferenceCapture returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETRefunds200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETRefunds200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

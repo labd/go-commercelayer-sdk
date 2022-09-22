@@ -112,5 +112,3 @@ func (v *NullablePATCHInventoryReturnLocationsInventoryReturnLocationId200Respon
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

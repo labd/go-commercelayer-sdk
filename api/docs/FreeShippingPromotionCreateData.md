@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "free_shipping_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTFreeShippingPromotions201ResponseDataAttributes**](POSTFreeShippingPromotions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTStockItems201ResponseDataAttributes**](POSTStockItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemCreateDataRelationships**](StockItemCreateDataRelationships.md) |  | [optional] 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_tax_calculators"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETExternalTaxCalculators200ResponseDataInnerAttributes**](GETExternalTaxCalculators200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 

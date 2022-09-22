@@ -17,8 +17,8 @@ import (
 
 // GETBraintreeGateways200ResponseDataInnerRelationships struct for GETBraintreeGateways200ResponseDataInnerRelationships
 type GETBraintreeGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	BraintreePayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"braintree_payments,omitempty"`
+	PaymentMethods    *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods        `json:"payment_methods,omitempty"`
+	BraintreePayments *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments `json:"braintree_payments,omitempty"`
 }
 
 // NewGETBraintreeGateways200ResponseDataInnerRelationships instantiates a new GETBraintreeGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETBraintreeGateways200ResponseDataInnerRelationships) SetPaymentMethod
 }
 
 // GetBraintreePayments returns the BraintreePayments field value if set, zero value otherwise.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePayments() GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments {
 	if o == nil || o.BraintreePayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments
 		return ret
 	}
 	return *o.BraintreePayments
@@ -81,7 +81,7 @@ func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePaym
 
 // GetBraintreePaymentsOk returns a tuple with the BraintreePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETBraintreeGateways200ResponseDataInnerRelationships) GetBraintreePaymentsOk() (*GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments, bool) {
 	if o == nil || o.BraintreePayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETBraintreeGateways200ResponseDataInnerRelationships) HasBraintreePaym
 	return false
 }
 
-// SetBraintreePayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the BraintreePayments field.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationships) SetBraintreePayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetBraintreePayments gets a reference to the given GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments and assigns it to the BraintreePayments field.
+func (o *GETBraintreeGateways200ResponseDataInnerRelationships) SetBraintreePayments(v GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) {
 	o.BraintreePayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETBraintreeGateways200ResponseDataInnerRelationships) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,9 +20,9 @@ type AdjustmentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHAdjustmentsAdjustmentId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                `json:"id"`
+	Attributes    PATCHAdjustmentsAdjustmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                `json:"relationships,omitempty"`
 }
 
 // NewAdjustmentUpdateData instantiates a new AdjustmentUpdateData object
@@ -42,8 +42,6 @@ func NewAdjustmentUpdateData(type_ string, id string, attributes PATCHAdjustment
 // but it doesn't guarantee that properties required by API are set
 func NewAdjustmentUpdateDataWithDefaults() *AdjustmentUpdateData {
 	this := AdjustmentUpdateData{}
-	var type_ string = "adjustments"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableAdjustmentUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

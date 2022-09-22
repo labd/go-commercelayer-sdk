@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "prices"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHPricesPriceId200ResponseDataAttributes**](PATCHPricesPriceId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceUpdateDataRelationships**](PriceUpdateDataRelationships.md) |  | [optional] 

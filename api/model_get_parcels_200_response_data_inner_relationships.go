@@ -17,11 +17,11 @@ import (
 
 // GETParcels200ResponseDataInnerRelationships struct for GETParcels200ResponseDataInnerRelationships
 type GETParcels200ResponseDataInnerRelationships struct {
-	Shipment *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"shipment,omitempty"`
-	Package *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"package,omitempty"`
-	ParcelLineItems *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"parcel_line_items,omitempty"`
-	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
-	Events *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"events,omitempty"`
+	Shipment        *GETParcels200ResponseDataInnerRelationshipsShipment            `json:"shipment,omitempty"`
+	Package         *GETParcels200ResponseDataInnerRelationshipsPackage             `json:"package,omitempty"`
+	ParcelLineItems *GETParcels200ResponseDataInnerRelationshipsParcelLineItems     `json:"parcel_line_items,omitempty"`
+	Attachments     *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments `json:"attachments,omitempty"`
+	Events          *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents    `json:"events,omitempty"`
 }
 
 // NewGETParcels200ResponseDataInnerRelationships instantiates a new GETParcels200ResponseDataInnerRelationships object
@@ -42,9 +42,9 @@ func NewGETParcels200ResponseDataInnerRelationshipsWithDefaults() *GETParcels200
 }
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationships) GetShipment() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETParcels200ResponseDataInnerRelationships) GetShipment() GETParcels200ResponseDataInnerRelationshipsShipment {
 	if o == nil || o.Shipment == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETParcels200ResponseDataInnerRelationshipsShipment
 		return ret
 	}
 	return *o.Shipment
@@ -52,7 +52,7 @@ func (o *GETParcels200ResponseDataInnerRelationships) GetShipment() GETAddresses
 
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationships) GetShipmentOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETParcels200ResponseDataInnerRelationships) GetShipmentOk() (*GETParcels200ResponseDataInnerRelationshipsShipment, bool) {
 	if o == nil || o.Shipment == nil {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *GETParcels200ResponseDataInnerRelationships) HasShipment() bool {
 	return false
 }
 
-// SetShipment gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Shipment field.
-func (o *GETParcels200ResponseDataInnerRelationships) SetShipment(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetShipment gets a reference to the given GETParcels200ResponseDataInnerRelationshipsShipment and assigns it to the Shipment field.
+func (o *GETParcels200ResponseDataInnerRelationships) SetShipment(v GETParcels200ResponseDataInnerRelationshipsShipment) {
 	o.Shipment = &v
 }
 
 // GetPackage returns the Package field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationships) GetPackage() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETParcels200ResponseDataInnerRelationships) GetPackage() GETParcels200ResponseDataInnerRelationshipsPackage {
 	if o == nil || o.Package == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETParcels200ResponseDataInnerRelationshipsPackage
 		return ret
 	}
 	return *o.Package
@@ -84,7 +84,7 @@ func (o *GETParcels200ResponseDataInnerRelationships) GetPackage() GETAddresses2
 
 // GetPackageOk returns a tuple with the Package field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationships) GetPackageOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETParcels200ResponseDataInnerRelationships) GetPackageOk() (*GETParcels200ResponseDataInnerRelationshipsPackage, bool) {
 	if o == nil || o.Package == nil {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *GETParcels200ResponseDataInnerRelationships) HasPackage() bool {
 	return false
 }
 
-// SetPackage gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Package field.
-func (o *GETParcels200ResponseDataInnerRelationships) SetPackage(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetPackage gets a reference to the given GETParcels200ResponseDataInnerRelationshipsPackage and assigns it to the Package field.
+func (o *GETParcels200ResponseDataInnerRelationships) SetPackage(v GETParcels200ResponseDataInnerRelationshipsPackage) {
 	o.Package = &v
 }
 
 // GetParcelLineItems returns the ParcelLineItems field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationships) GetParcelLineItems() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETParcels200ResponseDataInnerRelationships) GetParcelLineItems() GETParcels200ResponseDataInnerRelationshipsParcelLineItems {
 	if o == nil || o.ParcelLineItems == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETParcels200ResponseDataInnerRelationshipsParcelLineItems
 		return ret
 	}
 	return *o.ParcelLineItems
@@ -116,7 +116,7 @@ func (o *GETParcels200ResponseDataInnerRelationships) GetParcelLineItems() GETAd
 
 // GetParcelLineItemsOk returns a tuple with the ParcelLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationships) GetParcelLineItemsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETParcels200ResponseDataInnerRelationships) GetParcelLineItemsOk() (*GETParcels200ResponseDataInnerRelationshipsParcelLineItems, bool) {
 	if o == nil || o.ParcelLineItems == nil {
 		return nil, false
 	}
@@ -132,15 +132,15 @@ func (o *GETParcels200ResponseDataInnerRelationships) HasParcelLineItems() bool 
 	return false
 }
 
-// SetParcelLineItems gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the ParcelLineItems field.
-func (o *GETParcels200ResponseDataInnerRelationships) SetParcelLineItems(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetParcelLineItems gets a reference to the given GETParcels200ResponseDataInnerRelationshipsParcelLineItems and assigns it to the ParcelLineItems field.
+func (o *GETParcels200ResponseDataInnerRelationships) SetParcelLineItems(v GETParcels200ResponseDataInnerRelationshipsParcelLineItems) {
 	o.ParcelLineItems = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETParcels200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -148,7 +148,7 @@ func (o *GETParcels200ResponseDataInnerRelationships) GetAttachments() GETAdyenG
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETParcels200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -164,15 +164,15 @@ func (o *GETParcels200ResponseDataInnerRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
-func (o *GETParcels200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETParcels200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETParcels200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -180,7 +180,7 @@ func (o *GETParcels200ResponseDataInnerRelationships) GetEvents() GETAdyenGatewa
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETParcels200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -196,8 +196,8 @@ func (o *GETParcels200ResponseDataInnerRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Events field.
-func (o *GETParcels200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETParcels200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -256,5 +256,3 @@ func (v *NullableGETParcels200ResponseDataInnerRelationships) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

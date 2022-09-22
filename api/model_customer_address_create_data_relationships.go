@@ -18,7 +18,7 @@ import (
 // CustomerAddressCreateDataRelationships struct for CustomerAddressCreateDataRelationships
 type CustomerAddressCreateDataRelationships struct {
 	Customer CouponRecipientDataRelationshipsCustomer `json:"customer"`
-	Address BingGeocoderDataRelationshipsAddresses `json:"address"`
+	Address  BingGeocoderDataRelationshipsAddresses   `json:"address"`
 }
 
 // NewCustomerAddressCreateDataRelationships instantiates a new CustomerAddressCreateDataRelationships object
@@ -134,5 +134,3 @@ func (v *NullableCustomerAddressCreateDataRelationships) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("bundles", "XGZwpOSrWL", *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
+    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
     bundleId := "bundleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("bundles", *openapiclient.NewPOSTBundles201ResponseDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
+    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("Type_example", *openapiclient.NewPOSTBundles201ResponseDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

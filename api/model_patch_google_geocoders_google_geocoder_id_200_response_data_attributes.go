@@ -261,5 +261,3 @@ func (v *NullablePATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

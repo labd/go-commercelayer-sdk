@@ -784,7 +784,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("coupon_codes_promotion_rules", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
+    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
     couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -856,7 +856,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("coupon_codes_promotion_rules", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleCreate | 
+    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -20,9 +20,9 @@ type GETAvalaraAccounts200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETAvalaraAccounts200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *GETAvalaraAccounts200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETAvalaraAccounts200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETAvalaraAccounts200ResponseDataInner() *GETAvalaraAccounts200ResponseDataInner {
 	this := GETAvalaraAccounts200ResponseDataInner{}
-	var type_ string = "avalara_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETAvalaraAccounts200ResponseDataInner() *GETAvalaraAccounts200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewGETAvalaraAccounts200ResponseDataInnerWithDefaults() *GETAvalaraAccounts200ResponseDataInner {
 	this := GETAvalaraAccounts200ResponseDataInner{}
-	var type_ string = "avalara_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETAvalaraAccounts200ResponseDataInner) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

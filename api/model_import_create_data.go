@@ -18,9 +18,9 @@ import (
 // ImportCreateData struct for ImportCreateData
 type ImportCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTImports201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTImports201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}               `json:"relationships,omitempty"`
 }
 
 // NewImportCreateData instantiates a new ImportCreateData object
@@ -39,8 +39,6 @@ func NewImportCreateData(type_ string, attributes POSTImports201ResponseDataAttr
 // but it doesn't guarantee that properties required by API are set
 func NewImportCreateDataWithDefaults() *ImportCreateData {
 	this := ImportCreateData{}
-	var type_ string = "imports"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableImportCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

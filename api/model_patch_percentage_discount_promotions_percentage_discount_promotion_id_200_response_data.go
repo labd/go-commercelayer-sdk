@@ -20,10 +20,10 @@ type PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDa
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                                   `json:"links,omitempty"`
+	Attributes    *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships                                `json:"relationships,omitempty"`
 }
 
 // NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData instantiates a new PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDa
 // will change when the set of required properties is changed
 func NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData() *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData {
 	this := PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respons
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataWithDefaults() *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData {
 	this := PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHPercentageDiscountPromotionsPercentageDiscountPromotionId2
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

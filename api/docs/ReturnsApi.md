@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("returns", "XGZwpOSrWL", *openapiclient.NewPATCHReturnsReturnId200ResponseDataAttributes())) // ReturnUpdate | 
+    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnsReturnId200ResponseDataAttributes())) // ReturnUpdate | 
     returnId := "returnId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("returns", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ReturnCreate | 
+    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ReturnCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

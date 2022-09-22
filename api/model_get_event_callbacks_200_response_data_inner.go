@@ -20,9 +20,9 @@ type GETEventCallbacks200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *GETEventCallbacks200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETEventCallbacks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETEventCallbacks200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETEventCallbacks200ResponseDataInner() *GETEventCallbacks200ResponseDataInner {
 	this := GETEventCallbacks200ResponseDataInner{}
-	var type_ string = "event_callbacks"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETEventCallbacks200ResponseDataInner() *GETEventCallbacks200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewGETEventCallbacks200ResponseDataInnerWithDefaults() *GETEventCallbacks200ResponseDataInner {
 	this := GETEventCallbacks200ResponseDataInner{}
-	var type_ string = "event_callbacks"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETEventCallbacks200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

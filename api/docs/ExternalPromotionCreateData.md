@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTExternalPromotions201ResponseDataAttributes**](POSTExternalPromotions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 

@@ -17,9 +17,9 @@ import (
 
 // GETSkuListPromotionRules200ResponseDataInnerRelationships struct for GETSkuListPromotionRules200ResponseDataInnerRelationships
 type GETSkuListPromotionRules200ResponseDataInnerRelationships struct {
-	Promotion *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"promotion,omitempty"`
-	SkuList *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku_list,omitempty"`
-	Skus *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"skus,omitempty"`
+	Promotion *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion `json:"promotion,omitempty"`
+	SkuList   *GETBundles200ResponseDataInnerRelationshipsSkuList                     `json:"sku_list,omitempty"`
+	Skus      *GETBundles200ResponseDataInnerRelationshipsSkus                        `json:"skus,omitempty"`
 }
 
 // NewGETSkuListPromotionRules200ResponseDataInnerRelationships instantiates a new GETSkuListPromotionRules200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETSkuListPromotionRules200ResponseDataInnerRelationshipsWithDefaults() 
 }
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotion() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion {
 	if o == nil || o.Promotion == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion
 		return ret
 	}
 	return *o.Promotion
@@ -50,7 +50,7 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotion
 
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetPromotionOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion, bool) {
 	if o == nil || o.Promotion == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) HasPromotion
 	return false
 }
 
-// SetPromotion gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Promotion field.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetPromotion gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion and assigns it to the Promotion field.
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetPromotion(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsPromotion) {
 	o.Promotion = &v
 }
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuList() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuList() GETBundles200ResponseDataInnerRelationshipsSkuList {
 	if o == nil || o.SkuList == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETBundles200ResponseDataInnerRelationshipsSkuList
 		return ret
 	}
 	return *o.SkuList
@@ -82,7 +82,7 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuList()
 
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkuListOk() (*GETBundles200ResponseDataInnerRelationshipsSkuList, bool) {
 	if o == nil || o.SkuList == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) HasSkuList()
 	return false
 }
 
-// SetSkuList gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the SkuList field.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkuList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetSkuList gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkuList and assigns it to the SkuList field.
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkuList(v GETBundles200ResponseDataInnerRelationshipsSkuList) {
 	o.SkuList = &v
 }
 
 // GetSkus returns the Skus field value if set, zero value otherwise.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkus() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkus() GETBundles200ResponseDataInnerRelationshipsSkus {
 	if o == nil || o.Skus == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETBundles200ResponseDataInnerRelationshipsSkus
 		return ret
 	}
 	return *o.Skus
@@ -114,7 +114,7 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkus() GE
 
 // GetSkusOk returns a tuple with the Skus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkusOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) GetSkusOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool) {
 	if o == nil || o.Skus == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) HasSkus() bo
 	return false
 }
 
-// SetSkus gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Skus field.
-func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkus(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetSkus gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkus and assigns it to the Skus field.
+func (o *GETSkuListPromotionRules200ResponseDataInnerRelationships) SetSkus(v GETBundles200ResponseDataInnerRelationshipsSkus) {
 	o.Skus = &v
 }
 
@@ -184,5 +184,3 @@ func (v *NullableGETSkuListPromotionRules200ResponseDataInnerRelationships) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

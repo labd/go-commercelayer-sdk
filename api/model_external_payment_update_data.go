@@ -20,9 +20,9 @@ type ExternalPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewExternalPaymentUpdateData instantiates a new ExternalPaymentUpdateData object
@@ -42,8 +42,6 @@ func NewExternalPaymentUpdateData(type_ string, id string, attributes PATCHExter
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPaymentUpdateDataWithDefaults() *ExternalPaymentUpdateData {
 	this := ExternalPaymentUpdateData{}
-	var type_ string = "external_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableExternalPaymentUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

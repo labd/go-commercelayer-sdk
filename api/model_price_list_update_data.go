@@ -20,9 +20,9 @@ type PriceListUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHPriceListsPriceListId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                              `json:"id"`
+	Attributes    PATCHPriceListsPriceListId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                              `json:"relationships,omitempty"`
 }
 
 // NewPriceListUpdateData instantiates a new PriceListUpdateData object
@@ -42,8 +42,6 @@ func NewPriceListUpdateData(type_ string, id string, attributes PATCHPriceListsP
 // but it doesn't guarantee that properties required by API are set
 func NewPriceListUpdateDataWithDefaults() *PriceListUpdateData {
 	this := PriceListUpdateData{}
-	var type_ string = "price_lists"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullablePriceListUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

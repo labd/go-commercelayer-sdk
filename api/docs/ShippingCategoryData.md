@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_categories"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETShippingCategories200ResponseDataInnerAttributes**](GETShippingCategories200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingCategoryDataRelationships**](ShippingCategoryDataRelationships.md) |  | [optional] 
 

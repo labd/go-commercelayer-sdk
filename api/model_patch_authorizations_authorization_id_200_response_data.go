@@ -20,10 +20,10 @@ type PATCHAuthorizationsAuthorizationId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAuthorizations200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAuthorizations200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHAuthorizationsAuthorizationId200ResponseData instantiates a new PATCHAuthorizationsAuthorizationId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHAuthorizationsAuthorizationId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHAuthorizationsAuthorizationId200ResponseData() *PATCHAuthorizationsAuthorizationId200ResponseData {
 	this := PATCHAuthorizationsAuthorizationId200ResponseData{}
-	var type_ string = "authorizations"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHAuthorizationsAuthorizationId200ResponseData() *PATCHAuthorizations
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHAuthorizationsAuthorizationId200ResponseDataWithDefaults() *PATCHAuthorizationsAuthorizationId200ResponseData {
 	this := PATCHAuthorizationsAuthorizationId200ResponseData{}
-	var type_ string = "authorizations"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHAuthorizationsAuthorizationId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

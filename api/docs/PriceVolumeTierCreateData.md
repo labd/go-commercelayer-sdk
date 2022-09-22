@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "price_volume_tiers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTPriceVolumeTiers201ResponseDataAttributes**](POSTPriceVolumeTiers201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceVolumeTierCreateDataRelationships**](PriceVolumeTierCreateDataRelationships.md) |  | [optional] 
 

@@ -20,9 +20,9 @@ type StockTransferUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHStockTransfersStockTransferId200ResponseDataAttributes `json:"attributes"`
-	Relationships *StockTransferUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHStockTransfersStockTransferId200ResponseDataAttributes `json:"attributes"`
+	Relationships *StockTransferUpdateDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewStockTransferUpdateData instantiates a new StockTransferUpdateData object
@@ -42,8 +42,6 @@ func NewStockTransferUpdateData(type_ string, id string, attributes PATCHStockTr
 // but it doesn't guarantee that properties required by API are set
 func NewStockTransferUpdateDataWithDefaults() *StockTransferUpdateData {
 	this := StockTransferUpdateData{}
-	var type_ string = "stock_transfers"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableStockTransferUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

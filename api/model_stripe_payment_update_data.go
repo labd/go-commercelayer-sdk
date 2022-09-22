@@ -20,9 +20,9 @@ type StripePaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHStripePaymentsStripePaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHStripePaymentsStripePaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentUpdateData instantiates a new StripePaymentUpdateData object
@@ -42,8 +42,6 @@ func NewStripePaymentUpdateData(type_ string, id string, attributes PATCHStripeP
 // but it doesn't guarantee that properties required by API are set
 func NewStripePaymentUpdateDataWithDefaults() *StripePaymentUpdateData {
 	this := StripePaymentUpdateData{}
-	var type_ string = "stripe_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableStripePaymentUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

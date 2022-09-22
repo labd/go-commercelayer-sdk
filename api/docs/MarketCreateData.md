@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "markets"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTMarkets201ResponseDataAttributes**](POSTMarkets201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketCreateDataRelationships**](MarketCreateDataRelationships.md) |  | [optional] 
 

@@ -17,7 +17,7 @@ import (
 
 // KlarnaGatewayDataRelationships struct for KlarnaGatewayDataRelationships
 type KlarnaGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
 	KlarnaPayments *KlarnaGatewayDataRelationshipsKlarnaPayments `json:"klarna_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableKlarnaGatewayDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

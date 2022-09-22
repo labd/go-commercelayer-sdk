@@ -217,5 +217,3 @@ func (v *NullablePOSTShippingCategories201ResponseDataAttributes) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

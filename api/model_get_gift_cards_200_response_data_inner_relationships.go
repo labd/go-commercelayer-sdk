@@ -17,10 +17,10 @@ import (
 
 // GETGiftCards200ResponseDataInnerRelationships struct for GETGiftCards200ResponseDataInnerRelationships
 type GETGiftCards200ResponseDataInnerRelationships struct {
-	Market *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"market,omitempty"`
-	GiftCardRecipient *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"gift_card_recipient,omitempty"`
-	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
-	Events *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"events,omitempty"`
+	Market            *GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket `json:"market,omitempty"`
+	GiftCardRecipient *GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient       `json:"gift_card_recipient,omitempty"`
+	Attachments       *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments       `json:"attachments,omitempty"`
+	Events            *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents          `json:"events,omitempty"`
 }
 
 // NewGETGiftCards200ResponseDataInnerRelationships instantiates a new GETGiftCards200ResponseDataInnerRelationships object
@@ -41,9 +41,9 @@ func NewGETGiftCards200ResponseDataInnerRelationshipsWithDefaults() *GETGiftCard
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetMarket() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetMarket() GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -51,7 +51,7 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) GetMarket() GETAddresses
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetMarketOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetMarketOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -67,15 +67,15 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Market field.
-func (o *GETGiftCards200ResponseDataInnerRelationships) SetMarket(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetMarket gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket and assigns it to the Market field.
+func (o *GETGiftCards200ResponseDataInnerRelationships) SetMarket(v GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetGiftCardRecipient returns the GiftCardRecipient field value if set, zero value otherwise.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetGiftCardRecipient() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetGiftCardRecipient() GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient {
 	if o == nil || o.GiftCardRecipient == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient
 		return ret
 	}
 	return *o.GiftCardRecipient
@@ -83,7 +83,7 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) GetGiftCardRecipient() G
 
 // GetGiftCardRecipientOk returns a tuple with the GiftCardRecipient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetGiftCardRecipientOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetGiftCardRecipientOk() (*GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient, bool) {
 	if o == nil || o.GiftCardRecipient == nil {
 		return nil, false
 	}
@@ -99,15 +99,15 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) HasGiftCardRecipient() b
 	return false
 }
 
-// SetGiftCardRecipient gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the GiftCardRecipient field.
-func (o *GETGiftCards200ResponseDataInnerRelationships) SetGiftCardRecipient(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetGiftCardRecipient gets a reference to the given GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient and assigns it to the GiftCardRecipient field.
+func (o *GETGiftCards200ResponseDataInnerRelationships) SetGiftCardRecipient(v GETGiftCards200ResponseDataInnerRelationshipsGiftCardRecipient) {
 	o.GiftCardRecipient = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -115,7 +115,7 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) GetAttachments() GETAdye
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -131,15 +131,15 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) HasAttachments() bool {
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
-func (o *GETGiftCards200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETGiftCards200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetEvents() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -147,7 +147,7 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) GetEvents() GETAdyenGate
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGiftCards200ResponseDataInnerRelationships) GetEventsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETGiftCards200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -163,8 +163,8 @@ func (o *GETGiftCards200ResponseDataInnerRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Events field.
-func (o *GETGiftCards200ResponseDataInnerRelationships) SetEvents(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETGiftCards200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -220,5 +220,3 @@ func (v *NullableGETGiftCards200ResponseDataInnerRelationships) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

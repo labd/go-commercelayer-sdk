@@ -20,10 +20,10 @@ type PATCHGiftCardsGiftCardId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETGiftCards200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
+	Attributes    *PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETGiftCards200ResponseDataInnerRelationships     `json:"relationships,omitempty"`
 }
 
 // NewPATCHGiftCardsGiftCardId200ResponseData instantiates a new PATCHGiftCardsGiftCardId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHGiftCardsGiftCardId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHGiftCardsGiftCardId200ResponseData() *PATCHGiftCardsGiftCardId200ResponseData {
 	this := PATCHGiftCardsGiftCardId200ResponseData{}
-	var type_ string = "gift_cards"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHGiftCardsGiftCardId200ResponseData() *PATCHGiftCardsGiftCardId200Re
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHGiftCardsGiftCardId200ResponseDataWithDefaults() *PATCHGiftCardsGiftCardId200ResponseData {
 	this := PATCHGiftCardsGiftCardId200ResponseData{}
-	var type_ string = "gift_cards"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHGiftCardsGiftCardId200ResponseData) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

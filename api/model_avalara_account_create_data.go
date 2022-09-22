@@ -18,9 +18,9 @@ import (
 // AvalaraAccountCreateData struct for AvalaraAccountCreateData
 type AvalaraAccountCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAvalaraAccounts201ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    POSTAvalaraAccounts201ResponseDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewAvalaraAccountCreateData instantiates a new AvalaraAccountCreateData object
@@ -39,8 +39,6 @@ func NewAvalaraAccountCreateData(type_ string, attributes POSTAvalaraAccounts201
 // but it doesn't guarantee that properties required by API are set
 func NewAvalaraAccountCreateDataWithDefaults() *AvalaraAccountCreateData {
 	this := AvalaraAccountCreateData{}
-	var type_ string = "avalara_accounts"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableAvalaraAccountCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

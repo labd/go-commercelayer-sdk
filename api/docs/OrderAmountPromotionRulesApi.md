@@ -715,7 +715,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("order_amount_promotion_rules", "XGZwpOSrWL", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleUpdate | 
+    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleUpdate | 
     orderAmountPromotionRuleId := "orderAmountPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -787,7 +787,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("order_amount_promotion_rules", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleCreate | 
+    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

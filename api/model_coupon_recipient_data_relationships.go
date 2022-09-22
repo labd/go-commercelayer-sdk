@@ -17,7 +17,7 @@ import (
 
 // CouponRecipientDataRelationships struct for CouponRecipientDataRelationships
 type CouponRecipientDataRelationships struct {
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
+	Customer    *CouponRecipientDataRelationshipsCustomer   `json:"customer,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableCouponRecipientDataRelationships) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

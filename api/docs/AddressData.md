@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "addresses"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAddresses200ResponseDataInnerAttributes**](GETAddresses200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AddressDataRelationships**](AddressDataRelationships.md) |  | [optional] 
 

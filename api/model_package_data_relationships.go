@@ -18,8 +18,8 @@ import (
 // PackageDataRelationships struct for PackageDataRelationships
 type PackageDataRelationships struct {
 	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	Parcels *PackageDataRelationshipsParcels `json:"parcels,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Parcels       *PackageDataRelationshipsParcels                `json:"parcels,omitempty"`
+	Attachments   *AvalaraAccountDataRelationshipsAttachments     `json:"attachments,omitempty"`
 }
 
 // NewPackageDataRelationships instantiates a new PackageDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullablePackageDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

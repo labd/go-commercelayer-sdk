@@ -508,7 +508,7 @@ import (
 )
 
 func main() {
-    priceUpdate := *openapiclient.NewPriceUpdate(*openapiclient.NewPriceUpdateData("prices", "XGZwpOSrWL", *openapiclient.NewPATCHPricesPriceId200ResponseDataAttributes())) // PriceUpdate | 
+    priceUpdate := *openapiclient.NewPriceUpdate(*openapiclient.NewPriceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPricesPriceId200ResponseDataAttributes())) // PriceUpdate | 
     priceId := "priceId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -580,7 +580,7 @@ import (
 )
 
 func main() {
-    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData("prices", *openapiclient.NewPOSTPrices201ResponseDataAttributes(int32(10000), int32(13000)))) // PriceCreate | 
+    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData("Type_example", *openapiclient.NewPOSTPrices201ResponseDataAttributes(int32(10000), int32(13000)))) // PriceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

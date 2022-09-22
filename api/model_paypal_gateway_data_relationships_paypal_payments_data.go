@@ -29,8 +29,6 @@ type PaypalGatewayDataRelationshipsPaypalPaymentsData struct {
 // will change when the set of required properties is changed
 func NewPaypalGatewayDataRelationshipsPaypalPaymentsData() *PaypalGatewayDataRelationshipsPaypalPaymentsData {
 	this := PaypalGatewayDataRelationshipsPaypalPaymentsData{}
-	var type_ string = "paypal_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewPaypalGatewayDataRelationshipsPaypalPaymentsData() *PaypalGatewayDataRel
 // but it doesn't guarantee that properties required by API are set
 func NewPaypalGatewayDataRelationshipsPaypalPaymentsDataWithDefaults() *PaypalGatewayDataRelationshipsPaypalPaymentsData {
 	this := PaypalGatewayDataRelationshipsPaypalPaymentsData{}
-	var type_ string = "paypal_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullablePaypalGatewayDataRelationshipsPaypalPaymentsData) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

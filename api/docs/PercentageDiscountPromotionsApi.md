@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("percentage_discount_promotions", "XGZwpOSrWL", *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
+    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
     percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("percentage_discount_promotions", *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
+    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("Type_example", *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

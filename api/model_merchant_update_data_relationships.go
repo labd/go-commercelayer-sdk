@@ -112,5 +112,3 @@ func (v *NullableMerchantUpdateDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

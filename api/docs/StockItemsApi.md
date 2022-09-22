@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("stock_items", "XGZwpOSrWL", *openapiclient.NewPATCHStockItemsStockItemId200ResponseDataAttributes())) // StockItemUpdate | 
+    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockItemsStockItemId200ResponseDataAttributes())) // StockItemUpdate | 
     stockItemId := "stockItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("stock_items", *openapiclient.NewPOSTStockItems201ResponseDataAttributes(int32(100)))) // StockItemCreate | 
+    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("Type_example", *openapiclient.NewPOSTStockItems201ResponseDataAttributes(int32(100)))) // StockItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

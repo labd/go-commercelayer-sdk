@@ -29,8 +29,6 @@ type BraintreeGatewayDataRelationshipsBraintreePaymentsData struct {
 // will change when the set of required properties is changed
 func NewBraintreeGatewayDataRelationshipsBraintreePaymentsData() *BraintreeGatewayDataRelationshipsBraintreePaymentsData {
 	this := BraintreeGatewayDataRelationshipsBraintreePaymentsData{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewBraintreeGatewayDataRelationshipsBraintreePaymentsData() *BraintreeGatew
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreeGatewayDataRelationshipsBraintreePaymentsDataWithDefaults() *BraintreeGatewayDataRelationshipsBraintreePaymentsData {
 	this := BraintreeGatewayDataRelationshipsBraintreePaymentsData{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableBraintreeGatewayDataRelationshipsBraintreePaymentsData) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

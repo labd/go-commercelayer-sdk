@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "braintree_gateways"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTBraintreeGateways201ResponseDataAttributes**](POSTBraintreeGateways201ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETBraintreeGateways200ResponseDataInnerRelationships**](GETBraintreeGateways200ResponseDataInnerRelationships.md) |  | [optional] 

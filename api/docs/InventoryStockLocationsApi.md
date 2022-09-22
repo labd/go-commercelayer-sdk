@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("inventory_stock_locations", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
+    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
     inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("inventory_stock_locations", *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
+    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

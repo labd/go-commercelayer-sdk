@@ -18,8 +18,8 @@ import (
 // CustomerPaymentSourceCreateData struct for CustomerPaymentSourceCreateData
 type CustomerPaymentSourceCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Type          string                                        `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes    `json:"attributes"`
 	Relationships *CustomerPaymentSourceCreateDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -39,8 +39,6 @@ func NewCustomerPaymentSourceCreateData(type_ string, attributes POSTAdyenPaymen
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerPaymentSourceCreateDataWithDefaults() *CustomerPaymentSourceCreateData {
 	this := CustomerPaymentSourceCreateData{}
-	var type_ string = "customer_payment_sources"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCustomerPaymentSourceCreateData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

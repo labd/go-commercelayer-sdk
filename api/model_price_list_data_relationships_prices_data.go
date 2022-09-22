@@ -29,8 +29,6 @@ type PriceListDataRelationshipsPricesData struct {
 // will change when the set of required properties is changed
 func NewPriceListDataRelationshipsPricesData() *PriceListDataRelationshipsPricesData {
 	this := PriceListDataRelationshipsPricesData{}
-	var type_ string = "prices"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewPriceListDataRelationshipsPricesData() *PriceListDataRelationshipsPrices
 // but it doesn't guarantee that properties required by API are set
 func NewPriceListDataRelationshipsPricesDataWithDefaults() *PriceListDataRelationshipsPricesData {
 	this := PriceListDataRelationshipsPricesData{}
-	var type_ string = "prices"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullablePriceListDataRelationshipsPricesData) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

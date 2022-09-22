@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // PercentageDiscountPromotionsApiService PercentageDiscountPromotionsApi service
 type PercentageDiscountPromotionsApiService service
 
 type PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *PercentageDiscountPromotionsApiService
+	ctx                           context.Context
+	ApiService                    *PercentageDiscountPromotionsApiService
 	percentageDiscountPromotionId string
 }
 
@@ -45,8 +44,8 @@ Delete a percentage discount promotion
 */
 func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 // Execute executes the request
 func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId")
@@ -117,7 +116,7 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 }
 
 type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PercentageDiscountPromotionsApiService
 }
 
@@ -136,7 +135,7 @@ List all percentage discount promotions
 func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest {
 	return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 //  @return GETPercentageDiscountPromotions200Response
 func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) (*GETPercentageDiscountPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPercentageDiscountPromotions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPercentageDiscountPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.GETPercentageDiscountPromotions")
@@ -216,8 +215,8 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 }
 
 type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *PercentageDiscountPromotionsApiService
+	ctx                           context.Context
+	ApiService                    *PercentageDiscountPromotionsApiService
 	percentageDiscountPromotionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a percentage discount promotion
 */
 func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 //  @return GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.GETPercentageDiscountPromotionsPercentageDiscountPromotionId")
@@ -319,10 +318,10 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 }
 
 type PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *PercentageDiscountPromotionsApiService
+	ctx                               context.Context
+	ApiService                        *PercentageDiscountPromotionsApiService
 	percentageDiscountPromotionUpdate *PercentageDiscountPromotionUpdate
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId     string
 }
 
 func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate PercentageDiscountPromotionUpdate) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
@@ -345,8 +344,8 @@ Update a percentage discount promotion
 */
 func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                    a,
+		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 //  @return PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId")
@@ -433,8 +432,8 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 }
 
 type PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest struct {
-	ctx context.Context
-	ApiService *PercentageDiscountPromotionsApiService
+	ctx                               context.Context
+	ApiService                        *PercentageDiscountPromotionsApiService
 	percentageDiscountPromotionCreate *PercentageDiscountPromotionCreate
 }
 
@@ -458,7 +457,7 @@ Create a percentage discount promotion
 func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotions(ctx context.Context) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest {
 	return PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 //  @return POSTPercentageDiscountPromotions201Response
 func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) (*POSTPercentageDiscountPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTPercentageDiscountPromotions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPercentageDiscountPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.POSTPercentageDiscountPromotions")

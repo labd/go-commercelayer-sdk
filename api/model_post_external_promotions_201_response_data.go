@@ -20,9 +20,9 @@ type POSTExternalPromotions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTExternalPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                 `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                  `json:"links,omitempty"`
+	Attributes    *POSTExternalPromotions201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTExternalPromotions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTExternalPromotions201ResponseData() *POSTExternalPromotions201ResponseData {
 	this := POSTExternalPromotions201ResponseData{}
-	var type_ string = "external_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTExternalPromotions201ResponseData() *POSTExternalPromotions201Respon
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTExternalPromotions201ResponseDataWithDefaults() *POSTExternalPromotions201ResponseData {
 	this := POSTExternalPromotions201ResponseData{}
-	var type_ string = "external_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTExternalPromotions201ResponseData) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

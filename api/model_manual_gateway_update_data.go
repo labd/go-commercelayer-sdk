@@ -20,9 +20,9 @@ type ManualGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHManualGatewaysManualGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHManualGatewaysManualGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayUpdateData instantiates a new ManualGatewayUpdateData object
@@ -42,8 +42,6 @@ func NewManualGatewayUpdateData(type_ string, id string, attributes PATCHManualG
 // but it doesn't guarantee that properties required by API are set
 func NewManualGatewayUpdateDataWithDefaults() *ManualGatewayUpdateData {
 	this := ManualGatewayUpdateData{}
-	var type_ string = "manual_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableManualGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

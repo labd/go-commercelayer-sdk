@@ -20,9 +20,9 @@ type POSTCoupons201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTCoupons201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks       `json:"links,omitempty"`
+	Attributes    *POSTCoupons201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETCoupons200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTCoupons201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTCoupons201ResponseData() *POSTCoupons201ResponseData {
 	this := POSTCoupons201ResponseData{}
-	var type_ string = "coupons"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTCoupons201ResponseData() *POSTCoupons201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTCoupons201ResponseDataWithDefaults() *POSTCoupons201ResponseData {
 	this := POSTCoupons201ResponseData{}
-	var type_ string = "coupons"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTCoupons201ResponseData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

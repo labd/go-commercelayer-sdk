@@ -20,9 +20,9 @@ type POSTTaxCategories201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTTaxCategories201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
+	Attributes    *POSTTaxCategories201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETTaxCategories200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTTaxCategories201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTTaxCategories201ResponseData() *POSTTaxCategories201ResponseData {
 	this := POSTTaxCategories201ResponseData{}
-	var type_ string = "tax_categories"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTTaxCategories201ResponseData() *POSTTaxCategories201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTTaxCategories201ResponseDataWithDefaults() *POSTTaxCategories201ResponseData {
 	this := POSTTaxCategories201ResponseData{}
-	var type_ string = "tax_categories"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTTaxCategories201ResponseData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

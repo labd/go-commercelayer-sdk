@@ -358,5 +358,3 @@ func (v *NullablePOSTCheckoutComPayments201ResponseDataAttributes) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

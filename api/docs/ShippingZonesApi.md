@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("shipping_zones", "XGZwpOSrWL", *openapiclient.NewPATCHShippingZonesShippingZoneId200ResponseDataAttributes())) // ShippingZoneUpdate | 
+    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingZonesShippingZoneId200ResponseDataAttributes())) // ShippingZoneUpdate | 
     shippingZoneId := "shippingZoneId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("shipping_zones", *openapiclient.NewPOSTShippingZones201ResponseDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
+    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("Type_example", *openapiclient.NewPOSTShippingZones201ResponseDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

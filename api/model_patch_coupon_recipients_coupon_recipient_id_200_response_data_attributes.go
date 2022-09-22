@@ -298,5 +298,3 @@ func (v *NullablePATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

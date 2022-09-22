@@ -17,12 +17,12 @@ import (
 
 // MarketDataRelationships struct for MarketDataRelationships
 type MarketDataRelationships struct {
-	Merchant *MarketDataRelationshipsMerchant `json:"merchant,omitempty"`
-	PriceList *MarketDataRelationshipsPriceList `json:"price_list,omitempty"`
+	Merchant       *MarketDataRelationshipsMerchant                        `json:"merchant,omitempty"`
+	PriceList      *MarketDataRelationshipsPriceList                       `json:"price_list,omitempty"`
 	InventoryModel *InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
-	TaxCalculator *MarketDataRelationshipsTaxCalculator `json:"tax_calculator,omitempty"`
-	CustomerGroup *CustomerDataRelationshipsCustomerGroup `json:"customer_group,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	TaxCalculator  *MarketDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
+	CustomerGroup  *CustomerDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
+	Attachments    *AvalaraAccountDataRelationshipsAttachments             `json:"attachments,omitempty"`
 }
 
 // NewMarketDataRelationships instantiates a new MarketDataRelationships object
@@ -292,5 +292,3 @@ func (v *NullableMarketDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

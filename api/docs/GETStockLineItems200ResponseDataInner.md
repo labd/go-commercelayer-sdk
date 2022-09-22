@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "stock_line_items"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETStockLineItems200ResponseDataInnerAttributes**](GETStockLineItems200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETStockLineItems200ResponseDataInnerRelationships**](GETStockLineItems200ResponseDataInnerRelationships.md) |  | [optional] 

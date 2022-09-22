@@ -284,5 +284,3 @@ func (v *NullablePOSTShippingWeightTiers201ResponseDataAttributes) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

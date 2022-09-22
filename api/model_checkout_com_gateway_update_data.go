@@ -20,9 +20,9 @@ type CheckoutComGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CheckoutComGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                `json:"id"`
+	Attributes    PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayCreateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
@@ -42,8 +42,6 @@ func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCh
 // but it doesn't guarantee that properties required by API are set
 func NewCheckoutComGatewayUpdateDataWithDefaults() *CheckoutComGatewayUpdateData {
 	this := CheckoutComGatewayUpdateData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableCheckoutComGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

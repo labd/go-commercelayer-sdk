@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "orders"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTOrders201ResponseDataAttributes**](POSTOrders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCreateDataRelationships**](OrderCreateDataRelationships.md) |  | [optional] 
 

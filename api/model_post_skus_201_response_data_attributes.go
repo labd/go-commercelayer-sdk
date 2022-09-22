@@ -543,5 +543,3 @@ func (v *NullablePOSTSkus201ResponseDataAttributes) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

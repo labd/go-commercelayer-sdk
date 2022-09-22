@@ -20,9 +20,9 @@ type POSTExternalTaxCalculators201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTExternalTaxCalculators201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *POSTExternalTaxCalculators201ResponseDataAttributes `json:"attributes,omitempty"`
 	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTExternalTaxCalculators201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTExternalTaxCalculators201ResponseData() *POSTExternalTaxCalculators201ResponseData {
 	this := POSTExternalTaxCalculators201ResponseData{}
-	var type_ string = "external_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTExternalTaxCalculators201ResponseData() *POSTExternalTaxCalculators2
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTExternalTaxCalculators201ResponseDataWithDefaults() *POSTExternalTaxCalculators201ResponseData {
 	this := POSTExternalTaxCalculators201ResponseData{}
-	var type_ string = "external_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTExternalTaxCalculators201ResponseData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "braintree_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETBraintreePayments200ResponseDataInnerAttributes**](GETBraintreePayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 

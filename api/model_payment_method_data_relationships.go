@@ -17,9 +17,9 @@ import (
 
 // PaymentMethodDataRelationships struct for PaymentMethodDataRelationships
 type PaymentMethodDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market         *AvalaraAccountDataRelationshipsMarkets      `json:"market,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Attachments    *AvalaraAccountDataRelationshipsAttachments  `json:"attachments,omitempty"`
 }
 
 // NewPaymentMethodDataRelationships instantiates a new PaymentMethodDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullablePaymentMethodDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

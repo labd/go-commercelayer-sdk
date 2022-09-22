@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTPaymentMethods201ResponseDataAttributes**](POSTPaymentMethods201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodCreateDataRelationships**](PaymentMethodCreateDataRelationships.md) |  | [optional] 
 

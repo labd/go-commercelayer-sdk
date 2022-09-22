@@ -29,8 +29,6 @@ type OrderDataRelationshipsShipmentsData struct {
 // will change when the set of required properties is changed
 func NewOrderDataRelationshipsShipmentsData() *OrderDataRelationshipsShipmentsData {
 	this := OrderDataRelationshipsShipmentsData{}
-	var type_ string = "shipments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewOrderDataRelationshipsShipmentsData() *OrderDataRelationshipsShipmentsDa
 // but it doesn't guarantee that properties required by API are set
 func NewOrderDataRelationshipsShipmentsDataWithDefaults() *OrderDataRelationshipsShipmentsData {
 	this := OrderDataRelationshipsShipmentsData{}
-	var type_ string = "shipments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableOrderDataRelationshipsShipmentsData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

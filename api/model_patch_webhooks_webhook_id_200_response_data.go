@@ -20,10 +20,10 @@ type PATCHWebhooksWebhookId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHWebhooksWebhookId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETWebhooks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                          `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks           `json:"links,omitempty"`
+	Attributes    *PATCHWebhooksWebhookId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETWebhooks200ResponseDataInnerRelationships    `json:"relationships,omitempty"`
 }
 
 // NewPATCHWebhooksWebhookId200ResponseData instantiates a new PATCHWebhooksWebhookId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHWebhooksWebhookId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHWebhooksWebhookId200ResponseData() *PATCHWebhooksWebhookId200ResponseData {
 	this := PATCHWebhooksWebhookId200ResponseData{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHWebhooksWebhookId200ResponseData() *PATCHWebhooksWebhookId200Respon
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHWebhooksWebhookId200ResponseDataWithDefaults() *PATCHWebhooksWebhookId200ResponseData {
 	this := PATCHWebhooksWebhookId200ResponseData{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHWebhooksWebhookId200ResponseData) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

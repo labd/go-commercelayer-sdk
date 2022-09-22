@@ -20,10 +20,10 @@ type GETPercentageDiscountPromotions200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships      `json:"relationships,omitempty"`
 }
 
 // NewGETPercentageDiscountPromotions200ResponseDataInner instantiates a new GETPercentageDiscountPromotions200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETPercentageDiscountPromotions200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETPercentageDiscountPromotions200ResponseDataInner() *GETPercentageDiscountPromotions200ResponseDataInner {
 	this := GETPercentageDiscountPromotions200ResponseDataInner{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETPercentageDiscountPromotions200ResponseDataInner() *GETPercentageDisc
 // but it doesn't guarantee that properties required by API are set
 func NewGETPercentageDiscountPromotions200ResponseDataInnerWithDefaults() *GETPercentageDiscountPromotions200ResponseDataInner {
 	this := GETPercentageDiscountPromotions200ResponseDataInner{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETPercentageDiscountPromotions200ResponseDataInner) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("webhooks", "XGZwpOSrWL", *openapiclient.NewPATCHWebhooksWebhookId200ResponseDataAttributes())) // WebhookUpdate | 
+    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHWebhooksWebhookId200ResponseDataAttributes())) // WebhookUpdate | 
     webhookId := "webhookId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("webhooks", *openapiclient.NewPOSTWebhooks201ResponseDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
+    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("Type_example", *openapiclient.NewPOSTWebhooks201ResponseDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

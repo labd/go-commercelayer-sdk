@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAdyenPayments200ResponseDataInnerAttributes**](GETAdyenPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 

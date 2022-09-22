@@ -17,9 +17,9 @@ import (
 
 // GETTaxCategories200ResponseDataInnerRelationships struct for GETTaxCategories200ResponseDataInnerRelationships
 type GETTaxCategories200ResponseDataInnerRelationships struct {
-	Sku *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku,omitempty"`
-	TaxCalculator *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"tax_calculator,omitempty"`
-	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
+	Sku           *GETInStockSubscriptions200ResponseDataInnerRelationshipsSku    `json:"sku,omitempty"`
+	TaxCalculator *GETMarkets200ResponseDataInnerRelationshipsTaxCalculator       `json:"tax_calculator,omitempty"`
+	Attachments   *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewGETTaxCategories200ResponseDataInnerRelationships instantiates a new GETTaxCategories200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETTaxCategories200ResponseDataInnerRelationshipsWithDefaults() *GETTaxC
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSku() GETInStockSubscriptions200ResponseDataInnerRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETInStockSubscriptions200ResponseDataInnerRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -50,7 +50,7 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSku() GETAddresse
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetSkuOk() (*GETInStockSubscriptions200ResponseDataInnerRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Sku field.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetSku gets a reference to the given GETInStockSubscriptions200ResponseDataInnerRelationshipsSku and assigns it to the Sku field.
+func (o *GETTaxCategories200ResponseDataInnerRelationships) SetSku(v GETInStockSubscriptions200ResponseDataInnerRelationshipsSku) {
 	o.Sku = &v
 }
 
 // GetTaxCalculator returns the TaxCalculator field value if set, zero value otherwise.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculator() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculator() GETMarkets200ResponseDataInnerRelationshipsTaxCalculator {
 	if o == nil || o.TaxCalculator == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETMarkets200ResponseDataInnerRelationshipsTaxCalculator
 		return ret
 	}
 	return *o.TaxCalculator
@@ -82,7 +82,7 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculator() G
 
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETMarkets200ResponseDataInnerRelationshipsTaxCalculator, bool) {
 	if o == nil || o.TaxCalculator == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) HasTaxCalculator() b
 	return false
 }
 
-// SetTaxCalculator gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the TaxCalculator field.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) SetTaxCalculator(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetTaxCalculator gets a reference to the given GETMarkets200ResponseDataInnerRelationshipsTaxCalculator and assigns it to the TaxCalculator field.
+func (o *GETTaxCategories200ResponseDataInnerRelationships) SetTaxCalculator(v GETMarkets200ResponseDataInnerRelationshipsTaxCalculator) {
 	o.TaxCalculator = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -114,7 +114,7 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachments() GET
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETTaxCategories200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETTaxCategories200ResponseDataInnerRelationships) HasAttachments() boo
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
-func (o *GETTaxCategories200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETTaxCategories200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
@@ -184,5 +184,3 @@ func (v *NullableGETTaxCategories200ResponseDataInnerRelationships) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

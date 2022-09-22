@@ -20,9 +20,9 @@ type POSTFixedAmountPromotions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTFixedAmountPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                 `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                  `json:"links,omitempty"`
+	Attributes    *POSTFixedAmountPromotions201ResponseDataAttributes     `json:"attributes,omitempty"`
 	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTFixedAmountPromotions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTFixedAmountPromotions201ResponseData() *POSTFixedAmountPromotions201ResponseData {
 	this := POSTFixedAmountPromotions201ResponseData{}
-	var type_ string = "fixed_amount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTFixedAmountPromotions201ResponseData() *POSTFixedAmountPromotions201
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTFixedAmountPromotions201ResponseDataWithDefaults() *POSTFixedAmountPromotions201ResponseData {
 	this := POSTFixedAmountPromotions201ResponseData{}
-	var type_ string = "fixed_amount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTFixedAmountPromotions201ResponseData) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

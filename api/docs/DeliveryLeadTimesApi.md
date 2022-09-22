@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("delivery_lead_times", "XGZwpOSrWL", *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes())) // DeliveryLeadTimeUpdate | 
+    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes())) // DeliveryLeadTimeUpdate | 
     deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("delivery_lead_times", *openapiclient.NewPOSTDeliveryLeadTimes201ResponseDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
+    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("Type_example", *openapiclient.NewPOSTDeliveryLeadTimes201ResponseDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

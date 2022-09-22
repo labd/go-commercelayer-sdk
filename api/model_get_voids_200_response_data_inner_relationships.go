@@ -17,8 +17,8 @@ import (
 
 // GETVoids200ResponseDataInnerRelationships struct for GETVoids200ResponseDataInnerRelationships
 type GETVoids200ResponseDataInnerRelationships struct {
-	Order *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"order,omitempty"`
-	ReferenceAuthorization *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"reference_authorization,omitempty"`
+	Order                  *GETAdyenPayments200ResponseDataInnerRelationshipsOrder             `json:"order,omitempty"`
+	ReferenceAuthorization *GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization `json:"reference_authorization,omitempty"`
 }
 
 // NewGETVoids200ResponseDataInnerRelationships instantiates a new GETVoids200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETVoids200ResponseDataInnerRelationshipsWithDefaults() *GETVoids200Resp
 }
 
 // GetOrder returns the Order field value if set, zero value otherwise.
-func (o *GETVoids200ResponseDataInnerRelationships) GetOrder() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETVoids200ResponseDataInnerRelationships) GetOrder() GETAdyenPayments200ResponseDataInnerRelationshipsOrder {
 	if o == nil || o.Order == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETAdyenPayments200ResponseDataInnerRelationshipsOrder
 		return ret
 	}
 	return *o.Order
@@ -49,7 +49,7 @@ func (o *GETVoids200ResponseDataInnerRelationships) GetOrder() GETAddresses200Re
 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETVoids200ResponseDataInnerRelationships) GetOrderOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETVoids200ResponseDataInnerRelationships) GetOrderOk() (*GETAdyenPayments200ResponseDataInnerRelationshipsOrder, bool) {
 	if o == nil || o.Order == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETVoids200ResponseDataInnerRelationships) HasOrder() bool {
 	return false
 }
 
-// SetOrder gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Order field.
-func (o *GETVoids200ResponseDataInnerRelationships) SetOrder(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetOrder gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationshipsOrder and assigns it to the Order field.
+func (o *GETVoids200ResponseDataInnerRelationships) SetOrder(v GETAdyenPayments200ResponseDataInnerRelationshipsOrder) {
 	o.Order = &v
 }
 
 // GetReferenceAuthorization returns the ReferenceAuthorization field value if set, zero value otherwise.
-func (o *GETVoids200ResponseDataInnerRelationships) GetReferenceAuthorization() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETVoids200ResponseDataInnerRelationships) GetReferenceAuthorization() GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization {
 	if o == nil || o.ReferenceAuthorization == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization
 		return ret
 	}
 	return *o.ReferenceAuthorization
@@ -81,7 +81,7 @@ func (o *GETVoids200ResponseDataInnerRelationships) GetReferenceAuthorization() 
 
 // GetReferenceAuthorizationOk returns a tuple with the ReferenceAuthorization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETVoids200ResponseDataInnerRelationships) GetReferenceAuthorizationOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETVoids200ResponseDataInnerRelationships) GetReferenceAuthorizationOk() (*GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization, bool) {
 	if o == nil || o.ReferenceAuthorization == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETVoids200ResponseDataInnerRelationships) HasReferenceAuthorization() 
 	return false
 }
 
-// SetReferenceAuthorization gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the ReferenceAuthorization field.
-func (o *GETVoids200ResponseDataInnerRelationships) SetReferenceAuthorization(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetReferenceAuthorization gets a reference to the given GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization and assigns it to the ReferenceAuthorization field.
+func (o *GETVoids200ResponseDataInnerRelationships) SetReferenceAuthorization(v GETCaptures200ResponseDataInnerRelationshipsReferenceAuthorization) {
 	o.ReferenceAuthorization = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETVoids200ResponseDataInnerRelationships) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

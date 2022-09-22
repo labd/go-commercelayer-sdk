@@ -17,12 +17,12 @@ import (
 
 // OrderSubscriptionDataRelationships struct for OrderSubscriptionDataRelationships
 type OrderSubscriptionDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	SourceOrder *AdyenPaymentDataRelationshipsOrder `json:"source_order,omitempty"`
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
+	Market      *AvalaraAccountDataRelationshipsMarkets        `json:"market,omitempty"`
+	SourceOrder *AdyenPaymentDataRelationshipsOrder            `json:"source_order,omitempty"`
+	Customer    *CouponRecipientDataRelationshipsCustomer      `json:"customer,omitempty"`
 	OrderCopies *OrderSubscriptionDataRelationshipsOrderCopies `json:"order_copies,omitempty"`
-	Orders *AdyenPaymentDataRelationshipsOrder `json:"orders,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Orders      *AdyenPaymentDataRelationshipsOrder            `json:"orders,omitempty"`
+	Events      *CustomerAddressDataRelationshipsEvents        `json:"events,omitempty"`
 }
 
 // NewOrderSubscriptionDataRelationships instantiates a new OrderSubscriptionDataRelationships object
@@ -292,5 +292,3 @@ func (v *NullableOrderSubscriptionDataRelationships) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

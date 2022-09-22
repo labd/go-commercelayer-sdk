@@ -277,5 +277,3 @@ func (v *NullablePOSTCheckoutComGateways201ResponseDataAttributes) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // EventCallbacksApiService EventCallbacksApi service
 type EventCallbacksApiService service
 
 type EventCallbacksApiGETEventCallbacksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventCallbacksApiService
 }
 
@@ -44,7 +43,7 @@ List all event callbacks
 func (a *EventCallbacksApiService) GETEventCallbacks(ctx context.Context) EventCallbacksApiGETEventCallbacksRequest {
 	return EventCallbacksApiGETEventCallbacksRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -52,10 +51,10 @@ func (a *EventCallbacksApiService) GETEventCallbacks(ctx context.Context) EventC
 //  @return GETEventCallbacks200Response
 func (a *EventCallbacksApiService) GETEventCallbacksExecute(r EventCallbacksApiGETEventCallbacksRequest) (*GETEventCallbacks200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETEventCallbacks200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETEventCallbacks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETEventCallbacks")
@@ -124,8 +123,8 @@ func (a *EventCallbacksApiService) GETEventCallbacksExecute(r EventCallbacksApiG
 }
 
 type EventCallbacksApiGETEventCallbacksEventCallbackIdRequest struct {
-	ctx context.Context
-	ApiService *EventCallbacksApiService
+	ctx             context.Context
+	ApiService      *EventCallbacksApiService
 	eventCallbackId string
 }
 
@@ -144,8 +143,8 @@ Retrieve an event callback
 */
 func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackId(ctx context.Context, eventCallbackId string) EventCallbacksApiGETEventCallbacksEventCallbackIdRequest {
 	return EventCallbacksApiGETEventCallbacksEventCallbackIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		eventCallbackId: eventCallbackId,
 	}
 }
@@ -154,10 +153,10 @@ func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackId(ctx context.
 //  @return GETEventCallbacksEventCallbackId200Response
 func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackIdExecute(r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) (*GETEventCallbacksEventCallbackId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETEventCallbacksEventCallbackId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETEventCallbacksEventCallbackId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETEventCallbacksEventCallbackId")
@@ -227,9 +226,9 @@ func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackIdExecute(r Eve
 }
 
 type EventCallbacksApiGETEventIdLastEventCallbacksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventCallbacksApiService
-	eventId string
+	eventId    string
 }
 
 func (r EventCallbacksApiGETEventIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -248,17 +247,17 @@ Retrieve the last event callbacks associated to the event
 func (a *EventCallbacksApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId string) EventCallbacksApiGETEventIdLastEventCallbacksRequest {
 	return EventCallbacksApiGETEventIdLastEventCallbacksRequest{
 		ApiService: a,
-		ctx: ctx,
-		eventId: eventId,
+		ctx:        ctx,
+		eventId:    eventId,
 	}
 }
 
 // Execute executes the request
 func (a *EventCallbacksApiService) GETEventIdLastEventCallbacksExecute(r EventCallbacksApiGETEventIdLastEventCallbacksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETEventIdLastEventCallbacks")
@@ -319,9 +318,9 @@ func (a *EventCallbacksApiService) GETEventIdLastEventCallbacksExecute(r EventCa
 }
 
 type EventCallbacksApiGETWebhookIdLastEventCallbacksRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *EventCallbacksApiService
-	webhookId string
+	webhookId  string
 }
 
 func (r EventCallbacksApiGETWebhookIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -340,17 +339,17 @@ Retrieve the last event callbacks associated to the webhook
 func (a *EventCallbacksApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) EventCallbacksApiGETWebhookIdLastEventCallbacksRequest {
 	return EventCallbacksApiGETWebhookIdLastEventCallbacksRequest{
 		ApiService: a,
-		ctx: ctx,
-		webhookId: webhookId,
+		ctx:        ctx,
+		webhookId:  webhookId,
 	}
 }
 
 // Execute executes the request
 func (a *EventCallbacksApiService) GETWebhookIdLastEventCallbacksExecute(r EventCallbacksApiGETWebhookIdLastEventCallbacksRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETWebhookIdLastEventCallbacks")

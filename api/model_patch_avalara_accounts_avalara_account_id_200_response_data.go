@@ -20,10 +20,10 @@ type PATCHAvalaraAccountsAvalaraAccountId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships           `json:"relationships,omitempty"`
 }
 
 // NewPATCHAvalaraAccountsAvalaraAccountId200ResponseData instantiates a new PATCHAvalaraAccountsAvalaraAccountId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHAvalaraAccountsAvalaraAccountId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHAvalaraAccountsAvalaraAccountId200ResponseData() *PATCHAvalaraAccountsAvalaraAccountId200ResponseData {
 	this := PATCHAvalaraAccountsAvalaraAccountId200ResponseData{}
-	var type_ string = "avalara_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHAvalaraAccountsAvalaraAccountId200ResponseData() *PATCHAvalaraAccou
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataWithDefaults() *PATCHAvalaraAccountsAvalaraAccountId200ResponseData {
 	this := PATCHAvalaraAccountsAvalaraAccountId200ResponseData{}
-	var type_ string = "avalara_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHAvalaraAccountsAvalaraAccountId200ResponseData) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

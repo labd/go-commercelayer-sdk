@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "sku_list_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuListItems201ResponseDataAttributes**](POSTSkuListItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListItemCreateDataRelationships**](SkuListItemCreateDataRelationships.md) |  | [optional] 
 

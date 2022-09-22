@@ -18,9 +18,9 @@ import (
 // CustomerPasswordResetCreateData struct for CustomerPasswordResetCreateData
 type CustomerPasswordResetCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTCustomerPasswordResets201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    POSTCustomerPasswordResets201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                              `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetCreateData instantiates a new CustomerPasswordResetCreateData object
@@ -39,8 +39,6 @@ func NewCustomerPasswordResetCreateData(type_ string, attributes POSTCustomerPas
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerPasswordResetCreateDataWithDefaults() *CustomerPasswordResetCreateData {
 	this := CustomerPasswordResetCreateData{}
-	var type_ string = "customer_password_resets"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCustomerPasswordResetCreateData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

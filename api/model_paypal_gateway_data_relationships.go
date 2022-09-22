@@ -17,7 +17,7 @@ import (
 
 // PaypalGatewayDataRelationships struct for PaypalGatewayDataRelationships
 type PaypalGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
 	PaypalPayments *PaypalGatewayDataRelationshipsPaypalPayments `json:"paypal_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullablePaypalGatewayDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

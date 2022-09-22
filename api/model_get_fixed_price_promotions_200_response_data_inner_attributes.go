@@ -668,5 +668,3 @@ func (v *NullableGETFixedPricePromotions200ResponseDataInnerAttributes) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

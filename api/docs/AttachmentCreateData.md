@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "attachments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTAttachments201ResponseDataAttributes**](POSTAttachments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentCreateDataRelationships**](AttachmentCreateDataRelationships.md) |  | [optional] 
 

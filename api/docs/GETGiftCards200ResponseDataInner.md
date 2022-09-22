@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "gift_cards"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETGiftCards200ResponseDataInnerAttributes**](GETGiftCards200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETGiftCards200ResponseDataInnerRelationships**](GETGiftCards200ResponseDataInnerRelationships.md) |  | [optional] 

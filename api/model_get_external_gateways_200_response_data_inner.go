@@ -20,9 +20,9 @@ type GETExternalGateways200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETExternalGateways200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                               `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                `json:"links,omitempty"`
+	Attributes    *GETExternalGateways200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETExternalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETExternalGateways200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETExternalGateways200ResponseDataInner() *GETExternalGateways200ResponseDataInner {
 	this := GETExternalGateways200ResponseDataInner{}
-	var type_ string = "external_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETExternalGateways200ResponseDataInner() *GETExternalGateways200Respons
 // but it doesn't guarantee that properties required by API are set
 func NewGETExternalGateways200ResponseDataInnerWithDefaults() *GETExternalGateways200ResponseDataInner {
 	this := GETExternalGateways200ResponseDataInner{}
-	var type_ string = "external_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETExternalGateways200ResponseDataInner) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

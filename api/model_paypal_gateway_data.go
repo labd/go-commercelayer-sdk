@@ -18,9 +18,9 @@ import (
 // PaypalGatewayData struct for PaypalGatewayData
 type PaypalGatewayData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *PaypalGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PaypalGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayData instantiates a new PaypalGatewayData object
@@ -39,8 +39,6 @@ func NewPaypalGatewayData(type_ string, attributes GETKlarnaGateways200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewPaypalGatewayDataWithDefaults() *PaypalGatewayData {
 	this := PaypalGatewayData{}
-	var type_ string = "paypal_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullablePaypalGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

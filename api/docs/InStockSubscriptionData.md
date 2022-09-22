@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "in_stock_subscriptions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETInStockSubscriptions200ResponseDataInnerAttributes**](GETInStockSubscriptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionDataRelationships**](InStockSubscriptionDataRelationships.md) |  | [optional] 
 

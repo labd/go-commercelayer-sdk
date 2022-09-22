@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "braintree_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes**](PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BraintreeGatewayCreateDataRelationships**](BraintreeGatewayCreateDataRelationships.md) |  | [optional] 

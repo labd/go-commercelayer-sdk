@@ -18,9 +18,9 @@ import (
 // StockTransferCreateData struct for StockTransferCreateData
 type StockTransferCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTStockTransfers201ResponseDataAttributes `json:"attributes"`
-	Relationships *StockTransferCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTStockTransfers201ResponseDataAttributes `json:"attributes"`
+	Relationships *StockTransferCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewStockTransferCreateData instantiates a new StockTransferCreateData object
@@ -39,8 +39,6 @@ func NewStockTransferCreateData(type_ string, attributes POSTStockTransfers201Re
 // but it doesn't guarantee that properties required by API are set
 func NewStockTransferCreateDataWithDefaults() *StockTransferCreateData {
 	this := StockTransferCreateData{}
-	var type_ string = "stock_transfers"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableStockTransferCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

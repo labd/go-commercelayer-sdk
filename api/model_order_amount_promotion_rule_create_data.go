@@ -18,9 +18,9 @@ import (
 // OrderAmountPromotionRuleCreateData struct for OrderAmountPromotionRuleCreateData
 type OrderAmountPromotionRuleCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTOrderAmountPromotionRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    POSTOrderAmountPromotionRules201ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleCreateData instantiates a new OrderAmountPromotionRuleCreateData object
@@ -39,8 +39,6 @@ func NewOrderAmountPromotionRuleCreateData(type_ string, attributes POSTOrderAmo
 // but it doesn't guarantee that properties required by API are set
 func NewOrderAmountPromotionRuleCreateDataWithDefaults() *OrderAmountPromotionRuleCreateData {
 	this := OrderAmountPromotionRuleCreateData{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableOrderAmountPromotionRuleCreateData) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

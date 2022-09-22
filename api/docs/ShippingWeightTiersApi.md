@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("shipping_weight_tiers", "XGZwpOSrWL", *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes())) // ShippingWeightTierUpdate | 
+    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes())) // ShippingWeightTierUpdate | 
     shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("shipping_weight_tiers", *openapiclient.NewPOSTShippingWeightTiers201ResponseDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
+    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("Type_example", *openapiclient.NewPOSTShippingWeightTiers201ResponseDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

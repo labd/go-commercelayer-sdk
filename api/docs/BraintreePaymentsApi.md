@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("braintree_payments", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes())) // BraintreePaymentUpdate | 
+    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes())) // BraintreePaymentUpdate | 
     braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("braintree_payments", *openapiclient.NewPOSTBraintreePayments201ResponseDataAttributes())) // BraintreePaymentCreate | 
+    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("Type_example", *openapiclient.NewPOSTBraintreePayments201ResponseDataAttributes())) // BraintreePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

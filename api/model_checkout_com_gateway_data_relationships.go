@@ -17,7 +17,7 @@ import (
 
 // CheckoutComGatewayDataRelationships struct for CheckoutComGatewayDataRelationships
 type CheckoutComGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods      *AdyenGatewayDataRelationshipsPaymentMethods            `json:"payment_methods,omitempty"`
 	CheckoutComPayments *CheckoutComGatewayDataRelationshipsCheckoutComPayments `json:"checkout_com_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableCheckoutComGatewayDataRelationships) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

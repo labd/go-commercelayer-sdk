@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "manual_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETManualGateways200ResponseDataInnerAttributes**](GETManualGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualGatewayDataRelationships**](ManualGatewayDataRelationships.md) |  | [optional] 
 

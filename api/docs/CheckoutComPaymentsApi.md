@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("checkout_com_payments", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
+    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
     checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("checkout_com_payments", *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
+    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("Type_example", *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

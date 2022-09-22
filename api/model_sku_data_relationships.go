@@ -17,12 +17,12 @@ import (
 
 // SkuDataRelationships struct for SkuDataRelationships
 type SkuDataRelationships struct {
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
-	Prices *PriceListDataRelationshipsPrices `json:"prices,omitempty"`
-	StockItems *SkuDataRelationshipsStockItems `json:"stock_items,omitempty"`
-	DeliveryLeadTimes *ShipmentDataRelationshipsDeliveryLeadTime `json:"delivery_lead_times,omitempty"`
-	SkuOptions *LineItemOptionDataRelationshipsSkuOption `json:"sku_options,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	ShippingCategory  *ShipmentDataRelationshipsShippingCategory  `json:"shipping_category,omitempty"`
+	Prices            *PriceListDataRelationshipsPrices           `json:"prices,omitempty"`
+	StockItems        *SkuDataRelationshipsStockItems             `json:"stock_items,omitempty"`
+	DeliveryLeadTimes *ShipmentDataRelationshipsDeliveryLeadTime  `json:"delivery_lead_times,omitempty"`
+	SkuOptions        *LineItemOptionDataRelationshipsSkuOption   `json:"sku_options,omitempty"`
+	Attachments       *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewSkuDataRelationships instantiates a new SkuDataRelationships object
@@ -292,5 +292,3 @@ func (v *NullableSkuDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

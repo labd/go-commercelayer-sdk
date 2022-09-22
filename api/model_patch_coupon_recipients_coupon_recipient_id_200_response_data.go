@@ -20,10 +20,10 @@ type PATCHCouponRecipientsCouponRecipientId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETCouponRecipients200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                          `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                           `json:"links,omitempty"`
+	Attributes    *PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCouponRecipients200ResponseDataInnerRelationships            `json:"relationships,omitempty"`
 }
 
 // NewPATCHCouponRecipientsCouponRecipientId200ResponseData instantiates a new PATCHCouponRecipientsCouponRecipientId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHCouponRecipientsCouponRecipientId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHCouponRecipientsCouponRecipientId200ResponseData() *PATCHCouponRecipientsCouponRecipientId200ResponseData {
 	this := PATCHCouponRecipientsCouponRecipientId200ResponseData{}
-	var type_ string = "coupon_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHCouponRecipientsCouponRecipientId200ResponseData() *PATCHCouponReci
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHCouponRecipientsCouponRecipientId200ResponseDataWithDefaults() *PATCHCouponRecipientsCouponRecipientId200ResponseData {
 	this := PATCHCouponRecipientsCouponRecipientId200ResponseData{}
-	var type_ string = "coupon_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHCouponRecipientsCouponRecipientId200ResponseData) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

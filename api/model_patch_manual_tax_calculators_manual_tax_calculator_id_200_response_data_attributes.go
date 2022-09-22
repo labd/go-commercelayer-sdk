@@ -224,5 +224,3 @@ func (v *NullablePATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

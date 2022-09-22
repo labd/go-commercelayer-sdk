@@ -18,9 +18,9 @@ import (
 // CaptureData struct for CaptureData
 type CaptureData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETCaptures200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CaptureDataRelationships `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    GETCaptures200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CaptureDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCaptureData instantiates a new CaptureData object
@@ -39,8 +39,6 @@ func NewCaptureData(type_ string, attributes GETCaptures200ResponseDataInnerAttr
 // but it doesn't guarantee that properties required by API are set
 func NewCaptureDataWithDefaults() *CaptureData {
 	this := CaptureData{}
-	var type_ string = "captures"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCaptureData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

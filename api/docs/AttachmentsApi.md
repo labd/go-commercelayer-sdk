@@ -3406,7 +3406,7 @@ import (
 )
 
 func main() {
-    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("attachments", "XGZwpOSrWL", *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
+    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
     attachmentId := "attachmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -3478,7 +3478,7 @@ import (
 )
 
 func main() {
-    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("attachments", *openapiclient.NewPOSTAttachments201ResponseDataAttributes("DDT transport document"))) // AttachmentCreate | 
+    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("Type_example", *openapiclient.NewPOSTAttachments201ResponseDataAttributes("DDT transport document"))) // AttachmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

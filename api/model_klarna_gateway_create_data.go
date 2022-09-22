@@ -18,9 +18,9 @@ import (
 // KlarnaGatewayCreateData struct for KlarnaGatewayCreateData
 type KlarnaGatewayCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTKlarnaGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships *KlarnaGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTKlarnaGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *KlarnaGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewKlarnaGatewayCreateData instantiates a new KlarnaGatewayCreateData object
@@ -39,8 +39,6 @@ func NewKlarnaGatewayCreateData(type_ string, attributes POSTKlarnaGateways201Re
 // but it doesn't guarantee that properties required by API are set
 func NewKlarnaGatewayCreateDataWithDefaults() *KlarnaGatewayCreateData {
 	this := KlarnaGatewayCreateData{}
-	var type_ string = "klarna_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableKlarnaGatewayCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

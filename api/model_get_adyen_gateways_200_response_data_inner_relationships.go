@@ -18,7 +18,7 @@ import (
 // GETAdyenGateways200ResponseDataInnerRelationships struct for GETAdyenGateways200ResponseDataInnerRelationships
 type GETAdyenGateways200ResponseDataInnerRelationships struct {
 	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	AdyenPayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"adyen_payments,omitempty"`
+	AdyenPayments  *GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments  `json:"adyen_payments,omitempty"`
 }
 
 // NewGETAdyenGateways200ResponseDataInnerRelationships instantiates a new GETAdyenGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETAdyenGateways200ResponseDataInnerRelationships) SetPaymentMethods(v 
 }
 
 // GetAdyenPayments returns the AdyenPayments field value if set, zero value otherwise.
-func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPayments() GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments {
 	if o == nil || o.AdyenPayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments
 		return ret
 	}
 	return *o.AdyenPayments
@@ -81,7 +81,7 @@ func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPayments() G
 
 // GetAdyenPaymentsOk returns a tuple with the AdyenPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments, bool) {
 	if o == nil || o.AdyenPayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETAdyenGateways200ResponseDataInnerRelationships) HasAdyenPayments() b
 	return false
 }
 
-// SetAdyenPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the AdyenPayments field.
-func (o *GETAdyenGateways200ResponseDataInnerRelationships) SetAdyenPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetAdyenPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments and assigns it to the AdyenPayments field.
+func (o *GETAdyenGateways200ResponseDataInnerRelationships) SetAdyenPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments) {
 	o.AdyenPayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETAdyenGateways200ResponseDataInnerRelationships) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

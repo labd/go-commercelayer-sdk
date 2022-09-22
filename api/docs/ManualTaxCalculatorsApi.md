@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("manual_tax_calculators", "XGZwpOSrWL", *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
+    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
     manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("manual_tax_calculators", *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
+    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

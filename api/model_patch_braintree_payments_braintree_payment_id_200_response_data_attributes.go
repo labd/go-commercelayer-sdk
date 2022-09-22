@@ -335,5 +335,3 @@ func (v *NullablePATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttribut
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -298,5 +298,3 @@ func (v *NullablePATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

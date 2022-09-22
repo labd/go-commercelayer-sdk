@@ -112,5 +112,3 @@ func (v *NullableGETExternalPaymentsExternalPaymentId200Response) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

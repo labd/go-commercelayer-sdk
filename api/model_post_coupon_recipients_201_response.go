@@ -112,5 +112,3 @@ func (v *NullablePOSTCouponRecipients201Response) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

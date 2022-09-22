@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "webhooks"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETWebhooks200ResponseDataInnerAttributes**](GETWebhooks200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**WebhookDataRelationships**](WebhookDataRelationships.md) |  | [optional] 
 

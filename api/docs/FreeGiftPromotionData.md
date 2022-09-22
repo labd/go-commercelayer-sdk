@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "free_gift_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETFreeGiftPromotions200ResponseDataInnerAttributes**](GETFreeGiftPromotions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 

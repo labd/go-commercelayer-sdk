@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("bing_geocoders", "XGZwpOSrWL", *openapiclient.NewPATCHBingGeocodersBingGeocoderId200ResponseDataAttributes())) // BingGeocoderUpdate | 
+    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBingGeocodersBingGeocoderId200ResponseDataAttributes())) // BingGeocoderUpdate | 
     bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("bing_geocoders", *openapiclient.NewPOSTBingGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
+    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("Type_example", *openapiclient.NewPOSTBingGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

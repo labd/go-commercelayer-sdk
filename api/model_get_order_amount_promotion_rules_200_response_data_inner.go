@@ -20,9 +20,9 @@ type GETOrderAmountPromotionRules200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETOrderAmountPromotionRules200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *GETOrderAmountPromotionRules200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETOrderAmountPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETOrderAmountPromotionRules200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETOrderAmountPromotionRules200ResponseDataInner() *GETOrderAmountPromotionRules200ResponseDataInner {
 	this := GETOrderAmountPromotionRules200ResponseDataInner{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETOrderAmountPromotionRules200ResponseDataInner() *GETOrderAmountPromot
 // but it doesn't guarantee that properties required by API are set
 func NewGETOrderAmountPromotionRules200ResponseDataInnerWithDefaults() *GETOrderAmountPromotionRules200ResponseDataInner {
 	this := GETOrderAmountPromotionRules200ResponseDataInner{}
-	var type_ string = "order_amount_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETOrderAmountPromotionRules200ResponseDataInner) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

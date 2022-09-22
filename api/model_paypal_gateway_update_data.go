@@ -20,9 +20,9 @@ type PaypalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayUpdateData instantiates a new PaypalGatewayUpdateData object
@@ -42,8 +42,6 @@ func NewPaypalGatewayUpdateData(type_ string, id string, attributes PATCHPaypalG
 // but it doesn't guarantee that properties required by API are set
 func NewPaypalGatewayUpdateDataWithDefaults() *PaypalGatewayUpdateData {
 	this := PaypalGatewayUpdateData{}
-	var type_ string = "paypal_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullablePaypalGatewayUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type PATCHStripeGatewaysStripeGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETStripeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETStripeGateways200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHStripeGatewaysStripeGatewayId200ResponseData instantiates a new PATCHStripeGatewaysStripeGatewayId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHStripeGatewaysStripeGatewayId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHStripeGatewaysStripeGatewayId200ResponseData() *PATCHStripeGatewaysStripeGatewayId200ResponseData {
 	this := PATCHStripeGatewaysStripeGatewayId200ResponseData{}
-	var type_ string = "stripe_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHStripeGatewaysStripeGatewayId200ResponseData() *PATCHStripeGateways
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHStripeGatewaysStripeGatewayId200ResponseDataWithDefaults() *PATCHStripeGatewaysStripeGatewayId200ResponseData {
 	this := PATCHStripeGatewaysStripeGatewayId200ResponseData{}
-	var type_ string = "stripe_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHStripeGatewaysStripeGatewayId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

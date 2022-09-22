@@ -17,13 +17,13 @@ import (
 
 // LineItemDataRelationships struct for LineItemDataRelationships
 type LineItemDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
-	Item *LineItemDataRelationshipsItem `json:"item,omitempty"`
+	Order           *AdyenPaymentDataRelationshipsOrder       `json:"order,omitempty"`
+	Item            *LineItemDataRelationshipsItem            `json:"item,omitempty"`
 	LineItemOptions *LineItemDataRelationshipsLineItemOptions `json:"line_item_options,omitempty"`
 	// Deprecated
 	ShipmentLineItems *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_items,omitempty"`
-	StockLineItems *LineItemDataRelationshipsStockLineItems `json:"stock_line_items,omitempty"`
-	StockTransfers *LineItemDataRelationshipsStockTransfers `json:"stock_transfers,omitempty"`
+	StockLineItems    *LineItemDataRelationshipsStockLineItems    `json:"stock_line_items,omitempty"`
+	StockTransfers    *LineItemDataRelationshipsStockTransfers    `json:"stock_transfers,omitempty"`
 }
 
 // NewLineItemDataRelationships instantiates a new LineItemDataRelationships object
@@ -296,5 +296,3 @@ func (v *NullableLineItemDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

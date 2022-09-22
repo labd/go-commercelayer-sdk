@@ -29,8 +29,6 @@ type ExternalGatewayDataRelationshipsExternalPaymentsData struct {
 // will change when the set of required properties is changed
 func NewExternalGatewayDataRelationshipsExternalPaymentsData() *ExternalGatewayDataRelationshipsExternalPaymentsData {
 	this := ExternalGatewayDataRelationshipsExternalPaymentsData{}
-	var type_ string = "external_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewExternalGatewayDataRelationshipsExternalPaymentsData() *ExternalGatewayD
 // but it doesn't guarantee that properties required by API are set
 func NewExternalGatewayDataRelationshipsExternalPaymentsDataWithDefaults() *ExternalGatewayDataRelationshipsExternalPaymentsData {
 	this := ExternalGatewayDataRelationshipsExternalPaymentsData{}
-	var type_ string = "external_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableExternalGatewayDataRelationshipsExternalPaymentsData) Unmarshal
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

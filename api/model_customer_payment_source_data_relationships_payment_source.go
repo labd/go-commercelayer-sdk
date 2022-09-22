@@ -18,14 +18,14 @@ import (
 
 // CustomerPaymentSourceDataRelationshipsPaymentSource - struct for CustomerPaymentSourceDataRelationshipsPaymentSource
 type CustomerPaymentSourceDataRelationshipsPaymentSource struct {
-	AdyenPayment *AdyenPayment
-	BraintreePayment *BraintreePayment
+	AdyenPayment       *AdyenPayment
+	BraintreePayment   *BraintreePayment
 	CheckoutComPayment *CheckoutComPayment
-	ExternalPayment *ExternalPayment
-	KlarnaPayment *KlarnaPayment
-	PaypalPayment *PaypalPayment
-	StripePayment *StripePayment
-	WireTransfer *WireTransfer
+	ExternalPayment    *ExternalPayment
+	KlarnaPayment      *KlarnaPayment
+	PaypalPayment      *PaypalPayment
+	StripePayment      *StripePayment
+	WireTransfer       *WireTransfer
 }
 
 // AdyenPaymentAsCustomerPaymentSourceDataRelationshipsPaymentSource is a convenience function that returns AdyenPayment wrapped in CustomerPaymentSourceDataRelationshipsPaymentSource
@@ -83,7 +83,6 @@ func WireTransferAsCustomerPaymentSourceDataRelationshipsPaymentSource(v *WireTr
 		WireTransfer: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CustomerPaymentSourceDataRelationshipsPaymentSource) UnmarshalJSON(data []byte) error {
@@ -250,7 +249,7 @@ func (src CustomerPaymentSourceDataRelationshipsPaymentSource) MarshalJSON() ([]
 }
 
 // Get the actual instance
-func (obj *CustomerPaymentSourceDataRelationshipsPaymentSource) GetActualInstance() (interface{}) {
+func (obj *CustomerPaymentSourceDataRelationshipsPaymentSource) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -325,5 +324,3 @@ func (v *NullableCustomerPaymentSourceDataRelationshipsPaymentSource) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

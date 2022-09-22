@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("adjustments", "XGZwpOSrWL", *openapiclient.NewPATCHAdjustmentsAdjustmentId200ResponseDataAttributes())) // AdjustmentUpdate | 
+    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdjustmentsAdjustmentId200ResponseDataAttributes())) // AdjustmentUpdate | 
     adjustmentId := "adjustmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("adjustments", *openapiclient.NewPOSTAdjustments201ResponseDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
+    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("Type_example", *openapiclient.NewPOSTAdjustments201ResponseDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

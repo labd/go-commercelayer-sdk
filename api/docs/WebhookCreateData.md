@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "webhooks"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTWebhooks201ResponseDataAttributes**](POSTWebhooks201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

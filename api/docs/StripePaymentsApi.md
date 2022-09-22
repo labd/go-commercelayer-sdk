@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData("stripe_payments", "XGZwpOSrWL", *openapiclient.NewPATCHStripePaymentsStripePaymentId200ResponseDataAttributes())) // StripePaymentUpdate | 
+    stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStripePaymentsStripePaymentId200ResponseDataAttributes())) // StripePaymentUpdate | 
     stripePaymentId := "stripePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    stripePaymentCreate := *openapiclient.NewStripePaymentCreate(*openapiclient.NewStripePaymentCreateData("stripe_payments", *openapiclient.NewPOSTStripePayments201ResponseDataAttributes())) // StripePaymentCreate | 
+    stripePaymentCreate := *openapiclient.NewStripePaymentCreate(*openapiclient.NewStripePaymentCreateData("Type_example", *openapiclient.NewPOSTStripePayments201ResponseDataAttributes())) // StripePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

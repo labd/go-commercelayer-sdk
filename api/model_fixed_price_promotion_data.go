@@ -18,9 +18,9 @@ import (
 // FixedPricePromotionData struct for FixedPricePromotionData
 type FixedPricePromotionData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETFixedPricePromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETFixedPricePromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionData instantiates a new FixedPricePromotionData object
@@ -39,8 +39,6 @@ func NewFixedPricePromotionData(type_ string, attributes GETFixedPricePromotions
 // but it doesn't guarantee that properties required by API are set
 func NewFixedPricePromotionDataWithDefaults() *FixedPricePromotionData {
 	this := FixedPricePromotionData{}
-	var type_ string = "fixed_price_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableFixedPricePromotionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

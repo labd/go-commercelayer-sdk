@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // ShippingZonesApiService ShippingZonesApi service
 type ShippingZonesApiService service
 
 type ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingZonesApiService
+	ctx            context.Context
+	ApiService     *ShippingZonesApiService
 	shippingZoneId string
 }
 
@@ -45,8 +44,8 @@ Delete a shipping zone
 */
 func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneId(ctx context.
 // Execute executes the request
 func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.DELETEShippingZonesShippingZoneId")
@@ -117,8 +116,8 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 }
 
 type ShippingZonesApiGETShippingMethodIdShippingZoneRequest struct {
-	ctx context.Context
-	ApiService *ShippingZonesApiService
+	ctx              context.Context
+	ApiService       *ShippingZonesApiService
 	shippingMethodId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the shipping zone associated to the shipping method
 */
 func (a *ShippingZonesApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) ShippingZonesApiGETShippingMethodIdShippingZoneRequest {
 	return ShippingZonesApiGETShippingMethodIdShippingZoneRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZone(ctx context.Co
 // Execute executes the request
 func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r ShippingZonesApiGETShippingMethodIdShippingZoneRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.GETShippingMethodIdShippingZone")
@@ -209,7 +208,7 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r Shipp
 }
 
 type ShippingZonesApiGETShippingZonesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingZonesApiService
 }
 
@@ -228,7 +227,7 @@ List all shipping zones
 func (a *ShippingZonesApiService) GETShippingZones(ctx context.Context) ShippingZonesApiGETShippingZonesRequest {
 	return ShippingZonesApiGETShippingZonesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *ShippingZonesApiService) GETShippingZones(ctx context.Context) Shipping
 //  @return GETShippingZones200Response
 func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETShippingZonesRequest) (*GETShippingZones200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingZones200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingZones200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.GETShippingZones")
@@ -308,8 +307,8 @@ func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETS
 }
 
 type ShippingZonesApiGETShippingZonesShippingZoneIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingZonesApiService
+	ctx            context.Context
+	ApiService     *ShippingZonesApiService
 	shippingZoneId string
 }
 
@@ -328,8 +327,8 @@ Retrieve a shipping zone
 */
 func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiGETShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiGETShippingZonesShippingZoneIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Con
 //  @return GETShippingZonesShippingZoneId200Response
 func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r ShippingZonesApiGETShippingZonesShippingZoneIdRequest) (*GETShippingZonesShippingZoneId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingZonesShippingZoneId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingZonesShippingZoneId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.GETShippingZonesShippingZoneId")
@@ -411,10 +410,10 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 }
 
 type ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingZonesApiService
+	ctx                context.Context
+	ApiService         *ShippingZonesApiService
 	shippingZoneUpdate *ShippingZoneUpdate
-	shippingZoneId string
+	shippingZoneId     string
 }
 
 func (r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) ShippingZoneUpdate(shippingZoneUpdate ShippingZoneUpdate) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
@@ -437,8 +436,8 @@ Update a shipping zone
 */
 func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		shippingZoneId: shippingZoneId,
 	}
 }
@@ -447,10 +446,10 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.C
 //  @return PATCHShippingZonesShippingZoneId200Response
 func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) (*PATCHShippingZonesShippingZoneId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHShippingZonesShippingZoneId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHShippingZonesShippingZoneId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.PATCHShippingZonesShippingZoneId")
@@ -525,8 +524,8 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 }
 
 type ShippingZonesApiPOSTShippingZonesRequest struct {
-	ctx context.Context
-	ApiService *ShippingZonesApiService
+	ctx                context.Context
+	ApiService         *ShippingZonesApiService
 	shippingZoneCreate *ShippingZoneCreate
 }
 
@@ -550,7 +549,7 @@ Create a shipping zone
 func (a *ShippingZonesApiService) POSTShippingZones(ctx context.Context) ShippingZonesApiPOSTShippingZonesRequest {
 	return ShippingZonesApiPOSTShippingZonesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *ShippingZonesApiService) POSTShippingZones(ctx context.Context) Shippin
 //  @return POSTShippingZones201Response
 func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOSTShippingZonesRequest) (*POSTShippingZones201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTShippingZones201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTShippingZones201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingZonesApiService.POSTShippingZones")

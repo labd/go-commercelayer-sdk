@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("merchants", "XGZwpOSrWL", *openapiclient.NewPATCHMerchantsMerchantId200ResponseDataAttributes())) // MerchantUpdate | 
+    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHMerchantsMerchantId200ResponseDataAttributes())) // MerchantUpdate | 
     merchantId := "merchantId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("merchants", *openapiclient.NewPOSTMerchants201ResponseDataAttributes("The Brand Inc."))) // MerchantCreate | 
+    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("Type_example", *openapiclient.NewPOSTMerchants201ResponseDataAttributes("The Brand Inc."))) // MerchantCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

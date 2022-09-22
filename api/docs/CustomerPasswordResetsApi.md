@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("customer_password_resets", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes())) // CustomerPasswordResetUpdate | 
+    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes())) // CustomerPasswordResetUpdate | 
     customerPasswordResetId := "customerPasswordResetId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("customer_password_resets", *openapiclient.NewPOSTCustomerPasswordResets201ResponseDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
+    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("Type_example", *openapiclient.NewPOSTCustomerPasswordResets201ResponseDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

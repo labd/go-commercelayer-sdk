@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("captures", "XGZwpOSrWL", *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
+    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
     captureId := "captureId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()

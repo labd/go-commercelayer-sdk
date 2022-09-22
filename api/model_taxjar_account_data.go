@@ -18,9 +18,9 @@ import (
 // TaxjarAccountData struct for TaxjarAccountData
 type TaxjarAccountData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AvalaraAccountDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountData instantiates a new TaxjarAccountData object
@@ -39,8 +39,6 @@ func NewTaxjarAccountData(type_ string, attributes GETManualTaxCalculators200Res
 // but it doesn't guarantee that properties required by API are set
 func NewTaxjarAccountDataWithDefaults() *TaxjarAccountData {
 	this := TaxjarAccountData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableTaxjarAccountData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

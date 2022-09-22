@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "customers"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETCustomers200ResponseDataInnerAttributes**](GETCustomers200ResponseDataInnerAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETCustomers200ResponseDataInnerRelationships**](GETCustomers200ResponseDataInnerRelationships.md) |  | [optional] 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "return_line_items"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes**](PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETReturnLineItems200ResponseDataInnerRelationships**](GETReturnLineItems200ResponseDataInnerRelationships.md) |  | [optional] 

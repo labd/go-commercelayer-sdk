@@ -18,9 +18,9 @@ import (
 // GiftCardRecipientData struct for GiftCardRecipientData
 type GiftCardRecipientData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETCouponRecipients200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CouponRecipientDataRelationships `json:"relationships,omitempty"`
+	Type          string                                            `json:"type"`
+	Attributes    GETCouponRecipients200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CouponRecipientDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewGiftCardRecipientData instantiates a new GiftCardRecipientData object
@@ -39,8 +39,6 @@ func NewGiftCardRecipientData(type_ string, attributes GETCouponRecipients200Res
 // but it doesn't guarantee that properties required by API are set
 func NewGiftCardRecipientDataWithDefaults() *GiftCardRecipientData {
 	this := GiftCardRecipientData{}
-	var type_ string = "gift_card_recipients"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableGiftCardRecipientData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,9 +18,9 @@ import (
 // RefundData struct for RefundData
 type RefundData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *RefundDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *RefundDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewRefundData instantiates a new RefundData object
@@ -39,8 +39,6 @@ func NewRefundData(type_ string, attributes GETRefunds200ResponseDataInnerAttrib
 // but it doesn't guarantee that properties required by API are set
 func NewRefundDataWithDefaults() *RefundData {
 	this := RefundData{}
-	var type_ string = "refunds"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableRefundData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

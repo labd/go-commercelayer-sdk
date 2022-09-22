@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("stripe_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
+    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
     stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("stripe_gateways", *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
+    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("Type_example", *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

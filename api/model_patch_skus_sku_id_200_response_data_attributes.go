@@ -557,5 +557,3 @@ func (v *NullablePATCHSkusSkuId200ResponseDataAttributes) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

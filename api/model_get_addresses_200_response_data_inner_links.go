@@ -113,5 +113,3 @@ func (v *NullableGETAddresses200ResponseDataInnerLinks) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

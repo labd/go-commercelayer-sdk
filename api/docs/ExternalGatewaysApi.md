@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("external_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
+    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
     externalGatewayId := "externalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("external_gateways", *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
+    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("Type_example", *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

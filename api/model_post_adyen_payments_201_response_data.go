@@ -20,9 +20,9 @@ type POSTAdyenPayments201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks             `json:"links,omitempty"`
+	Attributes    *POSTAdyenPayments201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTAdyenPayments201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTAdyenPayments201ResponseData() *POSTAdyenPayments201ResponseData {
 	this := POSTAdyenPayments201ResponseData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTAdyenPayments201ResponseData() *POSTAdyenPayments201ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTAdyenPayments201ResponseDataWithDefaults() *POSTAdyenPayments201ResponseData {
 	this := POSTAdyenPayments201ResponseData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTAdyenPayments201ResponseData) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

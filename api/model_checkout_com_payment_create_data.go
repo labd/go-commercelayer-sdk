@@ -18,9 +18,9 @@ import (
 // CheckoutComPaymentCreateData struct for CheckoutComPaymentCreateData
 type CheckoutComPaymentCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTCheckoutComPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTCheckoutComPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships             `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComPaymentCreateData instantiates a new CheckoutComPaymentCreateData object
@@ -39,8 +39,6 @@ func NewCheckoutComPaymentCreateData(type_ string, attributes POSTCheckoutComPay
 // but it doesn't guarantee that properties required by API are set
 func NewCheckoutComPaymentCreateDataWithDefaults() *CheckoutComPaymentCreateData {
 	this := CheckoutComPaymentCreateData{}
-	var type_ string = "checkout_com_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCheckoutComPaymentCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

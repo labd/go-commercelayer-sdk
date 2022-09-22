@@ -20,9 +20,9 @@ type SkuOptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Id            string                                              `json:"id"`
+	Attributes    PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships         `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionUpdateData instantiates a new SkuOptionUpdateData object
@@ -42,8 +42,6 @@ func NewSkuOptionUpdateData(type_ string, id string, attributes PATCHSkuOptionsS
 // but it doesn't guarantee that properties required by API are set
 func NewSkuOptionUpdateDataWithDefaults() *SkuOptionUpdateData {
 	this := SkuOptionUpdateData{}
-	var type_ string = "sku_options"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableSkuOptionUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 
 // MerchantDataRelationships struct for MerchantDataRelationships
 type MerchantDataRelationships struct {
-	Address *BingGeocoderDataRelationshipsAddresses `json:"address,omitempty"`
+	Address     *BingGeocoderDataRelationshipsAddresses     `json:"address,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableMerchantDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

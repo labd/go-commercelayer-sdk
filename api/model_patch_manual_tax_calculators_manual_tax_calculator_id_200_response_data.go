@@ -20,10 +20,10 @@ type PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETManualTaxCalculators200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                   `json:"links,omitempty"`
+	Attributes    *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETManualTaxCalculators200ResponseDataInnerRelationships                `json:"relationships,omitempty"`
 }
 
 // NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData instantiates a new PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData() *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData {
 	this := PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData() *PATCHMa
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataWithDefaults() *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData {
 	this := PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

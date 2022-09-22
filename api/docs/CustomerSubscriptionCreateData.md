@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customer_subscriptions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTCustomerSubscriptions201ResponseDataAttributes**](POSTCustomerSubscriptions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

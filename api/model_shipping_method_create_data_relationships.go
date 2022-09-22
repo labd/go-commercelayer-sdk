@@ -17,10 +17,10 @@ import (
 
 // ShippingMethodCreateDataRelationships struct for ShippingMethodCreateDataRelationships
 type ShippingMethodCreateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	ShippingZone *ShippingMethodDataRelationshipsShippingZone `json:"shipping_zone,omitempty"`
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	Market              *AvalaraAccountDataRelationshipsMarkets             `json:"market,omitempty"`
+	ShippingZone        *ShippingMethodDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
+	ShippingCategory    *ShipmentDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
+	StockLocation       *DeliveryLeadTimeDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
 	ShippingMethodTiers *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
 }
 
@@ -256,5 +256,3 @@ func (v *NullableShippingMethodCreateDataRelationships) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

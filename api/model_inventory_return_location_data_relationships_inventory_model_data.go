@@ -29,8 +29,6 @@ type InventoryReturnLocationDataRelationshipsInventoryModelData struct {
 // will change when the set of required properties is changed
 func NewInventoryReturnLocationDataRelationshipsInventoryModelData() *InventoryReturnLocationDataRelationshipsInventoryModelData {
 	this := InventoryReturnLocationDataRelationshipsInventoryModelData{}
-	var type_ string = "inventory_models"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewInventoryReturnLocationDataRelationshipsInventoryModelData() *InventoryR
 // but it doesn't guarantee that properties required by API are set
 func NewInventoryReturnLocationDataRelationshipsInventoryModelDataWithDefaults() *InventoryReturnLocationDataRelationshipsInventoryModelData {
 	this := InventoryReturnLocationDataRelationshipsInventoryModelData{}
-	var type_ string = "inventory_models"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableInventoryReturnLocationDataRelationshipsInventoryModelData) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

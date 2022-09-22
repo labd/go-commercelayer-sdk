@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("line_items", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemsLineItemId200ResponseDataAttributes())) // LineItemUpdate | 
+    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemsLineItemId200ResponseDataAttributes())) // LineItemUpdate | 
     lineItemId := "lineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("line_items", *openapiclient.NewPOSTLineItems201ResponseDataAttributes(int32(4)))) // LineItemCreate | 
+    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("Type_example", *openapiclient.NewPOSTLineItems201ResponseDataAttributes(int32(4)))) // LineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

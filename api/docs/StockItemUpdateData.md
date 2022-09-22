@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHStockItemsStockItemId200ResponseDataAttributes**](PATCHStockItemsStockItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemUpdateDataRelationships**](StockItemUpdateDataRelationships.md) |  | [optional] 

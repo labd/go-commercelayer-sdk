@@ -20,10 +20,10 @@ type PATCHShippingCategoriesShippingCategoryId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETShippingCategories200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                              `json:"links,omitempty"`
+	Attributes    *PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETShippingCategories200ResponseDataInnerRelationships             `json:"relationships,omitempty"`
 }
 
 // NewPATCHShippingCategoriesShippingCategoryId200ResponseData instantiates a new PATCHShippingCategoriesShippingCategoryId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHShippingCategoriesShippingCategoryId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHShippingCategoriesShippingCategoryId200ResponseData() *PATCHShippingCategoriesShippingCategoryId200ResponseData {
 	this := PATCHShippingCategoriesShippingCategoryId200ResponseData{}
-	var type_ string = "shipping_categories"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHShippingCategoriesShippingCategoryId200ResponseData() *PATCHShippin
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHShippingCategoriesShippingCategoryId200ResponseDataWithDefaults() *PATCHShippingCategoriesShippingCategoryId200ResponseData {
 	this := PATCHShippingCategoriesShippingCategoryId200ResponseData{}
-	var type_ string = "shipping_categories"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHShippingCategoriesShippingCategoryId200ResponseData) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

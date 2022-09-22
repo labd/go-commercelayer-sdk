@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_subscriptions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETOrderSubscriptions200ResponseDataInnerAttributes**](GETOrderSubscriptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderSubscriptionDataRelationships**](OrderSubscriptionDataRelationships.md) |  | [optional] 
 

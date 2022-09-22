@@ -29,8 +29,6 @@ type AvalaraAccountDataRelationshipsMarketsData struct {
 // will change when the set of required properties is changed
 func NewAvalaraAccountDataRelationshipsMarketsData() *AvalaraAccountDataRelationshipsMarketsData {
 	this := AvalaraAccountDataRelationshipsMarketsData{}
-	var type_ string = "markets"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewAvalaraAccountDataRelationshipsMarketsData() *AvalaraAccountDataRelation
 // but it doesn't guarantee that properties required by API are set
 func NewAvalaraAccountDataRelationshipsMarketsDataWithDefaults() *AvalaraAccountDataRelationshipsMarketsData {
 	this := AvalaraAccountDataRelationshipsMarketsData{}
-	var type_ string = "markets"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableAvalaraAccountDataRelationshipsMarketsData) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

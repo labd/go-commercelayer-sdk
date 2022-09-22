@@ -18,9 +18,9 @@ import (
 // AddressCreateData struct for AddressCreateData
 type AddressCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAddresses201ResponseDataAttributes `json:"attributes"`
-	Relationships *AddressDataRelationships `json:"relationships,omitempty"`
+	Type          string                                 `json:"type"`
+	Attributes    POSTAddresses201ResponseDataAttributes `json:"attributes"`
+	Relationships *AddressDataRelationships              `json:"relationships,omitempty"`
 }
 
 // NewAddressCreateData instantiates a new AddressCreateData object
@@ -39,8 +39,6 @@ func NewAddressCreateData(type_ string, attributes POSTAddresses201ResponseDataA
 // but it doesn't guarantee that properties required by API are set
 func NewAddressCreateDataWithDefaults() *AddressCreateData {
 	this := AddressCreateData{}
-	var type_ string = "addresses"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableAddressCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

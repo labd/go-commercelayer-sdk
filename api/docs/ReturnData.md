@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "returns"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETReturns200ResponseDataInnerAttributes**](GETReturns200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnDataRelationships**](ReturnDataRelationships.md) |  | [optional] 
 

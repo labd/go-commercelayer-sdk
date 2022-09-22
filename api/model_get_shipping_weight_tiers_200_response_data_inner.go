@@ -20,9 +20,9 @@ type GETShippingWeightTiers200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETShippingMethodTiers200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                   `json:"links,omitempty"`
+	Attributes    *GETShippingMethodTiers200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETShippingMethodTiers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETShippingWeightTiers200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETShippingWeightTiers200ResponseDataInner() *GETShippingWeightTiers200ResponseDataInner {
 	this := GETShippingWeightTiers200ResponseDataInner{}
-	var type_ string = "shipping_weight_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETShippingWeightTiers200ResponseDataInner() *GETShippingWeightTiers200R
 // but it doesn't guarantee that properties required by API are set
 func NewGETShippingWeightTiers200ResponseDataInnerWithDefaults() *GETShippingWeightTiers200ResponseDataInner {
 	this := GETShippingWeightTiers200ResponseDataInner{}
-	var type_ string = "shipping_weight_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETShippingWeightTiers200ResponseDataInner) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData("tax_rules", "XGZwpOSrWL", *openapiclient.NewPATCHTaxRulesTaxRuleId200ResponseDataAttributes())) // TaxRuleUpdate | 
+    taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxRulesTaxRuleId200ResponseDataAttributes())) // TaxRuleUpdate | 
     taxRuleId := "taxRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    taxRuleCreate := *openapiclient.NewTaxRuleCreate(*openapiclient.NewTaxRuleCreateData("tax_rules", *openapiclient.NewPOSTTaxRules201ResponseDataAttributes("Fixed 22%"))) // TaxRuleCreate | 
+    taxRuleCreate := *openapiclient.NewTaxRuleCreate(*openapiclient.NewTaxRuleCreateData("Type_example", *openapiclient.NewPOSTTaxRules201ResponseDataAttributes("Fixed 22%"))) // TaxRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

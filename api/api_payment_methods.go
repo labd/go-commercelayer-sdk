@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // PaymentMethodsApiService PaymentMethodsApi service
 type PaymentMethodsApiService service
 
 type PaymentMethodsApiDELETEPaymentMethodsPaymentMethodIdRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	paymentMethodId string
 }
 
@@ -45,8 +44,8 @@ Delete a payment method
 */
 func (a *PaymentMethodsApiService) DELETEPaymentMethodsPaymentMethodId(ctx context.Context, paymentMethodId string) PaymentMethodsApiDELETEPaymentMethodsPaymentMethodIdRequest {
 	return PaymentMethodsApiDELETEPaymentMethodsPaymentMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *PaymentMethodsApiService) DELETEPaymentMethodsPaymentMethodId(ctx conte
 // Execute executes the request
 func (a *PaymentMethodsApiService) DELETEPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiDELETEPaymentMethodsPaymentMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.DELETEPaymentMethodsPaymentMethodId")
@@ -117,8 +116,8 @@ func (a *PaymentMethodsApiService) DELETEPaymentMethodsPaymentMethodIdExecute(r 
 }
 
 type PaymentMethodsApiGETAdyenGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx            context.Context
+	ApiService     *PaymentMethodsApiService
 	adyenGatewayId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the payment methods associated to the adyen gateway
 */
 func (a *PaymentMethodsApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) PaymentMethodsApiGETAdyenGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETAdyenGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:     a,
+		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *PaymentMethodsApiService) GETAdyenGatewayIdPaymentMethods(ctx context.C
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETAdyenGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETAdyenGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETAdyenGatewayIdPaymentMethods")
@@ -209,8 +208,8 @@ func (a *PaymentMethodsApiService) GETAdyenGatewayIdPaymentMethodsExecute(r Paym
 }
 
 type PaymentMethodsApiGETBraintreeGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx                context.Context
+	ApiService         *PaymentMethodsApiService
 	braintreeGatewayId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the payment methods associated to the braintree gateway
 */
 func (a *PaymentMethodsApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) PaymentMethodsApiGETBraintreeGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETBraintreeGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *PaymentMethodsApiService) GETBraintreeGatewayIdPaymentMethods(ctx conte
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETBraintreeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETBraintreeGatewayIdPaymentMethods")
@@ -301,8 +300,8 @@ func (a *PaymentMethodsApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r 
 }
 
 type PaymentMethodsApiGETCheckoutComGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx                  context.Context
+	ApiService           *PaymentMethodsApiService
 	checkoutComGatewayId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the payment methods associated to the checkout.com gateway
 */
 func (a *PaymentMethodsApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) PaymentMethodsApiGETCheckoutComGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETCheckoutComGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *PaymentMethodsApiService) GETCheckoutComGatewayIdPaymentMethods(ctx con
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETCheckoutComGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETCheckoutComGatewayIdPaymentMethods")
@@ -393,8 +392,8 @@ func (a *PaymentMethodsApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(
 }
 
 type PaymentMethodsApiGETExternalGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx               context.Context
+	ApiService        *PaymentMethodsApiService
 	externalGatewayId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the payment methods associated to the external gateway
 */
 func (a *PaymentMethodsApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) PaymentMethodsApiGETExternalGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETExternalGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		externalGatewayId: externalGatewayId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *PaymentMethodsApiService) GETExternalGatewayIdPaymentMethods(ctx contex
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETExternalGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETExternalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETExternalGatewayIdPaymentMethods")
@@ -485,8 +484,8 @@ func (a *PaymentMethodsApiService) GETExternalGatewayIdPaymentMethodsExecute(r P
 }
 
 type PaymentMethodsApiGETKlarnaGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	klarnaGatewayId string
 }
 
@@ -505,8 +504,8 @@ Retrieve the payment methods associated to the klarna gateway
 */
 func (a *PaymentMethodsApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) PaymentMethodsApiGETKlarnaGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETKlarnaGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		klarnaGatewayId: klarnaGatewayId,
 	}
 }
@@ -514,9 +513,9 @@ func (a *PaymentMethodsApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETKlarnaGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETKlarnaGatewayIdPaymentMethods")
@@ -577,8 +576,8 @@ func (a *PaymentMethodsApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r Pay
 }
 
 type PaymentMethodsApiGETManualGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	manualGatewayId string
 }
 
@@ -597,8 +596,8 @@ Retrieve the payment methods associated to the manual gateway
 */
 func (a *PaymentMethodsApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) PaymentMethodsApiGETManualGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETManualGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		manualGatewayId: manualGatewayId,
 	}
 }
@@ -606,9 +605,9 @@ func (a *PaymentMethodsApiService) GETManualGatewayIdPaymentMethods(ctx context.
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETManualGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETManualGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETManualGatewayIdPaymentMethods")
@@ -669,9 +668,9 @@ func (a *PaymentMethodsApiService) GETManualGatewayIdPaymentMethodsExecute(r Pay
 }
 
 type PaymentMethodsApiGETOrderIdAvailablePaymentMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PaymentMethodsApiService
-	orderId string
+	orderId    string
 }
 
 func (r PaymentMethodsApiGETOrderIdAvailablePaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -690,17 +689,17 @@ Retrieve the available payment methods associated to the order
 func (a *PaymentMethodsApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) PaymentMethodsApiGETOrderIdAvailablePaymentMethodsRequest {
 	return PaymentMethodsApiGETOrderIdAvailablePaymentMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETOrderIdAvailablePaymentMethodsExecute(r PaymentMethodsApiGETOrderIdAvailablePaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETOrderIdAvailablePaymentMethods")
@@ -761,9 +760,9 @@ func (a *PaymentMethodsApiService) GETOrderIdAvailablePaymentMethodsExecute(r Pa
 }
 
 type PaymentMethodsApiGETOrderIdPaymentMethodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PaymentMethodsApiService
-	orderId string
+	orderId    string
 }
 
 func (r PaymentMethodsApiGETOrderIdPaymentMethodRequest) Execute() (*http.Response, error) {
@@ -782,17 +781,17 @@ Retrieve the payment method associated to the order
 func (a *PaymentMethodsApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId string) PaymentMethodsApiGETOrderIdPaymentMethodRequest {
 	return PaymentMethodsApiGETOrderIdPaymentMethodRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETOrderIdPaymentMethodExecute(r PaymentMethodsApiGETOrderIdPaymentMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETOrderIdPaymentMethod")
@@ -853,8 +852,8 @@ func (a *PaymentMethodsApiService) GETOrderIdPaymentMethodExecute(r PaymentMetho
 }
 
 type PaymentMethodsApiGETPaymentGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx              context.Context
+	ApiService       *PaymentMethodsApiService
 	paymentGatewayId string
 }
 
@@ -873,8 +872,8 @@ Retrieve the payment methods associated to the payment gateway
 */
 func (a *PaymentMethodsApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) PaymentMethodsApiGETPaymentGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETPaymentGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		paymentGatewayId: paymentGatewayId,
 	}
 }
@@ -882,9 +881,9 @@ func (a *PaymentMethodsApiService) GETPaymentGatewayIdPaymentMethods(ctx context
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETPaymentGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETPaymentGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaymentGatewayIdPaymentMethods")
@@ -945,7 +944,7 @@ func (a *PaymentMethodsApiService) GETPaymentGatewayIdPaymentMethodsExecute(r Pa
 }
 
 type PaymentMethodsApiGETPaymentMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PaymentMethodsApiService
 }
 
@@ -964,7 +963,7 @@ List all payment methods
 func (a *PaymentMethodsApiService) GETPaymentMethods(ctx context.Context) PaymentMethodsApiGETPaymentMethodsRequest {
 	return PaymentMethodsApiGETPaymentMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -972,10 +971,10 @@ func (a *PaymentMethodsApiService) GETPaymentMethods(ctx context.Context) Paymen
 //  @return GETPaymentMethods200Response
 func (a *PaymentMethodsApiService) GETPaymentMethodsExecute(r PaymentMethodsApiGETPaymentMethodsRequest) (*GETPaymentMethods200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPaymentMethods200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPaymentMethods200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaymentMethods")
@@ -1044,8 +1043,8 @@ func (a *PaymentMethodsApiService) GETPaymentMethodsExecute(r PaymentMethodsApiG
 }
 
 type PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	paymentMethodId string
 }
 
@@ -1064,8 +1063,8 @@ Retrieve a payment method
 */
 func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodId(ctx context.Context, paymentMethodId string) PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest {
 	return PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -1074,10 +1073,10 @@ func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodId(ctx context.
 //  @return GETPaymentMethodsPaymentMethodId200Response
 func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest) (*GETPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPaymentMethodsPaymentMethodId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPaymentMethodsPaymentMethodId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaymentMethodsPaymentMethodId")
@@ -1147,8 +1146,8 @@ func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodIdExecute(r Pay
 }
 
 type PaymentMethodsApiGETPaypalGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	paypalGatewayId string
 }
 
@@ -1167,8 +1166,8 @@ Retrieve the payment methods associated to the paypal gateway
 */
 func (a *PaymentMethodsApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) PaymentMethodsApiGETPaypalGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETPaypalGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paypalGatewayId: paypalGatewayId,
 	}
 }
@@ -1176,9 +1175,9 @@ func (a *PaymentMethodsApiService) GETPaypalGatewayIdPaymentMethods(ctx context.
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETPaypalGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETPaypalGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaypalGatewayIdPaymentMethods")
@@ -1239,8 +1238,8 @@ func (a *PaymentMethodsApiService) GETPaypalGatewayIdPaymentMethodsExecute(r Pay
 }
 
 type PaymentMethodsApiGETStripeGatewayIdPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx             context.Context
+	ApiService      *PaymentMethodsApiService
 	stripeGatewayId string
 }
 
@@ -1259,8 +1258,8 @@ Retrieve the payment methods associated to the stripe gateway
 */
 func (a *PaymentMethodsApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) PaymentMethodsApiGETStripeGatewayIdPaymentMethodsRequest {
 	return PaymentMethodsApiGETStripeGatewayIdPaymentMethodsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
 	}
 }
@@ -1268,9 +1267,9 @@ func (a *PaymentMethodsApiService) GETStripeGatewayIdPaymentMethods(ctx context.
 // Execute executes the request
 func (a *PaymentMethodsApiService) GETStripeGatewayIdPaymentMethodsExecute(r PaymentMethodsApiGETStripeGatewayIdPaymentMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETStripeGatewayIdPaymentMethods")
@@ -1331,10 +1330,10 @@ func (a *PaymentMethodsApiService) GETStripeGatewayIdPaymentMethodsExecute(r Pay
 }
 
 type PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx                 context.Context
+	ApiService          *PaymentMethodsApiService
 	paymentMethodUpdate *PaymentMethodUpdate
-	paymentMethodId string
+	paymentMethodId     string
 }
 
 func (r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) PaymentMethodUpdate(paymentMethodUpdate PaymentMethodUpdate) PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest {
@@ -1357,8 +1356,8 @@ Update a payment method
 */
 func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodId(ctx context.Context, paymentMethodId string) PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest {
 	return PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
 	}
 }
@@ -1367,10 +1366,10 @@ func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodId(ctx contex
 //  @return PATCHPaymentMethodsPaymentMethodId200Response
 func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) (*PATCHPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHPaymentMethodsPaymentMethodId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPaymentMethodsPaymentMethodId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.PATCHPaymentMethodsPaymentMethodId")
@@ -1445,8 +1444,8 @@ func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodIdExecute(r P
 }
 
 type PaymentMethodsApiPOSTPaymentMethodsRequest struct {
-	ctx context.Context
-	ApiService *PaymentMethodsApiService
+	ctx                 context.Context
+	ApiService          *PaymentMethodsApiService
 	paymentMethodCreate *PaymentMethodCreate
 }
 
@@ -1470,7 +1469,7 @@ Create a payment method
 func (a *PaymentMethodsApiService) POSTPaymentMethods(ctx context.Context) PaymentMethodsApiPOSTPaymentMethodsRequest {
 	return PaymentMethodsApiPOSTPaymentMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1478,10 +1477,10 @@ func (a *PaymentMethodsApiService) POSTPaymentMethods(ctx context.Context) Payme
 //  @return POSTPaymentMethods201Response
 func (a *PaymentMethodsApiService) POSTPaymentMethodsExecute(r PaymentMethodsApiPOSTPaymentMethodsRequest) (*POSTPaymentMethods201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTPaymentMethods201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPaymentMethods201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.POSTPaymentMethods")

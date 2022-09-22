@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "packages"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTPackages201ResponseDataAttributes**](POSTPackages201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageCreateDataRelationships**](PackageCreateDataRelationships.md) |  | [optional] 
 

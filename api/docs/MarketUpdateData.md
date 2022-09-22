@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "markets"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHMarketsMarketId200ResponseDataAttributes**](PATCHMarketsMarketId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketUpdateDataRelationships**](MarketUpdateDataRelationships.md) |  | [optional] 

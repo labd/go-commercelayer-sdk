@@ -20,9 +20,9 @@ type CaptureUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHCapturesCaptureId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                          `json:"id"`
+	Attributes    PATCHCapturesCaptureId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                          `json:"relationships,omitempty"`
 }
 
 // NewCaptureUpdateData instantiates a new CaptureUpdateData object
@@ -42,8 +42,6 @@ func NewCaptureUpdateData(type_ string, id string, attributes PATCHCapturesCaptu
 // but it doesn't guarantee that properties required by API are set
 func NewCaptureUpdateDataWithDefaults() *CaptureUpdateData {
 	this := CaptureUpdateData{}
-	var type_ string = "captures"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableCaptureUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

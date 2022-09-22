@@ -17,12 +17,12 @@ import (
 
 // StockLocationDataRelationships struct for StockLocationDataRelationships
 type StockLocationDataRelationships struct {
-	Address *BingGeocoderDataRelationshipsAddresses `json:"address,omitempty"`
-	InventoryStockLocations *InventoryModelDataRelationshipsInventoryStockLocations `json:"inventory_stock_locations,omitempty"`
+	Address                  *BingGeocoderDataRelationshipsAddresses                  `json:"address,omitempty"`
+	InventoryStockLocations  *InventoryModelDataRelationshipsInventoryStockLocations  `json:"inventory_stock_locations,omitempty"`
 	InventoryReturnLocations *InventoryModelDataRelationshipsInventoryReturnLocations `json:"inventory_return_locations,omitempty"`
-	StockItems *SkuDataRelationshipsStockItems `json:"stock_items,omitempty"`
-	StockTransfers *LineItemDataRelationshipsStockTransfers `json:"stock_transfers,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	StockItems               *SkuDataRelationshipsStockItems                          `json:"stock_items,omitempty"`
+	StockTransfers           *LineItemDataRelationshipsStockTransfers                 `json:"stock_transfers,omitempty"`
+	Attachments              *AvalaraAccountDataRelationshipsAttachments              `json:"attachments,omitempty"`
 }
 
 // NewStockLocationDataRelationships instantiates a new StockLocationDataRelationships object
@@ -292,5 +292,3 @@ func (v *NullableStockLocationDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

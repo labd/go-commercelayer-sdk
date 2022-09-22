@@ -18,9 +18,9 @@ import (
 // InventoryModelCreateData struct for InventoryModelCreateData
 type InventoryModelCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
 }
 
 // NewInventoryModelCreateData instantiates a new InventoryModelCreateData object
@@ -39,8 +39,6 @@ func NewInventoryModelCreateData(type_ string, attributes POSTInventoryModels201
 // but it doesn't guarantee that properties required by API are set
 func NewInventoryModelCreateDataWithDefaults() *InventoryModelCreateData {
 	this := InventoryModelCreateData{}
-	var type_ string = "inventory_models"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableInventoryModelCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,8 +18,8 @@ import (
 // StockItemDataRelationships struct for StockItemDataRelationships
 type StockItemDataRelationships struct {
 	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Sku           *BundleDataRelationshipsSkus                    `json:"sku,omitempty"`
+	Attachments   *AvalaraAccountDataRelationshipsAttachments     `json:"attachments,omitempty"`
 }
 
 // NewStockItemDataRelationships instantiates a new StockItemDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableStockItemDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -261,5 +261,3 @@ func (v *NullablePATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

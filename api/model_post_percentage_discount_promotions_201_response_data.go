@@ -20,10 +20,10 @@ type POSTPercentageDiscountPromotions201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                    `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
+	Attributes    *POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewPOSTPercentageDiscountPromotions201ResponseData instantiates a new POSTPercentageDiscountPromotions201ResponseData object
@@ -32,8 +32,6 @@ type POSTPercentageDiscountPromotions201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTPercentageDiscountPromotions201ResponseData() *POSTPercentageDiscountPromotions201ResponseData {
 	this := POSTPercentageDiscountPromotions201ResponseData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTPercentageDiscountPromotions201ResponseData() *POSTPercentageDiscoun
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTPercentageDiscountPromotions201ResponseDataWithDefaults() *POSTPercentageDiscountPromotions201ResponseData {
 	this := POSTPercentageDiscountPromotions201ResponseData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTPercentageDiscountPromotions201ResponseData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

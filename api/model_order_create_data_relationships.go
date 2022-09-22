@@ -17,12 +17,12 @@ import (
 
 // OrderCreateDataRelationships struct for OrderCreateDataRelationships
 type OrderCreateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	ShippingAddress *BingGeocoderDataRelationshipsAddresses `json:"shipping_address,omitempty"`
-	BillingAddress *BingGeocoderDataRelationshipsAddresses `json:"billing_address,omitempty"`
-	PaymentMethod *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_method,omitempty"`
-	PaymentSource *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Market          *AvalaraAccountDataRelationshipsMarkets              `json:"market,omitempty"`
+	Customer        *CouponRecipientDataRelationshipsCustomer            `json:"customer,omitempty"`
+	ShippingAddress *BingGeocoderDataRelationshipsAddresses              `json:"shipping_address,omitempty"`
+	BillingAddress  *BingGeocoderDataRelationshipsAddresses              `json:"billing_address,omitempty"`
+	PaymentMethod   *AdyenGatewayDataRelationshipsPaymentMethods         `json:"payment_method,omitempty"`
+	PaymentSource   *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
 // NewOrderCreateDataRelationships instantiates a new OrderCreateDataRelationships object
@@ -292,5 +292,3 @@ func (v *NullableOrderCreateDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,8 +20,8 @@ type BillingInfoValidationRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Id            string                                      `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes  `json:"attributes"`
 	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -42,8 +42,6 @@ func NewBillingInfoValidationRuleUpdateData(type_ string, id string, attributes 
 // but it doesn't guarantee that properties required by API are set
 func NewBillingInfoValidationRuleUpdateDataWithDefaults() *BillingInfoValidationRuleUpdateData {
 	this := BillingInfoValidationRuleUpdateData{}
-	var type_ string = "billing_info_validation_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableBillingInfoValidationRuleUpdateData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

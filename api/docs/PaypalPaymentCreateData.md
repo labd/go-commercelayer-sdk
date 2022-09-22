@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "paypal_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTPaypalPayments201ResponseDataAttributes**](POSTPaypalPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 

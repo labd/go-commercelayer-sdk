@@ -20,9 +20,9 @@ type CouponRecipientUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CouponRecipientCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponRecipientCreateDataRelationships                         `json:"relationships,omitempty"`
 }
 
 // NewCouponRecipientUpdateData instantiates a new CouponRecipientUpdateData object
@@ -42,8 +42,6 @@ func NewCouponRecipientUpdateData(type_ string, id string, attributes PATCHCoupo
 // but it doesn't guarantee that properties required by API are set
 func NewCouponRecipientUpdateDataWithDefaults() *CouponRecipientUpdateData {
 	this := CouponRecipientUpdateData{}
-	var type_ string = "coupon_recipients"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableCouponRecipientUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

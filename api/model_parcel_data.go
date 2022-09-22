@@ -18,9 +18,9 @@ import (
 // ParcelData struct for ParcelData
 type ParcelData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETParcels200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ParcelDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETParcels200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ParcelDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewParcelData instantiates a new ParcelData object
@@ -39,8 +39,6 @@ func NewParcelData(type_ string, attributes GETParcels200ResponseDataInnerAttrib
 // but it doesn't guarantee that properties required by API are set
 func NewParcelDataWithDefaults() *ParcelData {
 	this := ParcelData{}
-	var type_ string = "parcels"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableParcelData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

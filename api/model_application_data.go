@@ -18,9 +18,9 @@ import (
 // ApplicationData struct for ApplicationData
 type ApplicationData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETApplicationApplicationId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETApplicationApplicationId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                               `json:"relationships,omitempty"`
 }
 
 // NewApplicationData instantiates a new ApplicationData object
@@ -39,8 +39,6 @@ func NewApplicationData(type_ string, attributes GETApplicationApplicationId200R
 // but it doesn't guarantee that properties required by API are set
 func NewApplicationDataWithDefaults() *ApplicationData {
 	this := ApplicationData{}
-	var type_ string = "application"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableApplicationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,9 +18,9 @@ import (
 // PriceVolumeTierCreateData struct for PriceVolumeTierCreateData
 type PriceVolumeTierCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTPriceVolumeTiers201ResponseDataAttributes `json:"attributes"`
-	Relationships *PriceVolumeTierCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                        `json:"type"`
+	Attributes    POSTPriceVolumeTiers201ResponseDataAttributes `json:"attributes"`
+	Relationships *PriceVolumeTierCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierCreateData instantiates a new PriceVolumeTierCreateData object
@@ -39,8 +39,6 @@ func NewPriceVolumeTierCreateData(type_ string, attributes POSTPriceVolumeTiers2
 // but it doesn't guarantee that properties required by API are set
 func NewPriceVolumeTierCreateDataWithDefaults() *PriceVolumeTierCreateData {
 	this := PriceVolumeTierCreateData{}
-	var type_ string = "price_volume_tiers"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullablePriceVolumeTierCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

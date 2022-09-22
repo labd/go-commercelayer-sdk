@@ -18,9 +18,9 @@ import (
 // SkuListData struct for SkuListData
 type SkuListData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETSkuLists200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *SkuListDataRelationships `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    GETSkuLists200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *SkuListDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewSkuListData instantiates a new SkuListData object
@@ -39,8 +39,6 @@ func NewSkuListData(type_ string, attributes GETSkuLists200ResponseDataInnerAttr
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListDataWithDefaults() *SkuListData {
 	this := SkuListData{}
-	var type_ string = "sku_lists"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableSkuListData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

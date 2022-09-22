@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // InStockSubscriptionsApiService InStockSubscriptionsApi service
 type InStockSubscriptionsApiService service
 
 type InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *InStockSubscriptionsApiService
+	ctx                   context.Context
+	ApiService            *InStockSubscriptionsApiService
 	inStockSubscriptionId string
 }
 
@@ -45,8 +44,8 @@ Delete an in stock subscription
 */
 func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 // Execute executes the request
 func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.DELETEInStockSubscriptionsInStockSubscriptionId")
@@ -117,7 +116,7 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 }
 
 type InStockSubscriptionsApiGETInStockSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *InStockSubscriptionsApiService
 }
 
@@ -136,7 +135,7 @@ List all in stock subscriptions
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiGETInStockSubscriptionsRequest {
 	return InStockSubscriptionsApiGETInStockSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Con
 //  @return GETInStockSubscriptions200Response
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*GETInStockSubscriptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETInStockSubscriptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETInStockSubscriptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptions")
@@ -216,8 +215,8 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStoc
 }
 
 type InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *InStockSubscriptionsApiService
+	ctx                   context.Context
+	ApiService            *InStockSubscriptionsApiService
 	inStockSubscriptionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve an in stock subscription
 */
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 //  @return GETInStockSubscriptionsInStockSubscriptionId200Response
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETInStockSubscriptionsInStockSubscriptionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETInStockSubscriptionsInStockSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptionsInStockSubscriptionId")
@@ -319,10 +318,10 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 }
 
 type InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *InStockSubscriptionsApiService
+	ctx                       context.Context
+	ApiService                *InStockSubscriptionsApiService
 	inStockSubscriptionUpdate *InStockSubscriptionUpdate
-	inStockSubscriptionId string
+	inStockSubscriptionId     string
 }
 
 func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) InStockSubscriptionUpdate(inStockSubscriptionUpdate InStockSubscriptionUpdate) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
@@ -345,8 +344,8 @@ Update an in stock subscription
 */
 func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 //  @return PATCHInStockSubscriptionsInStockSubscriptionId200Response
 func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHInStockSubscriptionsInStockSubscriptionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHInStockSubscriptionsInStockSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.PATCHInStockSubscriptionsInStockSubscriptionId")
@@ -433,8 +432,8 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 }
 
 type InStockSubscriptionsApiPOSTInStockSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *InStockSubscriptionsApiService
+	ctx                       context.Context
+	ApiService                *InStockSubscriptionsApiService
 	inStockSubscriptionCreate *InStockSubscriptionCreate
 }
 
@@ -458,7 +457,7 @@ Create an in stock subscription
 func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
 	return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Co
 //  @return POSTInStockSubscriptions201Response
 func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*POSTInStockSubscriptions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTInStockSubscriptions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTInStockSubscriptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.POSTInStockSubscriptions")

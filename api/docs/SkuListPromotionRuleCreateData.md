@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "sku_list_promotion_rules"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListPromotionRuleCreateDataRelationships**](SkuListPromotionRuleCreateDataRelationships.md) |  | [optional] 
 

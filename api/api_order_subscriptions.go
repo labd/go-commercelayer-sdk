@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // OrderSubscriptionsApiService OrderSubscriptionsApi service
 type OrderSubscriptionsApiService service
 
 type OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *OrderSubscriptionsApiService
+	ctx                 context.Context
+	ApiService          *OrderSubscriptionsApiService
 	orderSubscriptionId string
 }
 
@@ -45,8 +44,8 @@ Delete an order subscription
 */
 func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest {
 	return OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscription
 // Execute executes the request
 func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiDELETEOrderSubscriptionsOrderSubscriptionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.DELETEOrderSubscriptionsOrderSubscriptionId")
@@ -117,7 +116,7 @@ func (a *OrderSubscriptionsApiService) DELETEOrderSubscriptionsOrderSubscription
 }
 
 type OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OrderSubscriptionsApiService
 	customerId string
 }
@@ -138,7 +137,7 @@ Retrieve the order subscriptions associated to the customer
 func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest {
 	return OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptions(ctx conte
 // Execute executes the request
 func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETCustomerIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETCustomerIdOrderSubscriptions")
@@ -209,8 +208,8 @@ func (a *OrderSubscriptionsApiService) GETCustomerIdOrderSubscriptionsExecute(r 
 }
 
 type OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest struct {
-	ctx context.Context
-	ApiService *OrderSubscriptionsApiService
+	ctx         context.Context
+	ApiService  *OrderSubscriptionsApiService
 	orderCopyId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the order subscription associated to the order copy
 */
 func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest {
 	return OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		orderCopyId: orderCopyId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscription(ctx conte
 // Execute executes the request
 func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r OrderSubscriptionsApiGETOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderCopyIdOrderSubscription")
@@ -301,9 +300,9 @@ func (a *OrderSubscriptionsApiService) GETOrderCopyIdOrderSubscriptionExecute(r 
 }
 
 type OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OrderSubscriptionsApiService
-	orderId string
+	orderId    string
 }
 
 func (r OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -322,17 +321,17 @@ Retrieve the order subscriptions associated to the order
 func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest {
 	return OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderIdOrderSubscriptionsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderIdOrderSubscriptions")
@@ -393,7 +392,7 @@ func (a *OrderSubscriptionsApiService) GETOrderIdOrderSubscriptionsExecute(r Ord
 }
 
 type OrderSubscriptionsApiGETOrderSubscriptionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OrderSubscriptionsApiService
 }
 
@@ -412,7 +411,7 @@ List all order subscriptions
 func (a *OrderSubscriptionsApiService) GETOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiGETOrderSubscriptionsRequest {
 	return OrderSubscriptionsApiGETOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -420,10 +419,10 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptions(ctx context.Context
 //  @return GETOrderSubscriptions200Response
 func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderSubscriptionsRequest) (*GETOrderSubscriptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETOrderSubscriptions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrderSubscriptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderSubscriptions")
@@ -492,8 +491,8 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r OrderSubsc
 }
 
 type OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *OrderSubscriptionsApiService
+	ctx                 context.Context
+	ApiService          *OrderSubscriptionsApiService
 	orderSubscriptionId string
 }
 
@@ -512,8 +511,8 @@ Retrieve an order subscription
 */
 func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest {
 	return OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -522,10 +521,10 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(
 //  @return GETOrderSubscriptionsOrderSubscriptionId200Response
 func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*GETOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETOrderSubscriptionsOrderSubscriptionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrderSubscriptionsOrderSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderSubscriptionsOrderSubscriptionId")
@@ -595,10 +594,10 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdE
 }
 
 type OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest struct {
-	ctx context.Context
-	ApiService *OrderSubscriptionsApiService
+	ctx                     context.Context
+	ApiService              *OrderSubscriptionsApiService
 	orderSubscriptionUpdate *OrderSubscriptionUpdate
-	orderSubscriptionId string
+	orderSubscriptionId     string
 }
 
 func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) OrderSubscriptionUpdate(orderSubscriptionUpdate OrderSubscriptionUpdate) OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
@@ -621,8 +620,8 @@ Update an order subscription
 */
 func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionId(ctx context.Context, orderSubscriptionId string) OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest {
 	return OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -631,10 +630,10 @@ func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionI
 //  @return PATCHOrderSubscriptionsOrderSubscriptionId200Response
 func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*PATCHOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHOrderSubscriptionsOrderSubscriptionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHOrderSubscriptionsOrderSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.PATCHOrderSubscriptionsOrderSubscriptionId")
@@ -709,8 +708,8 @@ func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionI
 }
 
 type OrderSubscriptionsApiPOSTOrderSubscriptionsRequest struct {
-	ctx context.Context
-	ApiService *OrderSubscriptionsApiService
+	ctx                     context.Context
+	ApiService              *OrderSubscriptionsApiService
 	orderSubscriptionCreate *OrderSubscriptionCreate
 }
 
@@ -734,7 +733,7 @@ Create an order subscription
 func (a *OrderSubscriptionsApiService) POSTOrderSubscriptions(ctx context.Context) OrderSubscriptionsApiPOSTOrderSubscriptionsRequest {
 	return OrderSubscriptionsApiPOSTOrderSubscriptionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -742,10 +741,10 @@ func (a *OrderSubscriptionsApiService) POSTOrderSubscriptions(ctx context.Contex
 //  @return POSTOrderSubscriptions201Response
 func (a *OrderSubscriptionsApiService) POSTOrderSubscriptionsExecute(r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) (*POSTOrderSubscriptions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTOrderSubscriptions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTOrderSubscriptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.POSTOrderSubscriptions")

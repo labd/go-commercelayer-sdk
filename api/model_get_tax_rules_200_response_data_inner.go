@@ -20,9 +20,9 @@ type GETTaxRules200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETTaxRules200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                       `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
+	Attributes    *GETTaxRules200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETTaxRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETTaxRules200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETTaxRules200ResponseDataInner() *GETTaxRules200ResponseDataInner {
 	this := GETTaxRules200ResponseDataInner{}
-	var type_ string = "tax_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETTaxRules200ResponseDataInner() *GETTaxRules200ResponseDataInner {
 // but it doesn't guarantee that properties required by API are set
 func NewGETTaxRules200ResponseDataInnerWithDefaults() *GETTaxRules200ResponseDataInner {
 	this := GETTaxRules200ResponseDataInner{}
-	var type_ string = "tax_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETTaxRules200ResponseDataInner) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

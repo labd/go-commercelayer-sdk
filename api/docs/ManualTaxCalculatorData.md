@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "manual_tax_calculators"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETManualTaxCalculators200ResponseDataInnerAttributes**](GETManualTaxCalculators200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualTaxCalculatorDataRelationships**](ManualTaxCalculatorDataRelationships.md) |  | [optional] 
 

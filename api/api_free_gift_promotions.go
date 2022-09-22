@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // FreeGiftPromotionsApiService FreeGiftPromotionsApi service
 type FreeGiftPromotionsApiService service
 
 type FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeGiftPromotionsApiService
+	ctx                 context.Context
+	ApiService          *FreeGiftPromotionsApiService
 	freeGiftPromotionId string
 }
 
@@ -45,8 +44,8 @@ Delete a free gift promotion
 */
 func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 // Execute executes the request
 func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.DELETEFreeGiftPromotionsFreeGiftPromotionId")
@@ -117,7 +116,7 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 }
 
 type FreeGiftPromotionsApiGETFreeGiftPromotionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *FreeGiftPromotionsApiService
 }
 
@@ -136,7 +135,7 @@ List all free gift promotions
 func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotions(ctx context.Context) FreeGiftPromotionsApiGETFreeGiftPromotionsRequest {
 	return FreeGiftPromotionsApiGETFreeGiftPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotions(ctx context.Context
 //  @return GETFreeGiftPromotions200Response
 func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPromotionsApiGETFreeGiftPromotionsRequest) (*GETFreeGiftPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFreeGiftPromotions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFreeGiftPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.GETFreeGiftPromotions")
@@ -216,8 +215,8 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPr
 }
 
 type FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeGiftPromotionsApiService
+	ctx                 context.Context
+	ApiService          *FreeGiftPromotionsApiService
 	freeGiftPromotionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a free gift promotion
 */
 func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(
 //  @return GETFreeGiftPromotionsFreeGiftPromotionId200Response
 func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) (*GETFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFreeGiftPromotionsFreeGiftPromotionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFreeGiftPromotionsFreeGiftPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.GETFreeGiftPromotionsFreeGiftPromotionId")
@@ -319,10 +318,10 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 }
 
 type FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FreeGiftPromotionsApiService
+	ctx                     context.Context
+	ApiService              *FreeGiftPromotionsApiService
 	freeGiftPromotionUpdate *FreeGiftPromotionUpdate
-	freeGiftPromotionId string
+	freeGiftPromotionId     string
 }
 
 func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionUpdate(freeGiftPromotionUpdate FreeGiftPromotionUpdate) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
@@ -345,8 +344,8 @@ Update a free gift promotion
 */
 func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 //  @return PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
 func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) (*PATCHFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.PATCHFreeGiftPromotionsFreeGiftPromotionId")
@@ -433,8 +432,8 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 }
 
 type FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest struct {
-	ctx context.Context
-	ApiService *FreeGiftPromotionsApiService
+	ctx                     context.Context
+	ApiService              *FreeGiftPromotionsApiService
 	freeGiftPromotionCreate *FreeGiftPromotionCreate
 }
 
@@ -458,7 +457,7 @@ Create a free gift promotion
 func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotions(ctx context.Context) FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest {
 	return FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotions(ctx context.Contex
 //  @return POSTFreeGiftPromotions201Response
 func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) (*POSTFreeGiftPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTFreeGiftPromotions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTFreeGiftPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.POSTFreeGiftPromotions")

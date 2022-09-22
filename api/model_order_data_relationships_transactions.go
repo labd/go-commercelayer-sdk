@@ -19,9 +19,9 @@ import (
 // OrderDataRelationshipsTransactions - struct for OrderDataRelationshipsTransactions
 type OrderDataRelationshipsTransactions struct {
 	Authorization *Authorization
-	Capture *Capture
-	Refund *Refund
-	Void *Void
+	Capture       *Capture
+	Refund        *Refund
+	Void          *Void
 }
 
 // AuthorizationAsOrderDataRelationshipsTransactions is a convenience function that returns Authorization wrapped in OrderDataRelationshipsTransactions
@@ -51,7 +51,6 @@ func VoidAsOrderDataRelationshipsTransactions(v *Void) OrderDataRelationshipsTra
 		Void: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *OrderDataRelationshipsTransactions) UnmarshalJSON(data []byte) error {
@@ -146,7 +145,7 @@ func (src OrderDataRelationshipsTransactions) MarshalJSON() ([]byte, error) {
 }
 
 // Get the actual instance
-func (obj *OrderDataRelationshipsTransactions) GetActualInstance() (interface{}) {
+func (obj *OrderDataRelationshipsTransactions) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -205,5 +204,3 @@ func (v *NullableOrderDataRelationshipsTransactions) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

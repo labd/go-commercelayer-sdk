@@ -17,7 +17,7 @@ import (
 
 // BraintreeGatewayDataRelationships struct for BraintreeGatewayDataRelationships
 type BraintreeGatewayDataRelationships struct {
-	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
+	PaymentMethods    *AdyenGatewayDataRelationshipsPaymentMethods        `json:"payment_methods,omitempty"`
 	BraintreePayments *BraintreeGatewayDataRelationshipsBraintreePayments `json:"braintree_payments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableBraintreeGatewayDataRelationships) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

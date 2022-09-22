@@ -17,8 +17,8 @@ import (
 
 // GETKlarnaGateways200ResponseDataInnerRelationships struct for GETKlarnaGateways200ResponseDataInnerRelationships
 type GETKlarnaGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	KlarnaPayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"klarna_payments,omitempty"`
+	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	KlarnaPayments *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments `json:"klarna_payments,omitempty"`
 }
 
 // NewGETKlarnaGateways200ResponseDataInnerRelationships instantiates a new GETKlarnaGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETKlarnaGateways200ResponseDataInnerRelationships) SetPaymentMethods(v
 }
 
 // GetKlarnaPayments returns the KlarnaPayments field value if set, zero value otherwise.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPayments() GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments {
 	if o == nil || o.KlarnaPayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments
 		return ret
 	}
 	return *o.KlarnaPayments
@@ -81,7 +81,7 @@ func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPayments()
 
 // GetKlarnaPaymentsOk returns a tuple with the KlarnaPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETKlarnaGateways200ResponseDataInnerRelationships) GetKlarnaPaymentsOk() (*GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments, bool) {
 	if o == nil || o.KlarnaPayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETKlarnaGateways200ResponseDataInnerRelationships) HasKlarnaPayments()
 	return false
 }
 
-// SetKlarnaPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the KlarnaPayments field.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationships) SetKlarnaPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetKlarnaPayments gets a reference to the given GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments and assigns it to the KlarnaPayments field.
+func (o *GETKlarnaGateways200ResponseDataInnerRelationships) SetKlarnaPayments(v GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) {
 	o.KlarnaPayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETKlarnaGateways200ResponseDataInnerRelationships) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

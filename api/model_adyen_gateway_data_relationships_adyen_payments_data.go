@@ -29,8 +29,6 @@ type AdyenGatewayDataRelationshipsAdyenPaymentsData struct {
 // will change when the set of required properties is changed
 func NewAdyenGatewayDataRelationshipsAdyenPaymentsData() *AdyenGatewayDataRelationshipsAdyenPaymentsData {
 	this := AdyenGatewayDataRelationshipsAdyenPaymentsData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewAdyenGatewayDataRelationshipsAdyenPaymentsData() *AdyenGatewayDataRelati
 // but it doesn't guarantee that properties required by API are set
 func NewAdyenGatewayDataRelationshipsAdyenPaymentsDataWithDefaults() *AdyenGatewayDataRelationshipsAdyenPaymentsData {
 	this := AdyenGatewayDataRelationshipsAdyenPaymentsData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableAdyenGatewayDataRelationshipsAdyenPaymentsData) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

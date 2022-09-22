@@ -20,9 +20,9 @@ type GETPriceVolumeTiers200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETPriceTiers200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks          `json:"links,omitempty"`
+	Attributes    *GETPriceTiers200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETPriceTiers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETPriceVolumeTiers200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETPriceVolumeTiers200ResponseDataInner() *GETPriceVolumeTiers200ResponseDataInner {
 	this := GETPriceVolumeTiers200ResponseDataInner{}
-	var type_ string = "price_volume_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETPriceVolumeTiers200ResponseDataInner() *GETPriceVolumeTiers200Respons
 // but it doesn't guarantee that properties required by API are set
 func NewGETPriceVolumeTiers200ResponseDataInnerWithDefaults() *GETPriceVolumeTiers200ResponseDataInner {
 	this := GETPriceVolumeTiers200ResponseDataInner{}
-	var type_ string = "price_volume_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETPriceVolumeTiers200ResponseDataInner) UnmarshalJSON(src []by
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

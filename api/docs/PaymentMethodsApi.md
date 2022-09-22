@@ -991,7 +991,7 @@ import (
 )
 
 func main() {
-    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("payment_methods", "XGZwpOSrWL", *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
+    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
     paymentMethodId := "paymentMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1063,7 +1063,7 @@ import (
 )
 
 func main() {
-    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("payment_methods", *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
+    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("Type_example", *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

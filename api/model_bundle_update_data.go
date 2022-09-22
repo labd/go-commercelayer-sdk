@@ -20,9 +20,9 @@ type BundleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                        `json:"id"`
+	Attributes    PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                        `json:"relationships,omitempty"`
 }
 
 // NewBundleUpdateData instantiates a new BundleUpdateData object
@@ -42,8 +42,6 @@ func NewBundleUpdateData(type_ string, id string, attributes PATCHBundlesBundleI
 // but it doesn't guarantee that properties required by API are set
 func NewBundleUpdateDataWithDefaults() *BundleUpdateData {
 	this := BundleUpdateData{}
-	var type_ string = "bundles"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableBundleUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

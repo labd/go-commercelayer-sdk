@@ -17,22 +17,22 @@ import (
 
 // ShipmentDataRelationships struct for ShipmentDataRelationships
 type ShipmentDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	OriginAddress *BingGeocoderDataRelationshipsAddresses `json:"origin_address,omitempty"`
-	ShippingAddress *BingGeocoderDataRelationshipsAddresses `json:"shipping_address,omitempty"`
-	ShippingMethod *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
-	DeliveryLeadTime *ShipmentDataRelationshipsDeliveryLeadTime `json:"delivery_lead_time,omitempty"`
+	Order            *AdyenPaymentDataRelationshipsOrder              `json:"order,omitempty"`
+	ShippingCategory *ShipmentDataRelationshipsShippingCategory       `json:"shipping_category,omitempty"`
+	StockLocation    *DeliveryLeadTimeDataRelationshipsStockLocation  `json:"stock_location,omitempty"`
+	OriginAddress    *BingGeocoderDataRelationshipsAddresses          `json:"origin_address,omitempty"`
+	ShippingAddress  *BingGeocoderDataRelationshipsAddresses          `json:"shipping_address,omitempty"`
+	ShippingMethod   *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
+	DeliveryLeadTime *ShipmentDataRelationshipsDeliveryLeadTime       `json:"delivery_lead_time,omitempty"`
 	// Deprecated
-	ShipmentLineItems *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_items,omitempty"`
-	StockLineItems *LineItemDataRelationshipsStockLineItems `json:"stock_line_items,omitempty"`
-	StockTransfers *LineItemDataRelationshipsStockTransfers `json:"stock_transfers,omitempty"`
+	ShipmentLineItems        *LineItemDataRelationshipsShipmentLineItems      `json:"shipment_line_items,omitempty"`
+	StockLineItems           *LineItemDataRelationshipsStockLineItems         `json:"stock_line_items,omitempty"`
+	StockTransfers           *LineItemDataRelationshipsStockTransfers         `json:"stock_transfers,omitempty"`
 	AvailableShippingMethods *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"available_shipping_methods,omitempty"`
-	CarrierAccounts *ShipmentDataRelationshipsCarrierAccounts `json:"carrier_accounts,omitempty"`
-	Parcels *PackageDataRelationshipsParcels `json:"parcels,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	CarrierAccounts          *ShipmentDataRelationshipsCarrierAccounts        `json:"carrier_accounts,omitempty"`
+	Parcels                  *PackageDataRelationshipsParcels                 `json:"parcels,omitempty"`
+	Attachments              *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
+	Events                   *CustomerAddressDataRelationshipsEvents          `json:"events,omitempty"`
 }
 
 // NewShipmentDataRelationships instantiates a new ShipmentDataRelationships object
@@ -620,5 +620,3 @@ func (v *NullableShipmentDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

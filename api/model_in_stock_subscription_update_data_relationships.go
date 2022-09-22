@@ -17,9 +17,9 @@ import (
 
 // InStockSubscriptionUpdateDataRelationships struct for InStockSubscriptionUpdateDataRelationships
 type InStockSubscriptionUpdateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market   *AvalaraAccountDataRelationshipsMarkets   `json:"market,omitempty"`
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
+	Sku      *BundleDataRelationshipsSkus              `json:"sku,omitempty"`
 }
 
 // NewInStockSubscriptionUpdateDataRelationships instantiates a new InStockSubscriptionUpdateDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableInStockSubscriptionUpdateDataRelationships) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

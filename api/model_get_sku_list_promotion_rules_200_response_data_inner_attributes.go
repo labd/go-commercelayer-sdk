@@ -372,5 +372,3 @@ func (v *NullableGETSkuListPromotionRules200ResponseDataInnerAttributes) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

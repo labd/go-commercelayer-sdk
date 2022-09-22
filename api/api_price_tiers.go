@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // PriceTiersApiService PriceTiersApi service
 type PriceTiersApiService service
 
 type PriceTiersApiGETPriceIdPriceTiersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PriceTiersApiService
-	priceId string
+	priceId    string
 }
 
 func (r PriceTiersApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Retrieve the price tiers associated to the price
 func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) PriceTiersApiGETPriceIdPriceTiersRequest {
 	return PriceTiersApiGETPriceIdPriceTiersRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r PriceTiersApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceIdPriceTiers")
@@ -117,7 +116,7 @@ func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r PriceTiersApiGETPri
 }
 
 type PriceTiersApiGETPriceTiersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PriceTiersApiService
 }
 
@@ -136,7 +135,7 @@ List all price tiers
 func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiGETPriceTiersRequest {
 	return PriceTiersApiGETPriceTiersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiG
 //  @return GETPriceTiers200Response
 func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*GETPriceTiers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPriceTiers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPriceTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiers")
@@ -216,8 +215,8 @@ func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiers
 }
 
 type PriceTiersApiGETPriceTiersPriceTierIdRequest struct {
-	ctx context.Context
-	ApiService *PriceTiersApiService
+	ctx         context.Context
+	ApiService  *PriceTiersApiService
 	priceTierId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a price tier
 */
 func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) PriceTiersApiGETPriceTiersPriceTierIdRequest {
 	return PriceTiersApiGETPriceTiersPriceTierIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceTierId: priceTierId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, pri
 //  @return GETPriceTiersPriceTierId200Response
 func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPriceTiersPriceTierId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPriceTiersPriceTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiersPriceTierId")

@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // CouponsApiService CouponsApi service
 type CouponsApiService service
 
 type CouponsApiDELETECouponsCouponIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CouponsApiService
-	couponId string
+	couponId   string
 }
 
 func (r CouponsApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete a coupon
 func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest {
 	return CouponsApiDELETECouponsCouponIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		couponId: couponId,
+		ctx:        ctx,
+		couponId:   couponId,
 	}
 }
 
 // Execute executes the request
 func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECouponsCouponIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.DELETECouponsCouponId")
@@ -117,8 +116,8 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 }
 
 type CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
-	ctx context.Context
-	ApiService *CouponsApiService
+	ctx                        context.Context
+	ApiService                 *CouponsApiService
 	couponCodesPromotionRuleId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the coupons associated to the coupon codes promotion rule
 */
 func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
 	return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:                 a,
+		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Con
 // Execute executes the request
 func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETCouponCodesPromotionRuleIdCoupons")
@@ -209,7 +208,7 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r Coupon
 }
 
 type CouponsApiGETCouponsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CouponsApiService
 }
 
@@ -228,7 +227,7 @@ List all coupons
 func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCouponsRequest {
 	return CouponsApiGETCouponsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCoupons
 //  @return GETCoupons200Response
 func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*GETCoupons200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCoupons200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCoupons200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETCoupons")
@@ -308,9 +307,9 @@ func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*G
 }
 
 type CouponsApiGETCouponsCouponIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CouponsApiService
-	couponId string
+	couponId   string
 }
 
 func (r CouponsApiGETCouponsCouponIdRequest) Execute() (*GETCouponsCouponId200Response, *http.Response, error) {
@@ -329,8 +328,8 @@ Retrieve a coupon
 func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest {
 	return CouponsApiGETCouponsCouponIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		couponId: couponId,
+		ctx:        ctx,
+		couponId:   couponId,
 	}
 }
 
@@ -338,10 +337,10 @@ func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId str
 //  @return GETCouponsCouponId200Response
 func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCouponIdRequest) (*GETCouponsCouponId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCouponsCouponId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCouponsCouponId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETCouponsCouponId")
@@ -411,10 +410,10 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 }
 
 type CouponsApiPATCHCouponsCouponIdRequest struct {
-	ctx context.Context
-	ApiService *CouponsApiService
+	ctx          context.Context
+	ApiService   *CouponsApiService
 	couponUpdate *CouponUpdate
-	couponId string
+	couponId     string
 }
 
 func (r CouponsApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) CouponsApiPATCHCouponsCouponIdRequest {
@@ -438,8 +437,8 @@ Update a coupon
 func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest {
 	return CouponsApiPATCHCouponsCouponIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		couponId: couponId,
+		ctx:        ctx,
+		couponId:   couponId,
 	}
 }
 
@@ -447,10 +446,10 @@ func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId s
 //  @return PATCHCouponsCouponId200Response
 func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCouponsCouponIdRequest) (*PATCHCouponsCouponId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHCouponsCouponId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCouponsCouponId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.PATCHCouponsCouponId")
@@ -525,8 +524,8 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 }
 
 type CouponsApiPOSTCouponsRequest struct {
-	ctx context.Context
-	ApiService *CouponsApiService
+	ctx          context.Context
+	ApiService   *CouponsApiService
 	couponCreate *CouponCreate
 }
 
@@ -550,7 +549,7 @@ Create a coupon
 func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCouponsRequest {
 	return CouponsApiPOSTCouponsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCoupo
 //  @return POSTCoupons201Response
 func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (*POSTCoupons201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTCoupons201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCoupons201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.POSTCoupons")

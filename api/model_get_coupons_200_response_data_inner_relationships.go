@@ -17,7 +17,7 @@ import (
 
 // GETCoupons200ResponseDataInnerRelationships struct for GETCoupons200ResponseDataInnerRelationships
 type GETCoupons200ResponseDataInnerRelationships struct {
-	PromotionRule *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"promotion_rule,omitempty"`
+	PromotionRule *GETCoupons200ResponseDataInnerRelationshipsPromotionRule `json:"promotion_rule,omitempty"`
 }
 
 // NewGETCoupons200ResponseDataInnerRelationships instantiates a new GETCoupons200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETCoupons200ResponseDataInnerRelationshipsWithDefaults() *GETCoupons200
 }
 
 // GetPromotionRule returns the PromotionRule field value if set, zero value otherwise.
-func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRule() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRule() GETCoupons200ResponseDataInnerRelationshipsPromotionRule {
 	if o == nil || o.PromotionRule == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCoupons200ResponseDataInnerRelationshipsPromotionRule
 		return ret
 	}
 	return *o.PromotionRule
@@ -48,7 +48,7 @@ func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRule() GETAddr
 
 // GetPromotionRuleOk returns a tuple with the PromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRuleOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETCoupons200ResponseDataInnerRelationships) GetPromotionRuleOk() (*GETCoupons200ResponseDataInnerRelationshipsPromotionRule, bool) {
 	if o == nil || o.PromotionRule == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETCoupons200ResponseDataInnerRelationships) HasPromotionRule() bool {
 	return false
 }
 
-// SetPromotionRule gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the PromotionRule field.
-func (o *GETCoupons200ResponseDataInnerRelationships) SetPromotionRule(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetPromotionRule gets a reference to the given GETCoupons200ResponseDataInnerRelationshipsPromotionRule and assigns it to the PromotionRule field.
+func (o *GETCoupons200ResponseDataInnerRelationships) SetPromotionRule(v GETCoupons200ResponseDataInnerRelationshipsPromotionRule) {
 	o.PromotionRule = &v
 }
 
@@ -112,5 +112,3 @@ func (v *NullableGETCoupons200ResponseDataInnerRelationships) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

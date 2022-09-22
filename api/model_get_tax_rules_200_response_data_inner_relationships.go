@@ -17,7 +17,7 @@ import (
 
 // GETTaxRules200ResponseDataInnerRelationships struct for GETTaxRules200ResponseDataInnerRelationships
 type GETTaxRules200ResponseDataInnerRelationships struct {
-	ManualTaxCalculator *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"manual_tax_calculator,omitempty"`
+	ManualTaxCalculator *GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator `json:"manual_tax_calculator,omitempty"`
 }
 
 // NewGETTaxRules200ResponseDataInnerRelationships instantiates a new GETTaxRules200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETTaxRules200ResponseDataInnerRelationshipsWithDefaults() *GETTaxRules2
 }
 
 // GetManualTaxCalculator returns the ManualTaxCalculator field value if set, zero value otherwise.
-func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculator() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculator() GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator {
 	if o == nil || o.ManualTaxCalculator == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator
 		return ret
 	}
 	return *o.ManualTaxCalculator
@@ -48,7 +48,7 @@ func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculator() 
 
 // GetManualTaxCalculatorOk returns a tuple with the ManualTaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculatorOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETTaxRules200ResponseDataInnerRelationships) GetManualTaxCalculatorOk() (*GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator, bool) {
 	if o == nil || o.ManualTaxCalculator == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETTaxRules200ResponseDataInnerRelationships) HasManualTaxCalculator() 
 	return false
 }
 
-// SetManualTaxCalculator gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the ManualTaxCalculator field.
-func (o *GETTaxRules200ResponseDataInnerRelationships) SetManualTaxCalculator(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetManualTaxCalculator gets a reference to the given GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator and assigns it to the ManualTaxCalculator field.
+func (o *GETTaxRules200ResponseDataInnerRelationships) SetManualTaxCalculator(v GETTaxRules200ResponseDataInnerRelationshipsManualTaxCalculator) {
 	o.ManualTaxCalculator = &v
 }
 
@@ -112,5 +112,3 @@ func (v *NullableGETTaxRules200ResponseDataInnerRelationships) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,9 +18,9 @@ import (
 // BraintreeGatewayData struct for BraintreeGatewayData
 type BraintreeGatewayData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBraintreeGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BraintreeGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETBraintreeGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
@@ -39,8 +39,6 @@ func NewBraintreeGatewayData(type_ string, attributes GETBraintreeGateways200Res
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreeGatewayDataWithDefaults() *BraintreeGatewayData {
 	this := BraintreeGatewayData{}
-	var type_ string = "braintree_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableBraintreeGatewayData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

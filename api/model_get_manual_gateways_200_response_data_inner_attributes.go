@@ -372,5 +372,3 @@ func (v *NullableGETManualGateways200ResponseDataInnerAttributes) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

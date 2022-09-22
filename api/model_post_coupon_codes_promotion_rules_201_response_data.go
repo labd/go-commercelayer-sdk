@@ -20,9 +20,9 @@ type POSTCouponCodesPromotionRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *POSTAdyenPayments201ResponseDataAttributes                    `json:"attributes,omitempty"`
 	Relationships *GETCouponCodesPromotionRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTCouponCodesPromotionRules201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTCouponCodesPromotionRules201ResponseData() *POSTCouponCodesPromotionRules201ResponseData {
 	this := POSTCouponCodesPromotionRules201ResponseData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTCouponCodesPromotionRules201ResponseData() *POSTCouponCodesPromotion
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTCouponCodesPromotionRules201ResponseDataWithDefaults() *POSTCouponCodesPromotionRules201ResponseData {
 	this := POSTCouponCodesPromotionRules201ResponseData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTCouponCodesPromotionRules201ResponseData) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

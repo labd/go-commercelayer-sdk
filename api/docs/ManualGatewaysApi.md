@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("manual_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
+    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
     manualGatewayId := "manualGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("manual_gateways", *openapiclient.NewPOSTManualGateways201ResponseDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
+    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("Type_example", *openapiclient.NewPOSTManualGateways201ResponseDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -18,9 +18,9 @@ import (
 // MerchantData struct for MerchantData
 type MerchantData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETMerchants200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *MerchantDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    GETMerchants200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *MerchantDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewMerchantData instantiates a new MerchantData object
@@ -39,8 +39,6 @@ func NewMerchantData(type_ string, attributes GETMerchants200ResponseDataInnerAt
 // but it doesn't guarantee that properties required by API are set
 func NewMerchantDataWithDefaults() *MerchantData {
 	this := MerchantData{}
-	var type_ string = "merchants"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableMerchantData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

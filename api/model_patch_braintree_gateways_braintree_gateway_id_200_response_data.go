@@ -20,10 +20,10 @@ type PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                            `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                             `json:"links,omitempty"`
+	Attributes    *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships             `json:"relationships,omitempty"`
 }
 
 // NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseData instantiates a new PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseData() *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData {
 	this := PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData{}
-	var type_ string = "braintree_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseData() *PATCHBraintre
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataWithDefaults() *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData {
 	this := PATCHBraintreeGatewaysBraintreeGatewayId200ResponseData{}
-	var type_ string = "braintree_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHBraintreeGatewaysBraintreeGatewayId200ResponseData) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

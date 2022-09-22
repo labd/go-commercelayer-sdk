@@ -20,10 +20,10 @@ type PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETCheckoutComGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                 `json:"links,omitempty"`
+	Attributes    *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETCheckoutComGateways200ResponseDataInnerRelationships               `json:"relationships,omitempty"`
 }
 
 // NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData instantiates a new PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData() *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData {
 	this := PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData() *PATCHChec
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataWithDefaults() *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData {
 	this := PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseData) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

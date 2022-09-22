@@ -112,5 +112,3 @@ func (v *NullableGETShippingCategoriesShippingCategoryId200Response) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

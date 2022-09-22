@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETExternalPayments200ResponseDataInnerAttributes**](GETExternalPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPaymentDataRelationships**](ExternalPaymentDataRelationships.md) |  | [optional] 
 

@@ -20,10 +20,10 @@ type PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETOrderSubscriptions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                               `json:"links,omitempty"`
+	Attributes    *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETOrderSubscriptions200ResponseDataInnerRelationships              `json:"relationships,omitempty"`
 }
 
 // NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseData instantiates a new PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseData() *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData {
 	this := PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData{}
-	var type_ string = "order_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseData() *PATCHOrderS
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataWithDefaults() *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData {
 	this := PATCHOrderSubscriptionsOrderSubscriptionId200ResponseData{}
-	var type_ string = "order_subscriptions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHOrderSubscriptionsOrderSubscriptionId200ResponseData) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

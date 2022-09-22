@@ -18,9 +18,9 @@ import (
 // PackageCreateData struct for PackageCreateData
 type PackageCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTPackages201ResponseDataAttributes `json:"attributes"`
-	Relationships *PackageCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                `json:"type"`
+	Attributes    POSTPackages201ResponseDataAttributes `json:"attributes"`
+	Relationships *PackageCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewPackageCreateData instantiates a new PackageCreateData object
@@ -39,8 +39,6 @@ func NewPackageCreateData(type_ string, attributes POSTPackages201ResponseDataAt
 // but it doesn't guarantee that properties required by API are set
 func NewPackageCreateDataWithDefaults() *PackageCreateData {
 	this := PackageCreateData{}
-	var type_ string = "packages"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullablePackageCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

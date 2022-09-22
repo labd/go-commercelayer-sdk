@@ -372,5 +372,3 @@ func (v *NullableGETExternalPayments200ResponseDataInnerAttributes) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

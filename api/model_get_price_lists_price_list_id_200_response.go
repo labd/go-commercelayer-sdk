@@ -112,5 +112,3 @@ func (v *NullableGETPriceListsPriceListId200Response) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

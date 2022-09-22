@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // AuthorizationsApiService AuthorizationsApi service
 type AuthorizationsApiService service
 
 type AuthorizationsApiGETAuthorizationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthorizationsApiService
 }
 
@@ -44,7 +43,7 @@ List all authorizations
 func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) AuthorizationsApiGETAuthorizationsRequest {
 	return AuthorizationsApiGETAuthorizationsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -52,10 +51,10 @@ func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) Author
 //  @return GETAuthorizations200Response
 func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*GETAuthorizations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAuthorizations200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAuthorizations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizations")
@@ -124,8 +123,8 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiG
 }
 
 type AuthorizationsApiGETAuthorizationsAuthorizationIdRequest struct {
-	ctx context.Context
-	ApiService *AuthorizationsApiService
+	ctx             context.Context
+	ApiService      *AuthorizationsApiService
 	authorizationId string
 }
 
@@ -144,8 +143,8 @@ Retrieve an authorization
 */
 func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -154,10 +153,10 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.
 //  @return GETAuthorizationsAuthorizationId200Response
 func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETAuthorizationsAuthorizationId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAuthorizationsAuthorizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizationsAuthorizationId")
@@ -227,9 +226,9 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Aut
 }
 
 type AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	captureId string
+	captureId  string
 }
 
 func (r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -248,17 +247,17 @@ Retrieve the reference authorization associated to the capture
 func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
-		ctx: ctx,
-		captureId: captureId,
+		ctx:        ctx,
+		captureId:  captureId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETCaptureIdReferenceAuthorization")
@@ -319,9 +318,9 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 }
 
 type AuthorizationsApiGETOrderIdAuthorizationsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	orderId string
+	orderId    string
 }
 
 func (r AuthorizationsApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
@@ -340,17 +339,17 @@ Retrieve the authorizations associated to the order
 func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest {
 	return AuthorizationsApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r AuthorizationsApiGETOrderIdAuthorizationsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETOrderIdAuthorizations")
@@ -411,9 +410,9 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r Authorizati
 }
 
 type AuthorizationsApiGETVoidIdReferenceAuthorizationRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	voidId string
+	voidId     string
 }
 
 func (r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -432,17 +431,17 @@ Retrieve the reference authorization associated to the void
 func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
-		ctx: ctx,
-		voidId: voidId,
+		ctx:        ctx,
+		voidId:     voidId,
 	}
 }
 
 // Execute executes the request
 func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETVoidIdReferenceAuthorization")
@@ -503,10 +502,10 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r Auth
 }
 
 type AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest struct {
-	ctx context.Context
-	ApiService *AuthorizationsApiService
+	ctx                 context.Context
+	ApiService          *AuthorizationsApiService
 	authorizationUpdate *AuthorizationUpdate
-	authorizationId string
+	authorizationId     string
 }
 
 func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
@@ -529,8 +528,8 @@ Update an authorization
 */
 func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		authorizationId: authorizationId,
 	}
 }
@@ -539,10 +538,10 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx contex
 //  @return PATCHAuthorizationsAuthorizationId200Response
 func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHAuthorizationsAuthorizationId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAuthorizationsAuthorizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.PATCHAuthorizationsAuthorizationId")

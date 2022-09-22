@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("in_stock_subscriptions", "XGZwpOSrWL", *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
+    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
     inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("in_stock_subscriptions", *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
+    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("Type_example", *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

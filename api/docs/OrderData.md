@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "orders"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETOrders200ResponseDataInnerAttributes**](GETOrders200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderDataRelationships**](OrderDataRelationships.md) |  | [optional] 
 

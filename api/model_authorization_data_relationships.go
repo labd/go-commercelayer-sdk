@@ -17,9 +17,9 @@ import (
 
 // AuthorizationDataRelationships struct for AuthorizationDataRelationships
 type AuthorizationDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
+	Order    *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
 	Captures *AuthorizationDataRelationshipsCaptures `json:"captures,omitempty"`
-	Voids *AuthorizationDataRelationshipsVoids `json:"voids,omitempty"`
+	Voids    *AuthorizationDataRelationshipsVoids    `json:"voids,omitempty"`
 }
 
 // NewAuthorizationDataRelationships instantiates a new AuthorizationDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableAuthorizationDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

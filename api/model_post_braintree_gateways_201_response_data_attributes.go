@@ -448,5 +448,3 @@ func (v *NullablePOSTBraintreeGateways201ResponseDataAttributes) UnmarshalJSON(s
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

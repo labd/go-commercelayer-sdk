@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupons"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTCoupons201ResponseDataAttributes**](POSTCoupons201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCreateDataRelationships**](CouponCreateDataRelationships.md) |  | [optional] 
 

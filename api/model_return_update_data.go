@@ -20,9 +20,9 @@ type ReturnUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHReturnsReturnId200ResponseDataAttributes `json:"attributes"`
-	Relationships *PackageUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                        `json:"id"`
+	Attributes    PATCHReturnsReturnId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PackageUpdateDataRelationships               `json:"relationships,omitempty"`
 }
 
 // NewReturnUpdateData instantiates a new ReturnUpdateData object
@@ -42,8 +42,6 @@ func NewReturnUpdateData(type_ string, id string, attributes PATCHReturnsReturnI
 // but it doesn't guarantee that properties required by API are set
 func NewReturnUpdateDataWithDefaults() *ReturnUpdateData {
 	this := ReturnUpdateData{}
-	var type_ string = "returns"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableReturnUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

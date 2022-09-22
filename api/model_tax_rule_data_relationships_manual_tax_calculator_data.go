@@ -29,8 +29,6 @@ type TaxRuleDataRelationshipsManualTaxCalculatorData struct {
 // will change when the set of required properties is changed
 func NewTaxRuleDataRelationshipsManualTaxCalculatorData() *TaxRuleDataRelationshipsManualTaxCalculatorData {
 	this := TaxRuleDataRelationshipsManualTaxCalculatorData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewTaxRuleDataRelationshipsManualTaxCalculatorData() *TaxRuleDataRelationsh
 // but it doesn't guarantee that properties required by API are set
 func NewTaxRuleDataRelationshipsManualTaxCalculatorDataWithDefaults() *TaxRuleDataRelationshipsManualTaxCalculatorData {
 	this := TaxRuleDataRelationshipsManualTaxCalculatorData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableTaxRuleDataRelationshipsManualTaxCalculatorData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

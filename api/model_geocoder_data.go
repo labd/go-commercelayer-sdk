@@ -18,9 +18,9 @@ import (
 // GeocoderData struct for GeocoderData
 type GeocoderData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBingGeocoders200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BingGeocoderDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    GETBingGeocoders200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BingGeocoderDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewGeocoderData instantiates a new GeocoderData object
@@ -39,8 +39,6 @@ func NewGeocoderData(type_ string, attributes GETBingGeocoders200ResponseDataInn
 // but it doesn't guarantee that properties required by API are set
 func NewGeocoderDataWithDefaults() *GeocoderData {
 	this := GeocoderData{}
-	var type_ string = "geocoders"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableGeocoderData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

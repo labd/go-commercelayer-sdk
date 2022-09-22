@@ -20,10 +20,10 @@ type GETAdjustments200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETAdjustments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          *string                                       `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
+	Attributes    *GETAdjustments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships map[string]interface{}                        `json:"relationships,omitempty"`
 }
 
 // NewGETAdjustments200ResponseDataInner instantiates a new GETAdjustments200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETAdjustments200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETAdjustments200ResponseDataInner() *GETAdjustments200ResponseDataInner {
 	this := GETAdjustments200ResponseDataInner{}
-	var type_ string = "adjustments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETAdjustments200ResponseDataInner() *GETAdjustments200ResponseDataInner
 // but it doesn't guarantee that properties required by API are set
 func NewGETAdjustments200ResponseDataInnerWithDefaults() *GETAdjustments200ResponseDataInner {
 	this := GETAdjustments200ResponseDataInner{}
-	var type_ string = "adjustments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETAdjustments200ResponseDataInner) UnmarshalJSON(src []byte) e
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

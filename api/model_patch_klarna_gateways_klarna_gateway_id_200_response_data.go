@@ -20,10 +20,10 @@ type PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETKlarnaGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETKlarnaGateways200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseData instantiates a new PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseData() *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData {
 	this := PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData{}
-	var type_ string = "klarna_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseData() *PATCHKlarnaGateways
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataWithDefaults() *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData {
 	this := PATCHKlarnaGatewaysKlarnaGatewayId200ResponseData{}
-	var type_ string = "klarna_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHKlarnaGatewaysKlarnaGatewayId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

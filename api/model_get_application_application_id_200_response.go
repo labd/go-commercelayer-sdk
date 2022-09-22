@@ -112,5 +112,3 @@ func (v *NullableGETApplicationApplicationId200Response) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

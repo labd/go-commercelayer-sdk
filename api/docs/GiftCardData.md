@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "gift_cards"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETGiftCards200ResponseDataInnerAttributes**](GETGiftCards200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**GiftCardDataRelationships**](GiftCardDataRelationships.md) |  | [optional] 
 

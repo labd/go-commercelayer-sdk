@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    fixedAmountPromotionUpdate := *openapiclient.NewFixedAmountPromotionUpdate(*openapiclient.NewFixedAmountPromotionUpdateData("fixed_amount_promotions", "XGZwpOSrWL", *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes())) // FixedAmountPromotionUpdate | 
+    fixedAmountPromotionUpdate := *openapiclient.NewFixedAmountPromotionUpdate(*openapiclient.NewFixedAmountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes())) // FixedAmountPromotionUpdate | 
     fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    fixedAmountPromotionCreate := *openapiclient.NewFixedAmountPromotionCreate(*openapiclient.NewFixedAmountPromotionCreateData("fixed_amount_promotions", *openapiclient.NewPOSTFixedAmountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedAmountPromotionCreate | 
+    fixedAmountPromotionCreate := *openapiclient.NewFixedAmountPromotionCreate(*openapiclient.NewFixedAmountPromotionCreateData("Type_example", *openapiclient.NewPOSTFixedAmountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedAmountPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

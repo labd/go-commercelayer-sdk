@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // ShipmentsApiService ShipmentsApi service
 type ShipmentsApiService service
 
 type ShipmentsApiGETOrderIdShipmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShipmentsApiService
-	orderId string
+	orderId    string
 }
 
 func (r ShipmentsApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Retrieve the shipments associated to the order
 func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId string) ShipmentsApiGETOrderIdShipmentsRequest {
 	return ShipmentsApiGETOrderIdShipmentsRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderIdShipmentsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETOrderIdShipments")
@@ -117,9 +116,9 @@ func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderI
 }
 
 type ShipmentsApiGETParcelIdShipmentRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShipmentsApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r ShipmentsApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
@@ -138,17 +137,17 @@ Retrieve the shipment associated to the parcel
 func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId string) ShipmentsApiGETParcelIdShipmentRequest {
 	return ShipmentsApiGETParcelIdShipmentRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ShipmentsApiGETParcelIdShipmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETParcelIdShipment")
@@ -209,7 +208,7 @@ func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ShipmentsApiGETParcel
 }
 
 type ShipmentsApiGETShipmentsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShipmentsApiService
 }
 
@@ -228,7 +227,7 @@ List all shipments
 func (a *ShipmentsApiService) GETShipments(ctx context.Context) ShipmentsApiGETShipmentsRequest {
 	return ShipmentsApiGETShipmentsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *ShipmentsApiService) GETShipments(ctx context.Context) ShipmentsApiGETS
 //  @return GETShipments200Response
 func (a *ShipmentsApiService) GETShipmentsExecute(r ShipmentsApiGETShipmentsRequest) (*GETShipments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShipments200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShipments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETShipments")
@@ -308,7 +307,7 @@ func (a *ShipmentsApiService) GETShipmentsExecute(r ShipmentsApiGETShipmentsRequ
 }
 
 type ShipmentsApiGETShipmentsShipmentIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShipmentsApiService
 	shipmentId string
 }
@@ -329,7 +328,7 @@ Retrieve a shipment
 func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiGETShipmentsShipmentIdRequest {
 	return ShipmentsApiGETShipmentsShipmentIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipme
 //  @return GETShipmentsShipmentId200Response
 func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShipmentsShipmentIdRequest) (*GETShipmentsShipmentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShipmentsShipmentId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShipmentsShipmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETShipmentsShipmentId")
@@ -411,8 +410,8 @@ func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShi
 }
 
 type ShipmentsApiGETStockLineItemIdShipmentRequest struct {
-	ctx context.Context
-	ApiService *ShipmentsApiService
+	ctx             context.Context
+	ApiService      *ShipmentsApiService
 	stockLineItemId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the shipment associated to the stock line item
 */
 func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ShipmentsApiGETStockLineItemIdShipmentRequest {
 	return ShipmentsApiGETStockLineItemIdShipmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockLineItemId: stockLineItemId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, st
 // Execute executes the request
 func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGETStockLineItemIdShipmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETStockLineItemIdShipment")
@@ -503,8 +502,8 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGE
 }
 
 type ShipmentsApiGETStockTransferIdShipmentRequest struct {
-	ctx context.Context
-	ApiService *ShipmentsApiService
+	ctx             context.Context
+	ApiService      *ShipmentsApiService
 	stockTransferId string
 }
 
@@ -523,8 +522,8 @@ Retrieve the shipment associated to the stock transfer
 */
 func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ShipmentsApiGETStockTransferIdShipmentRequest {
 	return ShipmentsApiGETStockTransferIdShipmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		stockTransferId: stockTransferId,
 	}
 }
@@ -532,9 +531,9 @@ func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, st
 // Execute executes the request
 func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ShipmentsApiGETStockTransferIdShipmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.GETStockTransferIdShipment")
@@ -595,10 +594,10 @@ func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ShipmentsApiGE
 }
 
 type ShipmentsApiPATCHShipmentsShipmentIdRequest struct {
-	ctx context.Context
-	ApiService *ShipmentsApiService
+	ctx            context.Context
+	ApiService     *ShipmentsApiService
 	shipmentUpdate *ShipmentUpdate
-	shipmentId string
+	shipmentId     string
 }
 
 func (r ShipmentsApiPATCHShipmentsShipmentIdRequest) ShipmentUpdate(shipmentUpdate ShipmentUpdate) ShipmentsApiPATCHShipmentsShipmentIdRequest {
@@ -622,7 +621,7 @@ Update a shipment
 func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiPATCHShipmentsShipmentIdRequest {
 	return ShipmentsApiPATCHShipmentsShipmentIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -631,10 +630,10 @@ func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, ship
 //  @return PATCHShipmentsShipmentId200Response
 func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATCHShipmentsShipmentIdRequest) (*PATCHShipmentsShipmentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHShipmentsShipmentId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHShipmentsShipmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShipmentsApiService.PATCHShipmentsShipmentId")

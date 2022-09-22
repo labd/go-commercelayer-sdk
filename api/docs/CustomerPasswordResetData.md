@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customer_password_resets"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCustomerPasswordResets200ResponseDataInnerAttributes**](GETCustomerPasswordResets200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 

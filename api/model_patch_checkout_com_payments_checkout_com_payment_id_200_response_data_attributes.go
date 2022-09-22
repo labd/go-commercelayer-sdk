@@ -446,5 +446,3 @@ func (v *NullablePATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

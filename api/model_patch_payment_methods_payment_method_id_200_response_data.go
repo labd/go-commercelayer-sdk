@@ -20,10 +20,10 @@ type PATCHPaymentMethodsPaymentMethodId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETPaymentMethods200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETPaymentMethods200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHPaymentMethodsPaymentMethodId200ResponseData instantiates a new PATCHPaymentMethodsPaymentMethodId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHPaymentMethodsPaymentMethodId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHPaymentMethodsPaymentMethodId200ResponseData() *PATCHPaymentMethodsPaymentMethodId200ResponseData {
 	this := PATCHPaymentMethodsPaymentMethodId200ResponseData{}
-	var type_ string = "payment_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHPaymentMethodsPaymentMethodId200ResponseData() *PATCHPaymentMethods
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHPaymentMethodsPaymentMethodId200ResponseDataWithDefaults() *PATCHPaymentMethodsPaymentMethodId200ResponseData {
 	this := PATCHPaymentMethodsPaymentMethodId200ResponseData{}
-	var type_ string = "payment_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHPaymentMethodsPaymentMethodId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

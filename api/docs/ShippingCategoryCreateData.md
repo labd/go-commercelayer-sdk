@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_categories"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTShippingCategories201ResponseDataAttributes**](POSTShippingCategories201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETPaymentMethods200ResponseDataInnerAttributes**](GETPaymentMethods200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodDataRelationships**](PaymentMethodDataRelationships.md) |  | [optional] 
 

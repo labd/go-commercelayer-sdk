@@ -20,9 +20,9 @@ type GoogleGeocoderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                        `json:"relationships,omitempty"`
 }
 
 // NewGoogleGeocoderUpdateData instantiates a new GoogleGeocoderUpdateData object
@@ -42,8 +42,6 @@ func NewGoogleGeocoderUpdateData(type_ string, id string, attributes PATCHGoogle
 // but it doesn't guarantee that properties required by API are set
 func NewGoogleGeocoderUpdateDataWithDefaults() *GoogleGeocoderUpdateData {
 	this := GoogleGeocoderUpdateData{}
-	var type_ string = "google_geocoders"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableGoogleGeocoderUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

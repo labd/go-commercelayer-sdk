@@ -20,10 +20,10 @@ type PATCHGoogleGeocodersGoogleGeocoderId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETBingGeocoders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBingGeocoders200ResponseDataInnerRelationships             `json:"relationships,omitempty"`
 }
 
 // NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseData instantiates a new PATCHGoogleGeocodersGoogleGeocoderId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHGoogleGeocodersGoogleGeocoderId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseData() *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData {
 	this := PATCHGoogleGeocodersGoogleGeocoderId200ResponseData{}
-	var type_ string = "google_geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseData() *PATCHGoogleGeocod
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseDataWithDefaults() *PATCHGoogleGeocodersGoogleGeocoderId200ResponseData {
 	this := PATCHGoogleGeocodersGoogleGeocoderId200ResponseData{}
-	var type_ string = "google_geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHGoogleGeocodersGoogleGeocoderId200ResponseData) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

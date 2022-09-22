@@ -890,5 +890,3 @@ func (v *NullableGETOrganizationOrganizationId200ResponseDataAttributes) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

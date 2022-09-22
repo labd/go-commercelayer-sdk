@@ -112,5 +112,3 @@ func (v *NullableGETShippingWeightTiersShippingWeightTierId200Response) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

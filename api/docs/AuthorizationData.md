@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "authorizations"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAuthorizations200ResponseDataInnerAttributes**](GETAuthorizations200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AuthorizationDataRelationships**](AuthorizationDataRelationships.md) |  | [optional] 
 

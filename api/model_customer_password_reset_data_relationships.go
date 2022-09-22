@@ -18,7 +18,7 @@ import (
 // CustomerPasswordResetDataRelationships struct for CustomerPasswordResetDataRelationships
 type CustomerPasswordResetDataRelationships struct {
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Events   *CustomerAddressDataRelationshipsEvents   `json:"events,omitempty"`
 }
 
 // NewCustomerPasswordResetDataRelationships instantiates a new CustomerPasswordResetDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableCustomerPasswordResetDataRelationships) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

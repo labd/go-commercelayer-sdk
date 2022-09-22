@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // ShippingWeightTiersApiService ShippingWeightTiersApi service
 type ShippingWeightTiersApiService service
 
 type ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingWeightTiersApiService
+	ctx                  context.Context
+	ApiService           *ShippingWeightTiersApiService
 	shippingWeightTierId string
 }
 
@@ -45,8 +44,8 @@ Delete a shipping weight tier
 */
 func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 // Execute executes the request
 func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.DELETEShippingWeightTiersShippingWeightTierId")
@@ -117,8 +116,8 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 }
 
 type ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest struct {
-	ctx context.Context
-	ApiService *ShippingWeightTiersApiService
+	ctx              context.Context
+	ApiService       *ShippingWeightTiersApiService
 	shippingMethodId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the shipping weight tiers associated to the shipping method
 */
 func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest {
 	return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(c
 // Execute executes the request
 func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.GETShippingMethodIdShippingWeightTiers")
@@ -209,7 +208,7 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersEx
 }
 
 type ShippingWeightTiersApiGETShippingWeightTiersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingWeightTiersApiService
 }
 
@@ -228,7 +227,7 @@ List all shipping weight tiers
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiGETShippingWeightTiersRequest {
 	return ShippingWeightTiersApiGETShippingWeightTiersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Conte
 //  @return GETShippingWeightTiers200Response
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*GETShippingWeightTiers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingWeightTiers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingWeightTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.GETShippingWeightTiers")
@@ -308,8 +307,8 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r Shipping
 }
 
 type ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingWeightTiersApiService
+	ctx                  context.Context
+	ApiService           *ShippingWeightTiersApiService
 	shippingWeightTierId string
 }
 
@@ -328,8 +327,8 @@ Retrieve a shipping weight tier
 */
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 //  @return GETShippingWeightTiersShippingWeightTierId200Response
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*GETShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingWeightTiersShippingWeightTierId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingWeightTiersShippingWeightTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.GETShippingWeightTiersShippingWeightTierId")
@@ -411,10 +410,10 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 }
 
 type ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingWeightTiersApiService
+	ctx                      context.Context
+	ApiService               *ShippingWeightTiersApiService
 	shippingWeightTierUpdate *ShippingWeightTierUpdate
-	shippingWeightTierId string
+	shippingWeightTierId     string
 }
 
 func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) ShippingWeightTierUpdate(shippingWeightTierUpdate ShippingWeightTierUpdate) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
@@ -437,8 +436,8 @@ Update a shipping weight tier
 */
 func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -447,10 +446,10 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 //  @return PATCHShippingWeightTiersShippingWeightTierId200Response
 func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*PATCHShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHShippingWeightTiersShippingWeightTierId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHShippingWeightTiersShippingWeightTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.PATCHShippingWeightTiersShippingWeightTierId")
@@ -525,8 +524,8 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 }
 
 type ShippingWeightTiersApiPOSTShippingWeightTiersRequest struct {
-	ctx context.Context
-	ApiService *ShippingWeightTiersApiService
+	ctx                      context.Context
+	ApiService               *ShippingWeightTiersApiService
 	shippingWeightTierCreate *ShippingWeightTierCreate
 }
 
@@ -550,7 +549,7 @@ Create a shipping weight tier
 func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiPOSTShippingWeightTiersRequest {
 	return ShippingWeightTiersApiPOSTShippingWeightTiersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Cont
 //  @return POSTShippingWeightTiers201Response
 func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*POSTShippingWeightTiers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTShippingWeightTiers201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTShippingWeightTiers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.POSTShippingWeightTiers")

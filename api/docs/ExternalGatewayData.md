@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETExternalGateways200ResponseDataInnerAttributes**](GETExternalGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalGatewayDataRelationships**](ExternalGatewayDataRelationships.md) |  | [optional] 
 

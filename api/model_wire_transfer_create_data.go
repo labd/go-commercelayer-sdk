@@ -18,9 +18,9 @@ import (
 // WireTransferCreateData struct for WireTransferCreateData
 type WireTransferCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewWireTransferCreateData instantiates a new WireTransferCreateData object
@@ -39,8 +39,6 @@ func NewWireTransferCreateData(type_ string, attributes POSTAdyenPayments201Resp
 // but it doesn't guarantee that properties required by API are set
 func NewWireTransferCreateDataWithDefaults() *WireTransferCreateData {
 	this := WireTransferCreateData{}
-	var type_ string = "wire_transfers"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableWireTransferCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

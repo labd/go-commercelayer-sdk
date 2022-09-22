@@ -20,9 +20,9 @@ type CustomerSubscriptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                     `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                     `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionUpdateData instantiates a new CustomerSubscriptionUpdateData object
@@ -42,8 +42,6 @@ func NewCustomerSubscriptionUpdateData(type_ string, id string, attributes POSTA
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerSubscriptionUpdateDataWithDefaults() *CustomerSubscriptionUpdateData {
 	this := CustomerSubscriptionUpdateData{}
-	var type_ string = "customer_subscriptions"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableCustomerSubscriptionUpdateData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

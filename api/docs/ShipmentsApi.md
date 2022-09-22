@@ -438,7 +438,7 @@ import (
 )
 
 func main() {
-    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("shipments", "XGZwpOSrWL", *openapiclient.NewPATCHShipmentsShipmentId200ResponseDataAttributes())) // ShipmentUpdate | 
+    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShipmentsShipmentId200ResponseDataAttributes())) // ShipmentUpdate | 
     shipmentId := "shipmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()

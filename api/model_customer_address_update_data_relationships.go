@@ -18,7 +18,7 @@ import (
 // CustomerAddressUpdateDataRelationships struct for CustomerAddressUpdateDataRelationships
 type CustomerAddressUpdateDataRelationships struct {
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	Address *BingGeocoderDataRelationshipsAddresses `json:"address,omitempty"`
+	Address  *BingGeocoderDataRelationshipsAddresses   `json:"address,omitempty"`
 }
 
 // NewCustomerAddressUpdateDataRelationships instantiates a new CustomerAddressUpdateDataRelationships object
@@ -148,5 +148,3 @@ func (v *NullableCustomerAddressUpdateDataRelationships) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

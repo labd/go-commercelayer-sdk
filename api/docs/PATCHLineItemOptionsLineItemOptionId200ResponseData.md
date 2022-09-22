@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "line_item_options"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes**](PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETLineItemOptions200ResponseDataInnerRelationships**](GETLineItemOptions200ResponseDataInnerRelationships.md) |  | [optional] 

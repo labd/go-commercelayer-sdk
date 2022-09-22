@@ -17,9 +17,9 @@ import (
 
 // RefundDataRelationships struct for RefundDataRelationships
 type RefundDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
+	Order            *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
 	ReferenceCapture *AuthorizationDataRelationshipsCaptures `json:"reference_capture,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Events           *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
 }
 
 // NewRefundDataRelationships instantiates a new RefundDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableRefundDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

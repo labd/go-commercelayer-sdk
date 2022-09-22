@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Merchant** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**PriceList** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**InventoryModel** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**TaxCalculator** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**CustomerGroup** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Merchant** | Pointer to [**GETMarkets200ResponseDataInnerRelationshipsMerchant**](GETMarkets200ResponseDataInnerRelationshipsMerchant.md) |  | [optional] 
+**PriceList** | Pointer to [**GETMarkets200ResponseDataInnerRelationshipsPriceList**](GETMarkets200ResponseDataInnerRelationshipsPriceList.md) |  | [optional] 
+**InventoryModel** | Pointer to [**GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel**](GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel.md) |  | [optional] 
+**TaxCalculator** | Pointer to [**GETMarkets200ResponseDataInnerRelationshipsTaxCalculator**](GETMarkets200ResponseDataInnerRelationshipsTaxCalculator.md) |  | [optional] 
+**CustomerGroup** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsCustomerGroup**](GETCustomers200ResponseDataInnerRelationshipsCustomerGroup.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchant
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetMerchant() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetMerchant() GETMarkets200ResponseDataInnerRelationshipsMerchant`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetMerchantOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetMerchantOk() (*GETMarkets200ResponseDataInnerRelationshipsMerchant, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetMerchant(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetMerchant(v GETMarkets200ResponseDataInnerRelationshipsMerchant)`
 
 SetMerchant sets Merchant field to given value.
 
@@ -57,20 +57,20 @@ HasMerchant returns a boolean if a field has been set.
 
 ### GetPriceList
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetPriceList() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetPriceList() GETMarkets200ResponseDataInnerRelationshipsPriceList`
 
 GetPriceList returns the PriceList field if non-nil, zero value otherwise.
 
 ### GetPriceListOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetPriceListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetPriceListOk() (*GETMarkets200ResponseDataInnerRelationshipsPriceList, bool)`
 
 GetPriceListOk returns a tuple with the PriceList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceList
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetPriceList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetPriceList(v GETMarkets200ResponseDataInnerRelationshipsPriceList)`
 
 SetPriceList sets PriceList field to given value.
 
@@ -82,20 +82,20 @@ HasPriceList returns a boolean if a field has been set.
 
 ### GetInventoryModel
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetInventoryModel() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetInventoryModel() GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel`
 
 GetInventoryModel returns the InventoryModel field if non-nil, zero value otherwise.
 
 ### GetInventoryModelOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel, bool)`
 
 GetInventoryModelOk returns a tuple with the InventoryModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryModel
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetInventoryModel(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetInventoryModel(v GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel)`
 
 SetInventoryModel sets InventoryModel field to given value.
 
@@ -107,20 +107,20 @@ HasInventoryModel returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetTaxCalculator() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetTaxCalculator() GETMarkets200ResponseDataInnerRelationshipsTaxCalculator`
 
 GetTaxCalculator returns the TaxCalculator field if non-nil, zero value otherwise.
 
 ### GetTaxCalculatorOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetTaxCalculatorOk() (*GETMarkets200ResponseDataInnerRelationshipsTaxCalculator, bool)`
 
 GetTaxCalculatorOk returns a tuple with the TaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCalculator
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetTaxCalculator(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetTaxCalculator(v GETMarkets200ResponseDataInnerRelationshipsTaxCalculator)`
 
 SetTaxCalculator sets TaxCalculator field to given value.
 
@@ -132,20 +132,20 @@ HasTaxCalculator returns a boolean if a field has been set.
 
 ### GetCustomerGroup
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetCustomerGroup() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetCustomerGroup() GETCustomers200ResponseDataInnerRelationshipsCustomerGroup`
 
 GetCustomerGroup returns the CustomerGroup field if non-nil, zero value otherwise.
 
 ### GetCustomerGroupOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetCustomerGroupOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetCustomerGroupOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerGroup, bool)`
 
 GetCustomerGroupOk returns a tuple with the CustomerGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerGroup
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetCustomerGroup(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetCustomerGroup(v GETCustomers200ResponseDataInnerRelationshipsCustomerGroup)`
 
 SetCustomerGroup sets CustomerGroup field to given value.
 
@@ -157,20 +157,20 @@ HasCustomerGroup returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETMarkets200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETMarkets200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

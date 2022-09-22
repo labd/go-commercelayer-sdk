@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTCustomers201ResponseDataAttributes**](POSTCustomers201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerCreateDataRelationships**](CustomerCreateDataRelationships.md) |  | [optional] 
 

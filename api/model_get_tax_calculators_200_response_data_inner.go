@@ -20,10 +20,10 @@ type GETTaxCalculators200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
+	Attributes    *GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
 }
 
 // NewGETTaxCalculators200ResponseDataInner instantiates a new GETTaxCalculators200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETTaxCalculators200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETTaxCalculators200ResponseDataInner() *GETTaxCalculators200ResponseDataInner {
 	this := GETTaxCalculators200ResponseDataInner{}
-	var type_ string = "tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETTaxCalculators200ResponseDataInner() *GETTaxCalculators200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewGETTaxCalculators200ResponseDataInnerWithDefaults() *GETTaxCalculators200ResponseDataInner {
 	this := GETTaxCalculators200ResponseDataInner{}
-	var type_ string = "tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETTaxCalculators200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

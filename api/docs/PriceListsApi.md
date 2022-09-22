@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("price_lists", "XGZwpOSrWL", *openapiclient.NewPATCHPriceListsPriceListId200ResponseDataAttributes())) // PriceListUpdate | 
+    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceListsPriceListId200ResponseDataAttributes())) // PriceListUpdate | 
     priceListId := "priceListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("price_lists", *openapiclient.NewPOSTPriceLists201ResponseDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
+    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("Type_example", *openapiclient.NewPOSTPriceLists201ResponseDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

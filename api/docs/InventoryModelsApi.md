@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("inventory_models", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributes())) // InventoryModelUpdate | 
+    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributes())) // InventoryModelUpdate | 
     inventoryModelId := "inventoryModelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("inventory_models", *openapiclient.NewPOSTInventoryModels201ResponseDataAttributes("EU Inventory Model"))) // InventoryModelCreate | 
+    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("Type_example", *openapiclient.NewPOSTInventoryModels201ResponseDataAttributes("EU Inventory Model"))) // InventoryModelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

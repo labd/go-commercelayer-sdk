@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // ShippingCategoriesApiService ShippingCategoriesApi service
 type ShippingCategoriesApiService service
 
 type ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingCategoriesApiService
+	ctx                context.Context
+	ApiService         *ShippingCategoriesApiService
 	shippingCategoryId string
 }
 
@@ -45,8 +44,8 @@ Delete a shipping category
 */
 func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryI
 // Execute executes the request
 func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.DELETEShippingCategoriesShippingCategoryId")
@@ -117,7 +116,7 @@ func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryI
 }
 
 type ShippingCategoriesApiGETShipmentIdShippingCategoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingCategoriesApiService
 	shipmentId string
 }
@@ -138,7 +137,7 @@ Retrieve the shipping category associated to the shipment
 func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) ShippingCategoriesApiGETShipmentIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategory(ctx context
 // Execute executes the request
 func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategoryExecute(r ShippingCategoriesApiGETShipmentIdShippingCategoryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShipmentIdShippingCategory")
@@ -209,7 +208,7 @@ func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategoryExecute(r Sh
 }
 
 type ShippingCategoriesApiGETShippingCategoriesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingCategoriesApiService
 }
 
@@ -228,7 +227,7 @@ List all shipping categories
 func (a *ShippingCategoriesApiService) GETShippingCategories(ctx context.Context) ShippingCategoriesApiGETShippingCategoriesRequest {
 	return ShippingCategoriesApiGETShippingCategoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *ShippingCategoriesApiService) GETShippingCategories(ctx context.Context
 //  @return GETShippingCategories200Response
 func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCategoriesApiGETShippingCategoriesRequest) (*GETShippingCategories200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingCategories200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingCategories200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShippingCategories")
@@ -308,8 +307,8 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCa
 }
 
 type ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingCategoriesApiService
+	ctx                context.Context
+	ApiService         *ShippingCategoriesApiService
 	shippingCategoryId string
 }
 
@@ -328,8 +327,8 @@ Retrieve a shipping category
 */
 func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(c
 //  @return GETShippingCategoriesShippingCategoryId200Response
 func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) (*GETShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingCategoriesShippingCategoryId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingCategoriesShippingCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShippingCategoriesShippingCategoryId")
@@ -411,8 +410,8 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdEx
 }
 
 type ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest struct {
-	ctx context.Context
-	ApiService *ShippingCategoriesApiService
+	ctx              context.Context
+	ApiService       *ShippingCategoriesApiService
 	shippingMethodId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the shipping category associated to the shipping method
 */
 func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategory(ctx c
 // Execute executes the request
 func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategoryExecute(r ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShippingMethodIdShippingCategory")
@@ -503,9 +502,9 @@ func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategoryExecut
 }
 
 type ShippingCategoriesApiGETSkuIdShippingCategoryRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingCategoriesApiService
-	skuId string
+	skuId      string
 }
 
 func (r ShippingCategoriesApiGETSkuIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -524,17 +523,17 @@ Retrieve the shipping category associated to the SKU
 func (a *ShippingCategoriesApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) ShippingCategoriesApiGETSkuIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETSkuIdShippingCategoryRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *ShippingCategoriesApiService) GETSkuIdShippingCategoryExecute(r ShippingCategoriesApiGETSkuIdShippingCategoryRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETSkuIdShippingCategory")
@@ -595,10 +594,10 @@ func (a *ShippingCategoriesApiService) GETSkuIdShippingCategoryExecute(r Shippin
 }
 
 type ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingCategoriesApiService
+	ctx                    context.Context
+	ApiService             *ShippingCategoriesApiService
 	shippingCategoryUpdate *ShippingCategoryUpdate
-	shippingCategoryId string
+	shippingCategoryId     string
 }
 
 func (r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) ShippingCategoryUpdate(shippingCategoryUpdate ShippingCategoryUpdate) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
@@ -621,8 +620,8 @@ Update a shipping category
 */
 func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		shippingCategoryId: shippingCategoryId,
 	}
 }
@@ -631,10 +630,10 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 //  @return PATCHShippingCategoriesShippingCategoryId200Response
 func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) (*PATCHShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHShippingCategoriesShippingCategoryId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHShippingCategoriesShippingCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.PATCHShippingCategoriesShippingCategoryId")
@@ -709,8 +708,8 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 }
 
 type ShippingCategoriesApiPOSTShippingCategoriesRequest struct {
-	ctx context.Context
-	ApiService *ShippingCategoriesApiService
+	ctx                    context.Context
+	ApiService             *ShippingCategoriesApiService
 	shippingCategoryCreate *ShippingCategoryCreate
 }
 
@@ -734,7 +733,7 @@ Create a shipping category
 func (a *ShippingCategoriesApiService) POSTShippingCategories(ctx context.Context) ShippingCategoriesApiPOSTShippingCategoriesRequest {
 	return ShippingCategoriesApiPOSTShippingCategoriesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -742,10 +741,10 @@ func (a *ShippingCategoriesApiService) POSTShippingCategories(ctx context.Contex
 //  @return POSTShippingCategories201Response
 func (a *ShippingCategoriesApiService) POSTShippingCategoriesExecute(r ShippingCategoriesApiPOSTShippingCategoriesRequest) (*POSTShippingCategories201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTShippingCategories201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTShippingCategories201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.POSTShippingCategories")

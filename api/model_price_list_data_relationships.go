@@ -17,7 +17,7 @@ import (
 
 // PriceListDataRelationships struct for PriceListDataRelationships
 type PriceListDataRelationships struct {
-	Prices *PriceListDataRelationshipsPrices `json:"prices,omitempty"`
+	Prices      *PriceListDataRelationshipsPrices           `json:"prices,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullablePriceListDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

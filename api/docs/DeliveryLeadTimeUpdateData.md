@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "delivery_lead_times"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**DeliveryLeadTimeUpdateDataRelationships**](DeliveryLeadTimeUpdateDataRelationships.md) |  | [optional] 

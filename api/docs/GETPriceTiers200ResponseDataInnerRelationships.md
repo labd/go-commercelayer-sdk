@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Price** | Pointer to [**GETPriceTiers200ResponseDataInnerRelationshipsPrice**](GETPriceTiers200ResponseDataInnerRelationshipsPrice.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPrice
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetPrice() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetPrice() GETPriceTiers200ResponseDataInnerRelationshipsPrice`
 
 GetPrice returns the Price field if non-nil, zero value otherwise.
 
 ### GetPriceOk
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetPriceOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetPriceOk() (*GETPriceTiers200ResponseDataInnerRelationshipsPrice, bool)`
 
 GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrice
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) SetPrice(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) SetPrice(v GETPriceTiers200ResponseDataInnerRelationshipsPrice)`
 
 SetPrice sets Price field to given value.
 
@@ -53,20 +53,20 @@ HasPrice returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETPriceTiers200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETPriceTiers200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

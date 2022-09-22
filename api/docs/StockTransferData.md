@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_transfers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETStockTransfers200ResponseDataInnerAttributes**](GETStockTransfers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**StockTransferDataRelationships**](StockTransferDataRelationships.md) |  | [optional] 
 

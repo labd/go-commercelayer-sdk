@@ -18,9 +18,9 @@ import (
 // BundleData struct for BundleData
 type BundleData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBundles200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BundleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETBundles200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BundleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewBundleData instantiates a new BundleData object
@@ -39,8 +39,6 @@ func NewBundleData(type_ string, attributes GETBundles200ResponseDataInnerAttrib
 // but it doesn't guarantee that properties required by API are set
 func NewBundleDataWithDefaults() *BundleData {
 	this := BundleData{}
-	var type_ string = "bundles"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableBundleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("adyen_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes())) // AdyenGatewayUpdate | 
+    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes())) // AdyenGatewayUpdate | 
     adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("adyen_gateways", *openapiclient.NewPOSTAdyenGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
+    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("Type_example", *openapiclient.NewPOSTAdyenGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

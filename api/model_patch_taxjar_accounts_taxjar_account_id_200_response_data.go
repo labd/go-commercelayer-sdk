@@ -20,10 +20,10 @@ type PATCHTaxjarAccountsTaxjarAccountId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships         `json:"relationships,omitempty"`
 }
 
 // NewPATCHTaxjarAccountsTaxjarAccountId200ResponseData instantiates a new PATCHTaxjarAccountsTaxjarAccountId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHTaxjarAccountsTaxjarAccountId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHTaxjarAccountsTaxjarAccountId200ResponseData() *PATCHTaxjarAccountsTaxjarAccountId200ResponseData {
 	this := PATCHTaxjarAccountsTaxjarAccountId200ResponseData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHTaxjarAccountsTaxjarAccountId200ResponseData() *PATCHTaxjarAccounts
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataWithDefaults() *PATCHTaxjarAccountsTaxjarAccountId200ResponseData {
 	this := PATCHTaxjarAccountsTaxjarAccountId200ResponseData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHTaxjarAccountsTaxjarAccountId200ResponseData) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

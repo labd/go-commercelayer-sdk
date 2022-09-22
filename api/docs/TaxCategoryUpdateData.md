@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes**](PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryUpdateDataRelationships**](TaxCategoryUpdateDataRelationships.md) |  | [optional] 

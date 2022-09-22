@@ -18,9 +18,9 @@ import (
 // AdyenGatewayCreateData struct for AdyenGatewayCreateData
 type AdyenGatewayCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAdyenGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayCreateData instantiates a new AdyenGatewayCreateData object
@@ -39,8 +39,6 @@ func NewAdyenGatewayCreateData(type_ string, attributes POSTAdyenGateways201Resp
 // but it doesn't guarantee that properties required by API are set
 func NewAdyenGatewayCreateDataWithDefaults() *AdyenGatewayCreateData {
 	this := AdyenGatewayCreateData{}
-	var type_ string = "adyen_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableAdyenGatewayCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

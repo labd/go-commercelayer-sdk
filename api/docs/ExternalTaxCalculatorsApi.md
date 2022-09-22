@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("external_tax_calculators", "XGZwpOSrWL", *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes())) // ExternalTaxCalculatorUpdate | 
+    externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes())) // ExternalTaxCalculatorUpdate | 
     externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalTaxCalculatorCreate := *openapiclient.NewExternalTaxCalculatorCreate(*openapiclient.NewExternalTaxCalculatorCreateData("external_tax_calculators", *openapiclient.NewPOSTExternalTaxCalculators201ResponseDataAttributes("Personal tax calculator", "https://external_calculator.yourbrand.com"))) // ExternalTaxCalculatorCreate | 
+    externalTaxCalculatorCreate := *openapiclient.NewExternalTaxCalculatorCreate(*openapiclient.NewExternalTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTExternalTaxCalculators201ResponseDataAttributes("Personal tax calculator", "https://external_calculator.yourbrand.com"))) // ExternalTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

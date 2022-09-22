@@ -17,8 +17,8 @@ import (
 
 // GETStripeGateways200ResponseDataInnerRelationships struct for GETStripeGateways200ResponseDataInnerRelationships
 type GETStripeGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	StripePayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"stripe_payments,omitempty"`
+	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	StripePayments *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments `json:"stripe_payments,omitempty"`
 }
 
 // NewGETStripeGateways200ResponseDataInnerRelationships instantiates a new GETStripeGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETStripeGateways200ResponseDataInnerRelationships) SetPaymentMethods(v
 }
 
 // GetStripePayments returns the StripePayments field value if set, zero value otherwise.
-func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePayments() GETStripeGateways200ResponseDataInnerRelationshipsStripePayments {
 	if o == nil || o.StripePayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETStripeGateways200ResponseDataInnerRelationshipsStripePayments
 		return ret
 	}
 	return *o.StripePayments
@@ -81,7 +81,7 @@ func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePayments()
 
 // GetStripePaymentsOk returns a tuple with the StripePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETStripeGateways200ResponseDataInnerRelationships) GetStripePaymentsOk() (*GETStripeGateways200ResponseDataInnerRelationshipsStripePayments, bool) {
 	if o == nil || o.StripePayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETStripeGateways200ResponseDataInnerRelationships) HasStripePayments()
 	return false
 }
 
-// SetStripePayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the StripePayments field.
-func (o *GETStripeGateways200ResponseDataInnerRelationships) SetStripePayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetStripePayments gets a reference to the given GETStripeGateways200ResponseDataInnerRelationshipsStripePayments and assigns it to the StripePayments field.
+func (o *GETStripeGateways200ResponseDataInnerRelationships) SetStripePayments(v GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) {
 	o.StripePayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETStripeGateways200ResponseDataInnerRelationships) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

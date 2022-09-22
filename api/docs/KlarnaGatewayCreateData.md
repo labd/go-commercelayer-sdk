@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "klarna_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTKlarnaGateways201ResponseDataAttributes**](POSTKlarnaGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**KlarnaGatewayCreateDataRelationships**](KlarnaGatewayCreateDataRelationships.md) |  | [optional] 
 

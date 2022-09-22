@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // PackagesApiService PackagesApi service
 type PackagesApiService service
 
 type PackagesApiDELETEPackagesPackageIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PackagesApiService
-	packageId string
+	packageId  string
 }
 
 func (r PackagesApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete a package
 func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest {
 	return PackagesApiDELETEPackagesPackageIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
 // Execute executes the request
 func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEPackagesPackageIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.DELETEPackagesPackageId")
@@ -117,7 +116,7 @@ func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEP
 }
 
 type PackagesApiGETPackagesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PackagesApiService
 }
 
@@ -136,7 +135,7 @@ List all packages
 func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPackagesRequest {
 	return PackagesApiGETPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPack
 //  @return GETPackages200Response
 func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest) (*GETPackages200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPackages200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPackages200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.GETPackages")
@@ -216,9 +215,9 @@ func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest)
 }
 
 type PackagesApiGETPackagesPackageIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PackagesApiService
-	packageId string
+	packageId  string
 }
 
 func (r PackagesApiGETPackagesPackageIdRequest) Execute() (*GETPackagesPackageId200Response, *http.Response, error) {
@@ -237,8 +236,8 @@ Retrieve a package
 func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest {
 	return PackagesApiGETPackagesPackageIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
@@ -246,10 +245,10 @@ func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId
 //  @return GETPackagesPackageId200Response
 func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackagesPackageIdRequest) (*GETPackagesPackageId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPackagesPackageId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPackagesPackageId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.GETPackagesPackageId")
@@ -319,9 +318,9 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackage
 }
 
 type PackagesApiGETParcelIdPackageRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PackagesApiService
-	parcelId string
+	parcelId   string
 }
 
 func (r PackagesApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
@@ -340,17 +339,17 @@ Retrieve the package associated to the parcel
 func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest {
 	return PackagesApiGETParcelIdPackageRequest{
 		ApiService: a,
-		ctx: ctx,
-		parcelId: parcelId,
+		ctx:        ctx,
+		parcelId:   parcelId,
 	}
 }
 
 // Execute executes the request
 func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdPackageRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.GETParcelIdPackage")
@@ -411,10 +410,10 @@ func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdP
 }
 
 type PackagesApiPATCHPackagesPackageIdRequest struct {
-	ctx context.Context
-	ApiService *PackagesApiService
+	ctx           context.Context
+	ApiService    *PackagesApiService
 	packageUpdate *PackageUpdate
-	packageId string
+	packageId     string
 }
 
 func (r PackagesApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) PackagesApiPATCHPackagesPackageIdRequest {
@@ -438,8 +437,8 @@ Update a package
 func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest {
 	return PackagesApiPATCHPackagesPackageIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		packageId: packageId,
+		ctx:        ctx,
+		packageId:  packageId,
 	}
 }
 
@@ -447,10 +446,10 @@ func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, package
 //  @return PATCHPackagesPackageId200Response
 func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPackagesPackageIdRequest) (*PATCHPackagesPackageId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHPackagesPackageId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPackagesPackageId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.PATCHPackagesPackageId")
@@ -525,8 +524,8 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPac
 }
 
 type PackagesApiPOSTPackagesRequest struct {
-	ctx context.Context
-	ApiService *PackagesApiService
+	ctx           context.Context
+	ApiService    *PackagesApiService
 	packageCreate *PackageCreate
 }
 
@@ -550,7 +549,7 @@ Create a package
 func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPackagesRequest {
 	return PackagesApiPOSTPackagesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPa
 //  @return POSTPackages201Response
 func (a *PackagesApiService) POSTPackagesExecute(r PackagesApiPOSTPackagesRequest) (*POSTPackages201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTPackages201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPackages201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PackagesApiService.POSTPackages")

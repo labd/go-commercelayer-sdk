@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    lineItemOptionUpdate := *openapiclient.NewLineItemOptionUpdate(*openapiclient.NewLineItemOptionUpdateData("line_item_options", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes())) // LineItemOptionUpdate | 
+    lineItemOptionUpdate := *openapiclient.NewLineItemOptionUpdate(*openapiclient.NewLineItemOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes())) // LineItemOptionUpdate | 
     lineItemOptionId := "lineItemOptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    lineItemOptionCreate := *openapiclient.NewLineItemOptionCreate(*openapiclient.NewLineItemOptionCreateData("line_item_options", *openapiclient.NewPOSTLineItemOptions201ResponseDataAttributes(int32(2), map[string]interface{}({"embossing_text":"Happy Birthday!"})))) // LineItemOptionCreate | 
+    lineItemOptionCreate := *openapiclient.NewLineItemOptionCreate(*openapiclient.NewLineItemOptionCreateData("Type_example", *openapiclient.NewPOSTLineItemOptions201ResponseDataAttributes(int32(2), map[string]interface{}({"embossing_text":"Happy Birthday!"})))) // LineItemOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**AdyenPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**AdyenPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments**](GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetAdyenPayments
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPayments() GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments`
 
 GetAdyenPayments returns the AdyenPayments field if non-nil, zero value otherwise.
 
 ### GetAdyenPaymentsOk
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationships) GetAdyenPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments, bool)`
 
 GetAdyenPaymentsOk returns a tuple with the AdyenPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAdyenPayments
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationships) SetAdyenPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationships) SetAdyenPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsAdyenPayments)`
 
 SetAdyenPayments sets AdyenPayments field to given value.
 

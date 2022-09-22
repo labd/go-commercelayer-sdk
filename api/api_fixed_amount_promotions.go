@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // FixedAmountPromotionsApiService FixedAmountPromotionsApi service
 type FixedAmountPromotionsApiService service
 
 type FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FixedAmountPromotionsApiService
+	ctx                    context.Context
+	ApiService             *FixedAmountPromotionsApiService
 	fixedAmountPromotionId string
 }
 
@@ -45,8 +44,8 @@ Delete a fixed amount promotion
 */
 func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmount
 // Execute executes the request
 func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.DELETEFixedAmountPromotionsFixedAmountPromotionId")
@@ -117,7 +116,7 @@ func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmount
 }
 
 type FixedAmountPromotionsApiGETFixedAmountPromotionsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *FixedAmountPromotionsApiService
 }
 
@@ -136,7 +135,7 @@ List all fixed amount promotions
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotions(ctx context.Context) FixedAmountPromotionsApiGETFixedAmountPromotionsRequest {
 	return FixedAmountPromotionsApiGETFixedAmountPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotions(ctx context.C
 //  @return GETFixedAmountPromotions200Response
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) (*GETFixedAmountPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFixedAmountPromotions200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFixedAmountPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.GETFixedAmountPromotions")
@@ -216,8 +215,8 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r Fixe
 }
 
 type FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FixedAmountPromotionsApiService
+	ctx                    context.Context
+	ApiService             *FixedAmountPromotionsApiService
 	fixedAmountPromotionId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a fixed amount promotion
 */
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 //  @return GETFixedAmountPromotionsFixedAmountPromotionId200Response
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) (*GETFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETFixedAmountPromotionsFixedAmountPromotionId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFixedAmountPromotionsFixedAmountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.GETFixedAmountPromotionsFixedAmountPromotionId")
@@ -319,10 +318,10 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 }
 
 type FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
-	ctx context.Context
-	ApiService *FixedAmountPromotionsApiService
+	ctx                        context.Context
+	ApiService                 *FixedAmountPromotionsApiService
 	fixedAmountPromotionUpdate *FixedAmountPromotionUpdate
-	fixedAmountPromotionId string
+	fixedAmountPromotionId     string
 }
 
 func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) FixedAmountPromotionUpdate(fixedAmountPromotionUpdate FixedAmountPromotionUpdate) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
@@ -345,8 +344,8 @@ Update a fixed amount promotion
 */
 func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
 	}
 }
@@ -355,10 +354,10 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 //  @return PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
 func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) (*PATCHFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.PATCHFixedAmountPromotionsFixedAmountPromotionId")
@@ -433,8 +432,8 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 }
 
 type FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest struct {
-	ctx context.Context
-	ApiService *FixedAmountPromotionsApiService
+	ctx                        context.Context
+	ApiService                 *FixedAmountPromotionsApiService
 	fixedAmountPromotionCreate *FixedAmountPromotionCreate
 }
 
@@ -458,7 +457,7 @@ Create a fixed amount promotion
 func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotions(ctx context.Context) FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest {
 	return FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -466,10 +465,10 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotions(ctx context.
 //  @return POSTFixedAmountPromotions201Response
 func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) (*POSTFixedAmountPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTFixedAmountPromotions201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTFixedAmountPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.POSTFixedAmountPromotions")

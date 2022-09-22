@@ -17,7 +17,7 @@ import (
 
 // GETWebhooks200ResponseDataInnerRelationships struct for GETWebhooks200ResponseDataInnerRelationships
 type GETWebhooks200ResponseDataInnerRelationships struct {
-	LastEventCallbacks *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"last_event_callbacks,omitempty"`
+	LastEventCallbacks *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
 }
 
 // NewGETWebhooks200ResponseDataInnerRelationships instantiates a new GETWebhooks200ResponseDataInnerRelationships object
@@ -38,9 +38,9 @@ func NewGETWebhooks200ResponseDataInnerRelationshipsWithDefaults() *GETWebhooks2
 }
 
 // GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
-func (o *GETWebhooks200ResponseDataInnerRelationships) GetLastEventCallbacks() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETWebhooks200ResponseDataInnerRelationships) GetLastEventCallbacks() GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks {
 	if o == nil || o.LastEventCallbacks == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks
 		return ret
 	}
 	return *o.LastEventCallbacks
@@ -48,7 +48,7 @@ func (o *GETWebhooks200ResponseDataInnerRelationships) GetLastEventCallbacks() G
 
 // GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETWebhooks200ResponseDataInnerRelationships) GetLastEventCallbacksOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETWebhooks200ResponseDataInnerRelationships) GetLastEventCallbacksOk() (*GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks, bool) {
 	if o == nil || o.LastEventCallbacks == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *GETWebhooks200ResponseDataInnerRelationships) HasLastEventCallbacks() b
 	return false
 }
 
-// SetLastEventCallbacks gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the LastEventCallbacks field.
-func (o *GETWebhooks200ResponseDataInnerRelationships) SetLastEventCallbacks(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetLastEventCallbacks gets a reference to the given GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks and assigns it to the LastEventCallbacks field.
+func (o *GETWebhooks200ResponseDataInnerRelationships) SetLastEventCallbacks(v GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) {
 	o.LastEventCallbacks = &v
 }
 
@@ -112,5 +112,3 @@ func (v *NullableGETWebhooks200ResponseDataInnerRelationships) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

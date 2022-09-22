@@ -20,10 +20,10 @@ type GETBraintreePayments200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewGETBraintreePayments200ResponseDataInner instantiates a new GETBraintreePayments200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETBraintreePayments200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETBraintreePayments200ResponseDataInner() *GETBraintreePayments200ResponseDataInner {
 	this := GETBraintreePayments200ResponseDataInner{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETBraintreePayments200ResponseDataInner() *GETBraintreePayments200Respo
 // but it doesn't guarantee that properties required by API are set
 func NewGETBraintreePayments200ResponseDataInnerWithDefaults() *GETBraintreePayments200ResponseDataInner {
 	this := GETBraintreePayments200ResponseDataInner{}
-	var type_ string = "braintree_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETBraintreePayments200ResponseDataInner) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

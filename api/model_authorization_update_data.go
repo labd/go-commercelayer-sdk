@@ -20,9 +20,9 @@ type AuthorizationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHAuthorizationsAuthorizationId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHAuthorizationsAuthorizationId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationUpdateData instantiates a new AuthorizationUpdateData object
@@ -42,8 +42,6 @@ func NewAuthorizationUpdateData(type_ string, id string, attributes PATCHAuthori
 // but it doesn't guarantee that properties required by API are set
 func NewAuthorizationUpdateDataWithDefaults() *AuthorizationUpdateData {
 	this := AuthorizationUpdateData{}
-	var type_ string = "authorizations"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableAuthorizationUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -261,5 +261,3 @@ func (v *NullablePATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) Unmar
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

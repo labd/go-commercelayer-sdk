@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("paypal_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes())) // PaypalGatewayUpdate | 
+    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes())) // PaypalGatewayUpdate | 
     paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("paypal_gateways", *openapiclient.NewPOSTPaypalGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
+    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("Type_example", *openapiclient.NewPOSTPaypalGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

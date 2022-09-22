@@ -105,5 +105,3 @@ func (v *NullableCustomerDataRelationshipsCustomerPaymentSources) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

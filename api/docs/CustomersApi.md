@@ -991,7 +991,7 @@ import (
 )
 
 func main() {
-    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("customers", "XGZwpOSrWL", *openapiclient.NewPATCHCustomersCustomerId200ResponseDataAttributes())) // CustomerUpdate | 
+    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomersCustomerId200ResponseDataAttributes())) // CustomerUpdate | 
     customerId := "customerId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1063,7 +1063,7 @@ import (
 )
 
 func main() {
-    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("customers", *openapiclient.NewPOSTCustomers201ResponseDataAttributes("john@example.com"))) // CustomerCreate | 
+    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("Type_example", *openapiclient.NewPOSTCustomers201ResponseDataAttributes("john@example.com"))) // CustomerCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

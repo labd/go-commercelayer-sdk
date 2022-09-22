@@ -18,9 +18,9 @@ import (
 // CouponData struct for CouponData
 type CouponData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETCoupons200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CouponDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETCoupons200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CouponDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCouponData instantiates a new CouponData object
@@ -39,8 +39,6 @@ func NewCouponData(type_ string, attributes GETCoupons200ResponseDataInnerAttrib
 // but it doesn't guarantee that properties required by API are set
 func NewCouponDataWithDefaults() *CouponData {
 	this := CouponData{}
-	var type_ string = "coupons"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCouponData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

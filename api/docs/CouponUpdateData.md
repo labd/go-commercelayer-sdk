@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupons"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHCouponsCouponId200ResponseDataAttributes**](PATCHCouponsCouponId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponDataRelationships**](CouponDataRelationships.md) |  | [optional] 

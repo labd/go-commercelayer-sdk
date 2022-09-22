@@ -20,9 +20,9 @@ type PATCHSkuOptionsSkuOptionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                              `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
+	Attributes    *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
 	Relationships *GETCarrierAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type PATCHSkuOptionsSkuOptionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHSkuOptionsSkuOptionId200ResponseData() *PATCHSkuOptionsSkuOptionId200ResponseData {
 	this := PATCHSkuOptionsSkuOptionId200ResponseData{}
-	var type_ string = "sku_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHSkuOptionsSkuOptionId200ResponseData() *PATCHSkuOptionsSkuOptionId2
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHSkuOptionsSkuOptionId200ResponseDataWithDefaults() *PATCHSkuOptionsSkuOptionId200ResponseData {
 	this := PATCHSkuOptionsSkuOptionId200ResponseData{}
-	var type_ string = "sku_options"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHSkuOptionsSkuOptionId200ResponseData) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

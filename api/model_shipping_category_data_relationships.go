@@ -17,7 +17,7 @@ import (
 
 // ShippingCategoryDataRelationships struct for ShippingCategoryDataRelationships
 type ShippingCategoryDataRelationships struct {
-	Skus *BundleDataRelationshipsSkus `json:"skus,omitempty"`
+	Skus        *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableShippingCategoryDataRelationships) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

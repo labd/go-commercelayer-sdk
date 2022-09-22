@@ -20,9 +20,9 @@ type ManualTaxCalculatorUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ManualTaxCalculatorCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                  `json:"id"`
+	Attributes    PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ManualTaxCalculatorCreateDataRelationships                             `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorUpdateData instantiates a new ManualTaxCalculatorUpdateData object
@@ -42,8 +42,6 @@ func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes PATCHM
 // but it doesn't guarantee that properties required by API are set
 func NewManualTaxCalculatorUpdateDataWithDefaults() *ManualTaxCalculatorUpdateData {
 	this := ManualTaxCalculatorUpdateData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableManualTaxCalculatorUpdateData) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,9 +17,9 @@ import (
 
 // InventoryModelDataRelationships struct for InventoryModelDataRelationships
 type InventoryModelDataRelationships struct {
-	InventoryStockLocations *InventoryModelDataRelationshipsInventoryStockLocations `json:"inventory_stock_locations,omitempty"`
+	InventoryStockLocations  *InventoryModelDataRelationshipsInventoryStockLocations  `json:"inventory_stock_locations,omitempty"`
 	InventoryReturnLocations *InventoryModelDataRelationshipsInventoryReturnLocations `json:"inventory_return_locations,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Attachments              *AvalaraAccountDataRelationshipsAttachments              `json:"attachments,omitempty"`
 }
 
 // NewInventoryModelDataRelationships instantiates a new InventoryModelDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableInventoryModelDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

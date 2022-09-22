@@ -409,5 +409,3 @@ func (v *NullableGETOrderAmountPromotionRules200ResponseDataInnerAttributes) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

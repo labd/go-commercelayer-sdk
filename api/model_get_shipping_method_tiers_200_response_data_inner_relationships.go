@@ -17,8 +17,8 @@ import (
 
 // GETShippingMethodTiers200ResponseDataInnerRelationships struct for GETShippingMethodTiers200ResponseDataInnerRelationships
 type GETShippingMethodTiers200ResponseDataInnerRelationships struct {
-	ShippingMethod *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"shipping_method,omitempty"`
-	Attachments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"attachments,omitempty"`
+	ShippingMethod *GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod `json:"shipping_method,omitempty"`
+	Attachments    *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments      `json:"attachments,omitempty"`
 }
 
 // NewGETShippingMethodTiers200ResponseDataInnerRelationships instantiates a new GETShippingMethodTiers200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETShippingMethodTiers200ResponseDataInnerRelationshipsWithDefaults() *G
 }
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetShippingMethod() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetShippingMethod() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod {
 	if o == nil || o.ShippingMethod == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod
 		return ret
 	}
 	return *o.ShippingMethod
@@ -49,7 +49,7 @@ func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetShippingMet
 
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod, bool) {
 	if o == nil || o.ShippingMethod == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) HasShippingMet
 	return false
 }
 
-// SetShippingMethod gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the ShippingMethod field.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) SetShippingMethod(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetShippingMethod gets a reference to the given GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod and assigns it to the ShippingMethod field.
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) SetShippingMethod(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod) {
 	o.ShippingMethod = &v
 }
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
 		return ret
 	}
 	return *o.Attachments
@@ -81,7 +81,7 @@ func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetAttachments
 
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
 	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) HasAttachments
 	return false
 }
 
-// SetAttachments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Attachments field.
-func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETShippingMethodTiers200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
 	o.Attachments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETShippingMethodTiers200ResponseDataInnerRelationships) Unmars
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

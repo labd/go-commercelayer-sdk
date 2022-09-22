@@ -17,14 +17,14 @@ import (
 
 // ShippingMethodDataRelationships struct for ShippingMethodDataRelationships
 type ShippingMethodDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	ShippingZone *ShippingMethodDataRelationshipsShippingZone `json:"shipping_zone,omitempty"`
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	DeliveryLeadTimeForShipment *ShipmentDataRelationshipsDeliveryLeadTime `json:"delivery_lead_time_for_shipment,omitempty"`
-	ShippingMethodTiers *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
-	ShippingWeightTiers *ShippingMethodDataRelationshipsShippingWeightTiers `json:"shipping_weight_tiers,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Market                      *AvalaraAccountDataRelationshipsMarkets             `json:"market,omitempty"`
+	ShippingZone                *ShippingMethodDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
+	ShippingCategory            *ShipmentDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
+	StockLocation               *DeliveryLeadTimeDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
+	DeliveryLeadTimeForShipment *ShipmentDataRelationshipsDeliveryLeadTime          `json:"delivery_lead_time_for_shipment,omitempty"`
+	ShippingMethodTiers         *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
+	ShippingWeightTiers         *ShippingMethodDataRelationshipsShippingWeightTiers `json:"shipping_weight_tiers,omitempty"`
+	Attachments                 *AvalaraAccountDataRelationshipsAttachments         `json:"attachments,omitempty"`
 }
 
 // NewShippingMethodDataRelationships instantiates a new ShippingMethodDataRelationships object
@@ -364,5 +364,3 @@ func (v *NullableShippingMethodDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

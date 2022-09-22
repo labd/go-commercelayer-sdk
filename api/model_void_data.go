@@ -18,9 +18,9 @@ import (
 // VoidData struct for VoidData
 type VoidData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *VoidDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *VoidDataRelationships                   `json:"relationships,omitempty"`
 }
 
 // NewVoidData instantiates a new VoidData object
@@ -39,8 +39,6 @@ func NewVoidData(type_ string, attributes GETRefunds200ResponseDataInnerAttribut
 // but it doesn't guarantee that properties required by API are set
 func NewVoidDataWithDefaults() *VoidData {
 	this := VoidData{}
-	var type_ string = "voids"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableVoidData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

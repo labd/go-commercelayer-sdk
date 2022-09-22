@@ -17,9 +17,9 @@ import (
 
 // GETSkuLists200ResponseDataInnerRelationships struct for GETSkuLists200ResponseDataInnerRelationships
 type GETSkuLists200ResponseDataInnerRelationships struct {
-	Skus *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"skus,omitempty"`
-	SkuListItems *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"sku_list_items,omitempty"`
-	Bundles *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"bundles,omitempty"`
+	Skus         *GETBundles200ResponseDataInnerRelationshipsSkus          `json:"skus,omitempty"`
+	SkuListItems *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems `json:"sku_list_items,omitempty"`
+	Bundles      *GETSkuLists200ResponseDataInnerRelationshipsBundles      `json:"bundles,omitempty"`
 }
 
 // NewGETSkuLists200ResponseDataInnerRelationships instantiates a new GETSkuLists200ResponseDataInnerRelationships object
@@ -40,9 +40,9 @@ func NewGETSkuLists200ResponseDataInnerRelationshipsWithDefaults() *GETSkuLists2
 }
 
 // GetSkus returns the Skus field value if set, zero value otherwise.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkus() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkus() GETBundles200ResponseDataInnerRelationshipsSkus {
 	if o == nil || o.Skus == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETBundles200ResponseDataInnerRelationshipsSkus
 		return ret
 	}
 	return *o.Skus
@@ -50,7 +50,7 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkus() GETAdyenGateway
 
 // GetSkusOk returns a tuple with the Skus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkusOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkusOk() (*GETBundles200ResponseDataInnerRelationshipsSkus, bool) {
 	if o == nil || o.Skus == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) HasSkus() bool {
 	return false
 }
 
-// SetSkus gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Skus field.
-func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkus(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetSkus gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkus and assigns it to the Skus field.
+func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkus(v GETBundles200ResponseDataInnerRelationshipsSkus) {
 	o.Skus = &v
 }
 
 // GetSkuListItems returns the SkuListItems field value if set, zero value otherwise.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItems() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItems() GETSkuLists200ResponseDataInnerRelationshipsSkuListItems {
 	if o == nil || o.SkuListItems == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETSkuLists200ResponseDataInnerRelationshipsSkuListItems
 		return ret
 	}
 	return *o.SkuListItems
@@ -82,7 +82,7 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItems() GETAdye
 
 // GetSkuListItemsOk returns a tuple with the SkuListItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItemsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetSkuListItemsOk() (*GETSkuLists200ResponseDataInnerRelationshipsSkuListItems, bool) {
 	if o == nil || o.SkuListItems == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) HasSkuListItems() bool {
 	return false
 }
 
-// SetSkuListItems gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the SkuListItems field.
-func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkuListItems(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetSkuListItems gets a reference to the given GETSkuLists200ResponseDataInnerRelationshipsSkuListItems and assigns it to the SkuListItems field.
+func (o *GETSkuLists200ResponseDataInnerRelationships) SetSkuListItems(v GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) {
 	o.SkuListItems = &v
 }
 
 // GetBundles returns the Bundles field value if set, zero value otherwise.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundles() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundles() GETSkuLists200ResponseDataInnerRelationshipsBundles {
 	if o == nil || o.Bundles == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETSkuLists200ResponseDataInnerRelationshipsBundles
 		return ret
 	}
 	return *o.Bundles
@@ -114,7 +114,7 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundles() GETAdyenGate
 
 // GetBundlesOk returns a tuple with the Bundles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundlesOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetBundlesOk() (*GETSkuLists200ResponseDataInnerRelationshipsBundles, bool) {
 	if o == nil || o.Bundles == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) HasBundles() bool {
 	return false
 }
 
-// SetBundles gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the Bundles field.
-func (o *GETSkuLists200ResponseDataInnerRelationships) SetBundles(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetBundles gets a reference to the given GETSkuLists200ResponseDataInnerRelationshipsBundles and assigns it to the Bundles field.
+func (o *GETSkuLists200ResponseDataInnerRelationships) SetBundles(v GETSkuLists200ResponseDataInnerRelationshipsBundles) {
 	o.Bundles = &v
 }
 
@@ -184,5 +184,3 @@ func (v *NullableGETSkuLists200ResponseDataInnerRelationships) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

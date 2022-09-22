@@ -20,10 +20,10 @@ type PATCHBingGeocodersBingGeocoderId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETBingGeocoders200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                    `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
+	Attributes    *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBingGeocoders200ResponseDataInnerRelationships         `json:"relationships,omitempty"`
 }
 
 // NewPATCHBingGeocodersBingGeocoderId200ResponseData instantiates a new PATCHBingGeocodersBingGeocoderId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHBingGeocodersBingGeocoderId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHBingGeocodersBingGeocoderId200ResponseData() *PATCHBingGeocodersBingGeocoderId200ResponseData {
 	this := PATCHBingGeocodersBingGeocoderId200ResponseData{}
-	var type_ string = "bing_geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHBingGeocodersBingGeocoderId200ResponseData() *PATCHBingGeocodersBin
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHBingGeocodersBingGeocoderId200ResponseDataWithDefaults() *PATCHBingGeocodersBingGeocoderId200ResponseData {
 	this := PATCHBingGeocodersBingGeocoderId200ResponseData{}
-	var type_ string = "bing_geocoders"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHBingGeocodersBingGeocoderId200ResponseData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

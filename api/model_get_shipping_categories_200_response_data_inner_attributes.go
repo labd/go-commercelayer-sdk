@@ -335,5 +335,3 @@ func (v *NullableGETShippingCategories200ResponseDataInnerAttributes) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

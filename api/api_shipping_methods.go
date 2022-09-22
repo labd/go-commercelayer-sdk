@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // ShippingMethodsApiService ShippingMethodsApi service
 type ShippingMethodsApiService service
 
 type ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx              context.Context
+	ApiService       *ShippingMethodsApiService
 	shippingMethodId string
 }
 
@@ -45,8 +44,8 @@ Delete a shipping method
 */
 func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodId(ctx co
 // Execute executes the request
 func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodIdExecute(r ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.DELETEShippingMethodsShippingMethodId")
@@ -117,8 +116,8 @@ func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodIdExecute
 }
 
 type ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx                context.Context
+	ApiService         *ShippingMethodsApiService
 	deliveryLeadTimeId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the shipping method associated to the delivery lead time
 */
 func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest {
 	return ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethod(ctx cont
 // Execute executes the request
 func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETDeliveryLeadTimeIdShippingMethod")
@@ -209,7 +208,7 @@ func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r
 }
 
 type ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingMethodsApiService
 	shipmentId string
 }
@@ -230,7 +229,7 @@ Retrieve the available shipping methods associated to the shipment
 func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest {
 	return ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethods(ctx co
 // Execute executes the request
 func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethodsExecute(r ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShipmentIdAvailableShippingMethods")
@@ -301,7 +300,7 @@ func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethodsExecute
 }
 
 type ShippingMethodsApiGETShipmentIdShippingMethodRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingMethodsApiService
 	shipmentId string
 }
@@ -322,7 +321,7 @@ Retrieve the shipping method associated to the shipment
 func (a *ShippingMethodsApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) ShippingMethodsApiGETShipmentIdShippingMethodRequest {
 	return ShippingMethodsApiGETShipmentIdShippingMethodRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *ShippingMethodsApiService) GETShipmentIdShippingMethod(ctx context.Cont
 // Execute executes the request
 func (a *ShippingMethodsApiService) GETShipmentIdShippingMethodExecute(r ShippingMethodsApiGETShipmentIdShippingMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShipmentIdShippingMethod")
@@ -393,8 +392,8 @@ func (a *ShippingMethodsApiService) GETShipmentIdShippingMethodExecute(r Shippin
 }
 
 type ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx                  context.Context
+	ApiService           *ShippingMethodsApiService
 	shippingMethodTierId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the shipping method associated to the shipping method tier
 */
 func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest {
 	return ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingMethodTierId: shippingMethodTierId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethod(ctx co
 // Execute executes the request
 func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethodExecute(r ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShippingMethodTierIdShippingMethod")
@@ -485,7 +484,7 @@ func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethodExecute
 }
 
 type ShippingMethodsApiGETShippingMethodsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ShippingMethodsApiService
 }
 
@@ -504,7 +503,7 @@ List all shipping methods
 func (a *ShippingMethodsApiService) GETShippingMethods(ctx context.Context) ShippingMethodsApiGETShippingMethodsRequest {
 	return ShippingMethodsApiGETShippingMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -512,10 +511,10 @@ func (a *ShippingMethodsApiService) GETShippingMethods(ctx context.Context) Ship
 //  @return GETShippingMethods200Response
 func (a *ShippingMethodsApiService) GETShippingMethodsExecute(r ShippingMethodsApiGETShippingMethodsRequest) (*GETShippingMethods200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingMethods200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingMethods200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShippingMethods")
@@ -584,8 +583,8 @@ func (a *ShippingMethodsApiService) GETShippingMethodsExecute(r ShippingMethodsA
 }
 
 type ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx              context.Context
+	ApiService       *ShippingMethodsApiService
 	shippingMethodId string
 }
 
@@ -604,8 +603,8 @@ Retrieve a shipping method
 */
 func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -614,10 +613,10 @@ func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodId(ctx conte
 //  @return GETShippingMethodsShippingMethodId200Response
 func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodIdExecute(r ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest) (*GETShippingMethodsShippingMethodId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETShippingMethodsShippingMethodId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingMethodsShippingMethodId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShippingMethodsShippingMethodId")
@@ -687,8 +686,8 @@ func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodIdExecute(r 
 }
 
 type ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx                  context.Context
+	ApiService           *ShippingMethodsApiService
 	shippingWeightTierId string
 }
 
@@ -707,8 +706,8 @@ Retrieve the shipping method associated to the shipping weight tier
 */
 func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest {
 	return ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:           a,
+		ctx:                  ctx,
 		shippingWeightTierId: shippingWeightTierId,
 	}
 }
@@ -716,9 +715,9 @@ func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethod(ctx co
 // Execute executes the request
 func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethodExecute(r ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.GETShippingWeightTierIdShippingMethod")
@@ -779,10 +778,10 @@ func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethodExecute
 }
 
 type ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx                  context.Context
+	ApiService           *ShippingMethodsApiService
 	shippingMethodUpdate *ShippingMethodUpdate
-	shippingMethodId string
+	shippingMethodId     string
 }
 
 func (r ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest) ShippingMethodUpdate(shippingMethodUpdate ShippingMethodUpdate) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
@@ -805,8 +804,8 @@ Update a shipping method
 */
 func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -815,10 +814,10 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodId(ctx con
 //  @return PATCHShippingMethodsShippingMethodId200Response
 func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(r ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest) (*PATCHShippingMethodsShippingMethodId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHShippingMethodsShippingMethodId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHShippingMethodsShippingMethodId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.PATCHShippingMethodsShippingMethodId")
@@ -893,8 +892,8 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(
 }
 
 type ShippingMethodsApiPOSTShippingMethodsRequest struct {
-	ctx context.Context
-	ApiService *ShippingMethodsApiService
+	ctx                  context.Context
+	ApiService           *ShippingMethodsApiService
 	shippingMethodCreate *ShippingMethodCreate
 }
 
@@ -918,7 +917,7 @@ Create a shipping method
 func (a *ShippingMethodsApiService) POSTShippingMethods(ctx context.Context) ShippingMethodsApiPOSTShippingMethodsRequest {
 	return ShippingMethodsApiPOSTShippingMethodsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -926,10 +925,10 @@ func (a *ShippingMethodsApiService) POSTShippingMethods(ctx context.Context) Shi
 //  @return POSTShippingMethods201Response
 func (a *ShippingMethodsApiService) POSTShippingMethodsExecute(r ShippingMethodsApiPOSTShippingMethodsRequest) (*POSTShippingMethods201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTShippingMethods201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTShippingMethods201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodsApiService.POSTShippingMethods")

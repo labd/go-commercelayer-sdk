@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "parcels"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTParcels201ResponseDataAttributes**](POSTParcels201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelCreateDataRelationships**](ParcelCreateDataRelationships.md) |  | [optional] 
 

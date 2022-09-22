@@ -17,9 +17,9 @@ import (
 
 // ExternalPaymentDataRelationships struct for ExternalPaymentDataRelationships
 type ExternalPaymentDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
-	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
-	Wallet *CustomerDataRelationshipsCustomerPaymentSources `json:"wallet,omitempty"`
+	Order          *AdyenPaymentDataRelationshipsOrder              `json:"order,omitempty"`
+	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway     `json:"payment_gateway,omitempty"`
+	Wallet         *CustomerDataRelationshipsCustomerPaymentSources `json:"wallet,omitempty"`
 }
 
 // NewExternalPaymentDataRelationships instantiates a new ExternalPaymentDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableExternalPaymentDataRelationships) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

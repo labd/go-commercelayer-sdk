@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**InventoryStockLocations** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**InventoryReturnLocations** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**StockItems** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**StockTransfers** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**Address** | Pointer to [**GETCustomerAddresses200ResponseDataInnerRelationshipsAddress**](GETCustomerAddresses200ResponseDataInnerRelationshipsAddress.md) |  | [optional] 
+**InventoryStockLocations** | Pointer to [**GETInventoryModels200ResponseDataInnerRelationshipsInventoryStockLocations**](GETInventoryModels200ResponseDataInnerRelationshipsInventoryStockLocations.md) |  | [optional] 
+**InventoryReturnLocations** | Pointer to [**GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations**](GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations.md) |  | [optional] 
+**StockItems** | Pointer to [**GETSkus200ResponseDataInnerRelationshipsStockItems**](GETSkus200ResponseDataInnerRelationshipsStockItems.md) |  | [optional] 
+**StockTransfers** | Pointer to [**GETLineItems200ResponseDataInnerRelationshipsStockTransfers**](GETLineItems200ResponseDataInnerRelationshipsStockTransfers.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddress
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAddress() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAddress() GETCustomerAddresses200ResponseDataInnerRelationshipsAddress`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAddressOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAddressOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsAddress, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetAddress(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetAddress(v GETCustomerAddresses200ResponseDataInnerRelationshipsAddress)`
 
 SetAddress sets Address field to given value.
 
@@ -57,20 +57,20 @@ HasAddress returns a boolean if a field has been set.
 
 ### GetInventoryStockLocations
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryStockLocations() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryStockLocations() GETInventoryModels200ResponseDataInnerRelationshipsInventoryStockLocations`
 
 GetInventoryStockLocations returns the InventoryStockLocations field if non-nil, zero value otherwise.
 
 ### GetInventoryStockLocationsOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryStockLocationsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryStockLocationsOk() (*GETInventoryModels200ResponseDataInnerRelationshipsInventoryStockLocations, bool)`
 
 GetInventoryStockLocationsOk returns a tuple with the InventoryStockLocations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryStockLocations
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetInventoryStockLocations(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetInventoryStockLocations(v GETInventoryModels200ResponseDataInnerRelationshipsInventoryStockLocations)`
 
 SetInventoryStockLocations sets InventoryStockLocations field to given value.
 
@@ -82,20 +82,20 @@ HasInventoryStockLocations returns a boolean if a field has been set.
 
 ### GetInventoryReturnLocations
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryReturnLocations() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryReturnLocations() GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations`
 
 GetInventoryReturnLocations returns the InventoryReturnLocations field if non-nil, zero value otherwise.
 
 ### GetInventoryReturnLocationsOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryReturnLocationsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetInventoryReturnLocationsOk() (*GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations, bool)`
 
 GetInventoryReturnLocationsOk returns a tuple with the InventoryReturnLocations field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryReturnLocations
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetInventoryReturnLocations(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetInventoryReturnLocations(v GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations)`
 
 SetInventoryReturnLocations sets InventoryReturnLocations field to given value.
 
@@ -107,20 +107,20 @@ HasInventoryReturnLocations returns a boolean if a field has been set.
 
 ### GetStockItems
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockItems() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockItems() GETSkus200ResponseDataInnerRelationshipsStockItems`
 
 GetStockItems returns the StockItems field if non-nil, zero value otherwise.
 
 ### GetStockItemsOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockItemsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockItemsOk() (*GETSkus200ResponseDataInnerRelationshipsStockItems, bool)`
 
 GetStockItemsOk returns a tuple with the StockItems field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockItems
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetStockItems(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetStockItems(v GETSkus200ResponseDataInnerRelationshipsStockItems)`
 
 SetStockItems sets StockItems field to given value.
 
@@ -132,20 +132,20 @@ HasStockItems returns a boolean if a field has been set.
 
 ### GetStockTransfers
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockTransfers() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockTransfers() GETLineItems200ResponseDataInnerRelationshipsStockTransfers`
 
 GetStockTransfers returns the StockTransfers field if non-nil, zero value otherwise.
 
 ### GetStockTransfersOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockTransfersOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetStockTransfersOk() (*GETLineItems200ResponseDataInnerRelationshipsStockTransfers, bool)`
 
 GetStockTransfersOk returns a tuple with the StockTransfers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockTransfers
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetStockTransfers(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetStockTransfers(v GETLineItems200ResponseDataInnerRelationshipsStockTransfers)`
 
 SetStockTransfers sets StockTransfers field to given value.
 
@@ -157,20 +157,20 @@ HasStockTransfers returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETStockLocations200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETStockLocations200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

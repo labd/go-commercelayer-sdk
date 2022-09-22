@@ -20,10 +20,10 @@ type GETCheckoutComPayments200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETCheckoutComPayments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                               `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                `json:"links,omitempty"`
+	Attributes    *GETCheckoutComPayments200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships    `json:"relationships,omitempty"`
 }
 
 // NewGETCheckoutComPayments200ResponseDataInner instantiates a new GETCheckoutComPayments200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETCheckoutComPayments200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETCheckoutComPayments200ResponseDataInner() *GETCheckoutComPayments200ResponseDataInner {
 	this := GETCheckoutComPayments200ResponseDataInner{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETCheckoutComPayments200ResponseDataInner() *GETCheckoutComPayments200R
 // but it doesn't guarantee that properties required by API are set
 func NewGETCheckoutComPayments200ResponseDataInnerWithDefaults() *GETCheckoutComPayments200ResponseDataInner {
 	this := GETCheckoutComPayments200ResponseDataInner{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETCheckoutComPayments200ResponseDataInner) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

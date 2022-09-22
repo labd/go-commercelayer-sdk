@@ -20,10 +20,10 @@ type PATCHPricesPriceId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHPricesPriceId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETPrices200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks       `json:"links,omitempty"`
+	Attributes    *PATCHPricesPriceId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETPrices200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewPATCHPricesPriceId200ResponseData instantiates a new PATCHPricesPriceId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHPricesPriceId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHPricesPriceId200ResponseData() *PATCHPricesPriceId200ResponseData {
 	this := PATCHPricesPriceId200ResponseData{}
-	var type_ string = "prices"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHPricesPriceId200ResponseData() *PATCHPricesPriceId200ResponseData {
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHPricesPriceId200ResponseDataWithDefaults() *PATCHPricesPriceId200ResponseData {
 	this := PATCHPricesPriceId200ResponseData{}
-	var type_ string = "prices"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHPricesPriceId200ResponseData) UnmarshalJSON(src []byte) er
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

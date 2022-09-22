@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "skus"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETSkus200ResponseDataInnerAttributes**](GETSkus200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuDataRelationships**](SkuDataRelationships.md) |  | [optional] 
 

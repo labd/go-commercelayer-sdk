@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_amount_promotion_rules"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETOrderAmountPromotionRules200ResponseDataInnerAttributes**](GETOrderAmountPromotionRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
 

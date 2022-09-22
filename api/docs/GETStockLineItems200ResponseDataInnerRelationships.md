@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Shipment** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**LineItem** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**StockItem** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Shipment** | Pointer to [**GETParcels200ResponseDataInnerRelationshipsShipment**](GETParcels200ResponseDataInnerRelationshipsShipment.md) |  | [optional] 
+**LineItem** | Pointer to [**GETLineItemOptions200ResponseDataInnerRelationshipsLineItem**](GETLineItemOptions200ResponseDataInnerRelationshipsLineItem.md) |  | [optional] 
+**StockItem** | Pointer to [**GETStockLineItems200ResponseDataInnerRelationshipsStockItem**](GETStockLineItems200ResponseDataInnerRelationshipsStockItem.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShipment
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetShipment() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetShipment() GETParcels200ResponseDataInnerRelationshipsShipment`
 
 GetShipment returns the Shipment field if non-nil, zero value otherwise.
 
 ### GetShipmentOk
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetShipmentOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetShipmentOk() (*GETParcels200ResponseDataInnerRelationshipsShipment, bool)`
 
 GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipment
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetShipment(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetShipment(v GETParcels200ResponseDataInnerRelationshipsShipment)`
 
 SetShipment sets Shipment field to given value.
 
@@ -54,20 +54,20 @@ HasShipment returns a boolean if a field has been set.
 
 ### GetLineItem
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetLineItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetLineItem() GETLineItemOptions200ResponseDataInnerRelationshipsLineItem`
 
 GetLineItem returns the LineItem field if non-nil, zero value otherwise.
 
 ### GetLineItemOk
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetLineItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetLineItemOk() (*GETLineItemOptions200ResponseDataInnerRelationshipsLineItem, bool)`
 
 GetLineItemOk returns a tuple with the LineItem field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLineItem
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetLineItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetLineItem(v GETLineItemOptions200ResponseDataInnerRelationshipsLineItem)`
 
 SetLineItem sets LineItem field to given value.
 
@@ -79,20 +79,20 @@ HasLineItem returns a boolean if a field has been set.
 
 ### GetStockItem
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetStockItem() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetStockItem() GETStockLineItems200ResponseDataInnerRelationshipsStockItem`
 
 GetStockItem returns the StockItem field if non-nil, zero value otherwise.
 
 ### GetStockItemOk
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetStockItemOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) GetStockItemOk() (*GETStockLineItems200ResponseDataInnerRelationshipsStockItem, bool)`
 
 GetStockItemOk returns a tuple with the StockItem field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockItem
 
-`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetStockItem(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETStockLineItems200ResponseDataInnerRelationships) SetStockItem(v GETStockLineItems200ResponseDataInnerRelationshipsStockItem)`
 
 SetStockItem sets StockItem field to given value.
 

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PaymentMethods** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
-**PaypalPayments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**PaypalPayments** | Pointer to [**GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments**](GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasPaymentMethods returns a boolean if a field has been set.
 
 ### GetPaypalPayments
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPayments() GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments`
 
 GetPaypalPayments returns the PaypalPayments field if non-nil, zero value otherwise.
 
 ### GetPaypalPaymentsOk
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPaymentsOk() (*GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments, bool)`
 
 GetPaypalPaymentsOk returns a tuple with the PaypalPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaypalPayments
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationships) SetPaypalPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationships) SetPaypalPayments(v GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments)`
 
 SetPaypalPayments sets PaypalPayments field to given value.
 

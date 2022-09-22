@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("braintree_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
+    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
     braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("braintree_gateways", *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
+    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("Type_example", *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

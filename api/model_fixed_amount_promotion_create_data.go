@@ -18,9 +18,9 @@ import (
 // FixedAmountPromotionCreateData struct for FixedAmountPromotionCreateData
 type FixedAmountPromotionCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTFixedAmountPromotions201ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    POSTFixedAmountPromotions201ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships          `json:"relationships,omitempty"`
 }
 
 // NewFixedAmountPromotionCreateData instantiates a new FixedAmountPromotionCreateData object
@@ -39,8 +39,6 @@ func NewFixedAmountPromotionCreateData(type_ string, attributes POSTFixedAmountP
 // but it doesn't guarantee that properties required by API are set
 func NewFixedAmountPromotionCreateDataWithDefaults() *FixedAmountPromotionCreateData {
 	this := FixedAmountPromotionCreateData{}
-	var type_ string = "fixed_amount_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableFixedAmountPromotionCreateData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

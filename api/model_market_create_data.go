@@ -18,9 +18,9 @@ import (
 // MarketCreateData struct for MarketCreateData
 type MarketCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTMarkets201ResponseDataAttributes `json:"attributes"`
-	Relationships *MarketCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTMarkets201ResponseDataAttributes `json:"attributes"`
+	Relationships *MarketCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewMarketCreateData instantiates a new MarketCreateData object
@@ -39,8 +39,6 @@ func NewMarketCreateData(type_ string, attributes POSTMarkets201ResponseDataAttr
 // but it doesn't guarantee that properties required by API are set
 func NewMarketCreateDataWithDefaults() *MarketCreateData {
 	this := MarketCreateData{}
-	var type_ string = "markets"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableMarketCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

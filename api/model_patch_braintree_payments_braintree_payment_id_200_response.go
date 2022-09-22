@@ -112,5 +112,3 @@ func (v *NullablePATCHBraintreePaymentsBraintreePaymentId200Response) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

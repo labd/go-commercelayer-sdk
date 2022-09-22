@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // MerchantsApiService MerchantsApi service
 type MerchantsApiService service
 
 type MerchantsApiDELETEMerchantsMerchantIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MerchantsApiService
 	merchantId string
 }
@@ -46,7 +45,7 @@ Delete a merchant
 func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiDELETEMerchantsMerchantIdRequest {
 	return MerchantsApiDELETEMerchantsMerchantIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		merchantId: merchantId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, mer
 // Execute executes the request
 func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDELETEMerchantsMerchantIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.DELETEMerchantsMerchantId")
@@ -117,9 +116,9 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 }
 
 type MerchantsApiGETMarketIdMerchantRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MerchantsApiService
-	marketId string
+	marketId   string
 }
 
 func (r MerchantsApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
@@ -138,17 +137,17 @@ Retrieve the merchant associated to the market
 func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId string) MerchantsApiGETMarketIdMerchantRequest {
 	return MerchantsApiGETMarketIdMerchantRequest{
 		ApiService: a,
-		ctx: ctx,
-		marketId: marketId,
+		ctx:        ctx,
+		marketId:   marketId,
 	}
 }
 
 // Execute executes the request
 func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarketIdMerchantRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMarketIdMerchant")
@@ -209,7 +208,7 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarket
 }
 
 type MerchantsApiGETMerchantsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MerchantsApiService
 }
 
@@ -228,7 +227,7 @@ List all merchants
 func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETMerchantsRequest {
 	return MerchantsApiGETMerchantsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -236,10 +235,10 @@ func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETM
 //  @return GETMerchants200Response
 func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequest) (*GETMerchants200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETMerchants200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETMerchants200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchants")
@@ -308,7 +307,7 @@ func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequ
 }
 
 type MerchantsApiGETMerchantsMerchantIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *MerchantsApiService
 	merchantId string
 }
@@ -329,7 +328,7 @@ Retrieve a merchant
 func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiGETMerchantsMerchantIdRequest {
 	return MerchantsApiGETMerchantsMerchantIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		merchantId: merchantId,
 	}
 }
@@ -338,10 +337,10 @@ func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, mercha
 //  @return GETMerchantsMerchantId200Response
 func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMerchantsMerchantIdRequest) (*GETMerchantsMerchantId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETMerchantsMerchantId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETMerchantsMerchantId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchantsMerchantId")
@@ -411,10 +410,10 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 }
 
 type MerchantsApiPATCHMerchantsMerchantIdRequest struct {
-	ctx context.Context
-	ApiService *MerchantsApiService
+	ctx            context.Context
+	ApiService     *MerchantsApiService
 	merchantUpdate *MerchantUpdate
-	merchantId string
+	merchantId     string
 }
 
 func (r MerchantsApiPATCHMerchantsMerchantIdRequest) MerchantUpdate(merchantUpdate MerchantUpdate) MerchantsApiPATCHMerchantsMerchantIdRequest {
@@ -438,7 +437,7 @@ Update a merchant
 func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiPATCHMerchantsMerchantIdRequest {
 	return MerchantsApiPATCHMerchantsMerchantIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		merchantId: merchantId,
 	}
 }
@@ -447,10 +446,10 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merc
 //  @return PATCHMerchantsMerchantId200Response
 func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATCHMerchantsMerchantIdRequest) (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHMerchantsMerchantId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHMerchantsMerchantId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.PATCHMerchantsMerchantId")
@@ -525,8 +524,8 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 }
 
 type MerchantsApiPOSTMerchantsRequest struct {
-	ctx context.Context
-	ApiService *MerchantsApiService
+	ctx            context.Context
+	ApiService     *MerchantsApiService
 	merchantCreate *MerchantCreate
 }
 
@@ -550,7 +549,7 @@ Create a merchant
 func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOSTMerchantsRequest {
 	return MerchantsApiPOSTMerchantsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -558,10 +557,10 @@ func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOS
 //  @return POSTMerchants201Response
 func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRequest) (*POSTMerchants201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTMerchants201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTMerchants201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.POSTMerchants")

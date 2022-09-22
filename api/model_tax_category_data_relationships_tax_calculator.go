@@ -18,10 +18,10 @@ import (
 
 // TaxCategoryDataRelationshipsTaxCalculator - struct for TaxCategoryDataRelationshipsTaxCalculator
 type TaxCategoryDataRelationshipsTaxCalculator struct {
-	AvalaraAccount *AvalaraAccount
+	AvalaraAccount        *AvalaraAccount
 	ExternalTaxCalculator *ExternalTaxCalculator
-	ManualTaxCalculator *ManualTaxCalculator
-	TaxjarAccount *TaxjarAccount
+	ManualTaxCalculator   *ManualTaxCalculator
+	TaxjarAccount         *TaxjarAccount
 }
 
 // AvalaraAccountAsTaxCategoryDataRelationshipsTaxCalculator is a convenience function that returns AvalaraAccount wrapped in TaxCategoryDataRelationshipsTaxCalculator
@@ -51,7 +51,6 @@ func TaxjarAccountAsTaxCategoryDataRelationshipsTaxCalculator(v *TaxjarAccount) 
 		TaxjarAccount: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *TaxCategoryDataRelationshipsTaxCalculator) UnmarshalJSON(data []byte) error {
@@ -146,7 +145,7 @@ func (src TaxCategoryDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, erro
 }
 
 // Get the actual instance
-func (obj *TaxCategoryDataRelationshipsTaxCalculator) GetActualInstance() (interface{}) {
+func (obj *TaxCategoryDataRelationshipsTaxCalculator) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -205,5 +204,3 @@ func (v *NullableTaxCategoryDataRelationshipsTaxCalculator) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,7 +17,7 @@ import (
 
 // ParcelLineItemCreateDataRelationships struct for ParcelLineItemCreateDataRelationships
 type ParcelLineItemCreateDataRelationships struct {
-	Parcel PackageDataRelationshipsParcels `json:"parcel"`
+	Parcel        PackageDataRelationshipsParcels         `json:"parcel"`
 	StockLineItem LineItemDataRelationshipsStockLineItems `json:"stock_line_item"`
 	// Deprecated
 	ShipmentLineItem *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_item,omitempty"`
@@ -174,5 +174,3 @@ func (v *NullableParcelLineItemCreateDataRelationships) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

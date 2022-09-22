@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "checkout_com_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTCheckoutComPayments201ResponseDataAttributes**](POSTCheckoutComPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 

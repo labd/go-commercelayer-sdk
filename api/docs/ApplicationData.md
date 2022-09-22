@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "application"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETApplicationApplicationId200ResponseDataAttributes**](GETApplicationApplicationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

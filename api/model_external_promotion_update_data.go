@@ -20,9 +20,9 @@ type ExternalPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                              `json:"id"`
+	Attributes    PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships                           `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionUpdateData instantiates a new ExternalPromotionUpdateData object
@@ -42,8 +42,6 @@ func NewExternalPromotionUpdateData(type_ string, id string, attributes PATCHExt
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPromotionUpdateDataWithDefaults() *ExternalPromotionUpdateData {
 	this := ExternalPromotionUpdateData{}
-	var type_ string = "external_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableExternalPromotionUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

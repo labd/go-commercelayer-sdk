@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTLineItemOptions201ResponseDataAttributes**](POSTLineItemOptions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionCreateDataRelationships**](LineItemOptionCreateDataRelationships.md) |  | [optional] 
 

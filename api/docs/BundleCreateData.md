@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "bundles"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTBundles201ResponseDataAttributes**](POSTBundles201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BundleCreateDataRelationships**](BundleCreateDataRelationships.md) |  | [optional] 
 

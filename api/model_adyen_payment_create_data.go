@@ -18,9 +18,9 @@ import (
 // AdyenPaymentCreateData struct for AdyenPaymentCreateData
 type AdyenPaymentCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewAdyenPaymentCreateData instantiates a new AdyenPaymentCreateData object
@@ -39,8 +39,6 @@ func NewAdyenPaymentCreateData(type_ string, attributes POSTAdyenPayments201Resp
 // but it doesn't guarantee that properties required by API are set
 func NewAdyenPaymentCreateDataWithDefaults() *AdyenPaymentCreateData {
 	this := AdyenPaymentCreateData{}
-	var type_ string = "adyen_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableAdyenPaymentCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

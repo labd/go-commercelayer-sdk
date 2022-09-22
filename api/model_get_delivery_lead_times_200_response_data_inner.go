@@ -20,9 +20,9 @@ type GETDeliveryLeadTimes200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETDeliveryLeadTimes200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
+	Attributes    *GETDeliveryLeadTimes200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETDeliveryLeadTimes200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETDeliveryLeadTimes200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETDeliveryLeadTimes200ResponseDataInner() *GETDeliveryLeadTimes200ResponseDataInner {
 	this := GETDeliveryLeadTimes200ResponseDataInner{}
-	var type_ string = "delivery_lead_times"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETDeliveryLeadTimes200ResponseDataInner() *GETDeliveryLeadTimes200Respo
 // but it doesn't guarantee that properties required by API are set
 func NewGETDeliveryLeadTimes200ResponseDataInnerWithDefaults() *GETDeliveryLeadTimes200ResponseDataInner {
 	this := GETDeliveryLeadTimes200ResponseDataInner{}
-	var type_ string = "delivery_lead_times"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETDeliveryLeadTimes200ResponseDataInner) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

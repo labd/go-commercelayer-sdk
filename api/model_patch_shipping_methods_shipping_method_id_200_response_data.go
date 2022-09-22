@@ -20,10 +20,10 @@ type PATCHShippingMethodsShippingMethodId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETShippingMethods200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                         `json:"links,omitempty"`
+	Attributes    *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETShippingMethods200ResponseDataInnerRelationships           `json:"relationships,omitempty"`
 }
 
 // NewPATCHShippingMethodsShippingMethodId200ResponseData instantiates a new PATCHShippingMethodsShippingMethodId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHShippingMethodsShippingMethodId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHShippingMethodsShippingMethodId200ResponseData() *PATCHShippingMethodsShippingMethodId200ResponseData {
 	this := PATCHShippingMethodsShippingMethodId200ResponseData{}
-	var type_ string = "shipping_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHShippingMethodsShippingMethodId200ResponseData() *PATCHShippingMeth
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHShippingMethodsShippingMethodId200ResponseDataWithDefaults() *PATCHShippingMethodsShippingMethodId200ResponseData {
 	this := PATCHShippingMethodsShippingMethodId200ResponseData{}
-	var type_ string = "shipping_methods"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHShippingMethodsShippingMethodId200ResponseData) UnmarshalJ
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

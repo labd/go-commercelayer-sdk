@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCustomers200ResponseDataInnerAttributes**](GETCustomers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerDataRelationships**](CustomerDataRelationships.md) |  | [optional] 
 

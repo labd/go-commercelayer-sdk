@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("free_gift_promotions", "XGZwpOSrWL", *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes())) // FreeGiftPromotionUpdate | 
+    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes())) // FreeGiftPromotionUpdate | 
     freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("free_gift_promotions", *openapiclient.NewPOSTFreeGiftPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
+    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("Type_example", *openapiclient.NewPOSTFreeGiftPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

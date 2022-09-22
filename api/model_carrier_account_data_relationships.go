@@ -17,7 +17,7 @@ import (
 
 // CarrierAccountDataRelationships struct for CarrierAccountDataRelationships
 type CarrierAccountDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market      *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableCarrierAccountDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

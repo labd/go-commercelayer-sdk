@@ -20,10 +20,10 @@ type PATCHBundlesBundleId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETBundles200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks         `json:"links,omitempty"`
+	Attributes    *PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETBundles200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
 }
 
 // NewPATCHBundlesBundleId200ResponseData instantiates a new PATCHBundlesBundleId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHBundlesBundleId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHBundlesBundleId200ResponseData() *PATCHBundlesBundleId200ResponseData {
 	this := PATCHBundlesBundleId200ResponseData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHBundlesBundleId200ResponseData() *PATCHBundlesBundleId200ResponseDa
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHBundlesBundleId200ResponseDataWithDefaults() *PATCHBundlesBundleId200ResponseData {
 	this := PATCHBundlesBundleId200ResponseData{}
-	var type_ string = "bundles"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHBundlesBundleId200ResponseData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

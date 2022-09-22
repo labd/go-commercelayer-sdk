@@ -483,5 +483,3 @@ func (v *NullableGETBraintreeGateways200ResponseDataInnerAttributes) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

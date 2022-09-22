@@ -224,5 +224,3 @@ func (v *NullablePOSTOrderAmountPromotionRules201ResponseDataAttributes) Unmarsh
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

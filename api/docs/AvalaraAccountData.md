@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "avalara_accounts"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAvalaraAccounts200ResponseDataInnerAttributes**](GETAvalaraAccounts200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 

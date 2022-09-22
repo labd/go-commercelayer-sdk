@@ -18,9 +18,9 @@ import (
 // DeliveryLeadTimeCreateData struct for DeliveryLeadTimeCreateData
 type DeliveryLeadTimeCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTDeliveryLeadTimes201ResponseDataAttributes `json:"attributes"`
-	Relationships *DeliveryLeadTimeCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTDeliveryLeadTimes201ResponseDataAttributes `json:"attributes"`
+	Relationships *DeliveryLeadTimeCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewDeliveryLeadTimeCreateData instantiates a new DeliveryLeadTimeCreateData object
@@ -39,8 +39,6 @@ func NewDeliveryLeadTimeCreateData(type_ string, attributes POSTDeliveryLeadTime
 // but it doesn't guarantee that properties required by API are set
 func NewDeliveryLeadTimeCreateDataWithDefaults() *DeliveryLeadTimeCreateData {
 	this := DeliveryLeadTimeCreateData{}
-	var type_ string = "delivery_lead_times"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableDeliveryLeadTimeCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

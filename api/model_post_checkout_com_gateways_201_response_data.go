@@ -20,9 +20,9 @@ type POSTCheckoutComGateways201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTCheckoutComGateways201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                   `json:"links,omitempty"`
+	Attributes    *POSTCheckoutComGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETCheckoutComGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTCheckoutComGateways201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTCheckoutComGateways201ResponseData() *POSTCheckoutComGateways201ResponseData {
 	this := POSTCheckoutComGateways201ResponseData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTCheckoutComGateways201ResponseData() *POSTCheckoutComGateways201Resp
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTCheckoutComGateways201ResponseDataWithDefaults() *POSTCheckoutComGateways201ResponseData {
 	this := POSTCheckoutComGateways201ResponseData{}
-	var type_ string = "checkout_com_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTCheckoutComGateways201ResponseData) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

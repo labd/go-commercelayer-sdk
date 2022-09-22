@@ -17,27 +17,27 @@ import (
 
 // OrderDataRelationships struct for OrderDataRelationships
 type OrderDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	ShippingAddress *BingGeocoderDataRelationshipsAddresses `json:"shipping_address,omitempty"`
-	BillingAddress *BingGeocoderDataRelationshipsAddresses `json:"billing_address,omitempty"`
-	AvailablePaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods `json:"available_payment_methods,omitempty"`
-	AvailableCustomerPaymentSources *CustomerDataRelationshipsCustomerPaymentSources `json:"available_customer_payment_sources,omitempty"`
-	AvailableFreeSkus *BundleDataRelationshipsSkus `json:"available_free_skus,omitempty"`
-	AvailableFreeBundles *OrderDataRelationshipsAvailableFreeBundles `json:"available_free_bundles,omitempty"`
-	PaymentMethod *AdyenGatewayDataRelationshipsPaymentMethods `json:"payment_method,omitempty"`
-	PaymentSource *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
-	LineItems *LineItemOptionDataRelationshipsLineItem `json:"line_items,omitempty"`
-	Shipments *OrderDataRelationshipsShipments `json:"shipments,omitempty"`
-	Transactions *OrderDataRelationshipsTransactions `json:"transactions,omitempty"`
-	Authorizations *CaptureDataRelationshipsReferenceAuthorization `json:"authorizations,omitempty"`
-	Captures *AuthorizationDataRelationshipsCaptures `json:"captures,omitempty"`
-	Voids *AuthorizationDataRelationshipsVoids `json:"voids,omitempty"`
-	Refunds *CaptureDataRelationshipsRefunds `json:"refunds,omitempty"`
-	OrderSubscriptions *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscriptions,omitempty"`
-	OrderCopies *OrderSubscriptionDataRelationshipsOrderCopies `json:"order_copies,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Market                          *AvalaraAccountDataRelationshipsMarkets              `json:"market,omitempty"`
+	Customer                        *CouponRecipientDataRelationshipsCustomer            `json:"customer,omitempty"`
+	ShippingAddress                 *BingGeocoderDataRelationshipsAddresses              `json:"shipping_address,omitempty"`
+	BillingAddress                  *BingGeocoderDataRelationshipsAddresses              `json:"billing_address,omitempty"`
+	AvailablePaymentMethods         *AdyenGatewayDataRelationshipsPaymentMethods         `json:"available_payment_methods,omitempty"`
+	AvailableCustomerPaymentSources *CustomerDataRelationshipsCustomerPaymentSources     `json:"available_customer_payment_sources,omitempty"`
+	AvailableFreeSkus               *BundleDataRelationshipsSkus                         `json:"available_free_skus,omitempty"`
+	AvailableFreeBundles            *OrderDataRelationshipsAvailableFreeBundles          `json:"available_free_bundles,omitempty"`
+	PaymentMethod                   *AdyenGatewayDataRelationshipsPaymentMethods         `json:"payment_method,omitempty"`
+	PaymentSource                   *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	LineItems                       *LineItemOptionDataRelationshipsLineItem             `json:"line_items,omitempty"`
+	Shipments                       *OrderDataRelationshipsShipments                     `json:"shipments,omitempty"`
+	Transactions                    *OrderDataRelationshipsTransactions                  `json:"transactions,omitempty"`
+	Authorizations                  *CaptureDataRelationshipsReferenceAuthorization      `json:"authorizations,omitempty"`
+	Captures                        *AuthorizationDataRelationshipsCaptures              `json:"captures,omitempty"`
+	Voids                           *AuthorizationDataRelationshipsVoids                 `json:"voids,omitempty"`
+	Refunds                         *CaptureDataRelationshipsRefunds                     `json:"refunds,omitempty"`
+	OrderSubscriptions              *CustomerDataRelationshipsOrderSubscriptions         `json:"order_subscriptions,omitempty"`
+	OrderCopies                     *OrderSubscriptionDataRelationshipsOrderCopies       `json:"order_copies,omitempty"`
+	Attachments                     *AvalaraAccountDataRelationshipsAttachments          `json:"attachments,omitempty"`
+	Events                          *CustomerAddressDataRelationshipsEvents              `json:"events,omitempty"`
 }
 
 // NewOrderDataRelationships instantiates a new OrderDataRelationships object
@@ -832,5 +832,3 @@ func (v *NullableOrderDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

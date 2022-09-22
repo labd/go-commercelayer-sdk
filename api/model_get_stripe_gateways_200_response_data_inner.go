@@ -20,9 +20,9 @@ type GETStripeGateways200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETStripeGateways200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                             `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *GETStripeGateways200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETStripeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETStripeGateways200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETStripeGateways200ResponseDataInner() *GETStripeGateways200ResponseDataInner {
 	this := GETStripeGateways200ResponseDataInner{}
-	var type_ string = "stripe_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETStripeGateways200ResponseDataInner() *GETStripeGateways200ResponseDat
 // but it doesn't guarantee that properties required by API are set
 func NewGETStripeGateways200ResponseDataInnerWithDefaults() *GETStripeGateways200ResponseDataInner {
 	this := GETStripeGateways200ResponseDataInner{}
-	var type_ string = "stripe_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETStripeGateways200ResponseDataInner) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

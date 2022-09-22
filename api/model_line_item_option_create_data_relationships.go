@@ -17,7 +17,7 @@ import (
 
 // LineItemOptionCreateDataRelationships struct for LineItemOptionCreateDataRelationships
 type LineItemOptionCreateDataRelationships struct {
-	LineItem LineItemOptionDataRelationshipsLineItem `json:"line_item"`
+	LineItem  LineItemOptionDataRelationshipsLineItem  `json:"line_item"`
 	SkuOption LineItemOptionDataRelationshipsSkuOption `json:"sku_option"`
 }
 
@@ -134,5 +134,3 @@ func (v *NullableLineItemOptionCreateDataRelationships) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

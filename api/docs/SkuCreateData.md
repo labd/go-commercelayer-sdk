@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "skus"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTSkus201ResponseDataAttributes**](POSTSkus201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuCreateDataRelationships**](SkuCreateDataRelationships.md) |  | [optional] 
 

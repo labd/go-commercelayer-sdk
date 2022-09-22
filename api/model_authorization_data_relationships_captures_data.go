@@ -29,8 +29,6 @@ type AuthorizationDataRelationshipsCapturesData struct {
 // will change when the set of required properties is changed
 func NewAuthorizationDataRelationshipsCapturesData() *AuthorizationDataRelationshipsCapturesData {
 	this := AuthorizationDataRelationshipsCapturesData{}
-	var type_ string = "captures"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewAuthorizationDataRelationshipsCapturesData() *AuthorizationDataRelations
 // but it doesn't guarantee that properties required by API are set
 func NewAuthorizationDataRelationshipsCapturesDataWithDefaults() *AuthorizationDataRelationshipsCapturesData {
 	this := AuthorizationDataRelationshipsCapturesData{}
-	var type_ string = "captures"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableAuthorizationDataRelationshipsCapturesData) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

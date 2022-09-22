@@ -20,9 +20,9 @@ type POSTBillingInfoValidationRules201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTAdyenPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                          `json:"links,omitempty"`
+	Attributes    *POSTAdyenPayments201ResponseDataAttributes                     `json:"attributes,omitempty"`
 	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTBillingInfoValidationRules201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTBillingInfoValidationRules201ResponseData() *POSTBillingInfoValidationRules201ResponseData {
 	this := POSTBillingInfoValidationRules201ResponseData{}
-	var type_ string = "billing_info_validation_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTBillingInfoValidationRules201ResponseData() *POSTBillingInfoValidati
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTBillingInfoValidationRules201ResponseDataWithDefaults() *POSTBillingInfoValidationRules201ResponseData {
 	this := POSTBillingInfoValidationRules201ResponseData{}
-	var type_ string = "billing_info_validation_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTBillingInfoValidationRules201ResponseData) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

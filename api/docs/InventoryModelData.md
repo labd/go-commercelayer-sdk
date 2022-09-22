@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "inventory_models"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETInventoryModels200ResponseDataInnerAttributes**](GETInventoryModels200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryModelDataRelationships**](InventoryModelDataRelationships.md) |  | [optional] 
 

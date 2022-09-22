@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTExternalGateways201ResponseDataAttributes**](POSTExternalGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

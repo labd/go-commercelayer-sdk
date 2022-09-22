@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // PricesApiService PricesApi service
 type PricesApiService service
 
 type PricesApiDELETEPricesPriceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PricesApiService
-	priceId string
+	priceId    string
 }
 
 func (r PricesApiDELETEPricesPriceIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete a price
 func (a *PricesApiService) DELETEPricesPriceId(ctx context.Context, priceId string) PricesApiDELETEPricesPriceIdRequest {
 	return PricesApiDELETEPricesPriceIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
 // Execute executes the request
 func (a *PricesApiService) DELETEPricesPriceIdExecute(r PricesApiDELETEPricesPriceIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.DELETEPricesPriceId")
@@ -117,8 +116,8 @@ func (a *PricesApiService) DELETEPricesPriceIdExecute(r PricesApiDELETEPricesPri
 }
 
 type PricesApiGETPriceListIdPricesRequest struct {
-	ctx context.Context
-	ApiService *PricesApiService
+	ctx         context.Context
+	ApiService  *PricesApiService
 	priceListId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the prices associated to the price list
 */
 func (a *PricesApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) PricesApiGETPriceListIdPricesRequest {
 	return PricesApiGETPriceListIdPricesRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceListId: priceListId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *PricesApiService) GETPriceListIdPrices(ctx context.Context, priceListId
 // Execute executes the request
 func (a *PricesApiService) GETPriceListIdPricesExecute(r PricesApiGETPriceListIdPricesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPriceListIdPrices")
@@ -209,8 +208,8 @@ func (a *PricesApiService) GETPriceListIdPricesExecute(r PricesApiGETPriceListId
 }
 
 type PricesApiGETPriceTierIdPriceRequest struct {
-	ctx context.Context
-	ApiService *PricesApiService
+	ctx         context.Context
+	ApiService  *PricesApiService
 	priceTierId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the price associated to the price tier
 */
 func (a *PricesApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId string) PricesApiGETPriceTierIdPriceRequest {
 	return PricesApiGETPriceTierIdPriceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:  a,
+		ctx:         ctx,
 		priceTierId: priceTierId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *PricesApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId 
 // Execute executes the request
 func (a *PricesApiService) GETPriceTierIdPriceExecute(r PricesApiGETPriceTierIdPriceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPriceTierIdPrice")
@@ -301,8 +300,8 @@ func (a *PricesApiService) GETPriceTierIdPriceExecute(r PricesApiGETPriceTierIdP
 }
 
 type PricesApiGETPriceVolumeTierIdPriceRequest struct {
-	ctx context.Context
-	ApiService *PricesApiService
+	ctx               context.Context
+	ApiService        *PricesApiService
 	priceVolumeTierId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the price associated to the price volume tier
 */
 func (a *PricesApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) PricesApiGETPriceVolumeTierIdPriceRequest {
 	return PricesApiGETPriceVolumeTierIdPriceRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		priceVolumeTierId: priceVolumeTierId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *PricesApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceV
 // Execute executes the request
 func (a *PricesApiService) GETPriceVolumeTierIdPriceExecute(r PricesApiGETPriceVolumeTierIdPriceRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPriceVolumeTierIdPrice")
@@ -393,7 +392,7 @@ func (a *PricesApiService) GETPriceVolumeTierIdPriceExecute(r PricesApiGETPriceV
 }
 
 type PricesApiGETPricesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PricesApiService
 }
 
@@ -412,7 +411,7 @@ List all prices
 func (a *PricesApiService) GETPrices(ctx context.Context) PricesApiGETPricesRequest {
 	return PricesApiGETPricesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -420,10 +419,10 @@ func (a *PricesApiService) GETPrices(ctx context.Context) PricesApiGETPricesRequ
 //  @return GETPrices200Response
 func (a *PricesApiService) GETPricesExecute(r PricesApiGETPricesRequest) (*GETPrices200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPrices200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPrices200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPrices")
@@ -492,9 +491,9 @@ func (a *PricesApiService) GETPricesExecute(r PricesApiGETPricesRequest) (*GETPr
 }
 
 type PricesApiGETPricesPriceIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PricesApiService
-	priceId string
+	priceId    string
 }
 
 func (r PricesApiGETPricesPriceIdRequest) Execute() (*GETPricesPriceId200Response, *http.Response, error) {
@@ -513,8 +512,8 @@ Retrieve a price
 func (a *PricesApiService) GETPricesPriceId(ctx context.Context, priceId string) PricesApiGETPricesPriceIdRequest {
 	return PricesApiGETPricesPriceIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
@@ -522,10 +521,10 @@ func (a *PricesApiService) GETPricesPriceId(ctx context.Context, priceId string)
 //  @return GETPricesPriceId200Response
 func (a *PricesApiService) GETPricesPriceIdExecute(r PricesApiGETPricesPriceIdRequest) (*GETPricesPriceId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETPricesPriceId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPricesPriceId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPricesPriceId")
@@ -595,9 +594,9 @@ func (a *PricesApiService) GETPricesPriceIdExecute(r PricesApiGETPricesPriceIdRe
 }
 
 type PricesApiGETSkuIdPricesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *PricesApiService
-	skuId string
+	skuId      string
 }
 
 func (r PricesApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
@@ -616,17 +615,17 @@ Retrieve the prices associated to the SKU
 func (a *PricesApiService) GETSkuIdPrices(ctx context.Context, skuId string) PricesApiGETSkuIdPricesRequest {
 	return PricesApiGETSkuIdPricesRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *PricesApiService) GETSkuIdPricesExecute(r PricesApiGETSkuIdPricesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETSkuIdPrices")
@@ -687,10 +686,10 @@ func (a *PricesApiService) GETSkuIdPricesExecute(r PricesApiGETSkuIdPricesReques
 }
 
 type PricesApiPATCHPricesPriceIdRequest struct {
-	ctx context.Context
-	ApiService *PricesApiService
+	ctx         context.Context
+	ApiService  *PricesApiService
 	priceUpdate *PriceUpdate
-	priceId string
+	priceId     string
 }
 
 func (r PricesApiPATCHPricesPriceIdRequest) PriceUpdate(priceUpdate PriceUpdate) PricesApiPATCHPricesPriceIdRequest {
@@ -714,8 +713,8 @@ Update a price
 func (a *PricesApiService) PATCHPricesPriceId(ctx context.Context, priceId string) PricesApiPATCHPricesPriceIdRequest {
 	return PricesApiPATCHPricesPriceIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		priceId: priceId,
+		ctx:        ctx,
+		priceId:    priceId,
 	}
 }
 
@@ -723,10 +722,10 @@ func (a *PricesApiService) PATCHPricesPriceId(ctx context.Context, priceId strin
 //  @return PATCHPricesPriceId200Response
 func (a *PricesApiService) PATCHPricesPriceIdExecute(r PricesApiPATCHPricesPriceIdRequest) (*PATCHPricesPriceId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHPricesPriceId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHPricesPriceId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.PATCHPricesPriceId")
@@ -801,8 +800,8 @@ func (a *PricesApiService) PATCHPricesPriceIdExecute(r PricesApiPATCHPricesPrice
 }
 
 type PricesApiPOSTPricesRequest struct {
-	ctx context.Context
-	ApiService *PricesApiService
+	ctx         context.Context
+	ApiService  *PricesApiService
 	priceCreate *PriceCreate
 }
 
@@ -826,7 +825,7 @@ Create a price
 func (a *PricesApiService) POSTPrices(ctx context.Context) PricesApiPOSTPricesRequest {
 	return PricesApiPOSTPricesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -834,10 +833,10 @@ func (a *PricesApiService) POSTPrices(ctx context.Context) PricesApiPOSTPricesRe
 //  @return POSTPrices201Response
 func (a *PricesApiService) POSTPricesExecute(r PricesApiPOSTPricesRequest) (*POSTPrices201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTPrices201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTPrices201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.POSTPrices")

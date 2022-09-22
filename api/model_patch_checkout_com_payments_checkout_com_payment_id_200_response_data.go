@@ -20,10 +20,10 @@ type PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                 `json:"links,omitempty"`
+	Attributes    *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData instantiates a new PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData() *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData {
 	this := PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData() *PATCHChec
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataWithDefaults() *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData {
 	this := PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData{}
-	var type_ string = "checkout_com_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

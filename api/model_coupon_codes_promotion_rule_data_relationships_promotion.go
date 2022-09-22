@@ -18,11 +18,11 @@ import (
 
 // CouponCodesPromotionRuleDataRelationshipsPromotion - struct for CouponCodesPromotionRuleDataRelationshipsPromotion
 type CouponCodesPromotionRuleDataRelationshipsPromotion struct {
-	ExternalPromotion *ExternalPromotion
-	FixedAmountPromotion *FixedAmountPromotion
-	FixedPricePromotion *FixedPricePromotion
-	FreeGiftPromotion *FreeGiftPromotion
-	FreeShippingPromotion *FreeShippingPromotion
+	ExternalPromotion           *ExternalPromotion
+	FixedAmountPromotion        *FixedAmountPromotion
+	FixedPricePromotion         *FixedPricePromotion
+	FreeGiftPromotion           *FreeGiftPromotion
+	FreeShippingPromotion       *FreeShippingPromotion
 	PercentageDiscountPromotion *PercentageDiscountPromotion
 }
 
@@ -67,7 +67,6 @@ func PercentageDiscountPromotionAsCouponCodesPromotionRuleDataRelationshipsPromo
 		PercentageDiscountPromotion: v,
 	}
 }
-
 
 // Unmarshal JSON data into one of the pointers in the struct
 func (dst *CouponCodesPromotionRuleDataRelationshipsPromotion) UnmarshalJSON(data []byte) error {
@@ -198,7 +197,7 @@ func (src CouponCodesPromotionRuleDataRelationshipsPromotion) MarshalJSON() ([]b
 }
 
 // Get the actual instance
-func (obj *CouponCodesPromotionRuleDataRelationshipsPromotion) GetActualInstance() (interface{}) {
+func (obj *CouponCodesPromotionRuleDataRelationshipsPromotion) GetActualInstance() interface{} {
 	if obj == nil {
 		return nil
 	}
@@ -265,5 +264,3 @@ func (v *NullableCouponCodesPromotionRuleDataRelationshipsPromotion) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "attachments"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETAttachments200ResponseDataInnerAttributes**](GETAttachments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentDataRelationships**](AttachmentDataRelationships.md) |  | [optional] 
 

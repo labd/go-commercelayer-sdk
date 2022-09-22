@@ -20,10 +20,10 @@ type GETExternalTaxCalculators200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                  `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                   `json:"links,omitempty"`
+	Attributes    *GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships     `json:"relationships,omitempty"`
 }
 
 // NewGETExternalTaxCalculators200ResponseDataInner instantiates a new GETExternalTaxCalculators200ResponseDataInner object
@@ -32,8 +32,6 @@ type GETExternalTaxCalculators200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETExternalTaxCalculators200ResponseDataInner() *GETExternalTaxCalculators200ResponseDataInner {
 	this := GETExternalTaxCalculators200ResponseDataInner{}
-	var type_ string = "external_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETExternalTaxCalculators200ResponseDataInner() *GETExternalTaxCalculato
 // but it doesn't guarantee that properties required by API are set
 func NewGETExternalTaxCalculators200ResponseDataInnerWithDefaults() *GETExternalTaxCalculators200ResponseDataInner {
 	this := GETExternalTaxCalculators200ResponseDataInner{}
-	var type_ string = "external_tax_calculators"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETExternalTaxCalculators200ResponseDataInner) UnmarshalJSON(sr
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

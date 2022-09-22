@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupons"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCoupons200ResponseDataInnerAttributes**](GETCoupons200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponDataRelationships**](CouponDataRelationships.md) |  | [optional] 
 

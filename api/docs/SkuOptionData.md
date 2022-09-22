@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "sku_options"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETSkuOptions200ResponseDataInnerAttributes**](GETSkuOptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CarrierAccountDataRelationships**](CarrierAccountDataRelationships.md) |  | [optional] 
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customer_subscriptions"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETCustomerSubscriptions200ResponseDataInnerAttributes**](GETCustomerSubscriptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 

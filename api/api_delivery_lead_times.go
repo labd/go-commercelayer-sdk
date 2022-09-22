@@ -20,13 +20,12 @@ import (
 	"strings"
 )
 
-
 // DeliveryLeadTimesApiService DeliveryLeadTimesApi service
 type DeliveryLeadTimesApiService service
 
 type DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
-	ctx context.Context
-	ApiService *DeliveryLeadTimesApiService
+	ctx                context.Context
+	ApiService         *DeliveryLeadTimesApiService
 	deliveryLeadTimeId string
 }
 
@@ -45,8 +44,8 @@ Delete a delivery lead time
 */
 func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeId(
 // Execute executes the request
 func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.DELETEDeliveryLeadTimesDeliveryLeadTimeId")
@@ -117,7 +116,7 @@ func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeIdE
 }
 
 type DeliveryLeadTimesApiGETDeliveryLeadTimesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DeliveryLeadTimesApiService
 }
 
@@ -136,7 +135,7 @@ List all delivery lead times
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimes(ctx context.Context) DeliveryLeadTimesApiGETDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiGETDeliveryLeadTimesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimes(ctx context.Context) 
 //  @return GETDeliveryLeadTimes200Response
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) (*GETDeliveryLeadTimes200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETDeliveryLeadTimes200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETDeliveryLeadTimes200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETDeliveryLeadTimes")
@@ -216,8 +215,8 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLead
 }
 
 type DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
-	ctx context.Context
-	ApiService *DeliveryLeadTimesApiService
+	ctx                context.Context
+	ApiService         *DeliveryLeadTimesApiService
 	deliveryLeadTimeId string
 }
 
@@ -236,8 +235,8 @@ Retrieve a delivery lead time
 */
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -246,10 +245,10 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx
 //  @return GETDeliveryLeadTimesDeliveryLeadTimeId200Response
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*GETDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETDeliveryLeadTimesDeliveryLeadTimeId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETDeliveryLeadTimesDeliveryLeadTimeId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETDeliveryLeadTimesDeliveryLeadTimeId")
@@ -319,7 +318,7 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExec
 }
 
 type DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DeliveryLeadTimesApiService
 	shipmentId string
 }
@@ -340,7 +339,7 @@ Retrieve the delivery lead time associated to the shipment
 func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest {
 	return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		shipmentId: shipmentId,
 	}
 }
@@ -348,9 +347,9 @@ func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTime(ctx context.
 // Execute executes the request
 func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTimeExecute(r DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETShipmentIdDeliveryLeadTime")
@@ -411,8 +410,8 @@ func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTimeExecute(r Del
 }
 
 type DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest struct {
-	ctx context.Context
-	ApiService *DeliveryLeadTimesApiService
+	ctx              context.Context
+	ApiService       *DeliveryLeadTimesApiService
 	shippingMethodId string
 }
 
@@ -431,8 +430,8 @@ Retrieve the delivery lead time for shipment associated to the shipping method
 */
 func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
 	return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:       a,
+		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
 	}
 }
@@ -440,9 +439,9 @@ func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShip
 // Execute executes the request
 func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute(r DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETShippingMethodIdDeliveryLeadTimeForShipment")
@@ -503,9 +502,9 @@ func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShip
 }
 
 type DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *DeliveryLeadTimesApiService
-	skuId string
+	skuId      string
 }
 
 func (r DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
@@ -524,17 +523,17 @@ Retrieve the delivery lead times associated to the SKU
 func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest{
 		ApiService: a,
-		ctx: ctx,
-		skuId: skuId,
+		ctx:        ctx,
+		skuId:      skuId,
 	}
 }
 
 // Execute executes the request
 func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimesExecute(r DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETSkuIdDeliveryLeadTimes")
@@ -595,10 +594,10 @@ func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimesExecute(r Deliver
 }
 
 type DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
-	ctx context.Context
-	ApiService *DeliveryLeadTimesApiService
+	ctx                    context.Context
+	ApiService             *DeliveryLeadTimesApiService
 	deliveryLeadTimeUpdate *DeliveryLeadTimeUpdate
-	deliveryLeadTimeId string
+	deliveryLeadTimeId     string
 }
 
 func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate DeliveryLeadTimeUpdate) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
@@ -621,8 +620,8 @@ Update a delivery lead time
 */
 func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:         a,
+		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
 	}
 }
@@ -631,10 +630,10 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(c
 //  @return PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
 func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.PATCHDeliveryLeadTimesDeliveryLeadTimeId")
@@ -709,8 +708,8 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdEx
 }
 
 type DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest struct {
-	ctx context.Context
-	ApiService *DeliveryLeadTimesApiService
+	ctx                    context.Context
+	ApiService             *DeliveryLeadTimesApiService
 	deliveryLeadTimeCreate *DeliveryLeadTimeCreate
 }
 
@@ -734,7 +733,7 @@ Create a delivery lead time
 func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimes(ctx context.Context) DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -742,10 +741,10 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimes(ctx context.Context)
 //  @return POSTDeliveryLeadTimes201Response
 func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) (*POSTDeliveryLeadTimes201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTDeliveryLeadTimes201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTDeliveryLeadTimes201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.POSTDeliveryLeadTimes")

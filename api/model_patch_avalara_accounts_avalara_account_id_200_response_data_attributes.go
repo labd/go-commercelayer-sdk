@@ -409,5 +409,3 @@ func (v *NullablePATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

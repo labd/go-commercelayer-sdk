@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customer_groups"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTCustomerGroups201ResponseDataAttributes**](POSTCustomerGroups201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

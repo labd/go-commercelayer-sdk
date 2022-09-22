@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    inventoryReturnLocationUpdate := *openapiclient.NewInventoryReturnLocationUpdate(*openapiclient.NewInventoryReturnLocationUpdateData("inventory_return_locations", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes())) // InventoryReturnLocationUpdate | 
+    inventoryReturnLocationUpdate := *openapiclient.NewInventoryReturnLocationUpdate(*openapiclient.NewInventoryReturnLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes())) // InventoryReturnLocationUpdate | 
     inventoryReturnLocationId := "inventoryReturnLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    inventoryReturnLocationCreate := *openapiclient.NewInventoryReturnLocationCreate(*openapiclient.NewInventoryReturnLocationCreateData("inventory_return_locations", *openapiclient.NewPOSTInventoryReturnLocations201ResponseDataAttributes(int32(1)))) // InventoryReturnLocationCreate | 
+    inventoryReturnLocationCreate := *openapiclient.NewInventoryReturnLocationCreate(*openapiclient.NewInventoryReturnLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryReturnLocations201ResponseDataAttributes(int32(1)))) // InventoryReturnLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

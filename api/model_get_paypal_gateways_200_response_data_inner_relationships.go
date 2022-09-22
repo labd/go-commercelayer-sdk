@@ -17,8 +17,8 @@ import (
 
 // GETPaypalGateways200ResponseDataInnerRelationships struct for GETPaypalGateways200ResponseDataInnerRelationships
 type GETPaypalGateways200ResponseDataInnerRelationships struct {
-	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"payment_methods,omitempty"`
-	PaypalPayments *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods `json:"paypal_payments,omitempty"`
+	PaymentMethods *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
+	PaypalPayments *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments `json:"paypal_payments,omitempty"`
 }
 
 // NewGETPaypalGateways200ResponseDataInnerRelationships instantiates a new GETPaypalGateways200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETPaypalGateways200ResponseDataInnerRelationships) SetPaymentMethods(v
 }
 
 // GetPaypalPayments returns the PaypalPayments field value if set, zero value otherwise.
-func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPayments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods {
+func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPayments() GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments {
 	if o == nil || o.PaypalPayments == nil {
-		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
+		var ret GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments
 		return ret
 	}
 	return *o.PaypalPayments
@@ -81,7 +81,7 @@ func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPayments()
 
 // GetPaypalPaymentsOk returns a tuple with the PaypalPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPaymentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool) {
+func (o *GETPaypalGateways200ResponseDataInnerRelationships) GetPaypalPaymentsOk() (*GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments, bool) {
 	if o == nil || o.PaypalPayments == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETPaypalGateways200ResponseDataInnerRelationships) HasPaypalPayments()
 	return false
 }
 
-// SetPaypalPayments gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods and assigns it to the PaypalPayments field.
-func (o *GETPaypalGateways200ResponseDataInnerRelationships) SetPaypalPayments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) {
+// SetPaypalPayments gets a reference to the given GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments and assigns it to the PaypalPayments field.
+func (o *GETPaypalGateways200ResponseDataInnerRelationships) SetPaypalPayments(v GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) {
 	o.PaypalPayments = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETPaypalGateways200ResponseDataInnerRelationships) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -20,10 +20,10 @@ type PATCHAdyenPaymentsAdyenPaymentId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                    `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
+	Attributes    *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETAdyenPayments200ResponseDataInnerRelationships         `json:"relationships,omitempty"`
 }
 
 // NewPATCHAdyenPaymentsAdyenPaymentId200ResponseData instantiates a new PATCHAdyenPaymentsAdyenPaymentId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHAdyenPaymentsAdyenPaymentId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHAdyenPaymentsAdyenPaymentId200ResponseData() *PATCHAdyenPaymentsAdyenPaymentId200ResponseData {
 	this := PATCHAdyenPaymentsAdyenPaymentId200ResponseData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHAdyenPaymentsAdyenPaymentId200ResponseData() *PATCHAdyenPaymentsAdy
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataWithDefaults() *PATCHAdyenPaymentsAdyenPaymentId200ResponseData {
 	this := PATCHAdyenPaymentsAdyenPaymentId200ResponseData{}
-	var type_ string = "adyen_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHAdyenPaymentsAdyenPaymentId200ResponseData) UnmarshalJSON(
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

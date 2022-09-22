@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "in_stock_subscriptions"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes**](PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionUpdateDataRelationships**](InStockSubscriptionUpdateDataRelationships.md) |  | [optional] 

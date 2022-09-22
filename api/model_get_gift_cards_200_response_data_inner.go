@@ -20,9 +20,9 @@ type GETGiftCards200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETGiftCards200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                        `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks         `json:"links,omitempty"`
+	Attributes    *GETGiftCards200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETGiftCards200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETGiftCards200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETGiftCards200ResponseDataInner() *GETGiftCards200ResponseDataInner {
 	this := GETGiftCards200ResponseDataInner{}
-	var type_ string = "gift_cards"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETGiftCards200ResponseDataInner() *GETGiftCards200ResponseDataInner {
 // but it doesn't guarantee that properties required by API are set
 func NewGETGiftCards200ResponseDataInnerWithDefaults() *GETGiftCards200ResponseDataInner {
 	this := GETGiftCards200ResponseDataInner{}
-	var type_ string = "gift_cards"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETGiftCards200ResponseDataInner) UnmarshalJSON(src []byte) err
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

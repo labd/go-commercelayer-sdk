@@ -17,7 +17,7 @@ import (
 
 // PaymentMethodUpdateDataRelationships struct for PaymentMethodUpdateDataRelationships
 type PaymentMethodUpdateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market         *AvalaraAccountDataRelationshipsMarkets      `json:"market,omitempty"`
 	PaymentGateway *AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullablePaymentMethodUpdateDataRelationships) UnmarshalJSON(src []byte)
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

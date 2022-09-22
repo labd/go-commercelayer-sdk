@@ -20,9 +20,9 @@ type GETBraintreeGateways200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETBraintreeGateways200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
+	Attributes    *GETBraintreeGateways200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETBraintreeGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETBraintreeGateways200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETBraintreeGateways200ResponseDataInner() *GETBraintreeGateways200ResponseDataInner {
 	this := GETBraintreeGateways200ResponseDataInner{}
-	var type_ string = "braintree_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETBraintreeGateways200ResponseDataInner() *GETBraintreeGateways200Respo
 // but it doesn't guarantee that properties required by API are set
 func NewGETBraintreeGateways200ResponseDataInnerWithDefaults() *GETBraintreeGateways200ResponseDataInner {
 	this := GETBraintreeGateways200ResponseDataInner{}
-	var type_ string = "braintree_gateways"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETBraintreeGateways200ResponseDataInner) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

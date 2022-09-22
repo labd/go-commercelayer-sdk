@@ -17,7 +17,7 @@ import (
 
 // ReturnCreateDataRelationships struct for ReturnCreateDataRelationships
 type ReturnCreateDataRelationships struct {
-	Order AdyenPaymentDataRelationshipsOrder `json:"order"`
+	Order         AdyenPaymentDataRelationshipsOrder              `json:"order"`
 	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
 }
 
@@ -141,5 +141,3 @@ func (v *NullableReturnCreateDataRelationships) UnmarshalJSON(src []byte) error 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

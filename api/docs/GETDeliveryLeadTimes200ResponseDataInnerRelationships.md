@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**ShippingMethod** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**Attachments** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods.md) |  | [optional] 
+**StockLocation** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation**](GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation.md) |  | [optional] 
+**ShippingMethod** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod**](GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -29,20 +29,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocation() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocation() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocationOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetStockLocationOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetStockLocation(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetStockLocation(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
@@ -54,20 +54,20 @@ HasStockLocation returns a boolean if a field has been set.
 
 ### GetShippingMethod
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethod() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethod() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod`
 
 GetShippingMethod returns the ShippingMethod field if non-nil, zero value otherwise.
 
 ### GetShippingMethodOk
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetShippingMethodOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod, bool)`
 
 GetShippingMethodOk returns a tuple with the ShippingMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingMethod
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetShippingMethod(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetShippingMethod(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsShippingMethod)`
 
 SetShippingMethod sets ShippingMethod field to given value.
 
@@ -79,20 +79,20 @@ HasShippingMethod returns a boolean if a field has been set.
 
 ### GetAttachments
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachments() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
 
 GetAttachments returns the Attachments field if non-nil, zero value otherwise.
 
 ### GetAttachmentsOk
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods, bool)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
 
 GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachments
 
-`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetAttachments(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods)`
+`func (o *GETDeliveryLeadTimes200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
 
 SetAttachments sets Attachments field to given value.
 

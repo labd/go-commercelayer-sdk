@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Customer** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**PaymentSource** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**Customer** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationshipsCustomer**](GETCouponRecipients200ResponseDataInnerRelationshipsCustomer.md) |  | [optional] 
+**PaymentSource** | Pointer to [**GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource**](GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCustomer
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomer() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomer() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomerOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomerOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetCustomer(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetCustomer(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 
@@ -53,20 +53,20 @@ HasCustomer returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSource() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSource() GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSourceOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSourceOk() (*GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetPaymentSource(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetPaymentSource(v GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 

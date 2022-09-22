@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("imports", *openapiclient.NewPOSTImports201ResponseDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
+    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("Type_example", *openapiclient.NewPOSTImports201ResponseDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

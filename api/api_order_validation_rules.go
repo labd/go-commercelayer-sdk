@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // OrderValidationRulesApiService OrderValidationRulesApi service
 type OrderValidationRulesApiService service
 
 type OrderValidationRulesApiGETOrderValidationRulesRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *OrderValidationRulesApiService
 }
 
@@ -44,7 +43,7 @@ List all order validation rules
 func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Context) OrderValidationRulesApiGETOrderValidationRulesRequest {
 	return OrderValidationRulesApiGETOrderValidationRulesRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -52,10 +51,10 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Con
 //  @return GETOrderValidationRules200Response
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderValidationRulesApiGETOrderValidationRulesRequest) (*GETOrderValidationRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETOrderValidationRules200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrderValidationRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRules")
@@ -124,8 +123,8 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderV
 }
 
 type OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest struct {
-	ctx context.Context
-	ApiService *OrderValidationRulesApiService
+	ctx                   context.Context
+	ApiService            *OrderValidationRulesApiService
 	orderValidationRuleId string
 }
 
@@ -144,8 +143,8 @@ Retrieve an order validation rule
 */
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId string) OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest {
 	return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		orderValidationRuleId: orderValidationRuleId,
 	}
 }
@@ -154,10 +153,10 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 //  @return GETOrderValidationRulesOrderValidationRuleId200Response
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETOrderValidationRulesOrderValidationRuleId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETOrderValidationRulesOrderValidationRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRulesOrderValidationRuleId")

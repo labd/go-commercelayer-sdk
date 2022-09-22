@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "paypal_gateways"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes**](PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETPaypalGateways200ResponseDataInnerRelationships**](GETPaypalGateways200ResponseDataInnerRelationships.md) |  | [optional] 

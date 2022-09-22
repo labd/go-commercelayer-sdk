@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("paypal_payments", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes())) // PaypalPaymentUpdate | 
+    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes())) // PaypalPaymentUpdate | 
     paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("paypal_payments", *openapiclient.NewPOSTPaypalPayments201ResponseDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
+    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("Type_example", *openapiclient.NewPOSTPaypalPayments201ResponseDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

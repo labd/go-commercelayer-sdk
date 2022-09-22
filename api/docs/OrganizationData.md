@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "organization"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETOrganizationOrganizationId200ResponseDataAttributes**](GETOrganizationOrganizationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

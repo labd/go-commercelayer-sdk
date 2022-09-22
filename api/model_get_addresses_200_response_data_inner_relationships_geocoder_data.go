@@ -17,7 +17,7 @@ import (
 
 // GETAddresses200ResponseDataInnerRelationshipsGeocoderData struct for GETAddresses200ResponseDataInnerRelationshipsGeocoderData
 type GETAddresses200ResponseDataInnerRelationshipsGeocoderData struct {
-	// The resource type
+	// The resource's type
 	Type *string `json:"type,omitempty"`
 	// The resource ID
 	Id *string `json:"id,omitempty"`
@@ -150,5 +150,3 @@ func (v *NullableGETAddresses200ResponseDataInnerRelationshipsGeocoderData) Unma
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -18,9 +18,9 @@ import (
 // OrderValidationRuleData struct for OrderValidationRuleData
 type OrderValidationRuleData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                      `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderValidationRuleData instantiates a new OrderValidationRuleData object
@@ -39,8 +39,6 @@ func NewOrderValidationRuleData(type_ string, attributes GETBillingInfoValidatio
 // but it doesn't guarantee that properties required by API are set
 func NewOrderValidationRuleDataWithDefaults() *OrderValidationRuleData {
 	this := OrderValidationRuleData{}
-	var type_ string = "order_validation_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableOrderValidationRuleData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

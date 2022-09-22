@@ -20,10 +20,10 @@ type PATCHTaxRulesTaxRuleId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETTaxRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                          `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks           `json:"links,omitempty"`
+	Attributes    *PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETTaxRules200ResponseDataInnerRelationships    `json:"relationships,omitempty"`
 }
 
 // NewPATCHTaxRulesTaxRuleId200ResponseData instantiates a new PATCHTaxRulesTaxRuleId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHTaxRulesTaxRuleId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHTaxRulesTaxRuleId200ResponseData() *PATCHTaxRulesTaxRuleId200ResponseData {
 	this := PATCHTaxRulesTaxRuleId200ResponseData{}
-	var type_ string = "tax_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHTaxRulesTaxRuleId200ResponseData() *PATCHTaxRulesTaxRuleId200Respon
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHTaxRulesTaxRuleId200ResponseDataWithDefaults() *PATCHTaxRulesTaxRuleId200ResponseData {
 	this := PATCHTaxRulesTaxRuleId200ResponseData{}
-	var type_ string = "tax_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHTaxRulesTaxRuleId200ResponseData) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

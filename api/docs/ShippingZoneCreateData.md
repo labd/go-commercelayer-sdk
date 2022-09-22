@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_zones"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTShippingZones201ResponseDataAttributes**](POSTShippingZones201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

@@ -20,10 +20,10 @@ type GETOrganizationOrganizationId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETOrganizationOrganizationId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          *string                                                 `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                  `json:"links,omitempty"`
+	Attributes    *GETOrganizationOrganizationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships map[string]interface{}                                  `json:"relationships,omitempty"`
 }
 
 // NewGETOrganizationOrganizationId200ResponseData instantiates a new GETOrganizationOrganizationId200ResponseData object
@@ -32,8 +32,6 @@ type GETOrganizationOrganizationId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewGETOrganizationOrganizationId200ResponseData() *GETOrganizationOrganizationId200ResponseData {
 	this := GETOrganizationOrganizationId200ResponseData{}
-	var type_ string = "organization"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETOrganizationOrganizationId200ResponseData() *GETOrganizationOrganizat
 // but it doesn't guarantee that properties required by API are set
 func NewGETOrganizationOrganizationId200ResponseDataWithDefaults() *GETOrganizationOrganizationId200ResponseData {
 	this := GETOrganizationOrganizationId200ResponseData{}
-	var type_ string = "organization"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETOrganizationOrganizationId200ResponseData) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -17,8 +17,8 @@ import (
 
 // CustomerGroupDataRelationships struct for CustomerGroupDataRelationships
 type CustomerGroupDataRelationships struct {
-	Customers *CouponRecipientDataRelationshipsCustomer `json:"customers,omitempty"`
-	Markets *AvalaraAccountDataRelationshipsMarkets `json:"markets,omitempty"`
+	Customers   *CouponRecipientDataRelationshipsCustomer   `json:"customers,omitempty"`
+	Markets     *AvalaraAccountDataRelationshipsMarkets     `json:"markets,omitempty"`
 	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
@@ -184,5 +184,3 @@ func (v *NullableCustomerGroupDataRelationships) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

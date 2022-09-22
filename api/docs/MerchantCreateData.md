@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "merchants"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTMerchants201ResponseDataAttributes**](POSTMerchants201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantCreateDataRelationships**](MerchantCreateDataRelationships.md) |  | [optional] 
 

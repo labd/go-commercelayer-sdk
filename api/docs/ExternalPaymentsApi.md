@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("external_payments", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes())) // ExternalPaymentUpdate | 
+    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes())) // ExternalPaymentUpdate | 
     externalPaymentId := "externalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("external_payments", *openapiclient.NewPOSTExternalPayments201ResponseDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
+    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("Type_example", *openapiclient.NewPOSTExternalPayments201ResponseDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

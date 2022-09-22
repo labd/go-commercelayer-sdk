@@ -29,8 +29,6 @@ type EventDataRelationshipsLastEventCallbacksData struct {
 // will change when the set of required properties is changed
 func NewEventDataRelationshipsLastEventCallbacksData() *EventDataRelationshipsLastEventCallbacksData {
 	this := EventDataRelationshipsLastEventCallbacksData{}
-	var type_ string = "event_callbacks"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewEventDataRelationshipsLastEventCallbacksData() *EventDataRelationshipsLa
 // but it doesn't guarantee that properties required by API are set
 func NewEventDataRelationshipsLastEventCallbacksDataWithDefaults() *EventDataRelationshipsLastEventCallbacksData {
 	this := EventDataRelationshipsLastEventCallbacksData{}
-	var type_ string = "event_callbacks"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableEventDataRelationshipsLastEventCallbacksData) UnmarshalJSON(src
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -112,5 +112,3 @@ func (v *NullableGETInventoryReturnLocations200Response) UnmarshalJSON(src []byt
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

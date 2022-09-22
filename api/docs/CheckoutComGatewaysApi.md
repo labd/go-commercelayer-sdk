@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("checkout_com_gateways", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes())) // CheckoutComGatewayUpdate | 
+    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes())) // CheckoutComGatewayUpdate | 
     checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("checkout_com_gateways", *openapiclient.NewPOSTCheckoutComGateways201ResponseDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
+    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("Type_example", *openapiclient.NewPOSTCheckoutComGateways201ResponseDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

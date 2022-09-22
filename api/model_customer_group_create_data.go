@@ -18,9 +18,9 @@ import (
 // CustomerGroupCreateData struct for CustomerGroupCreateData
 type CustomerGroupCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTCustomerGroups201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTCustomerGroups201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
 }
 
 // NewCustomerGroupCreateData instantiates a new CustomerGroupCreateData object
@@ -39,8 +39,6 @@ func NewCustomerGroupCreateData(type_ string, attributes POSTCustomerGroups201Re
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerGroupCreateDataWithDefaults() *CustomerGroupCreateData {
 	this := CustomerGroupCreateData{}
-	var type_ string = "customer_groups"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableCustomerGroupCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

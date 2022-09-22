@@ -112,5 +112,3 @@ func (v *NullableGETStripePaymentsStripePaymentId200Response) UnmarshalJSON(src 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

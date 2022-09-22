@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stripe_gateways"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETStripeGateways200ResponseDataInnerAttributes**](GETStripeGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**StripeGatewayDataRelationships**](StripeGatewayDataRelationships.md) |  | [optional] 
 

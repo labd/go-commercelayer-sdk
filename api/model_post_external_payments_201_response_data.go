@@ -20,9 +20,9 @@ type POSTExternalPayments201ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *POSTExternalPayments201ResponseDataAttributes `json:"attributes,omitempty"`
+	Type          *string                                               `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                `json:"links,omitempty"`
+	Attributes    *POSTExternalPayments201ResponseDataAttributes        `json:"attributes,omitempty"`
 	Relationships *GETExternalPayments200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type POSTExternalPayments201ResponseData struct {
 // will change when the set of required properties is changed
 func NewPOSTExternalPayments201ResponseData() *POSTExternalPayments201ResponseData {
 	this := POSTExternalPayments201ResponseData{}
-	var type_ string = "external_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPOSTExternalPayments201ResponseData() *POSTExternalPayments201ResponseDa
 // but it doesn't guarantee that properties required by API are set
 func NewPOSTExternalPayments201ResponseDataWithDefaults() *POSTExternalPayments201ResponseData {
 	this := POSTExternalPayments201ResponseData{}
-	var type_ string = "external_payments"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePOSTExternalPayments201ResponseData) UnmarshalJSON(src []byte) 
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

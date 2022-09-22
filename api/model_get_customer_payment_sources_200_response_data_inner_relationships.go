@@ -17,8 +17,8 @@ import (
 
 // GETCustomerPaymentSources200ResponseDataInnerRelationships struct for GETCustomerPaymentSources200ResponseDataInnerRelationships
 type GETCustomerPaymentSources200ResponseDataInnerRelationships struct {
-	Customer *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"customer,omitempty"`
-	PaymentSource *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"payment_source,omitempty"`
+	Customer      *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer            `json:"customer,omitempty"`
+	PaymentSource *GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
 // NewGETCustomerPaymentSources200ResponseDataInnerRelationships instantiates a new GETCustomerPaymentSources200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETCustomerPaymentSources200ResponseDataInnerRelationshipsWithDefaults()
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomer() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomer() GETCouponRecipients200ResponseDataInnerRelationshipsCustomer {
 	if o == nil || o.Customer == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCouponRecipients200ResponseDataInnerRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -49,7 +49,7 @@ func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomer
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomerOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetCustomerOk() (*GETCouponRecipients200ResponseDataInnerRelationshipsCustomer, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) HasCustomer
 	return false
 }
 
-// SetCustomer gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Customer field.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetCustomer(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetCustomer gets a reference to the given GETCouponRecipients200ResponseDataInnerRelationshipsCustomer and assigns it to the Customer field.
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetCustomer(v GETCouponRecipients200ResponseDataInnerRelationshipsCustomer) {
 	o.Customer = &v
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSource() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSource() GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource {
 	if o == nil || o.PaymentSource == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -81,7 +81,7 @@ func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentS
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSourceOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) GetPaymentSourceOk() (*GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource, bool) {
 	if o == nil || o.PaymentSource == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) HasPaymentS
 	return false
 }
 
-// SetPaymentSource gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the PaymentSource field.
-func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetPaymentSource(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetPaymentSource gets a reference to the given GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *GETCustomerPaymentSources200ResponseDataInnerRelationships) SetPaymentSource(v GETCustomerPaymentSources200ResponseDataInnerRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETCustomerPaymentSources200ResponseDataInnerRelationships) Unm
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

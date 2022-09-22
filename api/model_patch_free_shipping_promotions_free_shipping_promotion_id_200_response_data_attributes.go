@@ -372,5 +372,3 @@ func (v *NullablePATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

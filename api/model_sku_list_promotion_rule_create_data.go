@@ -18,9 +18,9 @@ import (
 // SkuListPromotionRuleCreateData struct for SkuListPromotionRuleCreateData
 type SkuListPromotionRuleCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *SkuListPromotionRuleCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuListPromotionRuleCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleCreateData instantiates a new SkuListPromotionRuleCreateData object
@@ -39,8 +39,6 @@ func NewSkuListPromotionRuleCreateData(type_ string, attributes POSTSkuListPromo
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListPromotionRuleCreateDataWithDefaults() *SkuListPromotionRuleCreateData {
 	this := SkuListPromotionRuleCreateData{}
-	var type_ string = "sku_list_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableSkuListPromotionRuleCreateData) UnmarshalJSON(src []byte) error
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

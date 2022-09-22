@@ -17,11 +17,11 @@ import (
 
 // ParcelDataRelationships struct for ParcelDataRelationships
 type ParcelDataRelationships struct {
-	Shipment *OrderDataRelationshipsShipments `json:"shipment,omitempty"`
-	Package *ParcelDataRelationshipsPackage `json:"package,omitempty"`
-	ParcelLineItems *ParcelDataRelationshipsParcelLineItems `json:"parcel_line_items,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Shipment        *OrderDataRelationshipsShipments            `json:"shipment,omitempty"`
+	Package         *ParcelDataRelationshipsPackage             `json:"package,omitempty"`
+	ParcelLineItems *ParcelDataRelationshipsParcelLineItems     `json:"parcel_line_items,omitempty"`
+	Attachments     *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events          *CustomerAddressDataRelationshipsEvents     `json:"events,omitempty"`
 }
 
 // NewParcelDataRelationships instantiates a new ParcelDataRelationships object
@@ -256,5 +256,3 @@ func (v *NullableParcelDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

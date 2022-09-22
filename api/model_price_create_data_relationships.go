@@ -17,8 +17,8 @@ import (
 
 // PriceCreateDataRelationships struct for PriceCreateDataRelationships
 type PriceCreateDataRelationships struct {
-	PriceList MarketDataRelationshipsPriceList `json:"price_list"`
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
+	PriceList  MarketDataRelationshipsPriceList  `json:"price_list"`
+	Sku        *BundleDataRelationshipsSkus      `json:"sku,omitempty"`
 	PriceTiers *PriceDataRelationshipsPriceTiers `json:"price_tiers,omitempty"`
 }
 
@@ -177,5 +177,3 @@ func (v *NullablePriceCreateDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

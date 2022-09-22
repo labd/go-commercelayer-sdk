@@ -18,9 +18,9 @@ import (
 // LineItemCreateData struct for LineItemCreateData
 type LineItemCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTLineItems201ResponseDataAttributes `json:"attributes"`
-	Relationships *LineItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                 `json:"type"`
+	Attributes    POSTLineItems201ResponseDataAttributes `json:"attributes"`
+	Relationships *LineItemCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewLineItemCreateData instantiates a new LineItemCreateData object
@@ -39,8 +39,6 @@ func NewLineItemCreateData(type_ string, attributes POSTLineItems201ResponseData
 // but it doesn't guarantee that properties required by API are set
 func NewLineItemCreateDataWithDefaults() *LineItemCreateData {
 	this := LineItemCreateData{}
-	var type_ string = "line_items"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableLineItemCreateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

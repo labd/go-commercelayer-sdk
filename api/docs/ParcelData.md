@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "parcels"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETParcels200ResponseDataInnerAttributes**](GETParcels200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelDataRelationships**](ParcelDataRelationships.md) |  | [optional] 
 

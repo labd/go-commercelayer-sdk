@@ -1060,7 +1060,7 @@ import (
 )
 
 func main() {
-    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("addresses", "XGZwpOSrWL", *openapiclient.NewPATCHAddressesAddressId200ResponseDataAttributes())) // AddressUpdate | 
+    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAddressesAddressId200ResponseDataAttributes())) // AddressUpdate | 
     addressId := "addressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1132,7 +1132,7 @@ import (
 )
 
 func main() {
-    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("addresses", *openapiclient.NewPOSTAddresses201ResponseDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
+    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("Type_example", *openapiclient.NewPOSTAddresses201ResponseDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

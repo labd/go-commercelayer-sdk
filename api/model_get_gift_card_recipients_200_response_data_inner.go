@@ -20,9 +20,9 @@ type GETGiftCardRecipients200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETCouponRecipients200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                               `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                `json:"links,omitempty"`
+	Attributes    *GETCouponRecipients200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETCouponRecipients200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETGiftCardRecipients200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETGiftCardRecipients200ResponseDataInner() *GETGiftCardRecipients200ResponseDataInner {
 	this := GETGiftCardRecipients200ResponseDataInner{}
-	var type_ string = "gift_card_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETGiftCardRecipients200ResponseDataInner() *GETGiftCardRecipients200Res
 // but it doesn't guarantee that properties required by API are set
 func NewGETGiftCardRecipients200ResponseDataInnerWithDefaults() *GETGiftCardRecipients200ResponseDataInner {
 	this := GETGiftCardRecipients200ResponseDataInner{}
-	var type_ string = "gift_card_recipients"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETGiftCardRecipients200ResponseDataInner) UnmarshalJSON(src []
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

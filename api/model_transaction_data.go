@@ -18,9 +18,9 @@ import (
 // TransactionData struct for TransactionData
 type TransactionData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships     `json:"relationships,omitempty"`
 }
 
 // NewTransactionData instantiates a new TransactionData object
@@ -39,8 +39,6 @@ func NewTransactionData(type_ string, attributes GETRefunds200ResponseDataInnerA
 // but it doesn't guarantee that properties required by API are set
 func NewTransactionDataWithDefaults() *TransactionData {
 	this := TransactionData{}
-	var type_ string = "transactions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableTransactionData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

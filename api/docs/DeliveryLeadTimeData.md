@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "delivery_lead_times"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETDeliveryLeadTimes200ResponseDataInnerAttributes**](GETDeliveryLeadTimes200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**DeliveryLeadTimeDataRelationships**](DeliveryLeadTimeDataRelationships.md) |  | [optional] 
 

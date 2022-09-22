@@ -20,10 +20,10 @@ type GETApplicationApplicationId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETApplicationApplicationId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Type          *string                                               `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                `json:"links,omitempty"`
+	Attributes    *GETApplicationApplicationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships map[string]interface{}                                `json:"relationships,omitempty"`
 }
 
 // NewGETApplicationApplicationId200ResponseData instantiates a new GETApplicationApplicationId200ResponseData object
@@ -32,8 +32,6 @@ type GETApplicationApplicationId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewGETApplicationApplicationId200ResponseData() *GETApplicationApplicationId200ResponseData {
 	this := GETApplicationApplicationId200ResponseData{}
-	var type_ string = "application"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETApplicationApplicationId200ResponseData() *GETApplicationApplicationI
 // but it doesn't guarantee that properties required by API are set
 func NewGETApplicationApplicationId200ResponseDataWithDefaults() *GETApplicationApplicationId200ResponseData {
 	this := GETApplicationApplicationId200ResponseData{}
-	var type_ string = "application"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETApplicationApplicationId200ResponseData) UnmarshalJSON(src [
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

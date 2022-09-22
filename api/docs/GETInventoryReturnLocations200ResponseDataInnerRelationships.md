@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
-**InventoryModel** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoder**](GETAddresses200ResponseDataInnerRelationshipsGeocoder.md) |  | [optional] 
+**StockLocation** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation**](GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation.md) |  | [optional] 
+**InventoryModel** | Pointer to [**GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel**](GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocation() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocation() GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocationOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetStockLocationOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetStockLocation(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetStockLocation(v GETDeliveryLeadTimes200ResponseDataInnerRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
@@ -53,20 +53,20 @@ HasStockLocation returns a boolean if a field has been set.
 
 ### GetInventoryModel
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModel() GETAddresses200ResponseDataInnerRelationshipsGeocoder`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModel() GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel`
 
 GetInventoryModel returns the InventoryModel field if non-nil, zero value otherwise.
 
 ### GetInventoryModelOk
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool)`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) GetInventoryModelOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel, bool)`
 
 GetInventoryModelOk returns a tuple with the InventoryModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryModel
 
-`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetInventoryModel(v GETAddresses200ResponseDataInnerRelationshipsGeocoder)`
+`func (o *GETInventoryReturnLocations200ResponseDataInnerRelationships) SetInventoryModel(v GETInventoryReturnLocations200ResponseDataInnerRelationshipsInventoryModel)`
 
 SetInventoryModel sets InventoryModel field to given value.
 

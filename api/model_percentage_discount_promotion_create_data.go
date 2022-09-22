@@ -18,9 +18,9 @@ import (
 // PercentageDiscountPromotionCreateData struct for PercentageDiscountPromotionCreateData
 type PercentageDiscountPromotionCreateData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                    `json:"type"`
+	Attributes    POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships               `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionCreateData instantiates a new PercentageDiscountPromotionCreateData object
@@ -39,8 +39,6 @@ func NewPercentageDiscountPromotionCreateData(type_ string, attributes POSTPerce
 // but it doesn't guarantee that properties required by API are set
 func NewPercentageDiscountPromotionCreateDataWithDefaults() *PercentageDiscountPromotionCreateData {
 	this := PercentageDiscountPromotionCreateData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullablePercentageDiscountPromotionCreateData) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

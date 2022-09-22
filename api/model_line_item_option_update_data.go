@@ -20,9 +20,9 @@ type LineItemOptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *LineItemOptionUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *LineItemOptionUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionUpdateData instantiates a new LineItemOptionUpdateData object
@@ -42,8 +42,6 @@ func NewLineItemOptionUpdateData(type_ string, id string, attributes PATCHLineIt
 // but it doesn't guarantee that properties required by API are set
 func NewLineItemOptionUpdateDataWithDefaults() *LineItemOptionUpdateData {
 	this := LineItemOptionUpdateData{}
-	var type_ string = "line_item_options"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableLineItemOptionUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

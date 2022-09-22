@@ -17,10 +17,10 @@ import (
 
 // GiftCardDataRelationships struct for GiftCardDataRelationships
 type GiftCardDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market            *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
 	GiftCardRecipient *GiftCardDataRelationshipsGiftCardRecipient `json:"gift_card_recipient,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Attachments       *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Events            *CustomerAddressDataRelationshipsEvents     `json:"events,omitempty"`
 }
 
 // NewGiftCardDataRelationships instantiates a new GiftCardDataRelationships object
@@ -220,5 +220,3 @@ func (v *NullableGiftCardDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

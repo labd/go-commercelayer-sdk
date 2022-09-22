@@ -105,5 +105,3 @@ func (v *NullableBraintreeGatewayDataRelationshipsBraintreePayments) UnmarshalJS
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

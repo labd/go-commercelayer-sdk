@@ -29,8 +29,6 @@ type CouponDataRelationshipsPromotionRuleData struct {
 // will change when the set of required properties is changed
 func NewCouponDataRelationshipsPromotionRuleData() *CouponDataRelationshipsPromotionRuleData {
 	this := CouponDataRelationshipsPromotionRuleData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewCouponDataRelationshipsPromotionRuleData() *CouponDataRelationshipsPromo
 // but it doesn't guarantee that properties required by API are set
 func NewCouponDataRelationshipsPromotionRuleDataWithDefaults() *CouponDataRelationshipsPromotionRuleData {
 	this := CouponDataRelationshipsPromotionRuleData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableCouponDataRelationshipsPromotionRuleData) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

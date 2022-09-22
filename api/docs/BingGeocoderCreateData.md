@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "bing_geocoders"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTBingGeocoders201ResponseDataAttributes**](POSTBingGeocoders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 

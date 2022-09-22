@@ -18,9 +18,9 @@ import (
 // AuthorizationData struct for AuthorizationData
 type AuthorizationData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETAuthorizations200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AuthorizationDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETAuthorizations200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AuthorizationDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationData instantiates a new AuthorizationData object
@@ -39,8 +39,6 @@ func NewAuthorizationData(type_ string, attributes GETAuthorizations200ResponseD
 // but it doesn't guarantee that properties required by API are set
 func NewAuthorizationDataWithDefaults() *AuthorizationData {
 	this := AuthorizationData{}
-	var type_ string = "authorizations"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableAuthorizationData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

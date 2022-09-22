@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("coupon_recipients", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // CouponRecipientUpdate | 
+    couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // CouponRecipientUpdate | 
     couponRecipientId := "couponRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    couponRecipientCreate := *openapiclient.NewCouponRecipientCreate(*openapiclient.NewCouponRecipientCreateData("coupon_recipients", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // CouponRecipientCreate | 
+    couponRecipientCreate := *openapiclient.NewCouponRecipientCreate(*openapiclient.NewCouponRecipientCreateData("Type_example", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // CouponRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "event_callbacks"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETEventCallbacks200ResponseDataInnerAttributes**](GETEventCallbacks200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**EventCallbackDataRelationships**](EventCallbackDataRelationships.md) |  | [optional] 
 

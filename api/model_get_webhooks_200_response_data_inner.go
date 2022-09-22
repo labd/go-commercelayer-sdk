@@ -20,9 +20,9 @@ type GETWebhooks200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *GETWebhooks200ResponseDataInnerAttributes `json:"attributes,omitempty"`
+	Type          *string                                       `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
+	Attributes    *GETWebhooks200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
 	Relationships *GETWebhooks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
@@ -32,8 +32,6 @@ type GETWebhooks200ResponseDataInner struct {
 // will change when the set of required properties is changed
 func NewGETWebhooks200ResponseDataInner() *GETWebhooks200ResponseDataInner {
 	this := GETWebhooks200ResponseDataInner{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewGETWebhooks200ResponseDataInner() *GETWebhooks200ResponseDataInner {
 // but it doesn't guarantee that properties required by API are set
 func NewGETWebhooks200ResponseDataInnerWithDefaults() *GETWebhooks200ResponseDataInner {
 	this := GETWebhooks200ResponseDataInner{}
-	var type_ string = "webhooks"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullableGETWebhooks200ResponseDataInner) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

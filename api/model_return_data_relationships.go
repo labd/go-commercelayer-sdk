@@ -17,14 +17,14 @@ import (
 
 // ReturnDataRelationships struct for ReturnDataRelationships
 type ReturnDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
-	OriginAddress *BingGeocoderDataRelationshipsAddresses `json:"origin_address,omitempty"`
-	DestinationAddress *BingGeocoderDataRelationshipsAddresses `json:"destination_address,omitempty"`
-	ReturnLineItems *ReturnDataRelationshipsReturnLineItems `json:"return_line_items,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Order              *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
+	Customer           *CouponRecipientDataRelationshipsCustomer       `json:"customer,omitempty"`
+	StockLocation      *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	OriginAddress      *BingGeocoderDataRelationshipsAddresses         `json:"origin_address,omitempty"`
+	DestinationAddress *BingGeocoderDataRelationshipsAddresses         `json:"destination_address,omitempty"`
+	ReturnLineItems    *ReturnDataRelationshipsReturnLineItems         `json:"return_line_items,omitempty"`
+	Attachments        *AvalaraAccountDataRelationshipsAttachments     `json:"attachments,omitempty"`
+	Events             *CustomerAddressDataRelationshipsEvents         `json:"events,omitempty"`
 }
 
 // NewReturnDataRelationships instantiates a new ReturnDataRelationships object
@@ -364,5 +364,3 @@ func (v *NullableReturnDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

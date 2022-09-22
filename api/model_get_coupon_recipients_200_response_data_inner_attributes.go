@@ -409,5 +409,3 @@ func (v *NullableGETCouponRecipients200ResponseDataInnerAttributes) UnmarshalJSO
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("parcel_line_items", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ParcelLineItemUpdate | 
+    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ParcelLineItemUpdate | 
     parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("parcel_line_items", *openapiclient.NewPOSTParcelLineItems201ResponseDataAttributes(int32(4)))) // ParcelLineItemCreate | 
+    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("Type_example", *openapiclient.NewPOSTParcelLineItems201ResponseDataAttributes(int32(4)))) // ParcelLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

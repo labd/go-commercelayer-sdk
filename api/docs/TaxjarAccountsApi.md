@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("taxjar_accounts", "XGZwpOSrWL", *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes())) // TaxjarAccountUpdate | 
+    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes())) // TaxjarAccountUpdate | 
     taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("taxjar_accounts", *openapiclient.NewPOSTTaxjarAccounts201ResponseDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
+    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("Type_example", *openapiclient.NewPOSTTaxjarAccounts201ResponseDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

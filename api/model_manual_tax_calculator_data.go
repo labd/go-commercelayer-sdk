@@ -18,9 +18,9 @@ import (
 // ManualTaxCalculatorData struct for ManualTaxCalculatorData
 type ManualTaxCalculatorData struct {
 	// The resource's type
-	Type string `json:"type"`
-	Attributes GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ManualTaxCalculatorDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ManualTaxCalculatorDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorData instantiates a new ManualTaxCalculatorData object
@@ -39,8 +39,6 @@ func NewManualTaxCalculatorData(type_ string, attributes GETManualTaxCalculators
 // but it doesn't guarantee that properties required by API are set
 func NewManualTaxCalculatorDataWithDefaults() *ManualTaxCalculatorData {
 	this := ManualTaxCalculatorData{}
-	var type_ string = "manual_tax_calculators"
-	this.Type = type_
 	return &this
 }
 
@@ -173,5 +171,3 @@ func (v *NullableManualTaxCalculatorData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

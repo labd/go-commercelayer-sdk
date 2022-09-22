@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] [default to "checkout_com_gateways"]
+**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**POSTCheckoutComGateways201ResponseDataAttributes**](POSTCheckoutComGateways201ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to [**GETCheckoutComGateways200ResponseDataInnerRelationships**](GETCheckoutComGateways200ResponseDataInnerRelationships.md) |  | [optional] 

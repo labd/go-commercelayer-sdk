@@ -217,5 +217,3 @@ func (v *NullablePOSTInventoryReturnLocations201ResponseDataAttributes) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

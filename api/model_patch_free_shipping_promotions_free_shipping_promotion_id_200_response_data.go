@@ -20,10 +20,10 @@ type PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETExternalPromotions200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                      `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                       `json:"links,omitempty"`
+	Attributes    *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETExternalPromotions200ResponseDataInnerRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData instantiates a new PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData() *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData {
 	this := PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData() *PAT
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataWithDefaults() *PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData {
 	this := PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseData{}
-	var type_ string = "free_shipping_promotions"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDa
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

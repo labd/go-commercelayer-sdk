@@ -20,10 +20,10 @@ type PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETPriceTiers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                          `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                           `json:"links,omitempty"`
+	Attributes    *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETPriceTiers200ResponseDataInnerRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseData instantiates a new PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseData() *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData {
 	this := PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData{}
-	var type_ string = "price_volume_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseData() *PATCHPriceVolum
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataWithDefaults() *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData {
 	this := PATCHPriceVolumeTiersPriceVolumeTierId200ResponseData{}
-	var type_ string = "price_volume_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHPriceVolumeTiersPriceVolumeTierId200ResponseData) Unmarsha
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

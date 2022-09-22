@@ -17,7 +17,7 @@ import (
 
 // ReturnLineItemCreateDataRelationships struct for ReturnLineItemCreateDataRelationships
 type ReturnLineItemCreateDataRelationships struct {
-	Return CustomerDataRelationshipsReturns `json:"return"`
+	Return   CustomerDataRelationshipsReturns        `json:"return"`
 	LineItem LineItemOptionDataRelationshipsLineItem `json:"line_item"`
 }
 
@@ -134,5 +134,3 @@ func (v *NullableReturnLineItemCreateDataRelationships) UnmarshalJSON(src []byte
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

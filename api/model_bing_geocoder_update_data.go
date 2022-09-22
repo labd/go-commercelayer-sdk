@@ -20,9 +20,9 @@ type BingGeocoderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id string `json:"id"`
-	Attributes PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{} `json:"relationships,omitempty"`
+	Id            string                                                    `json:"id"`
+	Attributes    PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                    `json:"relationships,omitempty"`
 }
 
 // NewBingGeocoderUpdateData instantiates a new BingGeocoderUpdateData object
@@ -42,8 +42,6 @@ func NewBingGeocoderUpdateData(type_ string, id string, attributes PATCHBingGeoc
 // but it doesn't guarantee that properties required by API are set
 func NewBingGeocoderUpdateDataWithDefaults() *BingGeocoderUpdateData {
 	this := BingGeocoderUpdateData{}
-	var type_ string = "bing_geocoders"
-	this.Type = type_
 	return &this
 }
 
@@ -203,5 +201,3 @@ func (v *NullableBingGeocoderUpdateData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_weight_tiers"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTShippingWeightTiers201ResponseDataAttributes**](POSTShippingWeightTiers201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingWeightTierCreateDataRelationships**](ShippingWeightTierCreateDataRelationships.md) |  | [optional] 
 

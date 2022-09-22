@@ -17,8 +17,8 @@ import (
 
 // GETSkuListItems200ResponseDataInnerRelationships struct for GETSkuListItems200ResponseDataInnerRelationships
 type GETSkuListItems200ResponseDataInnerRelationships struct {
-	SkuList *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku_list,omitempty"`
-	Sku *GETAddresses200ResponseDataInnerRelationshipsGeocoder `json:"sku,omitempty"`
+	SkuList *GETBundles200ResponseDataInnerRelationshipsSkuList          `json:"sku_list,omitempty"`
+	Sku     *GETInStockSubscriptions200ResponseDataInnerRelationshipsSku `json:"sku,omitempty"`
 }
 
 // NewGETSkuListItems200ResponseDataInnerRelationships instantiates a new GETSkuListItems200ResponseDataInnerRelationships object
@@ -39,9 +39,9 @@ func NewGETSkuListItems200ResponseDataInnerRelationshipsWithDefaults() *GETSkuLi
 }
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETBundles200ResponseDataInnerRelationshipsSkuList {
 	if o == nil || o.SkuList == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETBundles200ResponseDataInnerRelationshipsSkuList
 		return ret
 	}
 	return *o.SkuList
@@ -49,7 +49,7 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuList() GETAddre
 
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuListOk() (*GETBundles200ResponseDataInnerRelationshipsSkuList, bool) {
 	if o == nil || o.SkuList == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) HasSkuList() bool {
 	return false
 }
 
-// SetSkuList gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the SkuList field.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetSkuList gets a reference to the given GETBundles200ResponseDataInnerRelationshipsSkuList and assigns it to the SkuList field.
+func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSkuList(v GETBundles200ResponseDataInnerRelationshipsSkuList) {
 	o.SkuList = &v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETAddresses200ResponseDataInnerRelationshipsGeocoder {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETInStockSubscriptions200ResponseDataInnerRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret GETAddresses200ResponseDataInnerRelationshipsGeocoder
+		var ret GETInStockSubscriptions200ResponseDataInnerRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -81,7 +81,7 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSku() GETAddresses
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETAddresses200ResponseDataInnerRelationshipsGeocoder, bool) {
+func (o *GETSkuListItems200ResponseDataInnerRelationships) GetSkuOk() (*GETInStockSubscriptions200ResponseDataInnerRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETSkuListItems200ResponseDataInnerRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given GETAddresses200ResponseDataInnerRelationshipsGeocoder and assigns it to the Sku field.
-func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETAddresses200ResponseDataInnerRelationshipsGeocoder) {
+// SetSku gets a reference to the given GETInStockSubscriptions200ResponseDataInnerRelationshipsSku and assigns it to the Sku field.
+func (o *GETSkuListItems200ResponseDataInnerRelationships) SetSku(v GETInStockSubscriptions200ResponseDataInnerRelationshipsSku) {
 	o.Sku = &v
 }
 
@@ -148,5 +148,3 @@ func (v *NullableGETSkuListItems200ResponseDataInnerRelationships) UnmarshalJSON
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

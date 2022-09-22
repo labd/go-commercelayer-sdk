@@ -29,8 +29,6 @@ type BundleDataRelationshipsSkusData struct {
 // will change when the set of required properties is changed
 func NewBundleDataRelationshipsSkusData() *BundleDataRelationshipsSkusData {
 	this := BundleDataRelationshipsSkusData{}
-	var type_ string = "skus"
-	this.Type = &type_
 	return &this
 }
 
@@ -39,8 +37,6 @@ func NewBundleDataRelationshipsSkusData() *BundleDataRelationshipsSkusData {
 // but it doesn't guarantee that properties required by API are set
 func NewBundleDataRelationshipsSkusDataWithDefaults() *BundleDataRelationshipsSkusData {
 	this := BundleDataRelationshipsSkusData{}
-	var type_ string = "skus"
-	this.Type = &type_
 	return &this
 }
 
@@ -154,5 +150,3 @@ func (v *NullableBundleDataRelationshipsSkusData) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

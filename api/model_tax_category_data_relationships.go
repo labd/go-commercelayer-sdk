@@ -17,9 +17,9 @@ import (
 
 // TaxCategoryDataRelationships struct for TaxCategoryDataRelationships
 type TaxCategoryDataRelationships struct {
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
-	TaxCalculator *TaxCategoryDataRelationshipsTaxCalculator `json:"tax_calculator,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Sku           *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
+	TaxCalculator *TaxCategoryDataRelationshipsTaxCalculator  `json:"tax_calculator,omitempty"`
+	Attachments   *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewTaxCategoryDataRelationships instantiates a new TaxCategoryDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableTaxCategoryDataRelationships) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

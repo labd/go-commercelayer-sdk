@@ -20,10 +20,10 @@ type PATCHShippingWeightTiersShippingWeightTierId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type *string `json:"type,omitempty"`
-	Links *GETAddresses200ResponseDataInnerLinks `json:"links,omitempty"`
-	Attributes *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETShippingMethodTiers200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                 `json:"links,omitempty"`
+	Attributes    *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETShippingMethodTiers200ResponseDataInnerRelationships               `json:"relationships,omitempty"`
 }
 
 // NewPATCHShippingWeightTiersShippingWeightTierId200ResponseData instantiates a new PATCHShippingWeightTiersShippingWeightTierId200ResponseData object
@@ -32,8 +32,6 @@ type PATCHShippingWeightTiersShippingWeightTierId200ResponseData struct {
 // will change when the set of required properties is changed
 func NewPATCHShippingWeightTiersShippingWeightTierId200ResponseData() *PATCHShippingWeightTiersShippingWeightTierId200ResponseData {
 	this := PATCHShippingWeightTiersShippingWeightTierId200ResponseData{}
-	var type_ string = "shipping_weight_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -42,8 +40,6 @@ func NewPATCHShippingWeightTiersShippingWeightTierId200ResponseData() *PATCHShip
 // but it doesn't guarantee that properties required by API are set
 func NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataWithDefaults() *PATCHShippingWeightTiersShippingWeightTierId200ResponseData {
 	this := PATCHShippingWeightTiersShippingWeightTierId200ResponseData{}
-	var type_ string = "shipping_weight_tiers"
-	this.Type = &type_
 	return &this
 }
 
@@ -262,5 +258,3 @@ func (v *NullablePATCHShippingWeightTiersShippingWeightTierId200ResponseData) Un
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

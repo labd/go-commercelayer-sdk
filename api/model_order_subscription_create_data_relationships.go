@@ -17,8 +17,8 @@ import (
 
 // OrderSubscriptionCreateDataRelationships struct for OrderSubscriptionCreateDataRelationships
 type OrderSubscriptionCreateDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	SourceOrder AdyenPaymentDataRelationshipsOrder `json:"source_order"`
+	Market      *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	SourceOrder AdyenPaymentDataRelationshipsOrder      `json:"source_order"`
 }
 
 // NewOrderSubscriptionCreateDataRelationships instantiates a new OrderSubscriptionCreateDataRelationships object
@@ -141,5 +141,3 @@ func (v *NullableOrderSubscriptionCreateDataRelationships) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

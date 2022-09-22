@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("klarna_payments", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes())) // KlarnaPaymentUpdate | 
+    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes())) // KlarnaPaymentUpdate | 
     klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("klarna_payments", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // KlarnaPaymentCreate | 
+    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // KlarnaPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

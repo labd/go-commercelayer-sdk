@@ -20,14 +20,13 @@ import (
 	"strings"
 )
 
-
 // ImportsApiService ImportsApi service
 type ImportsApiService service
 
 type ImportsApiDELETEImportsImportIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImportsApiService
-	importId string
+	importId   string
 }
 
 func (r ImportsApiDELETEImportsImportIdRequest) Execute() (*http.Response, error) {
@@ -46,17 +45,17 @@ Delete an import
 func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ImportsApiDELETEImportsImportIdRequest {
 	return ImportsApiDELETEImportsImportIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		importId: importId,
+		ctx:        ctx,
+		importId:   importId,
 	}
 }
 
 // Execute executes the request
 func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImportsImportIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.DELETEImportsImportId")
@@ -117,7 +116,7 @@ func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImpor
 }
 
 type ImportsApiGETImportsRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImportsApiService
 }
 
@@ -136,7 +135,7 @@ List all imports
 func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImportsRequest {
 	return ImportsApiGETImportsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -144,10 +143,10 @@ func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImports
 //  @return GETImports200Response
 func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*GETImports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETImports200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETImports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.GETImports")
@@ -216,9 +215,9 @@ func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*G
 }
 
 type ImportsApiGETImportsImportIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *ImportsApiService
-	importId string
+	importId   string
 }
 
 func (r ImportsApiGETImportsImportIdRequest) Execute() (*GETImportsImportId200Response, *http.Response, error) {
@@ -237,8 +236,8 @@ Retrieve an import
 func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ImportsApiGETImportsImportIdRequest {
 	return ImportsApiGETImportsImportIdRequest{
 		ApiService: a,
-		ctx: ctx,
-		importId: importId,
+		ctx:        ctx,
+		importId:   importId,
 	}
 }
 
@@ -246,10 +245,10 @@ func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId str
 //  @return GETImportsImportId200Response
 func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImportIdRequest) (*GETImportsImportId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETImportsImportId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETImportsImportId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.GETImportsImportId")
@@ -319,8 +318,8 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImpo
 }
 
 type ImportsApiPOSTImportsRequest struct {
-	ctx context.Context
-	ApiService *ImportsApiService
+	ctx          context.Context
+	ApiService   *ImportsApiService
 	importCreate *ImportCreate
 }
 
@@ -344,7 +343,7 @@ Create an import
 func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImportsRequest {
 	return ImportsApiPOSTImportsRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -352,10 +351,10 @@ func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImpor
 //  @return POSTImports201Response
 func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (*POSTImports201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTImports201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTImports201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.POSTImports")

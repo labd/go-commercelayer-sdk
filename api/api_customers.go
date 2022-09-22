@@ -20,12 +20,11 @@ import (
 	"strings"
 )
 
-
 // CustomersApiService CustomersApi service
 type CustomersApiService service
 
 type CustomersApiDELETECustomersCustomerIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomersApiService
 	customerId string
 }
@@ -46,7 +45,7 @@ Delete a customer
 func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId string) CustomersApiDELETECustomersCustomerIdRequest {
 	return CustomersApiDELETECustomersCustomerIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -54,9 +53,9 @@ func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, cus
 // Execute executes the request
 func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDELETECustomersCustomerIdRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodDelete
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.DELETECustomersCustomerId")
@@ -117,8 +116,8 @@ func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDEL
 }
 
 type CustomersApiGETCouponRecipientIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx               context.Context
+	ApiService        *CustomersApiService
 	couponRecipientId string
 }
 
@@ -137,8 +136,8 @@ Retrieve the customer associated to the coupon recipient
 */
 func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) CustomersApiGETCouponRecipientIdCustomerRequest {
 	return CustomersApiGETCouponRecipientIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		couponRecipientId: couponRecipientId,
 	}
 }
@@ -146,9 +145,9 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, 
 // Execute executes the request
 func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApiGETCouponRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCouponRecipientIdCustomer")
@@ -209,8 +208,8 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApi
 }
 
 type CustomersApiGETCustomerAddressIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx               context.Context
+	ApiService        *CustomersApiService
 	customerAddressId string
 }
 
@@ -229,8 +228,8 @@ Retrieve the customer associated to the customer address
 */
 func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) CustomersApiGETCustomerAddressIdCustomerRequest {
 	return CustomersApiGETCustomerAddressIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:        a,
+		ctx:               ctx,
 		customerAddressId: customerAddressId,
 	}
 }
@@ -238,9 +237,9 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, 
 // Execute executes the request
 func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApiGETCustomerAddressIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomerAddressIdCustomer")
@@ -301,8 +300,8 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApi
 }
 
 type CustomersApiGETCustomerGroupIdCustomersRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx             context.Context
+	ApiService      *CustomersApiService
 	customerGroupId string
 }
 
@@ -321,8 +320,8 @@ Retrieve the customers associated to the customer group
 */
 func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) CustomersApiGETCustomerGroupIdCustomersRequest {
 	return CustomersApiGETCustomerGroupIdCustomersRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:      a,
+		ctx:             ctx,
 		customerGroupId: customerGroupId,
 	}
 }
@@ -330,9 +329,9 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, c
 // Execute executes the request
 func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiGETCustomerGroupIdCustomersRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomerGroupIdCustomers")
@@ -393,8 +392,8 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiG
 }
 
 type CustomersApiGETCustomerPasswordResetIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                     context.Context
+	ApiService              *CustomersApiService
 	customerPasswordResetId string
 }
 
@@ -413,8 +412,8 @@ Retrieve the customer associated to the customer password reset
 */
 func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) CustomersApiGETCustomerPasswordResetIdCustomerRequest {
 	return CustomersApiGETCustomerPasswordResetIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPasswordResetId: customerPasswordResetId,
 	}
 }
@@ -422,9 +421,9 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Con
 // Execute executes the request
 func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r CustomersApiGETCustomerPasswordResetIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomerPasswordResetIdCustomer")
@@ -485,8 +484,8 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r Custom
 }
 
 type CustomersApiGETCustomerPaymentSourceIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                     context.Context
+	ApiService              *CustomersApiService
 	customerPaymentSourceId string
 }
 
@@ -505,8 +504,8 @@ Retrieve the customer associated to the customer payment source
 */
 func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) CustomersApiGETCustomerPaymentSourceIdCustomerRequest {
 	return CustomersApiGETCustomerPaymentSourceIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:              a,
+		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
 	}
 }
@@ -514,9 +513,9 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Con
 // Execute executes the request
 func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r CustomersApiGETCustomerPaymentSourceIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomerPaymentSourceIdCustomer")
@@ -577,8 +576,8 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r Custom
 }
 
 type CustomersApiGETCustomerSubscriptionIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                    context.Context
+	ApiService             *CustomersApiService
 	customerSubscriptionId string
 }
 
@@ -597,8 +596,8 @@ Retrieve the customer associated to the customer subscription
 */
 func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) CustomersApiGETCustomerSubscriptionIdCustomerRequest {
 	return CustomersApiGETCustomerSubscriptionIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:             a,
+		ctx:                    ctx,
 		customerSubscriptionId: customerSubscriptionId,
 	}
 }
@@ -606,9 +605,9 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Cont
 // Execute executes the request
 func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r CustomersApiGETCustomerSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomerSubscriptionIdCustomer")
@@ -669,7 +668,7 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r Custome
 }
 
 type CustomersApiGETCustomersRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomersApiService
 }
 
@@ -688,7 +687,7 @@ List all customers
 func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETCustomersRequest {
 	return CustomersApiGETCustomersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -696,10 +695,10 @@ func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETC
 //  @return GETCustomers200Response
 func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequest) (*GETCustomers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCustomers200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomers")
@@ -768,7 +767,7 @@ func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequ
 }
 
 type CustomersApiGETCustomersCustomerIdRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomersApiService
 	customerId string
 }
@@ -789,7 +788,7 @@ Retrieve a customer
 func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId string) CustomersApiGETCustomersCustomerIdRequest {
 	return CustomersApiGETCustomersCustomerIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -798,10 +797,10 @@ func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, custom
 //  @return GETCustomersCustomerId200Response
 func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*GETCustomersCustomerId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *GETCustomersCustomerId200Response
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomersCustomerId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomersCustomerId")
@@ -871,8 +870,8 @@ func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCus
 }
 
 type CustomersApiGETGiftCardRecipientIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                 context.Context
+	ApiService          *CustomersApiService
 	giftCardRecipientId string
 }
 
@@ -891,8 +890,8 @@ Retrieve the customer associated to the gift card recipient
 */
 func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) CustomersApiGETGiftCardRecipientIdCustomerRequest {
 	return CustomersApiGETGiftCardRecipientIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		giftCardRecipientId: giftCardRecipientId,
 	}
 }
@@ -900,9 +899,9 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context
 // Execute executes the request
 func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersApiGETGiftCardRecipientIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETGiftCardRecipientIdCustomer")
@@ -963,8 +962,8 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersA
 }
 
 type CustomersApiGETInStockSubscriptionIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                   context.Context
+	ApiService            *CustomersApiService
 	inStockSubscriptionId string
 }
 
@@ -983,8 +982,8 @@ Retrieve the customer associated to the in stock subscription
 */
 func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) CustomersApiGETInStockSubscriptionIdCustomerRequest {
 	return CustomersApiGETInStockSubscriptionIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:            a,
+		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
 	}
 }
@@ -992,9 +991,9 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Conte
 // Execute executes the request
 func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r CustomersApiGETInStockSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETInStockSubscriptionIdCustomer")
@@ -1055,9 +1054,9 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r Customer
 }
 
 type CustomersApiGETOrderIdCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomersApiService
-	orderId string
+	orderId    string
 }
 
 func (r CustomersApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1076,17 +1075,17 @@ Retrieve the customer associated to the order
 func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId string) CustomersApiGETOrderIdCustomerRequest {
 	return CustomersApiGETOrderIdCustomerRequest{
 		ApiService: a,
-		ctx: ctx,
-		orderId: orderId,
+		ctx:        ctx,
+		orderId:    orderId,
 	}
 }
 
 // Execute executes the request
 func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETOrderIdCustomer")
@@ -1147,8 +1146,8 @@ func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderId
 }
 
 type CustomersApiGETOrderSubscriptionIdCustomerRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx                 context.Context
+	ApiService          *CustomersApiService
 	orderSubscriptionId string
 }
 
@@ -1167,8 +1166,8 @@ Retrieve the customer associated to the order subscription
 */
 func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) CustomersApiGETOrderSubscriptionIdCustomerRequest {
 	return CustomersApiGETOrderSubscriptionIdCustomerRequest{
-		ApiService: a,
-		ctx: ctx,
+		ApiService:          a,
+		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
 	}
 }
@@ -1176,9 +1175,9 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context
 // Execute executes the request
 func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersApiGETOrderSubscriptionIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETOrderSubscriptionIdCustomer")
@@ -1239,9 +1238,9 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersA
 }
 
 type CustomersApiGETReturnIdCustomerRequest struct {
-	ctx context.Context
+	ctx        context.Context
 	ApiService *CustomersApiService
-	returnId string
+	returnId   string
 }
 
 func (r CustomersApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1260,17 +1259,17 @@ Retrieve the customer associated to the return
 func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId string) CustomersApiGETReturnIdCustomerRequest {
 	return CustomersApiGETReturnIdCustomerRequest{
 		ApiService: a,
-		ctx: ctx,
-		returnId: returnId,
+		ctx:        ctx,
+		returnId:   returnId,
 	}
 }
 
 // Execute executes the request
 func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturnIdCustomerRequest) (*http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodGet
-		localVarPostBody     interface{}
-		formFiles            []formFile
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETReturnIdCustomer")
@@ -1331,10 +1330,10 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturn
 }
 
 type CustomersApiPATCHCustomersCustomerIdRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx            context.Context
+	ApiService     *CustomersApiService
 	customerUpdate *CustomerUpdate
-	customerId string
+	customerId     string
 }
 
 func (r CustomersApiPATCHCustomersCustomerIdRequest) CustomerUpdate(customerUpdate CustomerUpdate) CustomersApiPATCHCustomersCustomerIdRequest {
@@ -1358,7 +1357,7 @@ Update a customer
 func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId string) CustomersApiPATCHCustomersCustomerIdRequest {
 	return CustomersApiPATCHCustomersCustomerIdRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 		customerId: customerId,
 	}
 }
@@ -1367,10 +1366,10 @@ func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, cust
 //  @return PATCHCustomersCustomerId200Response
 func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*PATCHCustomersCustomerId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPatch
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *PATCHCustomersCustomerId200Response
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCustomersCustomerId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.PATCHCustomersCustomerId")
@@ -1445,8 +1444,8 @@ func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATC
 }
 
 type CustomersApiPOSTCustomersRequest struct {
-	ctx context.Context
-	ApiService *CustomersApiService
+	ctx            context.Context
+	ApiService     *CustomersApiService
 	customerCreate *CustomerCreate
 }
 
@@ -1470,7 +1469,7 @@ Create a customer
 func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOSTCustomersRequest {
 	return CustomersApiPOSTCustomersRequest{
 		ApiService: a,
-		ctx: ctx,
+		ctx:        ctx,
 	}
 }
 
@@ -1478,10 +1477,10 @@ func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOS
 //  @return POSTCustomers201Response
 func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*POSTCustomers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-		localVarReturnValue  *POSTCustomers201Response
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCustomers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.POSTCustomers")

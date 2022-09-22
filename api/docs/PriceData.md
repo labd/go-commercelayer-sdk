@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "prices"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**GETPrices200ResponseDataInnerAttributes**](GETPrices200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceDataRelationships**](PriceDataRelationships.md) |  | [optional] 
 

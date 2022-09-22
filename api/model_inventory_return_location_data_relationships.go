@@ -17,7 +17,7 @@ import (
 
 // InventoryReturnLocationDataRelationships struct for InventoryReturnLocationDataRelationships
 type InventoryReturnLocationDataRelationships struct {
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	StockLocation  *DeliveryLeadTimeDataRelationshipsStockLocation         `json:"stock_location,omitempty"`
 	InventoryModel *InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
 }
 
@@ -148,5 +148,3 @@ func (v *NullableInventoryReturnLocationDataRelationships) UnmarshalJSON(src []b
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-

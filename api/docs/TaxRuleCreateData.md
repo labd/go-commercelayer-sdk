@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_rules"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTTaxRules201ResponseDataAttributes**](POSTTaxRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxRuleCreateDataRelationships**](TaxRuleCreateDataRelationships.md) |  | [optional] 
 

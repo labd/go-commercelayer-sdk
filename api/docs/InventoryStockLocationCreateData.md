@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "inventory_stock_locations"]
+**Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTInventoryStockLocations201ResponseDataAttributes**](POSTInventoryStockLocations201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationCreateDataRelationships**](InventoryReturnLocationCreateDataRelationships.md) |  | [optional] 
 

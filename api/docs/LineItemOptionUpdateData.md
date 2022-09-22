@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes**](PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionUpdateDataRelationships**](LineItemOptionUpdateDataRelationships.md) |  | [optional] 

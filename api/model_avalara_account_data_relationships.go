@@ -18,8 +18,8 @@ import (
 // AvalaraAccountDataRelationships struct for AvalaraAccountDataRelationships
 type AvalaraAccountDataRelationships struct {
 	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
-	Markets *AvalaraAccountDataRelationshipsMarkets `json:"markets,omitempty"`
-	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	Markets       *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
+	Attachments   *AvalaraAccountDataRelationshipsAttachments   `json:"attachments,omitempty"`
 }
 
 // NewAvalaraAccountDataRelationships instantiates a new AvalaraAccountDataRelationships object
@@ -184,5 +184,3 @@ func (v *NullableAvalaraAccountDataRelationships) UnmarshalJSON(src []byte) erro
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
-
-
