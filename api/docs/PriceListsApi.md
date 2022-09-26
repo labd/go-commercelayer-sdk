@@ -1,6 +1,6 @@
 # \PriceListsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ No authorization required
 
 ## GETPriceLists
 
-> GETPriceLists(ctx).Execute()
+> GETPriceLists200Response GETPriceLists(ctx).Execute()
 
 List all price lists
 
@@ -247,6 +247,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETPriceLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPriceLists`: GETPriceLists200Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.GETPriceLists`: %v\n", resp)
 }
 ```
 
@@ -261,16 +263,16 @@ Other parameters are passed through a pointer to a apiGETPriceListsRequest struc
 
 ### Return type
 
- (empty response body)
+[**GETPriceLists200Response**](GETPriceLists200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -279,7 +281,7 @@ No authorization required
 
 ## GETPriceListsPriceListId
 
-> PriceList GETPriceListsPriceListId(ctx, priceListId).Execute()
+> GETPriceListsPriceListId200Response GETPriceListsPriceListId(ctx, priceListId).Execute()
 
 Retrieve a price list
 
@@ -307,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceListsPriceListId`: PriceList
+    // response from `GETPriceListsPriceListId`: GETPriceListsPriceListId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.GETPriceListsPriceListId`: %v\n", resp)
 }
 ```
@@ -331,11 +333,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceList**](PriceList.md)
+[**GETPriceListsPriceListId200Response**](GETPriceListsPriceListId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHPriceListsPriceListId
 
-> PATCHPriceListsPriceListId(ctx, priceListId).PriceListUpdate(priceListUpdate).Execute()
+> PATCHPriceListsPriceListId200Response PATCHPriceListsPriceListId(ctx, priceListId).PriceListUpdate(priceListUpdate).Execute()
 
 Update a price list
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("price_lists", "XGZwpOSrWL", *openapiclient.NewPriceListUpdateDataAttributes())) // PriceListUpdate | 
+    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceListsPriceListId200ResponseDataAttributes())) // PriceListUpdate | 
     priceListId := "priceListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.PATCHPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPriceListsPriceListId`: PATCHPriceListsPriceListId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.PATCHPriceListsPriceListId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPriceListsPriceListId200Response**](PATCHPriceListsPriceListId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTPriceLists
 
-> POSTPriceLists(ctx).PriceListCreate(priceListCreate).Execute()
+> POSTPriceLists201Response POSTPriceLists(ctx).PriceListCreate(priceListCreate).Execute()
 
 Create a price list
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("price_lists", *openapiclient.NewPriceListCreateDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
+    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("Type_example", *openapiclient.NewPOSTPriceLists201ResponseDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.POSTPriceLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPriceLists`: POSTPriceLists201Response
+    fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.POSTPriceLists`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPriceLists201Response**](POSTPriceLists201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

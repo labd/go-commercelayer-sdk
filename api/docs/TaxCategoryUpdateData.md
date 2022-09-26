@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**TaxCategoryUpdateDataAttributes**](TaxCategoryUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes**](PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryUpdateDataRelationships**](TaxCategoryUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryUpdateData
 
-`func NewTaxCategoryUpdateData(type_ string, id string, attributes TaxCategoryUpdateDataAttributes, ) *TaxCategoryUpdateData`
+`func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, ) *TaxCategoryUpdateData`
 
 NewTaxCategoryUpdateData instantiates a new TaxCategoryUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes`
+`func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttributes, bool)`
+`func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryUpdateData) SetAttributes(v TaxCategoryUpdateDataAttributes)`
+`func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

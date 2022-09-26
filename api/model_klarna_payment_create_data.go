@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // KlarnaPaymentCreateData struct for KlarnaPaymentCreateData
 type KlarnaPaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    AdyenPaymentCreateDataAttributes     `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewKlarnaPaymentCreateData instantiates a new KlarnaPaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaPaymentCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes) *KlarnaPaymentCreateData {
+func NewKlarnaPaymentCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *KlarnaPaymentCreateData {
 	this := KlarnaPaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewKlarnaPaymentCreateData(type_ string, attributes AdyenPaymentCreateDataA
 // but it doesn't guarantee that properties required by API are set
 func NewKlarnaPaymentCreateDataWithDefaults() *KlarnaPaymentCreateData {
 	this := KlarnaPaymentCreateData{}
-	var type_ string = "klarna_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *KlarnaPaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaPaymentCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *KlarnaPaymentCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *KlarnaPaymentCreateData) GetAttributes() AdyenPaymentCreateDataAttribut
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *KlarnaPaymentCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *KlarnaPaymentCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttr
 }
 
 // SetAttributes sets field value
-func (o *KlarnaPaymentCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *KlarnaPaymentCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PromotionData struct for PromotionData
 type PromotionData struct {
 	// The resource's type
-	Type          string                              `json:"type"`
-	Attributes    FreeShippingPromotionDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewPromotionData instantiates a new PromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPromotionData(type_ string, attributes FreeShippingPromotionDataAttributes) *PromotionData {
+func NewPromotionData(type_ string, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes) *PromotionData {
 	this := PromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPromotionData(type_ string, attributes FreeShippingPromotionDataAttribut
 // but it doesn't guarantee that properties required by API are set
 func NewPromotionDataWithDefaults() *PromotionData {
 	this := PromotionData{}
-	var type_ string = "promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PromotionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PromotionData) GetAttributes() FreeShippingPromotionDataAttributes {
+func (o *PromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret FreeShippingPromotionDataAttributes
+		var ret GETFreeShippingPromotions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PromotionData) GetAttributes() FreeShippingPromotionDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PromotionData) GetAttributesOk() (*FreeShippingPromotionDataAttributes, bool) {
+func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PromotionData) GetAttributesOk() (*FreeShippingPromotionDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *PromotionData) SetAttributes(v FreeShippingPromotionDataAttributes) {
+func (o *PromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

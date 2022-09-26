@@ -1,6 +1,6 @@
 # \BraintreePaymentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETBraintreePayments
 
-> GETBraintreePayments(ctx).Execute()
+> GETBraintreePayments200Response GETBraintreePayments(ctx).Execute()
 
 List all braintree payments
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.GETBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETBraintreePayments`: GETBraintreePayments200Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.GETBraintreePayments`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETBraintreePaymentsReques
 
 ### Return type
 
- (empty response body)
+[**GETBraintreePayments200Response**](GETBraintreePayments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETBraintreePaymentsBraintreePaymentId
 
-> BraintreePayment GETBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).Execute()
+> GETBraintreePaymentsBraintreePaymentId200Response GETBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).Execute()
 
 Retrieve a braintree payment
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.GETBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreePaymentsBraintreePaymentId`: BraintreePayment
+    // response from `GETBraintreePaymentsBraintreePaymentId`: GETBraintreePaymentsBraintreePaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.GETBraintreePaymentsBraintreePaymentId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreePayment**](BraintreePayment.md)
+[**GETBraintreePaymentsBraintreePaymentId200Response**](GETBraintreePaymentsBraintreePaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHBraintreePaymentsBraintreePaymentId
 
-> PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
+> PATCHBraintreePaymentsBraintreePaymentId200Response PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
 
 Update a braintree payment
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("braintree_payments", "XGZwpOSrWL", *openapiclient.NewBraintreePaymentUpdateDataAttributes())) // BraintreePaymentUpdate | 
+    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes())) // BraintreePaymentUpdate | 
     braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHBraintreePaymentsBraintreePaymentId`: PATCHBraintreePaymentsBraintreePaymentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHBraintreePaymentsBraintreePaymentId200Response**](PATCHBraintreePaymentsBraintreePaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTBraintreePayments
 
-> POSTBraintreePayments(ctx).BraintreePaymentCreate(braintreePaymentCreate).Execute()
+> POSTBraintreePayments201Response POSTBraintreePayments(ctx).BraintreePaymentCreate(braintreePaymentCreate).Execute()
 
 Create a braintree payment
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("braintree_payments", *openapiclient.NewBraintreePaymentCreateDataAttributes())) // BraintreePaymentCreate | 
+    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("Type_example", *openapiclient.NewPOSTBraintreePayments201ResponseDataAttributes())) // BraintreePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.POSTBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTBraintreePayments`: POSTBraintreePayments201Response
+    fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.POSTBraintreePayments`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBraintreePayments201Response**](POSTBraintreePayments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,7 @@ type CouponCodesPromotionRuleUpdateData struct {
 	Type string `json:"type"`
 	// The resource's id
 	Id            string                                     `json:"id"`
-	Attributes    AdyenPaymentCreateDataAttributes           `json:"attributes"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
 	Relationships *CouponCodesPromotionRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -29,7 +29,7 @@ type CouponCodesPromotionRuleUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *CouponCodesPromotionRuleUpdateData {
+func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *CouponCodesPromotionRuleUpdateData {
 	this := CouponCodesPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewCouponCodesPromotionRuleUpdateData(type_ string, id string, attributes A
 // but it doesn't guarantee that properties required by API are set
 func NewCouponCodesPromotionRuleUpdateDataWithDefaults() *CouponCodesPromotionRuleUpdateData {
 	this := CouponCodesPromotionRuleUpdateData{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *CouponCodesPromotionRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *CouponCodesPromotionRuleUpdateData) GetAttributes() AdyenPaymentCreateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *CouponCodesPromotionRuleUpdateData) GetAttributesOk() (*AdyenPaymentCre
 }
 
 // SetAttributes sets field value
-func (o *CouponCodesPromotionRuleUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *CouponCodesPromotionRuleUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

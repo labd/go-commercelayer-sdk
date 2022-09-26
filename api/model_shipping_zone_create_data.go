@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingZoneCreateData struct for ShippingZoneCreateData
 type ShippingZoneCreateData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    ShippingZoneCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}           `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    POSTShippingZones201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                     `json:"relationships,omitempty"`
 }
 
 // NewShippingZoneCreateData instantiates a new ShippingZoneCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZoneCreateData(type_ string, attributes ShippingZoneCreateDataAttributes) *ShippingZoneCreateData {
+func NewShippingZoneCreateData(type_ string, attributes POSTShippingZones201ResponseDataAttributes) *ShippingZoneCreateData {
 	this := ShippingZoneCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewShippingZoneCreateData(type_ string, attributes ShippingZoneCreateDataAt
 // but it doesn't guarantee that properties required by API are set
 func NewShippingZoneCreateDataWithDefaults() *ShippingZoneCreateData {
 	this := ShippingZoneCreateData{}
-	var type_ string = "shipping_zones"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ShippingZoneCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingZoneCreateData) GetAttributes() ShippingZoneCreateDataAttributes {
+func (o *ShippingZoneCreateData) GetAttributes() POSTShippingZones201ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingZoneCreateDataAttributes
+		var ret POSTShippingZones201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ShippingZoneCreateData) GetAttributes() ShippingZoneCreateDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneCreateData) GetAttributesOk() (*ShippingZoneCreateDataAttributes, bool) {
+func (o *ShippingZoneCreateData) GetAttributesOk() (*POSTShippingZones201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *ShippingZoneCreateData) GetAttributesOk() (*ShippingZoneCreateDataAttri
 }
 
 // SetAttributes sets field value
-func (o *ShippingZoneCreateData) SetAttributes(v ShippingZoneCreateDataAttributes) {
+func (o *ShippingZoneCreateData) SetAttributes(v POSTShippingZones201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

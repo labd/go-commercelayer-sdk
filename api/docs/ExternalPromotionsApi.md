@@ -1,6 +1,6 @@
 # \ExternalPromotionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETExternalPromotions
 
-> GETExternalPromotions(ctx).Execute()
+> GETExternalPromotions200Response GETExternalPromotions(ctx).Execute()
 
 List all external promotions
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.GETExternalPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETExternalPromotions`: GETExternalPromotions200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.GETExternalPromotions`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETExternalPromotionsReque
 
 ### Return type
 
- (empty response body)
+[**GETExternalPromotions200Response**](GETExternalPromotions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETExternalPromotionsExternalPromotionId
 
-> ExternalPromotion GETExternalPromotionsExternalPromotionId(ctx, externalPromotionId).Execute()
+> GETExternalPromotionsExternalPromotionId200Response GETExternalPromotionsExternalPromotionId(ctx, externalPromotionId).Execute()
 
 Retrieve an external promotion
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.GETExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPromotionsExternalPromotionId`: ExternalPromotion
+    // response from `GETExternalPromotionsExternalPromotionId`: GETExternalPromotionsExternalPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.GETExternalPromotionsExternalPromotionId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalPromotion**](ExternalPromotion.md)
+[**GETExternalPromotionsExternalPromotionId200Response**](GETExternalPromotionsExternalPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHExternalPromotionsExternalPromotionId
 
-> PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
+> PATCHExternalPromotionsExternalPromotionId200Response PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
 
 Update an external promotion
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("external_promotions", "XGZwpOSrWL", *openapiclient.NewExternalPromotionUpdateDataAttributes())) // ExternalPromotionUpdate | 
+    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes())) // ExternalPromotionUpdate | 
     externalPromotionId := "externalPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHExternalPromotionsExternalPromotionId`: PATCHExternalPromotionsExternalPromotionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHExternalPromotionsExternalPromotionId200Response**](PATCHExternalPromotionsExternalPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTExternalPromotions
 
-> POSTExternalPromotions(ctx).ExternalPromotionCreate(externalPromotionCreate).Execute()
+> POSTExternalPromotions201Response POSTExternalPromotions(ctx).ExternalPromotionCreate(externalPromotionCreate).Execute()
 
 Create an external promotion
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("external_promotions", *openapiclient.NewExternalPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
+    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("Type_example", *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.POSTExternalPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTExternalPromotions`: POSTExternalPromotions201Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.POSTExternalPromotions`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTExternalPromotions201Response**](POSTExternalPromotions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

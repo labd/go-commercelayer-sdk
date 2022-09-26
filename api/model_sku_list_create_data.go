@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuListCreateData struct for SkuListCreateData
 type SkuListCreateData struct {
 	// The resource's type
-	Type          string                      `json:"type"`
-	Attributes    SkuListCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}      `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    POSTSkuLists201ResponseDataAttributes   `json:"attributes"`
+	Relationships *CouponRecipientCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListCreateData instantiates a new SkuListCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListCreateData(type_ string, attributes SkuListCreateDataAttributes) *SkuListCreateData {
+func NewSkuListCreateData(type_ string, attributes POSTSkuLists201ResponseDataAttributes) *SkuListCreateData {
 	this := SkuListCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewSkuListCreateData(type_ string, attributes SkuListCreateDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListCreateDataWithDefaults() *SkuListCreateData {
 	this := SkuListCreateData{}
-	var type_ string = "sku_lists"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *SkuListCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListCreateData) GetAttributes() SkuListCreateDataAttributes {
+func (o *SkuListCreateData) GetAttributes() POSTSkuLists201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuListCreateDataAttributes
+		var ret POSTSkuLists201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *SkuListCreateData) GetAttributes() SkuListCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListCreateData) GetAttributesOk() (*SkuListCreateDataAttributes, bool) {
+func (o *SkuListCreateData) GetAttributesOk() (*POSTSkuLists201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,22 +86,22 @@ func (o *SkuListCreateData) GetAttributesOk() (*SkuListCreateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *SkuListCreateData) SetAttributes(v SkuListCreateDataAttributes) {
+func (o *SkuListCreateData) SetAttributes(v POSTSkuLists201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuListCreateData) GetRelationships() map[string]interface{} {
+func (o *SkuListCreateData) GetRelationships() CouponRecipientCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+		var ret CouponRecipientCreateDataRelationships
 		return ret
 	}
-	return o.Relationships
+	return *o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListCreateData) GetRelationshipsOk() (map[string]interface{}, bool) {
+func (o *SkuListCreateData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,9 +117,9 @@ func (o *SkuListCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *SkuListCreateData) SetRelationships(v map[string]interface{}) {
-	o.Relationships = v
+// SetRelationships gets a reference to the given CouponRecipientCreateDataRelationships and assigns it to the Relationships field.
+func (o *SkuListCreateData) SetRelationships(v CouponRecipientCreateDataRelationships) {
+	o.Relationships = &v
 }
 
 func (o SkuListCreateData) MarshalJSON() ([]byte, error) {

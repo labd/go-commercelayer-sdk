@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // InStockSubscriptionData struct for InStockSubscriptionData
 type InStockSubscriptionData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    InStockSubscriptionDataAttributes     `json:"attributes"`
-	Relationships *InStockSubscriptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                `json:"type"`
+	Attributes    GETInStockSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *InStockSubscriptionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewInStockSubscriptionData instantiates a new InStockSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionData(type_ string, attributes InStockSubscriptionDataAttributes) *InStockSubscriptionData {
+func NewInStockSubscriptionData(type_ string, attributes GETInStockSubscriptions200ResponseDataInnerAttributes) *InStockSubscriptionData {
 	this := InStockSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewInStockSubscriptionData(type_ string, attributes InStockSubscriptionData
 // but it doesn't guarantee that properties required by API are set
 func NewInStockSubscriptionDataWithDefaults() *InStockSubscriptionData {
 	this := InStockSubscriptionData{}
-	var type_ string = "in_stock_subscriptions"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *InStockSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InStockSubscriptionData) GetAttributes() InStockSubscriptionDataAttributes {
+func (o *InStockSubscriptionData) GetAttributes() GETInStockSubscriptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret InStockSubscriptionDataAttributes
+		var ret GETInStockSubscriptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *InStockSubscriptionData) GetAttributes() InStockSubscriptionDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionData) GetAttributesOk() (*InStockSubscriptionDataAttributes, bool) {
+func (o *InStockSubscriptionData) GetAttributesOk() (*GETInStockSubscriptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *InStockSubscriptionData) GetAttributesOk() (*InStockSubscriptionDataAtt
 }
 
 // SetAttributes sets field value
-func (o *InStockSubscriptionData) SetAttributes(v InStockSubscriptionDataAttributes) {
+func (o *InStockSubscriptionData) SetAttributes(v GETInStockSubscriptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

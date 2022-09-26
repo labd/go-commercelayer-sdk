@@ -1,6 +1,6 @@
 # \CustomerPaymentSourcesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ No authorization required
 
 ## GETCustomerPaymentSources
 
-> GETCustomerPaymentSources(ctx).Execute()
+> GETCustomerPaymentSources200Response GETCustomerPaymentSources(ctx).Execute()
 
 List all customer payment sources
 
@@ -180,6 +180,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCustomerPaymentSources`: GETCustomerPaymentSources200Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.GETCustomerPaymentSources`: %v\n", resp)
 }
 ```
 
@@ -194,16 +196,16 @@ Other parameters are passed through a pointer to a apiGETCustomerPaymentSourcesR
 
 ### Return type
 
- (empty response body)
+[**GETCustomerPaymentSources200Response**](GETCustomerPaymentSources200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -212,7 +214,7 @@ No authorization required
 
 ## GETCustomerPaymentSourcesCustomerPaymentSourceId
 
-> CustomerPaymentSource GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).Execute()
+> GETCustomerPaymentSourcesCustomerPaymentSourceId200Response GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).Execute()
 
 Retrieve a customer payment source
 
@@ -240,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPaymentSourcesCustomerPaymentSourceId`: CustomerPaymentSource
+    // response from `GETCustomerPaymentSourcesCustomerPaymentSourceId`: GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.GETCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
@@ -264,11 +266,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerPaymentSource**](CustomerPaymentSource.md)
+[**GETCustomerPaymentSourcesCustomerPaymentSourceId200Response**](GETCustomerPaymentSourcesCustomerPaymentSourceId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHCustomerPaymentSourcesCustomerPaymentSourceId
 
-> PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
+> POSTCustomerPaymentSources201Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
 
 Update a customer payment source
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("customer_payment_sources", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerPaymentSourceUpdate | 
+    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
     customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: POSTCustomerPaymentSources201Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTCustomerPaymentSources
 
-> POSTCustomerPaymentSources(ctx).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
+> POSTCustomerPaymentSources201Response POSTCustomerPaymentSources(ctx).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
 
 Create a customer payment source
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData("customer_payment_sources", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerPaymentSourceCreate | 
+    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.POSTCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCustomerPaymentSources`: POSTCustomerPaymentSources201Response
+    fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.POSTCustomerPaymentSources`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

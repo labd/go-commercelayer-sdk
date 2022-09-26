@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "gift_card_recipients"]
-**Attributes** | [**CouponRecipientCreateDataAttributes**](CouponRecipientCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTCouponRecipients201ResponseDataAttributes**](POSTCouponRecipients201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGiftCardRecipientCreateData
 
-`func NewGiftCardRecipientCreateData(type_ string, attributes CouponRecipientCreateDataAttributes, ) *GiftCardRecipientCreateData`
+`func NewGiftCardRecipientCreateData(type_ string, attributes POSTCouponRecipients201ResponseDataAttributes, ) *GiftCardRecipientCreateData`
 
 NewGiftCardRecipientCreateData instantiates a new GiftCardRecipientCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *GiftCardRecipientCreateData) GetAttributes() CouponRecipientCreateDataAttributes`
+`func (o *GiftCardRecipientCreateData) GetAttributes() POSTCouponRecipients201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GiftCardRecipientCreateData) GetAttributesOk() (*CouponRecipientCreateDataAttributes, bool)`
+`func (o *GiftCardRecipientCreateData) GetAttributesOk() (*POSTCouponRecipients201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GiftCardRecipientCreateData) SetAttributes(v CouponRecipientCreateDataAttributes)`
+`func (o *GiftCardRecipientCreateData) SetAttributes(v POSTCouponRecipients201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

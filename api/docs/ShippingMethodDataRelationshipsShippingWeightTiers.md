@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_weight_tiers"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ShippingMethodDataRelationshipsShippingWeightTiersData**](ShippingMethodDataRelationshipsShippingWeightTiersData.md) |  | 
 
 ## Methods
 
 ### NewShippingMethodDataRelationshipsShippingWeightTiers
 
-`func NewShippingMethodDataRelationshipsShippingWeightTiers(type_ string, id string, ) *ShippingMethodDataRelationshipsShippingWeightTiers`
+`func NewShippingMethodDataRelationshipsShippingWeightTiers(data ShippingMethodDataRelationshipsShippingWeightTiersData, ) *ShippingMethodDataRelationshipsShippingWeightTiers`
 
 NewShippingMethodDataRelationshipsShippingWeightTiers instantiates a new ShippingMethodDataRelationshipsShippingWeightTiers object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewShippingMethodDataRelationshipsShippingWeightTiersWithDefaults instantiates a
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetType() string`
+`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetData() ShippingMethodDataRelationshipsShippingWeightTiersData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetTypeOk() (*string, bool)`
+`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetDataOk() (*ShippingMethodDataRelationshipsShippingWeightTiersData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) SetType(v string)`
+`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) SetData(v ShippingMethodDataRelationshipsShippingWeightTiersData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ShippingMethodDataRelationshipsShippingWeightTiers) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

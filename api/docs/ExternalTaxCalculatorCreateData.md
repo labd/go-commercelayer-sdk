@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "external_tax_calculators"]
-**Attributes** | [**ExternalTaxCalculatorCreateDataAttributes**](ExternalTaxCalculatorCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTExternalTaxCalculators201ResponseDataAttributes**](POSTExternalTaxCalculators201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalTaxCalculatorCreateData
 
-`func NewExternalTaxCalculatorCreateData(type_ string, attributes ExternalTaxCalculatorCreateDataAttributes, ) *ExternalTaxCalculatorCreateData`
+`func NewExternalTaxCalculatorCreateData(type_ string, attributes POSTExternalTaxCalculators201ResponseDataAttributes, ) *ExternalTaxCalculatorCreateData`
 
 NewExternalTaxCalculatorCreateData instantiates a new ExternalTaxCalculatorCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalTaxCalculatorCreateData) GetAttributes() ExternalTaxCalculatorCreateDataAttributes`
+`func (o *ExternalTaxCalculatorCreateData) GetAttributes() POSTExternalTaxCalculators201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalTaxCalculatorCreateData) GetAttributesOk() (*ExternalTaxCalculatorCreateDataAttributes, bool)`
+`func (o *ExternalTaxCalculatorCreateData) GetAttributesOk() (*POSTExternalTaxCalculators201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalTaxCalculatorCreateData) SetAttributes(v ExternalTaxCalculatorCreateDataAttributes)`
+`func (o *ExternalTaxCalculatorCreateData) SetAttributes(v POSTExternalTaxCalculators201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

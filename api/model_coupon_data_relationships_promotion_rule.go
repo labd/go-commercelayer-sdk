@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // CouponDataRelationshipsPromotionRule struct for CouponDataRelationshipsPromotionRule
 type CouponDataRelationshipsPromotionRule struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data CouponDataRelationshipsPromotionRuleData `json:"data"`
 }
 
 // NewCouponDataRelationshipsPromotionRule instantiates a new CouponDataRelationshipsPromotionRule object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponDataRelationshipsPromotionRule(type_ string, id string) *CouponDataRelationshipsPromotionRule {
+func NewCouponDataRelationshipsPromotionRule(data CouponDataRelationshipsPromotionRuleData) *CouponDataRelationshipsPromotionRule {
 	this := CouponDataRelationshipsPromotionRule{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewCouponDataRelationshipsPromotionRule(type_ string, id string) *CouponDat
 // but it doesn't guarantee that properties required by API are set
 func NewCouponDataRelationshipsPromotionRuleWithDefaults() *CouponDataRelationshipsPromotionRule {
 	this := CouponDataRelationshipsPromotionRule{}
-	var type_ string = "coupon_codes_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *CouponDataRelationshipsPromotionRule) GetType() string {
+// GetData returns the Data field value
+func (o *CouponDataRelationshipsPromotionRule) GetData() CouponDataRelationshipsPromotionRuleData {
 	if o == nil {
-		var ret string
+		var ret CouponDataRelationshipsPromotionRuleData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponDataRelationshipsPromotionRule) GetTypeOk() (*string, bool) {
+func (o *CouponDataRelationshipsPromotionRule) GetDataOk() (*CouponDataRelationshipsPromotionRuleData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *CouponDataRelationshipsPromotionRule) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *CouponDataRelationshipsPromotionRule) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CouponDataRelationshipsPromotionRule) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CouponDataRelationshipsPromotionRule) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *CouponDataRelationshipsPromotionRule) SetData(v CouponDataRelationshipsPromotionRuleData) {
+	o.Data = v
 }
 
 func (o CouponDataRelationshipsPromotionRule) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

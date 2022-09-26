@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // KlarnaPaymentData struct for KlarnaPaymentData
 type KlarnaPaymentData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    KlarnaPaymentDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETKlarnaPayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewKlarnaPaymentData instantiates a new KlarnaPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaPaymentData(type_ string, attributes KlarnaPaymentDataAttributes) *KlarnaPaymentData {
+func NewKlarnaPaymentData(type_ string, attributes GETKlarnaPayments200ResponseDataInnerAttributes) *KlarnaPaymentData {
 	this := KlarnaPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewKlarnaPaymentData(type_ string, attributes KlarnaPaymentDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewKlarnaPaymentDataWithDefaults() *KlarnaPaymentData {
 	this := KlarnaPaymentData{}
-	var type_ string = "klarna_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *KlarnaPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaPaymentData) GetAttributes() KlarnaPaymentDataAttributes {
+func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret KlarnaPaymentDataAttributes
+		var ret GETKlarnaPayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *KlarnaPaymentData) GetAttributes() KlarnaPaymentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentData) GetAttributesOk() (*KlarnaPaymentDataAttributes, bool) {
+func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *KlarnaPaymentData) GetAttributesOk() (*KlarnaPaymentDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *KlarnaPaymentData) SetAttributes(v KlarnaPaymentDataAttributes) {
+func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

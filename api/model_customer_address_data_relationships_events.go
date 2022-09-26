@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // CustomerAddressDataRelationshipsEvents struct for CustomerAddressDataRelationshipsEvents
 type CustomerAddressDataRelationshipsEvents struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data CustomerAddressDataRelationshipsEventsData `json:"data"`
 }
 
 // NewCustomerAddressDataRelationshipsEvents instantiates a new CustomerAddressDataRelationshipsEvents object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressDataRelationshipsEvents(type_ string, id string) *CustomerAddressDataRelationshipsEvents {
+func NewCustomerAddressDataRelationshipsEvents(data CustomerAddressDataRelationshipsEventsData) *CustomerAddressDataRelationshipsEvents {
 	this := CustomerAddressDataRelationshipsEvents{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewCustomerAddressDataRelationshipsEvents(type_ string, id string) *Custome
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerAddressDataRelationshipsEventsWithDefaults() *CustomerAddressDataRelationshipsEvents {
 	this := CustomerAddressDataRelationshipsEvents{}
-	var type_ string = "events"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *CustomerAddressDataRelationshipsEvents) GetType() string {
+// GetData returns the Data field value
+func (o *CustomerAddressDataRelationshipsEvents) GetData() CustomerAddressDataRelationshipsEventsData {
 	if o == nil {
-		var ret string
+		var ret CustomerAddressDataRelationshipsEventsData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressDataRelationshipsEvents) GetTypeOk() (*string, bool) {
+func (o *CustomerAddressDataRelationshipsEvents) GetDataOk() (*CustomerAddressDataRelationshipsEventsData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *CustomerAddressDataRelationshipsEvents) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *CustomerAddressDataRelationshipsEvents) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CustomerAddressDataRelationshipsEvents) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CustomerAddressDataRelationshipsEvents) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *CustomerAddressDataRelationshipsEvents) SetData(v CustomerAddressDataRelationshipsEventsData) {
+	o.Data = v
 }
 
 func (o CustomerAddressDataRelationshipsEvents) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

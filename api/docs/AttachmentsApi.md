@@ -1,6 +1,6 @@
 # \AttachmentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -128,7 +128,7 @@ No authorization required
 
 ## GETAttachments
 
-> GETAttachments(ctx).Execute()
+> GETAttachments200Response GETAttachments(ctx).Execute()
 
 List all attachments
 
@@ -155,6 +155,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAttachments`: GETAttachments200Response
+    fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.GETAttachments`: %v\n", resp)
 }
 ```
 
@@ -169,16 +171,16 @@ Other parameters are passed through a pointer to a apiGETAttachmentsRequest stru
 
 ### Return type
 
- (empty response body)
+[**GETAttachments200Response**](GETAttachments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -187,7 +189,7 @@ No authorization required
 
 ## GETAttachmentsAttachmentId
 
-> Attachment GETAttachmentsAttachmentId(ctx, attachmentId).Execute()
+> GETAttachmentsAttachmentId200Response GETAttachmentsAttachmentId(ctx, attachmentId).Execute()
 
 Retrieve an attachment
 
@@ -215,7 +217,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAttachmentsAttachmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAttachmentsAttachmentId`: Attachment
+    // response from `GETAttachmentsAttachmentId`: GETAttachmentsAttachmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.GETAttachmentsAttachmentId`: %v\n", resp)
 }
 ```
@@ -239,11 +241,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Attachment**](Attachment.md)
+[**GETAttachmentsAttachmentId200Response**](GETAttachmentsAttachmentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -311,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -379,7 +381,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -447,7 +449,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -515,7 +517,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -583,7 +585,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -651,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -719,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -787,7 +789,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -855,7 +857,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -923,7 +925,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -991,7 +993,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1059,7 +1061,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1127,7 +1129,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1195,7 +1197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1263,7 +1265,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1331,7 +1333,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1399,7 +1401,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1467,7 +1469,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1535,7 +1537,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1603,7 +1605,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1671,7 +1673,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1739,7 +1741,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1807,7 +1809,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1875,7 +1877,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1943,7 +1945,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2011,7 +2013,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2079,7 +2081,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2147,7 +2149,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2215,7 +2217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2283,7 +2285,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2351,7 +2353,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2419,7 +2421,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2487,7 +2489,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2555,7 +2557,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2623,7 +2625,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2691,7 +2693,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2759,7 +2761,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2827,7 +2829,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2895,7 +2897,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -2963,7 +2965,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3031,7 +3033,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3099,7 +3101,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3167,7 +3169,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3235,7 +3237,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3303,7 +3305,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3371,7 +3373,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -3385,7 +3387,7 @@ No authorization required
 
 ## PATCHAttachmentsAttachmentId
 
-> PATCHAttachmentsAttachmentId(ctx, attachmentId).AttachmentUpdate(attachmentUpdate).Execute()
+> PATCHAttachmentsAttachmentId200Response PATCHAttachmentsAttachmentId(ctx, attachmentId).AttachmentUpdate(attachmentUpdate).Execute()
 
 Update an attachment
 
@@ -3404,7 +3406,7 @@ import (
 )
 
 func main() {
-    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("attachments", "XGZwpOSrWL", *openapiclient.NewAttachmentUpdateDataAttributes())) // AttachmentUpdate | 
+    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
     attachmentId := "attachmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -3414,6 +3416,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.PATCHAttachmentsAttachmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAttachmentsAttachmentId`: PATCHAttachmentsAttachmentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.PATCHAttachmentsAttachmentId`: %v\n", resp)
 }
 ```
 
@@ -3437,16 +3441,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAttachmentsAttachmentId200Response**](PATCHAttachmentsAttachmentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3455,7 +3459,7 @@ No authorization required
 
 ## POSTAttachments
 
-> POSTAttachments(ctx).AttachmentCreate(attachmentCreate).Execute()
+> POSTAttachments201Response POSTAttachments(ctx).AttachmentCreate(attachmentCreate).Execute()
 
 Create an attachment
 
@@ -3474,7 +3478,7 @@ import (
 )
 
 func main() {
-    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("attachments", *openapiclient.NewAttachmentCreateDataAttributes("DDT transport document"))) // AttachmentCreate | 
+    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("Type_example", *openapiclient.NewPOSTAttachments201ResponseDataAttributes("DDT transport document"))) // AttachmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -3483,6 +3487,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.POSTAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTAttachments`: POSTAttachments201Response
+    fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.POSTAttachments`: %v\n", resp)
 }
 ```
 
@@ -3501,16 +3507,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTAttachments201Response**](POSTAttachments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

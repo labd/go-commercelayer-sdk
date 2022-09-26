@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "wire_transfers"]
-**Attributes** | [**BillingInfoValidationRuleDataAttributes**](BillingInfoValidationRuleDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewWireTransferData
 
-`func NewWireTransferData(type_ string, attributes BillingInfoValidationRuleDataAttributes, ) *WireTransferData`
+`func NewWireTransferData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes, ) *WireTransferData`
 
 NewWireTransferData instantiates a new WireTransferData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *WireTransferData) GetAttributes() BillingInfoValidationRuleDataAttributes`
+`func (o *WireTransferData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WireTransferData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool)`
+`func (o *WireTransferData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WireTransferData) SetAttributes(v BillingInfoValidationRuleDataAttributes)`
+`func (o *WireTransferData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

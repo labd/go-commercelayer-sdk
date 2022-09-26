@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stripe_payments"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**StripeGatewayDataRelationshipsStripePaymentsData**](StripeGatewayDataRelationshipsStripePaymentsData.md) |  | 
 
 ## Methods
 
 ### NewStripeGatewayDataRelationshipsStripePayments
 
-`func NewStripeGatewayDataRelationshipsStripePayments(type_ string, id string, ) *StripeGatewayDataRelationshipsStripePayments`
+`func NewStripeGatewayDataRelationshipsStripePayments(data StripeGatewayDataRelationshipsStripePaymentsData, ) *StripeGatewayDataRelationshipsStripePayments`
 
 NewStripeGatewayDataRelationshipsStripePayments instantiates a new StripeGatewayDataRelationshipsStripePayments object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewStripeGatewayDataRelationshipsStripePaymentsWithDefaults instantiates a new S
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *StripeGatewayDataRelationshipsStripePayments) GetType() string`
+`func (o *StripeGatewayDataRelationshipsStripePayments) GetData() StripeGatewayDataRelationshipsStripePaymentsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *StripeGatewayDataRelationshipsStripePayments) GetTypeOk() (*string, bool)`
+`func (o *StripeGatewayDataRelationshipsStripePayments) GetDataOk() (*StripeGatewayDataRelationshipsStripePaymentsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *StripeGatewayDataRelationshipsStripePayments) SetType(v string)`
+`func (o *StripeGatewayDataRelationshipsStripePayments) SetData(v StripeGatewayDataRelationshipsStripePaymentsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *StripeGatewayDataRelationshipsStripePayments) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *StripeGatewayDataRelationshipsStripePayments) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *StripeGatewayDataRelationshipsStripePayments) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

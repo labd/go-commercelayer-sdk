@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type WebhookUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                      `json:"id"`
-	Attributes    WebhookUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}      `json:"relationships,omitempty"`
+	Id            string                                          `json:"id"`
+	Attributes    PATCHWebhooksWebhookId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                          `json:"relationships,omitempty"`
 }
 
 // NewWebhookUpdateData instantiates a new WebhookUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookUpdateData(type_ string, id string, attributes WebhookUpdateDataAttributes) *WebhookUpdateData {
+func NewWebhookUpdateData(type_ string, id string, attributes PATCHWebhooksWebhookId200ResponseDataAttributes) *WebhookUpdateData {
 	this := WebhookUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewWebhookUpdateData(type_ string, id string, attributes WebhookUpdateDataA
 // but it doesn't guarantee that properties required by API are set
 func NewWebhookUpdateDataWithDefaults() *WebhookUpdateData {
 	this := WebhookUpdateData{}
-	var type_ string = "webhooks"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *WebhookUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WebhookUpdateData) GetAttributes() WebhookUpdateDataAttributes {
+func (o *WebhookUpdateData) GetAttributes() PATCHWebhooksWebhookId200ResponseDataAttributes {
 	if o == nil {
-		var ret WebhookUpdateDataAttributes
+		var ret PATCHWebhooksWebhookId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *WebhookUpdateData) GetAttributes() WebhookUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WebhookUpdateData) GetAttributesOk() (*WebhookUpdateDataAttributes, bool) {
+func (o *WebhookUpdateData) GetAttributesOk() (*PATCHWebhooksWebhookId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *WebhookUpdateData) GetAttributesOk() (*WebhookUpdateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *WebhookUpdateData) SetAttributes(v WebhookUpdateDataAttributes) {
+func (o *WebhookUpdateData) SetAttributes(v PATCHWebhooksWebhookId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

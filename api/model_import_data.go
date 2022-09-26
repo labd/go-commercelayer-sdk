@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ImportData struct for ImportData
 type ImportData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    ImportDataAttributes     `json:"attributes"`
-	Relationships *ImportDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETImports200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExportDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewImportData instantiates a new ImportData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewImportData(type_ string, attributes ImportDataAttributes) *ImportData {
+func NewImportData(type_ string, attributes GETImports200ResponseDataInnerAttributes) *ImportData {
 	this := ImportData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewImportData(type_ string, attributes ImportDataAttributes) *ImportData {
 // but it doesn't guarantee that properties required by API are set
 func NewImportDataWithDefaults() *ImportData {
 	this := ImportData{}
-	var type_ string = "imports"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ImportData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ImportData) GetAttributes() ImportDataAttributes {
+func (o *ImportData) GetAttributes() GETImports200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ImportDataAttributes
+		var ret GETImports200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ImportData) GetAttributes() ImportDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetAttributesOk() (*ImportDataAttributes, bool) {
+func (o *ImportData) GetAttributesOk() (*GETImports200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +86,14 @@ func (o *ImportData) GetAttributesOk() (*ImportDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *ImportData) SetAttributes(v ImportDataAttributes) {
+func (o *ImportData) SetAttributes(v GETImports200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ImportData) GetRelationships() ImportDataRelationships {
+func (o *ImportData) GetRelationships() ExportDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ImportDataRelationships
+		var ret ExportDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -103,7 +101,7 @@ func (o *ImportData) GetRelationships() ImportDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetRelationshipsOk() (*ImportDataRelationships, bool) {
+func (o *ImportData) GetRelationshipsOk() (*ExportDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -119,8 +117,8 @@ func (o *ImportData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ImportDataRelationships and assigns it to the Relationships field.
-func (o *ImportData) SetRelationships(v ImportDataRelationships) {
+// SetRelationships gets a reference to the given ExportDataRelationships and assigns it to the Relationships field.
+func (o *ImportData) SetRelationships(v ExportDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_methods"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ShippingMethodUpdateDataAttributes**](ShippingMethodUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHShippingMethodsShippingMethodId200ResponseDataAttributes**](PATCHShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodCreateDataRelationships**](ShippingMethodCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodUpdateData
 
-`func NewShippingMethodUpdateData(type_ string, id string, attributes ShippingMethodUpdateDataAttributes, ) *ShippingMethodUpdateData`
+`func NewShippingMethodUpdateData(type_ string, id string, attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, ) *ShippingMethodUpdateData`
 
 NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingMethodUpdateData) GetAttributes() ShippingMethodUpdateDataAttributes`
+`func (o *ShippingMethodUpdateData) GetAttributes() PATCHShippingMethodsShippingMethodId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodUpdateData) GetAttributesOk() (*ShippingMethodUpdateDataAttributes, bool)`
+`func (o *ShippingMethodUpdateData) GetAttributesOk() (*PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodUpdateData) SetAttributes(v ShippingMethodUpdateDataAttributes)`
+`func (o *ShippingMethodUpdateData) SetAttributes(v PATCHShippingMethodsShippingMethodId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

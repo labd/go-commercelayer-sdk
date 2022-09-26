@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // StripePaymentsApiService StripePaymentsApi service
 type StripePaymentsApiService service
 
-type ApiDELETEStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
 	stripePaymentId string
 }
 
-func (r ApiDELETEStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiDELETEStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiDELETEStripePaymentsStripePaymentIdRequest {
-	return ApiDELETEStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -51,7 +51,7 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx conte
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r ApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripeGatewayIdStripePaymentsRequest struct {
+type StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
 	stripeGatewayId string
 }
 
-func (r ApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStripeGatewayIdStripePaymentsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the stripe payments associated to the stripe gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripeGatewayId The resource's id
- @return ApiGETStripeGatewayIdStripePaymentsRequest
+ @return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) ApiGETStripeGatewayIdStripePaymentsRequest {
-	return ApiGETStripeGatewayIdStripePaymentsRequest{
+func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest {
+	return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripeGatewayId: stripeGatewayId,
@@ -143,7 +143,7 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r ApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
+func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentsRequest struct {
+type StripePaymentsApiGETStripePaymentsRequest struct {
 	ctx        context.Context
 	ApiService *StripePaymentsApiService
 }
 
-func (r ApiGETStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiGETStripePaymentsRequest) Execute() (*GETStripePayments200Response, *http.Response, error) {
 	return r.ApiService.GETStripePaymentsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETStripePayments List all stripe payments
 List all stripe payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStripePaymentsRequest
+ @return StripePaymentsApiGETStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) ApiGETStripePaymentsRequest {
-	return ApiGETStripePaymentsRequest{
+func (a *StripePaymentsApiService) GETStripePayments(ctx context.Context) StripePaymentsApiGETStripePaymentsRequest {
+	return StripePaymentsApiGETStripePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymentsRequest) (*http.Response, error) {
+//  @return GETStripePayments200Response
+func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiGETStripePaymentsRequest) (*GETStripePayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStripePayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.GETStripePayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stripe_payments"
@@ -260,7 +262,7 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymen
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymen
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r ApiGETStripePaymen
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiGETStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
 	stripePaymentId string
 }
 
-func (r ApiGETStripePaymentsStripePaymentIdRequest) Execute() (*StripePayment, *http.Response, error) {
+func (r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) Execute() (*GETStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	return r.ApiService.GETStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiGETStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiGETStripePaymentsStripePaymentIdRequest {
-	return ApiGETStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -323,13 +334,13 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.
 }
 
 // Execute executes the request
-//  @return StripePayment
-func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r ApiGETStripePaymentsStripePaymentIdRequest) (*StripePayment, *http.Response, error) {
+//  @return GETStripePaymentsStripePaymentId200Response
+func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) (*GETStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StripePayment
+		localVarReturnValue *GETStripePaymentsStripePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.GETStripePaymentsStripePaymentId")
@@ -398,19 +409,19 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHStripePaymentsStripePaymentIdRequest struct {
+type StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest struct {
 	ctx                 context.Context
 	ApiService          *StripePaymentsApiService
 	stripePaymentUpdate *StripePaymentUpdate
 	stripePaymentId     string
 }
 
-func (r ApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) ApiPATCHStripePaymentsStripePaymentIdRequest {
+func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
 	r.stripePaymentUpdate = &stripePaymentUpdate
 	return r
 }
 
-func (r ApiPATCHStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) Execute() (*PATCHStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHStripePaymentsStripePaymentIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stripePaymentId The resource's id
- @return ApiPATCHStripePaymentsStripePaymentIdRequest
+ @return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) ApiPATCHStripePaymentsStripePaymentIdRequest {
-	return ApiPATCHStripePaymentsStripePaymentIdRequest{
+func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
+	return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stripePaymentId: stripePaymentId,
@@ -432,16 +443,18 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx contex
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r ApiPATCHStripePaymentsStripePaymentIdRequest) (*http.Response, error) {
+//  @return PATCHStripePaymentsStripePaymentId200Response
+func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) (*PATCHStripePaymentsStripePaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHStripePaymentsStripePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.PATCHStripePaymentsStripePaymentId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}"
@@ -451,7 +464,7 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stripePaymentUpdate == nil {
-		return nil, reportError("stripePaymentUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stripePaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r A
 	localVarPostBody = r.stripePaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTStripePaymentsRequest struct {
+type StripePaymentsApiPOSTStripePaymentsRequest struct {
 	ctx                 context.Context
 	ApiService          *StripePaymentsApiService
 	stripePaymentCreate *StripePaymentCreate
 }
 
-func (r ApiPOSTStripePaymentsRequest) StripePaymentCreate(stripePaymentCreate StripePaymentCreate) ApiPOSTStripePaymentsRequest {
+func (r StripePaymentsApiPOSTStripePaymentsRequest) StripePaymentCreate(stripePaymentCreate StripePaymentCreate) StripePaymentsApiPOSTStripePaymentsRequest {
 	r.stripePaymentCreate = &stripePaymentCreate
 	return r
 }
 
-func (r ApiPOSTStripePaymentsRequest) Execute() (*http.Response, error) {
+func (r StripePaymentsApiPOSTStripePaymentsRequest) Execute() (*POSTStripePayments201Response, *http.Response, error) {
 	return r.ApiService.POSTStripePaymentsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTStripePayments Create a stripe payment
 Create a stripe payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStripePaymentsRequest
+ @return StripePaymentsApiPOSTStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) ApiPOSTStripePaymentsRequest {
-	return ApiPOSTStripePaymentsRequest{
+func (a *StripePaymentsApiService) POSTStripePayments(ctx context.Context) StripePaymentsApiPOSTStripePaymentsRequest {
+	return StripePaymentsApiPOSTStripePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaymentsRequest) (*http.Response, error) {
+//  @return POSTStripePayments201Response
+func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApiPOSTStripePaymentsRequest) (*POSTStripePayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTStripePayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripePaymentsApiService.POSTStripePayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stripe_payments"
@@ -550,7 +574,7 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaym
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stripePaymentCreate == nil {
-		return nil, reportError("stripePaymentCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stripePaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaym
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaym
 	localVarPostBody = r.stripePaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r ApiPOSTStripePaym
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

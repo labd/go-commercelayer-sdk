@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**StockItemUpdateDataAttributes**](StockItemUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHStockItemsStockItemId200ResponseDataAttributes**](PATCHStockItemsStockItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemUpdateDataRelationships**](StockItemUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockItemUpdateData
 
-`func NewStockItemUpdateData(type_ string, id string, attributes StockItemUpdateDataAttributes, ) *StockItemUpdateData`
+`func NewStockItemUpdateData(type_ string, id string, attributes PATCHStockItemsStockItemId200ResponseDataAttributes, ) *StockItemUpdateData`
 
 NewStockItemUpdateData instantiates a new StockItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StockItemUpdateData) GetAttributes() StockItemUpdateDataAttributes`
+`func (o *StockItemUpdateData) GetAttributes() PATCHStockItemsStockItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockItemUpdateData) GetAttributesOk() (*StockItemUpdateDataAttributes, bool)`
+`func (o *StockItemUpdateData) GetAttributesOk() (*PATCHStockItemsStockItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockItemUpdateData) SetAttributes(v StockItemUpdateDataAttributes)`
+`func (o *StockItemUpdateData) SetAttributes(v PATCHStockItemsStockItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

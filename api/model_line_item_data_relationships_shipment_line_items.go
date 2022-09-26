@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // LineItemDataRelationshipsShipmentLineItems struct for LineItemDataRelationshipsShipmentLineItems
 type LineItemDataRelationshipsShipmentLineItems struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data LineItemDataRelationshipsShipmentLineItemsData `json:"data"`
 }
 
 // NewLineItemDataRelationshipsShipmentLineItems instantiates a new LineItemDataRelationshipsShipmentLineItems object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemDataRelationshipsShipmentLineItems(type_ string, id string) *LineItemDataRelationshipsShipmentLineItems {
+func NewLineItemDataRelationshipsShipmentLineItems(data LineItemDataRelationshipsShipmentLineItemsData) *LineItemDataRelationshipsShipmentLineItems {
 	this := LineItemDataRelationshipsShipmentLineItems{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewLineItemDataRelationshipsShipmentLineItems(type_ string, id string) *Lin
 // but it doesn't guarantee that properties required by API are set
 func NewLineItemDataRelationshipsShipmentLineItemsWithDefaults() *LineItemDataRelationshipsShipmentLineItems {
 	this := LineItemDataRelationshipsShipmentLineItems{}
-	var type_ string = "shipment_line_items"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *LineItemDataRelationshipsShipmentLineItems) GetType() string {
+// GetData returns the Data field value
+func (o *LineItemDataRelationshipsShipmentLineItems) GetData() LineItemDataRelationshipsShipmentLineItemsData {
 	if o == nil {
-		var ret string
+		var ret LineItemDataRelationshipsShipmentLineItemsData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *LineItemDataRelationshipsShipmentLineItems) GetTypeOk() (*string, bool) {
+func (o *LineItemDataRelationshipsShipmentLineItems) GetDataOk() (*LineItemDataRelationshipsShipmentLineItemsData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *LineItemDataRelationshipsShipmentLineItems) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *LineItemDataRelationshipsShipmentLineItems) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *LineItemDataRelationshipsShipmentLineItems) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *LineItemDataRelationshipsShipmentLineItems) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *LineItemDataRelationshipsShipmentLineItems) SetData(v LineItemDataRelationshipsShipmentLineItemsData) {
+	o.Data = v
 }
 
 func (o LineItemDataRelationshipsShipmentLineItems) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

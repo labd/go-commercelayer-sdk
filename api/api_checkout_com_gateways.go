@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // CheckoutComGatewaysApiService CheckoutComGatewaysApi service
 type CheckoutComGatewaysApiService service
 
-type ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest struct {
+type CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest struct {
 	ctx                  context.Context
 	ApiService           *CheckoutComGatewaysApiService
 	checkoutComGatewayId string
 }
 
-func (r ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*http.Response, error) {
+func (r CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECheckoutComGatewaysCheckoutComGatewayIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest
+ @return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest
 */
-func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest {
-	return ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest{
+func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest {
+	return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -51,7 +51,7 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 }
 
 // Execute executes the request
-func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayIdExecute(r ApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest) (*http.Response, error) {
+func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComGatewaysRequest struct {
+type CheckoutComGatewaysApiGETCheckoutComGatewaysRequest struct {
 	ctx        context.Context
 	ApiService *CheckoutComGatewaysApiService
 }
 
-func (r ApiGETCheckoutComGatewaysRequest) Execute() (*http.Response, error) {
+func (r CheckoutComGatewaysApiGETCheckoutComGatewaysRequest) Execute() (*GETCheckoutComGateways200Response, *http.Response, error) {
 	return r.ApiService.GETCheckoutComGatewaysExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETCheckoutComGateways List all checkout.com gateways
 List all checkout.com gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCheckoutComGatewaysRequest
+ @return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest
 */
-func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Context) ApiGETCheckoutComGatewaysRequest {
-	return ApiGETCheckoutComGatewaysRequest{
+func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiGETCheckoutComGatewaysRequest {
+	return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r ApiGETCheckoutComGatewaysRequest) (*http.Response, error) {
+//  @return GETCheckoutComGateways200Response
+func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysRequest) (*GETCheckoutComGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCheckoutComGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.GETCheckoutComGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways"
@@ -168,7 +170,7 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r ApiGETCh
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r ApiGETCh
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r ApiGETCh
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
+type CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
 	ctx                  context.Context
 	ApiService           *CheckoutComGatewaysApiService
 	checkoutComGatewayId string
 }
 
-func (r ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*CheckoutComGateway, *http.Response, error) {
+func (r CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*GETCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETCheckoutComGatewaysCheckoutComGatewayIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest
+ @return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest
 */
-func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest {
-	return ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest{
+func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest {
+	return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -231,13 +242,13 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 }
 
 // Execute executes the request
-//  @return CheckoutComGateway
-func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayIdExecute(r ApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) (*CheckoutComGateway, *http.Response, error) {
+//  @return GETCheckoutComGatewaysCheckoutComGatewayId200Response
+func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) (*GETCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CheckoutComGateway
+		localVarReturnValue *GETCheckoutComGatewaysCheckoutComGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.GETCheckoutComGatewaysCheckoutComGatewayId")
@@ -306,19 +317,19 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
+type CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
 	ctx                      context.Context
 	ApiService               *CheckoutComGatewaysApiService
 	checkoutComGatewayUpdate *CheckoutComGatewayUpdate
 	checkoutComGatewayId     string
 }
 
-func (r ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) CheckoutComGatewayUpdate(checkoutComGatewayUpdate CheckoutComGatewayUpdate) ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
+func (r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) CheckoutComGatewayUpdate(checkoutComGatewayUpdate CheckoutComGatewayUpdate) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
 	r.checkoutComGatewayUpdate = &checkoutComGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*http.Response, error) {
+func (r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) Execute() (*PATCHCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCheckoutComGatewaysCheckoutComGatewayIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param checkoutComGatewayId The resource's id
- @return ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
+ @return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
 */
-func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
-	return ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest{
+func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
+	return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		checkoutComGatewayId: checkoutComGatewayId,
@@ -340,16 +351,18 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 }
 
 // Execute executes the request
-func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayIdExecute(r ApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) (*http.Response, error) {
+//  @return PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
+func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) (*PATCHCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.PATCHCheckoutComGatewaysCheckoutComGatewayId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}"
@@ -359,7 +372,7 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.checkoutComGatewayUpdate == nil {
-		return nil, reportError("checkoutComGatewayUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("checkoutComGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 	localVarPostBody = r.checkoutComGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTCheckoutComGatewaysRequest struct {
+type CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest struct {
 	ctx                      context.Context
 	ApiService               *CheckoutComGatewaysApiService
 	checkoutComGatewayCreate *CheckoutComGatewayCreate
 }
 
-func (r ApiPOSTCheckoutComGatewaysRequest) CheckoutComGatewayCreate(checkoutComGatewayCreate CheckoutComGatewayCreate) ApiPOSTCheckoutComGatewaysRequest {
+func (r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) CheckoutComGatewayCreate(checkoutComGatewayCreate CheckoutComGatewayCreate) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
 	r.checkoutComGatewayCreate = &checkoutComGatewayCreate
 	return r
 }
 
-func (r ApiPOSTCheckoutComGatewaysRequest) Execute() (*http.Response, error) {
+func (r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) Execute() (*POSTCheckoutComGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTCheckoutComGatewaysExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTCheckoutComGateways Create a checkout.com gateway
 Create a checkout.com gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCheckoutComGatewaysRequest
+ @return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest
 */
-func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Context) ApiPOSTCheckoutComGatewaysRequest {
-	return ApiPOSTCheckoutComGatewaysRequest{
+func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
+	return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r ApiPOSTCheckoutComGatewaysRequest) (*http.Response, error) {
+//  @return POSTCheckoutComGateways201Response
+func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) (*POSTCheckoutComGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCheckoutComGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComGatewaysApiService.POSTCheckoutComGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways"
@@ -458,7 +482,7 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r ApiPOST
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.checkoutComGatewayCreate == nil {
-		return nil, reportError("checkoutComGatewayCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("checkoutComGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r ApiPOST
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r ApiPOST
 	localVarPostBody = r.checkoutComGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r ApiPOST
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

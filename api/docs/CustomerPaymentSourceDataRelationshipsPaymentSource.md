@@ -4,15 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_payments"]
-**Id** | **string** | The resource&#39;s id | 
-**Data** | [**WireTransferData**](WireTransferData.md) |  | 
+**Data** | [**CustomerPaymentSourceDataRelationshipsPaymentSourceData**](CustomerPaymentSourceDataRelationshipsPaymentSourceData.md) |  | 
 
 ## Methods
 
 ### NewCustomerPaymentSourceDataRelationshipsPaymentSource
 
-`func NewCustomerPaymentSourceDataRelationshipsPaymentSource(type_ string, id string, data WireTransferData, ) *CustomerPaymentSourceDataRelationshipsPaymentSource`
+`func NewCustomerPaymentSourceDataRelationshipsPaymentSource(data CustomerPaymentSourceDataRelationshipsPaymentSourceData, ) *CustomerPaymentSourceDataRelationshipsPaymentSource`
 
 NewCustomerPaymentSourceDataRelationshipsPaymentSource instantiates a new CustomerPaymentSourceDataRelationshipsPaymentSource object
 This constructor will assign default values to properties that have it defined,
@@ -27,62 +25,22 @@ NewCustomerPaymentSourceDataRelationshipsPaymentSourceWithDefaults instantiates 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetType() string`
-
-GetType returns the Type field if non-nil, zero value otherwise.
-
-### GetTypeOk
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetTypeOk() (*string, bool)`
-
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetType
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) SetType(v string)`
-
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) SetId(v string)`
-
-SetId sets Id field to given value.
-
-
 ### GetData
 
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetData() WireTransferData`
+`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetData() CustomerPaymentSourceDataRelationshipsPaymentSourceData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetDataOk() (*WireTransferData, bool)`
+`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetDataOk() (*CustomerPaymentSourceDataRelationshipsPaymentSourceData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) SetData(v WireTransferData)`
+`func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) SetData(v CustomerPaymentSourceDataRelationshipsPaymentSourceData)`
 
 SetData sets Data field to given value.
 

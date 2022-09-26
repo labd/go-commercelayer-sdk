@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ReturnLineItemCreateData struct for ReturnLineItemCreateData
 type ReturnLineItemCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    ReturnLineItemCreateDataAttributes     `json:"attributes"`
-	Relationships *ReturnLineItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    POSTReturnLineItems201ResponseDataAttributes `json:"attributes"`
+	Relationships *ReturnLineItemCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemCreateData instantiates a new ReturnLineItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreateData(type_ string, attributes ReturnLineItemCreateDataAttributes) *ReturnLineItemCreateData {
+func NewReturnLineItemCreateData(type_ string, attributes POSTReturnLineItems201ResponseDataAttributes) *ReturnLineItemCreateData {
 	this := ReturnLineItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewReturnLineItemCreateData(type_ string, attributes ReturnLineItemCreateDa
 // but it doesn't guarantee that properties required by API are set
 func NewReturnLineItemCreateDataWithDefaults() *ReturnLineItemCreateData {
 	this := ReturnLineItemCreateData{}
-	var type_ string = "return_line_items"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ReturnLineItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnLineItemCreateData) GetAttributes() ReturnLineItemCreateDataAttributes {
+func (o *ReturnLineItemCreateData) GetAttributes() POSTReturnLineItems201ResponseDataAttributes {
 	if o == nil {
-		var ret ReturnLineItemCreateDataAttributes
+		var ret POSTReturnLineItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ReturnLineItemCreateData) GetAttributes() ReturnLineItemCreateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateData) GetAttributesOk() (*ReturnLineItemCreateDataAttributes, bool) {
+func (o *ReturnLineItemCreateData) GetAttributesOk() (*POSTReturnLineItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *ReturnLineItemCreateData) GetAttributesOk() (*ReturnLineItemCreateDataA
 }
 
 // SetAttributes sets field value
-func (o *ReturnLineItemCreateData) SetAttributes(v ReturnLineItemCreateDataAttributes) {
+func (o *ReturnLineItemCreateData) SetAttributes(v POSTReturnLineItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

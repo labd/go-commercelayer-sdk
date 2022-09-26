@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type GoogleGeocoderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                             `json:"id"`
-	Attributes    GoogleGeocoderUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}             `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                        `json:"relationships,omitempty"`
 }
 
 // NewGoogleGeocoderUpdateData instantiates a new GoogleGeocoderUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGoogleGeocoderUpdateData(type_ string, id string, attributes GoogleGeocoderUpdateDataAttributes) *GoogleGeocoderUpdateData {
+func NewGoogleGeocoderUpdateData(type_ string, id string, attributes PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes) *GoogleGeocoderUpdateData {
 	this := GoogleGeocoderUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewGoogleGeocoderUpdateData(type_ string, id string, attributes GoogleGeoco
 // but it doesn't guarantee that properties required by API are set
 func NewGoogleGeocoderUpdateDataWithDefaults() *GoogleGeocoderUpdateData {
 	this := GoogleGeocoderUpdateData{}
-	var type_ string = "google_geocoders"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *GoogleGeocoderUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GoogleGeocoderUpdateData) GetAttributes() GoogleGeocoderUpdateDataAttributes {
+func (o *GoogleGeocoderUpdateData) GetAttributes() PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes {
 	if o == nil {
-		var ret GoogleGeocoderUpdateDataAttributes
+		var ret PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *GoogleGeocoderUpdateData) GetAttributes() GoogleGeocoderUpdateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*GoogleGeocoderUpdateDataAttributes, bool) {
+func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*GoogleGeocoderUpdateDataA
 }
 
 // SetAttributes sets field value
-func (o *GoogleGeocoderUpdateData) SetAttributes(v GoogleGeocoderUpdateDataAttributes) {
+func (o *GoogleGeocoderUpdateData) SetAttributes(v PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

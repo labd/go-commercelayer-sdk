@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "event_callbacks"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**EventDataRelationshipsLastEventCallbacksData**](EventDataRelationshipsLastEventCallbacksData.md) |  | 
 
 ## Methods
 
 ### NewEventDataRelationshipsLastEventCallbacks
 
-`func NewEventDataRelationshipsLastEventCallbacks(type_ string, id string, ) *EventDataRelationshipsLastEventCallbacks`
+`func NewEventDataRelationshipsLastEventCallbacks(data EventDataRelationshipsLastEventCallbacksData, ) *EventDataRelationshipsLastEventCallbacks`
 
 NewEventDataRelationshipsLastEventCallbacks instantiates a new EventDataRelationshipsLastEventCallbacks object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewEventDataRelationshipsLastEventCallbacksWithDefaults instantiates a new Event
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *EventDataRelationshipsLastEventCallbacks) GetType() string`
+`func (o *EventDataRelationshipsLastEventCallbacks) GetData() EventDataRelationshipsLastEventCallbacksData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *EventDataRelationshipsLastEventCallbacks) GetTypeOk() (*string, bool)`
+`func (o *EventDataRelationshipsLastEventCallbacks) GetDataOk() (*EventDataRelationshipsLastEventCallbacksData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *EventDataRelationshipsLastEventCallbacks) SetType(v string)`
+`func (o *EventDataRelationshipsLastEventCallbacks) SetData(v EventDataRelationshipsLastEventCallbacksData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *EventDataRelationshipsLastEventCallbacks) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *EventDataRelationshipsLastEventCallbacks) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *EventDataRelationshipsLastEventCallbacks) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

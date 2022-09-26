@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PercentageDiscountPromotionData struct for PercentageDiscountPromotionData
 type PercentageDiscountPromotionData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    PercentageDiscountPromotionDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships     `json:"relationships,omitempty"`
+	Type          string                                                        `json:"type"`
+	Attributes    GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships                         `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionData(type_ string, attributes PercentageDiscountPromotionDataAttributes) *PercentageDiscountPromotionData {
+func NewPercentageDiscountPromotionData(type_ string, attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes) *PercentageDiscountPromotionData {
 	this := PercentageDiscountPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPercentageDiscountPromotionData(type_ string, attributes PercentageDisco
 // but it doesn't guarantee that properties required by API are set
 func NewPercentageDiscountPromotionDataWithDefaults() *PercentageDiscountPromotionData {
 	this := PercentageDiscountPromotionData{}
-	var type_ string = "percentage_discount_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PercentageDiscountPromotionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountPromotionDataAttributes {
+func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PercentageDiscountPromotionDataAttributes
+		var ret GETPercentageDiscountPromotions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountProm
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscountPromotionDataAttributes, bool) {
+func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscount
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionData) SetAttributes(v PercentageDiscountPromotionDataAttributes) {
+func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

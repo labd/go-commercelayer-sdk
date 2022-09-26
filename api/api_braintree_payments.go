@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // BraintreePaymentsApiService BraintreePaymentsApi service
 type BraintreePaymentsApiService service
 
-type ApiDELETEBraintreePaymentsBraintreePaymentIdRequest struct {
+type BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest struct {
 	ctx                context.Context
 	ApiService         *BraintreePaymentsApiService
 	braintreePaymentId string
 }
 
-func (r ApiDELETEBraintreePaymentsBraintreePaymentIdRequest) Execute() (*http.Response, error) {
+func (r BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBraintreePaymentsBraintreePaymentIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiDELETEBraintreePaymentsBraintreePaymentIdRequest
+ @return BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest
 */
-func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) ApiDELETEBraintreePaymentsBraintreePaymentIdRequest {
-	return ApiDELETEBraintreePaymentsBraintreePaymentIdRequest{
+func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest {
+	return BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -51,7 +51,7 @@ func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentId(
 }
 
 // Execute executes the request
-func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentIdExecute(r ApiDELETEBraintreePaymentsBraintreePaymentIdRequest) (*http.Response, error) {
+func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentIdExecute(r BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentIdE
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
+type BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
 	ctx                context.Context
 	ApiService         *BraintreePaymentsApiService
 	braintreeGatewayId string
 }
 
-func (r ApiGETBraintreeGatewayIdBraintreePaymentsRequest) Execute() (*http.Response, error) {
+func (r BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBraintreeGatewayIdBraintreePaymentsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the braintree payments associated to the braintree gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreeGatewayId The resource's id
- @return ApiGETBraintreeGatewayIdBraintreePaymentsRequest
+ @return BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest
 */
-func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) ApiGETBraintreeGatewayIdBraintreePaymentsRequest {
-	return ApiGETBraintreeGatewayIdBraintreePaymentsRequest{
+func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest {
+	return BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreeGatewayId: braintreeGatewayId,
@@ -143,7 +143,7 @@ func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePayments(ctx
 }
 
 // Execute executes the request
-func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r ApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error) {
+func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePaymentsExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentsRequest struct {
+type BraintreePaymentsApiGETBraintreePaymentsRequest struct {
 	ctx        context.Context
 	ApiService *BraintreePaymentsApiService
 }
 
-func (r ApiGETBraintreePaymentsRequest) Execute() (*http.Response, error) {
+func (r BraintreePaymentsApiGETBraintreePaymentsRequest) Execute() (*GETBraintreePayments200Response, *http.Response, error) {
 	return r.ApiService.GETBraintreePaymentsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETBraintreePayments List all braintree payments
 List all braintree payments
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETBraintreePaymentsRequest
+ @return BraintreePaymentsApiGETBraintreePaymentsRequest
 */
-func (a *BraintreePaymentsApiService) GETBraintreePayments(ctx context.Context) ApiGETBraintreePaymentsRequest {
-	return ApiGETBraintreePaymentsRequest{
+func (a *BraintreePaymentsApiService) GETBraintreePayments(ctx context.Context) BraintreePaymentsApiGETBraintreePaymentsRequest {
+	return BraintreePaymentsApiGETBraintreePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r ApiGETBraintreePaymentsRequest) (*http.Response, error) {
+//  @return GETBraintreePayments200Response
+func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r BraintreePaymentsApiGETBraintreePaymentsRequest) (*GETBraintreePayments200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETBraintreePayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreePaymentsApiService.GETBraintreePayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_payments"
@@ -260,7 +262,7 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r ApiGETBraint
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r ApiGETBraint
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r ApiGETBraint
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETBraintreePaymentsBraintreePaymentIdRequest struct {
+type BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest struct {
 	ctx                context.Context
 	ApiService         *BraintreePaymentsApiService
 	braintreePaymentId string
 }
 
-func (r ApiGETBraintreePaymentsBraintreePaymentIdRequest) Execute() (*BraintreePayment, *http.Response, error) {
+func (r BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest) Execute() (*GETBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	return r.ApiService.GETBraintreePaymentsBraintreePaymentIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiGETBraintreePaymentsBraintreePaymentIdRequest
+ @return BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest
 */
-func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) ApiGETBraintreePaymentsBraintreePaymentIdRequest {
-	return ApiGETBraintreePaymentsBraintreePaymentIdRequest{
+func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest {
+	return BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -323,13 +334,13 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentId(ctx
 }
 
 // Execute executes the request
-//  @return BraintreePayment
-func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentIdExecute(r ApiGETBraintreePaymentsBraintreePaymentIdRequest) (*BraintreePayment, *http.Response, error) {
+//  @return GETBraintreePaymentsBraintreePaymentId200Response
+func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentIdExecute(r BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest) (*GETBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BraintreePayment
+		localVarReturnValue *GETBraintreePaymentsBraintreePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreePaymentsApiService.GETBraintreePaymentsBraintreePaymentId")
@@ -398,19 +409,19 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentIdExec
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHBraintreePaymentsBraintreePaymentIdRequest struct {
+type BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest struct {
 	ctx                    context.Context
 	ApiService             *BraintreePaymentsApiService
 	braintreePaymentUpdate *BraintreePaymentUpdate
 	braintreePaymentId     string
 }
 
-func (r ApiPATCHBraintreePaymentsBraintreePaymentIdRequest) BraintreePaymentUpdate(braintreePaymentUpdate BraintreePaymentUpdate) ApiPATCHBraintreePaymentsBraintreePaymentIdRequest {
+func (r BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest) BraintreePaymentUpdate(braintreePaymentUpdate BraintreePaymentUpdate) BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest {
 	r.braintreePaymentUpdate = &braintreePaymentUpdate
 	return r
 }
 
-func (r ApiPATCHBraintreePaymentsBraintreePaymentIdRequest) Execute() (*http.Response, error) {
+func (r BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest) Execute() (*PATCHBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHBraintreePaymentsBraintreePaymentIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param braintreePaymentId The resource's id
- @return ApiPATCHBraintreePaymentsBraintreePaymentIdRequest
+ @return BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest
 */
-func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) ApiPATCHBraintreePaymentsBraintreePaymentIdRequest {
-	return ApiPATCHBraintreePaymentsBraintreePaymentIdRequest{
+func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest {
+	return BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		braintreePaymentId: braintreePaymentId,
@@ -432,16 +443,18 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentId(c
 }
 
 // Execute executes the request
-func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdExecute(r ApiPATCHBraintreePaymentsBraintreePaymentIdRequest) (*http.Response, error) {
+//  @return PATCHBraintreePaymentsBraintreePaymentId200Response
+func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdExecute(r BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest) (*PATCHBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHBraintreePaymentsBraintreePaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreePaymentsApiService.PATCHBraintreePaymentsBraintreePaymentId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}"
@@ -451,7 +464,7 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdEx
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.braintreePaymentUpdate == nil {
-		return nil, reportError("braintreePaymentUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("braintreePaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdEx
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdEx
 	localVarPostBody = r.braintreePaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdEx
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTBraintreePaymentsRequest struct {
+type BraintreePaymentsApiPOSTBraintreePaymentsRequest struct {
 	ctx                    context.Context
 	ApiService             *BraintreePaymentsApiService
 	braintreePaymentCreate *BraintreePaymentCreate
 }
 
-func (r ApiPOSTBraintreePaymentsRequest) BraintreePaymentCreate(braintreePaymentCreate BraintreePaymentCreate) ApiPOSTBraintreePaymentsRequest {
+func (r BraintreePaymentsApiPOSTBraintreePaymentsRequest) BraintreePaymentCreate(braintreePaymentCreate BraintreePaymentCreate) BraintreePaymentsApiPOSTBraintreePaymentsRequest {
 	r.braintreePaymentCreate = &braintreePaymentCreate
 	return r
 }
 
-func (r ApiPOSTBraintreePaymentsRequest) Execute() (*http.Response, error) {
+func (r BraintreePaymentsApiPOSTBraintreePaymentsRequest) Execute() (*POSTBraintreePayments201Response, *http.Response, error) {
 	return r.ApiService.POSTBraintreePaymentsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTBraintreePayments Create a braintree payment
 Create a braintree payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTBraintreePaymentsRequest
+ @return BraintreePaymentsApiPOSTBraintreePaymentsRequest
 */
-func (a *BraintreePaymentsApiService) POSTBraintreePayments(ctx context.Context) ApiPOSTBraintreePaymentsRequest {
-	return ApiPOSTBraintreePaymentsRequest{
+func (a *BraintreePaymentsApiService) POSTBraintreePayments(ctx context.Context) BraintreePaymentsApiPOSTBraintreePaymentsRequest {
+	return BraintreePaymentsApiPOSTBraintreePaymentsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r ApiPOSTBraintreePaymentsRequest) (*http.Response, error) {
+//  @return POSTBraintreePayments201Response
+func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r BraintreePaymentsApiPOSTBraintreePaymentsRequest) (*POSTBraintreePayments201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTBraintreePayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BraintreePaymentsApiService.POSTBraintreePayments")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/braintree_payments"
@@ -550,7 +574,7 @@ func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r ApiPOSTBrai
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.braintreePaymentCreate == nil {
-		return nil, reportError("braintreePaymentCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("braintreePaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r ApiPOSTBrai
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r ApiPOSTBrai
 	localVarPostBody = r.braintreePaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r ApiPOSTBrai
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

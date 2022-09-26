@@ -1,6 +1,6 @@
 # \TaxCategoriesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ No authorization required
 
 ## GETTaxCategories
 
-> GETTaxCategories(ctx).Execute()
+> GETTaxCategories200Response GETTaxCategories(ctx).Execute()
 
 List all tax categories
 
@@ -386,6 +386,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETTaxCategories`: GETTaxCategories200Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.GETTaxCategories`: %v\n", resp)
 }
 ```
 
@@ -400,16 +402,16 @@ Other parameters are passed through a pointer to a apiGETTaxCategoriesRequest st
 
 ### Return type
 
- (empty response body)
+[**GETTaxCategories200Response**](GETTaxCategories200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -418,7 +420,7 @@ No authorization required
 
 ## GETTaxCategoriesTaxCategoryId
 
-> TaxCategory GETTaxCategoriesTaxCategoryId(ctx, taxCategoryId).Execute()
+> GETTaxCategoriesTaxCategoryId200Response GETTaxCategoriesTaxCategoryId(ctx, taxCategoryId).Execute()
 
 Retrieve a tax category
 
@@ -446,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCategoriesTaxCategoryId`: TaxCategory
+    // response from `GETTaxCategoriesTaxCategoryId`: GETTaxCategoriesTaxCategoryId200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.GETTaxCategoriesTaxCategoryId`: %v\n", resp)
 }
 ```
@@ -470,11 +472,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxCategory**](TaxCategory.md)
+[**GETTaxCategoriesTaxCategoryId200Response**](GETTaxCategoriesTaxCategoryId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -542,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -556,7 +558,7 @@ No authorization required
 
 ## PATCHTaxCategoriesTaxCategoryId
 
-> PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
+> PATCHTaxCategoriesTaxCategoryId200Response PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
 
 Update a tax category
 
@@ -575,7 +577,7 @@ import (
 )
 
 func main() {
-    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("tax_categories", "XGZwpOSrWL", *openapiclient.NewTaxCategoryUpdateDataAttributes())) // TaxCategoryUpdate | 
+    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes())) // TaxCategoryUpdate | 
     taxCategoryId := "taxCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -585,6 +587,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHTaxCategoriesTaxCategoryId`: PATCHTaxCategoriesTaxCategoryId200Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId`: %v\n", resp)
 }
 ```
 
@@ -608,16 +612,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHTaxCategoriesTaxCategoryId200Response**](PATCHTaxCategoriesTaxCategoryId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -626,7 +630,7 @@ No authorization required
 
 ## POSTTaxCategories
 
-> POSTTaxCategories(ctx).TaxCategoryCreate(taxCategoryCreate).Execute()
+> POSTTaxCategories201Response POSTTaxCategories(ctx).TaxCategoryCreate(taxCategoryCreate).Execute()
 
 Create a tax category
 
@@ -645,7 +649,7 @@ import (
 )
 
 func main() {
-    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("tax_categories", *openapiclient.NewTaxCategoryCreateDataAttributes("31000"))) // TaxCategoryCreate | 
+    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("Type_example", *openapiclient.NewPOSTTaxCategories201ResponseDataAttributes("31000"))) // TaxCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -654,6 +658,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.POSTTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTTaxCategories`: POSTTaxCategories201Response
+    fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.POSTTaxCategories`: %v\n", resp)
 }
 ```
 
@@ -672,16 +678,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTTaxCategories201Response**](POSTTaxCategories201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

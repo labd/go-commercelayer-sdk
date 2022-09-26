@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "klarna_payments"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**KlarnaGatewayDataRelationshipsKlarnaPaymentsData**](KlarnaGatewayDataRelationshipsKlarnaPaymentsData.md) |  | 
 
 ## Methods
 
 ### NewKlarnaGatewayDataRelationshipsKlarnaPayments
 
-`func NewKlarnaGatewayDataRelationshipsKlarnaPayments(type_ string, id string, ) *KlarnaGatewayDataRelationshipsKlarnaPayments`
+`func NewKlarnaGatewayDataRelationshipsKlarnaPayments(data KlarnaGatewayDataRelationshipsKlarnaPaymentsData, ) *KlarnaGatewayDataRelationshipsKlarnaPayments`
 
 NewKlarnaGatewayDataRelationshipsKlarnaPayments instantiates a new KlarnaGatewayDataRelationshipsKlarnaPayments object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewKlarnaGatewayDataRelationshipsKlarnaPaymentsWithDefaults instantiates a new K
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetType() string`
+`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetData() KlarnaGatewayDataRelationshipsKlarnaPaymentsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetTypeOk() (*string, bool)`
+`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetDataOk() (*KlarnaGatewayDataRelationshipsKlarnaPaymentsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) SetType(v string)`
+`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) SetData(v KlarnaGatewayDataRelationshipsKlarnaPaymentsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *KlarnaGatewayDataRelationshipsKlarnaPayments) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

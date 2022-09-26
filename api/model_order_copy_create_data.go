@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderCopyCreateData struct for OrderCopyCreateData
 type OrderCopyCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    OrderCopyCreateDataAttributes     `json:"attributes"`
-	Relationships *OrderCopyCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    POSTOrderCopies201ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderCopyCreateDataRelationships        `json:"relationships,omitempty"`
 }
 
 // NewOrderCopyCreateData instantiates a new OrderCopyCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyCreateData(type_ string, attributes OrderCopyCreateDataAttributes) *OrderCopyCreateData {
+func NewOrderCopyCreateData(type_ string, attributes POSTOrderCopies201ResponseDataAttributes) *OrderCopyCreateData {
 	this := OrderCopyCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewOrderCopyCreateData(type_ string, attributes OrderCopyCreateDataAttribut
 // but it doesn't guarantee that properties required by API are set
 func NewOrderCopyCreateDataWithDefaults() *OrderCopyCreateData {
 	this := OrderCopyCreateData{}
-	var type_ string = "order_copies"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *OrderCopyCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderCopyCreateData) GetAttributes() OrderCopyCreateDataAttributes {
+func (o *OrderCopyCreateData) GetAttributes() POSTOrderCopies201ResponseDataAttributes {
 	if o == nil {
-		var ret OrderCopyCreateDataAttributes
+		var ret POSTOrderCopies201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *OrderCopyCreateData) GetAttributes() OrderCopyCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyCreateData) GetAttributesOk() (*OrderCopyCreateDataAttributes, bool) {
+func (o *OrderCopyCreateData) GetAttributesOk() (*POSTOrderCopies201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *OrderCopyCreateData) GetAttributesOk() (*OrderCopyCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *OrderCopyCreateData) SetAttributes(v OrderCopyCreateDataAttributes) {
+func (o *OrderCopyCreateData) SetAttributes(v POSTOrderCopies201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

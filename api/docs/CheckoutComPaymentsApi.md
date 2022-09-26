@@ -1,6 +1,6 @@
 # \CheckoutComPaymentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETCheckoutComPayments
 
-> GETCheckoutComPayments(ctx).Execute()
+> GETCheckoutComPayments200Response GETCheckoutComPayments(ctx).Execute()
 
 List all checkout.com payments
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.GETCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCheckoutComPayments`: GETCheckoutComPayments200Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.GETCheckoutComPayments`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETCheckoutComPaymentsRequ
 
 ### Return type
 
- (empty response body)
+[**GETCheckoutComPayments200Response**](GETCheckoutComPayments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETCheckoutComPaymentsCheckoutComPaymentId
 
-> CheckoutComPayment GETCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).Execute()
+> GETCheckoutComPaymentsCheckoutComPaymentId200Response GETCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).Execute()
 
 Retrieve a checkout.com payment
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.GETCheckoutComPaymentsCheckoutComPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComPaymentsCheckoutComPaymentId`: CheckoutComPayment
+    // response from `GETCheckoutComPaymentsCheckoutComPaymentId`: GETCheckoutComPaymentsCheckoutComPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.GETCheckoutComPaymentsCheckoutComPaymentId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckoutComPayment**](CheckoutComPayment.md)
+[**GETCheckoutComPaymentsCheckoutComPaymentId200Response**](GETCheckoutComPaymentsCheckoutComPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHCheckoutComPaymentsCheckoutComPaymentId
 
-> PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).CheckoutComPaymentUpdate(checkoutComPaymentUpdate).Execute()
+> PATCHCheckoutComPaymentsCheckoutComPaymentId200Response PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).CheckoutComPaymentUpdate(checkoutComPaymentUpdate).Execute()
 
 Update a checkout.com payment
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("checkout_com_payments", "XGZwpOSrWL", *openapiclient.NewCheckoutComPaymentUpdateDataAttributes())) // CheckoutComPaymentUpdate | 
+    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
     checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.PATCHCheckoutComPaymentsCheckoutComPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCheckoutComPaymentsCheckoutComPaymentId`: PATCHCheckoutComPaymentsCheckoutComPaymentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.PATCHCheckoutComPaymentsCheckoutComPaymentId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCheckoutComPaymentsCheckoutComPaymentId200Response**](PATCHCheckoutComPaymentsCheckoutComPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTCheckoutComPayments
 
-> POSTCheckoutComPayments(ctx).CheckoutComPaymentCreate(checkoutComPaymentCreate).Execute()
+> POSTCheckoutComPayments201Response POSTCheckoutComPayments(ctx).CheckoutComPaymentCreate(checkoutComPaymentCreate).Execute()
 
 Create a checkout.com payment
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("checkout_com_payments", *openapiclient.NewCheckoutComPaymentCreateDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
+    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("Type_example", *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.POSTCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCheckoutComPayments`: POSTCheckoutComPayments201Response
+    fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.POSTCheckoutComPayments`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCheckoutComPayments201Response**](POSTCheckoutComPayments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_rules"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ManualTaxCalculatorDataRelationshipsTaxRulesData**](ManualTaxCalculatorDataRelationshipsTaxRulesData.md) |  | 
 
 ## Methods
 
 ### NewManualTaxCalculatorDataRelationshipsTaxRules
 
-`func NewManualTaxCalculatorDataRelationshipsTaxRules(type_ string, id string, ) *ManualTaxCalculatorDataRelationshipsTaxRules`
+`func NewManualTaxCalculatorDataRelationshipsTaxRules(data ManualTaxCalculatorDataRelationshipsTaxRulesData, ) *ManualTaxCalculatorDataRelationshipsTaxRules`
 
 NewManualTaxCalculatorDataRelationshipsTaxRules instantiates a new ManualTaxCalculatorDataRelationshipsTaxRules object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewManualTaxCalculatorDataRelationshipsTaxRulesWithDefaults instantiates a new M
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetType() string`
+`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetData() ManualTaxCalculatorDataRelationshipsTaxRulesData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetTypeOk() (*string, bool)`
+`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetDataOk() (*ManualTaxCalculatorDataRelationshipsTaxRulesData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetType(v string)`
+`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetData(v ManualTaxCalculatorDataRelationshipsTaxRulesData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

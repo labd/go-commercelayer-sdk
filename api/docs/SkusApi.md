@@ -1,6 +1,6 @@
 # \SkusApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -626,7 +626,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -694,7 +694,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -762,7 +762,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -830,7 +830,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -844,7 +844,7 @@ No authorization required
 
 ## GETSkus
 
-> GETSkus(ctx).Execute()
+> GETSkus200Response GETSkus(ctx).Execute()
 
 List all SKUs
 
@@ -871,6 +871,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETSkus`: GETSkus200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkusApi.GETSkus`: %v\n", resp)
 }
 ```
 
@@ -885,16 +887,16 @@ Other parameters are passed through a pointer to a apiGETSkusRequest struct via 
 
 ### Return type
 
- (empty response body)
+[**GETSkus200Response**](GETSkus200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -903,7 +905,7 @@ No authorization required
 
 ## GETSkusSkuId
 
-> Sku GETSkusSkuId(ctx, skuId).Execute()
+> GETSkusSkuId200Response GETSkusSkuId(ctx, skuId).Execute()
 
 Retrieve a SKU
 
@@ -931,7 +933,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkusSkuId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkusSkuId`: Sku
+    // response from `GETSkusSkuId`: GETSkusSkuId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkusApi.GETSkusSkuId`: %v\n", resp)
 }
 ```
@@ -955,11 +957,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Sku**](Sku.md)
+[**GETSkusSkuId200Response**](GETSkusSkuId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1027,7 +1029,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1095,7 +1097,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1163,7 +1165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1177,7 +1179,7 @@ No authorization required
 
 ## PATCHSkusSkuId
 
-> PATCHSkusSkuId(ctx, skuId).SkuUpdate(skuUpdate).Execute()
+> PATCHSkusSkuId200Response PATCHSkusSkuId(ctx, skuId).SkuUpdate(skuUpdate).Execute()
 
 Update a SKU
 
@@ -1196,7 +1198,7 @@ import (
 )
 
 func main() {
-    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("skus", "XGZwpOSrWL", *openapiclient.NewSkuUpdateDataAttributes())) // SkuUpdate | 
+    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkusSkuId200ResponseDataAttributes())) // SkuUpdate | 
     skuId := "skuId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1206,6 +1208,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.PATCHSkusSkuId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHSkusSkuId`: PATCHSkusSkuId200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkusApi.PATCHSkusSkuId`: %v\n", resp)
 }
 ```
 
@@ -1229,16 +1233,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHSkusSkuId200Response**](PATCHSkusSkuId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1247,7 +1251,7 @@ No authorization required
 
 ## POSTSkus
 
-> POSTSkus(ctx).SkuCreate(skuCreate).Execute()
+> POSTSkus201Response POSTSkus(ctx).SkuCreate(skuCreate).Execute()
 
 Create a SKU
 
@@ -1266,7 +1270,7 @@ import (
 )
 
 func main() {
-    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("skus", *openapiclient.NewSkuCreateDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
+    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("Type_example", *openapiclient.NewPOSTSkus201ResponseDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1275,6 +1279,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.POSTSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTSkus`: POSTSkus201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkusApi.POSTSkus`: %v\n", resp)
 }
 ```
 
@@ -1293,16 +1299,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkus201Response**](POSTSkus201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "skus"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**BundleDataRelationshipsSkusData**](BundleDataRelationshipsSkusData.md) |  | 
 
 ## Methods
 
 ### NewBundleDataRelationshipsSkus
 
-`func NewBundleDataRelationshipsSkus(type_ string, id string, ) *BundleDataRelationshipsSkus`
+`func NewBundleDataRelationshipsSkus(data BundleDataRelationshipsSkusData, ) *BundleDataRelationshipsSkus`
 
 NewBundleDataRelationshipsSkus instantiates a new BundleDataRelationshipsSkus object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewBundleDataRelationshipsSkusWithDefaults instantiates a new BundleDataRelation
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *BundleDataRelationshipsSkus) GetType() string`
+`func (o *BundleDataRelationshipsSkus) GetData() BundleDataRelationshipsSkusData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *BundleDataRelationshipsSkus) GetTypeOk() (*string, bool)`
+`func (o *BundleDataRelationshipsSkus) GetDataOk() (*BundleDataRelationshipsSkusData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *BundleDataRelationshipsSkus) SetType(v string)`
+`func (o *BundleDataRelationshipsSkus) SetData(v BundleDataRelationshipsSkusData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *BundleDataRelationshipsSkus) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *BundleDataRelationshipsSkus) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *BundleDataRelationshipsSkus) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

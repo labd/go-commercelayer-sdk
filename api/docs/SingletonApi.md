@@ -1,6 +1,6 @@
 # \SingletonApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETApplicationApplicationId
 
-> Application GETApplicationApplicationId(ctx).Execute()
+> GETApplicationApplicationId200Response GETApplicationApplicationId(ctx).Execute()
 
 Retrieve the application
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SingletonApi.GETApplicationApplicationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETApplicationApplicationId`: Application
+    // response from `GETApplicationApplicationId`: GETApplicationApplicationId200Response
     fmt.Fprintf(os.Stdout, "Response from `SingletonApi.GETApplicationApplicationId`: %v\n", resp)
 }
 ```
@@ -54,11 +54,11 @@ Other parameters are passed through a pointer to a apiGETApplicationApplicationI
 
 ### Return type
 
-[**Application**](Application.md)
+[**GETApplicationApplicationId200Response**](GETApplicationApplicationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -72,7 +72,7 @@ No authorization required
 
 ## GETOrganizationOrganizationId
 
-> Organization GETOrganizationOrganizationId(ctx).Execute()
+> GETOrganizationOrganizationId200Response GETOrganizationOrganizationId(ctx).Execute()
 
 Retrieve the organization
 
@@ -99,7 +99,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SingletonApi.GETOrganizationOrganizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrganizationOrganizationId`: Organization
+    // response from `GETOrganizationOrganizationId`: GETOrganizationOrganizationId200Response
     fmt.Fprintf(os.Stdout, "Response from `SingletonApi.GETOrganizationOrganizationId`: %v\n", resp)
 }
 ```
@@ -115,11 +115,11 @@ Other parameters are passed through a pointer to a apiGETOrganizationOrganizatio
 
 ### Return type
 
-[**Organization**](Organization.md)
+[**GETOrganizationOrganizationId200Response**](GETOrganizationOrganizationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

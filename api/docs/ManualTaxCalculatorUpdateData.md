@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "manual_tax_calculators"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ManualTaxCalculatorUpdateDataAttributes**](ManualTaxCalculatorUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes**](PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualTaxCalculatorCreateDataRelationships**](ManualTaxCalculatorCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewManualTaxCalculatorUpdateData
 
-`func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes ManualTaxCalculatorUpdateDataAttributes, ) *ManualTaxCalculatorUpdateData`
+`func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, ) *ManualTaxCalculatorUpdateData`
 
 NewManualTaxCalculatorUpdateData instantiates a new ManualTaxCalculatorUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ManualTaxCalculatorUpdateData) GetAttributes() ManualTaxCalculatorUpdateDataAttributes`
+`func (o *ManualTaxCalculatorUpdateData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*ManualTaxCalculatorUpdateDataAttributes, bool)`
+`func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualTaxCalculatorUpdateData) SetAttributes(v ManualTaxCalculatorUpdateDataAttributes)`
+`func (o *ManualTaxCalculatorUpdateData) SetAttributes(v PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

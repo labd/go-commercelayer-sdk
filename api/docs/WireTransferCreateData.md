@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "wire_transfers"]
-**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewWireTransferCreateData
 
-`func NewWireTransferCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *WireTransferCreateData`
+`func NewWireTransferCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *WireTransferCreateData`
 
 NewWireTransferCreateData instantiates a new WireTransferCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *WireTransferCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
+`func (o *WireTransferCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WireTransferCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
+`func (o *WireTransferCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WireTransferCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
+`func (o *WireTransferCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

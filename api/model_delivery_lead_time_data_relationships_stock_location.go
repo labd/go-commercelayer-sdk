@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // DeliveryLeadTimeDataRelationshipsStockLocation struct for DeliveryLeadTimeDataRelationshipsStockLocation
 type DeliveryLeadTimeDataRelationshipsStockLocation struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data DeliveryLeadTimeDataRelationshipsStockLocationData `json:"data"`
 }
 
 // NewDeliveryLeadTimeDataRelationshipsStockLocation instantiates a new DeliveryLeadTimeDataRelationshipsStockLocation object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliveryLeadTimeDataRelationshipsStockLocation(type_ string, id string) *DeliveryLeadTimeDataRelationshipsStockLocation {
+func NewDeliveryLeadTimeDataRelationshipsStockLocation(data DeliveryLeadTimeDataRelationshipsStockLocationData) *DeliveryLeadTimeDataRelationshipsStockLocation {
 	this := DeliveryLeadTimeDataRelationshipsStockLocation{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewDeliveryLeadTimeDataRelationshipsStockLocation(type_ string, id string) 
 // but it doesn't guarantee that properties required by API are set
 func NewDeliveryLeadTimeDataRelationshipsStockLocationWithDefaults() *DeliveryLeadTimeDataRelationshipsStockLocation {
 	this := DeliveryLeadTimeDataRelationshipsStockLocation{}
-	var type_ string = "stock_locations"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetType() string {
+// GetData returns the Data field value
+func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetData() DeliveryLeadTimeDataRelationshipsStockLocationData {
 	if o == nil {
-		var ret string
+		var ret DeliveryLeadTimeDataRelationshipsStockLocationData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetTypeOk() (*string, bool) {
+func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetDataOk() (*DeliveryLeadTimeDataRelationshipsStockLocationData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *DeliveryLeadTimeDataRelationshipsStockLocation) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *DeliveryLeadTimeDataRelationshipsStockLocation) SetData(v DeliveryLeadTimeDataRelationshipsStockLocationData) {
+	o.Data = v
 }
 
 func (o DeliveryLeadTimeDataRelationshipsStockLocation) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

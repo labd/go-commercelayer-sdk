@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "geocoders"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**AddressDataRelationshipsGeocoderData**](AddressDataRelationshipsGeocoderData.md) |  | 
 
 ## Methods
 
 ### NewAddressDataRelationshipsGeocoder
 
-`func NewAddressDataRelationshipsGeocoder(type_ string, id string, ) *AddressDataRelationshipsGeocoder`
+`func NewAddressDataRelationshipsGeocoder(data AddressDataRelationshipsGeocoderData, ) *AddressDataRelationshipsGeocoder`
 
 NewAddressDataRelationshipsGeocoder instantiates a new AddressDataRelationshipsGeocoder object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewAddressDataRelationshipsGeocoderWithDefaults instantiates a new AddressDataRe
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *AddressDataRelationshipsGeocoder) GetType() string`
+`func (o *AddressDataRelationshipsGeocoder) GetData() AddressDataRelationshipsGeocoderData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *AddressDataRelationshipsGeocoder) GetTypeOk() (*string, bool)`
+`func (o *AddressDataRelationshipsGeocoder) GetDataOk() (*AddressDataRelationshipsGeocoderData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *AddressDataRelationshipsGeocoder) SetType(v string)`
+`func (o *AddressDataRelationshipsGeocoder) SetData(v AddressDataRelationshipsGeocoderData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *AddressDataRelationshipsGeocoder) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AddressDataRelationshipsGeocoder) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AddressDataRelationshipsGeocoder) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

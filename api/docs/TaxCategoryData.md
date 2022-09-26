@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_categories"]
-**Attributes** | [**TaxCategoryDataAttributes**](TaxCategoryDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETTaxCategories200ResponseDataInnerAttributes**](GETTaxCategories200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryDataRelationships**](TaxCategoryDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryData
 
-`func NewTaxCategoryData(type_ string, attributes TaxCategoryDataAttributes, ) *TaxCategoryData`
+`func NewTaxCategoryData(type_ string, attributes GETTaxCategories200ResponseDataInnerAttributes, ) *TaxCategoryData`
 
 NewTaxCategoryData instantiates a new TaxCategoryData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCategoryData) GetAttributes() TaxCategoryDataAttributes`
+`func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryData) GetAttributesOk() (*TaxCategoryDataAttributes, bool)`
+`func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryData) SetAttributes(v TaxCategoryDataAttributes)`
+`func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -1,6 +1,6 @@
 # \PaypalGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETPaypalGateways
 
-> GETPaypalGateways(ctx).Execute()
+> GETPaypalGateways200Response GETPaypalGateways(ctx).Execute()
 
 List all paypal gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.GETPaypalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPaypalGateways`: GETPaypalGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.GETPaypalGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETPaypalGatewaysRequest s
 
 ### Return type
 
- (empty response body)
+[**GETPaypalGateways200Response**](GETPaypalGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETPaypalGatewaysPaypalGatewayId
 
-> PaypalGateway GETPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).Execute()
+> GETPaypalGatewaysPaypalGatewayId200Response GETPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).Execute()
 
 Retrieve a paypal gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.GETPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalGatewaysPaypalGatewayId`: PaypalGateway
+    // response from `GETPaypalGatewaysPaypalGatewayId`: GETPaypalGatewaysPaypalGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.GETPaypalGatewaysPaypalGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaypalGateway**](PaypalGateway.md)
+[**GETPaypalGatewaysPaypalGatewayId200Response**](GETPaypalGatewaysPaypalGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHPaypalGatewaysPaypalGatewayId
 
-> PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
+> PATCHPaypalGatewaysPaypalGatewayId200Response PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
 
 Update a paypal gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("paypal_gateways", "XGZwpOSrWL", *openapiclient.NewPaypalGatewayUpdateDataAttributes())) // PaypalGatewayUpdate | 
+    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes())) // PaypalGatewayUpdate | 
     paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHPaypalGatewaysPaypalGatewayId`: PATCHPaypalGatewaysPaypalGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHPaypalGatewaysPaypalGatewayId200Response**](PATCHPaypalGatewaysPaypalGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTPaypalGateways
 
-> POSTPaypalGateways(ctx).PaypalGatewayCreate(paypalGatewayCreate).Execute()
+> POSTPaypalGateways201Response POSTPaypalGateways(ctx).PaypalGatewayCreate(paypalGatewayCreate).Execute()
 
 Create a paypal gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("paypal_gateways", *openapiclient.NewPaypalGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
+    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("Type_example", *openapiclient.NewPOSTPaypalGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.POSTPaypalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTPaypalGateways`: POSTPaypalGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.POSTPaypalGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTPaypalGateways201Response**](POSTPaypalGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

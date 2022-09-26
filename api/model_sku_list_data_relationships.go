@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,6 +17,7 @@ import (
 
 // SkuListDataRelationships struct for SkuListDataRelationships
 type SkuListDataRelationships struct {
+	Customer     *CouponRecipientDataRelationshipsCustomer   `json:"customer,omitempty"`
 	Skus         *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
 	SkuListItems *SkuListDataRelationshipsSkuListItems       `json:"sku_list_items,omitempty"`
 	Bundles      *OrderDataRelationshipsAvailableFreeBundles `json:"bundles,omitempty"`
@@ -37,6 +38,38 @@ func NewSkuListDataRelationships() *SkuListDataRelationships {
 func NewSkuListDataRelationshipsWithDefaults() *SkuListDataRelationships {
 	this := SkuListDataRelationships{}
 	return &this
+}
+
+// GetCustomer returns the Customer field value if set, zero value otherwise.
+func (o *SkuListDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+	if o == nil || o.Customer == nil {
+		var ret CouponRecipientDataRelationshipsCustomer
+		return ret
+	}
+	return *o.Customer
+}
+
+// GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuListDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+	if o == nil || o.Customer == nil {
+		return nil, false
+	}
+	return o.Customer, true
+}
+
+// HasCustomer returns a boolean if a field has been set.
+func (o *SkuListDataRelationships) HasCustomer() bool {
+	if o != nil && o.Customer != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the Customer field.
+func (o *SkuListDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+	o.Customer = &v
 }
 
 // GetSkus returns the Skus field value if set, zero value otherwise.
@@ -137,6 +170,9 @@ func (o *SkuListDataRelationships) SetBundles(v OrderDataRelationshipsAvailableF
 
 func (o SkuListDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Customer != nil {
+		toSerialize["customer"] = o.Customer
+	}
 	if o.Skus != nil {
 		toSerialize["skus"] = o.Skus
 	}

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_gateways"]
-**Attributes** | [**AdyenGatewayCreateDataAttributes**](AdyenGatewayCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTAdyenGateways201ResponseDataAttributes**](POSTAdyenGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenGatewayCreateDataRelationships**](AdyenGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenGatewayCreateData
 
-`func NewAdyenGatewayCreateData(type_ string, attributes AdyenGatewayCreateDataAttributes, ) *AdyenGatewayCreateData`
+`func NewAdyenGatewayCreateData(type_ string, attributes POSTAdyenGateways201ResponseDataAttributes, ) *AdyenGatewayCreateData`
 
 NewAdyenGatewayCreateData instantiates a new AdyenGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AdyenGatewayCreateData) GetAttributes() AdyenGatewayCreateDataAttributes`
+`func (o *AdyenGatewayCreateData) GetAttributes() POSTAdyenGateways201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdyenGatewayCreateData) GetAttributesOk() (*AdyenGatewayCreateDataAttributes, bool)`
+`func (o *AdyenGatewayCreateData) GetAttributesOk() (*POSTAdyenGateways201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdyenGatewayCreateData) SetAttributes(v AdyenGatewayCreateDataAttributes)`
+`func (o *AdyenGatewayCreateData) SetAttributes(v POSTAdyenGateways201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

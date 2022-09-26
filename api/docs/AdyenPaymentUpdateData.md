@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_payments"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**AdyenPaymentUpdateDataAttributes**](AdyenPaymentUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenPaymentUpdateData
 
-`func NewAdyenPaymentUpdateData(type_ string, id string, attributes AdyenPaymentUpdateDataAttributes, ) *AdyenPaymentUpdateData`
+`func NewAdyenPaymentUpdateData(type_ string, id string, attributes PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, ) *AdyenPaymentUpdateData`
 
 NewAdyenPaymentUpdateData instantiates a new AdyenPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AdyenPaymentUpdateData) GetAttributes() AdyenPaymentUpdateDataAttributes`
+`func (o *AdyenPaymentUpdateData) GetAttributes() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdyenPaymentUpdateData) GetAttributesOk() (*AdyenPaymentUpdateDataAttributes, bool)`
+`func (o *AdyenPaymentUpdateData) GetAttributesOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdyenPaymentUpdateData) SetAttributes(v AdyenPaymentUpdateDataAttributes)`
+`func (o *AdyenPaymentUpdateData) SetAttributes(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BraintreeGatewayCreateData struct for BraintreeGatewayCreateData
 type BraintreeGatewayCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    BraintreeGatewayCreateDataAttributes     `json:"attributes"`
-	Relationships *BraintreeGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTBraintreeGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayCreateData instantiates a new BraintreeGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayCreateData(type_ string, attributes BraintreeGatewayCreateDataAttributes) *BraintreeGatewayCreateData {
+func NewBraintreeGatewayCreateData(type_ string, attributes POSTBraintreeGateways201ResponseDataAttributes) *BraintreeGatewayCreateData {
 	this := BraintreeGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewBraintreeGatewayCreateData(type_ string, attributes BraintreeGatewayCrea
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreeGatewayCreateDataWithDefaults() *BraintreeGatewayCreateData {
 	this := BraintreeGatewayCreateData{}
-	var type_ string = "braintree_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *BraintreeGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreeGatewayCreateData) GetAttributes() BraintreeGatewayCreateDataAttributes {
+func (o *BraintreeGatewayCreateData) GetAttributes() POSTBraintreeGateways201ResponseDataAttributes {
 	if o == nil {
-		var ret BraintreeGatewayCreateDataAttributes
+		var ret POSTBraintreeGateways201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *BraintreeGatewayCreateData) GetAttributes() BraintreeGatewayCreateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayCreateData) GetAttributesOk() (*BraintreeGatewayCreateDataAttributes, bool) {
+func (o *BraintreeGatewayCreateData) GetAttributesOk() (*POSTBraintreeGateways201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *BraintreeGatewayCreateData) GetAttributesOk() (*BraintreeGatewayCreateD
 }
 
 // SetAttributes sets field value
-func (o *BraintreeGatewayCreateData) SetAttributes(v BraintreeGatewayCreateDataAttributes) {
+func (o *BraintreeGatewayCreateData) SetAttributes(v POSTBraintreeGateways201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

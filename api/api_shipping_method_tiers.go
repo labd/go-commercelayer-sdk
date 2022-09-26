@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ShippingMethodTiersApiService ShippingMethodTiersApi service
 type ShippingMethodTiersApiService service
 
-type ApiGETShippingMethodIdShippingMethodTiersRequest struct {
+type ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingMethodTiersApiService
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdShippingMethodTiersRequest) Execute() (*http.Response, error) {
+func (r ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdShippingMethodTiersExecute(r)
 }
 
@@ -40,10 +40,10 @@ Retrieve the shipping method tiers associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdShippingMethodTiersRequest
+ @return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest
 */
-func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdShippingMethodTiersRequest {
-	return ApiGETShippingMethodIdShippingMethodTiersRequest{
+func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest {
+	return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -51,7 +51,7 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(c
 }
 
 // Execute executes the request
-func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiersExecute(r ApiGETShippingMethodIdShippingMethodTiersRequest) (*http.Response, error) {
+func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiersExecute(r ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiersEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodTiersRequest struct {
+type ShippingMethodTiersApiGETShippingMethodTiersRequest struct {
 	ctx        context.Context
 	ApiService *ShippingMethodTiersApiService
 }
 
-func (r ApiGETShippingMethodTiersRequest) Execute() (*http.Response, error) {
+func (r ShippingMethodTiersApiGETShippingMethodTiersRequest) Execute() (*GETShippingMethodTiers200Response, *http.Response, error) {
 	return r.ApiService.GETShippingMethodTiersExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETShippingMethodTiers List all shipping method tiers
 List all shipping method tiers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETShippingMethodTiersRequest
+ @return ShippingMethodTiersApiGETShippingMethodTiersRequest
 */
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiers(ctx context.Context) ApiGETShippingMethodTiersRequest {
-	return ApiGETShippingMethodTiersRequest{
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiers(ctx context.Context) ShippingMethodTiersApiGETShippingMethodTiersRequest {
+	return ShippingMethodTiersApiGETShippingMethodTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ApiGETShippingMethodTiersRequest) (*http.Response, error) {
+//  @return GETShippingMethodTiers200Response
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ShippingMethodTiersApiGETShippingMethodTiersRequest) (*GETShippingMethodTiers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETShippingMethodTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodTiersApiService.GETShippingMethodTiers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers"
@@ -168,7 +170,7 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ApiGETSh
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ApiGETSh
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ApiGETSh
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodTiersShippingMethodTierIdRequest struct {
+type ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingMethodTiersApiService
 	shippingMethodTierId string
 }
 
-func (r ApiGETShippingMethodTiersShippingMethodTierIdRequest) Execute() (*ShippingMethodTier, *http.Response, error) {
+func (r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) Execute() (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
 	return r.ApiService.GETShippingMethodTiersShippingMethodTierIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a shipping method tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodTierId The resource's id
- @return ApiGETShippingMethodTiersShippingMethodTierIdRequest
+ @return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest
 */
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierId(ctx context.Context, shippingMethodTierId string) ApiGETShippingMethodTiersShippingMethodTierIdRequest {
-	return ApiGETShippingMethodTiersShippingMethodTierIdRequest{
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierId(ctx context.Context, shippingMethodTierId string) ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest {
+	return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
 		shippingMethodTierId: shippingMethodTierId,
@@ -231,13 +242,13 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTier
 }
 
 // Execute executes the request
-//  @return ShippingMethodTier
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierIdExecute(r ApiGETShippingMethodTiersShippingMethodTierIdRequest) (*ShippingMethodTier, *http.Response, error) {
+//  @return GETShippingMethodTiersShippingMethodTierId200Response
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierIdExecute(r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingMethodTier
+		localVarReturnValue *GETShippingMethodTiersShippingMethodTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodTiersApiService.GETShippingMethodTiersShippingMethodTierId")

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type FixedPricePromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    FixedPricePromotionUpdateDataAttributes     `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                  `json:"id"`
+	Attributes    PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships                             `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionUpdateData instantiates a new FixedPricePromotionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionUpdateData(type_ string, id string, attributes FixedPricePromotionUpdateDataAttributes) *FixedPricePromotionUpdateData {
+func NewFixedPricePromotionUpdateData(type_ string, id string, attributes PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes) *FixedPricePromotionUpdateData {
 	this := FixedPricePromotionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewFixedPricePromotionUpdateData(type_ string, id string, attributes FixedP
 // but it doesn't guarantee that properties required by API are set
 func NewFixedPricePromotionUpdateDataWithDefaults() *FixedPricePromotionUpdateData {
 	this := FixedPricePromotionUpdateData{}
-	var type_ string = "fixed_price_promotions"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *FixedPricePromotionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedPricePromotionUpdateData) GetAttributes() FixedPricePromotionUpdateDataAttributes {
+func (o *FixedPricePromotionUpdateData) GetAttributes() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes {
 	if o == nil {
-		var ret FixedPricePromotionUpdateDataAttributes
+		var ret PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *FixedPricePromotionUpdateData) GetAttributes() FixedPricePromotionUpdat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionUpdateData) GetAttributesOk() (*FixedPricePromotionUpdateDataAttributes, bool) {
+func (o *FixedPricePromotionUpdateData) GetAttributesOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *FixedPricePromotionUpdateData) GetAttributesOk() (*FixedPricePromotionU
 }
 
 // SetAttributes sets field value
-func (o *FixedPricePromotionUpdateData) SetAttributes(v FixedPricePromotionUpdateDataAttributes) {
+func (o *FixedPricePromotionUpdateData) SetAttributes(v PATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

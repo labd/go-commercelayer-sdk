@@ -1,6 +1,6 @@
 # \WireTransfersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETWireTransfers
 
-> GETWireTransfers(ctx).Execute()
+> GETWireTransfers200Response GETWireTransfers(ctx).Execute()
 
 List all wire transfers
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.GETWireTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETWireTransfers`: GETWireTransfers200Response
+    fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.GETWireTransfers`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETWireTransfersRequest st
 
 ### Return type
 
- (empty response body)
+[**GETWireTransfers200Response**](GETWireTransfers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETWireTransfersWireTransferId
 
-> WireTransfer GETWireTransfersWireTransferId(ctx, wireTransferId).Execute()
+> GETWireTransfersWireTransferId200Response GETWireTransfersWireTransferId(ctx, wireTransferId).Execute()
 
 Retrieve a wire transfer
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.GETWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWireTransfersWireTransferId`: WireTransfer
+    // response from `GETWireTransfersWireTransferId`: GETWireTransfersWireTransferId200Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.GETWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WireTransfer**](WireTransfer.md)
+[**GETWireTransfersWireTransferId200Response**](GETWireTransfersWireTransferId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHWireTransfersWireTransferId
 
-> PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
+> POSTWireTransfers201Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
 
 Update a wire transfer
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("wire_transfers", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // WireTransferUpdate | 
+    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferUpdate | 
     wireTransferId := "wireTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.PATCHWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHWireTransfersWireTransferId`: POSTWireTransfers201Response
+    fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.PATCHWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTWireTransfers
 
-> POSTWireTransfers(ctx).WireTransferCreate(wireTransferCreate).Execute()
+> POSTWireTransfers201Response POSTWireTransfers(ctx).WireTransferCreate(wireTransferCreate).Execute()
 
 Create a wire transfer
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("wire_transfers", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // WireTransferCreate | 
+    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.POSTWireTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTWireTransfers`: POSTWireTransfers201Response
+    fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.POSTWireTransfers`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

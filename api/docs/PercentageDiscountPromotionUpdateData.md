@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "percentage_discount_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PercentageDiscountPromotionUpdateDataAttributes**](PercentageDiscountPromotionUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes**](PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionUpdateDataRelationships**](FixedPricePromotionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPercentageDiscountPromotionUpdateData
 
-`func NewPercentageDiscountPromotionUpdateData(type_ string, id string, attributes PercentageDiscountPromotionUpdateDataAttributes, ) *PercentageDiscountPromotionUpdateData`
+`func NewPercentageDiscountPromotionUpdateData(type_ string, id string, attributes PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes, ) *PercentageDiscountPromotionUpdateData`
 
 NewPercentageDiscountPromotionUpdateData instantiates a new PercentageDiscountPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PercentageDiscountPromotionUpdateData) GetAttributes() PercentageDiscountPromotionUpdateDataAttributes`
+`func (o *PercentageDiscountPromotionUpdateData) GetAttributes() PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PercentageDiscountPromotionUpdateData) GetAttributesOk() (*PercentageDiscountPromotionUpdateDataAttributes, bool)`
+`func (o *PercentageDiscountPromotionUpdateData) GetAttributesOk() (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PercentageDiscountPromotionUpdateData) SetAttributes(v PercentageDiscountPromotionUpdateDataAttributes)`
+`func (o *PercentageDiscountPromotionUpdateData) SetAttributes(v PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

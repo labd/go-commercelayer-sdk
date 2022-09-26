@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ReturnsApiService ReturnsApi service
 type ReturnsApiService service
 
-type ApiDELETEReturnsReturnIdRequest struct {
+type ReturnsApiDELETEReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
 	returnId   string
 }
 
-func (r ApiDELETEReturnsReturnIdRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiDELETEReturnsReturnIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEReturnsReturnIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiDELETEReturnsReturnIdRequest
+ @return ReturnsApiDELETEReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId string) ApiDELETEReturnsReturnIdRequest {
-	return ApiDELETEReturnsReturnIdRequest{
+func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId string) ReturnsApiDELETEReturnsReturnIdRequest {
+	return ReturnsApiDELETEReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -51,7 +51,7 @@ func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId 
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ApiDELETEReturnsReturnIdRequest) (*http.Response, error) {
+func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETEReturnsReturnIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ApiDELETEReturnsRetur
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdReturnsRequest struct {
+type ReturnsApiGETCustomerIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
 	customerId string
 }
 
-func (r ApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdReturnsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the returns associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdReturnsRequest
+ @return ReturnsApiGETCustomerIdReturnsRequest
 */
-func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ApiGETCustomerIdReturnsRequest {
-	return ApiGETCustomerIdReturnsRequest{
+func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ReturnsApiGETCustomerIdReturnsRequest {
+	return ReturnsApiGETCustomerIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -143,7 +143,7 @@ func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturnsRequest) (*http.Response, error) {
+func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerIdReturnsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ApiGETCustomerIdReturn
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnLineItemIdReturnRequest struct {
+type ReturnsApiGETReturnLineItemIdReturnRequest struct {
 	ctx              context.Context
 	ApiService       *ReturnsApiService
 	returnLineItemId string
 }
 
-func (r ApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnLineItemIdReturnExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the return associated to the return line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnLineItemId The resource's id
- @return ApiGETReturnLineItemIdReturnRequest
+ @return ReturnsApiGETReturnLineItemIdReturnRequest
 */
-func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ApiGETReturnLineItemIdReturnRequest {
-	return ApiGETReturnLineItemIdReturnRequest{
+func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ReturnsApiGETReturnLineItemIdReturnRequest {
+	return ReturnsApiGETReturnLineItemIdReturnRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		returnLineItemId: returnLineItemId,
@@ -235,7 +235,7 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, retur
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
+func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ReturnsApiGETReturnLineItemIdReturnRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,12 +299,12 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ApiGETReturnLineI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnsRequest struct {
+type ReturnsApiGETReturnsRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
 }
 
-func (r ApiGETReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiGETReturnsRequest) Execute() (*GETReturns200Response, *http.Response, error) {
 	return r.ApiService.GETReturnsExecute(r)
 }
 
@@ -314,26 +314,28 @@ GETReturns List all returns
 List all returns
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETReturnsRequest
+ @return ReturnsApiGETReturnsRequest
 */
-func (a *ReturnsApiService) GETReturns(ctx context.Context) ApiGETReturnsRequest {
-	return ApiGETReturnsRequest{
+func (a *ReturnsApiService) GETReturns(ctx context.Context) ReturnsApiGETReturnsRequest {
+	return ReturnsApiGETReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Response, error) {
+//  @return GETReturns200Response
+func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*GETReturns200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETReturns200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETReturns")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/returns"
@@ -352,7 +354,7 @@ func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Res
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -361,19 +363,19 @@ func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Res
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -381,19 +383,28 @@ func (a *ReturnsApiService) GETReturnsExecute(r ApiGETReturnsRequest) (*http.Res
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETReturnsReturnIdRequest struct {
+type ReturnsApiGETReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
 	returnId   string
 }
 
-func (r ApiGETReturnsReturnIdRequest) Execute() (*ModelReturn, *http.Response, error) {
+func (r ReturnsApiGETReturnsReturnIdRequest) Execute() (*GETReturnsReturnId200Response, *http.Response, error) {
 	return r.ApiService.GETReturnsReturnIdExecute(r)
 }
 
@@ -404,10 +415,10 @@ Retrieve a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnsReturnIdRequest
+ @return ReturnsApiGETReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId string) ApiGETReturnsReturnIdRequest {
-	return ApiGETReturnsReturnIdRequest{
+func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId string) ReturnsApiGETReturnsReturnIdRequest {
+	return ReturnsApiGETReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -415,13 +426,13 @@ func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId str
 }
 
 // Execute executes the request
-//  @return ModelReturn
-func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ApiGETReturnsReturnIdRequest) (*ModelReturn, *http.Response, error) {
+//  @return GETReturnsReturnId200Response
+func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsReturnIdRequest) (*GETReturnsReturnId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ModelReturn
+		localVarReturnValue *GETReturnsReturnId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETReturnsReturnId")
@@ -490,19 +501,19 @@ func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ApiGETReturnsReturnIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHReturnsReturnIdRequest struct {
+type ReturnsApiPATCHReturnsReturnIdRequest struct {
 	ctx          context.Context
 	ApiService   *ReturnsApiService
 	returnUpdate *ReturnUpdate
 	returnId     string
 }
 
-func (r ApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnUpdate) ApiPATCHReturnsReturnIdRequest {
+func (r ReturnsApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnUpdate) ReturnsApiPATCHReturnsReturnIdRequest {
 	r.returnUpdate = &returnUpdate
 	return r
 }
 
-func (r ApiPATCHReturnsReturnIdRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiPATCHReturnsReturnIdRequest) Execute() (*PATCHReturnsReturnId200Response, *http.Response, error) {
 	return r.ApiService.PATCHReturnsReturnIdExecute(r)
 }
 
@@ -513,10 +524,10 @@ Update a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiPATCHReturnsReturnIdRequest
+ @return ReturnsApiPATCHReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId string) ApiPATCHReturnsReturnIdRequest {
-	return ApiPATCHReturnsReturnIdRequest{
+func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId string) ReturnsApiPATCHReturnsReturnIdRequest {
+	return ReturnsApiPATCHReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -524,16 +535,18 @@ func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId s
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnIdRequest) (*http.Response, error) {
+//  @return PATCHReturnsReturnId200Response
+func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturnsReturnIdRequest) (*PATCHReturnsReturnId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHReturnsReturnId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.PATCHReturnsReturnId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}"
@@ -543,7 +556,7 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.returnUpdate == nil {
-		return nil, reportError("returnUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("returnUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -556,7 +569,7 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnI
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -567,19 +580,19 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnI
 	localVarPostBody = r.returnUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -587,24 +600,33 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ApiPATCHReturnsReturnI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTReturnsRequest struct {
+type ReturnsApiPOSTReturnsRequest struct {
 	ctx          context.Context
 	ApiService   *ReturnsApiService
 	returnCreate *ReturnCreate
 }
 
-func (r ApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) ApiPOSTReturnsRequest {
+func (r ReturnsApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) ReturnsApiPOSTReturnsRequest {
 	r.returnCreate = &returnCreate
 	return r
 }
 
-func (r ApiPOSTReturnsRequest) Execute() (*http.Response, error) {
+func (r ReturnsApiPOSTReturnsRequest) Execute() (*POSTReturns201Response, *http.Response, error) {
 	return r.ApiService.POSTReturnsExecute(r)
 }
 
@@ -614,26 +636,28 @@ POSTReturns Create a return
 Create a return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTReturnsRequest
+ @return ReturnsApiPOSTReturnsRequest
 */
-func (a *ReturnsApiService) POSTReturns(ctx context.Context) ApiPOSTReturnsRequest {
-	return ApiPOSTReturnsRequest{
+func (a *ReturnsApiService) POSTReturns(ctx context.Context) ReturnsApiPOSTReturnsRequest {
+	return ReturnsApiPOSTReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.Response, error) {
+//  @return POSTReturns201Response
+func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (*POSTReturns201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTReturns201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.POSTReturns")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/returns"
@@ -642,7 +666,7 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.returnCreate == nil {
-		return nil, reportError("returnCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("returnCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -655,7 +679,7 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.R
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -666,19 +690,19 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.R
 	localVarPostBody = r.returnCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -686,8 +710,17 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ApiPOSTReturnsRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdjustmentCreateData struct for AdjustmentCreateData
 type AdjustmentCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    AdjustmentCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}         `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    POSTAdjustments201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                   `json:"relationships,omitempty"`
 }
 
 // NewAdjustmentCreateData instantiates a new AdjustmentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdjustmentCreateData(type_ string, attributes AdjustmentCreateDataAttributes) *AdjustmentCreateData {
+func NewAdjustmentCreateData(type_ string, attributes POSTAdjustments201ResponseDataAttributes) *AdjustmentCreateData {
 	this := AdjustmentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewAdjustmentCreateData(type_ string, attributes AdjustmentCreateDataAttrib
 // but it doesn't guarantee that properties required by API are set
 func NewAdjustmentCreateDataWithDefaults() *AdjustmentCreateData {
 	this := AdjustmentCreateData{}
-	var type_ string = "adjustments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *AdjustmentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdjustmentCreateData) GetAttributes() AdjustmentCreateDataAttributes {
+func (o *AdjustmentCreateData) GetAttributes() POSTAdjustments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdjustmentCreateDataAttributes
+		var ret POSTAdjustments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *AdjustmentCreateData) GetAttributes() AdjustmentCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdjustmentCreateData) GetAttributesOk() (*AdjustmentCreateDataAttributes, bool) {
+func (o *AdjustmentCreateData) GetAttributesOk() (*POSTAdjustments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *AdjustmentCreateData) GetAttributesOk() (*AdjustmentCreateDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *AdjustmentCreateData) SetAttributes(v AdjustmentCreateDataAttributes) {
+func (o *AdjustmentCreateData) SetAttributes(v POSTAdjustments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

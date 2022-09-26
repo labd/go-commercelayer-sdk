@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderSubscriptionData struct for OrderSubscriptionData
 type OrderSubscriptionData struct {
 	// The resource's type
-	Type          string                              `json:"type"`
-	Attributes    OrderSubscriptionDataAttributes     `json:"attributes"`
-	Relationships *OrderSubscriptionDataRelationships `json:"relationships,omitempty"`
+	Type          string                                              `json:"type"`
+	Attributes    GETOrderSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionData instantiates a new OrderSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionData(type_ string, attributes OrderSubscriptionDataAttributes) *OrderSubscriptionData {
+func NewOrderSubscriptionData(type_ string, attributes GETOrderSubscriptions200ResponseDataInnerAttributes) *OrderSubscriptionData {
 	this := OrderSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewOrderSubscriptionData(type_ string, attributes OrderSubscriptionDataAttr
 // but it doesn't guarantee that properties required by API are set
 func NewOrderSubscriptionDataWithDefaults() *OrderSubscriptionData {
 	this := OrderSubscriptionData{}
-	var type_ string = "order_subscriptions"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *OrderSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderSubscriptionData) GetAttributes() OrderSubscriptionDataAttributes {
+func (o *OrderSubscriptionData) GetAttributes() GETOrderSubscriptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret OrderSubscriptionDataAttributes
+		var ret GETOrderSubscriptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *OrderSubscriptionData) GetAttributes() OrderSubscriptionDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionData) GetAttributesOk() (*OrderSubscriptionDataAttributes, bool) {
+func (o *OrderSubscriptionData) GetAttributesOk() (*GETOrderSubscriptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *OrderSubscriptionData) GetAttributesOk() (*OrderSubscriptionDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *OrderSubscriptionData) SetAttributes(v OrderSubscriptionDataAttributes) {
+func (o *OrderSubscriptionData) SetAttributes(v GETOrderSubscriptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // CouponsApiService CouponsApi service
 type CouponsApiService service
 
-type ApiDELETECouponsCouponIdRequest struct {
+type CouponsApiDELETECouponsCouponIdRequest struct {
 	ctx        context.Context
 	ApiService *CouponsApiService
 	couponId   string
 }
 
-func (r ApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
+func (r CouponsApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECouponsCouponIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return ApiDELETECouponsCouponIdRequest
+ @return CouponsApiDELETECouponsCouponIdRequest
 */
-func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) ApiDELETECouponsCouponIdRequest {
-	return ApiDELETECouponsCouponIdRequest{
+func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest {
+	return CouponsApiDELETECouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -51,7 +51,7 @@ func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId 
 }
 
 // Execute executes the request
-func (a *CouponsApiService) DELETECouponsCouponIdExecute(r ApiDELETECouponsCouponIdRequest) (*http.Response, error) {
+func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECouponsCouponIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r ApiDELETECouponsCoupo
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
+type CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
 	ctx                        context.Context
 	ApiService                 *CouponsApiService
 	couponCodesPromotionRuleId string
 }
 
-func (r ApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
+func (r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCouponCodesPromotionRuleIdCouponsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the coupons associated to the coupon codes promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponCodesPromotionRuleId The resource's id
- @return ApiGETCouponCodesPromotionRuleIdCouponsRequest
+ @return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
-func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) ApiGETCouponCodesPromotionRuleIdCouponsRequest {
-	return ApiGETCouponCodesPromotionRuleIdCouponsRequest{
+func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
+	return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
 		couponCodesPromotionRuleId: couponCodesPromotionRuleId,
@@ -143,7 +143,7 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Con
 }
 
 // Execute executes the request
-func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
+func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCouponsRequest struct {
+type CouponsApiGETCouponsRequest struct {
 	ctx        context.Context
 	ApiService *CouponsApiService
 }
 
-func (r ApiGETCouponsRequest) Execute() (*http.Response, error) {
+func (r CouponsApiGETCouponsRequest) Execute() (*GETCoupons200Response, *http.Response, error) {
 	return r.ApiService.GETCouponsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETCoupons List all coupons
 List all coupons
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCouponsRequest
+ @return CouponsApiGETCouponsRequest
 */
-func (a *CouponsApiService) GETCoupons(ctx context.Context) ApiGETCouponsRequest {
-	return ApiGETCouponsRequest{
+func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCouponsRequest {
+	return CouponsApiGETCouponsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponsApiService) GETCouponsExecute(r ApiGETCouponsRequest) (*http.Response, error) {
+//  @return GETCoupons200Response
+func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*GETCoupons200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCoupons200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETCoupons")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/coupons"
@@ -260,7 +262,7 @@ func (a *CouponsApiService) GETCouponsExecute(r ApiGETCouponsRequest) (*http.Res
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *CouponsApiService) GETCouponsExecute(r ApiGETCouponsRequest) (*http.Res
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *CouponsApiService) GETCouponsExecute(r ApiGETCouponsRequest) (*http.Res
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCouponsCouponIdRequest struct {
+type CouponsApiGETCouponsCouponIdRequest struct {
 	ctx        context.Context
 	ApiService *CouponsApiService
 	couponId   string
 }
 
-func (r ApiGETCouponsCouponIdRequest) Execute() (*Coupon, *http.Response, error) {
+func (r CouponsApiGETCouponsCouponIdRequest) Execute() (*GETCouponsCouponId200Response, *http.Response, error) {
 	return r.ApiService.GETCouponsCouponIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return ApiGETCouponsCouponIdRequest
+ @return CouponsApiGETCouponsCouponIdRequest
 */
-func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) ApiGETCouponsCouponIdRequest {
-	return ApiGETCouponsCouponIdRequest{
+func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest {
+	return CouponsApiGETCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -323,13 +334,13 @@ func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId str
 }
 
 // Execute executes the request
-//  @return Coupon
-func (a *CouponsApiService) GETCouponsCouponIdExecute(r ApiGETCouponsCouponIdRequest) (*Coupon, *http.Response, error) {
+//  @return GETCouponsCouponId200Response
+func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCouponIdRequest) (*GETCouponsCouponId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Coupon
+		localVarReturnValue *GETCouponsCouponId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.GETCouponsCouponId")
@@ -398,19 +409,19 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r ApiGETCouponsCouponIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHCouponsCouponIdRequest struct {
+type CouponsApiPATCHCouponsCouponIdRequest struct {
 	ctx          context.Context
 	ApiService   *CouponsApiService
 	couponUpdate *CouponUpdate
 	couponId     string
 }
 
-func (r ApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) ApiPATCHCouponsCouponIdRequest {
+func (r CouponsApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) CouponsApiPATCHCouponsCouponIdRequest {
 	r.couponUpdate = &couponUpdate
 	return r
 }
 
-func (r ApiPATCHCouponsCouponIdRequest) Execute() (*http.Response, error) {
+func (r CouponsApiPATCHCouponsCouponIdRequest) Execute() (*PATCHCouponsCouponId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCouponsCouponIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param couponId The resource's id
- @return ApiPATCHCouponsCouponIdRequest
+ @return CouponsApiPATCHCouponsCouponIdRequest
 */
-func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) ApiPATCHCouponsCouponIdRequest {
-	return ApiPATCHCouponsCouponIdRequest{
+func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest {
+	return CouponsApiPATCHCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		couponId:   couponId,
@@ -432,16 +443,18 @@ func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId s
 }
 
 // Execute executes the request
-func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponIdRequest) (*http.Response, error) {
+//  @return PATCHCouponsCouponId200Response
+func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCouponsCouponIdRequest) (*PATCHCouponsCouponId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHCouponsCouponId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.PATCHCouponsCouponId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}"
@@ -451,7 +464,7 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.couponUpdate == nil {
-		return nil, reportError("couponUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("couponUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponI
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponI
 	localVarPostBody = r.couponUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r ApiPATCHCouponsCouponI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTCouponsRequest struct {
+type CouponsApiPOSTCouponsRequest struct {
 	ctx          context.Context
 	ApiService   *CouponsApiService
 	couponCreate *CouponCreate
 }
 
-func (r ApiPOSTCouponsRequest) CouponCreate(couponCreate CouponCreate) ApiPOSTCouponsRequest {
+func (r CouponsApiPOSTCouponsRequest) CouponCreate(couponCreate CouponCreate) CouponsApiPOSTCouponsRequest {
 	r.couponCreate = &couponCreate
 	return r
 }
 
-func (r ApiPOSTCouponsRequest) Execute() (*http.Response, error) {
+func (r CouponsApiPOSTCouponsRequest) Execute() (*POSTCoupons201Response, *http.Response, error) {
 	return r.ApiService.POSTCouponsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTCoupons Create a coupon
 Create a coupon
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCouponsRequest
+ @return CouponsApiPOSTCouponsRequest
 */
-func (a *CouponsApiService) POSTCoupons(ctx context.Context) ApiPOSTCouponsRequest {
-	return ApiPOSTCouponsRequest{
+func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCouponsRequest {
+	return CouponsApiPOSTCouponsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.Response, error) {
+//  @return POSTCoupons201Response
+func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (*POSTCoupons201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCoupons201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponsApiService.POSTCoupons")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/coupons"
@@ -550,7 +574,7 @@ func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.couponCreate == nil {
-		return nil, reportError("couponCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("couponCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.R
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.R
 	localVarPostBody = r.couponCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *CouponsApiService) POSTCouponsExecute(r ApiPOSTCouponsRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

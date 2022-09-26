@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ParcelLineItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                           `json:"id"`
-	Attributes    AdyenPaymentCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}           `json:"relationships,omitempty"`
+	Id            string                                     `json:"id"`
+	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                     `json:"relationships,omitempty"`
 }
 
 // NewParcelLineItemUpdateData instantiates a new ParcelLineItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *ParcelLineItemUpdateData {
+func NewParcelLineItemUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *ParcelLineItemUpdateData {
 	this := ParcelLineItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewParcelLineItemUpdateData(type_ string, id string, attributes AdyenPaymen
 // but it doesn't guarantee that properties required by API are set
 func NewParcelLineItemUpdateDataWithDefaults() *ParcelLineItemUpdateData {
 	this := ParcelLineItemUpdateData{}
-	var type_ string = "parcel_line_items"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *ParcelLineItemUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelLineItemUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
+func (o *ParcelLineItemUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentCreateDataAttributes
+		var ret POSTAdyenPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *ParcelLineItemUpdateData) GetAttributes() AdyenPaymentCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
+func (o *ParcelLineItemUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *ParcelLineItemUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *ParcelLineItemUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
+func (o *ParcelLineItemUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

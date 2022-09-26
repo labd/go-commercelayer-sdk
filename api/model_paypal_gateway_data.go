@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaypalGatewayData struct for PaypalGatewayData
 type PaypalGatewayData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    KlarnaGatewayDataAttributes     `json:"attributes"`
-	Relationships *PaypalGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PaypalGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayData instantiates a new PaypalGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalGatewayData(type_ string, attributes KlarnaGatewayDataAttributes) *PaypalGatewayData {
+func NewPaypalGatewayData(type_ string, attributes GETKlarnaGateways200ResponseDataInnerAttributes) *PaypalGatewayData {
 	this := PaypalGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPaypalGatewayData(type_ string, attributes KlarnaGatewayDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewPaypalGatewayDataWithDefaults() *PaypalGatewayData {
 	this := PaypalGatewayData{}
-	var type_ string = "paypal_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PaypalGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
+func (o *PaypalGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret KlarnaGatewayDataAttributes
+		var ret GETKlarnaGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PaypalGatewayData) GetAttributes() KlarnaGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, bool) {
+func (o *PaypalGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PaypalGatewayData) GetAttributesOk() (*KlarnaGatewayDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *PaypalGatewayData) SetAttributes(v KlarnaGatewayDataAttributes) {
+func (o *PaypalGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

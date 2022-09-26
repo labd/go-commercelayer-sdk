@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "return_line_items"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ReturnLineItemUpdateDataAttributes**](ReturnLineItemUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes**](PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewReturnLineItemUpdateData
 
-`func NewReturnLineItemUpdateData(type_ string, id string, attributes ReturnLineItemUpdateDataAttributes, ) *ReturnLineItemUpdateData`
+`func NewReturnLineItemUpdateData(type_ string, id string, attributes PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes, ) *ReturnLineItemUpdateData`
 
 NewReturnLineItemUpdateData instantiates a new ReturnLineItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnLineItemUpdateData) GetAttributes() ReturnLineItemUpdateDataAttributes`
+`func (o *ReturnLineItemUpdateData) GetAttributes() PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnLineItemUpdateData) GetAttributesOk() (*ReturnLineItemUpdateDataAttributes, bool)`
+`func (o *ReturnLineItemUpdateData) GetAttributesOk() (*PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnLineItemUpdateData) SetAttributes(v ReturnLineItemUpdateDataAttributes)`
+`func (o *ReturnLineItemUpdateData) SetAttributes(v PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

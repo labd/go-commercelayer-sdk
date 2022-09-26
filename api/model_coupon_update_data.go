@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CouponUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                     `json:"id"`
-	Attributes    CouponUpdateDataAttributes `json:"attributes"`
-	Relationships *CouponDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                        `json:"id"`
+	Attributes    PATCHCouponsCouponId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewCouponUpdateData instantiates a new CouponUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponUpdateData(type_ string, id string, attributes CouponUpdateDataAttributes) *CouponUpdateData {
+func NewCouponUpdateData(type_ string, id string, attributes PATCHCouponsCouponId200ResponseDataAttributes) *CouponUpdateData {
 	this := CouponUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewCouponUpdateData(type_ string, id string, attributes CouponUpdateDataAtt
 // but it doesn't guarantee that properties required by API are set
 func NewCouponUpdateDataWithDefaults() *CouponUpdateData {
 	this := CouponUpdateData{}
-	var type_ string = "coupons"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *CouponUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponUpdateData) GetAttributes() CouponUpdateDataAttributes {
+func (o *CouponUpdateData) GetAttributes() PATCHCouponsCouponId200ResponseDataAttributes {
 	if o == nil {
-		var ret CouponUpdateDataAttributes
+		var ret PATCHCouponsCouponId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *CouponUpdateData) GetAttributes() CouponUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponUpdateData) GetAttributesOk() (*CouponUpdateDataAttributes, bool) {
+func (o *CouponUpdateData) GetAttributesOk() (*PATCHCouponsCouponId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *CouponUpdateData) GetAttributesOk() (*CouponUpdateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *CouponUpdateData) SetAttributes(v CouponUpdateDataAttributes) {
+func (o *CouponUpdateData) SetAttributes(v PATCHCouponsCouponId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

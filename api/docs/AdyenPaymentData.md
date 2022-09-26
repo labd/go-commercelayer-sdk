@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "adyen_payments"]
-**Attributes** | [**AdyenPaymentDataAttributes**](AdyenPaymentDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETAdyenPayments200ResponseDataInnerAttributes**](GETAdyenPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenPaymentData
 
-`func NewAdyenPaymentData(type_ string, attributes AdyenPaymentDataAttributes, ) *AdyenPaymentData`
+`func NewAdyenPaymentData(type_ string, attributes GETAdyenPayments200ResponseDataInnerAttributes, ) *AdyenPaymentData`
 
 NewAdyenPaymentData instantiates a new AdyenPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AdyenPaymentData) GetAttributes() AdyenPaymentDataAttributes`
+`func (o *AdyenPaymentData) GetAttributes() GETAdyenPayments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdyenPaymentData) GetAttributesOk() (*AdyenPaymentDataAttributes, bool)`
+`func (o *AdyenPaymentData) GetAttributesOk() (*GETAdyenPayments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdyenPaymentData) SetAttributes(v AdyenPaymentDataAttributes)`
+`func (o *AdyenPaymentData) SetAttributes(v GETAdyenPayments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

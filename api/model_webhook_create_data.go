@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // WebhookCreateData struct for WebhookCreateData
 type WebhookCreateData struct {
 	// The resource's type
-	Type          string                      `json:"type"`
-	Attributes    WebhookCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}      `json:"relationships,omitempty"`
+	Type          string                                `json:"type"`
+	Attributes    POSTWebhooks201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                `json:"relationships,omitempty"`
 }
 
 // NewWebhookCreateData instantiates a new WebhookCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookCreateData(type_ string, attributes WebhookCreateDataAttributes) *WebhookCreateData {
+func NewWebhookCreateData(type_ string, attributes POSTWebhooks201ResponseDataAttributes) *WebhookCreateData {
 	this := WebhookCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewWebhookCreateData(type_ string, attributes WebhookCreateDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewWebhookCreateDataWithDefaults() *WebhookCreateData {
 	this := WebhookCreateData{}
-	var type_ string = "webhooks"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *WebhookCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WebhookCreateData) GetAttributes() WebhookCreateDataAttributes {
+func (o *WebhookCreateData) GetAttributes() POSTWebhooks201ResponseDataAttributes {
 	if o == nil {
-		var ret WebhookCreateDataAttributes
+		var ret POSTWebhooks201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *WebhookCreateData) GetAttributes() WebhookCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WebhookCreateData) GetAttributesOk() (*WebhookCreateDataAttributes, bool) {
+func (o *WebhookCreateData) GetAttributesOk() (*POSTWebhooks201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *WebhookCreateData) GetAttributesOk() (*WebhookCreateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *WebhookCreateData) SetAttributes(v WebhookCreateDataAttributes) {
+func (o *WebhookCreateData) SetAttributes(v POSTWebhooks201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

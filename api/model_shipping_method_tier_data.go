@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingMethodTierData struct for ShippingMethodTierData
 type ShippingMethodTierData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    ShippingMethodTierDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodTierDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETShippingMethodTiers200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ShippingMethodTierDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodTierData instantiates a new ShippingMethodTierData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodTierData(type_ string, attributes ShippingMethodTierDataAttributes) *ShippingMethodTierData {
+func NewShippingMethodTierData(type_ string, attributes GETShippingMethodTiers200ResponseDataInnerAttributes) *ShippingMethodTierData {
 	this := ShippingMethodTierData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewShippingMethodTierData(type_ string, attributes ShippingMethodTierDataAt
 // but it doesn't guarantee that properties required by API are set
 func NewShippingMethodTierDataWithDefaults() *ShippingMethodTierData {
 	this := ShippingMethodTierData{}
-	var type_ string = "shipping_method_tiers"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ShippingMethodTierData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingMethodTierData) GetAttributes() ShippingMethodTierDataAttributes {
+func (o *ShippingMethodTierData) GetAttributes() GETShippingMethodTiers200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShippingMethodTierDataAttributes
+		var ret GETShippingMethodTiers200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ShippingMethodTierData) GetAttributes() ShippingMethodTierDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodTierData) GetAttributesOk() (*ShippingMethodTierDataAttributes, bool) {
+func (o *ShippingMethodTierData) GetAttributesOk() (*GETShippingMethodTiers200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *ShippingMethodTierData) GetAttributesOk() (*ShippingMethodTierDataAttri
 }
 
 // SetAttributes sets field value
-func (o *ShippingMethodTierData) SetAttributes(v ShippingMethodTierDataAttributes) {
+func (o *ShippingMethodTierData) SetAttributes(v GETShippingMethodTiers200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

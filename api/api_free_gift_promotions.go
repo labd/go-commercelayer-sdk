@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // FreeGiftPromotionsApiService FreeGiftPromotionsApi service
 type FreeGiftPromotionsApiService service
 
-type ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
+type FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *FreeGiftPromotionsApiService
 	freeGiftPromotionId string
 }
 
-func (r ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*http.Response, error) {
+func (r FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEFreeGiftPromotionsFreeGiftPromotionIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest
+ @return FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest {
-	return ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest{
+func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest {
+	return FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -51,7 +51,7 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 }
 
 // Execute executes the request
-func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionIdExecute(r ApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) (*http.Response, error) {
+func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionsRequest struct {
+type FreeGiftPromotionsApiGETFreeGiftPromotionsRequest struct {
 	ctx        context.Context
 	ApiService *FreeGiftPromotionsApiService
 }
 
-func (r ApiGETFreeGiftPromotionsRequest) Execute() (*http.Response, error) {
+func (r FreeGiftPromotionsApiGETFreeGiftPromotionsRequest) Execute() (*GETFreeGiftPromotions200Response, *http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETFreeGiftPromotions List all free gift promotions
 List all free gift promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETFreeGiftPromotionsRequest
+ @return FreeGiftPromotionsApiGETFreeGiftPromotionsRequest
 */
-func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotions(ctx context.Context) ApiGETFreeGiftPromotionsRequest {
-	return ApiGETFreeGiftPromotionsRequest{
+func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotions(ctx context.Context) FreeGiftPromotionsApiGETFreeGiftPromotionsRequest {
+	return FreeGiftPromotionsApiGETFreeGiftPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r ApiGETFreeGiftPromotionsRequest) (*http.Response, error) {
+//  @return GETFreeGiftPromotions200Response
+func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPromotionsApiGETFreeGiftPromotionsRequest) (*GETFreeGiftPromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFreeGiftPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.GETFreeGiftPromotions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions"
@@ -168,7 +170,7 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r ApiGETFree
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r ApiGETFree
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r ApiGETFree
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
+type FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *FreeGiftPromotionsApiService
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*FreeGiftPromotion, *http.Response, error) {
+func (r FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*GETFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionsFreeGiftPromotionIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest
+ @return FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest {
-	return ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest{
+func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest {
+	return FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -231,13 +242,13 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(
 }
 
 // Execute executes the request
-//  @return FreeGiftPromotion
-func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdExecute(r ApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) (*FreeGiftPromotion, *http.Response, error) {
+//  @return GETFreeGiftPromotionsFreeGiftPromotionId200Response
+func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) (*GETFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FreeGiftPromotion
+		localVarReturnValue *GETFreeGiftPromotionsFreeGiftPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.GETFreeGiftPromotionsFreeGiftPromotionId")
@@ -306,19 +317,19 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
+type FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
 	ctx                     context.Context
 	ApiService              *FreeGiftPromotionsApiService
 	freeGiftPromotionUpdate *FreeGiftPromotionUpdate
 	freeGiftPromotionId     string
 }
 
-func (r ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionUpdate(freeGiftPromotionUpdate FreeGiftPromotionUpdate) ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
+func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionUpdate(freeGiftPromotionUpdate FreeGiftPromotionUpdate) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	r.freeGiftPromotionUpdate = &freeGiftPromotionUpdate
 	return r
 }
 
-func (r ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*http.Response, error) {
+func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*PATCHFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHFreeGiftPromotionsFreeGiftPromotionIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
+ @return FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
-	return ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest{
+func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
+	return FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -340,16 +351,18 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 }
 
 // Execute executes the request
-func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionIdExecute(r ApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) (*http.Response, error) {
+//  @return PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
+func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionIdExecute(r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) (*PATCHFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.PATCHFreeGiftPromotionsFreeGiftPromotionId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
@@ -359,7 +372,7 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.freeGiftPromotionUpdate == nil {
-		return nil, reportError("freeGiftPromotionUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("freeGiftPromotionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 	localVarPostBody = r.freeGiftPromotionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTFreeGiftPromotionsRequest struct {
+type FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest struct {
 	ctx                     context.Context
 	ApiService              *FreeGiftPromotionsApiService
 	freeGiftPromotionCreate *FreeGiftPromotionCreate
 }
 
-func (r ApiPOSTFreeGiftPromotionsRequest) FreeGiftPromotionCreate(freeGiftPromotionCreate FreeGiftPromotionCreate) ApiPOSTFreeGiftPromotionsRequest {
+func (r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) FreeGiftPromotionCreate(freeGiftPromotionCreate FreeGiftPromotionCreate) FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest {
 	r.freeGiftPromotionCreate = &freeGiftPromotionCreate
 	return r
 }
 
-func (r ApiPOSTFreeGiftPromotionsRequest) Execute() (*http.Response, error) {
+func (r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) Execute() (*POSTFreeGiftPromotions201Response, *http.Response, error) {
 	return r.ApiService.POSTFreeGiftPromotionsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTFreeGiftPromotions Create a free gift promotion
 Create a free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTFreeGiftPromotionsRequest
+ @return FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest
 */
-func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotions(ctx context.Context) ApiPOSTFreeGiftPromotionsRequest {
-	return ApiPOSTFreeGiftPromotionsRequest{
+func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotions(ctx context.Context) FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest {
+	return FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r ApiPOSTFreeGiftPromotionsRequest) (*http.Response, error) {
+//  @return POSTFreeGiftPromotions201Response
+func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) (*POSTFreeGiftPromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTFreeGiftPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeGiftPromotionsApiService.POSTFreeGiftPromotions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions"
@@ -458,7 +482,7 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r ApiPOSTFr
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.freeGiftPromotionCreate == nil {
-		return nil, reportError("freeGiftPromotionCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("freeGiftPromotionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r ApiPOSTFr
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r ApiPOSTFr
 	localVarPostBody = r.freeGiftPromotionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r ApiPOSTFr
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

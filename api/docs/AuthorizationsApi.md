@@ -1,6 +1,6 @@
 # \AuthorizationsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## GETAuthorizations
 
-> GETAuthorizations(ctx).Execute()
+> GETAuthorizations200Response GETAuthorizations(ctx).Execute()
 
 List all authorizations
 
@@ -42,6 +42,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETAuthorizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAuthorizations`: GETAuthorizations200Response
+    fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.GETAuthorizations`: %v\n", resp)
 }
 ```
 
@@ -56,16 +58,16 @@ Other parameters are passed through a pointer to a apiGETAuthorizationsRequest s
 
 ### Return type
 
- (empty response body)
+[**GETAuthorizations200Response**](GETAuthorizations200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -74,7 +76,7 @@ No authorization required
 
 ## GETAuthorizationsAuthorizationId
 
-> Authorization GETAuthorizationsAuthorizationId(ctx, authorizationId).Execute()
+> GETAuthorizationsAuthorizationId200Response GETAuthorizationsAuthorizationId(ctx, authorizationId).Execute()
 
 Retrieve an authorization
 
@@ -102,7 +104,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETAuthorizationsAuthorizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAuthorizationsAuthorizationId`: Authorization
+    // response from `GETAuthorizationsAuthorizationId`: GETAuthorizationsAuthorizationId200Response
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.GETAuthorizationsAuthorizationId`: %v\n", resp)
 }
 ```
@@ -126,11 +128,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Authorization**](Authorization.md)
+[**GETAuthorizationsAuthorizationId200Response**](GETAuthorizationsAuthorizationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -198,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -334,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -348,7 +350,7 @@ No authorization required
 
 ## PATCHAuthorizationsAuthorizationId
 
-> PATCHAuthorizationsAuthorizationId(ctx, authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
+> PATCHAuthorizationsAuthorizationId200Response PATCHAuthorizationsAuthorizationId(ctx, authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
 
 Update an authorization
 
@@ -367,7 +369,7 @@ import (
 )
 
 func main() {
-    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("authorizations", "XGZwpOSrWL", *openapiclient.NewAuthorizationUpdateDataAttributes())) // AuthorizationUpdate | 
+    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes())) // AuthorizationUpdate | 
     authorizationId := "authorizationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -377,6 +379,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.PATCHAuthorizationsAuthorizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAuthorizationsAuthorizationId`: PATCHAuthorizationsAuthorizationId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.PATCHAuthorizationsAuthorizationId`: %v\n", resp)
 }
 ```
 
@@ -400,16 +404,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAuthorizationsAuthorizationId200Response**](PATCHAuthorizationsAuthorizationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

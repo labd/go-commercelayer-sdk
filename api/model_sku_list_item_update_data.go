@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type SkuListItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                          `json:"id"`
-	Attributes    SkuListItemCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}          `json:"relationships,omitempty"`
+	Id            string                                    `json:"id"`
+	Attributes    POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
 }
 
 // NewSkuListItemUpdateData instantiates a new SkuListItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemUpdateData(type_ string, id string, attributes SkuListItemCreateDataAttributes) *SkuListItemUpdateData {
+func NewSkuListItemUpdateData(type_ string, id string, attributes POSTSkuListItems201ResponseDataAttributes) *SkuListItemUpdateData {
 	this := SkuListItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewSkuListItemUpdateData(type_ string, id string, attributes SkuListItemCre
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListItemUpdateDataWithDefaults() *SkuListItemUpdateData {
 	this := SkuListItemUpdateData{}
-	var type_ string = "sku_list_items"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *SkuListItemUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListItemUpdateData) GetAttributes() SkuListItemCreateDataAttributes {
+func (o *SkuListItemUpdateData) GetAttributes() POSTSkuListItems201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuListItemCreateDataAttributes
+		var ret POSTSkuListItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *SkuListItemUpdateData) GetAttributes() SkuListItemCreateDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdateData) GetAttributesOk() (*SkuListItemCreateDataAttributes, bool) {
+func (o *SkuListItemUpdateData) GetAttributesOk() (*POSTSkuListItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *SkuListItemUpdateData) GetAttributesOk() (*SkuListItemCreateDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *SkuListItemUpdateData) SetAttributes(v SkuListItemCreateDataAttributes) {
+func (o *SkuListItemUpdateData) SetAttributes(v POSTSkuListItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

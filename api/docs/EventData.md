@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "events"]
-**Attributes** | [**EventDataAttributes**](EventDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETEvents200ResponseDataInnerAttributes**](GETEvents200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**EventDataRelationships**](EventDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewEventData
 
-`func NewEventData(type_ string, attributes EventDataAttributes, ) *EventData`
+`func NewEventData(type_ string, attributes GETEvents200ResponseDataInnerAttributes, ) *EventData`
 
 NewEventData instantiates a new EventData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *EventData) GetAttributes() EventDataAttributes`
+`func (o *EventData) GetAttributes() GETEvents200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *EventData) GetAttributesOk() (*EventDataAttributes, bool)`
+`func (o *EventData) GetAttributesOk() (*GETEvents200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *EventData) SetAttributes(v EventDataAttributes)`
+`func (o *EventData) SetAttributes(v GETEvents200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

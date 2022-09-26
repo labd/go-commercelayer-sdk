@@ -1,6 +1,6 @@
 # \ShippingZonesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETShippingZones
 
-> GETShippingZones(ctx).Execute()
+> GETShippingZones200Response GETShippingZones(ctx).Execute()
 
 List all shipping zones
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.GETShippingZones``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETShippingZones`: GETShippingZones200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.GETShippingZones`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETShippingZonesRequest st
 
 ### Return type
 
- (empty response body)
+[**GETShippingZones200Response**](GETShippingZones200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETShippingZonesShippingZoneId
 
-> ShippingZone GETShippingZonesShippingZoneId(ctx, shippingZoneId).Execute()
+> GETShippingZonesShippingZoneId200Response GETShippingZonesShippingZoneId(ctx, shippingZoneId).Execute()
 
 Retrieve a shipping zone
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.GETShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingZonesShippingZoneId`: ShippingZone
+    // response from `GETShippingZonesShippingZoneId`: GETShippingZonesShippingZoneId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.GETShippingZonesShippingZoneId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingZone**](ShippingZone.md)
+[**GETShippingZonesShippingZoneId200Response**](GETShippingZonesShippingZoneId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHShippingZonesShippingZoneId
 
-> PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
+> PATCHShippingZonesShippingZoneId200Response PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
 
 Update a shipping zone
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("shipping_zones", "XGZwpOSrWL", *openapiclient.NewShippingZoneUpdateDataAttributes())) // ShippingZoneUpdate | 
+    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingZonesShippingZoneId200ResponseDataAttributes())) // ShippingZoneUpdate | 
     shippingZoneId := "shippingZoneId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.PATCHShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHShippingZonesShippingZoneId`: PATCHShippingZonesShippingZoneId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.PATCHShippingZonesShippingZoneId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHShippingZonesShippingZoneId200Response**](PATCHShippingZonesShippingZoneId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTShippingZones
 
-> POSTShippingZones(ctx).ShippingZoneCreate(shippingZoneCreate).Execute()
+> POSTShippingZones201Response POSTShippingZones(ctx).ShippingZoneCreate(shippingZoneCreate).Execute()
 
 Create a shipping zone
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("shipping_zones", *openapiclient.NewShippingZoneCreateDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
+    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("Type_example", *openapiclient.NewPOSTShippingZones201ResponseDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.POSTShippingZones``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTShippingZones`: POSTShippingZones201Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.POSTShippingZones`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTShippingZones201Response**](POSTShippingZones201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

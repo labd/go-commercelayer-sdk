@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_amount_promotion_rules"]
-**Attributes** | [**OrderAmountPromotionRuleDataAttributes**](OrderAmountPromotionRuleDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETOrderAmountPromotionRules200ResponseDataInnerAttributes**](GETOrderAmountPromotionRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleData
 
-`func NewOrderAmountPromotionRuleData(type_ string, attributes OrderAmountPromotionRuleDataAttributes, ) *OrderAmountPromotionRuleData`
+`func NewOrderAmountPromotionRuleData(type_ string, attributes GETOrderAmountPromotionRules200ResponseDataInnerAttributes, ) *OrderAmountPromotionRuleData`
 
 NewOrderAmountPromotionRuleData instantiates a new OrderAmountPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleData) GetAttributes() OrderAmountPromotionRuleDataAttributes`
+`func (o *OrderAmountPromotionRuleData) GetAttributes() GETOrderAmountPromotionRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*OrderAmountPromotionRuleDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*GETOrderAmountPromotionRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleData) SetAttributes(v OrderAmountPromotionRuleDataAttributes)`
+`func (o *OrderAmountPromotionRuleData) SetAttributes(v GETOrderAmountPromotionRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

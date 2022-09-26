@@ -1,6 +1,6 @@
 # \InventoryReturnLocationsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ No authorization required
 
 ## GETInventoryReturnLocations
 
-> GETInventoryReturnLocations(ctx).Execute()
+> GETInventoryReturnLocations200Response GETInventoryReturnLocations(ctx).Execute()
 
 List all inventory return locations
 
@@ -179,6 +179,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryReturnLocationsApi.GETInventoryReturnLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETInventoryReturnLocations`: GETInventoryReturnLocations200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryReturnLocationsApi.GETInventoryReturnLocations`: %v\n", resp)
 }
 ```
 
@@ -193,16 +195,16 @@ Other parameters are passed through a pointer to a apiGETInventoryReturnLocation
 
 ### Return type
 
- (empty response body)
+[**GETInventoryReturnLocations200Response**](GETInventoryReturnLocations200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -211,7 +213,7 @@ No authorization required
 
 ## GETInventoryReturnLocationsInventoryReturnLocationId
 
-> InventoryReturnLocation GETInventoryReturnLocationsInventoryReturnLocationId(ctx, inventoryReturnLocationId).Execute()
+> GETInventoryReturnLocationsInventoryReturnLocationId200Response GETInventoryReturnLocationsInventoryReturnLocationId(ctx, inventoryReturnLocationId).Execute()
 
 Retrieve an inventory return location
 
@@ -239,7 +241,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryReturnLocationsApi.GETInventoryReturnLocationsInventoryReturnLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryReturnLocationsInventoryReturnLocationId`: InventoryReturnLocation
+    // response from `GETInventoryReturnLocationsInventoryReturnLocationId`: GETInventoryReturnLocationsInventoryReturnLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryReturnLocationsApi.GETInventoryReturnLocationsInventoryReturnLocationId`: %v\n", resp)
 }
 ```
@@ -263,11 +265,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryReturnLocation**](InventoryReturnLocation.md)
+[**GETInventoryReturnLocationsInventoryReturnLocationId200Response**](GETInventoryReturnLocationsInventoryReturnLocationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -335,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHInventoryReturnLocationsInventoryReturnLocationId
 
-> PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx, inventoryReturnLocationId).InventoryReturnLocationUpdate(inventoryReturnLocationUpdate).Execute()
+> PATCHInventoryReturnLocationsInventoryReturnLocationId200Response PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx, inventoryReturnLocationId).InventoryReturnLocationUpdate(inventoryReturnLocationUpdate).Execute()
 
 Update an inventory return location
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    inventoryReturnLocationUpdate := *openapiclient.NewInventoryReturnLocationUpdate(*openapiclient.NewInventoryReturnLocationUpdateData("inventory_return_locations", "XGZwpOSrWL", *openapiclient.NewInventoryReturnLocationUpdateDataAttributes())) // InventoryReturnLocationUpdate | 
+    inventoryReturnLocationUpdate := *openapiclient.NewInventoryReturnLocationUpdate(*openapiclient.NewInventoryReturnLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes())) // InventoryReturnLocationUpdate | 
     inventoryReturnLocationId := "inventoryReturnLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryReturnLocationsApi.PATCHInventoryReturnLocationsInventoryReturnLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHInventoryReturnLocationsInventoryReturnLocationId`: PATCHInventoryReturnLocationsInventoryReturnLocationId200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryReturnLocationsApi.PATCHInventoryReturnLocationsInventoryReturnLocationId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHInventoryReturnLocationsInventoryReturnLocationId200Response**](PATCHInventoryReturnLocationsInventoryReturnLocationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTInventoryReturnLocations
 
-> POSTInventoryReturnLocations(ctx).InventoryReturnLocationCreate(inventoryReturnLocationCreate).Execute()
+> POSTInventoryReturnLocations201Response POSTInventoryReturnLocations(ctx).InventoryReturnLocationCreate(inventoryReturnLocationCreate).Execute()
 
 Create an inventory return location
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    inventoryReturnLocationCreate := *openapiclient.NewInventoryReturnLocationCreate(*openapiclient.NewInventoryReturnLocationCreateData("inventory_return_locations", *openapiclient.NewInventoryReturnLocationCreateDataAttributes(int32(1)))) // InventoryReturnLocationCreate | 
+    inventoryReturnLocationCreate := *openapiclient.NewInventoryReturnLocationCreate(*openapiclient.NewInventoryReturnLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryReturnLocations201ResponseDataAttributes(int32(1)))) // InventoryReturnLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryReturnLocationsApi.POSTInventoryReturnLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTInventoryReturnLocations`: POSTInventoryReturnLocations201Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryReturnLocationsApi.POSTInventoryReturnLocations`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTInventoryReturnLocations201Response**](POSTInventoryReturnLocations201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

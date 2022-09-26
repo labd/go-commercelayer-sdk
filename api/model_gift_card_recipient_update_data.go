@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type GiftCardRecipientUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                  `json:"id"`
-	Attributes    CouponRecipientUpdateDataAttributes     `json:"attributes"`
-	Relationships *CouponRecipientCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponRecipientCreateDataRelationships                         `json:"relationships,omitempty"`
 }
 
 // NewGiftCardRecipientUpdateData instantiates a new GiftCardRecipientUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardRecipientUpdateData(type_ string, id string, attributes CouponRecipientUpdateDataAttributes) *GiftCardRecipientUpdateData {
+func NewGiftCardRecipientUpdateData(type_ string, id string, attributes PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes) *GiftCardRecipientUpdateData {
 	this := GiftCardRecipientUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewGiftCardRecipientUpdateData(type_ string, id string, attributes CouponRe
 // but it doesn't guarantee that properties required by API are set
 func NewGiftCardRecipientUpdateDataWithDefaults() *GiftCardRecipientUpdateData {
 	this := GiftCardRecipientUpdateData{}
-	var type_ string = "gift_card_recipients"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *GiftCardRecipientUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardRecipientUpdateData) GetAttributes() CouponRecipientUpdateDataAttributes {
+func (o *GiftCardRecipientUpdateData) GetAttributes() PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes {
 	if o == nil {
-		var ret CouponRecipientUpdateDataAttributes
+		var ret PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *GiftCardRecipientUpdateData) GetAttributes() CouponRecipientUpdateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardRecipientUpdateData) GetAttributesOk() (*CouponRecipientUpdateDataAttributes, bool) {
+func (o *GiftCardRecipientUpdateData) GetAttributesOk() (*PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *GiftCardRecipientUpdateData) GetAttributesOk() (*CouponRecipientUpdateD
 }
 
 // SetAttributes sets field value
-func (o *GiftCardRecipientUpdateData) SetAttributes(v CouponRecipientUpdateDataAttributes) {
+func (o *GiftCardRecipientUpdateData) SetAttributes(v PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

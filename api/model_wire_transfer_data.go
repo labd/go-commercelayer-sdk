@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // WireTransferData struct for WireTransferData
 type WireTransferData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships    `json:"relationships,omitempty"`
+	Type          string                                                      `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewWireTransferData instantiates a new WireTransferData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *WireTransferData {
+func NewWireTransferData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *WireTransferData {
 	this := WireTransferData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewWireTransferData(type_ string, attributes BillingInfoValidationRuleDataA
 // but it doesn't guarantee that properties required by API are set
 func NewWireTransferDataWithDefaults() *WireTransferData {
 	this := WireTransferData{}
-	var type_ string = "wire_transfers"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *WireTransferData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *WireTransferData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *WireTransferData) GetAttributes() BillingInfoValidationRuleDataAttribut
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *WireTransferData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *WireTransferData) GetAttributesOk() (*BillingInfoValidationRuleDataAttr
 }
 
 // SetAttributes sets field value
-func (o *WireTransferData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *WireTransferData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

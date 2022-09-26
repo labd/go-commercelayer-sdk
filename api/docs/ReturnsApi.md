@@ -1,6 +1,6 @@
 # \ReturnsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -220,7 +220,7 @@ No authorization required
 
 ## GETReturns
 
-> GETReturns(ctx).Execute()
+> GETReturns200Response GETReturns(ctx).Execute()
 
 List all returns
 
@@ -247,6 +247,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETReturns`: GETReturns200Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.GETReturns`: %v\n", resp)
 }
 ```
 
@@ -261,16 +263,16 @@ Other parameters are passed through a pointer to a apiGETReturnsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETReturns200Response**](GETReturns200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -279,7 +281,7 @@ No authorization required
 
 ## GETReturnsReturnId
 
-> ModelReturn GETReturnsReturnId(ctx, returnId).Execute()
+> GETReturnsReturnId200Response GETReturnsReturnId(ctx, returnId).Execute()
 
 Retrieve a return
 
@@ -307,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturnsReturnId`: ModelReturn
+    // response from `GETReturnsReturnId`: GETReturnsReturnId200Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.GETReturnsReturnId`: %v\n", resp)
 }
 ```
@@ -331,11 +333,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ModelReturn**](ModelReturn.md)
+[**GETReturnsReturnId200Response**](GETReturnsReturnId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHReturnsReturnId
 
-> PATCHReturnsReturnId(ctx, returnId).ReturnUpdate(returnUpdate).Execute()
+> PATCHReturnsReturnId200Response PATCHReturnsReturnId(ctx, returnId).ReturnUpdate(returnUpdate).Execute()
 
 Update a return
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("returns", "XGZwpOSrWL", *openapiclient.NewReturnUpdateDataAttributes())) // ReturnUpdate | 
+    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnsReturnId200ResponseDataAttributes())) // ReturnUpdate | 
     returnId := "returnId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.PATCHReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHReturnsReturnId`: PATCHReturnsReturnId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.PATCHReturnsReturnId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHReturnsReturnId200Response**](PATCHReturnsReturnId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTReturns
 
-> POSTReturns(ctx).ReturnCreate(returnCreate).Execute()
+> POSTReturns201Response POSTReturns(ctx).ReturnCreate(returnCreate).Execute()
 
 Create a return
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("returns", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // ReturnCreate | 
+    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ReturnCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.POSTReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTReturns`: POSTReturns201Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.POSTReturns`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTReturns201Response**](POSTReturns201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupons"]
-**Attributes** | [**CouponCreateDataAttributes**](CouponCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTCoupons201ResponseDataAttributes**](POSTCoupons201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCreateDataRelationships**](CouponCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCreateData
 
-`func NewCouponCreateData(type_ string, attributes CouponCreateDataAttributes, ) *CouponCreateData`
+`func NewCouponCreateData(type_ string, attributes POSTCoupons201ResponseDataAttributes, ) *CouponCreateData`
 
 NewCouponCreateData instantiates a new CouponCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponCreateData) GetAttributes() CouponCreateDataAttributes`
+`func (o *CouponCreateData) GetAttributes() POSTCoupons201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponCreateData) GetAttributesOk() (*CouponCreateDataAttributes, bool)`
+`func (o *CouponCreateData) GetAttributesOk() (*POSTCoupons201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponCreateData) SetAttributes(v CouponCreateDataAttributes)`
+`func (o *CouponCreateData) SetAttributes(v POSTCoupons201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

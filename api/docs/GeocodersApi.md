@@ -1,6 +1,6 @@
 # \GeocodersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## GETGeocoders
 
-> GETGeocoders(ctx).Execute()
+> GETGeocoders200Response GETGeocoders(ctx).Execute()
 
 List all geocoders
 
@@ -107,6 +107,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GeocodersApi.GETGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETGeocoders`: GETGeocoders200Response
+    fmt.Fprintf(os.Stdout, "Response from `GeocodersApi.GETGeocoders`: %v\n", resp)
 }
 ```
 
@@ -121,16 +123,16 @@ Other parameters are passed through a pointer to a apiGETGeocodersRequest struct
 
 ### Return type
 
- (empty response body)
+[**GETGeocoders200Response**](GETGeocoders200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -139,7 +141,7 @@ No authorization required
 
 ## GETGeocodersGeocoderId
 
-> Geocoder GETGeocodersGeocoderId(ctx, geocoderId).Execute()
+> GETGeocodersGeocoderId200Response GETGeocodersGeocoderId(ctx, geocoderId).Execute()
 
 Retrieve a geocoder
 
@@ -167,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GeocodersApi.GETGeocodersGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGeocodersGeocoderId`: Geocoder
+    // response from `GETGeocodersGeocoderId`: GETGeocodersGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `GeocodersApi.GETGeocodersGeocoderId`: %v\n", resp)
 }
 ```
@@ -191,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Geocoder**](Geocoder.md)
+[**GETGeocodersGeocoderId200Response**](GETGeocodersGeocoderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

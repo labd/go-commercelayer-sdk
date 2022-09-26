@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderSubscriptionCreateData struct for OrderSubscriptionCreateData
 type OrderSubscriptionCreateData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    OrderSubscriptionCreateDataAttributes     `json:"attributes"`
-	Relationships *OrderSubscriptionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    POSTOrderSubscriptions201ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionCreateData instantiates a new OrderSubscriptionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionCreateData(type_ string, attributes OrderSubscriptionCreateDataAttributes) *OrderSubscriptionCreateData {
+func NewOrderSubscriptionCreateData(type_ string, attributes POSTOrderSubscriptions201ResponseDataAttributes) *OrderSubscriptionCreateData {
 	this := OrderSubscriptionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewOrderSubscriptionCreateData(type_ string, attributes OrderSubscriptionCr
 // but it doesn't guarantee that properties required by API are set
 func NewOrderSubscriptionCreateDataWithDefaults() *OrderSubscriptionCreateData {
 	this := OrderSubscriptionCreateData{}
-	var type_ string = "order_subscriptions"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *OrderSubscriptionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderSubscriptionCreateData) GetAttributes() OrderSubscriptionCreateDataAttributes {
+func (o *OrderSubscriptionCreateData) GetAttributes() POSTOrderSubscriptions201ResponseDataAttributes {
 	if o == nil {
-		var ret OrderSubscriptionCreateDataAttributes
+		var ret POSTOrderSubscriptions201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *OrderSubscriptionCreateData) GetAttributes() OrderSubscriptionCreateDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionCreateData) GetAttributesOk() (*OrderSubscriptionCreateDataAttributes, bool) {
+func (o *OrderSubscriptionCreateData) GetAttributesOk() (*POSTOrderSubscriptions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *OrderSubscriptionCreateData) GetAttributesOk() (*OrderSubscriptionCreat
 }
 
 // SetAttributes sets field value
-func (o *OrderSubscriptionCreateData) SetAttributes(v OrderSubscriptionCreateDataAttributes) {
+func (o *OrderSubscriptionCreateData) SetAttributes(v POSTOrderSubscriptions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

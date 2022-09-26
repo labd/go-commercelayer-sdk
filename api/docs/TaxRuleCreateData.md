@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "tax_rules"]
-**Attributes** | [**TaxRuleCreateDataAttributes**](TaxRuleCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTTaxRules201ResponseDataAttributes**](POSTTaxRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxRuleCreateDataRelationships**](TaxRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxRuleCreateData
 
-`func NewTaxRuleCreateData(type_ string, attributes TaxRuleCreateDataAttributes, ) *TaxRuleCreateData`
+`func NewTaxRuleCreateData(type_ string, attributes POSTTaxRules201ResponseDataAttributes, ) *TaxRuleCreateData`
 
 NewTaxRuleCreateData instantiates a new TaxRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxRuleCreateData) GetAttributes() TaxRuleCreateDataAttributes`
+`func (o *TaxRuleCreateData) GetAttributes() POSTTaxRules201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxRuleCreateData) GetAttributesOk() (*TaxRuleCreateDataAttributes, bool)`
+`func (o *TaxRuleCreateData) GetAttributesOk() (*POSTTaxRules201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxRuleCreateData) SetAttributes(v TaxRuleCreateDataAttributes)`
+`func (o *TaxRuleCreateData) SetAttributes(v POSTTaxRules201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // CaptureDataRelationshipsReferenceAuthorization struct for CaptureDataRelationshipsReferenceAuthorization
 type CaptureDataRelationshipsReferenceAuthorization struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data CaptureDataRelationshipsReferenceAuthorizationData `json:"data"`
 }
 
 // NewCaptureDataRelationshipsReferenceAuthorization instantiates a new CaptureDataRelationshipsReferenceAuthorization object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCaptureDataRelationshipsReferenceAuthorization(type_ string, id string) *CaptureDataRelationshipsReferenceAuthorization {
+func NewCaptureDataRelationshipsReferenceAuthorization(data CaptureDataRelationshipsReferenceAuthorizationData) *CaptureDataRelationshipsReferenceAuthorization {
 	this := CaptureDataRelationshipsReferenceAuthorization{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewCaptureDataRelationshipsReferenceAuthorization(type_ string, id string) 
 // but it doesn't guarantee that properties required by API are set
 func NewCaptureDataRelationshipsReferenceAuthorizationWithDefaults() *CaptureDataRelationshipsReferenceAuthorization {
 	this := CaptureDataRelationshipsReferenceAuthorization{}
-	var type_ string = "authorizations"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *CaptureDataRelationshipsReferenceAuthorization) GetType() string {
+// GetData returns the Data field value
+func (o *CaptureDataRelationshipsReferenceAuthorization) GetData() CaptureDataRelationshipsReferenceAuthorizationData {
 	if o == nil {
-		var ret string
+		var ret CaptureDataRelationshipsReferenceAuthorizationData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CaptureDataRelationshipsReferenceAuthorization) GetTypeOk() (*string, bool) {
+func (o *CaptureDataRelationshipsReferenceAuthorization) GetDataOk() (*CaptureDataRelationshipsReferenceAuthorizationData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *CaptureDataRelationshipsReferenceAuthorization) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *CaptureDataRelationshipsReferenceAuthorization) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CaptureDataRelationshipsReferenceAuthorization) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CaptureDataRelationshipsReferenceAuthorization) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *CaptureDataRelationshipsReferenceAuthorization) SetData(v CaptureDataRelationshipsReferenceAuthorizationData) {
+	o.Data = v
 }
 
 func (o CaptureDataRelationshipsReferenceAuthorization) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

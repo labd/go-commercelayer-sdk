@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "webhooks"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**EventCallbackDataRelationshipsWebhookData**](EventCallbackDataRelationshipsWebhookData.md) |  | 
 
 ## Methods
 
 ### NewEventCallbackDataRelationshipsWebhook
 
-`func NewEventCallbackDataRelationshipsWebhook(type_ string, id string, ) *EventCallbackDataRelationshipsWebhook`
+`func NewEventCallbackDataRelationshipsWebhook(data EventCallbackDataRelationshipsWebhookData, ) *EventCallbackDataRelationshipsWebhook`
 
 NewEventCallbackDataRelationshipsWebhook instantiates a new EventCallbackDataRelationshipsWebhook object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewEventCallbackDataRelationshipsWebhookWithDefaults instantiates a new EventCal
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *EventCallbackDataRelationshipsWebhook) GetType() string`
+`func (o *EventCallbackDataRelationshipsWebhook) GetData() EventCallbackDataRelationshipsWebhookData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *EventCallbackDataRelationshipsWebhook) GetTypeOk() (*string, bool)`
+`func (o *EventCallbackDataRelationshipsWebhook) GetDataOk() (*EventCallbackDataRelationshipsWebhookData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *EventCallbackDataRelationshipsWebhook) SetType(v string)`
+`func (o *EventCallbackDataRelationshipsWebhook) SetData(v EventCallbackDataRelationshipsWebhookData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *EventCallbackDataRelationshipsWebhook) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *EventCallbackDataRelationshipsWebhook) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *EventCallbackDataRelationshipsWebhook) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

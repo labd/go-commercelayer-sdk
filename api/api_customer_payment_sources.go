@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // CustomerPaymentSourcesApiService CustomerPaymentSourcesApi service
 type CustomerPaymentSourcesApiService service
 
-type ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
+type CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomerPaymentSourcesApiService
 	customerPaymentSourceId string
 }
 
-func (r ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETECustomerPaymentSourcesCustomerPaymentSourceIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPaymentSourceId The resource's id
- @return ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest
+ @return CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest
 */
-func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest {
-	return ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest{
+func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest {
+	return CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
@@ -51,7 +51,7 @@ func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerP
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceIdExecute(r ApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*http.Response, error) {
+func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiDELETECustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *CustomerPaymentSourcesApiService) DELETECustomerPaymentSourcesCustomerP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerIdCustomerPaymentSourcesRequest struct {
+type CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService *CustomerPaymentSourcesApiService
 	customerId string
 }
 
-func (r ApiGETCustomerIdCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerIdCustomerPaymentSourcesExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the customer payment sources associated to the customer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerId The resource's id
- @return ApiGETCustomerIdCustomerPaymentSourcesRequest
+ @return CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest
 */
-func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) ApiGETCustomerIdCustomerPaymentSourcesRequest {
-	return ApiGETCustomerIdCustomerPaymentSourcesRequest{
+func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest {
+	return CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		customerId: customerId,
@@ -143,7 +143,7 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSources(c
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSourcesExecute(r ApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
+func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETCustomerIdCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerIdCustomerPaymentSourcesEx
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPaymentSourcesRequest struct {
+type CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService *CustomerPaymentSourcesApiService
 }
 
-func (r ApiGETCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest) Execute() (*GETCustomerPaymentSources200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerPaymentSourcesExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETCustomerPaymentSources List all customer payment sources
 List all customer payment sources
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETCustomerPaymentSourcesRequest
+ @return CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest
 */
-func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSources(ctx context.Context) ApiGETCustomerPaymentSourcesRequest {
-	return ApiGETCustomerPaymentSourcesRequest{
+func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSources(ctx context.Context) CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest {
+	return CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r ApiGETCustomerPaymentSourcesRequest) (*http.Response, error) {
+//  @return GETCustomerPaymentSources200Response
+func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETCustomerPaymentSourcesRequest) (*GETCustomerPaymentSources200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETCustomerPaymentSources200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETCustomerPaymentSources")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources"
@@ -260,7 +262,7 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r Ap
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r Ap
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
+type CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomerPaymentSourcesApiService
 	customerPaymentSourceId string
 }
 
-func (r ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*CustomerPaymentSource, *http.Response, error) {
+func (r CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*GETCustomerPaymentSourcesCustomerPaymentSourceId200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPaymentSourceId The resource's id
- @return ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest
+ @return CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest
 */
-func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
-	return ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
+func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
+	return CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
@@ -323,13 +334,13 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaym
 }
 
 // Execute executes the request
-//  @return CustomerPaymentSource
-func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r ApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*CustomerPaymentSource, *http.Response, error) {
+//  @return GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
+func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiGETCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*GETCustomerPaymentSourcesCustomerPaymentSourceId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerPaymentSource
+		localVarReturnValue *GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.GETCustomerPaymentSourcesCustomerPaymentSourceId")
@@ -398,13 +409,13 @@ func (a *CustomerPaymentSourcesApiService) GETCustomerPaymentSourcesCustomerPaym
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPaymentIdWalletRequest struct {
+type CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest struct {
 	ctx               context.Context
 	ApiService        *CustomerPaymentSourcesApiService
 	externalPaymentId string
 }
 
-func (r ApiGETExternalPaymentIdWalletRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPaymentIdWalletExecute(r)
 }
 
@@ -415,10 +426,10 @@ Retrieve the wallet associated to the external payment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPaymentId The resource's id
- @return ApiGETExternalPaymentIdWalletRequest
+ @return CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest
 */
-func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) ApiGETExternalPaymentIdWalletRequest {
-	return ApiGETExternalPaymentIdWalletRequest{
+func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest {
+	return CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest{
 		ApiService:        a,
 		ctx:               ctx,
 		externalPaymentId: externalPaymentId,
@@ -426,7 +437,7 @@ func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWallet(ctx contex
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWalletExecute(r ApiGETExternalPaymentIdWalletRequest) (*http.Response, error) {
+func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWalletExecute(r CustomerPaymentSourcesApiGETExternalPaymentIdWalletRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -490,13 +501,13 @@ func (a *CustomerPaymentSourcesApiService) GETExternalPaymentIdWalletExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
+type CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService *CustomerPaymentSourcesApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableCustomerPaymentSourcesExecute(r)
 }
 
@@ -507,10 +518,10 @@ Retrieve the available customer payment sources associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableCustomerPaymentSourcesRequest
+ @return CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest
 */
-func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) ApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
-	return ApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
+func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
+	return CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -518,7 +529,7 @@ func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSou
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r ApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
+func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiGETOrderIdAvailableCustomerPaymentSourcesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -582,19 +593,19 @@ func (a *CustomerPaymentSourcesApiService) GETOrderIdAvailableCustomerPaymentSou
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
+type CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *CustomerPaymentSourcesApiService
 	customerPaymentSourceUpdate *CustomerPaymentSourceUpdate
 	customerPaymentSourceId     string
 }
 
-func (r ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) CustomerPaymentSourceUpdate(customerPaymentSourceUpdate CustomerPaymentSourceUpdate) ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
+func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) CustomerPaymentSourceUpdate(customerPaymentSourceUpdate CustomerPaymentSourceUpdate) CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
 	r.customerPaymentSourceUpdate = &customerPaymentSourceUpdate
 	return r
 }
 
-func (r ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) Execute() (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r)
 }
 
@@ -605,10 +616,10 @@ Update a customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerPaymentSourceId The resource's id
- @return ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest
+ @return CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest
 */
-func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
-	return ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
+func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx context.Context, customerPaymentSourceId string) CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest {
+	return CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		customerPaymentSourceId: customerPaymentSourceId,
@@ -616,16 +627,18 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r ApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*http.Response, error) {
+//  @return POSTCustomerPaymentSources201Response
+func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPaymentSourceIdExecute(r CustomerPaymentSourcesApiPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest) (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCustomerPaymentSources201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.PATCHCustomerPaymentSourcesCustomerPaymentSourceId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources/{customerPaymentSourceId}"
@@ -635,7 +648,7 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.customerPaymentSourceUpdate == nil {
-		return nil, reportError("customerPaymentSourceUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("customerPaymentSourceUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -648,7 +661,7 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -659,19 +672,19 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 	localVarPostBody = r.customerPaymentSourceUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -679,24 +692,33 @@ func (a *CustomerPaymentSourcesApiService) PATCHCustomerPaymentSourcesCustomerPa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTCustomerPaymentSourcesRequest struct {
+type CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest struct {
 	ctx                         context.Context
 	ApiService                  *CustomerPaymentSourcesApiService
 	customerPaymentSourceCreate *CustomerPaymentSourceCreate
 }
 
-func (r ApiPOSTCustomerPaymentSourcesRequest) CustomerPaymentSourceCreate(customerPaymentSourceCreate CustomerPaymentSourceCreate) ApiPOSTCustomerPaymentSourcesRequest {
+func (r CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest) CustomerPaymentSourceCreate(customerPaymentSourceCreate CustomerPaymentSourceCreate) CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest {
 	r.customerPaymentSourceCreate = &customerPaymentSourceCreate
 	return r
 }
 
-func (r ApiPOSTCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
+func (r CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest) Execute() (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	return r.ApiService.POSTCustomerPaymentSourcesExecute(r)
 }
 
@@ -706,26 +728,28 @@ POSTCustomerPaymentSources Create a customer payment source
 Create a customer payment source
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTCustomerPaymentSourcesRequest
+ @return CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest
 */
-func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSources(ctx context.Context) ApiPOSTCustomerPaymentSourcesRequest {
-	return ApiPOSTCustomerPaymentSourcesRequest{
+func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSources(ctx context.Context) CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest {
+	return CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r ApiPOSTCustomerPaymentSourcesRequest) (*http.Response, error) {
+//  @return POSTCustomerPaymentSources201Response
+func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r CustomerPaymentSourcesApiPOSTCustomerPaymentSourcesRequest) (*POSTCustomerPaymentSources201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTCustomerPaymentSources201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPaymentSourcesApiService.POSTCustomerPaymentSources")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources"
@@ -734,7 +758,7 @@ func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.customerPaymentSourceCreate == nil {
-		return nil, reportError("customerPaymentSourceCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("customerPaymentSourceCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -747,7 +771,7 @@ func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -758,19 +782,19 @@ func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r A
 	localVarPostBody = r.customerPaymentSourceCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -778,8 +802,17 @@ func (a *CustomerPaymentSourcesApiService) POSTCustomerPaymentSourcesExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ParcelLineItemsApiService ParcelLineItemsApi service
 type ParcelLineItemsApiService service
 
-type ApiDELETEParcelLineItemsParcelLineItemIdRequest struct {
+type ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest struct {
 	ctx              context.Context
 	ApiService       *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
-func (r ApiDELETEParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
+func (r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiDELETEParcelLineItemsParcelLineItemIdRequest
+ @return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiDELETEParcelLineItemsParcelLineItemIdRequest {
-	return ApiDELETEParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest {
+	return ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -51,7 +51,7 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemId(ctx co
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute(r ApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiDELETEParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *ParcelLineItemsApiService) DELETEParcelLineItemsParcelLineItemIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelIdParcelLineItemsRequest struct {
+type ParcelLineItemsApiGETParcelIdParcelLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *ParcelLineItemsApiService
 	parcelId   string
 }
 
-func (r ApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETParcelIdParcelLineItemsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the parcel line items associated to the parcel
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelId The resource's id
- @return ApiGETParcelIdParcelLineItemsRequest
+ @return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ApiGETParcelIdParcelLineItemsRequest {
-	return ApiGETParcelIdParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) ParcelLineItemsApiGETParcelIdParcelLineItemsRequest {
+	return ParcelLineItemsApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		parcelId:   parcelId,
@@ -143,7 +143,7 @@ func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItems(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
+func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ParcelLineItemsApiGETParcelIdParcelLineItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *ParcelLineItemsApiService) GETParcelIdParcelLineItemsExecute(r ApiGETPa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemsRequest struct {
+type ParcelLineItemsApiGETParcelLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *ParcelLineItemsApiService
 }
 
-func (r ApiGETParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ParcelLineItemsApiGETParcelLineItemsRequest) Execute() (*GETParcelLineItems200Response, *http.Response, error) {
 	return r.ApiService.GETParcelLineItemsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETParcelLineItems List all parcel line items
 List all parcel line items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETParcelLineItemsRequest
+ @return ParcelLineItemsApiGETParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) ApiGETParcelLineItemsRequest {
-	return ApiGETParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) GETParcelLineItems(ctx context.Context) ParcelLineItemsApiGETParcelLineItemsRequest {
+	return ParcelLineItemsApiGETParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ApiGETParcelLineItemsRequest) (*http.Response, error) {
+//  @return GETParcelLineItems200Response
+func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ParcelLineItemsApiGETParcelLineItemsRequest) (*GETParcelLineItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETParcelLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.GETParcelLineItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items"
@@ -260,7 +262,7 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ApiGETParcelLine
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ApiGETParcelLine
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsExecute(r ApiGETParcelLine
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETParcelLineItemsParcelLineItemIdRequest struct {
+type ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest struct {
 	ctx              context.Context
 	ApiService       *ParcelLineItemsApiService
 	parcelLineItemId string
 }
 
-func (r ApiGETParcelLineItemsParcelLineItemIdRequest) Execute() (*ParcelLineItem, *http.Response, error) {
+func (r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) Execute() (*GETParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	return r.ApiService.GETParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiGETParcelLineItemsParcelLineItemIdRequest
+ @return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiGETParcelLineItemsParcelLineItemIdRequest {
-	return ApiGETParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest {
+	return ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -323,13 +334,13 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemId(ctx conte
 }
 
 // Execute executes the request
-//  @return ParcelLineItem
-func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r ApiGETParcelLineItemsParcelLineItemIdRequest) (*ParcelLineItem, *http.Response, error) {
+//  @return GETParcelLineItemsParcelLineItemId200Response
+func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiGETParcelLineItemsParcelLineItemIdRequest) (*GETParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ParcelLineItem
+		localVarReturnValue *GETParcelLineItemsParcelLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.GETParcelLineItemsParcelLineItemId")
@@ -398,19 +409,19 @@ func (a *ParcelLineItemsApiService) GETParcelLineItemsParcelLineItemIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHParcelLineItemsParcelLineItemIdRequest struct {
+type ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest struct {
 	ctx                  context.Context
 	ApiService           *ParcelLineItemsApiService
 	parcelLineItemUpdate *ParcelLineItemUpdate
 	parcelLineItemId     string
 }
 
-func (r ApiPATCHParcelLineItemsParcelLineItemIdRequest) ParcelLineItemUpdate(parcelLineItemUpdate ParcelLineItemUpdate) ApiPATCHParcelLineItemsParcelLineItemIdRequest {
+func (r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) ParcelLineItemUpdate(parcelLineItemUpdate ParcelLineItemUpdate) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
 	r.parcelLineItemUpdate = &parcelLineItemUpdate
 	return r
 }
 
-func (r ApiPATCHParcelLineItemsParcelLineItemIdRequest) Execute() (*http.Response, error) {
+func (r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) Execute() (*PATCHParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	return r.ApiService.PATCHParcelLineItemsParcelLineItemIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param parcelLineItemId The resource's id
- @return ApiPATCHParcelLineItemsParcelLineItemIdRequest
+ @return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest
 */
-func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ApiPATCHParcelLineItemsParcelLineItemIdRequest {
-	return ApiPATCHParcelLineItemsParcelLineItemIdRequest{
+func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx context.Context, parcelLineItemId string) ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest {
+	return ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		parcelLineItemId: parcelLineItemId,
@@ -432,16 +443,18 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemId(ctx con
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(r ApiPATCHParcelLineItemsParcelLineItemIdRequest) (*http.Response, error) {
+//  @return PATCHParcelLineItemsParcelLineItemId200Response
+func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(r ParcelLineItemsApiPATCHParcelLineItemsParcelLineItemIdRequest) (*PATCHParcelLineItemsParcelLineItemId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHParcelLineItemsParcelLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.PATCHParcelLineItemsParcelLineItemId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}"
@@ -451,7 +464,7 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.parcelLineItemUpdate == nil {
-		return nil, reportError("parcelLineItemUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("parcelLineItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 	localVarPostBody = r.parcelLineItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *ParcelLineItemsApiService) PATCHParcelLineItemsParcelLineItemIdExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTParcelLineItemsRequest struct {
+type ParcelLineItemsApiPOSTParcelLineItemsRequest struct {
 	ctx                  context.Context
 	ApiService           *ParcelLineItemsApiService
 	parcelLineItemCreate *ParcelLineItemCreate
 }
 
-func (r ApiPOSTParcelLineItemsRequest) ParcelLineItemCreate(parcelLineItemCreate ParcelLineItemCreate) ApiPOSTParcelLineItemsRequest {
+func (r ParcelLineItemsApiPOSTParcelLineItemsRequest) ParcelLineItemCreate(parcelLineItemCreate ParcelLineItemCreate) ParcelLineItemsApiPOSTParcelLineItemsRequest {
 	r.parcelLineItemCreate = &parcelLineItemCreate
 	return r
 }
 
-func (r ApiPOSTParcelLineItemsRequest) Execute() (*http.Response, error) {
+func (r ParcelLineItemsApiPOSTParcelLineItemsRequest) Execute() (*POSTParcelLineItems201Response, *http.Response, error) {
 	return r.ApiService.POSTParcelLineItemsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTParcelLineItems Create a parcel line item
 Create a parcel line item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTParcelLineItemsRequest
+ @return ParcelLineItemsApiPOSTParcelLineItemsRequest
 */
-func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) ApiPOSTParcelLineItemsRequest {
-	return ApiPOSTParcelLineItemsRequest{
+func (a *ParcelLineItemsApiService) POSTParcelLineItems(ctx context.Context) ParcelLineItemsApiPOSTParcelLineItemsRequest {
+	return ParcelLineItemsApiPOSTParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLineItemsRequest) (*http.Response, error) {
+//  @return POSTParcelLineItems201Response
+func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ParcelLineItemsApiPOSTParcelLineItemsRequest) (*POSTParcelLineItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTParcelLineItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelLineItemsApiService.POSTParcelLineItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items"
@@ -550,7 +574,7 @@ func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.parcelLineItemCreate == nil {
-		return nil, reportError("parcelLineItemCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("parcelLineItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLi
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLi
 	localVarPostBody = r.parcelLineItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *ParcelLineItemsApiService) POSTParcelLineItemsExecute(r ApiPOSTParcelLi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

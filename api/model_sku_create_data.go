@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuCreateData struct for SkuCreateData
 type SkuCreateData struct {
 	// The resource's type
-	Type          string                      `json:"type"`
-	Attributes    SkuCreateDataAttributes     `json:"attributes"`
-	Relationships *SkuCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    POSTSkus201ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewSkuCreateData instantiates a new SkuCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuCreateData(type_ string, attributes SkuCreateDataAttributes) *SkuCreateData {
+func NewSkuCreateData(type_ string, attributes POSTSkus201ResponseDataAttributes) *SkuCreateData {
 	this := SkuCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewSkuCreateData(type_ string, attributes SkuCreateDataAttributes) *SkuCrea
 // but it doesn't guarantee that properties required by API are set
 func NewSkuCreateDataWithDefaults() *SkuCreateData {
 	this := SkuCreateData{}
-	var type_ string = "skus"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *SkuCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuCreateData) GetAttributes() SkuCreateDataAttributes {
+func (o *SkuCreateData) GetAttributes() POSTSkus201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuCreateDataAttributes
+		var ret POSTSkus201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *SkuCreateData) GetAttributes() SkuCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuCreateData) GetAttributesOk() (*SkuCreateDataAttributes, bool) {
+func (o *SkuCreateData) GetAttributesOk() (*POSTSkus201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *SkuCreateData) GetAttributesOk() (*SkuCreateDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *SkuCreateData) SetAttributes(v SkuCreateDataAttributes) {
+func (o *SkuCreateData) SetAttributes(v POSTSkus201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

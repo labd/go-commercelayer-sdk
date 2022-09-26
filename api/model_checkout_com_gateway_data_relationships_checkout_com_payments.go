@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // CheckoutComGatewayDataRelationshipsCheckoutComPayments struct for CheckoutComGatewayDataRelationshipsCheckoutComPayments
 type CheckoutComGatewayDataRelationshipsCheckoutComPayments struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData `json:"data"`
 }
 
 // NewCheckoutComGatewayDataRelationshipsCheckoutComPayments instantiates a new CheckoutComGatewayDataRelationshipsCheckoutComPayments object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayDataRelationshipsCheckoutComPayments(type_ string, id string) *CheckoutComGatewayDataRelationshipsCheckoutComPayments {
+func NewCheckoutComGatewayDataRelationshipsCheckoutComPayments(data CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData) *CheckoutComGatewayDataRelationshipsCheckoutComPayments {
 	this := CheckoutComGatewayDataRelationshipsCheckoutComPayments{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewCheckoutComGatewayDataRelationshipsCheckoutComPayments(type_ string, id 
 // but it doesn't guarantee that properties required by API are set
 func NewCheckoutComGatewayDataRelationshipsCheckoutComPaymentsWithDefaults() *CheckoutComGatewayDataRelationshipsCheckoutComPayments {
 	this := CheckoutComGatewayDataRelationshipsCheckoutComPayments{}
-	var type_ string = "checkout_com_payments"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetType() string {
+// GetData returns the Data field value
+func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetData() CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData {
 	if o == nil {
-		var ret string
+		var ret CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetTypeOk() (*string, bool) {
+func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetDataOk() (*CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) SetData(v CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData) {
+	o.Data = v
 }
 
 func (o CheckoutComGatewayDataRelationshipsCheckoutComPayments) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

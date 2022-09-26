@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CouponCreateData struct for CouponCreateData
 type CouponCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    CouponCreateDataAttributes     `json:"attributes"`
-	Relationships *CouponCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTCoupons201ResponseDataAttributes `json:"attributes"`
+	Relationships *CouponCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewCouponCreateData instantiates a new CouponCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCreateData(type_ string, attributes CouponCreateDataAttributes) *CouponCreateData {
+func NewCouponCreateData(type_ string, attributes POSTCoupons201ResponseDataAttributes) *CouponCreateData {
 	this := CouponCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewCouponCreateData(type_ string, attributes CouponCreateDataAttributes) *C
 // but it doesn't guarantee that properties required by API are set
 func NewCouponCreateDataWithDefaults() *CouponCreateData {
 	this := CouponCreateData{}
-	var type_ string = "coupons"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *CouponCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponCreateData) GetAttributes() CouponCreateDataAttributes {
+func (o *CouponCreateData) GetAttributes() POSTCoupons201ResponseDataAttributes {
 	if o == nil {
-		var ret CouponCreateDataAttributes
+		var ret POSTCoupons201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *CouponCreateData) GetAttributes() CouponCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponCreateData) GetAttributesOk() (*CouponCreateDataAttributes, bool) {
+func (o *CouponCreateData) GetAttributesOk() (*POSTCoupons201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *CouponCreateData) GetAttributesOk() (*CouponCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *CouponCreateData) SetAttributes(v CouponCreateDataAttributes) {
+func (o *CouponCreateData) SetAttributes(v POSTCoupons201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

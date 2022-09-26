@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ManualTaxCalculatorsApiService ManualTaxCalculatorsApi service
 type ManualTaxCalculatorsApiService service
 
-type ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
+type ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
 	ctx                   context.Context
 	ApiService            *ManualTaxCalculatorsApiService
 	manualTaxCalculatorId string
 }
 
-func (r ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*http.Response, error) {
+func (r ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEManualTaxCalculatorsManualTaxCalculatorIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest
+ @return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest {
-	return ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest{
+func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest {
+	return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -51,7 +51,7 @@ func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalc
 }
 
 // Execute executes the request
-func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorIdExecute(r ApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest) (*http.Response, error) {
+func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorsRequest struct {
+type ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest struct {
 	ctx        context.Context
 	ApiService *ManualTaxCalculatorsApiService
 }
 
-func (r ApiGETManualTaxCalculatorsRequest) Execute() (*http.Response, error) {
+func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) Execute() (*GETManualTaxCalculators200Response, *http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETManualTaxCalculators List all manual tax calculators
 List all manual tax calculators
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETManualTaxCalculatorsRequest
+ @return ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest
 */
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculators(ctx context.Context) ApiGETManualTaxCalculatorsRequest {
-	return ApiGETManualTaxCalculatorsRequest{
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculators(ctx context.Context) ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest {
+	return ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ApiGETManualTaxCalculatorsRequest) (*http.Response, error) {
+//  @return GETManualTaxCalculators200Response
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) (*GETManualTaxCalculators200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETManualTaxCalculators200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.GETManualTaxCalculators")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators"
@@ -168,7 +170,7 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ApiGET
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ApiGET
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ApiGET
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
+type ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
 	ctx                   context.Context
 	ApiService            *ManualTaxCalculatorsApiService
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*ManualTaxCalculator, *http.Response, error) {
+func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest
+ @return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest {
-	return ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest{
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest {
+	return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -231,13 +242,13 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 }
 
 // Execute executes the request
-//  @return ManualTaxCalculator
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r ApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) (*ManualTaxCalculator, *http.Response, error) {
+//  @return GETManualTaxCalculatorsManualTaxCalculatorId200Response
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ManualTaxCalculator
+		localVarReturnValue *GETManualTaxCalculatorsManualTaxCalculatorId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.GETManualTaxCalculatorsManualTaxCalculatorId")
@@ -306,13 +317,13 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETTaxRuleIdManualTaxCalculatorRequest struct {
+type ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService *ManualTaxCalculatorsApiService
 	taxRuleId  string
 }
 
-func (r ApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
+func (r ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxRuleIdManualTaxCalculatorExecute(r)
 }
 
@@ -323,10 +334,10 @@ Retrieve the manual tax calculator associated to the tax rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxRuleId The resource's id
- @return ApiGETTaxRuleIdManualTaxCalculatorRequest
+ @return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest
 */
-func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ApiGETTaxRuleIdManualTaxCalculatorRequest {
-	return ApiGETTaxRuleIdManualTaxCalculatorRequest{
+func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest {
+	return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
 		taxRuleId:  taxRuleId,
@@ -334,7 +345,7 @@ func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx con
 }
 
 // Execute executes the request
-func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculatorExecute(r ApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error) {
+func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculatorExecute(r ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -398,19 +409,19 @@ func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculatorExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
+type ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
 	ctx                       context.Context
 	ApiService                *ManualTaxCalculatorsApiService
 	manualTaxCalculatorUpdate *ManualTaxCalculatorUpdate
 	manualTaxCalculatorId     string
 }
 
-func (r ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate ManualTaxCalculatorUpdate) ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
+func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate ManualTaxCalculatorUpdate) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	r.manualTaxCalculatorUpdate = &manualTaxCalculatorUpdate
 	return r
 }
 
-func (r ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*http.Response, error) {
+func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	return r.ApiService.PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest
+ @return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
-	return ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest{
+func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
+	return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -432,16 +443,18 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 }
 
 // Execute executes the request
-func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r ApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) (*http.Response, error) {
+//  @return PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
+func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) (*PATCHManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.PATCHManualTaxCalculatorsManualTaxCalculatorId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}"
@@ -451,7 +464,7 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.manualTaxCalculatorUpdate == nil {
-		return nil, reportError("manualTaxCalculatorUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("manualTaxCalculatorUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 	localVarPostBody = r.manualTaxCalculatorUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTManualTaxCalculatorsRequest struct {
+type ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest struct {
 	ctx                       context.Context
 	ApiService                *ManualTaxCalculatorsApiService
 	manualTaxCalculatorCreate *ManualTaxCalculatorCreate
 }
 
-func (r ApiPOSTManualTaxCalculatorsRequest) ManualTaxCalculatorCreate(manualTaxCalculatorCreate ManualTaxCalculatorCreate) ApiPOSTManualTaxCalculatorsRequest {
+func (r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) ManualTaxCalculatorCreate(manualTaxCalculatorCreate ManualTaxCalculatorCreate) ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest {
 	r.manualTaxCalculatorCreate = &manualTaxCalculatorCreate
 	return r
 }
 
-func (r ApiPOSTManualTaxCalculatorsRequest) Execute() (*http.Response, error) {
+func (r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) Execute() (*POSTManualTaxCalculators201Response, *http.Response, error) {
 	return r.ApiService.POSTManualTaxCalculatorsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTManualTaxCalculators Create a manual tax calculator
 Create a manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTManualTaxCalculatorsRequest
+ @return ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest
 */
-func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculators(ctx context.Context) ApiPOSTManualTaxCalculatorsRequest {
-	return ApiPOSTManualTaxCalculatorsRequest{
+func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculators(ctx context.Context) ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest {
+	return ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ApiPOSTManualTaxCalculatorsRequest) (*http.Response, error) {
+//  @return POSTManualTaxCalculators201Response
+func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) (*POSTManualTaxCalculators201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTManualTaxCalculators201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.POSTManualTaxCalculators")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators"
@@ -550,7 +574,7 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ApiPO
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.manualTaxCalculatorCreate == nil {
-		return nil, reportError("manualTaxCalculatorCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("manualTaxCalculatorCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ApiPO
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ApiPO
 	localVarPostBody = r.manualTaxCalculatorCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ApiPO
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

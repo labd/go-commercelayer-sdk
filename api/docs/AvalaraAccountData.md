@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "avalara_accounts"]
-**Attributes** | [**AvalaraAccountDataAttributes**](AvalaraAccountDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETAvalaraAccounts200ResponseDataInnerAttributes**](GETAvalaraAccounts200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAvalaraAccountData
 
-`func NewAvalaraAccountData(type_ string, attributes AvalaraAccountDataAttributes, ) *AvalaraAccountData`
+`func NewAvalaraAccountData(type_ string, attributes GETAvalaraAccounts200ResponseDataInnerAttributes, ) *AvalaraAccountData`
 
 NewAvalaraAccountData instantiates a new AvalaraAccountData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AvalaraAccountData) GetAttributes() AvalaraAccountDataAttributes`
+`func (o *AvalaraAccountData) GetAttributes() GETAvalaraAccounts200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AvalaraAccountData) GetAttributesOk() (*AvalaraAccountDataAttributes, bool)`
+`func (o *AvalaraAccountData) GetAttributesOk() (*GETAvalaraAccounts200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AvalaraAccountData) SetAttributes(v AvalaraAccountDataAttributes)`
+`func (o *AvalaraAccountData) SetAttributes(v GETAvalaraAccounts200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

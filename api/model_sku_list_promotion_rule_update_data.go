@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type SkuListPromotionRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                       `json:"id"`
-	Attributes    SkuListPromotionRuleCreateDataAttributes     `json:"attributes"`
-	Relationships *SkuListPromotionRuleUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                             `json:"id"`
+	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuListPromotionRuleUpdateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleUpdateData instantiates a new SkuListPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes SkuListPromotionRuleCreateDataAttributes) *SkuListPromotionRuleUpdateData {
+func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes POSTSkuListPromotionRules201ResponseDataAttributes) *SkuListPromotionRuleUpdateData {
 	this := SkuListPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes SkuLi
 // but it doesn't guarantee that properties required by API are set
 func NewSkuListPromotionRuleUpdateDataWithDefaults() *SkuListPromotionRuleUpdateData {
 	this := SkuListPromotionRuleUpdateData{}
-	var type_ string = "sku_list_promotion_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *SkuListPromotionRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCreateDataAttributes {
+func (o *SkuListPromotionRuleUpdateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuListPromotionRuleCreateDataAttributes
+		var ret POSTSkuListPromotionRules201ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCre
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRuleCreateDataAttributes, bool) {
+func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*POSTSkuListPromotionRules201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRul
 }
 
 // SetAttributes sets field value
-func (o *SkuListPromotionRuleUpdateData) SetAttributes(v SkuListPromotionRuleCreateDataAttributes) {
+func (o *SkuListPromotionRuleUpdateData) SetAttributes(v POSTSkuListPromotionRules201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

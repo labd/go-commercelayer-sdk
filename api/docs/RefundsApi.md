@@ -1,6 +1,6 @@
 # \RefundsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -149,7 +149,7 @@ No authorization required
 
 ## GETRefunds
 
-> GETRefunds(ctx).Execute()
+> GETRefunds200Response GETRefunds(ctx).Execute()
 
 List all refunds
 
@@ -176,6 +176,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RefundsApi.GETRefunds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETRefunds`: GETRefunds200Response
+    fmt.Fprintf(os.Stdout, "Response from `RefundsApi.GETRefunds`: %v\n", resp)
 }
 ```
 
@@ -190,16 +192,16 @@ Other parameters are passed through a pointer to a apiGETRefundsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETRefunds200Response**](GETRefunds200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -208,7 +210,7 @@ No authorization required
 
 ## GETRefundsRefundId
 
-> Refund GETRefundsRefundId(ctx, refundId).Execute()
+> GETRefundsRefundId200Response GETRefundsRefundId(ctx, refundId).Execute()
 
 Retrieve a refund
 
@@ -236,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RefundsApi.GETRefundsRefundId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETRefundsRefundId`: Refund
+    // response from `GETRefundsRefundId`: GETRefundsRefundId200Response
     fmt.Fprintf(os.Stdout, "Response from `RefundsApi.GETRefundsRefundId`: %v\n", resp)
 }
 ```
@@ -260,11 +262,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Refund**](Refund.md)
+[**GETRefundsRefundId200Response**](GETRefundsRefundId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

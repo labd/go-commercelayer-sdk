@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_copies"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**OrderSubscriptionDataRelationshipsOrderCopiesData**](OrderSubscriptionDataRelationshipsOrderCopiesData.md) |  | 
 
 ## Methods
 
 ### NewOrderSubscriptionDataRelationshipsOrderCopies
 
-`func NewOrderSubscriptionDataRelationshipsOrderCopies(type_ string, id string, ) *OrderSubscriptionDataRelationshipsOrderCopies`
+`func NewOrderSubscriptionDataRelationshipsOrderCopies(data OrderSubscriptionDataRelationshipsOrderCopiesData, ) *OrderSubscriptionDataRelationshipsOrderCopies`
 
 NewOrderSubscriptionDataRelationshipsOrderCopies instantiates a new OrderSubscriptionDataRelationshipsOrderCopies object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewOrderSubscriptionDataRelationshipsOrderCopiesWithDefaults instantiates a new 
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetType() string`
+`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetData() OrderSubscriptionDataRelationshipsOrderCopiesData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetTypeOk() (*string, bool)`
+`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetDataOk() (*OrderSubscriptionDataRelationshipsOrderCopiesData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) SetType(v string)`
+`func (o *OrderSubscriptionDataRelationshipsOrderCopies) SetData(v OrderSubscriptionDataRelationshipsOrderCopiesData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *OrderSubscriptionDataRelationshipsOrderCopies) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type StockItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                            `json:"id"`
-	Attributes    StockItemUpdateDataAttributes     `json:"attributes"`
-	Relationships *StockItemUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                              `json:"id"`
+	Attributes    PATCHStockItemsStockItemId200ResponseDataAttributes `json:"attributes"`
+	Relationships *StockItemUpdateDataRelationships                   `json:"relationships,omitempty"`
 }
 
 // NewStockItemUpdateData instantiates a new StockItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockItemUpdateData(type_ string, id string, attributes StockItemUpdateDataAttributes) *StockItemUpdateData {
+func NewStockItemUpdateData(type_ string, id string, attributes PATCHStockItemsStockItemId200ResponseDataAttributes) *StockItemUpdateData {
 	this := StockItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewStockItemUpdateData(type_ string, id string, attributes StockItemUpdateD
 // but it doesn't guarantee that properties required by API are set
 func NewStockItemUpdateDataWithDefaults() *StockItemUpdateData {
 	this := StockItemUpdateData{}
-	var type_ string = "stock_items"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *StockItemUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockItemUpdateData) GetAttributes() StockItemUpdateDataAttributes {
+func (o *StockItemUpdateData) GetAttributes() PATCHStockItemsStockItemId200ResponseDataAttributes {
 	if o == nil {
-		var ret StockItemUpdateDataAttributes
+		var ret PATCHStockItemsStockItemId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *StockItemUpdateData) GetAttributes() StockItemUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockItemUpdateData) GetAttributesOk() (*StockItemUpdateDataAttributes, bool) {
+func (o *StockItemUpdateData) GetAttributesOk() (*PATCHStockItemsStockItemId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *StockItemUpdateData) GetAttributesOk() (*StockItemUpdateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *StockItemUpdateData) SetAttributes(v StockItemUpdateDataAttributes) {
+func (o *StockItemUpdateData) SetAttributes(v PATCHStockItemsStockItemId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

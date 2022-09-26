@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // SkuOptionsApiService SkuOptionsApi service
 type SkuOptionsApiService service
 
-type ApiDELETESkuOptionsSkuOptionIdRequest struct {
+type SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest struct {
 	ctx         context.Context
 	ApiService  *SkuOptionsApiService
 	skuOptionId string
 }
 
-func (r ApiDELETESkuOptionsSkuOptionIdRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkuOptionsSkuOptionIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiDELETESkuOptionsSkuOptionIdRequest
+ @return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) ApiDELETESkuOptionsSkuOptionIdRequest {
-	return ApiDELETESkuOptionsSkuOptionIdRequest{
+func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest {
+	return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -51,7 +51,7 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r ApiDELETESkuOptionsSkuOptionIdRequest) (*http.Response, error) {
+func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r ApiDELETESku
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETLineItemOptionIdSkuOptionRequest struct {
+type SkuOptionsApiGETLineItemOptionIdSkuOptionRequest struct {
 	ctx              context.Context
 	ApiService       *SkuOptionsApiService
 	lineItemOptionId string
 }
 
-func (r ApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETLineItemOptionIdSkuOptionExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the sku option associated to the line item option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param lineItemOptionId The resource's id
- @return ApiGETLineItemOptionIdSkuOptionRequest
+ @return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest
 */
-func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) ApiGETLineItemOptionIdSkuOptionRequest {
-	return ApiGETLineItemOptionIdSkuOptionRequest{
+func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) SkuOptionsApiGETLineItemOptionIdSkuOptionRequest {
+	return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		lineItemOptionId: lineItemOptionId,
@@ -143,7 +143,7 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r ApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error) {
+func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsApiGETLineItemOptionIdSkuOptionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r ApiGETLineI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuIdSkuOptionsRequest struct {
+type SkuOptionsApiGETSkuIdSkuOptionsRequest struct {
 	ctx        context.Context
 	ApiService *SkuOptionsApiService
 	skuId      string
 }
 
-func (r ApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuIdSkuOptionsExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the sku options associated to the SKU
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuId The resource's id
- @return ApiGETSkuIdSkuOptionsRequest
+ @return SkuOptionsApiGETSkuIdSkuOptionsRequest
 */
-func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) ApiGETSkuIdSkuOptionsRequest {
-	return ApiGETSkuIdSkuOptionsRequest{
+func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) SkuOptionsApiGETSkuIdSkuOptionsRequest {
+	return SkuOptionsApiGETSkuIdSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuId:      skuId,
@@ -235,7 +235,7 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId str
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r ApiGETSkuIdSkuOptionsRequest) (*http.Response, error) {
+func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r SkuOptionsApiGETSkuIdSkuOptionsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,12 +299,12 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r ApiGETSkuIdSkuOptions
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuOptionsRequest struct {
+type SkuOptionsApiGETSkuOptionsRequest struct {
 	ctx        context.Context
 	ApiService *SkuOptionsApiService
 }
 
-func (r ApiGETSkuOptionsRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiGETSkuOptionsRequest) Execute() (*GETSkuOptions200Response, *http.Response, error) {
 	return r.ApiService.GETSkuOptionsExecute(r)
 }
 
@@ -314,26 +314,28 @@ GETSkuOptions List all SKU options
 List all SKU options
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETSkuOptionsRequest
+ @return SkuOptionsApiGETSkuOptionsRequest
 */
-func (a *SkuOptionsApiService) GETSkuOptions(ctx context.Context) ApiGETSkuOptionsRequest {
-	return ApiGETSkuOptionsRequest{
+func (a *SkuOptionsApiService) GETSkuOptions(ctx context.Context) SkuOptionsApiGETSkuOptionsRequest {
+	return SkuOptionsApiGETSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) GETSkuOptionsExecute(r ApiGETSkuOptionsRequest) (*http.Response, error) {
+//  @return GETSkuOptions200Response
+func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptionsRequest) (*GETSkuOptions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETSkuOptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.GETSkuOptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_options"
@@ -352,7 +354,7 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r ApiGETSkuOptionsRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -361,19 +363,19 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r ApiGETSkuOptionsRequest) (
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -381,19 +383,28 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r ApiGETSkuOptionsRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETSkuOptionsSkuOptionIdRequest struct {
+type SkuOptionsApiGETSkuOptionsSkuOptionIdRequest struct {
 	ctx         context.Context
 	ApiService  *SkuOptionsApiService
 	skuOptionId string
 }
 
-func (r ApiGETSkuOptionsSkuOptionIdRequest) Execute() (*SkuOption, *http.Response, error) {
+func (r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) Execute() (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	return r.ApiService.GETSkuOptionsSkuOptionIdExecute(r)
 }
 
@@ -404,10 +415,10 @@ Retrieve a SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiGETSkuOptionsSkuOptionIdRequest
+ @return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) ApiGETSkuOptionsSkuOptionIdRequest {
-	return ApiGETSkuOptionsSkuOptionIdRequest{
+func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiGETSkuOptionsSkuOptionIdRequest {
+	return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -415,13 +426,13 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, sku
 }
 
 // Execute executes the request
-//  @return SkuOption
-func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r ApiGETSkuOptionsSkuOptionIdRequest) (*SkuOption, *http.Response, error) {
+//  @return GETSkuOptionsSkuOptionId200Response
+func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuOption
+		localVarReturnValue *GETSkuOptionsSkuOptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.GETSkuOptionsSkuOptionId")
@@ -490,19 +501,19 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r ApiGETSkuOption
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHSkuOptionsSkuOptionIdRequest struct {
+type SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest struct {
 	ctx             context.Context
 	ApiService      *SkuOptionsApiService
 	skuOptionUpdate *SkuOptionUpdate
 	skuOptionId     string
 }
 
-func (r ApiPATCHSkuOptionsSkuOptionIdRequest) SkuOptionUpdate(skuOptionUpdate SkuOptionUpdate) ApiPATCHSkuOptionsSkuOptionIdRequest {
+func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) SkuOptionUpdate(skuOptionUpdate SkuOptionUpdate) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
 	r.skuOptionUpdate = &skuOptionUpdate
 	return r
 }
 
-func (r ApiPATCHSkuOptionsSkuOptionIdRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) Execute() (*PATCHSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHSkuOptionsSkuOptionIdExecute(r)
 }
 
@@ -513,10 +524,10 @@ Update a SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiPATCHSkuOptionsSkuOptionIdRequest
+ @return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) ApiPATCHSkuOptionsSkuOptionIdRequest {
-	return ApiPATCHSkuOptionsSkuOptionIdRequest{
+func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
+	return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -524,16 +535,18 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r ApiPATCHSkuOptionsSkuOptionIdRequest) (*http.Response, error) {
+//  @return PATCHSkuOptionsSkuOptionId200Response
+func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) (*PATCHSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHSkuOptionsSkuOptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.PATCHSkuOptionsSkuOptionId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
@@ -543,7 +556,7 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r ApiPATCHSkuOp
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuOptionUpdate == nil {
-		return nil, reportError("skuOptionUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuOptionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -556,7 +569,7 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r ApiPATCHSkuOp
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -567,19 +580,19 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r ApiPATCHSkuOp
 	localVarPostBody = r.skuOptionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -587,24 +600,33 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r ApiPATCHSkuOp
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTSkuOptionsRequest struct {
+type SkuOptionsApiPOSTSkuOptionsRequest struct {
 	ctx             context.Context
 	ApiService      *SkuOptionsApiService
 	skuOptionCreate *SkuOptionCreate
 }
 
-func (r ApiPOSTSkuOptionsRequest) SkuOptionCreate(skuOptionCreate SkuOptionCreate) ApiPOSTSkuOptionsRequest {
+func (r SkuOptionsApiPOSTSkuOptionsRequest) SkuOptionCreate(skuOptionCreate SkuOptionCreate) SkuOptionsApiPOSTSkuOptionsRequest {
 	r.skuOptionCreate = &skuOptionCreate
 	return r
 }
 
-func (r ApiPOSTSkuOptionsRequest) Execute() (*http.Response, error) {
+func (r SkuOptionsApiPOSTSkuOptionsRequest) Execute() (*POSTSkuOptions201Response, *http.Response, error) {
 	return r.ApiService.POSTSkuOptionsExecute(r)
 }
 
@@ -614,26 +636,28 @@ POSTSkuOptions Create a SKU option
 Create a SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTSkuOptionsRequest
+ @return SkuOptionsApiPOSTSkuOptionsRequest
 */
-func (a *SkuOptionsApiService) POSTSkuOptions(ctx context.Context) ApiPOSTSkuOptionsRequest {
-	return ApiPOSTSkuOptionsRequest{
+func (a *SkuOptionsApiService) POSTSkuOptions(ctx context.Context) SkuOptionsApiPOSTSkuOptionsRequest {
+	return SkuOptionsApiPOSTSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r ApiPOSTSkuOptionsRequest) (*http.Response, error) {
+//  @return POSTSkuOptions201Response
+func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptionsRequest) (*POSTSkuOptions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuOptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.POSTSkuOptions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_options"
@@ -642,7 +666,7 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r ApiPOSTSkuOptionsRequest)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuOptionCreate == nil {
-		return nil, reportError("skuOptionCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuOptionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -655,7 +679,7 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r ApiPOSTSkuOptionsRequest)
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -666,19 +690,19 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r ApiPOSTSkuOptionsRequest)
 	localVarPostBody = r.skuOptionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -686,8 +710,17 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r ApiPOSTSkuOptionsRequest)
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

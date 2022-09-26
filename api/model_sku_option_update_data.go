@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type SkuOptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    SkuOptionUpdateDataAttributes               `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Id            string                                              `json:"id"`
+	Attributes    PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships         `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionUpdateData instantiates a new SkuOptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuOptionUpdateData(type_ string, id string, attributes SkuOptionUpdateDataAttributes) *SkuOptionUpdateData {
+func NewSkuOptionUpdateData(type_ string, id string, attributes PATCHSkuOptionsSkuOptionId200ResponseDataAttributes) *SkuOptionUpdateData {
 	this := SkuOptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewSkuOptionUpdateData(type_ string, id string, attributes SkuOptionUpdateD
 // but it doesn't guarantee that properties required by API are set
 func NewSkuOptionUpdateDataWithDefaults() *SkuOptionUpdateData {
 	this := SkuOptionUpdateData{}
-	var type_ string = "sku_options"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *SkuOptionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuOptionUpdateData) GetAttributes() SkuOptionUpdateDataAttributes {
+func (o *SkuOptionUpdateData) GetAttributes() PATCHSkuOptionsSkuOptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret SkuOptionUpdateDataAttributes
+		var ret PATCHSkuOptionsSkuOptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *SkuOptionUpdateData) GetAttributes() SkuOptionUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuOptionUpdateData) GetAttributesOk() (*SkuOptionUpdateDataAttributes, bool) {
+func (o *SkuOptionUpdateData) GetAttributesOk() (*PATCHSkuOptionsSkuOptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *SkuOptionUpdateData) GetAttributesOk() (*SkuOptionUpdateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *SkuOptionUpdateData) SetAttributes(v SkuOptionUpdateDataAttributes) {
+func (o *SkuOptionUpdateData) SetAttributes(v PATCHSkuOptionsSkuOptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

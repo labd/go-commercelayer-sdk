@@ -1,6 +1,6 @@
 # \StockItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ No authorization required
 
 ## GETStockItems
 
-> GETStockItems(ctx).Execute()
+> GETStockItems200Response GETStockItems(ctx).Execute()
 
 List all stock items
 
@@ -180,6 +180,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETStockItems`: GETStockItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.GETStockItems`: %v\n", resp)
 }
 ```
 
@@ -194,16 +196,16 @@ Other parameters are passed through a pointer to a apiGETStockItemsRequest struc
 
 ### Return type
 
- (empty response body)
+[**GETStockItems200Response**](GETStockItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -212,7 +214,7 @@ No authorization required
 
 ## GETStockItemsStockItemId
 
-> StockItem GETStockItemsStockItemId(ctx, stockItemId).Execute()
+> GETStockItemsStockItemId200Response GETStockItemsStockItemId(ctx, stockItemId).Execute()
 
 Retrieve a stock item
 
@@ -240,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETStockItemsStockItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockItemsStockItemId`: StockItem
+    // response from `GETStockItemsStockItemId`: GETStockItemsStockItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.GETStockItemsStockItemId`: %v\n", resp)
 }
 ```
@@ -264,11 +266,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockItem**](StockItem.md)
+[**GETStockItemsStockItemId200Response**](GETStockItemsStockItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHStockItemsStockItemId
 
-> PATCHStockItemsStockItemId(ctx, stockItemId).StockItemUpdate(stockItemUpdate).Execute()
+> PATCHStockItemsStockItemId200Response PATCHStockItemsStockItemId(ctx, stockItemId).StockItemUpdate(stockItemUpdate).Execute()
 
 Update a stock item
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("stock_items", "XGZwpOSrWL", *openapiclient.NewStockItemUpdateDataAttributes())) // StockItemUpdate | 
+    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockItemsStockItemId200ResponseDataAttributes())) // StockItemUpdate | 
     stockItemId := "stockItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.PATCHStockItemsStockItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHStockItemsStockItemId`: PATCHStockItemsStockItemId200Response
+    fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.PATCHStockItemsStockItemId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHStockItemsStockItemId200Response**](PATCHStockItemsStockItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTStockItems
 
-> POSTStockItems(ctx).StockItemCreate(stockItemCreate).Execute()
+> POSTStockItems201Response POSTStockItems(ctx).StockItemCreate(stockItemCreate).Execute()
 
 Create a stock item
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("stock_items", *openapiclient.NewStockItemCreateDataAttributes(int32(100)))) // StockItemCreate | 
+    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("Type_example", *openapiclient.NewPOSTStockItems201ResponseDataAttributes(int32(100)))) // StockItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.POSTStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTStockItems`: POSTStockItems201Response
+    fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.POSTStockItems`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTStockItems201Response**](POSTStockItems201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

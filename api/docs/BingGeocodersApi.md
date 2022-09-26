@@ -1,6 +1,6 @@
 # \BingGeocodersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETBingGeocoders
 
-> GETBingGeocoders(ctx).Execute()
+> GETBingGeocoders200Response GETBingGeocoders(ctx).Execute()
 
 List all bing geocoders
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.GETBingGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETBingGeocoders`: GETBingGeocoders200Response
+    fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.GETBingGeocoders`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETBingGeocodersRequest st
 
 ### Return type
 
- (empty response body)
+[**GETBingGeocoders200Response**](GETBingGeocoders200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETBingGeocodersBingGeocoderId
 
-> BingGeocoder GETBingGeocodersBingGeocoderId(ctx, bingGeocoderId).Execute()
+> GETBingGeocodersBingGeocoderId200Response GETBingGeocodersBingGeocoderId(ctx, bingGeocoderId).Execute()
 
 Retrieve a bing geocoder
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.GETBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBingGeocodersBingGeocoderId`: BingGeocoder
+    // response from `GETBingGeocodersBingGeocoderId`: GETBingGeocodersBingGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.GETBingGeocodersBingGeocoderId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BingGeocoder**](BingGeocoder.md)
+[**GETBingGeocodersBingGeocoderId200Response**](GETBingGeocodersBingGeocoderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHBingGeocodersBingGeocoderId
 
-> PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
+> PATCHBingGeocodersBingGeocoderId200Response PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
 
 Update a bing geocoder
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("bing_geocoders", "XGZwpOSrWL", *openapiclient.NewBingGeocoderUpdateDataAttributes())) // BingGeocoderUpdate | 
+    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBingGeocodersBingGeocoderId200ResponseDataAttributes())) // BingGeocoderUpdate | 
     bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.PATCHBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHBingGeocodersBingGeocoderId`: PATCHBingGeocodersBingGeocoderId200Response
+    fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.PATCHBingGeocodersBingGeocoderId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHBingGeocodersBingGeocoderId200Response**](PATCHBingGeocodersBingGeocoderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTBingGeocoders
 
-> POSTBingGeocoders(ctx).BingGeocoderCreate(bingGeocoderCreate).Execute()
+> POSTBingGeocoders201Response POSTBingGeocoders(ctx).BingGeocoderCreate(bingGeocoderCreate).Execute()
 
 Create a bing geocoder
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("bing_geocoders", *openapiclient.NewBingGeocoderCreateDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
+    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("Type_example", *openapiclient.NewPOSTBingGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.POSTBingGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTBingGeocoders`: POSTBingGeocoders201Response
+    fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.POSTBingGeocoders`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBingGeocoders201Response**](POSTBingGeocoders201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

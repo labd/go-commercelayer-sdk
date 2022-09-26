@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "prices"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**PriceListDataRelationshipsPricesData**](PriceListDataRelationshipsPricesData.md) |  | 
 
 ## Methods
 
 ### NewPriceListDataRelationshipsPrices
 
-`func NewPriceListDataRelationshipsPrices(type_ string, id string, ) *PriceListDataRelationshipsPrices`
+`func NewPriceListDataRelationshipsPrices(data PriceListDataRelationshipsPricesData, ) *PriceListDataRelationshipsPrices`
 
 NewPriceListDataRelationshipsPrices instantiates a new PriceListDataRelationshipsPrices object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewPriceListDataRelationshipsPricesWithDefaults instantiates a new PriceListData
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *PriceListDataRelationshipsPrices) GetType() string`
+`func (o *PriceListDataRelationshipsPrices) GetData() PriceListDataRelationshipsPricesData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *PriceListDataRelationshipsPrices) GetTypeOk() (*string, bool)`
+`func (o *PriceListDataRelationshipsPrices) GetDataOk() (*PriceListDataRelationshipsPricesData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *PriceListDataRelationshipsPrices) SetType(v string)`
+`func (o *PriceListDataRelationshipsPrices) SetData(v PriceListDataRelationshipsPricesData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *PriceListDataRelationshipsPrices) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *PriceListDataRelationshipsPrices) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *PriceListDataRelationshipsPrices) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

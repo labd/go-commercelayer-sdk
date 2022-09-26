@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "line_item_options"]
-**Attributes** | [**LineItemOptionDataAttributes**](LineItemOptionDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETLineItemOptions200ResponseDataInnerAttributes**](GETLineItemOptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionDataRelationships**](LineItemOptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionData
 
-`func NewLineItemOptionData(type_ string, attributes LineItemOptionDataAttributes, ) *LineItemOptionData`
+`func NewLineItemOptionData(type_ string, attributes GETLineItemOptions200ResponseDataInnerAttributes, ) *LineItemOptionData`
 
 NewLineItemOptionData instantiates a new LineItemOptionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *LineItemOptionData) GetAttributes() LineItemOptionDataAttributes`
+`func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemOptionData) GetAttributesOk() (*LineItemOptionDataAttributes, bool)`
+`func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemOptionData) SetAttributes(v LineItemOptionDataAttributes)`
+`func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

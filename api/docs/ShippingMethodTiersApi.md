@@ -1,6 +1,6 @@
 # \ShippingMethodTiersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -80,7 +80,7 @@ No authorization required
 
 ## GETShippingMethodTiers
 
-> GETShippingMethodTiers(ctx).Execute()
+> GETShippingMethodTiers200Response GETShippingMethodTiers(ctx).Execute()
 
 List all shipping method tiers
 
@@ -107,6 +107,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodTiersApi.GETShippingMethodTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETShippingMethodTiers`: GETShippingMethodTiers200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingMethodTiersApi.GETShippingMethodTiers`: %v\n", resp)
 }
 ```
 
@@ -121,16 +123,16 @@ Other parameters are passed through a pointer to a apiGETShippingMethodTiersRequ
 
 ### Return type
 
- (empty response body)
+[**GETShippingMethodTiers200Response**](GETShippingMethodTiers200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -139,7 +141,7 @@ No authorization required
 
 ## GETShippingMethodTiersShippingMethodTierId
 
-> ShippingMethodTier GETShippingMethodTiersShippingMethodTierId(ctx, shippingMethodTierId).Execute()
+> GETShippingMethodTiersShippingMethodTierId200Response GETShippingMethodTiersShippingMethodTierId(ctx, shippingMethodTierId).Execute()
 
 Retrieve a shipping method tier
 
@@ -167,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodTiersApi.GETShippingMethodTiersShippingMethodTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethodTiersShippingMethodTierId`: ShippingMethodTier
+    // response from `GETShippingMethodTiersShippingMethodTierId`: GETShippingMethodTiersShippingMethodTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodTiersApi.GETShippingMethodTiersShippingMethodTierId`: %v\n", resp)
 }
 ```
@@ -191,11 +193,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingMethodTier**](ShippingMethodTier.md)
+[**GETShippingMethodTiersShippingMethodTierId200Response**](GETShippingMethodTiersShippingMethodTierId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

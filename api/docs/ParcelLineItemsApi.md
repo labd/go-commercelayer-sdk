@@ -1,6 +1,6 @@
 # \ParcelLineItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETParcelLineItems
 
-> GETParcelLineItems(ctx).Execute()
+> GETParcelLineItems200Response GETParcelLineItems(ctx).Execute()
 
 List all parcel line items
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.GETParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETParcelLineItems`: GETParcelLineItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.GETParcelLineItems`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETParcelLineItemsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETParcelLineItems200Response**](GETParcelLineItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETParcelLineItemsParcelLineItemId
 
-> ParcelLineItem GETParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).Execute()
+> GETParcelLineItemsParcelLineItemId200Response GETParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).Execute()
 
 Retrieve a parcel line item
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.GETParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcelLineItemsParcelLineItemId`: ParcelLineItem
+    // response from `GETParcelLineItemsParcelLineItemId`: GETParcelLineItemsParcelLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.GETParcelLineItemsParcelLineItemId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelLineItem**](ParcelLineItem.md)
+[**GETParcelLineItemsParcelLineItemId200Response**](GETParcelLineItemsParcelLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHParcelLineItemsParcelLineItemId
 
-> PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
+> PATCHParcelLineItemsParcelLineItemId200Response PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
 
 Update a parcel line item
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("parcel_line_items", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // ParcelLineItemUpdate | 
+    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ParcelLineItemUpdate | 
     parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHParcelLineItemsParcelLineItemId`: PATCHParcelLineItemsParcelLineItemId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHParcelLineItemsParcelLineItemId200Response**](PATCHParcelLineItemsParcelLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTParcelLineItems
 
-> POSTParcelLineItems(ctx).ParcelLineItemCreate(parcelLineItemCreate).Execute()
+> POSTParcelLineItems201Response POSTParcelLineItems(ctx).ParcelLineItemCreate(parcelLineItemCreate).Execute()
 
 Create a parcel line item
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("parcel_line_items", *openapiclient.NewParcelLineItemCreateDataAttributes(int32(4)))) // ParcelLineItemCreate | 
+    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("Type_example", *openapiclient.NewPOSTParcelLineItems201ResponseDataAttributes(int32(4)))) // ParcelLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.POSTParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTParcelLineItems`: POSTParcelLineItems201Response
+    fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.POSTParcelLineItems`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTParcelLineItems201Response**](POSTParcelLineItems201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "manual_gateways"]
-**Attributes** | [**ManualGatewayCreateDataAttributes**](ManualGatewayCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTManualGateways201ResponseDataAttributes**](POSTManualGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewManualGatewayCreateData
 
-`func NewManualGatewayCreateData(type_ string, attributes ManualGatewayCreateDataAttributes, ) *ManualGatewayCreateData`
+`func NewManualGatewayCreateData(type_ string, attributes POSTManualGateways201ResponseDataAttributes, ) *ManualGatewayCreateData`
 
 NewManualGatewayCreateData instantiates a new ManualGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ManualGatewayCreateData) GetAttributes() ManualGatewayCreateDataAttributes`
+`func (o *ManualGatewayCreateData) GetAttributes() POSTManualGateways201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualGatewayCreateData) GetAttributesOk() (*ManualGatewayCreateDataAttributes, bool)`
+`func (o *ManualGatewayCreateData) GetAttributesOk() (*POSTManualGateways201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualGatewayCreateData) SetAttributes(v ManualGatewayCreateDataAttributes)`
+`func (o *ManualGatewayCreateData) SetAttributes(v POSTManualGateways201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

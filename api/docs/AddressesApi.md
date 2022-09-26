@@ -1,6 +1,6 @@
 # \AddressesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -94,7 +94,7 @@ No authorization required
 
 ## GETAddresses
 
-> GETAddresses(ctx).Execute()
+> GETAddresses200Response GETAddresses(ctx).Execute()
 
 List all addresses
 
@@ -121,6 +121,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETAddresses`: GETAddresses200Response
+    fmt.Fprintf(os.Stdout, "Response from `AddressesApi.GETAddresses`: %v\n", resp)
 }
 ```
 
@@ -135,16 +137,16 @@ Other parameters are passed through a pointer to a apiGETAddressesRequest struct
 
 ### Return type
 
- (empty response body)
+[**GETAddresses200Response**](GETAddresses200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -153,7 +155,7 @@ No authorization required
 
 ## GETAddressesAddressId
 
-> Address GETAddressesAddressId(ctx, addressId).Execute()
+> GETAddressesAddressId200Response GETAddressesAddressId(ctx, addressId).Execute()
 
 Retrieve an address
 
@@ -181,7 +183,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAddressesAddressId`: Address
+    // response from `GETAddressesAddressId`: GETAddressesAddressId200Response
     fmt.Fprintf(os.Stdout, "Response from `AddressesApi.GETAddressesAddressId`: %v\n", resp)
 }
 ```
@@ -205,11 +207,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Address**](Address.md)
+[**GETAddressesAddressId200Response**](GETAddressesAddressId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -277,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -345,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -413,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -481,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -549,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -617,7 +619,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -685,7 +687,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -753,7 +755,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -821,7 +823,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -889,7 +891,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -957,7 +959,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1025,7 +1027,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1039,7 +1041,7 @@ No authorization required
 
 ## PATCHAddressesAddressId
 
-> PATCHAddressesAddressId(ctx, addressId).AddressUpdate(addressUpdate).Execute()
+> PATCHAddressesAddressId200Response PATCHAddressesAddressId(ctx, addressId).AddressUpdate(addressUpdate).Execute()
 
 Update an address
 
@@ -1058,7 +1060,7 @@ import (
 )
 
 func main() {
-    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("addresses", "XGZwpOSrWL", *openapiclient.NewAddressUpdateDataAttributes())) // AddressUpdate | 
+    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAddressesAddressId200ResponseDataAttributes())) // AddressUpdate | 
     addressId := "addressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1068,6 +1070,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.PATCHAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHAddressesAddressId`: PATCHAddressesAddressId200Response
+    fmt.Fprintf(os.Stdout, "Response from `AddressesApi.PATCHAddressesAddressId`: %v\n", resp)
 }
 ```
 
@@ -1091,16 +1095,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHAddressesAddressId200Response**](PATCHAddressesAddressId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1109,7 +1113,7 @@ No authorization required
 
 ## POSTAddresses
 
-> POSTAddresses(ctx).AddressCreate(addressCreate).Execute()
+> POSTAddresses201Response POSTAddresses(ctx).AddressCreate(addressCreate).Execute()
 
 Create an address
 
@@ -1128,7 +1132,7 @@ import (
 )
 
 func main() {
-    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("addresses", *openapiclient.NewAddressCreateDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
+    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("Type_example", *openapiclient.NewPOSTAddresses201ResponseDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1137,6 +1141,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.POSTAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTAddresses`: POSTAddresses201Response
+    fmt.Fprintf(os.Stdout, "Response from `AddressesApi.POSTAddresses`: %v\n", resp)
 }
 ```
 
@@ -1155,16 +1161,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTAddresses201Response**](POSTAddresses201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

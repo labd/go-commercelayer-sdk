@@ -1,6 +1,6 @@
 # \CarrierAccountsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GETCarrierAccounts
 
-> GETCarrierAccounts(ctx).Execute()
+> GETCarrierAccounts200Response GETCarrierAccounts(ctx).Execute()
 
 List all carrier accounts
 
@@ -39,6 +39,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CarrierAccountsApi.GETCarrierAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCarrierAccounts`: GETCarrierAccounts200Response
+    fmt.Fprintf(os.Stdout, "Response from `CarrierAccountsApi.GETCarrierAccounts`: %v\n", resp)
 }
 ```
 
@@ -53,16 +55,16 @@ Other parameters are passed through a pointer to a apiGETCarrierAccountsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETCarrierAccounts200Response**](GETCarrierAccounts200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -71,7 +73,7 @@ No authorization required
 
 ## GETCarrierAccountsCarrierAccountId
 
-> CarrierAccount GETCarrierAccountsCarrierAccountId(ctx, carrierAccountId).Execute()
+> GETCarrierAccountsCarrierAccountId200Response GETCarrierAccountsCarrierAccountId(ctx, carrierAccountId).Execute()
 
 Retrieve a carrier account
 
@@ -99,7 +101,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CarrierAccountsApi.GETCarrierAccountsCarrierAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCarrierAccountsCarrierAccountId`: CarrierAccount
+    // response from `GETCarrierAccountsCarrierAccountId`: GETCarrierAccountsCarrierAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `CarrierAccountsApi.GETCarrierAccountsCarrierAccountId`: %v\n", resp)
 }
 ```
@@ -123,11 +125,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CarrierAccount**](CarrierAccount.md)
+[**GETCarrierAccountsCarrierAccountId200Response**](GETCarrierAccountsCarrierAccountId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -195,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

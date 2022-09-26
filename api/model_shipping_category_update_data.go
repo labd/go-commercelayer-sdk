@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ShippingCategoryUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    ShippingCategoryUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}               `json:"relationships,omitempty"`
+	Id            string                                                             `json:"id"`
+	Attributes    PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                             `json:"relationships,omitempty"`
 }
 
 // NewShippingCategoryUpdateData instantiates a new ShippingCategoryUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryUpdateData(type_ string, id string, attributes ShippingCategoryUpdateDataAttributes) *ShippingCategoryUpdateData {
+func NewShippingCategoryUpdateData(type_ string, id string, attributes PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes) *ShippingCategoryUpdateData {
 	this := ShippingCategoryUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewShippingCategoryUpdateData(type_ string, id string, attributes ShippingC
 // but it doesn't guarantee that properties required by API are set
 func NewShippingCategoryUpdateDataWithDefaults() *ShippingCategoryUpdateData {
 	this := ShippingCategoryUpdateData{}
-	var type_ string = "shipping_categories"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *ShippingCategoryUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingCategoryUpdateData) GetAttributes() ShippingCategoryUpdateDataAttributes {
+func (o *ShippingCategoryUpdateData) GetAttributes() PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingCategoryUpdateDataAttributes
+		var ret PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *ShippingCategoryUpdateData) GetAttributes() ShippingCategoryUpdateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryUpdateData) GetAttributesOk() (*ShippingCategoryUpdateDataAttributes, bool) {
+func (o *ShippingCategoryUpdateData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *ShippingCategoryUpdateData) GetAttributesOk() (*ShippingCategoryUpdateD
 }
 
 // SetAttributes sets field value
-func (o *ShippingCategoryUpdateData) SetAttributes(v ShippingCategoryUpdateDataAttributes) {
+func (o *ShippingCategoryUpdateData) SetAttributes(v PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

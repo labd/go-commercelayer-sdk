@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "payment_methods"]
-**Attributes** | [**PaymentMethodDataAttributes**](PaymentMethodDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETPaymentMethods200ResponseDataInnerAttributes**](GETPaymentMethods200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodDataRelationships**](PaymentMethodDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentMethodData
 
-`func NewPaymentMethodData(type_ string, attributes PaymentMethodDataAttributes, ) *PaymentMethodData`
+`func NewPaymentMethodData(type_ string, attributes GETPaymentMethods200ResponseDataInnerAttributes, ) *PaymentMethodData`
 
 NewPaymentMethodData instantiates a new PaymentMethodData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PaymentMethodData) GetAttributes() PaymentMethodDataAttributes`
+`func (o *PaymentMethodData) GetAttributes() GETPaymentMethods200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaymentMethodData) GetAttributesOk() (*PaymentMethodDataAttributes, bool)`
+`func (o *PaymentMethodData) GetAttributesOk() (*GETPaymentMethods200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaymentMethodData) SetAttributes(v PaymentMethodDataAttributes)`
+`func (o *PaymentMethodData) SetAttributes(v GETPaymentMethods200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

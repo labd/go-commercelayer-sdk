@@ -1,6 +1,6 @@
 # \BundlesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -84,7 +84,7 @@ No authorization required
 
 ## GETBundles
 
-> GETBundles(ctx).Execute()
+> GETBundles200Response GETBundles(ctx).Execute()
 
 List all bundles
 
@@ -111,6 +111,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETBundles`: GETBundles200Response
+    fmt.Fprintf(os.Stdout, "Response from `BundlesApi.GETBundles`: %v\n", resp)
 }
 ```
 
@@ -125,16 +127,16 @@ Other parameters are passed through a pointer to a apiGETBundlesRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETBundles200Response**](GETBundles200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -143,7 +145,7 @@ No authorization required
 
 ## GETBundlesBundleId
 
-> Bundle GETBundlesBundleId(ctx, bundleId).Execute()
+> GETBundlesBundleId200Response GETBundlesBundleId(ctx, bundleId).Execute()
 
 Retrieve a bundle
 
@@ -171,7 +173,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBundlesBundleId`: Bundle
+    // response from `GETBundlesBundleId`: GETBundlesBundleId200Response
     fmt.Fprintf(os.Stdout, "Response from `BundlesApi.GETBundlesBundleId`: %v\n", resp)
 }
 ```
@@ -195,11 +197,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Bundle**](Bundle.md)
+[**GETBundlesBundleId200Response**](GETBundlesBundleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -267,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -335,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHBundlesBundleId
 
-> PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
+> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
 
 Update a bundle
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("bundles", "XGZwpOSrWL", *openapiclient.NewBundleUpdateDataAttributes())) // BundleUpdate | 
+    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
     bundleId := "bundleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.PATCHBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHBundlesBundleId`: PATCHBundlesBundleId200Response
+    fmt.Fprintf(os.Stdout, "Response from `BundlesApi.PATCHBundlesBundleId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHBundlesBundleId200Response**](PATCHBundlesBundleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTBundles
 
-> POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
+> POSTBundles201Response POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
 
 Create a bundle
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("bundles", *openapiclient.NewBundleCreateDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
+    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("Type_example", *openapiclient.NewPOSTBundles201ResponseDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.POSTBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTBundles`: POSTBundles201Response
+    fmt.Fprintf(os.Stdout, "Response from `BundlesApi.POSTBundles`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBundles201Response**](POSTBundles201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

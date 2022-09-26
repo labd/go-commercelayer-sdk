@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // FixedPricePromotionsApiService FixedPricePromotionsApi service
 type FixedPricePromotionsApiService service
 
-type ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *FixedPricePromotionsApiService
 	fixedPricePromotionId string
 }
 
-func (r ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
+func (r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
+ @return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
-	return ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
+	return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -51,7 +51,7 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r ApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
+func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionsRequest struct {
+type FixedPricePromotionsApiGETFixedPricePromotionsRequest struct {
 	ctx        context.Context
 	ApiService *FixedPricePromotionsApiService
 }
 
-func (r ApiGETFixedPricePromotionsRequest) Execute() (*http.Response, error) {
+func (r FixedPricePromotionsApiGETFixedPricePromotionsRequest) Execute() (*GETFixedPricePromotions200Response, *http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETFixedPricePromotions List all fixed price promotions
 List all fixed price promotions
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETFixedPricePromotionsRequest
+ @return FixedPricePromotionsApiGETFixedPricePromotionsRequest
 */
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotions(ctx context.Context) ApiGETFixedPricePromotionsRequest {
-	return ApiGETFixedPricePromotionsRequest{
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiGETFixedPricePromotionsRequest {
+	return FixedPricePromotionsApiGETFixedPricePromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r ApiGETFixedPricePromotionsRequest) (*http.Response, error) {
+//  @return GETFixedPricePromotions200Response
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedPricePromotionsApiGETFixedPricePromotionsRequest) (*GETFixedPricePromotions200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETFixedPricePromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.GETFixedPricePromotions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions"
@@ -168,7 +170,7 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r ApiGET
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r ApiGET
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r ApiGET
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *FixedPricePromotionsApiService
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*FixedPricePromotion, *http.Response, error) {
+func (r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*GETFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionsFixedPricePromotionIdRequest
+ @return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
-	return ApiGETFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
+	return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -231,13 +242,13 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 }
 
 // Execute executes the request
-//  @return FixedPricePromotion
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r ApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotion, *http.Response, error) {
+//  @return GETFixedPricePromotionsFixedPricePromotionId200Response
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*GETFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedPricePromotion
+		localVarReturnValue *GETFixedPricePromotionsFixedPricePromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.GETFixedPricePromotionsFixedPricePromotionId")
@@ -306,19 +317,19 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest struct {
+type FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                       context.Context
 	ApiService                *FixedPricePromotionsApiService
 	fixedPricePromotionUpdate *FixedPricePromotionUpdate
 	fixedPricePromotionId     string
 }
 
-func (r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) FixedPricePromotionUpdate(fixedPricePromotionUpdate FixedPricePromotionUpdate) ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
+func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) FixedPricePromotionUpdate(fixedPricePromotionUpdate FixedPricePromotionUpdate) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
 	r.fixedPricePromotionUpdate = &fixedPricePromotionUpdate
 	return r
 }
 
-func (r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
+func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*PATCHFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
+ @return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
-	return ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest{
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
+	return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -340,16 +351,18 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r ApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*http.Response, error) {
+//  @return PATCHFixedPricePromotionsFixedPricePromotionId200Response
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*PATCHFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHFixedPricePromotionsFixedPricePromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.PATCHFixedPricePromotionsFixedPricePromotionId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}"
@@ -359,7 +372,7 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.fixedPricePromotionUpdate == nil {
-		return nil, reportError("fixedPricePromotionUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("fixedPricePromotionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 	localVarPostBody = r.fixedPricePromotionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTFixedPricePromotionsRequest struct {
+type FixedPricePromotionsApiPOSTFixedPricePromotionsRequest struct {
 	ctx                       context.Context
 	ApiService                *FixedPricePromotionsApiService
 	fixedPricePromotionCreate *FixedPricePromotionCreate
 }
 
-func (r ApiPOSTFixedPricePromotionsRequest) FixedPricePromotionCreate(fixedPricePromotionCreate FixedPricePromotionCreate) ApiPOSTFixedPricePromotionsRequest {
+func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) FixedPricePromotionCreate(fixedPricePromotionCreate FixedPricePromotionCreate) FixedPricePromotionsApiPOSTFixedPricePromotionsRequest {
 	r.fixedPricePromotionCreate = &fixedPricePromotionCreate
 	return r
 }
 
-func (r ApiPOSTFixedPricePromotionsRequest) Execute() (*http.Response, error) {
+func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) Execute() (*POSTFixedPricePromotions201Response, *http.Response, error) {
 	return r.ApiService.POSTFixedPricePromotionsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTFixedPricePromotions Create a fixed price promotion
 Create a fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTFixedPricePromotionsRequest
+ @return FixedPricePromotionsApiPOSTFixedPricePromotionsRequest
 */
-func (a *FixedPricePromotionsApiService) POSTFixedPricePromotions(ctx context.Context) ApiPOSTFixedPricePromotionsRequest {
-	return ApiPOSTFixedPricePromotionsRequest{
+func (a *FixedPricePromotionsApiService) POSTFixedPricePromotions(ctx context.Context) FixedPricePromotionsApiPOSTFixedPricePromotionsRequest {
+	return FixedPricePromotionsApiPOSTFixedPricePromotionsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPOSTFixedPricePromotionsRequest) (*http.Response, error) {
+//  @return POSTFixedPricePromotions201Response
+func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) (*POSTFixedPricePromotions201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTFixedPricePromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.POSTFixedPricePromotions")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions"
@@ -458,7 +482,7 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPO
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.fixedPricePromotionCreate == nil {
-		return nil, reportError("fixedPricePromotionCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("fixedPricePromotionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPO
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPO
 	localVarPostBody = r.fixedPricePromotionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r ApiPO
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

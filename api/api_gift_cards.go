@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // GiftCardsApiService GiftCardsApi service
 type GiftCardsApiService service
 
-type ApiDELETEGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiDELETEGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService *GiftCardsApiService
 	giftCardId string
 }
 
-func (r ApiDELETEGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEGiftCardsGiftCardIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiDELETEGiftCardsGiftCardIdRequest
+ @return GiftCardsApiDELETEGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiDELETEGiftCardsGiftCardIdRequest {
-	return ApiDELETEGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiDELETEGiftCardsGiftCardIdRequest {
+	return GiftCardsApiDELETEGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -51,7 +51,7 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, gif
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r ApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error) {
+func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r ApiDELETEGiftCa
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardsRequest struct {
+type GiftCardsApiGETGiftCardsRequest struct {
 	ctx        context.Context
 	ApiService *GiftCardsApiService
 }
 
-func (r ApiGETGiftCardsRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiGETGiftCardsRequest) Execute() (*GETGiftCards200Response, *http.Response, error) {
 	return r.ApiService.GETGiftCardsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETGiftCards List all gift cards
 List all gift cards
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETGiftCardsRequest
+ @return GiftCardsApiGETGiftCardsRequest
 */
-func (a *GiftCardsApiService) GETGiftCards(ctx context.Context) ApiGETGiftCardsRequest {
-	return ApiGETGiftCardsRequest{
+func (a *GiftCardsApiService) GETGiftCards(ctx context.Context) GiftCardsApiGETGiftCardsRequest {
+	return GiftCardsApiGETGiftCardsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*http.Response, error) {
+//  @return GETGiftCards200Response
+func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequest) (*GETGiftCards200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETGiftCards200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.GETGiftCards")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/gift_cards"
@@ -168,7 +170,7 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*ht
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*ht
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r ApiGETGiftCardsRequest) (*ht
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiGETGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService *GiftCardsApiService
 	giftCardId string
 }
 
-func (r ApiGETGiftCardsGiftCardIdRequest) Execute() (*GiftCard, *http.Response, error) {
+func (r GiftCardsApiGETGiftCardsGiftCardIdRequest) Execute() (*GETGiftCardsGiftCardId200Response, *http.Response, error) {
 	return r.ApiService.GETGiftCardsGiftCardIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardsGiftCardIdRequest
+ @return GiftCardsApiGETGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiGETGiftCardsGiftCardIdRequest {
-	return ApiGETGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiGETGiftCardsGiftCardIdRequest {
+	return GiftCardsApiGETGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -231,13 +242,13 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCa
 }
 
 // Execute executes the request
-//  @return GiftCard
-func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r ApiGETGiftCardsGiftCardIdRequest) (*GiftCard, *http.Response, error) {
+//  @return GETGiftCardsGiftCardId200Response
+func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGiftCardsGiftCardIdRequest) (*GETGiftCardsGiftCardId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GiftCard
+		localVarReturnValue *GETGiftCardsGiftCardId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.GETGiftCardsGiftCardId")
@@ -306,19 +317,19 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r ApiGETGiftCardsGif
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHGiftCardsGiftCardIdRequest struct {
+type GiftCardsApiPATCHGiftCardsGiftCardIdRequest struct {
 	ctx            context.Context
 	ApiService     *GiftCardsApiService
 	giftCardUpdate *GiftCardUpdate
 	giftCardId     string
 }
 
-func (r ApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpdate GiftCardUpdate) ApiPATCHGiftCardsGiftCardIdRequest {
+func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpdate GiftCardUpdate) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
 	r.giftCardUpdate = &giftCardUpdate
 	return r
 }
 
-func (r ApiPATCHGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) Execute() (*PATCHGiftCardsGiftCardId200Response, *http.Response, error) {
 	return r.ApiService.PATCHGiftCardsGiftCardIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiPATCHGiftCardsGiftCardIdRequest
+ @return GiftCardsApiPATCHGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) ApiPATCHGiftCardsGiftCardIdRequest {
-	return ApiPATCHGiftCardsGiftCardIdRequest{
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
+	return GiftCardsApiPATCHGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -340,16 +351,18 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, gift
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCardsGiftCardIdRequest) (*http.Response, error) {
+//  @return PATCHGiftCardsGiftCardId200Response
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) (*PATCHGiftCardsGiftCardId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHGiftCardsGiftCardId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.PATCHGiftCardsGiftCardId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}"
@@ -359,7 +372,7 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCard
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.giftCardUpdate == nil {
-		return nil, reportError("giftCardUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("giftCardUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCard
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCard
 	localVarPostBody = r.giftCardUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r ApiPATCHGiftCard
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTGiftCardsRequest struct {
+type GiftCardsApiPOSTGiftCardsRequest struct {
 	ctx            context.Context
 	ApiService     *GiftCardsApiService
 	giftCardCreate *GiftCardCreate
 }
 
-func (r ApiPOSTGiftCardsRequest) GiftCardCreate(giftCardCreate GiftCardCreate) ApiPOSTGiftCardsRequest {
+func (r GiftCardsApiPOSTGiftCardsRequest) GiftCardCreate(giftCardCreate GiftCardCreate) GiftCardsApiPOSTGiftCardsRequest {
 	r.giftCardCreate = &giftCardCreate
 	return r
 }
 
-func (r ApiPOSTGiftCardsRequest) Execute() (*http.Response, error) {
+func (r GiftCardsApiPOSTGiftCardsRequest) Execute() (*POSTGiftCards201Response, *http.Response, error) {
 	return r.ApiService.POSTGiftCardsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTGiftCards Create a gift card
 Create a gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTGiftCardsRequest
+ @return GiftCardsApiPOSTGiftCardsRequest
 */
-func (a *GiftCardsApiService) POSTGiftCards(ctx context.Context) ApiPOSTGiftCardsRequest {
-	return ApiPOSTGiftCardsRequest{
+func (a *GiftCardsApiService) POSTGiftCards(ctx context.Context) GiftCardsApiPOSTGiftCardsRequest {
+	return GiftCardsApiPOSTGiftCardsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*http.Response, error) {
+//  @return POSTGiftCards201Response
+func (a *GiftCardsApiService) POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRequest) (*POSTGiftCards201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTGiftCards201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.POSTGiftCards")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/gift_cards"
@@ -458,7 +482,7 @@ func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.giftCardCreate == nil {
-		return nil, reportError("giftCardCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("giftCardCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*
 	localVarPostBody = r.giftCardCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *GiftCardsApiService) POSTGiftCardsExecute(r ApiPOSTGiftCardsRequest) (*
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -1,6 +1,6 @@
 # \FixedPricePromotionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETFixedPricePromotions
 
-> GETFixedPricePromotions(ctx).Execute()
+> GETFixedPricePromotions200Response GETFixedPricePromotions(ctx).Execute()
 
 List all fixed price promotions
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.GETFixedPricePromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETFixedPricePromotions`: GETFixedPricePromotions200Response
+    fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.GETFixedPricePromotions`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETFixedPricePromotionsReq
 
 ### Return type
 
- (empty response body)
+[**GETFixedPricePromotions200Response**](GETFixedPricePromotions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETFixedPricePromotionsFixedPricePromotionId
 
-> FixedPricePromotion GETFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).Execute()
+> GETFixedPricePromotionsFixedPricePromotionId200Response GETFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).Execute()
 
 Retrieve a fixed price promotion
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.GETFixedPricePromotionsFixedPricePromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFixedPricePromotionsFixedPricePromotionId`: FixedPricePromotion
+    // response from `GETFixedPricePromotionsFixedPricePromotionId`: GETFixedPricePromotionsFixedPricePromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.GETFixedPricePromotionsFixedPricePromotionId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FixedPricePromotion**](FixedPricePromotion.md)
+[**GETFixedPricePromotionsFixedPricePromotionId200Response**](GETFixedPricePromotionsFixedPricePromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHFixedPricePromotionsFixedPricePromotionId
 
-> PATCHFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).FixedPricePromotionUpdate(fixedPricePromotionUpdate).Execute()
+> PATCHFixedPricePromotionsFixedPricePromotionId200Response PATCHFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).FixedPricePromotionUpdate(fixedPricePromotionUpdate).Execute()
 
 Update a fixed price promotion
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    fixedPricePromotionUpdate := *openapiclient.NewFixedPricePromotionUpdate(*openapiclient.NewFixedPricePromotionUpdateData("fixed_price_promotions", "XGZwpOSrWL", *openapiclient.NewFixedPricePromotionUpdateDataAttributes())) // FixedPricePromotionUpdate | 
+    fixedPricePromotionUpdate := *openapiclient.NewFixedPricePromotionUpdate(*openapiclient.NewFixedPricePromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes())) // FixedPricePromotionUpdate | 
     fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.PATCHFixedPricePromotionsFixedPricePromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHFixedPricePromotionsFixedPricePromotionId`: PATCHFixedPricePromotionsFixedPricePromotionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.PATCHFixedPricePromotionsFixedPricePromotionId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHFixedPricePromotionsFixedPricePromotionId200Response**](PATCHFixedPricePromotionsFixedPricePromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTFixedPricePromotions
 
-> POSTFixedPricePromotions(ctx).FixedPricePromotionCreate(fixedPricePromotionCreate).Execute()
+> POSTFixedPricePromotions201Response POSTFixedPricePromotions(ctx).FixedPricePromotionCreate(fixedPricePromotionCreate).Execute()
 
 Create a fixed price promotion
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData("fixed_price_promotions", *openapiclient.NewFixedPricePromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedPricePromotionCreate | 
+    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData("Type_example", *openapiclient.NewPOSTFixedPricePromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedPricePromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.POSTFixedPricePromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTFixedPricePromotions`: POSTFixedPricePromotions201Response
+    fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.POSTFixedPricePromotions`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTFixedPricePromotions201Response**](POSTFixedPricePromotions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

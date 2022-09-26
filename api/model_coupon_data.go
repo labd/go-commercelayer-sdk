@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CouponData struct for CouponData
 type CouponData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    CouponDataAttributes     `json:"attributes"`
-	Relationships *CouponDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETCoupons200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CouponDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCouponData instantiates a new CouponData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponData(type_ string, attributes CouponDataAttributes) *CouponData {
+func NewCouponData(type_ string, attributes GETCoupons200ResponseDataInnerAttributes) *CouponData {
 	this := CouponData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewCouponData(type_ string, attributes CouponDataAttributes) *CouponData {
 // but it doesn't guarantee that properties required by API are set
 func NewCouponDataWithDefaults() *CouponData {
 	this := CouponData{}
-	var type_ string = "coupons"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *CouponData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponData) GetAttributes() CouponDataAttributes {
+func (o *CouponData) GetAttributes() GETCoupons200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CouponDataAttributes
+		var ret GETCoupons200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *CouponData) GetAttributes() CouponDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponData) GetAttributesOk() (*CouponDataAttributes, bool) {
+func (o *CouponData) GetAttributesOk() (*GETCoupons200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *CouponData) GetAttributesOk() (*CouponDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *CouponData) SetAttributes(v CouponDataAttributes) {
+func (o *CouponData) SetAttributes(v GETCoupons200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

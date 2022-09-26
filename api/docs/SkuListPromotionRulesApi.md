@@ -1,6 +1,6 @@
 # \SkuListPromotionRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +211,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -483,7 +483,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -551,7 +551,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -565,7 +565,7 @@ No authorization required
 
 ## GETSkuListPromotionRules
 
-> GETSkuListPromotionRules(ctx).Execute()
+> GETSkuListPromotionRules200Response GETSkuListPromotionRules(ctx).Execute()
 
 List all SKU list promotion rules
 
@@ -592,6 +592,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETSkuListPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETSkuListPromotionRules`: GETSkuListPromotionRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.GETSkuListPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -606,16 +608,16 @@ Other parameters are passed through a pointer to a apiGETSkuListPromotionRulesRe
 
 ### Return type
 
- (empty response body)
+[**GETSkuListPromotionRules200Response**](GETSkuListPromotionRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -624,7 +626,7 @@ No authorization required
 
 ## GETSkuListPromotionRulesSkuListPromotionRuleId
 
-> SkuListPromotionRule GETSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).Execute()
+> GETSkuListPromotionRulesSkuListPromotionRuleId200Response GETSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).Execute()
 
 Retrieve a SKU list promotion rule
 
@@ -652,7 +654,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListPromotionRulesSkuListPromotionRuleId`: SkuListPromotionRule
+    // response from `GETSkuListPromotionRulesSkuListPromotionRuleId`: GETSkuListPromotionRulesSkuListPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.GETSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -676,11 +678,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListPromotionRule**](SkuListPromotionRule.md)
+[**GETSkuListPromotionRulesSkuListPromotionRuleId200Response**](GETSkuListPromotionRulesSkuListPromotionRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -694,7 +696,7 @@ No authorization required
 
 ## PATCHSkuListPromotionRulesSkuListPromotionRuleId
 
-> PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
+> POSTSkuListPromotionRules201Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
 
 Update a SKU list promotion rule
 
@@ -713,7 +715,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("sku_list_promotion_rules", "XGZwpOSrWL", *openapiclient.NewSkuListPromotionRuleCreateDataAttributes())) // SkuListPromotionRuleUpdate | 
+    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleUpdate | 
     skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -723,6 +725,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: POSTSkuListPromotionRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
 
@@ -746,16 +750,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -764,7 +768,7 @@ No authorization required
 
 ## POSTSkuListPromotionRules
 
-> POSTSkuListPromotionRules(ctx).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
+> POSTSkuListPromotionRules201Response POSTSkuListPromotionRules(ctx).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
 
 Create a SKU list promotion rule
 
@@ -783,7 +787,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("sku_list_promotion_rules", *openapiclient.NewSkuListPromotionRuleCreateDataAttributes())) // SkuListPromotionRuleCreate | 
+    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -792,6 +796,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.POSTSkuListPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTSkuListPromotionRules`: POSTSkuListPromotionRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.POSTSkuListPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -810,16 +816,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

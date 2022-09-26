@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AdyenPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    AdyenPaymentUpdateDataAttributes     `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                    `json:"id"`
+	Attributes    PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewAdyenPaymentUpdateData instantiates a new AdyenPaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentUpdateData(type_ string, id string, attributes AdyenPaymentUpdateDataAttributes) *AdyenPaymentUpdateData {
+func NewAdyenPaymentUpdateData(type_ string, id string, attributes PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) *AdyenPaymentUpdateData {
 	this := AdyenPaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewAdyenPaymentUpdateData(type_ string, id string, attributes AdyenPaymentU
 // but it doesn't guarantee that properties required by API are set
 func NewAdyenPaymentUpdateDataWithDefaults() *AdyenPaymentUpdateData {
 	this := AdyenPaymentUpdateData{}
-	var type_ string = "adyen_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *AdyenPaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenPaymentUpdateData) GetAttributes() AdyenPaymentUpdateDataAttributes {
+func (o *AdyenPaymentUpdateData) GetAttributes() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret AdyenPaymentUpdateDataAttributes
+		var ret PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *AdyenPaymentUpdateData) GetAttributes() AdyenPaymentUpdateDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentUpdateData) GetAttributesOk() (*AdyenPaymentUpdateDataAttributes, bool) {
+func (o *AdyenPaymentUpdateData) GetAttributesOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *AdyenPaymentUpdateData) GetAttributesOk() (*AdyenPaymentUpdateDataAttri
 }
 
 // SetAttributes sets field value
-func (o *AdyenPaymentUpdateData) SetAttributes(v AdyenPaymentUpdateDataAttributes) {
+func (o *AdyenPaymentUpdateData) SetAttributes(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

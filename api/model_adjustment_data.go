@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdjustmentData struct for AdjustmentData
 type AdjustmentData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    AdjustmentDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}   `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    GETAdjustments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
 }
 
 // NewAdjustmentData instantiates a new AdjustmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdjustmentData(type_ string, attributes AdjustmentDataAttributes) *AdjustmentData {
+func NewAdjustmentData(type_ string, attributes GETAdjustments200ResponseDataInnerAttributes) *AdjustmentData {
 	this := AdjustmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewAdjustmentData(type_ string, attributes AdjustmentDataAttributes) *Adjus
 // but it doesn't guarantee that properties required by API are set
 func NewAdjustmentDataWithDefaults() *AdjustmentData {
 	this := AdjustmentData{}
-	var type_ string = "adjustments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *AdjustmentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdjustmentData) GetAttributes() AdjustmentDataAttributes {
+func (o *AdjustmentData) GetAttributes() GETAdjustments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret AdjustmentDataAttributes
+		var ret GETAdjustments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *AdjustmentData) GetAttributes() AdjustmentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdjustmentData) GetAttributesOk() (*AdjustmentDataAttributes, bool) {
+func (o *AdjustmentData) GetAttributesOk() (*GETAdjustments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *AdjustmentData) GetAttributesOk() (*AdjustmentDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *AdjustmentData) SetAttributes(v AdjustmentDataAttributes) {
+func (o *AdjustmentData) SetAttributes(v GETAdjustments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

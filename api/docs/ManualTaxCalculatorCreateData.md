@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "manual_tax_calculators"]
-**Attributes** | [**ManualTaxCalculatorCreateDataAttributes**](ManualTaxCalculatorCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTManualTaxCalculators201ResponseDataAttributes**](POSTManualTaxCalculators201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualTaxCalculatorCreateDataRelationships**](ManualTaxCalculatorCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewManualTaxCalculatorCreateData
 
-`func NewManualTaxCalculatorCreateData(type_ string, attributes ManualTaxCalculatorCreateDataAttributes, ) *ManualTaxCalculatorCreateData`
+`func NewManualTaxCalculatorCreateData(type_ string, attributes POSTManualTaxCalculators201ResponseDataAttributes, ) *ManualTaxCalculatorCreateData`
 
 NewManualTaxCalculatorCreateData instantiates a new ManualTaxCalculatorCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ManualTaxCalculatorCreateData) GetAttributes() ManualTaxCalculatorCreateDataAttributes`
+`func (o *ManualTaxCalculatorCreateData) GetAttributes() POSTManualTaxCalculators201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*ManualTaxCalculatorCreateDataAttributes, bool)`
+`func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*POSTManualTaxCalculators201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualTaxCalculatorCreateData) SetAttributes(v ManualTaxCalculatorCreateDataAttributes)`
+`func (o *ManualTaxCalculatorCreateData) SetAttributes(v POSTManualTaxCalculators201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

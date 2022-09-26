@@ -1,6 +1,6 @@
 # \EventCallbacksApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GETEventCallbacks
 
-> GETEventCallbacks(ctx).Execute()
+> GETEventCallbacks200Response GETEventCallbacks(ctx).Execute()
 
 List all event callbacks
 
@@ -40,6 +40,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETEventCallbacks`: GETEventCallbacks200Response
+    fmt.Fprintf(os.Stdout, "Response from `EventCallbacksApi.GETEventCallbacks`: %v\n", resp)
 }
 ```
 
@@ -54,16 +56,16 @@ Other parameters are passed through a pointer to a apiGETEventCallbacksRequest s
 
 ### Return type
 
- (empty response body)
+[**GETEventCallbacks200Response**](GETEventCallbacks200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -72,7 +74,7 @@ No authorization required
 
 ## GETEventCallbacksEventCallbackId
 
-> EventCallback GETEventCallbacksEventCallbackId(ctx, eventCallbackId).Execute()
+> GETEventCallbacksEventCallbackId200Response GETEventCallbacksEventCallbackId(ctx, eventCallbackId).Execute()
 
 Retrieve an event callback
 
@@ -100,7 +102,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETEventCallbacksEventCallbackId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEventCallbacksEventCallbackId`: EventCallback
+    // response from `GETEventCallbacksEventCallbackId`: GETEventCallbacksEventCallbackId200Response
     fmt.Fprintf(os.Stdout, "Response from `EventCallbacksApi.GETEventCallbacksEventCallbackId`: %v\n", resp)
 }
 ```
@@ -124,11 +126,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventCallback**](EventCallback.md)
+[**GETEventCallbacksEventCallbackId200Response**](GETEventCallbacksEventCallbackId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -196,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -264,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

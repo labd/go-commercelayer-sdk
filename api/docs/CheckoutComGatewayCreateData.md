@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "checkout_com_gateways"]
-**Attributes** | [**CheckoutComGatewayCreateDataAttributes**](CheckoutComGatewayCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTCheckoutComGateways201ResponseDataAttributes**](POSTCheckoutComGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CheckoutComGatewayCreateDataRelationships**](CheckoutComGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComGatewayCreateData
 
-`func NewCheckoutComGatewayCreateData(type_ string, attributes CheckoutComGatewayCreateDataAttributes, ) *CheckoutComGatewayCreateData`
+`func NewCheckoutComGatewayCreateData(type_ string, attributes POSTCheckoutComGateways201ResponseDataAttributes, ) *CheckoutComGatewayCreateData`
 
 NewCheckoutComGatewayCreateData instantiates a new CheckoutComGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComGatewayCreateData) GetAttributes() CheckoutComGatewayCreateDataAttributes`
+`func (o *CheckoutComGatewayCreateData) GetAttributes() POSTCheckoutComGateways201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComGatewayCreateData) GetAttributesOk() (*CheckoutComGatewayCreateDataAttributes, bool)`
+`func (o *CheckoutComGatewayCreateData) GetAttributesOk() (*POSTCheckoutComGateways201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComGatewayCreateData) SetAttributes(v CheckoutComGatewayCreateDataAttributes)`
+`func (o *CheckoutComGatewayCreateData) SetAttributes(v POSTCheckoutComGateways201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

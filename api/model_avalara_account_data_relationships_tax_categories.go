@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // AvalaraAccountDataRelationshipsTaxCategories struct for AvalaraAccountDataRelationshipsTaxCategories
 type AvalaraAccountDataRelationshipsTaxCategories struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data AvalaraAccountDataRelationshipsTaxCategoriesData `json:"data"`
 }
 
 // NewAvalaraAccountDataRelationshipsTaxCategories instantiates a new AvalaraAccountDataRelationshipsTaxCategories object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvalaraAccountDataRelationshipsTaxCategories(type_ string, id string) *AvalaraAccountDataRelationshipsTaxCategories {
+func NewAvalaraAccountDataRelationshipsTaxCategories(data AvalaraAccountDataRelationshipsTaxCategoriesData) *AvalaraAccountDataRelationshipsTaxCategories {
 	this := AvalaraAccountDataRelationshipsTaxCategories{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewAvalaraAccountDataRelationshipsTaxCategories(type_ string, id string) *A
 // but it doesn't guarantee that properties required by API are set
 func NewAvalaraAccountDataRelationshipsTaxCategoriesWithDefaults() *AvalaraAccountDataRelationshipsTaxCategories {
 	this := AvalaraAccountDataRelationshipsTaxCategories{}
-	var type_ string = "tax_categories"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetType() string {
+// GetData returns the Data field value
+func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() AvalaraAccountDataRelationshipsTaxCategoriesData {
 	if o == nil {
-		var ret string
+		var ret AvalaraAccountDataRelationshipsTaxCategoriesData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetTypeOk() (*string, bool) {
+func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*AvalaraAccountDataRelationshipsTaxCategoriesData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *AvalaraAccountDataRelationshipsTaxCategories) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *AvalaraAccountDataRelationshipsTaxCategories) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v AvalaraAccountDataRelationshipsTaxCategoriesData) {
+	o.Data = v
 }
 
 func (o AvalaraAccountDataRelationshipsTaxCategories) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

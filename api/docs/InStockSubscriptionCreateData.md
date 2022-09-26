@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "in_stock_subscriptions"]
-**Attributes** | [**InStockSubscriptionCreateDataAttributes**](InStockSubscriptionCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTInStockSubscriptions201ResponseDataAttributes**](POSTInStockSubscriptions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionCreateDataRelationships**](InStockSubscriptionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInStockSubscriptionCreateData
 
-`func NewInStockSubscriptionCreateData(type_ string, attributes InStockSubscriptionCreateDataAttributes, ) *InStockSubscriptionCreateData`
+`func NewInStockSubscriptionCreateData(type_ string, attributes POSTInStockSubscriptions201ResponseDataAttributes, ) *InStockSubscriptionCreateData`
 
 NewInStockSubscriptionCreateData instantiates a new InStockSubscriptionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InStockSubscriptionCreateData) GetAttributes() InStockSubscriptionCreateDataAttributes`
+`func (o *InStockSubscriptionCreateData) GetAttributes() POSTInStockSubscriptions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InStockSubscriptionCreateData) GetAttributesOk() (*InStockSubscriptionCreateDataAttributes, bool)`
+`func (o *InStockSubscriptionCreateData) GetAttributesOk() (*POSTInStockSubscriptions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InStockSubscriptionCreateData) SetAttributes(v InStockSubscriptionCreateDataAttributes)`
+`func (o *InStockSubscriptionCreateData) SetAttributes(v POSTInStockSubscriptions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

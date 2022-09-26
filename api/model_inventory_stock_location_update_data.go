@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type InventoryStockLocationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    InventoryStockLocationUpdateDataAttributes `json:"attributes"`
-	Relationships *InventoryReturnLocationDataRelationships  `json:"relationships,omitempty"`
+	Id            string                                                                        `json:"id"`
+	Attributes    PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes `json:"attributes"`
+	Relationships *InventoryReturnLocationDataRelationships                                     `json:"relationships,omitempty"`
 }
 
 // NewInventoryStockLocationUpdateData instantiates a new InventoryStockLocationUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryStockLocationUpdateData(type_ string, id string, attributes InventoryStockLocationUpdateDataAttributes) *InventoryStockLocationUpdateData {
+func NewInventoryStockLocationUpdateData(type_ string, id string, attributes PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) *InventoryStockLocationUpdateData {
 	this := InventoryStockLocationUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewInventoryStockLocationUpdateData(type_ string, id string, attributes Inv
 // but it doesn't guarantee that properties required by API are set
 func NewInventoryStockLocationUpdateDataWithDefaults() *InventoryStockLocationUpdateData {
 	this := InventoryStockLocationUpdateData{}
-	var type_ string = "inventory_stock_locations"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *InventoryStockLocationUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InventoryStockLocationUpdateData) GetAttributes() InventoryStockLocationUpdateDataAttributes {
+func (o *InventoryStockLocationUpdateData) GetAttributes() PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes {
 	if o == nil {
-		var ret InventoryStockLocationUpdateDataAttributes
+		var ret PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *InventoryStockLocationUpdateData) GetAttributes() InventoryStockLocatio
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationUpdateData) GetAttributesOk() (*InventoryStockLocationUpdateDataAttributes, bool) {
+func (o *InventoryStockLocationUpdateData) GetAttributesOk() (*PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *InventoryStockLocationUpdateData) GetAttributesOk() (*InventoryStockLoc
 }
 
 // SetAttributes sets field value
-func (o *InventoryStockLocationUpdateData) SetAttributes(v InventoryStockLocationUpdateDataAttributes) {
+func (o *InventoryStockLocationUpdateData) SetAttributes(v PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

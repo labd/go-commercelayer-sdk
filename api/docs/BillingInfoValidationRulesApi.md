@@ -1,6 +1,6 @@
 # \BillingInfoValidationRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETBillingInfoValidationRules
 
-> GETBillingInfoValidationRules(ctx).Execute()
+> GETBillingInfoValidationRules200Response GETBillingInfoValidationRules(ctx).Execute()
 
 List all billing info validation rules
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.GETBillingInfoValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETBillingInfoValidationRules`: GETBillingInfoValidationRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.GETBillingInfoValidationRules`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETBillingInfoValidationRu
 
 ### Return type
 
- (empty response body)
+[**GETBillingInfoValidationRules200Response**](GETBillingInfoValidationRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> BillingInfoValidationRule GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).Execute()
+> GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).Execute()
 
 Retrieve a billing info validation rule
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.GETBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBillingInfoValidationRulesBillingInfoValidationRuleId`: BillingInfoValidationRule
+    // response from `GETBillingInfoValidationRulesBillingInfoValidationRuleId`: GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.GETBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BillingInfoValidationRule**](BillingInfoValidationRule.md)
+[**GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
+> POSTBillingInfoValidationRules201Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
 
 Update a billing info validation rule
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("billing_info_validation_rules", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // BillingInfoValidationRuleUpdate | 
+    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleUpdate | 
     billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: POSTBillingInfoValidationRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTBillingInfoValidationRules
 
-> POSTBillingInfoValidationRules(ctx).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
+> POSTBillingInfoValidationRules201Response POSTBillingInfoValidationRules(ctx).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
 
 Create a billing info validation rule
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("billing_info_validation_rules", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // BillingInfoValidationRuleCreate | 
+    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.POSTBillingInfoValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTBillingInfoValidationRules`: POSTBillingInfoValidationRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.POSTBillingInfoValidationRules`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

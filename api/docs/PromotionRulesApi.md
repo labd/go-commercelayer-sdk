@@ -1,6 +1,6 @@
 # \PromotionRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETPromotionRules
 
-> GETPromotionRules(ctx).Execute()
+> GETPromotionRules200Response GETPromotionRules(ctx).Execute()
 
 List all promotion rules
 
@@ -38,6 +38,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPromotionRules`: GETPromotionRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -52,16 +54,16 @@ Other parameters are passed through a pointer to a apiGETPromotionRulesRequest s
 
 ### Return type
 
- (empty response body)
+[**GETPromotionRules200Response**](GETPromotionRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -70,7 +72,7 @@ No authorization required
 
 ## GETPromotionRulesPromotionRuleId
 
-> PromotionRule GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
+> GETPromotionRulesPromotionRuleId200Response GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
 
 Retrieve a promotion rule
 
@@ -98,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRulesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionRulesPromotionRuleId`: PromotionRule
+    // response from `GETPromotionRulesPromotionRuleId`: GETPromotionRulesPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRulesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -122,11 +124,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PromotionRule**](PromotionRule.md)
+[**GETPromotionRulesPromotionRuleId200Response**](GETPromotionRulesPromotionRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

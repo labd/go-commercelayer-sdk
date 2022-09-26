@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "events"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**CustomerAddressDataRelationshipsEventsData**](CustomerAddressDataRelationshipsEventsData.md) |  | 
 
 ## Methods
 
 ### NewCustomerAddressDataRelationshipsEvents
 
-`func NewCustomerAddressDataRelationshipsEvents(type_ string, id string, ) *CustomerAddressDataRelationshipsEvents`
+`func NewCustomerAddressDataRelationshipsEvents(data CustomerAddressDataRelationshipsEventsData, ) *CustomerAddressDataRelationshipsEvents`
 
 NewCustomerAddressDataRelationshipsEvents instantiates a new CustomerAddressDataRelationshipsEvents object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewCustomerAddressDataRelationshipsEventsWithDefaults instantiates a new Custome
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *CustomerAddressDataRelationshipsEvents) GetType() string`
+`func (o *CustomerAddressDataRelationshipsEvents) GetData() CustomerAddressDataRelationshipsEventsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *CustomerAddressDataRelationshipsEvents) GetTypeOk() (*string, bool)`
+`func (o *CustomerAddressDataRelationshipsEvents) GetDataOk() (*CustomerAddressDataRelationshipsEventsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *CustomerAddressDataRelationshipsEvents) SetType(v string)`
+`func (o *CustomerAddressDataRelationshipsEvents) SetData(v CustomerAddressDataRelationshipsEventsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *CustomerAddressDataRelationshipsEvents) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CustomerAddressDataRelationshipsEvents) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CustomerAddressDataRelationshipsEvents) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

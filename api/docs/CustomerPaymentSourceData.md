@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customer_payment_sources"]
-**Attributes** | [**CustomerPaymentSourceDataAttributes**](CustomerPaymentSourceDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETCustomerPaymentSources200ResponseDataInnerAttributes**](GETCustomerPaymentSources200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceData
 
-`func NewCustomerPaymentSourceData(type_ string, attributes CustomerPaymentSourceDataAttributes, ) *CustomerPaymentSourceData`
+`func NewCustomerPaymentSourceData(type_ string, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes, ) *CustomerPaymentSourceData`
 
 NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceData) GetAttributes() CustomerPaymentSourceDataAttributes`
+`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceData) GetAttributesOk() (*CustomerPaymentSourceDataAttributes, bool)`
+`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceData) SetAttributes(v CustomerPaymentSourceDataAttributes)`
+`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

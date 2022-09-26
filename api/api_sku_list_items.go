@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // SkuListItemsApiService SkuListItemsApi service
 type SkuListItemsApiService service
 
-type ApiDELETESkuListItemsSkuListItemIdRequest struct {
+type SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest struct {
 	ctx           context.Context
 	ApiService    *SkuListItemsApiService
 	skuListItemId string
 }
 
-func (r ApiDELETESkuListItemsSkuListItemIdRequest) Execute() (*http.Response, error) {
+func (r SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkuListItemsSkuListItemIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiDELETESkuListItemsSkuListItemIdRequest
+ @return SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest
 */
-func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) ApiDELETESkuListItemsSkuListItemIdRequest {
-	return ApiDELETESkuListItemsSkuListItemIdRequest{
+func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest {
+	return SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -51,7 +51,7 @@ func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemId(ctx context.Con
 }
 
 // Execute executes the request
-func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemIdExecute(r ApiDELETESkuListItemsSkuListItemIdRequest) (*http.Response, error) {
+func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemIdExecute(r SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemIdExecute(r ApiDEL
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdSkuListItemsRequest struct {
+type SkuListItemsApiGETSkuListIdSkuListItemsRequest struct {
 	ctx        context.Context
 	ApiService *SkuListItemsApiService
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
+func (r SkuListItemsApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdSkuListItemsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the sku list items associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdSkuListItemsRequest
+ @return SkuListItemsApiGETSkuListIdSkuListItemsRequest
 */
-func (a *SkuListItemsApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) ApiGETSkuListIdSkuListItemsRequest {
-	return ApiGETSkuListIdSkuListItemsRequest{
+func (a *SkuListItemsApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) SkuListItemsApiGETSkuListIdSkuListItemsRequest {
+	return SkuListItemsApiGETSkuListIdSkuListItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -143,7 +143,7 @@ func (a *SkuListItemsApiService) GETSkuListIdSkuListItems(ctx context.Context, s
 }
 
 // Execute executes the request
-func (a *SkuListItemsApiService) GETSkuListIdSkuListItemsExecute(r ApiGETSkuListIdSkuListItemsRequest) (*http.Response, error) {
+func (a *SkuListItemsApiService) GETSkuListIdSkuListItemsExecute(r SkuListItemsApiGETSkuListIdSkuListItemsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,12 +207,12 @@ func (a *SkuListItemsApiService) GETSkuListIdSkuListItemsExecute(r ApiGETSkuList
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemsRequest struct {
+type SkuListItemsApiGETSkuListItemsRequest struct {
 	ctx        context.Context
 	ApiService *SkuListItemsApiService
 }
 
-func (r ApiGETSkuListItemsRequest) Execute() (*http.Response, error) {
+func (r SkuListItemsApiGETSkuListItemsRequest) Execute() (*GETSkuListItems200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListItemsExecute(r)
 }
 
@@ -222,26 +222,28 @@ GETSkuListItems List all SKU list items
 List all SKU list items
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETSkuListItemsRequest
+ @return SkuListItemsApiGETSkuListItemsRequest
 */
-func (a *SkuListItemsApiService) GETSkuListItems(ctx context.Context) ApiGETSkuListItemsRequest {
-	return ApiGETSkuListItemsRequest{
+func (a *SkuListItemsApiService) GETSkuListItems(ctx context.Context) SkuListItemsApiGETSkuListItemsRequest {
+	return SkuListItemsApiGETSkuListItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListItemsApiService) GETSkuListItemsExecute(r ApiGETSkuListItemsRequest) (*http.Response, error) {
+//  @return GETSkuListItems200Response
+func (a *SkuListItemsApiService) GETSkuListItemsExecute(r SkuListItemsApiGETSkuListItemsRequest) (*GETSkuListItems200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETSkuListItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListItemsApiService.GETSkuListItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_list_items"
@@ -260,7 +262,7 @@ func (a *SkuListItemsApiService) GETSkuListItemsExecute(r ApiGETSkuListItemsRequ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -269,19 +271,19 @@ func (a *SkuListItemsApiService) GETSkuListItemsExecute(r ApiGETSkuListItemsRequ
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -289,19 +291,28 @@ func (a *SkuListItemsApiService) GETSkuListItemsExecute(r ApiGETSkuListItemsRequ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemsSkuListItemIdRequest struct {
+type SkuListItemsApiGETSkuListItemsSkuListItemIdRequest struct {
 	ctx           context.Context
 	ApiService    *SkuListItemsApiService
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemsSkuListItemIdRequest) Execute() (*SkuListItem, *http.Response, error) {
+func (r SkuListItemsApiGETSkuListItemsSkuListItemIdRequest) Execute() (*GETSkuListItemsSkuListItemId200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListItemsSkuListItemIdExecute(r)
 }
 
@@ -312,10 +323,10 @@ Retrieve a SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemsSkuListItemIdRequest
+ @return SkuListItemsApiGETSkuListItemsSkuListItemIdRequest
 */
-func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) ApiGETSkuListItemsSkuListItemIdRequest {
-	return ApiGETSkuListItemsSkuListItemIdRequest{
+func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiGETSkuListItemsSkuListItemIdRequest {
+	return SkuListItemsApiGETSkuListItemsSkuListItemIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -323,13 +334,13 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemId(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return SkuListItem
-func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r ApiGETSkuListItemsSkuListItemIdRequest) (*SkuListItem, *http.Response, error) {
+//  @return GETSkuListItemsSkuListItemId200Response
+func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r SkuListItemsApiGETSkuListItemsSkuListItemIdRequest) (*GETSkuListItemsSkuListItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuListItem
+		localVarReturnValue *GETSkuListItemsSkuListItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListItemsApiService.GETSkuListItemsSkuListItemId")
@@ -398,19 +409,19 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r ApiGETSku
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHSkuListItemsSkuListItemIdRequest struct {
+type SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest struct {
 	ctx               context.Context
 	ApiService        *SkuListItemsApiService
 	skuListItemUpdate *SkuListItemUpdate
 	skuListItemId     string
 }
 
-func (r ApiPATCHSkuListItemsSkuListItemIdRequest) SkuListItemUpdate(skuListItemUpdate SkuListItemUpdate) ApiPATCHSkuListItemsSkuListItemIdRequest {
+func (r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) SkuListItemUpdate(skuListItemUpdate SkuListItemUpdate) SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest {
 	r.skuListItemUpdate = &skuListItemUpdate
 	return r
 }
 
-func (r ApiPATCHSkuListItemsSkuListItemIdRequest) Execute() (*http.Response, error) {
+func (r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) Execute() (*POSTSkuListItems201Response, *http.Response, error) {
 	return r.ApiService.PATCHSkuListItemsSkuListItemIdExecute(r)
 }
 
@@ -421,10 +432,10 @@ Update a SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiPATCHSkuListItemsSkuListItemIdRequest
+ @return SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest
 */
-func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) ApiPATCHSkuListItemsSkuListItemIdRequest {
-	return ApiPATCHSkuListItemsSkuListItemIdRequest{
+func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest {
+	return SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -432,16 +443,18 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemId(ctx context.Cont
 }
 
 // Execute executes the request
-func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r ApiPATCHSkuListItemsSkuListItemIdRequest) (*http.Response, error) {
+//  @return POSTSkuListItems201Response
+func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) (*POSTSkuListItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuListItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListItemsApiService.PATCHSkuListItemsSkuListItemId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}"
@@ -451,7 +464,7 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r ApiPATC
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuListItemUpdate == nil {
-		return nil, reportError("skuListItemUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuListItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -464,7 +477,7 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r ApiPATC
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -475,19 +488,19 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r ApiPATC
 	localVarPostBody = r.skuListItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -495,24 +508,33 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r ApiPATC
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTSkuListItemsRequest struct {
+type SkuListItemsApiPOSTSkuListItemsRequest struct {
 	ctx               context.Context
 	ApiService        *SkuListItemsApiService
 	skuListItemCreate *SkuListItemCreate
 }
 
-func (r ApiPOSTSkuListItemsRequest) SkuListItemCreate(skuListItemCreate SkuListItemCreate) ApiPOSTSkuListItemsRequest {
+func (r SkuListItemsApiPOSTSkuListItemsRequest) SkuListItemCreate(skuListItemCreate SkuListItemCreate) SkuListItemsApiPOSTSkuListItemsRequest {
 	r.skuListItemCreate = &skuListItemCreate
 	return r
 }
 
-func (r ApiPOSTSkuListItemsRequest) Execute() (*http.Response, error) {
+func (r SkuListItemsApiPOSTSkuListItemsRequest) Execute() (*POSTSkuListItems201Response, *http.Response, error) {
 	return r.ApiService.POSTSkuListItemsExecute(r)
 }
 
@@ -522,26 +544,28 @@ POSTSkuListItems Create a SKU list item
 Create a SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTSkuListItemsRequest
+ @return SkuListItemsApiPOSTSkuListItemsRequest
 */
-func (a *SkuListItemsApiService) POSTSkuListItems(ctx context.Context) ApiPOSTSkuListItemsRequest {
-	return ApiPOSTSkuListItemsRequest{
+func (a *SkuListItemsApiService) POSTSkuListItems(ctx context.Context) SkuListItemsApiPOSTSkuListItemsRequest {
+	return SkuListItemsApiPOSTSkuListItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r ApiPOSTSkuListItemsRequest) (*http.Response, error) {
+//  @return POSTSkuListItems201Response
+func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r SkuListItemsApiPOSTSkuListItemsRequest) (*POSTSkuListItems201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuListItems201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListItemsApiService.POSTSkuListItems")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_list_items"
@@ -550,7 +574,7 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r ApiPOSTSkuListItemsRe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuListItemCreate == nil {
-		return nil, reportError("skuListItemCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuListItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -563,7 +587,7 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r ApiPOSTSkuListItemsRe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -574,19 +598,19 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r ApiPOSTSkuListItemsRe
 	localVarPostBody = r.skuListItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -594,8 +618,17 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r ApiPOSTSkuListItemsRe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

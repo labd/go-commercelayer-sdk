@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // GoogleGeocoderData struct for GoogleGeocoderData
 type GoogleGeocoderData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    BingGeocoderDataAttributes     `json:"attributes"`
-	Relationships *BingGeocoderDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    GETBingGeocoders200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BingGeocoderDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewGoogleGeocoderData instantiates a new GoogleGeocoderData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGoogleGeocoderData(type_ string, attributes BingGeocoderDataAttributes) *GoogleGeocoderData {
+func NewGoogleGeocoderData(type_ string, attributes GETBingGeocoders200ResponseDataInnerAttributes) *GoogleGeocoderData {
 	this := GoogleGeocoderData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewGoogleGeocoderData(type_ string, attributes BingGeocoderDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewGoogleGeocoderDataWithDefaults() *GoogleGeocoderData {
 	this := GoogleGeocoderData{}
-	var type_ string = "google_geocoders"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *GoogleGeocoderData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GoogleGeocoderData) GetAttributes() BingGeocoderDataAttributes {
+func (o *GoogleGeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BingGeocoderDataAttributes
+		var ret GETBingGeocoders200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *GoogleGeocoderData) GetAttributes() BingGeocoderDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GoogleGeocoderData) GetAttributesOk() (*BingGeocoderDataAttributes, bool) {
+func (o *GoogleGeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *GoogleGeocoderData) GetAttributesOk() (*BingGeocoderDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *GoogleGeocoderData) SetAttributes(v BingGeocoderDataAttributes) {
+func (o *GoogleGeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

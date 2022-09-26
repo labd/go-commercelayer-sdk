@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_copies"]
-**Attributes** | [**OrderCopyCreateDataAttributes**](OrderCopyCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTOrderCopies201ResponseDataAttributes**](POSTOrderCopies201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCopyCreateDataRelationships**](OrderCopyCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderCopyCreateData
 
-`func NewOrderCopyCreateData(type_ string, attributes OrderCopyCreateDataAttributes, ) *OrderCopyCreateData`
+`func NewOrderCopyCreateData(type_ string, attributes POSTOrderCopies201ResponseDataAttributes, ) *OrderCopyCreateData`
 
 NewOrderCopyCreateData instantiates a new OrderCopyCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderCopyCreateData) GetAttributes() OrderCopyCreateDataAttributes`
+`func (o *OrderCopyCreateData) GetAttributes() POSTOrderCopies201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderCopyCreateData) GetAttributesOk() (*OrderCopyCreateDataAttributes, bool)`
+`func (o *OrderCopyCreateData) GetAttributesOk() (*POSTOrderCopies201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderCopyCreateData) SetAttributes(v OrderCopyCreateDataAttributes)`
+`func (o *OrderCopyCreateData) SetAttributes(v POSTOrderCopies201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

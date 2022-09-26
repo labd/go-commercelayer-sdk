@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "coupon_recipients"]
-**Attributes** | [**CouponRecipientCreateDataAttributes**](CouponRecipientCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTCouponRecipients201ResponseDataAttributes**](POSTCouponRecipients201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponRecipientCreateData
 
-`func NewCouponRecipientCreateData(type_ string, attributes CouponRecipientCreateDataAttributes, ) *CouponRecipientCreateData`
+`func NewCouponRecipientCreateData(type_ string, attributes POSTCouponRecipients201ResponseDataAttributes, ) *CouponRecipientCreateData`
 
 NewCouponRecipientCreateData instantiates a new CouponRecipientCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponRecipientCreateData) GetAttributes() CouponRecipientCreateDataAttributes`
+`func (o *CouponRecipientCreateData) GetAttributes() POSTCouponRecipients201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponRecipientCreateData) GetAttributesOk() (*CouponRecipientCreateDataAttributes, bool)`
+`func (o *CouponRecipientCreateData) GetAttributesOk() (*POSTCouponRecipients201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponRecipientCreateData) SetAttributes(v CouponRecipientCreateDataAttributes)`
+`func (o *CouponRecipientCreateData) SetAttributes(v POSTCouponRecipients201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -1,6 +1,6 @@
 # \CouponCodesPromotionRulesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -76,7 +76,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -90,7 +90,7 @@ No authorization required
 
 ## GETCouponCodesPromotionRules
 
-> GETCouponCodesPromotionRules(ctx).Execute()
+> GETCouponCodesPromotionRules200Response GETCouponCodesPromotionRules(ctx).Execute()
 
 List all coupon codes promotion rules
 
@@ -117,6 +117,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCouponCodesPromotionRules`: GETCouponCodesPromotionRules200Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -131,16 +133,16 @@ Other parameters are passed through a pointer to a apiGETCouponCodesPromotionRul
 
 ### Return type
 
- (empty response body)
+[**GETCouponCodesPromotionRules200Response**](GETCouponCodesPromotionRules200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -149,7 +151,7 @@ No authorization required
 
 ## GETCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> CouponCodesPromotionRule GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).Execute()
+> GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).Execute()
 
 Retrieve a coupon codes promotion rule
 
@@ -177,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: CouponCodesPromotionRule
+    // response from `GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -201,11 +203,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CouponCodesPromotionRule**](CouponCodesPromotionRule.md)
+[**GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response**](GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -273,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -341,7 +343,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -409,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -477,7 +479,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -545,7 +547,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -613,7 +615,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -681,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -749,7 +751,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -763,7 +765,7 @@ No authorization required
 
 ## PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
+> POSTCouponCodesPromotionRules201Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
 
 Update a coupon codes promotion rule
 
@@ -782,7 +784,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("coupon_codes_promotion_rules", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CouponCodesPromotionRuleUpdate | 
+    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
     couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -792,6 +794,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: POSTCouponCodesPromotionRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
 
@@ -815,16 +819,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -833,7 +837,7 @@ No authorization required
 
 ## POSTCouponCodesPromotionRules
 
-> POSTCouponCodesPromotionRules(ctx).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
+> POSTCouponCodesPromotionRules201Response POSTCouponCodesPromotionRules(ctx).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
 
 Create a coupon codes promotion rule
 
@@ -852,7 +856,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("coupon_codes_promotion_rules", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CouponCodesPromotionRuleCreate | 
+    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -861,6 +865,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCouponCodesPromotionRules`: POSTCouponCodesPromotionRules201Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules`: %v\n", resp)
 }
 ```
 
@@ -879,16 +885,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

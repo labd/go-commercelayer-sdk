@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // VoidData struct for VoidData
 type VoidData struct {
 	// The resource's type
-	Type          string                 `json:"type"`
-	Attributes    RefundDataAttributes   `json:"attributes"`
-	Relationships *VoidDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *VoidDataRelationships                   `json:"relationships,omitempty"`
 }
 
 // NewVoidData instantiates a new VoidData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVoidData(type_ string, attributes RefundDataAttributes) *VoidData {
+func NewVoidData(type_ string, attributes GETRefunds200ResponseDataInnerAttributes) *VoidData {
 	this := VoidData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewVoidData(type_ string, attributes RefundDataAttributes) *VoidData {
 // but it doesn't guarantee that properties required by API are set
 func NewVoidDataWithDefaults() *VoidData {
 	this := VoidData{}
-	var type_ string = "voids"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *VoidData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *VoidData) GetAttributes() RefundDataAttributes {
+func (o *VoidData) GetAttributes() GETRefunds200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret RefundDataAttributes
+		var ret GETRefunds200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *VoidData) GetAttributes() RefundDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *VoidData) GetAttributesOk() (*RefundDataAttributes, bool) {
+func (o *VoidData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *VoidData) GetAttributesOk() (*RefundDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *VoidData) SetAttributes(v RefundDataAttributes) {
+func (o *VoidData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

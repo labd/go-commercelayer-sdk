@@ -1,6 +1,6 @@
 # \OrderCopiesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 ## GETOrderCopies
 
-> GETOrderCopies(ctx).Execute()
+> GETOrderCopies200Response GETOrderCopies(ctx).Execute()
 
 List all order copies
 
@@ -110,6 +110,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETOrderCopies`: GETOrderCopies200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.GETOrderCopies`: %v\n", resp)
 }
 ```
 
@@ -124,16 +126,16 @@ Other parameters are passed through a pointer to a apiGETOrderCopiesRequest stru
 
 ### Return type
 
- (empty response body)
+[**GETOrderCopies200Response**](GETOrderCopies200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -142,7 +144,7 @@ No authorization required
 
 ## GETOrderCopiesOrderCopyId
 
-> OrderCopy GETOrderCopiesOrderCopyId(ctx, orderCopyId).Execute()
+> GETOrderCopiesOrderCopyId200Response GETOrderCopiesOrderCopyId(ctx, orderCopyId).Execute()
 
 Retrieve an order copy
 
@@ -170,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderCopiesOrderCopyId`: OrderCopy
+    // response from `GETOrderCopiesOrderCopyId`: GETOrderCopiesOrderCopyId200Response
     fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.GETOrderCopiesOrderCopyId`: %v\n", resp)
 }
 ```
@@ -194,11 +196,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**OrderCopy**](OrderCopy.md)
+[**GETOrderCopiesOrderCopyId200Response**](GETOrderCopiesOrderCopyId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -334,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -348,7 +350,7 @@ No authorization required
 
 ## POSTOrderCopies
 
-> POSTOrderCopies(ctx).OrderCopyCreate(orderCopyCreate).Execute()
+> POSTOrderCopies201Response POSTOrderCopies(ctx).OrderCopyCreate(orderCopyCreate).Execute()
 
 Create an order copy
 
@@ -367,7 +369,7 @@ import (
 )
 
 func main() {
-    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("order_copies", *openapiclient.NewOrderCopyCreateDataAttributes())) // OrderCopyCreate | 
+    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("Type_example", *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -376,6 +378,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.POSTOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTOrderCopies`: POSTOrderCopies201Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.POSTOrderCopies`: %v\n", resp)
 }
 ```
 
@@ -394,16 +398,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTOrderCopies201Response**](POSTOrderCopies201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

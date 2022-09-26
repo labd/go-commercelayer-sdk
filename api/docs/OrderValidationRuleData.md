@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_validation_rules"]
-**Attributes** | [**BillingInfoValidationRuleDataAttributes**](BillingInfoValidationRuleDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderValidationRuleData
 
-`func NewOrderValidationRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes, ) *OrderValidationRuleData`
+`func NewOrderValidationRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes, ) *OrderValidationRuleData`
 
 NewOrderValidationRuleData instantiates a new OrderValidationRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderValidationRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes`
+`func (o *OrderValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool)`
+`func (o *OrderValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderValidationRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes)`
+`func (o *OrderValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

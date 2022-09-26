@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceTierData struct for PriceTierData
 type PriceTierData struct {
 	// The resource's type
-	Type          string                      `json:"type"`
-	Attributes    PriceTierDataAttributes     `json:"attributes"`
-	Relationships *PriceTierDataRelationships `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    GETPriceTiers200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PriceTierDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewPriceTierData instantiates a new PriceTierData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceTierData(type_ string, attributes PriceTierDataAttributes) *PriceTierData {
+func NewPriceTierData(type_ string, attributes GETPriceTiers200ResponseDataInnerAttributes) *PriceTierData {
 	this := PriceTierData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPriceTierData(type_ string, attributes PriceTierDataAttributes) *PriceTi
 // but it doesn't guarantee that properties required by API are set
 func NewPriceTierDataWithDefaults() *PriceTierData {
 	this := PriceTierData{}
-	var type_ string = "price_tiers"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PriceTierData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceTierData) GetAttributes() PriceTierDataAttributes {
+func (o *PriceTierData) GetAttributes() GETPriceTiers200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PriceTierDataAttributes
+		var ret GETPriceTiers200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PriceTierData) GetAttributes() PriceTierDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceTierData) GetAttributesOk() (*PriceTierDataAttributes, bool) {
+func (o *PriceTierData) GetAttributesOk() (*GETPriceTiers200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PriceTierData) GetAttributesOk() (*PriceTierDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *PriceTierData) SetAttributes(v PriceTierDataAttributes) {
+func (o *PriceTierData) SetAttributes(v GETPriceTiers200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

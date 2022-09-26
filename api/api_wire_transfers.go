@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // WireTransfersApiService WireTransfersApi service
 type WireTransfersApiService service
 
-type ApiDELETEWireTransfersWireTransferIdRequest struct {
+type WireTransfersApiDELETEWireTransfersWireTransferIdRequest struct {
 	ctx            context.Context
 	ApiService     *WireTransfersApiService
 	wireTransferId string
 }
 
-func (r ApiDELETEWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
+func (r WireTransfersApiDELETEWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEWireTransfersWireTransferIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return ApiDELETEWireTransfersWireTransferIdRequest
+ @return WireTransfersApiDELETEWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiDELETEWireTransfersWireTransferIdRequest {
-	return ApiDELETEWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiDELETEWireTransfersWireTransferIdRequest {
+	return WireTransfersApiDELETEWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -51,7 +51,7 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferId(ctx context.
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r ApiDELETEWireTransfersWireTransferIdRequest) (*http.Response, error) {
+func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r WireTransfersApiDELETEWireTransfersWireTransferIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETWireTransfersRequest struct {
+type WireTransfersApiGETWireTransfersRequest struct {
 	ctx        context.Context
 	ApiService *WireTransfersApiService
 }
 
-func (r ApiGETWireTransfersRequest) Execute() (*http.Response, error) {
+func (r WireTransfersApiGETWireTransfersRequest) Execute() (*GETWireTransfers200Response, *http.Response, error) {
 	return r.ApiService.GETWireTransfersExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETWireTransfers List all wire transfers
 List all wire transfers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETWireTransfersRequest
+ @return WireTransfersApiGETWireTransfersRequest
 */
-func (a *WireTransfersApiService) GETWireTransfers(ctx context.Context) ApiGETWireTransfersRequest {
-	return ApiGETWireTransfersRequest{
+func (a *WireTransfersApiService) GETWireTransfers(ctx context.Context) WireTransfersApiGETWireTransfersRequest {
+	return WireTransfersApiGETWireTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) GETWireTransfersExecute(r ApiGETWireTransfersRequest) (*http.Response, error) {
+//  @return GETWireTransfers200Response
+func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETWireTransfersRequest) (*GETWireTransfers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETWireTransfers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.GETWireTransfers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/wire_transfers"
@@ -168,7 +170,7 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r ApiGETWireTransfersR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r ApiGETWireTransfersR
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r ApiGETWireTransfersR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETWireTransfersWireTransferIdRequest struct {
+type WireTransfersApiGETWireTransfersWireTransferIdRequest struct {
 	ctx            context.Context
 	ApiService     *WireTransfersApiService
 	wireTransferId string
 }
 
-func (r ApiGETWireTransfersWireTransferIdRequest) Execute() (*WireTransfer, *http.Response, error) {
+func (r WireTransfersApiGETWireTransfersWireTransferIdRequest) Execute() (*GETWireTransfersWireTransferId200Response, *http.Response, error) {
 	return r.ApiService.GETWireTransfersWireTransferIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return ApiGETWireTransfersWireTransferIdRequest
+ @return WireTransfersApiGETWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiGETWireTransfersWireTransferIdRequest {
-	return ApiGETWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiGETWireTransfersWireTransferIdRequest {
+	return WireTransfersApiGETWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -231,13 +242,13 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return WireTransfer
-func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r ApiGETWireTransfersWireTransferIdRequest) (*WireTransfer, *http.Response, error) {
+//  @return GETWireTransfersWireTransferId200Response
+func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTransfersApiGETWireTransfersWireTransferIdRequest) (*GETWireTransfersWireTransferId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *WireTransfer
+		localVarReturnValue *GETWireTransfersWireTransferId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.GETWireTransfersWireTransferId")
@@ -306,19 +317,19 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r ApiGET
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHWireTransfersWireTransferIdRequest struct {
+type WireTransfersApiPATCHWireTransfersWireTransferIdRequest struct {
 	ctx                context.Context
 	ApiService         *WireTransfersApiService
 	wireTransferUpdate *WireTransferUpdate
 	wireTransferId     string
 }
 
-func (r ApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpdate(wireTransferUpdate WireTransferUpdate) ApiPATCHWireTransfersWireTransferIdRequest {
+func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpdate(wireTransferUpdate WireTransferUpdate) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
 	r.wireTransferUpdate = &wireTransferUpdate
 	return r
 }
 
-func (r ApiPATCHWireTransfersWireTransferIdRequest) Execute() (*http.Response, error) {
+func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) Execute() (*POSTWireTransfers201Response, *http.Response, error) {
 	return r.ApiService.PATCHWireTransfersWireTransferIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param wireTransferId The resource's id
- @return ApiPATCHWireTransfersWireTransferIdRequest
+ @return WireTransfersApiPATCHWireTransfersWireTransferIdRequest
 */
-func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.Context, wireTransferId string) ApiPATCHWireTransfersWireTransferIdRequest {
-	return ApiPATCHWireTransfersWireTransferIdRequest{
+func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.Context, wireTransferId string) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
+	return WireTransfersApiPATCHWireTransfersWireTransferIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		wireTransferId: wireTransferId,
@@ -340,16 +351,18 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.C
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiPATCHWireTransfersWireTransferIdRequest) (*http.Response, error) {
+//  @return POSTWireTransfers201Response
+func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) (*POSTWireTransfers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTWireTransfers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.PATCHWireTransfersWireTransferId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
@@ -359,7 +372,7 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiP
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.wireTransferUpdate == nil {
-		return nil, reportError("wireTransferUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("wireTransferUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiP
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiP
 	localVarPostBody = r.wireTransferUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r ApiP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTWireTransfersRequest struct {
+type WireTransfersApiPOSTWireTransfersRequest struct {
 	ctx                context.Context
 	ApiService         *WireTransfersApiService
 	wireTransferCreate *WireTransferCreate
 }
 
-func (r ApiPOSTWireTransfersRequest) WireTransferCreate(wireTransferCreate WireTransferCreate) ApiPOSTWireTransfersRequest {
+func (r WireTransfersApiPOSTWireTransfersRequest) WireTransferCreate(wireTransferCreate WireTransferCreate) WireTransfersApiPOSTWireTransfersRequest {
 	r.wireTransferCreate = &wireTransferCreate
 	return r
 }
 
-func (r ApiPOSTWireTransfersRequest) Execute() (*http.Response, error) {
+func (r WireTransfersApiPOSTWireTransfersRequest) Execute() (*POSTWireTransfers201Response, *http.Response, error) {
 	return r.ApiService.POSTWireTransfersExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTWireTransfers Create a wire transfer
 Create a wire transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTWireTransfersRequest
+ @return WireTransfersApiPOSTWireTransfersRequest
 */
-func (a *WireTransfersApiService) POSTWireTransfers(ctx context.Context) ApiPOSTWireTransfersRequest {
-	return ApiPOSTWireTransfersRequest{
+func (a *WireTransfersApiService) POSTWireTransfers(ctx context.Context) WireTransfersApiPOSTWireTransfersRequest {
+	return WireTransfersApiPOSTWireTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfersRequest) (*http.Response, error) {
+//  @return POSTWireTransfers201Response
+func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOSTWireTransfersRequest) (*POSTWireTransfers201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTWireTransfers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.POSTWireTransfers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/wire_transfers"
@@ -458,7 +482,7 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfer
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.wireTransferCreate == nil {
-		return nil, reportError("wireTransferCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("wireTransferCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfer
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfer
 	localVarPostBody = r.wireTransferCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r ApiPOSTWireTransfer
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

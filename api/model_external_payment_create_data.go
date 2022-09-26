@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalPaymentCreateData struct for ExternalPaymentCreateData
 type ExternalPaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    ExternalPaymentCreateDataAttributes  `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                        `json:"type"`
+	Attributes    POSTExternalPayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships          `json:"relationships,omitempty"`
 }
 
 // NewExternalPaymentCreateData instantiates a new ExternalPaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentCreateData(type_ string, attributes ExternalPaymentCreateDataAttributes) *ExternalPaymentCreateData {
+func NewExternalPaymentCreateData(type_ string, attributes POSTExternalPayments201ResponseDataAttributes) *ExternalPaymentCreateData {
 	this := ExternalPaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewExternalPaymentCreateData(type_ string, attributes ExternalPaymentCreate
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPaymentCreateDataWithDefaults() *ExternalPaymentCreateData {
 	this := ExternalPaymentCreateData{}
-	var type_ string = "external_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ExternalPaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPaymentCreateData) GetAttributes() ExternalPaymentCreateDataAttributes {
+func (o *ExternalPaymentCreateData) GetAttributes() POSTExternalPayments201ResponseDataAttributes {
 	if o == nil {
-		var ret ExternalPaymentCreateDataAttributes
+		var ret POSTExternalPayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ExternalPaymentCreateData) GetAttributes() ExternalPaymentCreateDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentCreateData) GetAttributesOk() (*ExternalPaymentCreateDataAttributes, bool) {
+func (o *ExternalPaymentCreateData) GetAttributesOk() (*POSTExternalPayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *ExternalPaymentCreateData) GetAttributesOk() (*ExternalPaymentCreateDat
 }
 
 // SetAttributes sets field value
-func (o *ExternalPaymentCreateData) SetAttributes(v ExternalPaymentCreateDataAttributes) {
+func (o *ExternalPaymentCreateData) SetAttributes(v POSTExternalPayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

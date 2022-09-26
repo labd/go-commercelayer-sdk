@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type KlarnaPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    KlarnaPaymentUpdateDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewKlarnaPaymentUpdateData instantiates a new KlarnaPaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaPaymentUpdateData(type_ string, id string, attributes KlarnaPaymentUpdateDataAttributes) *KlarnaPaymentUpdateData {
+func NewKlarnaPaymentUpdateData(type_ string, id string, attributes PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) *KlarnaPaymentUpdateData {
 	this := KlarnaPaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewKlarnaPaymentUpdateData(type_ string, id string, attributes KlarnaPaymen
 // but it doesn't guarantee that properties required by API are set
 func NewKlarnaPaymentUpdateDataWithDefaults() *KlarnaPaymentUpdateData {
 	this := KlarnaPaymentUpdateData{}
-	var type_ string = "klarna_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *KlarnaPaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaPaymentUpdateData) GetAttributes() KlarnaPaymentUpdateDataAttributes {
+func (o *KlarnaPaymentUpdateData) GetAttributes() PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret KlarnaPaymentUpdateDataAttributes
+		var ret PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *KlarnaPaymentUpdateData) GetAttributes() KlarnaPaymentUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*KlarnaPaymentUpdateDataAttributes, bool) {
+func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*KlarnaPaymentUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *KlarnaPaymentUpdateData) SetAttributes(v KlarnaPaymentUpdateDataAttributes) {
+func (o *KlarnaPaymentUpdateData) SetAttributes(v PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

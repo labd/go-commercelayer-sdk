@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,12 +23,12 @@ import (
 // PromotionRulesApiService PromotionRulesApi service
 type PromotionRulesApiService service
 
-type ApiGETPromotionRulesRequest struct {
+type PromotionRulesApiGETPromotionRulesRequest struct {
 	ctx        context.Context
 	ApiService *PromotionRulesApiService
 }
 
-func (r ApiGETPromotionRulesRequest) Execute() (*http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*GETPromotionRules200Response, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesExecute(r)
 }
 
@@ -38,26 +38,28 @@ GETPromotionRules List all promotion rules
 List all promotion rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPromotionRulesRequest
+ @return PromotionRulesApiGETPromotionRulesRequest
 */
-func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) ApiGETPromotionRulesRequest {
-	return ApiGETPromotionRulesRequest{
+func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) PromotionRulesApiGETPromotionRulesRequest {
+	return PromotionRulesApiGETPromotionRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PromotionRulesApiService) GETPromotionRulesExecute(r ApiGETPromotionRulesRequest) (*http.Response, error) {
+//  @return GETPromotionRules200Response
+func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*GETPromotionRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/promotion_rules"
@@ -76,7 +78,7 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r ApiGETPromotionRul
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -85,19 +87,19 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r ApiGETPromotionRul
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -105,19 +107,28 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r ApiGETPromotionRul
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionRulesPromotionRuleIdRequest struct {
+type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
 	ctx             context.Context
 	ApiService      *PromotionRulesApiService
 	promotionRuleId string
 }
 
-func (r ApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*PromotionRule, *http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesPromotionRuleIdExecute(r)
 }
 
@@ -128,10 +139,10 @@ Retrieve a promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionRuleId The resource's id
- @return ApiGETPromotionRulesPromotionRuleIdRequest
+ @return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
 */
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) ApiGETPromotionRulesPromotionRuleIdRequest {
-	return ApiGETPromotionRulesPromotionRuleIdRequest{
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
+	return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		promotionRuleId: promotionRuleId,
@@ -139,13 +150,13 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 }
 
 // Execute executes the request
-//  @return PromotionRule
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r ApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRule, *http.Response, error) {
+//  @return GETPromotionRulesPromotionRuleId200Response
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PromotionRule
+		localVarReturnValue *GETPromotionRulesPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRulesPromotionRuleId")

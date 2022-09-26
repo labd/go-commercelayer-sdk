@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // PriceTiersApiService PriceTiersApi service
 type PriceTiersApiService service
 
-type ApiGETPriceIdPriceTiersRequest struct {
+type PriceTiersApiGETPriceIdPriceTiersRequest struct {
 	ctx        context.Context
 	ApiService *PriceTiersApiService
 	priceId    string
 }
 
-func (r ApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
+func (r PriceTiersApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPriceIdPriceTiersExecute(r)
 }
 
@@ -40,10 +40,10 @@ Retrieve the price tiers associated to the price
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceId The resource's id
- @return ApiGETPriceIdPriceTiersRequest
+ @return PriceTiersApiGETPriceIdPriceTiersRequest
 */
-func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) ApiGETPriceIdPriceTiersRequest {
-	return ApiGETPriceIdPriceTiersRequest{
+func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) PriceTiersApiGETPriceIdPriceTiersRequest {
+	return PriceTiersApiGETPriceIdPriceTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 		priceId:    priceId,
@@ -51,7 +51,7 @@ func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId
 }
 
 // Execute executes the request
-func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r ApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
+func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r PriceTiersApiGETPriceIdPriceTiersRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *PriceTiersApiService) GETPriceIdPriceTiersExecute(r ApiGETPriceIdPriceT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPriceTiersRequest struct {
+type PriceTiersApiGETPriceTiersRequest struct {
 	ctx        context.Context
 	ApiService *PriceTiersApiService
 }
 
-func (r ApiGETPriceTiersRequest) Execute() (*http.Response, error) {
+func (r PriceTiersApiGETPriceTiersRequest) Execute() (*GETPriceTiers200Response, *http.Response, error) {
 	return r.ApiService.GETPriceTiersExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETPriceTiers List all price tiers
 List all price tiers
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETPriceTiersRequest
+ @return PriceTiersApiGETPriceTiersRequest
 */
-func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) ApiGETPriceTiersRequest {
-	return ApiGETPriceTiersRequest{
+func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiGETPriceTiersRequest {
+	return PriceTiersApiGETPriceTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *PriceTiersApiService) GETPriceTiersExecute(r ApiGETPriceTiersRequest) (*http.Response, error) {
+//  @return GETPriceTiers200Response
+func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*GETPriceTiers200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETPriceTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/price_tiers"
@@ -168,7 +170,7 @@ func (a *PriceTiersApiService) GETPriceTiersExecute(r ApiGETPriceTiersRequest) (
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *PriceTiersApiService) GETPriceTiersExecute(r ApiGETPriceTiersRequest) (
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *PriceTiersApiService) GETPriceTiersExecute(r ApiGETPriceTiersRequest) (
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETPriceTiersPriceTierIdRequest struct {
+type PriceTiersApiGETPriceTiersPriceTierIdRequest struct {
 	ctx         context.Context
 	ApiService  *PriceTiersApiService
 	priceTierId string
 }
 
-func (r ApiGETPriceTiersPriceTierIdRequest) Execute() (*PriceTier, *http.Response, error) {
+func (r PriceTiersApiGETPriceTiersPriceTierIdRequest) Execute() (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
 	return r.ApiService.GETPriceTiersPriceTierIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a price tier
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param priceTierId The resource's id
- @return ApiGETPriceTiersPriceTierIdRequest
+ @return PriceTiersApiGETPriceTiersPriceTierIdRequest
 */
-func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) ApiGETPriceTiersPriceTierIdRequest {
-	return ApiGETPriceTiersPriceTierIdRequest{
+func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) PriceTiersApiGETPriceTiersPriceTierIdRequest {
+	return PriceTiersApiGETPriceTiersPriceTierIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		priceTierId: priceTierId,
@@ -231,13 +242,13 @@ func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, pri
 }
 
 // Execute executes the request
-//  @return PriceTier
-func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r ApiGETPriceTiersPriceTierIdRequest) (*PriceTier, *http.Response, error) {
+//  @return GETPriceTiersPriceTierId200Response
+func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceTier
+		localVarReturnValue *GETPriceTiersPriceTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiersPriceTierId")

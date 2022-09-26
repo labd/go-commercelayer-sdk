@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "customers"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**CouponRecipientDataRelationshipsCustomerData**](CouponRecipientDataRelationshipsCustomerData.md) |  | 
 
 ## Methods
 
 ### NewCouponRecipientDataRelationshipsCustomer
 
-`func NewCouponRecipientDataRelationshipsCustomer(type_ string, id string, ) *CouponRecipientDataRelationshipsCustomer`
+`func NewCouponRecipientDataRelationshipsCustomer(data CouponRecipientDataRelationshipsCustomerData, ) *CouponRecipientDataRelationshipsCustomer`
 
 NewCouponRecipientDataRelationshipsCustomer instantiates a new CouponRecipientDataRelationshipsCustomer object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewCouponRecipientDataRelationshipsCustomerWithDefaults instantiates a new Coupo
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *CouponRecipientDataRelationshipsCustomer) GetType() string`
+`func (o *CouponRecipientDataRelationshipsCustomer) GetData() CouponRecipientDataRelationshipsCustomerData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *CouponRecipientDataRelationshipsCustomer) GetTypeOk() (*string, bool)`
+`func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*CouponRecipientDataRelationshipsCustomerData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *CouponRecipientDataRelationshipsCustomer) SetType(v string)`
+`func (o *CouponRecipientDataRelationshipsCustomer) SetData(v CouponRecipientDataRelationshipsCustomerData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *CouponRecipientDataRelationshipsCustomer) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CouponRecipientDataRelationshipsCustomer) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CouponRecipientDataRelationshipsCustomer) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

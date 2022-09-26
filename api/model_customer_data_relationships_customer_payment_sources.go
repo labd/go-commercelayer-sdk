@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // CustomerDataRelationshipsCustomerPaymentSources struct for CustomerDataRelationshipsCustomerPaymentSources
 type CustomerDataRelationshipsCustomerPaymentSources struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data CustomerDataRelationshipsCustomerPaymentSourcesData `json:"data"`
 }
 
 // NewCustomerDataRelationshipsCustomerPaymentSources instantiates a new CustomerDataRelationshipsCustomerPaymentSources object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerDataRelationshipsCustomerPaymentSources(type_ string, id string) *CustomerDataRelationshipsCustomerPaymentSources {
+func NewCustomerDataRelationshipsCustomerPaymentSources(data CustomerDataRelationshipsCustomerPaymentSourcesData) *CustomerDataRelationshipsCustomerPaymentSources {
 	this := CustomerDataRelationshipsCustomerPaymentSources{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewCustomerDataRelationshipsCustomerPaymentSources(type_ string, id string)
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerDataRelationshipsCustomerPaymentSourcesWithDefaults() *CustomerDataRelationshipsCustomerPaymentSources {
 	this := CustomerDataRelationshipsCustomerPaymentSources{}
-	var type_ string = "customer_payment_sources"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *CustomerDataRelationshipsCustomerPaymentSources) GetType() string {
+// GetData returns the Data field value
+func (o *CustomerDataRelationshipsCustomerPaymentSources) GetData() CustomerDataRelationshipsCustomerPaymentSourcesData {
 	if o == nil {
-		var ret string
+		var ret CustomerDataRelationshipsCustomerPaymentSourcesData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsCustomerPaymentSources) GetTypeOk() (*string, bool) {
+func (o *CustomerDataRelationshipsCustomerPaymentSources) GetDataOk() (*CustomerDataRelationshipsCustomerPaymentSourcesData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *CustomerDataRelationshipsCustomerPaymentSources) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *CustomerDataRelationshipsCustomerPaymentSources) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsCustomerPaymentSources) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *CustomerDataRelationshipsCustomerPaymentSources) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *CustomerDataRelationshipsCustomerPaymentSources) SetData(v CustomerDataRelationshipsCustomerPaymentSourcesData) {
+	o.Data = v
 }
 
 func (o CustomerDataRelationshipsCustomerPaymentSources) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

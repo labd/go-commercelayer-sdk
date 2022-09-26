@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // GoogleGeocodersApiService GoogleGeocodersApi service
 type GoogleGeocodersApiService service
 
-type ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest struct {
+type GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
 	ApiService       *GoogleGeocodersApiService
 	googleGeocoderId string
 }
 
-func (r ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
+ @return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
-	return ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
+	return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -51,7 +51,7 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx co
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute(r ApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
+func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGoogleGeocodersRequest struct {
+type GoogleGeocodersApiGETGoogleGeocodersRequest struct {
 	ctx        context.Context
 	ApiService *GoogleGeocodersApiService
 }
 
-func (r ApiGETGoogleGeocodersRequest) Execute() (*http.Response, error) {
+func (r GoogleGeocodersApiGETGoogleGeocodersRequest) Execute() (*GETGoogleGeocoders200Response, *http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETGoogleGeocoders List all google geocoders
 List all google geocoders
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETGoogleGeocodersRequest
+ @return GoogleGeocodersApiGETGoogleGeocodersRequest
 */
-func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) ApiGETGoogleGeocodersRequest {
-	return ApiGETGoogleGeocodersRequest{
+func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) GoogleGeocodersApiGETGoogleGeocodersRequest {
+	return GoogleGeocodersApiGETGoogleGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r ApiGETGoogleGeocodersRequest) (*http.Response, error) {
+//  @return GETGoogleGeocoders200Response
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*GETGoogleGeocoders200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETGoogleGeocoders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.GETGoogleGeocoders")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/google_geocoders"
@@ -168,7 +170,7 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r ApiGETGoogleGeoc
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r ApiGETGoogleGeoc
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r ApiGETGoogleGeoc
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
+type GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
 	ApiService       *GoogleGeocodersApiService
 	googleGeocoderId string
 }
 
-func (r ApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GoogleGeocoder, *http.Response, error) {
+func (r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return ApiGETGoogleGeocodersGoogleGeocoderIdRequest
+ @return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiGETGoogleGeocodersGoogleGeocoderIdRequest {
-	return ApiGETGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest {
+	return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -231,13 +242,13 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx conte
 }
 
 // Execute executes the request
-//  @return GoogleGeocoder
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r ApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoder, *http.Response, error) {
+//  @return GETGoogleGeocodersGoogleGeocoderId200Response
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GoogleGeocoder
+		localVarReturnValue *GETGoogleGeocodersGoogleGeocoderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.GETGoogleGeocodersGoogleGeocoderId")
@@ -306,19 +317,19 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest struct {
+type GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx                  context.Context
 	ApiService           *GoogleGeocodersApiService
 	googleGeocoderUpdate *GoogleGeocoderUpdate
 	googleGeocoderId     string
 }
 
-func (r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeocoderUpdate(googleGeocoderUpdate GoogleGeocoderUpdate) ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
+func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeocoderUpdate(googleGeocoderUpdate GoogleGeocoderUpdate) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
 	r.googleGeocoderUpdate = &googleGeocoderUpdate
 	return r
 }
 
-func (r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
+func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*PATCHGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	return r.ApiService.PATCHGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param googleGeocoderId The resource's id
- @return ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
+ @return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
-	return ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
+	return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		googleGeocoderId: googleGeocoderId,
@@ -340,16 +351,18 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx con
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r ApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*http.Response, error) {
+//  @return PATCHGoogleGeocodersGoogleGeocoderId200Response
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*PATCHGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHGoogleGeocodersGoogleGeocoderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.PATCHGoogleGeocodersGoogleGeocoderId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}"
@@ -359,7 +372,7 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.googleGeocoderUpdate == nil {
-		return nil, reportError("googleGeocoderUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("googleGeocoderUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 	localVarPostBody = r.googleGeocoderUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTGoogleGeocodersRequest struct {
+type GoogleGeocodersApiPOSTGoogleGeocodersRequest struct {
 	ctx                  context.Context
 	ApiService           *GoogleGeocodersApiService
 	googleGeocoderCreate *GoogleGeocoderCreate
 }
 
-func (r ApiPOSTGoogleGeocodersRequest) GoogleGeocoderCreate(googleGeocoderCreate GoogleGeocoderCreate) ApiPOSTGoogleGeocodersRequest {
+func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) GoogleGeocoderCreate(googleGeocoderCreate GoogleGeocoderCreate) GoogleGeocodersApiPOSTGoogleGeocodersRequest {
 	r.googleGeocoderCreate = &googleGeocoderCreate
 	return r
 }
 
-func (r ApiPOSTGoogleGeocodersRequest) Execute() (*http.Response, error) {
+func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) Execute() (*POSTGoogleGeocoders201Response, *http.Response, error) {
 	return r.ApiService.POSTGoogleGeocodersExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTGoogleGeocoders Create a google geocoder
 Create a google geocoder
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTGoogleGeocodersRequest
+ @return GoogleGeocodersApiPOSTGoogleGeocodersRequest
 */
-func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) ApiPOSTGoogleGeocodersRequest {
-	return ApiPOSTGoogleGeocodersRequest{
+func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) GoogleGeocodersApiPOSTGoogleGeocodersRequest {
+	return GoogleGeocodersApiPOSTGoogleGeocodersRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGeocodersRequest) (*http.Response, error) {
+//  @return POSTGoogleGeocoders201Response
+func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*POSTGoogleGeocoders201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTGoogleGeocoders201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.POSTGoogleGeocoders")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/google_geocoders"
@@ -458,7 +482,7 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.googleGeocoderCreate == nil {
-		return nil, reportError("googleGeocoderCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("googleGeocoderCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGe
 	localVarPostBody = r.googleGeocoderCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r ApiPOSTGoogleGe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

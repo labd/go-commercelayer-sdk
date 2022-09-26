@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "packages"]
-**Attributes** | [**PackageDataAttributes**](PackageDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageData
 
-`func NewPackageData(type_ string, attributes PackageDataAttributes, ) *PackageData`
+`func NewPackageData(type_ string, attributes GETPackages200ResponseDataInnerAttributes, ) *PackageData`
 
 NewPackageData instantiates a new PackageData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PackageData) GetAttributes() PackageDataAttributes`
+`func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageData) GetAttributesOk() (*PackageDataAttributes, bool)`
+`func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageData) SetAttributes(v PackageDataAttributes)`
+`func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

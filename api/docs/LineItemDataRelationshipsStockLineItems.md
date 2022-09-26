@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stock_line_items"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**LineItemDataRelationshipsStockLineItemsData**](LineItemDataRelationshipsStockLineItemsData.md) |  | 
 
 ## Methods
 
 ### NewLineItemDataRelationshipsStockLineItems
 
-`func NewLineItemDataRelationshipsStockLineItems(type_ string, id string, ) *LineItemDataRelationshipsStockLineItems`
+`func NewLineItemDataRelationshipsStockLineItems(data LineItemDataRelationshipsStockLineItemsData, ) *LineItemDataRelationshipsStockLineItems`
 
 NewLineItemDataRelationshipsStockLineItems instantiates a new LineItemDataRelationshipsStockLineItems object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewLineItemDataRelationshipsStockLineItemsWithDefaults instantiates a new LineIt
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *LineItemDataRelationshipsStockLineItems) GetType() string`
+`func (o *LineItemDataRelationshipsStockLineItems) GetData() LineItemDataRelationshipsStockLineItemsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *LineItemDataRelationshipsStockLineItems) GetTypeOk() (*string, bool)`
+`func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*LineItemDataRelationshipsStockLineItemsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *LineItemDataRelationshipsStockLineItems) SetType(v string)`
+`func (o *LineItemDataRelationshipsStockLineItems) SetData(v LineItemDataRelationshipsStockLineItemsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *LineItemDataRelationshipsStockLineItems) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *LineItemDataRelationshipsStockLineItems) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *LineItemDataRelationshipsStockLineItems) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

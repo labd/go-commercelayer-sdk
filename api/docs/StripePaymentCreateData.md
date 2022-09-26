@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "stripe_payments"]
-**Attributes** | [**StripePaymentCreateDataAttributes**](StripePaymentCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTStripePayments201ResponseDataAttributes**](POSTStripePayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripePaymentCreateData
 
-`func NewStripePaymentCreateData(type_ string, attributes StripePaymentCreateDataAttributes, ) *StripePaymentCreateData`
+`func NewStripePaymentCreateData(type_ string, attributes POSTStripePayments201ResponseDataAttributes, ) *StripePaymentCreateData`
 
 NewStripePaymentCreateData instantiates a new StripePaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StripePaymentCreateData) GetAttributes() StripePaymentCreateDataAttributes`
+`func (o *StripePaymentCreateData) GetAttributes() POSTStripePayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripePaymentCreateData) GetAttributesOk() (*StripePaymentCreateDataAttributes, bool)`
+`func (o *StripePaymentCreateData) GetAttributesOk() (*POSTStripePayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripePaymentCreateData) SetAttributes(v StripePaymentCreateDataAttributes)`
+`func (o *StripePaymentCreateData) SetAttributes(v POSTStripePayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

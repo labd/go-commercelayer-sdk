@@ -1,6 +1,6 @@
 # \ShippingMethodsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ No authorization required
 
 ## GETShippingMethods
 
-> GETShippingMethods(ctx).Execute()
+> GETShippingMethods200Response GETShippingMethods(ctx).Execute()
 
 List all shipping methods
 
@@ -386,6 +386,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETShippingMethods`: GETShippingMethods200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.GETShippingMethods`: %v\n", resp)
 }
 ```
 
@@ -400,16 +402,16 @@ Other parameters are passed through a pointer to a apiGETShippingMethodsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETShippingMethods200Response**](GETShippingMethods200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -418,7 +420,7 @@ No authorization required
 
 ## GETShippingMethodsShippingMethodId
 
-> ShippingMethod GETShippingMethodsShippingMethodId(ctx, shippingMethodId).Execute()
+> GETShippingMethodsShippingMethodId200Response GETShippingMethodsShippingMethodId(ctx, shippingMethodId).Execute()
 
 Retrieve a shipping method
 
@@ -446,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethodsShippingMethodId`: ShippingMethod
+    // response from `GETShippingMethodsShippingMethodId`: GETShippingMethodsShippingMethodId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.GETShippingMethodsShippingMethodId`: %v\n", resp)
 }
 ```
@@ -470,11 +472,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingMethod**](ShippingMethod.md)
+[**GETShippingMethodsShippingMethodId200Response**](GETShippingMethodsShippingMethodId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -542,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -556,7 +558,7 @@ No authorization required
 
 ## PATCHShippingMethodsShippingMethodId
 
-> PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
+> PATCHShippingMethodsShippingMethodId200Response PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
 
 Update a shipping method
 
@@ -575,7 +577,7 @@ import (
 )
 
 func main() {
-    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("shipping_methods", "XGZwpOSrWL", *openapiclient.NewShippingMethodUpdateDataAttributes())) // ShippingMethodUpdate | 
+    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingMethodsShippingMethodId200ResponseDataAttributes())) // ShippingMethodUpdate | 
     shippingMethodId := "shippingMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -585,6 +587,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.PATCHShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHShippingMethodsShippingMethodId`: PATCHShippingMethodsShippingMethodId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.PATCHShippingMethodsShippingMethodId`: %v\n", resp)
 }
 ```
 
@@ -608,16 +612,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHShippingMethodsShippingMethodId200Response**](PATCHShippingMethodsShippingMethodId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -626,7 +630,7 @@ No authorization required
 
 ## POSTShippingMethods
 
-> POSTShippingMethods(ctx).ShippingMethodCreate(shippingMethodCreate).Execute()
+> POSTShippingMethods201Response POSTShippingMethods(ctx).ShippingMethodCreate(shippingMethodCreate).Execute()
 
 Create a shipping method
 
@@ -645,7 +649,7 @@ import (
 )
 
 func main() {
-    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("shipping_methods", *openapiclient.NewShippingMethodCreateDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
+    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("Type_example", *openapiclient.NewPOSTShippingMethods201ResponseDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -654,6 +658,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.POSTShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTShippingMethods`: POSTShippingMethods201Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.POSTShippingMethods`: %v\n", resp)
 }
 ```
 
@@ -672,16 +678,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTShippingMethods201Response**](POSTShippingMethods201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

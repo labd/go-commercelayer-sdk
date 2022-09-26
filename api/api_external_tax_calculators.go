@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ExternalTaxCalculatorsApiService ExternalTaxCalculatorsApi service
 type ExternalTaxCalculatorsApiService service
 
-type ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
+type ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExternalTaxCalculatorsApiService
 	externalTaxCalculatorId string
 }
 
-func (r ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*http.Response, error) {
+func (r ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest
+ @return ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest
 */
-func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
-	return ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
+func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
+	return ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -51,7 +51,7 @@ func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalT
 }
 
 // Execute executes the request
-func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*http.Response, error) {
+func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiDELETEExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalT
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorsRequest struct {
+type ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest struct {
 	ctx        context.Context
 	ApiService *ExternalTaxCalculatorsApiService
 }
 
-func (r ApiGETExternalTaxCalculatorsRequest) Execute() (*http.Response, error) {
+func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) Execute() (*GETExternalTaxCalculators200Response, *http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETExternalTaxCalculators List all external tax calculators
 List all external tax calculators
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETExternalTaxCalculatorsRequest
+ @return ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest
 */
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculators(ctx context.Context) ApiGETExternalTaxCalculatorsRequest {
-	return ApiGETExternalTaxCalculatorsRequest{
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculators(ctx context.Context) ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest {
+	return ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r ApiGETExternalTaxCalculatorsRequest) (*http.Response, error) {
+//  @return GETExternalTaxCalculators200Response
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) (*GETExternalTaxCalculators200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETExternalTaxCalculators200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.GETExternalTaxCalculators")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators"
@@ -168,7 +170,7 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r Ap
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r Ap
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r Ap
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
+type ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
 	ctx                     context.Context
 	ApiService              *ExternalTaxCalculatorsApiService
 	externalTaxCalculatorId string
 }
 
-func (r ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*ExternalTaxCalculator, *http.Response, error) {
+func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*GETExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve an external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest
+ @return ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest
 */
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
-	return ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
+	return ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -231,13 +242,13 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 }
 
 // Execute executes the request
-//  @return ExternalTaxCalculator
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*ExternalTaxCalculator, *http.Response, error) {
+//  @return GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*GETExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExternalTaxCalculator
+		localVarReturnValue *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.GETExternalTaxCalculatorsExternalTaxCalculatorId")
@@ -306,19 +317,19 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
+type ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *ExternalTaxCalculatorsApiService
 	externalTaxCalculatorUpdate *ExternalTaxCalculatorUpdate
 	externalTaxCalculatorId     string
 }
 
-func (r ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate ExternalTaxCalculatorUpdate) ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
+func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate ExternalTaxCalculatorUpdate) ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
 	r.externalTaxCalculatorUpdate = &externalTaxCalculatorUpdate
 	return r
 }
 
-func (r ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*http.Response, error) {
+func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
 	return r.ApiService.PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update an external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest
+ @return ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest
 */
-func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
-	return ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
+func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx context.Context, externalTaxCalculatorId string) ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
+	return ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -340,16 +351,18 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 }
 
 // Execute executes the request
-func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*http.Response, error) {
+//  @return PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response
+func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.PATCHExternalTaxCalculatorsExternalTaxCalculatorId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}"
@@ -359,7 +372,7 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.externalTaxCalculatorUpdate == nil {
-		return nil, reportError("externalTaxCalculatorUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("externalTaxCalculatorUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 	localVarPostBody = r.externalTaxCalculatorUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTExternalTaxCalculatorsRequest struct {
+type ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest struct {
 	ctx                         context.Context
 	ApiService                  *ExternalTaxCalculatorsApiService
 	externalTaxCalculatorCreate *ExternalTaxCalculatorCreate
 }
 
-func (r ApiPOSTExternalTaxCalculatorsRequest) ExternalTaxCalculatorCreate(externalTaxCalculatorCreate ExternalTaxCalculatorCreate) ApiPOSTExternalTaxCalculatorsRequest {
+func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) ExternalTaxCalculatorCreate(externalTaxCalculatorCreate ExternalTaxCalculatorCreate) ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest {
 	r.externalTaxCalculatorCreate = &externalTaxCalculatorCreate
 	return r
 }
 
-func (r ApiPOSTExternalTaxCalculatorsRequest) Execute() (*http.Response, error) {
+func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) Execute() (*POSTExternalTaxCalculators201Response, *http.Response, error) {
 	return r.ApiService.POSTExternalTaxCalculatorsExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTExternalTaxCalculators Create an external tax calculator
 Create an external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTExternalTaxCalculatorsRequest
+ @return ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest
 */
-func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculators(ctx context.Context) ApiPOSTExternalTaxCalculatorsRequest {
-	return ApiPOSTExternalTaxCalculatorsRequest{
+func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculators(ctx context.Context) ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest {
+	return ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r ApiPOSTExternalTaxCalculatorsRequest) (*http.Response, error) {
+//  @return POSTExternalTaxCalculators201Response
+func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) (*POSTExternalTaxCalculators201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTExternalTaxCalculators201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.POSTExternalTaxCalculators")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators"
@@ -458,7 +482,7 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.externalTaxCalculatorCreate == nil {
-		return nil, reportError("externalTaxCalculatorCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("externalTaxCalculatorCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r A
 	localVarPostBody = r.externalTaxCalculatorCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

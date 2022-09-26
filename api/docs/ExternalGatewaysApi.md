@@ -1,6 +1,6 @@
 # \ExternalGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETExternalGateways
 
-> GETExternalGateways(ctx).Execute()
+> GETExternalGateways200Response GETExternalGateways(ctx).Execute()
 
 List all external gateways
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.GETExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETExternalGateways`: GETExternalGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.GETExternalGateways`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETExternalGatewaysRequest
 
 ### Return type
 
- (empty response body)
+[**GETExternalGateways200Response**](GETExternalGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETExternalGatewaysExternalGatewayId
 
-> ExternalGateway GETExternalGatewaysExternalGatewayId(ctx, externalGatewayId).Execute()
+> GETExternalGatewaysExternalGatewayId200Response GETExternalGatewaysExternalGatewayId(ctx, externalGatewayId).Execute()
 
 Retrieve an external gateway
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.GETExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalGatewaysExternalGatewayId`: ExternalGateway
+    // response from `GETExternalGatewaysExternalGatewayId`: GETExternalGatewaysExternalGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.GETExternalGatewaysExternalGatewayId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalGateway**](ExternalGateway.md)
+[**GETExternalGatewaysExternalGatewayId200Response**](GETExternalGatewaysExternalGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHExternalGatewaysExternalGatewayId
 
-> PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
+> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
 
 Update an external gateway
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("external_gateways", "XGZwpOSrWL", *openapiclient.NewExternalGatewayUpdateDataAttributes())) // ExternalGatewayUpdate | 
+    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
     externalGatewayId := "externalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHExternalGatewaysExternalGatewayId`: PATCHExternalGatewaysExternalGatewayId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHExternalGatewaysExternalGatewayId200Response**](PATCHExternalGatewaysExternalGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTExternalGateways
 
-> POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
+> POSTExternalGateways201Response POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
 
 Create an external gateway
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("external_gateways", *openapiclient.NewExternalGatewayCreateDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
+    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("Type_example", *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.POSTExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTExternalGateways`: POSTExternalGateways201Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.POSTExternalGateways`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTExternalGateways201Response**](POSTExternalGateways201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

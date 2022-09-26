@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "inventory_return_locations"]
-**Attributes** | [**InventoryReturnLocationDataAttributes**](InventoryReturnLocationDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**GETInventoryReturnLocations200ResponseDataInnerAttributes**](GETInventoryReturnLocations200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryReturnLocationData
 
-`func NewInventoryReturnLocationData(type_ string, attributes InventoryReturnLocationDataAttributes, ) *InventoryReturnLocationData`
+`func NewInventoryReturnLocationData(type_ string, attributes GETInventoryReturnLocations200ResponseDataInnerAttributes, ) *InventoryReturnLocationData`
 
 NewInventoryReturnLocationData instantiates a new InventoryReturnLocationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryReturnLocationData) GetAttributes() InventoryReturnLocationDataAttributes`
+`func (o *InventoryReturnLocationData) GetAttributes() GETInventoryReturnLocations200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryReturnLocationData) GetAttributesOk() (*InventoryReturnLocationDataAttributes, bool)`
+`func (o *InventoryReturnLocationData) GetAttributesOk() (*GETInventoryReturnLocations200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryReturnLocationData) SetAttributes(v InventoryReturnLocationDataAttributes)`
+`func (o *InventoryReturnLocationData) SetAttributes(v GETInventoryReturnLocations200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

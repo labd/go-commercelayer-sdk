@@ -1,6 +1,6 @@
 # \ShippingCategoriesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -71,7 +71,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -139,7 +139,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -153,7 +153,7 @@ No authorization required
 
 ## GETShippingCategories
 
-> GETShippingCategories(ctx).Execute()
+> GETShippingCategories200Response GETShippingCategories(ctx).Execute()
 
 List all shipping categories
 
@@ -180,6 +180,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETShippingCategories`: GETShippingCategories200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.GETShippingCategories`: %v\n", resp)
 }
 ```
 
@@ -194,16 +196,16 @@ Other parameters are passed through a pointer to a apiGETShippingCategoriesReque
 
 ### Return type
 
- (empty response body)
+[**GETShippingCategories200Response**](GETShippingCategories200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -212,7 +214,7 @@ No authorization required
 
 ## GETShippingCategoriesShippingCategoryId
 
-> ShippingCategory GETShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).Execute()
+> GETShippingCategoriesShippingCategoryId200Response GETShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).Execute()
 
 Retrieve a shipping category
 
@@ -240,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingCategoriesShippingCategoryId`: ShippingCategory
+    // response from `GETShippingCategoriesShippingCategoryId`: GETShippingCategoriesShippingCategoryId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.GETShippingCategoriesShippingCategoryId`: %v\n", resp)
 }
 ```
@@ -264,11 +266,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingCategory**](ShippingCategory.md)
+[**GETShippingCategoriesShippingCategoryId200Response**](GETShippingCategoriesShippingCategoryId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -336,7 +338,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -404,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -418,7 +420,7 @@ No authorization required
 
 ## PATCHShippingCategoriesShippingCategoryId
 
-> PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
+> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
 
 Update a shipping category
 
@@ -437,7 +439,7 @@ import (
 )
 
 func main() {
-    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("shipping_categories", "XGZwpOSrWL", *openapiclient.NewShippingCategoryUpdateDataAttributes())) // ShippingCategoryUpdate | 
+    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
     shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -447,6 +449,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHShippingCategoriesShippingCategoryId`: PATCHShippingCategoriesShippingCategoryId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId`: %v\n", resp)
 }
 ```
 
@@ -470,16 +474,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHShippingCategoriesShippingCategoryId200Response**](PATCHShippingCategoriesShippingCategoryId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -488,7 +492,7 @@ No authorization required
 
 ## POSTShippingCategories
 
-> POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
+> POSTShippingCategories201Response POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
 
 Create a shipping category
 
@@ -507,7 +511,7 @@ import (
 )
 
 func main() {
-    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("shipping_categories", *openapiclient.NewShippingCategoryCreateDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
+    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("Type_example", *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -516,6 +520,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.POSTShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTShippingCategories`: POSTShippingCategories201Response
+    fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.POSTShippingCategories`: %v\n", resp)
 }
 ```
 
@@ -534,16 +540,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTShippingCategories201Response**](POSTShippingCategories201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "merchants"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**MerchantUpdateDataAttributes**](MerchantUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHMerchantsMerchantId200ResponseDataAttributes**](PATCHMerchantsMerchantId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantUpdateDataRelationships**](MerchantUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMerchantUpdateData
 
-`func NewMerchantUpdateData(type_ string, id string, attributes MerchantUpdateDataAttributes, ) *MerchantUpdateData`
+`func NewMerchantUpdateData(type_ string, id string, attributes PATCHMerchantsMerchantId200ResponseDataAttributes, ) *MerchantUpdateData`
 
 NewMerchantUpdateData instantiates a new MerchantUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *MerchantUpdateData) GetAttributes() MerchantUpdateDataAttributes`
+`func (o *MerchantUpdateData) GetAttributes() PATCHMerchantsMerchantId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MerchantUpdateData) GetAttributesOk() (*MerchantUpdateDataAttributes, bool)`
+`func (o *MerchantUpdateData) GetAttributesOk() (*PATCHMerchantsMerchantId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MerchantUpdateData) SetAttributes(v MerchantUpdateDataAttributes)`
+`func (o *MerchantUpdateData) SetAttributes(v PATCHMerchantsMerchantId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

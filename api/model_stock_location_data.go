@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockLocationData struct for StockLocationData
 type StockLocationData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    StockLocationDataAttributes     `json:"attributes"`
-	Relationships *StockLocationDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETStockLocations200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StockLocationDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewStockLocationData instantiates a new StockLocationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLocationData(type_ string, attributes StockLocationDataAttributes) *StockLocationData {
+func NewStockLocationData(type_ string, attributes GETStockLocations200ResponseDataInnerAttributes) *StockLocationData {
 	this := StockLocationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewStockLocationData(type_ string, attributes StockLocationDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewStockLocationDataWithDefaults() *StockLocationData {
 	this := StockLocationData{}
-	var type_ string = "stock_locations"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *StockLocationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockLocationData) GetAttributes() StockLocationDataAttributes {
+func (o *StockLocationData) GetAttributes() GETStockLocations200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StockLocationDataAttributes
+		var ret GETStockLocations200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *StockLocationData) GetAttributes() StockLocationDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockLocationData) GetAttributesOk() (*StockLocationDataAttributes, bool) {
+func (o *StockLocationData) GetAttributesOk() (*GETStockLocations200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *StockLocationData) GetAttributesOk() (*StockLocationDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StockLocationData) SetAttributes(v StockLocationDataAttributes) {
+func (o *StockLocationData) SetAttributes(v GETStockLocations200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

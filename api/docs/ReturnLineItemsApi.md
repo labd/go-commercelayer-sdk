@@ -1,6 +1,6 @@
 # \ReturnLineItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETReturnLineItems
 
-> GETReturnLineItems(ctx).Execute()
+> GETReturnLineItems200Response GETReturnLineItems(ctx).Execute()
 
 List all return line items
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETReturnLineItems`: GETReturnLineItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.GETReturnLineItems`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETReturnLineItemsRequest 
 
 ### Return type
 
- (empty response body)
+[**GETReturnLineItems200Response**](GETReturnLineItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETReturnLineItemsReturnLineItemId
 
-> ReturnLineItem GETReturnLineItemsReturnLineItemId(ctx, returnLineItemId).Execute()
+> GETReturnLineItemsReturnLineItemId200Response GETReturnLineItemsReturnLineItemId(ctx, returnLineItemId).Execute()
 
 Retrieve a return line item
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturnLineItemsReturnLineItemId`: ReturnLineItem
+    // response from `GETReturnLineItemsReturnLineItemId`: GETReturnLineItemsReturnLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.GETReturnLineItemsReturnLineItemId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnLineItem**](ReturnLineItem.md)
+[**GETReturnLineItemsReturnLineItemId200Response**](GETReturnLineItemsReturnLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHReturnLineItemsReturnLineItemId
 
-> PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
+> PATCHReturnLineItemsReturnLineItemId200Response PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
 
 Update a return line item
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("return_line_items", "XGZwpOSrWL", *openapiclient.NewReturnLineItemUpdateDataAttributes())) // ReturnLineItemUpdate | 
+    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes())) // ReturnLineItemUpdate | 
     returnLineItemId := "returnLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHReturnLineItemsReturnLineItemId`: PATCHReturnLineItemsReturnLineItemId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHReturnLineItemsReturnLineItemId200Response**](PATCHReturnLineItemsReturnLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTReturnLineItems
 
-> POSTReturnLineItems(ctx).ReturnLineItemCreate(returnLineItemCreate).Execute()
+> POSTReturnLineItems201Response POSTReturnLineItems(ctx).ReturnLineItemCreate(returnLineItemCreate).Execute()
 
 Create a return line item
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("return_line_items", *openapiclient.NewReturnLineItemCreateDataAttributes(int32(4)))) // ReturnLineItemCreate | 
+    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("Type_example", *openapiclient.NewPOSTReturnLineItems201ResponseDataAttributes(int32(4)))) // ReturnLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.POSTReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTReturnLineItems`: POSTReturnLineItems201Response
+    fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.POSTReturnLineItems`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTReturnLineItems201Response**](POSTReturnLineItems201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "fixed_amount_promotions"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**FixedAmountPromotionUpdateDataAttributes**](FixedAmountPromotionUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes**](PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedAmountPromotionUpdateData
 
-`func NewFixedAmountPromotionUpdateData(type_ string, id string, attributes FixedAmountPromotionUpdateDataAttributes, ) *FixedAmountPromotionUpdateData`
+`func NewFixedAmountPromotionUpdateData(type_ string, id string, attributes PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes, ) *FixedAmountPromotionUpdateData`
 
 NewFixedAmountPromotionUpdateData instantiates a new FixedAmountPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *FixedAmountPromotionUpdateData) GetAttributes() FixedAmountPromotionUpdateDataAttributes`
+`func (o *FixedAmountPromotionUpdateData) GetAttributes() PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedAmountPromotionUpdateData) GetAttributesOk() (*FixedAmountPromotionUpdateDataAttributes, bool)`
+`func (o *FixedAmountPromotionUpdateData) GetAttributesOk() (*PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedAmountPromotionUpdateData) SetAttributes(v FixedAmountPromotionUpdateDataAttributes)`
+`func (o *FixedAmountPromotionUpdateData) SetAttributes(v PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

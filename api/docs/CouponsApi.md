@@ -1,6 +1,6 @@
 # \CouponsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETCoupons
 
-> GETCoupons(ctx).Execute()
+> GETCoupons200Response GETCoupons(ctx).Execute()
 
 List all coupons
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.GETCoupons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCoupons`: GETCoupons200Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponsApi.GETCoupons`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETCouponsRequest struct v
 
 ### Return type
 
- (empty response body)
+[**GETCoupons200Response**](GETCoupons200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETCouponsCouponId
 
-> Coupon GETCouponsCouponId(ctx, couponId).Execute()
+> GETCouponsCouponId200Response GETCouponsCouponId(ctx, couponId).Execute()
 
 Retrieve a coupon
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.GETCouponsCouponId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponsCouponId`: Coupon
+    // response from `GETCouponsCouponId`: GETCouponsCouponId200Response
     fmt.Fprintf(os.Stdout, "Response from `CouponsApi.GETCouponsCouponId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Coupon**](Coupon.md)
+[**GETCouponsCouponId200Response**](GETCouponsCouponId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHCouponsCouponId
 
-> PATCHCouponsCouponId(ctx, couponId).CouponUpdate(couponUpdate).Execute()
+> PATCHCouponsCouponId200Response PATCHCouponsCouponId(ctx, couponId).CouponUpdate(couponUpdate).Execute()
 
 Update a coupon
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    couponUpdate := *openapiclient.NewCouponUpdate(*openapiclient.NewCouponUpdateData("coupons", "XGZwpOSrWL", *openapiclient.NewCouponUpdateDataAttributes())) // CouponUpdate | 
+    couponUpdate := *openapiclient.NewCouponUpdate(*openapiclient.NewCouponUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponsCouponId200ResponseDataAttributes())) // CouponUpdate | 
     couponId := "couponId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.PATCHCouponsCouponId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCouponsCouponId`: PATCHCouponsCouponId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponsApi.PATCHCouponsCouponId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCouponsCouponId200Response**](PATCHCouponsCouponId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTCoupons
 
-> POSTCoupons(ctx).CouponCreate(couponCreate).Execute()
+> POSTCoupons201Response POSTCoupons(ctx).CouponCreate(couponCreate).Execute()
 
 Create a coupon
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    couponCreate := *openapiclient.NewCouponCreate(*openapiclient.NewCouponCreateData("coupons", *openapiclient.NewCouponCreateDataAttributes("04371af2-70b3-48d7-8f4e-316b374224c3", int32(50)))) // CouponCreate | 
+    couponCreate := *openapiclient.NewCouponCreate(*openapiclient.NewCouponCreateData("Type_example", *openapiclient.NewPOSTCoupons201ResponseDataAttributes("04371af2-70b3-48d7-8f4e-316b374224c3", int32(50)))) // CouponCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.POSTCoupons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTCoupons`: POSTCoupons201Response
+    fmt.Fprintf(os.Stdout, "Response from `CouponsApi.POSTCoupons`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTCoupons201Response**](POSTCoupons201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \FreeShippingPromotionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETFreeShippingPromotions
 
-> GETFreeShippingPromotions(ctx).Execute()
+> GETFreeShippingPromotions200Response GETFreeShippingPromotions(ctx).Execute()
 
 List all free shipping promotions
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.GETFreeShippingPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETFreeShippingPromotions`: GETFreeShippingPromotions200Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.GETFreeShippingPromotions`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETFreeShippingPromotionsR
 
 ### Return type
 
- (empty response body)
+[**GETFreeShippingPromotions200Response**](GETFreeShippingPromotions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETFreeShippingPromotionsFreeShippingPromotionId
 
-> FreeShippingPromotion GETFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).Execute()
+> GETFreeShippingPromotionsFreeShippingPromotionId200Response GETFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).Execute()
 
 Retrieve a free shipping promotion
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.GETFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeShippingPromotionsFreeShippingPromotionId`: FreeShippingPromotion
+    // response from `GETFreeShippingPromotionsFreeShippingPromotionId`: GETFreeShippingPromotionsFreeShippingPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.GETFreeShippingPromotionsFreeShippingPromotionId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeShippingPromotion**](FreeShippingPromotion.md)
+[**GETFreeShippingPromotionsFreeShippingPromotionId200Response**](GETFreeShippingPromotionsFreeShippingPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHFreeShippingPromotionsFreeShippingPromotionId
 
-> PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
+> PATCHFreeShippingPromotionsFreeShippingPromotionId200Response PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
 
 Update a free shipping promotion
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData("free_shipping_promotions", "XGZwpOSrWL", *openapiclient.NewFreeShippingPromotionUpdateDataAttributes())) // FreeShippingPromotionUpdate | 
+    freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes())) // FreeShippingPromotionUpdate | 
     freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHFreeShippingPromotionsFreeShippingPromotionId`: PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHFreeShippingPromotionsFreeShippingPromotionId200Response**](PATCHFreeShippingPromotionsFreeShippingPromotionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTFreeShippingPromotions
 
-> POSTFreeShippingPromotions(ctx).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
+> POSTFreeShippingPromotions201Response POSTFreeShippingPromotions(ctx).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
 
 Create a free shipping promotion
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData("free_shipping_promotions", *openapiclient.NewFreeShippingPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeShippingPromotionCreate | 
+    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData("Type_example", *openapiclient.NewPOSTFreeShippingPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeShippingPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.POSTFreeShippingPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTFreeShippingPromotions`: POSTFreeShippingPromotions201Response
+    fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.POSTFreeShippingPromotions`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTFreeShippingPromotions201Response**](POSTFreeShippingPromotions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -1,6 +1,6 @@
 # \CapturesApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -83,7 +83,7 @@ No authorization required
 
 ## GETCaptures
 
-> GETCaptures(ctx).Execute()
+> GETCaptures200Response GETCaptures(ctx).Execute()
 
 List all captures
 
@@ -110,6 +110,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETCaptures`: GETCaptures200Response
+    fmt.Fprintf(os.Stdout, "Response from `CapturesApi.GETCaptures`: %v\n", resp)
 }
 ```
 
@@ -124,16 +126,16 @@ Other parameters are passed through a pointer to a apiGETCapturesRequest struct 
 
 ### Return type
 
- (empty response body)
+[**GETCaptures200Response**](GETCaptures200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -142,7 +144,7 @@ No authorization required
 
 ## GETCapturesCaptureId
 
-> Capture GETCapturesCaptureId(ctx, captureId).Execute()
+> GETCapturesCaptureId200Response GETCapturesCaptureId(ctx, captureId).Execute()
 
 Retrieve a capture
 
@@ -170,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCapturesCaptureId`: Capture
+    // response from `GETCapturesCaptureId`: GETCapturesCaptureId200Response
     fmt.Fprintf(os.Stdout, "Response from `CapturesApi.GETCapturesCaptureId`: %v\n", resp)
 }
 ```
@@ -194,11 +196,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Capture**](Capture.md)
+[**GETCapturesCaptureId200Response**](GETCapturesCaptureId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -266,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -334,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -348,7 +350,7 @@ No authorization required
 
 ## PATCHCapturesCaptureId
 
-> PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
+> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
 
 Update a capture
 
@@ -367,7 +369,7 @@ import (
 )
 
 func main() {
-    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("captures", "XGZwpOSrWL", *openapiclient.NewCaptureUpdateDataAttributes())) // CaptureUpdate | 
+    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
     captureId := "captureId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -377,6 +379,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.PATCHCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHCapturesCaptureId`: PATCHCapturesCaptureId200Response
+    fmt.Fprintf(os.Stdout, "Response from `CapturesApi.PATCHCapturesCaptureId`: %v\n", resp)
 }
 ```
 
@@ -400,16 +404,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHCapturesCaptureId200Response**](PATCHCapturesCaptureId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

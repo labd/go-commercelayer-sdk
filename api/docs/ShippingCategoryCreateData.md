@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_categories"]
-**Attributes** | [**ShippingCategoryCreateDataAttributes**](ShippingCategoryCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTShippingCategories201ResponseDataAttributes**](POSTShippingCategories201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewShippingCategoryCreateData
 
-`func NewShippingCategoryCreateData(type_ string, attributes ShippingCategoryCreateDataAttributes, ) *ShippingCategoryCreateData`
+`func NewShippingCategoryCreateData(type_ string, attributes POSTShippingCategories201ResponseDataAttributes, ) *ShippingCategoryCreateData`
 
 NewShippingCategoryCreateData instantiates a new ShippingCategoryCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingCategoryCreateData) GetAttributes() ShippingCategoryCreateDataAttributes`
+`func (o *ShippingCategoryCreateData) GetAttributes() POSTShippingCategories201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingCategoryCreateData) GetAttributesOk() (*ShippingCategoryCreateDataAttributes, bool)`
+`func (o *ShippingCategoryCreateData) GetAttributesOk() (*POSTShippingCategories201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingCategoryCreateData) SetAttributes(v ShippingCategoryCreateDataAttributes)`
+`func (o *ShippingCategoryCreateData) SetAttributes(v POSTShippingCategories201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

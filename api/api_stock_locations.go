@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // StockLocationsApiService StockLocationsApi service
 type StockLocationsApiService service
 
-type ApiDELETEStockLocationsStockLocationIdRequest struct {
+type StockLocationsApiDELETEStockLocationsStockLocationIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockLocationsApiService
 	stockLocationId string
 }
 
-func (r ApiDELETEStockLocationsStockLocationIdRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiDELETEStockLocationsStockLocationIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEStockLocationsStockLocationIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiDELETEStockLocationsStockLocationIdRequest
+ @return StockLocationsApiDELETEStockLocationsStockLocationIdRequest
 */
-func (a *StockLocationsApiService) DELETEStockLocationsStockLocationId(ctx context.Context, stockLocationId string) ApiDELETEStockLocationsStockLocationIdRequest {
-	return ApiDELETEStockLocationsStockLocationIdRequest{
+func (a *StockLocationsApiService) DELETEStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiDELETEStockLocationsStockLocationIdRequest {
+	return StockLocationsApiDELETEStockLocationsStockLocationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -51,7 +51,7 @@ func (a *StockLocationsApiService) DELETEStockLocationsStockLocationId(ctx conte
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) DELETEStockLocationsStockLocationIdExecute(r ApiDELETEStockLocationsStockLocationIdRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) DELETEStockLocationsStockLocationIdExecute(r StockLocationsApiDELETEStockLocationsStockLocationIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *StockLocationsApiService) DELETEStockLocationsStockLocationIdExecute(r 
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETDeliveryLeadTimeIdStockLocationRequest struct {
+type StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest struct {
 	ctx                context.Context
 	ApiService         *StockLocationsApiService
 	deliveryLeadTimeId string
 }
 
-func (r ApiGETDeliveryLeadTimeIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimeIdStockLocationExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the stock location associated to the delivery lead time
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param deliveryLeadTimeId The resource's id
- @return ApiGETDeliveryLeadTimeIdStockLocationRequest
+ @return StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) ApiGETDeliveryLeadTimeIdStockLocationRequest {
-	return ApiGETDeliveryLeadTimeIdStockLocationRequest{
+func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest {
+	return StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest{
 		ApiService:         a,
 		ctx:                ctx,
 		deliveryLeadTimeId: deliveryLeadTimeId,
@@ -143,7 +143,7 @@ func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocation(ctx contex
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocationExecute(r ApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocationExecute(r StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocationExecute(r A
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryReturnLocationIdStockLocationRequest struct {
+type StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest struct {
 	ctx                       context.Context
 	ApiService                *StockLocationsApiService
 	inventoryReturnLocationId string
 }
 
-func (r ApiGETInventoryReturnLocationIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryReturnLocationIdStockLocationExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the stock location associated to the inventory return location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryReturnLocationId The resource's id
- @return ApiGETInventoryReturnLocationIdStockLocationRequest
+ @return StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) ApiGETInventoryReturnLocationIdStockLocationRequest {
-	return ApiGETInventoryReturnLocationIdStockLocationRequest{
+func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest {
+	return StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest{
 		ApiService:                a,
 		ctx:                       ctx,
 		inventoryReturnLocationId: inventoryReturnLocationId,
@@ -235,7 +235,7 @@ func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocation(ctx
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocationExecute(r ApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocationExecute(r StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,13 +299,13 @@ func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocationExec
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInventoryStockLocationIdStockLocationRequest struct {
+type StockLocationsApiGETInventoryStockLocationIdStockLocationRequest struct {
 	ctx                      context.Context
 	ApiService               *StockLocationsApiService
 	inventoryStockLocationId string
 }
 
-func (r ApiGETInventoryStockLocationIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETInventoryStockLocationIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInventoryStockLocationIdStockLocationExecute(r)
 }
 
@@ -316,10 +316,10 @@ Retrieve the stock location associated to the inventory stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inventoryStockLocationId The resource's id
- @return ApiGETInventoryStockLocationIdStockLocationRequest
+ @return StockLocationsApiGETInventoryStockLocationIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) ApiGETInventoryStockLocationIdStockLocationRequest {
-	return ApiGETInventoryStockLocationIdStockLocationRequest{
+func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) StockLocationsApiGETInventoryStockLocationIdStockLocationRequest {
+	return StockLocationsApiGETInventoryStockLocationIdStockLocationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
 		inventoryStockLocationId: inventoryStockLocationId,
@@ -327,7 +327,7 @@ func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocation(ctx 
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocationExecute(r ApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocationExecute(r StockLocationsApiGETInventoryStockLocationIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -391,13 +391,13 @@ func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocationExecu
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPackageIdStockLocationRequest struct {
+type StockLocationsApiGETPackageIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *StockLocationsApiService
 	packageId  string
 }
 
-func (r ApiGETPackageIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETPackageIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPackageIdStockLocationExecute(r)
 }
 
@@ -408,10 +408,10 @@ Retrieve the stock location associated to the package
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param packageId The resource's id
- @return ApiGETPackageIdStockLocationRequest
+ @return StockLocationsApiGETPackageIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) ApiGETPackageIdStockLocationRequest {
-	return ApiGETPackageIdStockLocationRequest{
+func (a *StockLocationsApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) StockLocationsApiGETPackageIdStockLocationRequest {
+	return StockLocationsApiGETPackageIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		packageId:  packageId,
@@ -419,7 +419,7 @@ func (a *StockLocationsApiService) GETPackageIdStockLocation(ctx context.Context
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETPackageIdStockLocationExecute(r ApiGETPackageIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETPackageIdStockLocationExecute(r StockLocationsApiGETPackageIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -483,13 +483,13 @@ func (a *StockLocationsApiService) GETPackageIdStockLocationExecute(r ApiGETPack
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETReturnIdStockLocationRequest struct {
+type StockLocationsApiGETReturnIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *StockLocationsApiService
 	returnId   string
 }
 
-func (r ApiGETReturnIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETReturnIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETReturnIdStockLocationExecute(r)
 }
 
@@ -500,10 +500,10 @@ Retrieve the stock location associated to the return
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param returnId The resource's id
- @return ApiGETReturnIdStockLocationRequest
+ @return StockLocationsApiGETReturnIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) ApiGETReturnIdStockLocationRequest {
-	return ApiGETReturnIdStockLocationRequest{
+func (a *StockLocationsApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) StockLocationsApiGETReturnIdStockLocationRequest {
+	return StockLocationsApiGETReturnIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		returnId:   returnId,
@@ -511,7 +511,7 @@ func (a *StockLocationsApiService) GETReturnIdStockLocation(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETReturnIdStockLocationExecute(r ApiGETReturnIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETReturnIdStockLocationExecute(r StockLocationsApiGETReturnIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -575,13 +575,13 @@ func (a *StockLocationsApiService) GETReturnIdStockLocationExecute(r ApiGETRetur
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShipmentIdStockLocationRequest struct {
+type StockLocationsApiGETShipmentIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *StockLocationsApiService
 	shipmentId string
 }
 
-func (r ApiGETShipmentIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETShipmentIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShipmentIdStockLocationExecute(r)
 }
 
@@ -592,10 +592,10 @@ Retrieve the stock location associated to the shipment
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shipmentId The resource's id
- @return ApiGETShipmentIdStockLocationRequest
+ @return StockLocationsApiGETShipmentIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) ApiGETShipmentIdStockLocationRequest {
-	return ApiGETShipmentIdStockLocationRequest{
+func (a *StockLocationsApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) StockLocationsApiGETShipmentIdStockLocationRequest {
+	return StockLocationsApiGETShipmentIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
 		shipmentId: shipmentId,
@@ -603,7 +603,7 @@ func (a *StockLocationsApiService) GETShipmentIdStockLocation(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETShipmentIdStockLocationExecute(r ApiGETShipmentIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETShipmentIdStockLocationExecute(r StockLocationsApiGETShipmentIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -667,13 +667,13 @@ func (a *StockLocationsApiService) GETShipmentIdStockLocationExecute(r ApiGETShi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdStockLocationRequest struct {
+type StockLocationsApiGETShippingMethodIdStockLocationRequest struct {
 	ctx              context.Context
 	ApiService       *StockLocationsApiService
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETShippingMethodIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdStockLocationExecute(r)
 }
 
@@ -684,10 +684,10 @@ Retrieve the stock location associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdStockLocationRequest
+ @return StockLocationsApiGETShippingMethodIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdStockLocationRequest {
-	return ApiGETShippingMethodIdStockLocationRequest{
+func (a *StockLocationsApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) StockLocationsApiGETShippingMethodIdStockLocationRequest {
+	return StockLocationsApiGETShippingMethodIdStockLocationRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -695,7 +695,7 @@ func (a *StockLocationsApiService) GETShippingMethodIdStockLocation(ctx context.
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETShippingMethodIdStockLocationExecute(r ApiGETShippingMethodIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETShippingMethodIdStockLocationExecute(r StockLocationsApiGETShippingMethodIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -759,13 +759,13 @@ func (a *StockLocationsApiService) GETShippingMethodIdStockLocationExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockItemIdStockLocationRequest struct {
+type StockLocationsApiGETStockItemIdStockLocationRequest struct {
 	ctx         context.Context
 	ApiService  *StockLocationsApiService
 	stockItemId string
 }
 
-func (r ApiGETStockItemIdStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETStockItemIdStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockItemIdStockLocationExecute(r)
 }
 
@@ -776,10 +776,10 @@ Retrieve the stock location associated to the stock item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockItemId The resource's id
- @return ApiGETStockItemIdStockLocationRequest
+ @return StockLocationsApiGETStockItemIdStockLocationRequest
 */
-func (a *StockLocationsApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) ApiGETStockItemIdStockLocationRequest {
-	return ApiGETStockItemIdStockLocationRequest{
+func (a *StockLocationsApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) StockLocationsApiGETStockItemIdStockLocationRequest {
+	return StockLocationsApiGETStockItemIdStockLocationRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		stockItemId: stockItemId,
@@ -787,7 +787,7 @@ func (a *StockLocationsApiService) GETStockItemIdStockLocation(ctx context.Conte
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETStockItemIdStockLocationExecute(r ApiGETStockItemIdStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETStockItemIdStockLocationExecute(r StockLocationsApiGETStockItemIdStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -851,12 +851,12 @@ func (a *StockLocationsApiService) GETStockItemIdStockLocationExecute(r ApiGETSt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationsRequest struct {
+type StockLocationsApiGETStockLocationsRequest struct {
 	ctx        context.Context
 	ApiService *StockLocationsApiService
 }
 
-func (r ApiGETStockLocationsRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETStockLocationsRequest) Execute() (*GETStockLocations200Response, *http.Response, error) {
 	return r.ApiService.GETStockLocationsExecute(r)
 }
 
@@ -866,26 +866,28 @@ GETStockLocations List all stock locations
 List all stock locations
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETStockLocationsRequest
+ @return StockLocationsApiGETStockLocationsRequest
 */
-func (a *StockLocationsApiService) GETStockLocations(ctx context.Context) ApiGETStockLocationsRequest {
-	return ApiGETStockLocationsRequest{
+func (a *StockLocationsApiService) GETStockLocations(ctx context.Context) StockLocationsApiGETStockLocationsRequest {
+	return StockLocationsApiGETStockLocationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETStockLocationsExecute(r ApiGETStockLocationsRequest) (*http.Response, error) {
+//  @return GETStockLocations200Response
+func (a *StockLocationsApiService) GETStockLocationsExecute(r StockLocationsApiGETStockLocationsRequest) (*GETStockLocations200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETStockLocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.GETStockLocations")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_locations"
@@ -904,7 +906,7 @@ func (a *StockLocationsApiService) GETStockLocationsExecute(r ApiGETStockLocatio
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -913,19 +915,19 @@ func (a *StockLocationsApiService) GETStockLocationsExecute(r ApiGETStockLocatio
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -933,19 +935,28 @@ func (a *StockLocationsApiService) GETStockLocationsExecute(r ApiGETStockLocatio
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockLocationsStockLocationIdRequest struct {
+type StockLocationsApiGETStockLocationsStockLocationIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockLocationsApiService
 	stockLocationId string
 }
 
-func (r ApiGETStockLocationsStockLocationIdRequest) Execute() (*StockLocation, *http.Response, error) {
+func (r StockLocationsApiGETStockLocationsStockLocationIdRequest) Execute() (*GETStockLocationsStockLocationId200Response, *http.Response, error) {
 	return r.ApiService.GETStockLocationsStockLocationIdExecute(r)
 }
 
@@ -956,10 +967,10 @@ Retrieve a stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiGETStockLocationsStockLocationIdRequest
+ @return StockLocationsApiGETStockLocationsStockLocationIdRequest
 */
-func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.Context, stockLocationId string) ApiGETStockLocationsStockLocationIdRequest {
-	return ApiGETStockLocationsStockLocationIdRequest{
+func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiGETStockLocationsStockLocationIdRequest {
+	return StockLocationsApiGETStockLocationsStockLocationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -967,13 +978,13 @@ func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.
 }
 
 // Execute executes the request
-//  @return StockLocation
-func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r ApiGETStockLocationsStockLocationIdRequest) (*StockLocation, *http.Response, error) {
+//  @return GETStockLocationsStockLocationId200Response
+func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r StockLocationsApiGETStockLocationsStockLocationIdRequest) (*GETStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLocation
+		localVarReturnValue *GETStockLocationsStockLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.GETStockLocationsStockLocationId")
@@ -1042,13 +1053,13 @@ func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r Api
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdDestinationStockLocationRequest struct {
+type StockLocationsApiGETStockTransferIdDestinationStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      *StockLocationsApiService
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdDestinationStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETStockTransferIdDestinationStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdDestinationStockLocationExecute(r)
 }
 
@@ -1059,10 +1070,10 @@ Retrieve the destination stock location associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdDestinationStockLocationRequest
+ @return StockLocationsApiGETStockTransferIdDestinationStockLocationRequest
 */
-func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdDestinationStockLocationRequest {
-	return ApiGETStockTransferIdDestinationStockLocationRequest{
+func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) StockLocationsApiGETStockTransferIdDestinationStockLocationRequest {
+	return StockLocationsApiGETStockTransferIdDestinationStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -1070,7 +1081,7 @@ func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocation(ct
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocationExecute(r ApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocationExecute(r StockLocationsApiGETStockTransferIdDestinationStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1134,13 +1145,13 @@ func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocationExe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETStockTransferIdOriginStockLocationRequest struct {
+type StockLocationsApiGETStockTransferIdOriginStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      *StockLocationsApiService
 	stockTransferId string
 }
 
-func (r ApiGETStockTransferIdOriginStockLocationRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiGETStockTransferIdOriginStockLocationRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETStockTransferIdOriginStockLocationExecute(r)
 }
 
@@ -1151,10 +1162,10 @@ Retrieve the origin stock location associated to the stock transfer
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockTransferId The resource's id
- @return ApiGETStockTransferIdOriginStockLocationRequest
+ @return StockLocationsApiGETStockTransferIdOriginStockLocationRequest
 */
-func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) ApiGETStockTransferIdOriginStockLocationRequest {
-	return ApiGETStockTransferIdOriginStockLocationRequest{
+func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) StockLocationsApiGETStockTransferIdOriginStockLocationRequest {
+	return StockLocationsApiGETStockTransferIdOriginStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockTransferId: stockTransferId,
@@ -1162,7 +1173,7 @@ func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocation(ctx con
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocationExecute(r ApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error) {
+func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocationExecute(r StockLocationsApiGETStockTransferIdOriginStockLocationRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1226,19 +1237,19 @@ func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocationExecute(
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHStockLocationsStockLocationIdRequest struct {
+type StockLocationsApiPATCHStockLocationsStockLocationIdRequest struct {
 	ctx                 context.Context
 	ApiService          *StockLocationsApiService
 	stockLocationUpdate *StockLocationUpdate
 	stockLocationId     string
 }
 
-func (r ApiPATCHStockLocationsStockLocationIdRequest) StockLocationUpdate(stockLocationUpdate StockLocationUpdate) ApiPATCHStockLocationsStockLocationIdRequest {
+func (r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) StockLocationUpdate(stockLocationUpdate StockLocationUpdate) StockLocationsApiPATCHStockLocationsStockLocationIdRequest {
 	r.stockLocationUpdate = &stockLocationUpdate
 	return r
 }
 
-func (r ApiPATCHStockLocationsStockLocationIdRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) Execute() (*PATCHStockLocationsStockLocationId200Response, *http.Response, error) {
 	return r.ApiService.PATCHStockLocationsStockLocationIdExecute(r)
 }
 
@@ -1249,10 +1260,10 @@ Update a stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param stockLocationId The resource's id
- @return ApiPATCHStockLocationsStockLocationIdRequest
+ @return StockLocationsApiPATCHStockLocationsStockLocationIdRequest
 */
-func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx context.Context, stockLocationId string) ApiPATCHStockLocationsStockLocationIdRequest {
-	return ApiPATCHStockLocationsStockLocationIdRequest{
+func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiPATCHStockLocationsStockLocationIdRequest {
+	return StockLocationsApiPATCHStockLocationsStockLocationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		stockLocationId: stockLocationId,
@@ -1260,16 +1271,18 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx contex
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r ApiPATCHStockLocationsStockLocationIdRequest) (*http.Response, error) {
+//  @return PATCHStockLocationsStockLocationId200Response
+func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) (*PATCHStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHStockLocationsStockLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.PATCHStockLocationsStockLocationId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}"
@@ -1279,7 +1292,7 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r A
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stockLocationUpdate == nil {
-		return nil, reportError("stockLocationUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stockLocationUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1292,7 +1305,7 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r A
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1303,19 +1316,19 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r A
 	localVarPostBody = r.stockLocationUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -1323,24 +1336,33 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r A
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTStockLocationsRequest struct {
+type StockLocationsApiPOSTStockLocationsRequest struct {
 	ctx                 context.Context
 	ApiService          *StockLocationsApiService
 	stockLocationCreate *StockLocationCreate
 }
 
-func (r ApiPOSTStockLocationsRequest) StockLocationCreate(stockLocationCreate StockLocationCreate) ApiPOSTStockLocationsRequest {
+func (r StockLocationsApiPOSTStockLocationsRequest) StockLocationCreate(stockLocationCreate StockLocationCreate) StockLocationsApiPOSTStockLocationsRequest {
 	r.stockLocationCreate = &stockLocationCreate
 	return r
 }
 
-func (r ApiPOSTStockLocationsRequest) Execute() (*http.Response, error) {
+func (r StockLocationsApiPOSTStockLocationsRequest) Execute() (*POSTStockLocations201Response, *http.Response, error) {
 	return r.ApiService.POSTStockLocationsExecute(r)
 }
 
@@ -1350,26 +1372,28 @@ POSTStockLocations Create a stock location
 Create a stock location
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTStockLocationsRequest
+ @return StockLocationsApiPOSTStockLocationsRequest
 */
-func (a *StockLocationsApiService) POSTStockLocations(ctx context.Context) ApiPOSTStockLocationsRequest {
-	return ApiPOSTStockLocationsRequest{
+func (a *StockLocationsApiService) POSTStockLocations(ctx context.Context) StockLocationsApiPOSTStockLocationsRequest {
+	return StockLocationsApiPOSTStockLocationsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *StockLocationsApiService) POSTStockLocationsExecute(r ApiPOSTStockLocationsRequest) (*http.Response, error) {
+//  @return POSTStockLocations201Response
+func (a *StockLocationsApiService) POSTStockLocationsExecute(r StockLocationsApiPOSTStockLocationsRequest) (*POSTStockLocations201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTStockLocations201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.POSTStockLocations")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/stock_locations"
@@ -1378,7 +1402,7 @@ func (a *StockLocationsApiService) POSTStockLocationsExecute(r ApiPOSTStockLocat
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.stockLocationCreate == nil {
-		return nil, reportError("stockLocationCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("stockLocationCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1391,7 +1415,7 @@ func (a *StockLocationsApiService) POSTStockLocationsExecute(r ApiPOSTStockLocat
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1402,19 +1426,19 @@ func (a *StockLocationsApiService) POSTStockLocationsExecute(r ApiPOSTStockLocat
 	localVarPostBody = r.stockLocationCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -1422,8 +1446,17 @@ func (a *StockLocationsApiService) POSTStockLocationsExecute(r ApiPOSTStockLocat
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

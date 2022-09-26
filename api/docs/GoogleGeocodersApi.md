@@ -1,6 +1,6 @@
 # \GoogleGeocodersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETGoogleGeocoders
 
-> GETGoogleGeocoders(ctx).Execute()
+> GETGoogleGeocoders200Response GETGoogleGeocoders(ctx).Execute()
 
 List all google geocoders
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.GETGoogleGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETGoogleGeocoders`: GETGoogleGeocoders200Response
+    fmt.Fprintf(os.Stdout, "Response from `GoogleGeocodersApi.GETGoogleGeocoders`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETGoogleGeocodersRequest 
 
 ### Return type
 
- (empty response body)
+[**GETGoogleGeocoders200Response**](GETGoogleGeocoders200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETGoogleGeocodersGoogleGeocoderId
 
-> GoogleGeocoder GETGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).Execute()
+> GETGoogleGeocodersGoogleGeocoderId200Response GETGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).Execute()
 
 Retrieve a google geocoder
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.GETGoogleGeocodersGoogleGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGoogleGeocodersGoogleGeocoderId`: GoogleGeocoder
+    // response from `GETGoogleGeocodersGoogleGeocoderId`: GETGoogleGeocodersGoogleGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `GoogleGeocodersApi.GETGoogleGeocodersGoogleGeocoderId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GoogleGeocoder**](GoogleGeocoder.md)
+[**GETGoogleGeocodersGoogleGeocoderId200Response**](GETGoogleGeocodersGoogleGeocoderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHGoogleGeocodersGoogleGeocoderId
 
-> PATCHGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).GoogleGeocoderUpdate(googleGeocoderUpdate).Execute()
+> PATCHGoogleGeocodersGoogleGeocoderId200Response PATCHGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).GoogleGeocoderUpdate(googleGeocoderUpdate).Execute()
 
 Update a google geocoder
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    googleGeocoderUpdate := *openapiclient.NewGoogleGeocoderUpdate(*openapiclient.NewGoogleGeocoderUpdateData("google_geocoders", "XGZwpOSrWL", *openapiclient.NewGoogleGeocoderUpdateDataAttributes())) // GoogleGeocoderUpdate | 
+    googleGeocoderUpdate := *openapiclient.NewGoogleGeocoderUpdate(*openapiclient.NewGoogleGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes())) // GoogleGeocoderUpdate | 
     googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.PATCHGoogleGeocodersGoogleGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHGoogleGeocodersGoogleGeocoderId`: PATCHGoogleGeocodersGoogleGeocoderId200Response
+    fmt.Fprintf(os.Stdout, "Response from `GoogleGeocodersApi.PATCHGoogleGeocodersGoogleGeocoderId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHGoogleGeocodersGoogleGeocoderId200Response**](PATCHGoogleGeocodersGoogleGeocoderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTGoogleGeocoders
 
-> POSTGoogleGeocoders(ctx).GoogleGeocoderCreate(googleGeocoderCreate).Execute()
+> POSTGoogleGeocoders201Response POSTGoogleGeocoders(ctx).GoogleGeocoderCreate(googleGeocoderCreate).Execute()
 
 Create a google geocoder
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    googleGeocoderCreate := *openapiclient.NewGoogleGeocoderCreate(*openapiclient.NewGoogleGeocoderCreateData("google_geocoders", *openapiclient.NewGoogleGeocoderCreateDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // GoogleGeocoderCreate | 
+    googleGeocoderCreate := *openapiclient.NewGoogleGeocoderCreate(*openapiclient.NewGoogleGeocoderCreateData("Type_example", *openapiclient.NewPOSTGoogleGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // GoogleGeocoderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.POSTGoogleGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTGoogleGeocoders`: POSTGoogleGeocoders201Response
+    fmt.Fprintf(os.Stdout, "Response from `GoogleGeocodersApi.POSTGoogleGeocoders`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTGoogleGeocoders201Response**](POSTGoogleGeocoders201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

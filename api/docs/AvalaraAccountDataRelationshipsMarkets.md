@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "markets"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**AvalaraAccountDataRelationshipsMarketsData**](AvalaraAccountDataRelationshipsMarketsData.md) |  | 
 
 ## Methods
 
 ### NewAvalaraAccountDataRelationshipsMarkets
 
-`func NewAvalaraAccountDataRelationshipsMarkets(type_ string, id string, ) *AvalaraAccountDataRelationshipsMarkets`
+`func NewAvalaraAccountDataRelationshipsMarkets(data AvalaraAccountDataRelationshipsMarketsData, ) *AvalaraAccountDataRelationshipsMarkets`
 
 NewAvalaraAccountDataRelationshipsMarkets instantiates a new AvalaraAccountDataRelationshipsMarkets object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewAvalaraAccountDataRelationshipsMarketsWithDefaults instantiates a new Avalara
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *AvalaraAccountDataRelationshipsMarkets) GetType() string`
+`func (o *AvalaraAccountDataRelationshipsMarkets) GetData() AvalaraAccountDataRelationshipsMarketsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *AvalaraAccountDataRelationshipsMarkets) GetTypeOk() (*string, bool)`
+`func (o *AvalaraAccountDataRelationshipsMarkets) GetDataOk() (*AvalaraAccountDataRelationshipsMarketsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *AvalaraAccountDataRelationshipsMarkets) SetType(v string)`
+`func (o *AvalaraAccountDataRelationshipsMarkets) SetData(v AvalaraAccountDataRelationshipsMarketsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *AvalaraAccountDataRelationshipsMarkets) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *AvalaraAccountDataRelationshipsMarkets) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *AvalaraAccountDataRelationshipsMarkets) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

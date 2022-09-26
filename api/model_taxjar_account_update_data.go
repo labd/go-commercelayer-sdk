@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type TaxjarAccountUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                 `json:"id"`
-	Attributes    TaxjarAccountUpdateDataAttributes      `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountUpdateData instantiates a new TaxjarAccountUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountUpdateData(type_ string, id string, attributes TaxjarAccountUpdateDataAttributes) *TaxjarAccountUpdateData {
+func NewTaxjarAccountUpdateData(type_ string, id string, attributes PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes) *TaxjarAccountUpdateData {
 	this := TaxjarAccountUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewTaxjarAccountUpdateData(type_ string, id string, attributes TaxjarAccoun
 // but it doesn't guarantee that properties required by API are set
 func NewTaxjarAccountUpdateDataWithDefaults() *TaxjarAccountUpdateData {
 	this := TaxjarAccountUpdateData{}
-	var type_ string = "taxjar_accounts"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *TaxjarAccountUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxjarAccountUpdateData) GetAttributes() TaxjarAccountUpdateDataAttributes {
+func (o *TaxjarAccountUpdateData) GetAttributes() PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes {
 	if o == nil {
-		var ret TaxjarAccountUpdateDataAttributes
+		var ret PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *TaxjarAccountUpdateData) GetAttributes() TaxjarAccountUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountUpdateData) GetAttributesOk() (*TaxjarAccountUpdateDataAttributes, bool) {
+func (o *TaxjarAccountUpdateData) GetAttributesOk() (*PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *TaxjarAccountUpdateData) GetAttributesOk() (*TaxjarAccountUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *TaxjarAccountUpdateData) SetAttributes(v TaxjarAccountUpdateDataAttributes) {
+func (o *TaxjarAccountUpdateData) SetAttributes(v PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

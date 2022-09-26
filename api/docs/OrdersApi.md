@@ -1,6 +1,6 @@
 # \OrdersApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -497,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -633,7 +633,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -701,7 +701,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -769,7 +769,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -905,7 +905,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -973,7 +973,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -987,7 +987,7 @@ No authorization required
 
 ## GETOrders
 
-> GETOrders(ctx).Execute()
+> GETOrders200Response GETOrders(ctx).Execute()
 
 List all orders
 
@@ -1014,6 +1014,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETOrders`: GETOrders200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrdersApi.GETOrders`: %v\n", resp)
 }
 ```
 
@@ -1028,16 +1030,16 @@ Other parameters are passed through a pointer to a apiGETOrdersRequest struct vi
 
 ### Return type
 
- (empty response body)
+[**GETOrders200Response**](GETOrders200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1046,7 +1048,7 @@ No authorization required
 
 ## GETOrdersOrderId
 
-> Order GETOrdersOrderId(ctx, orderId).Execute()
+> GETOrdersOrderId200Response GETOrdersOrderId(ctx, orderId).Execute()
 
 Retrieve an order
 
@@ -1074,7 +1076,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrdersOrderId`: Order
+    // response from `GETOrdersOrderId`: GETOrdersOrderId200Response
     fmt.Fprintf(os.Stdout, "Response from `OrdersApi.GETOrdersOrderId`: %v\n", resp)
 }
 ```
@@ -1098,11 +1100,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Order**](Order.md)
+[**GETOrdersOrderId200Response**](GETOrdersOrderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1170,7 +1172,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1238,7 +1240,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1306,7 +1308,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1374,7 +1376,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1442,7 +1444,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1510,7 +1512,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1578,7 +1580,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1646,7 +1648,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -1660,7 +1662,7 @@ No authorization required
 
 ## PATCHOrdersOrderId
 
-> PATCHOrdersOrderId(ctx, orderId).OrderUpdate(orderUpdate).Execute()
+> PATCHOrdersOrderId200Response PATCHOrdersOrderId(ctx, orderId).OrderUpdate(orderUpdate).Execute()
 
 Update an order
 
@@ -1679,7 +1681,7 @@ import (
 )
 
 func main() {
-    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("orders", "XGZwpOSrWL", *openapiclient.NewOrderUpdateDataAttributes())) // OrderUpdate | 
+    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrdersOrderId200ResponseDataAttributes())) // OrderUpdate | 
     orderId := "orderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1689,6 +1691,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.PATCHOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHOrdersOrderId`: PATCHOrdersOrderId200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrdersApi.PATCHOrdersOrderId`: %v\n", resp)
 }
 ```
 
@@ -1712,16 +1716,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHOrdersOrderId200Response**](PATCHOrdersOrderId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1730,7 +1734,7 @@ No authorization required
 
 ## POSTOrders
 
-> POSTOrders(ctx).OrderCreate(orderCreate).Execute()
+> POSTOrders201Response POSTOrders(ctx).OrderCreate(orderCreate).Execute()
 
 Create an order
 
@@ -1749,7 +1753,7 @@ import (
 )
 
 func main() {
-    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("orders", *openapiclient.NewOrderCreateDataAttributes())) // OrderCreate | 
+    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("Type_example", *openapiclient.NewPOSTOrders201ResponseDataAttributes())) // OrderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1758,6 +1762,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.POSTOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTOrders`: POSTOrders201Response
+    fmt.Fprintf(os.Stdout, "Response from `OrdersApi.POSTOrders`: %v\n", resp)
 }
 ```
 
@@ -1776,16 +1782,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTOrders201Response**](POSTOrders201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

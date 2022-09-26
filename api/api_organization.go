@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -22,12 +22,12 @@ import (
 // OrganizationApiService OrganizationApi service
 type OrganizationApiService service
 
-type ApiGETOrganizationOrganizationIdRequest struct {
+type OrganizationApiGETOrganizationOrganizationIdRequest struct {
 	ctx        context.Context
 	ApiService *OrganizationApiService
 }
 
-func (r ApiGETOrganizationOrganizationIdRequest) Execute() (*Organization, *http.Response, error) {
+func (r OrganizationApiGETOrganizationOrganizationIdRequest) Execute() (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -37,23 +37,23 @@ GETOrganizationOrganizationId Retrieve the organization
 Retrieve the organization
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETOrganizationOrganizationIdRequest
+ @return OrganizationApiGETOrganizationOrganizationIdRequest
 */
-func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) ApiGETOrganizationOrganizationIdRequest {
-	return ApiGETOrganizationOrganizationIdRequest{
+func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest {
+	return OrganizationApiGETOrganizationOrganizationIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-//  @return Organization
-func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r ApiGETOrganizationOrganizationIdRequest) (*Organization, *http.Response, error) {
+//  @return GETOrganizationOrganizationId200Response
+func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Organization
+		localVarReturnValue *GETOrganizationOrganizationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationApiService.GETOrganizationOrganizationId")

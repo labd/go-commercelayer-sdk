@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "inventory_return_locations"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**InventoryReturnLocationUpdateDataAttributes**](InventoryReturnLocationUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes**](PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryReturnLocationUpdateData
 
-`func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes InventoryReturnLocationUpdateDataAttributes, ) *InventoryReturnLocationUpdateData`
+`func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, ) *InventoryReturnLocationUpdateData`
 
 NewInventoryReturnLocationUpdateData instantiates a new InventoryReturnLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryReturnLocationUpdateData) GetAttributes() InventoryReturnLocationUpdateDataAttributes`
+`func (o *InventoryReturnLocationUpdateData) GetAttributes() PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryReturnLocationUpdateData) GetAttributesOk() (*InventoryReturnLocationUpdateDataAttributes, bool)`
+`func (o *InventoryReturnLocationUpdateData) GetAttributesOk() (*PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryReturnLocationUpdateData) SetAttributes(v InventoryReturnLocationUpdateDataAttributes)`
+`func (o *InventoryReturnLocationUpdateData) SetAttributes(v PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

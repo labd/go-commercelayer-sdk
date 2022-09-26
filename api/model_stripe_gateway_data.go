@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StripeGatewayData struct for StripeGatewayData
 type StripeGatewayData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    StripeGatewayDataAttributes     `json:"attributes"`
-	Relationships *StripeGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETStripeGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StripeGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewStripeGatewayData instantiates a new StripeGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayData(type_ string, attributes StripeGatewayDataAttributes) *StripeGatewayData {
+func NewStripeGatewayData(type_ string, attributes GETStripeGateways200ResponseDataInnerAttributes) *StripeGatewayData {
 	this := StripeGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewStripeGatewayData(type_ string, attributes StripeGatewayDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewStripeGatewayDataWithDefaults() *StripeGatewayData {
 	this := StripeGatewayData{}
-	var type_ string = "stripe_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *StripeGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripeGatewayData) GetAttributes() StripeGatewayDataAttributes {
+func (o *StripeGatewayData) GetAttributes() GETStripeGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StripeGatewayDataAttributes
+		var ret GETStripeGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *StripeGatewayData) GetAttributes() StripeGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayData) GetAttributesOk() (*StripeGatewayDataAttributes, bool) {
+func (o *StripeGatewayData) GetAttributesOk() (*GETStripeGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *StripeGatewayData) GetAttributesOk() (*StripeGatewayDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StripeGatewayData) SetAttributes(v StripeGatewayDataAttributes) {
+func (o *StripeGatewayData) SetAttributes(v GETStripeGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

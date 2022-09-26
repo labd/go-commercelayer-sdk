@@ -1,6 +1,6 @@
 # \PaymentGatewaysApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -209,7 +209,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -359,7 +359,7 @@ No authorization required
 
 ## GETPaymentGateways
 
-> GETPaymentGateways(ctx).Execute()
+> GETPaymentGateways200Response GETPaymentGateways(ctx).Execute()
 
 List all payment gateways
 
@@ -386,6 +386,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaymentGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETPaymentGateways`: GETPaymentGateways200Response
+    fmt.Fprintf(os.Stdout, "Response from `PaymentGatewaysApi.GETPaymentGateways`: %v\n", resp)
 }
 ```
 
@@ -400,16 +402,16 @@ Other parameters are passed through a pointer to a apiGETPaymentGatewaysRequest 
 
 ### Return type
 
- (empty response body)
+[**GETPaymentGateways200Response**](GETPaymentGateways200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -418,7 +420,7 @@ No authorization required
 
 ## GETPaymentGatewaysPaymentGatewayId
 
-> PaymentGateway GETPaymentGatewaysPaymentGatewayId(ctx, paymentGatewayId).Execute()
+> GETPaymentGatewaysPaymentGatewayId200Response GETPaymentGatewaysPaymentGatewayId(ctx, paymentGatewayId).Execute()
 
 Retrieve a payment gateway
 
@@ -446,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaymentGatewaysPaymentGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentGatewaysPaymentGatewayId`: PaymentGateway
+    // response from `GETPaymentGatewaysPaymentGatewayId`: GETPaymentGatewaysPaymentGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `PaymentGatewaysApi.GETPaymentGatewaysPaymentGatewayId`: %v\n", resp)
 }
 ```
@@ -470,11 +472,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentGateway**](PaymentGateway.md)
+[**GETPaymentGatewaysPaymentGatewayId200Response**](GETPaymentGatewaysPaymentGatewayId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -542,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -610,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -678,7 +680,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 

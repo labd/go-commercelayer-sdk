@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // ImportsApiService ImportsApi service
 type ImportsApiService service
 
-type ApiDELETEImportsImportIdRequest struct {
+type ImportsApiDELETEImportsImportIdRequest struct {
 	ctx        context.Context
 	ApiService *ImportsApiService
 	importId   string
 }
 
-func (r ApiDELETEImportsImportIdRequest) Execute() (*http.Response, error) {
+func (r ImportsApiDELETEImportsImportIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEImportsImportIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param importId The resource's id
- @return ApiDELETEImportsImportIdRequest
+ @return ImportsApiDELETEImportsImportIdRequest
 */
-func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ApiDELETEImportsImportIdRequest {
-	return ApiDELETEImportsImportIdRequest{
+func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ImportsApiDELETEImportsImportIdRequest {
+	return ImportsApiDELETEImportsImportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		importId:   importId,
@@ -51,7 +51,7 @@ func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId 
 }
 
 // Execute executes the request
-func (a *ImportsApiService) DELETEImportsImportIdExecute(r ApiDELETEImportsImportIdRequest) (*http.Response, error) {
+func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImportsImportIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *ImportsApiService) DELETEImportsImportIdExecute(r ApiDELETEImportsImpor
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETImportsRequest struct {
+type ImportsApiGETImportsRequest struct {
 	ctx        context.Context
 	ApiService *ImportsApiService
 }
 
-func (r ApiGETImportsRequest) Execute() (*http.Response, error) {
+func (r ImportsApiGETImportsRequest) Execute() (*GETImports200Response, *http.Response, error) {
 	return r.ApiService.GETImportsExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETImports List all imports
 List all imports
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETImportsRequest
+ @return ImportsApiGETImportsRequest
 */
-func (a *ImportsApiService) GETImports(ctx context.Context) ApiGETImportsRequest {
-	return ApiGETImportsRequest{
+func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImportsRequest {
+	return ImportsApiGETImportsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportsApiService) GETImportsExecute(r ApiGETImportsRequest) (*http.Response, error) {
+//  @return GETImports200Response
+func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*GETImports200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETImports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.GETImports")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/imports"
@@ -168,7 +170,7 @@ func (a *ImportsApiService) GETImportsExecute(r ApiGETImportsRequest) (*http.Res
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *ImportsApiService) GETImportsExecute(r ApiGETImportsRequest) (*http.Res
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *ImportsApiService) GETImportsExecute(r ApiGETImportsRequest) (*http.Res
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETImportsImportIdRequest struct {
+type ImportsApiGETImportsImportIdRequest struct {
 	ctx        context.Context
 	ApiService *ImportsApiService
 	importId   string
 }
 
-func (r ApiGETImportsImportIdRequest) Execute() (*ModelImport, *http.Response, error) {
+func (r ImportsApiGETImportsImportIdRequest) Execute() (*GETImportsImportId200Response, *http.Response, error) {
 	return r.ApiService.GETImportsImportIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param importId The resource's id
- @return ApiGETImportsImportIdRequest
+ @return ImportsApiGETImportsImportIdRequest
 */
-func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ApiGETImportsImportIdRequest {
-	return ApiGETImportsImportIdRequest{
+func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ImportsApiGETImportsImportIdRequest {
+	return ImportsApiGETImportsImportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		importId:   importId,
@@ -231,13 +242,13 @@ func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId str
 }
 
 // Execute executes the request
-//  @return ModelImport
-func (a *ImportsApiService) GETImportsImportIdExecute(r ApiGETImportsImportIdRequest) (*ModelImport, *http.Response, error) {
+//  @return GETImportsImportId200Response
+func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImportIdRequest) (*GETImportsImportId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ModelImport
+		localVarReturnValue *GETImportsImportId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.GETImportsImportId")
@@ -306,18 +317,18 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ApiGETImportsImportIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTImportsRequest struct {
+type ImportsApiPOSTImportsRequest struct {
 	ctx          context.Context
 	ApiService   *ImportsApiService
 	importCreate *ImportCreate
 }
 
-func (r ApiPOSTImportsRequest) ImportCreate(importCreate ImportCreate) ApiPOSTImportsRequest {
+func (r ImportsApiPOSTImportsRequest) ImportCreate(importCreate ImportCreate) ImportsApiPOSTImportsRequest {
 	r.importCreate = &importCreate
 	return r
 }
 
-func (r ApiPOSTImportsRequest) Execute() (*http.Response, error) {
+func (r ImportsApiPOSTImportsRequest) Execute() (*POSTImports201Response, *http.Response, error) {
 	return r.ApiService.POSTImportsExecute(r)
 }
 
@@ -327,26 +338,28 @@ POSTImports Create an import
 Create an import
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTImportsRequest
+ @return ImportsApiPOSTImportsRequest
 */
-func (a *ImportsApiService) POSTImports(ctx context.Context) ApiPOSTImportsRequest {
-	return ApiPOSTImportsRequest{
+func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImportsRequest {
+	return ImportsApiPOSTImportsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.Response, error) {
+//  @return POSTImports201Response
+func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (*POSTImports201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTImports201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportsApiService.POSTImports")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/imports"
@@ -355,7 +368,7 @@ func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.importCreate == nil {
-		return nil, reportError("importCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("importCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -368,7 +381,7 @@ func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.R
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -379,19 +392,19 @@ func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.R
 	localVarPostBody = r.importCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -399,8 +412,17 @@ func (a *ImportsApiService) POSTImportsExecute(r ApiPOSTImportsRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

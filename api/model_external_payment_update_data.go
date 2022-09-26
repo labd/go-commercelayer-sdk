@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ExternalPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    ExternalPaymentUpdateDataAttributes  `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewExternalPaymentUpdateData instantiates a new ExternalPaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentUpdateData(type_ string, id string, attributes ExternalPaymentUpdateDataAttributes) *ExternalPaymentUpdateData {
+func NewExternalPaymentUpdateData(type_ string, id string, attributes PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) *ExternalPaymentUpdateData {
 	this := ExternalPaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewExternalPaymentUpdateData(type_ string, id string, attributes ExternalPa
 // but it doesn't guarantee that properties required by API are set
 func NewExternalPaymentUpdateDataWithDefaults() *ExternalPaymentUpdateData {
 	this := ExternalPaymentUpdateData{}
-	var type_ string = "external_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *ExternalPaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPaymentUpdateData) GetAttributes() ExternalPaymentUpdateDataAttributes {
+func (o *ExternalPaymentUpdateData) GetAttributes() PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret ExternalPaymentUpdateDataAttributes
+		var ret PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *ExternalPaymentUpdateData) GetAttributes() ExternalPaymentUpdateDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentUpdateData) GetAttributesOk() (*ExternalPaymentUpdateDataAttributes, bool) {
+func (o *ExternalPaymentUpdateData) GetAttributesOk() (*PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *ExternalPaymentUpdateData) GetAttributesOk() (*ExternalPaymentUpdateDat
 }
 
 // SetAttributes sets field value
-func (o *ExternalPaymentUpdateData) SetAttributes(v ExternalPaymentUpdateDataAttributes) {
+func (o *ExternalPaymentUpdateData) SetAttributes(v PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

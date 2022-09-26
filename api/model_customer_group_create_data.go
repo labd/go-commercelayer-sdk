@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerGroupCreateData struct for CustomerGroupCreateData
 type CustomerGroupCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    CustomerGroupCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}            `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTCustomerGroups201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
 }
 
 // NewCustomerGroupCreateData instantiates a new CustomerGroupCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerGroupCreateData(type_ string, attributes CustomerGroupCreateDataAttributes) *CustomerGroupCreateData {
+func NewCustomerGroupCreateData(type_ string, attributes POSTCustomerGroups201ResponseDataAttributes) *CustomerGroupCreateData {
 	this := CustomerGroupCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewCustomerGroupCreateData(type_ string, attributes CustomerGroupCreateData
 // but it doesn't guarantee that properties required by API are set
 func NewCustomerGroupCreateDataWithDefaults() *CustomerGroupCreateData {
 	this := CustomerGroupCreateData{}
-	var type_ string = "customer_groups"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *CustomerGroupCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerGroupCreateData) GetAttributes() CustomerGroupCreateDataAttributes {
+func (o *CustomerGroupCreateData) GetAttributes() POSTCustomerGroups201ResponseDataAttributes {
 	if o == nil {
-		var ret CustomerGroupCreateDataAttributes
+		var ret POSTCustomerGroups201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *CustomerGroupCreateData) GetAttributes() CustomerGroupCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupCreateData) GetAttributesOk() (*CustomerGroupCreateDataAttributes, bool) {
+func (o *CustomerGroupCreateData) GetAttributesOk() (*POSTCustomerGroups201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *CustomerGroupCreateData) GetAttributesOk() (*CustomerGroupCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *CustomerGroupCreateData) SetAttributes(v CustomerGroupCreateDataAttributes) {
+func (o *CustomerGroupCreateData) SetAttributes(v POSTCustomerGroups201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

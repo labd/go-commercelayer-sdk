@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_weight_tiers"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ShippingWeightTierUpdateDataAttributes**](ShippingWeightTierUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes**](PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShipmentUpdateDataRelationships**](ShipmentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingWeightTierUpdateData
 
-`func NewShippingWeightTierUpdateData(type_ string, id string, attributes ShippingWeightTierUpdateDataAttributes, ) *ShippingWeightTierUpdateData`
+`func NewShippingWeightTierUpdateData(type_ string, id string, attributes PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes, ) *ShippingWeightTierUpdateData`
 
 NewShippingWeightTierUpdateData instantiates a new ShippingWeightTierUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingWeightTierUpdateData) GetAttributes() ShippingWeightTierUpdateDataAttributes`
+`func (o *ShippingWeightTierUpdateData) GetAttributes() PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingWeightTierUpdateData) GetAttributesOk() (*ShippingWeightTierUpdateDataAttributes, bool)`
+`func (o *ShippingWeightTierUpdateData) GetAttributesOk() (*PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingWeightTierUpdateData) SetAttributes(v ShippingWeightTierUpdateDataAttributes)`
+`func (o *ShippingWeightTierUpdateData) SetAttributes(v PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

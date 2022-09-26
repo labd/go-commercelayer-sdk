@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -17,20 +17,16 @@ import (
 
 // ManualTaxCalculatorDataRelationshipsTaxRules struct for ManualTaxCalculatorDataRelationshipsTaxRules
 type ManualTaxCalculatorDataRelationshipsTaxRules struct {
-	// The resource's type
-	Type string `json:"type"`
-	// The resource's id
-	Id string `json:"id"`
+	Data ManualTaxCalculatorDataRelationshipsTaxRulesData `json:"data"`
 }
 
 // NewManualTaxCalculatorDataRelationshipsTaxRules instantiates a new ManualTaxCalculatorDataRelationshipsTaxRules object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorDataRelationshipsTaxRules(type_ string, id string) *ManualTaxCalculatorDataRelationshipsTaxRules {
+func NewManualTaxCalculatorDataRelationshipsTaxRules(data ManualTaxCalculatorDataRelationshipsTaxRulesData) *ManualTaxCalculatorDataRelationshipsTaxRules {
 	this := ManualTaxCalculatorDataRelationshipsTaxRules{}
-	this.Type = type_
-	this.Id = id
+	this.Data = data
 	return &this
 }
 
@@ -39,66 +35,37 @@ func NewManualTaxCalculatorDataRelationshipsTaxRules(type_ string, id string) *M
 // but it doesn't guarantee that properties required by API are set
 func NewManualTaxCalculatorDataRelationshipsTaxRulesWithDefaults() *ManualTaxCalculatorDataRelationshipsTaxRules {
 	this := ManualTaxCalculatorDataRelationshipsTaxRules{}
-	var type_ string = "tax_rules"
-	this.Type = type_
 	return &this
 }
 
-// GetType returns the Type field value
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetType() string {
+// GetData returns the Data field value
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetData() ManualTaxCalculatorDataRelationshipsTaxRulesData {
 	if o == nil {
-		var ret string
+		var ret ManualTaxCalculatorDataRelationshipsTaxRulesData
 		return ret
 	}
 
-	return o.Type
+	return o.Data
 }
 
-// GetTypeOk returns a tuple with the Type field value
+// GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetTypeOk() (*string, bool) {
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetDataOk() (*ManualTaxCalculatorDataRelationshipsTaxRulesData, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Type, true
+	return &o.Data, true
 }
 
-// SetType sets field value
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetType(v string) {
-	o.Type = v
-}
-
-// GetId returns the Id field value
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetId() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value
-// and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetIdOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.Id, true
-}
-
-// SetId sets field value
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetId(v string) {
-	o.Id = v
+// SetData sets field value
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetData(v ManualTaxCalculatorDataRelationshipsTaxRulesData) {
+	o.Data = v
 }
 
 func (o ManualTaxCalculatorDataRelationshipsTaxRules) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
 }

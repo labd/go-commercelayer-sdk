@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // BundlesApiService BundlesApi service
 type BundlesApiService service
 
-type ApiDELETEBundlesBundleIdRequest struct {
+type BundlesApiDELETEBundlesBundleIdRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
 	bundleId   string
 }
 
-func (r ApiDELETEBundlesBundleIdRequest) Execute() (*http.Response, error) {
+func (r BundlesApiDELETEBundlesBundleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBundlesBundleIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiDELETEBundlesBundleIdRequest
+ @return BundlesApiDELETEBundlesBundleIdRequest
 */
-func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) ApiDELETEBundlesBundleIdRequest {
-	return ApiDELETEBundlesBundleIdRequest{
+func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) BundlesApiDELETEBundlesBundleIdRequest {
+	return BundlesApiDELETEBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -51,7 +51,7 @@ func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId 
 }
 
 // Execute executes the request
-func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r ApiDELETEBundlesBundleIdRequest) (*http.Response, error) {
+func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundlesBundleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r ApiDELETEBundlesBundl
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundlesRequest struct {
+type BundlesApiGETBundlesRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
 }
 
-func (r ApiGETBundlesRequest) Execute() (*http.Response, error) {
+func (r BundlesApiGETBundlesRequest) Execute() (*GETBundles200Response, *http.Response, error) {
 	return r.ApiService.GETBundlesExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETBundles List all bundles
 List all bundles
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETBundlesRequest
+ @return BundlesApiGETBundlesRequest
 */
-func (a *BundlesApiService) GETBundles(ctx context.Context) ApiGETBundlesRequest {
-	return ApiGETBundlesRequest{
+func (a *BundlesApiService) GETBundles(ctx context.Context) BundlesApiGETBundlesRequest {
+	return BundlesApiGETBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETBundlesExecute(r ApiGETBundlesRequest) (*http.Response, error) {
+//  @return GETBundles200Response
+func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*GETBundles200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETBundles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.GETBundles")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/bundles"
@@ -168,7 +170,7 @@ func (a *BundlesApiService) GETBundlesExecute(r ApiGETBundlesRequest) (*http.Res
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *BundlesApiService) GETBundlesExecute(r ApiGETBundlesRequest) (*http.Res
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *BundlesApiService) GETBundlesExecute(r ApiGETBundlesRequest) (*http.Res
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETBundlesBundleIdRequest struct {
+type BundlesApiGETBundlesBundleIdRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
 	bundleId   string
 }
 
-func (r ApiGETBundlesBundleIdRequest) Execute() (*Bundle, *http.Response, error) {
+func (r BundlesApiGETBundlesBundleIdRequest) Execute() (*GETBundlesBundleId200Response, *http.Response, error) {
 	return r.ApiService.GETBundlesBundleIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundlesBundleIdRequest
+ @return BundlesApiGETBundlesBundleIdRequest
 */
-func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) ApiGETBundlesBundleIdRequest {
-	return ApiGETBundlesBundleIdRequest{
+func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) BundlesApiGETBundlesBundleIdRequest {
+	return BundlesApiGETBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -231,13 +242,13 @@ func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId str
 }
 
 // Execute executes the request
-//  @return Bundle
-func (a *BundlesApiService) GETBundlesBundleIdExecute(r ApiGETBundlesBundleIdRequest) (*Bundle, *http.Response, error) {
+//  @return GETBundlesBundleId200Response
+func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*GETBundlesBundleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Bundle
+		localVarReturnValue *GETBundlesBundleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.GETBundlesBundleId")
@@ -306,13 +317,13 @@ func (a *BundlesApiService) GETBundlesBundleIdExecute(r ApiGETBundlesBundleIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdAvailableFreeBundlesRequest struct {
+type BundlesApiGETOrderIdAvailableFreeBundlesRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
+func (r BundlesApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdAvailableFreeBundlesExecute(r)
 }
 
@@ -323,10 +334,10 @@ Retrieve the available free bundles associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdAvailableFreeBundlesRequest
+ @return BundlesApiGETOrderIdAvailableFreeBundlesRequest
 */
-func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) ApiGETOrderIdAvailableFreeBundlesRequest {
-	return ApiGETOrderIdAvailableFreeBundlesRequest{
+func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) BundlesApiGETOrderIdAvailableFreeBundlesRequest {
+	return BundlesApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -334,7 +345,7 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGETOrderIdAvailableFreeBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -398,13 +409,13 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r ApiGETOrderI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListIdBundlesRequest struct {
+type BundlesApiGETSkuListIdBundlesRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
 	skuListId  string
 }
 
-func (r ApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
+func (r BundlesApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListIdBundlesExecute(r)
 }
 
@@ -415,10 +426,10 @@ Retrieve the bundles associated to the SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListIdBundlesRequest
+ @return BundlesApiGETSkuListIdBundlesRequest
 */
-func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) ApiGETSkuListIdBundlesRequest {
-	return ApiGETSkuListIdBundlesRequest{
+func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) BundlesApiGETSkuListIdBundlesRequest {
+	return BundlesApiGETSkuListIdBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -426,7 +437,7 @@ func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId s
 }
 
 // Execute executes the request
-func (a *BundlesApiService) GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesRequest) (*http.Response, error) {
+func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdBundlesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -490,19 +501,19 @@ func (a *BundlesApiService) GETSkuListIdBundlesExecute(r ApiGETSkuListIdBundlesR
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHBundlesBundleIdRequest struct {
+type BundlesApiPATCHBundlesBundleIdRequest struct {
 	ctx          context.Context
 	ApiService   *BundlesApiService
 	bundleUpdate *BundleUpdate
 	bundleId     string
 }
 
-func (r ApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleUpdate) ApiPATCHBundlesBundleIdRequest {
+func (r BundlesApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleUpdate) BundlesApiPATCHBundlesBundleIdRequest {
 	r.bundleUpdate = &bundleUpdate
 	return r
 }
 
-func (r ApiPATCHBundlesBundleIdRequest) Execute() (*http.Response, error) {
+func (r BundlesApiPATCHBundlesBundleIdRequest) Execute() (*PATCHBundlesBundleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHBundlesBundleIdExecute(r)
 }
 
@@ -513,10 +524,10 @@ Update a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiPATCHBundlesBundleIdRequest
+ @return BundlesApiPATCHBundlesBundleIdRequest
 */
-func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) ApiPATCHBundlesBundleIdRequest {
-	return ApiPATCHBundlesBundleIdRequest{
+func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) BundlesApiPATCHBundlesBundleIdRequest {
+	return BundlesApiPATCHBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -524,16 +535,18 @@ func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId s
 }
 
 // Execute executes the request
-func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleIdRequest) (*http.Response, error) {
+//  @return PATCHBundlesBundleId200Response
+func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*PATCHBundlesBundleId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHBundlesBundleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.PATCHBundlesBundleId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}"
@@ -543,7 +556,7 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.bundleUpdate == nil {
-		return nil, reportError("bundleUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("bundleUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -556,7 +569,7 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleI
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -567,19 +580,19 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleI
 	localVarPostBody = r.bundleUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -587,24 +600,33 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r ApiPATCHBundlesBundleI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTBundlesRequest struct {
+type BundlesApiPOSTBundlesRequest struct {
 	ctx          context.Context
 	ApiService   *BundlesApiService
 	bundleCreate *BundleCreate
 }
 
-func (r ApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) ApiPOSTBundlesRequest {
+func (r BundlesApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) BundlesApiPOSTBundlesRequest {
 	r.bundleCreate = &bundleCreate
 	return r
 }
 
-func (r ApiPOSTBundlesRequest) Execute() (*http.Response, error) {
+func (r BundlesApiPOSTBundlesRequest) Execute() (*POSTBundles201Response, *http.Response, error) {
 	return r.ApiService.POSTBundlesExecute(r)
 }
 
@@ -614,26 +636,28 @@ POSTBundles Create a bundle
 Create a bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTBundlesRequest
+ @return BundlesApiPOSTBundlesRequest
 */
-func (a *BundlesApiService) POSTBundles(ctx context.Context) ApiPOSTBundlesRequest {
-	return ApiPOSTBundlesRequest{
+func (a *BundlesApiService) POSTBundles(ctx context.Context) BundlesApiPOSTBundlesRequest {
+	return BundlesApiPOSTBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.Response, error) {
+//  @return POSTBundles201Response
+func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*POSTBundles201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTBundles201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.POSTBundles")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/bundles"
@@ -642,7 +666,7 @@ func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.bundleCreate == nil {
-		return nil, reportError("bundleCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("bundleCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -655,7 +679,7 @@ func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.R
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -666,19 +690,19 @@ func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.R
 	localVarPostBody = r.bundleCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -686,8 +710,17 @@ func (a *BundlesApiService) POSTBundlesExecute(r ApiPOSTBundlesRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

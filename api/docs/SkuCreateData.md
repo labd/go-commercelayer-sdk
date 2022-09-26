@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "skus"]
-**Attributes** | [**SkuCreateDataAttributes**](SkuCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTSkus201ResponseDataAttributes**](POSTSkus201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuCreateDataRelationships**](SkuCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuCreateData
 
-`func NewSkuCreateData(type_ string, attributes SkuCreateDataAttributes, ) *SkuCreateData`
+`func NewSkuCreateData(type_ string, attributes POSTSkus201ResponseDataAttributes, ) *SkuCreateData`
 
 NewSkuCreateData instantiates a new SkuCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuCreateData) GetAttributes() SkuCreateDataAttributes`
+`func (o *SkuCreateData) GetAttributes() POSTSkus201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuCreateData) GetAttributesOk() (*SkuCreateDataAttributes, bool)`
+`func (o *SkuCreateData) GetAttributesOk() (*POSTSkus201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuCreateData) SetAttributes(v SkuCreateDataAttributes)`
+`func (o *SkuCreateData) SetAttributes(v POSTSkus201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

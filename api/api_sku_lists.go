@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // SkuListsApiService SkuListsApi service
 type SkuListsApiService service
 
-type ApiDELETESkuListsSkuListIdRequest struct {
+type SkuListsApiDELETESkuListsSkuListIdRequest struct {
 	ctx        context.Context
 	ApiService *SkuListsApiService
 	skuListId  string
 }
 
-func (r ApiDELETESkuListsSkuListIdRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiDELETESkuListsSkuListIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETESkuListsSkuListIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiDELETESkuListsSkuListIdRequest
+ @return SkuListsApiDELETESkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuListId string) ApiDELETESkuListsSkuListIdRequest {
-	return ApiDELETESkuListsSkuListIdRequest{
+func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiDELETESkuListsSkuListIdRequest {
+	return SkuListsApiDELETESkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -51,7 +51,7 @@ func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuLis
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r ApiDELETESkuListsSkuListIdRequest) (*http.Response, error) {
+func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r SkuListsApiDELETESkuListsSkuListIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *SkuListsApiService) DELETESkuListsSkuListIdExecute(r ApiDELETESkuListsS
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdSkuListRequest struct {
+type SkuListsApiGETBundleIdSkuListRequest struct {
 	ctx        context.Context
 	ApiService *SkuListsApiService
 	bundleId   string
 }
 
-func (r ApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdSkuListExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the sku list associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdSkuListRequest
+ @return SkuListsApiGETBundleIdSkuListRequest
 */
-func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) ApiGETBundleIdSkuListRequest {
-	return ApiGETBundleIdSkuListRequest{
+func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) SkuListsApiGETBundleIdSkuListRequest {
+	return SkuListsApiGETBundleIdSkuListRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -143,7 +143,7 @@ func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId st
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETBundleIdSkuListExecute(r SkuListsApiGETBundleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *SkuListsApiService) GETBundleIdSkuListExecute(r ApiGETBundleIdSkuListRe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdSkuListRequest struct {
+type SkuListsApiGETFixedPricePromotionIdSkuListRequest struct {
 	ctx                   context.Context
 	ApiService            *SkuListsApiService
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdSkuListExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the sku list associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdSkuListRequest
+ @return SkuListsApiGETFixedPricePromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdSkuListRequest {
-	return ApiGETFixedPricePromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) SkuListsApiGETFixedPricePromotionIdSkuListRequest {
+	return SkuListsApiGETFixedPricePromotionIdSkuListRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -235,7 +235,7 @@ func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r SkuListsApiGETFixedPricePromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,13 +299,13 @@ func (a *SkuListsApiService) GETFixedPricePromotionIdSkuListExecute(r ApiGETFixe
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdSkuListRequest struct {
+type SkuListsApiGETFreeGiftPromotionIdSkuListRequest struct {
 	ctx                 context.Context
 	ApiService          *SkuListsApiService
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdSkuListExecute(r)
 }
 
@@ -316,10 +316,10 @@ Retrieve the sku list associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdSkuListRequest
+ @return SkuListsApiGETFreeGiftPromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdSkuListRequest {
-	return ApiGETFreeGiftPromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) SkuListsApiGETFreeGiftPromotionIdSkuListRequest {
+	return SkuListsApiGETFreeGiftPromotionIdSkuListRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -327,7 +327,7 @@ func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r SkuListsApiGETFreeGiftPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -391,13 +391,13 @@ func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuListExecute(r ApiGETFreeGi
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdSkuListRequest struct {
+type SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest struct {
 	ctx                           context.Context
 	ApiService                    *SkuListsApiService
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdSkuListExecute(r)
 }
 
@@ -408,10 +408,10 @@ Retrieve the sku list associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdSkuListRequest
+ @return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
 */
-func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdSkuListRequest {
-	return ApiGETPercentageDiscountPromotionIdSkuListRequest{
+func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest {
+	return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -419,7 +419,7 @@ func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r ApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -483,13 +483,13 @@ func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuListExecute(r Ap
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListItemIdSkuListRequest struct {
+type SkuListsApiGETSkuListItemIdSkuListRequest struct {
 	ctx           context.Context
 	ApiService    *SkuListsApiService
 	skuListItemId string
 }
 
-func (r ApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListItemIdSkuListExecute(r)
 }
 
@@ -500,10 +500,10 @@ Retrieve the sku list associated to the SKU list item
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListItemId The resource's id
- @return ApiGETSkuListItemIdSkuListRequest
+ @return SkuListsApiGETSkuListItemIdSkuListRequest
 */
-func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) ApiGETSkuListItemIdSkuListRequest {
-	return ApiGETSkuListItemIdSkuListRequest{
+func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) SkuListsApiGETSkuListItemIdSkuListRequest {
+	return SkuListsApiGETSkuListItemIdSkuListRequest{
 		ApiService:    a,
 		ctx:           ctx,
 		skuListItemId: skuListItemId,
@@ -511,7 +511,7 @@ func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuLis
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r SkuListsApiGETSkuListItemIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -575,13 +575,13 @@ func (a *SkuListsApiService) GETSkuListItemIdSkuListExecute(r ApiGETSkuListItemI
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListPromotionRuleIdSkuListRequest struct {
+type SkuListsApiGETSkuListPromotionRuleIdSkuListRequest struct {
 	ctx                    context.Context
 	ApiService             *SkuListsApiService
 	skuListPromotionRuleId string
 }
 
-func (r ApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRuleIdSkuListExecute(r)
 }
 
@@ -592,10 +592,10 @@ Retrieve the sku list associated to the SKU list promotion rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListPromotionRuleId The resource's id
- @return ApiGETSkuListPromotionRuleIdSkuListRequest
+ @return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
 */
-func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) ApiGETSkuListPromotionRuleIdSkuListRequest {
-	return ApiGETSkuListPromotionRuleIdSkuListRequest{
+func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) SkuListsApiGETSkuListPromotionRuleIdSkuListRequest {
+	return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		skuListPromotionRuleId: skuListPromotionRuleId,
@@ -603,7 +603,7 @@ func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
+func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r SkuListsApiGETSkuListPromotionRuleIdSkuListRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -667,12 +667,12 @@ func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuListExecute(r ApiGETSku
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListsRequest struct {
+type SkuListsApiGETSkuListsRequest struct {
 	ctx        context.Context
 	ApiService *SkuListsApiService
 }
 
-func (r ApiGETSkuListsRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiGETSkuListsRequest) Execute() (*GETSkuLists200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListsExecute(r)
 }
 
@@ -682,26 +682,28 @@ GETSkuLists List all SKU lists
 List all SKU lists
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETSkuListsRequest
+ @return SkuListsApiGETSkuListsRequest
 */
-func (a *SkuListsApiService) GETSkuLists(ctx context.Context) ApiGETSkuListsRequest {
-	return ApiGETSkuListsRequest{
+func (a *SkuListsApiService) GETSkuLists(ctx context.Context) SkuListsApiGETSkuListsRequest {
+	return SkuListsApiGETSkuListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.Response, error) {
+//  @return GETSkuLists200Response
+func (a *SkuListsApiService) GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*GETSkuLists200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETSkuLists200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETSkuLists")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_lists"
@@ -720,7 +722,7 @@ func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -729,19 +731,19 @@ func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -749,19 +751,28 @@ func (a *SkuListsApiService) GETSkuListsExecute(r ApiGETSkuListsRequest) (*http.
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETSkuListsSkuListIdRequest struct {
+type SkuListsApiGETSkuListsSkuListIdRequest struct {
 	ctx        context.Context
 	ApiService *SkuListsApiService
 	skuListId  string
 }
 
-func (r ApiGETSkuListsSkuListIdRequest) Execute() (*SkuList, *http.Response, error) {
+func (r SkuListsApiGETSkuListsSkuListIdRequest) Execute() (*GETSkuListsSkuListId200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListsSkuListIdExecute(r)
 }
 
@@ -772,10 +783,10 @@ Retrieve a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiGETSkuListsSkuListIdRequest
+ @return SkuListsApiGETSkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId string) ApiGETSkuListsSkuListIdRequest {
-	return ApiGETSkuListsSkuListIdRequest{
+func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiGETSkuListsSkuListIdRequest {
+	return SkuListsApiGETSkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -783,13 +794,13 @@ func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId
 }
 
 // Execute executes the request
-//  @return SkuList
-func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r ApiGETSkuListsSkuListIdRequest) (*SkuList, *http.Response, error) {
+//  @return GETSkuListsSkuListId200Response
+func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*GETSkuListsSkuListId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuList
+		localVarReturnValue *GETSkuListsSkuListId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETSkuListsSkuListId")
@@ -858,19 +869,19 @@ func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r ApiGETSkuListsSkuList
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHSkuListsSkuListIdRequest struct {
+type SkuListsApiPATCHSkuListsSkuListIdRequest struct {
 	ctx           context.Context
 	ApiService    *SkuListsApiService
 	skuListUpdate *SkuListUpdate
 	skuListId     string
 }
 
-func (r ApiPATCHSkuListsSkuListIdRequest) SkuListUpdate(skuListUpdate SkuListUpdate) ApiPATCHSkuListsSkuListIdRequest {
+func (r SkuListsApiPATCHSkuListsSkuListIdRequest) SkuListUpdate(skuListUpdate SkuListUpdate) SkuListsApiPATCHSkuListsSkuListIdRequest {
 	r.skuListUpdate = &skuListUpdate
 	return r
 }
 
-func (r ApiPATCHSkuListsSkuListIdRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiPATCHSkuListsSkuListIdRequest) Execute() (*PATCHSkuListsSkuListId200Response, *http.Response, error) {
 	return r.ApiService.PATCHSkuListsSkuListIdExecute(r)
 }
 
@@ -881,10 +892,10 @@ Update a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuListId The resource's id
- @return ApiPATCHSkuListsSkuListIdRequest
+ @return SkuListsApiPATCHSkuListsSkuListIdRequest
 */
-func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuListId string) ApiPATCHSkuListsSkuListIdRequest {
-	return ApiPATCHSkuListsSkuListIdRequest{
+func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiPATCHSkuListsSkuListIdRequest {
+	return SkuListsApiPATCHSkuListsSkuListIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		skuListId:  skuListId,
@@ -892,16 +903,18 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuList
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSkuListIdRequest) (*http.Response, error) {
+//  @return PATCHSkuListsSkuListId200Response
+func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*PATCHSkuListsSkuListId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHSkuListsSkuListId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.PATCHSkuListsSkuListId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}"
@@ -911,7 +924,7 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSku
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuListUpdate == nil {
-		return nil, reportError("skuListUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuListUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -924,7 +937,7 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSku
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -935,19 +948,19 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSku
 	localVarPostBody = r.skuListUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -955,24 +968,33 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r ApiPATCHSkuListsSku
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTSkuListsRequest struct {
+type SkuListsApiPOSTSkuListsRequest struct {
 	ctx           context.Context
 	ApiService    *SkuListsApiService
 	skuListCreate *SkuListCreate
 }
 
-func (r ApiPOSTSkuListsRequest) SkuListCreate(skuListCreate SkuListCreate) ApiPOSTSkuListsRequest {
+func (r SkuListsApiPOSTSkuListsRequest) SkuListCreate(skuListCreate SkuListCreate) SkuListsApiPOSTSkuListsRequest {
 	r.skuListCreate = &skuListCreate
 	return r
 }
 
-func (r ApiPOSTSkuListsRequest) Execute() (*http.Response, error) {
+func (r SkuListsApiPOSTSkuListsRequest) Execute() (*POSTSkuLists201Response, *http.Response, error) {
 	return r.ApiService.POSTSkuListsExecute(r)
 }
 
@@ -982,26 +1004,28 @@ POSTSkuLists Create a SKU list
 Create a SKU list
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTSkuListsRequest
+ @return SkuListsApiPOSTSkuListsRequest
 */
-func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) ApiPOSTSkuListsRequest {
-	return ApiPOSTSkuListsRequest{
+func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) SkuListsApiPOSTSkuListsRequest {
+	return SkuListsApiPOSTSkuListsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*http.Response, error) {
+//  @return POSTSkuLists201Response
+func (a *SkuListsApiService) POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*POSTSkuLists201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTSkuLists201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.POSTSkuLists")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/sku_lists"
@@ -1010,7 +1034,7 @@ func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*htt
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.skuListCreate == nil {
-		return nil, reportError("skuListCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("skuListCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1023,7 +1047,7 @@ func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*htt
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1034,19 +1058,19 @@ func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*htt
 	localVarPostBody = r.skuListCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -1054,8 +1078,17 @@ func (a *SkuListsApiService) POSTSkuListsExecute(r ApiPOSTSkuListsRequest) (*htt
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalGatewayData struct for ExternalGatewayData
 type ExternalGatewayData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    ExternalGatewayDataAttributes     `json:"attributes"`
-	Relationships *ExternalGatewayDataRelationships `json:"relationships,omitempty"`
+	Type          string                                            `json:"type"`
+	Attributes    GETExternalGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExternalGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayData instantiates a new ExternalGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayData(type_ string, attributes ExternalGatewayDataAttributes) *ExternalGatewayData {
+func NewExternalGatewayData(type_ string, attributes GETExternalGateways200ResponseDataInnerAttributes) *ExternalGatewayData {
 	this := ExternalGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewExternalGatewayData(type_ string, attributes ExternalGatewayDataAttribut
 // but it doesn't guarantee that properties required by API are set
 func NewExternalGatewayDataWithDefaults() *ExternalGatewayData {
 	this := ExternalGatewayData{}
-	var type_ string = "external_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *ExternalGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalGatewayData) GetAttributes() ExternalGatewayDataAttributes {
+func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ExternalGatewayDataAttributes
+		var ret GETExternalGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *ExternalGatewayData) GetAttributes() ExternalGatewayDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayData) GetAttributesOk() (*ExternalGatewayDataAttributes, bool) {
+func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *ExternalGatewayData) GetAttributesOk() (*ExternalGatewayDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *ExternalGatewayData) SetAttributes(v ExternalGatewayDataAttributes) {
+func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

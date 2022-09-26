@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "order_subscriptions"]
-**Attributes** | [**OrderSubscriptionCreateDataAttributes**](OrderSubscriptionCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTOrderSubscriptions201ResponseDataAttributes**](POSTOrderSubscriptions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderSubscriptionCreateDataRelationships**](OrderSubscriptionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderSubscriptionCreateData
 
-`func NewOrderSubscriptionCreateData(type_ string, attributes OrderSubscriptionCreateDataAttributes, ) *OrderSubscriptionCreateData`
+`func NewOrderSubscriptionCreateData(type_ string, attributes POSTOrderSubscriptions201ResponseDataAttributes, ) *OrderSubscriptionCreateData`
 
 NewOrderSubscriptionCreateData instantiates a new OrderSubscriptionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderSubscriptionCreateData) GetAttributes() OrderSubscriptionCreateDataAttributes`
+`func (o *OrderSubscriptionCreateData) GetAttributes() POSTOrderSubscriptions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderSubscriptionCreateData) GetAttributesOk() (*OrderSubscriptionCreateDataAttributes, bool)`
+`func (o *OrderSubscriptionCreateData) GetAttributesOk() (*POSTOrderSubscriptions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderSubscriptionCreateData) SetAttributes(v OrderSubscriptionCreateDataAttributes)`
+`func (o *OrderSubscriptionCreateData) SetAttributes(v POSTOrderSubscriptions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

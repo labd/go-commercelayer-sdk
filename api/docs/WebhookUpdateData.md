@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "webhooks"]
+**Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**WebhookUpdateDataAttributes**](WebhookUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHWebhooksWebhookId200ResponseDataAttributes**](PATCHWebhooksWebhookId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewWebhookUpdateData
 
-`func NewWebhookUpdateData(type_ string, id string, attributes WebhookUpdateDataAttributes, ) *WebhookUpdateData`
+`func NewWebhookUpdateData(type_ string, id string, attributes PATCHWebhooksWebhookId200ResponseDataAttributes, ) *WebhookUpdateData`
 
 NewWebhookUpdateData instantiates a new WebhookUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *WebhookUpdateData) GetAttributes() WebhookUpdateDataAttributes`
+`func (o *WebhookUpdateData) GetAttributes() PATCHWebhooksWebhookId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WebhookUpdateData) GetAttributesOk() (*WebhookUpdateDataAttributes, bool)`
+`func (o *WebhookUpdateData) GetAttributesOk() (*PATCHWebhooksWebhookId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WebhookUpdateData) SetAttributes(v WebhookUpdateDataAttributes)`
+`func (o *WebhookUpdateData) SetAttributes(v PATCHWebhooksWebhookId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

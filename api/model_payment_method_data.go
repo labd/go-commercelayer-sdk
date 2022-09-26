@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaymentMethodData struct for PaymentMethodData
 type PaymentMethodData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    PaymentMethodDataAttributes     `json:"attributes"`
-	Relationships *PaymentMethodDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETPaymentMethods200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *PaymentMethodDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewPaymentMethodData instantiates a new PaymentMethodData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentMethodData(type_ string, attributes PaymentMethodDataAttributes) *PaymentMethodData {
+func NewPaymentMethodData(type_ string, attributes GETPaymentMethods200ResponseDataInnerAttributes) *PaymentMethodData {
 	this := PaymentMethodData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPaymentMethodData(type_ string, attributes PaymentMethodDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewPaymentMethodDataWithDefaults() *PaymentMethodData {
 	this := PaymentMethodData{}
-	var type_ string = "payment_methods"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PaymentMethodData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaymentMethodData) GetAttributes() PaymentMethodDataAttributes {
+func (o *PaymentMethodData) GetAttributes() GETPaymentMethods200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PaymentMethodDataAttributes
+		var ret GETPaymentMethods200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PaymentMethodData) GetAttributes() PaymentMethodDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodData) GetAttributesOk() (*PaymentMethodDataAttributes, bool) {
+func (o *PaymentMethodData) GetAttributesOk() (*GETPaymentMethods200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PaymentMethodData) GetAttributesOk() (*PaymentMethodDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *PaymentMethodData) SetAttributes(v PaymentMethodDataAttributes) {
+func (o *PaymentMethodData) SetAttributes(v GETPaymentMethods200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

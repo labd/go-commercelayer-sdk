@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "return_line_items"]
-**Attributes** | [**ReturnLineItemCreateDataAttributes**](ReturnLineItemCreateDataAttributes.md) |  | 
+**Type** | **string** | The resource&#39;s type | 
+**Attributes** | [**POSTReturnLineItems201ResponseDataAttributes**](POSTReturnLineItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnLineItemCreateDataRelationships**](ReturnLineItemCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnLineItemCreateData
 
-`func NewReturnLineItemCreateData(type_ string, attributes ReturnLineItemCreateDataAttributes, ) *ReturnLineItemCreateData`
+`func NewReturnLineItemCreateData(type_ string, attributes POSTReturnLineItems201ResponseDataAttributes, ) *ReturnLineItemCreateData`
 
 NewReturnLineItemCreateData instantiates a new ReturnLineItemCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnLineItemCreateData) GetAttributes() ReturnLineItemCreateDataAttributes`
+`func (o *ReturnLineItemCreateData) GetAttributes() POSTReturnLineItems201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnLineItemCreateData) GetAttributesOk() (*ReturnLineItemCreateDataAttributes, bool)`
+`func (o *ReturnLineItemCreateData) GetAttributesOk() (*POSTReturnLineItems201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnLineItemCreateData) SetAttributes(v ReturnLineItemCreateDataAttributes)`
+`func (o *ReturnLineItemCreateData) SetAttributes(v POSTReturnLineItems201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

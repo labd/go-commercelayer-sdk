@@ -1,6 +1,6 @@
 # \InStockSubscriptionsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -82,7 +82,7 @@ No authorization required
 
 ## GETInStockSubscriptions
 
-> GETInStockSubscriptions(ctx).Execute()
+> GETInStockSubscriptions200Response GETInStockSubscriptions(ctx).Execute()
 
 List all in stock subscriptions
 
@@ -109,6 +109,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.GETInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETInStockSubscriptions`: GETInStockSubscriptions200Response
+    fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.GETInStockSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -123,16 +125,16 @@ Other parameters are passed through a pointer to a apiGETInStockSubscriptionsReq
 
 ### Return type
 
- (empty response body)
+[**GETInStockSubscriptions200Response**](GETInStockSubscriptions200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ No authorization required
 
 ## GETInStockSubscriptionsInStockSubscriptionId
 
-> InStockSubscription GETInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).Execute()
+> GETInStockSubscriptionsInStockSubscriptionId200Response GETInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).Execute()
 
 Retrieve an in stock subscription
 
@@ -169,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.GETInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInStockSubscriptionsInStockSubscriptionId`: InStockSubscription
+    // response from `GETInStockSubscriptionsInStockSubscriptionId`: GETInStockSubscriptionsInStockSubscriptionId200Response
     fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.GETInStockSubscriptionsInStockSubscriptionId`: %v\n", resp)
 }
 ```
@@ -193,11 +195,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InStockSubscription**](InStockSubscription.md)
+[**GETInStockSubscriptionsInStockSubscriptionId200Response**](GETInStockSubscriptionsInStockSubscriptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -211,7 +213,7 @@ No authorization required
 
 ## PATCHInStockSubscriptionsInStockSubscriptionId
 
-> PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
+> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
 
 Update an in stock subscription
 
@@ -230,7 +232,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("in_stock_subscriptions", "XGZwpOSrWL", *openapiclient.NewInStockSubscriptionUpdateDataAttributes())) // InStockSubscriptionUpdate | 
+    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
     inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -240,6 +242,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHInStockSubscriptionsInStockSubscriptionId`: PATCHInStockSubscriptionsInStockSubscriptionId200Response
+    fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId`: %v\n", resp)
 }
 ```
 
@@ -263,16 +267,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHInStockSubscriptionsInStockSubscriptionId200Response**](PATCHInStockSubscriptionsInStockSubscriptionId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -281,7 +285,7 @@ No authorization required
 
 ## POSTInStockSubscriptions
 
-> POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
+> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
 
 Create an in stock subscription
 
@@ -300,7 +304,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("in_stock_subscriptions", *openapiclient.NewInStockSubscriptionCreateDataAttributes())) // InStockSubscriptionCreate | 
+    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("Type_example", *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -309,6 +313,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.POSTInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTInStockSubscriptions`: POSTInStockSubscriptions201Response
+    fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.POSTInStockSubscriptions`: %v\n", resp)
 }
 ```
 
@@ -327,16 +333,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTInStockSubscriptions201Response**](POSTInStockSubscriptions201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

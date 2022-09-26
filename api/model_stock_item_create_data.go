@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockItemCreateData struct for StockItemCreateData
 type StockItemCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    StockItemCreateDataAttributes     `json:"attributes"`
-	Relationships *StockItemCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    POSTStockItems201ResponseDataAttributes `json:"attributes"`
+	Relationships *StockItemCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewStockItemCreateData instantiates a new StockItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockItemCreateData(type_ string, attributes StockItemCreateDataAttributes) *StockItemCreateData {
+func NewStockItemCreateData(type_ string, attributes POSTStockItems201ResponseDataAttributes) *StockItemCreateData {
 	this := StockItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewStockItemCreateData(type_ string, attributes StockItemCreateDataAttribut
 // but it doesn't guarantee that properties required by API are set
 func NewStockItemCreateDataWithDefaults() *StockItemCreateData {
 	this := StockItemCreateData{}
-	var type_ string = "stock_items"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *StockItemCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockItemCreateData) GetAttributes() StockItemCreateDataAttributes {
+func (o *StockItemCreateData) GetAttributes() POSTStockItems201ResponseDataAttributes {
 	if o == nil {
-		var ret StockItemCreateDataAttributes
+		var ret POSTStockItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *StockItemCreateData) GetAttributes() StockItemCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockItemCreateData) GetAttributesOk() (*StockItemCreateDataAttributes, bool) {
+func (o *StockItemCreateData) GetAttributesOk() (*POSTStockItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *StockItemCreateData) GetAttributesOk() (*StockItemCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *StockItemCreateData) SetAttributes(v StockItemCreateDataAttributes) {
+func (o *StockItemCreateData) SetAttributes(v POSTStockItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

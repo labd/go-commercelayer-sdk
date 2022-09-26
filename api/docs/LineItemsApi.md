@@ -1,6 +1,6 @@
 # \LineItemsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -155,7 +155,7 @@ No authorization required
 
 ## GETLineItems
 
-> GETLineItems(ctx).Execute()
+> GETLineItems200Response GETLineItems(ctx).Execute()
 
 List all line items
 
@@ -182,6 +182,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETLineItems`: GETLineItems200Response
+    fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.GETLineItems`: %v\n", resp)
 }
 ```
 
@@ -196,16 +198,16 @@ Other parameters are passed through a pointer to a apiGETLineItemsRequest struct
 
 ### Return type
 
- (empty response body)
+[**GETLineItems200Response**](GETLineItems200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -214,7 +216,7 @@ No authorization required
 
 ## GETLineItemsLineItemId
 
-> LineItem GETLineItemsLineItemId(ctx, lineItemId).Execute()
+> GETLineItemsLineItemId200Response GETLineItemsLineItemId(ctx, lineItemId).Execute()
 
 Retrieve a line item
 
@@ -242,7 +244,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETLineItemsLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETLineItemsLineItemId`: LineItem
+    // response from `GETLineItemsLineItemId`: GETLineItemsLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.GETLineItemsLineItemId`: %v\n", resp)
 }
 ```
@@ -266,11 +268,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**LineItem**](LineItem.md)
+[**GETLineItemsLineItemId200Response**](GETLineItemsLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -338,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -406,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -474,7 +476,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -542,7 +544,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -556,7 +558,7 @@ No authorization required
 
 ## PATCHLineItemsLineItemId
 
-> PATCHLineItemsLineItemId(ctx, lineItemId).LineItemUpdate(lineItemUpdate).Execute()
+> PATCHLineItemsLineItemId200Response PATCHLineItemsLineItemId(ctx, lineItemId).LineItemUpdate(lineItemUpdate).Execute()
 
 Update a line item
 
@@ -575,7 +577,7 @@ import (
 )
 
 func main() {
-    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("line_items", "XGZwpOSrWL", *openapiclient.NewLineItemUpdateDataAttributes())) // LineItemUpdate | 
+    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemsLineItemId200ResponseDataAttributes())) // LineItemUpdate | 
     lineItemId := "lineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -585,6 +587,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.PATCHLineItemsLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHLineItemsLineItemId`: PATCHLineItemsLineItemId200Response
+    fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.PATCHLineItemsLineItemId`: %v\n", resp)
 }
 ```
 
@@ -608,16 +612,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHLineItemsLineItemId200Response**](PATCHLineItemsLineItemId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -626,7 +630,7 @@ No authorization required
 
 ## POSTLineItems
 
-> POSTLineItems(ctx).LineItemCreate(lineItemCreate).Execute()
+> POSTLineItems201Response POSTLineItems(ctx).LineItemCreate(lineItemCreate).Execute()
 
 Create a line item
 
@@ -645,7 +649,7 @@ import (
 )
 
 func main() {
-    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("line_items", *openapiclient.NewLineItemCreateDataAttributes(int32(4)))) // LineItemCreate | 
+    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("Type_example", *openapiclient.NewPOSTLineItems201ResponseDataAttributes(int32(4)))) // LineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -654,6 +658,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.POSTLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTLineItems`: POSTLineItems201Response
+    fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.POSTLineItems`: %v\n", resp)
 }
 ```
 
@@ -672,16 +678,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTLineItems201Response**](POSTLineItems201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

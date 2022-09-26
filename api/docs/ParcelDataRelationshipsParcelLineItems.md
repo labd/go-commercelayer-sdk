@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "parcel_line_items"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ParcelDataRelationshipsParcelLineItemsData**](ParcelDataRelationshipsParcelLineItemsData.md) |  | 
 
 ## Methods
 
 ### NewParcelDataRelationshipsParcelLineItems
 
-`func NewParcelDataRelationshipsParcelLineItems(type_ string, id string, ) *ParcelDataRelationshipsParcelLineItems`
+`func NewParcelDataRelationshipsParcelLineItems(data ParcelDataRelationshipsParcelLineItemsData, ) *ParcelDataRelationshipsParcelLineItems`
 
 NewParcelDataRelationshipsParcelLineItems instantiates a new ParcelDataRelationshipsParcelLineItems object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewParcelDataRelationshipsParcelLineItemsWithDefaults instantiates a new ParcelD
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ParcelDataRelationshipsParcelLineItems) GetType() string`
+`func (o *ParcelDataRelationshipsParcelLineItems) GetData() ParcelDataRelationshipsParcelLineItemsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ParcelDataRelationshipsParcelLineItems) GetTypeOk() (*string, bool)`
+`func (o *ParcelDataRelationshipsParcelLineItems) GetDataOk() (*ParcelDataRelationshipsParcelLineItemsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ParcelDataRelationshipsParcelLineItems) SetType(v string)`
+`func (o *ParcelDataRelationshipsParcelLineItems) SetData(v ParcelDataRelationshipsParcelLineItemsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ParcelDataRelationshipsParcelLineItems) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ParcelDataRelationshipsParcelLineItems) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ParcelDataRelationshipsParcelLineItems) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

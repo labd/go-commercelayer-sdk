@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "addresses"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**BingGeocoderDataRelationshipsAddressesData**](BingGeocoderDataRelationshipsAddressesData.md) |  | 
 
 ## Methods
 
 ### NewBingGeocoderDataRelationshipsAddresses
 
-`func NewBingGeocoderDataRelationshipsAddresses(type_ string, id string, ) *BingGeocoderDataRelationshipsAddresses`
+`func NewBingGeocoderDataRelationshipsAddresses(data BingGeocoderDataRelationshipsAddressesData, ) *BingGeocoderDataRelationshipsAddresses`
 
 NewBingGeocoderDataRelationshipsAddresses instantiates a new BingGeocoderDataRelationshipsAddresses object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewBingGeocoderDataRelationshipsAddressesWithDefaults instantiates a new BingGeo
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *BingGeocoderDataRelationshipsAddresses) GetType() string`
+`func (o *BingGeocoderDataRelationshipsAddresses) GetData() BingGeocoderDataRelationshipsAddressesData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *BingGeocoderDataRelationshipsAddresses) GetTypeOk() (*string, bool)`
+`func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*BingGeocoderDataRelationshipsAddressesData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *BingGeocoderDataRelationshipsAddresses) SetType(v string)`
+`func (o *BingGeocoderDataRelationshipsAddresses) SetData(v BingGeocoderDataRelationshipsAddressesData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *BingGeocoderDataRelationshipsAddresses) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *BingGeocoderDataRelationshipsAddresses) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *BingGeocoderDataRelationshipsAddresses) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

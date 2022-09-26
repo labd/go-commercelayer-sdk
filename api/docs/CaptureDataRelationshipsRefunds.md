@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "refunds"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**CaptureDataRelationshipsRefundsData**](CaptureDataRelationshipsRefundsData.md) |  | 
 
 ## Methods
 
 ### NewCaptureDataRelationshipsRefunds
 
-`func NewCaptureDataRelationshipsRefunds(type_ string, id string, ) *CaptureDataRelationshipsRefunds`
+`func NewCaptureDataRelationshipsRefunds(data CaptureDataRelationshipsRefundsData, ) *CaptureDataRelationshipsRefunds`
 
 NewCaptureDataRelationshipsRefunds instantiates a new CaptureDataRelationshipsRefunds object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewCaptureDataRelationshipsRefundsWithDefaults instantiates a new CaptureDataRel
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *CaptureDataRelationshipsRefunds) GetType() string`
+`func (o *CaptureDataRelationshipsRefunds) GetData() CaptureDataRelationshipsRefundsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *CaptureDataRelationshipsRefunds) GetTypeOk() (*string, bool)`
+`func (o *CaptureDataRelationshipsRefunds) GetDataOk() (*CaptureDataRelationshipsRefundsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *CaptureDataRelationshipsRefunds) SetType(v string)`
+`func (o *CaptureDataRelationshipsRefunds) SetData(v CaptureDataRelationshipsRefundsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *CaptureDataRelationshipsRefunds) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *CaptureDataRelationshipsRefunds) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *CaptureDataRelationshipsRefunds) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // MarketsApiService MarketsApi service
 type MarketsApiService service
 
-type ApiDELETEMarketsMarketIdRequest struct {
+type MarketsApiDELETEMarketsMarketIdRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 	marketId   string
 }
 
-func (r ApiDELETEMarketsMarketIdRequest) Execute() (*http.Response, error) {
+func (r MarketsApiDELETEMarketsMarketIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEMarketsMarketIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiDELETEMarketsMarketIdRequest
+ @return MarketsApiDELETEMarketsMarketIdRequest
 */
-func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId string) ApiDELETEMarketsMarketIdRequest {
-	return ApiDELETEMarketsMarketIdRequest{
+func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId string) MarketsApiDELETEMarketsMarketIdRequest {
+	return MarketsApiDELETEMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -51,7 +51,7 @@ func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId 
 }
 
 // Execute executes the request
-func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r ApiDELETEMarketsMarketIdRequest) (*http.Response, error) {
+func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarketsMarketIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,13 +115,13 @@ func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r ApiDELETEMarketsMarke
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAvalaraAccountIdMarketsRequest struct {
+type MarketsApiGETAvalaraAccountIdMarketsRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
 	avalaraAccountId string
 }
 
-func (r ApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETAvalaraAccountIdMarketsExecute(r)
 }
 
@@ -132,10 +132,10 @@ Retrieve the markets associated to the avalara account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param avalaraAccountId The resource's id
- @return ApiGETAvalaraAccountIdMarketsRequest
+ @return MarketsApiGETAvalaraAccountIdMarketsRequest
 */
-func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) ApiGETAvalaraAccountIdMarketsRequest {
-	return ApiGETAvalaraAccountIdMarketsRequest{
+func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) MarketsApiGETAvalaraAccountIdMarketsRequest {
+	return MarketsApiGETAvalaraAccountIdMarketsRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		avalaraAccountId: avalaraAccountId,
@@ -143,7 +143,7 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, aval
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r ApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAvalaraAccountIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -207,13 +207,13 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r ApiGETAvalaraAcc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBillingInfoValidationRuleIdMarketRequest struct {
+type MarketsApiGETBillingInfoValidationRuleIdMarketRequest struct {
 	ctx                         context.Context
 	ApiService                  *MarketsApiService
 	billingInfoValidationRuleId string
 }
 
-func (r ApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRuleIdMarketExecute(r)
 }
 
@@ -224,10 +224,10 @@ Retrieve the market associated to the billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billingInfoValidationRuleId The resource's id
- @return ApiGETBillingInfoValidationRuleIdMarketRequest
+ @return MarketsApiGETBillingInfoValidationRuleIdMarketRequest
 */
-func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) ApiGETBillingInfoValidationRuleIdMarketRequest {
-	return ApiGETBillingInfoValidationRuleIdMarketRequest{
+func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) MarketsApiGETBillingInfoValidationRuleIdMarketRequest {
+	return MarketsApiGETBillingInfoValidationRuleIdMarketRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
@@ -235,7 +235,7 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Con
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r ApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r MarketsApiGETBillingInfoValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -299,13 +299,13 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r ApiGET
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBundleIdMarketRequest struct {
+type MarketsApiGETBundleIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 	bundleId   string
 }
 
-func (r ApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETBundleIdMarketExecute(r)
 }
 
@@ -316,10 +316,10 @@ Retrieve the market associated to the bundle
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param bundleId The resource's id
- @return ApiGETBundleIdMarketRequest
+ @return MarketsApiGETBundleIdMarketRequest
 */
-func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId string) ApiGETBundleIdMarketRequest {
-	return ApiGETBundleIdMarketRequest{
+func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId string) MarketsApiGETBundleIdMarketRequest {
+	return MarketsApiGETBundleIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		bundleId:   bundleId,
@@ -327,7 +327,7 @@ func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId stri
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETBundleIdMarketExecute(r ApiGETBundleIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -391,13 +391,13 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r ApiGETBundleIdMarketReque
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCarrierAccountIdMarketRequest struct {
+type MarketsApiGETCarrierAccountIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
 	carrierAccountId string
 }
 
-func (r ApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCarrierAccountIdMarketExecute(r)
 }
 
@@ -408,10 +408,10 @@ Retrieve the market associated to the carrier account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param carrierAccountId The resource's id
- @return ApiGETCarrierAccountIdMarketRequest
+ @return MarketsApiGETCarrierAccountIdMarketRequest
 */
-func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) ApiGETCarrierAccountIdMarketRequest {
-	return ApiGETCarrierAccountIdMarketRequest{
+func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) MarketsApiGETCarrierAccountIdMarketRequest {
+	return MarketsApiGETCarrierAccountIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		carrierAccountId: carrierAccountId,
@@ -419,7 +419,7 @@ func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carri
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r ApiGETCarrierAccountIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarrierAccountIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -483,13 +483,13 @@ func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r ApiGETCarrierAcco
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETCustomerGroupIdMarketsRequest struct {
+type MarketsApiGETCustomerGroupIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
 	customerGroupId string
 }
 
-func (r ApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETCustomerGroupIdMarketsExecute(r)
 }
 
@@ -500,10 +500,10 @@ Retrieve the markets associated to the customer group
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param customerGroupId The resource's id
- @return ApiGETCustomerGroupIdMarketsRequest
+ @return MarketsApiGETCustomerGroupIdMarketsRequest
 */
-func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) ApiGETCustomerGroupIdMarketsRequest {
-	return ApiGETCustomerGroupIdMarketsRequest{
+func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) MarketsApiGETCustomerGroupIdMarketsRequest {
+	return MarketsApiGETCustomerGroupIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		customerGroupId: customerGroupId,
@@ -511,7 +511,7 @@ func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, custo
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r ApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCustomerGroupIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -575,13 +575,13 @@ func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r ApiGETCustomerGro
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalPromotionIdMarketRequest struct {
+type MarketsApiGETExternalPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
 	externalPromotionId string
 }
 
-func (r ApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalPromotionIdMarketExecute(r)
 }
 
@@ -592,10 +592,10 @@ Retrieve the market associated to the external promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalPromotionId The resource's id
- @return ApiGETExternalPromotionIdMarketRequest
+ @return MarketsApiGETExternalPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) ApiGETExternalPromotionIdMarketRequest {
-	return ApiGETExternalPromotionIdMarketRequest{
+func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) MarketsApiGETExternalPromotionIdMarketRequest {
+	return MarketsApiGETExternalPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		externalPromotionId: externalPromotionId,
@@ -603,7 +603,7 @@ func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, ex
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r ApiGETExternalPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETExternalPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -667,13 +667,13 @@ func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r ApiGETExternal
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETExternalTaxCalculatorIdMarketsRequest struct {
+type MarketsApiGETExternalTaxCalculatorIdMarketsRequest struct {
 	ctx                     context.Context
 	ApiService              *MarketsApiService
 	externalTaxCalculatorId string
 }
 
-func (r ApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -684,10 +684,10 @@ Retrieve the markets associated to the external tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param externalTaxCalculatorId The resource's id
- @return ApiGETExternalTaxCalculatorIdMarketsRequest
+ @return MarketsApiGETExternalTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) ApiGETExternalTaxCalculatorIdMarketsRequest {
-	return ApiGETExternalTaxCalculatorIdMarketsRequest{
+func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) MarketsApiGETExternalTaxCalculatorIdMarketsRequest {
+	return MarketsApiGETExternalTaxCalculatorIdMarketsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		externalTaxCalculatorId: externalTaxCalculatorId,
@@ -695,7 +695,7 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r ApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsApiGETExternalTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -759,13 +759,13 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r ApiGETExt
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedAmountPromotionIdMarketRequest struct {
+type MarketsApiGETFixedAmountPromotionIdMarketRequest struct {
 	ctx                    context.Context
 	ApiService             *MarketsApiService
 	fixedAmountPromotionId string
 }
 
-func (r ApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionIdMarketExecute(r)
 }
 
@@ -776,10 +776,10 @@ Retrieve the market associated to the fixed amount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedAmountPromotionId The resource's id
- @return ApiGETFixedAmountPromotionIdMarketRequest
+ @return MarketsApiGETFixedAmountPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) ApiGETFixedAmountPromotionIdMarketRequest {
-	return ApiGETFixedAmountPromotionIdMarketRequest{
+func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) MarketsApiGETFixedAmountPromotionIdMarketRequest {
+	return MarketsApiGETFixedAmountPromotionIdMarketRequest{
 		ApiService:             a,
 		ctx:                    ctx,
 		fixedAmountPromotionId: fixedAmountPromotionId,
@@ -787,7 +787,7 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r ApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiGETFixedAmountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -851,13 +851,13 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r ApiGETFixed
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFixedPricePromotionIdMarketRequest struct {
+type MarketsApiGETFixedPricePromotionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
 	fixedPricePromotionId string
 }
 
-func (r ApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionIdMarketExecute(r)
 }
 
@@ -868,10 +868,10 @@ Retrieve the market associated to the fixed price promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param fixedPricePromotionId The resource's id
- @return ApiGETFixedPricePromotionIdMarketRequest
+ @return MarketsApiGETFixedPricePromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) ApiGETFixedPricePromotionIdMarketRequest {
-	return ApiGETFixedPricePromotionIdMarketRequest{
+func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) MarketsApiGETFixedPricePromotionIdMarketRequest {
+	return MarketsApiGETFixedPricePromotionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		fixedPricePromotionId: fixedPricePromotionId,
@@ -879,7 +879,7 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r ApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGETFixedPricePromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -943,13 +943,13 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r ApiGETFixedP
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeGiftPromotionIdMarketRequest struct {
+type MarketsApiGETFreeGiftPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
 	freeGiftPromotionId string
 }
 
-func (r ApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeGiftPromotionIdMarketExecute(r)
 }
 
@@ -960,10 +960,10 @@ Retrieve the market associated to the free gift promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeGiftPromotionId The resource's id
- @return ApiGETFreeGiftPromotionIdMarketRequest
+ @return MarketsApiGETFreeGiftPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) ApiGETFreeGiftPromotionIdMarketRequest {
-	return ApiGETFreeGiftPromotionIdMarketRequest{
+func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) MarketsApiGETFreeGiftPromotionIdMarketRequest {
+	return MarketsApiGETFreeGiftPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		freeGiftPromotionId: freeGiftPromotionId,
@@ -971,7 +971,7 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, fr
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r ApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETFreeGiftPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1035,13 +1035,13 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r ApiGETFreeGift
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETFreeShippingPromotionIdMarketRequest struct {
+type MarketsApiGETFreeShippingPromotionIdMarketRequest struct {
 	ctx                     context.Context
 	ApiService              *MarketsApiService
 	freeShippingPromotionId string
 }
 
-func (r ApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionIdMarketExecute(r)
 }
 
@@ -1052,10 +1052,10 @@ Retrieve the market associated to the free shipping promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param freeShippingPromotionId The resource's id
- @return ApiGETFreeShippingPromotionIdMarketRequest
+ @return MarketsApiGETFreeShippingPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) ApiGETFreeShippingPromotionIdMarketRequest {
-	return ApiGETFreeShippingPromotionIdMarketRequest{
+func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) MarketsApiGETFreeShippingPromotionIdMarketRequest {
+	return MarketsApiGETFreeShippingPromotionIdMarketRequest{
 		ApiService:              a,
 		ctx:                     ctx,
 		freeShippingPromotionId: freeShippingPromotionId,
@@ -1063,7 +1063,7 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r ApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApiGETFreeShippingPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1127,13 +1127,13 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r ApiGETFree
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETGiftCardIdMarketRequest struct {
+type MarketsApiGETGiftCardIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 	giftCardId string
 }
 
-func (r ApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETGiftCardIdMarketExecute(r)
 }
 
@@ -1144,10 +1144,10 @@ Retrieve the market associated to the gift card
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param giftCardId The resource's id
- @return ApiGETGiftCardIdMarketRequest
+ @return MarketsApiGETGiftCardIdMarketRequest
 */
-func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) ApiGETGiftCardIdMarketRequest {
-	return ApiGETGiftCardIdMarketRequest{
+func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) MarketsApiGETGiftCardIdMarketRequest {
+	return MarketsApiGETGiftCardIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		giftCardId: giftCardId,
@@ -1155,7 +1155,7 @@ func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId 
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETGiftCardIdMarketExecute(r ApiGETGiftCardIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1219,13 +1219,13 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r ApiGETGiftCardIdMarketR
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETInStockSubscriptionIdMarketRequest struct {
+type MarketsApiGETInStockSubscriptionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
 	inStockSubscriptionId string
 }
 
-func (r ApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionIdMarketExecute(r)
 }
 
@@ -1236,10 +1236,10 @@ Retrieve the market associated to the in stock subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param inStockSubscriptionId The resource's id
- @return ApiGETInStockSubscriptionIdMarketRequest
+ @return MarketsApiGETInStockSubscriptionIdMarketRequest
 */
-func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) ApiGETInStockSubscriptionIdMarketRequest {
-	return ApiGETInStockSubscriptionIdMarketRequest{
+func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) MarketsApiGETInStockSubscriptionIdMarketRequest {
+	return MarketsApiGETInStockSubscriptionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		inStockSubscriptionId: inStockSubscriptionId,
@@ -1247,7 +1247,7 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r ApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGETInStockSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1311,13 +1311,13 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r ApiGETInStoc
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETManualTaxCalculatorIdMarketsRequest struct {
+type MarketsApiGETManualTaxCalculatorIdMarketsRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
 	manualTaxCalculatorId string
 }
 
-func (r ApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -1328,10 +1328,10 @@ Retrieve the markets associated to the manual tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param manualTaxCalculatorId The resource's id
- @return ApiGETManualTaxCalculatorIdMarketsRequest
+ @return MarketsApiGETManualTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) ApiGETManualTaxCalculatorIdMarketsRequest {
-	return ApiGETManualTaxCalculatorIdMarketsRequest{
+func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) MarketsApiGETManualTaxCalculatorIdMarketsRequest {
+	return MarketsApiGETManualTaxCalculatorIdMarketsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		manualTaxCalculatorId: manualTaxCalculatorId,
@@ -1339,7 +1339,7 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context,
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r ApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r MarketsApiGETManualTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1403,12 +1403,12 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r ApiGETManua
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETMarketsRequest struct {
+type MarketsApiGETMarketsRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 }
 
-func (r ApiGETMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETMarketsRequest) Execute() (*GETMarkets200Response, *http.Response, error) {
 	return r.ApiService.GETMarketsExecute(r)
 }
 
@@ -1418,26 +1418,28 @@ GETMarkets List all markets
 List all markets
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETMarketsRequest
+ @return MarketsApiGETMarketsRequest
 */
-func (a *MarketsApiService) GETMarkets(ctx context.Context) ApiGETMarketsRequest {
-	return ApiGETMarketsRequest{
+func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarketsRequest {
+	return MarketsApiGETMarketsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETMarketsExecute(r ApiGETMarketsRequest) (*http.Response, error) {
+//  @return GETMarkets200Response
+func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*GETMarkets200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETMarkets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarkets")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/markets"
@@ -1456,7 +1458,7 @@ func (a *MarketsApiService) GETMarketsExecute(r ApiGETMarketsRequest) (*http.Res
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -1465,19 +1467,19 @@ func (a *MarketsApiService) GETMarketsExecute(r ApiGETMarketsRequest) (*http.Res
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -1485,19 +1487,28 @@ func (a *MarketsApiService) GETMarketsExecute(r ApiGETMarketsRequest) (*http.Res
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETMarketsMarketIdRequest struct {
+type MarketsApiGETMarketsMarketIdRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 	marketId   string
 }
 
-func (r ApiGETMarketsMarketIdRequest) Execute() (*Market, *http.Response, error) {
+func (r MarketsApiGETMarketsMarketIdRequest) Execute() (*GETMarketsMarketId200Response, *http.Response, error) {
 	return r.ApiService.GETMarketsMarketIdExecute(r)
 }
 
@@ -1508,10 +1519,10 @@ Retrieve a market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiGETMarketsMarketIdRequest
+ @return MarketsApiGETMarketsMarketIdRequest
 */
-func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId string) ApiGETMarketsMarketIdRequest {
-	return ApiGETMarketsMarketIdRequest{
+func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId string) MarketsApiGETMarketsMarketIdRequest {
+	return MarketsApiGETMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -1519,13 +1530,13 @@ func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId str
 }
 
 // Execute executes the request
-//  @return Market
-func (a *MarketsApiService) GETMarketsMarketIdExecute(r ApiGETMarketsMarketIdRequest) (*Market, *http.Response, error) {
+//  @return GETMarketsMarketId200Response
+func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMarketIdRequest) (*GETMarketsMarketId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *Market
+		localVarReturnValue *GETMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarketsMarketId")
@@ -1594,13 +1605,13 @@ func (a *MarketsApiService) GETMarketsMarketIdExecute(r ApiGETMarketsMarketIdReq
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETOrderIdMarketRequest struct {
+type MarketsApiGETOrderIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
 	orderId    string
 }
 
-func (r ApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderIdMarketExecute(r)
 }
 
@@ -1611,10 +1622,10 @@ Retrieve the market associated to the order
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderId The resource's id
- @return ApiGETOrderIdMarketRequest
+ @return MarketsApiGETOrderIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string) ApiGETOrderIdMarketRequest {
-	return ApiGETOrderIdMarketRequest{
+func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string) MarketsApiGETOrderIdMarketRequest {
+	return MarketsApiGETOrderIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
 		orderId:    orderId,
@@ -1622,7 +1633,7 @@ func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETOrderIdMarketExecute(r ApiGETOrderIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1686,13 +1697,13 @@ func (a *MarketsApiService) GETOrderIdMarketExecute(r ApiGETOrderIdMarketRequest
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderSubscriptionIdMarketRequest struct {
+type MarketsApiGETOrderSubscriptionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
 	orderSubscriptionId string
 }
 
-func (r ApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionIdMarketExecute(r)
 }
 
@@ -1703,10 +1714,10 @@ Retrieve the market associated to the order subscription
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderSubscriptionId The resource's id
- @return ApiGETOrderSubscriptionIdMarketRequest
+ @return MarketsApiGETOrderSubscriptionIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) ApiGETOrderSubscriptionIdMarketRequest {
-	return ApiGETOrderSubscriptionIdMarketRequest{
+func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) MarketsApiGETOrderSubscriptionIdMarketRequest {
+	return MarketsApiGETOrderSubscriptionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -1714,7 +1725,7 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, or
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r ApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETOrderSubscriptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1778,13 +1789,13 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r ApiGETOrderSub
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETOrderValidationRuleIdMarketRequest struct {
+type MarketsApiGETOrderValidationRuleIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
 	orderValidationRuleId string
 }
 
-func (r ApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETOrderValidationRuleIdMarketExecute(r)
 }
 
@@ -1795,10 +1806,10 @@ Retrieve the market associated to the order validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param orderValidationRuleId The resource's id
- @return ApiGETOrderValidationRuleIdMarketRequest
+ @return MarketsApiGETOrderValidationRuleIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) ApiGETOrderValidationRuleIdMarketRequest {
-	return ApiGETOrderValidationRuleIdMarketRequest{
+func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) MarketsApiGETOrderValidationRuleIdMarketRequest {
+	return MarketsApiGETOrderValidationRuleIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
 		orderValidationRuleId: orderValidationRuleId,
@@ -1806,7 +1817,7 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, 
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r ApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGETOrderValidationRuleIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1870,13 +1881,13 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r ApiGETOrderV
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPaymentMethodIdMarketRequest struct {
+type MarketsApiGETPaymentMethodIdMarketRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
 	paymentMethodId string
 }
 
-func (r ApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPaymentMethodIdMarketExecute(r)
 }
 
@@ -1887,10 +1898,10 @@ Retrieve the market associated to the payment method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param paymentMethodId The resource's id
- @return ApiGETPaymentMethodIdMarketRequest
+ @return MarketsApiGETPaymentMethodIdMarketRequest
 */
-func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) ApiGETPaymentMethodIdMarketRequest {
-	return ApiGETPaymentMethodIdMarketRequest{
+func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) MarketsApiGETPaymentMethodIdMarketRequest {
+	return MarketsApiGETPaymentMethodIdMarketRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		paymentMethodId: paymentMethodId,
@@ -1898,7 +1909,7 @@ func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymen
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r ApiGETPaymentMethodIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPaymentMethodIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -1962,13 +1973,13 @@ func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r ApiGETPaymentMetho
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPercentageDiscountPromotionIdMarketRequest struct {
+type MarketsApiGETPercentageDiscountPromotionIdMarketRequest struct {
 	ctx                           context.Context
 	ApiService                    *MarketsApiService
 	percentageDiscountPromotionId string
 }
 
-func (r ApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionIdMarketExecute(r)
 }
 
@@ -1979,10 +1990,10 @@ Retrieve the market associated to the percentage discount promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param percentageDiscountPromotionId The resource's id
- @return ApiGETPercentageDiscountPromotionIdMarketRequest
+ @return MarketsApiGETPercentageDiscountPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) ApiGETPercentageDiscountPromotionIdMarketRequest {
-	return ApiGETPercentageDiscountPromotionIdMarketRequest{
+func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) MarketsApiGETPercentageDiscountPromotionIdMarketRequest {
+	return MarketsApiGETPercentageDiscountPromotionIdMarketRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
 		percentageDiscountPromotionId: percentageDiscountPromotionId,
@@ -1990,7 +2001,7 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.C
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r ApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r MarketsApiGETPercentageDiscountPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2054,13 +2065,13 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r ApiG
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETPromotionIdMarketRequest struct {
+type MarketsApiGETPromotionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *MarketsApiService
 	promotionId string
 }
 
-func (r ApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETPromotionIdMarketExecute(r)
 }
 
@@ -2071,10 +2082,10 @@ Retrieve the market associated to the promotion
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param promotionId The resource's id
- @return ApiGETPromotionIdMarketRequest
+ @return MarketsApiGETPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) ApiGETPromotionIdMarketRequest {
-	return ApiGETPromotionIdMarketRequest{
+func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) MarketsApiGETPromotionIdMarketRequest {
+	return MarketsApiGETPromotionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		promotionId: promotionId,
@@ -2082,7 +2093,7 @@ func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionI
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETPromotionIdMarketExecute(r ApiGETPromotionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2146,13 +2157,13 @@ func (a *MarketsApiService) GETPromotionIdMarketExecute(r ApiGETPromotionIdMarke
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETShippingMethodIdMarketRequest struct {
+type MarketsApiGETShippingMethodIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
 	shippingMethodId string
 }
 
-func (r ApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETShippingMethodIdMarketExecute(r)
 }
 
@@ -2163,10 +2174,10 @@ Retrieve the market associated to the shipping method
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param shippingMethodId The resource's id
- @return ApiGETShippingMethodIdMarketRequest
+ @return MarketsApiGETShippingMethodIdMarketRequest
 */
-func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) ApiGETShippingMethodIdMarketRequest {
-	return ApiGETShippingMethodIdMarketRequest{
+func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) MarketsApiGETShippingMethodIdMarketRequest {
+	return MarketsApiGETShippingMethodIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
 		shippingMethodId: shippingMethodId,
@@ -2174,7 +2185,7 @@ func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shipp
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r ApiGETShippingMethodIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShippingMethodIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2238,13 +2249,13 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r ApiGETShippingMet
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETSkuOptionIdMarketRequest struct {
+type MarketsApiGETSkuOptionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *MarketsApiService
 	skuOptionId string
 }
 
-func (r ApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETSkuOptionIdMarketExecute(r)
 }
 
@@ -2255,10 +2266,10 @@ Retrieve the market associated to the SKU option
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param skuOptionId The resource's id
- @return ApiGETSkuOptionIdMarketRequest
+ @return MarketsApiGETSkuOptionIdMarketRequest
 */
-func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) ApiGETSkuOptionIdMarketRequest {
-	return ApiGETSkuOptionIdMarketRequest{
+func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) MarketsApiGETSkuOptionIdMarketRequest {
+	return MarketsApiGETSkuOptionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
 		skuOptionId: skuOptionId,
@@ -2266,7 +2277,7 @@ func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionI
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r ApiGETSkuOptionIdMarketRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOptionIdMarketRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2330,13 +2341,13 @@ func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r ApiGETSkuOptionIdMarke
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxCalculatorIdMarketsRequest struct {
+type MarketsApiGETTaxCalculatorIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
 	taxCalculatorId string
 }
 
-func (r ApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxCalculatorIdMarketsExecute(r)
 }
 
@@ -2347,10 +2358,10 @@ Retrieve the markets associated to the tax calculator
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxCalculatorId The resource's id
- @return ApiGETTaxCalculatorIdMarketsRequest
+ @return MarketsApiGETTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) ApiGETTaxCalculatorIdMarketsRequest {
-	return ApiGETTaxCalculatorIdMarketsRequest{
+func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) MarketsApiGETTaxCalculatorIdMarketsRequest {
+	return MarketsApiGETTaxCalculatorIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxCalculatorId: taxCalculatorId,
@@ -2358,7 +2369,7 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCa
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r ApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxCalculatorIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2422,13 +2433,13 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r ApiGETTaxCalculat
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETTaxjarAccountIdMarketsRequest struct {
+type MarketsApiGETTaxjarAccountIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
 	taxjarAccountId string
 }
 
-func (r ApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
 	return r.ApiService.GETTaxjarAccountIdMarketsExecute(r)
 }
 
@@ -2439,10 +2450,10 @@ Retrieve the markets associated to the taxjar account
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param taxjarAccountId The resource's id
- @return ApiGETTaxjarAccountIdMarketsRequest
+ @return MarketsApiGETTaxjarAccountIdMarketsRequest
 */
-func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) ApiGETTaxjarAccountIdMarketsRequest {
-	return ApiGETTaxjarAccountIdMarketsRequest{
+func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) MarketsApiGETTaxjarAccountIdMarketsRequest {
+	return MarketsApiGETTaxjarAccountIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
 		taxjarAccountId: taxjarAccountId,
@@ -2450,7 +2461,7 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxja
 }
 
 // Execute executes the request
-func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r ApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
+func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r MarketsApiGETTaxjarAccountIdMarketsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
@@ -2514,19 +2525,19 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r ApiGETTaxjarAccou
 	return localVarHTTPResponse, nil
 }
 
-type ApiPATCHMarketsMarketIdRequest struct {
+type MarketsApiPATCHMarketsMarketIdRequest struct {
 	ctx          context.Context
 	ApiService   *MarketsApiService
 	marketUpdate *MarketUpdate
 	marketId     string
 }
 
-func (r ApiPATCHMarketsMarketIdRequest) MarketUpdate(marketUpdate MarketUpdate) ApiPATCHMarketsMarketIdRequest {
+func (r MarketsApiPATCHMarketsMarketIdRequest) MarketUpdate(marketUpdate MarketUpdate) MarketsApiPATCHMarketsMarketIdRequest {
 	r.marketUpdate = &marketUpdate
 	return r
 }
 
-func (r ApiPATCHMarketsMarketIdRequest) Execute() (*http.Response, error) {
+func (r MarketsApiPATCHMarketsMarketIdRequest) Execute() (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	return r.ApiService.PATCHMarketsMarketIdExecute(r)
 }
 
@@ -2537,10 +2548,10 @@ Update a market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param marketId The resource's id
- @return ApiPATCHMarketsMarketIdRequest
+ @return MarketsApiPATCHMarketsMarketIdRequest
 */
-func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId string) ApiPATCHMarketsMarketIdRequest {
-	return ApiPATCHMarketsMarketIdRequest{
+func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId string) MarketsApiPATCHMarketsMarketIdRequest {
+	return MarketsApiPATCHMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
 		marketId:   marketId,
@@ -2548,16 +2559,18 @@ func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId s
 }
 
 // Execute executes the request
-func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r ApiPATCHMarketsMarketIdRequest) (*http.Response, error) {
+//  @return PATCHMarketsMarketId200Response
+func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarketsMarketIdRequest) (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.PATCHMarketsMarketId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}"
@@ -2567,7 +2580,7 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r ApiPATCHMarketsMarketI
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.marketUpdate == nil {
-		return nil, reportError("marketUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("marketUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2580,7 +2593,7 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r ApiPATCHMarketsMarketI
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -2591,19 +2604,19 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r ApiPATCHMarketsMarketI
 	localVarPostBody = r.marketUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -2611,24 +2624,33 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r ApiPATCHMarketsMarketI
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTMarketsRequest struct {
+type MarketsApiPOSTMarketsRequest struct {
 	ctx          context.Context
 	ApiService   *MarketsApiService
 	marketCreate *MarketCreate
 }
 
-func (r ApiPOSTMarketsRequest) MarketCreate(marketCreate MarketCreate) ApiPOSTMarketsRequest {
+func (r MarketsApiPOSTMarketsRequest) MarketCreate(marketCreate MarketCreate) MarketsApiPOSTMarketsRequest {
 	r.marketCreate = &marketCreate
 	return r
 }
 
-func (r ApiPOSTMarketsRequest) Execute() (*http.Response, error) {
+func (r MarketsApiPOSTMarketsRequest) Execute() (*POSTMarkets201Response, *http.Response, error) {
 	return r.ApiService.POSTMarketsExecute(r)
 }
 
@@ -2638,26 +2660,28 @@ POSTMarkets Create a market
 Create a market
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTMarketsRequest
+ @return MarketsApiPOSTMarketsRequest
 */
-func (a *MarketsApiService) POSTMarkets(ctx context.Context) ApiPOSTMarketsRequest {
-	return ApiPOSTMarketsRequest{
+func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarketsRequest {
+	return MarketsApiPOSTMarketsRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MarketsApiService) POSTMarketsExecute(r ApiPOSTMarketsRequest) (*http.Response, error) {
+//  @return POSTMarkets201Response
+func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (*POSTMarkets201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTMarkets201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.POSTMarkets")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/markets"
@@ -2666,7 +2690,7 @@ func (a *MarketsApiService) POSTMarketsExecute(r ApiPOSTMarketsRequest) (*http.R
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.marketCreate == nil {
-		return nil, reportError("marketCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("marketCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -2679,7 +2703,7 @@ func (a *MarketsApiService) POSTMarketsExecute(r ApiPOSTMarketsRequest) (*http.R
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -2690,19 +2714,19 @@ func (a *MarketsApiService) POSTMarketsExecute(r ApiPOSTMarketsRequest) (*http.R
 	localVarPostBody = r.marketCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -2710,8 +2734,17 @@ func (a *MarketsApiService) POSTMarketsExecute(r ApiPOSTMarketsRequest) (*http.R
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

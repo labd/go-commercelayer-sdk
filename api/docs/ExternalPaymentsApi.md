@@ -1,6 +1,6 @@
 # \ExternalPaymentsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -69,7 +69,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -137,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -151,7 +151,7 @@ No authorization required
 
 ## GETExternalPayments
 
-> GETExternalPayments(ctx).Execute()
+> GETExternalPayments200Response GETExternalPayments(ctx).Execute()
 
 List all external payments
 
@@ -178,6 +178,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.GETExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETExternalPayments`: GETExternalPayments200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.GETExternalPayments`: %v\n", resp)
 }
 ```
 
@@ -192,16 +194,16 @@ Other parameters are passed through a pointer to a apiGETExternalPaymentsRequest
 
 ### Return type
 
- (empty response body)
+[**GETExternalPayments200Response**](GETExternalPayments200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +212,7 @@ No authorization required
 
 ## GETExternalPaymentsExternalPaymentId
 
-> ExternalPayment GETExternalPaymentsExternalPaymentId(ctx, externalPaymentId).Execute()
+> GETExternalPaymentsExternalPaymentId200Response GETExternalPaymentsExternalPaymentId(ctx, externalPaymentId).Execute()
 
 Retrieve an external payment
 
@@ -238,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.GETExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPaymentsExternalPaymentId`: ExternalPayment
+    // response from `GETExternalPaymentsExternalPaymentId`: GETExternalPaymentsExternalPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.GETExternalPaymentsExternalPaymentId`: %v\n", resp)
 }
 ```
@@ -262,11 +264,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalPayment**](ExternalPayment.md)
+[**GETExternalPaymentsExternalPaymentId200Response**](GETExternalPaymentsExternalPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -280,7 +282,7 @@ No authorization required
 
 ## PATCHExternalPaymentsExternalPaymentId
 
-> PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
+> PATCHExternalPaymentsExternalPaymentId200Response PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
 
 Update an external payment
 
@@ -299,7 +301,7 @@ import (
 )
 
 func main() {
-    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("external_payments", "XGZwpOSrWL", *openapiclient.NewExternalPaymentUpdateDataAttributes())) // ExternalPaymentUpdate | 
+    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes())) // ExternalPaymentUpdate | 
     externalPaymentId := "externalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -309,6 +311,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHExternalPaymentsExternalPaymentId`: PATCHExternalPaymentsExternalPaymentId200Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId`: %v\n", resp)
 }
 ```
 
@@ -332,16 +336,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHExternalPaymentsExternalPaymentId200Response**](PATCHExternalPaymentsExternalPaymentId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -350,7 +354,7 @@ No authorization required
 
 ## POSTExternalPayments
 
-> POSTExternalPayments(ctx).ExternalPaymentCreate(externalPaymentCreate).Execute()
+> POSTExternalPayments201Response POSTExternalPayments(ctx).ExternalPaymentCreate(externalPaymentCreate).Execute()
 
 Create an external payment
 
@@ -369,7 +373,7 @@ import (
 )
 
 func main() {
-    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("external_payments", *openapiclient.NewExternalPaymentCreateDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
+    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("Type_example", *openapiclient.NewPOSTExternalPayments201ResponseDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,6 +382,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.POSTExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTExternalPayments`: POSTExternalPayments201Response
+    fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.POSTExternalPayments`: %v\n", resp)
 }
 ```
 
@@ -396,16 +402,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTExternalPayments201Response**](POSTExternalPayments201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

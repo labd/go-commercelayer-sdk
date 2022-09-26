@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type TaxRuleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                      `json:"id"`
-	Attributes    TaxRuleUpdateDataAttributes `json:"attributes"`
-	Relationships *TaxRuleDataRelationships   `json:"relationships,omitempty"`
+	Id            string                                          `json:"id"`
+	Attributes    PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *TaxRuleDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleUpdateData instantiates a new TaxRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleUpdateData(type_ string, id string, attributes TaxRuleUpdateDataAttributes) *TaxRuleUpdateData {
+func NewTaxRuleUpdateData(type_ string, id string, attributes PATCHTaxRulesTaxRuleId200ResponseDataAttributes) *TaxRuleUpdateData {
 	this := TaxRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -42,8 +42,6 @@ func NewTaxRuleUpdateData(type_ string, id string, attributes TaxRuleUpdateDataA
 // but it doesn't guarantee that properties required by API are set
 func NewTaxRuleUpdateDataWithDefaults() *TaxRuleUpdateData {
 	this := TaxRuleUpdateData{}
-	var type_ string = "tax_rules"
-	this.Type = type_
 	return &this
 }
 
@@ -96,9 +94,9 @@ func (o *TaxRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxRuleUpdateData) GetAttributes() TaxRuleUpdateDataAttributes {
+func (o *TaxRuleUpdateData) GetAttributes() PATCHTaxRulesTaxRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret TaxRuleUpdateDataAttributes
+		var ret PATCHTaxRulesTaxRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -107,7 +105,7 @@ func (o *TaxRuleUpdateData) GetAttributes() TaxRuleUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdateData) GetAttributesOk() (*TaxRuleUpdateDataAttributes, bool) {
+func (o *TaxRuleUpdateData) GetAttributesOk() (*PATCHTaxRulesTaxRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -115,7 +113,7 @@ func (o *TaxRuleUpdateData) GetAttributesOk() (*TaxRuleUpdateDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *TaxRuleUpdateData) SetAttributes(v TaxRuleUpdateDataAttributes) {
+func (o *TaxRuleUpdateData) SetAttributes(v PATCHTaxRulesTaxRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

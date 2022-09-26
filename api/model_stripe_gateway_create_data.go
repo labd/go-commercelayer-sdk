@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StripeGatewayCreateData struct for StripeGatewayCreateData
 type StripeGatewayCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
-	Attributes    StripeGatewayCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}            `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTStripeGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
 }
 
 // NewStripeGatewayCreateData instantiates a new StripeGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayCreateData(type_ string, attributes StripeGatewayCreateDataAttributes) *StripeGatewayCreateData {
+func NewStripeGatewayCreateData(type_ string, attributes POSTStripeGateways201ResponseDataAttributes) *StripeGatewayCreateData {
 	this := StripeGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewStripeGatewayCreateData(type_ string, attributes StripeGatewayCreateData
 // but it doesn't guarantee that properties required by API are set
 func NewStripeGatewayCreateDataWithDefaults() *StripeGatewayCreateData {
 	this := StripeGatewayCreateData{}
-	var type_ string = "stripe_gateways"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *StripeGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripeGatewayCreateData) GetAttributes() StripeGatewayCreateDataAttributes {
+func (o *StripeGatewayCreateData) GetAttributes() POSTStripeGateways201ResponseDataAttributes {
 	if o == nil {
-		var ret StripeGatewayCreateDataAttributes
+		var ret POSTStripeGateways201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *StripeGatewayCreateData) GetAttributes() StripeGatewayCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayCreateData) GetAttributesOk() (*StripeGatewayCreateDataAttributes, bool) {
+func (o *StripeGatewayCreateData) GetAttributesOk() (*POSTStripeGateways201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *StripeGatewayCreateData) GetAttributesOk() (*StripeGatewayCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StripeGatewayCreateData) SetAttributes(v StripeGatewayCreateDataAttributes) {
+func (o *StripeGatewayCreateData) SetAttributes(v POSTStripeGateways201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

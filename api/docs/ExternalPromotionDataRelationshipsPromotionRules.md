@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "promotion_rules"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ExternalPromotionDataRelationshipsPromotionRulesData**](ExternalPromotionDataRelationshipsPromotionRulesData.md) |  | 
 
 ## Methods
 
 ### NewExternalPromotionDataRelationshipsPromotionRules
 
-`func NewExternalPromotionDataRelationshipsPromotionRules(type_ string, id string, ) *ExternalPromotionDataRelationshipsPromotionRules`
+`func NewExternalPromotionDataRelationshipsPromotionRules(data ExternalPromotionDataRelationshipsPromotionRulesData, ) *ExternalPromotionDataRelationshipsPromotionRules`
 
 NewExternalPromotionDataRelationshipsPromotionRules instantiates a new ExternalPromotionDataRelationshipsPromotionRules object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewExternalPromotionDataRelationshipsPromotionRulesWithDefaults instantiates a n
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetType() string`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() ExternalPromotionDataRelationshipsPromotionRulesData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetTypeOk() (*string, bool)`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*ExternalPromotionDataRelationshipsPromotionRulesData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) SetType(v string)`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) SetData(v ExternalPromotionDataRelationshipsPromotionRulesData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

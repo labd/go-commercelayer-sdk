@@ -1,6 +1,6 @@
 # \InventoryStockLocationsApi
 
-All URIs are relative to *https://core.commercelayer.io/users/sign_in*
+All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -152,7 +152,7 @@ No authorization required
 
 ## GETInventoryStockLocations
 
-> GETInventoryStockLocations(ctx).Execute()
+> GETInventoryStockLocations200Response GETInventoryStockLocations(ctx).Execute()
 
 List all inventory stock locations
 
@@ -179,6 +179,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `GETInventoryStockLocations`: GETInventoryStockLocations200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.GETInventoryStockLocations`: %v\n", resp)
 }
 ```
 
@@ -193,16 +195,16 @@ Other parameters are passed through a pointer to a apiGETInventoryStockLocations
 
 ### Return type
 
- (empty response body)
+[**GETInventoryStockLocations200Response**](GETInventoryStockLocations200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -211,7 +213,7 @@ No authorization required
 
 ## GETInventoryStockLocationsInventoryStockLocationId
 
-> InventoryStockLocation GETInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).Execute()
+> GETInventoryStockLocationsInventoryStockLocationId200Response GETInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).Execute()
 
 Retrieve an inventory stock location
 
@@ -239,7 +241,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryStockLocationsInventoryStockLocationId`: InventoryStockLocation
+    // response from `GETInventoryStockLocationsInventoryStockLocationId`: GETInventoryStockLocationsInventoryStockLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.GETInventoryStockLocationsInventoryStockLocationId`: %v\n", resp)
 }
 ```
@@ -263,11 +265,11 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryStockLocation**](InventoryStockLocation.md)
+[**GETInventoryStockLocationsInventoryStockLocationId200Response**](GETInventoryStockLocationsInventoryStockLocationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -335,7 +337,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
@@ -349,7 +351,7 @@ No authorization required
 
 ## PATCHInventoryStockLocationsInventoryStockLocationId
 
-> PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
+> PATCHInventoryStockLocationsInventoryStockLocationId200Response PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
 
 Update an inventory stock location
 
@@ -368,7 +370,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("inventory_stock_locations", "XGZwpOSrWL", *openapiclient.NewInventoryStockLocationUpdateDataAttributes())) // InventoryStockLocationUpdate | 
+    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
     inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -378,6 +380,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHInventoryStockLocationsInventoryStockLocationId`: PATCHInventoryStockLocationsInventoryStockLocationId200Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId`: %v\n", resp)
 }
 ```
 
@@ -401,16 +405,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**PATCHInventoryStockLocationsInventoryStockLocationId200Response**](PATCHInventoryStockLocationsInventoryStockLocationId200Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -419,7 +423,7 @@ No authorization required
 
 ## POSTInventoryStockLocations
 
-> POSTInventoryStockLocations(ctx).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
+> POSTInventoryStockLocations201Response POSTInventoryStockLocations(ctx).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
 
 Create an inventory stock location
 
@@ -438,7 +442,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("inventory_stock_locations", *openapiclient.NewInventoryStockLocationCreateDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
+    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -447,6 +451,8 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.POSTInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `POSTInventoryStockLocations`: POSTInventoryStockLocations201Response
+    fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.POSTInventoryStockLocations`: %v\n", resp)
 }
 ```
 
@@ -465,16 +471,16 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**POSTInventoryStockLocations201Response**](POSTInventoryStockLocations201Response.md)
 
 ### Authorization
 
-No authorization required
+[bearerAuth](../README.md#bearerAuth)
 
 ### HTTP request headers
 
 - **Content-Type**: application/vnd.api+json
-- **Accept**: Not defined
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

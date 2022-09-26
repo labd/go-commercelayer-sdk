@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "packages"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ParcelDataRelationshipsPackageData**](ParcelDataRelationshipsPackageData.md) |  | 
 
 ## Methods
 
 ### NewParcelDataRelationshipsPackage
 
-`func NewParcelDataRelationshipsPackage(type_ string, id string, ) *ParcelDataRelationshipsPackage`
+`func NewParcelDataRelationshipsPackage(data ParcelDataRelationshipsPackageData, ) *ParcelDataRelationshipsPackage`
 
 NewParcelDataRelationshipsPackage instantiates a new ParcelDataRelationshipsPackage object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewParcelDataRelationshipsPackageWithDefaults instantiates a new ParcelDataRelat
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ParcelDataRelationshipsPackage) GetType() string`
+`func (o *ParcelDataRelationshipsPackage) GetData() ParcelDataRelationshipsPackageData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ParcelDataRelationshipsPackage) GetTypeOk() (*string, bool)`
+`func (o *ParcelDataRelationshipsPackage) GetDataOk() (*ParcelDataRelationshipsPackageData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ParcelDataRelationshipsPackage) SetType(v string)`
+`func (o *ParcelDataRelationshipsPackage) SetData(v ParcelDataRelationshipsPackageData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ParcelDataRelationshipsPackage) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ParcelDataRelationshipsPackage) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ParcelDataRelationshipsPackage) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // AdyenGatewaysApiService AdyenGatewaysApi service
 type AdyenGatewaysApiService service
 
-type ApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenGatewaysApiService
 	adyenGatewayId string
 }
 
-func (r ApiDELETEAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiDELETEAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -51,7 +51,7 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r ApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
+func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Api
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewaysRequest struct {
+type AdyenGatewaysApiGETAdyenGatewaysRequest struct {
 	ctx        context.Context
 	ApiService *AdyenGatewaysApiService
 }
 
-func (r ApiGETAdyenGatewaysRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysRequest) Execute() (*GETAdyenGateways200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETAdyenGateways List all adyen gateways
 List all adyen gateways
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETAdyenGatewaysRequest
+ @return AdyenGatewaysApiGETAdyenGatewaysRequest
 */
-func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) ApiGETAdyenGatewaysRequest {
-	return ApiGETAdyenGatewaysRequest{
+func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) AdyenGatewaysApiGETAdyenGatewaysRequest {
+	return AdyenGatewaysApiGETAdyenGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysRequest) (*http.Response, error) {
+//  @return GETAdyenGateways200Response
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*GETAdyenGateways200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETAdyenGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways"
@@ -168,7 +170,7 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysR
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysR
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r ApiGETAdyenGatewaysR
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenGatewaysApiService
 	adyenGatewayId string
 }
 
-func (r ApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*AdyenGateway, *http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiGETAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiGETAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiGETAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -231,13 +242,13 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return AdyenGateway
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r ApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGateway, *http.Response, error) {
+//  @return GETAdyenGatewaysAdyenGatewayId200Response
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenGateway
+		localVarReturnValue *GETAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGatewaysAdyenGatewayId")
@@ -306,19 +317,19 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r ApiGET
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
+type AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         *AdyenGatewaysApiService
 	adyenGatewayUpdate *AdyenGatewayUpdate
 	adyenGatewayId     string
 }
 
-func (r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) ApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
 	r.adyenGatewayUpdate = &adyenGatewayUpdate
 	return r
 }
 
-func (r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*PATCHAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param adyenGatewayId The resource's id
- @return ApiPATCHAdyenGatewaysAdyenGatewayIdRequest
+ @return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) ApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
-	return ApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+	return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
 		adyenGatewayId: adyenGatewayId,
@@ -340,16 +351,18 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.C
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*http.Response, error) {
+//  @return PATCHAdyenGatewaysAdyenGatewayId200Response
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*PATCHAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PATCHAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.PATCHAdyenGatewaysAdyenGatewayId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
@@ -359,7 +372,7 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiP
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adyenGatewayUpdate == nil {
-		return nil, reportError("adyenGatewayUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adyenGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiP
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiP
 	localVarPostBody = r.adyenGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r ApiP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTAdyenGatewaysRequest struct {
+type AdyenGatewaysApiPOSTAdyenGatewaysRequest struct {
 	ctx                context.Context
 	ApiService         *AdyenGatewaysApiService
 	adyenGatewayCreate *AdyenGatewayCreate
 }
 
-func (r ApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewayCreate AdyenGatewayCreate) ApiPOSTAdyenGatewaysRequest {
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewayCreate AdyenGatewayCreate) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
 	r.adyenGatewayCreate = &adyenGatewayCreate
 	return r
 }
 
-func (r ApiPOSTAdyenGatewaysRequest) Execute() (*http.Response, error) {
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) Execute() (*POSTAdyenGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTAdyenGatewaysExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTAdyenGateways Create an adyen gateway
 Create an adyen gateway
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTAdyenGatewaysRequest
+ @return AdyenGatewaysApiPOSTAdyenGatewaysRequest
 */
-func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) ApiPOSTAdyenGatewaysRequest {
-	return ApiPOSTAdyenGatewaysRequest{
+func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
+	return AdyenGatewaysApiPOSTAdyenGatewaysRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGatewaysRequest) (*http.Response, error) {
+//  @return POSTAdyenGateways201Response
+func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*POSTAdyenGateways201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTAdyenGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.POSTAdyenGateways")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways"
@@ -458,7 +482,7 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGateway
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.adyenGatewayCreate == nil {
-		return nil, reportError("adyenGatewayCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("adyenGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGateway
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGateway
 	localVarPostBody = r.adyenGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r ApiPOSTAdyenGateway
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

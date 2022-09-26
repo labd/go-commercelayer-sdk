@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "shipping_categories"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**ShipmentDataRelationshipsShippingCategoryData**](ShipmentDataRelationshipsShippingCategoryData.md) |  | 
 
 ## Methods
 
 ### NewShipmentDataRelationshipsShippingCategory
 
-`func NewShipmentDataRelationshipsShippingCategory(type_ string, id string, ) *ShipmentDataRelationshipsShippingCategory`
+`func NewShipmentDataRelationshipsShippingCategory(data ShipmentDataRelationshipsShippingCategoryData, ) *ShipmentDataRelationshipsShippingCategory`
 
 NewShipmentDataRelationshipsShippingCategory instantiates a new ShipmentDataRelationshipsShippingCategory object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewShipmentDataRelationshipsShippingCategoryWithDefaults instantiates a new Ship
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *ShipmentDataRelationshipsShippingCategory) GetType() string`
+`func (o *ShipmentDataRelationshipsShippingCategory) GetData() ShipmentDataRelationshipsShippingCategoryData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *ShipmentDataRelationshipsShippingCategory) GetTypeOk() (*string, bool)`
+`func (o *ShipmentDataRelationshipsShippingCategory) GetDataOk() (*ShipmentDataRelationshipsShippingCategoryData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *ShipmentDataRelationshipsShippingCategory) SetType(v string)`
+`func (o *ShipmentDataRelationshipsShippingCategory) SetData(v ShipmentDataRelationshipsShippingCategoryData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *ShipmentDataRelationshipsShippingCategory) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *ShipmentDataRelationshipsShippingCategory) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *ShipmentDataRelationshipsShippingCategory) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

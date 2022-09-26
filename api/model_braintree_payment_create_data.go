@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BraintreePaymentCreateData struct for BraintreePaymentCreateData
 type BraintreePaymentCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    BraintreePaymentCreateDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                         `json:"type"`
+	Attributes    POSTBraintreePayments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships           `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentCreateData instantiates a new BraintreePaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentCreateData(type_ string, attributes BraintreePaymentCreateDataAttributes) *BraintreePaymentCreateData {
+func NewBraintreePaymentCreateData(type_ string, attributes POSTBraintreePayments201ResponseDataAttributes) *BraintreePaymentCreateData {
 	this := BraintreePaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewBraintreePaymentCreateData(type_ string, attributes BraintreePaymentCrea
 // but it doesn't guarantee that properties required by API are set
 func NewBraintreePaymentCreateDataWithDefaults() *BraintreePaymentCreateData {
 	this := BraintreePaymentCreateData{}
-	var type_ string = "braintree_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *BraintreePaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreePaymentCreateData) GetAttributes() BraintreePaymentCreateDataAttributes {
+func (o *BraintreePaymentCreateData) GetAttributes() POSTBraintreePayments201ResponseDataAttributes {
 	if o == nil {
-		var ret BraintreePaymentCreateDataAttributes
+		var ret POSTBraintreePayments201ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *BraintreePaymentCreateData) GetAttributes() BraintreePaymentCreateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentCreateData) GetAttributesOk() (*BraintreePaymentCreateDataAttributes, bool) {
+func (o *BraintreePaymentCreateData) GetAttributesOk() (*POSTBraintreePayments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *BraintreePaymentCreateData) GetAttributesOk() (*BraintreePaymentCreateD
 }
 
 // SetAttributes sets field value
-func (o *BraintreePaymentCreateData) SetAttributes(v BraintreePaymentCreateDataAttributes) {
+func (o *BraintreePaymentCreateData) SetAttributes(v POSTBraintreePayments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

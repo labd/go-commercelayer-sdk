@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaypalPaymentData struct for PaypalPaymentData
 type PaypalPaymentData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    PaypalPaymentDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETPaypalPayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewPaypalPaymentData instantiates a new PaypalPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalPaymentData(type_ string, attributes PaypalPaymentDataAttributes) *PaypalPaymentData {
+func NewPaypalPaymentData(type_ string, attributes GETPaypalPayments200ResponseDataInnerAttributes) *PaypalPaymentData {
 	this := PaypalPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -39,8 +39,6 @@ func NewPaypalPaymentData(type_ string, attributes PaypalPaymentDataAttributes) 
 // but it doesn't guarantee that properties required by API are set
 func NewPaypalPaymentDataWithDefaults() *PaypalPaymentData {
 	this := PaypalPaymentData{}
-	var type_ string = "paypal_payments"
-	this.Type = type_
 	return &this
 }
 
@@ -69,9 +67,9 @@ func (o *PaypalPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalPaymentData) GetAttributes() PaypalPaymentDataAttributes {
+func (o *PaypalPaymentData) GetAttributes() GETPaypalPayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret PaypalPaymentDataAttributes
+		var ret GETPaypalPayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -80,7 +78,7 @@ func (o *PaypalPaymentData) GetAttributes() PaypalPaymentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentData) GetAttributesOk() (*PaypalPaymentDataAttributes, bool) {
+func (o *PaypalPaymentData) GetAttributesOk() (*GETPaypalPayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +86,7 @@ func (o *PaypalPaymentData) GetAttributesOk() (*PaypalPaymentDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *PaypalPaymentData) SetAttributes(v PaypalPaymentDataAttributes) {
+func (o *PaypalPaymentData) SetAttributes(v GETPaypalPayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -4,14 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | [default to "braintree_payments"]
-**Id** | **string** | The resource&#39;s id | 
+**Data** | [**BraintreeGatewayDataRelationshipsBraintreePaymentsData**](BraintreeGatewayDataRelationshipsBraintreePaymentsData.md) |  | 
 
 ## Methods
 
 ### NewBraintreeGatewayDataRelationshipsBraintreePayments
 
-`func NewBraintreeGatewayDataRelationshipsBraintreePayments(type_ string, id string, ) *BraintreeGatewayDataRelationshipsBraintreePayments`
+`func NewBraintreeGatewayDataRelationshipsBraintreePayments(data BraintreeGatewayDataRelationshipsBraintreePaymentsData, ) *BraintreeGatewayDataRelationshipsBraintreePayments`
 
 NewBraintreeGatewayDataRelationshipsBraintreePayments instantiates a new BraintreeGatewayDataRelationshipsBraintreePayments object
 This constructor will assign default values to properties that have it defined,
@@ -26,44 +25,24 @@ NewBraintreeGatewayDataRelationshipsBraintreePaymentsWithDefaults instantiates a
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetType
+### GetData
 
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetType() string`
+`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetData() BraintreeGatewayDataRelationshipsBraintreePaymentsData`
 
-GetType returns the Type field if non-nil, zero value otherwise.
+GetData returns the Data field if non-nil, zero value otherwise.
 
-### GetTypeOk
+### GetDataOk
 
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetTypeOk() (*string, bool)`
+`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetDataOk() (*BraintreeGatewayDataRelationshipsBraintreePaymentsData, bool)`
 
-GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetType
+### SetData
 
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) SetType(v string)`
+`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) SetData(v BraintreeGatewayDataRelationshipsBraintreePaymentsData)`
 
-SetType sets Type field to given value.
-
-
-### GetId
-
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *BraintreeGatewayDataRelationshipsBraintreePayments) SetId(v string)`
-
-SetId sets Id field to given value.
+SetData sets Data field to given value.
 
 
 

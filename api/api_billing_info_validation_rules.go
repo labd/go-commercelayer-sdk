@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 2.9.5
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -23,13 +23,13 @@ import (
 // BillingInfoValidationRulesApiService BillingInfoValidationRulesApi service
 type BillingInfoValidationRulesApiService service
 
-type ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
+type BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *BillingInfoValidationRulesApiService
 	billingInfoValidationRuleId string
 }
 
-func (r ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*http.Response, error) {
+func (r BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*http.Response, error) {
 	return r.ApiService.DELETEBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -40,10 +40,10 @@ Delete a billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billingInfoValidationRuleId The resource's id
- @return ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+ @return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
-	return ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
+func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+	return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
@@ -51,7 +51,7 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 }
 
 // Execute executes the request
-func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r ApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*http.Response, error) {
+func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodDelete
 		localVarPostBody   interface{}
@@ -115,12 +115,12 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 	return localVarHTTPResponse, nil
 }
 
-type ApiGETBillingInfoValidationRulesRequest struct {
+type BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest struct {
 	ctx        context.Context
 	ApiService *BillingInfoValidationRulesApiService
 }
 
-func (r ApiGETBillingInfoValidationRulesRequest) Execute() (*http.Response, error) {
+func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) Execute() (*GETBillingInfoValidationRules200Response, *http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRulesExecute(r)
 }
 
@@ -130,26 +130,28 @@ GETBillingInfoValidationRules List all billing info validation rules
 List all billing info validation rules
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGETBillingInfoValidationRulesRequest
+ @return BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest
 */
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRules(ctx context.Context) ApiGETBillingInfoValidationRulesRequest {
-	return ApiGETBillingInfoValidationRulesRequest{
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRules(ctx context.Context) BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest {
+	return BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExecute(r ApiGETBillingInfoValidationRulesRequest) (*http.Response, error) {
+//  @return GETBillingInfoValidationRules200Response
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) (*GETBillingInfoValidationRules200Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodGet
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *GETBillingInfoValidationRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.GETBillingInfoValidationRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules"
@@ -168,7 +170,7 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -177,19 +179,19 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -197,19 +199,28 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
+type BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *BillingInfoValidationRulesApiService
 	billingInfoValidationRuleId string
 }
 
-func (r ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*BillingInfoValidationRule, *http.Response, error) {
+func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -220,10 +231,10 @@ Retrieve a billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billingInfoValidationRuleId The resource's id
- @return ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+ @return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
-	return ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+	return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
@@ -231,13 +242,13 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 }
 
 // Execute executes the request
-//  @return BillingInfoValidationRule
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r ApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*BillingInfoValidationRule, *http.Response, error) {
+//  @return GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BillingInfoValidationRule
+		localVarReturnValue *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.GETBillingInfoValidationRulesBillingInfoValidationRuleId")
@@ -306,19 +317,19 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
+type BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
 	ctx                             context.Context
 	ApiService                      *BillingInfoValidationRulesApiService
 	billingInfoValidationRuleUpdate *BillingInfoValidationRuleUpdate
 	billingInfoValidationRuleId     string
 }
 
-func (r ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate BillingInfoValidationRuleUpdate) ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate BillingInfoValidationRuleUpdate) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	r.billingInfoValidationRuleUpdate = &billingInfoValidationRuleUpdate
 	return r
 }
 
-func (r ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*http.Response, error) {
+func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	return r.ApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -329,10 +340,10 @@ Update a billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param billingInfoValidationRuleId The resource's id
- @return ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+ @return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
-	return ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
+func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+	return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
 		billingInfoValidationRuleId: billingInfoValidationRuleId,
@@ -340,16 +351,18 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 }
 
 // Execute executes the request
-func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r ApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*http.Response, error) {
+//  @return POSTBillingInfoValidationRules201Response
+func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPatch
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTBillingInfoValidationRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
@@ -359,7 +372,7 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.billingInfoValidationRuleUpdate == nil {
-		return nil, reportError("billingInfoValidationRuleUpdate is required and must be specified")
+		return localVarReturnValue, nil, reportError("billingInfoValidationRuleUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -372,7 +385,7 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -383,19 +396,19 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 	localVarPostBody = r.billingInfoValidationRuleUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -403,24 +416,33 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiPOSTBillingInfoValidationRulesRequest struct {
+type BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest struct {
 	ctx                             context.Context
 	ApiService                      *BillingInfoValidationRulesApiService
 	billingInfoValidationRuleCreate *BillingInfoValidationRuleCreate
 }
 
-func (r ApiPOSTBillingInfoValidationRulesRequest) BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate BillingInfoValidationRuleCreate) ApiPOSTBillingInfoValidationRulesRequest {
+func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate BillingInfoValidationRuleCreate) BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest {
 	r.billingInfoValidationRuleCreate = &billingInfoValidationRuleCreate
 	return r
 }
 
-func (r ApiPOSTBillingInfoValidationRulesRequest) Execute() (*http.Response, error) {
+func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) Execute() (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	return r.ApiService.POSTBillingInfoValidationRulesExecute(r)
 }
 
@@ -430,26 +452,28 @@ POSTBillingInfoValidationRules Create a billing info validation rule
 Create a billing info validation rule
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiPOSTBillingInfoValidationRulesRequest
+ @return BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest
 */
-func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRules(ctx context.Context) ApiPOSTBillingInfoValidationRulesRequest {
-	return ApiPOSTBillingInfoValidationRulesRequest{
+func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRules(ctx context.Context) BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest {
+	return BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest{
 		ApiService: a,
 		ctx:        ctx,
 	}
 }
 
 // Execute executes the request
-func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExecute(r ApiPOSTBillingInfoValidationRulesRequest) (*http.Response, error) {
+//  @return POSTBillingInfoValidationRules201Response
+func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	var (
-		localVarHTTPMethod = http.MethodPost
-		localVarPostBody   interface{}
-		formFiles          []formFile
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *POSTBillingInfoValidationRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.POSTBillingInfoValidationRules")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules"
@@ -458,7 +482,7 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 	if r.billingInfoValidationRuleCreate == nil {
-		return nil, reportError("billingInfoValidationRuleCreate is required and must be specified")
+		return localVarReturnValue, nil, reportError("billingInfoValidationRuleCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -471,7 +495,7 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/vnd.api+json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -482,19 +506,19 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 	localVarPostBody = r.billingInfoValidationRuleCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -502,8 +526,17 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
