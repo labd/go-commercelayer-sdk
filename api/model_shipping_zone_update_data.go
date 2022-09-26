@@ -20,16 +20,16 @@ type ShippingZoneUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                           `json:"id"`
-	Attributes    ShippingZoneUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}           `json:"relationships,omitempty"`
+	Id            string                                                    `json:"id"`
+	Attributes    PATCHShippingZonesShippingZoneId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                    `json:"relationships,omitempty"`
 }
 
 // NewShippingZoneUpdateData instantiates a new ShippingZoneUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZoneUpdateData(type_ string, id string, attributes ShippingZoneUpdateDataAttributes) *ShippingZoneUpdateData {
+func NewShippingZoneUpdateData(type_ string, id string, attributes PATCHShippingZonesShippingZoneId200ResponseDataAttributes) *ShippingZoneUpdateData {
 	this := ShippingZoneUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ShippingZoneUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingZoneUpdateData) GetAttributes() ShippingZoneUpdateDataAttributes {
+func (o *ShippingZoneUpdateData) GetAttributes() PATCHShippingZonesShippingZoneId200ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingZoneUpdateDataAttributes
+		var ret PATCHShippingZonesShippingZoneId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ShippingZoneUpdateData) GetAttributes() ShippingZoneUpdateDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneUpdateData) GetAttributesOk() (*ShippingZoneUpdateDataAttributes, bool) {
+func (o *ShippingZoneUpdateData) GetAttributesOk() (*PATCHShippingZonesShippingZoneId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ShippingZoneUpdateData) GetAttributesOk() (*ShippingZoneUpdateDataAttri
 }
 
 // SetAttributes sets field value
-func (o *ShippingZoneUpdateData) SetAttributes(v ShippingZoneUpdateDataAttributes) {
+func (o *ShippingZoneUpdateData) SetAttributes(v PATCHShippingZonesShippingZoneId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

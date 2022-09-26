@@ -18,16 +18,16 @@ import (
 // EventCallbackData struct for EventCallbackData
 type EventCallbackData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    EventCallbackDataAttributes     `json:"attributes"`
-	Relationships *EventCallbackDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *EventCallbackDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewEventCallbackData instantiates a new EventCallbackData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventCallbackData(type_ string, attributes EventCallbackDataAttributes) *EventCallbackData {
+func NewEventCallbackData(type_ string, attributes GETEventCallbacks200ResponseDataInnerAttributes) *EventCallbackData {
 	this := EventCallbackData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *EventCallbackData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *EventCallbackData) GetAttributes() EventCallbackDataAttributes {
+func (o *EventCallbackData) GetAttributes() GETEventCallbacks200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret EventCallbackDataAttributes
+		var ret GETEventCallbacks200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *EventCallbackData) GetAttributes() EventCallbackDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetAttributesOk() (*EventCallbackDataAttributes, bool) {
+func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacks200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *EventCallbackData) GetAttributesOk() (*EventCallbackDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *EventCallbackData) SetAttributes(v EventCallbackDataAttributes) {
+func (o *EventCallbackData) SetAttributes(v GETEventCallbacks200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

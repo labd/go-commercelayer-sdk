@@ -496,7 +496,7 @@ Name | Type | Description  | Notes
 
 ## GETSkuLists
 
-> SkuListResponseList GETSkuLists(ctx).Execute()
+> GETSkuLists200Response GETSkuLists(ctx).Execute()
 
 List all SKU lists
 
@@ -523,7 +523,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuLists`: SkuListResponseList
+    // response from `GETSkuLists`: GETSkuLists200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.GETSkuLists`: %v\n", resp)
 }
 ```
@@ -539,7 +539,7 @@ Other parameters are passed through a pointer to a apiGETSkuListsRequest struct 
 
 ### Return type
 
-[**SkuListResponseList**](SkuListResponseList.md)
+[**GETSkuLists200Response**](GETSkuLists200Response.md)
 
 ### Authorization
 
@@ -557,7 +557,7 @@ Other parameters are passed through a pointer to a apiGETSkuListsRequest struct 
 
 ## GETSkuListsSkuListId
 
-> SkuListResponse GETSkuListsSkuListId(ctx, skuListId).Execute()
+> GETSkuListsSkuListId200Response GETSkuListsSkuListId(ctx, skuListId).Execute()
 
 Retrieve a SKU list
 
@@ -585,7 +585,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListsSkuListId`: SkuListResponse
+    // response from `GETSkuListsSkuListId`: GETSkuListsSkuListId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.GETSkuListsSkuListId`: %v\n", resp)
 }
 ```
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListResponse**](SkuListResponse.md)
+[**GETSkuListsSkuListId200Response**](GETSkuListsSkuListId200Response.md)
 
 ### Authorization
 
@@ -627,7 +627,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListsSkuListId
 
-> SkuListResponse PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
+> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
 
 Update a SKU list
 
@@ -646,7 +646,7 @@ import (
 )
 
 func main() {
-    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewSkuListUpdateDataAttributes())) // SkuListUpdate | 
+    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
     skuListId := "skuListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -656,7 +656,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.PATCHSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListsSkuListId`: SkuListResponse
+    // response from `PATCHSkuListsSkuListId`: PATCHSkuListsSkuListId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.PATCHSkuListsSkuListId`: %v\n", resp)
 }
 ```
@@ -681,7 +681,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListResponse**](SkuListResponse.md)
+[**PATCHSkuListsSkuListId200Response**](PATCHSkuListsSkuListId200Response.md)
 
 ### Authorization
 
@@ -699,7 +699,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuLists
 
-> SkuListResponse POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
+> POSTSkuLists201Response POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
 
 Create a SKU list
 
@@ -718,7 +718,7 @@ import (
 )
 
 func main() {
-    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("Type_example", *openapiclient.NewSkuListCreateDataAttributes("Personal list"))) // SkuListCreate | 
+    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("Type_example", *openapiclient.NewPOSTSkuLists201ResponseDataAttributes("Personal list"))) // SkuListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -727,7 +727,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.POSTSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTSkuLists`: SkuListResponse
+    // response from `POSTSkuLists`: POSTSkuLists201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListsApi.POSTSkuLists`: %v\n", resp)
 }
 ```
@@ -747,7 +747,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListResponse**](SkuListResponse.md)
+[**POSTSkuLists201Response**](POSTSkuLists201Response.md)
 
 ### Authorization
 

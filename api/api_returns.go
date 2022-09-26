@@ -304,7 +304,7 @@ type ReturnsApiGETReturnsRequest struct {
 	ApiService *ReturnsApiService
 }
 
-func (r ReturnsApiGETReturnsRequest) Execute() (*ReturnResponseList, *http.Response, error) {
+func (r ReturnsApiGETReturnsRequest) Execute() (*GETReturns200Response, *http.Response, error) {
 	return r.ApiService.GETReturnsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *ReturnsApiService) GETReturns(ctx context.Context) ReturnsApiGETReturns
 }
 
 // Execute executes the request
-//  @return ReturnResponseList
-func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*ReturnResponseList, *http.Response, error) {
+//  @return GETReturns200Response
+func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*GETReturns200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReturnResponseList
+		localVarReturnValue *GETReturns200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETReturns")
@@ -404,7 +404,7 @@ type ReturnsApiGETReturnsReturnIdRequest struct {
 	returnId   string
 }
 
-func (r ReturnsApiGETReturnsReturnIdRequest) Execute() (*ReturnResponse, *http.Response, error) {
+func (r ReturnsApiGETReturnsReturnIdRequest) Execute() (*GETReturnsReturnId200Response, *http.Response, error) {
 	return r.ApiService.GETReturnsReturnIdExecute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId str
 }
 
 // Execute executes the request
-//  @return ReturnResponse
-func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsReturnIdRequest) (*ReturnResponse, *http.Response, error) {
+//  @return GETReturnsReturnId200Response
+func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsReturnIdRequest) (*GETReturnsReturnId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReturnResponse
+		localVarReturnValue *GETReturnsReturnId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.GETReturnsReturnId")
@@ -513,7 +513,7 @@ func (r ReturnsApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnU
 	return r
 }
 
-func (r ReturnsApiPATCHReturnsReturnIdRequest) Execute() (*ReturnResponse, *http.Response, error) {
+func (r ReturnsApiPATCHReturnsReturnIdRequest) Execute() (*PATCHReturnsReturnId200Response, *http.Response, error) {
 	return r.ApiService.PATCHReturnsReturnIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId s
 }
 
 // Execute executes the request
-//  @return ReturnResponse
-func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturnsReturnIdRequest) (*ReturnResponse, *http.Response, error) {
+//  @return PATCHReturnsReturnId200Response
+func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturnsReturnIdRequest) (*PATCHReturnsReturnId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReturnResponse
+		localVarReturnValue *PATCHReturnsReturnId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.PATCHReturnsReturnId")
@@ -626,7 +626,7 @@ func (r ReturnsApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) Re
 	return r
 }
 
-func (r ReturnsApiPOSTReturnsRequest) Execute() (*ReturnResponse, *http.Response, error) {
+func (r ReturnsApiPOSTReturnsRequest) Execute() (*POSTReturns201Response, *http.Response, error) {
 	return r.ApiService.POSTReturnsExecute(r)
 }
 
@@ -646,13 +646,13 @@ func (a *ReturnsApiService) POSTReturns(ctx context.Context) ReturnsApiPOSTRetur
 }
 
 // Execute executes the request
-//  @return ReturnResponse
-func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (*ReturnResponse, *http.Response, error) {
+//  @return POSTReturns201Response
+func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (*POSTReturns201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ReturnResponse
+		localVarReturnValue *POSTReturns201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnsApiService.POSTReturns")

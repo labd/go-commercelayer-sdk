@@ -18,16 +18,16 @@ import (
 // AttachmentCreateData struct for AttachmentCreateData
 type AttachmentCreateData struct {
 	// The resource's type
-	Type          string                             `json:"type"`
-	Attributes    AttachmentCreateDataAttributes     `json:"attributes"`
-	Relationships *AttachmentCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    POSTAttachments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewAttachmentCreateData instantiates a new AttachmentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateData(type_ string, attributes AttachmentCreateDataAttributes) *AttachmentCreateData {
+func NewAttachmentCreateData(type_ string, attributes POSTAttachments201ResponseDataAttributes) *AttachmentCreateData {
 	this := AttachmentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AttachmentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentCreateData) GetAttributes() AttachmentCreateDataAttributes {
+func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAttributes {
 	if o == nil {
-		var ret AttachmentCreateDataAttributes
+		var ret POSTAttachments201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AttachmentCreateData) GetAttributes() AttachmentCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetAttributesOk() (*AttachmentCreateDataAttributes, bool) {
+func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AttachmentCreateData) GetAttributesOk() (*AttachmentCreateDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *AttachmentCreateData) SetAttributes(v AttachmentCreateDataAttributes) {
+func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

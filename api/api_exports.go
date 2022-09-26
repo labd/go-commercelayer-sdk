@@ -120,7 +120,7 @@ type ExportsApiGETExportsRequest struct {
 	ApiService *ExportsApiService
 }
 
-func (r ExportsApiGETExportsRequest) Execute() (*ExportResponseList, *http.Response, error) {
+func (r ExportsApiGETExportsRequest) Execute() (*GETExports200Response, *http.Response, error) {
 	return r.ApiService.GETExportsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *ExportsApiService) GETExports(ctx context.Context) ExportsApiGETExports
 }
 
 // Execute executes the request
-//  @return ExportResponseList
-func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*ExportResponseList, *http.Response, error) {
+//  @return GETExports200Response
+func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*GETExports200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExportResponseList
+		localVarReturnValue *GETExports200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportsApiService.GETExports")
@@ -220,7 +220,7 @@ type ExportsApiGETExportsExportIdRequest struct {
 	exportId   string
 }
 
-func (r ExportsApiGETExportsExportIdRequest) Execute() (*ExportResponse, *http.Response, error) {
+func (r ExportsApiGETExportsExportIdRequest) Execute() (*GETExportsExportId200Response, *http.Response, error) {
 	return r.ApiService.GETExportsExportIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *ExportsApiService) GETExportsExportId(ctx context.Context, exportId str
 }
 
 // Execute executes the request
-//  @return ExportResponse
-func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExportIdRequest) (*ExportResponse, *http.Response, error) {
+//  @return GETExportsExportId200Response
+func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExportIdRequest) (*GETExportsExportId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExportResponse
+		localVarReturnValue *GETExportsExportId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportsApiService.GETExportsExportId")
@@ -328,7 +328,7 @@ func (r ExportsApiPOSTExportsRequest) ExportCreate(exportCreate ExportCreate) Ex
 	return r
 }
 
-func (r ExportsApiPOSTExportsRequest) Execute() (*ExportResponse, *http.Response, error) {
+func (r ExportsApiPOSTExportsRequest) Execute() (*POSTExports201Response, *http.Response, error) {
 	return r.ApiService.POSTExportsExecute(r)
 }
 
@@ -348,13 +348,13 @@ func (a *ExportsApiService) POSTExports(ctx context.Context) ExportsApiPOSTExpor
 }
 
 // Execute executes the request
-//  @return ExportResponse
-func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (*ExportResponse, *http.Response, error) {
+//  @return POSTExports201Response
+func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (*POSTExports201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExportResponse
+		localVarReturnValue *POSTExports201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExportsApiService.POSTExports")

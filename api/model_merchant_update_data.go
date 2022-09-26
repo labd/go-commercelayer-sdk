@@ -20,16 +20,16 @@ type MerchantUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                           `json:"id"`
-	Attributes    MerchantUpdateDataAttributes     `json:"attributes"`
-	Relationships *MerchantUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                            `json:"id"`
+	Attributes    PATCHMerchantsMerchantId200ResponseDataAttributes `json:"attributes"`
+	Relationships *MerchantUpdateDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewMerchantUpdateData instantiates a new MerchantUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantUpdateData(type_ string, id string, attributes MerchantUpdateDataAttributes) *MerchantUpdateData {
+func NewMerchantUpdateData(type_ string, id string, attributes PATCHMerchantsMerchantId200ResponseDataAttributes) *MerchantUpdateData {
 	this := MerchantUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *MerchantUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MerchantUpdateData) GetAttributes() MerchantUpdateDataAttributes {
+func (o *MerchantUpdateData) GetAttributes() PATCHMerchantsMerchantId200ResponseDataAttributes {
 	if o == nil {
-		var ret MerchantUpdateDataAttributes
+		var ret PATCHMerchantsMerchantId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *MerchantUpdateData) GetAttributes() MerchantUpdateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MerchantUpdateData) GetAttributesOk() (*MerchantUpdateDataAttributes, bool) {
+func (o *MerchantUpdateData) GetAttributesOk() (*PATCHMerchantsMerchantId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *MerchantUpdateData) GetAttributesOk() (*MerchantUpdateDataAttributes, b
 }
 
 // SetAttributes sets field value
-func (o *MerchantUpdateData) SetAttributes(v MerchantUpdateDataAttributes) {
+func (o *MerchantUpdateData) SetAttributes(v PATCHMerchantsMerchantId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GETImports
 
-> ImportResponseList GETImports(ctx).Execute()
+> GETImports200Response GETImports(ctx).Execute()
 
 List all imports
 
@@ -108,7 +108,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.GETImports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETImports`: ImportResponseList
+    // response from `GETImports`: GETImports200Response
     fmt.Fprintf(os.Stdout, "Response from `ImportsApi.GETImports`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiGETImportsRequest struct v
 
 ### Return type
 
-[**ImportResponseList**](ImportResponseList.md)
+[**GETImports200Response**](GETImports200Response.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Other parameters are passed through a pointer to a apiGETImportsRequest struct v
 
 ## GETImportsImportId
 
-> ImportResponse GETImportsImportId(ctx, importId).Execute()
+> GETImportsImportId200Response GETImportsImportId(ctx, importId).Execute()
 
 Retrieve an import
 
@@ -170,7 +170,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.GETImportsImportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETImportsImportId`: ImportResponse
+    // response from `GETImportsImportId`: GETImportsImportId200Response
     fmt.Fprintf(os.Stdout, "Response from `ImportsApi.GETImportsImportId`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImportResponse**](ImportResponse.md)
+[**GETImportsImportId200Response**](GETImportsImportId200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTImports
 
-> ImportResponse POSTImports(ctx).ImportCreate(importCreate).Execute()
+> POSTImports201Response POSTImports(ctx).ImportCreate(importCreate).Execute()
 
 Create an import
 
@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("Type_example", *openapiclient.NewImportCreateDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
+    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData("Type_example", *openapiclient.NewPOSTImports201ResponseDataAttributes("skus", []map[string]interface{}{map[string]interface{}(123)}))) // ImportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.POSTImports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTImports`: ImportResponse
+    // response from `POSTImports`: POSTImports201Response
     fmt.Fprintf(os.Stdout, "Response from `ImportsApi.POSTImports`: %v\n", resp)
 }
 ```
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ImportResponse**](ImportResponse.md)
+[**POSTImports201Response**](POSTImports201Response.md)
 
 ### Authorization
 

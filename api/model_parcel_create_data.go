@@ -18,16 +18,16 @@ import (
 // ParcelCreateData struct for ParcelCreateData
 type ParcelCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    ParcelCreateDataAttributes     `json:"attributes"`
-	Relationships *ParcelCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTParcels201ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewParcelCreateData instantiates a new ParcelCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreateData(type_ string, attributes ParcelCreateDataAttributes) *ParcelCreateData {
+func NewParcelCreateData(type_ string, attributes POSTParcels201ResponseDataAttributes) *ParcelCreateData {
 	this := ParcelCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ParcelCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelCreateData) GetAttributes() ParcelCreateDataAttributes {
+func (o *ParcelCreateData) GetAttributes() POSTParcels201ResponseDataAttributes {
 	if o == nil {
-		var ret ParcelCreateDataAttributes
+		var ret POSTParcels201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ParcelCreateData) GetAttributes() ParcelCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool) {
+func (o *ParcelCreateData) GetAttributesOk() (*POSTParcels201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ParcelCreateData) GetAttributesOk() (*ParcelCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ParcelCreateData) SetAttributes(v ParcelCreateDataAttributes) {
+func (o *ParcelCreateData) SetAttributes(v POSTParcels201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

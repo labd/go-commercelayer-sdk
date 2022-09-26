@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETApplicationApplicationId
 
-> ApplicationResponse GETApplicationApplicationId(ctx).Execute()
+> GETApplicationApplicationId200Response GETApplicationApplicationId(ctx).Execute()
 
 Retrieve the application
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SingletonApi.GETApplicationApplicationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETApplicationApplicationId`: ApplicationResponse
+    // response from `GETApplicationApplicationId`: GETApplicationApplicationId200Response
     fmt.Fprintf(os.Stdout, "Response from `SingletonApi.GETApplicationApplicationId`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETApplicationApplicationI
 
 ### Return type
 
-[**ApplicationResponse**](ApplicationResponse.md)
+[**GETApplicationApplicationId200Response**](GETApplicationApplicationId200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETApplicationApplicationI
 
 ## GETOrganizationOrganizationId
 
-> OrganizationResponse GETOrganizationOrganizationId(ctx).Execute()
+> GETOrganizationOrganizationId200Response GETOrganizationOrganizationId(ctx).Execute()
 
 Retrieve the organization
 
@@ -99,7 +99,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SingletonApi.GETOrganizationOrganizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrganizationOrganizationId`: OrganizationResponse
+    // response from `GETOrganizationOrganizationId`: GETOrganizationOrganizationId200Response
     fmt.Fprintf(os.Stdout, "Response from `SingletonApi.GETOrganizationOrganizationId`: %v\n", resp)
 }
 ```
@@ -115,7 +115,7 @@ Other parameters are passed through a pointer to a apiGETOrganizationOrganizatio
 
 ### Return type
 
-[**OrganizationResponse**](OrganizationResponse.md)
+[**GETOrganizationOrganizationId200Response**](GETOrganizationOrganizationId200Response.md)
 
 ### Authorization
 

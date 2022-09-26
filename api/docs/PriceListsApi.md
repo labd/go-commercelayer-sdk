@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GETPriceLists
 
-> PriceListResponseList GETPriceLists(ctx).Execute()
+> GETPriceLists200Response GETPriceLists(ctx).Execute()
 
 List all price lists
 
@@ -247,7 +247,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETPriceLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceLists`: PriceListResponseList
+    // response from `GETPriceLists`: GETPriceLists200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.GETPriceLists`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Other parameters are passed through a pointer to a apiGETPriceListsRequest struc
 
 ### Return type
 
-[**PriceListResponseList**](PriceListResponseList.md)
+[**GETPriceLists200Response**](GETPriceLists200Response.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Other parameters are passed through a pointer to a apiGETPriceListsRequest struc
 
 ## GETPriceListsPriceListId
 
-> PriceListResponse GETPriceListsPriceListId(ctx, priceListId).Execute()
+> GETPriceListsPriceListId200Response GETPriceListsPriceListId(ctx, priceListId).Execute()
 
 Retrieve a price list
 
@@ -309,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceListsPriceListId`: PriceListResponse
+    // response from `GETPriceListsPriceListId`: GETPriceListsPriceListId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.GETPriceListsPriceListId`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceListResponse**](PriceListResponse.md)
+[**GETPriceListsPriceListId200Response**](GETPriceListsPriceListId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPriceListsPriceListId
 
-> PriceListResponse PATCHPriceListsPriceListId(ctx, priceListId).PriceListUpdate(priceListUpdate).Execute()
+> PATCHPriceListsPriceListId200Response PATCHPriceListsPriceListId(ctx, priceListId).PriceListUpdate(priceListUpdate).Execute()
 
 Update a price list
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPriceListUpdateDataAttributes())) // PriceListUpdate | 
+    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceListsPriceListId200ResponseDataAttributes())) // PriceListUpdate | 
     priceListId := "priceListId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.PATCHPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPriceListsPriceListId`: PriceListResponse
+    // response from `PATCHPriceListsPriceListId`: PATCHPriceListsPriceListId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.PATCHPriceListsPriceListId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceListResponse**](PriceListResponse.md)
+[**PATCHPriceListsPriceListId200Response**](PATCHPriceListsPriceListId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTPriceLists
 
-> PriceListResponse POSTPriceLists(ctx).PriceListCreate(priceListCreate).Execute()
+> POSTPriceLists201Response POSTPriceLists(ctx).PriceListCreate(priceListCreate).Execute()
 
 Create a price list
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("Type_example", *openapiclient.NewPriceListCreateDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
+    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("Type_example", *openapiclient.NewPOSTPriceLists201ResponseDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.POSTPriceLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPriceLists`: PriceListResponse
+    // response from `POSTPriceLists`: POSTPriceLists201Response
     fmt.Fprintf(os.Stdout, "Response from `PriceListsApi.POSTPriceLists`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceListResponse**](PriceListResponse.md)
+[**POSTPriceLists201Response**](POSTPriceLists201Response.md)
 
 ### Authorization
 

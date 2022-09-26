@@ -488,7 +488,7 @@ type PaymentGatewaysApiGETPaymentGatewaysRequest struct {
 	ApiService *PaymentGatewaysApiService
 }
 
-func (r PaymentGatewaysApiGETPaymentGatewaysRequest) Execute() (*PaymentGatewayResponseList, *http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysRequest) Execute() (*GETPaymentGateways200Response, *http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysExecute(r)
 }
 
@@ -508,13 +508,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGateways(ctx context.Context) Paym
 }
 
 // Execute executes the request
-//  @return PaymentGatewayResponseList
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*PaymentGatewayResponseList, *http.Response, error) {
+//  @return GETPaymentGateways200Response
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*GETPaymentGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PaymentGatewayResponseList
+		localVarReturnValue *GETPaymentGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETPaymentGateways")
@@ -588,7 +588,7 @@ type PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest struct {
 	paymentGatewayId string
 }
 
-func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*PaymentGatewayResponse, *http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*GETPaymentGatewaysPaymentGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysPaymentGatewayIdExecute(r)
 }
 
@@ -610,13 +610,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx conte
 }
 
 // Execute executes the request
-//  @return PaymentGatewayResponse
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGatewayResponse, *http.Response, error) {
+//  @return GETPaymentGatewaysPaymentGatewayId200Response
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*GETPaymentGatewaysPaymentGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PaymentGatewayResponse
+		localVarReturnValue *GETPaymentGatewaysPaymentGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETPaymentGatewaysPaymentGatewayId")

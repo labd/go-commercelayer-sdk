@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**ShippingZoneUpdateDataAttributes**](ShippingZoneUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHShippingZonesShippingZoneId200ResponseDataAttributes**](PATCHShippingZonesShippingZoneId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewShippingZoneUpdateData
 
-`func NewShippingZoneUpdateData(type_ string, id string, attributes ShippingZoneUpdateDataAttributes, ) *ShippingZoneUpdateData`
+`func NewShippingZoneUpdateData(type_ string, id string, attributes PATCHShippingZonesShippingZoneId200ResponseDataAttributes, ) *ShippingZoneUpdateData`
 
 NewShippingZoneUpdateData instantiates a new ShippingZoneUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingZoneUpdateData) GetAttributes() ShippingZoneUpdateDataAttributes`
+`func (o *ShippingZoneUpdateData) GetAttributes() PATCHShippingZonesShippingZoneId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingZoneUpdateData) GetAttributesOk() (*ShippingZoneUpdateDataAttributes, bool)`
+`func (o *ShippingZoneUpdateData) GetAttributesOk() (*PATCHShippingZonesShippingZoneId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingZoneUpdateData) SetAttributes(v ShippingZoneUpdateDataAttributes)`
+`func (o *ShippingZoneUpdateData) SetAttributes(v PATCHShippingZonesShippingZoneId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

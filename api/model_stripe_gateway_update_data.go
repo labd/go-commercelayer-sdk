@@ -20,16 +20,16 @@ type StripeGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                            `json:"id"`
-	Attributes    StripeGatewayUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}            `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
 }
 
 // NewStripeGatewayUpdateData instantiates a new StripeGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayUpdateData(type_ string, id string, attributes StripeGatewayUpdateDataAttributes) *StripeGatewayUpdateData {
+func NewStripeGatewayUpdateData(type_ string, id string, attributes PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) *StripeGatewayUpdateData {
 	this := StripeGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *StripeGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripeGatewayUpdateData) GetAttributes() StripeGatewayUpdateDataAttributes {
+func (o *StripeGatewayUpdateData) GetAttributes() PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret StripeGatewayUpdateDataAttributes
+		var ret PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *StripeGatewayUpdateData) GetAttributes() StripeGatewayUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayUpdateData) GetAttributesOk() (*StripeGatewayUpdateDataAttributes, bool) {
+func (o *StripeGatewayUpdateData) GetAttributesOk() (*PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *StripeGatewayUpdateData) GetAttributesOk() (*StripeGatewayUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StripeGatewayUpdateData) SetAttributes(v StripeGatewayUpdateDataAttributes) {
+func (o *StripeGatewayUpdateData) SetAttributes(v PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

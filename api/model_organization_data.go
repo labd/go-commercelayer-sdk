@@ -18,16 +18,16 @@ import (
 // OrganizationData struct for OrganizationData
 type OrganizationData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    OrganizationDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}     `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    GETOrganizationOrganizationId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                 `json:"relationships,omitempty"`
 }
 
 // NewOrganizationData instantiates a new OrganizationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrganizationData(type_ string, attributes OrganizationDataAttributes) *OrganizationData {
+func NewOrganizationData(type_ string, attributes GETOrganizationOrganizationId200ResponseDataAttributes) *OrganizationData {
 	this := OrganizationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *OrganizationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrganizationData) GetAttributes() OrganizationDataAttributes {
+func (o *OrganizationData) GetAttributes() GETOrganizationOrganizationId200ResponseDataAttributes {
 	if o == nil {
-		var ret OrganizationDataAttributes
+		var ret GETOrganizationOrganizationId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *OrganizationData) GetAttributes() OrganizationDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrganizationData) GetAttributesOk() (*OrganizationDataAttributes, bool) {
+func (o *OrganizationData) GetAttributesOk() (*GETOrganizationOrganizationId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *OrganizationData) GetAttributesOk() (*OrganizationDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *OrganizationData) SetAttributes(v OrganizationDataAttributes) {
+func (o *OrganizationData) SetAttributes(v GETOrganizationOrganizationId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

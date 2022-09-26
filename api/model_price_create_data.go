@@ -18,16 +18,16 @@ import (
 // PriceCreateData struct for PriceCreateData
 type PriceCreateData struct {
 	// The resource's type
-	Type          string                        `json:"type"`
-	Attributes    PriceCreateDataAttributes     `json:"attributes"`
-	Relationships *PriceCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                              `json:"type"`
+	Attributes    POSTPrices201ResponseDataAttributes `json:"attributes"`
+	Relationships *PriceCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewPriceCreateData instantiates a new PriceCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceCreateData(type_ string, attributes PriceCreateDataAttributes) *PriceCreateData {
+func NewPriceCreateData(type_ string, attributes POSTPrices201ResponseDataAttributes) *PriceCreateData {
 	this := PriceCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PriceCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceCreateData) GetAttributes() PriceCreateDataAttributes {
+func (o *PriceCreateData) GetAttributes() POSTPrices201ResponseDataAttributes {
 	if o == nil {
-		var ret PriceCreateDataAttributes
+		var ret POSTPrices201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PriceCreateData) GetAttributes() PriceCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceCreateData) GetAttributesOk() (*PriceCreateDataAttributes, bool) {
+func (o *PriceCreateData) GetAttributesOk() (*POSTPrices201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PriceCreateData) GetAttributesOk() (*PriceCreateDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *PriceCreateData) SetAttributes(v PriceCreateDataAttributes) {
+func (o *PriceCreateData) SetAttributes(v POSTPrices201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

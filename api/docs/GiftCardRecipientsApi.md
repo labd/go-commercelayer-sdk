@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETGiftCardRecipients
 
-> GiftCardRecipientResponseList GETGiftCardRecipients(ctx).Execute()
+> GETGiftCardRecipients200Response GETGiftCardRecipients(ctx).Execute()
 
 List all gift card recipients
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.GETGiftCardRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGiftCardRecipients`: GiftCardRecipientResponseList
+    // response from `GETGiftCardRecipients`: GETGiftCardRecipients200Response
     fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.GETGiftCardRecipients`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETGiftCardRecipientsReque
 
 ### Return type
 
-[**GiftCardRecipientResponseList**](GiftCardRecipientResponseList.md)
+[**GETGiftCardRecipients200Response**](GETGiftCardRecipients200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETGiftCardRecipientsReque
 
 ## GETGiftCardRecipientsGiftCardRecipientId
 
-> GiftCardRecipientResponse GETGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).Execute()
+> GETGiftCardRecipientsGiftCardRecipientId200Response GETGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).Execute()
 
 Retrieve a gift card recipient
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.GETGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGiftCardRecipientsGiftCardRecipientId`: GiftCardRecipientResponse
+    // response from `GETGiftCardRecipientsGiftCardRecipientId`: GETGiftCardRecipientsGiftCardRecipientId200Response
     fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.GETGiftCardRecipientsGiftCardRecipientId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftCardRecipientResponse**](GiftCardRecipientResponse.md)
+[**GETGiftCardRecipientsGiftCardRecipientId200Response**](GETGiftCardRecipientsGiftCardRecipientId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHGiftCardRecipientsGiftCardRecipientId
 
-> GiftCardRecipientResponse PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
+> PATCHGiftCardRecipientsGiftCardRecipientId200Response PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
 
 Update a gift card recipient
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCouponRecipientUpdateDataAttributes())) // GiftCardRecipientUpdate | 
+    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // GiftCardRecipientUpdate | 
     giftCardRecipientId := "giftCardRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHGiftCardRecipientsGiftCardRecipientId`: GiftCardRecipientResponse
+    // response from `PATCHGiftCardRecipientsGiftCardRecipientId`: PATCHGiftCardRecipientsGiftCardRecipientId200Response
     fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftCardRecipientResponse**](GiftCardRecipientResponse.md)
+[**PATCHGiftCardRecipientsGiftCardRecipientId200Response**](PATCHGiftCardRecipientsGiftCardRecipientId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTGiftCardRecipients
 
-> GiftCardRecipientResponse POSTGiftCardRecipients(ctx).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
+> POSTGiftCardRecipients201Response POSTGiftCardRecipients(ctx).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
 
 Create a gift card recipient
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("Type_example", *openapiclient.NewCouponRecipientCreateDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
+    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData("Type_example", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // GiftCardRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.POSTGiftCardRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTGiftCardRecipients`: GiftCardRecipientResponse
+    // response from `POSTGiftCardRecipients`: POSTGiftCardRecipients201Response
     fmt.Fprintf(os.Stdout, "Response from `GiftCardRecipientsApi.POSTGiftCardRecipients`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GiftCardRecipientResponse**](GiftCardRecipientResponse.md)
+[**POSTGiftCardRecipients201Response**](POSTGiftCardRecipients201Response.md)
 
 ### Authorization
 

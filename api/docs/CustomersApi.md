@@ -502,7 +502,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomers
 
-> CustomerResponseList GETCustomers(ctx).Execute()
+> GETCustomers200Response GETCustomers(ctx).Execute()
 
 List all customers
 
@@ -529,7 +529,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETCustomers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomers`: CustomerResponseList
+    // response from `GETCustomers`: GETCustomers200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomersApi.GETCustomers`: %v\n", resp)
 }
 ```
@@ -545,7 +545,7 @@ Other parameters are passed through a pointer to a apiGETCustomersRequest struct
 
 ### Return type
 
-[**CustomerResponseList**](CustomerResponseList.md)
+[**GETCustomers200Response**](GETCustomers200Response.md)
 
 ### Authorization
 
@@ -563,7 +563,7 @@ Other parameters are passed through a pointer to a apiGETCustomersRequest struct
 
 ## GETCustomersCustomerId
 
-> CustomerResponse GETCustomersCustomerId(ctx, customerId).Execute()
+> GETCustomersCustomerId200Response GETCustomersCustomerId(ctx, customerId).Execute()
 
 Retrieve a customer
 
@@ -591,7 +591,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.GETCustomersCustomerId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomersCustomerId`: CustomerResponse
+    // response from `GETCustomersCustomerId`: GETCustomersCustomerId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomersApi.GETCustomersCustomerId`: %v\n", resp)
 }
 ```
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerResponse**](CustomerResponse.md)
+[**GETCustomersCustomerId200Response**](GETCustomersCustomerId200Response.md)
 
 ### Authorization
 
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomersCustomerId
 
-> CustomerResponse PATCHCustomersCustomerId(ctx, customerId).CustomerUpdate(customerUpdate).Execute()
+> PATCHCustomersCustomerId200Response PATCHCustomersCustomerId(ctx, customerId).CustomerUpdate(customerUpdate).Execute()
 
 Update a customer
 
@@ -1060,7 +1060,7 @@ import (
 )
 
 func main() {
-    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCustomerUpdateDataAttributes())) // CustomerUpdate | 
+    customerUpdate := *openapiclient.NewCustomerUpdate(*openapiclient.NewCustomerUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomersCustomerId200ResponseDataAttributes())) // CustomerUpdate | 
     customerId := "customerId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1070,7 +1070,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.PATCHCustomersCustomerId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomersCustomerId`: CustomerResponse
+    // response from `PATCHCustomersCustomerId`: PATCHCustomersCustomerId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomersApi.PATCHCustomersCustomerId`: %v\n", resp)
 }
 ```
@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerResponse**](CustomerResponse.md)
+[**PATCHCustomersCustomerId200Response**](PATCHCustomersCustomerId200Response.md)
 
 ### Authorization
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomers
 
-> CustomerResponse POSTCustomers(ctx).CustomerCreate(customerCreate).Execute()
+> POSTCustomers201Response POSTCustomers(ctx).CustomerCreate(customerCreate).Execute()
 
 Create a customer
 
@@ -1132,7 +1132,7 @@ import (
 )
 
 func main() {
-    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("Type_example", *openapiclient.NewCustomerCreateDataAttributes("john@example.com"))) // CustomerCreate | 
+    customerCreate := *openapiclient.NewCustomerCreate(*openapiclient.NewCustomerCreateData("Type_example", *openapiclient.NewPOSTCustomers201ResponseDataAttributes("john@example.com"))) // CustomerCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1141,7 +1141,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomersApi.POSTCustomers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomers`: CustomerResponse
+    // response from `POSTCustomers`: POSTCustomers201Response
     fmt.Fprintf(os.Stdout, "Response from `CustomersApi.POSTCustomers`: %v\n", resp)
 }
 ```
@@ -1161,7 +1161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerResponse**](CustomerResponse.md)
+[**POSTCustomers201Response**](POSTCustomers201Response.md)
 
 ### Authorization
 

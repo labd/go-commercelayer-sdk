@@ -18,16 +18,16 @@ import (
 // CustomerPaymentSourceData struct for CustomerPaymentSourceData
 type CustomerPaymentSourceData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    CustomerPaymentSourceDataAttributes     `json:"attributes"`
-	Relationships *CustomerPaymentSourceDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                  `json:"type"`
+	Attributes    GETCustomerPaymentSources200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CustomerPaymentSourceDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceData(type_ string, attributes CustomerPaymentSourceDataAttributes) *CustomerPaymentSourceData {
+func NewCustomerPaymentSourceData(type_ string, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes) *CustomerPaymentSourceData {
 	this := CustomerPaymentSourceData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerPaymentSourceData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceData) GetAttributes() CustomerPaymentSourceDataAttributes {
+func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CustomerPaymentSourceDataAttributes
+		var ret GETCustomerPaymentSources200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerPaymentSourceData) GetAttributes() CustomerPaymentSourceDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceData) GetAttributesOk() (*CustomerPaymentSourceDataAttributes, bool) {
+func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerPaymentSourceData) GetAttributesOk() (*CustomerPaymentSourceDat
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceData) SetAttributes(v CustomerPaymentSourceDataAttributes) {
+func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

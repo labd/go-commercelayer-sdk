@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**ApplicationDataAttributes**](ApplicationDataAttributes.md) |  | 
+**Attributes** | [**GETApplicationApplicationId200ResponseDataAttributes**](GETApplicationApplicationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewApplicationData
 
-`func NewApplicationData(type_ string, attributes ApplicationDataAttributes, ) *ApplicationData`
+`func NewApplicationData(type_ string, attributes GETApplicationApplicationId200ResponseDataAttributes, ) *ApplicationData`
 
 NewApplicationData instantiates a new ApplicationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ApplicationData) GetAttributes() ApplicationDataAttributes`
+`func (o *ApplicationData) GetAttributes() GETApplicationApplicationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ApplicationData) GetAttributesOk() (*ApplicationDataAttributes, bool)`
+`func (o *ApplicationData) GetAttributesOk() (*GETApplicationApplicationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ApplicationData) SetAttributes(v ApplicationDataAttributes)`
+`func (o *ApplicationData) SetAttributes(v GETApplicationApplicationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

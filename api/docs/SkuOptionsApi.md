@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GETSkuOptions
 
-> SkuOptionResponseList GETSkuOptions(ctx).Execute()
+> GETSkuOptions200Response GETSkuOptions(ctx).Execute()
 
 List all SKU options
 
@@ -247,7 +247,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuOptions`: SkuOptionResponseList
+    // response from `GETSkuOptions`: GETSkuOptions200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.GETSkuOptions`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Other parameters are passed through a pointer to a apiGETSkuOptionsRequest struc
 
 ### Return type
 
-[**SkuOptionResponseList**](SkuOptionResponseList.md)
+[**GETSkuOptions200Response**](GETSkuOptions200Response.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Other parameters are passed through a pointer to a apiGETSkuOptionsRequest struc
 
 ## GETSkuOptionsSkuOptionId
 
-> SkuOptionResponse GETSkuOptionsSkuOptionId(ctx, skuOptionId).Execute()
+> GETSkuOptionsSkuOptionId200Response GETSkuOptionsSkuOptionId(ctx, skuOptionId).Execute()
 
 Retrieve a SKU option
 
@@ -309,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuOptionsSkuOptionId`: SkuOptionResponse
+    // response from `GETSkuOptionsSkuOptionId`: GETSkuOptionsSkuOptionId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.GETSkuOptionsSkuOptionId`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuOptionResponse**](SkuOptionResponse.md)
+[**GETSkuOptionsSkuOptionId200Response**](GETSkuOptionsSkuOptionId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuOptionsSkuOptionId
 
-> SkuOptionResponse PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
+> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
 
 Update a SKU option
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewSkuOptionUpdateDataAttributes())) // SkuOptionUpdate | 
+    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
     skuOptionId := "skuOptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.PATCHSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuOptionsSkuOptionId`: SkuOptionResponse
+    // response from `PATCHSkuOptionsSkuOptionId`: PATCHSkuOptionsSkuOptionId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.PATCHSkuOptionsSkuOptionId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuOptionResponse**](SkuOptionResponse.md)
+[**PATCHSkuOptionsSkuOptionId200Response**](PATCHSkuOptionsSkuOptionId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuOptions
 
-> SkuOptionResponse POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
+> POSTSkuOptions201Response POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
 
 Create a SKU option
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("Type_example", *openapiclient.NewSkuOptionCreateDataAttributes("Embossing"))) // SkuOptionCreate | 
+    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("Type_example", *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes("Embossing"))) // SkuOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.POSTSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTSkuOptions`: SkuOptionResponse
+    // response from `POSTSkuOptions`: POSTSkuOptions201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuOptionsApi.POSTSkuOptions`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuOptionResponse**](SkuOptionResponse.md)
+[**POSTSkuOptions201Response**](POSTSkuOptions201Response.md)
 
 ### Authorization
 

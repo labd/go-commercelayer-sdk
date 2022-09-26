@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GoogleGeocoderCreateDataAttributes**](GoogleGeocoderCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTGoogleGeocoders201ResponseDataAttributes**](POSTGoogleGeocoders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewGoogleGeocoderCreateData
 
-`func NewGoogleGeocoderCreateData(type_ string, attributes GoogleGeocoderCreateDataAttributes, ) *GoogleGeocoderCreateData`
+`func NewGoogleGeocoderCreateData(type_ string, attributes POSTGoogleGeocoders201ResponseDataAttributes, ) *GoogleGeocoderCreateData`
 
 NewGoogleGeocoderCreateData instantiates a new GoogleGeocoderCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *GoogleGeocoderCreateData) GetAttributes() GoogleGeocoderCreateDataAttributes`
+`func (o *GoogleGeocoderCreateData) GetAttributes() POSTGoogleGeocoders201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GoogleGeocoderCreateData) GetAttributesOk() (*GoogleGeocoderCreateDataAttributes, bool)`
+`func (o *GoogleGeocoderCreateData) GetAttributesOk() (*POSTGoogleGeocoders201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GoogleGeocoderCreateData) SetAttributes(v GoogleGeocoderCreateDataAttributes)`
+`func (o *GoogleGeocoderCreateData) SetAttributes(v POSTGoogleGeocoders201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

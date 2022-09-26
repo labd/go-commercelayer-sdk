@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETShippingZones
 
-> ShippingZoneResponseList GETShippingZones(ctx).Execute()
+> GETShippingZones200Response GETShippingZones(ctx).Execute()
 
 List all shipping zones
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.GETShippingZones``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingZones`: ShippingZoneResponseList
+    // response from `GETShippingZones`: GETShippingZones200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.GETShippingZones`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETShippingZonesRequest st
 
 ### Return type
 
-[**ShippingZoneResponseList**](ShippingZoneResponseList.md)
+[**GETShippingZones200Response**](GETShippingZones200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETShippingZonesRequest st
 
 ## GETShippingZonesShippingZoneId
 
-> ShippingZoneResponse GETShippingZonesShippingZoneId(ctx, shippingZoneId).Execute()
+> GETShippingZonesShippingZoneId200Response GETShippingZonesShippingZoneId(ctx, shippingZoneId).Execute()
 
 Retrieve a shipping zone
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.GETShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingZonesShippingZoneId`: ShippingZoneResponse
+    // response from `GETShippingZonesShippingZoneId`: GETShippingZonesShippingZoneId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.GETShippingZonesShippingZoneId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingZoneResponse**](ShippingZoneResponse.md)
+[**GETShippingZonesShippingZoneId200Response**](GETShippingZonesShippingZoneId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingZonesShippingZoneId
 
-> ShippingZoneResponse PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
+> PATCHShippingZonesShippingZoneId200Response PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
 
 Update a shipping zone
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewShippingZoneUpdateDataAttributes())) // ShippingZoneUpdate | 
+    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingZonesShippingZoneId200ResponseDataAttributes())) // ShippingZoneUpdate | 
     shippingZoneId := "shippingZoneId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.PATCHShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHShippingZonesShippingZoneId`: ShippingZoneResponse
+    // response from `PATCHShippingZonesShippingZoneId`: PATCHShippingZonesShippingZoneId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.PATCHShippingZonesShippingZoneId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingZoneResponse**](ShippingZoneResponse.md)
+[**PATCHShippingZonesShippingZoneId200Response**](PATCHShippingZonesShippingZoneId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingZones
 
-> ShippingZoneResponse POSTShippingZones(ctx).ShippingZoneCreate(shippingZoneCreate).Execute()
+> POSTShippingZones201Response POSTShippingZones(ctx).ShippingZoneCreate(shippingZoneCreate).Execute()
 
 Create a shipping zone
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("Type_example", *openapiclient.NewShippingZoneCreateDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
+    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("Type_example", *openapiclient.NewPOSTShippingZones201ResponseDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.POSTShippingZones``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTShippingZones`: ShippingZoneResponse
+    // response from `POSTShippingZones`: POSTShippingZones201Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingZonesApi.POSTShippingZones`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingZoneResponse**](ShippingZoneResponse.md)
+[**POSTShippingZones201Response**](POSTShippingZones201Response.md)
 
 ### Authorization
 

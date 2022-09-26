@@ -18,16 +18,16 @@ import (
 // DeliveryLeadTimeData struct for DeliveryLeadTimeData
 type DeliveryLeadTimeData struct {
 	// The resource's type
-	Type          string                             `json:"type"`
-	Attributes    DeliveryLeadTimeDataAttributes     `json:"attributes"`
-	Relationships *DeliveryLeadTimeDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETDeliveryLeadTimes200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *DeliveryLeadTimeDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewDeliveryLeadTimeData instantiates a new DeliveryLeadTimeData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliveryLeadTimeData(type_ string, attributes DeliveryLeadTimeDataAttributes) *DeliveryLeadTimeData {
+func NewDeliveryLeadTimeData(type_ string, attributes GETDeliveryLeadTimes200ResponseDataInnerAttributes) *DeliveryLeadTimeData {
 	this := DeliveryLeadTimeData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *DeliveryLeadTimeData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *DeliveryLeadTimeData) GetAttributes() DeliveryLeadTimeDataAttributes {
+func (o *DeliveryLeadTimeData) GetAttributes() GETDeliveryLeadTimes200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret DeliveryLeadTimeDataAttributes
+		var ret GETDeliveryLeadTimes200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *DeliveryLeadTimeData) GetAttributes() DeliveryLeadTimeDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeData) GetAttributesOk() (*DeliveryLeadTimeDataAttributes, bool) {
+func (o *DeliveryLeadTimeData) GetAttributesOk() (*GETDeliveryLeadTimes200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *DeliveryLeadTimeData) GetAttributesOk() (*DeliveryLeadTimeDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *DeliveryLeadTimeData) SetAttributes(v DeliveryLeadTimeDataAttributes) {
+func (o *DeliveryLeadTimeData) SetAttributes(v GETDeliveryLeadTimes200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

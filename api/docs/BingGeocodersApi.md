@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETBingGeocoders
 
-> BingGeocoderResponseList GETBingGeocoders(ctx).Execute()
+> GETBingGeocoders200Response GETBingGeocoders(ctx).Execute()
 
 List all bing geocoders
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.GETBingGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBingGeocoders`: BingGeocoderResponseList
+    // response from `GETBingGeocoders`: GETBingGeocoders200Response
     fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.GETBingGeocoders`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETBingGeocodersRequest st
 
 ### Return type
 
-[**BingGeocoderResponseList**](BingGeocoderResponseList.md)
+[**GETBingGeocoders200Response**](GETBingGeocoders200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETBingGeocodersRequest st
 
 ## GETBingGeocodersBingGeocoderId
 
-> BingGeocoderResponse GETBingGeocodersBingGeocoderId(ctx, bingGeocoderId).Execute()
+> GETBingGeocodersBingGeocoderId200Response GETBingGeocodersBingGeocoderId(ctx, bingGeocoderId).Execute()
 
 Retrieve a bing geocoder
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.GETBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBingGeocodersBingGeocoderId`: BingGeocoderResponse
+    // response from `GETBingGeocodersBingGeocoderId`: GETBingGeocodersBingGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.GETBingGeocodersBingGeocoderId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BingGeocoderResponse**](BingGeocoderResponse.md)
+[**GETBingGeocodersBingGeocoderId200Response**](GETBingGeocodersBingGeocoderId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBingGeocodersBingGeocoderId
 
-> BingGeocoderResponse PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
+> PATCHBingGeocodersBingGeocoderId200Response PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
 
 Update a bing geocoder
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewBingGeocoderUpdateDataAttributes())) // BingGeocoderUpdate | 
+    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBingGeocodersBingGeocoderId200ResponseDataAttributes())) // BingGeocoderUpdate | 
     bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.PATCHBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBingGeocodersBingGeocoderId`: BingGeocoderResponse
+    // response from `PATCHBingGeocodersBingGeocoderId`: PATCHBingGeocodersBingGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.PATCHBingGeocodersBingGeocoderId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BingGeocoderResponse**](BingGeocoderResponse.md)
+[**PATCHBingGeocodersBingGeocoderId200Response**](PATCHBingGeocodersBingGeocoderId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBingGeocoders
 
-> BingGeocoderResponse POSTBingGeocoders(ctx).BingGeocoderCreate(bingGeocoderCreate).Execute()
+> POSTBingGeocoders201Response POSTBingGeocoders(ctx).BingGeocoderCreate(bingGeocoderCreate).Execute()
 
 Create a bing geocoder
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("Type_example", *openapiclient.NewBingGeocoderCreateDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
+    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("Type_example", *openapiclient.NewPOSTBingGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.POSTBingGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTBingGeocoders`: BingGeocoderResponse
+    // response from `POSTBingGeocoders`: POSTBingGeocoders201Response
     fmt.Fprintf(os.Stdout, "Response from `BingGeocodersApi.POSTBingGeocoders`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BingGeocoderResponse**](BingGeocoderResponse.md)
+[**POSTBingGeocoders201Response**](POSTBingGeocoders201Response.md)
 
 ### Authorization
 

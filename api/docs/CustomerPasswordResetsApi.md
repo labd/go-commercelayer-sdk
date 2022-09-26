@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomerPasswordResets
 
-> CustomerPasswordResetResponseList GETCustomerPasswordResets(ctx).Execute()
+> GETCustomerPasswordResets200Response GETCustomerPasswordResets(ctx).Execute()
 
 List all customer password resets
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.GETCustomerPasswordResets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPasswordResets`: CustomerPasswordResetResponseList
+    // response from `GETCustomerPasswordResets`: GETCustomerPasswordResets200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.GETCustomerPasswordResets`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETCustomerPasswordResetsR
 
 ### Return type
 
-[**CustomerPasswordResetResponseList**](CustomerPasswordResetResponseList.md)
+[**GETCustomerPasswordResets200Response**](GETCustomerPasswordResets200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETCustomerPasswordResetsR
 
 ## GETCustomerPasswordResetsCustomerPasswordResetId
 
-> CustomerPasswordResetResponse GETCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).Execute()
+> GETCustomerPasswordResetsCustomerPasswordResetId200Response GETCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).Execute()
 
 Retrieve a customer password reset
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.GETCustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPasswordResetsCustomerPasswordResetId`: CustomerPasswordResetResponse
+    // response from `GETCustomerPasswordResetsCustomerPasswordResetId`: GETCustomerPasswordResetsCustomerPasswordResetId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.GETCustomerPasswordResetsCustomerPasswordResetId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerPasswordResetResponse**](CustomerPasswordResetResponse.md)
+[**GETCustomerPasswordResetsCustomerPasswordResetId200Response**](GETCustomerPasswordResetsCustomerPasswordResetId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerPasswordResetsCustomerPasswordResetId
 
-> CustomerPasswordResetResponse PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
+> PATCHCustomerPasswordResetsCustomerPasswordResetId200Response PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
 
 Update a customer password reset
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCustomerPasswordResetUpdateDataAttributes())) // CustomerPasswordResetUpdate | 
+    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes())) // CustomerPasswordResetUpdate | 
     customerPasswordResetId := "customerPasswordResetId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerPasswordResetsCustomerPasswordResetId`: CustomerPasswordResetResponse
+    // response from `PATCHCustomerPasswordResetsCustomerPasswordResetId`: PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerPasswordResetResponse**](CustomerPasswordResetResponse.md)
+[**PATCHCustomerPasswordResetsCustomerPasswordResetId200Response**](PATCHCustomerPasswordResetsCustomerPasswordResetId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerPasswordResets
 
-> CustomerPasswordResetResponse POSTCustomerPasswordResets(ctx).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
+> POSTCustomerPasswordResets201Response POSTCustomerPasswordResets(ctx).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
 
 Create a customer password reset
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("Type_example", *openapiclient.NewCustomerPasswordResetCreateDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
+    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData("Type_example", *openapiclient.NewPOSTCustomerPasswordResets201ResponseDataAttributes("john@example.com"))) // CustomerPasswordResetCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.POSTCustomerPasswordResets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomerPasswordResets`: CustomerPasswordResetResponse
+    // response from `POSTCustomerPasswordResets`: POSTCustomerPasswordResets201Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPasswordResetsApi.POSTCustomerPasswordResets`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerPasswordResetResponse**](CustomerPasswordResetResponse.md)
+[**POSTCustomerPasswordResets201Response**](POSTCustomerPasswordResets201Response.md)
 
 ### Authorization
 

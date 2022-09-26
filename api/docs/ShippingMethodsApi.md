@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## GETShippingMethods
 
-> ShippingMethodResponseList GETShippingMethods(ctx).Execute()
+> GETShippingMethods200Response GETShippingMethods(ctx).Execute()
 
 List all shipping methods
 
@@ -386,7 +386,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethods`: ShippingMethodResponseList
+    // response from `GETShippingMethods`: GETShippingMethods200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.GETShippingMethods`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Other parameters are passed through a pointer to a apiGETShippingMethodsRequest 
 
 ### Return type
 
-[**ShippingMethodResponseList**](ShippingMethodResponseList.md)
+[**GETShippingMethods200Response**](GETShippingMethods200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Other parameters are passed through a pointer to a apiGETShippingMethodsRequest 
 
 ## GETShippingMethodsShippingMethodId
 
-> ShippingMethodResponse GETShippingMethodsShippingMethodId(ctx, shippingMethodId).Execute()
+> GETShippingMethodsShippingMethodId200Response GETShippingMethodsShippingMethodId(ctx, shippingMethodId).Execute()
 
 Retrieve a shipping method
 
@@ -448,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethodsShippingMethodId`: ShippingMethodResponse
+    // response from `GETShippingMethodsShippingMethodId`: GETShippingMethodsShippingMethodId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.GETShippingMethodsShippingMethodId`: %v\n", resp)
 }
 ```
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingMethodResponse**](ShippingMethodResponse.md)
+[**GETShippingMethodsShippingMethodId200Response**](GETShippingMethodsShippingMethodId200Response.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingMethodsShippingMethodId
 
-> ShippingMethodResponse PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
+> PATCHShippingMethodsShippingMethodId200Response PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
 
 Update a shipping method
 
@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewShippingMethodUpdateDataAttributes())) // ShippingMethodUpdate | 
+    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingMethodsShippingMethodId200ResponseDataAttributes())) // ShippingMethodUpdate | 
     shippingMethodId := "shippingMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -587,7 +587,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.PATCHShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHShippingMethodsShippingMethodId`: ShippingMethodResponse
+    // response from `PATCHShippingMethodsShippingMethodId`: PATCHShippingMethodsShippingMethodId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.PATCHShippingMethodsShippingMethodId`: %v\n", resp)
 }
 ```
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingMethodResponse**](ShippingMethodResponse.md)
+[**PATCHShippingMethodsShippingMethodId200Response**](PATCHShippingMethodsShippingMethodId200Response.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingMethods
 
-> ShippingMethodResponse POSTShippingMethods(ctx).ShippingMethodCreate(shippingMethodCreate).Execute()
+> POSTShippingMethods201Response POSTShippingMethods(ctx).ShippingMethodCreate(shippingMethodCreate).Execute()
 
 Create a shipping method
 
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("Type_example", *openapiclient.NewShippingMethodCreateDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
+    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData("Type_example", *openapiclient.NewPOSTShippingMethods201ResponseDataAttributes("Standard shipping", int32(1000)))) // ShippingMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -658,7 +658,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.POSTShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTShippingMethods`: ShippingMethodResponse
+    // response from `POSTShippingMethods`: POSTShippingMethods201Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodsApi.POSTShippingMethods`: %v\n", resp)
 }
 ```
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingMethodResponse**](ShippingMethodResponse.md)
+[**POSTShippingMethods201Response**](POSTShippingMethods201Response.md)
 
 ### Authorization
 

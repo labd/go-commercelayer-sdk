@@ -120,7 +120,7 @@ type CustomerGroupsApiGETCustomerGroupsRequest struct {
 	ApiService *CustomerGroupsApiService
 }
 
-func (r CustomerGroupsApiGETCustomerGroupsRequest) Execute() (*CustomerGroupResponseList, *http.Response, error) {
+func (r CustomerGroupsApiGETCustomerGroupsRequest) Execute() (*GETCustomerGroups200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerGroupsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *CustomerGroupsApiService) GETCustomerGroups(ctx context.Context) Custom
 }
 
 // Execute executes the request
-//  @return CustomerGroupResponseList
-func (a *CustomerGroupsApiService) GETCustomerGroupsExecute(r CustomerGroupsApiGETCustomerGroupsRequest) (*CustomerGroupResponseList, *http.Response, error) {
+//  @return GETCustomerGroups200Response
+func (a *CustomerGroupsApiService) GETCustomerGroupsExecute(r CustomerGroupsApiGETCustomerGroupsRequest) (*GETCustomerGroups200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerGroupResponseList
+		localVarReturnValue *GETCustomerGroups200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerGroupsApiService.GETCustomerGroups")
@@ -220,7 +220,7 @@ type CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest struct {
 	customerGroupId string
 }
 
-func (r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) Execute() (*CustomerGroupResponse, *http.Response, error) {
+func (r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) Execute() (*GETCustomerGroupsCustomerGroupId200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerGroupsCustomerGroupIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupId(ctx context.
 }
 
 // Execute executes the request
-//  @return CustomerGroupResponse
-func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) (*CustomerGroupResponse, *http.Response, error) {
+//  @return GETCustomerGroupsCustomerGroupId200Response
+func (a *CustomerGroupsApiService) GETCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiGETCustomerGroupsCustomerGroupIdRequest) (*GETCustomerGroupsCustomerGroupId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerGroupResponse
+		localVarReturnValue *GETCustomerGroupsCustomerGroupId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerGroupsApiService.GETCustomerGroupsCustomerGroupId")
@@ -513,7 +513,7 @@ func (r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) CustomerGrou
 	return r
 }
 
-func (r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) Execute() (*CustomerGroupResponse, *http.Response, error) {
+func (r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) Execute() (*PATCHCustomerGroupsCustomerGroupId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerGroupsCustomerGroupIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupId(ctx contex
 }
 
 // Execute executes the request
-//  @return CustomerGroupResponse
-func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) (*CustomerGroupResponse, *http.Response, error) {
+//  @return PATCHCustomerGroupsCustomerGroupId200Response
+func (a *CustomerGroupsApiService) PATCHCustomerGroupsCustomerGroupIdExecute(r CustomerGroupsApiPATCHCustomerGroupsCustomerGroupIdRequest) (*PATCHCustomerGroupsCustomerGroupId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerGroupResponse
+		localVarReturnValue *PATCHCustomerGroupsCustomerGroupId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerGroupsApiService.PATCHCustomerGroupsCustomerGroupId")
@@ -626,7 +626,7 @@ func (r CustomerGroupsApiPOSTCustomerGroupsRequest) CustomerGroupCreate(customer
 	return r
 }
 
-func (r CustomerGroupsApiPOSTCustomerGroupsRequest) Execute() (*CustomerGroupResponse, *http.Response, error) {
+func (r CustomerGroupsApiPOSTCustomerGroupsRequest) Execute() (*POSTCustomerGroups201Response, *http.Response, error) {
 	return r.ApiService.POSTCustomerGroupsExecute(r)
 }
 
@@ -646,13 +646,13 @@ func (a *CustomerGroupsApiService) POSTCustomerGroups(ctx context.Context) Custo
 }
 
 // Execute executes the request
-//  @return CustomerGroupResponse
-func (a *CustomerGroupsApiService) POSTCustomerGroupsExecute(r CustomerGroupsApiPOSTCustomerGroupsRequest) (*CustomerGroupResponse, *http.Response, error) {
+//  @return POSTCustomerGroups201Response
+func (a *CustomerGroupsApiService) POSTCustomerGroupsExecute(r CustomerGroupsApiPOSTCustomerGroupsRequest) (*POSTCustomerGroups201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerGroupResponse
+		localVarReturnValue *POSTCustomerGroups201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerGroupsApiService.POSTCustomerGroups")

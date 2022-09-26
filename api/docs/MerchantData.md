@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**MerchantDataAttributes**](MerchantDataAttributes.md) |  | 
+**Attributes** | [**GETMerchants200ResponseDataInnerAttributes**](GETMerchants200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantDataRelationships**](MerchantDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMerchantData
 
-`func NewMerchantData(type_ string, attributes MerchantDataAttributes, ) *MerchantData`
+`func NewMerchantData(type_ string, attributes GETMerchants200ResponseDataInnerAttributes, ) *MerchantData`
 
 NewMerchantData instantiates a new MerchantData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *MerchantData) GetAttributes() MerchantDataAttributes`
+`func (o *MerchantData) GetAttributes() GETMerchants200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MerchantData) GetAttributesOk() (*MerchantDataAttributes, bool)`
+`func (o *MerchantData) GetAttributesOk() (*GETMerchants200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MerchantData) SetAttributes(v MerchantDataAttributes)`
+`func (o *MerchantData) SetAttributes(v GETMerchants200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -120,7 +120,7 @@ type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest struc
 	ApiService *PercentageDiscountPromotionsApiService
 }
 
-func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) Execute() (*PercentageDiscountPromotionResponseList, *http.Response, error) {
+func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) Execute() (*GETPercentageDiscountPromotions200Response, *http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 }
 
 // Execute executes the request
-//  @return PercentageDiscountPromotionResponseList
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) (*PercentageDiscountPromotionResponseList, *http.Response, error) {
+//  @return GETPercentageDiscountPromotions200Response
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsRequest) (*GETPercentageDiscountPromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PercentageDiscountPromotionResponseList
+		localVarReturnValue *GETPercentageDiscountPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.GETPercentageDiscountPromotions")
@@ -220,7 +220,7 @@ type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDis
 	percentageDiscountPromotionId string
 }
 
-func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*PercentageDiscountPromotionResponse, *http.Response, error) {
+func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	return r.ApiService.GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 }
 
 // Execute executes the request
-//  @return PercentageDiscountPromotionResponse
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotionResponse, *http.Response, error) {
+//  @return GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PercentageDiscountPromotionResponse
+		localVarReturnValue *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.GETPercentageDiscountPromotionsPercentageDiscountPromotionId")
@@ -329,7 +329,7 @@ func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercenta
 	return r
 }
 
-func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*PercentageDiscountPromotionResponse, *http.Response, error) {
+func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 }
 
 // Execute executes the request
-//  @return PercentageDiscountPromotionResponse
-func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PercentageDiscountPromotionResponse, *http.Response, error) {
+//  @return PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdExecute(r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PercentageDiscountPromotionResponse
+		localVarReturnValue *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId")
@@ -442,7 +442,7 @@ func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) 
 	return r
 }
 
-func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) Execute() (*PercentageDiscountPromotionResponse, *http.Response, error) {
+func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) Execute() (*POSTPercentageDiscountPromotions201Response, *http.Response, error) {
 	return r.ApiService.POSTPercentageDiscountPromotionsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 }
 
 // Execute executes the request
-//  @return PercentageDiscountPromotionResponse
-func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) (*PercentageDiscountPromotionResponse, *http.Response, error) {
+//  @return POSTPercentageDiscountPromotions201Response
+func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotionsExecute(r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) (*POSTPercentageDiscountPromotions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PercentageDiscountPromotionResponse
+		localVarReturnValue *POSTPercentageDiscountPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PercentageDiscountPromotionsApiService.POSTPercentageDiscountPromotions")

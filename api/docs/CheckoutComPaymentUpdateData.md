@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**CheckoutComPaymentUpdateDataAttributes**](CheckoutComPaymentUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes**](PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComPaymentUpdateData
 
-`func NewCheckoutComPaymentUpdateData(type_ string, id string, attributes CheckoutComPaymentUpdateDataAttributes, ) *CheckoutComPaymentUpdateData`
+`func NewCheckoutComPaymentUpdateData(type_ string, id string, attributes PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, ) *CheckoutComPaymentUpdateData`
 
 NewCheckoutComPaymentUpdateData instantiates a new CheckoutComPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComPaymentUpdateData) GetAttributes() CheckoutComPaymentUpdateDataAttributes`
+`func (o *CheckoutComPaymentUpdateData) GetAttributes() PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComPaymentUpdateData) GetAttributesOk() (*CheckoutComPaymentUpdateDataAttributes, bool)`
+`func (o *CheckoutComPaymentUpdateData) GetAttributesOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComPaymentUpdateData) SetAttributes(v CheckoutComPaymentUpdateDataAttributes)`
+`func (o *CheckoutComPaymentUpdateData) SetAttributes(v PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

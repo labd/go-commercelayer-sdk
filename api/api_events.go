@@ -396,7 +396,7 @@ type EventsApiGETEventsRequest struct {
 	ApiService *EventsApiService
 }
 
-func (r EventsApiGETEventsRequest) Execute() (*EventResponseList, *http.Response, error) {
+func (r EventsApiGETEventsRequest) Execute() (*GETEvents200Response, *http.Response, error) {
 	return r.ApiService.GETEventsExecute(r)
 }
 
@@ -416,13 +416,13 @@ func (a *EventsApiService) GETEvents(ctx context.Context) EventsApiGETEventsRequ
 }
 
 // Execute executes the request
-//  @return EventResponseList
-func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*EventResponseList, *http.Response, error) {
+//  @return GETEvents200Response
+func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*GETEvents200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *EventResponseList
+		localVarReturnValue *GETEvents200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEvents")
@@ -496,7 +496,7 @@ type EventsApiGETEventsEventIdRequest struct {
 	eventId    string
 }
 
-func (r EventsApiGETEventsEventIdRequest) Execute() (*EventResponse, *http.Response, error) {
+func (r EventsApiGETEventsEventIdRequest) Execute() (*GETEventsEventId200Response, *http.Response, error) {
 	return r.ApiService.GETEventsEventIdExecute(r)
 }
 
@@ -518,13 +518,13 @@ func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string)
 }
 
 // Execute executes the request
-//  @return EventResponse
-func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*EventResponse, *http.Response, error) {
+//  @return GETEventsEventId200Response
+func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*GETEventsEventId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *EventResponse
+		localVarReturnValue *GETEventsEventId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEventsEventId")

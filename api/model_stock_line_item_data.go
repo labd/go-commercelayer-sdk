@@ -18,16 +18,16 @@ import (
 // StockLineItemData struct for StockLineItemData
 type StockLineItemData struct {
 	// The resource's type
-	Type          string                          `json:"type"`
-	Attributes    StockLineItemDataAttributes     `json:"attributes"`
-	Relationships *StockLineItemDataRelationships `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    GETStockLineItems200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *StockLineItemDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewStockLineItemData instantiates a new StockLineItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLineItemData(type_ string, attributes StockLineItemDataAttributes) *StockLineItemData {
+func NewStockLineItemData(type_ string, attributes GETStockLineItems200ResponseDataInnerAttributes) *StockLineItemData {
 	this := StockLineItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *StockLineItemData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockLineItemData) GetAttributes() StockLineItemDataAttributes {
+func (o *StockLineItemData) GetAttributes() GETStockLineItems200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret StockLineItemDataAttributes
+		var ret GETStockLineItems200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *StockLineItemData) GetAttributes() StockLineItemDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockLineItemData) GetAttributesOk() (*StockLineItemDataAttributes, bool) {
+func (o *StockLineItemData) GetAttributesOk() (*GETStockLineItems200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *StockLineItemData) GetAttributesOk() (*StockLineItemDataAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *StockLineItemData) SetAttributes(v StockLineItemDataAttributes) {
+func (o *StockLineItemData) SetAttributes(v GETStockLineItems200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -1132,7 +1132,7 @@ type SkusApiGETSkusRequest struct {
 	ApiService *SkusApiService
 }
 
-func (r SkusApiGETSkusRequest) Execute() (*SkuResponseList, *http.Response, error) {
+func (r SkusApiGETSkusRequest) Execute() (*GETSkus200Response, *http.Response, error) {
 	return r.ApiService.GETSkusExecute(r)
 }
 
@@ -1152,13 +1152,13 @@ func (a *SkusApiService) GETSkus(ctx context.Context) SkusApiGETSkusRequest {
 }
 
 // Execute executes the request
-//  @return SkuResponseList
-func (a *SkusApiService) GETSkusExecute(r SkusApiGETSkusRequest) (*SkuResponseList, *http.Response, error) {
+//  @return GETSkus200Response
+func (a *SkusApiService) GETSkusExecute(r SkusApiGETSkusRequest) (*GETSkus200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuResponseList
+		localVarReturnValue *GETSkus200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkus")
@@ -1232,7 +1232,7 @@ type SkusApiGETSkusSkuIdRequest struct {
 	skuId      string
 }
 
-func (r SkusApiGETSkusSkuIdRequest) Execute() (*SkuResponse, *http.Response, error) {
+func (r SkusApiGETSkusSkuIdRequest) Execute() (*GETSkusSkuId200Response, *http.Response, error) {
 	return r.ApiService.GETSkusSkuIdExecute(r)
 }
 
@@ -1254,13 +1254,13 @@ func (a *SkusApiService) GETSkusSkuId(ctx context.Context, skuId string) SkusApi
 }
 
 // Execute executes the request
-//  @return SkuResponse
-func (a *SkusApiService) GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*SkuResponse, *http.Response, error) {
+//  @return GETSkusSkuId200Response
+func (a *SkusApiService) GETSkusSkuIdExecute(r SkusApiGETSkusSkuIdRequest) (*GETSkusSkuId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuResponse
+		localVarReturnValue *GETSkusSkuId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.GETSkusSkuId")
@@ -1617,7 +1617,7 @@ func (r SkusApiPATCHSkusSkuIdRequest) SkuUpdate(skuUpdate SkuUpdate) SkusApiPATC
 	return r
 }
 
-func (r SkusApiPATCHSkusSkuIdRequest) Execute() (*SkuResponse, *http.Response, error) {
+func (r SkusApiPATCHSkusSkuIdRequest) Execute() (*PATCHSkusSkuId200Response, *http.Response, error) {
 	return r.ApiService.PATCHSkusSkuIdExecute(r)
 }
 
@@ -1639,13 +1639,13 @@ func (a *SkusApiService) PATCHSkusSkuId(ctx context.Context, skuId string) SkusA
 }
 
 // Execute executes the request
-//  @return SkuResponse
-func (a *SkusApiService) PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (*SkuResponse, *http.Response, error) {
+//  @return PATCHSkusSkuId200Response
+func (a *SkusApiService) PATCHSkusSkuIdExecute(r SkusApiPATCHSkusSkuIdRequest) (*PATCHSkusSkuId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuResponse
+		localVarReturnValue *PATCHSkusSkuId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.PATCHSkusSkuId")
@@ -1730,7 +1730,7 @@ func (r SkusApiPOSTSkusRequest) SkuCreate(skuCreate SkuCreate) SkusApiPOSTSkusRe
 	return r
 }
 
-func (r SkusApiPOSTSkusRequest) Execute() (*SkuResponse, *http.Response, error) {
+func (r SkusApiPOSTSkusRequest) Execute() (*POSTSkus201Response, *http.Response, error) {
 	return r.ApiService.POSTSkusExecute(r)
 }
 
@@ -1750,13 +1750,13 @@ func (a *SkusApiService) POSTSkus(ctx context.Context) SkusApiPOSTSkusRequest {
 }
 
 // Execute executes the request
-//  @return SkuResponse
-func (a *SkusApiService) POSTSkusExecute(r SkusApiPOSTSkusRequest) (*SkuResponse, *http.Response, error) {
+//  @return POSTSkus201Response
+func (a *SkusApiService) POSTSkusExecute(r SkusApiPOSTSkusRequest) (*POSTSkus201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuResponse
+		localVarReturnValue *POSTSkus201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkusApiService.POSTSkus")

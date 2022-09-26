@@ -18,16 +18,16 @@ import (
 // ImportData struct for ImportData
 type ImportData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    ImportDataAttributes     `json:"attributes"`
-	Relationships *ExportDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETImports200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExportDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewImportData instantiates a new ImportData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewImportData(type_ string, attributes ImportDataAttributes) *ImportData {
+func NewImportData(type_ string, attributes GETImports200ResponseDataInnerAttributes) *ImportData {
 	this := ImportData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ImportData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ImportData) GetAttributes() ImportDataAttributes {
+func (o *ImportData) GetAttributes() GETImports200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ImportDataAttributes
+		var ret GETImports200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ImportData) GetAttributes() ImportDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetAttributesOk() (*ImportDataAttributes, bool) {
+func (o *ImportData) GetAttributesOk() (*GETImports200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ImportData) GetAttributesOk() (*ImportDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *ImportData) SetAttributes(v ImportDataAttributes) {
+func (o *ImportData) SetAttributes(v GETImports200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

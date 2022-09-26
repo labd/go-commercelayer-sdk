@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## GETAuthorizations
 
-> AuthorizationResponseList GETAuthorizations(ctx).Execute()
+> GETAuthorizations200Response GETAuthorizations(ctx).Execute()
 
 List all authorizations
 
@@ -42,7 +42,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETAuthorizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAuthorizations`: AuthorizationResponseList
+    // response from `GETAuthorizations`: GETAuthorizations200Response
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.GETAuthorizations`: %v\n", resp)
 }
 ```
@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiGETAuthorizationsRequest s
 
 ### Return type
 
-[**AuthorizationResponseList**](AuthorizationResponseList.md)
+[**GETAuthorizations200Response**](GETAuthorizations200Response.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ Other parameters are passed through a pointer to a apiGETAuthorizationsRequest s
 
 ## GETAuthorizationsAuthorizationId
 
-> AuthorizationResponse GETAuthorizationsAuthorizationId(ctx, authorizationId).Execute()
+> GETAuthorizationsAuthorizationId200Response GETAuthorizationsAuthorizationId(ctx, authorizationId).Execute()
 
 Retrieve an authorization
 
@@ -104,7 +104,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETAuthorizationsAuthorizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAuthorizationsAuthorizationId`: AuthorizationResponse
+    // response from `GETAuthorizationsAuthorizationId`: GETAuthorizationsAuthorizationId200Response
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.GETAuthorizationsAuthorizationId`: %v\n", resp)
 }
 ```
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthorizationResponse**](AuthorizationResponse.md)
+[**GETAuthorizationsAuthorizationId200Response**](GETAuthorizationsAuthorizationId200Response.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAuthorizationsAuthorizationId
 
-> AuthorizationResponse PATCHAuthorizationsAuthorizationId(ctx, authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
+> PATCHAuthorizationsAuthorizationId200Response PATCHAuthorizationsAuthorizationId(ctx, authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
 
 Update an authorization
 
@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAuthorizationUpdateDataAttributes())) // AuthorizationUpdate | 
+    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes())) // AuthorizationUpdate | 
     authorizationId := "authorizationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -379,7 +379,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.PATCHAuthorizationsAuthorizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAuthorizationsAuthorizationId`: AuthorizationResponse
+    // response from `PATCHAuthorizationsAuthorizationId`: PATCHAuthorizationsAuthorizationId200Response
     fmt.Fprintf(os.Stdout, "Response from `AuthorizationsApi.PATCHAuthorizationsAuthorizationId`: %v\n", resp)
 }
 ```
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AuthorizationResponse**](AuthorizationResponse.md)
+[**PATCHAuthorizationsAuthorizationId200Response**](PATCHAuthorizationsAuthorizationId200Response.md)
 
 ### Authorization
 

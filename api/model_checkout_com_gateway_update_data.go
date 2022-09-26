@@ -20,16 +20,16 @@ type CheckoutComGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    CheckoutComGatewayUpdateDataAttributes     `json:"attributes"`
-	Relationships *CheckoutComGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                `json:"id"`
+	Attributes    PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayCreateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes CheckoutComGatewayUpdateDataAttributes) *CheckoutComGatewayUpdateData {
+func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) *CheckoutComGatewayUpdateData {
 	this := CheckoutComGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CheckoutComGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateDataAttributes {
+func (o *CheckoutComGatewayUpdateData) GetAttributes() PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret CheckoutComGatewayUpdateDataAttributes
+		var ret PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpdateDataAttributes, bool) {
+func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpd
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComGatewayUpdateData) SetAttributes(v CheckoutComGatewayUpdateDataAttributes) {
+func (o *CheckoutComGatewayUpdateData) SetAttributes(v PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

@@ -764,7 +764,7 @@ type SkuListPromotionRulesApiGETSkuListPromotionRulesRequest struct {
 	ApiService *SkuListPromotionRulesApiService
 }
 
-func (r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) Execute() (*SkuListPromotionRuleResponseList, *http.Response, error) {
+func (r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) Execute() (*GETSkuListPromotionRules200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRulesExecute(r)
 }
 
@@ -784,13 +784,13 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRules(ctx context.C
 }
 
 // Execute executes the request
-//  @return SkuListPromotionRuleResponseList
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) (*SkuListPromotionRuleResponseList, *http.Response, error) {
+//  @return GETSkuListPromotionRules200Response
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesRequest) (*GETSkuListPromotionRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuListPromotionRuleResponseList
+		localVarReturnValue *GETSkuListPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETSkuListPromotionRules")
@@ -864,7 +864,7 @@ type SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdReque
 	skuListPromotionRuleId string
 }
 
-func (r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*SkuListPromotionRuleResponse, *http.Response, error) {
+func (r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*GETSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -886,13 +886,13 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 }
 
 // Execute executes the request
-//  @return SkuListPromotionRuleResponse
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*SkuListPromotionRuleResponse, *http.Response, error) {
+//  @return GETSkuListPromotionRulesSkuListPromotionRuleId200Response
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*GETSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuListPromotionRuleResponse
+		localVarReturnValue *GETSkuListPromotionRulesSkuListPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.GETSkuListPromotionRulesSkuListPromotionRuleId")
@@ -973,7 +973,7 @@ func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleId
 	return r
 }
 
-func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*SkuListPromotionRuleResponse, *http.Response, error) {
+func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -995,13 +995,13 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 }
 
 // Execute executes the request
-//  @return SkuListPromotionRuleResponse
-func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*SkuListPromotionRuleResponse, *http.Response, error) {
+//  @return POSTSkuListPromotionRules201Response
+func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuListPromotionRuleResponse
+		localVarReturnValue *POSTSkuListPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleId")
@@ -1086,7 +1086,7 @@ func (r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) SkuListPromoti
 	return r
 }
 
-func (r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) Execute() (*SkuListPromotionRuleResponse, *http.Response, error) {
+func (r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) Execute() (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.POSTSkuListPromotionRulesExecute(r)
 }
 
@@ -1106,13 +1106,13 @@ func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRules(ctx context.
 }
 
 // Execute executes the request
-//  @return SkuListPromotionRuleResponse
-func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) (*SkuListPromotionRuleResponse, *http.Response, error) {
+//  @return POSTSkuListPromotionRules201Response
+func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r SkuListPromotionRulesApiPOSTSkuListPromotionRulesRequest) (*POSTSkuListPromotionRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *SkuListPromotionRuleResponse
+		localVarReturnValue *POSTSkuListPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.POSTSkuListPromotionRules")

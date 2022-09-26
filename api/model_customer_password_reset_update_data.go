@@ -20,16 +20,16 @@ type CustomerPasswordResetUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                    `json:"id"`
-	Attributes    CustomerPasswordResetUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
+	Id            string                                                                      `json:"id"`
+	Attributes    PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                                      `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetUpdateData instantiates a new CustomerPasswordResetUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetUpdateData(type_ string, id string, attributes CustomerPasswordResetUpdateDataAttributes) *CustomerPasswordResetUpdateData {
+func NewCustomerPasswordResetUpdateData(type_ string, id string, attributes PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) *CustomerPasswordResetUpdateData {
 	this := CustomerPasswordResetUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CustomerPasswordResetUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPasswordResetUpdateData) GetAttributes() CustomerPasswordResetUpdateDataAttributes {
+func (o *CustomerPasswordResetUpdateData) GetAttributes() PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes {
 	if o == nil {
-		var ret CustomerPasswordResetUpdateDataAttributes
+		var ret PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CustomerPasswordResetUpdateData) GetAttributes() CustomerPasswordResetU
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetUpdateData) GetAttributesOk() (*CustomerPasswordResetUpdateDataAttributes, bool) {
+func (o *CustomerPasswordResetUpdateData) GetAttributesOk() (*PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CustomerPasswordResetUpdateData) GetAttributesOk() (*CustomerPasswordRe
 }
 
 // SetAttributes sets field value
-func (o *CustomerPasswordResetUpdateData) SetAttributes(v CustomerPasswordResetUpdateDataAttributes) {
+func (o *CustomerPasswordResetUpdateData) SetAttributes(v PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

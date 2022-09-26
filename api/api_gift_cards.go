@@ -120,7 +120,7 @@ type GiftCardsApiGETGiftCardsRequest struct {
 	ApiService *GiftCardsApiService
 }
 
-func (r GiftCardsApiGETGiftCardsRequest) Execute() (*GiftCardResponseList, *http.Response, error) {
+func (r GiftCardsApiGETGiftCardsRequest) Execute() (*GETGiftCards200Response, *http.Response, error) {
 	return r.ApiService.GETGiftCardsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *GiftCardsApiService) GETGiftCards(ctx context.Context) GiftCardsApiGETG
 }
 
 // Execute executes the request
-//  @return GiftCardResponseList
-func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequest) (*GiftCardResponseList, *http.Response, error) {
+//  @return GETGiftCards200Response
+func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequest) (*GETGiftCards200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GiftCardResponseList
+		localVarReturnValue *GETGiftCards200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.GETGiftCards")
@@ -220,7 +220,7 @@ type GiftCardsApiGETGiftCardsGiftCardIdRequest struct {
 	giftCardId string
 }
 
-func (r GiftCardsApiGETGiftCardsGiftCardIdRequest) Execute() (*GiftCardResponse, *http.Response, error) {
+func (r GiftCardsApiGETGiftCardsGiftCardIdRequest) Execute() (*GETGiftCardsGiftCardId200Response, *http.Response, error) {
 	return r.ApiService.GETGiftCardsGiftCardIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCa
 }
 
 // Execute executes the request
-//  @return GiftCardResponse
-func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGiftCardsGiftCardIdRequest) (*GiftCardResponse, *http.Response, error) {
+//  @return GETGiftCardsGiftCardId200Response
+func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGiftCardsGiftCardIdRequest) (*GETGiftCardsGiftCardId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GiftCardResponse
+		localVarReturnValue *GETGiftCardsGiftCardId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.GETGiftCardsGiftCardId")
@@ -329,7 +329,7 @@ func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpda
 	return r
 }
 
-func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) Execute() (*GiftCardResponse, *http.Response, error) {
+func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) Execute() (*PATCHGiftCardsGiftCardId200Response, *http.Response, error) {
 	return r.ApiService.PATCHGiftCardsGiftCardIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, gift
 }
 
 // Execute executes the request
-//  @return GiftCardResponse
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) (*GiftCardResponse, *http.Response, error) {
+//  @return PATCHGiftCardsGiftCardId200Response
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) (*PATCHGiftCardsGiftCardId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GiftCardResponse
+		localVarReturnValue *PATCHGiftCardsGiftCardId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.PATCHGiftCardsGiftCardId")
@@ -442,7 +442,7 @@ func (r GiftCardsApiPOSTGiftCardsRequest) GiftCardCreate(giftCardCreate GiftCard
 	return r
 }
 
-func (r GiftCardsApiPOSTGiftCardsRequest) Execute() (*GiftCardResponse, *http.Response, error) {
+func (r GiftCardsApiPOSTGiftCardsRequest) Execute() (*POSTGiftCards201Response, *http.Response, error) {
 	return r.ApiService.POSTGiftCardsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *GiftCardsApiService) POSTGiftCards(ctx context.Context) GiftCardsApiPOS
 }
 
 // Execute executes the request
-//  @return GiftCardResponse
-func (a *GiftCardsApiService) POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRequest) (*GiftCardResponse, *http.Response, error) {
+//  @return POSTGiftCards201Response
+func (a *GiftCardsApiService) POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRequest) (*POSTGiftCards201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GiftCardResponse
+		localVarReturnValue *POSTGiftCards201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardsApiService.POSTGiftCards")

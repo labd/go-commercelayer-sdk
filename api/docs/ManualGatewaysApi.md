@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETManualGateways
 
-> ManualGatewayResponseList GETManualGateways(ctx).Execute()
+> GETManualGateways200Response GETManualGateways(ctx).Execute()
 
 List all manual gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.GETManualGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualGateways`: ManualGatewayResponseList
+    // response from `GETManualGateways`: GETManualGateways200Response
     fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.GETManualGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETManualGatewaysRequest s
 
 ### Return type
 
-[**ManualGatewayResponseList**](ManualGatewayResponseList.md)
+[**GETManualGateways200Response**](GETManualGateways200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETManualGatewaysRequest s
 
 ## GETManualGatewaysManualGatewayId
 
-> ManualGatewayResponse GETManualGatewaysManualGatewayId(ctx, manualGatewayId).Execute()
+> GETManualGatewaysManualGatewayId200Response GETManualGatewaysManualGatewayId(ctx, manualGatewayId).Execute()
 
 Retrieve a manual gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.GETManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualGatewaysManualGatewayId`: ManualGatewayResponse
+    // response from `GETManualGatewaysManualGatewayId`: GETManualGatewaysManualGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.GETManualGatewaysManualGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualGatewayResponse**](ManualGatewayResponse.md)
+[**GETManualGatewaysManualGatewayId200Response**](GETManualGatewaysManualGatewayId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHManualGatewaysManualGatewayId
 
-> ManualGatewayResponse PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
+> PATCHManualGatewaysManualGatewayId200Response PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
 
 Update a manual gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewManualGatewayUpdateDataAttributes())) // ManualGatewayUpdate | 
+    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
     manualGatewayId := "manualGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.PATCHManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHManualGatewaysManualGatewayId`: ManualGatewayResponse
+    // response from `PATCHManualGatewaysManualGatewayId`: PATCHManualGatewaysManualGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.PATCHManualGatewaysManualGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualGatewayResponse**](ManualGatewayResponse.md)
+[**PATCHManualGatewaysManualGatewayId200Response**](PATCHManualGatewaysManualGatewayId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTManualGateways
 
-> ManualGatewayResponse POSTManualGateways(ctx).ManualGatewayCreate(manualGatewayCreate).Execute()
+> POSTManualGateways201Response POSTManualGateways(ctx).ManualGatewayCreate(manualGatewayCreate).Execute()
 
 Create a manual gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("Type_example", *openapiclient.NewManualGatewayCreateDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
+    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("Type_example", *openapiclient.NewPOSTManualGateways201ResponseDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.POSTManualGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTManualGateways`: ManualGatewayResponse
+    // response from `POSTManualGateways`: POSTManualGateways201Response
     fmt.Fprintf(os.Stdout, "Response from `ManualGatewaysApi.POSTManualGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ManualGatewayResponse**](ManualGatewayResponse.md)
+[**POSTManualGateways201Response**](POSTManualGateways201Response.md)
 
 ### Authorization
 

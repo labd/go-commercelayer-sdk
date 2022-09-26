@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETAvalaraAccounts
 
-> AvalaraAccountResponseList GETAvalaraAccounts(ctx).Execute()
+> GETAvalaraAccounts200Response GETAvalaraAccounts(ctx).Execute()
 
 List all avalara accounts
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.GETAvalaraAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAvalaraAccounts`: AvalaraAccountResponseList
+    // response from `GETAvalaraAccounts`: GETAvalaraAccounts200Response
     fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.GETAvalaraAccounts`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETAvalaraAccountsRequest 
 
 ### Return type
 
-[**AvalaraAccountResponseList**](AvalaraAccountResponseList.md)
+[**GETAvalaraAccounts200Response**](GETAvalaraAccounts200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETAvalaraAccountsRequest 
 
 ## GETAvalaraAccountsAvalaraAccountId
 
-> AvalaraAccountResponse GETAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).Execute()
+> GETAvalaraAccountsAvalaraAccountId200Response GETAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).Execute()
 
 Retrieve an avalara account
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.GETAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAvalaraAccountsAvalaraAccountId`: AvalaraAccountResponse
+    // response from `GETAvalaraAccountsAvalaraAccountId`: GETAvalaraAccountsAvalaraAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.GETAvalaraAccountsAvalaraAccountId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AvalaraAccountResponse**](AvalaraAccountResponse.md)
+[**GETAvalaraAccountsAvalaraAccountId200Response**](GETAvalaraAccountsAvalaraAccountId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAvalaraAccountsAvalaraAccountId
 
-> AvalaraAccountResponse PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
+> PATCHAvalaraAccountsAvalaraAccountId200Response PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
 
 Update an avalara account
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAvalaraAccountUpdateDataAttributes())) // AvalaraAccountUpdate | 
+    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
     avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAvalaraAccountsAvalaraAccountId`: AvalaraAccountResponse
+    // response from `PATCHAvalaraAccountsAvalaraAccountId`: PATCHAvalaraAccountsAvalaraAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AvalaraAccountResponse**](AvalaraAccountResponse.md)
+[**PATCHAvalaraAccountsAvalaraAccountId200Response**](PATCHAvalaraAccountsAvalaraAccountId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAvalaraAccounts
 
-> AvalaraAccountResponse POSTAvalaraAccounts(ctx).AvalaraAccountCreate(avalaraAccountCreate).Execute()
+> POSTAvalaraAccounts201Response POSTAvalaraAccounts(ctx).AvalaraAccountCreate(avalaraAccountCreate).Execute()
 
 Create an avalara account
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("Type_example", *openapiclient.NewAvalaraAccountCreateDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
+    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("Type_example", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.POSTAvalaraAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAvalaraAccounts`: AvalaraAccountResponse
+    // response from `POSTAvalaraAccounts`: POSTAvalaraAccounts201Response
     fmt.Fprintf(os.Stdout, "Response from `AvalaraAccountsApi.POSTAvalaraAccounts`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AvalaraAccountResponse**](AvalaraAccountResponse.md)
+[**POSTAvalaraAccounts201Response**](POSTAvalaraAccounts201Response.md)
 
 ### Authorization
 

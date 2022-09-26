@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETPromotions
 
-> PromotionResponseList GETPromotions(ctx).Execute()
+> GETPromotions200Response GETPromotions(ctx).Execute()
 
 List all promotions
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionsApi.GETPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotions`: PromotionResponseList
+    // response from `GETPromotions`: GETPromotions200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionsApi.GETPromotions`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETPromotionsRequest struc
 
 ### Return type
 
-[**PromotionResponseList**](PromotionResponseList.md)
+[**GETPromotions200Response**](GETPromotions200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETPromotionsRequest struc
 
 ## GETPromotionsPromotionId
 
-> PromotionResponse GETPromotionsPromotionId(ctx, promotionId).Execute()
+> GETPromotionsPromotionId200Response GETPromotionsPromotionId(ctx, promotionId).Execute()
 
 Retrieve a promotion
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionsApi.GETPromotionsPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionsPromotionId`: PromotionResponse
+    // response from `GETPromotionsPromotionId`: GETPromotionsPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionsApi.GETPromotionsPromotionId`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PromotionResponse**](PromotionResponse.md)
+[**GETPromotionsPromotionId200Response**](GETPromotionsPromotionId200Response.md)
 
 ### Authorization
 

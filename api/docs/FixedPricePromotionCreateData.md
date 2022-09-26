@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**FixedPricePromotionCreateDataAttributes**](FixedPricePromotionCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTFixedPricePromotions201ResponseDataAttributes**](POSTFixedPricePromotions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionCreateDataRelationships**](FixedPricePromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedPricePromotionCreateData
 
-`func NewFixedPricePromotionCreateData(type_ string, attributes FixedPricePromotionCreateDataAttributes, ) *FixedPricePromotionCreateData`
+`func NewFixedPricePromotionCreateData(type_ string, attributes POSTFixedPricePromotions201ResponseDataAttributes, ) *FixedPricePromotionCreateData`
 
 NewFixedPricePromotionCreateData instantiates a new FixedPricePromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *FixedPricePromotionCreateData) GetAttributes() FixedPricePromotionCreateDataAttributes`
+`func (o *FixedPricePromotionCreateData) GetAttributes() POSTFixedPricePromotions201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedPricePromotionCreateData) GetAttributesOk() (*FixedPricePromotionCreateDataAttributes, bool)`
+`func (o *FixedPricePromotionCreateData) GetAttributesOk() (*POSTFixedPricePromotions201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedPricePromotionCreateData) SetAttributes(v FixedPricePromotionCreateDataAttributes)`
+`func (o *FixedPricePromotionCreateData) SetAttributes(v POSTFixedPricePromotions201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

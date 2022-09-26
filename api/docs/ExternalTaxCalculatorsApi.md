@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETExternalTaxCalculators
 
-> ExternalTaxCalculatorResponseList GETExternalTaxCalculators(ctx).Execute()
+> GETExternalTaxCalculators200Response GETExternalTaxCalculators(ctx).Execute()
 
 List all external tax calculators
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.GETExternalTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalTaxCalculators`: ExternalTaxCalculatorResponseList
+    // response from `GETExternalTaxCalculators`: GETExternalTaxCalculators200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalTaxCalculatorsApi.GETExternalTaxCalculators`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETExternalTaxCalculatorsR
 
 ### Return type
 
-[**ExternalTaxCalculatorResponseList**](ExternalTaxCalculatorResponseList.md)
+[**GETExternalTaxCalculators200Response**](GETExternalTaxCalculators200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETExternalTaxCalculatorsR
 
 ## GETExternalTaxCalculatorsExternalTaxCalculatorId
 
-> ExternalTaxCalculatorResponse GETExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).Execute()
+> GETExternalTaxCalculatorsExternalTaxCalculatorId200Response GETExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).Execute()
 
 Retrieve an external tax calculator
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.GETExternalTaxCalculatorsExternalTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalTaxCalculatorsExternalTaxCalculatorId`: ExternalTaxCalculatorResponse
+    // response from `GETExternalTaxCalculatorsExternalTaxCalculatorId`: GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalTaxCalculatorsApi.GETExternalTaxCalculatorsExternalTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalTaxCalculatorResponse**](ExternalTaxCalculatorResponse.md)
+[**GETExternalTaxCalculatorsExternalTaxCalculatorId200Response**](GETExternalTaxCalculatorsExternalTaxCalculatorId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalTaxCalculatorsExternalTaxCalculatorId
 
-> ExternalTaxCalculatorResponse PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate).Execute()
+> PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate).Execute()
 
 Update an external tax calculator
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewExternalTaxCalculatorUpdateDataAttributes())) // ExternalTaxCalculatorUpdate | 
+    externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes())) // ExternalTaxCalculatorUpdate | 
     externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.PATCHExternalTaxCalculatorsExternalTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHExternalTaxCalculatorsExternalTaxCalculatorId`: ExternalTaxCalculatorResponse
+    // response from `PATCHExternalTaxCalculatorsExternalTaxCalculatorId`: PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalTaxCalculatorsApi.PATCHExternalTaxCalculatorsExternalTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalTaxCalculatorResponse**](ExternalTaxCalculatorResponse.md)
+[**PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response**](PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalTaxCalculators
 
-> ExternalTaxCalculatorResponse POSTExternalTaxCalculators(ctx).ExternalTaxCalculatorCreate(externalTaxCalculatorCreate).Execute()
+> POSTExternalTaxCalculators201Response POSTExternalTaxCalculators(ctx).ExternalTaxCalculatorCreate(externalTaxCalculatorCreate).Execute()
 
 Create an external tax calculator
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalTaxCalculatorCreate := *openapiclient.NewExternalTaxCalculatorCreate(*openapiclient.NewExternalTaxCalculatorCreateData("Type_example", *openapiclient.NewExternalTaxCalculatorCreateDataAttributes("Personal tax calculator", "https://external_calculator.yourbrand.com"))) // ExternalTaxCalculatorCreate | 
+    externalTaxCalculatorCreate := *openapiclient.NewExternalTaxCalculatorCreate(*openapiclient.NewExternalTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTExternalTaxCalculators201ResponseDataAttributes("Personal tax calculator", "https://external_calculator.yourbrand.com"))) // ExternalTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.POSTExternalTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTExternalTaxCalculators`: ExternalTaxCalculatorResponse
+    // response from `POSTExternalTaxCalculators`: POSTExternalTaxCalculators201Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalTaxCalculatorsApi.POSTExternalTaxCalculators`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalTaxCalculatorResponse**](ExternalTaxCalculatorResponse.md)
+[**POSTExternalTaxCalculators201Response**](POSTExternalTaxCalculators201Response.md)
 
 ### Authorization
 

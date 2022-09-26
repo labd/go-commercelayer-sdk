@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETExternalPayments
 
-> ExternalPaymentResponseList GETExternalPayments(ctx).Execute()
+> GETExternalPayments200Response GETExternalPayments(ctx).Execute()
 
 List all external payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.GETExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPayments`: ExternalPaymentResponseList
+    // response from `GETExternalPayments`: GETExternalPayments200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.GETExternalPayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETExternalPaymentsRequest
 
 ### Return type
 
-[**ExternalPaymentResponseList**](ExternalPaymentResponseList.md)
+[**GETExternalPayments200Response**](GETExternalPayments200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETExternalPaymentsRequest
 
 ## GETExternalPaymentsExternalPaymentId
 
-> ExternalPaymentResponse GETExternalPaymentsExternalPaymentId(ctx, externalPaymentId).Execute()
+> GETExternalPaymentsExternalPaymentId200Response GETExternalPaymentsExternalPaymentId(ctx, externalPaymentId).Execute()
 
 Retrieve an external payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.GETExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPaymentsExternalPaymentId`: ExternalPaymentResponse
+    // response from `GETExternalPaymentsExternalPaymentId`: GETExternalPaymentsExternalPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.GETExternalPaymentsExternalPaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalPaymentResponse**](ExternalPaymentResponse.md)
+[**GETExternalPaymentsExternalPaymentId200Response**](GETExternalPaymentsExternalPaymentId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalPaymentsExternalPaymentId
 
-> ExternalPaymentResponse PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
+> PATCHExternalPaymentsExternalPaymentId200Response PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
 
 Update an external payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewExternalPaymentUpdateDataAttributes())) // ExternalPaymentUpdate | 
+    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes())) // ExternalPaymentUpdate | 
     externalPaymentId := "externalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHExternalPaymentsExternalPaymentId`: ExternalPaymentResponse
+    // response from `PATCHExternalPaymentsExternalPaymentId`: PATCHExternalPaymentsExternalPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalPaymentResponse**](ExternalPaymentResponse.md)
+[**PATCHExternalPaymentsExternalPaymentId200Response**](PATCHExternalPaymentsExternalPaymentId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalPayments
 
-> ExternalPaymentResponse POSTExternalPayments(ctx).ExternalPaymentCreate(externalPaymentCreate).Execute()
+> POSTExternalPayments201Response POSTExternalPayments(ctx).ExternalPaymentCreate(externalPaymentCreate).Execute()
 
 Create an external payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("Type_example", *openapiclient.NewExternalPaymentCreateDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
+    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("Type_example", *openapiclient.NewPOSTExternalPayments201ResponseDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.POSTExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTExternalPayments`: ExternalPaymentResponse
+    // response from `POSTExternalPayments`: POSTExternalPayments201Response
     fmt.Fprintf(os.Stdout, "Response from `ExternalPaymentsApi.POSTExternalPayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExternalPaymentResponse**](ExternalPaymentResponse.md)
+[**POSTExternalPayments201Response**](POSTExternalPayments201Response.md)
 
 ### Authorization
 

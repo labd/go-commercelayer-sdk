@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**FreeShippingPromotionDataAttributes**](FreeShippingPromotionDataAttributes.md) |  | 
+**Attributes** | [**GETFreeShippingPromotions200ResponseDataInnerAttributes**](GETFreeShippingPromotions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFreeShippingPromotionData
 
-`func NewFreeShippingPromotionData(type_ string, attributes FreeShippingPromotionDataAttributes, ) *FreeShippingPromotionData`
+`func NewFreeShippingPromotionData(type_ string, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes, ) *FreeShippingPromotionData`
 
 NewFreeShippingPromotionData instantiates a new FreeShippingPromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *FreeShippingPromotionData) GetAttributes() FreeShippingPromotionDataAttributes`
+`func (o *FreeShippingPromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FreeShippingPromotionData) GetAttributesOk() (*FreeShippingPromotionDataAttributes, bool)`
+`func (o *FreeShippingPromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FreeShippingPromotionData) SetAttributes(v FreeShippingPromotionDataAttributes)`
+`func (o *FreeShippingPromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

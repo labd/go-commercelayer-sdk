@@ -120,7 +120,7 @@ type FixedPricePromotionsApiGETFixedPricePromotionsRequest struct {
 	ApiService *FixedPricePromotionsApiService
 }
 
-func (r FixedPricePromotionsApiGETFixedPricePromotionsRequest) Execute() (*FixedPricePromotionResponseList, *http.Response, error) {
+func (r FixedPricePromotionsApiGETFixedPricePromotionsRequest) Execute() (*GETFixedPricePromotions200Response, *http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotions(ctx context.Con
 }
 
 // Execute executes the request
-//  @return FixedPricePromotionResponseList
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedPricePromotionsApiGETFixedPricePromotionsRequest) (*FixedPricePromotionResponseList, *http.Response, error) {
+//  @return GETFixedPricePromotions200Response
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedPricePromotionsApiGETFixedPricePromotionsRequest) (*GETFixedPricePromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedPricePromotionResponseList
+		localVarReturnValue *GETFixedPricePromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.GETFixedPricePromotions")
@@ -220,7 +220,7 @@ type FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest 
 	fixedPricePromotionId string
 }
 
-func (r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*FixedPricePromotionResponse, *http.Response, error) {
+func (r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*GETFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	return r.ApiService.GETFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 }
 
 // Execute executes the request
-//  @return FixedPricePromotionResponse
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotionResponse, *http.Response, error) {
+//  @return GETFixedPricePromotionsFixedPricePromotionId200Response
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) (*GETFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedPricePromotionResponse
+		localVarReturnValue *GETFixedPricePromotionsFixedPricePromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.GETFixedPricePromotionsFixedPricePromotionId")
@@ -329,7 +329,7 @@ func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdReq
 	return r
 }
 
-func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*FixedPricePromotionResponse, *http.Response, error) {
+func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*PATCHFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 }
 
 // Execute executes the request
-//  @return FixedPricePromotionResponse
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*FixedPricePromotionResponse, *http.Response, error) {
+//  @return PATCHFixedPricePromotionsFixedPricePromotionId200Response
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionIdExecute(r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) (*PATCHFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedPricePromotionResponse
+		localVarReturnValue *PATCHFixedPricePromotionsFixedPricePromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.PATCHFixedPricePromotionsFixedPricePromotionId")
@@ -442,7 +442,7 @@ func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) FixedPricePromot
 	return r
 }
 
-func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) Execute() (*FixedPricePromotionResponse, *http.Response, error) {
+func (r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) Execute() (*POSTFixedPricePromotions201Response, *http.Response, error) {
 	return r.ApiService.POSTFixedPricePromotionsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotions(ctx context.Co
 }
 
 // Execute executes the request
-//  @return FixedPricePromotionResponse
-func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) (*FixedPricePromotionResponse, *http.Response, error) {
+//  @return POSTFixedPricePromotions201Response
+func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r FixedPricePromotionsApiPOSTFixedPricePromotionsRequest) (*POSTFixedPricePromotions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedPricePromotionResponse
+		localVarReturnValue *POSTFixedPricePromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedPricePromotionsApiService.POSTFixedPricePromotions")

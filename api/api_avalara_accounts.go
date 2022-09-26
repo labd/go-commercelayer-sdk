@@ -120,7 +120,7 @@ type AvalaraAccountsApiGETAvalaraAccountsRequest struct {
 	ApiService *AvalaraAccountsApiService
 }
 
-func (r AvalaraAccountsApiGETAvalaraAccountsRequest) Execute() (*AvalaraAccountResponseList, *http.Response, error) {
+func (r AvalaraAccountsApiGETAvalaraAccountsRequest) Execute() (*GETAvalaraAccounts200Response, *http.Response, error) {
 	return r.ApiService.GETAvalaraAccountsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccounts(ctx context.Context) Aval
 }
 
 // Execute executes the request
-//  @return AvalaraAccountResponseList
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsApiGETAvalaraAccountsRequest) (*AvalaraAccountResponseList, *http.Response, error) {
+//  @return GETAvalaraAccounts200Response
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsApiGETAvalaraAccountsRequest) (*GETAvalaraAccounts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AvalaraAccountResponseList
+		localVarReturnValue *GETAvalaraAccounts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvalaraAccountsApiService.GETAvalaraAccounts")
@@ -220,7 +220,7 @@ type AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest struct {
 	avalaraAccountId string
 }
 
-func (r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) Execute() (*AvalaraAccountResponse, *http.Response, error) {
+func (r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) Execute() (*GETAvalaraAccountsAvalaraAccountId200Response, *http.Response, error) {
 	return r.ApiService.GETAvalaraAccountsAvalaraAccountIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx conte
 }
 
 // Execute executes the request
-//  @return AvalaraAccountResponse
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) (*AvalaraAccountResponse, *http.Response, error) {
+//  @return GETAvalaraAccountsAvalaraAccountId200Response
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) (*GETAvalaraAccountsAvalaraAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AvalaraAccountResponse
+		localVarReturnValue *GETAvalaraAccountsAvalaraAccountId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvalaraAccountsApiService.GETAvalaraAccountsAvalaraAccountId")
@@ -329,7 +329,7 @@ func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) AvalaraAc
 	return r
 }
 
-func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) Execute() (*AvalaraAccountResponse, *http.Response, error) {
+func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) Execute() (*PATCHAvalaraAccountsAvalaraAccountId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAvalaraAccountsAvalaraAccountIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx con
 }
 
 // Execute executes the request
-//  @return AvalaraAccountResponse
-func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) (*AvalaraAccountResponse, *http.Response, error) {
+//  @return PATCHAvalaraAccountsAvalaraAccountId200Response
+func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) (*PATCHAvalaraAccountsAvalaraAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AvalaraAccountResponse
+		localVarReturnValue *PATCHAvalaraAccountsAvalaraAccountId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvalaraAccountsApiService.PATCHAvalaraAccountsAvalaraAccountId")
@@ -442,7 +442,7 @@ func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) AvalaraAccountCreate(avala
 	return r
 }
 
-func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) Execute() (*AvalaraAccountResponse, *http.Response, error) {
+func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) Execute() (*POSTAvalaraAccounts201Response, *http.Response, error) {
 	return r.ApiService.POSTAvalaraAccountsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *AvalaraAccountsApiService) POSTAvalaraAccounts(ctx context.Context) Ava
 }
 
 // Execute executes the request
-//  @return AvalaraAccountResponse
-func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccountsApiPOSTAvalaraAccountsRequest) (*AvalaraAccountResponse, *http.Response, error) {
+//  @return POSTAvalaraAccounts201Response
+func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccountsApiPOSTAvalaraAccountsRequest) (*POSTAvalaraAccounts201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AvalaraAccountResponse
+		localVarReturnValue *POSTAvalaraAccounts201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AvalaraAccountsApiService.POSTAvalaraAccounts")

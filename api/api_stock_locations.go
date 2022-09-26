@@ -856,7 +856,7 @@ type StockLocationsApiGETStockLocationsRequest struct {
 	ApiService *StockLocationsApiService
 }
 
-func (r StockLocationsApiGETStockLocationsRequest) Execute() (*StockLocationResponseList, *http.Response, error) {
+func (r StockLocationsApiGETStockLocationsRequest) Execute() (*GETStockLocations200Response, *http.Response, error) {
 	return r.ApiService.GETStockLocationsExecute(r)
 }
 
@@ -876,13 +876,13 @@ func (a *StockLocationsApiService) GETStockLocations(ctx context.Context) StockL
 }
 
 // Execute executes the request
-//  @return StockLocationResponseList
-func (a *StockLocationsApiService) GETStockLocationsExecute(r StockLocationsApiGETStockLocationsRequest) (*StockLocationResponseList, *http.Response, error) {
+//  @return GETStockLocations200Response
+func (a *StockLocationsApiService) GETStockLocationsExecute(r StockLocationsApiGETStockLocationsRequest) (*GETStockLocations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLocationResponseList
+		localVarReturnValue *GETStockLocations200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.GETStockLocations")
@@ -956,7 +956,7 @@ type StockLocationsApiGETStockLocationsStockLocationIdRequest struct {
 	stockLocationId string
 }
 
-func (r StockLocationsApiGETStockLocationsStockLocationIdRequest) Execute() (*StockLocationResponse, *http.Response, error) {
+func (r StockLocationsApiGETStockLocationsStockLocationIdRequest) Execute() (*GETStockLocationsStockLocationId200Response, *http.Response, error) {
 	return r.ApiService.GETStockLocationsStockLocationIdExecute(r)
 }
 
@@ -978,13 +978,13 @@ func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.
 }
 
 // Execute executes the request
-//  @return StockLocationResponse
-func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r StockLocationsApiGETStockLocationsStockLocationIdRequest) (*StockLocationResponse, *http.Response, error) {
+//  @return GETStockLocationsStockLocationId200Response
+func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r StockLocationsApiGETStockLocationsStockLocationIdRequest) (*GETStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLocationResponse
+		localVarReturnValue *GETStockLocationsStockLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.GETStockLocationsStockLocationId")
@@ -1249,7 +1249,7 @@ func (r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) StockLocatio
 	return r
 }
 
-func (r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) Execute() (*StockLocationResponse, *http.Response, error) {
+func (r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) Execute() (*PATCHStockLocationsStockLocationId200Response, *http.Response, error) {
 	return r.ApiService.PATCHStockLocationsStockLocationIdExecute(r)
 }
 
@@ -1271,13 +1271,13 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx contex
 }
 
 // Execute executes the request
-//  @return StockLocationResponse
-func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) (*StockLocationResponse, *http.Response, error) {
+//  @return PATCHStockLocationsStockLocationId200Response
+func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) (*PATCHStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLocationResponse
+		localVarReturnValue *PATCHStockLocationsStockLocationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.PATCHStockLocationsStockLocationId")
@@ -1362,7 +1362,7 @@ func (r StockLocationsApiPOSTStockLocationsRequest) StockLocationCreate(stockLoc
 	return r
 }
 
-func (r StockLocationsApiPOSTStockLocationsRequest) Execute() (*StockLocationResponse, *http.Response, error) {
+func (r StockLocationsApiPOSTStockLocationsRequest) Execute() (*POSTStockLocations201Response, *http.Response, error) {
 	return r.ApiService.POSTStockLocationsExecute(r)
 }
 
@@ -1382,13 +1382,13 @@ func (a *StockLocationsApiService) POSTStockLocations(ctx context.Context) Stock
 }
 
 // Execute executes the request
-//  @return StockLocationResponse
-func (a *StockLocationsApiService) POSTStockLocationsExecute(r StockLocationsApiPOSTStockLocationsRequest) (*StockLocationResponse, *http.Response, error) {
+//  @return POSTStockLocations201Response
+func (a *StockLocationsApiService) POSTStockLocationsExecute(r StockLocationsApiPOSTStockLocationsRequest) (*POSTStockLocations201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLocationResponse
+		localVarReturnValue *POSTStockLocations201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLocationsApiService.POSTStockLocations")

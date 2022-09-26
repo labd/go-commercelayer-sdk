@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**ManualTaxCalculatorDataAttributes**](ManualTaxCalculatorDataAttributes.md) |  | 
+**Attributes** | [**GETManualTaxCalculators200ResponseDataInnerAttributes**](GETManualTaxCalculators200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCalculatorData
 
-`func NewTaxCalculatorData(type_ string, attributes ManualTaxCalculatorDataAttributes, ) *TaxCalculatorData`
+`func NewTaxCalculatorData(type_ string, attributes GETManualTaxCalculators200ResponseDataInnerAttributes, ) *TaxCalculatorData`
 
 NewTaxCalculatorData instantiates a new TaxCalculatorData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCalculatorData) GetAttributes() ManualTaxCalculatorDataAttributes`
+`func (o *TaxCalculatorData) GetAttributes() GETManualTaxCalculators200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCalculatorData) GetAttributesOk() (*ManualTaxCalculatorDataAttributes, bool)`
+`func (o *TaxCalculatorData) GetAttributesOk() (*GETManualTaxCalculators200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCalculatorData) SetAttributes(v ManualTaxCalculatorDataAttributes)`
+`func (o *TaxCalculatorData) SetAttributes(v GETManualTaxCalculators200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

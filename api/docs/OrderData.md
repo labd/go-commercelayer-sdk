@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**OrderDataAttributes**](OrderDataAttributes.md) |  | 
+**Attributes** | [**GETOrders200ResponseDataInnerAttributes**](GETOrders200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderDataRelationships**](OrderDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderData
 
-`func NewOrderData(type_ string, attributes OrderDataAttributes, ) *OrderData`
+`func NewOrderData(type_ string, attributes GETOrders200ResponseDataInnerAttributes, ) *OrderData`
 
 NewOrderData instantiates a new OrderData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *OrderData) GetAttributes() OrderDataAttributes`
+`func (o *OrderData) GetAttributes() GETOrders200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderData) GetAttributesOk() (*OrderDataAttributes, bool)`
+`func (o *OrderData) GetAttributesOk() (*GETOrders200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderData) SetAttributes(v OrderDataAttributes)`
+`func (o *OrderData) SetAttributes(v GETOrders200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

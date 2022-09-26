@@ -212,7 +212,7 @@ type CustomerSubscriptionsApiGETCustomerSubscriptionsRequest struct {
 	ApiService *CustomerSubscriptionsApiService
 }
 
-func (r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) Execute() (*CustomerSubscriptionResponseList, *http.Response, error) {
+func (r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) Execute() (*GETCustomerSubscriptions200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptions(ctx context.C
 }
 
 // Execute executes the request
-//  @return CustomerSubscriptionResponseList
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) (*CustomerSubscriptionResponseList, *http.Response, error) {
+//  @return GETCustomerSubscriptions200Response
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) (*GETCustomerSubscriptions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerSubscriptionResponseList
+		localVarReturnValue *GETCustomerSubscriptions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerSubscriptionsApiService.GETCustomerSubscriptions")
@@ -312,7 +312,7 @@ type CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdReque
 	customerSubscriptionId string
 }
 
-func (r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*CustomerSubscriptionResponse, *http.Response, error) {
+func (r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*GETCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	return r.ApiService.GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 }
 
 // Execute executes the request
-//  @return CustomerSubscriptionResponse
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscriptionResponse, *http.Response, error) {
+//  @return GETCustomerSubscriptionsCustomerSubscriptionId200Response
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*GETCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerSubscriptionResponse
+		localVarReturnValue *GETCustomerSubscriptionsCustomerSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerSubscriptionsApiService.GETCustomerSubscriptionsCustomerSubscriptionId")
@@ -421,7 +421,7 @@ func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionId
 	return r
 }
 
-func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*CustomerSubscriptionResponse, *http.Response, error) {
+func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*PATCHCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 }
 
 // Execute executes the request
-//  @return CustomerSubscriptionResponse
-func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*CustomerSubscriptionResponse, *http.Response, error) {
+//  @return PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
+func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*PATCHCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerSubscriptionResponse
+		localVarReturnValue *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerSubscriptionsApiService.PATCHCustomerSubscriptionsCustomerSubscriptionId")
@@ -534,7 +534,7 @@ func (r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) CustomerSubscr
 	return r
 }
 
-func (r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) Execute() (*CustomerSubscriptionResponse, *http.Response, error) {
+func (r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) Execute() (*POSTCustomerSubscriptions201Response, *http.Response, error) {
 	return r.ApiService.POSTCustomerSubscriptionsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptions(ctx context.
 }
 
 // Execute executes the request
-//  @return CustomerSubscriptionResponse
-func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) (*CustomerSubscriptionResponse, *http.Response, error) {
+//  @return POSTCustomerSubscriptions201Response
+func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) (*POSTCustomerSubscriptions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerSubscriptionResponse
+		localVarReturnValue *POSTCustomerSubscriptions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerSubscriptionsApiService.POSTCustomerSubscriptions")

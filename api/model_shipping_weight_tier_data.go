@@ -18,16 +18,16 @@ import (
 // ShippingWeightTierData struct for ShippingWeightTierData
 type ShippingWeightTierData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    ShippingMethodTierDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodTierDataRelationships `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETShippingMethodTiers200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ShippingMethodTierDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierData instantiates a new ShippingWeightTierData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierData(type_ string, attributes ShippingMethodTierDataAttributes) *ShippingWeightTierData {
+func NewShippingWeightTierData(type_ string, attributes GETShippingMethodTiers200ResponseDataInnerAttributes) *ShippingWeightTierData {
 	this := ShippingWeightTierData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ShippingWeightTierData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingWeightTierData) GetAttributes() ShippingMethodTierDataAttributes {
+func (o *ShippingWeightTierData) GetAttributes() GETShippingMethodTiers200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShippingMethodTierDataAttributes
+		var ret GETShippingMethodTiers200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ShippingWeightTierData) GetAttributes() ShippingMethodTierDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierData) GetAttributesOk() (*ShippingMethodTierDataAttributes, bool) {
+func (o *ShippingWeightTierData) GetAttributesOk() (*GETShippingMethodTiers200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ShippingWeightTierData) GetAttributesOk() (*ShippingMethodTierDataAttri
 }
 
 // SetAttributes sets field value
-func (o *ShippingWeightTierData) SetAttributes(v ShippingMethodTierDataAttributes) {
+func (o *ShippingWeightTierData) SetAttributes(v GETShippingMethodTiers200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

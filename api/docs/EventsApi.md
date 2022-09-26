@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GETEvents
 
-> EventResponseList GETEvents(ctx).Execute()
+> GETEvents200Response GETEvents(ctx).Execute()
 
 List all events
 
@@ -326,7 +326,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEvents`: EventResponseList
+    // response from `GETEvents`: GETEvents200Response
     fmt.Fprintf(os.Stdout, "Response from `EventsApi.GETEvents`: %v\n", resp)
 }
 ```
@@ -342,7 +342,7 @@ Other parameters are passed through a pointer to a apiGETEventsRequest struct vi
 
 ### Return type
 
-[**EventResponseList**](EventResponseList.md)
+[**GETEvents200Response**](GETEvents200Response.md)
 
 ### Authorization
 
@@ -360,7 +360,7 @@ Other parameters are passed through a pointer to a apiGETEventsRequest struct vi
 
 ## GETEventsEventId
 
-> EventResponse GETEventsEventId(ctx, eventId).Execute()
+> GETEventsEventId200Response GETEventsEventId(ctx, eventId).Execute()
 
 Retrieve an event
 
@@ -388,7 +388,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETEventsEventId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEventsEventId`: EventResponse
+    // response from `GETEventsEventId`: GETEventsEventId200Response
     fmt.Fprintf(os.Stdout, "Response from `EventsApi.GETEventsEventId`: %v\n", resp)
 }
 ```
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventResponse**](EventResponse.md)
+[**GETEventsEventId200Response**](GETEventsEventId200Response.md)
 
 ### Authorization
 

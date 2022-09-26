@@ -304,7 +304,7 @@ type ParcelsApiGETParcelsRequest struct {
 	ApiService *ParcelsApiService
 }
 
-func (r ParcelsApiGETParcelsRequest) Execute() (*ParcelResponseList, *http.Response, error) {
+func (r ParcelsApiGETParcelsRequest) Execute() (*GETParcels200Response, *http.Response, error) {
 	return r.ApiService.GETParcelsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *ParcelsApiService) GETParcels(ctx context.Context) ParcelsApiGETParcels
 }
 
 // Execute executes the request
-//  @return ParcelResponseList
-func (a *ParcelsApiService) GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*ParcelResponseList, *http.Response, error) {
+//  @return GETParcels200Response
+func (a *ParcelsApiService) GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*GETParcels200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ParcelResponseList
+		localVarReturnValue *GETParcels200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelsApiService.GETParcels")
@@ -404,7 +404,7 @@ type ParcelsApiGETParcelsParcelIdRequest struct {
 	parcelId   string
 }
 
-func (r ParcelsApiGETParcelsParcelIdRequest) Execute() (*ParcelResponse, *http.Response, error) {
+func (r ParcelsApiGETParcelsParcelIdRequest) Execute() (*GETParcelsParcelId200Response, *http.Response, error) {
 	return r.ApiService.GETParcelsParcelIdExecute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId str
 }
 
 // Execute executes the request
-//  @return ParcelResponse
-func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParcelIdRequest) (*ParcelResponse, *http.Response, error) {
+//  @return GETParcelsParcelId200Response
+func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParcelIdRequest) (*GETParcelsParcelId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ParcelResponse
+		localVarReturnValue *GETParcelsParcelId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelsApiService.GETParcelsParcelId")
@@ -605,7 +605,7 @@ func (r ParcelsApiPATCHParcelsParcelIdRequest) ParcelUpdate(parcelUpdate ParcelU
 	return r
 }
 
-func (r ParcelsApiPATCHParcelsParcelIdRequest) Execute() (*ParcelResponse, *http.Response, error) {
+func (r ParcelsApiPATCHParcelsParcelIdRequest) Execute() (*PATCHParcelsParcelId200Response, *http.Response, error) {
 	return r.ApiService.PATCHParcelsParcelIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId s
 }
 
 // Execute executes the request
-//  @return ParcelResponse
-func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcelsParcelIdRequest) (*ParcelResponse, *http.Response, error) {
+//  @return PATCHParcelsParcelId200Response
+func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcelsParcelIdRequest) (*PATCHParcelsParcelId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ParcelResponse
+		localVarReturnValue *PATCHParcelsParcelId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelsApiService.PATCHParcelsParcelId")
@@ -718,7 +718,7 @@ func (r ParcelsApiPOSTParcelsRequest) ParcelCreate(parcelCreate ParcelCreate) Pa
 	return r
 }
 
-func (r ParcelsApiPOSTParcelsRequest) Execute() (*ParcelResponse, *http.Response, error) {
+func (r ParcelsApiPOSTParcelsRequest) Execute() (*POSTParcels201Response, *http.Response, error) {
 	return r.ApiService.POSTParcelsExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *ParcelsApiService) POSTParcels(ctx context.Context) ParcelsApiPOSTParce
 }
 
 // Execute executes the request
-//  @return ParcelResponse
-func (a *ParcelsApiService) POSTParcelsExecute(r ParcelsApiPOSTParcelsRequest) (*ParcelResponse, *http.Response, error) {
+//  @return POSTParcels201Response
+func (a *ParcelsApiService) POSTParcelsExecute(r ParcelsApiPOSTParcelsRequest) (*POSTParcels201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ParcelResponse
+		localVarReturnValue *POSTParcels201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ParcelsApiService.POSTParcels")

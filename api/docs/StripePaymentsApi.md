@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETStripePayments
 
-> StripePaymentResponseList GETStripePayments(ctx).Execute()
+> GETStripePayments200Response GETStripePayments(ctx).Execute()
 
 List all stripe payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.GETStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStripePayments`: StripePaymentResponseList
+    // response from `GETStripePayments`: GETStripePayments200Response
     fmt.Fprintf(os.Stdout, "Response from `StripePaymentsApi.GETStripePayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETStripePaymentsRequest s
 
 ### Return type
 
-[**StripePaymentResponseList**](StripePaymentResponseList.md)
+[**GETStripePayments200Response**](GETStripePayments200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETStripePaymentsRequest s
 
 ## GETStripePaymentsStripePaymentId
 
-> StripePaymentResponse GETStripePaymentsStripePaymentId(ctx, stripePaymentId).Execute()
+> GETStripePaymentsStripePaymentId200Response GETStripePaymentsStripePaymentId(ctx, stripePaymentId).Execute()
 
 Retrieve a stripe payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.GETStripePaymentsStripePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStripePaymentsStripePaymentId`: StripePaymentResponse
+    // response from `GETStripePaymentsStripePaymentId`: GETStripePaymentsStripePaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `StripePaymentsApi.GETStripePaymentsStripePaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripePaymentResponse**](StripePaymentResponse.md)
+[**GETStripePaymentsStripePaymentId200Response**](GETStripePaymentsStripePaymentId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStripePaymentsStripePaymentId
 
-> StripePaymentResponse PATCHStripePaymentsStripePaymentId(ctx, stripePaymentId).StripePaymentUpdate(stripePaymentUpdate).Execute()
+> PATCHStripePaymentsStripePaymentId200Response PATCHStripePaymentsStripePaymentId(ctx, stripePaymentId).StripePaymentUpdate(stripePaymentUpdate).Execute()
 
 Update a stripe payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewStripePaymentUpdateDataAttributes())) // StripePaymentUpdate | 
+    stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStripePaymentsStripePaymentId200ResponseDataAttributes())) // StripePaymentUpdate | 
     stripePaymentId := "stripePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.PATCHStripePaymentsStripePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHStripePaymentsStripePaymentId`: StripePaymentResponse
+    // response from `PATCHStripePaymentsStripePaymentId`: PATCHStripePaymentsStripePaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `StripePaymentsApi.PATCHStripePaymentsStripePaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripePaymentResponse**](StripePaymentResponse.md)
+[**PATCHStripePaymentsStripePaymentId200Response**](PATCHStripePaymentsStripePaymentId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTStripePayments
 
-> StripePaymentResponse POSTStripePayments(ctx).StripePaymentCreate(stripePaymentCreate).Execute()
+> POSTStripePayments201Response POSTStripePayments(ctx).StripePaymentCreate(stripePaymentCreate).Execute()
 
 Create a stripe payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    stripePaymentCreate := *openapiclient.NewStripePaymentCreate(*openapiclient.NewStripePaymentCreateData("Type_example", *openapiclient.NewStripePaymentCreateDataAttributes())) // StripePaymentCreate | 
+    stripePaymentCreate := *openapiclient.NewStripePaymentCreate(*openapiclient.NewStripePaymentCreateData("Type_example", *openapiclient.NewPOSTStripePayments201ResponseDataAttributes())) // StripePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.POSTStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTStripePayments`: StripePaymentResponse
+    // response from `POSTStripePayments`: POSTStripePayments201Response
     fmt.Fprintf(os.Stdout, "Response from `StripePaymentsApi.POSTStripePayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripePaymentResponse**](StripePaymentResponse.md)
+[**POSTStripePayments201Response**](POSTStripePayments201Response.md)
 
 ### Authorization
 

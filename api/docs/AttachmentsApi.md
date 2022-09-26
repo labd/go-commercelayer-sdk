@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ## GETAttachments
 
-> AttachmentResponseList GETAttachments(ctx).Execute()
+> GETAttachments200Response GETAttachments(ctx).Execute()
 
 List all attachments
 
@@ -155,7 +155,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAttachments`: AttachmentResponseList
+    // response from `GETAttachments`: GETAttachments200Response
     fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.GETAttachments`: %v\n", resp)
 }
 ```
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiGETAttachmentsRequest stru
 
 ### Return type
 
-[**AttachmentResponseList**](AttachmentResponseList.md)
+[**GETAttachments200Response**](GETAttachments200Response.md)
 
 ### Authorization
 
@@ -189,7 +189,7 @@ Other parameters are passed through a pointer to a apiGETAttachmentsRequest stru
 
 ## GETAttachmentsAttachmentId
 
-> AttachmentResponse GETAttachmentsAttachmentId(ctx, attachmentId).Execute()
+> GETAttachmentsAttachmentId200Response GETAttachmentsAttachmentId(ctx, attachmentId).Execute()
 
 Retrieve an attachment
 
@@ -217,7 +217,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAttachmentsAttachmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAttachmentsAttachmentId`: AttachmentResponse
+    // response from `GETAttachmentsAttachmentId`: GETAttachmentsAttachmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.GETAttachmentsAttachmentId`: %v\n", resp)
 }
 ```
@@ -241,7 +241,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttachmentResponse**](AttachmentResponse.md)
+[**GETAttachmentsAttachmentId200Response**](GETAttachmentsAttachmentId200Response.md)
 
 ### Authorization
 
@@ -3387,7 +3387,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAttachmentsAttachmentId
 
-> AttachmentResponse PATCHAttachmentsAttachmentId(ctx, attachmentId).AttachmentUpdate(attachmentUpdate).Execute()
+> PATCHAttachmentsAttachmentId200Response PATCHAttachmentsAttachmentId(ctx, attachmentId).AttachmentUpdate(attachmentUpdate).Execute()
 
 Update an attachment
 
@@ -3406,7 +3406,7 @@ import (
 )
 
 func main() {
-    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAttachmentUpdateDataAttributes())) // AttachmentUpdate | 
+    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
     attachmentId := "attachmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -3416,7 +3416,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.PATCHAttachmentsAttachmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAttachmentsAttachmentId`: AttachmentResponse
+    // response from `PATCHAttachmentsAttachmentId`: PATCHAttachmentsAttachmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.PATCHAttachmentsAttachmentId`: %v\n", resp)
 }
 ```
@@ -3441,7 +3441,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttachmentResponse**](AttachmentResponse.md)
+[**PATCHAttachmentsAttachmentId200Response**](PATCHAttachmentsAttachmentId200Response.md)
 
 ### Authorization
 
@@ -3459,7 +3459,7 @@ Name | Type | Description  | Notes
 
 ## POSTAttachments
 
-> AttachmentResponse POSTAttachments(ctx).AttachmentCreate(attachmentCreate).Execute()
+> POSTAttachments201Response POSTAttachments(ctx).AttachmentCreate(attachmentCreate).Execute()
 
 Create an attachment
 
@@ -3478,7 +3478,7 @@ import (
 )
 
 func main() {
-    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("Type_example", *openapiclient.NewAttachmentCreateDataAttributes("DDT transport document"))) // AttachmentCreate | 
+    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("Type_example", *openapiclient.NewPOSTAttachments201ResponseDataAttributes("DDT transport document"))) // AttachmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -3487,7 +3487,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.POSTAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAttachments`: AttachmentResponse
+    // response from `POSTAttachments`: POSTAttachments201Response
     fmt.Fprintf(os.Stdout, "Response from `AttachmentsApi.POSTAttachments`: %v\n", resp)
 }
 ```
@@ -3507,7 +3507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AttachmentResponse**](AttachmentResponse.md)
+[**POSTAttachments201Response**](POSTAttachments201Response.md)
 
 ### Authorization
 

@@ -20,16 +20,16 @@ type FreeShippingPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                    `json:"id"`
-	Attributes    FreeShippingPromotionUpdateDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                                      `json:"id"`
+	Attributes    PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewFreeShippingPromotionUpdateData instantiates a new FreeShippingPromotionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeShippingPromotionUpdateData(type_ string, id string, attributes FreeShippingPromotionUpdateDataAttributes) *FreeShippingPromotionUpdateData {
+func NewFreeShippingPromotionUpdateData(type_ string, id string, attributes PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) *FreeShippingPromotionUpdateData {
 	this := FreeShippingPromotionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *FreeShippingPromotionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FreeShippingPromotionUpdateData) GetAttributes() FreeShippingPromotionUpdateDataAttributes {
+func (o *FreeShippingPromotionUpdateData) GetAttributes() PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes {
 	if o == nil {
-		var ret FreeShippingPromotionUpdateDataAttributes
+		var ret PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *FreeShippingPromotionUpdateData) GetAttributes() FreeShippingPromotionU
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionUpdateData) GetAttributesOk() (*FreeShippingPromotionUpdateDataAttributes, bool) {
+func (o *FreeShippingPromotionUpdateData) GetAttributesOk() (*PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *FreeShippingPromotionUpdateData) GetAttributesOk() (*FreeShippingPromot
 }
 
 // SetAttributes sets field value
-func (o *FreeShippingPromotionUpdateData) SetAttributes(v FreeShippingPromotionUpdateDataAttributes) {
+func (o *FreeShippingPromotionUpdateData) SetAttributes(v PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

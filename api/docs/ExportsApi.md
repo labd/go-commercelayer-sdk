@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## GETExports
 
-> ExportResponseList GETExports(ctx).Execute()
+> GETExports200Response GETExports(ctx).Execute()
 
 List all exports
 
@@ -108,7 +108,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.GETExports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExports`: ExportResponseList
+    // response from `GETExports`: GETExports200Response
     fmt.Fprintf(os.Stdout, "Response from `ExportsApi.GETExports`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Other parameters are passed through a pointer to a apiGETExportsRequest struct v
 
 ### Return type
 
-[**ExportResponseList**](ExportResponseList.md)
+[**GETExports200Response**](GETExports200Response.md)
 
 ### Authorization
 
@@ -142,7 +142,7 @@ Other parameters are passed through a pointer to a apiGETExportsRequest struct v
 
 ## GETExportsExportId
 
-> ExportResponse GETExportsExportId(ctx, exportId).Execute()
+> GETExportsExportId200Response GETExportsExportId(ctx, exportId).Execute()
 
 Retrieve an export
 
@@ -170,7 +170,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.GETExportsExportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExportsExportId`: ExportResponse
+    // response from `GETExportsExportId`: GETExportsExportId200Response
     fmt.Fprintf(os.Stdout, "Response from `ExportsApi.GETExportsExportId`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExportResponse**](ExportResponse.md)
+[**GETExportsExportId200Response**](GETExportsExportId200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTExports
 
-> ExportResponse POSTExports(ctx).ExportCreate(exportCreate).Execute()
+> POSTExports201Response POSTExports(ctx).ExportCreate(exportCreate).Execute()
 
 Create an export
 
@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData("Type_example", *openapiclient.NewExportCreateDataAttributes("skus"))) // ExportCreate | 
+    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData("Type_example", *openapiclient.NewPOSTExports201ResponseDataAttributes("skus"))) // ExportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.POSTExports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTExports`: ExportResponse
+    // response from `POSTExports`: POSTExports201Response
     fmt.Fprintf(os.Stdout, "Response from `ExportsApi.POSTExports`: %v\n", resp)
 }
 ```
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ExportResponse**](ExportResponse.md)
+[**POSTExports201Response**](POSTExports201Response.md)
 
 ### Authorization
 

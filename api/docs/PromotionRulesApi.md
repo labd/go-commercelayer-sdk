@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETPromotionRules
 
-> PromotionRuleResponseList GETPromotionRules(ctx).Execute()
+> GETPromotionRules200Response GETPromotionRules(ctx).Execute()
 
 List all promotion rules
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionRules`: PromotionRuleResponseList
+    // response from `GETPromotionRules`: GETPromotionRules200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRules`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETPromotionRulesRequest s
 
 ### Return type
 
-[**PromotionRuleResponseList**](PromotionRuleResponseList.md)
+[**GETPromotionRules200Response**](GETPromotionRules200Response.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETPromotionRulesRequest s
 
 ## GETPromotionRulesPromotionRuleId
 
-> PromotionRuleResponse GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
+> GETPromotionRulesPromotionRuleId200Response GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
 
 Retrieve a promotion rule
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRulesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionRulesPromotionRuleId`: PromotionRuleResponse
+    // response from `GETPromotionRulesPromotionRuleId`: GETPromotionRulesPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRulesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PromotionRuleResponse**](PromotionRuleResponse.md)
+[**GETPromotionRulesPromotionRuleId200Response**](GETPromotionRulesPromotionRuleId200Response.md)
 
 ### Authorization
 

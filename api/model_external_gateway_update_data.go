@@ -20,16 +20,16 @@ type ExternalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                              `json:"id"`
-	Attributes    ExternalGatewayUpdateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}              `json:"relationships,omitempty"`
+	Id            string                                                          `json:"id"`
+	Attributes    PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                                          `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayUpdateData instantiates a new ExternalGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayUpdateData(type_ string, id string, attributes ExternalGatewayUpdateDataAttributes) *ExternalGatewayUpdateData {
+func NewExternalGatewayUpdateData(type_ string, id string, attributes PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) *ExternalGatewayUpdateData {
 	this := ExternalGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ExternalGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalGatewayUpdateData) GetAttributes() ExternalGatewayUpdateDataAttributes {
+func (o *ExternalGatewayUpdateData) GetAttributes() PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret ExternalGatewayUpdateDataAttributes
+		var ret PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ExternalGatewayUpdateData) GetAttributes() ExternalGatewayUpdateDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayUpdateData) GetAttributesOk() (*ExternalGatewayUpdateDataAttributes, bool) {
+func (o *ExternalGatewayUpdateData) GetAttributesOk() (*PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ExternalGatewayUpdateData) GetAttributesOk() (*ExternalGatewayUpdateDat
 }
 
 // SetAttributes sets field value
-func (o *ExternalGatewayUpdateData) SetAttributes(v ExternalGatewayUpdateDataAttributes) {
+func (o *ExternalGatewayUpdateData) SetAttributes(v PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

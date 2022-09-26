@@ -120,7 +120,7 @@ type OrderCopiesApiGETOrderCopiesRequest struct {
 	ApiService *OrderCopiesApiService
 }
 
-func (r OrderCopiesApiGETOrderCopiesRequest) Execute() (*OrderCopyResponseList, *http.Response, error) {
+func (r OrderCopiesApiGETOrderCopiesRequest) Execute() (*GETOrderCopies200Response, *http.Response, error) {
 	return r.ApiService.GETOrderCopiesExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *OrderCopiesApiService) GETOrderCopies(ctx context.Context) OrderCopiesA
 }
 
 // Execute executes the request
-//  @return OrderCopyResponseList
-func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCopiesRequest) (*OrderCopyResponseList, *http.Response, error) {
+//  @return GETOrderCopies200Response
+func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCopiesRequest) (*GETOrderCopies200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderCopyResponseList
+		localVarReturnValue *GETOrderCopies200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderCopiesApiService.GETOrderCopies")
@@ -220,7 +220,7 @@ type OrderCopiesApiGETOrderCopiesOrderCopyIdRequest struct {
 	orderCopyId string
 }
 
-func (r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) Execute() (*OrderCopyResponse, *http.Response, error) {
+func (r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) Execute() (*GETOrderCopiesOrderCopyId200Response, *http.Response, error) {
 	return r.ApiService.GETOrderCopiesOrderCopyIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, o
 }
 
 // Execute executes the request
-//  @return OrderCopyResponse
-func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) (*OrderCopyResponse, *http.Response, error) {
+//  @return GETOrderCopiesOrderCopyId200Response
+func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) (*GETOrderCopiesOrderCopyId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderCopyResponse
+		localVarReturnValue *GETOrderCopiesOrderCopyId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderCopiesApiService.GETOrderCopiesOrderCopyId")
@@ -512,7 +512,7 @@ func (r OrderCopiesApiPOSTOrderCopiesRequest) OrderCopyCreate(orderCopyCreate Or
 	return r
 }
 
-func (r OrderCopiesApiPOSTOrderCopiesRequest) Execute() (*OrderCopyResponse, *http.Response, error) {
+func (r OrderCopiesApiPOSTOrderCopiesRequest) Execute() (*POSTOrderCopies201Response, *http.Response, error) {
 	return r.ApiService.POSTOrderCopiesExecute(r)
 }
 
@@ -532,13 +532,13 @@ func (a *OrderCopiesApiService) POSTOrderCopies(ctx context.Context) OrderCopies
 }
 
 // Execute executes the request
-//  @return OrderCopyResponse
-func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrderCopiesRequest) (*OrderCopyResponse, *http.Response, error) {
+//  @return POSTOrderCopies201Response
+func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrderCopiesRequest) (*POSTOrderCopies201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderCopyResponse
+		localVarReturnValue *POSTOrderCopies201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderCopiesApiService.POSTOrderCopies")

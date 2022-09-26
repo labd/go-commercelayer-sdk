@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**LineItemUpdateDataAttributes**](LineItemUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHLineItemsLineItemId200ResponseDataAttributes**](PATCHLineItemsLineItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewLineItemUpdateData
 
-`func NewLineItemUpdateData(type_ string, id string, attributes LineItemUpdateDataAttributes, ) *LineItemUpdateData`
+`func NewLineItemUpdateData(type_ string, id string, attributes PATCHLineItemsLineItemId200ResponseDataAttributes, ) *LineItemUpdateData`
 
 NewLineItemUpdateData instantiates a new LineItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *LineItemUpdateData) GetAttributes() LineItemUpdateDataAttributes`
+`func (o *LineItemUpdateData) GetAttributes() PATCHLineItemsLineItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemUpdateData) GetAttributesOk() (*LineItemUpdateDataAttributes, bool)`
+`func (o *LineItemUpdateData) GetAttributesOk() (*PATCHLineItemsLineItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemUpdateData) SetAttributes(v LineItemUpdateDataAttributes)`
+`func (o *LineItemUpdateData) SetAttributes(v PATCHLineItemsLineItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

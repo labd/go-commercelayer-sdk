@@ -20,16 +20,16 @@ type PaypalPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                               `json:"id"`
-	Attributes    PaypalPaymentUpdateDataAttributes    `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewPaypalPaymentUpdateData instantiates a new PaypalPaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalPaymentUpdateData(type_ string, id string, attributes PaypalPaymentUpdateDataAttributes) *PaypalPaymentUpdateData {
+func NewPaypalPaymentUpdateData(type_ string, id string, attributes PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) *PaypalPaymentUpdateData {
 	this := PaypalPaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PaypalPaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalPaymentUpdateData) GetAttributes() PaypalPaymentUpdateDataAttributes {
+func (o *PaypalPaymentUpdateData) GetAttributes() PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret PaypalPaymentUpdateDataAttributes
+		var ret PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PaypalPaymentUpdateData) GetAttributes() PaypalPaymentUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PaypalPaymentUpdateDataAttributes, bool) {
+func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PaypalPaymentUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *PaypalPaymentUpdateData) SetAttributes(v PaypalPaymentUpdateDataAttributes) {
+func (o *PaypalPaymentUpdateData) SetAttributes(v PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

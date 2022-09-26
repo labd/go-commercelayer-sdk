@@ -19,7 +19,7 @@ import (
 type SkuOptionCreateData struct {
 	// The resource's type
 	Type          string                                      `json:"type"`
-	Attributes    SkuOptionCreateDataAttributes               `json:"attributes"`
+	Attributes    POSTSkuOptions201ResponseDataAttributes     `json:"attributes"`
 	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -27,7 +27,7 @@ type SkuOptionCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuOptionCreateData(type_ string, attributes SkuOptionCreateDataAttributes) *SkuOptionCreateData {
+func NewSkuOptionCreateData(type_ string, attributes POSTSkuOptions201ResponseDataAttributes) *SkuOptionCreateData {
 	this := SkuOptionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *SkuOptionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuOptionCreateData) GetAttributes() SkuOptionCreateDataAttributes {
+func (o *SkuOptionCreateData) GetAttributes() POSTSkuOptions201ResponseDataAttributes {
 	if o == nil {
-		var ret SkuOptionCreateDataAttributes
+		var ret POSTSkuOptions201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *SkuOptionCreateData) GetAttributes() SkuOptionCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuOptionCreateData) GetAttributesOk() (*SkuOptionCreateDataAttributes, bool) {
+func (o *SkuOptionCreateData) GetAttributesOk() (*POSTSkuOptions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *SkuOptionCreateData) GetAttributesOk() (*SkuOptionCreateDataAttributes,
 }
 
 // SetAttributes sets field value
-func (o *SkuOptionCreateData) SetAttributes(v SkuOptionCreateDataAttributes) {
+func (o *SkuOptionCreateData) SetAttributes(v POSTSkuOptions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

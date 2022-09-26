@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**TaxjarAccountCreateDataAttributes**](TaxjarAccountCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTTaxjarAccounts201ResponseDataAttributes**](POSTTaxjarAccounts201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxjarAccountCreateData
 
-`func NewTaxjarAccountCreateData(type_ string, attributes TaxjarAccountCreateDataAttributes, ) *TaxjarAccountCreateData`
+`func NewTaxjarAccountCreateData(type_ string, attributes POSTTaxjarAccounts201ResponseDataAttributes, ) *TaxjarAccountCreateData`
 
 NewTaxjarAccountCreateData instantiates a new TaxjarAccountCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxjarAccountCreateData) GetAttributes() TaxjarAccountCreateDataAttributes`
+`func (o *TaxjarAccountCreateData) GetAttributes() POSTTaxjarAccounts201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxjarAccountCreateData) GetAttributesOk() (*TaxjarAccountCreateDataAttributes, bool)`
+`func (o *TaxjarAccountCreateData) GetAttributesOk() (*POSTTaxjarAccounts201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxjarAccountCreateData) SetAttributes(v TaxjarAccountCreateDataAttributes)`
+`func (o *TaxjarAccountCreateData) SetAttributes(v POSTTaxjarAccounts201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

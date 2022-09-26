@@ -221,7 +221,7 @@ Name | Type | Description  | Notes
 
 ## GETParcels
 
-> ParcelResponseList GETParcels(ctx).Execute()
+> GETParcels200Response GETParcels(ctx).Execute()
 
 List all parcels
 
@@ -248,7 +248,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcels`: ParcelResponseList
+    // response from `GETParcels`: GETParcels200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.GETParcels`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Other parameters are passed through a pointer to a apiGETParcelsRequest struct v
 
 ### Return type
 
-[**ParcelResponseList**](ParcelResponseList.md)
+[**GETParcels200Response**](GETParcels200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Other parameters are passed through a pointer to a apiGETParcelsRequest struct v
 
 ## GETParcelsParcelId
 
-> ParcelResponse GETParcelsParcelId(ctx, parcelId).Execute()
+> GETParcelsParcelId200Response GETParcelsParcelId(ctx, parcelId).Execute()
 
 Retrieve a parcel
 
@@ -310,7 +310,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcelsParcelId`: ParcelResponse
+    // response from `GETParcelsParcelId`: GETParcelsParcelId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.GETParcelsParcelId`: %v\n", resp)
 }
 ```
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelResponse**](ParcelResponse.md)
+[**GETParcelsParcelId200Response**](GETParcelsParcelId200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHParcelsParcelId
 
-> ParcelResponse PATCHParcelsParcelId(ctx, parcelId).ParcelUpdate(parcelUpdate).Execute()
+> PATCHParcelsParcelId200Response PATCHParcelsParcelId(ctx, parcelId).ParcelUpdate(parcelUpdate).Execute()
 
 Update a parcel
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewParcelUpdateDataAttributes())) // ParcelUpdate | 
+    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHParcelsParcelId200ResponseDataAttributes())) // ParcelUpdate | 
     parcelId := "parcelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.PATCHParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHParcelsParcelId`: ParcelResponse
+    // response from `PATCHParcelsParcelId`: PATCHParcelsParcelId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.PATCHParcelsParcelId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelResponse**](ParcelResponse.md)
+[**PATCHParcelsParcelId200Response**](PATCHParcelsParcelId200Response.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTParcels
 
-> ParcelResponse POSTParcels(ctx).ParcelCreate(parcelCreate).Execute()
+> POSTParcels201Response POSTParcels(ctx).ParcelCreate(parcelCreate).Execute()
 
 Create a parcel
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("Type_example", *openapiclient.NewParcelCreateDataAttributes(float32(1000.0), "gr"))) // ParcelCreate | 
+    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData("Type_example", *openapiclient.NewPOSTParcels201ResponseDataAttributes(float32(1000.0), "gr"))) // ParcelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.POSTParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTParcels`: ParcelResponse
+    // response from `POSTParcels`: POSTParcels201Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelsApi.POSTParcels`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelResponse**](ParcelResponse.md)
+[**POSTParcels201Response**](POSTParcels201Response.md)
 
 ### Authorization
 

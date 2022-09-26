@@ -27,7 +27,7 @@ type ApplicationApiGETApplicationApplicationIdRequest struct {
 	ApiService *ApplicationApiService
 }
 
-func (r ApplicationApiGETApplicationApplicationIdRequest) Execute() (*ApplicationResponse, *http.Response, error) {
+func (r ApplicationApiGETApplicationApplicationIdRequest) Execute() (*GETApplicationApplicationId200Response, *http.Response, error) {
 	return r.ApiService.GETApplicationApplicationIdExecute(r)
 }
 
@@ -47,13 +47,13 @@ func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return ApplicationResponse
-func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*ApplicationResponse, *http.Response, error) {
+//  @return GETApplicationApplicationId200Response
+func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ApplicationResponse
+		localVarReturnValue *GETApplicationApplicationId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApplicationApiService.GETApplicationApplicationId")

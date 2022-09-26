@@ -20,16 +20,16 @@ type BraintreeGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                   `json:"id"`
-	Attributes    BraintreeGatewayUpdateDataAttributes     `json:"attributes"`
-	Relationships *BraintreeGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                            `json:"id"`
+	Attributes    PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayCreateDataRelationships                          `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayUpdateData instantiates a new BraintreeGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayUpdateData(type_ string, id string, attributes BraintreeGatewayUpdateDataAttributes) *BraintreeGatewayUpdateData {
+func NewBraintreeGatewayUpdateData(type_ string, id string, attributes PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) *BraintreeGatewayUpdateData {
 	this := BraintreeGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *BraintreeGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreeGatewayUpdateData) GetAttributes() BraintreeGatewayUpdateDataAttributes {
+func (o *BraintreeGatewayUpdateData) GetAttributes() PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret BraintreeGatewayUpdateDataAttributes
+		var ret PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *BraintreeGatewayUpdateData) GetAttributes() BraintreeGatewayUpdateDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayUpdateData) GetAttributesOk() (*BraintreeGatewayUpdateDataAttributes, bool) {
+func (o *BraintreeGatewayUpdateData) GetAttributesOk() (*PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *BraintreeGatewayUpdateData) GetAttributesOk() (*BraintreeGatewayUpdateD
 }
 
 // SetAttributes sets field value
-func (o *BraintreeGatewayUpdateData) SetAttributes(v BraintreeGatewayUpdateDataAttributes) {
+func (o *BraintreeGatewayUpdateData) SetAttributes(v PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

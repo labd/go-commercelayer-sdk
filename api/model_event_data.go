@@ -18,16 +18,16 @@ import (
 // EventData struct for EventData
 type EventData struct {
 	// The resource's type
-	Type          string                  `json:"type"`
-	Attributes    EventDataAttributes     `json:"attributes"`
-	Relationships *EventDataRelationships `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    GETEvents200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *EventDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewEventData instantiates a new EventData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventData(type_ string, attributes EventDataAttributes) *EventData {
+func NewEventData(type_ string, attributes GETEvents200ResponseDataInnerAttributes) *EventData {
 	this := EventData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *EventData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *EventData) GetAttributes() EventDataAttributes {
+func (o *EventData) GetAttributes() GETEvents200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret EventDataAttributes
+		var ret GETEvents200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *EventData) GetAttributes() EventDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *EventData) GetAttributesOk() (*EventDataAttributes, bool) {
+func (o *EventData) GetAttributesOk() (*GETEvents200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *EventData) GetAttributesOk() (*EventDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *EventData) SetAttributes(v EventDataAttributes) {
+func (o *EventData) SetAttributes(v GETEvents200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

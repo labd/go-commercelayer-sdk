@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**CustomerDataAttributes**](CustomerDataAttributes.md) |  | 
+**Attributes** | [**GETCustomers200ResponseDataInnerAttributes**](GETCustomers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerDataRelationships**](CustomerDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerData
 
-`func NewCustomerData(type_ string, attributes CustomerDataAttributes, ) *CustomerData`
+`func NewCustomerData(type_ string, attributes GETCustomers200ResponseDataInnerAttributes, ) *CustomerData`
 
 NewCustomerData instantiates a new CustomerData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerData) GetAttributes() CustomerDataAttributes`
+`func (o *CustomerData) GetAttributes() GETCustomers200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerData) GetAttributesOk() (*CustomerDataAttributes, bool)`
+`func (o *CustomerData) GetAttributesOk() (*GETCustomers200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerData) SetAttributes(v CustomerDataAttributes)`
+`func (o *CustomerData) SetAttributes(v GETCustomers200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

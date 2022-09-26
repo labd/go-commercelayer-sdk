@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**PriceCreateDataAttributes**](PriceCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTPrices201ResponseDataAttributes**](POSTPrices201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceCreateDataRelationships**](PriceCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceCreateData
 
-`func NewPriceCreateData(type_ string, attributes PriceCreateDataAttributes, ) *PriceCreateData`
+`func NewPriceCreateData(type_ string, attributes POSTPrices201ResponseDataAttributes, ) *PriceCreateData`
 
 NewPriceCreateData instantiates a new PriceCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PriceCreateData) GetAttributes() PriceCreateDataAttributes`
+`func (o *PriceCreateData) GetAttributes() POSTPrices201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceCreateData) GetAttributesOk() (*PriceCreateDataAttributes, bool)`
+`func (o *PriceCreateData) GetAttributesOk() (*POSTPrices201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceCreateData) SetAttributes(v PriceCreateDataAttributes)`
+`func (o *PriceCreateData) SetAttributes(v POSTPrices201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

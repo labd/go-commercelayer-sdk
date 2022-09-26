@@ -18,16 +18,16 @@ import (
 // OrderAmountPromotionRuleData struct for OrderAmountPromotionRuleData
 type OrderAmountPromotionRuleData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    OrderAmountPromotionRuleDataAttributes     `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                     `json:"type"`
+	Attributes    GETOrderAmountPromotionRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleData instantiates a new OrderAmountPromotionRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleData(type_ string, attributes OrderAmountPromotionRuleDataAttributes) *OrderAmountPromotionRuleData {
+func NewOrderAmountPromotionRuleData(type_ string, attributes GETOrderAmountPromotionRules200ResponseDataInnerAttributes) *OrderAmountPromotionRuleData {
 	this := OrderAmountPromotionRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *OrderAmountPromotionRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderAmountPromotionRuleData) GetAttributes() OrderAmountPromotionRuleDataAttributes {
+func (o *OrderAmountPromotionRuleData) GetAttributes() GETOrderAmountPromotionRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret OrderAmountPromotionRuleDataAttributes
+		var ret GETOrderAmountPromotionRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *OrderAmountPromotionRuleData) GetAttributes() OrderAmountPromotionRuleD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*OrderAmountPromotionRuleDataAttributes, bool) {
+func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*GETOrderAmountPromotionRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*OrderAmountPromotionR
 }
 
 // SetAttributes sets field value
-func (o *OrderAmountPromotionRuleData) SetAttributes(v OrderAmountPromotionRuleDataAttributes) {
+func (o *OrderAmountPromotionRuleData) SetAttributes(v GETOrderAmountPromotionRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

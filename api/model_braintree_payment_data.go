@@ -18,16 +18,16 @@ import (
 // BraintreePaymentData struct for BraintreePaymentData
 type BraintreePaymentData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    BraintreePaymentDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                             `json:"type"`
+	Attributes    GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentData instantiates a new BraintreePaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentData(type_ string, attributes BraintreePaymentDataAttributes) *BraintreePaymentData {
+func NewBraintreePaymentData(type_ string, attributes GETBraintreePayments200ResponseDataInnerAttributes) *BraintreePaymentData {
 	this := BraintreePaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *BraintreePaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreePaymentData) GetAttributes() BraintreePaymentDataAttributes {
+func (o *BraintreePaymentData) GetAttributes() GETBraintreePayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BraintreePaymentDataAttributes
+		var ret GETBraintreePayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *BraintreePaymentData) GetAttributes() BraintreePaymentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentData) GetAttributesOk() (*BraintreePaymentDataAttributes, bool) {
+func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *BraintreePaymentData) GetAttributesOk() (*BraintreePaymentDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *BraintreePaymentData) SetAttributes(v BraintreePaymentDataAttributes) {
+func (o *BraintreePaymentData) SetAttributes(v GETBraintreePayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

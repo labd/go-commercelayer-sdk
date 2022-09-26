@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**ExternalGatewayDataAttributes**](ExternalGatewayDataAttributes.md) |  | 
+**Attributes** | [**GETExternalGateways200ResponseDataInnerAttributes**](GETExternalGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalGatewayDataRelationships**](ExternalGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayData
 
-`func NewExternalGatewayData(type_ string, attributes ExternalGatewayDataAttributes, ) *ExternalGatewayData`
+`func NewExternalGatewayData(type_ string, attributes GETExternalGateways200ResponseDataInnerAttributes, ) *ExternalGatewayData`
 
 NewExternalGatewayData instantiates a new ExternalGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalGatewayData) GetAttributes() ExternalGatewayDataAttributes`
+`func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayData) GetAttributesOk() (*ExternalGatewayDataAttributes, bool)`
+`func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayData) SetAttributes(v ExternalGatewayDataAttributes)`
+`func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

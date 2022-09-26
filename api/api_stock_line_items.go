@@ -304,7 +304,7 @@ type StockLineItemsApiGETStockLineItemsRequest struct {
 	ApiService *StockLineItemsApiService
 }
 
-func (r StockLineItemsApiGETStockLineItemsRequest) Execute() (*StockLineItemResponseList, *http.Response, error) {
+func (r StockLineItemsApiGETStockLineItemsRequest) Execute() (*GETStockLineItems200Response, *http.Response, error) {
 	return r.ApiService.GETStockLineItemsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *StockLineItemsApiService) GETStockLineItems(ctx context.Context) StockL
 }
 
 // Execute executes the request
-//  @return StockLineItemResponseList
-func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiGETStockLineItemsRequest) (*StockLineItemResponseList, *http.Response, error) {
+//  @return GETStockLineItems200Response
+func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiGETStockLineItemsRequest) (*GETStockLineItems200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLineItemResponseList
+		localVarReturnValue *GETStockLineItems200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLineItemsApiService.GETStockLineItems")
@@ -404,7 +404,7 @@ type StockLineItemsApiGETStockLineItemsStockLineItemIdRequest struct {
 	stockLineItemId string
 }
 
-func (r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) Execute() (*StockLineItemResponse, *http.Response, error) {
+func (r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) Execute() (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
 	return r.ApiService.GETStockLineItemsStockLineItemIdExecute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.
 }
 
 // Execute executes the request
-//  @return StockLineItemResponse
-func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) (*StockLineItemResponse, *http.Response, error) {
+//  @return GETStockLineItemsStockLineItemId200Response
+func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StockLineItemResponse
+		localVarReturnValue *GETStockLineItemsStockLineItemId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockLineItemsApiService.GETStockLineItemsStockLineItemId")

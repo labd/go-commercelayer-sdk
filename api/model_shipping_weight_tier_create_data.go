@@ -18,16 +18,16 @@ import (
 // ShippingWeightTierCreateData struct for ShippingWeightTierCreateData
 type ShippingWeightTierCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    ShippingWeightTierCreateDataAttributes     `json:"attributes"`
-	Relationships *ShippingWeightTierCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTShippingWeightTiers201ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingWeightTierCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierCreateData instantiates a new ShippingWeightTierCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierCreateData(type_ string, attributes ShippingWeightTierCreateDataAttributes) *ShippingWeightTierCreateData {
+func NewShippingWeightTierCreateData(type_ string, attributes POSTShippingWeightTiers201ResponseDataAttributes) *ShippingWeightTierCreateData {
 	this := ShippingWeightTierCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ShippingWeightTierCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingWeightTierCreateData) GetAttributes() ShippingWeightTierCreateDataAttributes {
+func (o *ShippingWeightTierCreateData) GetAttributes() POSTShippingWeightTiers201ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingWeightTierCreateDataAttributes
+		var ret POSTShippingWeightTiers201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ShippingWeightTierCreateData) GetAttributes() ShippingWeightTierCreateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreateData) GetAttributesOk() (*ShippingWeightTierCreateDataAttributes, bool) {
+func (o *ShippingWeightTierCreateData) GetAttributesOk() (*POSTShippingWeightTiers201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ShippingWeightTierCreateData) GetAttributesOk() (*ShippingWeightTierCre
 }
 
 // SetAttributes sets field value
-func (o *ShippingWeightTierCreateData) SetAttributes(v ShippingWeightTierCreateDataAttributes) {
+func (o *ShippingWeightTierCreateData) SetAttributes(v POSTShippingWeightTiers201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

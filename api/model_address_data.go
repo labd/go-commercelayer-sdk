@@ -18,16 +18,16 @@ import (
 // AddressData struct for AddressData
 type AddressData struct {
 	// The resource's type
-	Type          string                    `json:"type"`
-	Attributes    AddressDataAttributes     `json:"attributes"`
-	Relationships *AddressDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    GETAddresses200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AddressDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewAddressData instantiates a new AddressData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressData(type_ string, attributes AddressDataAttributes) *AddressData {
+func NewAddressData(type_ string, attributes GETAddresses200ResponseDataInnerAttributes) *AddressData {
 	this := AddressData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AddressData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AddressData) GetAttributes() AddressDataAttributes {
+func (o *AddressData) GetAttributes() GETAddresses200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret AddressDataAttributes
+		var ret GETAddresses200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AddressData) GetAttributes() AddressDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AddressData) GetAttributesOk() (*AddressDataAttributes, bool) {
+func (o *AddressData) GetAttributesOk() (*GETAddresses200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AddressData) GetAttributesOk() (*AddressDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *AddressData) SetAttributes(v AddressDataAttributes) {
+func (o *AddressData) SetAttributes(v GETAddresses200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

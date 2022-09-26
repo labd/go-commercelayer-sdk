@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GETShipments
 
-> ShipmentResponseList GETShipments(ctx).Execute()
+> GETShipments200Response GETShipments(ctx).Execute()
 
 List all shipments
 
@@ -179,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETShipments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShipments`: ShipmentResponseList
+    // response from `GETShipments`: GETShipments200Response
     fmt.Fprintf(os.Stdout, "Response from `ShipmentsApi.GETShipments`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a apiGETShipmentsRequest struct
 
 ### Return type
 
-[**ShipmentResponseList**](ShipmentResponseList.md)
+[**GETShipments200Response**](GETShipments200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Other parameters are passed through a pointer to a apiGETShipmentsRequest struct
 
 ## GETShipmentsShipmentId
 
-> ShipmentResponse GETShipmentsShipmentId(ctx, shipmentId).Execute()
+> GETShipmentsShipmentId200Response GETShipmentsShipmentId(ctx, shipmentId).Execute()
 
 Retrieve a shipment
 
@@ -241,7 +241,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETShipmentsShipmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShipmentsShipmentId`: ShipmentResponse
+    // response from `GETShipmentsShipmentId`: GETShipmentsShipmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShipmentsApi.GETShipmentsShipmentId`: %v\n", resp)
 }
 ```
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShipmentResponse**](ShipmentResponse.md)
+[**GETShipmentsShipmentId200Response**](GETShipmentsShipmentId200Response.md)
 
 ### Authorization
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShipmentsShipmentId
 
-> ShipmentResponse PATCHShipmentsShipmentId(ctx, shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
+> PATCHShipmentsShipmentId200Response PATCHShipmentsShipmentId(ctx, shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
 
 Update a shipment
 
@@ -438,7 +438,7 @@ import (
 )
 
 func main() {
-    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewShipmentUpdateDataAttributes())) // ShipmentUpdate | 
+    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShipmentsShipmentId200ResponseDataAttributes())) // ShipmentUpdate | 
     shipmentId := "shipmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -448,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.PATCHShipmentsShipmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHShipmentsShipmentId`: ShipmentResponse
+    // response from `PATCHShipmentsShipmentId`: PATCHShipmentsShipmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShipmentsApi.PATCHShipmentsShipmentId`: %v\n", resp)
 }
 ```
@@ -473,7 +473,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShipmentResponse**](ShipmentResponse.md)
+[**PATCHShipmentsShipmentId200Response**](PATCHShipmentsShipmentId200Response.md)
 
 ### Authorization
 

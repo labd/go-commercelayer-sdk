@@ -18,16 +18,16 @@ import (
 // FixedPricePromotionCreateData struct for FixedPricePromotionCreateData
 type FixedPricePromotionCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    FixedPricePromotionCreateDataAttributes     `json:"attributes"`
-	Relationships *FixedPricePromotionCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                            `json:"type"`
+	Attributes    POSTFixedPricePromotions201ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionCreateData instantiates a new FixedPricePromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionCreateData(type_ string, attributes FixedPricePromotionCreateDataAttributes) *FixedPricePromotionCreateData {
+func NewFixedPricePromotionCreateData(type_ string, attributes POSTFixedPricePromotions201ResponseDataAttributes) *FixedPricePromotionCreateData {
 	this := FixedPricePromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *FixedPricePromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedPricePromotionCreateData) GetAttributes() FixedPricePromotionCreateDataAttributes {
+func (o *FixedPricePromotionCreateData) GetAttributes() POSTFixedPricePromotions201ResponseDataAttributes {
 	if o == nil {
-		var ret FixedPricePromotionCreateDataAttributes
+		var ret POSTFixedPricePromotions201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *FixedPricePromotionCreateData) GetAttributes() FixedPricePromotionCreat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateData) GetAttributesOk() (*FixedPricePromotionCreateDataAttributes, bool) {
+func (o *FixedPricePromotionCreateData) GetAttributesOk() (*POSTFixedPricePromotions201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *FixedPricePromotionCreateData) GetAttributesOk() (*FixedPricePromotionC
 }
 
 // SetAttributes sets field value
-func (o *FixedPricePromotionCreateData) SetAttributes(v FixedPricePromotionCreateDataAttributes) {
+func (o *FixedPricePromotionCreateData) SetAttributes(v POSTFixedPricePromotions201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

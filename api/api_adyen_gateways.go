@@ -120,7 +120,7 @@ type AdyenGatewaysApiGETAdyenGatewaysRequest struct {
 	ApiService *AdyenGatewaysApiService
 }
 
-func (r AdyenGatewaysApiGETAdyenGatewaysRequest) Execute() (*AdyenGatewayResponseList, *http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysRequest) Execute() (*GETAdyenGateways200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *AdyenGatewaysApiService) GETAdyenGateways(ctx context.Context) AdyenGat
 }
 
 // Execute executes the request
-//  @return AdyenGatewayResponseList
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*AdyenGatewayResponseList, *http.Response, error) {
+//  @return GETAdyenGateways200Response
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETAdyenGatewaysRequest) (*GETAdyenGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenGatewayResponseList
+		localVarReturnValue *GETAdyenGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGateways")
@@ -220,7 +220,7 @@ type AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
 	adyenGatewayId string
 }
 
-func (r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*AdyenGatewayResponse, *http.Response, error) {
+func (r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return AdyenGatewayResponse
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGatewayResponse, *http.Response, error) {
+//  @return GETAdyenGatewaysAdyenGatewayId200Response
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenGatewayResponse
+		localVarReturnValue *GETAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.GETAdyenGatewaysAdyenGatewayId")
@@ -329,7 +329,7 @@ func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpd
 	return r
 }
 
-func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*AdyenGatewayResponse, *http.Response, error) {
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) Execute() (*PATCHAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAdyenGatewaysAdyenGatewayIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.C
 }
 
 // Execute executes the request
-//  @return AdyenGatewayResponse
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*AdyenGatewayResponse, *http.Response, error) {
+//  @return PATCHAdyenGatewaysAdyenGatewayId200Response
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) (*PATCHAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenGatewayResponse
+		localVarReturnValue *PATCHAdyenGatewaysAdyenGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.PATCHAdyenGatewaysAdyenGatewayId")
@@ -442,7 +442,7 @@ func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewa
 	return r
 }
 
-func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) Execute() (*AdyenGatewayResponse, *http.Response, error) {
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) Execute() (*POSTAdyenGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTAdyenGatewaysExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *AdyenGatewaysApiService) POSTAdyenGateways(ctx context.Context) AdyenGa
 }
 
 // Execute executes the request
-//  @return AdyenGatewayResponse
-func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*AdyenGatewayResponse, *http.Response, error) {
+//  @return POSTAdyenGateways201Response
+func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOSTAdyenGatewaysRequest) (*POSTAdyenGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdyenGatewayResponse
+		localVarReturnValue *POSTAdyenGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdyenGatewaysApiService.POSTAdyenGateways")

@@ -580,7 +580,7 @@ type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest struct {
 	ApiService *OrderAmountPromotionRulesApiService
 }
 
-func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) Execute() (*OrderAmountPromotionRuleResponseList, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) Execute() (*GETOrderAmountPromotionRules200Response, *http.Response, error) {
 	return r.ApiService.GETOrderAmountPromotionRulesExecute(r)
 }
 
@@ -600,13 +600,13 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRules(ctx c
 }
 
 // Execute executes the request
-//  @return OrderAmountPromotionRuleResponseList
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) (*OrderAmountPromotionRuleResponseList, *http.Response, error) {
+//  @return GETOrderAmountPromotionRules200Response
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesRequest) (*GETOrderAmountPromotionRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderAmountPromotionRuleResponseList
+		localVarReturnValue *GETOrderAmountPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETOrderAmountPromotionRules")
@@ -680,7 +680,7 @@ type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotio
 	orderAmountPromotionRuleId string
 }
 
-func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -702,13 +702,13 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 }
 
 // Execute executes the request
-//  @return OrderAmountPromotionRuleResponse
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+//  @return GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderAmountPromotionRuleResponse
+		localVarReturnValue *GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -973,7 +973,7 @@ func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPro
 	return r
 }
 
-func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -995,13 +995,13 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 }
 
 // Execute executes the request
-//  @return OrderAmountPromotionRuleResponse
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+//  @return POSTOrderAmountPromotionRules201Response
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderAmountPromotionRuleResponse
+		localVarReturnValue *POSTOrderAmountPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -1086,7 +1086,7 @@ func (r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) OrderA
 	return r
 }
 
-func (r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) Execute() (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) Execute() (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	return r.ApiService.POSTOrderAmountPromotionRulesExecute(r)
 }
 
@@ -1106,13 +1106,13 @@ func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRules(ctx 
 }
 
 // Execute executes the request
-//  @return OrderAmountPromotionRuleResponse
-func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) (*OrderAmountPromotionRuleResponse, *http.Response, error) {
+//  @return POSTOrderAmountPromotionRules201Response
+func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecute(r OrderAmountPromotionRulesApiPOSTOrderAmountPromotionRulesRequest) (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *OrderAmountPromotionRuleResponse
+		localVarReturnValue *POSTOrderAmountPromotionRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.POSTOrderAmountPromotionRules")

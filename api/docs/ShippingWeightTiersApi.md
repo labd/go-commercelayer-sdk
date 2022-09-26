@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETShippingWeightTiers
 
-> ShippingWeightTierResponseList GETShippingWeightTiers(ctx).Execute()
+> GETShippingWeightTiers200Response GETShippingWeightTiers(ctx).Execute()
 
 List all shipping weight tiers
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.GETShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingWeightTiers`: ShippingWeightTierResponseList
+    // response from `GETShippingWeightTiers`: GETShippingWeightTiers200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.GETShippingWeightTiers`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETShippingWeightTiersRequ
 
 ### Return type
 
-[**ShippingWeightTierResponseList**](ShippingWeightTierResponseList.md)
+[**GETShippingWeightTiers200Response**](GETShippingWeightTiers200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETShippingWeightTiersRequ
 
 ## GETShippingWeightTiersShippingWeightTierId
 
-> ShippingWeightTierResponse GETShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).Execute()
+> GETShippingWeightTiersShippingWeightTierId200Response GETShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).Execute()
 
 Retrieve a shipping weight tier
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.GETShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingWeightTiersShippingWeightTierId`: ShippingWeightTierResponse
+    // response from `GETShippingWeightTiersShippingWeightTierId`: GETShippingWeightTiersShippingWeightTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.GETShippingWeightTiersShippingWeightTierId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingWeightTierResponse**](ShippingWeightTierResponse.md)
+[**GETShippingWeightTiersShippingWeightTierId200Response**](GETShippingWeightTiersShippingWeightTierId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingWeightTiersShippingWeightTierId
 
-> ShippingWeightTierResponse PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
+> PATCHShippingWeightTiersShippingWeightTierId200Response PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
 
 Update a shipping weight tier
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewShippingWeightTierUpdateDataAttributes())) // ShippingWeightTierUpdate | 
+    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes())) // ShippingWeightTierUpdate | 
     shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHShippingWeightTiersShippingWeightTierId`: ShippingWeightTierResponse
+    // response from `PATCHShippingWeightTiersShippingWeightTierId`: PATCHShippingWeightTiersShippingWeightTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingWeightTierResponse**](ShippingWeightTierResponse.md)
+[**PATCHShippingWeightTiersShippingWeightTierId200Response**](PATCHShippingWeightTiersShippingWeightTierId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingWeightTiers
 
-> ShippingWeightTierResponse POSTShippingWeightTiers(ctx).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
+> POSTShippingWeightTiers201Response POSTShippingWeightTiers(ctx).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
 
 Create a shipping weight tier
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("Type_example", *openapiclient.NewShippingWeightTierCreateDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
+    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("Type_example", *openapiclient.NewPOSTShippingWeightTiers201ResponseDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.POSTShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTShippingWeightTiers`: ShippingWeightTierResponse
+    // response from `POSTShippingWeightTiers`: POSTShippingWeightTiers201Response
     fmt.Fprintf(os.Stdout, "Response from `ShippingWeightTiersApi.POSTShippingWeightTiers`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ShippingWeightTierResponse**](ShippingWeightTierResponse.md)
+[**POSTShippingWeightTiers201Response**](POSTShippingWeightTiers201Response.md)
 
 ### Authorization
 

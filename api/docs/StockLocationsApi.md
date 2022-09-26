@@ -636,7 +636,7 @@ Name | Type | Description  | Notes
 
 ## GETStockLocations
 
-> StockLocationResponseList GETStockLocations(ctx).Execute()
+> GETStockLocations200Response GETStockLocations(ctx).Execute()
 
 List all stock locations
 
@@ -663,7 +663,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.GETStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockLocations`: StockLocationResponseList
+    // response from `GETStockLocations`: GETStockLocations200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLocationsApi.GETStockLocations`: %v\n", resp)
 }
 ```
@@ -679,7 +679,7 @@ Other parameters are passed through a pointer to a apiGETStockLocationsRequest s
 
 ### Return type
 
-[**StockLocationResponseList**](StockLocationResponseList.md)
+[**GETStockLocations200Response**](GETStockLocations200Response.md)
 
 ### Authorization
 
@@ -697,7 +697,7 @@ Other parameters are passed through a pointer to a apiGETStockLocationsRequest s
 
 ## GETStockLocationsStockLocationId
 
-> StockLocationResponse GETStockLocationsStockLocationId(ctx, stockLocationId).Execute()
+> GETStockLocationsStockLocationId200Response GETStockLocationsStockLocationId(ctx, stockLocationId).Execute()
 
 Retrieve a stock location
 
@@ -725,7 +725,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.GETStockLocationsStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockLocationsStockLocationId`: StockLocationResponse
+    // response from `GETStockLocationsStockLocationId`: GETStockLocationsStockLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLocationsApi.GETStockLocationsStockLocationId`: %v\n", resp)
 }
 ```
@@ -749,7 +749,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockLocationResponse**](StockLocationResponse.md)
+[**GETStockLocationsStockLocationId200Response**](GETStockLocationsStockLocationId200Response.md)
 
 ### Authorization
 
@@ -903,7 +903,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStockLocationsStockLocationId
 
-> StockLocationResponse PATCHStockLocationsStockLocationId(ctx, stockLocationId).StockLocationUpdate(stockLocationUpdate).Execute()
+> PATCHStockLocationsStockLocationId200Response PATCHStockLocationsStockLocationId(ctx, stockLocationId).StockLocationUpdate(stockLocationUpdate).Execute()
 
 Update a stock location
 
@@ -922,7 +922,7 @@ import (
 )
 
 func main() {
-    stockLocationUpdate := *openapiclient.NewStockLocationUpdate(*openapiclient.NewStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewStockLocationUpdateDataAttributes())) // StockLocationUpdate | 
+    stockLocationUpdate := *openapiclient.NewStockLocationUpdate(*openapiclient.NewStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockLocationsStockLocationId200ResponseDataAttributes())) // StockLocationUpdate | 
     stockLocationId := "stockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -932,7 +932,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.PATCHStockLocationsStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHStockLocationsStockLocationId`: StockLocationResponse
+    // response from `PATCHStockLocationsStockLocationId`: PATCHStockLocationsStockLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLocationsApi.PATCHStockLocationsStockLocationId`: %v\n", resp)
 }
 ```
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockLocationResponse**](StockLocationResponse.md)
+[**PATCHStockLocationsStockLocationId200Response**](PATCHStockLocationsStockLocationId200Response.md)
 
 ### Authorization
 
@@ -975,7 +975,7 @@ Name | Type | Description  | Notes
 
 ## POSTStockLocations
 
-> StockLocationResponse POSTStockLocations(ctx).StockLocationCreate(stockLocationCreate).Execute()
+> POSTStockLocations201Response POSTStockLocations(ctx).StockLocationCreate(stockLocationCreate).Execute()
 
 Create a stock location
 
@@ -994,7 +994,7 @@ import (
 )
 
 func main() {
-    stockLocationCreate := *openapiclient.NewStockLocationCreate(*openapiclient.NewStockLocationCreateData("Type_example", *openapiclient.NewStockLocationCreateDataAttributes("Primary warehouse"))) // StockLocationCreate | 
+    stockLocationCreate := *openapiclient.NewStockLocationCreate(*openapiclient.NewStockLocationCreateData("Type_example", *openapiclient.NewPOSTStockLocations201ResponseDataAttributes("Primary warehouse"))) // StockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1003,7 +1003,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLocationsApi.POSTStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTStockLocations`: StockLocationResponse
+    // response from `POSTStockLocations`: POSTStockLocations201Response
     fmt.Fprintf(os.Stdout, "Response from `StockLocationsApi.POSTStockLocations`: %v\n", resp)
 }
 ```
@@ -1023,7 +1023,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockLocationResponse**](StockLocationResponse.md)
+[**POSTStockLocations201Response**](POSTStockLocations201Response.md)
 
 ### Authorization
 

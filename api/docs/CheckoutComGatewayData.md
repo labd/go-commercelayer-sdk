@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**CheckoutComGatewayDataAttributes**](CheckoutComGatewayDataAttributes.md) |  | 
+**Attributes** | [**GETCheckoutComGateways200ResponseDataInnerAttributes**](GETCheckoutComGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CheckoutComGatewayDataRelationships**](CheckoutComGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComGatewayData
 
-`func NewCheckoutComGatewayData(type_ string, attributes CheckoutComGatewayDataAttributes, ) *CheckoutComGatewayData`
+`func NewCheckoutComGatewayData(type_ string, attributes GETCheckoutComGateways200ResponseDataInnerAttributes, ) *CheckoutComGatewayData`
 
 NewCheckoutComGatewayData instantiates a new CheckoutComGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComGatewayData) GetAttributes() CheckoutComGatewayDataAttributes`
+`func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComGatewayData) GetAttributesOk() (*CheckoutComGatewayDataAttributes, bool)`
+`func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComGatewayData) SetAttributes(v CheckoutComGatewayDataAttributes)`
+`func (o *CheckoutComGatewayData) SetAttributes(v GETCheckoutComGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

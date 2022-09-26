@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCodesPromotionRuleCreateDataRelationships**](CouponCodesPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleCreateData
 
-`func NewCouponCodesPromotionRuleCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *CouponCodesPromotionRuleCreateData`
+`func NewCouponCodesPromotionRuleCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CouponCodesPromotionRuleCreateData`
 
 NewCouponCodesPromotionRuleCreateData instantiates a new CouponCodesPromotionRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponCodesPromotionRuleCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
+`func (o *CouponCodesPromotionRuleCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponCodesPromotionRuleCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
+`func (o *CouponCodesPromotionRuleCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponCodesPromotionRuleCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
+`func (o *CouponCodesPromotionRuleCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

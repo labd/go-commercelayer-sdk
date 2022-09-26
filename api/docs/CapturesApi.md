@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GETCaptures
 
-> CaptureResponseList GETCaptures(ctx).Execute()
+> GETCaptures200Response GETCaptures(ctx).Execute()
 
 List all captures
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCaptures`: CaptureResponseList
+    // response from `GETCaptures`: GETCaptures200Response
     fmt.Fprintf(os.Stdout, "Response from `CapturesApi.GETCaptures`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiGETCapturesRequest struct 
 
 ### Return type
 
-[**CaptureResponseList**](CaptureResponseList.md)
+[**GETCaptures200Response**](GETCaptures200Response.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiGETCapturesRequest struct 
 
 ## GETCapturesCaptureId
 
-> CaptureResponse GETCapturesCaptureId(ctx, captureId).Execute()
+> GETCapturesCaptureId200Response GETCapturesCaptureId(ctx, captureId).Execute()
 
 Retrieve a capture
 
@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCapturesCaptureId`: CaptureResponse
+    // response from `GETCapturesCaptureId`: GETCapturesCaptureId200Response
     fmt.Fprintf(os.Stdout, "Response from `CapturesApi.GETCapturesCaptureId`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CaptureResponse**](CaptureResponse.md)
+[**GETCapturesCaptureId200Response**](GETCapturesCaptureId200Response.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCapturesCaptureId
 
-> CaptureResponse PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
+> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
 
 Update a capture
 
@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCaptureUpdateDataAttributes())) // CaptureUpdate | 
+    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
     captureId := "captureId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -379,7 +379,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.PATCHCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCapturesCaptureId`: CaptureResponse
+    // response from `PATCHCapturesCaptureId`: PATCHCapturesCaptureId200Response
     fmt.Fprintf(os.Stdout, "Response from `CapturesApi.PATCHCapturesCaptureId`: %v\n", resp)
 }
 ```
@@ -404,7 +404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CaptureResponse**](CaptureResponse.md)
+[**PATCHCapturesCaptureId200Response**](PATCHCapturesCaptureId200Response.md)
 
 ### Authorization
 

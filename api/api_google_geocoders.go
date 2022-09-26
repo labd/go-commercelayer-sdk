@@ -120,7 +120,7 @@ type GoogleGeocodersApiGETGoogleGeocodersRequest struct {
 	ApiService *GoogleGeocodersApiService
 }
 
-func (r GoogleGeocodersApiGETGoogleGeocodersRequest) Execute() (*GoogleGeocoderResponseList, *http.Response, error) {
+func (r GoogleGeocodersApiGETGoogleGeocodersRequest) Execute() (*GETGoogleGeocoders200Response, *http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) Goog
 }
 
 // Execute executes the request
-//  @return GoogleGeocoderResponseList
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*GoogleGeocoderResponseList, *http.Response, error) {
+//  @return GETGoogleGeocoders200Response
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*GETGoogleGeocoders200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GoogleGeocoderResponseList
+		localVarReturnValue *GETGoogleGeocoders200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.GETGoogleGeocoders")
@@ -220,7 +220,7 @@ type GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
 	googleGeocoderId string
 }
 
-func (r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GoogleGeocoderResponse, *http.Response, error) {
+func (r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	return r.ApiService.GETGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx conte
 }
 
 // Execute executes the request
-//  @return GoogleGeocoderResponse
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoderResponse, *http.Response, error) {
+//  @return GETGoogleGeocodersGoogleGeocoderId200Response
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GoogleGeocoderResponse
+		localVarReturnValue *GETGoogleGeocodersGoogleGeocoderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.GETGoogleGeocodersGoogleGeocoderId")
@@ -329,7 +329,7 @@ func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeo
 	return r
 }
 
-func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GoogleGeocoderResponse, *http.Response, error) {
+func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*PATCHGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	return r.ApiService.PATCHGoogleGeocodersGoogleGeocoderIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx con
 }
 
 // Execute executes the request
-//  @return GoogleGeocoderResponse
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*GoogleGeocoderResponse, *http.Response, error) {
+//  @return PATCHGoogleGeocodersGoogleGeocoderId200Response
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*PATCHGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GoogleGeocoderResponse
+		localVarReturnValue *PATCHGoogleGeocodersGoogleGeocoderId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.PATCHGoogleGeocodersGoogleGeocoderId")
@@ -442,7 +442,7 @@ func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) GoogleGeocoderCreate(googl
 	return r
 }
 
-func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) Execute() (*GoogleGeocoderResponse, *http.Response, error) {
+func (r GoogleGeocodersApiPOSTGoogleGeocodersRequest) Execute() (*POSTGoogleGeocoders201Response, *http.Response, error) {
 	return r.ApiService.POSTGoogleGeocodersExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) Goo
 }
 
 // Execute executes the request
-//  @return GoogleGeocoderResponse
-func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*GoogleGeocoderResponse, *http.Response, error) {
+//  @return POSTGoogleGeocoders201Response
+func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*POSTGoogleGeocoders201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GoogleGeocoderResponse
+		localVarReturnValue *POSTGoogleGeocoders201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GoogleGeocodersApiService.POSTGoogleGeocoders")

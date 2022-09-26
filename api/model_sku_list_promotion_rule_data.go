@@ -18,16 +18,16 @@ import (
 // SkuListPromotionRuleData struct for SkuListPromotionRuleData
 type SkuListPromotionRuleData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    SkuListPromotionRuleDataAttributes     `json:"attributes"`
-	Relationships *SkuListPromotionRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    GETSkuListPromotionRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *SkuListPromotionRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleData instantiates a new SkuListPromotionRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleData(type_ string, attributes SkuListPromotionRuleDataAttributes) *SkuListPromotionRuleData {
+func NewSkuListPromotionRuleData(type_ string, attributes GETSkuListPromotionRules200ResponseDataInnerAttributes) *SkuListPromotionRuleData {
 	this := SkuListPromotionRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *SkuListPromotionRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListPromotionRuleData) GetAttributes() SkuListPromotionRuleDataAttributes {
+func (o *SkuListPromotionRuleData) GetAttributes() GETSkuListPromotionRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret SkuListPromotionRuleDataAttributes
+		var ret GETSkuListPromotionRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *SkuListPromotionRuleData) GetAttributes() SkuListPromotionRuleDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleData) GetAttributesOk() (*SkuListPromotionRuleDataAttributes, bool) {
+func (o *SkuListPromotionRuleData) GetAttributesOk() (*GETSkuListPromotionRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *SkuListPromotionRuleData) GetAttributesOk() (*SkuListPromotionRuleDataA
 }
 
 // SetAttributes sets field value
-func (o *SkuListPromotionRuleData) SetAttributes(v SkuListPromotionRuleDataAttributes) {
+func (o *SkuListPromotionRuleData) SetAttributes(v GETSkuListPromotionRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

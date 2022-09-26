@@ -20,16 +20,16 @@ type ExternalTaxCalculatorUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                    `json:"id"`
-	Attributes    ExternalTaxCalculatorUpdateDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships    `json:"relationships,omitempty"`
+	Id            string                                                                      `json:"id"`
+	Attributes    PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships                                      `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorUpdateData instantiates a new ExternalTaxCalculatorUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes ExternalTaxCalculatorUpdateDataAttributes) *ExternalTaxCalculatorUpdateData {
+func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) *ExternalTaxCalculatorUpdateData {
 	this := ExternalTaxCalculatorUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ExternalTaxCalculatorUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalTaxCalculatorUpdateData) GetAttributes() ExternalTaxCalculatorUpdateDataAttributes {
+func (o *ExternalTaxCalculatorUpdateData) GetAttributes() PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes {
 	if o == nil {
-		var ret ExternalTaxCalculatorUpdateDataAttributes
+		var ret PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ExternalTaxCalculatorUpdateData) GetAttributes() ExternalTaxCalculatorU
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*ExternalTaxCalculatorUpdateDataAttributes, bool) {
+func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*ExternalTaxCalcula
 }
 
 // SetAttributes sets field value
-func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v ExternalTaxCalculatorUpdateDataAttributes) {
+func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## GETBundles
 
-> BundleResponseList GETBundles(ctx).Execute()
+> GETBundles200Response GETBundles(ctx).Execute()
 
 List all bundles
 
@@ -111,7 +111,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBundles`: BundleResponseList
+    // response from `GETBundles`: GETBundles200Response
     fmt.Fprintf(os.Stdout, "Response from `BundlesApi.GETBundles`: %v\n", resp)
 }
 ```
@@ -127,7 +127,7 @@ Other parameters are passed through a pointer to a apiGETBundlesRequest struct v
 
 ### Return type
 
-[**BundleResponseList**](BundleResponseList.md)
+[**GETBundles200Response**](GETBundles200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Other parameters are passed through a pointer to a apiGETBundlesRequest struct v
 
 ## GETBundlesBundleId
 
-> BundleResponse GETBundlesBundleId(ctx, bundleId).Execute()
+> GETBundlesBundleId200Response GETBundlesBundleId(ctx, bundleId).Execute()
 
 Retrieve a bundle
 
@@ -173,7 +173,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBundlesBundleId`: BundleResponse
+    // response from `GETBundlesBundleId`: GETBundlesBundleId200Response
     fmt.Fprintf(os.Stdout, "Response from `BundlesApi.GETBundlesBundleId`: %v\n", resp)
 }
 ```
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BundleResponse**](BundleResponse.md)
+[**GETBundlesBundleId200Response**](GETBundlesBundleId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBundlesBundleId
 
-> BundleResponse PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
+> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
 
 Update a bundle
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewBundleUpdateDataAttributes())) // BundleUpdate | 
+    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
     bundleId := "bundleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.PATCHBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBundlesBundleId`: BundleResponse
+    // response from `PATCHBundlesBundleId`: PATCHBundlesBundleId200Response
     fmt.Fprintf(os.Stdout, "Response from `BundlesApi.PATCHBundlesBundleId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BundleResponse**](BundleResponse.md)
+[**PATCHBundlesBundleId200Response**](PATCHBundlesBundleId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTBundles
 
-> BundleResponse POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
+> POSTBundles201Response POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
 
 Create a bundle
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("Type_example", *openapiclient.NewBundleCreateDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
+    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("Type_example", *openapiclient.NewPOSTBundles201ResponseDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.POSTBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTBundles`: BundleResponse
+    // response from `POSTBundles`: POSTBundles201Response
     fmt.Fprintf(os.Stdout, "Response from `BundlesApi.POSTBundles`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BundleResponse**](BundleResponse.md)
+[**POSTBundles201Response**](POSTBundles201Response.md)
 
 ### Authorization
 

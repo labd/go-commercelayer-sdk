@@ -120,7 +120,7 @@ type AttachmentsApiGETAttachmentsRequest struct {
 	ApiService *AttachmentsApiService
 }
 
-func (r AttachmentsApiGETAttachmentsRequest) Execute() (*AttachmentResponseList, *http.Response, error) {
+func (r AttachmentsApiGETAttachmentsRequest) Execute() (*GETAttachments200Response, *http.Response, error) {
 	return r.ApiService.GETAttachmentsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsA
 }
 
 // Execute executes the request
-//  @return AttachmentResponseList
-func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*AttachmentResponseList, *http.Response, error) {
+//  @return GETAttachments200Response
+func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*GETAttachments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AttachmentResponseList
+		localVarReturnValue *GETAttachments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAttachments")
@@ -220,7 +220,7 @@ type AttachmentsApiGETAttachmentsAttachmentIdRequest struct {
 	attachmentId string
 }
 
-func (r AttachmentsApiGETAttachmentsAttachmentIdRequest) Execute() (*AttachmentResponse, *http.Response, error) {
+func (r AttachmentsApiGETAttachmentsAttachmentIdRequest) Execute() (*GETAttachmentsAttachmentId200Response, *http.Response, error) {
 	return r.ApiService.GETAttachmentsAttachmentIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return AttachmentResponse
-func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*AttachmentResponse, *http.Response, error) {
+//  @return GETAttachmentsAttachmentId200Response
+func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*GETAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AttachmentResponse
+		localVarReturnValue *GETAttachmentsAttachmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETAttachmentsAttachmentId")
@@ -4561,7 +4561,7 @@ func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) AttachmentUpdate(atta
 	return r
 }
 
-func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) Execute() (*AttachmentResponse, *http.Response, error) {
+func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) Execute() (*PATCHAttachmentsAttachmentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAttachmentsAttachmentIdExecute(r)
 }
 
@@ -4583,13 +4583,13 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context
 }
 
 // Execute executes the request
-//  @return AttachmentResponse
-func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*AttachmentResponse, *http.Response, error) {
+//  @return PATCHAttachmentsAttachmentId200Response
+func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*PATCHAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AttachmentResponse
+		localVarReturnValue *PATCHAttachmentsAttachmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.PATCHAttachmentsAttachmentId")
@@ -4674,7 +4674,7 @@ func (r AttachmentsApiPOSTAttachmentsRequest) AttachmentCreate(attachmentCreate 
 	return r
 }
 
-func (r AttachmentsApiPOSTAttachmentsRequest) Execute() (*AttachmentResponse, *http.Response, error) {
+func (r AttachmentsApiPOSTAttachmentsRequest) Execute() (*POSTAttachments201Response, *http.Response, error) {
 	return r.ApiService.POSTAttachmentsExecute(r)
 }
 
@@ -4694,13 +4694,13 @@ func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) Attachments
 }
 
 // Execute executes the request
-//  @return AttachmentResponse
-func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*AttachmentResponse, *http.Response, error) {
+//  @return POSTAttachments201Response
+func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*POSTAttachments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AttachmentResponse
+		localVarReturnValue *POSTAttachments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.POSTAttachments")

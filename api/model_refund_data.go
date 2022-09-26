@@ -18,16 +18,16 @@ import (
 // RefundData struct for RefundData
 type RefundData struct {
 	// The resource's type
-	Type          string                   `json:"type"`
-	Attributes    RefundDataAttributes     `json:"attributes"`
-	Relationships *RefundDataRelationships `json:"relationships,omitempty"`
+	Type          string                                   `json:"type"`
+	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *RefundDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewRefundData instantiates a new RefundData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRefundData(type_ string, attributes RefundDataAttributes) *RefundData {
+func NewRefundData(type_ string, attributes GETRefunds200ResponseDataInnerAttributes) *RefundData {
 	this := RefundData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *RefundData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *RefundData) GetAttributes() RefundDataAttributes {
+func (o *RefundData) GetAttributes() GETRefunds200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret RefundDataAttributes
+		var ret GETRefunds200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *RefundData) GetAttributes() RefundDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *RefundData) GetAttributesOk() (*RefundDataAttributes, bool) {
+func (o *RefundData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *RefundData) GetAttributesOk() (*RefundDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *RefundData) SetAttributes(v RefundDataAttributes) {
+func (o *RefundData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -20,16 +20,16 @@ type StockLocationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                            `json:"id"`
-	Attributes    StockLocationUpdateDataAttributes `json:"attributes"`
-	Relationships *MerchantUpdateDataRelationships  `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHStockLocationsStockLocationId200ResponseDataAttributes `json:"attributes"`
+	Relationships *MerchantUpdateDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewStockLocationUpdateData instantiates a new StockLocationUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLocationUpdateData(type_ string, id string, attributes StockLocationUpdateDataAttributes) *StockLocationUpdateData {
+func NewStockLocationUpdateData(type_ string, id string, attributes PATCHStockLocationsStockLocationId200ResponseDataAttributes) *StockLocationUpdateData {
 	this := StockLocationUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *StockLocationUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockLocationUpdateData) GetAttributes() StockLocationUpdateDataAttributes {
+func (o *StockLocationUpdateData) GetAttributes() PATCHStockLocationsStockLocationId200ResponseDataAttributes {
 	if o == nil {
-		var ret StockLocationUpdateDataAttributes
+		var ret PATCHStockLocationsStockLocationId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *StockLocationUpdateData) GetAttributes() StockLocationUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockLocationUpdateData) GetAttributesOk() (*StockLocationUpdateDataAttributes, bool) {
+func (o *StockLocationUpdateData) GetAttributesOk() (*PATCHStockLocationsStockLocationId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *StockLocationUpdateData) GetAttributesOk() (*StockLocationUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StockLocationUpdateData) SetAttributes(v StockLocationUpdateDataAttributes) {
+func (o *StockLocationUpdateData) SetAttributes(v PATCHStockLocationsStockLocationId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## GETDeliveryLeadTimes
 
-> DeliveryLeadTimeResponseList GETDeliveryLeadTimes(ctx).Execute()
+> GETDeliveryLeadTimes200Response GETDeliveryLeadTimes(ctx).Execute()
 
 List all delivery lead times
 
@@ -112,7 +112,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETDeliveryLeadTimes`: DeliveryLeadTimeResponseList
+    // response from `GETDeliveryLeadTimes`: GETDeliveryLeadTimes200Response
     fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.GETDeliveryLeadTimes`: %v\n", resp)
 }
 ```
@@ -128,7 +128,7 @@ Other parameters are passed through a pointer to a apiGETDeliveryLeadTimesReques
 
 ### Return type
 
-[**DeliveryLeadTimeResponseList**](DeliveryLeadTimeResponseList.md)
+[**GETDeliveryLeadTimes200Response**](GETDeliveryLeadTimes200Response.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Other parameters are passed through a pointer to a apiGETDeliveryLeadTimesReques
 
 ## GETDeliveryLeadTimesDeliveryLeadTimeId
 
-> DeliveryLeadTimeResponse GETDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).Execute()
+> GETDeliveryLeadTimesDeliveryLeadTimeId200Response GETDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).Execute()
 
 Retrieve a delivery lead time
 
@@ -174,7 +174,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETDeliveryLeadTimesDeliveryLeadTimeId`: DeliveryLeadTimeResponse
+    // response from `GETDeliveryLeadTimesDeliveryLeadTimeId`: GETDeliveryLeadTimesDeliveryLeadTimeId200Response
     fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.GETDeliveryLeadTimesDeliveryLeadTimeId`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeliveryLeadTimeResponse**](DeliveryLeadTimeResponse.md)
+[**GETDeliveryLeadTimesDeliveryLeadTimeId200Response**](GETDeliveryLeadTimesDeliveryLeadTimeId200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHDeliveryLeadTimesDeliveryLeadTimeId
 
-> DeliveryLeadTimeResponse PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
+> PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
 
 Update a delivery lead time
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewDeliveryLeadTimeUpdateDataAttributes())) // DeliveryLeadTimeUpdate | 
+    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes())) // DeliveryLeadTimeUpdate | 
     deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHDeliveryLeadTimesDeliveryLeadTimeId`: DeliveryLeadTimeResponse
+    // response from `PATCHDeliveryLeadTimesDeliveryLeadTimeId`: PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
     fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeliveryLeadTimeResponse**](DeliveryLeadTimeResponse.md)
+[**PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTDeliveryLeadTimes
 
-> DeliveryLeadTimeResponse POSTDeliveryLeadTimes(ctx).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
+> POSTDeliveryLeadTimes201Response POSTDeliveryLeadTimes(ctx).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
 
 Create a delivery lead time
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("Type_example", *openapiclient.NewDeliveryLeadTimeCreateDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
+    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData("Type_example", *openapiclient.NewPOSTDeliveryLeadTimes201ResponseDataAttributes(int32(48), int32(72)))) // DeliveryLeadTimeCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.POSTDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTDeliveryLeadTimes`: DeliveryLeadTimeResponse
+    // response from `POSTDeliveryLeadTimes`: POSTDeliveryLeadTimes201Response
     fmt.Fprintf(os.Stdout, "Response from `DeliveryLeadTimesApi.POSTDeliveryLeadTimes`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeliveryLeadTimeResponse**](DeliveryLeadTimeResponse.md)
+[**POSTDeliveryLeadTimes201Response**](POSTDeliveryLeadTimes201Response.md)
 
 ### Authorization
 

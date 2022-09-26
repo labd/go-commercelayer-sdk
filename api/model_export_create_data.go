@@ -18,16 +18,16 @@ import (
 // ExportCreateData struct for ExportCreateData
 type ExportCreateData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    ExportCreateDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}     `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTExports201ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}               `json:"relationships,omitempty"`
 }
 
 // NewExportCreateData instantiates a new ExportCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExportCreateData(type_ string, attributes ExportCreateDataAttributes) *ExportCreateData {
+func NewExportCreateData(type_ string, attributes POSTExports201ResponseDataAttributes) *ExportCreateData {
 	this := ExportCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ExportCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExportCreateData) GetAttributes() ExportCreateDataAttributes {
+func (o *ExportCreateData) GetAttributes() POSTExports201ResponseDataAttributes {
 	if o == nil {
-		var ret ExportCreateDataAttributes
+		var ret POSTExports201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ExportCreateData) GetAttributes() ExportCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExportCreateData) GetAttributesOk() (*ExportCreateDataAttributes, bool) {
+func (o *ExportCreateData) GetAttributesOk() (*POSTExports201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ExportCreateData) GetAttributesOk() (*ExportCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *ExportCreateData) SetAttributes(v ExportCreateDataAttributes) {
+func (o *ExportCreateData) SetAttributes(v POSTExports201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

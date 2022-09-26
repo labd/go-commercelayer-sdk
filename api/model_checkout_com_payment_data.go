@@ -18,16 +18,16 @@ import (
 // CheckoutComPaymentData struct for CheckoutComPaymentData
 type CheckoutComPaymentData struct {
 	// The resource's type
-	Type          string                           `json:"type"`
-	Attributes    CheckoutComPaymentDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships   `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETCheckoutComPayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComPaymentData instantiates a new CheckoutComPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentData(type_ string, attributes CheckoutComPaymentDataAttributes) *CheckoutComPaymentData {
+func NewCheckoutComPaymentData(type_ string, attributes GETCheckoutComPayments200ResponseDataInnerAttributes) *CheckoutComPaymentData {
 	this := CheckoutComPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CheckoutComPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComPaymentData) GetAttributes() CheckoutComPaymentDataAttributes {
+func (o *CheckoutComPaymentData) GetAttributes() GETCheckoutComPayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CheckoutComPaymentDataAttributes
+		var ret GETCheckoutComPayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CheckoutComPaymentData) GetAttributes() CheckoutComPaymentDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentData) GetAttributesOk() (*CheckoutComPaymentDataAttributes, bool) {
+func (o *CheckoutComPaymentData) GetAttributesOk() (*GETCheckoutComPayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CheckoutComPaymentData) GetAttributesOk() (*CheckoutComPaymentDataAttri
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComPaymentData) SetAttributes(v CheckoutComPaymentDataAttributes) {
+func (o *CheckoutComPaymentData) SetAttributes(v GETCheckoutComPayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -120,7 +120,7 @@ type TaxjarAccountsApiGETTaxjarAccountsRequest struct {
 	ApiService *TaxjarAccountsApiService
 }
 
-func (r TaxjarAccountsApiGETTaxjarAccountsRequest) Execute() (*TaxjarAccountResponseList, *http.Response, error) {
+func (r TaxjarAccountsApiGETTaxjarAccountsRequest) Execute() (*GETTaxjarAccounts200Response, *http.Response, error) {
 	return r.ApiService.GETTaxjarAccountsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccounts(ctx context.Context) Taxjar
 }
 
 // Execute executes the request
-//  @return TaxjarAccountResponseList
-func (a *TaxjarAccountsApiService) GETTaxjarAccountsExecute(r TaxjarAccountsApiGETTaxjarAccountsRequest) (*TaxjarAccountResponseList, *http.Response, error) {
+//  @return GETTaxjarAccounts200Response
+func (a *TaxjarAccountsApiService) GETTaxjarAccountsExecute(r TaxjarAccountsApiGETTaxjarAccountsRequest) (*GETTaxjarAccounts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxjarAccountResponseList
+		localVarReturnValue *GETTaxjarAccounts200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxjarAccountsApiService.GETTaxjarAccounts")
@@ -220,7 +220,7 @@ type TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest struct {
 	taxjarAccountId string
 }
 
-func (r TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest) Execute() (*TaxjarAccountResponse, *http.Response, error) {
+func (r TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest) Execute() (*GETTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	return r.ApiService.GETTaxjarAccountsTaxjarAccountIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountId(ctx context.
 }
 
 // Execute executes the request
-//  @return TaxjarAccountResponse
-func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest) (*TaxjarAccountResponse, *http.Response, error) {
+//  @return GETTaxjarAccountsTaxjarAccountId200Response
+func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest) (*GETTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxjarAccountResponse
+		localVarReturnValue *GETTaxjarAccountsTaxjarAccountId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxjarAccountsApiService.GETTaxjarAccountsTaxjarAccountId")
@@ -329,7 +329,7 @@ func (r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) TaxjarAccoun
 	return r
 }
 
-func (r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) Execute() (*TaxjarAccountResponse, *http.Response, error) {
+func (r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) Execute() (*PATCHTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	return r.ApiService.PATCHTaxjarAccountsTaxjarAccountIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountId(ctx contex
 }
 
 // Execute executes the request
-//  @return TaxjarAccountResponse
-func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) (*TaxjarAccountResponse, *http.Response, error) {
+//  @return PATCHTaxjarAccountsTaxjarAccountId200Response
+func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) (*PATCHTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxjarAccountResponse
+		localVarReturnValue *PATCHTaxjarAccountsTaxjarAccountId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxjarAccountsApiService.PATCHTaxjarAccountsTaxjarAccountId")
@@ -442,7 +442,7 @@ func (r TaxjarAccountsApiPOSTTaxjarAccountsRequest) TaxjarAccountCreate(taxjarAc
 	return r
 }
 
-func (r TaxjarAccountsApiPOSTTaxjarAccountsRequest) Execute() (*TaxjarAccountResponse, *http.Response, error) {
+func (r TaxjarAccountsApiPOSTTaxjarAccountsRequest) Execute() (*POSTTaxjarAccounts201Response, *http.Response, error) {
 	return r.ApiService.POSTTaxjarAccountsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *TaxjarAccountsApiService) POSTTaxjarAccounts(ctx context.Context) Taxja
 }
 
 // Execute executes the request
-//  @return TaxjarAccountResponse
-func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApiPOSTTaxjarAccountsRequest) (*TaxjarAccountResponse, *http.Response, error) {
+//  @return POSTTaxjarAccounts201Response
+func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApiPOSTTaxjarAccountsRequest) (*POSTTaxjarAccounts201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxjarAccountResponse
+		localVarReturnValue *POSTTaxjarAccounts201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxjarAccountsApiService.POSTTaxjarAccounts")

@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETBraintreeGateways
 
-> BraintreeGatewayResponseList GETBraintreeGateways(ctx).Execute()
+> GETBraintreeGateways200Response GETBraintreeGateways(ctx).Execute()
 
 List all braintree gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.GETBraintreeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreeGateways`: BraintreeGatewayResponseList
+    // response from `GETBraintreeGateways`: GETBraintreeGateways200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.GETBraintreeGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETBraintreeGatewaysReques
 
 ### Return type
 
-[**BraintreeGatewayResponseList**](BraintreeGatewayResponseList.md)
+[**GETBraintreeGateways200Response**](GETBraintreeGateways200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETBraintreeGatewaysReques
 
 ## GETBraintreeGatewaysBraintreeGatewayId
 
-> BraintreeGatewayResponse GETBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).Execute()
+> GETBraintreeGatewaysBraintreeGatewayId200Response GETBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).Execute()
 
 Retrieve a braintree gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.GETBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreeGatewaysBraintreeGatewayId`: BraintreeGatewayResponse
+    // response from `GETBraintreeGatewaysBraintreeGatewayId`: GETBraintreeGatewaysBraintreeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.GETBraintreeGatewaysBraintreeGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreeGatewayResponse**](BraintreeGatewayResponse.md)
+[**GETBraintreeGatewaysBraintreeGatewayId200Response**](GETBraintreeGatewaysBraintreeGatewayId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBraintreeGatewaysBraintreeGatewayId
 
-> BraintreeGatewayResponse PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
+> PATCHBraintreeGatewaysBraintreeGatewayId200Response PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
 
 Update a braintree gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewBraintreeGatewayUpdateDataAttributes())) // BraintreeGatewayUpdate | 
+    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
     braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBraintreeGatewaysBraintreeGatewayId`: BraintreeGatewayResponse
+    // response from `PATCHBraintreeGatewaysBraintreeGatewayId`: PATCHBraintreeGatewaysBraintreeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreeGatewayResponse**](BraintreeGatewayResponse.md)
+[**PATCHBraintreeGatewaysBraintreeGatewayId200Response**](PATCHBraintreeGatewaysBraintreeGatewayId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBraintreeGateways
 
-> BraintreeGatewayResponse POSTBraintreeGateways(ctx).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
+> POSTBraintreeGateways201Response POSTBraintreeGateways(ctx).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
 
 Create a braintree gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("Type_example", *openapiclient.NewBraintreeGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
+    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("Type_example", *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.POSTBraintreeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTBraintreeGateways`: BraintreeGatewayResponse
+    // response from `POSTBraintreeGateways`: POSTBraintreeGateways201Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreeGatewaysApi.POSTBraintreeGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreeGatewayResponse**](BraintreeGatewayResponse.md)
+[**POSTBraintreeGateways201Response**](POSTBraintreeGateways201Response.md)
 
 ### Authorization
 

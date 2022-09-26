@@ -304,7 +304,7 @@ type PriceListsApiGETPriceListsRequest struct {
 	ApiService *PriceListsApiService
 }
 
-func (r PriceListsApiGETPriceListsRequest) Execute() (*PriceListResponseList, *http.Response, error) {
+func (r PriceListsApiGETPriceListsRequest) Execute() (*GETPriceLists200Response, *http.Response, error) {
 	return r.ApiService.GETPriceListsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *PriceListsApiService) GETPriceLists(ctx context.Context) PriceListsApiG
 }
 
 // Execute executes the request
-//  @return PriceListResponseList
-func (a *PriceListsApiService) GETPriceListsExecute(r PriceListsApiGETPriceListsRequest) (*PriceListResponseList, *http.Response, error) {
+//  @return GETPriceLists200Response
+func (a *PriceListsApiService) GETPriceListsExecute(r PriceListsApiGETPriceListsRequest) (*GETPriceLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceListResponseList
+		localVarReturnValue *GETPriceLists200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.GETPriceLists")
@@ -404,7 +404,7 @@ type PriceListsApiGETPriceListsPriceListIdRequest struct {
 	priceListId string
 }
 
-func (r PriceListsApiGETPriceListsPriceListIdRequest) Execute() (*PriceListResponse, *http.Response, error) {
+func (r PriceListsApiGETPriceListsPriceListIdRequest) Execute() (*GETPriceListsPriceListId200Response, *http.Response, error) {
 	return r.ApiService.GETPriceListsPriceListIdExecute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *PriceListsApiService) GETPriceListsPriceListId(ctx context.Context, pri
 }
 
 // Execute executes the request
-//  @return PriceListResponse
-func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGETPriceListsPriceListIdRequest) (*PriceListResponse, *http.Response, error) {
+//  @return GETPriceListsPriceListId200Response
+func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGETPriceListsPriceListIdRequest) (*GETPriceListsPriceListId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceListResponse
+		localVarReturnValue *GETPriceListsPriceListId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.GETPriceListsPriceListId")
@@ -513,7 +513,7 @@ func (r PriceListsApiPATCHPriceListsPriceListIdRequest) PriceListUpdate(priceLis
 	return r
 }
 
-func (r PriceListsApiPATCHPriceListsPriceListIdRequest) Execute() (*PriceListResponse, *http.Response, error) {
+func (r PriceListsApiPATCHPriceListsPriceListIdRequest) Execute() (*PATCHPriceListsPriceListId200Response, *http.Response, error) {
 	return r.ApiService.PATCHPriceListsPriceListIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListId(ctx context.Context, p
 }
 
 // Execute executes the request
-//  @return PriceListResponse
-func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApiPATCHPriceListsPriceListIdRequest) (*PriceListResponse, *http.Response, error) {
+//  @return PATCHPriceListsPriceListId200Response
+func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApiPATCHPriceListsPriceListIdRequest) (*PATCHPriceListsPriceListId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceListResponse
+		localVarReturnValue *PATCHPriceListsPriceListId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.PATCHPriceListsPriceListId")
@@ -626,7 +626,7 @@ func (r PriceListsApiPOSTPriceListsRequest) PriceListCreate(priceListCreate Pric
 	return r
 }
 
-func (r PriceListsApiPOSTPriceListsRequest) Execute() (*PriceListResponse, *http.Response, error) {
+func (r PriceListsApiPOSTPriceListsRequest) Execute() (*POSTPriceLists201Response, *http.Response, error) {
 	return r.ApiService.POSTPriceListsExecute(r)
 }
 
@@ -646,13 +646,13 @@ func (a *PriceListsApiService) POSTPriceLists(ctx context.Context) PriceListsApi
 }
 
 // Execute executes the request
-//  @return PriceListResponse
-func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceListsRequest) (*PriceListResponse, *http.Response, error) {
+//  @return POSTPriceLists201Response
+func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceListsRequest) (*POSTPriceLists201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PriceListResponse
+		localVarReturnValue *POSTPriceLists201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceListsApiService.POSTPriceLists")

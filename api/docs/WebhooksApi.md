@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GETWebhooks
 
-> WebhookResponseList GETWebhooks(ctx).Execute()
+> GETWebhooks200Response GETWebhooks(ctx).Execute()
 
 List all webhooks
 
@@ -247,7 +247,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWebhooks`: WebhookResponseList
+    // response from `GETWebhooks`: GETWebhooks200Response
     fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GETWebhooks`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Other parameters are passed through a pointer to a apiGETWebhooksRequest struct 
 
 ### Return type
 
-[**WebhookResponseList**](WebhookResponseList.md)
+[**GETWebhooks200Response**](GETWebhooks200Response.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Other parameters are passed through a pointer to a apiGETWebhooksRequest struct 
 
 ## GETWebhooksWebhookId
 
-> WebhookResponse GETWebhooksWebhookId(ctx, webhookId).Execute()
+> GETWebhooksWebhookId200Response GETWebhooksWebhookId(ctx, webhookId).Execute()
 
 Retrieve a webhook
 
@@ -309,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWebhooksWebhookId`: WebhookResponse
+    // response from `GETWebhooksWebhookId`: GETWebhooksWebhookId200Response
     fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.GETWebhooksWebhookId`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebhookResponse**](WebhookResponse.md)
+[**GETWebhooksWebhookId200Response**](GETWebhooksWebhookId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHWebhooksWebhookId
 
-> WebhookResponse PATCHWebhooksWebhookId(ctx, webhookId).WebhookUpdate(webhookUpdate).Execute()
+> PATCHWebhooksWebhookId200Response PATCHWebhooksWebhookId(ctx, webhookId).WebhookUpdate(webhookUpdate).Execute()
 
 Update a webhook
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewWebhookUpdateDataAttributes())) // WebhookUpdate | 
+    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHWebhooksWebhookId200ResponseDataAttributes())) // WebhookUpdate | 
     webhookId := "webhookId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PATCHWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHWebhooksWebhookId`: WebhookResponse
+    // response from `PATCHWebhooksWebhookId`: PATCHWebhooksWebhookId200Response
     fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.PATCHWebhooksWebhookId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebhookResponse**](WebhookResponse.md)
+[**PATCHWebhooksWebhookId200Response**](PATCHWebhooksWebhookId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTWebhooks
 
-> WebhookResponse POSTWebhooks(ctx).WebhookCreate(webhookCreate).Execute()
+> POSTWebhooks201Response POSTWebhooks(ctx).WebhookCreate(webhookCreate).Execute()
 
 Create a webhook
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("Type_example", *openapiclient.NewWebhookCreateDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
+    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("Type_example", *openapiclient.NewPOSTWebhooks201ResponseDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.POSTWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTWebhooks`: WebhookResponse
+    // response from `POSTWebhooks`: POSTWebhooks201Response
     fmt.Fprintf(os.Stdout, "Response from `WebhooksApi.POSTWebhooks`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WebhookResponse**](WebhookResponse.md)
+[**POSTWebhooks201Response**](POSTWebhooks201Response.md)
 
 ### Authorization
 

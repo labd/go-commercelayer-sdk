@@ -1408,7 +1408,7 @@ type MarketsApiGETMarketsRequest struct {
 	ApiService *MarketsApiService
 }
 
-func (r MarketsApiGETMarketsRequest) Execute() (*MarketResponseList, *http.Response, error) {
+func (r MarketsApiGETMarketsRequest) Execute() (*GETMarkets200Response, *http.Response, error) {
 	return r.ApiService.GETMarketsExecute(r)
 }
 
@@ -1428,13 +1428,13 @@ func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarkets
 }
 
 // Execute executes the request
-//  @return MarketResponseList
-func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*MarketResponseList, *http.Response, error) {
+//  @return GETMarkets200Response
+func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*GETMarkets200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *MarketResponseList
+		localVarReturnValue *GETMarkets200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarkets")
@@ -1508,7 +1508,7 @@ type MarketsApiGETMarketsMarketIdRequest struct {
 	marketId   string
 }
 
-func (r MarketsApiGETMarketsMarketIdRequest) Execute() (*MarketResponse, *http.Response, error) {
+func (r MarketsApiGETMarketsMarketIdRequest) Execute() (*GETMarketsMarketId200Response, *http.Response, error) {
 	return r.ApiService.GETMarketsMarketIdExecute(r)
 }
 
@@ -1530,13 +1530,13 @@ func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId str
 }
 
 // Execute executes the request
-//  @return MarketResponse
-func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMarketIdRequest) (*MarketResponse, *http.Response, error) {
+//  @return GETMarketsMarketId200Response
+func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMarketIdRequest) (*GETMarketsMarketId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *MarketResponse
+		localVarReturnValue *GETMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETMarketsMarketId")
@@ -2537,7 +2537,7 @@ func (r MarketsApiPATCHMarketsMarketIdRequest) MarketUpdate(marketUpdate MarketU
 	return r
 }
 
-func (r MarketsApiPATCHMarketsMarketIdRequest) Execute() (*MarketResponse, *http.Response, error) {
+func (r MarketsApiPATCHMarketsMarketIdRequest) Execute() (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	return r.ApiService.PATCHMarketsMarketIdExecute(r)
 }
 
@@ -2559,13 +2559,13 @@ func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId s
 }
 
 // Execute executes the request
-//  @return MarketResponse
-func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarketsMarketIdRequest) (*MarketResponse, *http.Response, error) {
+//  @return PATCHMarketsMarketId200Response
+func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarketsMarketIdRequest) (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *MarketResponse
+		localVarReturnValue *PATCHMarketsMarketId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.PATCHMarketsMarketId")
@@ -2650,7 +2650,7 @@ func (r MarketsApiPOSTMarketsRequest) MarketCreate(marketCreate MarketCreate) Ma
 	return r
 }
 
-func (r MarketsApiPOSTMarketsRequest) Execute() (*MarketResponse, *http.Response, error) {
+func (r MarketsApiPOSTMarketsRequest) Execute() (*POSTMarkets201Response, *http.Response, error) {
 	return r.ApiService.POSTMarketsExecute(r)
 }
 
@@ -2670,13 +2670,13 @@ func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarke
 }
 
 // Execute executes the request
-//  @return MarketResponse
-func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (*MarketResponse, *http.Response, error) {
+//  @return POSTMarkets201Response
+func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (*POSTMarkets201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *MarketResponse
+		localVarReturnValue *POSTMarkets201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.POSTMarkets")

@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETCheckoutComPayments
 
-> CheckoutComPaymentResponseList GETCheckoutComPayments(ctx).Execute()
+> GETCheckoutComPayments200Response GETCheckoutComPayments(ctx).Execute()
 
 List all checkout.com payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.GETCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComPayments`: CheckoutComPaymentResponseList
+    // response from `GETCheckoutComPayments`: GETCheckoutComPayments200Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.GETCheckoutComPayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETCheckoutComPaymentsRequ
 
 ### Return type
 
-[**CheckoutComPaymentResponseList**](CheckoutComPaymentResponseList.md)
+[**GETCheckoutComPayments200Response**](GETCheckoutComPayments200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETCheckoutComPaymentsRequ
 
 ## GETCheckoutComPaymentsCheckoutComPaymentId
 
-> CheckoutComPaymentResponse GETCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).Execute()
+> GETCheckoutComPaymentsCheckoutComPaymentId200Response GETCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).Execute()
 
 Retrieve a checkout.com payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.GETCheckoutComPaymentsCheckoutComPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComPaymentsCheckoutComPaymentId`: CheckoutComPaymentResponse
+    // response from `GETCheckoutComPaymentsCheckoutComPaymentId`: GETCheckoutComPaymentsCheckoutComPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.GETCheckoutComPaymentsCheckoutComPaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckoutComPaymentResponse**](CheckoutComPaymentResponse.md)
+[**GETCheckoutComPaymentsCheckoutComPaymentId200Response**](GETCheckoutComPaymentsCheckoutComPaymentId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCheckoutComPaymentsCheckoutComPaymentId
 
-> CheckoutComPaymentResponse PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).CheckoutComPaymentUpdate(checkoutComPaymentUpdate).Execute()
+> PATCHCheckoutComPaymentsCheckoutComPaymentId200Response PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx, checkoutComPaymentId).CheckoutComPaymentUpdate(checkoutComPaymentUpdate).Execute()
 
 Update a checkout.com payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCheckoutComPaymentUpdateDataAttributes())) // CheckoutComPaymentUpdate | 
+    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
     checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.PATCHCheckoutComPaymentsCheckoutComPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCheckoutComPaymentsCheckoutComPaymentId`: CheckoutComPaymentResponse
+    // response from `PATCHCheckoutComPaymentsCheckoutComPaymentId`: PATCHCheckoutComPaymentsCheckoutComPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.PATCHCheckoutComPaymentsCheckoutComPaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckoutComPaymentResponse**](CheckoutComPaymentResponse.md)
+[**PATCHCheckoutComPaymentsCheckoutComPaymentId200Response**](PATCHCheckoutComPaymentsCheckoutComPaymentId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTCheckoutComPayments
 
-> CheckoutComPaymentResponse POSTCheckoutComPayments(ctx).CheckoutComPaymentCreate(checkoutComPaymentCreate).Execute()
+> POSTCheckoutComPayments201Response POSTCheckoutComPayments(ctx).CheckoutComPaymentCreate(checkoutComPaymentCreate).Execute()
 
 Create a checkout.com payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("Type_example", *openapiclient.NewCheckoutComPaymentCreateDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
+    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("Type_example", *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.POSTCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCheckoutComPayments`: CheckoutComPaymentResponse
+    // response from `POSTCheckoutComPayments`: POSTCheckoutComPayments201Response
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComPaymentsApi.POSTCheckoutComPayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CheckoutComPaymentResponse**](CheckoutComPaymentResponse.md)
+[**POSTCheckoutComPayments201Response**](POSTCheckoutComPayments201Response.md)
 
 ### Authorization
 

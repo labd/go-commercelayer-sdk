@@ -18,16 +18,16 @@ import (
 // CheckoutComGatewayCreateData struct for CheckoutComGatewayCreateData
 type CheckoutComGatewayCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    CheckoutComGatewayCreateDataAttributes     `json:"attributes"`
-	Relationships *CheckoutComGatewayCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    POSTCheckoutComGateways201ResponseDataAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayCreateData instantiates a new CheckoutComGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayCreateData(type_ string, attributes CheckoutComGatewayCreateDataAttributes) *CheckoutComGatewayCreateData {
+func NewCheckoutComGatewayCreateData(type_ string, attributes POSTCheckoutComGateways201ResponseDataAttributes) *CheckoutComGatewayCreateData {
 	this := CheckoutComGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CheckoutComGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComGatewayCreateData) GetAttributes() CheckoutComGatewayCreateDataAttributes {
+func (o *CheckoutComGatewayCreateData) GetAttributes() POSTCheckoutComGateways201ResponseDataAttributes {
 	if o == nil {
-		var ret CheckoutComGatewayCreateDataAttributes
+		var ret POSTCheckoutComGateways201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CheckoutComGatewayCreateData) GetAttributes() CheckoutComGatewayCreateD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayCreateData) GetAttributesOk() (*CheckoutComGatewayCreateDataAttributes, bool) {
+func (o *CheckoutComGatewayCreateData) GetAttributesOk() (*POSTCheckoutComGateways201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CheckoutComGatewayCreateData) GetAttributesOk() (*CheckoutComGatewayCre
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComGatewayCreateData) SetAttributes(v CheckoutComGatewayCreateDataAttributes) {
+func (o *CheckoutComGatewayCreateData) SetAttributes(v POSTCheckoutComGateways201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

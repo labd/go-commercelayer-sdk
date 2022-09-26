@@ -20,16 +20,16 @@ type ShippingMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                 `json:"id"`
-	Attributes    ShippingMethodUpdateDataAttributes     `json:"attributes"`
-	Relationships *ShippingMethodCreateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingMethodCreateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodUpdateData(type_ string, id string, attributes ShippingMethodUpdateDataAttributes) *ShippingMethodUpdateData {
+func NewShippingMethodUpdateData(type_ string, id string, attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) *ShippingMethodUpdateData {
 	this := ShippingMethodUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ShippingMethodUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingMethodUpdateData) GetAttributes() ShippingMethodUpdateDataAttributes {
+func (o *ShippingMethodUpdateData) GetAttributes() PATCHShippingMethodsShippingMethodId200ResponseDataAttributes {
 	if o == nil {
-		var ret ShippingMethodUpdateDataAttributes
+		var ret PATCHShippingMethodsShippingMethodId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ShippingMethodUpdateData) GetAttributes() ShippingMethodUpdateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdateData) GetAttributesOk() (*ShippingMethodUpdateDataAttributes, bool) {
+func (o *ShippingMethodUpdateData) GetAttributesOk() (*PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ShippingMethodUpdateData) GetAttributesOk() (*ShippingMethodUpdateDataA
 }
 
 // SetAttributes sets field value
-func (o *ShippingMethodUpdateData) SetAttributes(v ShippingMethodUpdateDataAttributes) {
+func (o *ShippingMethodUpdateData) SetAttributes(v PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

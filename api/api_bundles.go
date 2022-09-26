@@ -120,7 +120,7 @@ type BundlesApiGETBundlesRequest struct {
 	ApiService *BundlesApiService
 }
 
-func (r BundlesApiGETBundlesRequest) Execute() (*BundleResponseList, *http.Response, error) {
+func (r BundlesApiGETBundlesRequest) Execute() (*GETBundles200Response, *http.Response, error) {
 	return r.ApiService.GETBundlesExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *BundlesApiService) GETBundles(ctx context.Context) BundlesApiGETBundles
 }
 
 // Execute executes the request
-//  @return BundleResponseList
-func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*BundleResponseList, *http.Response, error) {
+//  @return GETBundles200Response
+func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*GETBundles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BundleResponseList
+		localVarReturnValue *GETBundles200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.GETBundles")
@@ -220,7 +220,7 @@ type BundlesApiGETBundlesBundleIdRequest struct {
 	bundleId   string
 }
 
-func (r BundlesApiGETBundlesBundleIdRequest) Execute() (*BundleResponse, *http.Response, error) {
+func (r BundlesApiGETBundlesBundleIdRequest) Execute() (*GETBundlesBundleId200Response, *http.Response, error) {
 	return r.ApiService.GETBundlesBundleIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId str
 }
 
 // Execute executes the request
-//  @return BundleResponse
-func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*BundleResponse, *http.Response, error) {
+//  @return GETBundlesBundleId200Response
+func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*GETBundlesBundleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BundleResponse
+		localVarReturnValue *GETBundlesBundleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.GETBundlesBundleId")
@@ -513,7 +513,7 @@ func (r BundlesApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleU
 	return r
 }
 
-func (r BundlesApiPATCHBundlesBundleIdRequest) Execute() (*BundleResponse, *http.Response, error) {
+func (r BundlesApiPATCHBundlesBundleIdRequest) Execute() (*PATCHBundlesBundleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHBundlesBundleIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId s
 }
 
 // Execute executes the request
-//  @return BundleResponse
-func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*BundleResponse, *http.Response, error) {
+//  @return PATCHBundlesBundleId200Response
+func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*PATCHBundlesBundleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BundleResponse
+		localVarReturnValue *PATCHBundlesBundleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.PATCHBundlesBundleId")
@@ -626,7 +626,7 @@ func (r BundlesApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) Bu
 	return r
 }
 
-func (r BundlesApiPOSTBundlesRequest) Execute() (*BundleResponse, *http.Response, error) {
+func (r BundlesApiPOSTBundlesRequest) Execute() (*POSTBundles201Response, *http.Response, error) {
 	return r.ApiService.POSTBundlesExecute(r)
 }
 
@@ -646,13 +646,13 @@ func (a *BundlesApiService) POSTBundles(ctx context.Context) BundlesApiPOSTBundl
 }
 
 // Execute executes the request
-//  @return BundleResponse
-func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*BundleResponse, *http.Response, error) {
+//  @return POSTBundles201Response
+func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*POSTBundles201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *BundleResponse
+		localVarReturnValue *POSTBundles201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BundlesApiService.POSTBundles")

@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETTaxjarAccounts
 
-> TaxjarAccountResponseList GETTaxjarAccounts(ctx).Execute()
+> GETTaxjarAccounts200Response GETTaxjarAccounts(ctx).Execute()
 
 List all taxjar accounts
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.GETTaxjarAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxjarAccounts`: TaxjarAccountResponseList
+    // response from `GETTaxjarAccounts`: GETTaxjarAccounts200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.GETTaxjarAccounts`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETTaxjarAccountsRequest s
 
 ### Return type
 
-[**TaxjarAccountResponseList**](TaxjarAccountResponseList.md)
+[**GETTaxjarAccounts200Response**](GETTaxjarAccounts200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETTaxjarAccountsRequest s
 
 ## GETTaxjarAccountsTaxjarAccountId
 
-> TaxjarAccountResponse GETTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).Execute()
+> GETTaxjarAccountsTaxjarAccountId200Response GETTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).Execute()
 
 Retrieve a taxjar account
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.GETTaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxjarAccountsTaxjarAccountId`: TaxjarAccountResponse
+    // response from `GETTaxjarAccountsTaxjarAccountId`: GETTaxjarAccountsTaxjarAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.GETTaxjarAccountsTaxjarAccountId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxjarAccountResponse**](TaxjarAccountResponse.md)
+[**GETTaxjarAccountsTaxjarAccountId200Response**](GETTaxjarAccountsTaxjarAccountId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxjarAccountsTaxjarAccountId
 
-> TaxjarAccountResponse PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
+> PATCHTaxjarAccountsTaxjarAccountId200Response PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
 
 Update a taxjar account
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewTaxjarAccountUpdateDataAttributes())) // TaxjarAccountUpdate | 
+    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes())) // TaxjarAccountUpdate | 
     taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHTaxjarAccountsTaxjarAccountId`: TaxjarAccountResponse
+    // response from `PATCHTaxjarAccountsTaxjarAccountId`: PATCHTaxjarAccountsTaxjarAccountId200Response
     fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxjarAccountResponse**](TaxjarAccountResponse.md)
+[**PATCHTaxjarAccountsTaxjarAccountId200Response**](PATCHTaxjarAccountsTaxjarAccountId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxjarAccounts
 
-> TaxjarAccountResponse POSTTaxjarAccounts(ctx).TaxjarAccountCreate(taxjarAccountCreate).Execute()
+> POSTTaxjarAccounts201Response POSTTaxjarAccounts(ctx).TaxjarAccountCreate(taxjarAccountCreate).Execute()
 
 Create a taxjar account
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("Type_example", *openapiclient.NewTaxjarAccountCreateDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
+    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("Type_example", *openapiclient.NewPOSTTaxjarAccounts201ResponseDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.POSTTaxjarAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTTaxjarAccounts`: TaxjarAccountResponse
+    // response from `POSTTaxjarAccounts`: POSTTaxjarAccounts201Response
     fmt.Fprintf(os.Stdout, "Response from `TaxjarAccountsApi.POSTTaxjarAccounts`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaxjarAccountResponse**](TaxjarAccountResponse.md)
+[**POSTTaxjarAccounts201Response**](POSTTaxjarAccounts201Response.md)
 
 ### Authorization
 

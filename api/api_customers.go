@@ -672,7 +672,7 @@ type CustomersApiGETCustomersRequest struct {
 	ApiService *CustomersApiService
 }
 
-func (r CustomersApiGETCustomersRequest) Execute() (*CustomerResponseList, *http.Response, error) {
+func (r CustomersApiGETCustomersRequest) Execute() (*GETCustomers200Response, *http.Response, error) {
 	return r.ApiService.GETCustomersExecute(r)
 }
 
@@ -692,13 +692,13 @@ func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETC
 }
 
 // Execute executes the request
-//  @return CustomerResponseList
-func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequest) (*CustomerResponseList, *http.Response, error) {
+//  @return GETCustomers200Response
+func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequest) (*GETCustomers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerResponseList
+		localVarReturnValue *GETCustomers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomers")
@@ -772,7 +772,7 @@ type CustomersApiGETCustomersCustomerIdRequest struct {
 	customerId string
 }
 
-func (r CustomersApiGETCustomersCustomerIdRequest) Execute() (*CustomerResponse, *http.Response, error) {
+func (r CustomersApiGETCustomersCustomerIdRequest) Execute() (*GETCustomersCustomerId200Response, *http.Response, error) {
 	return r.ApiService.GETCustomersCustomerIdExecute(r)
 }
 
@@ -794,13 +794,13 @@ func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, custom
 }
 
 // Execute executes the request
-//  @return CustomerResponse
-func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*CustomerResponse, *http.Response, error) {
+//  @return GETCustomersCustomerId200Response
+func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*GETCustomersCustomerId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerResponse
+		localVarReturnValue *GETCustomersCustomerId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.GETCustomersCustomerId")
@@ -1433,7 +1433,7 @@ func (r CustomersApiPATCHCustomersCustomerIdRequest) CustomerUpdate(customerUpda
 	return r
 }
 
-func (r CustomersApiPATCHCustomersCustomerIdRequest) Execute() (*CustomerResponse, *http.Response, error) {
+func (r CustomersApiPATCHCustomersCustomerIdRequest) Execute() (*PATCHCustomersCustomerId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomersCustomerIdExecute(r)
 }
 
@@ -1455,13 +1455,13 @@ func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, cust
 }
 
 // Execute executes the request
-//  @return CustomerResponse
-func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*CustomerResponse, *http.Response, error) {
+//  @return PATCHCustomersCustomerId200Response
+func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*PATCHCustomersCustomerId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerResponse
+		localVarReturnValue *PATCHCustomersCustomerId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.PATCHCustomersCustomerId")
@@ -1546,7 +1546,7 @@ func (r CustomersApiPOSTCustomersRequest) CustomerCreate(customerCreate Customer
 	return r
 }
 
-func (r CustomersApiPOSTCustomersRequest) Execute() (*CustomerResponse, *http.Response, error) {
+func (r CustomersApiPOSTCustomersRequest) Execute() (*POSTCustomers201Response, *http.Response, error) {
 	return r.ApiService.POSTCustomersExecute(r)
 }
 
@@ -1566,13 +1566,13 @@ func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOS
 }
 
 // Execute executes the request
-//  @return CustomerResponse
-func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*CustomerResponse, *http.Response, error) {
+//  @return POSTCustomers201Response
+func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*POSTCustomers201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CustomerResponse
+		localVarReturnValue *POSTCustomers201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomersApiService.POSTCustomers")

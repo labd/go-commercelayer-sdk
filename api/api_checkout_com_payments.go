@@ -212,7 +212,7 @@ type CheckoutComPaymentsApiGETCheckoutComPaymentsRequest struct {
 	ApiService *CheckoutComPaymentsApiService
 }
 
-func (r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) Execute() (*CheckoutComPaymentResponseList, *http.Response, error) {
+func (r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) Execute() (*GETCheckoutComPayments200Response, *http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPayments(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return CheckoutComPaymentResponseList
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) (*CheckoutComPaymentResponseList, *http.Response, error) {
+//  @return GETCheckoutComPayments200Response
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsRequest) (*GETCheckoutComPayments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CheckoutComPaymentResponseList
+		localVarReturnValue *GETCheckoutComPayments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComPaymentsApiService.GETCheckoutComPayments")
@@ -312,7 +312,7 @@ type CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest str
 	checkoutComPaymentId string
 }
 
-func (r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*CheckoutComPaymentResponse, *http.Response, error) {
+func (r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*GETCheckoutComPaymentsCheckoutComPaymentId200Response, *http.Response, error) {
 	return r.ApiService.GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 }
 
 // Execute executes the request
-//  @return CheckoutComPaymentResponse
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) (*CheckoutComPaymentResponse, *http.Response, error) {
+//  @return GETCheckoutComPaymentsCheckoutComPaymentId200Response
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) (*GETCheckoutComPaymentsCheckoutComPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CheckoutComPaymentResponse
+		localVarReturnValue *GETCheckoutComPaymentsCheckoutComPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComPaymentsApiService.GETCheckoutComPaymentsCheckoutComPaymentId")
@@ -421,7 +421,7 @@ func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdReques
 	return r
 }
 
-func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*CheckoutComPaymentResponse, *http.Response, error) {
+func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*PATCHCheckoutComPaymentsCheckoutComPaymentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 }
 
 // Execute executes the request
-//  @return CheckoutComPaymentResponse
-func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) (*CheckoutComPaymentResponse, *http.Response, error) {
+//  @return PATCHCheckoutComPaymentsCheckoutComPaymentId200Response
+func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentIdExecute(r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) (*PATCHCheckoutComPaymentsCheckoutComPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CheckoutComPaymentResponse
+		localVarReturnValue *PATCHCheckoutComPaymentsCheckoutComPaymentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComPaymentsApiService.PATCHCheckoutComPaymentsCheckoutComPaymentId")
@@ -534,7 +534,7 @@ func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) CheckoutComPayment
 	return r
 }
 
-func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) Execute() (*CheckoutComPaymentResponse, *http.Response, error) {
+func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) Execute() (*POSTCheckoutComPayments201Response, *http.Response, error) {
 	return r.ApiService.POSTCheckoutComPaymentsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *CheckoutComPaymentsApiService) POSTCheckoutComPayments(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return CheckoutComPaymentResponse
-func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) (*CheckoutComPaymentResponse, *http.Response, error) {
+//  @return POSTCheckoutComPayments201Response
+func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) (*POSTCheckoutComPayments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *CheckoutComPaymentResponse
+		localVarReturnValue *POSTCheckoutComPayments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CheckoutComPaymentsApiService.POSTCheckoutComPayments")

@@ -212,7 +212,7 @@ type ShippingCategoriesApiGETShippingCategoriesRequest struct {
 	ApiService *ShippingCategoriesApiService
 }
 
-func (r ShippingCategoriesApiGETShippingCategoriesRequest) Execute() (*ShippingCategoryResponseList, *http.Response, error) {
+func (r ShippingCategoriesApiGETShippingCategoriesRequest) Execute() (*GETShippingCategories200Response, *http.Response, error) {
 	return r.ApiService.GETShippingCategoriesExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *ShippingCategoriesApiService) GETShippingCategories(ctx context.Context
 }
 
 // Execute executes the request
-//  @return ShippingCategoryResponseList
-func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCategoriesApiGETShippingCategoriesRequest) (*ShippingCategoryResponseList, *http.Response, error) {
+//  @return GETShippingCategories200Response
+func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCategoriesApiGETShippingCategoriesRequest) (*GETShippingCategories200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingCategoryResponseList
+		localVarReturnValue *GETShippingCategories200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShippingCategories")
@@ -312,7 +312,7 @@ type ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest struct 
 	shippingCategoryId string
 }
 
-func (r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) Execute() (*ShippingCategoryResponse, *http.Response, error) {
+func (r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) Execute() (*GETShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	return r.ApiService.GETShippingCategoriesShippingCategoryIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(c
 }
 
 // Execute executes the request
-//  @return ShippingCategoryResponse
-func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) (*ShippingCategoryResponse, *http.Response, error) {
+//  @return GETShippingCategoriesShippingCategoryId200Response
+func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) (*GETShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingCategoryResponse
+		localVarReturnValue *GETShippingCategoriesShippingCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.GETShippingCategoriesShippingCategoryId")
@@ -605,7 +605,7 @@ func (r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) S
 	return r
 }
 
-func (r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) Execute() (*ShippingCategoryResponse, *http.Response, error) {
+func (r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) Execute() (*PATCHShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	return r.ApiService.PATCHShippingCategoriesShippingCategoryIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 }
 
 // Execute executes the request
-//  @return ShippingCategoryResponse
-func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) (*ShippingCategoryResponse, *http.Response, error) {
+//  @return PATCHShippingCategoriesShippingCategoryId200Response
+func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) (*PATCHShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingCategoryResponse
+		localVarReturnValue *PATCHShippingCategoriesShippingCategoryId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.PATCHShippingCategoriesShippingCategoryId")
@@ -718,7 +718,7 @@ func (r ShippingCategoriesApiPOSTShippingCategoriesRequest) ShippingCategoryCrea
 	return r
 }
 
-func (r ShippingCategoriesApiPOSTShippingCategoriesRequest) Execute() (*ShippingCategoryResponse, *http.Response, error) {
+func (r ShippingCategoriesApiPOSTShippingCategoriesRequest) Execute() (*POSTShippingCategories201Response, *http.Response, error) {
 	return r.ApiService.POSTShippingCategoriesExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *ShippingCategoriesApiService) POSTShippingCategories(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return ShippingCategoryResponse
-func (a *ShippingCategoriesApiService) POSTShippingCategoriesExecute(r ShippingCategoriesApiPOSTShippingCategoriesRequest) (*ShippingCategoryResponse, *http.Response, error) {
+//  @return POSTShippingCategories201Response
+func (a *ShippingCategoriesApiService) POSTShippingCategoriesExecute(r ShippingCategoriesApiPOSTShippingCategoriesRequest) (*POSTShippingCategories201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingCategoryResponse
+		localVarReturnValue *POSTShippingCategories201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingCategoriesApiService.POSTShippingCategories")

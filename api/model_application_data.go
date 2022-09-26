@@ -18,16 +18,16 @@ import (
 // ApplicationData struct for ApplicationData
 type ApplicationData struct {
 	// The resource's type
-	Type          string                    `json:"type"`
-	Attributes    ApplicationDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}    `json:"relationships,omitempty"`
+	Type          string                                               `json:"type"`
+	Attributes    GETApplicationApplicationId200ResponseDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                               `json:"relationships,omitempty"`
 }
 
 // NewApplicationData instantiates a new ApplicationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApplicationData(type_ string, attributes ApplicationDataAttributes) *ApplicationData {
+func NewApplicationData(type_ string, attributes GETApplicationApplicationId200ResponseDataAttributes) *ApplicationData {
 	this := ApplicationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ApplicationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ApplicationData) GetAttributes() ApplicationDataAttributes {
+func (o *ApplicationData) GetAttributes() GETApplicationApplicationId200ResponseDataAttributes {
 	if o == nil {
-		var ret ApplicationDataAttributes
+		var ret GETApplicationApplicationId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ApplicationData) GetAttributes() ApplicationDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ApplicationData) GetAttributesOk() (*ApplicationDataAttributes, bool) {
+func (o *ApplicationData) GetAttributesOk() (*GETApplicationApplicationId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ApplicationData) GetAttributesOk() (*ApplicationDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *ApplicationData) SetAttributes(v ApplicationDataAttributes) {
+func (o *ApplicationData) SetAttributes(v GETApplicationApplicationId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

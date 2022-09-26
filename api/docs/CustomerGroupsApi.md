@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomerGroups
 
-> CustomerGroupResponseList GETCustomerGroups(ctx).Execute()
+> GETCustomerGroups200Response GETCustomerGroups(ctx).Execute()
 
 List all customer groups
 
@@ -111,7 +111,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETCustomerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerGroups`: CustomerGroupResponseList
+    // response from `GETCustomerGroups`: GETCustomerGroups200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerGroupsApi.GETCustomerGroups`: %v\n", resp)
 }
 ```
@@ -127,7 +127,7 @@ Other parameters are passed through a pointer to a apiGETCustomerGroupsRequest s
 
 ### Return type
 
-[**CustomerGroupResponseList**](CustomerGroupResponseList.md)
+[**GETCustomerGroups200Response**](GETCustomerGroups200Response.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ Other parameters are passed through a pointer to a apiGETCustomerGroupsRequest s
 
 ## GETCustomerGroupsCustomerGroupId
 
-> CustomerGroupResponse GETCustomerGroupsCustomerGroupId(ctx, customerGroupId).Execute()
+> GETCustomerGroupsCustomerGroupId200Response GETCustomerGroupsCustomerGroupId(ctx, customerGroupId).Execute()
 
 Retrieve a customer group
 
@@ -173,7 +173,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETCustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerGroupsCustomerGroupId`: CustomerGroupResponse
+    // response from `GETCustomerGroupsCustomerGroupId`: GETCustomerGroupsCustomerGroupId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerGroupsApi.GETCustomerGroupsCustomerGroupId`: %v\n", resp)
 }
 ```
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerGroupResponse**](CustomerGroupResponse.md)
+[**GETCustomerGroupsCustomerGroupId200Response**](GETCustomerGroupsCustomerGroupId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerGroupsCustomerGroupId
 
-> CustomerGroupResponse PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
+> PATCHCustomerGroupsCustomerGroupId200Response PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
 
 Update a customer group
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCustomerGroupUpdateDataAttributes())) // CustomerGroupUpdate | 
+    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes())) // CustomerGroupUpdate | 
     customerGroupId := "customerGroupId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerGroupsCustomerGroupId`: CustomerGroupResponse
+    // response from `PATCHCustomerGroupsCustomerGroupId`: PATCHCustomerGroupsCustomerGroupId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerGroupResponse**](CustomerGroupResponse.md)
+[**PATCHCustomerGroupsCustomerGroupId200Response**](PATCHCustomerGroupsCustomerGroupId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerGroups
 
-> CustomerGroupResponse POSTCustomerGroups(ctx).CustomerGroupCreate(customerGroupCreate).Execute()
+> POSTCustomerGroups201Response POSTCustomerGroups(ctx).CustomerGroupCreate(customerGroupCreate).Execute()
 
 Create a customer group
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData("Type_example", *openapiclient.NewCustomerGroupCreateDataAttributes("VIP"))) // CustomerGroupCreate | 
+    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData("Type_example", *openapiclient.NewPOSTCustomerGroups201ResponseDataAttributes("VIP"))) // CustomerGroupCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.POSTCustomerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomerGroups`: CustomerGroupResponse
+    // response from `POSTCustomerGroups`: POSTCustomerGroups201Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerGroupsApi.POSTCustomerGroups`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomerGroupResponse**](CustomerGroupResponse.md)
+[**POSTCustomerGroups201Response**](POSTCustomerGroups201Response.md)
 
 ### Authorization
 

@@ -18,16 +18,16 @@ import (
 // ShipmentData struct for ShipmentData
 type ShipmentData struct {
 	// The resource's type
-	Type          string                     `json:"type"`
-	Attributes    ShipmentDataAttributes     `json:"attributes"`
-	Relationships *ShipmentDataRelationships `json:"relationships,omitempty"`
+	Type          string                                     `json:"type"`
+	Attributes    GETShipments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ShipmentDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewShipmentData instantiates a new ShipmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShipmentData(type_ string, attributes ShipmentDataAttributes) *ShipmentData {
+func NewShipmentData(type_ string, attributes GETShipments200ResponseDataInnerAttributes) *ShipmentData {
 	this := ShipmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ShipmentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShipmentData) GetAttributes() ShipmentDataAttributes {
+func (o *ShipmentData) GetAttributes() GETShipments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret ShipmentDataAttributes
+		var ret GETShipments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ShipmentData) GetAttributes() ShipmentDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShipmentData) GetAttributesOk() (*ShipmentDataAttributes, bool) {
+func (o *ShipmentData) GetAttributesOk() (*GETShipments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ShipmentData) GetAttributesOk() (*ShipmentDataAttributes, bool) {
 }
 
 // SetAttributes sets field value
-func (o *ShipmentData) SetAttributes(v ShipmentDataAttributes) {
+func (o *ShipmentData) SetAttributes(v GETShipments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

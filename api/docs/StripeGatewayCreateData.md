@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**StripeGatewayCreateDataAttributes**](StripeGatewayCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTStripeGateways201ResponseDataAttributes**](POSTStripeGateways201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewStripeGatewayCreateData
 
-`func NewStripeGatewayCreateData(type_ string, attributes StripeGatewayCreateDataAttributes, ) *StripeGatewayCreateData`
+`func NewStripeGatewayCreateData(type_ string, attributes POSTStripeGateways201ResponseDataAttributes, ) *StripeGatewayCreateData`
 
 NewStripeGatewayCreateData instantiates a new StripeGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StripeGatewayCreateData) GetAttributes() StripeGatewayCreateDataAttributes`
+`func (o *StripeGatewayCreateData) GetAttributes() POSTStripeGateways201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripeGatewayCreateData) GetAttributesOk() (*StripeGatewayCreateDataAttributes, bool)`
+`func (o *StripeGatewayCreateData) GetAttributesOk() (*POSTStripeGateways201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripeGatewayCreateData) SetAttributes(v StripeGatewayCreateDataAttributes)`
+`func (o *StripeGatewayCreateData) SetAttributes(v POSTStripeGateways201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

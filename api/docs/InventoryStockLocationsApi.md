@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## GETInventoryStockLocations
 
-> InventoryStockLocationResponseList GETInventoryStockLocations(ctx).Execute()
+> GETInventoryStockLocations200Response GETInventoryStockLocations(ctx).Execute()
 
 List all inventory stock locations
 
@@ -179,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryStockLocations`: InventoryStockLocationResponseList
+    // response from `GETInventoryStockLocations`: GETInventoryStockLocations200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.GETInventoryStockLocations`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a apiGETInventoryStockLocations
 
 ### Return type
 
-[**InventoryStockLocationResponseList**](InventoryStockLocationResponseList.md)
+[**GETInventoryStockLocations200Response**](GETInventoryStockLocations200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Other parameters are passed through a pointer to a apiGETInventoryStockLocations
 
 ## GETInventoryStockLocationsInventoryStockLocationId
 
-> InventoryStockLocationResponse GETInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).Execute()
+> GETInventoryStockLocationsInventoryStockLocationId200Response GETInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).Execute()
 
 Retrieve an inventory stock location
 
@@ -241,7 +241,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryStockLocationsInventoryStockLocationId`: InventoryStockLocationResponse
+    // response from `GETInventoryStockLocationsInventoryStockLocationId`: GETInventoryStockLocationsInventoryStockLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.GETInventoryStockLocationsInventoryStockLocationId`: %v\n", resp)
 }
 ```
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryStockLocationResponse**](InventoryStockLocationResponse.md)
+[**GETInventoryStockLocationsInventoryStockLocationId200Response**](GETInventoryStockLocationsInventoryStockLocationId200Response.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInventoryStockLocationsInventoryStockLocationId
 
-> InventoryStockLocationResponse PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
+> PATCHInventoryStockLocationsInventoryStockLocationId200Response PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
 
 Update an inventory stock location
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewInventoryStockLocationUpdateDataAttributes())) // InventoryStockLocationUpdate | 
+    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
     inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHInventoryStockLocationsInventoryStockLocationId`: InventoryStockLocationResponse
+    // response from `PATCHInventoryStockLocationsInventoryStockLocationId`: PATCHInventoryStockLocationsInventoryStockLocationId200Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryStockLocationResponse**](InventoryStockLocationResponse.md)
+[**PATCHInventoryStockLocationsInventoryStockLocationId200Response**](PATCHInventoryStockLocationsInventoryStockLocationId200Response.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTInventoryStockLocations
 
-> InventoryStockLocationResponse POSTInventoryStockLocations(ctx).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
+> POSTInventoryStockLocations201Response POSTInventoryStockLocations(ctx).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
 
 Create an inventory stock location
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("Type_example", *openapiclient.NewInventoryStockLocationCreateDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
+    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.POSTInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTInventoryStockLocations`: InventoryStockLocationResponse
+    // response from `POSTInventoryStockLocations`: POSTInventoryStockLocations201Response
     fmt.Fprintf(os.Stdout, "Response from `InventoryStockLocationsApi.POSTInventoryStockLocations`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InventoryStockLocationResponse**](InventoryStockLocationResponse.md)
+[**POSTInventoryStockLocations201Response**](POSTInventoryStockLocations201Response.md)
 
 ### Authorization
 

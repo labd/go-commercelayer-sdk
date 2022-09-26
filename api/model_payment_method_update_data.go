@@ -20,16 +20,16 @@ type PaymentMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                `json:"id"`
-	Attributes    PaymentMethodUpdateDataAttributes     `json:"attributes"`
-	Relationships *PaymentMethodUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                      `json:"id"`
+	Attributes    PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PaymentMethodUpdateDataRelationships                       `json:"relationships,omitempty"`
 }
 
 // NewPaymentMethodUpdateData instantiates a new PaymentMethodUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentMethodUpdateData(type_ string, id string, attributes PaymentMethodUpdateDataAttributes) *PaymentMethodUpdateData {
+func NewPaymentMethodUpdateData(type_ string, id string, attributes PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) *PaymentMethodUpdateData {
 	this := PaymentMethodUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PaymentMethodUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaymentMethodUpdateData) GetAttributes() PaymentMethodUpdateDataAttributes {
+func (o *PaymentMethodUpdateData) GetAttributes() PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes {
 	if o == nil {
-		var ret PaymentMethodUpdateDataAttributes
+		var ret PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PaymentMethodUpdateData) GetAttributes() PaymentMethodUpdateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodUpdateData) GetAttributesOk() (*PaymentMethodUpdateDataAttributes, bool) {
+func (o *PaymentMethodUpdateData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PaymentMethodUpdateData) GetAttributesOk() (*PaymentMethodUpdateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *PaymentMethodUpdateData) SetAttributes(v PaymentMethodUpdateDataAttributes) {
+func (o *PaymentMethodUpdateData) SetAttributes(v PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

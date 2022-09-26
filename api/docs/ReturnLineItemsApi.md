@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETReturnLineItems
 
-> ReturnLineItemResponseList GETReturnLineItems(ctx).Execute()
+> GETReturnLineItems200Response GETReturnLineItems(ctx).Execute()
 
 List all return line items
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturnLineItems`: ReturnLineItemResponseList
+    // response from `GETReturnLineItems`: GETReturnLineItems200Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.GETReturnLineItems`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETReturnLineItemsRequest 
 
 ### Return type
 
-[**ReturnLineItemResponseList**](ReturnLineItemResponseList.md)
+[**GETReturnLineItems200Response**](GETReturnLineItems200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETReturnLineItemsRequest 
 
 ## GETReturnLineItemsReturnLineItemId
 
-> ReturnLineItemResponse GETReturnLineItemsReturnLineItemId(ctx, returnLineItemId).Execute()
+> GETReturnLineItemsReturnLineItemId200Response GETReturnLineItemsReturnLineItemId(ctx, returnLineItemId).Execute()
 
 Retrieve a return line item
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturnLineItemsReturnLineItemId`: ReturnLineItemResponse
+    // response from `GETReturnLineItemsReturnLineItemId`: GETReturnLineItemsReturnLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.GETReturnLineItemsReturnLineItemId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnLineItemResponse**](ReturnLineItemResponse.md)
+[**GETReturnLineItemsReturnLineItemId200Response**](GETReturnLineItemsReturnLineItemId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHReturnLineItemsReturnLineItemId
 
-> ReturnLineItemResponse PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
+> PATCHReturnLineItemsReturnLineItemId200Response PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
 
 Update a return line item
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewReturnLineItemUpdateDataAttributes())) // ReturnLineItemUpdate | 
+    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes())) // ReturnLineItemUpdate | 
     returnLineItemId := "returnLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHReturnLineItemsReturnLineItemId`: ReturnLineItemResponse
+    // response from `PATCHReturnLineItemsReturnLineItemId`: PATCHReturnLineItemsReturnLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnLineItemResponse**](ReturnLineItemResponse.md)
+[**PATCHReturnLineItemsReturnLineItemId200Response**](PATCHReturnLineItemsReturnLineItemId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTReturnLineItems
 
-> ReturnLineItemResponse POSTReturnLineItems(ctx).ReturnLineItemCreate(returnLineItemCreate).Execute()
+> POSTReturnLineItems201Response POSTReturnLineItems(ctx).ReturnLineItemCreate(returnLineItemCreate).Execute()
 
 Create a return line item
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("Type_example", *openapiclient.NewReturnLineItemCreateDataAttributes(int32(4)))) // ReturnLineItemCreate | 
+    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("Type_example", *openapiclient.NewPOSTReturnLineItems201ResponseDataAttributes(int32(4)))) // ReturnLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.POSTReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTReturnLineItems`: ReturnLineItemResponse
+    // response from `POSTReturnLineItems`: POSTReturnLineItems201Response
     fmt.Fprintf(os.Stdout, "Response from `ReturnLineItemsApi.POSTReturnLineItems`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReturnLineItemResponse**](ReturnLineItemResponse.md)
+[**POSTReturnLineItems201Response**](POSTReturnLineItems201Response.md)
 
 ### Authorization
 

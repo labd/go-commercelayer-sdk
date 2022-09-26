@@ -28,7 +28,7 @@ type EventCallbacksApiGETEventCallbacksRequest struct {
 	ApiService *EventCallbacksApiService
 }
 
-func (r EventCallbacksApiGETEventCallbacksRequest) Execute() (*EventCallbackResponseList, *http.Response, error) {
+func (r EventCallbacksApiGETEventCallbacksRequest) Execute() (*GETEventCallbacks200Response, *http.Response, error) {
 	return r.ApiService.GETEventCallbacksExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *EventCallbacksApiService) GETEventCallbacks(ctx context.Context) EventC
 }
 
 // Execute executes the request
-//  @return EventCallbackResponseList
-func (a *EventCallbacksApiService) GETEventCallbacksExecute(r EventCallbacksApiGETEventCallbacksRequest) (*EventCallbackResponseList, *http.Response, error) {
+//  @return GETEventCallbacks200Response
+func (a *EventCallbacksApiService) GETEventCallbacksExecute(r EventCallbacksApiGETEventCallbacksRequest) (*GETEventCallbacks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *EventCallbackResponseList
+		localVarReturnValue *GETEventCallbacks200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETEventCallbacks")
@@ -128,7 +128,7 @@ type EventCallbacksApiGETEventCallbacksEventCallbackIdRequest struct {
 	eventCallbackId string
 }
 
-func (r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) Execute() (*EventCallbackResponse, *http.Response, error) {
+func (r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) Execute() (*GETEventCallbacksEventCallbackId200Response, *http.Response, error) {
 	return r.ApiService.GETEventCallbacksEventCallbackIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackId(ctx context.
 }
 
 // Execute executes the request
-//  @return EventCallbackResponse
-func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackIdExecute(r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) (*EventCallbackResponse, *http.Response, error) {
+//  @return GETEventCallbacksEventCallbackId200Response
+func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackIdExecute(r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) (*GETEventCallbacksEventCallbackId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *EventCallbackResponse
+		localVarReturnValue *GETEventCallbacksEventCallbackId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventCallbacksApiService.GETEventCallbacksEventCallbackId")

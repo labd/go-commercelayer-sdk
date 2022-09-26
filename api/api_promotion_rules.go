@@ -28,7 +28,7 @@ type PromotionRulesApiGETPromotionRulesRequest struct {
 	ApiService *PromotionRulesApiService
 }
 
-func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*PromotionRuleResponseList, *http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*GETPromotionRules200Response, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) Promot
 }
 
 // Execute executes the request
-//  @return PromotionRuleResponseList
-func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*PromotionRuleResponseList, *http.Response, error) {
+//  @return GETPromotionRules200Response
+func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*GETPromotionRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PromotionRuleResponseList
+		localVarReturnValue *GETPromotionRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRules")
@@ -128,7 +128,7 @@ type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
 	promotionRuleId string
 }
 
-func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*PromotionRuleResponse, *http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesPromotionRuleIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 }
 
 // Execute executes the request
-//  @return PromotionRuleResponse
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRuleResponse, *http.Response, error) {
+//  @return GETPromotionRulesPromotionRuleId200Response
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PromotionRuleResponse
+		localVarReturnValue *GETPromotionRulesPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRulesPromotionRuleId")

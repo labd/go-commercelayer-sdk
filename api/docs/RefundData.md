@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**RefundDataAttributes**](RefundDataAttributes.md) |  | 
+**Attributes** | [**GETRefunds200ResponseDataInnerAttributes**](GETRefunds200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**RefundDataRelationships**](RefundDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewRefundData
 
-`func NewRefundData(type_ string, attributes RefundDataAttributes, ) *RefundData`
+`func NewRefundData(type_ string, attributes GETRefunds200ResponseDataInnerAttributes, ) *RefundData`
 
 NewRefundData instantiates a new RefundData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *RefundData) GetAttributes() RefundDataAttributes`
+`func (o *RefundData) GetAttributes() GETRefunds200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *RefundData) GetAttributesOk() (*RefundDataAttributes, bool)`
+`func (o *RefundData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *RefundData) SetAttributes(v RefundDataAttributes)`
+`func (o *RefundData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

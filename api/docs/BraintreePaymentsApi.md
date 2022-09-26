@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETBraintreePayments
 
-> BraintreePaymentResponseList GETBraintreePayments(ctx).Execute()
+> GETBraintreePayments200Response GETBraintreePayments(ctx).Execute()
 
 List all braintree payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.GETBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreePayments`: BraintreePaymentResponseList
+    // response from `GETBraintreePayments`: GETBraintreePayments200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.GETBraintreePayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETBraintreePaymentsReques
 
 ### Return type
 
-[**BraintreePaymentResponseList**](BraintreePaymentResponseList.md)
+[**GETBraintreePayments200Response**](GETBraintreePayments200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETBraintreePaymentsReques
 
 ## GETBraintreePaymentsBraintreePaymentId
 
-> BraintreePaymentResponse GETBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).Execute()
+> GETBraintreePaymentsBraintreePaymentId200Response GETBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).Execute()
 
 Retrieve a braintree payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.GETBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBraintreePaymentsBraintreePaymentId`: BraintreePaymentResponse
+    // response from `GETBraintreePaymentsBraintreePaymentId`: GETBraintreePaymentsBraintreePaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.GETBraintreePaymentsBraintreePaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreePaymentResponse**](BraintreePaymentResponse.md)
+[**GETBraintreePaymentsBraintreePaymentId200Response**](GETBraintreePaymentsBraintreePaymentId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBraintreePaymentsBraintreePaymentId
 
-> BraintreePaymentResponse PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
+> PATCHBraintreePaymentsBraintreePaymentId200Response PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
 
 Update a braintree payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewBraintreePaymentUpdateDataAttributes())) // BraintreePaymentUpdate | 
+    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes())) // BraintreePaymentUpdate | 
     braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBraintreePaymentsBraintreePaymentId`: BraintreePaymentResponse
+    // response from `PATCHBraintreePaymentsBraintreePaymentId`: PATCHBraintreePaymentsBraintreePaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreePaymentResponse**](BraintreePaymentResponse.md)
+[**PATCHBraintreePaymentsBraintreePaymentId200Response**](PATCHBraintreePaymentsBraintreePaymentId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTBraintreePayments
 
-> BraintreePaymentResponse POSTBraintreePayments(ctx).BraintreePaymentCreate(braintreePaymentCreate).Execute()
+> POSTBraintreePayments201Response POSTBraintreePayments(ctx).BraintreePaymentCreate(braintreePaymentCreate).Execute()
 
 Create a braintree payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("Type_example", *openapiclient.NewBraintreePaymentCreateDataAttributes())) // BraintreePaymentCreate | 
+    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData("Type_example", *openapiclient.NewPOSTBraintreePayments201ResponseDataAttributes())) // BraintreePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.POSTBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTBraintreePayments`: BraintreePaymentResponse
+    // response from `POSTBraintreePayments`: POSTBraintreePayments201Response
     fmt.Fprintf(os.Stdout, "Response from `BraintreePaymentsApi.POSTBraintreePayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BraintreePaymentResponse**](BraintreePaymentResponse.md)
+[**POSTBraintreePayments201Response**](POSTBraintreePayments201Response.md)
 
 ### Authorization
 

@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETStripeGateways
 
-> StripeGatewayResponseList GETStripeGateways(ctx).Execute()
+> GETStripeGateways200Response GETStripeGateways(ctx).Execute()
 
 List all stripe gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.GETStripeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStripeGateways`: StripeGatewayResponseList
+    // response from `GETStripeGateways`: GETStripeGateways200Response
     fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.GETStripeGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETStripeGatewaysRequest s
 
 ### Return type
 
-[**StripeGatewayResponseList**](StripeGatewayResponseList.md)
+[**GETStripeGateways200Response**](GETStripeGateways200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETStripeGatewaysRequest s
 
 ## GETStripeGatewaysStripeGatewayId
 
-> StripeGatewayResponse GETStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).Execute()
+> GETStripeGatewaysStripeGatewayId200Response GETStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).Execute()
 
 Retrieve a stripe gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.GETStripeGatewaysStripeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStripeGatewaysStripeGatewayId`: StripeGatewayResponse
+    // response from `GETStripeGatewaysStripeGatewayId`: GETStripeGatewaysStripeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.GETStripeGatewaysStripeGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripeGatewayResponse**](StripeGatewayResponse.md)
+[**GETStripeGatewaysStripeGatewayId200Response**](GETStripeGatewaysStripeGatewayId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStripeGatewaysStripeGatewayId
 
-> StripeGatewayResponse PATCHStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).StripeGatewayUpdate(stripeGatewayUpdate).Execute()
+> PATCHStripeGatewaysStripeGatewayId200Response PATCHStripeGatewaysStripeGatewayId(ctx, stripeGatewayId).StripeGatewayUpdate(stripeGatewayUpdate).Execute()
 
 Update a stripe gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewStripeGatewayUpdateDataAttributes())) // StripeGatewayUpdate | 
+    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
     stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.PATCHStripeGatewaysStripeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHStripeGatewaysStripeGatewayId`: StripeGatewayResponse
+    // response from `PATCHStripeGatewaysStripeGatewayId`: PATCHStripeGatewaysStripeGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.PATCHStripeGatewaysStripeGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripeGatewayResponse**](StripeGatewayResponse.md)
+[**PATCHStripeGatewaysStripeGatewayId200Response**](PATCHStripeGatewaysStripeGatewayId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTStripeGateways
 
-> StripeGatewayResponse POSTStripeGateways(ctx).StripeGatewayCreate(stripeGatewayCreate).Execute()
+> POSTStripeGateways201Response POSTStripeGateways(ctx).StripeGatewayCreate(stripeGatewayCreate).Execute()
 
 Create a stripe gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("Type_example", *openapiclient.NewStripeGatewayCreateDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
+    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("Type_example", *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.POSTStripeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTStripeGateways`: StripeGatewayResponse
+    // response from `POSTStripeGateways`: POSTStripeGateways201Response
     fmt.Fprintf(os.Stdout, "Response from `StripeGatewaysApi.POSTStripeGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StripeGatewayResponse**](StripeGatewayResponse.md)
+[**POSTStripeGateways201Response**](POSTStripeGateways201Response.md)
 
 ### Authorization
 

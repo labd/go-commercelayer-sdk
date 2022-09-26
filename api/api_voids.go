@@ -212,7 +212,7 @@ type VoidsApiGETVoidsRequest struct {
 	ApiService *VoidsApiService
 }
 
-func (r VoidsApiGETVoidsRequest) Execute() (*VoidResponseList, *http.Response, error) {
+func (r VoidsApiGETVoidsRequest) Execute() (*GETVoids200Response, *http.Response, error) {
 	return r.ApiService.GETVoidsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest 
 }
 
 // Execute executes the request
-//  @return VoidResponseList
-func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*VoidResponseList, *http.Response, error) {
+//  @return GETVoids200Response
+func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *VoidResponseList
+		localVarReturnValue *GETVoids200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoids")
@@ -312,7 +312,7 @@ type VoidsApiGETVoidsVoidIdRequest struct {
 	voidId     string
 }
 
-func (r VoidsApiGETVoidsVoidIdRequest) Execute() (*VoidResponse, *http.Response, error) {
+func (r VoidsApiGETVoidsVoidIdRequest) Execute() (*GETVoidsVoidId200Response, *http.Response, error) {
 	return r.ApiService.GETVoidsVoidIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) Voi
 }
 
 // Execute executes the request
-//  @return VoidResponse
-func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest) (*VoidResponse, *http.Response, error) {
+//  @return GETVoidsVoidId200Response
+func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest) (*GETVoidsVoidId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *VoidResponse
+		localVarReturnValue *GETVoidsVoidId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "VoidsApiService.GETVoidsVoidId")

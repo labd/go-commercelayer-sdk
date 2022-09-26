@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETAdjustments
 
-> AdjustmentResponseList GETAdjustments(ctx).Execute()
+> GETAdjustments200Response GETAdjustments(ctx).Execute()
 
 List all adjustments
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.GETAdjustments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdjustments`: AdjustmentResponseList
+    // response from `GETAdjustments`: GETAdjustments200Response
     fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.GETAdjustments`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETAdjustmentsRequest stru
 
 ### Return type
 
-[**AdjustmentResponseList**](AdjustmentResponseList.md)
+[**GETAdjustments200Response**](GETAdjustments200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETAdjustmentsRequest stru
 
 ## GETAdjustmentsAdjustmentId
 
-> AdjustmentResponse GETAdjustmentsAdjustmentId(ctx, adjustmentId).Execute()
+> GETAdjustmentsAdjustmentId200Response GETAdjustmentsAdjustmentId(ctx, adjustmentId).Execute()
 
 Retrieve an adjustment
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.GETAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdjustmentsAdjustmentId`: AdjustmentResponse
+    // response from `GETAdjustmentsAdjustmentId`: GETAdjustmentsAdjustmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.GETAdjustmentsAdjustmentId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdjustmentResponse**](AdjustmentResponse.md)
+[**GETAdjustmentsAdjustmentId200Response**](GETAdjustmentsAdjustmentId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdjustmentsAdjustmentId
 
-> AdjustmentResponse PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
+> PATCHAdjustmentsAdjustmentId200Response PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
 
 Update an adjustment
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdjustmentUpdateDataAttributes())) // AdjustmentUpdate | 
+    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdjustmentsAdjustmentId200ResponseDataAttributes())) // AdjustmentUpdate | 
     adjustmentId := "adjustmentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.PATCHAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAdjustmentsAdjustmentId`: AdjustmentResponse
+    // response from `PATCHAdjustmentsAdjustmentId`: PATCHAdjustmentsAdjustmentId200Response
     fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.PATCHAdjustmentsAdjustmentId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdjustmentResponse**](AdjustmentResponse.md)
+[**PATCHAdjustmentsAdjustmentId200Response**](PATCHAdjustmentsAdjustmentId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdjustments
 
-> AdjustmentResponse POSTAdjustments(ctx).AdjustmentCreate(adjustmentCreate).Execute()
+> POSTAdjustments201Response POSTAdjustments(ctx).AdjustmentCreate(adjustmentCreate).Execute()
 
 Create an adjustment
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("Type_example", *openapiclient.NewAdjustmentCreateDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
+    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData("Type_example", *openapiclient.NewPOSTAdjustments201ResponseDataAttributes("Additional service", "EUR", int32(1500)))) // AdjustmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.POSTAdjustments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAdjustments`: AdjustmentResponse
+    // response from `POSTAdjustments`: POSTAdjustments201Response
     fmt.Fprintf(os.Stdout, "Response from `AdjustmentsApi.POSTAdjustments`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AdjustmentResponse**](AdjustmentResponse.md)
+[**POSTAdjustments201Response**](POSTAdjustments201Response.md)
 
 ### Authorization
 

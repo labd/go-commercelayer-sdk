@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GETGeocoders
 
-> GeocoderResponseList GETGeocoders(ctx).Execute()
+> GETGeocoders200Response GETGeocoders(ctx).Execute()
 
 List all geocoders
 
@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GeocodersApi.GETGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGeocoders`: GeocoderResponseList
+    // response from `GETGeocoders`: GETGeocoders200Response
     fmt.Fprintf(os.Stdout, "Response from `GeocodersApi.GETGeocoders`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Other parameters are passed through a pointer to a apiGETGeocodersRequest struct
 
 ### Return type
 
-[**GeocoderResponseList**](GeocoderResponseList.md)
+[**GETGeocoders200Response**](GETGeocoders200Response.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Other parameters are passed through a pointer to a apiGETGeocodersRequest struct
 
 ## GETGeocodersGeocoderId
 
-> GeocoderResponse GETGeocodersGeocoderId(ctx, geocoderId).Execute()
+> GETGeocodersGeocoderId200Response GETGeocodersGeocoderId(ctx, geocoderId).Execute()
 
 Retrieve a geocoder
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `GeocodersApi.GETGeocodersGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETGeocodersGeocoderId`: GeocoderResponse
+    // response from `GETGeocodersGeocoderId`: GETGeocodersGeocoderId200Response
     fmt.Fprintf(os.Stdout, "Response from `GeocodersApi.GETGeocodersGeocoderId`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GeocoderResponse**](GeocoderResponse.md)
+[**GETGeocodersGeocoderId200Response**](GETGeocodersGeocoderId200Response.md)
 
 ### Authorization
 

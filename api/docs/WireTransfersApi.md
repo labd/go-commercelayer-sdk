@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETWireTransfers
 
-> WireTransferResponseList GETWireTransfers(ctx).Execute()
+> GETWireTransfers200Response GETWireTransfers(ctx).Execute()
 
 List all wire transfers
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.GETWireTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWireTransfers`: WireTransferResponseList
+    // response from `GETWireTransfers`: GETWireTransfers200Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.GETWireTransfers`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETWireTransfersRequest st
 
 ### Return type
 
-[**WireTransferResponseList**](WireTransferResponseList.md)
+[**GETWireTransfers200Response**](GETWireTransfers200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETWireTransfersRequest st
 
 ## GETWireTransfersWireTransferId
 
-> WireTransferResponse GETWireTransfersWireTransferId(ctx, wireTransferId).Execute()
+> GETWireTransfersWireTransferId200Response GETWireTransfersWireTransferId(ctx, wireTransferId).Execute()
 
 Retrieve a wire transfer
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.GETWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETWireTransfersWireTransferId`: WireTransferResponse
+    // response from `GETWireTransfersWireTransferId`: GETWireTransfersWireTransferId200Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.GETWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WireTransferResponse**](WireTransferResponse.md)
+[**GETWireTransfersWireTransferId200Response**](GETWireTransfersWireTransferId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHWireTransfersWireTransferId
 
-> WireTransferResponse PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
+> POSTWireTransfers201Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
 
 Update a wire transfer
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // WireTransferUpdate | 
+    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferUpdate | 
     wireTransferId := "wireTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.PATCHWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHWireTransfersWireTransferId`: WireTransferResponse
+    // response from `PATCHWireTransfersWireTransferId`: POSTWireTransfers201Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.PATCHWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WireTransferResponse**](WireTransferResponse.md)
+[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTWireTransfers
 
-> WireTransferResponse POSTWireTransfers(ctx).WireTransferCreate(wireTransferCreate).Execute()
+> POSTWireTransfers201Response POSTWireTransfers(ctx).WireTransferCreate(wireTransferCreate).Execute()
 
 Create a wire transfer
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // WireTransferCreate | 
+    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.POSTWireTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTWireTransfers`: WireTransferResponse
+    // response from `POSTWireTransfers`: POSTWireTransfers201Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.POSTWireTransfers`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WireTransferResponse**](WireTransferResponse.md)
+[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
 
 ### Authorization
 

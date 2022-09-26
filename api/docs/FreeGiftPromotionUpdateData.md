@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**FreeGiftPromotionUpdateDataAttributes**](FreeGiftPromotionUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes**](PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionUpdateDataRelationships**](FixedPricePromotionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFreeGiftPromotionUpdateData
 
-`func NewFreeGiftPromotionUpdateData(type_ string, id string, attributes FreeGiftPromotionUpdateDataAttributes, ) *FreeGiftPromotionUpdateData`
+`func NewFreeGiftPromotionUpdateData(type_ string, id string, attributes PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes, ) *FreeGiftPromotionUpdateData`
 
 NewFreeGiftPromotionUpdateData instantiates a new FreeGiftPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *FreeGiftPromotionUpdateData) GetAttributes() FreeGiftPromotionUpdateDataAttributes`
+`func (o *FreeGiftPromotionUpdateData) GetAttributes() PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FreeGiftPromotionUpdateData) GetAttributesOk() (*FreeGiftPromotionUpdateDataAttributes, bool)`
+`func (o *FreeGiftPromotionUpdateData) GetAttributesOk() (*PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FreeGiftPromotionUpdateData) SetAttributes(v FreeGiftPromotionUpdateDataAttributes)`
+`func (o *FreeGiftPromotionUpdateData) SetAttributes(v PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

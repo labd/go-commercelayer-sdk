@@ -120,7 +120,7 @@ type FixedAmountPromotionsApiGETFixedAmountPromotionsRequest struct {
 	ApiService *FixedAmountPromotionsApiService
 }
 
-func (r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) Execute() (*FixedAmountPromotionResponseList, *http.Response, error) {
+func (r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) Execute() (*GETFixedAmountPromotions200Response, *http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotions(ctx context.C
 }
 
 // Execute executes the request
-//  @return FixedAmountPromotionResponseList
-func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) (*FixedAmountPromotionResponseList, *http.Response, error) {
+//  @return GETFixedAmountPromotions200Response
+func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) (*GETFixedAmountPromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedAmountPromotionResponseList
+		localVarReturnValue *GETFixedAmountPromotions200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.GETFixedAmountPromotions")
@@ -220,7 +220,7 @@ type FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdReque
 	fixedAmountPromotionId string
 }
 
-func (r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*FixedAmountPromotionResponse, *http.Response, error) {
+func (r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*GETFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	return r.ApiService.GETFixedAmountPromotionsFixedAmountPromotionIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 }
 
 // Execute executes the request
-//  @return FixedAmountPromotionResponse
-func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) (*FixedAmountPromotionResponse, *http.Response, error) {
+//  @return GETFixedAmountPromotionsFixedAmountPromotionId200Response
+func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) (*GETFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedAmountPromotionResponse
+		localVarReturnValue *GETFixedAmountPromotionsFixedAmountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.GETFixedAmountPromotionsFixedAmountPromotionId")
@@ -329,7 +329,7 @@ func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionId
 	return r
 }
 
-func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*FixedAmountPromotionResponse, *http.Response, error) {
+func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*PATCHFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	return r.ApiService.PATCHFixedAmountPromotionsFixedAmountPromotionIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 }
 
 // Execute executes the request
-//  @return FixedAmountPromotionResponse
-func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) (*FixedAmountPromotionResponse, *http.Response, error) {
+//  @return PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
+func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) (*PATCHFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedAmountPromotionResponse
+		localVarReturnValue *PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.PATCHFixedAmountPromotionsFixedAmountPromotionId")
@@ -442,7 +442,7 @@ func (r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) FixedAmountPro
 	return r
 }
 
-func (r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) Execute() (*FixedAmountPromotionResponse, *http.Response, error) {
+func (r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) Execute() (*POSTFixedAmountPromotions201Response, *http.Response, error) {
 	return r.ApiService.POSTFixedAmountPromotionsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotions(ctx context.
 }
 
 // Execute executes the request
-//  @return FixedAmountPromotionResponse
-func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) (*FixedAmountPromotionResponse, *http.Response, error) {
+//  @return POSTFixedAmountPromotions201Response
+func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) (*POSTFixedAmountPromotions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *FixedAmountPromotionResponse
+		localVarReturnValue *POSTFixedAmountPromotions201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FixedAmountPromotionsApiService.POSTFixedAmountPromotions")

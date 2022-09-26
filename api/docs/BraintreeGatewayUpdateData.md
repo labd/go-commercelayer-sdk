@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**BraintreeGatewayUpdateDataAttributes**](BraintreeGatewayUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes**](PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BraintreeGatewayCreateDataRelationships**](BraintreeGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreeGatewayUpdateData
 
-`func NewBraintreeGatewayUpdateData(type_ string, id string, attributes BraintreeGatewayUpdateDataAttributes, ) *BraintreeGatewayUpdateData`
+`func NewBraintreeGatewayUpdateData(type_ string, id string, attributes PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes, ) *BraintreeGatewayUpdateData`
 
 NewBraintreeGatewayUpdateData instantiates a new BraintreeGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreeGatewayUpdateData) GetAttributes() BraintreeGatewayUpdateDataAttributes`
+`func (o *BraintreeGatewayUpdateData) GetAttributes() PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreeGatewayUpdateData) GetAttributesOk() (*BraintreeGatewayUpdateDataAttributes, bool)`
+`func (o *BraintreeGatewayUpdateData) GetAttributesOk() (*PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreeGatewayUpdateData) SetAttributes(v BraintreeGatewayUpdateDataAttributes)`
+`func (o *BraintreeGatewayUpdateData) SetAttributes(v PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -18,16 +18,16 @@ import (
 // MarketCreateData struct for MarketCreateData
 type MarketCreateData struct {
 	// The resource's type
-	Type          string                         `json:"type"`
-	Attributes    MarketCreateDataAttributes     `json:"attributes"`
-	Relationships *MarketCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    POSTMarkets201ResponseDataAttributes `json:"attributes"`
+	Relationships *MarketCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewMarketCreateData instantiates a new MarketCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMarketCreateData(type_ string, attributes MarketCreateDataAttributes) *MarketCreateData {
+func NewMarketCreateData(type_ string, attributes POSTMarkets201ResponseDataAttributes) *MarketCreateData {
 	this := MarketCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *MarketCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MarketCreateData) GetAttributes() MarketCreateDataAttributes {
+func (o *MarketCreateData) GetAttributes() POSTMarkets201ResponseDataAttributes {
 	if o == nil {
-		var ret MarketCreateDataAttributes
+		var ret POSTMarkets201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *MarketCreateData) GetAttributes() MarketCreateDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MarketCreateData) GetAttributesOk() (*MarketCreateDataAttributes, bool) {
+func (o *MarketCreateData) GetAttributesOk() (*POSTMarkets201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *MarketCreateData) GetAttributesOk() (*MarketCreateDataAttributes, bool)
 }
 
 // SetAttributes sets field value
-func (o *MarketCreateData) SetAttributes(v MarketCreateDataAttributes) {
+func (o *MarketCreateData) SetAttributes(v POSTMarkets201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

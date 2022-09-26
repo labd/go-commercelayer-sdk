@@ -18,16 +18,16 @@ import (
 // CustomerSubscriptionData struct for CustomerSubscriptionData
 type CustomerSubscriptionData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    CustomerSubscriptionDataAttributes      `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                 `json:"type"`
+	Attributes    GETCustomerSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerSubscriptionData(type_ string, attributes CustomerSubscriptionDataAttributes) *CustomerSubscriptionData {
+func NewCustomerSubscriptionData(type_ string, attributes GETCustomerSubscriptions200ResponseDataInnerAttributes) *CustomerSubscriptionData {
 	this := CustomerSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerSubscriptionData) GetAttributes() CustomerSubscriptionDataAttributes {
+func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret CustomerSubscriptionDataAttributes
+		var ret GETCustomerSubscriptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerSubscriptionData) GetAttributes() CustomerSubscriptionDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionData) GetAttributesOk() (*CustomerSubscriptionDataAttributes, bool) {
+func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerSubscriptionData) GetAttributesOk() (*CustomerSubscriptionDataA
 }
 
 // SetAttributes sets field value
-func (o *CustomerSubscriptionData) SetAttributes(v CustomerSubscriptionDataAttributes) {
+func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

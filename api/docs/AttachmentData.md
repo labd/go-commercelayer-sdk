@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**AttachmentDataAttributes**](AttachmentDataAttributes.md) |  | 
+**Attributes** | [**GETAttachments200ResponseDataInnerAttributes**](GETAttachments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentDataRelationships**](AttachmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentData
 
-`func NewAttachmentData(type_ string, attributes AttachmentDataAttributes, ) *AttachmentData`
+`func NewAttachmentData(type_ string, attributes GETAttachments200ResponseDataInnerAttributes, ) *AttachmentData`
 
 NewAttachmentData instantiates a new AttachmentData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *AttachmentData) GetAttributes() AttachmentDataAttributes`
+`func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentData) GetAttributesOk() (*AttachmentDataAttributes, bool)`
+`func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentData) SetAttributes(v AttachmentDataAttributes)`
+`func (o *AttachmentData) SetAttributes(v GETAttachments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

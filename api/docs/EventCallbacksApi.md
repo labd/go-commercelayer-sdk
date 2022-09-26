@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## GETEventCallbacks
 
-> EventCallbackResponseList GETEventCallbacks(ctx).Execute()
+> GETEventCallbacks200Response GETEventCallbacks(ctx).Execute()
 
 List all event callbacks
 
@@ -40,7 +40,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEventCallbacks`: EventCallbackResponseList
+    // response from `GETEventCallbacks`: GETEventCallbacks200Response
     fmt.Fprintf(os.Stdout, "Response from `EventCallbacksApi.GETEventCallbacks`: %v\n", resp)
 }
 ```
@@ -56,7 +56,7 @@ Other parameters are passed through a pointer to a apiGETEventCallbacksRequest s
 
 ### Return type
 
-[**EventCallbackResponseList**](EventCallbackResponseList.md)
+[**GETEventCallbacks200Response**](GETEventCallbacks200Response.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiGETEventCallbacksRequest s
 
 ## GETEventCallbacksEventCallbackId
 
-> EventCallbackResponse GETEventCallbacksEventCallbackId(ctx, eventCallbackId).Execute()
+> GETEventCallbacksEventCallbackId200Response GETEventCallbacksEventCallbackId(ctx, eventCallbackId).Execute()
 
 Retrieve an event callback
 
@@ -102,7 +102,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETEventCallbacksEventCallbackId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEventCallbacksEventCallbackId`: EventCallbackResponse
+    // response from `GETEventCallbacksEventCallbackId`: GETEventCallbacksEventCallbackId200Response
     fmt.Fprintf(os.Stdout, "Response from `EventCallbacksApi.GETEventCallbacksEventCallbackId`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EventCallbackResponse**](EventCallbackResponse.md)
+[**GETEventCallbacksEventCallbackId200Response**](GETEventCallbacksEventCallbackId200Response.md)
 
 ### Authorization
 

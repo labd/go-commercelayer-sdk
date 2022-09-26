@@ -212,7 +212,7 @@ type TaxRulesApiGETTaxRulesRequest struct {
 	ApiService *TaxRulesApiService
 }
 
-func (r TaxRulesApiGETTaxRulesRequest) Execute() (*TaxRuleResponseList, *http.Response, error) {
+func (r TaxRulesApiGETTaxRulesRequest) Execute() (*GETTaxRules200Response, *http.Response, error) {
 	return r.ApiService.GETTaxRulesExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxR
 }
 
 // Execute executes the request
-//  @return TaxRuleResponseList
-func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*TaxRuleResponseList, *http.Response, error) {
+//  @return GETTaxRules200Response
+func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*GETTaxRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxRuleResponseList
+		localVarReturnValue *GETTaxRules200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRules")
@@ -312,7 +312,7 @@ type TaxRulesApiGETTaxRulesTaxRuleIdRequest struct {
 	taxRuleId  string
 }
 
-func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*TaxRuleResponse, *http.Response, error) {
+func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	return r.ApiService.GETTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId
 }
 
 // Execute executes the request
-//  @return TaxRuleResponse
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*TaxRuleResponse, *http.Response, error) {
+//  @return GETTaxRulesTaxRuleId200Response
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxRuleResponse
+		localVarReturnValue *GETTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.GETTaxRulesTaxRuleId")
@@ -421,7 +421,7 @@ func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate Ta
 	return r
 }
 
-func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*TaxRuleResponse, *http.Response, error) {
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) Execute() (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHTaxRulesTaxRuleIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRule
 }
 
 // Execute executes the request
-//  @return TaxRuleResponse
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*TaxRuleResponse, *http.Response, error) {
+//  @return PATCHTaxRulesTaxRuleId200Response
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxRuleResponse
+		localVarReturnValue *PATCHTaxRulesTaxRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.PATCHTaxRulesTaxRuleId")
@@ -534,7 +534,7 @@ func (r TaxRulesApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreat
 	return r
 }
 
-func (r TaxRulesApiPOSTTaxRulesRequest) Execute() (*TaxRuleResponse, *http.Response, error) {
+func (r TaxRulesApiPOSTTaxRulesRequest) Execute() (*POSTTaxRules201Response, *http.Response, error) {
 	return r.ApiService.POSTTaxRulesExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTa
 }
 
 // Execute executes the request
-//  @return TaxRuleResponse
-func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*TaxRuleResponse, *http.Response, error) {
+//  @return POSTTaxRules201Response
+func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*POSTTaxRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *TaxRuleResponse
+		localVarReturnValue *POSTTaxRules201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TaxRulesApiService.POSTTaxRules")

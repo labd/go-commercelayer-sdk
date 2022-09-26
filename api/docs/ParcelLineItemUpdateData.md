@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewParcelLineItemUpdateData
 
-`func NewParcelLineItemUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes, ) *ParcelLineItemUpdateData`
+`func NewParcelLineItemUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *ParcelLineItemUpdateData`
 
 NewParcelLineItemUpdateData instantiates a new ParcelLineItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ParcelLineItemUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes`
+`func (o *ParcelLineItemUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelLineItemUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
+`func (o *ParcelLineItemUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelLineItemUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
+`func (o *ParcelLineItemUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

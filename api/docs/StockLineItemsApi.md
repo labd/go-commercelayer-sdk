@@ -218,7 +218,7 @@ Name | Type | Description  | Notes
 
 ## GETStockLineItems
 
-> StockLineItemResponseList GETStockLineItems(ctx).Execute()
+> GETStockLineItems200Response GETStockLineItems(ctx).Execute()
 
 List all stock line items
 
@@ -245,7 +245,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLineItemsApi.GETStockLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockLineItems`: StockLineItemResponseList
+    // response from `GETStockLineItems`: GETStockLineItems200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLineItemsApi.GETStockLineItems`: %v\n", resp)
 }
 ```
@@ -261,7 +261,7 @@ Other parameters are passed through a pointer to a apiGETStockLineItemsRequest s
 
 ### Return type
 
-[**StockLineItemResponseList**](StockLineItemResponseList.md)
+[**GETStockLineItems200Response**](GETStockLineItems200Response.md)
 
 ### Authorization
 
@@ -279,7 +279,7 @@ Other parameters are passed through a pointer to a apiGETStockLineItemsRequest s
 
 ## GETStockLineItemsStockLineItemId
 
-> StockLineItemResponse GETStockLineItemsStockLineItemId(ctx, stockLineItemId).Execute()
+> GETStockLineItemsStockLineItemId200Response GETStockLineItemsStockLineItemId(ctx, stockLineItemId).Execute()
 
 Retrieve a stock line item
 
@@ -307,7 +307,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockLineItemsApi.GETStockLineItemsStockLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockLineItemsStockLineItemId`: StockLineItemResponse
+    // response from `GETStockLineItemsStockLineItemId`: GETStockLineItemsStockLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockLineItemsApi.GETStockLineItemsStockLineItemId`: %v\n", resp)
 }
 ```
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockLineItemResponse**](StockLineItemResponse.md)
+[**GETStockLineItemsStockLineItemId200Response**](GETStockLineItemsStockLineItemId200Response.md)
 
 ### Authorization
 

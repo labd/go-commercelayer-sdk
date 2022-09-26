@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## GETPaymentGateways
 
-> PaymentGatewayResponseList GETPaymentGateways(ctx).Execute()
+> GETPaymentGateways200Response GETPaymentGateways(ctx).Execute()
 
 List all payment gateways
 
@@ -386,7 +386,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaymentGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentGateways`: PaymentGatewayResponseList
+    // response from `GETPaymentGateways`: GETPaymentGateways200Response
     fmt.Fprintf(os.Stdout, "Response from `PaymentGatewaysApi.GETPaymentGateways`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Other parameters are passed through a pointer to a apiGETPaymentGatewaysRequest 
 
 ### Return type
 
-[**PaymentGatewayResponseList**](PaymentGatewayResponseList.md)
+[**GETPaymentGateways200Response**](GETPaymentGateways200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Other parameters are passed through a pointer to a apiGETPaymentGatewaysRequest 
 
 ## GETPaymentGatewaysPaymentGatewayId
 
-> PaymentGatewayResponse GETPaymentGatewaysPaymentGatewayId(ctx, paymentGatewayId).Execute()
+> GETPaymentGatewaysPaymentGatewayId200Response GETPaymentGatewaysPaymentGatewayId(ctx, paymentGatewayId).Execute()
 
 Retrieve a payment gateway
 
@@ -448,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaymentGatewaysPaymentGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentGatewaysPaymentGatewayId`: PaymentGatewayResponse
+    // response from `GETPaymentGatewaysPaymentGatewayId`: GETPaymentGatewaysPaymentGatewayId200Response
     fmt.Fprintf(os.Stdout, "Response from `PaymentGatewaysApi.GETPaymentGatewaysPaymentGatewayId`: %v\n", resp)
 }
 ```
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PaymentGatewayResponse**](PaymentGatewayResponse.md)
+[**GETPaymentGatewaysPaymentGatewayId200Response**](GETPaymentGatewaysPaymentGatewayId200Response.md)
 
 ### Authorization
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**ExportDataAttributes**](ExportDataAttributes.md) |  | 
+**Attributes** | [**GETExports200ResponseDataInnerAttributes**](GETExports200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExportDataRelationships**](ExportDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExportData
 
-`func NewExportData(type_ string, attributes ExportDataAttributes, ) *ExportData`
+`func NewExportData(type_ string, attributes GETExports200ResponseDataInnerAttributes, ) *ExportData`
 
 NewExportData instantiates a new ExportData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExportData) GetAttributes() ExportDataAttributes`
+`func (o *ExportData) GetAttributes() GETExports200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExportData) GetAttributesOk() (*ExportDataAttributes, bool)`
+`func (o *ExportData) GetAttributesOk() (*GETExports200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExportData) SetAttributes(v ExportDataAttributes)`
+`func (o *ExportData) SetAttributes(v GETExports200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

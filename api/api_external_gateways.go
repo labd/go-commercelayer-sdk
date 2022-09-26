@@ -120,7 +120,7 @@ type ExternalGatewaysApiGETExternalGatewaysRequest struct {
 	ApiService *ExternalGatewaysApiService
 }
 
-func (r ExternalGatewaysApiGETExternalGatewaysRequest) Execute() (*ExternalGatewayResponseList, *http.Response, error) {
+func (r ExternalGatewaysApiGETExternalGatewaysRequest) Execute() (*GETExternalGateways200Response, *http.Response, error) {
 	return r.ApiService.GETExternalGatewaysExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *ExternalGatewaysApiService) GETExternalGateways(ctx context.Context) Ex
 }
 
 // Execute executes the request
-//  @return ExternalGatewayResponseList
-func (a *ExternalGatewaysApiService) GETExternalGatewaysExecute(r ExternalGatewaysApiGETExternalGatewaysRequest) (*ExternalGatewayResponseList, *http.Response, error) {
+//  @return GETExternalGateways200Response
+func (a *ExternalGatewaysApiService) GETExternalGatewaysExecute(r ExternalGatewaysApiGETExternalGatewaysRequest) (*GETExternalGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExternalGatewayResponseList
+		localVarReturnValue *GETExternalGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalGatewaysApiService.GETExternalGateways")
@@ -220,7 +220,7 @@ type ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest struct {
 	externalGatewayId string
 }
 
-func (r ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest) Execute() (*ExternalGatewayResponse, *http.Response, error) {
+func (r ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest) Execute() (*GETExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETExternalGatewaysExternalGatewayIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayId(ctx co
 }
 
 // Execute executes the request
-//  @return ExternalGatewayResponse
-func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest) (*ExternalGatewayResponse, *http.Response, error) {
+//  @return GETExternalGatewaysExternalGatewayId200Response
+func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest) (*GETExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExternalGatewayResponse
+		localVarReturnValue *GETExternalGatewaysExternalGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalGatewaysApiService.GETExternalGatewaysExternalGatewayId")
@@ -329,7 +329,7 @@ func (r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) Extern
 	return r
 }
 
-func (r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) Execute() (*ExternalGatewayResponse, *http.Response, error) {
+func (r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) Execute() (*PATCHExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHExternalGatewaysExternalGatewayIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayId(ctx 
 }
 
 // Execute executes the request
-//  @return ExternalGatewayResponse
-func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) (*ExternalGatewayResponse, *http.Response, error) {
+//  @return PATCHExternalGatewaysExternalGatewayId200Response
+func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) (*PATCHExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExternalGatewayResponse
+		localVarReturnValue *PATCHExternalGatewaysExternalGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalGatewaysApiService.PATCHExternalGatewaysExternalGatewayId")
@@ -442,7 +442,7 @@ func (r ExternalGatewaysApiPOSTExternalGatewaysRequest) ExternalGatewayCreate(ex
 	return r
 }
 
-func (r ExternalGatewaysApiPOSTExternalGatewaysRequest) Execute() (*ExternalGatewayResponse, *http.Response, error) {
+func (r ExternalGatewaysApiPOSTExternalGatewaysRequest) Execute() (*POSTExternalGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTExternalGatewaysExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *ExternalGatewaysApiService) POSTExternalGateways(ctx context.Context) E
 }
 
 // Execute executes the request
-//  @return ExternalGatewayResponse
-func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatewaysApiPOSTExternalGatewaysRequest) (*ExternalGatewayResponse, *http.Response, error) {
+//  @return POSTExternalGateways201Response
+func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatewaysApiPOSTExternalGatewaysRequest) (*POSTExternalGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ExternalGatewayResponse
+		localVarReturnValue *POSTExternalGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalGatewaysApiService.POSTExternalGateways")

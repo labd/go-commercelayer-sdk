@@ -120,7 +120,7 @@ type ShippingMethodTiersApiGETShippingMethodTiersRequest struct {
 	ApiService *ShippingMethodTiersApiService
 }
 
-func (r ShippingMethodTiersApiGETShippingMethodTiersRequest) Execute() (*ShippingMethodTierResponseList, *http.Response, error) {
+func (r ShippingMethodTiersApiGETShippingMethodTiersRequest) Execute() (*GETShippingMethodTiers200Response, *http.Response, error) {
 	return r.ApiService.GETShippingMethodTiersExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiers(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return ShippingMethodTierResponseList
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ShippingMethodTiersApiGETShippingMethodTiersRequest) (*ShippingMethodTierResponseList, *http.Response, error) {
+//  @return GETShippingMethodTiers200Response
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ShippingMethodTiersApiGETShippingMethodTiersRequest) (*GETShippingMethodTiers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingMethodTierResponseList
+		localVarReturnValue *GETShippingMethodTiers200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodTiersApiService.GETShippingMethodTiers")
@@ -220,7 +220,7 @@ type ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest str
 	shippingMethodTierId string
 }
 
-func (r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) Execute() (*ShippingMethodTierResponse, *http.Response, error) {
+func (r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) Execute() (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
 	return r.ApiService.GETShippingMethodTiersShippingMethodTierIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTier
 }
 
 // Execute executes the request
-//  @return ShippingMethodTierResponse
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierIdExecute(r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) (*ShippingMethodTierResponse, *http.Response, error) {
+//  @return GETShippingMethodTiersShippingMethodTierId200Response
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierIdExecute(r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *ShippingMethodTierResponse
+		localVarReturnValue *GETShippingMethodTiersShippingMethodTierId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingMethodTiersApiService.GETShippingMethodTiersShippingMethodTierId")

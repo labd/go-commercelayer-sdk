@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GETPriceTiers
 
-> PriceTierResponseList GETPriceTiers(ctx).Execute()
+> GETPriceTiers200Response GETPriceTiers(ctx).Execute()
 
 List all price tiers
 
@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceTiersApi.GETPriceTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceTiers`: PriceTierResponseList
+    // response from `GETPriceTiers`: GETPriceTiers200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceTiersApi.GETPriceTiers`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Other parameters are passed through a pointer to a apiGETPriceTiersRequest struc
 
 ### Return type
 
-[**PriceTierResponseList**](PriceTierResponseList.md)
+[**GETPriceTiers200Response**](GETPriceTiers200Response.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Other parameters are passed through a pointer to a apiGETPriceTiersRequest struc
 
 ## GETPriceTiersPriceTierId
 
-> PriceTierResponse GETPriceTiersPriceTierId(ctx, priceTierId).Execute()
+> GETPriceTiersPriceTierId200Response GETPriceTiersPriceTierId(ctx, priceTierId).Execute()
 
 Retrieve a price tier
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceTiersApi.GETPriceTiersPriceTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceTiersPriceTierId`: PriceTierResponse
+    // response from `GETPriceTiersPriceTierId`: GETPriceTiersPriceTierId200Response
     fmt.Fprintf(os.Stdout, "Response from `PriceTiersApi.GETPriceTiersPriceTierId`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PriceTierResponse**](PriceTierResponse.md)
+[**GETPriceTiersPriceTierId200Response**](GETPriceTiersPriceTierId200Response.md)
 
 ### Authorization
 

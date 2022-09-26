@@ -18,16 +18,16 @@ import (
 // StockTransferCreateData struct for StockTransferCreateData
 type StockTransferCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    StockTransferCreateDataAttributes     `json:"attributes"`
-	Relationships *StockTransferCreateDataRelationships `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    POSTStockTransfers201ResponseDataAttributes `json:"attributes"`
+	Relationships *StockTransferCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewStockTransferCreateData instantiates a new StockTransferCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferCreateData(type_ string, attributes StockTransferCreateDataAttributes) *StockTransferCreateData {
+func NewStockTransferCreateData(type_ string, attributes POSTStockTransfers201ResponseDataAttributes) *StockTransferCreateData {
 	this := StockTransferCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *StockTransferCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferCreateData) GetAttributes() StockTransferCreateDataAttributes {
+func (o *StockTransferCreateData) GetAttributes() POSTStockTransfers201ResponseDataAttributes {
 	if o == nil {
-		var ret StockTransferCreateDataAttributes
+		var ret POSTStockTransfers201ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *StockTransferCreateData) GetAttributes() StockTransferCreateDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateData) GetAttributesOk() (*StockTransferCreateDataAttributes, bool) {
+func (o *StockTransferCreateData) GetAttributesOk() (*POSTStockTransfers201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *StockTransferCreateData) GetAttributesOk() (*StockTransferCreateDataAtt
 }
 
 // SetAttributes sets field value
-func (o *StockTransferCreateData) SetAttributes(v StockTransferCreateDataAttributes) {
+func (o *StockTransferCreateData) SetAttributes(v POSTStockTransfers201ResponseDataAttributes) {
 	o.Attributes = v
 }
 

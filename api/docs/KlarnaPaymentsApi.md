@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETKlarnaPayments
 
-> KlarnaPaymentResponseList GETKlarnaPayments(ctx).Execute()
+> GETKlarnaPayments200Response GETKlarnaPayments(ctx).Execute()
 
 List all klarna payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.GETKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETKlarnaPayments`: KlarnaPaymentResponseList
+    // response from `GETKlarnaPayments`: GETKlarnaPayments200Response
     fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.GETKlarnaPayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETKlarnaPaymentsRequest s
 
 ### Return type
 
-[**KlarnaPaymentResponseList**](KlarnaPaymentResponseList.md)
+[**GETKlarnaPayments200Response**](GETKlarnaPayments200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETKlarnaPaymentsRequest s
 
 ## GETKlarnaPaymentsKlarnaPaymentId
 
-> KlarnaPaymentResponse GETKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).Execute()
+> GETKlarnaPaymentsKlarnaPaymentId200Response GETKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).Execute()
 
 Retrieve a klarna payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.GETKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETKlarnaPaymentsKlarnaPaymentId`: KlarnaPaymentResponse
+    // response from `GETKlarnaPaymentsKlarnaPaymentId`: GETKlarnaPaymentsKlarnaPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.GETKlarnaPaymentsKlarnaPaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KlarnaPaymentResponse**](KlarnaPaymentResponse.md)
+[**GETKlarnaPaymentsKlarnaPaymentId200Response**](GETKlarnaPaymentsKlarnaPaymentId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHKlarnaPaymentsKlarnaPaymentId
 
-> KlarnaPaymentResponse PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
+> PATCHKlarnaPaymentsKlarnaPaymentId200Response PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
 
 Update a klarna payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewKlarnaPaymentUpdateDataAttributes())) // KlarnaPaymentUpdate | 
+    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes())) // KlarnaPaymentUpdate | 
     klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHKlarnaPaymentsKlarnaPaymentId`: KlarnaPaymentResponse
+    // response from `PATCHKlarnaPaymentsKlarnaPaymentId`: PATCHKlarnaPaymentsKlarnaPaymentId200Response
     fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KlarnaPaymentResponse**](KlarnaPaymentResponse.md)
+[**PATCHKlarnaPaymentsKlarnaPaymentId200Response**](PATCHKlarnaPaymentsKlarnaPaymentId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTKlarnaPayments
 
-> KlarnaPaymentResponse POSTKlarnaPayments(ctx).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
+> POSTKlarnaPayments201Response POSTKlarnaPayments(ctx).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
 
 Create a klarna payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // KlarnaPaymentCreate | 
+    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // KlarnaPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.POSTKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTKlarnaPayments`: KlarnaPaymentResponse
+    // response from `POSTKlarnaPayments`: POSTKlarnaPayments201Response
     fmt.Fprintf(os.Stdout, "Response from `KlarnaPaymentsApi.POSTKlarnaPayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**KlarnaPaymentResponse**](KlarnaPaymentResponse.md)
+[**POSTKlarnaPayments201Response**](POSTKlarnaPayments201Response.md)
 
 ### Authorization
 

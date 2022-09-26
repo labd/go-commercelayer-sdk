@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**InventoryModelCreateDataAttributes**](InventoryModelCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTInventoryModels201ResponseDataAttributes**](POSTInventoryModels201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewInventoryModelCreateData
 
-`func NewInventoryModelCreateData(type_ string, attributes InventoryModelCreateDataAttributes, ) *InventoryModelCreateData`
+`func NewInventoryModelCreateData(type_ string, attributes POSTInventoryModels201ResponseDataAttributes, ) *InventoryModelCreateData`
 
 NewInventoryModelCreateData instantiates a new InventoryModelCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryModelCreateData) GetAttributes() InventoryModelCreateDataAttributes`
+`func (o *InventoryModelCreateData) GetAttributes() POSTInventoryModels201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryModelCreateData) GetAttributesOk() (*InventoryModelCreateDataAttributes, bool)`
+`func (o *InventoryModelCreateData) GetAttributesOk() (*POSTInventoryModels201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryModelCreateData) SetAttributes(v InventoryModelCreateDataAttributes)`
+`func (o *InventoryModelCreateData) SetAttributes(v POSTInventoryModels201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

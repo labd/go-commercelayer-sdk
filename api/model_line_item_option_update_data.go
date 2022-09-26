@@ -20,16 +20,16 @@ type LineItemOptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                 `json:"id"`
-	Attributes    LineItemOptionUpdateDataAttributes     `json:"attributes"`
-	Relationships *LineItemOptionUpdateDataRelationships `json:"relationships,omitempty"`
+	Id            string                                                        `json:"id"`
+	Attributes    PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *LineItemOptionUpdateDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionUpdateData instantiates a new LineItemOptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionUpdateData(type_ string, id string, attributes LineItemOptionUpdateDataAttributes) *LineItemOptionUpdateData {
+func NewLineItemOptionUpdateData(type_ string, id string, attributes PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) *LineItemOptionUpdateData {
 	this := LineItemOptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *LineItemOptionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemOptionUpdateData) GetAttributes() LineItemOptionUpdateDataAttributes {
+func (o *LineItemOptionUpdateData) GetAttributes() PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret LineItemOptionUpdateDataAttributes
+		var ret PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *LineItemOptionUpdateData) GetAttributes() LineItemOptionUpdateDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionUpdateData) GetAttributesOk() (*LineItemOptionUpdateDataAttributes, bool) {
+func (o *LineItemOptionUpdateData) GetAttributesOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *LineItemOptionUpdateData) GetAttributesOk() (*LineItemOptionUpdateDataA
 }
 
 // SetAttributes sets field value
-func (o *LineItemOptionUpdateData) SetAttributes(v LineItemOptionUpdateDataAttributes) {
+func (o *LineItemOptionUpdateData) SetAttributes(v PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 

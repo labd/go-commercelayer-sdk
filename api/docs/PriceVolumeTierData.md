@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**PriceTierDataAttributes**](PriceTierDataAttributes.md) |  | 
+**Attributes** | [**GETPriceTiers200ResponseDataInnerAttributes**](GETPriceTiers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceTierDataRelationships**](PriceTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceVolumeTierData
 
-`func NewPriceVolumeTierData(type_ string, attributes PriceTierDataAttributes, ) *PriceVolumeTierData`
+`func NewPriceVolumeTierData(type_ string, attributes GETPriceTiers200ResponseDataInnerAttributes, ) *PriceVolumeTierData`
 
 NewPriceVolumeTierData instantiates a new PriceVolumeTierData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PriceVolumeTierData) GetAttributes() PriceTierDataAttributes`
+`func (o *PriceVolumeTierData) GetAttributes() GETPriceTiers200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceVolumeTierData) GetAttributesOk() (*PriceTierDataAttributes, bool)`
+`func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceTiers200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceVolumeTierData) SetAttributes(v PriceTierDataAttributes)`
+`func (o *PriceVolumeTierData) SetAttributes(v GETPriceTiers200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

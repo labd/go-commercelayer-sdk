@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETFreeShippingPromotions
 
-> FreeShippingPromotionResponseList GETFreeShippingPromotions(ctx).Execute()
+> GETFreeShippingPromotions200Response GETFreeShippingPromotions(ctx).Execute()
 
 List all free shipping promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.GETFreeShippingPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeShippingPromotions`: FreeShippingPromotionResponseList
+    // response from `GETFreeShippingPromotions`: GETFreeShippingPromotions200Response
     fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.GETFreeShippingPromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETFreeShippingPromotionsR
 
 ### Return type
 
-[**FreeShippingPromotionResponseList**](FreeShippingPromotionResponseList.md)
+[**GETFreeShippingPromotions200Response**](GETFreeShippingPromotions200Response.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETFreeShippingPromotionsR
 
 ## GETFreeShippingPromotionsFreeShippingPromotionId
 
-> FreeShippingPromotionResponse GETFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).Execute()
+> GETFreeShippingPromotionsFreeShippingPromotionId200Response GETFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).Execute()
 
 Retrieve a free shipping promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.GETFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeShippingPromotionsFreeShippingPromotionId`: FreeShippingPromotionResponse
+    // response from `GETFreeShippingPromotionsFreeShippingPromotionId`: GETFreeShippingPromotionsFreeShippingPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.GETFreeShippingPromotionsFreeShippingPromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeShippingPromotionResponse**](FreeShippingPromotionResponse.md)
+[**GETFreeShippingPromotionsFreeShippingPromotionId200Response**](GETFreeShippingPromotionsFreeShippingPromotionId200Response.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFreeShippingPromotionsFreeShippingPromotionId
 
-> FreeShippingPromotionResponse PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
+> PATCHFreeShippingPromotionsFreeShippingPromotionId200Response PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
 
 Update a free shipping promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewFreeShippingPromotionUpdateDataAttributes())) // FreeShippingPromotionUpdate | 
+    freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes())) // FreeShippingPromotionUpdate | 
     freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHFreeShippingPromotionsFreeShippingPromotionId`: FreeShippingPromotionResponse
+    // response from `PATCHFreeShippingPromotionsFreeShippingPromotionId`: PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
     fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeShippingPromotionResponse**](FreeShippingPromotionResponse.md)
+[**PATCHFreeShippingPromotionsFreeShippingPromotionId200Response**](PATCHFreeShippingPromotionsFreeShippingPromotionId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFreeShippingPromotions
 
-> FreeShippingPromotionResponse POSTFreeShippingPromotions(ctx).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
+> POSTFreeShippingPromotions201Response POSTFreeShippingPromotions(ctx).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
 
 Create a free shipping promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData("Type_example", *openapiclient.NewFreeShippingPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeShippingPromotionCreate | 
+    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData("Type_example", *openapiclient.NewPOSTFreeShippingPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeShippingPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.POSTFreeShippingPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTFreeShippingPromotions`: FreeShippingPromotionResponse
+    // response from `POSTFreeShippingPromotions`: POSTFreeShippingPromotions201Response
     fmt.Fprintf(os.Stdout, "Response from `FreeShippingPromotionsApi.POSTFreeShippingPromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**FreeShippingPromotionResponse**](FreeShippingPromotionResponse.md)
+[**POSTFreeShippingPromotions201Response**](POSTFreeShippingPromotions201Response.md)
 
 ### Authorization
 

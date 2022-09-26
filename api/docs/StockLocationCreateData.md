@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**StockLocationCreateDataAttributes**](StockLocationCreateDataAttributes.md) |  | 
+**Attributes** | [**POSTStockLocations201ResponseDataAttributes**](POSTStockLocations201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantCreateDataRelationships**](MerchantCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockLocationCreateData
 
-`func NewStockLocationCreateData(type_ string, attributes StockLocationCreateDataAttributes, ) *StockLocationCreateData`
+`func NewStockLocationCreateData(type_ string, attributes POSTStockLocations201ResponseDataAttributes, ) *StockLocationCreateData`
 
 NewStockLocationCreateData instantiates a new StockLocationCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StockLocationCreateData) GetAttributes() StockLocationCreateDataAttributes`
+`func (o *StockLocationCreateData) GetAttributes() POSTStockLocations201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockLocationCreateData) GetAttributesOk() (*StockLocationCreateDataAttributes, bool)`
+`func (o *StockLocationCreateData) GetAttributesOk() (*POSTStockLocations201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockLocationCreateData) SetAttributes(v StockLocationCreateDataAttributes)`
+`func (o *StockLocationCreateData) SetAttributes(v POSTStockLocations201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

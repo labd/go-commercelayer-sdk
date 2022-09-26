@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**KlarnaPaymentUpdateDataAttributes**](KlarnaPaymentUpdateDataAttributes.md) |  | 
+**Attributes** | [**PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes**](PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaPaymentUpdateData
 
-`func NewKlarnaPaymentUpdateData(type_ string, id string, attributes KlarnaPaymentUpdateDataAttributes, ) *KlarnaPaymentUpdateData`
+`func NewKlarnaPaymentUpdateData(type_ string, id string, attributes PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentUpdateData`
 
 NewKlarnaPaymentUpdateData instantiates a new KlarnaPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *KlarnaPaymentUpdateData) GetAttributes() KlarnaPaymentUpdateDataAttributes`
+`func (o *KlarnaPaymentUpdateData) GetAttributes() PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*KlarnaPaymentUpdateDataAttributes, bool)`
+`func (o *KlarnaPaymentUpdateData) GetAttributesOk() (*PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaPaymentUpdateData) SetAttributes(v KlarnaPaymentUpdateDataAttributes)`
+`func (o *KlarnaPaymentUpdateData) SetAttributes(v PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**SkuListPromotionRuleDataAttributes**](SkuListPromotionRuleDataAttributes.md) |  | 
+**Attributes** | [**GETSkuListPromotionRules200ResponseDataInnerAttributes**](GETSkuListPromotionRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListPromotionRuleDataRelationships**](SkuListPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListPromotionRuleData
 
-`func NewSkuListPromotionRuleData(type_ string, attributes SkuListPromotionRuleDataAttributes, ) *SkuListPromotionRuleData`
+`func NewSkuListPromotionRuleData(type_ string, attributes GETSkuListPromotionRules200ResponseDataInnerAttributes, ) *SkuListPromotionRuleData`
 
 NewSkuListPromotionRuleData instantiates a new SkuListPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuListPromotionRuleData) GetAttributes() SkuListPromotionRuleDataAttributes`
+`func (o *SkuListPromotionRuleData) GetAttributes() GETSkuListPromotionRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListPromotionRuleData) GetAttributesOk() (*SkuListPromotionRuleDataAttributes, bool)`
+`func (o *SkuListPromotionRuleData) GetAttributesOk() (*GETSkuListPromotionRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListPromotionRuleData) SetAttributes(v SkuListPromotionRuleDataAttributes)`
+`func (o *SkuListPromotionRuleData) SetAttributes(v GETSkuListPromotionRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

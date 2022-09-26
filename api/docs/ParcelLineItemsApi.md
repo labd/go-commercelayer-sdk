@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETParcelLineItems
 
-> ParcelLineItemResponseList GETParcelLineItems(ctx).Execute()
+> GETParcelLineItems200Response GETParcelLineItems(ctx).Execute()
 
 List all parcel line items
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.GETParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcelLineItems`: ParcelLineItemResponseList
+    // response from `GETParcelLineItems`: GETParcelLineItems200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.GETParcelLineItems`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETParcelLineItemsRequest 
 
 ### Return type
 
-[**ParcelLineItemResponseList**](ParcelLineItemResponseList.md)
+[**GETParcelLineItems200Response**](GETParcelLineItems200Response.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETParcelLineItemsRequest 
 
 ## GETParcelLineItemsParcelLineItemId
 
-> ParcelLineItemResponse GETParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).Execute()
+> GETParcelLineItemsParcelLineItemId200Response GETParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).Execute()
 
 Retrieve a parcel line item
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.GETParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETParcelLineItemsParcelLineItemId`: ParcelLineItemResponse
+    // response from `GETParcelLineItemsParcelLineItemId`: GETParcelLineItemsParcelLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.GETParcelLineItemsParcelLineItemId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelLineItemResponse**](ParcelLineItemResponse.md)
+[**GETParcelLineItemsParcelLineItemId200Response**](GETParcelLineItemsParcelLineItemId200Response.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHParcelLineItemsParcelLineItemId
 
-> ParcelLineItemResponse PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
+> PATCHParcelLineItemsParcelLineItemId200Response PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
 
 Update a parcel line item
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // ParcelLineItemUpdate | 
+    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ParcelLineItemUpdate | 
     parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHParcelLineItemsParcelLineItemId`: ParcelLineItemResponse
+    // response from `PATCHParcelLineItemsParcelLineItemId`: PATCHParcelLineItemsParcelLineItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelLineItemResponse**](ParcelLineItemResponse.md)
+[**PATCHParcelLineItemsParcelLineItemId200Response**](PATCHParcelLineItemsParcelLineItemId200Response.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTParcelLineItems
 
-> ParcelLineItemResponse POSTParcelLineItems(ctx).ParcelLineItemCreate(parcelLineItemCreate).Execute()
+> POSTParcelLineItems201Response POSTParcelLineItems(ctx).ParcelLineItemCreate(parcelLineItemCreate).Execute()
 
 Create a parcel line item
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("Type_example", *openapiclient.NewParcelLineItemCreateDataAttributes(int32(4)))) // ParcelLineItemCreate | 
+    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("Type_example", *openapiclient.NewPOSTParcelLineItems201ResponseDataAttributes(int32(4)))) // ParcelLineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.POSTParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTParcelLineItems`: ParcelLineItemResponse
+    // response from `POSTParcelLineItems`: POSTParcelLineItems201Response
     fmt.Fprintf(os.Stdout, "Response from `ParcelLineItemsApi.POSTParcelLineItems`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ParcelLineItemResponse**](ParcelLineItemResponse.md)
+[**POSTParcelLineItems201Response**](POSTParcelLineItems201Response.md)
 
 ### Authorization
 

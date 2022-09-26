@@ -18,16 +18,16 @@ import (
 // BillingInfoValidationRuleData struct for BillingInfoValidationRuleData
 type BillingInfoValidationRuleData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    BillingInfoValidationRuleDataAttributes     `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Type          string                                                      `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewBillingInfoValidationRuleData instantiates a new BillingInfoValidationRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *BillingInfoValidationRuleData {
+func NewBillingInfoValidationRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *BillingInfoValidationRuleData {
 	this := BillingInfoValidationRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *BillingInfoValidationRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BillingInfoValidationRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes {
+func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret BillingInfoValidationRuleDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *BillingInfoValidationRuleData) GetAttributes() BillingInfoValidationRul
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
+func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *BillingInfoValidationRuleData) GetAttributesOk() (*BillingInfoValidatio
 }
 
 // SetAttributes sets field value
-func (o *BillingInfoValidationRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
+func (o *BillingInfoValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 

@@ -120,7 +120,7 @@ type StripeGatewaysApiGETStripeGatewaysRequest struct {
 	ApiService *StripeGatewaysApiService
 }
 
-func (r StripeGatewaysApiGETStripeGatewaysRequest) Execute() (*StripeGatewayResponseList, *http.Response, error) {
+func (r StripeGatewaysApiGETStripeGatewaysRequest) Execute() (*GETStripeGateways200Response, *http.Response, error) {
 	return r.ApiService.GETStripeGatewaysExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *StripeGatewaysApiService) GETStripeGateways(ctx context.Context) Stripe
 }
 
 // Execute executes the request
-//  @return StripeGatewayResponseList
-func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r StripeGatewaysApiGETStripeGatewaysRequest) (*StripeGatewayResponseList, *http.Response, error) {
+//  @return GETStripeGateways200Response
+func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r StripeGatewaysApiGETStripeGatewaysRequest) (*GETStripeGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StripeGatewayResponseList
+		localVarReturnValue *GETStripeGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripeGatewaysApiService.GETStripeGateways")
@@ -220,7 +220,7 @@ type StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest struct {
 	stripeGatewayId string
 }
 
-func (r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) Execute() (*StripeGatewayResponse, *http.Response, error) {
+func (r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) Execute() (*GETStripeGatewaysStripeGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETStripeGatewaysStripeGatewayIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.
 }
 
 // Execute executes the request
-//  @return StripeGatewayResponse
-func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) (*StripeGatewayResponse, *http.Response, error) {
+//  @return GETStripeGatewaysStripeGatewayId200Response
+func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) (*GETStripeGatewaysStripeGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StripeGatewayResponse
+		localVarReturnValue *GETStripeGatewaysStripeGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripeGatewaysApiService.GETStripeGatewaysStripeGatewayId")
@@ -329,7 +329,7 @@ func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) StripeGatewa
 	return r
 }
 
-func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) Execute() (*StripeGatewayResponse, *http.Response, error) {
+func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) Execute() (*PATCHStripeGatewaysStripeGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHStripeGatewaysStripeGatewayIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx contex
 }
 
 // Execute executes the request
-//  @return StripeGatewayResponse
-func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) (*StripeGatewayResponse, *http.Response, error) {
+//  @return PATCHStripeGatewaysStripeGatewayId200Response
+func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) (*PATCHStripeGatewaysStripeGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StripeGatewayResponse
+		localVarReturnValue *PATCHStripeGatewaysStripeGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripeGatewaysApiService.PATCHStripeGatewaysStripeGatewayId")
@@ -442,7 +442,7 @@ func (r StripeGatewaysApiPOSTStripeGatewaysRequest) StripeGatewayCreate(stripeGa
 	return r
 }
 
-func (r StripeGatewaysApiPOSTStripeGatewaysRequest) Execute() (*StripeGatewayResponse, *http.Response, error) {
+func (r StripeGatewaysApiPOSTStripeGatewaysRequest) Execute() (*POSTStripeGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTStripeGatewaysExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *StripeGatewaysApiService) POSTStripeGateways(ctx context.Context) Strip
 }
 
 // Execute executes the request
-//  @return StripeGatewayResponse
-func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApiPOSTStripeGatewaysRequest) (*StripeGatewayResponse, *http.Response, error) {
+//  @return POSTStripeGateways201Response
+func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApiPOSTStripeGatewaysRequest) (*POSTStripeGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *StripeGatewayResponse
+		localVarReturnValue *POSTStripeGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StripeGatewaysApiService.POSTStripeGateways")

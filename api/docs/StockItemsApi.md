@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GETStockItems
 
-> StockItemResponseList GETStockItems(ctx).Execute()
+> GETStockItems200Response GETStockItems(ctx).Execute()
 
 List all stock items
 
@@ -180,7 +180,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockItems`: StockItemResponseList
+    // response from `GETStockItems`: GETStockItems200Response
     fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.GETStockItems`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Other parameters are passed through a pointer to a apiGETStockItemsRequest struc
 
 ### Return type
 
-[**StockItemResponseList**](StockItemResponseList.md)
+[**GETStockItems200Response**](GETStockItems200Response.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Other parameters are passed through a pointer to a apiGETStockItemsRequest struc
 
 ## GETStockItemsStockItemId
 
-> StockItemResponse GETStockItemsStockItemId(ctx, stockItemId).Execute()
+> GETStockItemsStockItemId200Response GETStockItemsStockItemId(ctx, stockItemId).Execute()
 
 Retrieve a stock item
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.GETStockItemsStockItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockItemsStockItemId`: StockItemResponse
+    // response from `GETStockItemsStockItemId`: GETStockItemsStockItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.GETStockItemsStockItemId`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockItemResponse**](StockItemResponse.md)
+[**GETStockItemsStockItemId200Response**](GETStockItemsStockItemId200Response.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStockItemsStockItemId
 
-> StockItemResponse PATCHStockItemsStockItemId(ctx, stockItemId).StockItemUpdate(stockItemUpdate).Execute()
+> PATCHStockItemsStockItemId200Response PATCHStockItemsStockItemId(ctx, stockItemId).StockItemUpdate(stockItemUpdate).Execute()
 
 Update a stock item
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewStockItemUpdateDataAttributes())) // StockItemUpdate | 
+    stockItemUpdate := *openapiclient.NewStockItemUpdate(*openapiclient.NewStockItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockItemsStockItemId200ResponseDataAttributes())) // StockItemUpdate | 
     stockItemId := "stockItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.PATCHStockItemsStockItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHStockItemsStockItemId`: StockItemResponse
+    // response from `PATCHStockItemsStockItemId`: PATCHStockItemsStockItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.PATCHStockItemsStockItemId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockItemResponse**](StockItemResponse.md)
+[**PATCHStockItemsStockItemId200Response**](PATCHStockItemsStockItemId200Response.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTStockItems
 
-> StockItemResponse POSTStockItems(ctx).StockItemCreate(stockItemCreate).Execute()
+> POSTStockItems201Response POSTStockItems(ctx).StockItemCreate(stockItemCreate).Execute()
 
 Create a stock item
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("Type_example", *openapiclient.NewStockItemCreateDataAttributes(int32(100)))) // StockItemCreate | 
+    stockItemCreate := *openapiclient.NewStockItemCreate(*openapiclient.NewStockItemCreateData("Type_example", *openapiclient.NewPOSTStockItems201ResponseDataAttributes(int32(100)))) // StockItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockItemsApi.POSTStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTStockItems`: StockItemResponse
+    // response from `POSTStockItems`: POSTStockItems201Response
     fmt.Fprintf(os.Stdout, "Response from `StockItemsApi.POSTStockItems`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**StockItemResponse**](StockItemResponse.md)
+[**POSTStockItems201Response**](POSTStockItems201Response.md)
 
 ### Authorization
 

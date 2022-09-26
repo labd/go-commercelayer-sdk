@@ -120,7 +120,7 @@ type InventoryModelsApiGETInventoryModelsRequest struct {
 	ApiService *InventoryModelsApiService
 }
 
-func (r InventoryModelsApiGETInventoryModelsRequest) Execute() (*InventoryModelResponseList, *http.Response, error) {
+func (r InventoryModelsApiGETInventoryModelsRequest) Execute() (*GETInventoryModels200Response, *http.Response, error) {
 	return r.ApiService.GETInventoryModelsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *InventoryModelsApiService) GETInventoryModels(ctx context.Context) Inve
 }
 
 // Execute executes the request
-//  @return InventoryModelResponseList
-func (a *InventoryModelsApiService) GETInventoryModelsExecute(r InventoryModelsApiGETInventoryModelsRequest) (*InventoryModelResponseList, *http.Response, error) {
+//  @return GETInventoryModels200Response
+func (a *InventoryModelsApiService) GETInventoryModelsExecute(r InventoryModelsApiGETInventoryModelsRequest) (*GETInventoryModels200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *InventoryModelResponseList
+		localVarReturnValue *GETInventoryModels200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryModelsApiService.GETInventoryModels")
@@ -220,7 +220,7 @@ type InventoryModelsApiGETInventoryModelsInventoryModelIdRequest struct {
 	inventoryModelId string
 }
 
-func (r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) Execute() (*InventoryModelResponse, *http.Response, error) {
+func (r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) Execute() (*GETInventoryModelsInventoryModelId200Response, *http.Response, error) {
 	return r.ApiService.GETInventoryModelsInventoryModelIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelId(ctx conte
 }
 
 // Execute executes the request
-//  @return InventoryModelResponse
-func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelIdExecute(r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) (*InventoryModelResponse, *http.Response, error) {
+//  @return GETInventoryModelsInventoryModelId200Response
+func (a *InventoryModelsApiService) GETInventoryModelsInventoryModelIdExecute(r InventoryModelsApiGETInventoryModelsInventoryModelIdRequest) (*GETInventoryModelsInventoryModelId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *InventoryModelResponse
+		localVarReturnValue *GETInventoryModelsInventoryModelId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryModelsApiService.GETInventoryModelsInventoryModelId")
@@ -605,7 +605,7 @@ func (r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) Inventory
 	return r
 }
 
-func (r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) Execute() (*InventoryModelResponse, *http.Response, error) {
+func (r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) Execute() (*PATCHInventoryModelsInventoryModelId200Response, *http.Response, error) {
 	return r.ApiService.PATCHInventoryModelsInventoryModelIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelId(ctx con
 }
 
 // Execute executes the request
-//  @return InventoryModelResponse
-func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelIdExecute(r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) (*InventoryModelResponse, *http.Response, error) {
+//  @return PATCHInventoryModelsInventoryModelId200Response
+func (a *InventoryModelsApiService) PATCHInventoryModelsInventoryModelIdExecute(r InventoryModelsApiPATCHInventoryModelsInventoryModelIdRequest) (*PATCHInventoryModelsInventoryModelId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *InventoryModelResponse
+		localVarReturnValue *PATCHInventoryModelsInventoryModelId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryModelsApiService.PATCHInventoryModelsInventoryModelId")
@@ -718,7 +718,7 @@ func (r InventoryModelsApiPOSTInventoryModelsRequest) InventoryModelCreate(inven
 	return r
 }
 
-func (r InventoryModelsApiPOSTInventoryModelsRequest) Execute() (*InventoryModelResponse, *http.Response, error) {
+func (r InventoryModelsApiPOSTInventoryModelsRequest) Execute() (*POSTInventoryModels201Response, *http.Response, error) {
 	return r.ApiService.POSTInventoryModelsExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *InventoryModelsApiService) POSTInventoryModels(ctx context.Context) Inv
 }
 
 // Execute executes the request
-//  @return InventoryModelResponse
-func (a *InventoryModelsApiService) POSTInventoryModelsExecute(r InventoryModelsApiPOSTInventoryModelsRequest) (*InventoryModelResponse, *http.Response, error) {
+//  @return POSTInventoryModels201Response
+func (a *InventoryModelsApiService) POSTInventoryModelsExecute(r InventoryModelsApiPOSTInventoryModelsRequest) (*POSTInventoryModels201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *InventoryModelResponse
+		localVarReturnValue *POSTInventoryModels201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InventoryModelsApiService.POSTInventoryModels")

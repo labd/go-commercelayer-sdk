@@ -565,7 +565,7 @@ Name | Type | Description  | Notes
 
 ## GETSkuListPromotionRules
 
-> SkuListPromotionRuleResponseList GETSkuListPromotionRules(ctx).Execute()
+> GETSkuListPromotionRules200Response GETSkuListPromotionRules(ctx).Execute()
 
 List all SKU list promotion rules
 
@@ -592,7 +592,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETSkuListPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListPromotionRules`: SkuListPromotionRuleResponseList
+    // response from `GETSkuListPromotionRules`: GETSkuListPromotionRules200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.GETSkuListPromotionRules`: %v\n", resp)
 }
 ```
@@ -608,7 +608,7 @@ Other parameters are passed through a pointer to a apiGETSkuListPromotionRulesRe
 
 ### Return type
 
-[**SkuListPromotionRuleResponseList**](SkuListPromotionRuleResponseList.md)
+[**GETSkuListPromotionRules200Response**](GETSkuListPromotionRules200Response.md)
 
 ### Authorization
 
@@ -626,7 +626,7 @@ Other parameters are passed through a pointer to a apiGETSkuListPromotionRulesRe
 
 ## GETSkuListPromotionRulesSkuListPromotionRuleId
 
-> SkuListPromotionRuleResponse GETSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).Execute()
+> GETSkuListPromotionRulesSkuListPromotionRuleId200Response GETSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).Execute()
 
 Retrieve a SKU list promotion rule
 
@@ -654,7 +654,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkuListPromotionRulesSkuListPromotionRuleId`: SkuListPromotionRuleResponse
+    // response from `GETSkuListPromotionRulesSkuListPromotionRuleId`: GETSkuListPromotionRulesSkuListPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.GETSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListPromotionRuleResponse**](SkuListPromotionRuleResponse.md)
+[**GETSkuListPromotionRulesSkuListPromotionRuleId200Response**](GETSkuListPromotionRulesSkuListPromotionRuleId200Response.md)
 
 ### Authorization
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListPromotionRulesSkuListPromotionRuleId
 
-> SkuListPromotionRuleResponse PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
+> POSTSkuListPromotionRules201Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
 
 Update a SKU list promotion rule
 
@@ -715,7 +715,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewSkuListPromotionRuleCreateDataAttributes())) // SkuListPromotionRuleUpdate | 
+    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleUpdate | 
     skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -725,7 +725,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: SkuListPromotionRuleResponse
+    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: POSTSkuListPromotionRules201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListPromotionRuleResponse**](SkuListPromotionRuleResponse.md)
+[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
 
 ### Authorization
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuListPromotionRules
 
-> SkuListPromotionRuleResponse POSTSkuListPromotionRules(ctx).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
+> POSTSkuListPromotionRules201Response POSTSkuListPromotionRules(ctx).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
 
 Create a SKU list promotion rule
 
@@ -787,7 +787,7 @@ import (
 )
 
 func main() {
-    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("Type_example", *openapiclient.NewSkuListPromotionRuleCreateDataAttributes())) // SkuListPromotionRuleCreate | 
+    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -796,7 +796,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.POSTSkuListPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTSkuListPromotionRules`: SkuListPromotionRuleResponse
+    // response from `POSTSkuListPromotionRules`: POSTSkuListPromotionRules201Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.POSTSkuListPromotionRules`: %v\n", resp)
 }
 ```
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SkuListPromotionRuleResponse**](SkuListPromotionRuleResponse.md)
+[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
 
 ### Authorization
 

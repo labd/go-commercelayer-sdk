@@ -120,7 +120,7 @@ type KlarnaGatewaysApiGETKlarnaGatewaysRequest struct {
 	ApiService *KlarnaGatewaysApiService
 }
 
-func (r KlarnaGatewaysApiGETKlarnaGatewaysRequest) Execute() (*KlarnaGatewayResponseList, *http.Response, error) {
+func (r KlarnaGatewaysApiGETKlarnaGatewaysRequest) Execute() (*GETKlarnaGateways200Response, *http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGateways(ctx context.Context) Klarna
 }
 
 // Execute executes the request
-//  @return KlarnaGatewayResponseList
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiGETKlarnaGatewaysRequest) (*KlarnaGatewayResponseList, *http.Response, error) {
+//  @return GETKlarnaGateways200Response
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiGETKlarnaGatewaysRequest) (*GETKlarnaGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *KlarnaGatewayResponseList
+		localVarReturnValue *GETKlarnaGateways200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.GETKlarnaGateways")
@@ -220,7 +220,7 @@ type KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	klarnaGatewayId string
 }
 
-func (r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*KlarnaGatewayResponse, *http.Response, error) {
+func (r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*GETKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	return r.ApiService.GETKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.
 }
 
 // Execute executes the request
-//  @return KlarnaGatewayResponse
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGatewayResponse, *http.Response, error) {
+//  @return GETKlarnaGatewaysKlarnaGatewayId200Response
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) (*GETKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *KlarnaGatewayResponse
+		localVarReturnValue *GETKlarnaGatewaysKlarnaGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.GETKlarnaGatewaysKlarnaGatewayId")
@@ -329,7 +329,7 @@ func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewa
 	return r
 }
 
-func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*KlarnaGatewayResponse, *http.Response, error) {
+func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*PATCHKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	return r.ApiService.PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx contex
 }
 
 // Execute executes the request
-//  @return KlarnaGatewayResponse
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*KlarnaGatewayResponse, *http.Response, error) {
+//  @return PATCHKlarnaGatewaysKlarnaGatewayId200Response
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) (*PATCHKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *KlarnaGatewayResponse
+		localVarReturnValue *PATCHKlarnaGatewaysKlarnaGatewayId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.PATCHKlarnaGatewaysKlarnaGatewayId")
@@ -442,7 +442,7 @@ func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) KlarnaGatewayCreate(klarnaGa
 	return r
 }
 
-func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) Execute() (*KlarnaGatewayResponse, *http.Response, error) {
+func (r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) Execute() (*POSTKlarnaGateways201Response, *http.Response, error) {
 	return r.ApiService.POSTKlarnaGatewaysExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGateways(ctx context.Context) Klarn
 }
 
 // Execute executes the request
-//  @return KlarnaGatewayResponse
-func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) (*KlarnaGatewayResponse, *http.Response, error) {
+//  @return POSTKlarnaGateways201Response
+func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApiPOSTKlarnaGatewaysRequest) (*POSTKlarnaGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *KlarnaGatewayResponse
+		localVarReturnValue *POSTKlarnaGateways201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "KlarnaGatewaysApiService.POSTKlarnaGateways")

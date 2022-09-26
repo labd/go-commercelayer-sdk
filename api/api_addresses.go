@@ -120,7 +120,7 @@ type AddressesApiGETAddressesRequest struct {
 	ApiService *AddressesApiService
 }
 
-func (r AddressesApiGETAddressesRequest) Execute() (*AddressResponseList, *http.Response, error) {
+func (r AddressesApiGETAddressesRequest) Execute() (*GETAddresses200Response, *http.Response, error) {
 	return r.ApiService.GETAddressesExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *AddressesApiService) GETAddresses(ctx context.Context) AddressesApiGETA
 }
 
 // Execute executes the request
-//  @return AddressResponseList
-func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequest) (*AddressResponseList, *http.Response, error) {
+//  @return GETAddresses200Response
+func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequest) (*GETAddresses200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddressResponseList
+		localVarReturnValue *GETAddresses200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETAddresses")
@@ -220,7 +220,7 @@ type AddressesApiGETAddressesAddressIdRequest struct {
 	addressId  string
 }
 
-func (r AddressesApiGETAddressesAddressIdRequest) Execute() (*AddressResponse, *http.Response, error) {
+func (r AddressesApiGETAddressesAddressIdRequest) Execute() (*GETAddressesAddressId200Response, *http.Response, error) {
 	return r.ApiService.GETAddressesAddressIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *AddressesApiService) GETAddressesAddressId(ctx context.Context, address
 }
 
 // Execute executes the request
-//  @return AddressResponse
-func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddressesAddressIdRequest) (*AddressResponse, *http.Response, error) {
+//  @return GETAddressesAddressId200Response
+func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddressesAddressIdRequest) (*GETAddressesAddressId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddressResponse
+		localVarReturnValue *GETAddressesAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.GETAddressesAddressId")
@@ -1433,7 +1433,7 @@ func (r AddressesApiPATCHAddressesAddressIdRequest) AddressUpdate(addressUpdate 
 	return r
 }
 
-func (r AddressesApiPATCHAddressesAddressIdRequest) Execute() (*AddressResponse, *http.Response, error) {
+func (r AddressesApiPATCHAddressesAddressIdRequest) Execute() (*PATCHAddressesAddressId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAddressesAddressIdExecute(r)
 }
 
@@ -1455,13 +1455,13 @@ func (a *AddressesApiService) PATCHAddressesAddressId(ctx context.Context, addre
 }
 
 // Execute executes the request
-//  @return AddressResponse
-func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCHAddressesAddressIdRequest) (*AddressResponse, *http.Response, error) {
+//  @return PATCHAddressesAddressId200Response
+func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCHAddressesAddressIdRequest) (*PATCHAddressesAddressId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddressResponse
+		localVarReturnValue *PATCHAddressesAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.PATCHAddressesAddressId")
@@ -1546,7 +1546,7 @@ func (r AddressesApiPOSTAddressesRequest) AddressCreate(addressCreate AddressCre
 	return r
 }
 
-func (r AddressesApiPOSTAddressesRequest) Execute() (*AddressResponse, *http.Response, error) {
+func (r AddressesApiPOSTAddressesRequest) Execute() (*POSTAddresses201Response, *http.Response, error) {
 	return r.ApiService.POSTAddressesExecute(r)
 }
 
@@ -1566,13 +1566,13 @@ func (a *AddressesApiService) POSTAddresses(ctx context.Context) AddressesApiPOS
 }
 
 // Execute executes the request
-//  @return AddressResponse
-func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRequest) (*AddressResponse, *http.Response, error) {
+//  @return POSTAddresses201Response
+func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRequest) (*POSTAddresses201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AddressResponse
+		localVarReturnValue *POSTAddresses201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AddressesApiService.POSTAddresses")

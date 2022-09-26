@@ -120,7 +120,7 @@ type AdjustmentsApiGETAdjustmentsRequest struct {
 	ApiService *AdjustmentsApiService
 }
 
-func (r AdjustmentsApiGETAdjustmentsRequest) Execute() (*AdjustmentResponseList, *http.Response, error) {
+func (r AdjustmentsApiGETAdjustmentsRequest) Execute() (*GETAdjustments200Response, *http.Response, error) {
 	return r.ApiService.GETAdjustmentsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *AdjustmentsApiService) GETAdjustments(ctx context.Context) AdjustmentsA
 }
 
 // Execute executes the request
-//  @return AdjustmentResponseList
-func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustmentsRequest) (*AdjustmentResponseList, *http.Response, error) {
+//  @return GETAdjustments200Response
+func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustmentsRequest) (*GETAdjustments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdjustmentResponseList
+		localVarReturnValue *GETAdjustments200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.GETAdjustments")
@@ -220,7 +220,7 @@ type AdjustmentsApiGETAdjustmentsAdjustmentIdRequest struct {
 	adjustmentId string
 }
 
-func (r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) Execute() (*AdjustmentResponse, *http.Response, error) {
+func (r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) Execute() (*GETAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	return r.ApiService.GETAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentId(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return AdjustmentResponse
-func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) (*AdjustmentResponse, *http.Response, error) {
+//  @return GETAdjustmentsAdjustmentId200Response
+func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsApiGETAdjustmentsAdjustmentIdRequest) (*GETAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdjustmentResponse
+		localVarReturnValue *GETAdjustmentsAdjustmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.GETAdjustmentsAdjustmentId")
@@ -329,7 +329,7 @@ func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adju
 	return r
 }
 
-func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*AdjustmentResponse, *http.Response, error) {
+func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) Execute() (*PATCHAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	return r.ApiService.PATCHAdjustmentsAdjustmentIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentId(ctx context.Context
 }
 
 // Execute executes the request
-//  @return AdjustmentResponse
-func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) (*AdjustmentResponse, *http.Response, error) {
+//  @return PATCHAdjustmentsAdjustmentId200Response
+func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) (*PATCHAdjustmentsAdjustmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdjustmentResponse
+		localVarReturnValue *PATCHAdjustmentsAdjustmentId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.PATCHAdjustmentsAdjustmentId")
@@ -442,7 +442,7 @@ func (r AdjustmentsApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate 
 	return r
 }
 
-func (r AdjustmentsApiPOSTAdjustmentsRequest) Execute() (*AdjustmentResponse, *http.Response, error) {
+func (r AdjustmentsApiPOSTAdjustmentsRequest) Execute() (*POSTAdjustments201Response, *http.Response, error) {
 	return r.ApiService.POSTAdjustmentsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *AdjustmentsApiService) POSTAdjustments(ctx context.Context) Adjustments
 }
 
 // Execute executes the request
-//  @return AdjustmentResponse
-func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjustmentsRequest) (*AdjustmentResponse, *http.Response, error) {
+//  @return POSTAdjustments201Response
+func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjustmentsRequest) (*POSTAdjustments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *AdjustmentResponse
+		localVarReturnValue *POSTAdjustments201Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AdjustmentsApiService.POSTAdjustments")
