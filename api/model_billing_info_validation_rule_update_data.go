@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -21,7 +21,7 @@ type BillingInfoValidationRuleUpdateData struct {
 	Type string `json:"type"`
 	// The resource's id
 	Id            string                                      `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes  `json:"attributes"`
+	Attributes    AdyenPaymentCreateDataAttributes            `json:"attributes"`
 	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -29,7 +29,7 @@ type BillingInfoValidationRuleUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *BillingInfoValidationRuleUpdateData {
+func NewBillingInfoValidationRuleUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *BillingInfoValidationRuleUpdateData {
 	this := BillingInfoValidationRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *BillingInfoValidationRuleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BillingInfoValidationRuleUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *BillingInfoValidationRuleUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret AdyenPaymentCreateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *BillingInfoValidationRuleUpdateData) GetAttributes() POSTAdyenPayments2
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *BillingInfoValidationRuleUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *BillingInfoValidationRuleUpdateData) GetAttributesOk() (*POSTAdyenPayme
 }
 
 // SetAttributes sets field value
-func (o *BillingInfoValidationRuleUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *BillingInfoValidationRuleUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
 	o.Attributes = v
 }
 

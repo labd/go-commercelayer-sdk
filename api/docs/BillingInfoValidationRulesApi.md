@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETBillingInfoValidationRules
 
-> GETBillingInfoValidationRules200Response GETBillingInfoValidationRules(ctx).Execute()
+> BillingInfoValidationRuleResponseList GETBillingInfoValidationRules(ctx).Execute()
 
 List all billing info validation rules
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.GETBillingInfoValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBillingInfoValidationRules`: GETBillingInfoValidationRules200Response
+    // response from `GETBillingInfoValidationRules`: BillingInfoValidationRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.GETBillingInfoValidationRules`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETBillingInfoValidationRu
 
 ### Return type
 
-[**GETBillingInfoValidationRules200Response**](GETBillingInfoValidationRules200Response.md)
+[**BillingInfoValidationRuleResponseList**](BillingInfoValidationRuleResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETBillingInfoValidationRu
 
 ## GETBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).Execute()
+> BillingInfoValidationRuleResponse GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).Execute()
 
 Retrieve a billing info validation rule
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.GETBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETBillingInfoValidationRulesBillingInfoValidationRuleId`: GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+    // response from `GETBillingInfoValidationRulesBillingInfoValidationRuleId`: BillingInfoValidationRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.GETBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response.md)
+[**BillingInfoValidationRuleResponse**](BillingInfoValidationRuleResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> POSTBillingInfoValidationRules201Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
+> BillingInfoValidationRuleResponse PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
 
 Update a billing info validation rule
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleUpdate | 
+    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // BillingInfoValidationRuleUpdate | 
     billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: POSTBillingInfoValidationRules201Response
+    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: BillingInfoValidationRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
+[**BillingInfoValidationRuleResponse**](BillingInfoValidationRuleResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBillingInfoValidationRules
 
-> POSTBillingInfoValidationRules201Response POSTBillingInfoValidationRules(ctx).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
+> BillingInfoValidationRuleResponse POSTBillingInfoValidationRules(ctx).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
 
 Create a billing info validation rule
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleCreate | 
+    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // BillingInfoValidationRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.POSTBillingInfoValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTBillingInfoValidationRules`: POSTBillingInfoValidationRules201Response
+    // response from `POSTBillingInfoValidationRules`: BillingInfoValidationRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.POSTBillingInfoValidationRules`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
+[**BillingInfoValidationRuleResponse**](BillingInfoValidationRuleResponse.md)
 
 ### Authorization
 

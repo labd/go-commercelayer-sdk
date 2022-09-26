@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | 
+**Attributes** | [**SkuListPromotionRuleCreateDataAttributes**](SkuListPromotionRuleCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListPromotionRuleUpdateDataRelationships**](SkuListPromotionRuleUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListPromotionRuleUpdateData
 
-`func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes POSTSkuListPromotionRules201ResponseDataAttributes, ) *SkuListPromotionRuleUpdateData`
+`func NewSkuListPromotionRuleUpdateData(type_ string, id string, attributes SkuListPromotionRuleCreateDataAttributes, ) *SkuListPromotionRuleUpdateData`
 
 NewSkuListPromotionRuleUpdateData instantiates a new SkuListPromotionRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *SkuListPromotionRuleUpdateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes`
+`func (o *SkuListPromotionRuleUpdateData) GetAttributes() SkuListPromotionRuleCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*POSTSkuListPromotionRules201ResponseDataAttributes, bool)`
+`func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*SkuListPromotionRuleCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListPromotionRuleUpdateData) SetAttributes(v POSTSkuListPromotionRules201ResponseDataAttributes)`
+`func (o *SkuListPromotionRuleUpdateData) SetAttributes(v SkuListPromotionRuleCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

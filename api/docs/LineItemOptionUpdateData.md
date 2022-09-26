@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes**](PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**LineItemOptionUpdateDataAttributes**](LineItemOptionUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionUpdateDataRelationships**](LineItemOptionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionUpdateData
 
-`func NewLineItemOptionUpdateData(type_ string, id string, attributes PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes, ) *LineItemOptionUpdateData`
+`func NewLineItemOptionUpdateData(type_ string, id string, attributes LineItemOptionUpdateDataAttributes, ) *LineItemOptionUpdateData`
 
 NewLineItemOptionUpdateData instantiates a new LineItemOptionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *LineItemOptionUpdateData) GetAttributes() PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes`
+`func (o *LineItemOptionUpdateData) GetAttributes() LineItemOptionUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemOptionUpdateData) GetAttributesOk() (*PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool)`
+`func (o *LineItemOptionUpdateData) GetAttributesOk() (*LineItemOptionUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemOptionUpdateData) SetAttributes(v PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes)`
+`func (o *LineItemOptionUpdateData) SetAttributes(v LineItemOptionUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

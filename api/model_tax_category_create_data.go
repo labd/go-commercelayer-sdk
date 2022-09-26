@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxCategoryCreateData struct for TaxCategoryCreateData
 type TaxCategoryCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTTaxCategories201ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxCategoryCreateDataRelationships        `json:"relationships,omitempty"`
+	Type          string                              `json:"type"`
+	Attributes    TaxCategoryCreateDataAttributes     `json:"attributes"`
+	Relationships *TaxCategoryCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryCreateData instantiates a new TaxCategoryCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryCreateData(type_ string, attributes POSTTaxCategories201ResponseDataAttributes) *TaxCategoryCreateData {
+func NewTaxCategoryCreateData(type_ string, attributes TaxCategoryCreateDataAttributes) *TaxCategoryCreateData {
 	this := TaxCategoryCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *TaxCategoryCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategories201ResponseDataAttributes {
+func (o *TaxCategoryCreateData) GetAttributes() TaxCategoryCreateDataAttributes {
 	if o == nil {
-		var ret POSTTaxCategories201ResponseDataAttributes
+		var ret TaxCategoryCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategories201ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateData) GetAttributesOk() (*POSTTaxCategories201ResponseDataAttributes, bool) {
+func (o *TaxCategoryCreateData) GetAttributesOk() (*TaxCategoryCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *TaxCategoryCreateData) GetAttributesOk() (*POSTTaxCategories201Response
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryCreateData) SetAttributes(v POSTTaxCategories201ResponseDataAttributes) {
+func (o *TaxCategoryCreateData) SetAttributes(v TaxCategoryCreateDataAttributes) {
 	o.Attributes = v
 }
 

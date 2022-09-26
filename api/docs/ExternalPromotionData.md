@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETExternalPromotions200ResponseDataInnerAttributes**](GETExternalPromotions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**ExternalPromotionDataAttributes**](ExternalPromotionDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotionData
 
-`func NewExternalPromotionData(type_ string, attributes GETExternalPromotions200ResponseDataInnerAttributes, ) *ExternalPromotionData`
+`func NewExternalPromotionData(type_ string, attributes ExternalPromotionDataAttributes, ) *ExternalPromotionData`
 
 NewExternalPromotionData instantiates a new ExternalPromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPromotionData) GetAttributes() GETExternalPromotions200ResponseDataInnerAttributes`
+`func (o *ExternalPromotionData) GetAttributes() ExternalPromotionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPromotionData) GetAttributesOk() (*GETExternalPromotions200ResponseDataInnerAttributes, bool)`
+`func (o *ExternalPromotionData) GetAttributesOk() (*ExternalPromotionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPromotionData) SetAttributes(v GETExternalPromotions200ResponseDataInnerAttributes)`
+`func (o *ExternalPromotionData) SetAttributes(v ExternalPromotionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

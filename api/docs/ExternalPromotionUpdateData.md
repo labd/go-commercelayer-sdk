@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes**](PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalPromotionUpdateDataAttributes**](ExternalPromotionUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotionUpdateData
 
-`func NewExternalPromotionUpdateData(type_ string, id string, attributes PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes, ) *ExternalPromotionUpdateData`
+`func NewExternalPromotionUpdateData(type_ string, id string, attributes ExternalPromotionUpdateDataAttributes, ) *ExternalPromotionUpdateData`
 
 NewExternalPromotionUpdateData instantiates a new ExternalPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPromotionUpdateData) GetAttributes() PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes`
+`func (o *ExternalPromotionUpdateData) GetAttributes() ExternalPromotionUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPromotionUpdateData) GetAttributesOk() (*PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes, bool)`
+`func (o *ExternalPromotionUpdateData) GetAttributesOk() (*ExternalPromotionUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPromotionUpdateData) SetAttributes(v PATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes)`
+`func (o *ExternalPromotionUpdateData) SetAttributes(v ExternalPromotionUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

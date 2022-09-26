@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // WireTransferCreateData struct for WireTransferCreateData
 type WireTransferCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    AdyenPaymentCreateDataAttributes     `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewWireTransferCreateData instantiates a new WireTransferCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *WireTransferCreateData {
+func NewWireTransferCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes) *WireTransferCreateData {
 	this := WireTransferCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *WireTransferCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *WireTransferCreateData) GetAttributes() AdyenPaymentCreateDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret AdyenPaymentCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *WireTransferCreateData) GetAttributes() POSTAdyenPayments201ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *WireTransferCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *WireTransferCreateData) GetAttributesOk() (*POSTAdyenPayments201Respons
 }
 
 // SetAttributes sets field value
-func (o *WireTransferCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *WireTransferCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
 	o.Attributes = v
 }
 

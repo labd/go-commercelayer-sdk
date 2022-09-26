@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type FreeShippingPromotionsApiGETFreeShippingPromotionsRequest struct {
 	ApiService *FreeShippingPromotionsApiService
 }
 
-func (r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) Execute() (*GETFreeShippingPromotions200Response, *http.Response, error) {
+func (r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) Execute() (*FreeShippingPromotionResponseList, *http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotions(ctx context
 }
 
 // Execute executes the request
-//  @return GETFreeShippingPromotions200Response
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) (*GETFreeShippingPromotions200Response, *http.Response, error) {
+//  @return FreeShippingPromotionResponseList
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsRequest) (*FreeShippingPromotionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETFreeShippingPromotions200Response
+		localVarReturnValue *FreeShippingPromotionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.GETFreeShippingPromotions")
@@ -220,7 +220,7 @@ type FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRe
 	freeShippingPromotionId string
 }
 
-func (r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*GETFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
+func (r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*FreeShippingPromotionResponse, *http.Response, error) {
 	return r.ApiService.GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 }
 
 // Execute executes the request
-//  @return GETFreeShippingPromotionsFreeShippingPromotionId200Response
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*GETFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
+//  @return FreeShippingPromotionResponse
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETFreeShippingPromotionsFreeShippingPromotionId200Response
+		localVarReturnValue *FreeShippingPromotionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.GETFreeShippingPromotionsFreeShippingPromotionId")
@@ -329,7 +329,7 @@ func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotio
 	return r
 }
 
-func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*PATCHFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
+func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*FreeShippingPromotionResponse, *http.Response, error) {
 	return r.ApiService.PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 }
 
 // Execute executes the request
-//  @return PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
-func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*PATCHFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
+//  @return FreeShippingPromotionResponse
+func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionIdExecute(r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) (*FreeShippingPromotionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHFreeShippingPromotionsFreeShippingPromotionId200Response
+		localVarReturnValue *FreeShippingPromotionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.PATCHFreeShippingPromotionsFreeShippingPromotionId")
@@ -442,7 +442,7 @@ func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) FreeShipping
 	return r
 }
 
-func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) Execute() (*POSTFreeShippingPromotions201Response, *http.Response, error) {
+func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) Execute() (*FreeShippingPromotionResponse, *http.Response, error) {
 	return r.ApiService.POSTFreeShippingPromotionsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotions(ctx contex
 }
 
 // Execute executes the request
-//  @return POSTFreeShippingPromotions201Response
-func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) (*POSTFreeShippingPromotions201Response, *http.Response, error) {
+//  @return FreeShippingPromotionResponse
+func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) (*FreeShippingPromotionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTFreeShippingPromotions201Response
+		localVarReturnValue *FreeShippingPromotionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "FreeShippingPromotionsApiService.POSTFreeShippingPromotions")

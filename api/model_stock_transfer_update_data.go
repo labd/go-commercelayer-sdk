@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type StockTransferUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHStockTransfersStockTransferId200ResponseDataAttributes `json:"attributes"`
-	Relationships *StockTransferUpdateDataRelationships                       `json:"relationships,omitempty"`
+	Id            string                                `json:"id"`
+	Attributes    StockTransferUpdateDataAttributes     `json:"attributes"`
+	Relationships *StockTransferUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferUpdateData instantiates a new StockTransferUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferUpdateData(type_ string, id string, attributes PATCHStockTransfersStockTransferId200ResponseDataAttributes) *StockTransferUpdateData {
+func NewStockTransferUpdateData(type_ string, id string, attributes StockTransferUpdateDataAttributes) *StockTransferUpdateData {
 	this := StockTransferUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *StockTransferUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferUpdateData) GetAttributes() PATCHStockTransfersStockTransferId200ResponseDataAttributes {
+func (o *StockTransferUpdateData) GetAttributes() StockTransferUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHStockTransfersStockTransferId200ResponseDataAttributes
+		var ret StockTransferUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *StockTransferUpdateData) GetAttributes() PATCHStockTransfersStockTransf
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferUpdateData) GetAttributesOk() (*PATCHStockTransfersStockTransferId200ResponseDataAttributes, bool) {
+func (o *StockTransferUpdateData) GetAttributesOk() (*StockTransferUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *StockTransferUpdateData) GetAttributesOk() (*PATCHStockTransfersStockTr
 }
 
 // SetAttributes sets field value
-func (o *StockTransferUpdateData) SetAttributes(v PATCHStockTransfersStockTransferId200ResponseDataAttributes) {
+func (o *StockTransferUpdateData) SetAttributes(v StockTransferUpdateDataAttributes) {
 	o.Attributes = v
 }
 

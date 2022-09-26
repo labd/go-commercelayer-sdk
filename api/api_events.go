@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -396,7 +396,7 @@ type EventsApiGETEventsRequest struct {
 	ApiService *EventsApiService
 }
 
-func (r EventsApiGETEventsRequest) Execute() (*GETEvents200Response, *http.Response, error) {
+func (r EventsApiGETEventsRequest) Execute() (*EventResponseList, *http.Response, error) {
 	return r.ApiService.GETEventsExecute(r)
 }
 
@@ -416,13 +416,13 @@ func (a *EventsApiService) GETEvents(ctx context.Context) EventsApiGETEventsRequ
 }
 
 // Execute executes the request
-//  @return GETEvents200Response
-func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*GETEvents200Response, *http.Response, error) {
+//  @return EventResponseList
+func (a *EventsApiService) GETEventsExecute(r EventsApiGETEventsRequest) (*EventResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETEvents200Response
+		localVarReturnValue *EventResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEvents")
@@ -496,7 +496,7 @@ type EventsApiGETEventsEventIdRequest struct {
 	eventId    string
 }
 
-func (r EventsApiGETEventsEventIdRequest) Execute() (*GETEventsEventId200Response, *http.Response, error) {
+func (r EventsApiGETEventsEventIdRequest) Execute() (*EventResponse, *http.Response, error) {
 	return r.ApiService.GETEventsEventIdExecute(r)
 }
 
@@ -518,13 +518,13 @@ func (a *EventsApiService) GETEventsEventId(ctx context.Context, eventId string)
 }
 
 // Execute executes the request
-//  @return GETEventsEventId200Response
-func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*GETEventsEventId200Response, *http.Response, error) {
+//  @return EventResponse
+func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRequest) (*EventResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETEventsEventId200Response
+		localVarReturnValue *EventResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETEventsEventId")
@@ -591,6 +591,98 @@ func (a *EventsApiService) GETEventsEventIdExecute(r EventsApiGETEventsEventIdRe
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type EventsApiGETExportIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *EventsApiService
+	exportId   string
+}
+
+func (r EventsApiGETExportIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExportIdEventsExecute(r)
+}
+
+/*
+GETExportIdEvents Retrieve the events associated to the export
+
+Retrieve the events associated to the export
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param exportId The resource's id
+ @return EventsApiGETExportIdEventsRequest
+*/
+func (a *EventsApiService) GETExportIdEvents(ctx context.Context, exportId string) EventsApiGETExportIdEventsRequest {
+	return EventsApiGETExportIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		exportId:   exportId,
+	}
+}
+
+// Execute executes the request
+func (a *EventsApiService) GETExportIdEventsExecute(r EventsApiGETExportIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "EventsApiService.GETExportIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/exports/{exportId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type EventsApiGETGiftCardIdEventsRequest struct {

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHCouponsCouponId200ResponseDataAttributes**](PATCHCouponsCouponId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**CouponUpdateDataAttributes**](CouponUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponDataRelationships**](CouponDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponUpdateData
 
-`func NewCouponUpdateData(type_ string, id string, attributes PATCHCouponsCouponId200ResponseDataAttributes, ) *CouponUpdateData`
+`func NewCouponUpdateData(type_ string, id string, attributes CouponUpdateDataAttributes, ) *CouponUpdateData`
 
 NewCouponUpdateData instantiates a new CouponUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CouponUpdateData) GetAttributes() PATCHCouponsCouponId200ResponseDataAttributes`
+`func (o *CouponUpdateData) GetAttributes() CouponUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponUpdateData) GetAttributesOk() (*PATCHCouponsCouponId200ResponseDataAttributes, bool)`
+`func (o *CouponUpdateData) GetAttributesOk() (*CouponUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponUpdateData) SetAttributes(v PATCHCouponsCouponId200ResponseDataAttributes)`
+`func (o *CouponUpdateData) SetAttributes(v CouponUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

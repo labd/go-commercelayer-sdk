@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes**](PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PaypalPaymentUpdateDataAttributes**](PaypalPaymentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaypalPaymentUpdateData
 
-`func NewPaypalPaymentUpdateData(type_ string, id string, attributes PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, ) *PaypalPaymentUpdateData`
+`func NewPaypalPaymentUpdateData(type_ string, id string, attributes PaypalPaymentUpdateDataAttributes, ) *PaypalPaymentUpdateData`
 
 NewPaypalPaymentUpdateData instantiates a new PaypalPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PaypalPaymentUpdateData) GetAttributes() PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes`
+`func (o *PaypalPaymentUpdateData) GetAttributes() PaypalPaymentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, bool)`
+`func (o *PaypalPaymentUpdateData) GetAttributesOk() (*PaypalPaymentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaypalPaymentUpdateData) SetAttributes(v PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes)`
+`func (o *PaypalPaymentUpdateData) SetAttributes(v PaypalPaymentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

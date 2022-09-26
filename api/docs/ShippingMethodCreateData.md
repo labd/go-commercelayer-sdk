@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTShippingMethods201ResponseDataAttributes**](POSTShippingMethods201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ShippingMethodCreateDataAttributes**](ShippingMethodCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodCreateDataRelationships**](ShippingMethodCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodCreateData
 
-`func NewShippingMethodCreateData(type_ string, attributes POSTShippingMethods201ResponseDataAttributes, ) *ShippingMethodCreateData`
+`func NewShippingMethodCreateData(type_ string, attributes ShippingMethodCreateDataAttributes, ) *ShippingMethodCreateData`
 
 NewShippingMethodCreateData instantiates a new ShippingMethodCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingMethodCreateData) GetAttributes() POSTShippingMethods201ResponseDataAttributes`
+`func (o *ShippingMethodCreateData) GetAttributes() ShippingMethodCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodCreateData) GetAttributesOk() (*POSTShippingMethods201ResponseDataAttributes, bool)`
+`func (o *ShippingMethodCreateData) GetAttributesOk() (*ShippingMethodCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodCreateData) SetAttributes(v POSTShippingMethods201ResponseDataAttributes)`
+`func (o *ShippingMethodCreateData) SetAttributes(v ShippingMethodCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

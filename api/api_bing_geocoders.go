@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type BingGeocodersApiGETBingGeocodersRequest struct {
 	ApiService *BingGeocodersApiService
 }
 
-func (r BingGeocodersApiGETBingGeocodersRequest) Execute() (*GETBingGeocoders200Response, *http.Response, error) {
+func (r BingGeocodersApiGETBingGeocodersRequest) Execute() (*BingGeocoderResponseList, *http.Response, error) {
 	return r.ApiService.GETBingGeocodersExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *BingGeocodersApiService) GETBingGeocoders(ctx context.Context) BingGeoc
 }
 
 // Execute executes the request
-//  @return GETBingGeocoders200Response
-func (a *BingGeocodersApiService) GETBingGeocodersExecute(r BingGeocodersApiGETBingGeocodersRequest) (*GETBingGeocoders200Response, *http.Response, error) {
+//  @return BingGeocoderResponseList
+func (a *BingGeocodersApiService) GETBingGeocodersExecute(r BingGeocodersApiGETBingGeocodersRequest) (*BingGeocoderResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETBingGeocoders200Response
+		localVarReturnValue *BingGeocoderResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BingGeocodersApiService.GETBingGeocoders")
@@ -220,7 +220,7 @@ type BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest struct {
 	bingGeocoderId string
 }
 
-func (r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) Execute() (*GETBingGeocodersBingGeocoderId200Response, *http.Response, error) {
+func (r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) Execute() (*BingGeocoderResponse, *http.Response, error) {
 	return r.ApiService.GETBingGeocodersBingGeocoderIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETBingGeocodersBingGeocoderId200Response
-func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) (*GETBingGeocodersBingGeocoderId200Response, *http.Response, error) {
+//  @return BingGeocoderResponse
+func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiGETBingGeocodersBingGeocoderIdRequest) (*BingGeocoderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETBingGeocodersBingGeocoderId200Response
+		localVarReturnValue *BingGeocoderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BingGeocodersApiService.GETBingGeocodersBingGeocoderId")
@@ -329,7 +329,7 @@ func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) BingGeocoderUpd
 	return r
 }
 
-func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) Execute() (*PATCHBingGeocodersBingGeocoderId200Response, *http.Response, error) {
+func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) Execute() (*BingGeocoderResponse, *http.Response, error) {
 	return r.ApiService.PATCHBingGeocodersBingGeocoderIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderId(ctx context.C
 }
 
 // Execute executes the request
-//  @return PATCHBingGeocodersBingGeocoderId200Response
-func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) (*PATCHBingGeocodersBingGeocoderId200Response, *http.Response, error) {
+//  @return BingGeocoderResponse
+func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) (*BingGeocoderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHBingGeocodersBingGeocoderId200Response
+		localVarReturnValue *BingGeocoderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BingGeocodersApiService.PATCHBingGeocodersBingGeocoderId")
@@ -442,7 +442,7 @@ func (r BingGeocodersApiPOSTBingGeocodersRequest) BingGeocoderCreate(bingGeocode
 	return r
 }
 
-func (r BingGeocodersApiPOSTBingGeocodersRequest) Execute() (*POSTBingGeocoders201Response, *http.Response, error) {
+func (r BingGeocodersApiPOSTBingGeocodersRequest) Execute() (*BingGeocoderResponse, *http.Response, error) {
 	return r.ApiService.POSTBingGeocodersExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *BingGeocodersApiService) POSTBingGeocoders(ctx context.Context) BingGeo
 }
 
 // Execute executes the request
-//  @return POSTBingGeocoders201Response
-func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOSTBingGeocodersRequest) (*POSTBingGeocoders201Response, *http.Response, error) {
+//  @return BingGeocoderResponse
+func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOSTBingGeocodersRequest) (*BingGeocoderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTBingGeocoders201Response
+		localVarReturnValue *BingGeocoderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BingGeocodersApiService.POSTBingGeocoders")

@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 ## GETCouponCodesPromotionRules
 
-> GETCouponCodesPromotionRules200Response GETCouponCodesPromotionRules(ctx).Execute()
+> CouponCodesPromotionRuleResponseList GETCouponCodesPromotionRules(ctx).Execute()
 
 List all coupon codes promotion rules
 
@@ -117,7 +117,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponCodesPromotionRules`: GETCouponCodesPromotionRules200Response
+    // response from `GETCouponCodesPromotionRules`: CouponCodesPromotionRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRules`: %v\n", resp)
 }
 ```
@@ -133,7 +133,7 @@ Other parameters are passed through a pointer to a apiGETCouponCodesPromotionRul
 
 ### Return type
 
-[**GETCouponCodesPromotionRules200Response**](GETCouponCodesPromotionRules200Response.md)
+[**CouponCodesPromotionRuleResponseList**](CouponCodesPromotionRuleResponseList.md)
 
 ### Authorization
 
@@ -151,7 +151,7 @@ Other parameters are passed through a pointer to a apiGETCouponCodesPromotionRul
 
 ## GETCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).Execute()
+> CouponCodesPromotionRuleResponse GETCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).Execute()
 
 Retrieve a coupon codes promotion rule
 
@@ -179,7 +179,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
+    // response from `GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: CouponCodesPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.GETCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response**](GETCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response.md)
+[**CouponCodesPromotionRuleResponse**](CouponCodesPromotionRuleResponse.md)
 
 ### Authorization
 
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> POSTCouponCodesPromotionRules201Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
+> CouponCodesPromotionRuleResponse PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
 
 Update a coupon codes promotion rule
 
@@ -784,7 +784,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
+    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CouponCodesPromotionRuleUpdate | 
     couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -794,7 +794,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: POSTCouponCodesPromotionRules201Response
+    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: CouponCodesPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -819,7 +819,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
+[**CouponCodesPromotionRuleResponse**](CouponCodesPromotionRuleResponse.md)
 
 ### Authorization
 
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ## POSTCouponCodesPromotionRules
 
-> POSTCouponCodesPromotionRules201Response POSTCouponCodesPromotionRules(ctx).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
+> CouponCodesPromotionRuleResponse POSTCouponCodesPromotionRules(ctx).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
 
 Create a coupon codes promotion rule
 
@@ -856,7 +856,7 @@ import (
 )
 
 func main() {
-    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleCreate | 
+    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CouponCodesPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -865,7 +865,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCouponCodesPromotionRules`: POSTCouponCodesPromotionRules201Response
+    // response from `POSTCouponCodesPromotionRules`: CouponCodesPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules`: %v\n", resp)
 }
 ```
@@ -885,7 +885,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
+[**CouponCodesPromotionRuleResponse**](CouponCodesPromotionRuleResponse.md)
 
 ### Authorization
 

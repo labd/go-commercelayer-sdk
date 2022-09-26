@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -948,7 +948,7 @@ type PaymentMethodsApiGETPaymentMethodsRequest struct {
 	ApiService *PaymentMethodsApiService
 }
 
-func (r PaymentMethodsApiGETPaymentMethodsRequest) Execute() (*GETPaymentMethods200Response, *http.Response, error) {
+func (r PaymentMethodsApiGETPaymentMethodsRequest) Execute() (*PaymentMethodResponseList, *http.Response, error) {
 	return r.ApiService.GETPaymentMethodsExecute(r)
 }
 
@@ -968,13 +968,13 @@ func (a *PaymentMethodsApiService) GETPaymentMethods(ctx context.Context) Paymen
 }
 
 // Execute executes the request
-//  @return GETPaymentMethods200Response
-func (a *PaymentMethodsApiService) GETPaymentMethodsExecute(r PaymentMethodsApiGETPaymentMethodsRequest) (*GETPaymentMethods200Response, *http.Response, error) {
+//  @return PaymentMethodResponseList
+func (a *PaymentMethodsApiService) GETPaymentMethodsExecute(r PaymentMethodsApiGETPaymentMethodsRequest) (*PaymentMethodResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaymentMethods200Response
+		localVarReturnValue *PaymentMethodResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaymentMethods")
@@ -1048,7 +1048,7 @@ type PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest struct {
 	paymentMethodId string
 }
 
-func (r PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest) Execute() (*GETPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
+func (r PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest) Execute() (*PaymentMethodResponse, *http.Response, error) {
 	return r.ApiService.GETPaymentMethodsPaymentMethodIdExecute(r)
 }
 
@@ -1070,13 +1070,13 @@ func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPaymentMethodsPaymentMethodId200Response
-func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest) (*GETPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
+//  @return PaymentMethodResponse
+func (a *PaymentMethodsApiService) GETPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiGETPaymentMethodsPaymentMethodIdRequest) (*PaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaymentMethodsPaymentMethodId200Response
+		localVarReturnValue *PaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.GETPaymentMethodsPaymentMethodId")
@@ -1341,7 +1341,7 @@ func (r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) PaymentMetho
 	return r
 }
 
-func (r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) Execute() (*PATCHPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
+func (r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) Execute() (*PaymentMethodResponse, *http.Response, error) {
 	return r.ApiService.PATCHPaymentMethodsPaymentMethodIdExecute(r)
 }
 
@@ -1363,13 +1363,13 @@ func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHPaymentMethodsPaymentMethodId200Response
-func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) (*PATCHPaymentMethodsPaymentMethodId200Response, *http.Response, error) {
+//  @return PaymentMethodResponse
+func (a *PaymentMethodsApiService) PATCHPaymentMethodsPaymentMethodIdExecute(r PaymentMethodsApiPATCHPaymentMethodsPaymentMethodIdRequest) (*PaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHPaymentMethodsPaymentMethodId200Response
+		localVarReturnValue *PaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.PATCHPaymentMethodsPaymentMethodId")
@@ -1454,7 +1454,7 @@ func (r PaymentMethodsApiPOSTPaymentMethodsRequest) PaymentMethodCreate(paymentM
 	return r
 }
 
-func (r PaymentMethodsApiPOSTPaymentMethodsRequest) Execute() (*POSTPaymentMethods201Response, *http.Response, error) {
+func (r PaymentMethodsApiPOSTPaymentMethodsRequest) Execute() (*PaymentMethodResponse, *http.Response, error) {
 	return r.ApiService.POSTPaymentMethodsExecute(r)
 }
 
@@ -1474,13 +1474,13 @@ func (a *PaymentMethodsApiService) POSTPaymentMethods(ctx context.Context) Payme
 }
 
 // Execute executes the request
-//  @return POSTPaymentMethods201Response
-func (a *PaymentMethodsApiService) POSTPaymentMethodsExecute(r PaymentMethodsApiPOSTPaymentMethodsRequest) (*POSTPaymentMethods201Response, *http.Response, error) {
+//  @return PaymentMethodResponse
+func (a *PaymentMethodsApiService) POSTPaymentMethodsExecute(r PaymentMethodsApiPOSTPaymentMethodsRequest) (*PaymentMethodResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTPaymentMethods201Response
+		localVarReturnValue *PaymentMethodResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentMethodsApiService.POSTPaymentMethods")

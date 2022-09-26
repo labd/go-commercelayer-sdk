@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAdjustmentsAdjustmentId200ResponseDataAttributes**](PATCHAdjustmentsAdjustmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdjustmentUpdateDataAttributes**](AdjustmentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewAdjustmentUpdateData
 
-`func NewAdjustmentUpdateData(type_ string, id string, attributes PATCHAdjustmentsAdjustmentId200ResponseDataAttributes, ) *AdjustmentUpdateData`
+`func NewAdjustmentUpdateData(type_ string, id string, attributes AdjustmentUpdateDataAttributes, ) *AdjustmentUpdateData`
 
 NewAdjustmentUpdateData instantiates a new AdjustmentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AdjustmentUpdateData) GetAttributes() PATCHAdjustmentsAdjustmentId200ResponseDataAttributes`
+`func (o *AdjustmentUpdateData) GetAttributes() AdjustmentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdjustmentUpdateData) GetAttributesOk() (*PATCHAdjustmentsAdjustmentId200ResponseDataAttributes, bool)`
+`func (o *AdjustmentUpdateData) GetAttributesOk() (*AdjustmentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdjustmentUpdateData) SetAttributes(v PATCHAdjustmentsAdjustmentId200ResponseDataAttributes)`
+`func (o *AdjustmentUpdateData) SetAttributes(v AdjustmentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

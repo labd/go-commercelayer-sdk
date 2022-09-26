@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type PriceTiersApiGETPriceTiersRequest struct {
 	ApiService *PriceTiersApiService
 }
 
-func (r PriceTiersApiGETPriceTiersRequest) Execute() (*GETPriceTiers200Response, *http.Response, error) {
+func (r PriceTiersApiGETPriceTiersRequest) Execute() (*PriceTierResponseList, *http.Response, error) {
 	return r.ApiService.GETPriceTiersExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiG
 }
 
 // Execute executes the request
-//  @return GETPriceTiers200Response
-func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*GETPriceTiers200Response, *http.Response, error) {
+//  @return PriceTierResponseList
+func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*PriceTierResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPriceTiers200Response
+		localVarReturnValue *PriceTierResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiers")
@@ -220,7 +220,7 @@ type PriceTiersApiGETPriceTiersPriceTierIdRequest struct {
 	priceTierId string
 }
 
-func (r PriceTiersApiGETPriceTiersPriceTierIdRequest) Execute() (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
+func (r PriceTiersApiGETPriceTiersPriceTierIdRequest) Execute() (*PriceTierResponse, *http.Response, error) {
 	return r.ApiService.GETPriceTiersPriceTierIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, pri
 }
 
 // Execute executes the request
-//  @return GETPriceTiersPriceTierId200Response
-func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
+//  @return PriceTierResponse
+func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*PriceTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPriceTiersPriceTierId200Response
+		localVarReturnValue *PriceTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceTiersApiService.GETPriceTiersPriceTierId")

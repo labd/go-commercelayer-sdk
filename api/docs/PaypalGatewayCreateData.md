@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTPaypalGateways201ResponseDataAttributes**](POSTPaypalGateways201ResponseDataAttributes.md) |  | 
+**Attributes** | [**PaypalGatewayCreateDataAttributes**](PaypalGatewayCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewPaypalGatewayCreateData
 
-`func NewPaypalGatewayCreateData(type_ string, attributes POSTPaypalGateways201ResponseDataAttributes, ) *PaypalGatewayCreateData`
+`func NewPaypalGatewayCreateData(type_ string, attributes PaypalGatewayCreateDataAttributes, ) *PaypalGatewayCreateData`
 
 NewPaypalGatewayCreateData instantiates a new PaypalGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PaypalGatewayCreateData) GetAttributes() POSTPaypalGateways201ResponseDataAttributes`
+`func (o *PaypalGatewayCreateData) GetAttributes() PaypalGatewayCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaypalGatewayCreateData) GetAttributesOk() (*POSTPaypalGateways201ResponseDataAttributes, bool)`
+`func (o *PaypalGatewayCreateData) GetAttributesOk() (*PaypalGatewayCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaypalGatewayCreateData) SetAttributes(v POSTPaypalGateways201ResponseDataAttributes)`
+`func (o *PaypalGatewayCreateData) SetAttributes(v PaypalGatewayCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

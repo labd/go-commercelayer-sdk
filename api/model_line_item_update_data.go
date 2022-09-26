@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type LineItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHLineItemsLineItemId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                            `json:"relationships,omitempty"`
+	Id            string                       `json:"id"`
+	Attributes    LineItemUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}       `json:"relationships,omitempty"`
 }
 
 // NewLineItemUpdateData instantiates a new LineItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemUpdateData(type_ string, id string, attributes PATCHLineItemsLineItemId200ResponseDataAttributes) *LineItemUpdateData {
+func NewLineItemUpdateData(type_ string, id string, attributes LineItemUpdateDataAttributes) *LineItemUpdateData {
 	this := LineItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *LineItemUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemUpdateData) GetAttributes() PATCHLineItemsLineItemId200ResponseDataAttributes {
+func (o *LineItemUpdateData) GetAttributes() LineItemUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHLineItemsLineItemId200ResponseDataAttributes
+		var ret LineItemUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *LineItemUpdateData) GetAttributes() PATCHLineItemsLineItemId200Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemUpdateData) GetAttributesOk() (*PATCHLineItemsLineItemId200ResponseDataAttributes, bool) {
+func (o *LineItemUpdateData) GetAttributesOk() (*LineItemUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *LineItemUpdateData) GetAttributesOk() (*PATCHLineItemsLineItemId200Resp
 }
 
 // SetAttributes sets field value
-func (o *LineItemUpdateData) SetAttributes(v PATCHLineItemsLineItemId200ResponseDataAttributes) {
+func (o *LineItemUpdateData) SetAttributes(v LineItemUpdateDataAttributes) {
 	o.Attributes = v
 }
 

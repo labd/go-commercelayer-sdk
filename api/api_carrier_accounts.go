@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type CarrierAccountsApiGETCarrierAccountsRequest struct {
 	ApiService *CarrierAccountsApiService
 }
 
-func (r CarrierAccountsApiGETCarrierAccountsRequest) Execute() (*GETCarrierAccounts200Response, *http.Response, error) {
+func (r CarrierAccountsApiGETCarrierAccountsRequest) Execute() (*CarrierAccountResponseList, *http.Response, error) {
 	return r.ApiService.GETCarrierAccountsExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *CarrierAccountsApiService) GETCarrierAccounts(ctx context.Context) Carr
 }
 
 // Execute executes the request
-//  @return GETCarrierAccounts200Response
-func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsApiGETCarrierAccountsRequest) (*GETCarrierAccounts200Response, *http.Response, error) {
+//  @return CarrierAccountResponseList
+func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsApiGETCarrierAccountsRequest) (*CarrierAccountResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCarrierAccounts200Response
+		localVarReturnValue *CarrierAccountResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CarrierAccountsApiService.GETCarrierAccounts")
@@ -128,7 +128,7 @@ type CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest struct {
 	carrierAccountId string
 }
 
-func (r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) Execute() (*GETCarrierAccountsCarrierAccountId200Response, *http.Response, error) {
+func (r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) Execute() (*CarrierAccountResponse, *http.Response, error) {
 	return r.ApiService.GETCarrierAccountsCarrierAccountIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETCarrierAccountsCarrierAccountId200Response
-func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) (*GETCarrierAccountsCarrierAccountId200Response, *http.Response, error) {
+//  @return CarrierAccountResponse
+func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) (*CarrierAccountResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCarrierAccountsCarrierAccountId200Response
+		localVarReturnValue *CarrierAccountResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CarrierAccountsApiService.GETCarrierAccountsCarrierAccountId")

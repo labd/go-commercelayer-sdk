@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCaptures200ResponseDataInnerAttributes**](GETCaptures200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CaptureDataAttributes**](CaptureDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CaptureDataRelationships**](CaptureDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCaptureData
 
-`func NewCaptureData(type_ string, attributes GETCaptures200ResponseDataInnerAttributes, ) *CaptureData`
+`func NewCaptureData(type_ string, attributes CaptureDataAttributes, ) *CaptureData`
 
 NewCaptureData instantiates a new CaptureData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CaptureData) GetAttributes() GETCaptures200ResponseDataInnerAttributes`
+`func (o *CaptureData) GetAttributes() CaptureDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CaptureData) GetAttributesOk() (*GETCaptures200ResponseDataInnerAttributes, bool)`
+`func (o *CaptureData) GetAttributesOk() (*CaptureDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CaptureData) SetAttributes(v GETCaptures200ResponseDataInnerAttributes)`
+`func (o *CaptureData) SetAttributes(v CaptureDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

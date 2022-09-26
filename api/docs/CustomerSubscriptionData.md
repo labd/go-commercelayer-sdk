@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerSubscriptions200ResponseDataInnerAttributes**](GETCustomerSubscriptions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CustomerSubscriptionDataAttributes**](CustomerSubscriptionDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerSubscriptionData
 
-`func NewCustomerSubscriptionData(type_ string, attributes GETCustomerSubscriptions200ResponseDataInnerAttributes, ) *CustomerSubscriptionData`
+`func NewCustomerSubscriptionData(type_ string, attributes CustomerSubscriptionDataAttributes, ) *CustomerSubscriptionData`
 
 NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200ResponseDataInnerAttributes`
+`func (o *CustomerSubscriptionData) GetAttributes() CustomerSubscriptionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerSubscriptionData) GetAttributesOk() (*CustomerSubscriptionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptions200ResponseDataInnerAttributes)`
+`func (o *CustomerSubscriptionData) SetAttributes(v CustomerSubscriptionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

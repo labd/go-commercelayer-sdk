@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETInventoryStockLocations200ResponseDataInnerAttributes**](GETInventoryStockLocations200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**InventoryStockLocationDataAttributes**](InventoryStockLocationDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryStockLocationData
 
-`func NewInventoryStockLocationData(type_ string, attributes GETInventoryStockLocations200ResponseDataInnerAttributes, ) *InventoryStockLocationData`
+`func NewInventoryStockLocationData(type_ string, attributes InventoryStockLocationDataAttributes, ) *InventoryStockLocationData`
 
 NewInventoryStockLocationData instantiates a new InventoryStockLocationData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryStockLocationData) GetAttributes() GETInventoryStockLocations200ResponseDataInnerAttributes`
+`func (o *InventoryStockLocationData) GetAttributes() InventoryStockLocationDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryStockLocationData) GetAttributesOk() (*GETInventoryStockLocations200ResponseDataInnerAttributes, bool)`
+`func (o *InventoryStockLocationData) GetAttributesOk() (*InventoryStockLocationDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryStockLocationData) SetAttributes(v GETInventoryStockLocations200ResponseDataInnerAttributes)`
+`func (o *InventoryStockLocationData) SetAttributes(v InventoryStockLocationDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

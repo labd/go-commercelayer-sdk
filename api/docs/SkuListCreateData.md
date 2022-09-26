@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTSkuLists201ResponseDataAttributes**](POSTSkuLists201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Attributes** | [**SkuListCreateDataAttributes**](SkuListCreateDataAttributes.md) |  | 
+**Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListCreateData
 
-`func NewSkuListCreateData(type_ string, attributes POSTSkuLists201ResponseDataAttributes, ) *SkuListCreateData`
+`func NewSkuListCreateData(type_ string, attributes SkuListCreateDataAttributes, ) *SkuListCreateData`
 
 NewSkuListCreateData instantiates a new SkuListCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuListCreateData) GetAttributes() POSTSkuLists201ResponseDataAttributes`
+`func (o *SkuListCreateData) GetAttributes() SkuListCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListCreateData) GetAttributesOk() (*POSTSkuLists201ResponseDataAttributes, bool)`
+`func (o *SkuListCreateData) GetAttributesOk() (*SkuListCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListCreateData) SetAttributes(v POSTSkuLists201ResponseDataAttributes)`
+`func (o *SkuListCreateData) SetAttributes(v SkuListCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *SkuListCreateData) GetRelationships() map[string]interface{}`
+`func (o *SkuListCreateData) GetRelationships() CouponRecipientCreateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuListCreateData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *SkuListCreateData) GetRelationshipsOk() (*CouponRecipientCreateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuListCreateData) SetRelationships(v map[string]interface{})`
+`func (o *SkuListCreateData) SetRelationships(v CouponRecipientCreateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GETOrderCopies
 
-> GETOrderCopies200Response GETOrderCopies(ctx).Execute()
+> OrderCopyResponseList GETOrderCopies(ctx).Execute()
 
 List all order copies
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderCopies`: GETOrderCopies200Response
+    // response from `GETOrderCopies`: OrderCopyResponseList
     fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.GETOrderCopies`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiGETOrderCopiesRequest stru
 
 ### Return type
 
-[**GETOrderCopies200Response**](GETOrderCopies200Response.md)
+[**OrderCopyResponseList**](OrderCopyResponseList.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiGETOrderCopiesRequest stru
 
 ## GETOrderCopiesOrderCopyId
 
-> GETOrderCopiesOrderCopyId200Response GETOrderCopiesOrderCopyId(ctx, orderCopyId).Execute()
+> OrderCopyResponse GETOrderCopiesOrderCopyId(ctx, orderCopyId).Execute()
 
 Retrieve an order copy
 
@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderCopiesOrderCopyId`: GETOrderCopiesOrderCopyId200Response
+    // response from `GETOrderCopiesOrderCopyId`: OrderCopyResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.GETOrderCopiesOrderCopyId`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETOrderCopiesOrderCopyId200Response**](GETOrderCopiesOrderCopyId200Response.md)
+[**OrderCopyResponse**](OrderCopyResponse.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrderCopies
 
-> POSTOrderCopies201Response POSTOrderCopies(ctx).OrderCopyCreate(orderCopyCreate).Execute()
+> OrderCopyResponse POSTOrderCopies(ctx).OrderCopyCreate(orderCopyCreate).Execute()
 
 Create an order copy
 
@@ -369,7 +369,7 @@ import (
 )
 
 func main() {
-    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("Type_example", *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
+    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("Type_example", *openapiclient.NewOrderCopyCreateDataAttributes())) // OrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -378,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.POSTOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTOrderCopies`: POSTOrderCopies201Response
+    // response from `POSTOrderCopies`: OrderCopyResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.POSTOrderCopies`: %v\n", resp)
 }
 ```
@@ -398,7 +398,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTOrderCopies201Response**](POSTOrderCopies201Response.md)
+[**OrderCopyResponse**](OrderCopyResponse.md)
 
 ### Authorization
 

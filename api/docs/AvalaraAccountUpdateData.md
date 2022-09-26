@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes**](PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AvalaraAccountUpdateDataAttributes**](AvalaraAccountUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAvalaraAccountUpdateData
 
-`func NewAvalaraAccountUpdateData(type_ string, id string, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, ) *AvalaraAccountUpdateData`
+`func NewAvalaraAccountUpdateData(type_ string, id string, attributes AvalaraAccountUpdateDataAttributes, ) *AvalaraAccountUpdateData`
 
 NewAvalaraAccountUpdateData instantiates a new AvalaraAccountUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes`
+`func (o *AvalaraAccountUpdateData) GetAttributes() AvalaraAccountUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AvalaraAccountUpdateData) GetAttributesOk() (*PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, bool)`
+`func (o *AvalaraAccountUpdateData) GetAttributesOk() (*AvalaraAccountUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AvalaraAccountUpdateData) SetAttributes(v PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes)`
+`func (o *AvalaraAccountUpdateData) SetAttributes(v AvalaraAccountUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

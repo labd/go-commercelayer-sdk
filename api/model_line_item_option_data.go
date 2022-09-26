@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // LineItemOptionData struct for LineItemOptionData
 type LineItemOptionData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETLineItemOptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *LineItemOptionDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    LineItemOptionDataAttributes     `json:"attributes"`
+	Relationships *LineItemOptionDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionData instantiates a new LineItemOptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionData(type_ string, attributes GETLineItemOptions200ResponseDataInnerAttributes) *LineItemOptionData {
+func NewLineItemOptionData(type_ string, attributes LineItemOptionDataAttributes) *LineItemOptionData {
 	this := LineItemOptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *LineItemOptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes {
+func (o *LineItemOptionData) GetAttributes() LineItemOptionDataAttributes {
 	if o == nil {
-		var ret GETLineItemOptions200ResponseDataInnerAttributes
+		var ret LineItemOptionDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool) {
+func (o *LineItemOptionData) GetAttributesOk() (*LineItemOptionDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes) {
+func (o *LineItemOptionData) SetAttributes(v LineItemOptionDataAttributes) {
 	o.Attributes = v
 }
 

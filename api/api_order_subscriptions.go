@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -396,7 +396,7 @@ type OrderSubscriptionsApiGETOrderSubscriptionsRequest struct {
 	ApiService *OrderSubscriptionsApiService
 }
 
-func (r OrderSubscriptionsApiGETOrderSubscriptionsRequest) Execute() (*GETOrderSubscriptions200Response, *http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderSubscriptionsRequest) Execute() (*OrderSubscriptionResponseList, *http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionsExecute(r)
 }
 
@@ -416,13 +416,13 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptions(ctx context.Context
 }
 
 // Execute executes the request
-//  @return GETOrderSubscriptions200Response
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderSubscriptionsRequest) (*GETOrderSubscriptions200Response, *http.Response, error) {
+//  @return OrderSubscriptionResponseList
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsExecute(r OrderSubscriptionsApiGETOrderSubscriptionsRequest) (*OrderSubscriptionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrderSubscriptions200Response
+		localVarReturnValue *OrderSubscriptionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderSubscriptions")
@@ -496,7 +496,7 @@ type OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest struct
 	orderSubscriptionId string
 }
 
-func (r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*GETOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
+func (r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*OrderSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.GETOrderSubscriptionsOrderSubscriptionIdExecute(r)
 }
 
@@ -518,13 +518,13 @@ func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionId(
 }
 
 // Execute executes the request
-//  @return GETOrderSubscriptionsOrderSubscriptionId200Response
-func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*GETOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
+//  @return OrderSubscriptionResponse
+func (a *OrderSubscriptionsApiService) GETOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiGETOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrderSubscriptionsOrderSubscriptionId200Response
+		localVarReturnValue *OrderSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.GETOrderSubscriptionsOrderSubscriptionId")
@@ -605,7 +605,7 @@ func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) 
 	return r
 }
 
-func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*PATCHOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
+func (r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) Execute() (*OrderSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionI
 }
 
 // Execute executes the request
-//  @return PATCHOrderSubscriptionsOrderSubscriptionId200Response
-func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*PATCHOrderSubscriptionsOrderSubscriptionId200Response, *http.Response, error) {
+//  @return OrderSubscriptionResponse
+func (a *OrderSubscriptionsApiService) PATCHOrderSubscriptionsOrderSubscriptionIdExecute(r OrderSubscriptionsApiPATCHOrderSubscriptionsOrderSubscriptionIdRequest) (*OrderSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHOrderSubscriptionsOrderSubscriptionId200Response
+		localVarReturnValue *OrderSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.PATCHOrderSubscriptionsOrderSubscriptionId")
@@ -718,7 +718,7 @@ func (r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) OrderSubscriptionCre
 	return r
 }
 
-func (r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) Execute() (*POSTOrderSubscriptions201Response, *http.Response, error) {
+func (r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) Execute() (*OrderSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.POSTOrderSubscriptionsExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *OrderSubscriptionsApiService) POSTOrderSubscriptions(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return POSTOrderSubscriptions201Response
-func (a *OrderSubscriptionsApiService) POSTOrderSubscriptionsExecute(r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) (*POSTOrderSubscriptions201Response, *http.Response, error) {
+//  @return OrderSubscriptionResponse
+func (a *OrderSubscriptionsApiService) POSTOrderSubscriptionsExecute(r OrderSubscriptionsApiPOSTOrderSubscriptionsRequest) (*OrderSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTOrderSubscriptions201Response
+		localVarReturnValue *OrderSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderSubscriptionsApiService.POSTOrderSubscriptions")

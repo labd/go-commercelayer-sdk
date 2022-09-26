@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PackageCreateData struct for PackageCreateData
 type PackageCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    POSTPackages201ResponseDataAttributes `json:"attributes"`
-	Relationships *PackageCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                          `json:"type"`
+	Attributes    PackageCreateDataAttributes     `json:"attributes"`
+	Relationships *PackageCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageCreateData instantiates a new PackageCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageCreateData(type_ string, attributes POSTPackages201ResponseDataAttributes) *PackageCreateData {
+func NewPackageCreateData(type_ string, attributes PackageCreateDataAttributes) *PackageCreateData {
 	this := PackageCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PackageCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PackageCreateData) GetAttributes() POSTPackages201ResponseDataAttributes {
+func (o *PackageCreateData) GetAttributes() PackageCreateDataAttributes {
 	if o == nil {
-		var ret POSTPackages201ResponseDataAttributes
+		var ret PackageCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PackageCreateData) GetAttributes() POSTPackages201ResponseDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PackageCreateData) GetAttributesOk() (*POSTPackages201ResponseDataAttributes, bool) {
+func (o *PackageCreateData) GetAttributesOk() (*PackageCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PackageCreateData) GetAttributesOk() (*POSTPackages201ResponseDataAttri
 }
 
 // SetAttributes sets field value
-func (o *PackageCreateData) SetAttributes(v POSTPackages201ResponseDataAttributes) {
+func (o *PackageCreateData) SetAttributes(v PackageCreateDataAttributes) {
 	o.Attributes = v
 }
 

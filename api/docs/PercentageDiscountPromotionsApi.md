@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETPercentageDiscountPromotions
 
-> GETPercentageDiscountPromotions200Response GETPercentageDiscountPromotions(ctx).Execute()
+> PercentageDiscountPromotionResponseList GETPercentageDiscountPromotions(ctx).Execute()
 
 List all percentage discount promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.GETPercentageDiscountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPercentageDiscountPromotions`: GETPercentageDiscountPromotions200Response
+    // response from `GETPercentageDiscountPromotions`: PercentageDiscountPromotionResponseList
     fmt.Fprintf(os.Stdout, "Response from `PercentageDiscountPromotionsApi.GETPercentageDiscountPromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETPercentageDiscountPromo
 
 ### Return type
 
-[**GETPercentageDiscountPromotions200Response**](GETPercentageDiscountPromotions200Response.md)
+[**PercentageDiscountPromotionResponseList**](PercentageDiscountPromotionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETPercentageDiscountPromo
 
 ## GETPercentageDiscountPromotionsPercentageDiscountPromotionId
 
-> GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).Execute()
+> PercentageDiscountPromotionResponse GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).Execute()
 
 Retrieve a percentage discount promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.GETPercentageDiscountPromotionsPercentageDiscountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPercentageDiscountPromotionsPercentageDiscountPromotionId`: GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+    // response from `GETPercentageDiscountPromotionsPercentageDiscountPromotionId`: PercentageDiscountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `PercentageDiscountPromotionsApi.GETPercentageDiscountPromotionsPercentageDiscountPromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response**](GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response.md)
+[**PercentageDiscountPromotionResponse**](PercentageDiscountPromotionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId
 
-> PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate).Execute()
+> PercentageDiscountPromotionResponse PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate).Execute()
 
 Update a percentage discount promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
+    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPercentageDiscountPromotionUpdateDataAttributes())) // PercentageDiscountPromotionUpdate | 
     percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId`: PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
+    // response from `PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId`: PercentageDiscountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `PercentageDiscountPromotionsApi.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response**](PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response.md)
+[**PercentageDiscountPromotionResponse**](PercentageDiscountPromotionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTPercentageDiscountPromotions
 
-> POSTPercentageDiscountPromotions201Response POSTPercentageDiscountPromotions(ctx).PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate).Execute()
+> PercentageDiscountPromotionResponse POSTPercentageDiscountPromotions(ctx).PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate).Execute()
 
 Create a percentage discount promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("Type_example", *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
+    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("Type_example", *openapiclient.NewPercentageDiscountPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.POSTPercentageDiscountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPercentageDiscountPromotions`: POSTPercentageDiscountPromotions201Response
+    // response from `POSTPercentageDiscountPromotions`: PercentageDiscountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `PercentageDiscountPromotionsApi.POSTPercentageDiscountPromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPercentageDiscountPromotions201Response**](POSTPercentageDiscountPromotions201Response.md)
+[**PercentageDiscountPromotionResponse**](PercentageDiscountPromotionResponse.md)
 
 ### Authorization
 

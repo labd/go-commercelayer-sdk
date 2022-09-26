@@ -844,7 +844,7 @@ Name | Type | Description  | Notes
 
 ## GETSkus
 
-> GETSkus200Response GETSkus(ctx).Execute()
+> SkuResponseList GETSkus(ctx).Execute()
 
 List all SKUs
 
@@ -871,7 +871,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkus`: GETSkus200Response
+    // response from `GETSkus`: SkuResponseList
     fmt.Fprintf(os.Stdout, "Response from `SkusApi.GETSkus`: %v\n", resp)
 }
 ```
@@ -887,7 +887,7 @@ Other parameters are passed through a pointer to a apiGETSkusRequest struct via 
 
 ### Return type
 
-[**GETSkus200Response**](GETSkus200Response.md)
+[**SkuResponseList**](SkuResponseList.md)
 
 ### Authorization
 
@@ -905,7 +905,7 @@ Other parameters are passed through a pointer to a apiGETSkusRequest struct via 
 
 ## GETSkusSkuId
 
-> GETSkusSkuId200Response GETSkusSkuId(ctx, skuId).Execute()
+> SkuResponse GETSkusSkuId(ctx, skuId).Execute()
 
 Retrieve a SKU
 
@@ -933,7 +933,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkusSkuId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETSkusSkuId`: GETSkusSkuId200Response
+    // response from `GETSkusSkuId`: SkuResponse
     fmt.Fprintf(os.Stdout, "Response from `SkusApi.GETSkusSkuId`: %v\n", resp)
 }
 ```
@@ -957,7 +957,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETSkusSkuId200Response**](GETSkusSkuId200Response.md)
+[**SkuResponse**](SkuResponse.md)
 
 ### Authorization
 
@@ -1179,7 +1179,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkusSkuId
 
-> PATCHSkusSkuId200Response PATCHSkusSkuId(ctx, skuId).SkuUpdate(skuUpdate).Execute()
+> SkuResponse PATCHSkusSkuId(ctx, skuId).SkuUpdate(skuUpdate).Execute()
 
 Update a SKU
 
@@ -1198,7 +1198,7 @@ import (
 )
 
 func main() {
-    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkusSkuId200ResponseDataAttributes())) // SkuUpdate | 
+    skuUpdate := *openapiclient.NewSkuUpdate(*openapiclient.NewSkuUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewSkuUpdateDataAttributes())) // SkuUpdate | 
     skuId := "skuId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1208,7 +1208,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.PATCHSkusSkuId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkusSkuId`: PATCHSkusSkuId200Response
+    // response from `PATCHSkusSkuId`: SkuResponse
     fmt.Fprintf(os.Stdout, "Response from `SkusApi.PATCHSkusSkuId`: %v\n", resp)
 }
 ```
@@ -1233,7 +1233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHSkusSkuId200Response**](PATCHSkusSkuId200Response.md)
+[**SkuResponse**](SkuResponse.md)
 
 ### Authorization
 
@@ -1251,7 +1251,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkus
 
-> POSTSkus201Response POSTSkus(ctx).SkuCreate(skuCreate).Execute()
+> SkuResponse POSTSkus(ctx).SkuCreate(skuCreate).Execute()
 
 Create a SKU
 
@@ -1270,7 +1270,7 @@ import (
 )
 
 func main() {
-    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("Type_example", *openapiclient.NewPOSTSkus201ResponseDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
+    skuCreate := *openapiclient.NewSkuCreate(*openapiclient.NewSkuCreateData("Type_example", *openapiclient.NewSkuCreateDataAttributes("TSHIRTMM000000FFFFFFXLXX", "Black Men T-shirt with White Logo (XL)"))) // SkuCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1279,7 +1279,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.POSTSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTSkus`: POSTSkus201Response
+    // response from `POSTSkus`: SkuResponse
     fmt.Fprintf(os.Stdout, "Response from `SkusApi.POSTSkus`: %v\n", resp)
 }
 ```
@@ -1299,7 +1299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTSkus201Response**](POSTSkus201Response.md)
+[**SkuResponse**](SkuResponse.md)
 
 ### Authorization
 

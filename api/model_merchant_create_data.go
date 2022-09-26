@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // MerchantCreateData struct for MerchantCreateData
 type MerchantCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    POSTMerchants201ResponseDataAttributes `json:"attributes"`
-	Relationships *MerchantCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    MerchantCreateDataAttributes     `json:"attributes"`
+	Relationships *MerchantCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMerchantCreateData instantiates a new MerchantCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantCreateData(type_ string, attributes POSTMerchants201ResponseDataAttributes) *MerchantCreateData {
+func NewMerchantCreateData(type_ string, attributes MerchantCreateDataAttributes) *MerchantCreateData {
 	this := MerchantCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *MerchantCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MerchantCreateData) GetAttributes() POSTMerchants201ResponseDataAttributes {
+func (o *MerchantCreateData) GetAttributes() MerchantCreateDataAttributes {
 	if o == nil {
-		var ret POSTMerchants201ResponseDataAttributes
+		var ret MerchantCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *MerchantCreateData) GetAttributes() POSTMerchants201ResponseDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MerchantCreateData) GetAttributesOk() (*POSTMerchants201ResponseDataAttributes, bool) {
+func (o *MerchantCreateData) GetAttributesOk() (*MerchantCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *MerchantCreateData) GetAttributesOk() (*POSTMerchants201ResponseDataAtt
 }
 
 // SetAttributes sets field value
-func (o *MerchantCreateData) SetAttributes(v POSTMerchants201ResponseDataAttributes) {
+func (o *MerchantCreateData) SetAttributes(v MerchantCreateDataAttributes) {
 	o.Attributes = v
 }
 

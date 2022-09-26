@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BundleCreateData struct for BundleCreateData
 type BundleCreateData struct {
 	// The resource's type
-	Type          string                               `json:"type"`
-	Attributes    POSTBundles201ResponseDataAttributes `json:"attributes"`
-	Relationships *BundleCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                         `json:"type"`
+	Attributes    BundleCreateDataAttributes     `json:"attributes"`
+	Relationships *BundleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBundleCreateData instantiates a new BundleCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleCreateData(type_ string, attributes POSTBundles201ResponseDataAttributes) *BundleCreateData {
+func NewBundleCreateData(type_ string, attributes BundleCreateDataAttributes) *BundleCreateData {
 	this := BundleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *BundleCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BundleCreateData) GetAttributes() POSTBundles201ResponseDataAttributes {
+func (o *BundleCreateData) GetAttributes() BundleCreateDataAttributes {
 	if o == nil {
-		var ret POSTBundles201ResponseDataAttributes
+		var ret BundleCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *BundleCreateData) GetAttributes() POSTBundles201ResponseDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BundleCreateData) GetAttributesOk() (*POSTBundles201ResponseDataAttributes, bool) {
+func (o *BundleCreateData) GetAttributesOk() (*BundleCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *BundleCreateData) GetAttributesOk() (*POSTBundles201ResponseDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *BundleCreateData) SetAttributes(v POSTBundles201ResponseDataAttributes) {
+func (o *BundleCreateData) SetAttributes(v BundleCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ReturnLineItemUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                        `json:"id"`
-	Attributes    PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                        `json:"relationships,omitempty"`
+	Id            string                             `json:"id"`
+	Attributes    ReturnLineItemUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}             `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemUpdateData instantiates a new ReturnLineItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemUpdateData(type_ string, id string, attributes PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes) *ReturnLineItemUpdateData {
+func NewReturnLineItemUpdateData(type_ string, id string, attributes ReturnLineItemUpdateDataAttributes) *ReturnLineItemUpdateData {
 	this := ReturnLineItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ReturnLineItemUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnLineItemUpdateData) GetAttributes() PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes {
+func (o *ReturnLineItemUpdateData) GetAttributes() ReturnLineItemUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes
+		var ret ReturnLineItemUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ReturnLineItemUpdateData) GetAttributes() PATCHReturnLineItemsReturnLin
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemUpdateData) GetAttributesOk() (*PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes, bool) {
+func (o *ReturnLineItemUpdateData) GetAttributesOk() (*ReturnLineItemUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ReturnLineItemUpdateData) GetAttributesOk() (*PATCHReturnLineItemsRetur
 }
 
 // SetAttributes sets field value
-func (o *ReturnLineItemUpdateData) SetAttributes(v PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes) {
+func (o *ReturnLineItemUpdateData) SetAttributes(v ReturnLineItemUpdateDataAttributes) {
 	o.Attributes = v
 }
 

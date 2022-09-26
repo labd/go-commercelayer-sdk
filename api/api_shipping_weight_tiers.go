@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type ShippingWeightTiersApiGETShippingWeightTiersRequest struct {
 	ApiService *ShippingWeightTiersApiService
 }
 
-func (r ShippingWeightTiersApiGETShippingWeightTiersRequest) Execute() (*GETShippingWeightTiers200Response, *http.Response, error) {
+func (r ShippingWeightTiersApiGETShippingWeightTiersRequest) Execute() (*ShippingWeightTierResponseList, *http.Response, error) {
 	return r.ApiService.GETShippingWeightTiersExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETShippingWeightTiers200Response
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*GETShippingWeightTiers200Response, *http.Response, error) {
+//  @return ShippingWeightTierResponseList
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*ShippingWeightTierResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETShippingWeightTiers200Response
+		localVarReturnValue *ShippingWeightTierResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.GETShippingWeightTiers")
@@ -312,7 +312,7 @@ type ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest str
 	shippingWeightTierId string
 }
 
-func (r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) Execute() (*GETShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
+func (r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) Execute() (*ShippingWeightTierResponse, *http.Response, error) {
 	return r.ApiService.GETShippingWeightTiersShippingWeightTierIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 }
 
 // Execute executes the request
-//  @return GETShippingWeightTiersShippingWeightTierId200Response
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*GETShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
+//  @return ShippingWeightTierResponse
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*ShippingWeightTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETShippingWeightTiersShippingWeightTierId200Response
+		localVarReturnValue *ShippingWeightTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.GETShippingWeightTiersShippingWeightTierId")
@@ -421,7 +421,7 @@ func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdReques
 	return r
 }
 
-func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) Execute() (*PATCHShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
+func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) Execute() (*ShippingWeightTierResponse, *http.Response, error) {
 	return r.ApiService.PATCHShippingWeightTiersShippingWeightTierIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 }
 
 // Execute executes the request
-//  @return PATCHShippingWeightTiersShippingWeightTierId200Response
-func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*PATCHShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
+//  @return ShippingWeightTierResponse
+func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*ShippingWeightTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHShippingWeightTiersShippingWeightTierId200Response
+		localVarReturnValue *ShippingWeightTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.PATCHShippingWeightTiersShippingWeightTierId")
@@ -534,7 +534,7 @@ func (r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) ShippingWeightTier
 	return r
 }
 
-func (r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) Execute() (*POSTShippingWeightTiers201Response, *http.Response, error) {
+func (r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) Execute() (*ShippingWeightTierResponse, *http.Response, error) {
 	return r.ApiService.POSTShippingWeightTiersExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return POSTShippingWeightTiers201Response
-func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*POSTShippingWeightTiers201Response, *http.Response, error) {
+//  @return ShippingWeightTierResponse
+func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*ShippingWeightTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTShippingWeightTiers201Response
+		localVarReturnValue *ShippingWeightTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ShippingWeightTiersApiService.POSTShippingWeightTiers")

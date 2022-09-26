@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxCategoryData struct for TaxCategoryData
 type TaxCategoryData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    GETTaxCategories200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *TaxCategoryDataRelationships                  `json:"relationships,omitempty"`
+	Type          string                        `json:"type"`
+	Attributes    TaxCategoryDataAttributes     `json:"attributes"`
+	Relationships *TaxCategoryDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryData instantiates a new TaxCategoryData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryData(type_ string, attributes GETTaxCategories200ResponseDataInnerAttributes) *TaxCategoryData {
+func NewTaxCategoryData(type_ string, attributes TaxCategoryDataAttributes) *TaxCategoryData {
 	this := TaxCategoryData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *TaxCategoryData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAttributes {
+func (o *TaxCategoryData) GetAttributes() TaxCategoryDataAttributes {
 	if o == nil {
-		var ret GETTaxCategories200ResponseDataInnerAttributes
+		var ret TaxCategoryDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInnerAttributes, bool) {
+func (o *TaxCategoryData) GetAttributesOk() (*TaxCategoryDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInn
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAttributes) {
+func (o *TaxCategoryData) SetAttributes(v TaxCategoryDataAttributes) {
 	o.Attributes = v
 }
 

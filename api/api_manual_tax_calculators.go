@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest struct {
 	ApiService *ManualTaxCalculatorsApiService
 }
 
-func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) Execute() (*GETManualTaxCalculators200Response, *http.Response, error) {
+func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) Execute() (*ManualTaxCalculatorResponseList, *http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculators(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETManualTaxCalculators200Response
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) (*GETManualTaxCalculators200Response, *http.Response, error) {
+//  @return ManualTaxCalculatorResponseList
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) (*ManualTaxCalculatorResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETManualTaxCalculators200Response
+		localVarReturnValue *ManualTaxCalculatorResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.GETManualTaxCalculators")
@@ -220,7 +220,7 @@ type ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest 
 	manualTaxCalculatorId string
 }
 
-func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
+func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*ManualTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 }
 
 // Execute executes the request
-//  @return GETManualTaxCalculatorsManualTaxCalculatorId200Response
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
+//  @return ManualTaxCalculatorResponse
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) (*ManualTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETManualTaxCalculatorsManualTaxCalculatorId200Response
+		localVarReturnValue *ManualTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.GETManualTaxCalculatorsManualTaxCalculatorId")
@@ -421,7 +421,7 @@ func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdReq
 	return r
 }
 
-func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
+func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*ManualTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 }
 
 // Execute executes the request
-//  @return PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
-func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) (*PATCHManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
+//  @return ManualTaxCalculatorResponse
+func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) (*ManualTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
+		localVarReturnValue *ManualTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.PATCHManualTaxCalculatorsManualTaxCalculatorId")
@@ -534,7 +534,7 @@ func (r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) ManualTaxCalcula
 	return r
 }
 
-func (r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) Execute() (*POSTManualTaxCalculators201Response, *http.Response, error) {
+func (r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) Execute() (*ManualTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.POSTManualTaxCalculatorsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculators(ctx context.Co
 }
 
 // Execute executes the request
-//  @return POSTManualTaxCalculators201Response
-func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) (*POSTManualTaxCalculators201Response, *http.Response, error) {
+//  @return ManualTaxCalculatorResponse
+func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) (*ManualTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTManualTaxCalculators201Response
+		localVarReturnValue *ManualTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManualTaxCalculatorsApiService.POSTManualTaxCalculators")

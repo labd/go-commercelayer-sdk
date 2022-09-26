@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CheckoutComGatewayData struct for CheckoutComGatewayData
 type CheckoutComGatewayData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    GETCheckoutComGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CheckoutComGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    CheckoutComGatewayDataAttributes     `json:"attributes"`
+	Relationships *CheckoutComGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayData instantiates a new CheckoutComGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayData(type_ string, attributes GETCheckoutComGateways200ResponseDataInnerAttributes) *CheckoutComGatewayData {
+func NewCheckoutComGatewayData(type_ string, attributes CheckoutComGatewayDataAttributes) *CheckoutComGatewayData {
 	this := CheckoutComGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CheckoutComGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGateways200ResponseDataInnerAttributes {
+func (o *CheckoutComGatewayData) GetAttributes() CheckoutComGatewayDataAttributes {
 	if o == nil {
-		var ret GETCheckoutComGateways200ResponseDataInnerAttributes
+		var ret CheckoutComGatewayDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGateways200Respon
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGateways200ResponseDataInnerAttributes, bool) {
+func (o *CheckoutComGatewayData) GetAttributesOk() (*CheckoutComGatewayDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGateways200Re
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComGatewayData) SetAttributes(v GETCheckoutComGateways200ResponseDataInnerAttributes) {
+func (o *CheckoutComGatewayData) SetAttributes(v CheckoutComGatewayDataAttributes) {
 	o.Attributes = v
 }
 

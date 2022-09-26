@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTPriceVolumeTiers201ResponseDataAttributes**](POSTPriceVolumeTiers201ResponseDataAttributes.md) |  | 
+**Attributes** | [**PriceVolumeTierCreateDataAttributes**](PriceVolumeTierCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceVolumeTierCreateDataRelationships**](PriceVolumeTierCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceVolumeTierCreateData
 
-`func NewPriceVolumeTierCreateData(type_ string, attributes POSTPriceVolumeTiers201ResponseDataAttributes, ) *PriceVolumeTierCreateData`
+`func NewPriceVolumeTierCreateData(type_ string, attributes PriceVolumeTierCreateDataAttributes, ) *PriceVolumeTierCreateData`
 
 NewPriceVolumeTierCreateData instantiates a new PriceVolumeTierCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PriceVolumeTierCreateData) GetAttributes() POSTPriceVolumeTiers201ResponseDataAttributes`
+`func (o *PriceVolumeTierCreateData) GetAttributes() PriceVolumeTierCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceVolumeTierCreateData) GetAttributesOk() (*POSTPriceVolumeTiers201ResponseDataAttributes, bool)`
+`func (o *PriceVolumeTierCreateData) GetAttributesOk() (*PriceVolumeTierCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceVolumeTierCreateData) SetAttributes(v POSTPriceVolumeTiers201ResponseDataAttributes)`
+`func (o *PriceVolumeTierCreateData) SetAttributes(v PriceVolumeTierCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

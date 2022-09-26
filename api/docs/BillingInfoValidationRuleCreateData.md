@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleCreateDataRelationships**](BillingInfoValidationRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleCreateData
 
-`func NewBillingInfoValidationRuleCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *BillingInfoValidationRuleCreateData`
+`func NewBillingInfoValidationRuleCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *BillingInfoValidationRuleCreateData`
 
 NewBillingInfoValidationRuleCreateData instantiates a new BillingInfoValidationRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BillingInfoValidationRuleCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *BillingInfoValidationRuleCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BillingInfoValidationRuleCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *BillingInfoValidationRuleCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BillingInfoValidationRuleCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *BillingInfoValidationRuleCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

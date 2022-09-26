@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type DeliveryLeadTimeUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                            `json:"id"`
-	Attributes    PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes `json:"attributes"`
-	Relationships *DeliveryLeadTimeUpdateDataRelationships                          `json:"relationships,omitempty"`
+	Id            string                                   `json:"id"`
+	Attributes    DeliveryLeadTimeUpdateDataAttributes     `json:"attributes"`
+	Relationships *DeliveryLeadTimeUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewDeliveryLeadTimeUpdateData instantiates a new DeliveryLeadTimeUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliveryLeadTimeUpdateData(type_ string, id string, attributes PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) *DeliveryLeadTimeUpdateData {
+func NewDeliveryLeadTimeUpdateData(type_ string, id string, attributes DeliveryLeadTimeUpdateDataAttributes) *DeliveryLeadTimeUpdateData {
 	this := DeliveryLeadTimeUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *DeliveryLeadTimeUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *DeliveryLeadTimeUpdateData) GetAttributes() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes {
+func (o *DeliveryLeadTimeUpdateData) GetAttributes() DeliveryLeadTimeUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes
+		var ret DeliveryLeadTimeUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *DeliveryLeadTimeUpdateData) GetAttributes() PATCHDeliveryLeadTimesDeliv
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeUpdateData) GetAttributesOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, bool) {
+func (o *DeliveryLeadTimeUpdateData) GetAttributesOk() (*DeliveryLeadTimeUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *DeliveryLeadTimeUpdateData) GetAttributesOk() (*PATCHDeliveryLeadTimesD
 }
 
 // SetAttributes sets field value
-func (o *DeliveryLeadTimeUpdateData) SetAttributes(v PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) {
+func (o *DeliveryLeadTimeUpdateData) SetAttributes(v DeliveryLeadTimeUpdateDataAttributes) {
 	o.Attributes = v
 }
 

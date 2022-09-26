@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GETApplicationApplicationId
 
-> GETApplicationApplicationId200Response GETApplicationApplicationId(ctx).Execute()
+> ApplicationResponse GETApplicationApplicationId(ctx).Execute()
 
 Retrieve the application
 
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ApplicationApi.GETApplicationApplicationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETApplicationApplicationId`: GETApplicationApplicationId200Response
+    // response from `GETApplicationApplicationId`: ApplicationResponse
     fmt.Fprintf(os.Stdout, "Response from `ApplicationApi.GETApplicationApplicationId`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiGETApplicationApplicationI
 
 ### Return type
 
-[**GETApplicationApplicationId200Response**](GETApplicationApplicationId200Response.md)
+[**ApplicationResponse**](ApplicationResponse.md)
 
 ### Authorization
 

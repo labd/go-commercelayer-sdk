@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ## GETAddresses
 
-> GETAddresses200Response GETAddresses(ctx).Execute()
+> AddressResponseList GETAddresses(ctx).Execute()
 
 List all addresses
 
@@ -121,7 +121,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAddresses`: GETAddresses200Response
+    // response from `GETAddresses`: AddressResponseList
     fmt.Fprintf(os.Stdout, "Response from `AddressesApi.GETAddresses`: %v\n", resp)
 }
 ```
@@ -137,7 +137,7 @@ Other parameters are passed through a pointer to a apiGETAddressesRequest struct
 
 ### Return type
 
-[**GETAddresses200Response**](GETAddresses200Response.md)
+[**AddressResponseList**](AddressResponseList.md)
 
 ### Authorization
 
@@ -155,7 +155,7 @@ Other parameters are passed through a pointer to a apiGETAddressesRequest struct
 
 ## GETAddressesAddressId
 
-> GETAddressesAddressId200Response GETAddressesAddressId(ctx, addressId).Execute()
+> AddressResponse GETAddressesAddressId(ctx, addressId).Execute()
 
 Retrieve an address
 
@@ -183,7 +183,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAddressesAddressId`: GETAddressesAddressId200Response
+    // response from `GETAddressesAddressId`: AddressResponse
     fmt.Fprintf(os.Stdout, "Response from `AddressesApi.GETAddressesAddressId`: %v\n", resp)
 }
 ```
@@ -207,7 +207,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETAddressesAddressId200Response**](GETAddressesAddressId200Response.md)
+[**AddressResponse**](AddressResponse.md)
 
 ### Authorization
 
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAddressesAddressId
 
-> PATCHAddressesAddressId200Response PATCHAddressesAddressId(ctx, addressId).AddressUpdate(addressUpdate).Execute()
+> AddressResponse PATCHAddressesAddressId(ctx, addressId).AddressUpdate(addressUpdate).Execute()
 
 Update an address
 
@@ -1060,7 +1060,7 @@ import (
 )
 
 func main() {
-    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAddressesAddressId200ResponseDataAttributes())) // AddressUpdate | 
+    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAddressUpdateDataAttributes())) // AddressUpdate | 
     addressId := "addressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1070,7 +1070,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.PATCHAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAddressesAddressId`: PATCHAddressesAddressId200Response
+    // response from `PATCHAddressesAddressId`: AddressResponse
     fmt.Fprintf(os.Stdout, "Response from `AddressesApi.PATCHAddressesAddressId`: %v\n", resp)
 }
 ```
@@ -1095,7 +1095,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHAddressesAddressId200Response**](PATCHAddressesAddressId200Response.md)
+[**AddressResponse**](AddressResponse.md)
 
 ### Authorization
 
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ## POSTAddresses
 
-> POSTAddresses201Response POSTAddresses(ctx).AddressCreate(addressCreate).Execute()
+> AddressResponse POSTAddresses(ctx).AddressCreate(addressCreate).Execute()
 
 Create an address
 
@@ -1132,7 +1132,7 @@ import (
 )
 
 func main() {
-    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("Type_example", *openapiclient.NewPOSTAddresses201ResponseDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
+    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData("Type_example", *openapiclient.NewAddressCreateDataAttributes("2883 Geraldine Lane", "New York", "NY", "US", "(212) 646-338-1228"))) // AddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1141,7 +1141,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.POSTAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAddresses`: POSTAddresses201Response
+    // response from `POSTAddresses`: AddressResponse
     fmt.Fprintf(os.Stdout, "Response from `AddressesApi.POSTAddresses`: %v\n", resp)
 }
 ```
@@ -1161,7 +1161,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTAddresses201Response**](POSTAddresses201Response.md)
+[**AddressResponse**](AddressResponse.md)
 
 ### Authorization
 

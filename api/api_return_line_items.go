@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type ReturnLineItemsApiGETReturnLineItemsRequest struct {
 	ApiService *ReturnLineItemsApiService
 }
 
-func (r ReturnLineItemsApiGETReturnLineItemsRequest) Execute() (*GETReturnLineItems200Response, *http.Response, error) {
+func (r ReturnLineItemsApiGETReturnLineItemsRequest) Execute() (*ReturnLineItemResponseList, *http.Response, error) {
 	return r.ApiService.GETReturnLineItemsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *ReturnLineItemsApiService) GETReturnLineItems(ctx context.Context) Retu
 }
 
 // Execute executes the request
-//  @return GETReturnLineItems200Response
-func (a *ReturnLineItemsApiService) GETReturnLineItemsExecute(r ReturnLineItemsApiGETReturnLineItemsRequest) (*GETReturnLineItems200Response, *http.Response, error) {
+//  @return ReturnLineItemResponseList
+func (a *ReturnLineItemsApiService) GETReturnLineItemsExecute(r ReturnLineItemsApiGETReturnLineItemsRequest) (*ReturnLineItemResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETReturnLineItems200Response
+		localVarReturnValue *ReturnLineItemResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnLineItemsApiService.GETReturnLineItems")
@@ -312,7 +312,7 @@ type ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest struct {
 	returnLineItemId string
 }
 
-func (r ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest) Execute() (*GETReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
+func (r ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest) Execute() (*ReturnLineItemResponse, *http.Response, error) {
 	return r.ApiService.GETReturnLineItemsReturnLineItemIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETReturnLineItemsReturnLineItemId200Response
-func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest) (*GETReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
+//  @return ReturnLineItemResponse
+func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest) (*ReturnLineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETReturnLineItemsReturnLineItemId200Response
+		localVarReturnValue *ReturnLineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnLineItemsApiService.GETReturnLineItemsReturnLineItemId")
@@ -421,7 +421,7 @@ func (r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) ReturnLin
 	return r
 }
 
-func (r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) Execute() (*PATCHReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
+func (r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) Execute() (*ReturnLineItemResponse, *http.Response, error) {
 	return r.ApiService.PATCHReturnLineItemsReturnLineItemIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemId(ctx con
 }
 
 // Execute executes the request
-//  @return PATCHReturnLineItemsReturnLineItemId200Response
-func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) (*PATCHReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
+//  @return ReturnLineItemResponse
+func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) (*ReturnLineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHReturnLineItemsReturnLineItemId200Response
+		localVarReturnValue *ReturnLineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnLineItemsApiService.PATCHReturnLineItemsReturnLineItemId")
@@ -534,7 +534,7 @@ func (r ReturnLineItemsApiPOSTReturnLineItemsRequest) ReturnLineItemCreate(retur
 	return r
 }
 
-func (r ReturnLineItemsApiPOSTReturnLineItemsRequest) Execute() (*POSTReturnLineItems201Response, *http.Response, error) {
+func (r ReturnLineItemsApiPOSTReturnLineItemsRequest) Execute() (*ReturnLineItemResponse, *http.Response, error) {
 	return r.ApiService.POSTReturnLineItemsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *ReturnLineItemsApiService) POSTReturnLineItems(ctx context.Context) Ret
 }
 
 // Execute executes the request
-//  @return POSTReturnLineItems201Response
-func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItemsApiPOSTReturnLineItemsRequest) (*POSTReturnLineItems201Response, *http.Response, error) {
+//  @return ReturnLineItemResponse
+func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItemsApiPOSTReturnLineItemsRequest) (*ReturnLineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTReturnLineItems201Response
+		localVarReturnValue *ReturnLineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReturnLineItemsApiService.POSTReturnLineItems")

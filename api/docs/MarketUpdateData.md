@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHMarketsMarketId200ResponseDataAttributes**](PATCHMarketsMarketId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**MarketUpdateDataAttributes**](MarketUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketUpdateDataRelationships**](MarketUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMarketUpdateData
 
-`func NewMarketUpdateData(type_ string, id string, attributes PATCHMarketsMarketId200ResponseDataAttributes, ) *MarketUpdateData`
+`func NewMarketUpdateData(type_ string, id string, attributes MarketUpdateDataAttributes, ) *MarketUpdateData`
 
 NewMarketUpdateData instantiates a new MarketUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *MarketUpdateData) GetAttributes() PATCHMarketsMarketId200ResponseDataAttributes`
+`func (o *MarketUpdateData) GetAttributes() MarketUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MarketUpdateData) GetAttributesOk() (*PATCHMarketsMarketId200ResponseDataAttributes, bool)`
+`func (o *MarketUpdateData) GetAttributesOk() (*MarketUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MarketUpdateData) SetAttributes(v PATCHMarketsMarketId200ResponseDataAttributes)`
+`func (o *MarketUpdateData) SetAttributes(v MarketUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

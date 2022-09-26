@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // GiftCardCreateData struct for GiftCardCreateData
 type GiftCardCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    POSTGiftCards201ResponseDataAttributes `json:"attributes"`
-	Relationships *GiftCardCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    GiftCardCreateDataAttributes     `json:"attributes"`
+	Relationships *GiftCardCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardCreateData instantiates a new GiftCardCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardCreateData(type_ string, attributes POSTGiftCards201ResponseDataAttributes) *GiftCardCreateData {
+func NewGiftCardCreateData(type_ string, attributes GiftCardCreateDataAttributes) *GiftCardCreateData {
 	this := GiftCardCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *GiftCardCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardCreateData) GetAttributes() POSTGiftCards201ResponseDataAttributes {
+func (o *GiftCardCreateData) GetAttributes() GiftCardCreateDataAttributes {
 	if o == nil {
-		var ret POSTGiftCards201ResponseDataAttributes
+		var ret GiftCardCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *GiftCardCreateData) GetAttributes() POSTGiftCards201ResponseDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreateData) GetAttributesOk() (*POSTGiftCards201ResponseDataAttributes, bool) {
+func (o *GiftCardCreateData) GetAttributesOk() (*GiftCardCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *GiftCardCreateData) GetAttributesOk() (*POSTGiftCards201ResponseDataAtt
 }
 
 // SetAttributes sets field value
-func (o *GiftCardCreateData) SetAttributes(v POSTGiftCards201ResponseDataAttributes) {
+func (o *GiftCardCreateData) SetAttributes(v GiftCardCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // EventData struct for EventData
 type EventData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    GETEvents200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *EventDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                  `json:"type"`
+	Attributes    EventDataAttributes     `json:"attributes"`
+	Relationships *EventDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewEventData instantiates a new EventData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventData(type_ string, attributes GETEvents200ResponseDataInnerAttributes) *EventData {
+func NewEventData(type_ string, attributes EventDataAttributes) *EventData {
 	this := EventData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *EventData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *EventData) GetAttributes() GETEvents200ResponseDataInnerAttributes {
+func (o *EventData) GetAttributes() EventDataAttributes {
 	if o == nil {
-		var ret GETEvents200ResponseDataInnerAttributes
+		var ret EventDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *EventData) GetAttributes() GETEvents200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *EventData) GetAttributesOk() (*GETEvents200ResponseDataInnerAttributes, bool) {
+func (o *EventData) GetAttributesOk() (*EventDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *EventData) GetAttributesOk() (*GETEvents200ResponseDataInnerAttributes,
 }
 
 // SetAttributes sets field value
-func (o *EventData) SetAttributes(v GETEvents200ResponseDataInnerAttributes) {
+func (o *EventData) SetAttributes(v EventDataAttributes) {
 	o.Attributes = v
 }
 

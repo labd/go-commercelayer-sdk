@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## GETInventoryModels
 
-> GETInventoryModels200Response GETInventoryModels(ctx).Execute()
+> InventoryModelResponseList GETInventoryModels(ctx).Execute()
 
 List all inventory models
 
@@ -112,7 +112,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryModels`: GETInventoryModels200Response
+    // response from `GETInventoryModels`: InventoryModelResponseList
     fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.GETInventoryModels`: %v\n", resp)
 }
 ```
@@ -128,7 +128,7 @@ Other parameters are passed through a pointer to a apiGETInventoryModelsRequest 
 
 ### Return type
 
-[**GETInventoryModels200Response**](GETInventoryModels200Response.md)
+[**InventoryModelResponseList**](InventoryModelResponseList.md)
 
 ### Authorization
 
@@ -146,7 +146,7 @@ Other parameters are passed through a pointer to a apiGETInventoryModelsRequest 
 
 ## GETInventoryModelsInventoryModelId
 
-> GETInventoryModelsInventoryModelId200Response GETInventoryModelsInventoryModelId(ctx, inventoryModelId).Execute()
+> InventoryModelResponse GETInventoryModelsInventoryModelId(ctx, inventoryModelId).Execute()
 
 Retrieve an inventory model
 
@@ -174,7 +174,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryModelsInventoryModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInventoryModelsInventoryModelId`: GETInventoryModelsInventoryModelId200Response
+    // response from `GETInventoryModelsInventoryModelId`: InventoryModelResponse
     fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.GETInventoryModelsInventoryModelId`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETInventoryModelsInventoryModelId200Response**](GETInventoryModelsInventoryModelId200Response.md)
+[**InventoryModelResponse**](InventoryModelResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInventoryModelsInventoryModelId
 
-> PATCHInventoryModelsInventoryModelId200Response PATCHInventoryModelsInventoryModelId(ctx, inventoryModelId).InventoryModelUpdate(inventoryModelUpdate).Execute()
+> InventoryModelResponse PATCHInventoryModelsInventoryModelId(ctx, inventoryModelId).InventoryModelUpdate(inventoryModelUpdate).Execute()
 
 Update an inventory model
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributes())) // InventoryModelUpdate | 
+    inventoryModelUpdate := *openapiclient.NewInventoryModelUpdate(*openapiclient.NewInventoryModelUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewInventoryModelUpdateDataAttributes())) // InventoryModelUpdate | 
     inventoryModelId := "inventoryModelId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.PATCHInventoryModelsInventoryModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHInventoryModelsInventoryModelId`: PATCHInventoryModelsInventoryModelId200Response
+    // response from `PATCHInventoryModelsInventoryModelId`: InventoryModelResponse
     fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.PATCHInventoryModelsInventoryModelId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHInventoryModelsInventoryModelId200Response**](PATCHInventoryModelsInventoryModelId200Response.md)
+[**InventoryModelResponse**](InventoryModelResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTInventoryModels
 
-> POSTInventoryModels201Response POSTInventoryModels(ctx).InventoryModelCreate(inventoryModelCreate).Execute()
+> InventoryModelResponse POSTInventoryModels(ctx).InventoryModelCreate(inventoryModelCreate).Execute()
 
 Create an inventory model
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("Type_example", *openapiclient.NewPOSTInventoryModels201ResponseDataAttributes("EU Inventory Model"))) // InventoryModelCreate | 
+    inventoryModelCreate := *openapiclient.NewInventoryModelCreate(*openapiclient.NewInventoryModelCreateData("Type_example", *openapiclient.NewInventoryModelCreateDataAttributes("EU Inventory Model"))) // InventoryModelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.POSTInventoryModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTInventoryModels`: POSTInventoryModels201Response
+    // response from `POSTInventoryModels`: InventoryModelResponse
     fmt.Fprintf(os.Stdout, "Response from `InventoryModelsApi.POSTInventoryModels`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTInventoryModels201Response**](POSTInventoryModels201Response.md)
+[**InventoryModelResponse**](InventoryModelResponse.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type AuthorizationsApiGETAuthorizationsRequest struct {
 	ApiService *AuthorizationsApiService
 }
 
-func (r AuthorizationsApiGETAuthorizationsRequest) Execute() (*GETAuthorizations200Response, *http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsRequest) Execute() (*AuthorizationResponseList, *http.Response, error) {
 	return r.ApiService.GETAuthorizationsExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) Author
 }
 
 // Execute executes the request
-//  @return GETAuthorizations200Response
-func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*GETAuthorizations200Response, *http.Response, error) {
+//  @return AuthorizationResponseList
+func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*AuthorizationResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETAuthorizations200Response
+		localVarReturnValue *AuthorizationResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizations")
@@ -128,7 +128,7 @@ type AuthorizationsApiGETAuthorizationsAuthorizationIdRequest struct {
 	authorizationId string
 }
 
-func (r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) Execute() (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
+func (r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) Execute() (*AuthorizationResponse, *http.Response, error) {
 	return r.ApiService.GETAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETAuthorizationsAuthorizationId200Response
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
+//  @return AuthorizationResponse
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*AuthorizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETAuthorizationsAuthorizationId200Response
+		localVarReturnValue *AuthorizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.GETAuthorizationsAuthorizationId")
@@ -513,7 +513,7 @@ func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) Authorizatio
 	return r
 }
 
-func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
+func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) Execute() (*AuthorizationResponse, *http.Response, error) {
 	return r.ApiService.PATCHAuthorizationsAuthorizationIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHAuthorizationsAuthorizationId200Response
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
+//  @return AuthorizationResponse
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*AuthorizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHAuthorizationsAuthorizationId200Response
+		localVarReturnValue *AuthorizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AuthorizationsApiService.PATCHAuthorizationsAuthorizationId")

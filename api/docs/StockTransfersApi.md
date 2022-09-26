@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## GETStockTransfers
 
-> GETStockTransfers200Response GETStockTransfers(ctx).Execute()
+> StockTransferResponseList GETStockTransfers(ctx).Execute()
 
 List all stock transfers
 
@@ -316,7 +316,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockTransfers`: GETStockTransfers200Response
+    // response from `GETStockTransfers`: StockTransferResponseList
     fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.GETStockTransfers`: %v\n", resp)
 }
 ```
@@ -332,7 +332,7 @@ Other parameters are passed through a pointer to a apiGETStockTransfersRequest s
 
 ### Return type
 
-[**GETStockTransfers200Response**](GETStockTransfers200Response.md)
+[**StockTransferResponseList**](StockTransferResponseList.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiGETStockTransfersRequest s
 
 ## GETStockTransfersStockTransferId
 
-> GETStockTransfersStockTransferId200Response GETStockTransfersStockTransferId(ctx, stockTransferId).Execute()
+> StockTransferResponse GETStockTransfersStockTransferId(ctx, stockTransferId).Execute()
 
 Retrieve a stock transfer
 
@@ -378,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETStockTransfersStockTransferId`: GETStockTransfersStockTransferId200Response
+    // response from `GETStockTransfersStockTransferId`: StockTransferResponse
     fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.GETStockTransfersStockTransferId`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETStockTransfersStockTransferId200Response**](GETStockTransfersStockTransferId200Response.md)
+[**StockTransferResponse**](StockTransferResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStockTransfersStockTransferId
 
-> PATCHStockTransfersStockTransferId200Response PATCHStockTransfersStockTransferId(ctx, stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
+> StockTransferResponse PATCHStockTransfersStockTransferId(ctx, stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
 
 Update a stock transfer
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockTransfersStockTransferId200ResponseDataAttributes())) // StockTransferUpdate | 
+    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewStockTransferUpdateDataAttributes())) // StockTransferUpdate | 
     stockTransferId := "stockTransferId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.PATCHStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHStockTransfersStockTransferId`: PATCHStockTransfersStockTransferId200Response
+    // response from `PATCHStockTransfersStockTransferId`: StockTransferResponse
     fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.PATCHStockTransfersStockTransferId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHStockTransfersStockTransferId200Response**](PATCHStockTransfersStockTransferId200Response.md)
+[**StockTransferResponse**](StockTransferResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTStockTransfers
 
-> POSTStockTransfers201Response POSTStockTransfers(ctx).StockTransferCreate(stockTransferCreate).Execute()
+> StockTransferResponse POSTStockTransfers(ctx).StockTransferCreate(stockTransferCreate).Execute()
 
 Create a stock transfer
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("Type_example", *openapiclient.NewPOSTStockTransfers201ResponseDataAttributes(int32(2)))) // StockTransferCreate | 
+    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("Type_example", *openapiclient.NewStockTransferCreateDataAttributes(int32(2)))) // StockTransferCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.POSTStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTStockTransfers`: POSTStockTransfers201Response
+    // response from `POSTStockTransfers`: StockTransferResponse
     fmt.Fprintf(os.Stdout, "Response from `StockTransfersApi.POSTStockTransfers`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTStockTransfers201Response**](POSTStockTransfers201Response.md)
+[**StockTransferResponse**](StockTransferResponse.md)
 
 ### Authorization
 

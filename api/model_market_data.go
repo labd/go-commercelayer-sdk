@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // MarketData struct for MarketData
 type MarketData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    GETMarkets200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *MarketDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                   `json:"type"`
+	Attributes    MarketDataAttributes     `json:"attributes"`
+	Relationships *MarketDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewMarketData instantiates a new MarketData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMarketData(type_ string, attributes GETMarkets200ResponseDataInnerAttributes) *MarketData {
+func NewMarketData(type_ string, attributes MarketDataAttributes) *MarketData {
 	this := MarketData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *MarketData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MarketData) GetAttributes() GETMarkets200ResponseDataInnerAttributes {
+func (o *MarketData) GetAttributes() MarketDataAttributes {
 	if o == nil {
-		var ret GETMarkets200ResponseDataInnerAttributes
+		var ret MarketDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *MarketData) GetAttributes() GETMarkets200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MarketData) GetAttributesOk() (*GETMarkets200ResponseDataInnerAttributes, bool) {
+func (o *MarketData) GetAttributesOk() (*MarketDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *MarketData) GetAttributesOk() (*GETMarkets200ResponseDataInnerAttribute
 }
 
 // SetAttributes sets field value
-func (o *MarketData) SetAttributes(v GETMarkets200ResponseDataInnerAttributes) {
+func (o *MarketData) SetAttributes(v MarketDataAttributes) {
 	o.Attributes = v
 }
 

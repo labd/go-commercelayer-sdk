@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ## GETRefunds
 
-> GETRefunds200Response GETRefunds(ctx).Execute()
+> RefundResponseList GETRefunds(ctx).Execute()
 
 List all refunds
 
@@ -176,7 +176,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RefundsApi.GETRefunds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETRefunds`: GETRefunds200Response
+    // response from `GETRefunds`: RefundResponseList
     fmt.Fprintf(os.Stdout, "Response from `RefundsApi.GETRefunds`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiGETRefundsRequest struct v
 
 ### Return type
 
-[**GETRefunds200Response**](GETRefunds200Response.md)
+[**RefundResponseList**](RefundResponseList.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiGETRefundsRequest struct v
 
 ## GETRefundsRefundId
 
-> GETRefundsRefundId200Response GETRefundsRefundId(ctx, refundId).Execute()
+> RefundResponse GETRefundsRefundId(ctx, refundId).Execute()
 
 Retrieve a refund
 
@@ -238,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `RefundsApi.GETRefundsRefundId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETRefundsRefundId`: GETRefundsRefundId200Response
+    // response from `GETRefundsRefundId`: RefundResponse
     fmt.Fprintf(os.Stdout, "Response from `RefundsApi.GETRefundsRefundId`: %v\n", resp)
 }
 ```
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETRefundsRefundId200Response**](GETRefundsRefundId200Response.md)
+[**RefundResponse**](RefundResponse.md)
 
 ### Authorization
 

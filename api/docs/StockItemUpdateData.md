@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHStockItemsStockItemId200ResponseDataAttributes**](PATCHStockItemsStockItemId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**StockItemUpdateDataAttributes**](StockItemUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemUpdateDataRelationships**](StockItemUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockItemUpdateData
 
-`func NewStockItemUpdateData(type_ string, id string, attributes PATCHStockItemsStockItemId200ResponseDataAttributes, ) *StockItemUpdateData`
+`func NewStockItemUpdateData(type_ string, id string, attributes StockItemUpdateDataAttributes, ) *StockItemUpdateData`
 
 NewStockItemUpdateData instantiates a new StockItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StockItemUpdateData) GetAttributes() PATCHStockItemsStockItemId200ResponseDataAttributes`
+`func (o *StockItemUpdateData) GetAttributes() StockItemUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockItemUpdateData) GetAttributesOk() (*PATCHStockItemsStockItemId200ResponseDataAttributes, bool)`
+`func (o *StockItemUpdateData) GetAttributesOk() (*StockItemUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockItemUpdateData) SetAttributes(v PATCHStockItemsStockItemId200ResponseDataAttributes)`
+`func (o *StockItemUpdateData) SetAttributes(v StockItemUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

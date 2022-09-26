@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ManualGatewayCreateData struct for ManualGatewayCreateData
 type ManualGatewayCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    POSTManualGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    ManualGatewayCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}            `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayCreateData instantiates a new ManualGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayCreateData(type_ string, attributes POSTManualGateways201ResponseDataAttributes) *ManualGatewayCreateData {
+func NewManualGatewayCreateData(type_ string, attributes ManualGatewayCreateDataAttributes) *ManualGatewayCreateData {
 	this := ManualGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ManualGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualGatewayCreateData) GetAttributes() POSTManualGateways201ResponseDataAttributes {
+func (o *ManualGatewayCreateData) GetAttributes() ManualGatewayCreateDataAttributes {
 	if o == nil {
-		var ret POSTManualGateways201ResponseDataAttributes
+		var ret ManualGatewayCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ManualGatewayCreateData) GetAttributes() POSTManualGateways201ResponseD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayCreateData) GetAttributesOk() (*POSTManualGateways201ResponseDataAttributes, bool) {
+func (o *ManualGatewayCreateData) GetAttributesOk() (*ManualGatewayCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ManualGatewayCreateData) GetAttributesOk() (*POSTManualGateways201Respo
 }
 
 // SetAttributes sets field value
-func (o *ManualGatewayCreateData) SetAttributes(v POSTManualGateways201ResponseDataAttributes) {
+func (o *ManualGatewayCreateData) SetAttributes(v ManualGatewayCreateDataAttributes) {
 	o.Attributes = v
 }
 

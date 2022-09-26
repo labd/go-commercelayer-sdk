@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // FixedAmountPromotionData struct for FixedAmountPromotionData
 type FixedAmountPromotionData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    GETFixedAmountPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships                    `json:"relationships,omitempty"`
+	Type          string                              `json:"type"`
+	Attributes    FixedAmountPromotionDataAttributes  `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFixedAmountPromotionData instantiates a new FixedAmountPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedAmountPromotionData(type_ string, attributes GETFixedAmountPromotions200ResponseDataInnerAttributes) *FixedAmountPromotionData {
+func NewFixedAmountPromotionData(type_ string, attributes FixedAmountPromotionDataAttributes) *FixedAmountPromotionData {
 	this := FixedAmountPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *FixedAmountPromotionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotions200ResponseDataInnerAttributes {
+func (o *FixedAmountPromotionData) GetAttributes() FixedAmountPromotionDataAttributes {
 	if o == nil {
-		var ret GETFixedAmountPromotions200ResponseDataInnerAttributes
+		var ret FixedAmountPromotionDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotions200Re
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotions200ResponseDataInnerAttributes, bool) {
+func (o *FixedAmountPromotionData) GetAttributesOk() (*FixedAmountPromotionDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotions2
 }
 
 // SetAttributes sets field value
-func (o *FixedAmountPromotionData) SetAttributes(v GETFixedAmountPromotions200ResponseDataInnerAttributes) {
+func (o *FixedAmountPromotionData) SetAttributes(v FixedAmountPromotionDataAttributes) {
 	o.Attributes = v
 }
 

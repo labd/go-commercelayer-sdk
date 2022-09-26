@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTExternalPromotions201ResponseDataAttributes**](POSTExternalPromotions201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalPromotionCreateDataAttributes**](ExternalPromotionCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotionCreateData
 
-`func NewExternalPromotionCreateData(type_ string, attributes POSTExternalPromotions201ResponseDataAttributes, ) *ExternalPromotionCreateData`
+`func NewExternalPromotionCreateData(type_ string, attributes ExternalPromotionCreateDataAttributes, ) *ExternalPromotionCreateData`
 
 NewExternalPromotionCreateData instantiates a new ExternalPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPromotionCreateData) GetAttributes() POSTExternalPromotions201ResponseDataAttributes`
+`func (o *ExternalPromotionCreateData) GetAttributes() ExternalPromotionCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPromotionCreateData) GetAttributesOk() (*POSTExternalPromotions201ResponseDataAttributes, bool)`
+`func (o *ExternalPromotionCreateData) GetAttributesOk() (*ExternalPromotionCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPromotionCreateData) SetAttributes(v POSTExternalPromotions201ResponseDataAttributes)`
+`func (o *ExternalPromotionCreateData) SetAttributes(v ExternalPromotionCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

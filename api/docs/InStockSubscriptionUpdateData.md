@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes**](PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**InStockSubscriptionUpdateDataAttributes**](InStockSubscriptionUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionUpdateDataRelationships**](InStockSubscriptionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInStockSubscriptionUpdateData
 
-`func NewInStockSubscriptionUpdateData(type_ string, id string, attributes PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes, ) *InStockSubscriptionUpdateData`
+`func NewInStockSubscriptionUpdateData(type_ string, id string, attributes InStockSubscriptionUpdateDataAttributes, ) *InStockSubscriptionUpdateData`
 
 NewInStockSubscriptionUpdateData instantiates a new InStockSubscriptionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *InStockSubscriptionUpdateData) GetAttributes() PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes`
+`func (o *InStockSubscriptionUpdateData) GetAttributes() InStockSubscriptionUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InStockSubscriptionUpdateData) GetAttributesOk() (*PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes, bool)`
+`func (o *InStockSubscriptionUpdateData) GetAttributesOk() (*InStockSubscriptionUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InStockSubscriptionUpdateData) SetAttributes(v PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes)`
+`func (o *InStockSubscriptionUpdateData) SetAttributes(v InStockSubscriptionUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

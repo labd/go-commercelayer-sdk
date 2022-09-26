@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type PaypalPaymentsApiGETPaypalPaymentsRequest struct {
 	ApiService *PaypalPaymentsApiService
 }
 
-func (r PaypalPaymentsApiGETPaypalPaymentsRequest) Execute() (*GETPaypalPayments200Response, *http.Response, error) {
+func (r PaypalPaymentsApiGETPaypalPaymentsRequest) Execute() (*PaypalPaymentResponseList, *http.Response, error) {
 	return r.ApiService.GETPaypalPaymentsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *PaypalPaymentsApiService) GETPaypalPayments(ctx context.Context) Paypal
 }
 
 // Execute executes the request
-//  @return GETPaypalPayments200Response
-func (a *PaypalPaymentsApiService) GETPaypalPaymentsExecute(r PaypalPaymentsApiGETPaypalPaymentsRequest) (*GETPaypalPayments200Response, *http.Response, error) {
+//  @return PaypalPaymentResponseList
+func (a *PaypalPaymentsApiService) GETPaypalPaymentsExecute(r PaypalPaymentsApiGETPaypalPaymentsRequest) (*PaypalPaymentResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaypalPayments200Response
+		localVarReturnValue *PaypalPaymentResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalPaymentsApiService.GETPaypalPayments")
@@ -312,7 +312,7 @@ type PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest struct {
 	paypalPaymentId string
 }
 
-func (r PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest) Execute() (*GETPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
+func (r PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest) Execute() (*PaypalPaymentResponse, *http.Response, error) {
 	return r.ApiService.GETPaypalPaymentsPaypalPaymentIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPaypalPaymentsPaypalPaymentId200Response
-func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest) (*GETPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
+//  @return PaypalPaymentResponse
+func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest) (*PaypalPaymentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaypalPaymentsPaypalPaymentId200Response
+		localVarReturnValue *PaypalPaymentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalPaymentsApiService.GETPaypalPaymentsPaypalPaymentId")
@@ -421,7 +421,7 @@ func (r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) PaypalPaymen
 	return r
 }
 
-func (r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) Execute() (*PATCHPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
+func (r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) Execute() (*PaypalPaymentResponse, *http.Response, error) {
 	return r.ApiService.PATCHPaypalPaymentsPaypalPaymentIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHPaypalPaymentsPaypalPaymentId200Response
-func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) (*PATCHPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
+//  @return PaypalPaymentResponse
+func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) (*PaypalPaymentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHPaypalPaymentsPaypalPaymentId200Response
+		localVarReturnValue *PaypalPaymentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalPaymentsApiService.PATCHPaypalPaymentsPaypalPaymentId")
@@ -534,7 +534,7 @@ func (r PaypalPaymentsApiPOSTPaypalPaymentsRequest) PaypalPaymentCreate(paypalPa
 	return r
 }
 
-func (r PaypalPaymentsApiPOSTPaypalPaymentsRequest) Execute() (*POSTPaypalPayments201Response, *http.Response, error) {
+func (r PaypalPaymentsApiPOSTPaypalPaymentsRequest) Execute() (*PaypalPaymentResponse, *http.Response, error) {
 	return r.ApiService.POSTPaypalPaymentsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *PaypalPaymentsApiService) POSTPaypalPayments(ctx context.Context) Paypa
 }
 
 // Execute executes the request
-//  @return POSTPaypalPayments201Response
-func (a *PaypalPaymentsApiService) POSTPaypalPaymentsExecute(r PaypalPaymentsApiPOSTPaypalPaymentsRequest) (*POSTPaypalPayments201Response, *http.Response, error) {
+//  @return PaypalPaymentResponse
+func (a *PaypalPaymentsApiService) POSTPaypalPaymentsExecute(r PaypalPaymentsApiPOSTPaypalPaymentsRequest) (*PaypalPaymentResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTPaypalPayments201Response
+		localVarReturnValue *PaypalPaymentResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaypalPaymentsApiService.POSTPaypalPayments")

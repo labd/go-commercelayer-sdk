@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ReturnLineItemData struct for ReturnLineItemData
 type ReturnLineItemData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETReturnLineItems200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ReturnLineItemDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    ReturnLineItemDataAttributes     `json:"attributes"`
+	Relationships *ReturnLineItemDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewReturnLineItemData instantiates a new ReturnLineItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemData(type_ string, attributes GETReturnLineItems200ResponseDataInnerAttributes) *ReturnLineItemData {
+func NewReturnLineItemData(type_ string, attributes ReturnLineItemDataAttributes) *ReturnLineItemData {
 	this := ReturnLineItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ReturnLineItemData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ReturnLineItemData) GetAttributes() GETReturnLineItems200ResponseDataInnerAttributes {
+func (o *ReturnLineItemData) GetAttributes() ReturnLineItemDataAttributes {
 	if o == nil {
-		var ret GETReturnLineItems200ResponseDataInnerAttributes
+		var ret ReturnLineItemDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ReturnLineItemData) GetAttributes() GETReturnLineItems200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemData) GetAttributesOk() (*GETReturnLineItems200ResponseDataInnerAttributes, bool) {
+func (o *ReturnLineItemData) GetAttributesOk() (*ReturnLineItemDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ReturnLineItemData) GetAttributesOk() (*GETReturnLineItems200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *ReturnLineItemData) SetAttributes(v GETReturnLineItems200ResponseDataInnerAttributes) {
+func (o *ReturnLineItemData) SetAttributes(v ReturnLineItemDataAttributes) {
 	o.Attributes = v
 }
 

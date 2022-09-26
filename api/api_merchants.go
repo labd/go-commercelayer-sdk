@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type MerchantsApiGETMerchantsRequest struct {
 	ApiService *MerchantsApiService
 }
 
-func (r MerchantsApiGETMerchantsRequest) Execute() (*GETMerchants200Response, *http.Response, error) {
+func (r MerchantsApiGETMerchantsRequest) Execute() (*MerchantResponseList, *http.Response, error) {
 	return r.ApiService.GETMerchantsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETM
 }
 
 // Execute executes the request
-//  @return GETMerchants200Response
-func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequest) (*GETMerchants200Response, *http.Response, error) {
+//  @return MerchantResponseList
+func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequest) (*MerchantResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETMerchants200Response
+		localVarReturnValue *MerchantResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchants")
@@ -312,7 +312,7 @@ type MerchantsApiGETMerchantsMerchantIdRequest struct {
 	merchantId string
 }
 
-func (r MerchantsApiGETMerchantsMerchantIdRequest) Execute() (*GETMerchantsMerchantId200Response, *http.Response, error) {
+func (r MerchantsApiGETMerchantsMerchantIdRequest) Execute() (*MerchantResponse, *http.Response, error) {
 	return r.ApiService.GETMerchantsMerchantIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, mercha
 }
 
 // Execute executes the request
-//  @return GETMerchantsMerchantId200Response
-func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMerchantsMerchantIdRequest) (*GETMerchantsMerchantId200Response, *http.Response, error) {
+//  @return MerchantResponse
+func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMerchantsMerchantIdRequest) (*MerchantResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETMerchantsMerchantId200Response
+		localVarReturnValue *MerchantResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.GETMerchantsMerchantId")
@@ -421,7 +421,7 @@ func (r MerchantsApiPATCHMerchantsMerchantIdRequest) MerchantUpdate(merchantUpda
 	return r
 }
 
-func (r MerchantsApiPATCHMerchantsMerchantIdRequest) Execute() (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
+func (r MerchantsApiPATCHMerchantsMerchantIdRequest) Execute() (*MerchantResponse, *http.Response, error) {
 	return r.ApiService.PATCHMerchantsMerchantIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merc
 }
 
 // Execute executes the request
-//  @return PATCHMerchantsMerchantId200Response
-func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATCHMerchantsMerchantIdRequest) (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
+//  @return MerchantResponse
+func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATCHMerchantsMerchantIdRequest) (*MerchantResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHMerchantsMerchantId200Response
+		localVarReturnValue *MerchantResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.PATCHMerchantsMerchantId")
@@ -534,7 +534,7 @@ func (r MerchantsApiPOSTMerchantsRequest) MerchantCreate(merchantCreate Merchant
 	return r
 }
 
-func (r MerchantsApiPOSTMerchantsRequest) Execute() (*POSTMerchants201Response, *http.Response, error) {
+func (r MerchantsApiPOSTMerchantsRequest) Execute() (*MerchantResponse, *http.Response, error) {
 	return r.ApiService.POSTMerchantsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOS
 }
 
 // Execute executes the request
-//  @return POSTMerchants201Response
-func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRequest) (*POSTMerchants201Response, *http.Response, error) {
+//  @return MerchantResponse
+func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRequest) (*MerchantResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTMerchants201Response
+		localVarReturnValue *MerchantResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MerchantsApiService.POSTMerchants")

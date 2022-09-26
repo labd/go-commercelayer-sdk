@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CheckoutComPaymentCreateData struct for CheckoutComPaymentCreateData
 type CheckoutComPaymentCreateData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    POSTCheckoutComPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentCreateDataRelationships             `json:"relationships,omitempty"`
+	Type          string                                 `json:"type"`
+	Attributes    CheckoutComPaymentCreateDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentCreateDataRelationships   `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComPaymentCreateData instantiates a new CheckoutComPaymentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentCreateData(type_ string, attributes POSTCheckoutComPayments201ResponseDataAttributes) *CheckoutComPaymentCreateData {
+func NewCheckoutComPaymentCreateData(type_ string, attributes CheckoutComPaymentCreateDataAttributes) *CheckoutComPaymentCreateData {
 	this := CheckoutComPaymentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CheckoutComPaymentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComPaymentCreateData) GetAttributes() POSTCheckoutComPayments201ResponseDataAttributes {
+func (o *CheckoutComPaymentCreateData) GetAttributes() CheckoutComPaymentCreateDataAttributes {
 	if o == nil {
-		var ret POSTCheckoutComPayments201ResponseDataAttributes
+		var ret CheckoutComPaymentCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CheckoutComPaymentCreateData) GetAttributes() POSTCheckoutComPayments20
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentCreateData) GetAttributesOk() (*POSTCheckoutComPayments201ResponseDataAttributes, bool) {
+func (o *CheckoutComPaymentCreateData) GetAttributesOk() (*CheckoutComPaymentCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CheckoutComPaymentCreateData) GetAttributesOk() (*POSTCheckoutComPaymen
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComPaymentCreateData) SetAttributes(v POSTCheckoutComPayments201ResponseDataAttributes) {
+func (o *CheckoutComPaymentCreateData) SetAttributes(v CheckoutComPaymentCreateDataAttributes) {
 	o.Attributes = v
 }
 

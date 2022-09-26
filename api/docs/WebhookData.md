@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETWebhooks200ResponseDataInnerAttributes**](GETWebhooks200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**WebhookDataAttributes**](WebhookDataAttributes.md) |  | 
 **Relationships** | Pointer to [**WebhookDataRelationships**](WebhookDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewWebhookData
 
-`func NewWebhookData(type_ string, attributes GETWebhooks200ResponseDataInnerAttributes, ) *WebhookData`
+`func NewWebhookData(type_ string, attributes WebhookDataAttributes, ) *WebhookData`
 
 NewWebhookData instantiates a new WebhookData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *WebhookData) GetAttributes() GETWebhooks200ResponseDataInnerAttributes`
+`func (o *WebhookData) GetAttributes() WebhookDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WebhookData) GetAttributesOk() (*GETWebhooks200ResponseDataInnerAttributes, bool)`
+`func (o *WebhookData) GetAttributesOk() (*WebhookDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WebhookData) SetAttributes(v GETWebhooks200ResponseDataInnerAttributes)`
+`func (o *WebhookData) SetAttributes(v WebhookDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type GiftCardRecipientsApiGETGiftCardRecipientsRequest struct {
 	ApiService *GiftCardRecipientsApiService
 }
 
-func (r GiftCardRecipientsApiGETGiftCardRecipientsRequest) Execute() (*GETGiftCardRecipients200Response, *http.Response, error) {
+func (r GiftCardRecipientsApiGETGiftCardRecipientsRequest) Execute() (*GiftCardRecipientResponseList, *http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipients(ctx context.Context
 }
 
 // Execute executes the request
-//  @return GETGiftCardRecipients200Response
-func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsExecute(r GiftCardRecipientsApiGETGiftCardRecipientsRequest) (*GETGiftCardRecipients200Response, *http.Response, error) {
+//  @return GiftCardRecipientResponseList
+func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsExecute(r GiftCardRecipientsApiGETGiftCardRecipientsRequest) (*GiftCardRecipientResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETGiftCardRecipients200Response
+		localVarReturnValue *GiftCardRecipientResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.GETGiftCardRecipients")
@@ -312,7 +312,7 @@ type GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest struct
 	giftCardRecipientId string
 }
 
-func (r GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest) Execute() (*GETGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
+func (r GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest) Execute() (*GiftCardRecipientResponse, *http.Response, error) {
 	return r.ApiService.GETGiftCardRecipientsGiftCardRecipientIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientId(
 }
 
 // Execute executes the request
-//  @return GETGiftCardRecipientsGiftCardRecipientId200Response
-func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest) (*GETGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
+//  @return GiftCardRecipientResponse
+func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiGETGiftCardRecipientsGiftCardRecipientIdRequest) (*GiftCardRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETGiftCardRecipientsGiftCardRecipientId200Response
+		localVarReturnValue *GiftCardRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.GETGiftCardRecipientsGiftCardRecipientId")
@@ -421,7 +421,7 @@ func (r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) 
 	return r
 }
 
-func (r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) Execute() (*PATCHGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
+func (r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) Execute() (*GiftCardRecipientResponse, *http.Response, error) {
 	return r.ApiService.PATCHGiftCardRecipientsGiftCardRecipientIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientI
 }
 
 // Execute executes the request
-//  @return PATCHGiftCardRecipientsGiftCardRecipientId200Response
-func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) (*PATCHGiftCardRecipientsGiftCardRecipientId200Response, *http.Response, error) {
+//  @return GiftCardRecipientResponse
+func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientIdExecute(r GiftCardRecipientsApiPATCHGiftCardRecipientsGiftCardRecipientIdRequest) (*GiftCardRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHGiftCardRecipientsGiftCardRecipientId200Response
+		localVarReturnValue *GiftCardRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.PATCHGiftCardRecipientsGiftCardRecipientId")
@@ -534,7 +534,7 @@ func (r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) GiftCardRecipientCre
 	return r
 }
 
-func (r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) Execute() (*POSTGiftCardRecipients201Response, *http.Response, error) {
+func (r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) Execute() (*GiftCardRecipientResponse, *http.Response, error) {
 	return r.ApiService.POSTGiftCardRecipientsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *GiftCardRecipientsApiService) POSTGiftCardRecipients(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return POSTGiftCardRecipients201Response
-func (a *GiftCardRecipientsApiService) POSTGiftCardRecipientsExecute(r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) (*POSTGiftCardRecipients201Response, *http.Response, error) {
+//  @return GiftCardRecipientResponse
+func (a *GiftCardRecipientsApiService) POSTGiftCardRecipientsExecute(r GiftCardRecipientsApiPOSTGiftCardRecipientsRequest) (*GiftCardRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTGiftCardRecipients201Response
+		localVarReturnValue *GiftCardRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "GiftCardRecipientsApiService.POSTGiftCardRecipients")

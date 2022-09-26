@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTParcelLineItems201ResponseDataAttributes**](POSTParcelLineItems201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ParcelLineItemCreateDataAttributes**](ParcelLineItemCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelLineItemCreateDataRelationships**](ParcelLineItemCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelLineItemCreateData
 
-`func NewParcelLineItemCreateData(type_ string, attributes POSTParcelLineItems201ResponseDataAttributes, ) *ParcelLineItemCreateData`
+`func NewParcelLineItemCreateData(type_ string, attributes ParcelLineItemCreateDataAttributes, ) *ParcelLineItemCreateData`
 
 NewParcelLineItemCreateData instantiates a new ParcelLineItemCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ParcelLineItemCreateData) GetAttributes() POSTParcelLineItems201ResponseDataAttributes`
+`func (o *ParcelLineItemCreateData) GetAttributes() ParcelLineItemCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelLineItemCreateData) GetAttributesOk() (*POSTParcelLineItems201ResponseDataAttributes, bool)`
+`func (o *ParcelLineItemCreateData) GetAttributesOk() (*ParcelLineItemCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelLineItemCreateData) SetAttributes(v POSTParcelLineItems201ResponseDataAttributes)`
+`func (o *ParcelLineItemCreateData) SetAttributes(v ParcelLineItemCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GETPackages
 
-> GETPackages200Response GETPackages(ctx).Execute()
+> PackageResponseList GETPackages(ctx).Execute()
 
 List all packages
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETPackages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPackages`: GETPackages200Response
+    // response from `GETPackages`: PackageResponseList
     fmt.Fprintf(os.Stdout, "Response from `PackagesApi.GETPackages`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiGETPackagesRequest struct 
 
 ### Return type
 
-[**GETPackages200Response**](GETPackages200Response.md)
+[**PackageResponseList**](PackageResponseList.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiGETPackagesRequest struct 
 
 ## GETPackagesPackageId
 
-> GETPackagesPackageId200Response GETPackagesPackageId(ctx, packageId).Execute()
+> PackageResponse GETPackagesPackageId(ctx, packageId).Execute()
 
 Retrieve a package
 
@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPackagesPackageId`: GETPackagesPackageId200Response
+    // response from `GETPackagesPackageId`: PackageResponse
     fmt.Fprintf(os.Stdout, "Response from `PackagesApi.GETPackagesPackageId`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPackagesPackageId200Response**](GETPackagesPackageId200Response.md)
+[**PackageResponse**](PackageResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPackagesPackageId
 
-> PATCHPackagesPackageId200Response PATCHPackagesPackageId(ctx, packageId).PackageUpdate(packageUpdate).Execute()
+> PackageResponse PATCHPackagesPackageId(ctx, packageId).PackageUpdate(packageUpdate).Execute()
 
 Update a package
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
+    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPackageUpdateDataAttributes())) // PackageUpdate | 
     packageId := "packageId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.PATCHPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPackagesPackageId`: PATCHPackagesPackageId200Response
+    // response from `PATCHPackagesPackageId`: PackageResponse
     fmt.Fprintf(os.Stdout, "Response from `PackagesApi.PATCHPackagesPackageId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPackagesPackageId200Response**](PATCHPackagesPackageId200Response.md)
+[**PackageResponse**](PackageResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPackages
 
-> POSTPackages201Response POSTPackages(ctx).PackageCreate(packageCreate).Execute()
+> PackageResponse POSTPackages(ctx).PackageCreate(packageCreate).Execute()
 
 Create a package
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("Type_example", *openapiclient.NewPOSTPackages201ResponseDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
+    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("Type_example", *openapiclient.NewPackageCreateDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.POSTPackages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPackages`: POSTPackages201Response
+    // response from `POSTPackages`: PackageResponse
     fmt.Fprintf(os.Stdout, "Response from `PackagesApi.POSTPackages`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPackages201Response**](POSTPackages201Response.md)
+[**PackageResponse**](PackageResponse.md)
 
 ### Authorization
 

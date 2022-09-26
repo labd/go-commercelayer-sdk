@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GETCustomerSubscriptionIdEvents**](EventsApi.md#GETCustomerSubscriptionIdEvents) | **Get** /customer_subscriptions/{customerSubscriptionId}/events | Retrieve the events associated to the customer subscription
 [**GETEvents**](EventsApi.md#GETEvents) | **Get** /events | List all events
 [**GETEventsEventId**](EventsApi.md#GETEventsEventId) | **Get** /events/{eventId} | Retrieve an event
+[**GETExportIdEvents**](EventsApi.md#GETExportIdEvents) | **Get** /exports/{exportId}/events | Retrieve the events associated to the export
 [**GETGiftCardIdEvents**](EventsApi.md#GETGiftCardIdEvents) | **Get** /gift_cards/{giftCardId}/events | Retrieve the events associated to the gift card
 [**GETImportIdEvents**](EventsApi.md#GETImportIdEvents) | **Get** /imports/{importId}/events | Retrieve the events associated to the import
 [**GETInStockSubscriptionIdEvents**](EventsApi.md#GETInStockSubscriptionIdEvents) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/events | Retrieve the events associated to the in stock subscription
@@ -298,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GETEvents
 
-> GETEvents200Response GETEvents(ctx).Execute()
+> EventResponseList GETEvents(ctx).Execute()
 
 List all events
 
@@ -325,7 +326,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEvents`: GETEvents200Response
+    // response from `GETEvents`: EventResponseList
     fmt.Fprintf(os.Stdout, "Response from `EventsApi.GETEvents`: %v\n", resp)
 }
 ```
@@ -341,7 +342,7 @@ Other parameters are passed through a pointer to a apiGETEventsRequest struct vi
 
 ### Return type
 
-[**GETEvents200Response**](GETEvents200Response.md)
+[**EventResponseList**](EventResponseList.md)
 
 ### Authorization
 
@@ -359,7 +360,7 @@ Other parameters are passed through a pointer to a apiGETEventsRequest struct vi
 
 ## GETEventsEventId
 
-> GETEventsEventId200Response GETEventsEventId(ctx, eventId).Execute()
+> EventResponse GETEventsEventId(ctx, eventId).Execute()
 
 Retrieve an event
 
@@ -387,7 +388,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETEventsEventId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETEventsEventId`: GETEventsEventId200Response
+    // response from `GETEventsEventId`: EventResponse
     fmt.Fprintf(os.Stdout, "Response from `EventsApi.GETEventsEventId`: %v\n", resp)
 }
 ```
@@ -411,7 +412,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETEventsEventId200Response**](GETEventsEventId200Response.md)
+[**EventResponse**](EventResponse.md)
 
 ### Authorization
 
@@ -421,6 +422,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/vnd.api+json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETExportIdEvents
+
+> GETExportIdEvents(ctx, exportId).Execute()
+
+Retrieve the events associated to the export
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    exportId := "exportId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETExportIdEvents(context.Background(), exportId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETExportIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exportId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExportIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

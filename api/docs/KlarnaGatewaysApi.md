@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETKlarnaGateways
 
-> GETKlarnaGateways200Response GETKlarnaGateways(ctx).Execute()
+> KlarnaGatewayResponseList GETKlarnaGateways(ctx).Execute()
 
 List all klarna gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.GETKlarnaGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETKlarnaGateways`: GETKlarnaGateways200Response
+    // response from `GETKlarnaGateways`: KlarnaGatewayResponseList
     fmt.Fprintf(os.Stdout, "Response from `KlarnaGatewaysApi.GETKlarnaGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETKlarnaGatewaysRequest s
 
 ### Return type
 
-[**GETKlarnaGateways200Response**](GETKlarnaGateways200Response.md)
+[**KlarnaGatewayResponseList**](KlarnaGatewayResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETKlarnaGatewaysRequest s
 
 ## GETKlarnaGatewaysKlarnaGatewayId
 
-> GETKlarnaGatewaysKlarnaGatewayId200Response GETKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).Execute()
+> KlarnaGatewayResponse GETKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).Execute()
 
 Retrieve a klarna gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.GETKlarnaGatewaysKlarnaGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETKlarnaGatewaysKlarnaGatewayId`: GETKlarnaGatewaysKlarnaGatewayId200Response
+    // response from `GETKlarnaGatewaysKlarnaGatewayId`: KlarnaGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `KlarnaGatewaysApi.GETKlarnaGatewaysKlarnaGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETKlarnaGatewaysKlarnaGatewayId200Response**](GETKlarnaGatewaysKlarnaGatewayId200Response.md)
+[**KlarnaGatewayResponse**](KlarnaGatewayResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHKlarnaGatewaysKlarnaGatewayId
 
-> PATCHKlarnaGatewaysKlarnaGatewayId200Response PATCHKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).KlarnaGatewayUpdate(klarnaGatewayUpdate).Execute()
+> KlarnaGatewayResponse PATCHKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).KlarnaGatewayUpdate(klarnaGatewayUpdate).Execute()
 
 Update a klarna gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes())) // KlarnaGatewayUpdate | 
+    klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewKlarnaGatewayUpdateDataAttributes())) // KlarnaGatewayUpdate | 
     klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.PATCHKlarnaGatewaysKlarnaGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHKlarnaGatewaysKlarnaGatewayId`: PATCHKlarnaGatewaysKlarnaGatewayId200Response
+    // response from `PATCHKlarnaGatewaysKlarnaGatewayId`: KlarnaGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `KlarnaGatewaysApi.PATCHKlarnaGatewaysKlarnaGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHKlarnaGatewaysKlarnaGatewayId200Response**](PATCHKlarnaGatewaysKlarnaGatewayId200Response.md)
+[**KlarnaGatewayResponse**](KlarnaGatewayResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTKlarnaGateways
 
-> POSTKlarnaGateways201Response POSTKlarnaGateways(ctx).KlarnaGatewayCreate(klarnaGatewayCreate).Execute()
+> KlarnaGatewayResponse POSTKlarnaGateways(ctx).KlarnaGatewayCreate(klarnaGatewayCreate).Execute()
 
 Create a klarna gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    klarnaGatewayCreate := *openapiclient.NewKlarnaGatewayCreate(*openapiclient.NewKlarnaGatewayCreateData("Type_example", *openapiclient.NewPOSTKlarnaGateways201ResponseDataAttributes("US payment gateway", "EU", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // KlarnaGatewayCreate | 
+    klarnaGatewayCreate := *openapiclient.NewKlarnaGatewayCreate(*openapiclient.NewKlarnaGatewayCreateData("Type_example", *openapiclient.NewKlarnaGatewayCreateDataAttributes("US payment gateway", "EU", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // KlarnaGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.POSTKlarnaGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTKlarnaGateways`: POSTKlarnaGateways201Response
+    // response from `POSTKlarnaGateways`: KlarnaGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `KlarnaGatewaysApi.POSTKlarnaGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTKlarnaGateways201Response**](POSTKlarnaGateways201Response.md)
+[**KlarnaGatewayResponse**](KlarnaGatewayResponse.md)
 
 ### Authorization
 

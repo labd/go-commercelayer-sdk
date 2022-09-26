@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETPriceVolumeTiers
 
-> GETPriceVolumeTiers200Response GETPriceVolumeTiers(ctx).Execute()
+> PriceVolumeTierResponseList GETPriceVolumeTiers(ctx).Execute()
 
 List all price volume tiers
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.GETPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceVolumeTiers`: GETPriceVolumeTiers200Response
+    // response from `GETPriceVolumeTiers`: PriceVolumeTierResponseList
     fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.GETPriceVolumeTiers`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETPriceVolumeTiersRequest
 
 ### Return type
 
-[**GETPriceVolumeTiers200Response**](GETPriceVolumeTiers200Response.md)
+[**PriceVolumeTierResponseList**](PriceVolumeTierResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETPriceVolumeTiersRequest
 
 ## GETPriceVolumeTiersPriceVolumeTierId
 
-> GETPriceVolumeTiersPriceVolumeTierId200Response GETPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).Execute()
+> PriceVolumeTierResponse GETPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).Execute()
 
 Retrieve a price volume tier
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.GETPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPriceVolumeTiersPriceVolumeTierId`: GETPriceVolumeTiersPriceVolumeTierId200Response
+    // response from `GETPriceVolumeTiersPriceVolumeTierId`: PriceVolumeTierResponse
     fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.GETPriceVolumeTiersPriceVolumeTierId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPriceVolumeTiersPriceVolumeTierId200Response**](GETPriceVolumeTiersPriceVolumeTierId200Response.md)
+[**PriceVolumeTierResponse**](PriceVolumeTierResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPriceVolumeTiersPriceVolumeTierId
 
-> PATCHPriceVolumeTiersPriceVolumeTierId200Response PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
+> PriceVolumeTierResponse PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
 
 Update a price volume tier
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes())) // PriceVolumeTierUpdate | 
+    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPriceVolumeTierUpdateDataAttributes())) // PriceVolumeTierUpdate | 
     priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPriceVolumeTiersPriceVolumeTierId`: PATCHPriceVolumeTiersPriceVolumeTierId200Response
+    // response from `PATCHPriceVolumeTiersPriceVolumeTierId`: PriceVolumeTierResponse
     fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPriceVolumeTiersPriceVolumeTierId200Response**](PATCHPriceVolumeTiersPriceVolumeTierId200Response.md)
+[**PriceVolumeTierResponse**](PriceVolumeTierResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPriceVolumeTiers
 
-> POSTPriceVolumeTiers201Response POSTPriceVolumeTiers(ctx).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
+> PriceVolumeTierResponse POSTPriceVolumeTiers(ctx).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
 
 Create a price volume tier
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("Type_example", *openapiclient.NewPOSTPriceVolumeTiers201ResponseDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
+    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData("Type_example", *openapiclient.NewPriceVolumeTierCreateDataAttributes("six pack", int32(1000)))) // PriceVolumeTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.POSTPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPriceVolumeTiers`: POSTPriceVolumeTiers201Response
+    // response from `POSTPriceVolumeTiers`: PriceVolumeTierResponse
     fmt.Fprintf(os.Stdout, "Response from `PriceVolumeTiersApi.POSTPriceVolumeTiers`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPriceVolumeTiers201Response**](POSTPriceVolumeTiers201Response.md)
+[**PriceVolumeTierResponse**](PriceVolumeTierResponse.md)
 
 ### Authorization
 

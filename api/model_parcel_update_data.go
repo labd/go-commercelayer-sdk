@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ParcelUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                        `json:"id"`
-	Attributes    PATCHParcelsParcelId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ParcelUpdateDataRelationships                `json:"relationships,omitempty"`
+	Id            string                         `json:"id"`
+	Attributes    ParcelUpdateDataAttributes     `json:"attributes"`
+	Relationships *ParcelUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelUpdateData instantiates a new ParcelUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelUpdateData(type_ string, id string, attributes PATCHParcelsParcelId200ResponseDataAttributes) *ParcelUpdateData {
+func NewParcelUpdateData(type_ string, id string, attributes ParcelUpdateDataAttributes) *ParcelUpdateData {
 	this := ParcelUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ParcelUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelUpdateData) GetAttributes() PATCHParcelsParcelId200ResponseDataAttributes {
+func (o *ParcelUpdateData) GetAttributes() ParcelUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHParcelsParcelId200ResponseDataAttributes
+		var ret ParcelUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ParcelUpdateData) GetAttributes() PATCHParcelsParcelId200ResponseDataAt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelUpdateData) GetAttributesOk() (*PATCHParcelsParcelId200ResponseDataAttributes, bool) {
+func (o *ParcelUpdateData) GetAttributesOk() (*ParcelUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ParcelUpdateData) GetAttributesOk() (*PATCHParcelsParcelId200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *ParcelUpdateData) SetAttributes(v PATCHParcelsParcelId200ResponseDataAttributes) {
+func (o *ParcelUpdateData) SetAttributes(v ParcelUpdateDataAttributes) {
 	o.Attributes = v
 }
 

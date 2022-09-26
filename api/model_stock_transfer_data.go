@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // StockTransferData struct for StockTransferData
 type StockTransferData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETStockTransfers200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *StockTransferDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                          `json:"type"`
+	Attributes    StockTransferDataAttributes     `json:"attributes"`
+	Relationships *StockTransferDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStockTransferData instantiates a new StockTransferData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferData(type_ string, attributes GETStockTransfers200ResponseDataInnerAttributes) *StockTransferData {
+func NewStockTransferData(type_ string, attributes StockTransferDataAttributes) *StockTransferData {
 	this := StockTransferData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *StockTransferData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StockTransferData) GetAttributes() GETStockTransfers200ResponseDataInnerAttributes {
+func (o *StockTransferData) GetAttributes() StockTransferDataAttributes {
 	if o == nil {
-		var ret GETStockTransfers200ResponseDataInnerAttributes
+		var ret StockTransferDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *StockTransferData) GetAttributes() GETStockTransfers200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferData) GetAttributesOk() (*GETStockTransfers200ResponseDataInnerAttributes, bool) {
+func (o *StockTransferData) GetAttributesOk() (*StockTransferDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *StockTransferData) GetAttributesOk() (*GETStockTransfers200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *StockTransferData) SetAttributes(v GETStockTransfers200ResponseDataInnerAttributes) {
+func (o *StockTransferData) SetAttributes(v StockTransferDataAttributes) {
 	o.Attributes = v
 }
 

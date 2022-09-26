@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETParcelLineItems200ResponseDataInnerAttributes**](GETParcelLineItems200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**ParcelLineItemDataAttributes**](ParcelLineItemDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelLineItemDataRelationships**](ParcelLineItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelLineItemData
 
-`func NewParcelLineItemData(type_ string, attributes GETParcelLineItems200ResponseDataInnerAttributes, ) *ParcelLineItemData`
+`func NewParcelLineItemData(type_ string, attributes ParcelLineItemDataAttributes, ) *ParcelLineItemData`
 
 NewParcelLineItemData instantiates a new ParcelLineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataInnerAttributes`
+`func (o *ParcelLineItemData) GetAttributes() ParcelLineItemDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDataInnerAttributes, bool)`
+`func (o *ParcelLineItemData) GetAttributesOk() (*ParcelLineItemDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItems200ResponseDataInnerAttributes)`
+`func (o *ParcelLineItemData) SetAttributes(v ParcelLineItemDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

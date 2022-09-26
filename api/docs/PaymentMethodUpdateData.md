@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes**](PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PaymentMethodUpdateDataAttributes**](PaymentMethodUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodUpdateDataRelationships**](PaymentMethodUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentMethodUpdateData
 
-`func NewPaymentMethodUpdateData(type_ string, id string, attributes PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, ) *PaymentMethodUpdateData`
+`func NewPaymentMethodUpdateData(type_ string, id string, attributes PaymentMethodUpdateDataAttributes, ) *PaymentMethodUpdateData`
 
 NewPaymentMethodUpdateData instantiates a new PaymentMethodUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PaymentMethodUpdateData) GetAttributes() PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes`
+`func (o *PaymentMethodUpdateData) GetAttributes() PaymentMethodUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaymentMethodUpdateData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool)`
+`func (o *PaymentMethodUpdateData) GetAttributesOk() (*PaymentMethodUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaymentMethodUpdateData) SetAttributes(v PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes)`
+`func (o *PaymentMethodUpdateData) SetAttributes(v PaymentMethodUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

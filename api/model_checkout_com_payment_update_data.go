@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CheckoutComPaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                `json:"id"`
-	Attributes    PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships                                  `json:"relationships,omitempty"`
+	Id            string                                 `json:"id"`
+	Attributes    CheckoutComPaymentUpdateDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships   `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComPaymentUpdateData instantiates a new CheckoutComPaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentUpdateData(type_ string, id string, attributes PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) *CheckoutComPaymentUpdateData {
+func NewCheckoutComPaymentUpdateData(type_ string, id string, attributes CheckoutComPaymentUpdateDataAttributes) *CheckoutComPaymentUpdateData {
 	this := CheckoutComPaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CheckoutComPaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComPaymentUpdateData) GetAttributes() PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes {
+func (o *CheckoutComPaymentUpdateData) GetAttributes() CheckoutComPaymentUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes
+		var ret CheckoutComPaymentUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CheckoutComPaymentUpdateData) GetAttributes() PATCHCheckoutComPaymentsC
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentUpdateData) GetAttributesOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, bool) {
+func (o *CheckoutComPaymentUpdateData) GetAttributesOk() (*CheckoutComPaymentUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CheckoutComPaymentUpdateData) GetAttributesOk() (*PATCHCheckoutComPayme
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComPaymentUpdateData) SetAttributes(v PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) {
+func (o *CheckoutComPaymentUpdateData) SetAttributes(v CheckoutComPaymentUpdateDataAttributes) {
 	o.Attributes = v
 }
 

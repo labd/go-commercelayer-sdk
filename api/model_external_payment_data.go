@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalPaymentData struct for ExternalPaymentData
 type ExternalPaymentData struct {
 	// The resource's type
-	Type          string                                            `json:"type"`
-	Attributes    GETExternalPayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPaymentDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    ExternalPaymentDataAttributes     `json:"attributes"`
+	Relationships *ExternalPaymentDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalPaymentData instantiates a new ExternalPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentData(type_ string, attributes GETExternalPayments200ResponseDataInnerAttributes) *ExternalPaymentData {
+func NewExternalPaymentData(type_ string, attributes ExternalPaymentDataAttributes) *ExternalPaymentData {
 	this := ExternalPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ExternalPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPaymentData) GetAttributes() GETExternalPayments200ResponseDataInnerAttributes {
+func (o *ExternalPaymentData) GetAttributes() ExternalPaymentDataAttributes {
 	if o == nil {
-		var ret GETExternalPayments200ResponseDataInnerAttributes
+		var ret ExternalPaymentDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ExternalPaymentData) GetAttributes() GETExternalPayments200ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentData) GetAttributesOk() (*GETExternalPayments200ResponseDataInnerAttributes, bool) {
+func (o *ExternalPaymentData) GetAttributesOk() (*ExternalPaymentDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ExternalPaymentData) GetAttributesOk() (*GETExternalPayments200Response
 }
 
 // SetAttributes sets field value
-func (o *ExternalPaymentData) SetAttributes(v GETExternalPayments200ResponseDataInnerAttributes) {
+func (o *ExternalPaymentData) SetAttributes(v ExternalPaymentDataAttributes) {
 	o.Attributes = v
 }
 

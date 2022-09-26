@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GETShippingMethodTiers
 
-> GETShippingMethodTiers200Response GETShippingMethodTiers(ctx).Execute()
+> ShippingMethodTierResponseList GETShippingMethodTiers(ctx).Execute()
 
 List all shipping method tiers
 
@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodTiersApi.GETShippingMethodTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethodTiers`: GETShippingMethodTiers200Response
+    // response from `GETShippingMethodTiers`: ShippingMethodTierResponseList
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodTiersApi.GETShippingMethodTiers`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Other parameters are passed through a pointer to a apiGETShippingMethodTiersRequ
 
 ### Return type
 
-[**GETShippingMethodTiers200Response**](GETShippingMethodTiers200Response.md)
+[**ShippingMethodTierResponseList**](ShippingMethodTierResponseList.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Other parameters are passed through a pointer to a apiGETShippingMethodTiersRequ
 
 ## GETShippingMethodTiersShippingMethodTierId
 
-> GETShippingMethodTiersShippingMethodTierId200Response GETShippingMethodTiersShippingMethodTierId(ctx, shippingMethodTierId).Execute()
+> ShippingMethodTierResponse GETShippingMethodTiersShippingMethodTierId(ctx, shippingMethodTierId).Execute()
 
 Retrieve a shipping method tier
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodTiersApi.GETShippingMethodTiersShippingMethodTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingMethodTiersShippingMethodTierId`: GETShippingMethodTiersShippingMethodTierId200Response
+    // response from `GETShippingMethodTiersShippingMethodTierId`: ShippingMethodTierResponse
     fmt.Fprintf(os.Stdout, "Response from `ShippingMethodTiersApi.GETShippingMethodTiersShippingMethodTierId`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETShippingMethodTiersShippingMethodTierId200Response**](GETShippingMethodTiersShippingMethodTierId200Response.md)
+[**ShippingMethodTierResponse**](ShippingMethodTierResponse.md)
 
 ### Authorization
 

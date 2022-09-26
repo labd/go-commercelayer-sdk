@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomerSubscriptions
 
-> GETCustomerSubscriptions200Response GETCustomerSubscriptions(ctx).Execute()
+> CustomerSubscriptionResponseList GETCustomerSubscriptions(ctx).Execute()
 
 List all customer subscriptions
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.GETCustomerSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerSubscriptions`: GETCustomerSubscriptions200Response
+    // response from `GETCustomerSubscriptions`: CustomerSubscriptionResponseList
     fmt.Fprintf(os.Stdout, "Response from `CustomerSubscriptionsApi.GETCustomerSubscriptions`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETCustomerSubscriptionsRe
 
 ### Return type
 
-[**GETCustomerSubscriptions200Response**](GETCustomerSubscriptions200Response.md)
+[**CustomerSubscriptionResponseList**](CustomerSubscriptionResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETCustomerSubscriptionsRe
 
 ## GETCustomerSubscriptionsCustomerSubscriptionId
 
-> GETCustomerSubscriptionsCustomerSubscriptionId200Response GETCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).Execute()
+> CustomerSubscriptionResponse GETCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).Execute()
 
 Retrieve a customer subscription
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.GETCustomerSubscriptionsCustomerSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerSubscriptionsCustomerSubscriptionId`: GETCustomerSubscriptionsCustomerSubscriptionId200Response
+    // response from `GETCustomerSubscriptionsCustomerSubscriptionId`: CustomerSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerSubscriptionsApi.GETCustomerSubscriptionsCustomerSubscriptionId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCustomerSubscriptionsCustomerSubscriptionId200Response**](GETCustomerSubscriptionsCustomerSubscriptionId200Response.md)
+[**CustomerSubscriptionResponse**](CustomerSubscriptionResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerSubscriptionsCustomerSubscriptionId
 
-> PATCHCustomerSubscriptionsCustomerSubscriptionId200Response PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).CustomerSubscriptionUpdate(customerSubscriptionUpdate).Execute()
+> CustomerSubscriptionResponse PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).CustomerSubscriptionUpdate(customerSubscriptionUpdate).Execute()
 
 Update a customer subscription
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
+    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerSubscriptionUpdate | 
     customerSubscriptionId := "customerSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.PATCHCustomerSubscriptionsCustomerSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerSubscriptionsCustomerSubscriptionId`: PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
+    // response from `PATCHCustomerSubscriptionsCustomerSubscriptionId`: CustomerSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerSubscriptionsApi.PATCHCustomerSubscriptionsCustomerSubscriptionId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCustomerSubscriptionsCustomerSubscriptionId200Response**](PATCHCustomerSubscriptionsCustomerSubscriptionId200Response.md)
+[**CustomerSubscriptionResponse**](CustomerSubscriptionResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerSubscriptions
 
-> POSTCustomerSubscriptions201Response POSTCustomerSubscriptions(ctx).CustomerSubscriptionCreate(customerSubscriptionCreate).Execute()
+> CustomerSubscriptionResponse POSTCustomerSubscriptions(ctx).CustomerSubscriptionCreate(customerSubscriptionCreate).Execute()
 
 Create a customer subscription
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData("Type_example", *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes("john@example.com"))) // CustomerSubscriptionCreate | 
+    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData("Type_example", *openapiclient.NewCustomerSubscriptionCreateDataAttributes("john@example.com"))) // CustomerSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.POSTCustomerSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomerSubscriptions`: POSTCustomerSubscriptions201Response
+    // response from `POSTCustomerSubscriptions`: CustomerSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerSubscriptionsApi.POSTCustomerSubscriptions`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerSubscriptions201Response**](POSTCustomerSubscriptions201Response.md)
+[**CustomerSubscriptionResponse**](CustomerSubscriptionResponse.md)
 
 ### Authorization
 

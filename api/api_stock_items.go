@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type StockItemsApiGETStockItemsRequest struct {
 	ApiService *StockItemsApiService
 }
 
-func (r StockItemsApiGETStockItemsRequest) Execute() (*GETStockItems200Response, *http.Response, error) {
+func (r StockItemsApiGETStockItemsRequest) Execute() (*StockItemResponseList, *http.Response, error) {
 	return r.ApiService.GETStockItemsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *StockItemsApiService) GETStockItems(ctx context.Context) StockItemsApiG
 }
 
 // Execute executes the request
-//  @return GETStockItems200Response
-func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*GETStockItems200Response, *http.Response, error) {
+//  @return StockItemResponseList
+func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItemsRequest) (*StockItemResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETStockItems200Response
+		localVarReturnValue *StockItemResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItems")
@@ -312,7 +312,7 @@ type StockItemsApiGETStockItemsStockItemIdRequest struct {
 	stockItemId string
 }
 
-func (r StockItemsApiGETStockItemsStockItemIdRequest) Execute() (*GETStockItemsStockItemId200Response, *http.Response, error) {
+func (r StockItemsApiGETStockItemsStockItemIdRequest) Execute() (*StockItemResponse, *http.Response, error) {
 	return r.ApiService.GETStockItemsStockItemIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, sto
 }
 
 // Execute executes the request
-//  @return GETStockItemsStockItemId200Response
-func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*GETStockItemsStockItemId200Response, *http.Response, error) {
+//  @return StockItemResponse
+func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGETStockItemsStockItemIdRequest) (*StockItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETStockItemsStockItemId200Response
+		localVarReturnValue *StockItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.GETStockItemsStockItemId")
@@ -605,7 +605,7 @@ func (r StockItemsApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockIte
 	return r
 }
 
-func (r StockItemsApiPATCHStockItemsStockItemIdRequest) Execute() (*PATCHStockItemsStockItemId200Response, *http.Response, error) {
+func (r StockItemsApiPATCHStockItemsStockItemIdRequest) Execute() (*StockItemResponse, *http.Response, error) {
 	return r.ApiService.PATCHStockItemsStockItemIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, s
 }
 
 // Execute executes the request
-//  @return PATCHStockItemsStockItemId200Response
-func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*PATCHStockItemsStockItemId200Response, *http.Response, error) {
+//  @return StockItemResponse
+func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApiPATCHStockItemsStockItemIdRequest) (*StockItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHStockItemsStockItemId200Response
+		localVarReturnValue *StockItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.PATCHStockItemsStockItemId")
@@ -718,7 +718,7 @@ func (r StockItemsApiPOSTStockItemsRequest) StockItemCreate(stockItemCreate Stoc
 	return r
 }
 
-func (r StockItemsApiPOSTStockItemsRequest) Execute() (*POSTStockItems201Response, *http.Response, error) {
+func (r StockItemsApiPOSTStockItemsRequest) Execute() (*StockItemResponse, *http.Response, error) {
 	return r.ApiService.POSTStockItemsExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *StockItemsApiService) POSTStockItems(ctx context.Context) StockItemsApi
 }
 
 // Execute executes the request
-//  @return POSTStockItems201Response
-func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*POSTStockItems201Response, *http.Response, error) {
+//  @return StockItemResponse
+func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockItemsRequest) (*StockItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTStockItems201Response
+		localVarReturnValue *StockItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockItemsApiService.POSTStockItems")

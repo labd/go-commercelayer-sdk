@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ParcelLineItemData struct for ParcelLineItemData
 type ParcelLineItemData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETParcelLineItems200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ParcelLineItemDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    ParcelLineItemDataAttributes     `json:"attributes"`
+	Relationships *ParcelLineItemDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewParcelLineItemData instantiates a new ParcelLineItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemData(type_ string, attributes GETParcelLineItems200ResponseDataInnerAttributes) *ParcelLineItemData {
+func NewParcelLineItemData(type_ string, attributes ParcelLineItemDataAttributes) *ParcelLineItemData {
 	this := ParcelLineItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ParcelLineItemData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataInnerAttributes {
+func (o *ParcelLineItemData) GetAttributes() ParcelLineItemDataAttributes {
 	if o == nil {
-		var ret GETParcelLineItems200ResponseDataInnerAttributes
+		var ret ParcelLineItemDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDataInnerAttributes, bool) {
+func (o *ParcelLineItemData) GetAttributesOk() (*ParcelLineItemDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItems200ResponseDataInnerAttributes) {
+func (o *ParcelLineItemData) SetAttributes(v ParcelLineItemDataAttributes) {
 	o.Attributes = v
 }
 

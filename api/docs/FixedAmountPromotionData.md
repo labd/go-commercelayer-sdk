@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETFixedAmountPromotions200ResponseDataInnerAttributes**](GETFixedAmountPromotions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**FixedAmountPromotionDataAttributes**](FixedAmountPromotionDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedAmountPromotionData
 
-`func NewFixedAmountPromotionData(type_ string, attributes GETFixedAmountPromotions200ResponseDataInnerAttributes, ) *FixedAmountPromotionData`
+`func NewFixedAmountPromotionData(type_ string, attributes FixedAmountPromotionDataAttributes, ) *FixedAmountPromotionData`
 
 NewFixedAmountPromotionData instantiates a new FixedAmountPromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotions200ResponseDataInnerAttributes`
+`func (o *FixedAmountPromotionData) GetAttributes() FixedAmountPromotionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotions200ResponseDataInnerAttributes, bool)`
+`func (o *FixedAmountPromotionData) GetAttributesOk() (*FixedAmountPromotionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedAmountPromotionData) SetAttributes(v GETFixedAmountPromotions200ResponseDataInnerAttributes)`
+`func (o *FixedAmountPromotionData) SetAttributes(v FixedAmountPromotionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

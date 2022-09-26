@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AttachmentData struct for AttachmentData
 type AttachmentData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    GETAttachments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AttachmentDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                       `json:"type"`
+	Attributes    AttachmentDataAttributes     `json:"attributes"`
+	Relationships *AttachmentDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentData instantiates a new AttachmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentData(type_ string, attributes GETAttachments200ResponseDataInnerAttributes) *AttachmentData {
+func NewAttachmentData(type_ string, attributes AttachmentDataAttributes) *AttachmentData {
 	this := AttachmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AttachmentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttributes {
+func (o *AttachmentData) GetAttributes() AttachmentDataAttributes {
 	if o == nil {
-		var ret GETAttachments200ResponseDataInnerAttributes
+		var ret AttachmentDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerAttributes, bool) {
+func (o *AttachmentData) GetAttributesOk() (*AttachmentDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerA
 }
 
 // SetAttributes sets field value
-func (o *AttachmentData) SetAttributes(v GETAttachments200ResponseDataInnerAttributes) {
+func (o *AttachmentData) SetAttributes(v AttachmentDataAttributes) {
 	o.Attributes = v
 }
 

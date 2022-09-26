@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type TaxCategoryUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                   `json:"id"`
-	Attributes    PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxCategoryUpdateDataRelationships                      `json:"relationships,omitempty"`
+	Id            string                              `json:"id"`
+	Attributes    TaxCategoryUpdateDataAttributes     `json:"attributes"`
+	Relationships *TaxCategoryUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryUpdateData instantiates a new TaxCategoryUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) *TaxCategoryUpdateData {
+func NewTaxCategoryUpdateData(type_ string, id string, attributes TaxCategoryUpdateDataAttributes) *TaxCategoryUpdateData {
 	this := TaxCategoryUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *TaxCategoryUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes {
+func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes
+		var ret TaxCategoryUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId2
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool) {
+func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategor
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) {
+func (o *TaxCategoryUpdateData) SetAttributes(v TaxCategoryUpdateDataAttributes) {
 	o.Attributes = v
 }
 

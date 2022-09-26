@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETPromotionRules
 
-> GETPromotionRules200Response GETPromotionRules(ctx).Execute()
+> PromotionRuleResponseList GETPromotionRules(ctx).Execute()
 
 List all promotion rules
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionRules`: GETPromotionRules200Response
+    // response from `GETPromotionRules`: PromotionRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRules`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETPromotionRulesRequest s
 
 ### Return type
 
-[**GETPromotionRules200Response**](GETPromotionRules200Response.md)
+[**PromotionRuleResponseList**](PromotionRuleResponseList.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETPromotionRulesRequest s
 
 ## GETPromotionRulesPromotionRuleId
 
-> GETPromotionRulesPromotionRuleId200Response GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
+> PromotionRuleResponse GETPromotionRulesPromotionRuleId(ctx, promotionRuleId).Execute()
 
 Retrieve a promotion rule
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PromotionRulesApi.GETPromotionRulesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPromotionRulesPromotionRuleId`: GETPromotionRulesPromotionRuleId200Response
+    // response from `GETPromotionRulesPromotionRuleId`: PromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `PromotionRulesApi.GETPromotionRulesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPromotionRulesPromotionRuleId200Response**](GETPromotionRulesPromotionRuleId200Response.md)
+[**PromotionRuleResponse**](PromotionRuleResponse.md)
 
 ### Authorization
 

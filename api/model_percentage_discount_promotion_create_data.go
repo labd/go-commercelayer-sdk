@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PercentageDiscountPromotionCreateData struct for PercentageDiscountPromotionCreateData
 type PercentageDiscountPromotionCreateData struct {
 	// The resource's type
-	Type          string                                                    `json:"type"`
-	Attributes    POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships               `json:"relationships,omitempty"`
+	Type          string                                          `json:"type"`
+	Attributes    PercentageDiscountPromotionCreateDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships     `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionCreateData instantiates a new PercentageDiscountPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionCreateData(type_ string, attributes POSTPercentageDiscountPromotions201ResponseDataAttributes) *PercentageDiscountPromotionCreateData {
+func NewPercentageDiscountPromotionCreateData(type_ string, attributes PercentageDiscountPromotionCreateDataAttributes) *PercentageDiscountPromotionCreateData {
 	this := PercentageDiscountPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PercentageDiscountPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionCreateData) GetAttributes() POSTPercentageDiscountPromotions201ResponseDataAttributes {
+func (o *PercentageDiscountPromotionCreateData) GetAttributes() PercentageDiscountPromotionCreateDataAttributes {
 	if o == nil {
-		var ret POSTPercentageDiscountPromotions201ResponseDataAttributes
+		var ret PercentageDiscountPromotionCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PercentageDiscountPromotionCreateData) GetAttributes() POSTPercentageDi
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*POSTPercentageDiscountPromotions201ResponseDataAttributes, bool) {
+func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*PercentageDiscountPromotionCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*POSTPercenta
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionCreateData) SetAttributes(v POSTPercentageDiscountPromotions201ResponseDataAttributes) {
+func (o *PercentageDiscountPromotionCreateData) SetAttributes(v PercentageDiscountPromotionCreateDataAttributes) {
 	o.Attributes = v
 }
 

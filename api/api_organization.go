@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -27,7 +27,7 @@ type OrganizationApiGETOrganizationOrganizationIdRequest struct {
 	ApiService *OrganizationApiService
 }
 
-func (r OrganizationApiGETOrganizationOrganizationIdRequest) Execute() (*GETOrganizationOrganizationId200Response, *http.Response, error) {
+func (r OrganizationApiGETOrganizationOrganizationIdRequest) Execute() (*OrganizationResponse, *http.Response, error) {
 	return r.ApiService.GETOrganizationOrganizationIdExecute(r)
 }
 
@@ -47,13 +47,13 @@ func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETOrganizationOrganizationId200Response
-func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
+//  @return OrganizationResponse
+func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*OrganizationResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrganizationOrganizationId200Response
+		localVarReturnValue *OrganizationResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrganizationApiService.GETOrganizationOrganizationId")

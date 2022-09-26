@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes**](PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**InventoryStockLocationUpdateDataAttributes**](InventoryStockLocationUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationDataRelationships**](InventoryReturnLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryStockLocationUpdateData
 
-`func NewInventoryStockLocationUpdateData(type_ string, id string, attributes PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes, ) *InventoryStockLocationUpdateData`
+`func NewInventoryStockLocationUpdateData(type_ string, id string, attributes InventoryStockLocationUpdateDataAttributes, ) *InventoryStockLocationUpdateData`
 
 NewInventoryStockLocationUpdateData instantiates a new InventoryStockLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *InventoryStockLocationUpdateData) GetAttributes() PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes`
+`func (o *InventoryStockLocationUpdateData) GetAttributes() InventoryStockLocationUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InventoryStockLocationUpdateData) GetAttributesOk() (*PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes, bool)`
+`func (o *InventoryStockLocationUpdateData) GetAttributesOk() (*InventoryStockLocationUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InventoryStockLocationUpdateData) SetAttributes(v PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes)`
+`func (o *InventoryStockLocationUpdateData) SetAttributes(v InventoryStockLocationUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

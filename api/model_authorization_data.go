@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AuthorizationData struct for AuthorizationData
 type AuthorizationData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETAuthorizations200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AuthorizationDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                          `json:"type"`
+	Attributes    AuthorizationDataAttributes     `json:"attributes"`
+	Relationships *AuthorizationDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationData instantiates a new AuthorizationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationData(type_ string, attributes GETAuthorizations200ResponseDataInnerAttributes) *AuthorizationData {
+func NewAuthorizationData(type_ string, attributes AuthorizationDataAttributes) *AuthorizationData {
 	this := AuthorizationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AuthorizationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AuthorizationData) GetAttributes() GETAuthorizations200ResponseDataInnerAttributes {
+func (o *AuthorizationData) GetAttributes() AuthorizationDataAttributes {
 	if o == nil {
-		var ret GETAuthorizations200ResponseDataInnerAttributes
+		var ret AuthorizationDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AuthorizationData) GetAttributes() GETAuthorizations200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizations200ResponseDataInnerAttributes, bool) {
+func (o *AuthorizationData) GetAttributesOk() (*AuthorizationDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizations200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *AuthorizationData) SetAttributes(v GETAuthorizations200ResponseDataInnerAttributes) {
+func (o *AuthorizationData) SetAttributes(v AuthorizationDataAttributes) {
 	o.Attributes = v
 }
 

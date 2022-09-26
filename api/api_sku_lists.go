@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -672,7 +672,7 @@ type SkuListsApiGETSkuListsRequest struct {
 	ApiService *SkuListsApiService
 }
 
-func (r SkuListsApiGETSkuListsRequest) Execute() (*GETSkuLists200Response, *http.Response, error) {
+func (r SkuListsApiGETSkuListsRequest) Execute() (*SkuListResponseList, *http.Response, error) {
 	return r.ApiService.GETSkuListsExecute(r)
 }
 
@@ -692,13 +692,13 @@ func (a *SkuListsApiService) GETSkuLists(ctx context.Context) SkuListsApiGETSkuL
 }
 
 // Execute executes the request
-//  @return GETSkuLists200Response
-func (a *SkuListsApiService) GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*GETSkuLists200Response, *http.Response, error) {
+//  @return SkuListResponseList
+func (a *SkuListsApiService) GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*SkuListResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETSkuLists200Response
+		localVarReturnValue *SkuListResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETSkuLists")
@@ -772,7 +772,7 @@ type SkuListsApiGETSkuListsSkuListIdRequest struct {
 	skuListId  string
 }
 
-func (r SkuListsApiGETSkuListsSkuListIdRequest) Execute() (*GETSkuListsSkuListId200Response, *http.Response, error) {
+func (r SkuListsApiGETSkuListsSkuListIdRequest) Execute() (*SkuListResponse, *http.Response, error) {
 	return r.ApiService.GETSkuListsSkuListIdExecute(r)
 }
 
@@ -794,13 +794,13 @@ func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId
 }
 
 // Execute executes the request
-//  @return GETSkuListsSkuListId200Response
-func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*GETSkuListsSkuListId200Response, *http.Response, error) {
+//  @return SkuListResponse
+func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*SkuListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETSkuListsSkuListId200Response
+		localVarReturnValue *SkuListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.GETSkuListsSkuListId")
@@ -881,7 +881,7 @@ func (r SkuListsApiPATCHSkuListsSkuListIdRequest) SkuListUpdate(skuListUpdate Sk
 	return r
 }
 
-func (r SkuListsApiPATCHSkuListsSkuListIdRequest) Execute() (*PATCHSkuListsSkuListId200Response, *http.Response, error) {
+func (r SkuListsApiPATCHSkuListsSkuListIdRequest) Execute() (*SkuListResponse, *http.Response, error) {
 	return r.ApiService.PATCHSkuListsSkuListIdExecute(r)
 }
 
@@ -903,13 +903,13 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuList
 }
 
 // Execute executes the request
-//  @return PATCHSkuListsSkuListId200Response
-func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*PATCHSkuListsSkuListId200Response, *http.Response, error) {
+//  @return SkuListResponse
+func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*SkuListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHSkuListsSkuListId200Response
+		localVarReturnValue *SkuListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.PATCHSkuListsSkuListId")
@@ -994,7 +994,7 @@ func (r SkuListsApiPOSTSkuListsRequest) SkuListCreate(skuListCreate SkuListCreat
 	return r
 }
 
-func (r SkuListsApiPOSTSkuListsRequest) Execute() (*POSTSkuLists201Response, *http.Response, error) {
+func (r SkuListsApiPOSTSkuListsRequest) Execute() (*SkuListResponse, *http.Response, error) {
 	return r.ApiService.POSTSkuListsExecute(r)
 }
 
@@ -1014,13 +1014,13 @@ func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) SkuListsApiPOSTSk
 }
 
 // Execute executes the request
-//  @return POSTSkuLists201Response
-func (a *SkuListsApiService) POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*POSTSkuLists201Response, *http.Response, error) {
+//  @return SkuListResponse
+func (a *SkuListsApiService) POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*SkuListResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTSkuLists201Response
+		localVarReturnValue *SkuListResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListsApiService.POSTSkuLists")

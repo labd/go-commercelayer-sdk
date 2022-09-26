@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BillingInfoValidationRuleData struct for BillingInfoValidationRuleData
 type BillingInfoValidationRuleData struct {
 	// The resource's type
-	Type          string                                                      `json:"type"`
-	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    BillingInfoValidationRuleDataAttributes     `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewBillingInfoValidationRuleData instantiates a new BillingInfoValidationRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *BillingInfoValidationRuleData {
+func NewBillingInfoValidationRuleData(type_ string, attributes BillingInfoValidationRuleDataAttributes) *BillingInfoValidationRuleData {
 	this := BillingInfoValidationRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *BillingInfoValidationRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
+func (o *BillingInfoValidationRuleData) GetAttributes() BillingInfoValidationRuleDataAttributes {
 	if o == nil {
-		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
+		var ret BillingInfoValidationRuleDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidation
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
+func (o *BillingInfoValidationRuleData) GetAttributesOk() (*BillingInfoValidationRuleDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValida
 }
 
 // SetAttributes sets field value
-func (o *BillingInfoValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
+func (o *BillingInfoValidationRuleData) SetAttributes(v BillingInfoValidationRuleDataAttributes) {
 	o.Attributes = v
 }
 

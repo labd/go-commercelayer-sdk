@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CustomerAddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerAddressUpdateDataRelationships    `json:"relationships,omitempty"`
+	Id            string                                  `json:"id"`
+	Attributes    AdyenPaymentCreateDataAttributes        `json:"attributes"`
+	Relationships *CustomerAddressUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressUpdateData instantiates a new CustomerAddressUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerAddressUpdateData {
+func NewCustomerAddressUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes) *CustomerAddressUpdateData {
 	this := CustomerAddressUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CustomerAddressUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerAddressUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *CustomerAddressUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret AdyenPaymentCreateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CustomerAddressUpdateData) GetAttributes() POSTAdyenPayments201Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *CustomerAddressUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CustomerAddressUpdateData) GetAttributesOk() (*POSTAdyenPayments201Resp
 }
 
 // SetAttributes sets field value
-func (o *CustomerAddressUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *CustomerAddressUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type OrderValidationRulesApiGETOrderValidationRulesRequest struct {
 	ApiService *OrderValidationRulesApiService
 }
 
-func (r OrderValidationRulesApiGETOrderValidationRulesRequest) Execute() (*GETOrderValidationRules200Response, *http.Response, error) {
+func (r OrderValidationRulesApiGETOrderValidationRulesRequest) Execute() (*OrderValidationRuleResponseList, *http.Response, error) {
 	return r.ApiService.GETOrderValidationRulesExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETOrderValidationRules200Response
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderValidationRulesApiGETOrderValidationRulesRequest) (*GETOrderValidationRules200Response, *http.Response, error) {
+//  @return OrderValidationRuleResponseList
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderValidationRulesApiGETOrderValidationRulesRequest) (*OrderValidationRuleResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrderValidationRules200Response
+		localVarReturnValue *OrderValidationRuleResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRules")
@@ -128,7 +128,7 @@ type OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest 
 	orderValidationRuleId string
 }
 
-func (r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) Execute() (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
+func (r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) Execute() (*OrderValidationRuleResponse, *http.Response, error) {
 	return r.ApiService.GETOrderValidationRulesOrderValidationRuleIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 }
 
 // Execute executes the request
-//  @return GETOrderValidationRulesOrderValidationRuleId200Response
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
+//  @return OrderValidationRuleResponse
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*OrderValidationRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrderValidationRulesOrderValidationRuleId200Response
+		localVarReturnValue *OrderValidationRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderValidationRulesApiService.GETOrderValidationRulesOrderValidationRuleId")

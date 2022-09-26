@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CarrierAccountData struct for CarrierAccountData
 type CarrierAccountData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETCarrierAccounts200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CarrierAccountDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    CarrierAccountDataAttributes     `json:"attributes"`
+	Relationships *CarrierAccountDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountData instantiates a new CarrierAccountData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCarrierAccountData(type_ string, attributes GETCarrierAccounts200ResponseDataInnerAttributes) *CarrierAccountData {
+func NewCarrierAccountData(type_ string, attributes CarrierAccountDataAttributes) *CarrierAccountData {
 	this := CarrierAccountData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CarrierAccountData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataInnerAttributes {
+func (o *CarrierAccountData) GetAttributes() CarrierAccountDataAttributes {
 	if o == nil {
-		var ret GETCarrierAccounts200ResponseDataInnerAttributes
+		var ret CarrierAccountDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDataInnerAttributes, bool) {
+func (o *CarrierAccountData) GetAttributesOk() (*CarrierAccountDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataInnerAttributes) {
+func (o *CarrierAccountData) SetAttributes(v CarrierAccountDataAttributes) {
 	o.Attributes = v
 }
 

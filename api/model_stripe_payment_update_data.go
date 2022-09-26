@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type StripePaymentUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHStripePaymentsStripePaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
+	Id            string                               `json:"id"`
+	Attributes    StripePaymentUpdateDataAttributes    `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentUpdateData instantiates a new StripePaymentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripePaymentUpdateData(type_ string, id string, attributes PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) *StripePaymentUpdateData {
+func NewStripePaymentUpdateData(type_ string, id string, attributes StripePaymentUpdateDataAttributes) *StripePaymentUpdateData {
 	this := StripePaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *StripePaymentUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripePaymentUpdateData) GetAttributes() PATCHStripePaymentsStripePaymentId200ResponseDataAttributes {
+func (o *StripePaymentUpdateData) GetAttributes() StripePaymentUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHStripePaymentsStripePaymentId200ResponseDataAttributes
+		var ret StripePaymentUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *StripePaymentUpdateData) GetAttributes() PATCHStripePaymentsStripePayme
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripePaymentUpdateData) GetAttributesOk() (*PATCHStripePaymentsStripePaymentId200ResponseDataAttributes, bool) {
+func (o *StripePaymentUpdateData) GetAttributesOk() (*StripePaymentUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *StripePaymentUpdateData) GetAttributesOk() (*PATCHStripePaymentsStripeP
 }
 
 // SetAttributes sets field value
-func (o *StripePaymentUpdateData) SetAttributes(v PATCHStripePaymentsStripePaymentId200ResponseDataAttributes) {
+func (o *StripePaymentUpdateData) SetAttributes(v StripePaymentUpdateDataAttributes) {
 	o.Attributes = v
 }
 

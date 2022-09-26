@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETPercentageDiscountPromotions200ResponseDataInnerAttributes**](GETPercentageDiscountPromotions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**PercentageDiscountPromotionDataAttributes**](PercentageDiscountPromotionDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPercentageDiscountPromotionData
 
-`func NewPercentageDiscountPromotionData(type_ string, attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes, ) *PercentageDiscountPromotionData`
+`func NewPercentageDiscountPromotionData(type_ string, attributes PercentageDiscountPromotionDataAttributes, ) *PercentageDiscountPromotionData`
 
 NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotions200ResponseDataInnerAttributes`
+`func (o *PercentageDiscountPromotionData) GetAttributes() PercentageDiscountPromotionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotions200ResponseDataInnerAttributes, bool)`
+`func (o *PercentageDiscountPromotionData) GetAttributesOk() (*PercentageDiscountPromotionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotions200ResponseDataInnerAttributes)`
+`func (o *PercentageDiscountPromotionData) SetAttributes(v PercentageDiscountPromotionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

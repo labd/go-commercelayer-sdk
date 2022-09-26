@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHStripePaymentsStripePaymentId200ResponseDataAttributes**](PATCHStripePaymentsStripePaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**StripePaymentUpdateDataAttributes**](StripePaymentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripePaymentUpdateData
 
-`func NewStripePaymentUpdateData(type_ string, id string, attributes PATCHStripePaymentsStripePaymentId200ResponseDataAttributes, ) *StripePaymentUpdateData`
+`func NewStripePaymentUpdateData(type_ string, id string, attributes StripePaymentUpdateDataAttributes, ) *StripePaymentUpdateData`
 
 NewStripePaymentUpdateData instantiates a new StripePaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StripePaymentUpdateData) GetAttributes() PATCHStripePaymentsStripePaymentId200ResponseDataAttributes`
+`func (o *StripePaymentUpdateData) GetAttributes() StripePaymentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripePaymentUpdateData) GetAttributesOk() (*PATCHStripePaymentsStripePaymentId200ResponseDataAttributes, bool)`
+`func (o *StripePaymentUpdateData) GetAttributesOk() (*StripePaymentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripePaymentUpdateData) SetAttributes(v PATCHStripePaymentsStripePaymentId200ResponseDataAttributes)`
+`func (o *StripePaymentUpdateData) SetAttributes(v StripePaymentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

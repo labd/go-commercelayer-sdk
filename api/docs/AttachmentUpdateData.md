@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAttachmentsAttachmentId200ResponseDataAttributes**](PATCHAttachmentsAttachmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AttachmentUpdateDataAttributes**](AttachmentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentDataRelationships**](AttachmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentUpdateData
 
-`func NewAttachmentUpdateData(type_ string, id string, attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes, ) *AttachmentUpdateData`
+`func NewAttachmentUpdateData(type_ string, id string, attributes AttachmentUpdateDataAttributes, ) *AttachmentUpdateData`
 
 NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentId200ResponseDataAttributes`
+`func (o *AttachmentUpdateData) GetAttributes() AttachmentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentId200ResponseDataAttributes, bool)`
+`func (o *AttachmentUpdateData) GetAttributesOk() (*AttachmentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200ResponseDataAttributes)`
+`func (o *AttachmentUpdateData) SetAttributes(v AttachmentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ShippingWeightTierUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                `json:"id"`
-	Attributes    PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ShipmentUpdateDataRelationships                                      `json:"relationships,omitempty"`
+	Id            string                                 `json:"id"`
+	Attributes    ShippingWeightTierUpdateDataAttributes `json:"attributes"`
+	Relationships *ShipmentUpdateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierUpdateData instantiates a new ShippingWeightTierUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierUpdateData(type_ string, id string, attributes PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) *ShippingWeightTierUpdateData {
+func NewShippingWeightTierUpdateData(type_ string, id string, attributes ShippingWeightTierUpdateDataAttributes) *ShippingWeightTierUpdateData {
 	this := ShippingWeightTierUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ShippingWeightTierUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingWeightTierUpdateData) GetAttributes() PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes {
+func (o *ShippingWeightTierUpdateData) GetAttributes() ShippingWeightTierUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes
+		var ret ShippingWeightTierUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ShippingWeightTierUpdateData) GetAttributes() PATCHShippingWeightTiersS
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierUpdateData) GetAttributesOk() (*PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes, bool) {
+func (o *ShippingWeightTierUpdateData) GetAttributesOk() (*ShippingWeightTierUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ShippingWeightTierUpdateData) GetAttributesOk() (*PATCHShippingWeightTi
 }
 
 // SetAttributes sets field value
-func (o *ShippingWeightTierUpdateData) SetAttributes(v PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) {
+func (o *ShippingWeightTierUpdateData) SetAttributes(v ShippingWeightTierUpdateDataAttributes) {
 	o.Attributes = v
 }
 

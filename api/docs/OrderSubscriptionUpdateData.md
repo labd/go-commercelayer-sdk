@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes**](PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**OrderSubscriptionUpdateDataAttributes**](OrderSubscriptionUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewOrderSubscriptionUpdateData
 
-`func NewOrderSubscriptionUpdateData(type_ string, id string, attributes PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes, ) *OrderSubscriptionUpdateData`
+`func NewOrderSubscriptionUpdateData(type_ string, id string, attributes OrderSubscriptionUpdateDataAttributes, ) *OrderSubscriptionUpdateData`
 
 NewOrderSubscriptionUpdateData instantiates a new OrderSubscriptionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *OrderSubscriptionUpdateData) GetAttributes() PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes`
+`func (o *OrderSubscriptionUpdateData) GetAttributes() OrderSubscriptionUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderSubscriptionUpdateData) GetAttributesOk() (*PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes, bool)`
+`func (o *OrderSubscriptionUpdateData) GetAttributesOk() (*OrderSubscriptionUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderSubscriptionUpdateData) SetAttributes(v PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes)`
+`func (o *OrderSubscriptionUpdateData) SetAttributes(v OrderSubscriptionUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

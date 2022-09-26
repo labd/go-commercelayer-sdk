@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETInStockSubscriptions200ResponseDataInnerAttributes**](GETInStockSubscriptions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**InStockSubscriptionDataAttributes**](InStockSubscriptionDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionDataRelationships**](InStockSubscriptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInStockSubscriptionData
 
-`func NewInStockSubscriptionData(type_ string, attributes GETInStockSubscriptions200ResponseDataInnerAttributes, ) *InStockSubscriptionData`
+`func NewInStockSubscriptionData(type_ string, attributes InStockSubscriptionDataAttributes, ) *InStockSubscriptionData`
 
 NewInStockSubscriptionData instantiates a new InStockSubscriptionData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *InStockSubscriptionData) GetAttributes() GETInStockSubscriptions200ResponseDataInnerAttributes`
+`func (o *InStockSubscriptionData) GetAttributes() InStockSubscriptionDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InStockSubscriptionData) GetAttributesOk() (*GETInStockSubscriptions200ResponseDataInnerAttributes, bool)`
+`func (o *InStockSubscriptionData) GetAttributesOk() (*InStockSubscriptionDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InStockSubscriptionData) SetAttributes(v GETInStockSubscriptions200ResponseDataInnerAttributes)`
+`func (o *InStockSubscriptionData) SetAttributes(v InStockSubscriptionDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

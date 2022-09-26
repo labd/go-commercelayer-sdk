@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 
 ## GETVoids
 
-> GETVoids200Response GETVoids(ctx).Execute()
+> VoidResponseList GETVoids(ctx).Execute()
 
 List all voids
 
@@ -176,7 +176,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `VoidsApi.GETVoids``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETVoids`: GETVoids200Response
+    // response from `GETVoids`: VoidResponseList
     fmt.Fprintf(os.Stdout, "Response from `VoidsApi.GETVoids`: %v\n", resp)
 }
 ```
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiGETVoidsRequest struct via
 
 ### Return type
 
-[**GETVoids200Response**](GETVoids200Response.md)
+[**VoidResponseList**](VoidResponseList.md)
 
 ### Authorization
 
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiGETVoidsRequest struct via
 
 ## GETVoidsVoidId
 
-> GETVoidsVoidId200Response GETVoidsVoidId(ctx, voidId).Execute()
+> VoidResponse GETVoidsVoidId(ctx, voidId).Execute()
 
 Retrieve a void
 
@@ -238,7 +238,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `VoidsApi.GETVoidsVoidId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETVoidsVoidId`: GETVoidsVoidId200Response
+    // response from `GETVoidsVoidId`: VoidResponse
     fmt.Fprintf(os.Stdout, "Response from `VoidsApi.GETVoidsVoidId`: %v\n", resp)
 }
 ```
@@ -262,7 +262,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETVoidsVoidId200Response**](GETVoidsVoidId200Response.md)
+[**VoidResponse**](VoidResponse.md)
 
 ### Authorization
 

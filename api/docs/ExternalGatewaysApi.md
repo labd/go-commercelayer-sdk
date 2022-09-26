@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETExternalGateways
 
-> GETExternalGateways200Response GETExternalGateways(ctx).Execute()
+> ExternalGatewayResponseList GETExternalGateways(ctx).Execute()
 
 List all external gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.GETExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalGateways`: GETExternalGateways200Response
+    // response from `GETExternalGateways`: ExternalGatewayResponseList
     fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.GETExternalGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETExternalGatewaysRequest
 
 ### Return type
 
-[**GETExternalGateways200Response**](GETExternalGateways200Response.md)
+[**ExternalGatewayResponseList**](ExternalGatewayResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETExternalGatewaysRequest
 
 ## GETExternalGatewaysExternalGatewayId
 
-> GETExternalGatewaysExternalGatewayId200Response GETExternalGatewaysExternalGatewayId(ctx, externalGatewayId).Execute()
+> ExternalGatewayResponse GETExternalGatewaysExternalGatewayId(ctx, externalGatewayId).Execute()
 
 Retrieve an external gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.GETExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalGatewaysExternalGatewayId`: GETExternalGatewaysExternalGatewayId200Response
+    // response from `GETExternalGatewaysExternalGatewayId`: ExternalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.GETExternalGatewaysExternalGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETExternalGatewaysExternalGatewayId200Response**](GETExternalGatewaysExternalGatewayId200Response.md)
+[**ExternalGatewayResponse**](ExternalGatewayResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalGatewaysExternalGatewayId
 
-> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
+> ExternalGatewayResponse PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
 
 Update an external gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
+    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewExternalGatewayUpdateDataAttributes())) // ExternalGatewayUpdate | 
     externalGatewayId := "externalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHExternalGatewaysExternalGatewayId`: PATCHExternalGatewaysExternalGatewayId200Response
+    // response from `PATCHExternalGatewaysExternalGatewayId`: ExternalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHExternalGatewaysExternalGatewayId200Response**](PATCHExternalGatewaysExternalGatewayId200Response.md)
+[**ExternalGatewayResponse**](ExternalGatewayResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalGateways
 
-> POSTExternalGateways201Response POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
+> ExternalGatewayResponse POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
 
 Create an external gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("Type_example", *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
+    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("Type_example", *openapiclient.NewExternalGatewayCreateDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.POSTExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTExternalGateways`: POSTExternalGateways201Response
+    // response from `POSTExternalGateways`: ExternalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalGatewaysApi.POSTExternalGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTExternalGateways201Response**](POSTExternalGateways201Response.md)
+[**ExternalGatewayResponse**](ExternalGatewayResponse.md)
 
 ### Authorization
 

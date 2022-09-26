@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomerAddresses
 
-> GETCustomerAddresses200Response GETCustomerAddresses(ctx).Execute()
+> CustomerAddressResponseList GETCustomerAddresses(ctx).Execute()
 
 List all customer addresses
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.GETCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerAddresses`: GETCustomerAddresses200Response
+    // response from `GETCustomerAddresses`: CustomerAddressResponseList
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.GETCustomerAddresses`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiGETCustomerAddressesReques
 
 ### Return type
 
-[**GETCustomerAddresses200Response**](GETCustomerAddresses200Response.md)
+[**CustomerAddressResponseList**](CustomerAddressResponseList.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiGETCustomerAddressesReques
 
 ## GETCustomerAddressesCustomerAddressId
 
-> GETCustomerAddressesCustomerAddressId200Response GETCustomerAddressesCustomerAddressId(ctx, customerAddressId).Execute()
+> CustomerAddressResponse GETCustomerAddressesCustomerAddressId(ctx, customerAddressId).Execute()
 
 Retrieve a customer address
 
@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.GETCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerAddressesCustomerAddressId`: GETCustomerAddressesCustomerAddressId200Response
+    // response from `GETCustomerAddressesCustomerAddressId`: CustomerAddressResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.GETCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCustomerAddressesCustomerAddressId200Response**](GETCustomerAddressesCustomerAddressId200Response.md)
+[**CustomerAddressResponse**](CustomerAddressResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerAddressesCustomerAddressId
 
-> POSTCustomerAddresses201Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
+> CustomerAddressResponse PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
 
 Update a customer address
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressUpdate | 
+    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerAddressUpdate | 
     customerAddressId := "customerAddressId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerAddressesCustomerAddressId`: POSTCustomerAddresses201Response
+    // response from `PATCHCustomerAddressesCustomerAddressId`: CustomerAddressResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerAddresses201Response**](POSTCustomerAddresses201Response.md)
+[**CustomerAddressResponse**](CustomerAddressResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerAddresses
 
-> POSTCustomerAddresses201Response POSTCustomerAddresses(ctx).CustomerAddressCreate(customerAddressCreate).Execute()
+> CustomerAddressResponse POSTCustomerAddresses(ctx).CustomerAddressCreate(customerAddressCreate).Execute()
 
 Create a customer address
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressCreate | 
+    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerAddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.POSTCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomerAddresses`: POSTCustomerAddresses201Response
+    // response from `POSTCustomerAddresses`: CustomerAddressResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.POSTCustomerAddresses`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerAddresses201Response**](POSTCustomerAddresses201Response.md)
+[**CustomerAddressResponse**](CustomerAddressResponse.md)
 
 ### Authorization
 

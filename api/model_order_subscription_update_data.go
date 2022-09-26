@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type OrderSubscriptionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                              `json:"id"`
-	Attributes    PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                              `json:"relationships,omitempty"`
+	Id            string                                `json:"id"`
+	Attributes    OrderSubscriptionUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}                `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionUpdateData instantiates a new OrderSubscriptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionUpdateData(type_ string, id string, attributes PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) *OrderSubscriptionUpdateData {
+func NewOrderSubscriptionUpdateData(type_ string, id string, attributes OrderSubscriptionUpdateDataAttributes) *OrderSubscriptionUpdateData {
 	this := OrderSubscriptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *OrderSubscriptionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderSubscriptionUpdateData) GetAttributes() PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes {
+func (o *OrderSubscriptionUpdateData) GetAttributes() OrderSubscriptionUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes
+		var ret OrderSubscriptionUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *OrderSubscriptionUpdateData) GetAttributes() PATCHOrderSubscriptionsOrd
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionUpdateData) GetAttributesOk() (*PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes, bool) {
+func (o *OrderSubscriptionUpdateData) GetAttributesOk() (*OrderSubscriptionUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *OrderSubscriptionUpdateData) GetAttributesOk() (*PATCHOrderSubscription
 }
 
 // SetAttributes sets field value
-func (o *OrderSubscriptionUpdateData) SetAttributes(v PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) {
+func (o *OrderSubscriptionUpdateData) SetAttributes(v OrderSubscriptionUpdateDataAttributes) {
 	o.Attributes = v
 }
 

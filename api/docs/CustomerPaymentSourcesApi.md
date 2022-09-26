@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GETCustomerPaymentSources
 
-> GETCustomerPaymentSources200Response GETCustomerPaymentSources(ctx).Execute()
+> CustomerPaymentSourceResponseList GETCustomerPaymentSources(ctx).Execute()
 
 List all customer payment sources
 
@@ -180,7 +180,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPaymentSources`: GETCustomerPaymentSources200Response
+    // response from `GETCustomerPaymentSources`: CustomerPaymentSourceResponseList
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.GETCustomerPaymentSources`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Other parameters are passed through a pointer to a apiGETCustomerPaymentSourcesR
 
 ### Return type
 
-[**GETCustomerPaymentSources200Response**](GETCustomerPaymentSources200Response.md)
+[**CustomerPaymentSourceResponseList**](CustomerPaymentSourceResponseList.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Other parameters are passed through a pointer to a apiGETCustomerPaymentSourcesR
 
 ## GETCustomerPaymentSourcesCustomerPaymentSourceId
 
-> GETCustomerPaymentSourcesCustomerPaymentSourceId200Response GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).Execute()
+> CustomerPaymentSourceResponse GETCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).Execute()
 
 Retrieve a customer payment source
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCustomerPaymentSourcesCustomerPaymentSourceId`: GETCustomerPaymentSourcesCustomerPaymentSourceId200Response
+    // response from `GETCustomerPaymentSourcesCustomerPaymentSourceId`: CustomerPaymentSourceResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.GETCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCustomerPaymentSourcesCustomerPaymentSourceId200Response**](GETCustomerPaymentSourcesCustomerPaymentSourceId200Response.md)
+[**CustomerPaymentSourceResponse**](CustomerPaymentSourceResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerPaymentSourcesCustomerPaymentSourceId
 
-> POSTCustomerPaymentSources201Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
+> CustomerPaymentSourceResponse PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
 
 Update a customer payment source
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
+    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerPaymentSourceUpdate | 
     customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: POSTCustomerPaymentSources201Response
+    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: CustomerPaymentSourceResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
+[**CustomerPaymentSourceResponse**](CustomerPaymentSourceResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerPaymentSources
 
-> POSTCustomerPaymentSources201Response POSTCustomerPaymentSources(ctx).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
+> CustomerPaymentSourceResponse POSTCustomerPaymentSources(ctx).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
 
 Create a customer payment source
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
+    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // CustomerPaymentSourceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.POSTCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCustomerPaymentSources`: POSTCustomerPaymentSources201Response
+    // response from `POSTCustomerPaymentSources`: CustomerPaymentSourceResponse
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.POSTCustomerPaymentSources`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
+[**CustomerPaymentSourceResponse**](CustomerPaymentSourceResponse.md)
 
 ### Authorization
 

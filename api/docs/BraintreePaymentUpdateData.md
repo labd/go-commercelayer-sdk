@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes**](PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**BraintreePaymentUpdateDataAttributes**](BraintreePaymentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreePaymentUpdateData
 
-`func NewBraintreePaymentUpdateData(type_ string, id string, attributes PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes, ) *BraintreePaymentUpdateData`
+`func NewBraintreePaymentUpdateData(type_ string, id string, attributes BraintreePaymentUpdateDataAttributes, ) *BraintreePaymentUpdateData`
 
 NewBraintreePaymentUpdateData instantiates a new BraintreePaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreePaymentUpdateData) GetAttributes() PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes`
+`func (o *BraintreePaymentUpdateData) GetAttributes() BraintreePaymentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreePaymentUpdateData) GetAttributesOk() (*PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes, bool)`
+`func (o *BraintreePaymentUpdateData) GetAttributesOk() (*BraintreePaymentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreePaymentUpdateData) SetAttributes(v PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes)`
+`func (o *BraintreePaymentUpdateData) SetAttributes(v BraintreePaymentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETOrderValidationRules
 
-> GETOrderValidationRules200Response GETOrderValidationRules(ctx).Execute()
+> OrderValidationRuleResponseList GETOrderValidationRules(ctx).Execute()
 
 List all order validation rules
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderValidationRulesApi.GETOrderValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderValidationRules`: GETOrderValidationRules200Response
+    // response from `GETOrderValidationRules`: OrderValidationRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `OrderValidationRulesApi.GETOrderValidationRules`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETOrderValidationRulesReq
 
 ### Return type
 
-[**GETOrderValidationRules200Response**](GETOrderValidationRules200Response.md)
+[**OrderValidationRuleResponseList**](OrderValidationRuleResponseList.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETOrderValidationRulesReq
 
 ## GETOrderValidationRulesOrderValidationRuleId
 
-> GETOrderValidationRulesOrderValidationRuleId200Response GETOrderValidationRulesOrderValidationRuleId(ctx, orderValidationRuleId).Execute()
+> OrderValidationRuleResponse GETOrderValidationRulesOrderValidationRuleId(ctx, orderValidationRuleId).Execute()
 
 Retrieve an order validation rule
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderValidationRulesApi.GETOrderValidationRulesOrderValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderValidationRulesOrderValidationRuleId`: GETOrderValidationRulesOrderValidationRuleId200Response
+    // response from `GETOrderValidationRulesOrderValidationRuleId`: OrderValidationRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderValidationRulesApi.GETOrderValidationRulesOrderValidationRuleId`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETOrderValidationRulesOrderValidationRuleId200Response**](GETOrderValidationRulesOrderValidationRuleId200Response.md)
+[**OrderValidationRuleResponse**](OrderValidationRuleResponse.md)
 
 ### Authorization
 

@@ -155,7 +155,7 @@ Name | Type | Description  | Notes
 
 ## GETLineItems
 
-> GETLineItems200Response GETLineItems(ctx).Execute()
+> LineItemResponseList GETLineItems(ctx).Execute()
 
 List all line items
 
@@ -182,7 +182,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETLineItems`: GETLineItems200Response
+    // response from `GETLineItems`: LineItemResponseList
     fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.GETLineItems`: %v\n", resp)
 }
 ```
@@ -198,7 +198,7 @@ Other parameters are passed through a pointer to a apiGETLineItemsRequest struct
 
 ### Return type
 
-[**GETLineItems200Response**](GETLineItems200Response.md)
+[**LineItemResponseList**](LineItemResponseList.md)
 
 ### Authorization
 
@@ -216,7 +216,7 @@ Other parameters are passed through a pointer to a apiGETLineItemsRequest struct
 
 ## GETLineItemsLineItemId
 
-> GETLineItemsLineItemId200Response GETLineItemsLineItemId(ctx, lineItemId).Execute()
+> LineItemResponse GETLineItemsLineItemId(ctx, lineItemId).Execute()
 
 Retrieve a line item
 
@@ -244,7 +244,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.GETLineItemsLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETLineItemsLineItemId`: GETLineItemsLineItemId200Response
+    // response from `GETLineItemsLineItemId`: LineItemResponse
     fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.GETLineItemsLineItemId`: %v\n", resp)
 }
 ```
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETLineItemsLineItemId200Response**](GETLineItemsLineItemId200Response.md)
+[**LineItemResponse**](LineItemResponse.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ## PATCHLineItemsLineItemId
 
-> PATCHLineItemsLineItemId200Response PATCHLineItemsLineItemId(ctx, lineItemId).LineItemUpdate(lineItemUpdate).Execute()
+> LineItemResponse PATCHLineItemsLineItemId(ctx, lineItemId).LineItemUpdate(lineItemUpdate).Execute()
 
 Update a line item
 
@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemsLineItemId200ResponseDataAttributes())) // LineItemUpdate | 
+    lineItemUpdate := *openapiclient.NewLineItemUpdate(*openapiclient.NewLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewLineItemUpdateDataAttributes())) // LineItemUpdate | 
     lineItemId := "lineItemId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -587,7 +587,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.PATCHLineItemsLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHLineItemsLineItemId`: PATCHLineItemsLineItemId200Response
+    // response from `PATCHLineItemsLineItemId`: LineItemResponse
     fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.PATCHLineItemsLineItemId`: %v\n", resp)
 }
 ```
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHLineItemsLineItemId200Response**](PATCHLineItemsLineItemId200Response.md)
+[**LineItemResponse**](LineItemResponse.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## POSTLineItems
 
-> POSTLineItems201Response POSTLineItems(ctx).LineItemCreate(lineItemCreate).Execute()
+> LineItemResponse POSTLineItems(ctx).LineItemCreate(lineItemCreate).Execute()
 
 Create a line item
 
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("Type_example", *openapiclient.NewPOSTLineItems201ResponseDataAttributes(int32(4)))) // LineItemCreate | 
+    lineItemCreate := *openapiclient.NewLineItemCreate(*openapiclient.NewLineItemCreateData("Type_example", *openapiclient.NewLineItemCreateDataAttributes(int32(4)))) // LineItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -658,7 +658,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemsApi.POSTLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTLineItems`: POSTLineItems201Response
+    // response from `POSTLineItems`: LineItemResponse
     fmt.Fprintf(os.Stdout, "Response from `LineItemsApi.POSTLineItems`: %v\n", resp)
 }
 ```
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTLineItems201Response**](POSTLineItems201Response.md)
+[**LineItemResponse**](LineItemResponse.md)
 
 ### Authorization
 

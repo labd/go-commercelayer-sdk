@@ -987,7 +987,7 @@ Name | Type | Description  | Notes
 
 ## GETOrders
 
-> GETOrders200Response GETOrders(ctx).Execute()
+> OrderResponseList GETOrders(ctx).Execute()
 
 List all orders
 
@@ -1014,7 +1014,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrders`: GETOrders200Response
+    // response from `GETOrders`: OrderResponseList
     fmt.Fprintf(os.Stdout, "Response from `OrdersApi.GETOrders`: %v\n", resp)
 }
 ```
@@ -1030,7 +1030,7 @@ Other parameters are passed through a pointer to a apiGETOrdersRequest struct vi
 
 ### Return type
 
-[**GETOrders200Response**](GETOrders200Response.md)
+[**OrderResponseList**](OrderResponseList.md)
 
 ### Authorization
 
@@ -1048,7 +1048,7 @@ Other parameters are passed through a pointer to a apiGETOrdersRequest struct vi
 
 ## GETOrdersOrderId
 
-> GETOrdersOrderId200Response GETOrdersOrderId(ctx, orderId).Execute()
+> OrderResponse GETOrdersOrderId(ctx, orderId).Execute()
 
 Retrieve an order
 
@@ -1076,7 +1076,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrdersOrderId`: GETOrdersOrderId200Response
+    // response from `GETOrdersOrderId`: OrderResponse
     fmt.Fprintf(os.Stdout, "Response from `OrdersApi.GETOrdersOrderId`: %v\n", resp)
 }
 ```
@@ -1100,7 +1100,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETOrdersOrderId200Response**](GETOrdersOrderId200Response.md)
+[**OrderResponse**](OrderResponse.md)
 
 ### Authorization
 
@@ -1662,7 +1662,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrdersOrderId
 
-> PATCHOrdersOrderId200Response PATCHOrdersOrderId(ctx, orderId).OrderUpdate(orderUpdate).Execute()
+> OrderResponse PATCHOrdersOrderId(ctx, orderId).OrderUpdate(orderUpdate).Execute()
 
 Update an order
 
@@ -1681,7 +1681,7 @@ import (
 )
 
 func main() {
-    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrdersOrderId200ResponseDataAttributes())) // OrderUpdate | 
+    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewOrderUpdateDataAttributes())) // OrderUpdate | 
     orderId := "orderId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1691,7 +1691,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.PATCHOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHOrdersOrderId`: PATCHOrdersOrderId200Response
+    // response from `PATCHOrdersOrderId`: OrderResponse
     fmt.Fprintf(os.Stdout, "Response from `OrdersApi.PATCHOrdersOrderId`: %v\n", resp)
 }
 ```
@@ -1716,7 +1716,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHOrdersOrderId200Response**](PATCHOrdersOrderId200Response.md)
+[**OrderResponse**](OrderResponse.md)
 
 ### Authorization
 
@@ -1734,7 +1734,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrders
 
-> POSTOrders201Response POSTOrders(ctx).OrderCreate(orderCreate).Execute()
+> OrderResponse POSTOrders(ctx).OrderCreate(orderCreate).Execute()
 
 Create an order
 
@@ -1753,7 +1753,7 @@ import (
 )
 
 func main() {
-    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("Type_example", *openapiclient.NewPOSTOrders201ResponseDataAttributes())) // OrderCreate | 
+    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("Type_example", *openapiclient.NewOrderCreateDataAttributes())) // OrderCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1762,7 +1762,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.POSTOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTOrders`: POSTOrders201Response
+    // response from `POSTOrders`: OrderResponse
     fmt.Fprintf(os.Stdout, "Response from `OrdersApi.POSTOrders`: %v\n", resp)
 }
 ```
@@ -1782,7 +1782,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTOrders201Response**](POSTOrders201Response.md)
+[**OrderResponse**](OrderResponse.md)
 
 ### Authorization
 

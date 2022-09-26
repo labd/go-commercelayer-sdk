@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCouponRecipients200ResponseDataInnerAttributes**](GETCouponRecipients200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CouponRecipientDataAttributes**](CouponRecipientDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponRecipientDataRelationships**](CouponRecipientDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponRecipientData
 
-`func NewCouponRecipientData(type_ string, attributes GETCouponRecipients200ResponseDataInnerAttributes, ) *CouponRecipientData`
+`func NewCouponRecipientData(type_ string, attributes CouponRecipientDataAttributes, ) *CouponRecipientData`
 
 NewCouponRecipientData instantiates a new CouponRecipientData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponRecipientData) GetAttributes() GETCouponRecipients200ResponseDataInnerAttributes`
+`func (o *CouponRecipientData) GetAttributes() CouponRecipientDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipients200ResponseDataInnerAttributes, bool)`
+`func (o *CouponRecipientData) GetAttributesOk() (*CouponRecipientDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponRecipientData) SetAttributes(v GETCouponRecipients200ResponseDataInnerAttributes)`
+`func (o *CouponRecipientData) SetAttributes(v CouponRecipientDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PriceListUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                              `json:"id"`
-	Attributes    PATCHPriceListsPriceListId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                              `json:"relationships,omitempty"`
+	Id            string                        `json:"id"`
+	Attributes    PriceListUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}        `json:"relationships,omitempty"`
 }
 
 // NewPriceListUpdateData instantiates a new PriceListUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceListUpdateData(type_ string, id string, attributes PATCHPriceListsPriceListId200ResponseDataAttributes) *PriceListUpdateData {
+func NewPriceListUpdateData(type_ string, id string, attributes PriceListUpdateDataAttributes) *PriceListUpdateData {
 	this := PriceListUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PriceListUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceListUpdateData) GetAttributes() PATCHPriceListsPriceListId200ResponseDataAttributes {
+func (o *PriceListUpdateData) GetAttributes() PriceListUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHPriceListsPriceListId200ResponseDataAttributes
+		var ret PriceListUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PriceListUpdateData) GetAttributes() PATCHPriceListsPriceListId200Respo
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceListUpdateData) GetAttributesOk() (*PATCHPriceListsPriceListId200ResponseDataAttributes, bool) {
+func (o *PriceListUpdateData) GetAttributesOk() (*PriceListUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PriceListUpdateData) GetAttributesOk() (*PATCHPriceListsPriceListId200R
 }
 
 // SetAttributes sets field value
-func (o *PriceListUpdateData) SetAttributes(v PATCHPriceListsPriceListId200ResponseDataAttributes) {
+func (o *PriceListUpdateData) SetAttributes(v PriceListUpdateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ManualGatewayData struct for ManualGatewayData
 type ManualGatewayData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETManualGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ManualGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                          `json:"type"`
+	Attributes    ManualGatewayDataAttributes     `json:"attributes"`
+	Relationships *ManualGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayData instantiates a new ManualGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayData(type_ string, attributes GETManualGateways200ResponseDataInnerAttributes) *ManualGatewayData {
+func NewManualGatewayData(type_ string, attributes ManualGatewayDataAttributes) *ManualGatewayData {
 	this := ManualGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ManualGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualGatewayData) GetAttributes() GETManualGateways200ResponseDataInnerAttributes {
+func (o *ManualGatewayData) GetAttributes() ManualGatewayDataAttributes {
 	if o == nil {
-		var ret GETManualGateways200ResponseDataInnerAttributes
+		var ret ManualGatewayDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ManualGatewayData) GetAttributes() GETManualGateways200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayData) GetAttributesOk() (*GETManualGateways200ResponseDataInnerAttributes, bool) {
+func (o *ManualGatewayData) GetAttributesOk() (*ManualGatewayDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ManualGatewayData) GetAttributesOk() (*GETManualGateways200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *ManualGatewayData) SetAttributes(v GETManualGateways200ResponseDataInnerAttributes) {
+func (o *ManualGatewayData) SetAttributes(v ManualGatewayDataAttributes) {
 	o.Attributes = v
 }
 

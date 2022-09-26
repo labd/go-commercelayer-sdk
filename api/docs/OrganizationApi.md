@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GETOrganizationOrganizationId
 
-> GETOrganizationOrganizationId200Response GETOrganizationOrganizationId(ctx).Execute()
+> OrganizationResponse GETOrganizationOrganizationId(ctx).Execute()
 
 Retrieve the organization
 
@@ -37,7 +37,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrganizationApi.GETOrganizationOrganizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrganizationOrganizationId`: GETOrganizationOrganizationId200Response
+    // response from `GETOrganizationOrganizationId`: OrganizationResponse
     fmt.Fprintf(os.Stdout, "Response from `OrganizationApi.GETOrganizationOrganizationId`: %v\n", resp)
 }
 ```
@@ -53,7 +53,7 @@ Other parameters are passed through a pointer to a apiGETOrganizationOrganizatio
 
 ### Return type
 
-[**GETOrganizationOrganizationId200Response**](GETOrganizationOrganizationId200Response.md)
+[**OrganizationResponse**](OrganizationResponse.md)
 
 ### Authorization
 

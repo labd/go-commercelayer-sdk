@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // GiftCardRecipientData struct for GiftCardRecipientData
 type GiftCardRecipientData struct {
 	// The resource's type
-	Type          string                                            `json:"type"`
-	Attributes    GETCouponRecipients200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CouponRecipientDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    CouponRecipientDataAttributes     `json:"attributes"`
+	Relationships *CouponRecipientDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardRecipientData instantiates a new GiftCardRecipientData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardRecipientData(type_ string, attributes GETCouponRecipients200ResponseDataInnerAttributes) *GiftCardRecipientData {
+func NewGiftCardRecipientData(type_ string, attributes CouponRecipientDataAttributes) *GiftCardRecipientData {
 	this := GiftCardRecipientData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *GiftCardRecipientData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardRecipientData) GetAttributes() GETCouponRecipients200ResponseDataInnerAttributes {
+func (o *GiftCardRecipientData) GetAttributes() CouponRecipientDataAttributes {
 	if o == nil {
-		var ret GETCouponRecipients200ResponseDataInnerAttributes
+		var ret CouponRecipientDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *GiftCardRecipientData) GetAttributes() GETCouponRecipients200ResponseDa
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardRecipientData) GetAttributesOk() (*GETCouponRecipients200ResponseDataInnerAttributes, bool) {
+func (o *GiftCardRecipientData) GetAttributesOk() (*CouponRecipientDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *GiftCardRecipientData) GetAttributesOk() (*GETCouponRecipients200Respon
 }
 
 // SetAttributes sets field value
-func (o *GiftCardRecipientData) SetAttributes(v GETCouponRecipients200ResponseDataInnerAttributes) {
+func (o *GiftCardRecipientData) SetAttributes(v CouponRecipientDataAttributes) {
 	o.Attributes = v
 }
 

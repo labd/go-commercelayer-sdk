@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdyenPaymentData struct for AdyenPaymentData
 type AdyenPaymentData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    GETAdyenPayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                         `json:"type"`
+	Attributes    AdyenPaymentDataAttributes     `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenPaymentData instantiates a new AdyenPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentData(type_ string, attributes GETAdyenPayments200ResponseDataInnerAttributes) *AdyenPaymentData {
+func NewAdyenPaymentData(type_ string, attributes AdyenPaymentDataAttributes) *AdyenPaymentData {
 	this := AdyenPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AdyenPaymentData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenPaymentData) GetAttributes() GETAdyenPayments200ResponseDataInnerAttributes {
+func (o *AdyenPaymentData) GetAttributes() AdyenPaymentDataAttributes {
 	if o == nil {
-		var ret GETAdyenPayments200ResponseDataInnerAttributes
+		var ret AdyenPaymentDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AdyenPaymentData) GetAttributes() GETAdyenPayments200ResponseDataInnerA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentData) GetAttributesOk() (*GETAdyenPayments200ResponseDataInnerAttributes, bool) {
+func (o *AdyenPaymentData) GetAttributesOk() (*AdyenPaymentDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AdyenPaymentData) GetAttributesOk() (*GETAdyenPayments200ResponseDataIn
 }
 
 // SetAttributes sets field value
-func (o *AdyenPaymentData) SetAttributes(v GETAdyenPayments200ResponseDataInnerAttributes) {
+func (o *AdyenPaymentData) SetAttributes(v AdyenPaymentDataAttributes) {
 	o.Attributes = v
 }
 

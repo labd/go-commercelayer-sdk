@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes**](PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**TaxCategoryUpdateDataAttributes**](TaxCategoryUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryUpdateDataRelationships**](TaxCategoryUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryUpdateData
 
-`func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, ) *TaxCategoryUpdateData`
+`func NewTaxCategoryUpdateData(type_ string, id string, attributes TaxCategoryUpdateDataAttributes, ) *TaxCategoryUpdateData`
 
 NewTaxCategoryUpdateData instantiates a new TaxCategoryUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *TaxCategoryUpdateData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes`
+`func (o *TaxCategoryUpdateData) GetAttributes() TaxCategoryUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryUpdateData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool)`
+`func (o *TaxCategoryUpdateData) GetAttributesOk() (*TaxCategoryUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes)`
+`func (o *TaxCategoryUpdateData) SetAttributes(v TaxCategoryUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

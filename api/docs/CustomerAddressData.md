@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerAddresses200ResponseDataInnerAttributes**](GETCustomerAddresses200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CustomerAddressDataAttributes**](CustomerAddressDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerAddressDataRelationships**](CustomerAddressDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerAddressData
 
-`func NewCustomerAddressData(type_ string, attributes GETCustomerAddresses200ResponseDataInnerAttributes, ) *CustomerAddressData`
+`func NewCustomerAddressData(type_ string, attributes CustomerAddressDataAttributes, ) *CustomerAddressData`
 
 NewCustomerAddressData instantiates a new CustomerAddressData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerAddressData) GetAttributes() GETCustomerAddresses200ResponseDataInnerAttributes`
+`func (o *CustomerAddressData) GetAttributes() CustomerAddressDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerAddressData) GetAttributesOk() (*GETCustomerAddresses200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerAddressData) GetAttributesOk() (*CustomerAddressDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerAddressData) SetAttributes(v GETCustomerAddresses200ResponseDataInnerAttributes)`
+`func (o *CustomerAddressData) SetAttributes(v CustomerAddressDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CustomerUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHCustomersCustomerId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerCreateDataRelationships                  `json:"relationships,omitempty"`
+	Id            string                           `json:"id"`
+	Attributes    CustomerUpdateDataAttributes     `json:"attributes"`
+	Relationships *CustomerCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerUpdateData instantiates a new CustomerUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerUpdateData(type_ string, id string, attributes PATCHCustomersCustomerId200ResponseDataAttributes) *CustomerUpdateData {
+func NewCustomerUpdateData(type_ string, id string, attributes CustomerUpdateDataAttributes) *CustomerUpdateData {
 	this := CustomerUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CustomerUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerUpdateData) GetAttributes() PATCHCustomersCustomerId200ResponseDataAttributes {
+func (o *CustomerUpdateData) GetAttributes() CustomerUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHCustomersCustomerId200ResponseDataAttributes
+		var ret CustomerUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CustomerUpdateData) GetAttributes() PATCHCustomersCustomerId200Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerUpdateData) GetAttributesOk() (*PATCHCustomersCustomerId200ResponseDataAttributes, bool) {
+func (o *CustomerUpdateData) GetAttributesOk() (*CustomerUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CustomerUpdateData) GetAttributesOk() (*PATCHCustomersCustomerId200Resp
 }
 
 // SetAttributes sets field value
-func (o *CustomerUpdateData) SetAttributes(v PATCHCustomersCustomerId200ResponseDataAttributes) {
+func (o *CustomerUpdateData) SetAttributes(v CustomerUpdateDataAttributes) {
 	o.Attributes = v
 }
 

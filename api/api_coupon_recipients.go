@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type CouponRecipientsApiGETCouponRecipientsRequest struct {
 	ApiService *CouponRecipientsApiService
 }
 
-func (r CouponRecipientsApiGETCouponRecipientsRequest) Execute() (*GETCouponRecipients200Response, *http.Response, error) {
+func (r CouponRecipientsApiGETCouponRecipientsRequest) Execute() (*CouponRecipientResponseList, *http.Response, error) {
 	return r.ApiService.GETCouponRecipientsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *CouponRecipientsApiService) GETCouponRecipients(ctx context.Context) Co
 }
 
 // Execute executes the request
-//  @return GETCouponRecipients200Response
-func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r CouponRecipientsApiGETCouponRecipientsRequest) (*GETCouponRecipients200Response, *http.Response, error) {
+//  @return CouponRecipientResponseList
+func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r CouponRecipientsApiGETCouponRecipientsRequest) (*CouponRecipientResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCouponRecipients200Response
+		localVarReturnValue *CouponRecipientResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponRecipientsApiService.GETCouponRecipients")
@@ -220,7 +220,7 @@ type CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest struct {
 	couponRecipientId string
 }
 
-func (r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) Execute() (*GETCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
+func (r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) Execute() (*CouponRecipientResponse, *http.Response, error) {
 	return r.ApiService.GETCouponRecipientsCouponRecipientIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx co
 }
 
 // Execute executes the request
-//  @return GETCouponRecipientsCouponRecipientId200Response
-func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) (*GETCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
+//  @return CouponRecipientResponse
+func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) (*CouponRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCouponRecipientsCouponRecipientId200Response
+		localVarReturnValue *CouponRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponRecipientsApiService.GETCouponRecipientsCouponRecipientId")
@@ -329,7 +329,7 @@ func (r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) Coupon
 	return r
 }
 
-func (r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) Execute() (*PATCHCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
+func (r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) Execute() (*CouponRecipientResponse, *http.Response, error) {
 	return r.ApiService.PATCHCouponRecipientsCouponRecipientIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx 
 }
 
 // Execute executes the request
-//  @return PATCHCouponRecipientsCouponRecipientId200Response
-func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) (*PATCHCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
+//  @return CouponRecipientResponse
+func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) (*CouponRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHCouponRecipientsCouponRecipientId200Response
+		localVarReturnValue *CouponRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponRecipientsApiService.PATCHCouponRecipientsCouponRecipientId")
@@ -442,7 +442,7 @@ func (r CouponRecipientsApiPOSTCouponRecipientsRequest) CouponRecipientCreate(co
 	return r
 }
 
-func (r CouponRecipientsApiPOSTCouponRecipientsRequest) Execute() (*POSTCouponRecipients201Response, *http.Response, error) {
+func (r CouponRecipientsApiPOSTCouponRecipientsRequest) Execute() (*CouponRecipientResponse, *http.Response, error) {
 	return r.ApiService.POSTCouponRecipientsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *CouponRecipientsApiService) POSTCouponRecipients(ctx context.Context) C
 }
 
 // Execute executes the request
-//  @return POSTCouponRecipients201Response
-func (a *CouponRecipientsApiService) POSTCouponRecipientsExecute(r CouponRecipientsApiPOSTCouponRecipientsRequest) (*POSTCouponRecipients201Response, *http.Response, error) {
+//  @return CouponRecipientResponse
+func (a *CouponRecipientsApiService) POSTCouponRecipientsExecute(r CouponRecipientsApiPOSTCouponRecipientsRequest) (*CouponRecipientResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTCouponRecipients201Response
+		localVarReturnValue *CouponRecipientResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CouponRecipientsApiService.POSTCouponRecipients")

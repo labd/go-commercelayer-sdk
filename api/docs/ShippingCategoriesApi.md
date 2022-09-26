@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GETShippingCategories
 
-> GETShippingCategories200Response GETShippingCategories(ctx).Execute()
+> ShippingCategoryResponseList GETShippingCategories(ctx).Execute()
 
 List all shipping categories
 
@@ -180,7 +180,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingCategories`: GETShippingCategories200Response
+    // response from `GETShippingCategories`: ShippingCategoryResponseList
     fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.GETShippingCategories`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Other parameters are passed through a pointer to a apiGETShippingCategoriesReque
 
 ### Return type
 
-[**GETShippingCategories200Response**](GETShippingCategories200Response.md)
+[**ShippingCategoryResponseList**](ShippingCategoryResponseList.md)
 
 ### Authorization
 
@@ -214,7 +214,7 @@ Other parameters are passed through a pointer to a apiGETShippingCategoriesReque
 
 ## GETShippingCategoriesShippingCategoryId
 
-> GETShippingCategoriesShippingCategoryId200Response GETShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).Execute()
+> ShippingCategoryResponse GETShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).Execute()
 
 Retrieve a shipping category
 
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETShippingCategoriesShippingCategoryId`: GETShippingCategoriesShippingCategoryId200Response
+    // response from `GETShippingCategoriesShippingCategoryId`: ShippingCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.GETShippingCategoriesShippingCategoryId`: %v\n", resp)
 }
 ```
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETShippingCategoriesShippingCategoryId200Response**](GETShippingCategoriesShippingCategoryId200Response.md)
+[**ShippingCategoryResponse**](ShippingCategoryResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingCategoriesShippingCategoryId
 
-> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
+> ShippingCategoryResponse PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
 
 Update a shipping category
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
+    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewShippingCategoryUpdateDataAttributes())) // ShippingCategoryUpdate | 
     shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHShippingCategoriesShippingCategoryId`: PATCHShippingCategoriesShippingCategoryId200Response
+    // response from `PATCHShippingCategoriesShippingCategoryId`: ShippingCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHShippingCategoriesShippingCategoryId200Response**](PATCHShippingCategoriesShippingCategoryId200Response.md)
+[**ShippingCategoryResponse**](ShippingCategoryResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingCategories
 
-> POSTShippingCategories201Response POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
+> ShippingCategoryResponse POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
 
 Create a shipping category
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("Type_example", *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
+    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("Type_example", *openapiclient.NewShippingCategoryCreateDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.POSTShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTShippingCategories`: POSTShippingCategories201Response
+    // response from `POSTShippingCategories`: ShippingCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `ShippingCategoriesApi.POSTShippingCategories`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTShippingCategories201Response**](POSTShippingCategories201Response.md)
+[**ShippingCategoryResponse**](ShippingCategoryResponse.md)
 
 ### Authorization
 

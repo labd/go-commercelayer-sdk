@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PaymentMethodUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes `json:"attributes"`
-	Relationships *PaymentMethodUpdateDataRelationships                       `json:"relationships,omitempty"`
+	Id            string                                `json:"id"`
+	Attributes    PaymentMethodUpdateDataAttributes     `json:"attributes"`
+	Relationships *PaymentMethodUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPaymentMethodUpdateData instantiates a new PaymentMethodUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentMethodUpdateData(type_ string, id string, attributes PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) *PaymentMethodUpdateData {
+func NewPaymentMethodUpdateData(type_ string, id string, attributes PaymentMethodUpdateDataAttributes) *PaymentMethodUpdateData {
 	this := PaymentMethodUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PaymentMethodUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaymentMethodUpdateData) GetAttributes() PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes {
+func (o *PaymentMethodUpdateData) GetAttributes() PaymentMethodUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes
+		var ret PaymentMethodUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PaymentMethodUpdateData) GetAttributes() PATCHPaymentMethodsPaymentMeth
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodUpdateData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool) {
+func (o *PaymentMethodUpdateData) GetAttributesOk() (*PaymentMethodUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PaymentMethodUpdateData) GetAttributesOk() (*PATCHPaymentMethodsPayment
 }
 
 // SetAttributes sets field value
-func (o *PaymentMethodUpdateData) SetAttributes(v PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) {
+func (o *PaymentMethodUpdateData) SetAttributes(v PaymentMethodUpdateDataAttributes) {
 	o.Attributes = v
 }
 

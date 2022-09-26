@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETAdyenPayments
 
-> GETAdyenPayments200Response GETAdyenPayments(ctx).Execute()
+> AdyenPaymentResponseList GETAdyenPayments(ctx).Execute()
 
 List all adyen payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.GETAdyenPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdyenPayments`: GETAdyenPayments200Response
+    // response from `GETAdyenPayments`: AdyenPaymentResponseList
     fmt.Fprintf(os.Stdout, "Response from `AdyenPaymentsApi.GETAdyenPayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETAdyenPaymentsRequest st
 
 ### Return type
 
-[**GETAdyenPayments200Response**](GETAdyenPayments200Response.md)
+[**AdyenPaymentResponseList**](AdyenPaymentResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETAdyenPaymentsRequest st
 
 ## GETAdyenPaymentsAdyenPaymentId
 
-> GETAdyenPaymentsAdyenPaymentId200Response GETAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).Execute()
+> AdyenPaymentResponse GETAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).Execute()
 
 Retrieve an adyen payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.GETAdyenPaymentsAdyenPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdyenPaymentsAdyenPaymentId`: GETAdyenPaymentsAdyenPaymentId200Response
+    // response from `GETAdyenPaymentsAdyenPaymentId`: AdyenPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenPaymentsApi.GETAdyenPaymentsAdyenPaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETAdyenPaymentsAdyenPaymentId200Response**](GETAdyenPaymentsAdyenPaymentId200Response.md)
+[**AdyenPaymentResponse**](AdyenPaymentResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdyenPaymentsAdyenPaymentId
 
-> PATCHAdyenPaymentsAdyenPaymentId200Response PATCHAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).AdyenPaymentUpdate(adyenPaymentUpdate).Execute()
+> AdyenPaymentResponse PATCHAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).AdyenPaymentUpdate(adyenPaymentUpdate).Execute()
 
 Update an adyen payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes())) // AdyenPaymentUpdate | 
+    adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenPaymentUpdateDataAttributes())) // AdyenPaymentUpdate | 
     adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.PATCHAdyenPaymentsAdyenPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAdyenPaymentsAdyenPaymentId`: PATCHAdyenPaymentsAdyenPaymentId200Response
+    // response from `PATCHAdyenPaymentsAdyenPaymentId`: AdyenPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenPaymentsApi.PATCHAdyenPaymentsAdyenPaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHAdyenPaymentsAdyenPaymentId200Response**](PATCHAdyenPaymentsAdyenPaymentId200Response.md)
+[**AdyenPaymentResponse**](AdyenPaymentResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdyenPayments
 
-> POSTAdyenPayments201Response POSTAdyenPayments(ctx).AdyenPaymentCreate(adyenPaymentCreate).Execute()
+> AdyenPaymentResponse POSTAdyenPayments(ctx).AdyenPaymentCreate(adyenPaymentCreate).Execute()
 
 Create an adyen payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    adyenPaymentCreate := *openapiclient.NewAdyenPaymentCreate(*openapiclient.NewAdyenPaymentCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // AdyenPaymentCreate | 
+    adyenPaymentCreate := *openapiclient.NewAdyenPaymentCreate(*openapiclient.NewAdyenPaymentCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // AdyenPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.POSTAdyenPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAdyenPayments`: POSTAdyenPayments201Response
+    // response from `POSTAdyenPayments`: AdyenPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenPaymentsApi.POSTAdyenPayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTAdyenPayments201Response**](POSTAdyenPayments201Response.md)
+[**AdyenPaymentResponse**](AdyenPaymentResponse.md)
 
 ### Authorization
 

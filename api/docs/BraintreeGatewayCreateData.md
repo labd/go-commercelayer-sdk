@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTBraintreeGateways201ResponseDataAttributes**](POSTBraintreeGateways201ResponseDataAttributes.md) |  | 
+**Attributes** | [**BraintreeGatewayCreateDataAttributes**](BraintreeGatewayCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BraintreeGatewayCreateDataRelationships**](BraintreeGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreeGatewayCreateData
 
-`func NewBraintreeGatewayCreateData(type_ string, attributes POSTBraintreeGateways201ResponseDataAttributes, ) *BraintreeGatewayCreateData`
+`func NewBraintreeGatewayCreateData(type_ string, attributes BraintreeGatewayCreateDataAttributes, ) *BraintreeGatewayCreateData`
 
 NewBraintreeGatewayCreateData instantiates a new BraintreeGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreeGatewayCreateData) GetAttributes() POSTBraintreeGateways201ResponseDataAttributes`
+`func (o *BraintreeGatewayCreateData) GetAttributes() BraintreeGatewayCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreeGatewayCreateData) GetAttributesOk() (*POSTBraintreeGateways201ResponseDataAttributes, bool)`
+`func (o *BraintreeGatewayCreateData) GetAttributesOk() (*BraintreeGatewayCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreeGatewayCreateData) SetAttributes(v POSTBraintreeGateways201ResponseDataAttributes)`
+`func (o *BraintreeGatewayCreateData) SetAttributes(v BraintreeGatewayCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

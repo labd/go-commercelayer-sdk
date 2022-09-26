@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // InventoryModelCreateData struct for InventoryModelCreateData
 type InventoryModelCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
+	Type          string                             `json:"type"`
+	Attributes    InventoryModelCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}             `json:"relationships,omitempty"`
 }
 
 // NewInventoryModelCreateData instantiates a new InventoryModelCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryModelCreateData(type_ string, attributes POSTInventoryModels201ResponseDataAttributes) *InventoryModelCreateData {
+func NewInventoryModelCreateData(type_ string, attributes InventoryModelCreateDataAttributes) *InventoryModelCreateData {
 	this := InventoryModelCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *InventoryModelCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InventoryModelCreateData) GetAttributes() POSTInventoryModels201ResponseDataAttributes {
+func (o *InventoryModelCreateData) GetAttributes() InventoryModelCreateDataAttributes {
 	if o == nil {
-		var ret POSTInventoryModels201ResponseDataAttributes
+		var ret InventoryModelCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *InventoryModelCreateData) GetAttributes() POSTInventoryModels201Respons
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InventoryModelCreateData) GetAttributesOk() (*POSTInventoryModels201ResponseDataAttributes, bool) {
+func (o *InventoryModelCreateData) GetAttributesOk() (*InventoryModelCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *InventoryModelCreateData) GetAttributesOk() (*POSTInventoryModels201Res
 }
 
 // SetAttributes sets field value
-func (o *InventoryModelCreateData) SetAttributes(v POSTInventoryModels201ResponseDataAttributes) {
+func (o *InventoryModelCreateData) SetAttributes(v InventoryModelCreateDataAttributes) {
 	o.Attributes = v
 }
 

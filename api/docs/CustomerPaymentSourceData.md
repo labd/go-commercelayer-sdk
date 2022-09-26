@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerPaymentSources200ResponseDataInnerAttributes**](GETCustomerPaymentSources200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CustomerPaymentSourceDataAttributes**](CustomerPaymentSourceDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceData
 
-`func NewCustomerPaymentSourceData(type_ string, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes, ) *CustomerPaymentSourceData`
+`func NewCustomerPaymentSourceData(type_ string, attributes CustomerPaymentSourceDataAttributes, ) *CustomerPaymentSourceData`
 
 NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes`
+`func (o *CustomerPaymentSourceData) GetAttributes() CustomerPaymentSourceDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerPaymentSourceData) GetAttributesOk() (*CustomerPaymentSourceDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes)`
+`func (o *CustomerPaymentSourceData) SetAttributes(v CustomerPaymentSourceDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

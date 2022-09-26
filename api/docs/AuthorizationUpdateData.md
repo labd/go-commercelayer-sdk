@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAuthorizationsAuthorizationId200ResponseDataAttributes**](PATCHAuthorizationsAuthorizationId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AuthorizationUpdateDataAttributes**](AuthorizationUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewAuthorizationUpdateData
 
-`func NewAuthorizationUpdateData(type_ string, id string, attributes PATCHAuthorizationsAuthorizationId200ResponseDataAttributes, ) *AuthorizationUpdateData`
+`func NewAuthorizationUpdateData(type_ string, id string, attributes AuthorizationUpdateDataAttributes, ) *AuthorizationUpdateData`
 
 NewAuthorizationUpdateData instantiates a new AuthorizationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AuthorizationUpdateData) GetAttributes() PATCHAuthorizationsAuthorizationId200ResponseDataAttributes`
+`func (o *AuthorizationUpdateData) GetAttributes() AuthorizationUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AuthorizationUpdateData) GetAttributesOk() (*PATCHAuthorizationsAuthorizationId200ResponseDataAttributes, bool)`
+`func (o *AuthorizationUpdateData) GetAttributesOk() (*AuthorizationUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AuthorizationUpdateData) SetAttributes(v PATCHAuthorizationsAuthorizationId200ResponseDataAttributes)`
+`func (o *AuthorizationUpdateData) SetAttributes(v AuthorizationUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

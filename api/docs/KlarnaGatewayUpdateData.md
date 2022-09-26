@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes**](PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**KlarnaGatewayUpdateDataAttributes**](KlarnaGatewayUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**KlarnaGatewayCreateDataRelationships**](KlarnaGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaGatewayUpdateData
 
-`func NewKlarnaGatewayUpdateData(type_ string, id string, attributes PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, ) *KlarnaGatewayUpdateData`
+`func NewKlarnaGatewayUpdateData(type_ string, id string, attributes KlarnaGatewayUpdateDataAttributes, ) *KlarnaGatewayUpdateData`
 
 NewKlarnaGatewayUpdateData instantiates a new KlarnaGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *KlarnaGatewayUpdateData) GetAttributes() PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes`
+`func (o *KlarnaGatewayUpdateData) GetAttributes() KlarnaGatewayUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, bool)`
+`func (o *KlarnaGatewayUpdateData) GetAttributesOk() (*KlarnaGatewayUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaGatewayUpdateData) SetAttributes(v PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes)`
+`func (o *KlarnaGatewayUpdateData) SetAttributes(v KlarnaGatewayUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

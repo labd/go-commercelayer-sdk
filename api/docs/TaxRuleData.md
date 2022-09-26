@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETTaxRules200ResponseDataInnerAttributes**](GETTaxRules200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**TaxRuleDataAttributes**](TaxRuleDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxRuleDataRelationships**](TaxRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxRuleData
 
-`func NewTaxRuleData(type_ string, attributes GETTaxRules200ResponseDataInnerAttributes, ) *TaxRuleData`
+`func NewTaxRuleData(type_ string, attributes TaxRuleDataAttributes, ) *TaxRuleData`
 
 NewTaxRuleData instantiates a new TaxRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes`
+`func (o *TaxRuleData) GetAttributes() TaxRuleDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttributes, bool)`
+`func (o *TaxRuleData) GetAttributesOk() (*TaxRuleDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxRuleData) SetAttributes(v GETTaxRules200ResponseDataInnerAttributes)`
+`func (o *TaxRuleData) SetAttributes(v TaxRuleDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

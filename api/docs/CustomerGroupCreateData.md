@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTCustomerGroups201ResponseDataAttributes**](POSTCustomerGroups201ResponseDataAttributes.md) |  | 
+**Attributes** | [**CustomerGroupCreateDataAttributes**](CustomerGroupCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCustomerGroupCreateData
 
-`func NewCustomerGroupCreateData(type_ string, attributes POSTCustomerGroups201ResponseDataAttributes, ) *CustomerGroupCreateData`
+`func NewCustomerGroupCreateData(type_ string, attributes CustomerGroupCreateDataAttributes, ) *CustomerGroupCreateData`
 
 NewCustomerGroupCreateData instantiates a new CustomerGroupCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerGroupCreateData) GetAttributes() POSTCustomerGroups201ResponseDataAttributes`
+`func (o *CustomerGroupCreateData) GetAttributes() CustomerGroupCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerGroupCreateData) GetAttributesOk() (*POSTCustomerGroups201ResponseDataAttributes, bool)`
+`func (o *CustomerGroupCreateData) GetAttributesOk() (*CustomerGroupCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerGroupCreateData) SetAttributes(v POSTCustomerGroups201ResponseDataAttributes)`
+`func (o *CustomerGroupCreateData) SetAttributes(v CustomerGroupCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

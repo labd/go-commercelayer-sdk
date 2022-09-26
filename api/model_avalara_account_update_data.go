@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AvalaraAccountUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                        `json:"id"`
-	Attributes    PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships                        `json:"relationships,omitempty"`
+	Id            string                                 `json:"id"`
+	Attributes    AvalaraAccountUpdateDataAttributes     `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAvalaraAccountUpdateData instantiates a new AvalaraAccountUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvalaraAccountUpdateData(type_ string, id string, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes) *AvalaraAccountUpdateData {
+func NewAvalaraAccountUpdateData(type_ string, id string, attributes AvalaraAccountUpdateDataAttributes) *AvalaraAccountUpdateData {
 	this := AvalaraAccountUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *AvalaraAccountUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes {
+func (o *AvalaraAccountUpdateData) GetAttributes() AvalaraAccountUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes
+		var ret AvalaraAccountUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAc
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountUpdateData) GetAttributesOk() (*PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, bool) {
+func (o *AvalaraAccountUpdateData) GetAttributesOk() (*AvalaraAccountUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *AvalaraAccountUpdateData) GetAttributesOk() (*PATCHAvalaraAccountsAvala
 }
 
 // SetAttributes sets field value
-func (o *AvalaraAccountUpdateData) SetAttributes(v PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes) {
+func (o *AvalaraAccountUpdateData) SetAttributes(v AvalaraAccountUpdateDataAttributes) {
 	o.Attributes = v
 }
 

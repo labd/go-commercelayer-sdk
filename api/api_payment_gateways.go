@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -488,7 +488,7 @@ type PaymentGatewaysApiGETPaymentGatewaysRequest struct {
 	ApiService *PaymentGatewaysApiService
 }
 
-func (r PaymentGatewaysApiGETPaymentGatewaysRequest) Execute() (*GETPaymentGateways200Response, *http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysRequest) Execute() (*PaymentGatewayResponseList, *http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysExecute(r)
 }
 
@@ -508,13 +508,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGateways(ctx context.Context) Paym
 }
 
 // Execute executes the request
-//  @return GETPaymentGateways200Response
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*GETPaymentGateways200Response, *http.Response, error) {
+//  @return PaymentGatewayResponseList
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysApiGETPaymentGatewaysRequest) (*PaymentGatewayResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaymentGateways200Response
+		localVarReturnValue *PaymentGatewayResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETPaymentGateways")
@@ -588,7 +588,7 @@ type PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest struct {
 	paymentGatewayId string
 }
 
-func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*GETPaymentGatewaysPaymentGatewayId200Response, *http.Response, error) {
+func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*PaymentGatewayResponse, *http.Response, error) {
 	return r.ApiService.GETPaymentGatewaysPaymentGatewayIdExecute(r)
 }
 
@@ -610,13 +610,13 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETPaymentGatewaysPaymentGatewayId200Response
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*GETPaymentGatewaysPaymentGatewayId200Response, *http.Response, error) {
+//  @return PaymentGatewayResponse
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) (*PaymentGatewayResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPaymentGatewaysPaymentGatewayId200Response
+		localVarReturnValue *PaymentGatewayResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETPaymentGatewaysPaymentGatewayId")

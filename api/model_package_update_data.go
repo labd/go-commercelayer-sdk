@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PackageUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                          `json:"id"`
-	Attributes    PATCHPackagesPackageId200ResponseDataAttributes `json:"attributes"`
-	Relationships *PackageUpdateDataRelationships                 `json:"relationships,omitempty"`
+	Id            string                          `json:"id"`
+	Attributes    PackageUpdateDataAttributes     `json:"attributes"`
+	Relationships *PackageUpdateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageUpdateData instantiates a new PackageUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageUpdateData(type_ string, id string, attributes PATCHPackagesPackageId200ResponseDataAttributes) *PackageUpdateData {
+func NewPackageUpdateData(type_ string, id string, attributes PackageUpdateDataAttributes) *PackageUpdateData {
 	this := PackageUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PackageUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PackageUpdateData) GetAttributes() PATCHPackagesPackageId200ResponseDataAttributes {
+func (o *PackageUpdateData) GetAttributes() PackageUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHPackagesPackageId200ResponseDataAttributes
+		var ret PackageUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PackageUpdateData) GetAttributes() PATCHPackagesPackageId200ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PackageUpdateData) GetAttributesOk() (*PATCHPackagesPackageId200ResponseDataAttributes, bool) {
+func (o *PackageUpdateData) GetAttributesOk() (*PackageUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PackageUpdateData) GetAttributesOk() (*PATCHPackagesPackageId200Respons
 }
 
 // SetAttributes sets field value
-func (o *PackageUpdateData) SetAttributes(v PATCHPackagesPackageId200ResponseDataAttributes) {
+func (o *PackageUpdateData) SetAttributes(v PackageUpdateDataAttributes) {
 	o.Attributes = v
 }
 

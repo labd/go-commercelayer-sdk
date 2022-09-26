@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type GiftCardUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                            `json:"id"`
-	Attributes    PATCHGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GiftCardCreateDataRelationships                  `json:"relationships,omitempty"`
+	Id            string                           `json:"id"`
+	Attributes    GiftCardUpdateDataAttributes     `json:"attributes"`
+	Relationships *GiftCardCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewGiftCardUpdateData instantiates a new GiftCardUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardUpdateData(type_ string, id string, attributes PATCHGiftCardsGiftCardId200ResponseDataAttributes) *GiftCardUpdateData {
+func NewGiftCardUpdateData(type_ string, id string, attributes GiftCardUpdateDataAttributes) *GiftCardUpdateData {
 	this := GiftCardUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *GiftCardUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardUpdateData) GetAttributes() PATCHGiftCardsGiftCardId200ResponseDataAttributes {
+func (o *GiftCardUpdateData) GetAttributes() GiftCardUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHGiftCardsGiftCardId200ResponseDataAttributes
+		var ret GiftCardUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *GiftCardUpdateData) GetAttributes() PATCHGiftCardsGiftCardId200Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardUpdateData) GetAttributesOk() (*PATCHGiftCardsGiftCardId200ResponseDataAttributes, bool) {
+func (o *GiftCardUpdateData) GetAttributesOk() (*GiftCardUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *GiftCardUpdateData) GetAttributesOk() (*PATCHGiftCardsGiftCardId200Resp
 }
 
 // SetAttributes sets field value
-func (o *GiftCardUpdateData) SetAttributes(v PATCHGiftCardsGiftCardId200ResponseDataAttributes) {
+func (o *GiftCardUpdateData) SetAttributes(v GiftCardUpdateDataAttributes) {
 	o.Attributes = v
 }
 

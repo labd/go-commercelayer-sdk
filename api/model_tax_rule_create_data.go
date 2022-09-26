@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxRuleCreateData struct for TaxRuleCreateData
 type TaxRuleCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
-	Attributes    POSTTaxRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxRuleCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                          `json:"type"`
+	Attributes    TaxRuleCreateDataAttributes     `json:"attributes"`
+	Relationships *TaxRuleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleCreateData instantiates a new TaxRuleCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleCreateData(type_ string, attributes POSTTaxRules201ResponseDataAttributes) *TaxRuleCreateData {
+func NewTaxRuleCreateData(type_ string, attributes TaxRuleCreateDataAttributes) *TaxRuleCreateData {
 	this := TaxRuleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *TaxRuleCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxRuleCreateData) GetAttributes() POSTTaxRules201ResponseDataAttributes {
+func (o *TaxRuleCreateData) GetAttributes() TaxRuleCreateDataAttributes {
 	if o == nil {
-		var ret POSTTaxRules201ResponseDataAttributes
+		var ret TaxRuleCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *TaxRuleCreateData) GetAttributes() POSTTaxRules201ResponseDataAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleCreateData) GetAttributesOk() (*POSTTaxRules201ResponseDataAttributes, bool) {
+func (o *TaxRuleCreateData) GetAttributesOk() (*TaxRuleCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *TaxRuleCreateData) GetAttributesOk() (*POSTTaxRules201ResponseDataAttri
 }
 
 // SetAttributes sets field value
-func (o *TaxRuleCreateData) SetAttributes(v POSTTaxRules201ResponseDataAttributes) {
+func (o *TaxRuleCreateData) SetAttributes(v TaxRuleCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type PriceVolumeTiersApiGETPriceVolumeTiersRequest struct {
 	ApiService *PriceVolumeTiersApiService
 }
 
-func (r PriceVolumeTiersApiGETPriceVolumeTiersRequest) Execute() (*GETPriceVolumeTiers200Response, *http.Response, error) {
+func (r PriceVolumeTiersApiGETPriceVolumeTiersRequest) Execute() (*PriceVolumeTierResponseList, *http.Response, error) {
 	return r.ApiService.GETPriceVolumeTiersExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiers(ctx context.Context) Pr
 }
 
 // Execute executes the request
-//  @return GETPriceVolumeTiers200Response
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r PriceVolumeTiersApiGETPriceVolumeTiersRequest) (*GETPriceVolumeTiers200Response, *http.Response, error) {
+//  @return PriceVolumeTierResponseList
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r PriceVolumeTiersApiGETPriceVolumeTiersRequest) (*PriceVolumeTierResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPriceVolumeTiers200Response
+		localVarReturnValue *PriceVolumeTierResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.GETPriceVolumeTiers")
@@ -312,7 +312,7 @@ type PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest struct {
 	priceVolumeTierId string
 }
 
-func (r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*GETPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
+func (r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*PriceVolumeTierResponse, *http.Response, error) {
 	return r.ApiService.GETPriceVolumeTiersPriceVolumeTierIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx co
 }
 
 // Execute executes the request
-//  @return GETPriceVolumeTiersPriceVolumeTierId200Response
-func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) (*GETPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
+//  @return PriceVolumeTierResponse
+func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) (*PriceVolumeTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPriceVolumeTiersPriceVolumeTierId200Response
+		localVarReturnValue *PriceVolumeTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.GETPriceVolumeTiersPriceVolumeTierId")
@@ -421,7 +421,7 @@ func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) PriceV
 	return r
 }
 
-func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*PATCHPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
+func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) Execute() (*PriceVolumeTierResponse, *http.Response, error) {
 	return r.ApiService.PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx 
 }
 
 // Execute executes the request
-//  @return PATCHPriceVolumeTiersPriceVolumeTierId200Response
-func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) (*PATCHPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
+//  @return PriceVolumeTierResponse
+func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) (*PriceVolumeTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHPriceVolumeTiersPriceVolumeTierId200Response
+		localVarReturnValue *PriceVolumeTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.PATCHPriceVolumeTiersPriceVolumeTierId")
@@ -534,7 +534,7 @@ func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) PriceVolumeTierCreate(pr
 	return r
 }
 
-func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) Execute() (*POSTPriceVolumeTiers201Response, *http.Response, error) {
+func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) Execute() (*PriceVolumeTierResponse, *http.Response, error) {
 	return r.ApiService.POSTPriceVolumeTiersExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiers(ctx context.Context) P
 }
 
 // Execute executes the request
-//  @return POSTPriceVolumeTiers201Response
-func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) (*POSTPriceVolumeTiers201Response, *http.Response, error) {
+//  @return PriceVolumeTierResponse
+func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) (*PriceVolumeTierResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTPriceVolumeTiers201Response
+		localVarReturnValue *PriceVolumeTierResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PriceVolumeTiersApiService.POSTPriceVolumeTiers")

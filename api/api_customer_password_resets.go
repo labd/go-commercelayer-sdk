@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type CustomerPasswordResetsApiGETCustomerPasswordResetsRequest struct {
 	ApiService *CustomerPasswordResetsApiService
 }
 
-func (r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) Execute() (*GETCustomerPasswordResets200Response, *http.Response, error) {
+func (r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) Execute() (*CustomerPasswordResetResponseList, *http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context
 }
 
 // Execute executes the request
-//  @return GETCustomerPasswordResets200Response
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) (*GETCustomerPasswordResets200Response, *http.Response, error) {
+//  @return CustomerPasswordResetResponseList
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) (*CustomerPasswordResetResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCustomerPasswordResets200Response
+		localVarReturnValue *CustomerPasswordResetResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResets")
@@ -220,7 +220,7 @@ type CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRe
 	customerPasswordResetId string
 }
 
-func (r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
+func (r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*CustomerPasswordResetResponse, *http.Response, error) {
 	return r.ApiService.GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 }
 
 // Execute executes the request
-//  @return GETCustomerPasswordResetsCustomerPasswordResetId200Response
-func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
+//  @return CustomerPasswordResetResponse
+func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*CustomerPasswordResetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETCustomerPasswordResetsCustomerPasswordResetId200Response
+		localVarReturnValue *CustomerPasswordResetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.GETCustomerPasswordResetsCustomerPasswordResetId")
@@ -329,7 +329,7 @@ func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordRese
 	return r
 }
 
-func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
+func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) Execute() (*CustomerPasswordResetResponse, *http.Response, error) {
 	return r.ApiService.PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 }
 
 // Execute executes the request
-//  @return PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
-func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
+//  @return CustomerPasswordResetResponse
+func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*CustomerPasswordResetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
+		localVarReturnValue *CustomerPasswordResetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.PATCHCustomerPasswordResetsCustomerPasswordResetId")
@@ -442,7 +442,7 @@ func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) CustomerPass
 	return r
 }
 
-func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) Execute() (*POSTCustomerPasswordResets201Response, *http.Response, error) {
+func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) Execute() (*CustomerPasswordResetResponse, *http.Response, error) {
 	return r.ApiService.POSTCustomerPasswordResetsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx contex
 }
 
 // Execute executes the request
-//  @return POSTCustomerPasswordResets201Response
-func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) (*POSTCustomerPasswordResets201Response, *http.Response, error) {
+//  @return CustomerPasswordResetResponse
+func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) (*CustomerPasswordResetResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTCustomerPasswordResets201Response
+		localVarReturnValue *CustomerPasswordResetResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerPasswordResetsApiService.POSTCustomerPasswordResets")

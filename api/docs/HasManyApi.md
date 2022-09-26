@@ -40,6 +40,7 @@ Method | HTTP request | Description
 [**GETDeliveryLeadTimeIdAttachments**](HasManyApi.md#GETDeliveryLeadTimeIdAttachments) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/attachments | Retrieve the attachments associated to the delivery lead time
 [**GETEventIdLastEventCallbacks**](HasManyApi.md#GETEventIdLastEventCallbacks) | **Get** /events/{eventId}/last_event_callbacks | Retrieve the last event callbacks associated to the event
 [**GETEventIdWebhooks**](HasManyApi.md#GETEventIdWebhooks) | **Get** /events/{eventId}/webhooks | Retrieve the webhooks associated to the event
+[**GETExportIdEvents**](HasManyApi.md#GETExportIdEvents) | **Get** /exports/{exportId}/events | Retrieve the events associated to the export
 [**GETExternalGatewayIdExternalPayments**](HasManyApi.md#GETExternalGatewayIdExternalPayments) | **Get** /external_gateways/{externalGatewayId}/external_payments | Retrieve the external payments associated to the external gateway
 [**GETExternalGatewayIdPaymentMethods**](HasManyApi.md#GETExternalGatewayIdPaymentMethods) | **Get** /external_gateways/{externalGatewayId}/payment_methods | Retrieve the payment methods associated to the external gateway
 [**GETExternalPromotionIdAttachments**](HasManyApi.md#GETExternalPromotionIdAttachments) | **Get** /external_promotions/{externalPromotionId}/attachments | Retrieve the attachments associated to the external promotion
@@ -2586,6 +2587,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETEventIdWebhooksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETExportIdEvents
+
+> GETExportIdEvents(ctx, exportId).Execute()
+
+Retrieve the events associated to the export
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    exportId := "exportId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETExportIdEvents(context.Background(), exportId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExportIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**exportId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExportIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

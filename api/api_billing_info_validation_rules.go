@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest struct {
 	ApiService *BillingInfoValidationRulesApiService
 }
 
-func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) Execute() (*GETBillingInfoValidationRules200Response, *http.Response, error) {
+func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) Execute() (*BillingInfoValidationRuleResponseList, *http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRulesExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRules(ctx
 }
 
 // Execute executes the request
-//  @return GETBillingInfoValidationRules200Response
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) (*GETBillingInfoValidationRules200Response, *http.Response, error) {
+//  @return BillingInfoValidationRuleResponseList
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) (*BillingInfoValidationRuleResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETBillingInfoValidationRules200Response
+		localVarReturnValue *BillingInfoValidationRuleResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.GETBillingInfoValidationRules")
@@ -220,7 +220,7 @@ type BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValida
 	billingInfoValidationRuleId string
 }
 
-func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
+func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	return r.ApiService.GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 }
 
 // Execute executes the request
-//  @return GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
+//  @return BillingInfoValidationRuleResponse
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+		localVarReturnValue *BillingInfoValidationRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.GETBillingInfoValidationRulesBillingInfoValidationRuleId")
@@ -329,7 +329,7 @@ func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoV
 	return r
 }
 
-func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	return r.ApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 }
 
 // Execute executes the request
-//  @return POSTBillingInfoValidationRules201Response
-func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+//  @return BillingInfoValidationRuleResponse
+func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTBillingInfoValidationRules201Response
+		localVarReturnValue *BillingInfoValidationRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId")
@@ -442,7 +442,7 @@ func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) Bill
 	return r
 }
 
-func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) Execute() (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) Execute() (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	return r.ApiService.POSTBillingInfoValidationRulesExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRules(ct
 }
 
 // Execute executes the request
-//  @return POSTBillingInfoValidationRules201Response
-func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+//  @return BillingInfoValidationRuleResponse
+func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) (*BillingInfoValidationRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTBillingInfoValidationRules201Response
+		localVarReturnValue *BillingInfoValidationRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.POSTBillingInfoValidationRules")

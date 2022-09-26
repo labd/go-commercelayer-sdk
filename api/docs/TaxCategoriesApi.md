@@ -359,7 +359,7 @@ Name | Type | Description  | Notes
 
 ## GETTaxCategories
 
-> GETTaxCategories200Response GETTaxCategories(ctx).Execute()
+> TaxCategoryResponseList GETTaxCategories(ctx).Execute()
 
 List all tax categories
 
@@ -386,7 +386,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCategories`: GETTaxCategories200Response
+    // response from `GETTaxCategories`: TaxCategoryResponseList
     fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.GETTaxCategories`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Other parameters are passed through a pointer to a apiGETTaxCategoriesRequest st
 
 ### Return type
 
-[**GETTaxCategories200Response**](GETTaxCategories200Response.md)
+[**TaxCategoryResponseList**](TaxCategoryResponseList.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Other parameters are passed through a pointer to a apiGETTaxCategoriesRequest st
 
 ## GETTaxCategoriesTaxCategoryId
 
-> GETTaxCategoriesTaxCategoryId200Response GETTaxCategoriesTaxCategoryId(ctx, taxCategoryId).Execute()
+> TaxCategoryResponse GETTaxCategoriesTaxCategoryId(ctx, taxCategoryId).Execute()
 
 Retrieve a tax category
 
@@ -448,7 +448,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCategoriesTaxCategoryId`: GETTaxCategoriesTaxCategoryId200Response
+    // response from `GETTaxCategoriesTaxCategoryId`: TaxCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.GETTaxCategoriesTaxCategoryId`: %v\n", resp)
 }
 ```
@@ -472,7 +472,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETTaxCategoriesTaxCategoryId200Response**](GETTaxCategoriesTaxCategoryId200Response.md)
+[**TaxCategoryResponse**](TaxCategoryResponse.md)
 
 ### Authorization
 
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxCategoriesTaxCategoryId
 
-> PATCHTaxCategoriesTaxCategoryId200Response PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
+> TaxCategoryResponse PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
 
 Update a tax category
 
@@ -577,7 +577,7 @@ import (
 )
 
 func main() {
-    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes())) // TaxCategoryUpdate | 
+    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewTaxCategoryUpdateDataAttributes())) // TaxCategoryUpdate | 
     taxCategoryId := "taxCategoryId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -587,7 +587,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHTaxCategoriesTaxCategoryId`: PATCHTaxCategoriesTaxCategoryId200Response
+    // response from `PATCHTaxCategoriesTaxCategoryId`: TaxCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId`: %v\n", resp)
 }
 ```
@@ -612,7 +612,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHTaxCategoriesTaxCategoryId200Response**](PATCHTaxCategoriesTaxCategoryId200Response.md)
+[**TaxCategoryResponse**](TaxCategoryResponse.md)
 
 ### Authorization
 
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxCategories
 
-> POSTTaxCategories201Response POSTTaxCategories(ctx).TaxCategoryCreate(taxCategoryCreate).Execute()
+> TaxCategoryResponse POSTTaxCategories(ctx).TaxCategoryCreate(taxCategoryCreate).Execute()
 
 Create a tax category
 
@@ -649,7 +649,7 @@ import (
 )
 
 func main() {
-    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("Type_example", *openapiclient.NewPOSTTaxCategories201ResponseDataAttributes("31000"))) // TaxCategoryCreate | 
+    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData("Type_example", *openapiclient.NewTaxCategoryCreateDataAttributes("31000"))) // TaxCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -658,7 +658,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.POSTTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTTaxCategories`: POSTTaxCategories201Response
+    // response from `POSTTaxCategories`: TaxCategoryResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxCategoriesApi.POSTTaxCategories`: %v\n", resp)
 }
 ```
@@ -678,7 +678,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTTaxCategories201Response**](POSTTaxCategories201Response.md)
+[**TaxCategoryResponse**](TaxCategoryResponse.md)
 
 ### Authorization
 

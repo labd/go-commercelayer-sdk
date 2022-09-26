@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerCreateData struct for CustomerCreateData
 type CustomerCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
-	Attributes    POSTCustomers201ResponseDataAttributes `json:"attributes"`
-	Relationships *CustomerCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    CustomerCreateDataAttributes     `json:"attributes"`
+	Relationships *CustomerCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerCreateData instantiates a new CustomerCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerCreateData(type_ string, attributes POSTCustomers201ResponseDataAttributes) *CustomerCreateData {
+func NewCustomerCreateData(type_ string, attributes CustomerCreateDataAttributes) *CustomerCreateData {
 	this := CustomerCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerCreateData) GetAttributes() POSTCustomers201ResponseDataAttributes {
+func (o *CustomerCreateData) GetAttributes() CustomerCreateDataAttributes {
 	if o == nil {
-		var ret POSTCustomers201ResponseDataAttributes
+		var ret CustomerCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerCreateData) GetAttributes() POSTCustomers201ResponseDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerCreateData) GetAttributesOk() (*POSTCustomers201ResponseDataAttributes, bool) {
+func (o *CustomerCreateData) GetAttributesOk() (*CustomerCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerCreateData) GetAttributesOk() (*POSTCustomers201ResponseDataAtt
 }
 
 // SetAttributes sets field value
-func (o *CustomerCreateData) SetAttributes(v POSTCustomers201ResponseDataAttributes) {
+func (o *CustomerCreateData) SetAttributes(v CustomerCreateDataAttributes) {
 	o.Attributes = v
 }
 

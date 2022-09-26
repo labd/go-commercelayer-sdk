@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETTaxRules
 
-> GETTaxRules200Response GETTaxRules(ctx).Execute()
+> TaxRuleResponseList GETTaxRules(ctx).Execute()
 
 List all tax rules
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.GETTaxRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxRules`: GETTaxRules200Response
+    // response from `GETTaxRules`: TaxRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `TaxRulesApi.GETTaxRules`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETTaxRulesRequest struct 
 
 ### Return type
 
-[**GETTaxRules200Response**](GETTaxRules200Response.md)
+[**TaxRuleResponseList**](TaxRuleResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETTaxRulesRequest struct 
 
 ## GETTaxRulesTaxRuleId
 
-> GETTaxRulesTaxRuleId200Response GETTaxRulesTaxRuleId(ctx, taxRuleId).Execute()
+> TaxRuleResponse GETTaxRulesTaxRuleId(ctx, taxRuleId).Execute()
 
 Retrieve a tax rule
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.GETTaxRulesTaxRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxRulesTaxRuleId`: GETTaxRulesTaxRuleId200Response
+    // response from `GETTaxRulesTaxRuleId`: TaxRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxRulesApi.GETTaxRulesTaxRuleId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETTaxRulesTaxRuleId200Response**](GETTaxRulesTaxRuleId200Response.md)
+[**TaxRuleResponse**](TaxRuleResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxRulesTaxRuleId
 
-> PATCHTaxRulesTaxRuleId200Response PATCHTaxRulesTaxRuleId(ctx, taxRuleId).TaxRuleUpdate(taxRuleUpdate).Execute()
+> TaxRuleResponse PATCHTaxRulesTaxRuleId(ctx, taxRuleId).TaxRuleUpdate(taxRuleUpdate).Execute()
 
 Update a tax rule
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxRulesTaxRuleId200ResponseDataAttributes())) // TaxRuleUpdate | 
+    taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewTaxRuleUpdateDataAttributes())) // TaxRuleUpdate | 
     taxRuleId := "taxRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.PATCHTaxRulesTaxRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHTaxRulesTaxRuleId`: PATCHTaxRulesTaxRuleId200Response
+    // response from `PATCHTaxRulesTaxRuleId`: TaxRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxRulesApi.PATCHTaxRulesTaxRuleId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHTaxRulesTaxRuleId200Response**](PATCHTaxRulesTaxRuleId200Response.md)
+[**TaxRuleResponse**](TaxRuleResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxRules
 
-> POSTTaxRules201Response POSTTaxRules(ctx).TaxRuleCreate(taxRuleCreate).Execute()
+> TaxRuleResponse POSTTaxRules(ctx).TaxRuleCreate(taxRuleCreate).Execute()
 
 Create a tax rule
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    taxRuleCreate := *openapiclient.NewTaxRuleCreate(*openapiclient.NewTaxRuleCreateData("Type_example", *openapiclient.NewPOSTTaxRules201ResponseDataAttributes("Fixed 22%"))) // TaxRuleCreate | 
+    taxRuleCreate := *openapiclient.NewTaxRuleCreate(*openapiclient.NewTaxRuleCreateData("Type_example", *openapiclient.NewTaxRuleCreateDataAttributes("Fixed 22%"))) // TaxRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.POSTTaxRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTTaxRules`: POSTTaxRules201Response
+    // response from `POSTTaxRules`: TaxRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxRulesApi.POSTTaxRules`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTTaxRules201Response**](POSTTaxRules201Response.md)
+[**TaxRuleResponse**](TaxRuleResponse.md)
 
 ### Authorization
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTGiftCards201ResponseDataAttributes**](POSTGiftCards201ResponseDataAttributes.md) |  | 
+**Attributes** | [**GiftCardCreateDataAttributes**](GiftCardCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**GiftCardCreateDataRelationships**](GiftCardCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGiftCardCreateData
 
-`func NewGiftCardCreateData(type_ string, attributes POSTGiftCards201ResponseDataAttributes, ) *GiftCardCreateData`
+`func NewGiftCardCreateData(type_ string, attributes GiftCardCreateDataAttributes, ) *GiftCardCreateData`
 
 NewGiftCardCreateData instantiates a new GiftCardCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *GiftCardCreateData) GetAttributes() POSTGiftCards201ResponseDataAttributes`
+`func (o *GiftCardCreateData) GetAttributes() GiftCardCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GiftCardCreateData) GetAttributesOk() (*POSTGiftCards201ResponseDataAttributes, bool)`
+`func (o *GiftCardCreateData) GetAttributesOk() (*GiftCardCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GiftCardCreateData) SetAttributes(v POSTGiftCards201ResponseDataAttributes)`
+`func (o *GiftCardCreateData) SetAttributes(v GiftCardCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

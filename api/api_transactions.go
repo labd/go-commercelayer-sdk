@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type TransactionsApiGETTransactionsRequest struct {
 	ApiService *TransactionsApiService
 }
 
-func (r TransactionsApiGETTransactionsRequest) Execute() (*GETTransactions200Response, *http.Response, error) {
+func (r TransactionsApiGETTransactionsRequest) Execute() (*TransactionResponseList, *http.Response, error) {
 	return r.ApiService.GETTransactionsExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *TransactionsApiService) GETTransactions(ctx context.Context) Transactio
 }
 
 // Execute executes the request
-//  @return GETTransactions200Response
-func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*GETTransactions200Response, *http.Response, error) {
+//  @return TransactionResponseList
+func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*TransactionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETTransactions200Response
+		localVarReturnValue *TransactionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionsApiService.GETTransactions")
@@ -128,7 +128,7 @@ type TransactionsApiGETTransactionsTransactionIdRequest struct {
 	transactionId string
 }
 
-func (r TransactionsApiGETTransactionsTransactionIdRequest) Execute() (*GETTransactionsTransactionId200Response, *http.Response, error) {
+func (r TransactionsApiGETTransactionsTransactionIdRequest) Execute() (*TransactionResponse, *http.Response, error) {
 	return r.ApiService.GETTransactionsTransactionIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return GETTransactionsTransactionId200Response
-func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*GETTransactionsTransactionId200Response, *http.Response, error) {
+//  @return TransactionResponse
+func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*TransactionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETTransactionsTransactionId200Response
+		localVarReturnValue *TransactionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "TransactionsApiService.GETTransactionsTransactionId")

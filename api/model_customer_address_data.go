@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerAddressData struct for CustomerAddressData
 type CustomerAddressData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
-	Attributes    GETCustomerAddresses200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerAddressDataRelationships                  `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    CustomerAddressDataAttributes     `json:"attributes"`
+	Relationships *CustomerAddressDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerAddressData instantiates a new CustomerAddressData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressData(type_ string, attributes GETCustomerAddresses200ResponseDataInnerAttributes) *CustomerAddressData {
+func NewCustomerAddressData(type_ string, attributes CustomerAddressDataAttributes) *CustomerAddressData {
 	this := CustomerAddressData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerAddressData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerAddressData) GetAttributes() GETCustomerAddresses200ResponseDataInnerAttributes {
+func (o *CustomerAddressData) GetAttributes() CustomerAddressDataAttributes {
 	if o == nil {
-		var ret GETCustomerAddresses200ResponseDataInnerAttributes
+		var ret CustomerAddressDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerAddressData) GetAttributes() GETCustomerAddresses200ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressData) GetAttributesOk() (*GETCustomerAddresses200ResponseDataInnerAttributes, bool) {
+func (o *CustomerAddressData) GetAttributesOk() (*CustomerAddressDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerAddressData) GetAttributesOk() (*GETCustomerAddresses200Respons
 }
 
 // SetAttributes sets field value
-func (o *CustomerAddressData) SetAttributes(v GETCustomerAddresses200ResponseDataInnerAttributes) {
+func (o *CustomerAddressData) SetAttributes(v CustomerAddressDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type WireTransfersApiGETWireTransfersRequest struct {
 	ApiService *WireTransfersApiService
 }
 
-func (r WireTransfersApiGETWireTransfersRequest) Execute() (*GETWireTransfers200Response, *http.Response, error) {
+func (r WireTransfersApiGETWireTransfersRequest) Execute() (*WireTransferResponseList, *http.Response, error) {
 	return r.ApiService.GETWireTransfersExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *WireTransfersApiService) GETWireTransfers(ctx context.Context) WireTran
 }
 
 // Execute executes the request
-//  @return GETWireTransfers200Response
-func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETWireTransfersRequest) (*GETWireTransfers200Response, *http.Response, error) {
+//  @return WireTransferResponseList
+func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETWireTransfersRequest) (*WireTransferResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETWireTransfers200Response
+		localVarReturnValue *WireTransferResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.GETWireTransfers")
@@ -220,7 +220,7 @@ type WireTransfersApiGETWireTransfersWireTransferIdRequest struct {
 	wireTransferId string
 }
 
-func (r WireTransfersApiGETWireTransfersWireTransferIdRequest) Execute() (*GETWireTransfersWireTransferId200Response, *http.Response, error) {
+func (r WireTransfersApiGETWireTransfersWireTransferIdRequest) Execute() (*WireTransferResponse, *http.Response, error) {
 	return r.ApiService.GETWireTransfersWireTransferIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETWireTransfersWireTransferId200Response
-func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTransfersApiGETWireTransfersWireTransferIdRequest) (*GETWireTransfersWireTransferId200Response, *http.Response, error) {
+//  @return WireTransferResponse
+func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTransfersApiGETWireTransfersWireTransferIdRequest) (*WireTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETWireTransfersWireTransferId200Response
+		localVarReturnValue *WireTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.GETWireTransfersWireTransferId")
@@ -329,7 +329,7 @@ func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpd
 	return r
 }
 
-func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) Execute() (*POSTWireTransfers201Response, *http.Response, error) {
+func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) Execute() (*WireTransferResponse, *http.Response, error) {
 	return r.ApiService.PATCHWireTransfersWireTransferIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferId(ctx context.C
 }
 
 // Execute executes the request
-//  @return POSTWireTransfers201Response
-func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) (*POSTWireTransfers201Response, *http.Response, error) {
+//  @return WireTransferResponse
+func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) (*WireTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTWireTransfers201Response
+		localVarReturnValue *WireTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.PATCHWireTransfersWireTransferId")
@@ -442,7 +442,7 @@ func (r WireTransfersApiPOSTWireTransfersRequest) WireTransferCreate(wireTransfe
 	return r
 }
 
-func (r WireTransfersApiPOSTWireTransfersRequest) Execute() (*POSTWireTransfers201Response, *http.Response, error) {
+func (r WireTransfersApiPOSTWireTransfersRequest) Execute() (*WireTransferResponse, *http.Response, error) {
 	return r.ApiService.POSTWireTransfersExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *WireTransfersApiService) POSTWireTransfers(ctx context.Context) WireTra
 }
 
 // Execute executes the request
-//  @return POSTWireTransfers201Response
-func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOSTWireTransfersRequest) (*POSTWireTransfers201Response, *http.Response, error) {
+//  @return WireTransferResponse
+func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOSTWireTransfersRequest) (*WireTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTWireTransfers201Response
+		localVarReturnValue *WireTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "WireTransfersApiService.POSTWireTransfers")

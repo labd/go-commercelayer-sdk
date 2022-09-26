@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxRuleData struct for TaxRuleData
 type TaxRuleData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    GETTaxRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *TaxRuleDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                    `json:"type"`
+	Attributes    TaxRuleDataAttributes     `json:"attributes"`
+	Relationships *TaxRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleData instantiates a new TaxRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleData(type_ string, attributes GETTaxRules200ResponseDataInnerAttributes) *TaxRuleData {
+func NewTaxRuleData(type_ string, attributes TaxRuleDataAttributes) *TaxRuleData {
 	this := TaxRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *TaxRuleData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes {
+func (o *TaxRuleData) GetAttributes() TaxRuleDataAttributes {
 	if o == nil {
-		var ret GETTaxRules200ResponseDataInnerAttributes
+		var ret TaxRuleDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttributes, bool) {
+func (o *TaxRuleData) GetAttributesOk() (*TaxRuleDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *TaxRuleData) SetAttributes(v GETTaxRules200ResponseDataInnerAttributes) {
+func (o *TaxRuleData) SetAttributes(v TaxRuleDataAttributes) {
 	o.Attributes = v
 }
 

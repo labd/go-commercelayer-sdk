@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHTaxRulesTaxRuleId200ResponseDataAttributes**](PATCHTaxRulesTaxRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**TaxRuleUpdateDataAttributes**](TaxRuleUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxRuleDataRelationships**](TaxRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxRuleUpdateData
 
-`func NewTaxRuleUpdateData(type_ string, id string, attributes PATCHTaxRulesTaxRuleId200ResponseDataAttributes, ) *TaxRuleUpdateData`
+`func NewTaxRuleUpdateData(type_ string, id string, attributes TaxRuleUpdateDataAttributes, ) *TaxRuleUpdateData`
 
 NewTaxRuleUpdateData instantiates a new TaxRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *TaxRuleUpdateData) GetAttributes() PATCHTaxRulesTaxRuleId200ResponseDataAttributes`
+`func (o *TaxRuleUpdateData) GetAttributes() TaxRuleUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxRuleUpdateData) GetAttributesOk() (*PATCHTaxRulesTaxRuleId200ResponseDataAttributes, bool)`
+`func (o *TaxRuleUpdateData) GetAttributesOk() (*TaxRuleUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxRuleUpdateData) SetAttributes(v PATCHTaxRulesTaxRuleId200ResponseDataAttributes)`
+`func (o *TaxRuleUpdateData) SetAttributes(v TaxRuleUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

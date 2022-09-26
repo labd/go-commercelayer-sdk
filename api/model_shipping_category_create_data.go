@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ShippingCategoryCreateData struct for ShippingCategoryCreateData
 type ShippingCategoryCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    POSTShippingCategories201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                          `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    ShippingCategoryCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}               `json:"relationships,omitempty"`
 }
 
 // NewShippingCategoryCreateData instantiates a new ShippingCategoryCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryCreateData(type_ string, attributes POSTShippingCategories201ResponseDataAttributes) *ShippingCategoryCreateData {
+func NewShippingCategoryCreateData(type_ string, attributes ShippingCategoryCreateDataAttributes) *ShippingCategoryCreateData {
 	this := ShippingCategoryCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ShippingCategoryCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingCategoryCreateData) GetAttributes() POSTShippingCategories201ResponseDataAttributes {
+func (o *ShippingCategoryCreateData) GetAttributes() ShippingCategoryCreateDataAttributes {
 	if o == nil {
-		var ret POSTShippingCategories201ResponseDataAttributes
+		var ret ShippingCategoryCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ShippingCategoryCreateData) GetAttributes() POSTShippingCategories201Re
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryCreateData) GetAttributesOk() (*POSTShippingCategories201ResponseDataAttributes, bool) {
+func (o *ShippingCategoryCreateData) GetAttributesOk() (*ShippingCategoryCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ShippingCategoryCreateData) GetAttributesOk() (*POSTShippingCategories2
 }
 
 // SetAttributes sets field value
-func (o *ShippingCategoryCreateData) SetAttributes(v POSTShippingCategories201ResponseDataAttributes) {
+func (o *ShippingCategoryCreateData) SetAttributes(v ShippingCategoryCreateDataAttributes) {
 	o.Attributes = v
 }
 

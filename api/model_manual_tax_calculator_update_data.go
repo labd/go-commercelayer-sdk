@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ManualTaxCalculatorUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                  `json:"id"`
-	Attributes    PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ManualTaxCalculatorCreateDataRelationships                             `json:"relationships,omitempty"`
+	Id            string                                      `json:"id"`
+	Attributes    ManualTaxCalculatorUpdateDataAttributes     `json:"attributes"`
+	Relationships *ManualTaxCalculatorCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewManualTaxCalculatorUpdateData instantiates a new ManualTaxCalculatorUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) *ManualTaxCalculatorUpdateData {
+func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes ManualTaxCalculatorUpdateDataAttributes) *ManualTaxCalculatorUpdateData {
 	this := ManualTaxCalculatorUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ManualTaxCalculatorUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualTaxCalculatorUpdateData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes {
+func (o *ManualTaxCalculatorUpdateData) GetAttributes() ManualTaxCalculatorUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
+		var ret ManualTaxCalculatorUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ManualTaxCalculatorUpdateData) GetAttributes() PATCHManualTaxCalculator
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, bool) {
+func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*ManualTaxCalculatorUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ManualTaxCalculatorUpdateData) GetAttributesOk() (*PATCHManualTaxCalcul
 }
 
 // SetAttributes sets field value
-func (o *ManualTaxCalculatorUpdateData) SetAttributes(v PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) {
+func (o *ManualTaxCalculatorUpdateData) SetAttributes(v ManualTaxCalculatorUpdateDataAttributes) {
 	o.Attributes = v
 }
 

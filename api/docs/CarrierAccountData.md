@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCarrierAccounts200ResponseDataInnerAttributes**](GETCarrierAccounts200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**CarrierAccountDataAttributes**](CarrierAccountDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CarrierAccountDataRelationships**](CarrierAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCarrierAccountData
 
-`func NewCarrierAccountData(type_ string, attributes GETCarrierAccounts200ResponseDataInnerAttributes, ) *CarrierAccountData`
+`func NewCarrierAccountData(type_ string, attributes CarrierAccountDataAttributes, ) *CarrierAccountData`
 
 NewCarrierAccountData instantiates a new CarrierAccountData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataInnerAttributes`
+`func (o *CarrierAccountData) GetAttributes() CarrierAccountDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDataInnerAttributes, bool)`
+`func (o *CarrierAccountData) GetAttributesOk() (*CarrierAccountDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataInnerAttributes)`
+`func (o *CarrierAccountData) SetAttributes(v CarrierAccountDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

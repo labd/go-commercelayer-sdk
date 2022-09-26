@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -396,7 +396,7 @@ type StockTransfersApiGETStockTransfersRequest struct {
 	ApiService *StockTransfersApiService
 }
 
-func (r StockTransfersApiGETStockTransfersRequest) Execute() (*GETStockTransfers200Response, *http.Response, error) {
+func (r StockTransfersApiGETStockTransfersRequest) Execute() (*StockTransferResponseList, *http.Response, error) {
 	return r.ApiService.GETStockTransfersExecute(r)
 }
 
@@ -416,13 +416,13 @@ func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockT
 }
 
 // Execute executes the request
-//  @return GETStockTransfers200Response
-func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*GETStockTransfers200Response, *http.Response, error) {
+//  @return StockTransferResponseList
+func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*StockTransferResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETStockTransfers200Response
+		localVarReturnValue *StockTransferResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETStockTransfers")
@@ -496,7 +496,7 @@ type StockTransfersApiGETStockTransfersStockTransferIdRequest struct {
 	stockTransferId string
 }
 
-func (r StockTransfersApiGETStockTransfersStockTransferIdRequest) Execute() (*GETStockTransfersStockTransferId200Response, *http.Response, error) {
+func (r StockTransfersApiGETStockTransfersStockTransferIdRequest) Execute() (*StockTransferResponse, *http.Response, error) {
 	return r.ApiService.GETStockTransfersStockTransferIdExecute(r)
 }
 
@@ -518,13 +518,13 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETStockTransfersStockTransferId200Response
-func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*GETStockTransfersStockTransferId200Response, *http.Response, error) {
+//  @return StockTransferResponse
+func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*StockTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETStockTransfersStockTransferId200Response
+		localVarReturnValue *StockTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.GETStockTransfersStockTransferId")
@@ -605,7 +605,7 @@ func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) StockTransfe
 	return r
 }
 
-func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) Execute() (*PATCHStockTransfersStockTransferId200Response, *http.Response, error) {
+func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) Execute() (*StockTransferResponse, *http.Response, error) {
 	return r.ApiService.PATCHStockTransfersStockTransferIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHStockTransfersStockTransferId200Response
-func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*PATCHStockTransfersStockTransferId200Response, *http.Response, error) {
+//  @return StockTransferResponse
+func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*StockTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHStockTransfersStockTransferId200Response
+		localVarReturnValue *StockTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.PATCHStockTransfersStockTransferId")
@@ -718,7 +718,7 @@ func (r StockTransfersApiPOSTStockTransfersRequest) StockTransferCreate(stockTra
 	return r
 }
 
-func (r StockTransfersApiPOSTStockTransfersRequest) Execute() (*POSTStockTransfers201Response, *http.Response, error) {
+func (r StockTransfersApiPOSTStockTransfersRequest) Execute() (*StockTransferResponse, *http.Response, error) {
 	return r.ApiService.POSTStockTransfersExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) Stock
 }
 
 // Execute executes the request
-//  @return POSTStockTransfers201Response
-func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*POSTStockTransfers201Response, *http.Response, error) {
+//  @return StockTransferResponse
+func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*StockTransferResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTStockTransfers201Response
+		localVarReturnValue *StockTransferResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "StockTransfersApiService.POSTStockTransfers")

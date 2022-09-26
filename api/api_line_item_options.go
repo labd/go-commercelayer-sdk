@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type LineItemOptionsApiGETLineItemOptionsRequest struct {
 	ApiService *LineItemOptionsApiService
 }
 
-func (r LineItemOptionsApiGETLineItemOptionsRequest) Execute() (*GETLineItemOptions200Response, *http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsRequest) Execute() (*LineItemOptionResponseList, *http.Response, error) {
 	return r.ApiService.GETLineItemOptionsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) Line
 }
 
 // Execute executes the request
-//  @return GETLineItemOptions200Response
-func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*GETLineItemOptions200Response, *http.Response, error) {
+//  @return LineItemOptionResponseList
+func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*LineItemOptionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETLineItemOptions200Response
+		localVarReturnValue *LineItemOptionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.GETLineItemOptions")
@@ -312,7 +312,7 @@ type LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest struct {
 	lineItemOptionId string
 }
 
-func (r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
+func (r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*LineItemOptionResponse, *http.Response, error) {
 	return r.ApiService.GETLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETLineItemOptionsLineItemOptionId200Response
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
+//  @return LineItemOptionResponse
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*LineItemOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETLineItemOptionsLineItemOptionId200Response
+		localVarReturnValue *LineItemOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.GETLineItemOptionsLineItemOptionId")
@@ -421,7 +421,7 @@ func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemO
 	return r
 }
 
-func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*PATCHLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
+func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) Execute() (*LineItemOptionResponse, *http.Response, error) {
 	return r.ApiService.PATCHLineItemOptionsLineItemOptionIdExecute(r)
 }
 
@@ -443,13 +443,13 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx con
 }
 
 // Execute executes the request
-//  @return PATCHLineItemOptionsLineItemOptionId200Response
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*PATCHLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
+//  @return LineItemOptionResponse
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*LineItemOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHLineItemOptionsLineItemOptionId200Response
+		localVarReturnValue *LineItemOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.PATCHLineItemOptionsLineItemOptionId")
@@ -534,7 +534,7 @@ func (r LineItemOptionsApiPOSTLineItemOptionsRequest) LineItemOptionCreate(lineI
 	return r
 }
 
-func (r LineItemOptionsApiPOSTLineItemOptionsRequest) Execute() (*POSTLineItemOptions201Response, *http.Response, error) {
+func (r LineItemOptionsApiPOSTLineItemOptionsRequest) Execute() (*LineItemOptionResponse, *http.Response, error) {
 	return r.ApiService.POSTLineItemOptionsExecute(r)
 }
 
@@ -554,13 +554,13 @@ func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) Lin
 }
 
 // Execute executes the request
-//  @return POSTLineItemOptions201Response
-func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*POSTLineItemOptions201Response, *http.Response, error) {
+//  @return LineItemOptionResponse
+func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*LineItemOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTLineItemOptions201Response
+		localVarReturnValue *LineItemOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemOptionsApiService.POSTLineItemOptions")

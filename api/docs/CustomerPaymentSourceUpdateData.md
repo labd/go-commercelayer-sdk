@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceUpdateData
 
-`func NewCustomerPaymentSourceUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CustomerPaymentSourceUpdateData`
+`func NewCustomerPaymentSourceUpdateData(type_ string, id string, attributes AdyenPaymentCreateDataAttributes, ) *CustomerPaymentSourceUpdateData`
 
 NewCustomerPaymentSourceUpdateData instantiates a new CustomerPaymentSourceUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *CustomerPaymentSourceUpdateData) GetAttributes() AdyenPaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *CustomerPaymentSourceUpdateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

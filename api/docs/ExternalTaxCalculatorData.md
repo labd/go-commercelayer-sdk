@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETExternalTaxCalculators200ResponseDataInnerAttributes**](GETExternalTaxCalculators200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**ExternalTaxCalculatorDataAttributes**](ExternalTaxCalculatorDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalTaxCalculatorData
 
-`func NewExternalTaxCalculatorData(type_ string, attributes GETExternalTaxCalculators200ResponseDataInnerAttributes, ) *ExternalTaxCalculatorData`
+`func NewExternalTaxCalculatorData(type_ string, attributes ExternalTaxCalculatorDataAttributes, ) *ExternalTaxCalculatorData`
 
 NewExternalTaxCalculatorData instantiates a new ExternalTaxCalculatorData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalTaxCalculatorData) GetAttributes() GETExternalTaxCalculators200ResponseDataInnerAttributes`
+`func (o *ExternalTaxCalculatorData) GetAttributes() ExternalTaxCalculatorDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalTaxCalculatorData) GetAttributesOk() (*GETExternalTaxCalculators200ResponseDataInnerAttributes, bool)`
+`func (o *ExternalTaxCalculatorData) GetAttributesOk() (*ExternalTaxCalculatorDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalTaxCalculatorData) SetAttributes(v GETExternalTaxCalculators200ResponseDataInnerAttributes)`
+`func (o *ExternalTaxCalculatorData) SetAttributes(v ExternalTaxCalculatorDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes**](PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PriceVolumeTierUpdateDataAttributes**](PriceVolumeTierUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceVolumeTierUpdateDataRelationships**](PriceVolumeTierUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceVolumeTierUpdateData
 
-`func NewPriceVolumeTierUpdateData(type_ string, id string, attributes PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, ) *PriceVolumeTierUpdateData`
+`func NewPriceVolumeTierUpdateData(type_ string, id string, attributes PriceVolumeTierUpdateDataAttributes, ) *PriceVolumeTierUpdateData`
 
 NewPriceVolumeTierUpdateData instantiates a new PriceVolumeTierUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PriceVolumeTierUpdateData) GetAttributes() PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes`
+`func (o *PriceVolumeTierUpdateData) GetAttributes() PriceVolumeTierUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceVolumeTierUpdateData) GetAttributesOk() (*PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, bool)`
+`func (o *PriceVolumeTierUpdateData) GetAttributesOk() (*PriceVolumeTierUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceVolumeTierUpdateData) SetAttributes(v PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes)`
+`func (o *PriceVolumeTierUpdateData) SetAttributes(v PriceVolumeTierUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

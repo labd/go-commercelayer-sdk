@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETPaypalPayments
 
-> GETPaypalPayments200Response GETPaypalPayments(ctx).Execute()
+> PaypalPaymentResponseList GETPaypalPayments(ctx).Execute()
 
 List all paypal payments
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.GETPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalPayments`: GETPaypalPayments200Response
+    // response from `GETPaypalPayments`: PaypalPaymentResponseList
     fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.GETPaypalPayments`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETPaypalPaymentsRequest s
 
 ### Return type
 
-[**GETPaypalPayments200Response**](GETPaypalPayments200Response.md)
+[**PaypalPaymentResponseList**](PaypalPaymentResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETPaypalPaymentsRequest s
 
 ## GETPaypalPaymentsPaypalPaymentId
 
-> GETPaypalPaymentsPaypalPaymentId200Response GETPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).Execute()
+> PaypalPaymentResponse GETPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).Execute()
 
 Retrieve a paypal payment
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.GETPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalPaymentsPaypalPaymentId`: GETPaypalPaymentsPaypalPaymentId200Response
+    // response from `GETPaypalPaymentsPaypalPaymentId`: PaypalPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.GETPaypalPaymentsPaypalPaymentId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPaypalPaymentsPaypalPaymentId200Response**](GETPaypalPaymentsPaypalPaymentId200Response.md)
+[**PaypalPaymentResponse**](PaypalPaymentResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPaypalPaymentsPaypalPaymentId
 
-> PATCHPaypalPaymentsPaypalPaymentId200Response PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
+> PaypalPaymentResponse PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
 
 Update a paypal payment
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes())) // PaypalPaymentUpdate | 
+    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPaypalPaymentUpdateDataAttributes())) // PaypalPaymentUpdate | 
     paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPaypalPaymentsPaypalPaymentId`: PATCHPaypalPaymentsPaypalPaymentId200Response
+    // response from `PATCHPaypalPaymentsPaypalPaymentId`: PaypalPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPaypalPaymentsPaypalPaymentId200Response**](PATCHPaypalPaymentsPaypalPaymentId200Response.md)
+[**PaypalPaymentResponse**](PaypalPaymentResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPaypalPayments
 
-> POSTPaypalPayments201Response POSTPaypalPayments(ctx).PaypalPaymentCreate(paypalPaymentCreate).Execute()
+> PaypalPaymentResponse POSTPaypalPayments(ctx).PaypalPaymentCreate(paypalPaymentCreate).Execute()
 
 Create a paypal payment
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("Type_example", *openapiclient.NewPOSTPaypalPayments201ResponseDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
+    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData("Type_example", *openapiclient.NewPaypalPaymentCreateDataAttributes("https://yourdomain.com/thankyou", "https://yourdomain.com/checkout/payment"))) // PaypalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.POSTPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPaypalPayments`: POSTPaypalPayments201Response
+    // response from `POSTPaypalPayments`: PaypalPaymentResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalPaymentsApi.POSTPaypalPayments`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPaypalPayments201Response**](POSTPaypalPayments201Response.md)
+[**PaypalPaymentResponse**](PaypalPaymentResponse.md)
 
 ### Authorization
 

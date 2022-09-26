@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ## GETManualTaxCalculators
 
-> GETManualTaxCalculators200Response GETManualTaxCalculators(ctx).Execute()
+> ManualTaxCalculatorResponseList GETManualTaxCalculators(ctx).Execute()
 
 List all manual tax calculators
 
@@ -110,7 +110,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETManualTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualTaxCalculators`: GETManualTaxCalculators200Response
+    // response from `GETManualTaxCalculators`: ManualTaxCalculatorResponseList
     fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.GETManualTaxCalculators`: %v\n", resp)
 }
 ```
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiGETManualTaxCalculatorsReq
 
 ### Return type
 
-[**GETManualTaxCalculators200Response**](GETManualTaxCalculators200Response.md)
+[**ManualTaxCalculatorResponseList**](ManualTaxCalculatorResponseList.md)
 
 ### Authorization
 
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiGETManualTaxCalculatorsReq
 
 ## GETManualTaxCalculatorsManualTaxCalculatorId
 
-> GETManualTaxCalculatorsManualTaxCalculatorId200Response GETManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).Execute()
+> ManualTaxCalculatorResponse GETManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).Execute()
 
 Retrieve a manual tax calculator
 
@@ -172,7 +172,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETManualTaxCalculatorsManualTaxCalculatorId`: GETManualTaxCalculatorsManualTaxCalculatorId200Response
+    // response from `GETManualTaxCalculatorsManualTaxCalculatorId`: ManualTaxCalculatorResponse
     fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.GETManualTaxCalculatorsManualTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETManualTaxCalculatorsManualTaxCalculatorId200Response**](GETManualTaxCalculatorsManualTaxCalculatorId200Response.md)
+[**ManualTaxCalculatorResponse**](ManualTaxCalculatorResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHManualTaxCalculatorsManualTaxCalculatorId
 
-> PATCHManualTaxCalculatorsManualTaxCalculatorId200Response PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate).Execute()
+> ManualTaxCalculatorResponse PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx, manualTaxCalculatorId).ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate).Execute()
 
 Update a manual tax calculator
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
+    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewManualTaxCalculatorUpdateDataAttributes())) // ManualTaxCalculatorUpdate | 
     manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.PATCHManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHManualTaxCalculatorsManualTaxCalculatorId`: PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
+    // response from `PATCHManualTaxCalculatorsManualTaxCalculatorId`: ManualTaxCalculatorResponse
     fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.PATCHManualTaxCalculatorsManualTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHManualTaxCalculatorsManualTaxCalculatorId200Response**](PATCHManualTaxCalculatorsManualTaxCalculatorId200Response.md)
+[**ManualTaxCalculatorResponse**](ManualTaxCalculatorResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTManualTaxCalculators
 
-> POSTManualTaxCalculators201Response POSTManualTaxCalculators(ctx).ManualTaxCalculatorCreate(manualTaxCalculatorCreate).Execute()
+> ManualTaxCalculatorResponse POSTManualTaxCalculators(ctx).ManualTaxCalculatorCreate(manualTaxCalculatorCreate).Execute()
 
 Create a manual tax calculator
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
+    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("Type_example", *openapiclient.NewManualTaxCalculatorCreateDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.POSTManualTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTManualTaxCalculators`: POSTManualTaxCalculators201Response
+    // response from `POSTManualTaxCalculators`: ManualTaxCalculatorResponse
     fmt.Fprintf(os.Stdout, "Response from `ManualTaxCalculatorsApi.POSTManualTaxCalculators`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTManualTaxCalculators201Response**](POSTManualTaxCalculators201Response.md)
+[**ManualTaxCalculatorResponse**](ManualTaxCalculatorResponse.md)
 
 ### Authorization
 

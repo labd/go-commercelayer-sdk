@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AuthorizationUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHAuthorizationsAuthorizationId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
+	Id            string                            `json:"id"`
+	Attributes    AuthorizationUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}            `json:"relationships,omitempty"`
 }
 
 // NewAuthorizationUpdateData instantiates a new AuthorizationUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationUpdateData(type_ string, id string, attributes PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) *AuthorizationUpdateData {
+func NewAuthorizationUpdateData(type_ string, id string, attributes AuthorizationUpdateDataAttributes) *AuthorizationUpdateData {
 	this := AuthorizationUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *AuthorizationUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AuthorizationUpdateData) GetAttributes() PATCHAuthorizationsAuthorizationId200ResponseDataAttributes {
+func (o *AuthorizationUpdateData) GetAttributes() AuthorizationUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHAuthorizationsAuthorizationId200ResponseDataAttributes
+		var ret AuthorizationUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *AuthorizationUpdateData) GetAttributes() PATCHAuthorizationsAuthorizati
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationUpdateData) GetAttributesOk() (*PATCHAuthorizationsAuthorizationId200ResponseDataAttributes, bool) {
+func (o *AuthorizationUpdateData) GetAttributesOk() (*AuthorizationUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *AuthorizationUpdateData) GetAttributesOk() (*PATCHAuthorizationsAuthori
 }
 
 // SetAttributes sets field value
-func (o *AuthorizationUpdateData) SetAttributes(v PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) {
+func (o *AuthorizationUpdateData) SetAttributes(v AuthorizationUpdateDataAttributes) {
 	o.Attributes = v
 }
 

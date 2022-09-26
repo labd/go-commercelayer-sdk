@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETReturnLineItems200ResponseDataInnerAttributes**](GETReturnLineItems200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**ReturnLineItemDataAttributes**](ReturnLineItemDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnLineItemDataRelationships**](ReturnLineItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnLineItemData
 
-`func NewReturnLineItemData(type_ string, attributes GETReturnLineItems200ResponseDataInnerAttributes, ) *ReturnLineItemData`
+`func NewReturnLineItemData(type_ string, attributes ReturnLineItemDataAttributes, ) *ReturnLineItemData`
 
 NewReturnLineItemData instantiates a new ReturnLineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnLineItemData) GetAttributes() GETReturnLineItems200ResponseDataInnerAttributes`
+`func (o *ReturnLineItemData) GetAttributes() ReturnLineItemDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnLineItemData) GetAttributesOk() (*GETReturnLineItems200ResponseDataInnerAttributes, bool)`
+`func (o *ReturnLineItemData) GetAttributesOk() (*ReturnLineItemDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnLineItemData) SetAttributes(v GETReturnLineItems200ResponseDataInnerAttributes)`
+`func (o *ReturnLineItemData) SetAttributes(v ReturnLineItemDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

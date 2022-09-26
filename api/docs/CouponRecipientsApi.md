@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETCouponRecipients
 
-> GETCouponRecipients200Response GETCouponRecipients(ctx).Execute()
+> CouponRecipientResponseList GETCouponRecipients(ctx).Execute()
 
 List all coupon recipients
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.GETCouponRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponRecipients`: GETCouponRecipients200Response
+    // response from `GETCouponRecipients`: CouponRecipientResponseList
     fmt.Fprintf(os.Stdout, "Response from `CouponRecipientsApi.GETCouponRecipients`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETCouponRecipientsRequest
 
 ### Return type
 
-[**GETCouponRecipients200Response**](GETCouponRecipients200Response.md)
+[**CouponRecipientResponseList**](CouponRecipientResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETCouponRecipientsRequest
 
 ## GETCouponRecipientsCouponRecipientId
 
-> GETCouponRecipientsCouponRecipientId200Response GETCouponRecipientsCouponRecipientId(ctx, couponRecipientId).Execute()
+> CouponRecipientResponse GETCouponRecipientsCouponRecipientId(ctx, couponRecipientId).Execute()
 
 Retrieve a coupon recipient
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.GETCouponRecipientsCouponRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCouponRecipientsCouponRecipientId`: GETCouponRecipientsCouponRecipientId200Response
+    // response from `GETCouponRecipientsCouponRecipientId`: CouponRecipientResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponRecipientsApi.GETCouponRecipientsCouponRecipientId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCouponRecipientsCouponRecipientId200Response**](GETCouponRecipientsCouponRecipientId200Response.md)
+[**CouponRecipientResponse**](CouponRecipientResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponRecipientsCouponRecipientId
 
-> PATCHCouponRecipientsCouponRecipientId200Response PATCHCouponRecipientsCouponRecipientId(ctx, couponRecipientId).CouponRecipientUpdate(couponRecipientUpdate).Execute()
+> CouponRecipientResponse PATCHCouponRecipientsCouponRecipientId(ctx, couponRecipientId).CouponRecipientUpdate(couponRecipientUpdate).Execute()
 
 Update a coupon recipient
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // CouponRecipientUpdate | 
+    couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCouponRecipientUpdateDataAttributes())) // CouponRecipientUpdate | 
     couponRecipientId := "couponRecipientId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.PATCHCouponRecipientsCouponRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCouponRecipientsCouponRecipientId`: PATCHCouponRecipientsCouponRecipientId200Response
+    // response from `PATCHCouponRecipientsCouponRecipientId`: CouponRecipientResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponRecipientsApi.PATCHCouponRecipientsCouponRecipientId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCouponRecipientsCouponRecipientId200Response**](PATCHCouponRecipientsCouponRecipientId200Response.md)
+[**CouponRecipientResponse**](CouponRecipientResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCouponRecipients
 
-> POSTCouponRecipients201Response POSTCouponRecipients(ctx).CouponRecipientCreate(couponRecipientCreate).Execute()
+> CouponRecipientResponse POSTCouponRecipients(ctx).CouponRecipientCreate(couponRecipientCreate).Execute()
 
 Create a coupon recipient
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    couponRecipientCreate := *openapiclient.NewCouponRecipientCreate(*openapiclient.NewCouponRecipientCreateData("Type_example", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // CouponRecipientCreate | 
+    couponRecipientCreate := *openapiclient.NewCouponRecipientCreate(*openapiclient.NewCouponRecipientCreateData("Type_example", *openapiclient.NewCouponRecipientCreateDataAttributes("john@example.com"))) // CouponRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.POSTCouponRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCouponRecipients`: POSTCouponRecipients201Response
+    // response from `POSTCouponRecipients`: CouponRecipientResponse
     fmt.Fprintf(os.Stdout, "Response from `CouponRecipientsApi.POSTCouponRecipients`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCouponRecipients201Response**](POSTCouponRecipients201Response.md)
+[**CouponRecipientResponse**](CouponRecipientResponse.md)
 
 ### Authorization
 

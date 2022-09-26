@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdyenPaymentUpdateDataAttributes**](AdyenPaymentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenPaymentUpdateData
 
-`func NewAdyenPaymentUpdateData(type_ string, id string, attributes PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, ) *AdyenPaymentUpdateData`
+`func NewAdyenPaymentUpdateData(type_ string, id string, attributes AdyenPaymentUpdateDataAttributes, ) *AdyenPaymentUpdateData`
 
 NewAdyenPaymentUpdateData instantiates a new AdyenPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AdyenPaymentUpdateData) GetAttributes() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes`
+`func (o *AdyenPaymentUpdateData) GetAttributes() AdyenPaymentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdyenPaymentUpdateData) GetAttributesOk() (*PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, bool)`
+`func (o *AdyenPaymentUpdateData) GetAttributesOk() (*AdyenPaymentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdyenPaymentUpdateData) SetAttributes(v PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes)`
+`func (o *AdyenPaymentUpdateData) SetAttributes(v AdyenPaymentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

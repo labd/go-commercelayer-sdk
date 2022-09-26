@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuOptionData struct for SkuOptionData
 type SkuOptionData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    GETSkuOptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CarrierAccountDataRelationships            `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    SkuOptionDataAttributes          `json:"attributes"`
+	Relationships *CarrierAccountDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionData instantiates a new SkuOptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuOptionData(type_ string, attributes GETSkuOptions200ResponseDataInnerAttributes) *SkuOptionData {
+func NewSkuOptionData(type_ string, attributes SkuOptionDataAttributes) *SkuOptionData {
 	this := SkuOptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *SkuOptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuOptionData) GetAttributes() GETSkuOptions200ResponseDataInnerAttributes {
+func (o *SkuOptionData) GetAttributes() SkuOptionDataAttributes {
 	if o == nil {
-		var ret GETSkuOptions200ResponseDataInnerAttributes
+		var ret SkuOptionDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *SkuOptionData) GetAttributes() GETSkuOptions200ResponseDataInnerAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptions200ResponseDataInnerAttributes, bool) {
+func (o *SkuOptionData) GetAttributesOk() (*SkuOptionDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptions200ResponseDataInnerAtt
 }
 
 // SetAttributes sets field value
-func (o *SkuOptionData) SetAttributes(v GETSkuOptions200ResponseDataInnerAttributes) {
+func (o *SkuOptionData) SetAttributes(v SkuOptionDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type PromotionRulesApiGETPromotionRulesRequest struct {
 	ApiService *PromotionRulesApiService
 }
 
-func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*GETPromotionRules200Response, *http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesRequest) Execute() (*PromotionRuleResponseList, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) Promot
 }
 
 // Execute executes the request
-//  @return GETPromotionRules200Response
-func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*GETPromotionRules200Response, *http.Response, error) {
+//  @return PromotionRuleResponseList
+func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*PromotionRuleResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPromotionRules200Response
+		localVarReturnValue *PromotionRuleResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRules")
@@ -128,7 +128,7 @@ type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
 	promotionRuleId string
 }
 
-func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
+func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*PromotionRuleResponse, *http.Response, error) {
 	return r.ApiService.GETPromotionRulesPromotionRuleIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPromotionRulesPromotionRuleId200Response
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
+//  @return PromotionRuleResponse
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*PromotionRuleResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPromotionRulesPromotionRuleId200Response
+		localVarReturnValue *PromotionRuleResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionRulesApiService.GETPromotionRulesPromotionRuleId")

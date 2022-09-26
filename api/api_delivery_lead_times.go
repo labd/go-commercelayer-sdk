@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type DeliveryLeadTimesApiGETDeliveryLeadTimesRequest struct {
 	ApiService *DeliveryLeadTimesApiService
 }
 
-func (r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) Execute() (*GETDeliveryLeadTimes200Response, *http.Response, error) {
+func (r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) Execute() (*DeliveryLeadTimeResponseList, *http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimesExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimes(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GETDeliveryLeadTimes200Response
-func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) (*GETDeliveryLeadTimes200Response, *http.Response, error) {
+//  @return DeliveryLeadTimeResponseList
+func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) (*DeliveryLeadTimeResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETDeliveryLeadTimes200Response
+		localVarReturnValue *DeliveryLeadTimeResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETDeliveryLeadTimes")
@@ -220,7 +220,7 @@ type DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
 	deliveryLeadTimeId string
 }
 
-func (r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*GETDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
+func (r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*DeliveryLeadTimeResponse, *http.Response, error) {
 	return r.ApiService.GETDeliveryLeadTimesDeliveryLeadTimeIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx
 }
 
 // Execute executes the request
-//  @return GETDeliveryLeadTimesDeliveryLeadTimeId200Response
-func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*GETDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
+//  @return DeliveryLeadTimeResponse
+func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*DeliveryLeadTimeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETDeliveryLeadTimesDeliveryLeadTimeId200Response
+		localVarReturnValue *DeliveryLeadTimeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.GETDeliveryLeadTimesDeliveryLeadTimeId")
@@ -605,7 +605,7 @@ func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) Del
 	return r
 }
 
-func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
+func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*DeliveryLeadTimeResponse, *http.Response, error) {
 	return r.ApiService.PATCHDeliveryLeadTimesDeliveryLeadTimeIdExecute(r)
 }
 
@@ -627,13 +627,13 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(c
 }
 
 // Execute executes the request
-//  @return PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
-func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
+//  @return DeliveryLeadTimeResponse
+func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*DeliveryLeadTimeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
+		localVarReturnValue *DeliveryLeadTimeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.PATCHDeliveryLeadTimesDeliveryLeadTimeId")
@@ -718,7 +718,7 @@ func (r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) DeliveryLeadTimeCreate
 	return r
 }
 
-func (r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) Execute() (*POSTDeliveryLeadTimes201Response, *http.Response, error) {
+func (r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) Execute() (*DeliveryLeadTimeResponse, *http.Response, error) {
 	return r.ApiService.POSTDeliveryLeadTimesExecute(r)
 }
 
@@ -738,13 +738,13 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimes(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return POSTDeliveryLeadTimes201Response
-func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) (*POSTDeliveryLeadTimes201Response, *http.Response, error) {
+//  @return DeliveryLeadTimeResponse
+func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) (*DeliveryLeadTimeResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTDeliveryLeadTimes201Response
+		localVarReturnValue *DeliveryLeadTimeResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "DeliveryLeadTimesApiService.POSTDeliveryLeadTimes")

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest struct {
 	ApiService *ExternalTaxCalculatorsApiService
 }
 
-func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) Execute() (*GETExternalTaxCalculators200Response, *http.Response, error) {
+func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) Execute() (*ExternalTaxCalculatorResponseList, *http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculators(ctx context
 }
 
 // Execute executes the request
-//  @return GETExternalTaxCalculators200Response
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) (*GETExternalTaxCalculators200Response, *http.Response, error) {
+//  @return ExternalTaxCalculatorResponseList
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsRequest) (*ExternalTaxCalculatorResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETExternalTaxCalculators200Response
+		localVarReturnValue *ExternalTaxCalculatorResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.GETExternalTaxCalculators")
@@ -220,7 +220,7 @@ type ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRe
 	externalTaxCalculatorId string
 }
 
-func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*GETExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
+func (r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 }
 
 // Execute executes the request
-//  @return GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
-func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*GETExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
+//  @return ExternalTaxCalculatorResponse
+func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiGETExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
+		localVarReturnValue *ExternalTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.GETExternalTaxCalculatorsExternalTaxCalculatorId")
@@ -329,7 +329,7 @@ func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculato
 	return r
 }
 
-func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
+func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) Execute() (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 }
 
 // Execute executes the request
-//  @return PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response
-func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response, *http.Response, error) {
+//  @return ExternalTaxCalculatorResponse
+func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTaxCalculatorIdExecute(r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response
+		localVarReturnValue *ExternalTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.PATCHExternalTaxCalculatorsExternalTaxCalculatorId")
@@ -442,7 +442,7 @@ func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) ExternalTaxC
 	return r
 }
 
-func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) Execute() (*POSTExternalTaxCalculators201Response, *http.Response, error) {
+func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) Execute() (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	return r.ApiService.POSTExternalTaxCalculatorsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculators(ctx contex
 }
 
 // Execute executes the request
-//  @return POSTExternalTaxCalculators201Response
-func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) (*POSTExternalTaxCalculators201Response, *http.Response, error) {
+//  @return ExternalTaxCalculatorResponse
+func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) (*ExternalTaxCalculatorResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTExternalTaxCalculators201Response
+		localVarReturnValue *ExternalTaxCalculatorResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExternalTaxCalculatorsApiService.POSTExternalTaxCalculators")

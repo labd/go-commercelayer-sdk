@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AdyenGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                    `json:"id"`
-	Attributes    PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenGatewayCreateDataRelationships                      `json:"relationships,omitempty"`
+	Id            string                               `json:"id"`
+	Attributes    AdyenGatewayUpdateDataAttributes     `json:"attributes"`
+	Relationships *AdyenGatewayCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayUpdateData instantiates a new AdyenGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayUpdateData(type_ string, id string, attributes PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) *AdyenGatewayUpdateData {
+func NewAdyenGatewayUpdateData(type_ string, id string, attributes AdyenGatewayUpdateDataAttributes) *AdyenGatewayUpdateData {
 	this := AdyenGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *AdyenGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayUpdateData) GetAttributes() PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes {
+func (o *AdyenGatewayUpdateData) GetAttributes() AdyenGatewayUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes
+		var ret AdyenGatewayUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *AdyenGatewayUpdateData) GetAttributes() PATCHAdyenGatewaysAdyenGatewayI
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayUpdateData) GetAttributesOk() (*PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes, bool) {
+func (o *AdyenGatewayUpdateData) GetAttributesOk() (*AdyenGatewayUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *AdyenGatewayUpdateData) GetAttributesOk() (*PATCHAdyenGatewaysAdyenGate
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayUpdateData) SetAttributes(v PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) {
+func (o *AdyenGatewayUpdateData) SetAttributes(v AdyenGatewayUpdateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // TaxjarAccountCreateData struct for TaxjarAccountCreateData
 type TaxjarAccountCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    POSTTaxjarAccounts201ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships      `json:"relationships,omitempty"`
+	Type          string                                 `json:"type"`
+	Attributes    TaxjarAccountCreateDataAttributes      `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountCreateData instantiates a new TaxjarAccountCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountCreateData(type_ string, attributes POSTTaxjarAccounts201ResponseDataAttributes) *TaxjarAccountCreateData {
+func NewTaxjarAccountCreateData(type_ string, attributes TaxjarAccountCreateDataAttributes) *TaxjarAccountCreateData {
 	this := TaxjarAccountCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *TaxjarAccountCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxjarAccountCreateData) GetAttributes() POSTTaxjarAccounts201ResponseDataAttributes {
+func (o *TaxjarAccountCreateData) GetAttributes() TaxjarAccountCreateDataAttributes {
 	if o == nil {
-		var ret POSTTaxjarAccounts201ResponseDataAttributes
+		var ret TaxjarAccountCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *TaxjarAccountCreateData) GetAttributes() POSTTaxjarAccounts201ResponseD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountCreateData) GetAttributesOk() (*POSTTaxjarAccounts201ResponseDataAttributes, bool) {
+func (o *TaxjarAccountCreateData) GetAttributesOk() (*TaxjarAccountCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *TaxjarAccountCreateData) GetAttributesOk() (*POSTTaxjarAccounts201Respo
 }
 
 // SetAttributes sets field value
-func (o *TaxjarAccountCreateData) SetAttributes(v POSTTaxjarAccounts201ResponseDataAttributes) {
+func (o *TaxjarAccountCreateData) SetAttributes(v TaxjarAccountCreateDataAttributes) {
 	o.Attributes = v
 }
 

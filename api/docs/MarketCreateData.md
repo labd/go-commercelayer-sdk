@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTMarkets201ResponseDataAttributes**](POSTMarkets201ResponseDataAttributes.md) |  | 
+**Attributes** | [**MarketCreateDataAttributes**](MarketCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketCreateDataRelationships**](MarketCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMarketCreateData
 
-`func NewMarketCreateData(type_ string, attributes POSTMarkets201ResponseDataAttributes, ) *MarketCreateData`
+`func NewMarketCreateData(type_ string, attributes MarketCreateDataAttributes, ) *MarketCreateData`
 
 NewMarketCreateData instantiates a new MarketCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *MarketCreateData) GetAttributes() POSTMarkets201ResponseDataAttributes`
+`func (o *MarketCreateData) GetAttributes() MarketCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MarketCreateData) GetAttributesOk() (*POSTMarkets201ResponseDataAttributes, bool)`
+`func (o *MarketCreateData) GetAttributesOk() (*MarketCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MarketCreateData) SetAttributes(v POSTMarkets201ResponseDataAttributes)`
+`func (o *MarketCreateData) SetAttributes(v MarketCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

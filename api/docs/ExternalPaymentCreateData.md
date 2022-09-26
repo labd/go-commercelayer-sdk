@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTExternalPayments201ResponseDataAttributes**](POSTExternalPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalPaymentCreateDataAttributes**](ExternalPaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPaymentCreateData
 
-`func NewExternalPaymentCreateData(type_ string, attributes POSTExternalPayments201ResponseDataAttributes, ) *ExternalPaymentCreateData`
+`func NewExternalPaymentCreateData(type_ string, attributes ExternalPaymentCreateDataAttributes, ) *ExternalPaymentCreateData`
 
 NewExternalPaymentCreateData instantiates a new ExternalPaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalPaymentCreateData) GetAttributes() POSTExternalPayments201ResponseDataAttributes`
+`func (o *ExternalPaymentCreateData) GetAttributes() ExternalPaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalPaymentCreateData) GetAttributesOk() (*POSTExternalPayments201ResponseDataAttributes, bool)`
+`func (o *ExternalPaymentCreateData) GetAttributesOk() (*ExternalPaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalPaymentCreateData) SetAttributes(v POSTExternalPayments201ResponseDataAttributes)`
+`func (o *ExternalPaymentCreateData) SetAttributes(v ExternalPaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

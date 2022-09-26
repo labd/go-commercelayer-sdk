@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETFixedAmountPromotions
 
-> GETFixedAmountPromotions200Response GETFixedAmountPromotions(ctx).Execute()
+> FixedAmountPromotionResponseList GETFixedAmountPromotions(ctx).Execute()
 
 List all fixed amount promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.GETFixedAmountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFixedAmountPromotions`: GETFixedAmountPromotions200Response
+    // response from `GETFixedAmountPromotions`: FixedAmountPromotionResponseList
     fmt.Fprintf(os.Stdout, "Response from `FixedAmountPromotionsApi.GETFixedAmountPromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETFixedAmountPromotionsRe
 
 ### Return type
 
-[**GETFixedAmountPromotions200Response**](GETFixedAmountPromotions200Response.md)
+[**FixedAmountPromotionResponseList**](FixedAmountPromotionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETFixedAmountPromotionsRe
 
 ## GETFixedAmountPromotionsFixedAmountPromotionId
 
-> GETFixedAmountPromotionsFixedAmountPromotionId200Response GETFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).Execute()
+> FixedAmountPromotionResponse GETFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).Execute()
 
 Retrieve a fixed amount promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.GETFixedAmountPromotionsFixedAmountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFixedAmountPromotionsFixedAmountPromotionId`: GETFixedAmountPromotionsFixedAmountPromotionId200Response
+    // response from `GETFixedAmountPromotionsFixedAmountPromotionId`: FixedAmountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedAmountPromotionsApi.GETFixedAmountPromotionsFixedAmountPromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETFixedAmountPromotionsFixedAmountPromotionId200Response**](GETFixedAmountPromotionsFixedAmountPromotionId200Response.md)
+[**FixedAmountPromotionResponse**](FixedAmountPromotionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFixedAmountPromotionsFixedAmountPromotionId
 
-> PATCHFixedAmountPromotionsFixedAmountPromotionId200Response PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).FixedAmountPromotionUpdate(fixedAmountPromotionUpdate).Execute()
+> FixedAmountPromotionResponse PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).FixedAmountPromotionUpdate(fixedAmountPromotionUpdate).Execute()
 
 Update a fixed amount promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    fixedAmountPromotionUpdate := *openapiclient.NewFixedAmountPromotionUpdate(*openapiclient.NewFixedAmountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes())) // FixedAmountPromotionUpdate | 
+    fixedAmountPromotionUpdate := *openapiclient.NewFixedAmountPromotionUpdate(*openapiclient.NewFixedAmountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewFixedAmountPromotionUpdateDataAttributes())) // FixedAmountPromotionUpdate | 
     fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.PATCHFixedAmountPromotionsFixedAmountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHFixedAmountPromotionsFixedAmountPromotionId`: PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
+    // response from `PATCHFixedAmountPromotionsFixedAmountPromotionId`: FixedAmountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedAmountPromotionsApi.PATCHFixedAmountPromotionsFixedAmountPromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHFixedAmountPromotionsFixedAmountPromotionId200Response**](PATCHFixedAmountPromotionsFixedAmountPromotionId200Response.md)
+[**FixedAmountPromotionResponse**](FixedAmountPromotionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFixedAmountPromotions
 
-> POSTFixedAmountPromotions201Response POSTFixedAmountPromotions(ctx).FixedAmountPromotionCreate(fixedAmountPromotionCreate).Execute()
+> FixedAmountPromotionResponse POSTFixedAmountPromotions(ctx).FixedAmountPromotionCreate(fixedAmountPromotionCreate).Execute()
 
 Create a fixed amount promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    fixedAmountPromotionCreate := *openapiclient.NewFixedAmountPromotionCreate(*openapiclient.NewFixedAmountPromotionCreateData("Type_example", *openapiclient.NewPOSTFixedAmountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedAmountPromotionCreate | 
+    fixedAmountPromotionCreate := *openapiclient.NewFixedAmountPromotionCreate(*openapiclient.NewFixedAmountPromotionCreateData("Type_example", *openapiclient.NewFixedAmountPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedAmountPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.POSTFixedAmountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTFixedAmountPromotions`: POSTFixedAmountPromotions201Response
+    // response from `POSTFixedAmountPromotions`: FixedAmountPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedAmountPromotionsApi.POSTFixedAmountPromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTFixedAmountPromotions201Response**](POSTFixedAmountPromotions201Response.md)
+[**FixedAmountPromotionResponse**](FixedAmountPromotionResponse.md)
 
 ### Authorization
 

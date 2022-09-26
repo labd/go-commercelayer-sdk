@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHReturnsReturnId200ResponseDataAttributes**](PATCHReturnsReturnId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ReturnUpdateDataAttributes**](ReturnUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageUpdateDataRelationships**](PackageUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnUpdateData
 
-`func NewReturnUpdateData(type_ string, id string, attributes PATCHReturnsReturnId200ResponseDataAttributes, ) *ReturnUpdateData`
+`func NewReturnUpdateData(type_ string, id string, attributes ReturnUpdateDataAttributes, ) *ReturnUpdateData`
 
 NewReturnUpdateData instantiates a new ReturnUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnUpdateData) GetAttributes() PATCHReturnsReturnId200ResponseDataAttributes`
+`func (o *ReturnUpdateData) GetAttributes() ReturnUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnUpdateData) GetAttributesOk() (*PATCHReturnsReturnId200ResponseDataAttributes, bool)`
+`func (o *ReturnUpdateData) GetAttributesOk() (*ReturnUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnUpdateData) SetAttributes(v PATCHReturnsReturnId200ResponseDataAttributes)`
+`func (o *ReturnUpdateData) SetAttributes(v ReturnUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

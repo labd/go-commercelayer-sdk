@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuListPromotionRuleCreateData struct for SkuListPromotionRuleCreateData
 type SkuListPromotionRuleCreateData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
-	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *SkuListPromotionRuleCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                       `json:"type"`
+	Attributes    SkuListPromotionRuleCreateDataAttributes     `json:"attributes"`
+	Relationships *SkuListPromotionRuleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleCreateData instantiates a new SkuListPromotionRuleCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleCreateData(type_ string, attributes POSTSkuListPromotionRules201ResponseDataAttributes) *SkuListPromotionRuleCreateData {
+func NewSkuListPromotionRuleCreateData(type_ string, attributes SkuListPromotionRuleCreateDataAttributes) *SkuListPromotionRuleCreateData {
 	this := SkuListPromotionRuleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *SkuListPromotionRuleCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListPromotionRuleCreateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes {
+func (o *SkuListPromotionRuleCreateData) GetAttributes() SkuListPromotionRuleCreateDataAttributes {
 	if o == nil {
-		var ret POSTSkuListPromotionRules201ResponseDataAttributes
+		var ret SkuListPromotionRuleCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *SkuListPromotionRuleCreateData) GetAttributes() POSTSkuListPromotionRul
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleCreateData) GetAttributesOk() (*POSTSkuListPromotionRules201ResponseDataAttributes, bool) {
+func (o *SkuListPromotionRuleCreateData) GetAttributesOk() (*SkuListPromotionRuleCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *SkuListPromotionRuleCreateData) GetAttributesOk() (*POSTSkuListPromotio
 }
 
 // SetAttributes sets field value
-func (o *SkuListPromotionRuleCreateData) SetAttributes(v POSTSkuListPromotionRules201ResponseDataAttributes) {
+func (o *SkuListPromotionRuleCreateData) SetAttributes(v SkuListPromotionRuleCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 
 ## GETOrderAmountPromotionRules
 
-> GETOrderAmountPromotionRules200Response GETOrderAmountPromotionRules(ctx).Execute()
+> OrderAmountPromotionRuleResponseList GETOrderAmountPromotionRules(ctx).Execute()
 
 List all order amount promotion rules
 
@@ -456,7 +456,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderAmountPromotionRules`: GETOrderAmountPromotionRules200Response
+    // response from `GETOrderAmountPromotionRules`: OrderAmountPromotionRuleResponseList
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRules`: %v\n", resp)
 }
 ```
@@ -472,7 +472,7 @@ Other parameters are passed through a pointer to a apiGETOrderAmountPromotionRul
 
 ### Return type
 
-[**GETOrderAmountPromotionRules200Response**](GETOrderAmountPromotionRules200Response.md)
+[**OrderAmountPromotionRuleResponseList**](OrderAmountPromotionRuleResponseList.md)
 
 ### Authorization
 
@@ -490,7 +490,7 @@ Other parameters are passed through a pointer to a apiGETOrderAmountPromotionRul
 
 ## GETOrderAmountPromotionRulesOrderAmountPromotionRuleId
 
-> GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).Execute()
+> OrderAmountPromotionRuleResponse GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).Execute()
 
 Retrieve an order amount promotion rule
 
@@ -518,7 +518,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+    // response from `GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: OrderAmountPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.GETOrderAmountPromotionRulesOrderAmountPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -542,7 +542,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response**](GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response.md)
+[**OrderAmountPromotionRuleResponse**](OrderAmountPromotionRuleResponse.md)
 
 ### Authorization
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId
 
-> POSTOrderAmountPromotionRules201Response PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
+> OrderAmountPromotionRuleResponse PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx, orderAmountPromotionRuleId).OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate).Execute()
 
 Update an order amount promotion rule
 
@@ -715,7 +715,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleUpdate | 
+    orderAmountPromotionRuleUpdate := *openapiclient.NewOrderAmountPromotionRuleUpdate(*openapiclient.NewOrderAmountPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewOrderAmountPromotionRuleCreateDataAttributes())) // OrderAmountPromotionRuleUpdate | 
     orderAmountPromotionRuleId := "orderAmountPromotionRuleId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -725,7 +725,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: POSTOrderAmountPromotionRules201Response
+    // response from `PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: OrderAmountPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -750,7 +750,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTOrderAmountPromotionRules201Response**](POSTOrderAmountPromotionRules201Response.md)
+[**OrderAmountPromotionRuleResponse**](OrderAmountPromotionRuleResponse.md)
 
 ### Authorization
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrderAmountPromotionRules
 
-> POSTOrderAmountPromotionRules201Response POSTOrderAmountPromotionRules(ctx).OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate).Execute()
+> OrderAmountPromotionRuleResponse POSTOrderAmountPromotionRules(ctx).OrderAmountPromotionRuleCreate(orderAmountPromotionRuleCreate).Execute()
 
 Create an order amount promotion rule
 
@@ -787,7 +787,7 @@ import (
 )
 
 func main() {
-    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTOrderAmountPromotionRules201ResponseDataAttributes())) // OrderAmountPromotionRuleCreate | 
+    orderAmountPromotionRuleCreate := *openapiclient.NewOrderAmountPromotionRuleCreate(*openapiclient.NewOrderAmountPromotionRuleCreateData("Type_example", *openapiclient.NewOrderAmountPromotionRuleCreateDataAttributes())) // OrderAmountPromotionRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -796,7 +796,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderAmountPromotionRulesApi.POSTOrderAmountPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTOrderAmountPromotionRules`: POSTOrderAmountPromotionRules201Response
+    // response from `POSTOrderAmountPromotionRules`: OrderAmountPromotionRuleResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderAmountPromotionRulesApi.POSTOrderAmountPromotionRules`: %v\n", resp)
 }
 ```
@@ -816,7 +816,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTOrderAmountPromotionRules201Response**](POSTOrderAmountPromotionRules201Response.md)
+[**OrderAmountPromotionRuleResponse**](OrderAmountPromotionRuleResponse.md)
 
 ### Authorization
 

@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETExternalPromotions
 
-> GETExternalPromotions200Response GETExternalPromotions(ctx).Execute()
+> ExternalPromotionResponseList GETExternalPromotions(ctx).Execute()
 
 List all external promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.GETExternalPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPromotions`: GETExternalPromotions200Response
+    // response from `GETExternalPromotions`: ExternalPromotionResponseList
     fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.GETExternalPromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETExternalPromotionsReque
 
 ### Return type
 
-[**GETExternalPromotions200Response**](GETExternalPromotions200Response.md)
+[**ExternalPromotionResponseList**](ExternalPromotionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETExternalPromotionsReque
 
 ## GETExternalPromotionsExternalPromotionId
 
-> GETExternalPromotionsExternalPromotionId200Response GETExternalPromotionsExternalPromotionId(ctx, externalPromotionId).Execute()
+> ExternalPromotionResponse GETExternalPromotionsExternalPromotionId(ctx, externalPromotionId).Execute()
 
 Retrieve an external promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.GETExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETExternalPromotionsExternalPromotionId`: GETExternalPromotionsExternalPromotionId200Response
+    // response from `GETExternalPromotionsExternalPromotionId`: ExternalPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.GETExternalPromotionsExternalPromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETExternalPromotionsExternalPromotionId200Response**](GETExternalPromotionsExternalPromotionId200Response.md)
+[**ExternalPromotionResponse**](ExternalPromotionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalPromotionsExternalPromotionId
 
-> PATCHExternalPromotionsExternalPromotionId200Response PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
+> ExternalPromotionResponse PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
 
 Update an external promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes())) // ExternalPromotionUpdate | 
+    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewExternalPromotionUpdateDataAttributes())) // ExternalPromotionUpdate | 
     externalPromotionId := "externalPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHExternalPromotionsExternalPromotionId`: PATCHExternalPromotionsExternalPromotionId200Response
+    // response from `PATCHExternalPromotionsExternalPromotionId`: ExternalPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHExternalPromotionsExternalPromotionId200Response**](PATCHExternalPromotionsExternalPromotionId200Response.md)
+[**ExternalPromotionResponse**](ExternalPromotionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalPromotions
 
-> POSTExternalPromotions201Response POSTExternalPromotions(ctx).ExternalPromotionCreate(externalPromotionCreate).Execute()
+> ExternalPromotionResponse POSTExternalPromotions(ctx).ExternalPromotionCreate(externalPromotionCreate).Execute()
 
 Create an external promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("Type_example", *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
+    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData("Type_example", *openapiclient.NewExternalPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), "https://external_promotion.yourbrand.com"))) // ExternalPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.POSTExternalPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTExternalPromotions`: POSTExternalPromotions201Response
+    // response from `POSTExternalPromotions`: ExternalPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `ExternalPromotionsApi.POSTExternalPromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTExternalPromotions201Response**](POSTExternalPromotions201Response.md)
+[**ExternalPromotionResponse**](ExternalPromotionResponse.md)
 
 ### Authorization
 

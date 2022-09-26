@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // OrderAmountPromotionRuleCreateData struct for OrderAmountPromotionRuleCreateData
 type OrderAmountPromotionRuleCreateData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    POSTOrderAmountPromotionRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                           `json:"type"`
+	Attributes    OrderAmountPromotionRuleCreateDataAttributes     `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleCreateData instantiates a new OrderAmountPromotionRuleCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleCreateData(type_ string, attributes POSTOrderAmountPromotionRules201ResponseDataAttributes) *OrderAmountPromotionRuleCreateData {
+func NewOrderAmountPromotionRuleCreateData(type_ string, attributes OrderAmountPromotionRuleCreateDataAttributes) *OrderAmountPromotionRuleCreateData {
 	this := OrderAmountPromotionRuleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *OrderAmountPromotionRuleCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderAmountPromotionRuleCreateData) GetAttributes() POSTOrderAmountPromotionRules201ResponseDataAttributes {
+func (o *OrderAmountPromotionRuleCreateData) GetAttributes() OrderAmountPromotionRuleCreateDataAttributes {
 	if o == nil {
-		var ret POSTOrderAmountPromotionRules201ResponseDataAttributes
+		var ret OrderAmountPromotionRuleCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *OrderAmountPromotionRuleCreateData) GetAttributes() POSTOrderAmountProm
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleCreateData) GetAttributesOk() (*POSTOrderAmountPromotionRules201ResponseDataAttributes, bool) {
+func (o *OrderAmountPromotionRuleCreateData) GetAttributesOk() (*OrderAmountPromotionRuleCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *OrderAmountPromotionRuleCreateData) GetAttributesOk() (*POSTOrderAmount
 }
 
 // SetAttributes sets field value
-func (o *OrderAmountPromotionRuleCreateData) SetAttributes(v POSTOrderAmountPromotionRules201ResponseDataAttributes) {
+func (o *OrderAmountPromotionRuleCreateData) SetAttributes(v OrderAmountPromotionRuleCreateDataAttributes) {
 	o.Attributes = v
 }
 

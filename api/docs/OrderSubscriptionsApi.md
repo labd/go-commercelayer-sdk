@@ -289,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## GETOrderSubscriptions
 
-> GETOrderSubscriptions200Response GETOrderSubscriptions(ctx).Execute()
+> OrderSubscriptionResponseList GETOrderSubscriptions(ctx).Execute()
 
 List all order subscriptions
 
@@ -316,7 +316,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderSubscriptions`: GETOrderSubscriptions200Response
+    // response from `GETOrderSubscriptions`: OrderSubscriptionResponseList
     fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.GETOrderSubscriptions`: %v\n", resp)
 }
 ```
@@ -332,7 +332,7 @@ Other parameters are passed through a pointer to a apiGETOrderSubscriptionsReque
 
 ### Return type
 
-[**GETOrderSubscriptions200Response**](GETOrderSubscriptions200Response.md)
+[**OrderSubscriptionResponseList**](OrderSubscriptionResponseList.md)
 
 ### Authorization
 
@@ -350,7 +350,7 @@ Other parameters are passed through a pointer to a apiGETOrderSubscriptionsReque
 
 ## GETOrderSubscriptionsOrderSubscriptionId
 
-> GETOrderSubscriptionsOrderSubscriptionId200Response GETOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).Execute()
+> OrderSubscriptionResponse GETOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).Execute()
 
 Retrieve an order subscription
 
@@ -378,7 +378,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETOrderSubscriptionsOrderSubscriptionId`: GETOrderSubscriptionsOrderSubscriptionId200Response
+    // response from `GETOrderSubscriptionsOrderSubscriptionId`: OrderSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.GETOrderSubscriptionsOrderSubscriptionId`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETOrderSubscriptionsOrderSubscriptionId200Response**](GETOrderSubscriptionsOrderSubscriptionId200Response.md)
+[**OrderSubscriptionResponse**](OrderSubscriptionResponse.md)
 
 ### Authorization
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrderSubscriptionsOrderSubscriptionId
 
-> PATCHOrderSubscriptionsOrderSubscriptionId200Response PATCHOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).OrderSubscriptionUpdate(orderSubscriptionUpdate).Execute()
+> OrderSubscriptionResponse PATCHOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).OrderSubscriptionUpdate(orderSubscriptionUpdate).Execute()
 
 Update an order subscription
 
@@ -439,7 +439,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
+    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewOrderSubscriptionUpdateDataAttributes())) // OrderSubscriptionUpdate | 
     orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -449,7 +449,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.PATCHOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHOrderSubscriptionsOrderSubscriptionId`: PATCHOrderSubscriptionsOrderSubscriptionId200Response
+    // response from `PATCHOrderSubscriptionsOrderSubscriptionId`: OrderSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.PATCHOrderSubscriptionsOrderSubscriptionId`: %v\n", resp)
 }
 ```
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHOrderSubscriptionsOrderSubscriptionId200Response**](PATCHOrderSubscriptionsOrderSubscriptionId200Response.md)
+[**OrderSubscriptionResponse**](OrderSubscriptionResponse.md)
 
 ### Authorization
 
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrderSubscriptions
 
-> POSTOrderSubscriptions201Response POSTOrderSubscriptions(ctx).OrderSubscriptionCreate(orderSubscriptionCreate).Execute()
+> OrderSubscriptionResponse POSTOrderSubscriptions(ctx).OrderSubscriptionCreate(orderSubscriptionCreate).Execute()
 
 Create an order subscription
 
@@ -511,7 +511,7 @@ import (
 )
 
 func main() {
-    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("Type_example", *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes("monthly"))) // OrderSubscriptionCreate | 
+    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("Type_example", *openapiclient.NewOrderSubscriptionCreateDataAttributes("monthly"))) // OrderSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -520,7 +520,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.POSTOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTOrderSubscriptions`: POSTOrderSubscriptions201Response
+    // response from `POSTOrderSubscriptions`: OrderSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `OrderSubscriptionsApi.POSTOrderSubscriptions`: %v\n", resp)
 }
 ```
@@ -540,7 +540,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTOrderSubscriptions201Response**](POSTOrderSubscriptions201Response.md)
+[**OrderSubscriptionResponse**](OrderSubscriptionResponse.md)
 
 ### Authorization
 

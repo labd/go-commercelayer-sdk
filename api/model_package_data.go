@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PackageData struct for PackageData
 type PackageData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    GETPackages200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *PackageDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                    `json:"type"`
+	Attributes    PackageDataAttributes     `json:"attributes"`
+	Relationships *PackageDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPackageData instantiates a new PackageData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageData(type_ string, attributes GETPackages200ResponseDataInnerAttributes) *PackageData {
+func NewPackageData(type_ string, attributes PackageDataAttributes) *PackageData {
 	this := PackageData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PackageData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes {
+func (o *PackageData) GetAttributes() PackageDataAttributes {
 	if o == nil {
-		var ret GETPackages200ResponseDataInnerAttributes
+		var ret PackageDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttributes, bool) {
+func (o *PackageData) GetAttributesOk() (*PackageDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes) {
+func (o *PackageData) SetAttributes(v PackageDataAttributes) {
 	o.Attributes = v
 }
 

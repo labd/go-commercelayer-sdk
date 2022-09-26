@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes**](PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalGatewayUpdateDataAttributes**](ExternalGatewayUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayUpdateData
 
-`func NewExternalGatewayUpdateData(type_ string, id string, attributes PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, ) *ExternalGatewayUpdateData`
+`func NewExternalGatewayUpdateData(type_ string, id string, attributes ExternalGatewayUpdateDataAttributes, ) *ExternalGatewayUpdateData`
 
 NewExternalGatewayUpdateData instantiates a new ExternalGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalGatewayUpdateData) GetAttributes() PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes`
+`func (o *ExternalGatewayUpdateData) GetAttributes() ExternalGatewayUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayUpdateData) GetAttributesOk() (*PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool)`
+`func (o *ExternalGatewayUpdateData) GetAttributesOk() (*ExternalGatewayUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayUpdateData) SetAttributes(v PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes)`
+`func (o *ExternalGatewayUpdateData) SetAttributes(v ExternalGatewayUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

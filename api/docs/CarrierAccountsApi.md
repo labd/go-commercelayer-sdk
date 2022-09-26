@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 ## GETCarrierAccounts
 
-> GETCarrierAccounts200Response GETCarrierAccounts(ctx).Execute()
+> CarrierAccountResponseList GETCarrierAccounts(ctx).Execute()
 
 List all carrier accounts
 
@@ -39,7 +39,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CarrierAccountsApi.GETCarrierAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCarrierAccounts`: GETCarrierAccounts200Response
+    // response from `GETCarrierAccounts`: CarrierAccountResponseList
     fmt.Fprintf(os.Stdout, "Response from `CarrierAccountsApi.GETCarrierAccounts`: %v\n", resp)
 }
 ```
@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGETCarrierAccountsRequest 
 
 ### Return type
 
-[**GETCarrierAccounts200Response**](GETCarrierAccounts200Response.md)
+[**CarrierAccountResponseList**](CarrierAccountResponseList.md)
 
 ### Authorization
 
@@ -73,7 +73,7 @@ Other parameters are passed through a pointer to a apiGETCarrierAccountsRequest 
 
 ## GETCarrierAccountsCarrierAccountId
 
-> GETCarrierAccountsCarrierAccountId200Response GETCarrierAccountsCarrierAccountId(ctx, carrierAccountId).Execute()
+> CarrierAccountResponse GETCarrierAccountsCarrierAccountId(ctx, carrierAccountId).Execute()
 
 Retrieve a carrier account
 
@@ -101,7 +101,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CarrierAccountsApi.GETCarrierAccountsCarrierAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCarrierAccountsCarrierAccountId`: GETCarrierAccountsCarrierAccountId200Response
+    // response from `GETCarrierAccountsCarrierAccountId`: CarrierAccountResponse
     fmt.Fprintf(os.Stdout, "Response from `CarrierAccountsApi.GETCarrierAccountsCarrierAccountId`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCarrierAccountsCarrierAccountId200Response**](GETCarrierAccountsCarrierAccountId200Response.md)
+[**CarrierAccountResponse**](CarrierAccountResponse.md)
 
 ### Authorization
 

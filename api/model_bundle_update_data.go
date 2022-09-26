@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type BundleUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                        `json:"id"`
-	Attributes    PATCHBundlesBundleId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                        `json:"relationships,omitempty"`
+	Id            string                     `json:"id"`
+	Attributes    BundleUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}     `json:"relationships,omitempty"`
 }
 
 // NewBundleUpdateData instantiates a new BundleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleUpdateData(type_ string, id string, attributes PATCHBundlesBundleId200ResponseDataAttributes) *BundleUpdateData {
+func NewBundleUpdateData(type_ string, id string, attributes BundleUpdateDataAttributes) *BundleUpdateData {
 	this := BundleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *BundleUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BundleUpdateData) GetAttributes() PATCHBundlesBundleId200ResponseDataAttributes {
+func (o *BundleUpdateData) GetAttributes() BundleUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHBundlesBundleId200ResponseDataAttributes
+		var ret BundleUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *BundleUpdateData) GetAttributes() PATCHBundlesBundleId200ResponseDataAt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BundleUpdateData) GetAttributesOk() (*PATCHBundlesBundleId200ResponseDataAttributes, bool) {
+func (o *BundleUpdateData) GetAttributesOk() (*BundleUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *BundleUpdateData) GetAttributesOk() (*PATCHBundlesBundleId200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *BundleUpdateData) SetAttributes(v PATCHBundlesBundleId200ResponseDataAttributes) {
+func (o *BundleUpdateData) SetAttributes(v BundleUpdateDataAttributes) {
 	o.Attributes = v
 }
 

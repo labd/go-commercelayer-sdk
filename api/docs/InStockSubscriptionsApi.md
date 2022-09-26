@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETInStockSubscriptions
 
-> GETInStockSubscriptions200Response GETInStockSubscriptions(ctx).Execute()
+> InStockSubscriptionResponseList GETInStockSubscriptions(ctx).Execute()
 
 List all in stock subscriptions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.GETInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInStockSubscriptions`: GETInStockSubscriptions200Response
+    // response from `GETInStockSubscriptions`: InStockSubscriptionResponseList
     fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.GETInStockSubscriptions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETInStockSubscriptionsReq
 
 ### Return type
 
-[**GETInStockSubscriptions200Response**](GETInStockSubscriptions200Response.md)
+[**InStockSubscriptionResponseList**](InStockSubscriptionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETInStockSubscriptionsReq
 
 ## GETInStockSubscriptionsInStockSubscriptionId
 
-> GETInStockSubscriptionsInStockSubscriptionId200Response GETInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).Execute()
+> InStockSubscriptionResponse GETInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).Execute()
 
 Retrieve an in stock subscription
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.GETInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETInStockSubscriptionsInStockSubscriptionId`: GETInStockSubscriptionsInStockSubscriptionId200Response
+    // response from `GETInStockSubscriptionsInStockSubscriptionId`: InStockSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.GETInStockSubscriptionsInStockSubscriptionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETInStockSubscriptionsInStockSubscriptionId200Response**](GETInStockSubscriptionsInStockSubscriptionId200Response.md)
+[**InStockSubscriptionResponse**](InStockSubscriptionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInStockSubscriptionsInStockSubscriptionId
 
-> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
+> InStockSubscriptionResponse PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
 
 Update an in stock subscription
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
+    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewInStockSubscriptionUpdateDataAttributes())) // InStockSubscriptionUpdate | 
     inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHInStockSubscriptionsInStockSubscriptionId`: PATCHInStockSubscriptionsInStockSubscriptionId200Response
+    // response from `PATCHInStockSubscriptionsInStockSubscriptionId`: InStockSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHInStockSubscriptionsInStockSubscriptionId200Response**](PATCHInStockSubscriptionsInStockSubscriptionId200Response.md)
+[**InStockSubscriptionResponse**](InStockSubscriptionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTInStockSubscriptions
 
-> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
+> InStockSubscriptionResponse POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
 
 Create an in stock subscription
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("Type_example", *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
+    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("Type_example", *openapiclient.NewInStockSubscriptionCreateDataAttributes())) // InStockSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.POSTInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTInStockSubscriptions`: POSTInStockSubscriptions201Response
+    // response from `POSTInStockSubscriptions`: InStockSubscriptionResponse
     fmt.Fprintf(os.Stdout, "Response from `InStockSubscriptionsApi.POSTInStockSubscriptions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTInStockSubscriptions201Response**](POSTInStockSubscriptions201Response.md)
+[**InStockSubscriptionResponse**](InStockSubscriptionResponse.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalPromotionCreateData struct for ExternalPromotionCreateData
 type ExternalPromotionCreateData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    POSTExternalPromotions201ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    ExternalPromotionCreateDataAttributes     `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionCreateData instantiates a new ExternalPromotionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionCreateData(type_ string, attributes POSTExternalPromotions201ResponseDataAttributes) *ExternalPromotionCreateData {
+func NewExternalPromotionCreateData(type_ string, attributes ExternalPromotionCreateDataAttributes) *ExternalPromotionCreateData {
 	this := ExternalPromotionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ExternalPromotionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPromotionCreateData) GetAttributes() POSTExternalPromotions201ResponseDataAttributes {
+func (o *ExternalPromotionCreateData) GetAttributes() ExternalPromotionCreateDataAttributes {
 	if o == nil {
-		var ret POSTExternalPromotions201ResponseDataAttributes
+		var ret ExternalPromotionCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ExternalPromotionCreateData) GetAttributes() POSTExternalPromotions201R
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionCreateData) GetAttributesOk() (*POSTExternalPromotions201ResponseDataAttributes, bool) {
+func (o *ExternalPromotionCreateData) GetAttributesOk() (*ExternalPromotionCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ExternalPromotionCreateData) GetAttributesOk() (*POSTExternalPromotions
 }
 
 // SetAttributes sets field value
-func (o *ExternalPromotionCreateData) SetAttributes(v POSTExternalPromotions201ResponseDataAttributes) {
+func (o *ExternalPromotionCreateData) SetAttributes(v ExternalPromotionCreateDataAttributes) {
 	o.Attributes = v
 }
 

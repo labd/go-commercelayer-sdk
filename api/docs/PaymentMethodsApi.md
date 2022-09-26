@@ -705,7 +705,7 @@ Name | Type | Description  | Notes
 
 ## GETPaymentMethods
 
-> GETPaymentMethods200Response GETPaymentMethods(ctx).Execute()
+> PaymentMethodResponseList GETPaymentMethods(ctx).Execute()
 
 List all payment methods
 
@@ -732,7 +732,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentMethods`: GETPaymentMethods200Response
+    // response from `GETPaymentMethods`: PaymentMethodResponseList
     fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.GETPaymentMethods`: %v\n", resp)
 }
 ```
@@ -748,7 +748,7 @@ Other parameters are passed through a pointer to a apiGETPaymentMethodsRequest s
 
 ### Return type
 
-[**GETPaymentMethods200Response**](GETPaymentMethods200Response.md)
+[**PaymentMethodResponseList**](PaymentMethodResponseList.md)
 
 ### Authorization
 
@@ -766,7 +766,7 @@ Other parameters are passed through a pointer to a apiGETPaymentMethodsRequest s
 
 ## GETPaymentMethodsPaymentMethodId
 
-> GETPaymentMethodsPaymentMethodId200Response GETPaymentMethodsPaymentMethodId(ctx, paymentMethodId).Execute()
+> PaymentMethodResponse GETPaymentMethodsPaymentMethodId(ctx, paymentMethodId).Execute()
 
 Retrieve a payment method
 
@@ -794,7 +794,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaymentMethodsPaymentMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaymentMethodsPaymentMethodId`: GETPaymentMethodsPaymentMethodId200Response
+    // response from `GETPaymentMethodsPaymentMethodId`: PaymentMethodResponse
     fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.GETPaymentMethodsPaymentMethodId`: %v\n", resp)
 }
 ```
@@ -818,7 +818,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPaymentMethodsPaymentMethodId200Response**](GETPaymentMethodsPaymentMethodId200Response.md)
+[**PaymentMethodResponse**](PaymentMethodResponse.md)
 
 ### Authorization
 
@@ -972,7 +972,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPaymentMethodsPaymentMethodId
 
-> PATCHPaymentMethodsPaymentMethodId200Response PATCHPaymentMethodsPaymentMethodId(ctx, paymentMethodId).PaymentMethodUpdate(paymentMethodUpdate).Execute()
+> PaymentMethodResponse PATCHPaymentMethodsPaymentMethodId(ctx, paymentMethodId).PaymentMethodUpdate(paymentMethodUpdate).Execute()
 
 Update a payment method
 
@@ -991,7 +991,7 @@ import (
 )
 
 func main() {
-    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
+    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPaymentMethodUpdateDataAttributes())) // PaymentMethodUpdate | 
     paymentMethodId := "paymentMethodId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1001,7 +1001,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.PATCHPaymentMethodsPaymentMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPaymentMethodsPaymentMethodId`: PATCHPaymentMethodsPaymentMethodId200Response
+    // response from `PATCHPaymentMethodsPaymentMethodId`: PaymentMethodResponse
     fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.PATCHPaymentMethodsPaymentMethodId`: %v\n", resp)
 }
 ```
@@ -1026,7 +1026,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPaymentMethodsPaymentMethodId200Response**](PATCHPaymentMethodsPaymentMethodId200Response.md)
+[**PaymentMethodResponse**](PaymentMethodResponse.md)
 
 ### Authorization
 
@@ -1044,7 +1044,7 @@ Name | Type | Description  | Notes
 
 ## POSTPaymentMethods
 
-> POSTPaymentMethods201Response POSTPaymentMethods(ctx).PaymentMethodCreate(paymentMethodCreate).Execute()
+> PaymentMethodResponse POSTPaymentMethods(ctx).PaymentMethodCreate(paymentMethodCreate).Execute()
 
 Create a payment method
 
@@ -1063,7 +1063,7 @@ import (
 )
 
 func main() {
-    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("Type_example", *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
+    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("Type_example", *openapiclient.NewPaymentMethodCreateDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1072,7 +1072,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.POSTPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPaymentMethods`: POSTPaymentMethods201Response
+    // response from `POSTPaymentMethods`: PaymentMethodResponse
     fmt.Fprintf(os.Stdout, "Response from `PaymentMethodsApi.POSTPaymentMethods`: %v\n", resp)
 }
 ```
@@ -1092,7 +1092,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPaymentMethods201Response**](POSTPaymentMethods201Response.md)
+[**PaymentMethodResponse**](PaymentMethodResponse.md)
 
 ### Authorization
 

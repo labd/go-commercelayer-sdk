@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ## GETMerchants
 
-> GETMerchants200Response GETMerchants(ctx).Execute()
+> MerchantResponseList GETMerchants(ctx).Execute()
 
 List all merchants
 
@@ -178,7 +178,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETMerchants``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMerchants`: GETMerchants200Response
+    // response from `GETMerchants`: MerchantResponseList
     fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.GETMerchants`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Other parameters are passed through a pointer to a apiGETMerchantsRequest struct
 
 ### Return type
 
-[**GETMerchants200Response**](GETMerchants200Response.md)
+[**MerchantResponseList**](MerchantResponseList.md)
 
 ### Authorization
 
@@ -212,7 +212,7 @@ Other parameters are passed through a pointer to a apiGETMerchantsRequest struct
 
 ## GETMerchantsMerchantId
 
-> GETMerchantsMerchantId200Response GETMerchantsMerchantId(ctx, merchantId).Execute()
+> MerchantResponse GETMerchantsMerchantId(ctx, merchantId).Execute()
 
 Retrieve a merchant
 
@@ -240,7 +240,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMerchantsMerchantId`: GETMerchantsMerchantId200Response
+    // response from `GETMerchantsMerchantId`: MerchantResponse
     fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.GETMerchantsMerchantId`: %v\n", resp)
 }
 ```
@@ -264,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETMerchantsMerchantId200Response**](GETMerchantsMerchantId200Response.md)
+[**MerchantResponse**](MerchantResponse.md)
 
 ### Authorization
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHMerchantsMerchantId
 
-> PATCHMerchantsMerchantId200Response PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
+> MerchantResponse PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
 
 Update a merchant
 
@@ -301,7 +301,7 @@ import (
 )
 
 func main() {
-    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHMerchantsMerchantId200ResponseDataAttributes())) // MerchantUpdate | 
+    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewMerchantUpdateDataAttributes())) // MerchantUpdate | 
     merchantId := "merchantId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.PATCHMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHMerchantsMerchantId`: PATCHMerchantsMerchantId200Response
+    // response from `PATCHMerchantsMerchantId`: MerchantResponse
     fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.PATCHMerchantsMerchantId`: %v\n", resp)
 }
 ```
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHMerchantsMerchantId200Response**](PATCHMerchantsMerchantId200Response.md)
+[**MerchantResponse**](MerchantResponse.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTMerchants
 
-> POSTMerchants201Response POSTMerchants(ctx).MerchantCreate(merchantCreate).Execute()
+> MerchantResponse POSTMerchants(ctx).MerchantCreate(merchantCreate).Execute()
 
 Create a merchant
 
@@ -373,7 +373,7 @@ import (
 )
 
 func main() {
-    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("Type_example", *openapiclient.NewPOSTMerchants201ResponseDataAttributes("The Brand Inc."))) // MerchantCreate | 
+    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("Type_example", *openapiclient.NewMerchantCreateDataAttributes("The Brand Inc."))) // MerchantCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -382,7 +382,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.POSTMerchants``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTMerchants`: POSTMerchants201Response
+    // response from `POSTMerchants`: MerchantResponse
     fmt.Fprintf(os.Stdout, "Response from `MerchantsApi.POSTMerchants`: %v\n", resp)
 }
 ```
@@ -402,7 +402,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTMerchants201Response**](POSTMerchants201Response.md)
+[**MerchantResponse**](MerchantResponse.md)
 
 ### Authorization
 

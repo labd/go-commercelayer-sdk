@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETFixedPricePromotions
 
-> GETFixedPricePromotions200Response GETFixedPricePromotions(ctx).Execute()
+> FixedPricePromotionResponseList GETFixedPricePromotions(ctx).Execute()
 
 List all fixed price promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.GETFixedPricePromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFixedPricePromotions`: GETFixedPricePromotions200Response
+    // response from `GETFixedPricePromotions`: FixedPricePromotionResponseList
     fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.GETFixedPricePromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETFixedPricePromotionsReq
 
 ### Return type
 
-[**GETFixedPricePromotions200Response**](GETFixedPricePromotions200Response.md)
+[**FixedPricePromotionResponseList**](FixedPricePromotionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETFixedPricePromotionsReq
 
 ## GETFixedPricePromotionsFixedPricePromotionId
 
-> GETFixedPricePromotionsFixedPricePromotionId200Response GETFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).Execute()
+> FixedPricePromotionResponse GETFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).Execute()
 
 Retrieve a fixed price promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.GETFixedPricePromotionsFixedPricePromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFixedPricePromotionsFixedPricePromotionId`: GETFixedPricePromotionsFixedPricePromotionId200Response
+    // response from `GETFixedPricePromotionsFixedPricePromotionId`: FixedPricePromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.GETFixedPricePromotionsFixedPricePromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETFixedPricePromotionsFixedPricePromotionId200Response**](GETFixedPricePromotionsFixedPricePromotionId200Response.md)
+[**FixedPricePromotionResponse**](FixedPricePromotionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFixedPricePromotionsFixedPricePromotionId
 
-> PATCHFixedPricePromotionsFixedPricePromotionId200Response PATCHFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).FixedPricePromotionUpdate(fixedPricePromotionUpdate).Execute()
+> FixedPricePromotionResponse PATCHFixedPricePromotionsFixedPricePromotionId(ctx, fixedPricePromotionId).FixedPricePromotionUpdate(fixedPricePromotionUpdate).Execute()
 
 Update a fixed price promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    fixedPricePromotionUpdate := *openapiclient.NewFixedPricePromotionUpdate(*openapiclient.NewFixedPricePromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes())) // FixedPricePromotionUpdate | 
+    fixedPricePromotionUpdate := *openapiclient.NewFixedPricePromotionUpdate(*openapiclient.NewFixedPricePromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewFixedPricePromotionUpdateDataAttributes())) // FixedPricePromotionUpdate | 
     fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.PATCHFixedPricePromotionsFixedPricePromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHFixedPricePromotionsFixedPricePromotionId`: PATCHFixedPricePromotionsFixedPricePromotionId200Response
+    // response from `PATCHFixedPricePromotionsFixedPricePromotionId`: FixedPricePromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.PATCHFixedPricePromotionsFixedPricePromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHFixedPricePromotionsFixedPricePromotionId200Response**](PATCHFixedPricePromotionsFixedPricePromotionId200Response.md)
+[**FixedPricePromotionResponse**](FixedPricePromotionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFixedPricePromotions
 
-> POSTFixedPricePromotions201Response POSTFixedPricePromotions(ctx).FixedPricePromotionCreate(fixedPricePromotionCreate).Execute()
+> FixedPricePromotionResponse POSTFixedPricePromotions(ctx).FixedPricePromotionCreate(fixedPricePromotionCreate).Execute()
 
 Create a fixed price promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData("Type_example", *openapiclient.NewPOSTFixedPricePromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedPricePromotionCreate | 
+    fixedPricePromotionCreate := *openapiclient.NewFixedPricePromotionCreate(*openapiclient.NewFixedPricePromotionCreateData("Type_example", *openapiclient.NewFixedPricePromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedPricePromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedPricePromotionsApi.POSTFixedPricePromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTFixedPricePromotions`: POSTFixedPricePromotions201Response
+    // response from `POSTFixedPricePromotions`: FixedPricePromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FixedPricePromotionsApi.POSTFixedPricePromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTFixedPricePromotions201Response**](POSTFixedPricePromotions201Response.md)
+[**FixedPricePromotionResponse**](FixedPricePromotionResponse.md)
 
 ### Authorization
 

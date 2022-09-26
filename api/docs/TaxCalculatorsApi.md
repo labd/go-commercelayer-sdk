@@ -80,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GETTaxCalculators
 
-> GETTaxCalculators200Response GETTaxCalculators(ctx).Execute()
+> TaxCalculatorResponseList GETTaxCalculators(ctx).Execute()
 
 List all tax calculators
 
@@ -107,7 +107,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCalculatorsApi.GETTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCalculators`: GETTaxCalculators200Response
+    // response from `GETTaxCalculators`: TaxCalculatorResponseList
     fmt.Fprintf(os.Stdout, "Response from `TaxCalculatorsApi.GETTaxCalculators`: %v\n", resp)
 }
 ```
@@ -123,7 +123,7 @@ Other parameters are passed through a pointer to a apiGETTaxCalculatorsRequest s
 
 ### Return type
 
-[**GETTaxCalculators200Response**](GETTaxCalculators200Response.md)
+[**TaxCalculatorResponseList**](TaxCalculatorResponseList.md)
 
 ### Authorization
 
@@ -141,7 +141,7 @@ Other parameters are passed through a pointer to a apiGETTaxCalculatorsRequest s
 
 ## GETTaxCalculatorsTaxCalculatorId
 
-> GETTaxCalculatorsTaxCalculatorId200Response GETTaxCalculatorsTaxCalculatorId(ctx, taxCalculatorId).Execute()
+> TaxCalculatorResponse GETTaxCalculatorsTaxCalculatorId(ctx, taxCalculatorId).Execute()
 
 Retrieve a tax calculator
 
@@ -169,7 +169,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCalculatorsApi.GETTaxCalculatorsTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTaxCalculatorsTaxCalculatorId`: GETTaxCalculatorsTaxCalculatorId200Response
+    // response from `GETTaxCalculatorsTaxCalculatorId`: TaxCalculatorResponse
     fmt.Fprintf(os.Stdout, "Response from `TaxCalculatorsApi.GETTaxCalculatorsTaxCalculatorId`: %v\n", resp)
 }
 ```
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETTaxCalculatorsTaxCalculatorId200Response**](GETTaxCalculatorsTaxCalculatorId200Response.md)
+[**TaxCalculatorResponse**](TaxCalculatorResponse.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type FixedAmountPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                    `json:"id"`
-	Attributes    PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionCreateDataRelationships                                 `json:"relationships,omitempty"`
+	Id            string                                    `json:"id"`
+	Attributes    FixedAmountPromotionUpdateDataAttributes  `json:"attributes"`
+	Relationships *ExternalPromotionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewFixedAmountPromotionUpdateData instantiates a new FixedAmountPromotionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedAmountPromotionUpdateData(type_ string, id string, attributes PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes) *FixedAmountPromotionUpdateData {
+func NewFixedAmountPromotionUpdateData(type_ string, id string, attributes FixedAmountPromotionUpdateDataAttributes) *FixedAmountPromotionUpdateData {
 	this := FixedAmountPromotionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *FixedAmountPromotionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedAmountPromotionUpdateData) GetAttributes() PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes {
+func (o *FixedAmountPromotionUpdateData) GetAttributes() FixedAmountPromotionUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes
+		var ret FixedAmountPromotionUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *FixedAmountPromotionUpdateData) GetAttributes() PATCHFixedAmountPromoti
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedAmountPromotionUpdateData) GetAttributesOk() (*PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes, bool) {
+func (o *FixedAmountPromotionUpdateData) GetAttributesOk() (*FixedAmountPromotionUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *FixedAmountPromotionUpdateData) GetAttributesOk() (*PATCHFixedAmountPro
 }
 
 // SetAttributes sets field value
-func (o *FixedAmountPromotionUpdateData) SetAttributes(v PATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes) {
+func (o *FixedAmountPromotionUpdateData) SetAttributes(v FixedAmountPromotionUpdateDataAttributes) {
 	o.Attributes = v
 }
 

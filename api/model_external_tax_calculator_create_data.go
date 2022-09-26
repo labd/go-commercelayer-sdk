@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalTaxCalculatorCreateData struct for ExternalTaxCalculatorCreateData
 type ExternalTaxCalculatorCreateData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    POSTExternalTaxCalculators201ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships              `json:"relationships,omitempty"`
+	Type          string                                    `json:"type"`
+	Attributes    ExternalTaxCalculatorCreateDataAttributes `json:"attributes"`
+	Relationships *AvalaraAccountCreateDataRelationships    `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorCreateData instantiates a new ExternalTaxCalculatorCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalTaxCalculatorCreateData(type_ string, attributes POSTExternalTaxCalculators201ResponseDataAttributes) *ExternalTaxCalculatorCreateData {
+func NewExternalTaxCalculatorCreateData(type_ string, attributes ExternalTaxCalculatorCreateDataAttributes) *ExternalTaxCalculatorCreateData {
 	this := ExternalTaxCalculatorCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ExternalTaxCalculatorCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalTaxCalculatorCreateData) GetAttributes() POSTExternalTaxCalculators201ResponseDataAttributes {
+func (o *ExternalTaxCalculatorCreateData) GetAttributes() ExternalTaxCalculatorCreateDataAttributes {
 	if o == nil {
-		var ret POSTExternalTaxCalculators201ResponseDataAttributes
+		var ret ExternalTaxCalculatorCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ExternalTaxCalculatorCreateData) GetAttributes() POSTExternalTaxCalcula
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorCreateData) GetAttributesOk() (*POSTExternalTaxCalculators201ResponseDataAttributes, bool) {
+func (o *ExternalTaxCalculatorCreateData) GetAttributesOk() (*ExternalTaxCalculatorCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ExternalTaxCalculatorCreateData) GetAttributesOk() (*POSTExternalTaxCal
 }
 
 // SetAttributes sets field value
-func (o *ExternalTaxCalculatorCreateData) SetAttributes(v POSTExternalTaxCalculators201ResponseDataAttributes) {
+func (o *ExternalTaxCalculatorCreateData) SetAttributes(v ExternalTaxCalculatorCreateDataAttributes) {
 	o.Attributes = v
 }
 

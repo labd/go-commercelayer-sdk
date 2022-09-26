@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GETTransactions
 
-> GETTransactions200Response GETTransactions(ctx).Execute()
+> TransactionResponseList GETTransactions(ctx).Execute()
 
 List all transactions
 
@@ -38,7 +38,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TransactionsApi.GETTransactions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTransactions`: GETTransactions200Response
+    // response from `GETTransactions`: TransactionResponseList
     fmt.Fprintf(os.Stdout, "Response from `TransactionsApi.GETTransactions`: %v\n", resp)
 }
 ```
@@ -54,7 +54,7 @@ Other parameters are passed through a pointer to a apiGETTransactionsRequest str
 
 ### Return type
 
-[**GETTransactions200Response**](GETTransactions200Response.md)
+[**TransactionResponseList**](TransactionResponseList.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ Other parameters are passed through a pointer to a apiGETTransactionsRequest str
 
 ## GETTransactionsTransactionId
 
-> GETTransactionsTransactionId200Response GETTransactionsTransactionId(ctx, transactionId).Execute()
+> TransactionResponse GETTransactionsTransactionId(ctx, transactionId).Execute()
 
 Retrieve a transaction
 
@@ -100,7 +100,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `TransactionsApi.GETTransactionsTransactionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETTransactionsTransactionId`: GETTransactionsTransactionId200Response
+    // response from `GETTransactionsTransactionId`: TransactionResponse
     fmt.Fprintf(os.Stdout, "Response from `TransactionsApi.GETTransactionsTransactionId`: %v\n", resp)
 }
 ```
@@ -124,7 +124,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETTransactionsTransactionId200Response**](GETTransactionsTransactionId200Response.md)
+[**TransactionResponse**](TransactionResponse.md)
 
 ### Authorization
 

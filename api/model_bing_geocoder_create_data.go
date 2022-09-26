@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // BingGeocoderCreateData struct for BingGeocoderCreateData
 type BingGeocoderCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTBingGeocoders201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                     `json:"relationships,omitempty"`
+	Type          string                           `json:"type"`
+	Attributes    BingGeocoderCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}           `json:"relationships,omitempty"`
 }
 
 // NewBingGeocoderCreateData instantiates a new BingGeocoderCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBingGeocoderCreateData(type_ string, attributes POSTBingGeocoders201ResponseDataAttributes) *BingGeocoderCreateData {
+func NewBingGeocoderCreateData(type_ string, attributes BingGeocoderCreateDataAttributes) *BingGeocoderCreateData {
 	this := BingGeocoderCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *BingGeocoderCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BingGeocoderCreateData) GetAttributes() POSTBingGeocoders201ResponseDataAttributes {
+func (o *BingGeocoderCreateData) GetAttributes() BingGeocoderCreateDataAttributes {
 	if o == nil {
-		var ret POSTBingGeocoders201ResponseDataAttributes
+		var ret BingGeocoderCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *BingGeocoderCreateData) GetAttributes() POSTBingGeocoders201ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderCreateData) GetAttributesOk() (*POSTBingGeocoders201ResponseDataAttributes, bool) {
+func (o *BingGeocoderCreateData) GetAttributesOk() (*BingGeocoderCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *BingGeocoderCreateData) GetAttributesOk() (*POSTBingGeocoders201Respons
 }
 
 // SetAttributes sets field value
-func (o *BingGeocoderCreateData) SetAttributes(v POSTBingGeocoders201ResponseDataAttributes) {
+func (o *BingGeocoderCreateData) SetAttributes(v BingGeocoderCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETReturns200ResponseDataInnerAttributes**](GETReturns200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**ReturnDataAttributes**](ReturnDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnDataRelationships**](ReturnDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnData
 
-`func NewReturnData(type_ string, attributes GETReturns200ResponseDataInnerAttributes, ) *ReturnData`
+`func NewReturnData(type_ string, attributes ReturnDataAttributes, ) *ReturnData`
 
 NewReturnData instantiates a new ReturnData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ReturnData) GetAttributes() GETReturns200ResponseDataInnerAttributes`
+`func (o *ReturnData) GetAttributes() ReturnDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ReturnData) GetAttributesOk() (*GETReturns200ResponseDataInnerAttributes, bool)`
+`func (o *ReturnData) GetAttributesOk() (*ReturnDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ReturnData) SetAttributes(v GETReturns200ResponseDataInnerAttributes)`
+`func (o *ReturnData) SetAttributes(v ReturnDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

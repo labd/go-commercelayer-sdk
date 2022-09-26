@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type OrderUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                      `json:"id"`
-	Attributes    PATCHOrdersOrderId200ResponseDataAttributes `json:"attributes"`
-	Relationships *OrderCreateDataRelationships               `json:"relationships,omitempty"`
+	Id            string                        `json:"id"`
+	Attributes    OrderUpdateDataAttributes     `json:"attributes"`
+	Relationships *OrderCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewOrderUpdateData instantiates a new OrderUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderUpdateData(type_ string, id string, attributes PATCHOrdersOrderId200ResponseDataAttributes) *OrderUpdateData {
+func NewOrderUpdateData(type_ string, id string, attributes OrderUpdateDataAttributes) *OrderUpdateData {
 	this := OrderUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *OrderUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderId200ResponseDataAttributes {
+func (o *OrderUpdateData) GetAttributes() OrderUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHOrdersOrderId200ResponseDataAttributes
+		var ret OrderUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderId200ResponseDataAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderId200ResponseDataAttributes, bool) {
+func (o *OrderUpdateData) GetAttributesOk() (*OrderUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderId200ResponseDataA
 }
 
 // SetAttributes sets field value
-func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderId200ResponseDataAttributes) {
+func (o *OrderUpdateData) SetAttributes(v OrderUpdateDataAttributes) {
 	o.Attributes = v
 }
 

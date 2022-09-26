@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTFreeShippingPromotions201ResponseDataAttributes**](POSTFreeShippingPromotions201ResponseDataAttributes.md) |  | 
+**Attributes** | [**FreeShippingPromotionCreateDataAttributes**](FreeShippingPromotionCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFreeShippingPromotionCreateData
 
-`func NewFreeShippingPromotionCreateData(type_ string, attributes POSTFreeShippingPromotions201ResponseDataAttributes, ) *FreeShippingPromotionCreateData`
+`func NewFreeShippingPromotionCreateData(type_ string, attributes FreeShippingPromotionCreateDataAttributes, ) *FreeShippingPromotionCreateData`
 
 NewFreeShippingPromotionCreateData instantiates a new FreeShippingPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *FreeShippingPromotionCreateData) GetAttributes() POSTFreeShippingPromotions201ResponseDataAttributes`
+`func (o *FreeShippingPromotionCreateData) GetAttributes() FreeShippingPromotionCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FreeShippingPromotionCreateData) GetAttributesOk() (*POSTFreeShippingPromotions201ResponseDataAttributes, bool)`
+`func (o *FreeShippingPromotionCreateData) GetAttributesOk() (*FreeShippingPromotionCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FreeShippingPromotionCreateData) SetAttributes(v POSTFreeShippingPromotions201ResponseDataAttributes)`
+`func (o *FreeShippingPromotionCreateData) SetAttributes(v FreeShippingPromotionCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

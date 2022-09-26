@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PaypalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
+	Id            string                            `json:"id"`
+	Attributes    PaypalGatewayUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}            `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayUpdateData instantiates a new PaypalGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalGatewayUpdateData(type_ string, id string, attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) *PaypalGatewayUpdateData {
+func NewPaypalGatewayUpdateData(type_ string, id string, attributes PaypalGatewayUpdateDataAttributes) *PaypalGatewayUpdateData {
 	this := PaypalGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PaypalGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalGatewayUpdateData) GetAttributes() PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes {
+func (o *PaypalGatewayUpdateData) GetAttributes() PaypalGatewayUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes
+		var ret PaypalGatewayUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PaypalGatewayUpdateData) GetAttributes() PATCHPaypalGatewaysPaypalGatew
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayUpdateData) GetAttributesOk() (*PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes, bool) {
+func (o *PaypalGatewayUpdateData) GetAttributesOk() (*PaypalGatewayUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PaypalGatewayUpdateData) GetAttributesOk() (*PATCHPaypalGatewaysPaypalG
 }
 
 // SetAttributes sets field value
-func (o *PaypalGatewayUpdateData) SetAttributes(v PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) {
+func (o *PaypalGatewayUpdateData) SetAttributes(v PaypalGatewayUpdateDataAttributes) {
 	o.Attributes = v
 }
 

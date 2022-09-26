@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceData struct for PriceData
 type PriceData struct {
 	// The resource's type
-	Type          string                                  `json:"type"`
-	Attributes    GETPrices200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *PriceDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                  `json:"type"`
+	Attributes    PriceDataAttributes     `json:"attributes"`
+	Relationships *PriceDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceData instantiates a new PriceData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceData(type_ string, attributes GETPrices200ResponseDataInnerAttributes) *PriceData {
+func NewPriceData(type_ string, attributes PriceDataAttributes) *PriceData {
 	this := PriceData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PriceData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceData) GetAttributes() GETPrices200ResponseDataInnerAttributes {
+func (o *PriceData) GetAttributes() PriceDataAttributes {
 	if o == nil {
-		var ret GETPrices200ResponseDataInnerAttributes
+		var ret PriceDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PriceData) GetAttributes() GETPrices200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceData) GetAttributesOk() (*GETPrices200ResponseDataInnerAttributes, bool) {
+func (o *PriceData) GetAttributesOk() (*PriceDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PriceData) GetAttributesOk() (*GETPrices200ResponseDataInnerAttributes,
 }
 
 // SetAttributes sets field value
-func (o *PriceData) SetAttributes(v GETPrices200ResponseDataInnerAttributes) {
+func (o *PriceData) SetAttributes(v PriceDataAttributes) {
 	o.Attributes = v
 }
 

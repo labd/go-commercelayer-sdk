@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AttachmentCreateData struct for AttachmentCreateData
 type AttachmentCreateData struct {
 	// The resource's type
-	Type          string                                   `json:"type"`
-	Attributes    POSTAttachments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AttachmentCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                             `json:"type"`
+	Attributes    AttachmentCreateDataAttributes     `json:"attributes"`
+	Relationships *AttachmentCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAttachmentCreateData instantiates a new AttachmentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateData(type_ string, attributes POSTAttachments201ResponseDataAttributes) *AttachmentCreateData {
+func NewAttachmentCreateData(type_ string, attributes AttachmentCreateDataAttributes) *AttachmentCreateData {
 	this := AttachmentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AttachmentCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAttributes {
+func (o *AttachmentCreateData) GetAttributes() AttachmentCreateDataAttributes {
 	if o == nil {
-		var ret POSTAttachments201ResponseDataAttributes
+		var ret AttachmentCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDataAttributes, bool) {
+func (o *AttachmentCreateData) GetAttributesOk() (*AttachmentCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDat
 }
 
 // SetAttributes sets field value
-func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAttributes) {
+func (o *AttachmentCreateData) SetAttributes(v AttachmentCreateDataAttributes) {
 	o.Attributes = v
 }
 

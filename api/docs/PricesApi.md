@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ## GETPrices
 
-> GETPrices200Response GETPrices(ctx).Execute()
+> PriceResponseList GETPrices(ctx).Execute()
 
 List all prices
 
@@ -317,7 +317,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPrices`: GETPrices200Response
+    // response from `GETPrices`: PriceResponseList
     fmt.Fprintf(os.Stdout, "Response from `PricesApi.GETPrices`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Other parameters are passed through a pointer to a apiGETPricesRequest struct vi
 
 ### Return type
 
-[**GETPrices200Response**](GETPrices200Response.md)
+[**PriceResponseList**](PriceResponseList.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Other parameters are passed through a pointer to a apiGETPricesRequest struct vi
 
 ## GETPricesPriceId
 
-> GETPricesPriceId200Response GETPricesPriceId(ctx, priceId).Execute()
+> PriceResponse GETPricesPriceId(ctx, priceId).Execute()
 
 Retrieve a price
 
@@ -379,7 +379,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPricesPriceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPricesPriceId`: GETPricesPriceId200Response
+    // response from `GETPricesPriceId`: PriceResponse
     fmt.Fprintf(os.Stdout, "Response from `PricesApi.GETPricesPriceId`: %v\n", resp)
 }
 ```
@@ -403,7 +403,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPricesPriceId200Response**](GETPricesPriceId200Response.md)
+[**PriceResponse**](PriceResponse.md)
 
 ### Authorization
 
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPricesPriceId
 
-> PATCHPricesPriceId200Response PATCHPricesPriceId(ctx, priceId).PriceUpdate(priceUpdate).Execute()
+> PriceResponse PATCHPricesPriceId(ctx, priceId).PriceUpdate(priceUpdate).Execute()
 
 Update a price
 
@@ -508,7 +508,7 @@ import (
 )
 
 func main() {
-    priceUpdate := *openapiclient.NewPriceUpdate(*openapiclient.NewPriceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPricesPriceId200ResponseDataAttributes())) // PriceUpdate | 
+    priceUpdate := *openapiclient.NewPriceUpdate(*openapiclient.NewPriceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPriceUpdateDataAttributes())) // PriceUpdate | 
     priceId := "priceId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -518,7 +518,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.PATCHPricesPriceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPricesPriceId`: PATCHPricesPriceId200Response
+    // response from `PATCHPricesPriceId`: PriceResponse
     fmt.Fprintf(os.Stdout, "Response from `PricesApi.PATCHPricesPriceId`: %v\n", resp)
 }
 ```
@@ -543,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPricesPriceId200Response**](PATCHPricesPriceId200Response.md)
+[**PriceResponse**](PriceResponse.md)
 
 ### Authorization
 
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ## POSTPrices
 
-> POSTPrices201Response POSTPrices(ctx).PriceCreate(priceCreate).Execute()
+> PriceResponse POSTPrices(ctx).PriceCreate(priceCreate).Execute()
 
 Create a price
 
@@ -580,7 +580,7 @@ import (
 )
 
 func main() {
-    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData("Type_example", *openapiclient.NewPOSTPrices201ResponseDataAttributes(int32(10000), int32(13000)))) // PriceCreate | 
+    priceCreate := *openapiclient.NewPriceCreate(*openapiclient.NewPriceCreateData("Type_example", *openapiclient.NewPriceCreateDataAttributes(int32(10000), int32(13000)))) // PriceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -589,7 +589,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.POSTPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPrices`: POSTPrices201Response
+    // response from `POSTPrices`: PriceResponse
     fmt.Fprintf(os.Stdout, "Response from `PricesApi.POSTPrices`: %v\n", resp)
 }
 ```
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPrices201Response**](POSTPrices201Response.md)
+[**PriceResponse**](PriceResponse.md)
 
 ### Authorization
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETStockItems200ResponseDataInnerAttributes**](GETStockItems200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**StockItemDataAttributes**](StockItemDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemDataRelationships**](StockItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockItemData
 
-`func NewStockItemData(type_ string, attributes GETStockItems200ResponseDataInnerAttributes, ) *StockItemData`
+`func NewStockItemData(type_ string, attributes StockItemDataAttributes, ) *StockItemData`
 
 NewStockItemData instantiates a new StockItemData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StockItemData) GetAttributes() GETStockItems200ResponseDataInnerAttributes`
+`func (o *StockItemData) GetAttributes() StockItemDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockItemData) GetAttributesOk() (*GETStockItems200ResponseDataInnerAttributes, bool)`
+`func (o *StockItemData) GetAttributesOk() (*StockItemDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockItemData) SetAttributes(v GETStockItems200ResponseDataInnerAttributes)`
+`func (o *StockItemData) SetAttributes(v StockItemDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCodesPromotionRuleCreateDataRelationships**](CouponCodesPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleCreateData
 
-`func NewCouponCodesPromotionRuleCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CouponCodesPromotionRuleCreateData`
+`func NewCouponCodesPromotionRuleCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *CouponCodesPromotionRuleCreateData`
 
 NewCouponCodesPromotionRuleCreateData instantiates a new CouponCodesPromotionRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *CouponCodesPromotionRuleCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *CouponCodesPromotionRuleCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponCodesPromotionRuleCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *CouponCodesPromotionRuleCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponCodesPromotionRuleCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *CouponCodesPromotionRuleCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

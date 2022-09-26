@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTExternalGateways201ResponseDataAttributes**](POSTExternalGateways201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalGatewayCreateDataAttributes**](ExternalGatewayCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayCreateData
 
-`func NewExternalGatewayCreateData(type_ string, attributes POSTExternalGateways201ResponseDataAttributes, ) *ExternalGatewayCreateData`
+`func NewExternalGatewayCreateData(type_ string, attributes ExternalGatewayCreateDataAttributes, ) *ExternalGatewayCreateData`
 
 NewExternalGatewayCreateData instantiates a new ExternalGatewayCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalGatewayCreateData) GetAttributes() POSTExternalGateways201ResponseDataAttributes`
+`func (o *ExternalGatewayCreateData) GetAttributes() ExternalGatewayCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayCreateData) GetAttributesOk() (*POSTExternalGateways201ResponseDataAttributes, bool)`
+`func (o *ExternalGatewayCreateData) GetAttributesOk() (*ExternalGatewayCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayCreateData) SetAttributes(v POSTExternalGateways201ResponseDataAttributes)`
+`func (o *ExternalGatewayCreateData) SetAttributes(v ExternalGatewayCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

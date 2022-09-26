@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes**](PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**FreeShippingPromotionUpdateDataAttributes**](FreeShippingPromotionUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFreeShippingPromotionUpdateData
 
-`func NewFreeShippingPromotionUpdateData(type_ string, id string, attributes PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, ) *FreeShippingPromotionUpdateData`
+`func NewFreeShippingPromotionUpdateData(type_ string, id string, attributes FreeShippingPromotionUpdateDataAttributes, ) *FreeShippingPromotionUpdateData`
 
 NewFreeShippingPromotionUpdateData instantiates a new FreeShippingPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *FreeShippingPromotionUpdateData) GetAttributes() PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes`
+`func (o *FreeShippingPromotionUpdateData) GetAttributes() FreeShippingPromotionUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FreeShippingPromotionUpdateData) GetAttributesOk() (*PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, bool)`
+`func (o *FreeShippingPromotionUpdateData) GetAttributesOk() (*FreeShippingPromotionUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FreeShippingPromotionUpdateData) SetAttributes(v PATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes)`
+`func (o *FreeShippingPromotionUpdateData) SetAttributes(v FreeShippingPromotionUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

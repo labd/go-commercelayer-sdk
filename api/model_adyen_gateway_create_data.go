@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdyenGatewayCreateData struct for AdyenGatewayCreateData
 type AdyenGatewayCreateData struct {
 	// The resource's type
-	Type          string                                     `json:"type"`
-	Attributes    POSTAdyenGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenGatewayCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                               `json:"type"`
+	Attributes    AdyenGatewayCreateDataAttributes     `json:"attributes"`
+	Relationships *AdyenGatewayCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayCreateData instantiates a new AdyenGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayCreateData(type_ string, attributes POSTAdyenGateways201ResponseDataAttributes) *AdyenGatewayCreateData {
+func NewAdyenGatewayCreateData(type_ string, attributes AdyenGatewayCreateDataAttributes) *AdyenGatewayCreateData {
 	this := AdyenGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AdyenGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayCreateData) GetAttributes() POSTAdyenGateways201ResponseDataAttributes {
+func (o *AdyenGatewayCreateData) GetAttributes() AdyenGatewayCreateDataAttributes {
 	if o == nil {
-		var ret POSTAdyenGateways201ResponseDataAttributes
+		var ret AdyenGatewayCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AdyenGatewayCreateData) GetAttributes() POSTAdyenGateways201ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayCreateData) GetAttributesOk() (*POSTAdyenGateways201ResponseDataAttributes, bool) {
+func (o *AdyenGatewayCreateData) GetAttributesOk() (*AdyenGatewayCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AdyenGatewayCreateData) GetAttributesOk() (*POSTAdyenGateways201Respons
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayCreateData) SetAttributes(v POSTAdyenGateways201ResponseDataAttributes) {
+func (o *AdyenGatewayCreateData) SetAttributes(v AdyenGatewayCreateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETFreeGiftPromotions
 
-> GETFreeGiftPromotions200Response GETFreeGiftPromotions(ctx).Execute()
+> FreeGiftPromotionResponseList GETFreeGiftPromotions(ctx).Execute()
 
 List all free gift promotions
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.GETFreeGiftPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeGiftPromotions`: GETFreeGiftPromotions200Response
+    // response from `GETFreeGiftPromotions`: FreeGiftPromotionResponseList
     fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.GETFreeGiftPromotions`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETFreeGiftPromotionsReque
 
 ### Return type
 
-[**GETFreeGiftPromotions200Response**](GETFreeGiftPromotions200Response.md)
+[**FreeGiftPromotionResponseList**](FreeGiftPromotionResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETFreeGiftPromotionsReque
 
 ## GETFreeGiftPromotionsFreeGiftPromotionId
 
-> GETFreeGiftPromotionsFreeGiftPromotionId200Response GETFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).Execute()
+> FreeGiftPromotionResponse GETFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).Execute()
 
 Retrieve a free gift promotion
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.GETFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETFreeGiftPromotionsFreeGiftPromotionId`: GETFreeGiftPromotionsFreeGiftPromotionId200Response
+    // response from `GETFreeGiftPromotionsFreeGiftPromotionId`: FreeGiftPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.GETFreeGiftPromotionsFreeGiftPromotionId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETFreeGiftPromotionsFreeGiftPromotionId200Response**](GETFreeGiftPromotionsFreeGiftPromotionId200Response.md)
+[**FreeGiftPromotionResponse**](FreeGiftPromotionResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFreeGiftPromotionsFreeGiftPromotionId
 
-> PATCHFreeGiftPromotionsFreeGiftPromotionId200Response PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
+> FreeGiftPromotionResponse PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
 
 Update a free gift promotion
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes())) // FreeGiftPromotionUpdate | 
+    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewFreeGiftPromotionUpdateDataAttributes())) // FreeGiftPromotionUpdate | 
     freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHFreeGiftPromotionsFreeGiftPromotionId`: PATCHFreeGiftPromotionsFreeGiftPromotionId200Response
+    // response from `PATCHFreeGiftPromotionsFreeGiftPromotionId`: FreeGiftPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHFreeGiftPromotionsFreeGiftPromotionId200Response**](PATCHFreeGiftPromotionsFreeGiftPromotionId200Response.md)
+[**FreeGiftPromotionResponse**](FreeGiftPromotionResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFreeGiftPromotions
 
-> POSTFreeGiftPromotions201Response POSTFreeGiftPromotions(ctx).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
+> FreeGiftPromotionResponse POSTFreeGiftPromotions(ctx).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
 
 Create a free gift promotion
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("Type_example", *openapiclient.NewPOSTFreeGiftPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
+    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData("Type_example", *openapiclient.NewFreeGiftPromotionCreateDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5)))) // FreeGiftPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.POSTFreeGiftPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTFreeGiftPromotions`: POSTFreeGiftPromotions201Response
+    // response from `POSTFreeGiftPromotions`: FreeGiftPromotionResponse
     fmt.Fprintf(os.Stdout, "Response from `FreeGiftPromotionsApi.POSTFreeGiftPromotions`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTFreeGiftPromotions201Response**](POSTFreeGiftPromotions201Response.md)
+[**FreeGiftPromotionResponse**](FreeGiftPromotionResponse.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // GoogleGeocoderCreateData struct for GoogleGeocoderCreateData
 type GoogleGeocoderCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    POSTGoogleGeocoders201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
+	Type          string                             `json:"type"`
+	Attributes    GoogleGeocoderCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}             `json:"relationships,omitempty"`
 }
 
 // NewGoogleGeocoderCreateData instantiates a new GoogleGeocoderCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGoogleGeocoderCreateData(type_ string, attributes POSTGoogleGeocoders201ResponseDataAttributes) *GoogleGeocoderCreateData {
+func NewGoogleGeocoderCreateData(type_ string, attributes GoogleGeocoderCreateDataAttributes) *GoogleGeocoderCreateData {
 	this := GoogleGeocoderCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *GoogleGeocoderCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GoogleGeocoderCreateData) GetAttributes() POSTGoogleGeocoders201ResponseDataAttributes {
+func (o *GoogleGeocoderCreateData) GetAttributes() GoogleGeocoderCreateDataAttributes {
 	if o == nil {
-		var ret POSTGoogleGeocoders201ResponseDataAttributes
+		var ret GoogleGeocoderCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *GoogleGeocoderCreateData) GetAttributes() POSTGoogleGeocoders201Respons
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GoogleGeocoderCreateData) GetAttributesOk() (*POSTGoogleGeocoders201ResponseDataAttributes, bool) {
+func (o *GoogleGeocoderCreateData) GetAttributesOk() (*GoogleGeocoderCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *GoogleGeocoderCreateData) GetAttributesOk() (*POSTGoogleGeocoders201Res
 }
 
 // SetAttributes sets field value
-func (o *GoogleGeocoderCreateData) SetAttributes(v POSTGoogleGeocoders201ResponseDataAttributes) {
+func (o *GoogleGeocoderCreateData) SetAttributes(v GoogleGeocoderCreateDataAttributes) {
 	o.Attributes = v
 }
 

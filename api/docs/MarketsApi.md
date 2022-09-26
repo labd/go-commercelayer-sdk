@@ -1058,7 +1058,7 @@ Name | Type | Description  | Notes
 
 ## GETMarkets
 
-> GETMarkets200Response GETMarkets(ctx).Execute()
+> MarketResponseList GETMarkets(ctx).Execute()
 
 List all markets
 
@@ -1085,7 +1085,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMarkets`: GETMarkets200Response
+    // response from `GETMarkets`: MarketResponseList
     fmt.Fprintf(os.Stdout, "Response from `MarketsApi.GETMarkets`: %v\n", resp)
 }
 ```
@@ -1101,7 +1101,7 @@ Other parameters are passed through a pointer to a apiGETMarketsRequest struct v
 
 ### Return type
 
-[**GETMarkets200Response**](GETMarkets200Response.md)
+[**MarketResponseList**](MarketResponseList.md)
 
 ### Authorization
 
@@ -1119,7 +1119,7 @@ Other parameters are passed through a pointer to a apiGETMarketsRequest struct v
 
 ## GETMarketsMarketId
 
-> GETMarketsMarketId200Response GETMarketsMarketId(ctx, marketId).Execute()
+> MarketResponse GETMarketsMarketId(ctx, marketId).Execute()
 
 Retrieve a market
 
@@ -1147,7 +1147,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.GETMarketsMarketId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETMarketsMarketId`: GETMarketsMarketId200Response
+    // response from `GETMarketsMarketId`: MarketResponse
     fmt.Fprintf(os.Stdout, "Response from `MarketsApi.GETMarketsMarketId`: %v\n", resp)
 }
 ```
@@ -1171,7 +1171,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETMarketsMarketId200Response**](GETMarketsMarketId200Response.md)
+[**MarketResponse**](MarketResponse.md)
 
 ### Authorization
 
@@ -1869,7 +1869,7 @@ Name | Type | Description  | Notes
 
 ## PATCHMarketsMarketId
 
-> PATCHMarketsMarketId200Response PATCHMarketsMarketId(ctx, marketId).MarketUpdate(marketUpdate).Execute()
+> MarketResponse PATCHMarketsMarketId(ctx, marketId).MarketUpdate(marketUpdate).Execute()
 
 Update a market
 
@@ -1888,7 +1888,7 @@ import (
 )
 
 func main() {
-    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHMarketsMarketId200ResponseDataAttributes())) // MarketUpdate | 
+    marketUpdate := *openapiclient.NewMarketUpdate(*openapiclient.NewMarketUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewMarketUpdateDataAttributes())) // MarketUpdate | 
     marketId := "marketId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -1898,7 +1898,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.PATCHMarketsMarketId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHMarketsMarketId`: PATCHMarketsMarketId200Response
+    // response from `PATCHMarketsMarketId`: MarketResponse
     fmt.Fprintf(os.Stdout, "Response from `MarketsApi.PATCHMarketsMarketId`: %v\n", resp)
 }
 ```
@@ -1923,7 +1923,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHMarketsMarketId200Response**](PATCHMarketsMarketId200Response.md)
+[**MarketResponse**](MarketResponse.md)
 
 ### Authorization
 
@@ -1941,7 +1941,7 @@ Name | Type | Description  | Notes
 
 ## POSTMarkets
 
-> POSTMarkets201Response POSTMarkets(ctx).MarketCreate(marketCreate).Execute()
+> MarketResponse POSTMarkets(ctx).MarketCreate(marketCreate).Execute()
 
 Create a market
 
@@ -1960,7 +1960,7 @@ import (
 )
 
 func main() {
-    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("Type_example", *openapiclient.NewPOSTMarkets201ResponseDataAttributes("EU Market"))) // MarketCreate | 
+    marketCreate := *openapiclient.NewMarketCreate(*openapiclient.NewMarketCreateData("Type_example", *openapiclient.NewMarketCreateDataAttributes("EU Market"))) // MarketCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1969,7 +1969,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `MarketsApi.POSTMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTMarkets`: POSTMarkets201Response
+    // response from `POSTMarkets`: MarketResponse
     fmt.Fprintf(os.Stdout, "Response from `MarketsApi.POSTMarkets`: %v\n", resp)
 }
 ```
@@ -1989,7 +1989,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTMarkets201Response**](POSTMarkets201Response.md)
+[**MarketResponse**](MarketResponse.md)
 
 ### Authorization
 

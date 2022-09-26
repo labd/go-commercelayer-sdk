@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHShipmentsShipmentId200ResponseDataAttributes**](PATCHShipmentsShipmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ShipmentUpdateDataAttributes**](ShipmentUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShipmentUpdateDataRelationships**](ShipmentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShipmentUpdateData
 
-`func NewShipmentUpdateData(type_ string, id string, attributes PATCHShipmentsShipmentId200ResponseDataAttributes, ) *ShipmentUpdateData`
+`func NewShipmentUpdateData(type_ string, id string, attributes ShipmentUpdateDataAttributes, ) *ShipmentUpdateData`
 
 NewShipmentUpdateData instantiates a new ShipmentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ShipmentUpdateData) GetAttributes() PATCHShipmentsShipmentId200ResponseDataAttributes`
+`func (o *ShipmentUpdateData) GetAttributes() ShipmentUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShipmentUpdateData) GetAttributesOk() (*PATCHShipmentsShipmentId200ResponseDataAttributes, bool)`
+`func (o *ShipmentUpdateData) GetAttributesOk() (*ShipmentUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShipmentUpdateData) SetAttributes(v PATCHShipmentsShipmentId200ResponseDataAttributes)`
+`func (o *ShipmentUpdateData) SetAttributes(v ShipmentUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

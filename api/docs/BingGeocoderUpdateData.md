@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes**](PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**BingGeocoderUpdateDataAttributes**](BingGeocoderUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewBingGeocoderUpdateData
 
-`func NewBingGeocoderUpdateData(type_ string, id string, attributes PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes, ) *BingGeocoderUpdateData`
+`func NewBingGeocoderUpdateData(type_ string, id string, attributes BingGeocoderUpdateDataAttributes, ) *BingGeocoderUpdateData`
 
 NewBingGeocoderUpdateData instantiates a new BingGeocoderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *BingGeocoderUpdateData) GetAttributes() PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes`
+`func (o *BingGeocoderUpdateData) GetAttributes() BingGeocoderUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BingGeocoderUpdateData) GetAttributesOk() (*PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes, bool)`
+`func (o *BingGeocoderUpdateData) GetAttributesOk() (*BingGeocoderUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BingGeocoderUpdateData) SetAttributes(v PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes)`
+`func (o *BingGeocoderUpdateData) SetAttributes(v BingGeocoderUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

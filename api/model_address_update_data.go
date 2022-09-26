@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type AddressUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                           `json:"id"`
-	Attributes    PATCHAddressesAddressId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AddressDataRelationships                        `json:"relationships,omitempty"`
+	Id            string                      `json:"id"`
+	Attributes    AddressUpdateDataAttributes `json:"attributes"`
+	Relationships *AddressDataRelationships   `json:"relationships,omitempty"`
 }
 
 // NewAddressUpdateData instantiates a new AddressUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressUpdateData(type_ string, id string, attributes PATCHAddressesAddressId200ResponseDataAttributes) *AddressUpdateData {
+func NewAddressUpdateData(type_ string, id string, attributes AddressUpdateDataAttributes) *AddressUpdateData {
 	this := AddressUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *AddressUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AddressUpdateData) GetAttributes() PATCHAddressesAddressId200ResponseDataAttributes {
+func (o *AddressUpdateData) GetAttributes() AddressUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHAddressesAddressId200ResponseDataAttributes
+		var ret AddressUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *AddressUpdateData) GetAttributes() PATCHAddressesAddressId200ResponseDa
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AddressUpdateData) GetAttributesOk() (*PATCHAddressesAddressId200ResponseDataAttributes, bool) {
+func (o *AddressUpdateData) GetAttributesOk() (*AddressUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *AddressUpdateData) GetAttributesOk() (*PATCHAddressesAddressId200Respon
 }
 
 // SetAttributes sets field value
-func (o *AddressUpdateData) SetAttributes(v PATCHAddressesAddressId200ResponseDataAttributes) {
+func (o *AddressUpdateData) SetAttributes(v AddressUpdateDataAttributes) {
 	o.Attributes = v
 }
 

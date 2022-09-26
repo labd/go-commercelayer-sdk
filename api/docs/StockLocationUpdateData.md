@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHStockLocationsStockLocationId200ResponseDataAttributes**](PATCHStockLocationsStockLocationId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**StockLocationUpdateDataAttributes**](StockLocationUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantUpdateDataRelationships**](MerchantUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockLocationUpdateData
 
-`func NewStockLocationUpdateData(type_ string, id string, attributes PATCHStockLocationsStockLocationId200ResponseDataAttributes, ) *StockLocationUpdateData`
+`func NewStockLocationUpdateData(type_ string, id string, attributes StockLocationUpdateDataAttributes, ) *StockLocationUpdateData`
 
 NewStockLocationUpdateData instantiates a new StockLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *StockLocationUpdateData) GetAttributes() PATCHStockLocationsStockLocationId200ResponseDataAttributes`
+`func (o *StockLocationUpdateData) GetAttributes() StockLocationUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockLocationUpdateData) GetAttributesOk() (*PATCHStockLocationsStockLocationId200ResponseDataAttributes, bool)`
+`func (o *StockLocationUpdateData) GetAttributesOk() (*StockLocationUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockLocationUpdateData) SetAttributes(v PATCHStockLocationsStockLocationId200ResponseDataAttributes)`
+`func (o *StockLocationUpdateData) SetAttributes(v StockLocationUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

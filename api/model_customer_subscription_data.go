@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerSubscriptionData struct for CustomerSubscriptionData
 type CustomerSubscriptionData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    GETCustomerSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships                `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    CustomerSubscriptionDataAttributes      `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerSubscriptionData(type_ string, attributes GETCustomerSubscriptions200ResponseDataInnerAttributes) *CustomerSubscriptionData {
+func NewCustomerSubscriptionData(type_ string, attributes CustomerSubscriptionDataAttributes) *CustomerSubscriptionData {
 	this := CustomerSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerSubscriptionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200ResponseDataInnerAttributes {
+func (o *CustomerSubscriptionData) GetAttributes() CustomerSubscriptionDataAttributes {
 	if o == nil {
-		var ret GETCustomerSubscriptions200ResponseDataInnerAttributes
+		var ret CustomerSubscriptionDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200Re
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions200ResponseDataInnerAttributes, bool) {
+func (o *CustomerSubscriptionData) GetAttributesOk() (*CustomerSubscriptionDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions2
 }
 
 // SetAttributes sets field value
-func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptions200ResponseDataInnerAttributes) {
+func (o *CustomerSubscriptionData) SetAttributes(v CustomerSubscriptionDataAttributes) {
 	o.Attributes = v
 }
 

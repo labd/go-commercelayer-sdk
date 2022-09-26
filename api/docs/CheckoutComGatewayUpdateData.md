@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes**](PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**CheckoutComGatewayUpdateDataAttributes**](CheckoutComGatewayUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CheckoutComGatewayCreateDataRelationships**](CheckoutComGatewayCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComGatewayUpdateData
 
-`func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, ) *CheckoutComGatewayUpdateData`
+`func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes CheckoutComGatewayUpdateDataAttributes, ) *CheckoutComGatewayUpdateData`
 
 NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CheckoutComGatewayUpdateData) GetAttributes() PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes`
+`func (o *CheckoutComGatewayUpdateData) GetAttributes() CheckoutComGatewayUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, bool)`
+`func (o *CheckoutComGatewayUpdateData) GetAttributesOk() (*CheckoutComGatewayUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComGatewayUpdateData) SetAttributes(v PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes)`
+`func (o *CheckoutComGatewayUpdateData) SetAttributes(v CheckoutComGatewayUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -28,7 +28,7 @@ type PromotionsApiGETPromotionsRequest struct {
 	ApiService *PromotionsApiService
 }
 
-func (r PromotionsApiGETPromotionsRequest) Execute() (*GETPromotions200Response, *http.Response, error) {
+func (r PromotionsApiGETPromotionsRequest) Execute() (*PromotionResponseList, *http.Response, error) {
 	return r.ApiService.GETPromotionsExecute(r)
 }
 
@@ -48,13 +48,13 @@ func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiG
 }
 
 // Execute executes the request
-//  @return GETPromotions200Response
-func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*GETPromotions200Response, *http.Response, error) {
+//  @return PromotionResponseList
+func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*PromotionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPromotions200Response
+		localVarReturnValue *PromotionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionsApiService.GETPromotions")
@@ -128,7 +128,7 @@ type PromotionsApiGETPromotionsPromotionIdRequest struct {
 	promotionId string
 }
 
-func (r PromotionsApiGETPromotionsPromotionIdRequest) Execute() (*GETPromotionsPromotionId200Response, *http.Response, error) {
+func (r PromotionsApiGETPromotionsPromotionIdRequest) Execute() (*PromotionResponse, *http.Response, error) {
 	return r.ApiService.GETPromotionsPromotionIdExecute(r)
 }
 
@@ -150,13 +150,13 @@ func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, pro
 }
 
 // Execute executes the request
-//  @return GETPromotionsPromotionId200Response
-func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*GETPromotionsPromotionId200Response, *http.Response, error) {
+//  @return PromotionResponse
+func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*PromotionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETPromotionsPromotionId200Response
+		localVarReturnValue *PromotionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PromotionsApiService.GETPromotionsPromotionId")

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ExternalPromotionData struct for ExternalPromotionData
 type ExternalPromotionData struct {
 	// The resource's type
-	Type          string                                              `json:"type"`
-	Attributes    GETExternalPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                              `json:"type"`
+	Attributes    ExternalPromotionDataAttributes     `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewExternalPromotionData instantiates a new ExternalPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionData(type_ string, attributes GETExternalPromotions200ResponseDataInnerAttributes) *ExternalPromotionData {
+func NewExternalPromotionData(type_ string, attributes ExternalPromotionDataAttributes) *ExternalPromotionData {
 	this := ExternalPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ExternalPromotionData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPromotionData) GetAttributes() GETExternalPromotions200ResponseDataInnerAttributes {
+func (o *ExternalPromotionData) GetAttributes() ExternalPromotionDataAttributes {
 	if o == nil {
-		var ret GETExternalPromotions200ResponseDataInnerAttributes
+		var ret ExternalPromotionDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ExternalPromotionData) GetAttributes() GETExternalPromotions200Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionData) GetAttributesOk() (*GETExternalPromotions200ResponseDataInnerAttributes, bool) {
+func (o *ExternalPromotionData) GetAttributesOk() (*ExternalPromotionDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ExternalPromotionData) GetAttributesOk() (*GETExternalPromotions200Resp
 }
 
 // SetAttributes sets field value
-func (o *ExternalPromotionData) SetAttributes(v GETExternalPromotions200ResponseDataInnerAttributes) {
+func (o *ExternalPromotionData) SetAttributes(v ExternalPromotionDataAttributes) {
 	o.Attributes = v
 }
 

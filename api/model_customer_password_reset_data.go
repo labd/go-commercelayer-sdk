@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // CustomerPasswordResetData struct for CustomerPasswordResetData
 type CustomerPasswordResetData struct {
 	// The resource's type
-	Type          string                                                  `json:"type"`
-	Attributes    GETCustomerPasswordResets200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    CustomerPasswordResetDataAttributes     `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetData(type_ string, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes) *CustomerPasswordResetData {
+func NewCustomerPasswordResetData(type_ string, attributes CustomerPasswordResetDataAttributes) *CustomerPasswordResetData {
 	this := CustomerPasswordResetData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *CustomerPasswordResetData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes {
+func (o *CustomerPasswordResetData) GetAttributes() CustomerPasswordResetDataAttributes {
 	if o == nil {
-		var ret GETCustomerPasswordResets200ResponseDataInnerAttributes
+		var ret CustomerPasswordResetDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool) {
+func (o *CustomerPasswordResetData) GetAttributesOk() (*CustomerPasswordResetDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordReset
 }
 
 // SetAttributes sets field value
-func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes) {
+func (o *CustomerPasswordResetData) SetAttributes(v CustomerPasswordResetDataAttributes) {
 	o.Attributes = v
 }
 

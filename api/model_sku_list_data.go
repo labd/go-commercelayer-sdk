@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // SkuListData struct for SkuListData
 type SkuListData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    GETSkuLists200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *SkuListDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                    `json:"type"`
+	Attributes    SkuListDataAttributes     `json:"attributes"`
+	Relationships *SkuListDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuListData instantiates a new SkuListData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListData(type_ string, attributes GETSkuLists200ResponseDataInnerAttributes) *SkuListData {
+func NewSkuListData(type_ string, attributes SkuListDataAttributes) *SkuListData {
 	this := SkuListData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *SkuListData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListData) GetAttributes() GETSkuLists200ResponseDataInnerAttributes {
+func (o *SkuListData) GetAttributes() SkuListDataAttributes {
 	if o == nil {
-		var ret GETSkuLists200ResponseDataInnerAttributes
+		var ret SkuListDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *SkuListData) GetAttributes() GETSkuLists200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListData) GetAttributesOk() (*GETSkuLists200ResponseDataInnerAttributes, bool) {
+func (o *SkuListData) GetAttributesOk() (*SkuListDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *SkuListData) GetAttributesOk() (*GETSkuLists200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *SkuListData) SetAttributes(v GETSkuLists200ResponseDataInnerAttributes) {
+func (o *SkuListData) SetAttributes(v SkuListDataAttributes) {
 	o.Attributes = v
 }
 

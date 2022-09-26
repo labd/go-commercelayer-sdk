@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // AdyenGatewayData struct for AdyenGatewayData
 type AdyenGatewayData struct {
 	// The resource's type
-	Type          string                                         `json:"type"`
-	Attributes    GETAdyenGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          string                         `json:"type"`
+	Attributes    AdyenGatewayDataAttributes     `json:"attributes"`
+	Relationships *AdyenGatewayDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayData instantiates a new AdyenGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayData(type_ string, attributes GETAdyenGateways200ResponseDataInnerAttributes) *AdyenGatewayData {
+func NewAdyenGatewayData(type_ string, attributes AdyenGatewayDataAttributes) *AdyenGatewayData {
 	this := AdyenGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *AdyenGatewayData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayData) GetAttributes() GETAdyenGateways200ResponseDataInnerAttributes {
+func (o *AdyenGatewayData) GetAttributes() AdyenGatewayDataAttributes {
 	if o == nil {
-		var ret GETAdyenGateways200ResponseDataInnerAttributes
+		var ret AdyenGatewayDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *AdyenGatewayData) GetAttributes() GETAdyenGateways200ResponseDataInnerA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGateways200ResponseDataInnerAttributes, bool) {
+func (o *AdyenGatewayData) GetAttributesOk() (*AdyenGatewayDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGateways200ResponseDataIn
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayData) SetAttributes(v GETAdyenGateways200ResponseDataInnerAttributes) {
+func (o *AdyenGatewayData) SetAttributes(v AdyenGatewayDataAttributes) {
 	o.Attributes = v
 }
 

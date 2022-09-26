@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHAddressesAddressId200ResponseDataAttributes**](PATCHAddressesAddressId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**AddressUpdateDataAttributes**](AddressUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AddressDataRelationships**](AddressDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAddressUpdateData
 
-`func NewAddressUpdateData(type_ string, id string, attributes PATCHAddressesAddressId200ResponseDataAttributes, ) *AddressUpdateData`
+`func NewAddressUpdateData(type_ string, id string, attributes AddressUpdateDataAttributes, ) *AddressUpdateData`
 
 NewAddressUpdateData instantiates a new AddressUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *AddressUpdateData) GetAttributes() PATCHAddressesAddressId200ResponseDataAttributes`
+`func (o *AddressUpdateData) GetAttributes() AddressUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AddressUpdateData) GetAttributesOk() (*PATCHAddressesAddressId200ResponseDataAttributes, bool)`
+`func (o *AddressUpdateData) GetAttributesOk() (*AddressUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AddressUpdateData) SetAttributes(v PATCHAddressesAddressId200ResponseDataAttributes)`
+`func (o *AddressUpdateData) SetAttributes(v AddressUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTPercentageDiscountPromotions201ResponseDataAttributes**](POSTPercentageDiscountPromotions201ResponseDataAttributes.md) |  | 
+**Attributes** | [**PercentageDiscountPromotionCreateDataAttributes**](PercentageDiscountPromotionCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionUpdateDataRelationships**](FixedPricePromotionUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPercentageDiscountPromotionCreateData
 
-`func NewPercentageDiscountPromotionCreateData(type_ string, attributes POSTPercentageDiscountPromotions201ResponseDataAttributes, ) *PercentageDiscountPromotionCreateData`
+`func NewPercentageDiscountPromotionCreateData(type_ string, attributes PercentageDiscountPromotionCreateDataAttributes, ) *PercentageDiscountPromotionCreateData`
 
 NewPercentageDiscountPromotionCreateData instantiates a new PercentageDiscountPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *PercentageDiscountPromotionCreateData) GetAttributes() POSTPercentageDiscountPromotions201ResponseDataAttributes`
+`func (o *PercentageDiscountPromotionCreateData) GetAttributes() PercentageDiscountPromotionCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*POSTPercentageDiscountPromotions201ResponseDataAttributes, bool)`
+`func (o *PercentageDiscountPromotionCreateData) GetAttributesOk() (*PercentageDiscountPromotionCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PercentageDiscountPromotionCreateData) SetAttributes(v POSTPercentageDiscountPromotions201ResponseDataAttributes)`
+`func (o *PercentageDiscountPromotionCreateData) SetAttributes(v PercentageDiscountPromotionCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

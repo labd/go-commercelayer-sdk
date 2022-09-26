@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes**](PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GoogleGeocoderUpdateDataAttributes**](GoogleGeocoderUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewGoogleGeocoderUpdateData
 
-`func NewGoogleGeocoderUpdateData(type_ string, id string, attributes PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes, ) *GoogleGeocoderUpdateData`
+`func NewGoogleGeocoderUpdateData(type_ string, id string, attributes GoogleGeocoderUpdateDataAttributes, ) *GoogleGeocoderUpdateData`
 
 NewGoogleGeocoderUpdateData instantiates a new GoogleGeocoderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *GoogleGeocoderUpdateData) GetAttributes() PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes`
+`func (o *GoogleGeocoderUpdateData) GetAttributes() GoogleGeocoderUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes, bool)`
+`func (o *GoogleGeocoderUpdateData) GetAttributesOk() (*GoogleGeocoderUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GoogleGeocoderUpdateData) SetAttributes(v PATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes)`
+`func (o *GoogleGeocoderUpdateData) SetAttributes(v GoogleGeocoderUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

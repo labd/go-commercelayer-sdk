@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETImports200ResponseDataInnerAttributes**](GETImports200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**ImportDataRelationships**](ImportDataRelationships.md) |  | [optional] 
+**Attributes** | [**ImportDataAttributes**](ImportDataAttributes.md) |  | 
+**Relationships** | Pointer to [**ExportDataRelationships**](ExportDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewImportData
 
-`func NewImportData(type_ string, attributes GETImports200ResponseDataInnerAttributes, ) *ImportData`
+`func NewImportData(type_ string, attributes ImportDataAttributes, ) *ImportData`
 
 NewImportData instantiates a new ImportData object
 This constructor will assign default values to properties that have it defined,
@@ -49,40 +49,40 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ImportData) GetAttributes() GETImports200ResponseDataInnerAttributes`
+`func (o *ImportData) GetAttributes() ImportDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ImportData) GetAttributesOk() (*GETImports200ResponseDataInnerAttributes, bool)`
+`func (o *ImportData) GetAttributesOk() (*ImportDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ImportData) SetAttributes(v GETImports200ResponseDataInnerAttributes)`
+`func (o *ImportData) SetAttributes(v ImportDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *ImportData) GetRelationships() ImportDataRelationships`
+`func (o *ImportData) GetRelationships() ExportDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ImportData) GetRelationshipsOk() (*ImportDataRelationships, bool)`
+`func (o *ImportData) GetRelationshipsOk() (*ExportDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ImportData) SetRelationships(v ImportDataRelationships)`
+`func (o *ImportData) SetRelationships(v ExportDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

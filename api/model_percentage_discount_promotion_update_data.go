@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type PercentageDiscountPromotionUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                                                  `json:"id"`
-	Attributes    PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionUpdateDataRelationships                                             `json:"relationships,omitempty"`
+	Id            string                                          `json:"id"`
+	Attributes    PercentageDiscountPromotionUpdateDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionUpdateDataRelationships     `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionUpdateData instantiates a new PercentageDiscountPromotionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionUpdateData(type_ string, id string, attributes PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) *PercentageDiscountPromotionUpdateData {
+func NewPercentageDiscountPromotionUpdateData(type_ string, id string, attributes PercentageDiscountPromotionUpdateDataAttributes) *PercentageDiscountPromotionUpdateData {
 	this := PercentageDiscountPromotionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *PercentageDiscountPromotionUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionUpdateData) GetAttributes() PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes {
+func (o *PercentageDiscountPromotionUpdateData) GetAttributes() PercentageDiscountPromotionUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes
+		var ret PercentageDiscountPromotionUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *PercentageDiscountPromotionUpdateData) GetAttributes() PATCHPercentageD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionUpdateData) GetAttributesOk() (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes, bool) {
+func (o *PercentageDiscountPromotionUpdateData) GetAttributesOk() (*PercentageDiscountPromotionUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *PercentageDiscountPromotionUpdateData) GetAttributesOk() (*PATCHPercent
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionUpdateData) SetAttributes(v PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) {
+func (o *PercentageDiscountPromotionUpdateData) SetAttributes(v PercentageDiscountPromotionUpdateDataAttributes) {
 	o.Attributes = v
 }
 

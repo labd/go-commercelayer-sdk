@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes**](PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**CouponRecipientUpdateDataAttributes**](CouponRecipientUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponRecipientCreateDataRelationships**](CouponRecipientCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGiftCardRecipientUpdateData
 
-`func NewGiftCardRecipientUpdateData(type_ string, id string, attributes PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes, ) *GiftCardRecipientUpdateData`
+`func NewGiftCardRecipientUpdateData(type_ string, id string, attributes CouponRecipientUpdateDataAttributes, ) *GiftCardRecipientUpdateData`
 
 NewGiftCardRecipientUpdateData instantiates a new GiftCardRecipientUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *GiftCardRecipientUpdateData) GetAttributes() PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes`
+`func (o *GiftCardRecipientUpdateData) GetAttributes() CouponRecipientUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GiftCardRecipientUpdateData) GetAttributesOk() (*PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes, bool)`
+`func (o *GiftCardRecipientUpdateData) GetAttributesOk() (*CouponRecipientUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GiftCardRecipientUpdateData) SetAttributes(v PATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes)`
+`func (o *GiftCardRecipientUpdateData) SetAttributes(v CouponRecipientUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

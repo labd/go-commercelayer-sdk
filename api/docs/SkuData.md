@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETSkus200ResponseDataInnerAttributes**](GETSkus200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**SkuDataAttributes**](SkuDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuDataRelationships**](SkuDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuData
 
-`func NewSkuData(type_ string, attributes GETSkus200ResponseDataInnerAttributes, ) *SkuData`
+`func NewSkuData(type_ string, attributes SkuDataAttributes, ) *SkuData`
 
 NewSkuData instantiates a new SkuData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *SkuData) GetAttributes() GETSkus200ResponseDataInnerAttributes`
+`func (o *SkuData) GetAttributes() SkuDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuData) GetAttributesOk() (*GETSkus200ResponseDataInnerAttributes, bool)`
+`func (o *SkuData) GetAttributesOk() (*SkuDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuData) SetAttributes(v GETSkus200ResponseDataInnerAttributes)`
+`func (o *SkuData) SetAttributes(v SkuDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

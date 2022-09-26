@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -120,7 +120,7 @@ type InStockSubscriptionsApiGETInStockSubscriptionsRequest struct {
 	ApiService *InStockSubscriptionsApiService
 }
 
-func (r InStockSubscriptionsApiGETInStockSubscriptionsRequest) Execute() (*GETInStockSubscriptions200Response, *http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsRequest) Execute() (*InStockSubscriptionResponseList, *http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsExecute(r)
 }
 
@@ -140,13 +140,13 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETInStockSubscriptions200Response
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*GETInStockSubscriptions200Response, *http.Response, error) {
+//  @return InStockSubscriptionResponseList
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*InStockSubscriptionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETInStockSubscriptions200Response
+		localVarReturnValue *InStockSubscriptionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptions")
@@ -220,7 +220,7 @@ type InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest 
 	inStockSubscriptionId string
 }
 
-func (r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
+func (r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*InStockSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.GETInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -242,13 +242,13 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 }
 
 // Execute executes the request
-//  @return GETInStockSubscriptionsInStockSubscriptionId200Response
-func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
+//  @return InStockSubscriptionResponse
+func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETInStockSubscriptionsInStockSubscriptionId200Response
+		localVarReturnValue *InStockSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.GETInStockSubscriptionsInStockSubscriptionId")
@@ -329,7 +329,7 @@ func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdReq
 	return r
 }
 
-func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
+func (r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) Execute() (*InStockSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r)
 }
 
@@ -351,13 +351,13 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 }
 
 // Execute executes the request
-//  @return PATCHInStockSubscriptionsInStockSubscriptionId200Response
-func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
+//  @return InStockSubscriptionResponse
+func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*InStockSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHInStockSubscriptionsInStockSubscriptionId200Response
+		localVarReturnValue *InStockSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.PATCHInStockSubscriptionsInStockSubscriptionId")
@@ -442,7 +442,7 @@ func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) InStockSubscript
 	return r
 }
 
-func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) Execute() (*POSTInStockSubscriptions201Response, *http.Response, error) {
+func (r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) Execute() (*InStockSubscriptionResponse, *http.Response, error) {
 	return r.ApiService.POSTInStockSubscriptionsExecute(r)
 }
 
@@ -462,13 +462,13 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Co
 }
 
 // Execute executes the request
-//  @return POSTInStockSubscriptions201Response
-func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*POSTInStockSubscriptions201Response, *http.Response, error) {
+//  @return InStockSubscriptionResponse
+func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*InStockSubscriptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTInStockSubscriptions201Response
+		localVarReturnValue *InStockSubscriptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InStockSubscriptionsApiService.POSTInStockSubscriptions")

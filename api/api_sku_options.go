@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -304,7 +304,7 @@ type SkuOptionsApiGETSkuOptionsRequest struct {
 	ApiService *SkuOptionsApiService
 }
 
-func (r SkuOptionsApiGETSkuOptionsRequest) Execute() (*GETSkuOptions200Response, *http.Response, error) {
+func (r SkuOptionsApiGETSkuOptionsRequest) Execute() (*SkuOptionResponseList, *http.Response, error) {
 	return r.ApiService.GETSkuOptionsExecute(r)
 }
 
@@ -324,13 +324,13 @@ func (a *SkuOptionsApiService) GETSkuOptions(ctx context.Context) SkuOptionsApiG
 }
 
 // Execute executes the request
-//  @return GETSkuOptions200Response
-func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptionsRequest) (*GETSkuOptions200Response, *http.Response, error) {
+//  @return SkuOptionResponseList
+func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptionsRequest) (*SkuOptionResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETSkuOptions200Response
+		localVarReturnValue *SkuOptionResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.GETSkuOptions")
@@ -404,7 +404,7 @@ type SkuOptionsApiGETSkuOptionsSkuOptionIdRequest struct {
 	skuOptionId string
 }
 
-func (r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) Execute() (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
+func (r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) Execute() (*SkuOptionResponse, *http.Response, error) {
 	return r.ApiService.GETSkuOptionsSkuOptionIdExecute(r)
 }
 
@@ -426,13 +426,13 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, sku
 }
 
 // Execute executes the request
-//  @return GETSkuOptionsSkuOptionId200Response
-func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
+//  @return SkuOptionResponse
+func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) (*SkuOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETSkuOptionsSkuOptionId200Response
+		localVarReturnValue *SkuOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.GETSkuOptionsSkuOptionId")
@@ -513,7 +513,7 @@ func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) SkuOptionUpdate(skuOptio
 	return r
 }
 
-func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) Execute() (*PATCHSkuOptionsSkuOptionId200Response, *http.Response, error) {
+func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) Execute() (*SkuOptionResponse, *http.Response, error) {
 	return r.ApiService.PATCHSkuOptionsSkuOptionIdExecute(r)
 }
 
@@ -535,13 +535,13 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, s
 }
 
 // Execute executes the request
-//  @return PATCHSkuOptionsSkuOptionId200Response
-func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) (*PATCHSkuOptionsSkuOptionId200Response, *http.Response, error) {
+//  @return SkuOptionResponse
+func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) (*SkuOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHSkuOptionsSkuOptionId200Response
+		localVarReturnValue *SkuOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.PATCHSkuOptionsSkuOptionId")
@@ -626,7 +626,7 @@ func (r SkuOptionsApiPOSTSkuOptionsRequest) SkuOptionCreate(skuOptionCreate SkuO
 	return r
 }
 
-func (r SkuOptionsApiPOSTSkuOptionsRequest) Execute() (*POSTSkuOptions201Response, *http.Response, error) {
+func (r SkuOptionsApiPOSTSkuOptionsRequest) Execute() (*SkuOptionResponse, *http.Response, error) {
 	return r.ApiService.POSTSkuOptionsExecute(r)
 }
 
@@ -646,13 +646,13 @@ func (a *SkuOptionsApiService) POSTSkuOptions(ctx context.Context) SkuOptionsApi
 }
 
 // Execute executes the request
-//  @return POSTSkuOptions201Response
-func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptionsRequest) (*POSTSkuOptions201Response, *http.Response, error) {
+//  @return SkuOptionResponse
+func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptionsRequest) (*SkuOptionResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTSkuOptions201Response
+		localVarReturnValue *SkuOptionResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuOptionsApiService.POSTSkuOptions")

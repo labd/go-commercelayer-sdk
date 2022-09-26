@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETPaypalGateways
 
-> GETPaypalGateways200Response GETPaypalGateways(ctx).Execute()
+> PaypalGatewayResponseList GETPaypalGateways(ctx).Execute()
 
 List all paypal gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.GETPaypalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalGateways`: GETPaypalGateways200Response
+    // response from `GETPaypalGateways`: PaypalGatewayResponseList
     fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.GETPaypalGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETPaypalGatewaysRequest s
 
 ### Return type
 
-[**GETPaypalGateways200Response**](GETPaypalGateways200Response.md)
+[**PaypalGatewayResponseList**](PaypalGatewayResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETPaypalGatewaysRequest s
 
 ## GETPaypalGatewaysPaypalGatewayId
 
-> GETPaypalGatewaysPaypalGatewayId200Response GETPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).Execute()
+> PaypalGatewayResponse GETPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).Execute()
 
 Retrieve a paypal gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.GETPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETPaypalGatewaysPaypalGatewayId`: GETPaypalGatewaysPaypalGatewayId200Response
+    // response from `GETPaypalGatewaysPaypalGatewayId`: PaypalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.GETPaypalGatewaysPaypalGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETPaypalGatewaysPaypalGatewayId200Response**](GETPaypalGatewaysPaypalGatewayId200Response.md)
+[**PaypalGatewayResponse**](PaypalGatewayResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPaypalGatewaysPaypalGatewayId
 
-> PATCHPaypalGatewaysPaypalGatewayId200Response PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
+> PaypalGatewayResponse PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
 
 Update a paypal gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes())) // PaypalGatewayUpdate | 
+    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPaypalGatewayUpdateDataAttributes())) // PaypalGatewayUpdate | 
     paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHPaypalGatewaysPaypalGatewayId`: PATCHPaypalGatewaysPaypalGatewayId200Response
+    // response from `PATCHPaypalGatewaysPaypalGatewayId`: PaypalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHPaypalGatewaysPaypalGatewayId200Response**](PATCHPaypalGatewaysPaypalGatewayId200Response.md)
+[**PaypalGatewayResponse**](PaypalGatewayResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTPaypalGateways
 
-> POSTPaypalGateways201Response POSTPaypalGateways(ctx).PaypalGatewayCreate(paypalGatewayCreate).Execute()
+> PaypalGatewayResponse POSTPaypalGateways(ctx).PaypalGatewayCreate(paypalGatewayCreate).Execute()
 
 Create a paypal gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("Type_example", *openapiclient.NewPOSTPaypalGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
+    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData("Type_example", *openapiclient.NewPaypalGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // PaypalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.POSTPaypalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTPaypalGateways`: POSTPaypalGateways201Response
+    // response from `POSTPaypalGateways`: PaypalGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `PaypalGatewaysApi.POSTPaypalGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTPaypalGateways201Response**](POSTPaypalGateways201Response.md)
+[**PaypalGatewayResponse**](PaypalGatewayResponse.md)
 
 ### Authorization
 

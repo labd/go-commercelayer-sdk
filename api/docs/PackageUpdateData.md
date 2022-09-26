@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHPackagesPackageId200ResponseDataAttributes**](PATCHPackagesPackageId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**PackageUpdateDataAttributes**](PackageUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageUpdateDataRelationships**](PackageUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageUpdateData
 
-`func NewPackageUpdateData(type_ string, id string, attributes PATCHPackagesPackageId200ResponseDataAttributes, ) *PackageUpdateData`
+`func NewPackageUpdateData(type_ string, id string, attributes PackageUpdateDataAttributes, ) *PackageUpdateData`
 
 NewPackageUpdateData instantiates a new PackageUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *PackageUpdateData) GetAttributes() PATCHPackagesPackageId200ResponseDataAttributes`
+`func (o *PackageUpdateData) GetAttributes() PackageUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageUpdateData) GetAttributesOk() (*PATCHPackagesPackageId200ResponseDataAttributes, bool)`
+`func (o *PackageUpdateData) GetAttributesOk() (*PackageUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageUpdateData) SetAttributes(v PATCHPackagesPackageId200ResponseDataAttributes)`
+`func (o *PackageUpdateData) SetAttributes(v PackageUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

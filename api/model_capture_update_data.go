@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type CaptureUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                          `json:"id"`
-	Attributes    PATCHCapturesCaptureId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                          `json:"relationships,omitempty"`
+	Id            string                      `json:"id"`
+	Attributes    CaptureUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}      `json:"relationships,omitempty"`
 }
 
 // NewCaptureUpdateData instantiates a new CaptureUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCaptureUpdateData(type_ string, id string, attributes PATCHCapturesCaptureId200ResponseDataAttributes) *CaptureUpdateData {
+func NewCaptureUpdateData(type_ string, id string, attributes CaptureUpdateDataAttributes) *CaptureUpdateData {
 	this := CaptureUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *CaptureUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CaptureUpdateData) GetAttributes() PATCHCapturesCaptureId200ResponseDataAttributes {
+func (o *CaptureUpdateData) GetAttributes() CaptureUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHCapturesCaptureId200ResponseDataAttributes
+		var ret CaptureUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *CaptureUpdateData) GetAttributes() PATCHCapturesCaptureId200ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CaptureUpdateData) GetAttributesOk() (*PATCHCapturesCaptureId200ResponseDataAttributes, bool) {
+func (o *CaptureUpdateData) GetAttributesOk() (*CaptureUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *CaptureUpdateData) GetAttributesOk() (*PATCHCapturesCaptureId200Respons
 }
 
 // SetAttributes sets field value
-func (o *CaptureUpdateData) SetAttributes(v PATCHCapturesCaptureId200ResponseDataAttributes) {
+func (o *CaptureUpdateData) SetAttributes(v CaptureUpdateDataAttributes) {
 	o.Attributes = v
 }
 

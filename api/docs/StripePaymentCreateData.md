@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTStripePayments201ResponseDataAttributes**](POSTStripePayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**StripePaymentCreateDataAttributes**](StripePaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripePaymentCreateData
 
-`func NewStripePaymentCreateData(type_ string, attributes POSTStripePayments201ResponseDataAttributes, ) *StripePaymentCreateData`
+`func NewStripePaymentCreateData(type_ string, attributes StripePaymentCreateDataAttributes, ) *StripePaymentCreateData`
 
 NewStripePaymentCreateData instantiates a new StripePaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *StripePaymentCreateData) GetAttributes() POSTStripePayments201ResponseDataAttributes`
+`func (o *StripePaymentCreateData) GetAttributes() StripePaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripePaymentCreateData) GetAttributesOk() (*POSTStripePayments201ResponseDataAttributes, bool)`
+`func (o *StripePaymentCreateData) GetAttributesOk() (*StripePaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripePaymentCreateData) SetAttributes(v POSTStripePayments201ResponseDataAttributes)`
+`func (o *StripePaymentCreateData) SetAttributes(v StripePaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

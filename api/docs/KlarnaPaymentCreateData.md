@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Attributes** | [**AdyenPaymentCreateDataAttributes**](AdyenPaymentCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaPaymentCreateData
 
-`func NewKlarnaPaymentCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *KlarnaPaymentCreateData`
+`func NewKlarnaPaymentCreateData(type_ string, attributes AdyenPaymentCreateDataAttributes, ) *KlarnaPaymentCreateData`
 
 NewKlarnaPaymentCreateData instantiates a new KlarnaPaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *KlarnaPaymentCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *KlarnaPaymentCreateData) GetAttributes() AdyenPaymentCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaPaymentCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *KlarnaPaymentCreateData) GetAttributesOk() (*AdyenPaymentCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaPaymentCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *KlarnaPaymentCreateData) SetAttributes(v AdyenPaymentCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

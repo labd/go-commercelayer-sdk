@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // LineItemOptionCreateData struct for LineItemOptionCreateData
 type LineItemOptionCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    POSTLineItemOptions201ResponseDataAttributes `json:"attributes"`
-	Relationships *LineItemOptionCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                 `json:"type"`
+	Attributes    LineItemOptionCreateDataAttributes     `json:"attributes"`
+	Relationships *LineItemOptionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionCreateData instantiates a new LineItemOptionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionCreateData(type_ string, attributes POSTLineItemOptions201ResponseDataAttributes) *LineItemOptionCreateData {
+func NewLineItemOptionCreateData(type_ string, attributes LineItemOptionCreateDataAttributes) *LineItemOptionCreateData {
 	this := LineItemOptionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *LineItemOptionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemOptionCreateData) GetAttributes() POSTLineItemOptions201ResponseDataAttributes {
+func (o *LineItemOptionCreateData) GetAttributes() LineItemOptionCreateDataAttributes {
 	if o == nil {
-		var ret POSTLineItemOptions201ResponseDataAttributes
+		var ret LineItemOptionCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *LineItemOptionCreateData) GetAttributes() POSTLineItemOptions201Respons
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionCreateData) GetAttributesOk() (*POSTLineItemOptions201ResponseDataAttributes, bool) {
+func (o *LineItemOptionCreateData) GetAttributesOk() (*LineItemOptionCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *LineItemOptionCreateData) GetAttributesOk() (*POSTLineItemOptions201Res
 }
 
 // SetAttributes sets field value
-func (o *LineItemOptionCreateData) SetAttributes(v POSTLineItemOptions201ResponseDataAttributes) {
+func (o *LineItemOptionCreateData) SetAttributes(v LineItemOptionCreateDataAttributes) {
 	o.Attributes = v
 }
 

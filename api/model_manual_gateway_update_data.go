@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ManualGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
-	Attributes    PATCHManualGatewaysManualGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
+	Id            string                            `json:"id"`
+	Attributes    ManualGatewayUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}            `json:"relationships,omitempty"`
 }
 
 // NewManualGatewayUpdateData instantiates a new ManualGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayUpdateData(type_ string, id string, attributes PATCHManualGatewaysManualGatewayId200ResponseDataAttributes) *ManualGatewayUpdateData {
+func NewManualGatewayUpdateData(type_ string, id string, attributes ManualGatewayUpdateDataAttributes) *ManualGatewayUpdateData {
 	this := ManualGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ManualGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ManualGatewayUpdateData) GetAttributes() PATCHManualGatewaysManualGatewayId200ResponseDataAttributes {
+func (o *ManualGatewayUpdateData) GetAttributes() ManualGatewayUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHManualGatewaysManualGatewayId200ResponseDataAttributes
+		var ret ManualGatewayUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ManualGatewayUpdateData) GetAttributes() PATCHManualGatewaysManualGatew
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayUpdateData) GetAttributesOk() (*PATCHManualGatewaysManualGatewayId200ResponseDataAttributes, bool) {
+func (o *ManualGatewayUpdateData) GetAttributesOk() (*ManualGatewayUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ManualGatewayUpdateData) GetAttributesOk() (*PATCHManualGatewaysManualG
 }
 
 // SetAttributes sets field value
-func (o *ManualGatewayUpdateData) SetAttributes(v PATCHManualGatewaysManualGatewayId200ResponseDataAttributes) {
+func (o *ManualGatewayUpdateData) SetAttributes(v ManualGatewayUpdateDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PaypalGatewayCreateData struct for PaypalGatewayCreateData
 type PaypalGatewayCreateData struct {
 	// The resource's type
-	Type          string                                      `json:"type"`
-	Attributes    POSTPaypalGateways201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                      `json:"relationships,omitempty"`
+	Type          string                            `json:"type"`
+	Attributes    PaypalGatewayCreateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}            `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayCreateData instantiates a new PaypalGatewayCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalGatewayCreateData(type_ string, attributes POSTPaypalGateways201ResponseDataAttributes) *PaypalGatewayCreateData {
+func NewPaypalGatewayCreateData(type_ string, attributes PaypalGatewayCreateDataAttributes) *PaypalGatewayCreateData {
 	this := PaypalGatewayCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PaypalGatewayCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalGatewayCreateData) GetAttributes() POSTPaypalGateways201ResponseDataAttributes {
+func (o *PaypalGatewayCreateData) GetAttributes() PaypalGatewayCreateDataAttributes {
 	if o == nil {
-		var ret POSTPaypalGateways201ResponseDataAttributes
+		var ret PaypalGatewayCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PaypalGatewayCreateData) GetAttributes() POSTPaypalGateways201ResponseD
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayCreateData) GetAttributesOk() (*POSTPaypalGateways201ResponseDataAttributes, bool) {
+func (o *PaypalGatewayCreateData) GetAttributesOk() (*PaypalGatewayCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PaypalGatewayCreateData) GetAttributesOk() (*POSTPaypalGateways201Respo
 }
 
 // SetAttributes sets field value
-func (o *PaypalGatewayCreateData) SetAttributes(v POSTPaypalGateways201ResponseDataAttributes) {
+func (o *PaypalGatewayCreateData) SetAttributes(v PaypalGatewayCreateDataAttributes) {
 	o.Attributes = v
 }
 

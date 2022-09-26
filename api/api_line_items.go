@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -212,7 +212,7 @@ type LineItemsApiGETLineItemsRequest struct {
 	ApiService *LineItemsApiService
 }
 
-func (r LineItemsApiGETLineItemsRequest) Execute() (*GETLineItems200Response, *http.Response, error) {
+func (r LineItemsApiGETLineItemsRequest) Execute() (*LineItemResponseList, *http.Response, error) {
 	return r.ApiService.GETLineItemsExecute(r)
 }
 
@@ -232,13 +232,13 @@ func (a *LineItemsApiService) GETLineItems(ctx context.Context) LineItemsApiGETL
 }
 
 // Execute executes the request
-//  @return GETLineItems200Response
-func (a *LineItemsApiService) GETLineItemsExecute(r LineItemsApiGETLineItemsRequest) (*GETLineItems200Response, *http.Response, error) {
+//  @return LineItemResponseList
+func (a *LineItemsApiService) GETLineItemsExecute(r LineItemsApiGETLineItemsRequest) (*LineItemResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETLineItems200Response
+		localVarReturnValue *LineItemResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETLineItems")
@@ -312,7 +312,7 @@ type LineItemsApiGETLineItemsLineItemIdRequest struct {
 	lineItemId string
 }
 
-func (r LineItemsApiGETLineItemsLineItemIdRequest) Execute() (*GETLineItemsLineItemId200Response, *http.Response, error) {
+func (r LineItemsApiGETLineItemsLineItemIdRequest) Execute() (*LineItemResponse, *http.Response, error) {
 	return r.ApiService.GETLineItemsLineItemIdExecute(r)
 }
 
@@ -334,13 +334,13 @@ func (a *LineItemsApiService) GETLineItemsLineItemId(ctx context.Context, lineIt
 }
 
 // Execute executes the request
-//  @return GETLineItemsLineItemId200Response
-func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLineItemsLineItemIdRequest) (*GETLineItemsLineItemId200Response, *http.Response, error) {
+//  @return LineItemResponse
+func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLineItemsLineItemIdRequest) (*LineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETLineItemsLineItemId200Response
+		localVarReturnValue *LineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.GETLineItemsLineItemId")
@@ -789,7 +789,7 @@ func (r LineItemsApiPATCHLineItemsLineItemIdRequest) LineItemUpdate(lineItemUpda
 	return r
 }
 
-func (r LineItemsApiPATCHLineItemsLineItemIdRequest) Execute() (*PATCHLineItemsLineItemId200Response, *http.Response, error) {
+func (r LineItemsApiPATCHLineItemsLineItemIdRequest) Execute() (*LineItemResponse, *http.Response, error) {
 	return r.ApiService.PATCHLineItemsLineItemIdExecute(r)
 }
 
@@ -811,13 +811,13 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemId(ctx context.Context, line
 }
 
 // Execute executes the request
-//  @return PATCHLineItemsLineItemId200Response
-func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATCHLineItemsLineItemIdRequest) (*PATCHLineItemsLineItemId200Response, *http.Response, error) {
+//  @return LineItemResponse
+func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATCHLineItemsLineItemIdRequest) (*LineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHLineItemsLineItemId200Response
+		localVarReturnValue *LineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.PATCHLineItemsLineItemId")
@@ -902,7 +902,7 @@ func (r LineItemsApiPOSTLineItemsRequest) LineItemCreate(lineItemCreate LineItem
 	return r
 }
 
-func (r LineItemsApiPOSTLineItemsRequest) Execute() (*POSTLineItems201Response, *http.Response, error) {
+func (r LineItemsApiPOSTLineItemsRequest) Execute() (*LineItemResponse, *http.Response, error) {
 	return r.ApiService.POSTLineItemsExecute(r)
 }
 
@@ -922,13 +922,13 @@ func (a *LineItemsApiService) POSTLineItems(ctx context.Context) LineItemsApiPOS
 }
 
 // Execute executes the request
-//  @return POSTLineItems201Response
-func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRequest) (*POSTLineItems201Response, *http.Response, error) {
+//  @return LineItemResponse
+func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRequest) (*LineItemResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTLineItems201Response
+		localVarReturnValue *LineItemResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LineItemsApiService.POSTLineItems")

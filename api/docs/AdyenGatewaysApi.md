@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETAdyenGateways
 
-> GETAdyenGateways200Response GETAdyenGateways(ctx).Execute()
+> AdyenGatewayResponseList GETAdyenGateways(ctx).Execute()
 
 List all adyen gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.GETAdyenGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdyenGateways`: GETAdyenGateways200Response
+    // response from `GETAdyenGateways`: AdyenGatewayResponseList
     fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.GETAdyenGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETAdyenGatewaysRequest st
 
 ### Return type
 
-[**GETAdyenGateways200Response**](GETAdyenGateways200Response.md)
+[**AdyenGatewayResponseList**](AdyenGatewayResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETAdyenGatewaysRequest st
 
 ## GETAdyenGatewaysAdyenGatewayId
 
-> GETAdyenGatewaysAdyenGatewayId200Response GETAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).Execute()
+> AdyenGatewayResponse GETAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).Execute()
 
 Retrieve an adyen gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.GETAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETAdyenGatewaysAdyenGatewayId`: GETAdyenGatewaysAdyenGatewayId200Response
+    // response from `GETAdyenGatewaysAdyenGatewayId`: AdyenGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.GETAdyenGatewaysAdyenGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETAdyenGatewaysAdyenGatewayId200Response**](GETAdyenGatewaysAdyenGatewayId200Response.md)
+[**AdyenGatewayResponse**](AdyenGatewayResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdyenGatewaysAdyenGatewayId
 
-> PATCHAdyenGatewaysAdyenGatewayId200Response PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
+> AdyenGatewayResponse PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
 
 Update an adyen gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes())) // AdyenGatewayUpdate | 
+    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewAdyenGatewayUpdateDataAttributes())) // AdyenGatewayUpdate | 
     adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHAdyenGatewaysAdyenGatewayId`: PATCHAdyenGatewaysAdyenGatewayId200Response
+    // response from `PATCHAdyenGatewaysAdyenGatewayId`: AdyenGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHAdyenGatewaysAdyenGatewayId200Response**](PATCHAdyenGatewaysAdyenGatewayId200Response.md)
+[**AdyenGatewayResponse**](AdyenGatewayResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdyenGateways
 
-> POSTAdyenGateways201Response POSTAdyenGateways(ctx).AdyenGatewayCreate(adyenGatewayCreate).Execute()
+> AdyenGatewayResponse POSTAdyenGateways(ctx).AdyenGatewayCreate(adyenGatewayCreate).Execute()
 
 Create an adyen gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("Type_example", *openapiclient.NewPOSTAdyenGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
+    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData("Type_example", *openapiclient.NewAdyenGatewayCreateDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "1797a841fbb37ca7-AdyenDemo"))) // AdyenGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.POSTAdyenGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTAdyenGateways`: POSTAdyenGateways201Response
+    // response from `POSTAdyenGateways`: AdyenGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `AdyenGatewaysApi.POSTAdyenGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTAdyenGateways201Response**](POSTAdyenGateways201Response.md)
+[**AdyenGatewayResponse**](AdyenGatewayResponse.md)
 
 ### Authorization
 

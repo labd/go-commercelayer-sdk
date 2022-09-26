@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -1316,7 +1316,7 @@ type OrdersApiGETOrdersRequest struct {
 	ApiService *OrdersApiService
 }
 
-func (r OrdersApiGETOrdersRequest) Execute() (*GETOrders200Response, *http.Response, error) {
+func (r OrdersApiGETOrdersRequest) Execute() (*OrderResponseList, *http.Response, error) {
 	return r.ApiService.GETOrdersExecute(r)
 }
 
@@ -1336,13 +1336,13 @@ func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequ
 }
 
 // Execute executes the request
-//  @return GETOrders200Response
-func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOrders200Response, *http.Response, error) {
+//  @return OrderResponseList
+func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*OrderResponseList, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrders200Response
+		localVarReturnValue *OrderResponseList
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrders")
@@ -1416,7 +1416,7 @@ type OrdersApiGETOrdersOrderIdRequest struct {
 	orderId    string
 }
 
-func (r OrdersApiGETOrdersOrderIdRequest) Execute() (*GETOrdersOrderId200Response, *http.Response, error) {
+func (r OrdersApiGETOrdersOrderIdRequest) Execute() (*OrderResponse, *http.Response, error) {
 	return r.ApiService.GETOrdersOrderIdExecute(r)
 }
 
@@ -1438,13 +1438,13 @@ func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-//  @return GETOrdersOrderId200Response
-func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRequest) (*GETOrdersOrderId200Response, *http.Response, error) {
+//  @return OrderResponse
+func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRequest) (*OrderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *GETOrdersOrderId200Response
+		localVarReturnValue *OrderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrdersOrderId")
@@ -2261,7 +2261,7 @@ func (r OrdersApiPATCHOrdersOrderIdRequest) OrderUpdate(orderUpdate OrderUpdate)
 	return r
 }
 
-func (r OrdersApiPATCHOrdersOrderIdRequest) Execute() (*PATCHOrdersOrderId200Response, *http.Response, error) {
+func (r OrdersApiPATCHOrdersOrderIdRequest) Execute() (*OrderResponse, *http.Response, error) {
 	return r.ApiService.PATCHOrdersOrderIdExecute(r)
 }
 
@@ -2283,13 +2283,13 @@ func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-//  @return PATCHOrdersOrderId200Response
-func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrderIdRequest) (*PATCHOrdersOrderId200Response, *http.Response, error) {
+//  @return OrderResponse
+func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrderIdRequest) (*OrderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *PATCHOrdersOrderId200Response
+		localVarReturnValue *OrderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.PATCHOrdersOrderId")
@@ -2374,7 +2374,7 @@ func (r OrdersApiPOSTOrdersRequest) OrderCreate(orderCreate OrderCreate) OrdersA
 	return r
 }
 
-func (r OrdersApiPOSTOrdersRequest) Execute() (*POSTOrders201Response, *http.Response, error) {
+func (r OrdersApiPOSTOrdersRequest) Execute() (*OrderResponse, *http.Response, error) {
 	return r.ApiService.POSTOrdersExecute(r)
 }
 
@@ -2394,13 +2394,13 @@ func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRe
 }
 
 // Execute executes the request
-//  @return POSTOrders201Response
-func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*POSTOrders201Response, *http.Response, error) {
+//  @return OrderResponse
+func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*OrderResponse, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTOrders201Response
+		localVarReturnValue *OrderResponse
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.POSTOrders")

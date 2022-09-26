@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // ApplicationData struct for ApplicationData
 type ApplicationData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    GETApplicationApplicationId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                               `json:"relationships,omitempty"`
+	Type          string                    `json:"type"`
+	Attributes    ApplicationDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}    `json:"relationships,omitempty"`
 }
 
 // NewApplicationData instantiates a new ApplicationData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewApplicationData(type_ string, attributes GETApplicationApplicationId200ResponseDataAttributes) *ApplicationData {
+func NewApplicationData(type_ string, attributes ApplicationDataAttributes) *ApplicationData {
 	this := ApplicationData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *ApplicationData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ApplicationData) GetAttributes() GETApplicationApplicationId200ResponseDataAttributes {
+func (o *ApplicationData) GetAttributes() ApplicationDataAttributes {
 	if o == nil {
-		var ret GETApplicationApplicationId200ResponseDataAttributes
+		var ret ApplicationDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ApplicationData) GetAttributes() GETApplicationApplicationId200Response
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ApplicationData) GetAttributesOk() (*GETApplicationApplicationId200ResponseDataAttributes, bool) {
+func (o *ApplicationData) GetAttributesOk() (*ApplicationDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *ApplicationData) GetAttributesOk() (*GETApplicationApplicationId200Resp
 }
 
 // SetAttributes sets field value
-func (o *ApplicationData) SetAttributes(v GETApplicationApplicationId200ResponseDataAttributes) {
+func (o *ApplicationData) SetAttributes(v ApplicationDataAttributes) {
 	o.Attributes = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -3285,6 +3285,98 @@ func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebh
 
 	localVarPath := localBasePath + "/events/{eventId}/webhooks"
 	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETExportIdEventsRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	exportId   string
+}
+
+func (r HasManyApiGETExportIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETExportIdEventsExecute(r)
+}
+
+/*
+GETExportIdEvents Retrieve the events associated to the export
+
+Retrieve the events associated to the export
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param exportId The resource's id
+ @return HasManyApiGETExportIdEventsRequest
+*/
+func (a *HasManyApiService) GETExportIdEvents(ctx context.Context, exportId string) HasManyApiGETExportIdEventsRequest {
+	return HasManyApiGETExportIdEventsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		exportId:   exportId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETExportIdEventsExecute(r HasManyApiGETExportIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETExportIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/exports/{exportId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes**](PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ExternalTaxCalculatorUpdateDataAttributes**](ExternalTaxCalculatorUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalTaxCalculatorUpdateData
 
-`func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes, ) *ExternalTaxCalculatorUpdateData`
+`func NewExternalTaxCalculatorUpdateData(type_ string, id string, attributes ExternalTaxCalculatorUpdateDataAttributes, ) *ExternalTaxCalculatorUpdateData`
 
 NewExternalTaxCalculatorUpdateData instantiates a new ExternalTaxCalculatorUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ExternalTaxCalculatorUpdateData) GetAttributes() PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes`
+`func (o *ExternalTaxCalculatorUpdateData) GetAttributes() ExternalTaxCalculatorUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes, bool)`
+`func (o *ExternalTaxCalculatorUpdateData) GetAttributesOk() (*ExternalTaxCalculatorUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes)`
+`func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v ExternalTaxCalculatorUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

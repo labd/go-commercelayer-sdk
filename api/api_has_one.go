@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -11841,6 +11841,98 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 
 	localVarPath := localBasePath + "/skus/{skuId}/shipping_category"
 	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETSkuListIdCustomerRequest struct {
+	ctx        context.Context
+	ApiService *HasOneApiService
+	skuListId  string
+}
+
+func (r HasOneApiGETSkuListIdCustomerRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListIdCustomerExecute(r)
+}
+
+/*
+GETSkuListIdCustomer Retrieve the customer associated to the SKU list
+
+Retrieve the customer associated to the SKU list
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param skuListId The resource's id
+ @return HasOneApiGETSkuListIdCustomerRequest
+*/
+func (a *HasOneApiService) GETSkuListIdCustomer(ctx context.Context, skuListId string) HasOneApiGETSkuListIdCustomerRequest {
+	return HasOneApiGETSkuListIdCustomerRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuListId:  skuListId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCustomerRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETSkuListIdCustomer")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_lists/{skuListId}/customer"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

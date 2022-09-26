@@ -220,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## GETReturns
 
-> GETReturns200Response GETReturns(ctx).Execute()
+> ReturnResponseList GETReturns(ctx).Execute()
 
 List all returns
 
@@ -247,7 +247,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturns`: GETReturns200Response
+    // response from `GETReturns`: ReturnResponseList
     fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.GETReturns`: %v\n", resp)
 }
 ```
@@ -263,7 +263,7 @@ Other parameters are passed through a pointer to a apiGETReturnsRequest struct v
 
 ### Return type
 
-[**GETReturns200Response**](GETReturns200Response.md)
+[**ReturnResponseList**](ReturnResponseList.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ Other parameters are passed through a pointer to a apiGETReturnsRequest struct v
 
 ## GETReturnsReturnId
 
-> GETReturnsReturnId200Response GETReturnsReturnId(ctx, returnId).Execute()
+> ReturnResponse GETReturnsReturnId(ctx, returnId).Execute()
 
 Retrieve a return
 
@@ -309,7 +309,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETReturnsReturnId`: GETReturnsReturnId200Response
+    // response from `GETReturnsReturnId`: ReturnResponse
     fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.GETReturnsReturnId`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETReturnsReturnId200Response**](GETReturnsReturnId200Response.md)
+[**ReturnResponse**](ReturnResponse.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHReturnsReturnId
 
-> PATCHReturnsReturnId200Response PATCHReturnsReturnId(ctx, returnId).ReturnUpdate(returnUpdate).Execute()
+> ReturnResponse PATCHReturnsReturnId(ctx, returnId).ReturnUpdate(returnUpdate).Execute()
 
 Update a return
 
@@ -370,7 +370,7 @@ import (
 )
 
 func main() {
-    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnsReturnId200ResponseDataAttributes())) // ReturnUpdate | 
+    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewReturnUpdateDataAttributes())) // ReturnUpdate | 
     returnId := "returnId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -380,7 +380,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.PATCHReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHReturnsReturnId`: PATCHReturnsReturnId200Response
+    // response from `PATCHReturnsReturnId`: ReturnResponse
     fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.PATCHReturnsReturnId`: %v\n", resp)
 }
 ```
@@ -405,7 +405,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHReturnsReturnId200Response**](PATCHReturnsReturnId200Response.md)
+[**ReturnResponse**](ReturnResponse.md)
 
 ### Authorization
 
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTReturns
 
-> POSTReturns201Response POSTReturns(ctx).ReturnCreate(returnCreate).Execute()
+> ReturnResponse POSTReturns(ctx).ReturnCreate(returnCreate).Execute()
 
 Create a return
 
@@ -442,7 +442,7 @@ import (
 )
 
 func main() {
-    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ReturnCreate | 
+    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData("Type_example", *openapiclient.NewAdyenPaymentCreateDataAttributes())) // ReturnCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -451,7 +451,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.POSTReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTReturns`: POSTReturns201Response
+    // response from `POSTReturns`: ReturnResponse
     fmt.Fprintf(os.Stdout, "Response from `ReturnsApi.POSTReturns`: %v\n", resp)
 }
 ```
@@ -471,7 +471,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTReturns201Response**](POSTReturns201Response.md)
+[**ReturnResponse**](ReturnResponse.md)
 
 ### Authorization
 

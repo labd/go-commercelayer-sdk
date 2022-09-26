@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## GETCheckoutComGateways
 
-> GETCheckoutComGateways200Response GETCheckoutComGateways(ctx).Execute()
+> CheckoutComGatewayResponseList GETCheckoutComGateways(ctx).Execute()
 
 List all checkout.com gateways
 
@@ -109,7 +109,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.GETCheckoutComGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComGateways`: GETCheckoutComGateways200Response
+    // response from `GETCheckoutComGateways`: CheckoutComGatewayResponseList
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.GETCheckoutComGateways`: %v\n", resp)
 }
 ```
@@ -125,7 +125,7 @@ Other parameters are passed through a pointer to a apiGETCheckoutComGatewaysRequ
 
 ### Return type
 
-[**GETCheckoutComGateways200Response**](GETCheckoutComGateways200Response.md)
+[**CheckoutComGatewayResponseList**](CheckoutComGatewayResponseList.md)
 
 ### Authorization
 
@@ -143,7 +143,7 @@ Other parameters are passed through a pointer to a apiGETCheckoutComGatewaysRequ
 
 ## GETCheckoutComGatewaysCheckoutComGatewayId
 
-> GETCheckoutComGatewaysCheckoutComGatewayId200Response GETCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).Execute()
+> CheckoutComGatewayResponse GETCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).Execute()
 
 Retrieve a checkout.com gateway
 
@@ -171,7 +171,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.GETCheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GETCheckoutComGatewaysCheckoutComGatewayId`: GETCheckoutComGatewaysCheckoutComGatewayId200Response
+    // response from `GETCheckoutComGatewaysCheckoutComGatewayId`: CheckoutComGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.GETCheckoutComGatewaysCheckoutComGatewayId`: %v\n", resp)
 }
 ```
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GETCheckoutComGatewaysCheckoutComGatewayId200Response**](GETCheckoutComGatewaysCheckoutComGatewayId200Response.md)
+[**CheckoutComGatewayResponse**](CheckoutComGatewayResponse.md)
 
 ### Authorization
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCheckoutComGatewaysCheckoutComGatewayId
 
-> PATCHCheckoutComGatewaysCheckoutComGatewayId200Response PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
+> CheckoutComGatewayResponse PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
 
 Update a checkout.com gateway
 
@@ -232,7 +232,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes())) // CheckoutComGatewayUpdate | 
+    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewCheckoutComGatewayUpdateDataAttributes())) // CheckoutComGatewayUpdate | 
     checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
 
     configuration := openapiclient.NewConfiguration()
@@ -242,7 +242,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCheckoutComGatewaysCheckoutComGatewayId`: PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
+    // response from `PATCHCheckoutComGatewaysCheckoutComGatewayId`: CheckoutComGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId`: %v\n", resp)
 }
 ```
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PATCHCheckoutComGatewaysCheckoutComGatewayId200Response**](PATCHCheckoutComGatewaysCheckoutComGatewayId200Response.md)
+[**CheckoutComGatewayResponse**](CheckoutComGatewayResponse.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCheckoutComGateways
 
-> POSTCheckoutComGateways201Response POSTCheckoutComGateways(ctx).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
+> CheckoutComGatewayResponse POSTCheckoutComGateways(ctx).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
 
 Create a checkout.com gateway
 
@@ -304,7 +304,7 @@ import (
 )
 
 func main() {
-    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("Type_example", *openapiclient.NewPOSTCheckoutComGateways201ResponseDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
+    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData("Type_example", *openapiclient.NewCheckoutComGatewayCreateDataAttributes("US payment gateway", "sk_test_xxxx-yyyy-zzzz", "pk_test_xxxx-yyyy-zzzz"))) // CheckoutComGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -313,7 +313,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.POSTCheckoutComGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `POSTCheckoutComGateways`: POSTCheckoutComGateways201Response
+    // response from `POSTCheckoutComGateways`: CheckoutComGatewayResponse
     fmt.Fprintf(os.Stdout, "Response from `CheckoutComGatewaysApi.POSTCheckoutComGateways`: %v\n", resp)
 }
 ```
@@ -333,7 +333,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCheckoutComGateways201Response**](POSTCheckoutComGateways201Response.md)
+[**CheckoutComGatewayResponse**](CheckoutComGatewayResponse.md)
 
 ### Authorization
 

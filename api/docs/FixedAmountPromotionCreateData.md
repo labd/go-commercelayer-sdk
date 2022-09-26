@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTFixedAmountPromotions201ResponseDataAttributes**](POSTFixedAmountPromotions201ResponseDataAttributes.md) |  | 
+**Attributes** | [**FixedAmountPromotionCreateDataAttributes**](FixedAmountPromotionCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedAmountPromotionCreateData
 
-`func NewFixedAmountPromotionCreateData(type_ string, attributes POSTFixedAmountPromotions201ResponseDataAttributes, ) *FixedAmountPromotionCreateData`
+`func NewFixedAmountPromotionCreateData(type_ string, attributes FixedAmountPromotionCreateDataAttributes, ) *FixedAmountPromotionCreateData`
 
 NewFixedAmountPromotionCreateData instantiates a new FixedAmountPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *FixedAmountPromotionCreateData) GetAttributes() POSTFixedAmountPromotions201ResponseDataAttributes`
+`func (o *FixedAmountPromotionCreateData) GetAttributes() FixedAmountPromotionCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedAmountPromotionCreateData) GetAttributesOk() (*POSTFixedAmountPromotions201ResponseDataAttributes, bool)`
+`func (o *FixedAmountPromotionCreateData) GetAttributesOk() (*FixedAmountPromotionCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedAmountPromotionCreateData) SetAttributes(v POSTFixedAmountPromotions201ResponseDataAttributes)`
+`func (o *FixedAmountPromotionCreateData) SetAttributes(v FixedAmountPromotionCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

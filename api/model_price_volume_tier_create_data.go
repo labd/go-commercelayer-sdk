@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // PriceVolumeTierCreateData struct for PriceVolumeTierCreateData
 type PriceVolumeTierCreateData struct {
 	// The resource's type
-	Type          string                                        `json:"type"`
-	Attributes    POSTPriceVolumeTiers201ResponseDataAttributes `json:"attributes"`
-	Relationships *PriceVolumeTierCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                  `json:"type"`
+	Attributes    PriceVolumeTierCreateDataAttributes     `json:"attributes"`
+	Relationships *PriceVolumeTierCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierCreateData instantiates a new PriceVolumeTierCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierCreateData(type_ string, attributes POSTPriceVolumeTiers201ResponseDataAttributes) *PriceVolumeTierCreateData {
+func NewPriceVolumeTierCreateData(type_ string, attributes PriceVolumeTierCreateDataAttributes) *PriceVolumeTierCreateData {
 	this := PriceVolumeTierCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *PriceVolumeTierCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceVolumeTierCreateData) GetAttributes() POSTPriceVolumeTiers201ResponseDataAttributes {
+func (o *PriceVolumeTierCreateData) GetAttributes() PriceVolumeTierCreateDataAttributes {
 	if o == nil {
-		var ret POSTPriceVolumeTiers201ResponseDataAttributes
+		var ret PriceVolumeTierCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *PriceVolumeTierCreateData) GetAttributes() POSTPriceVolumeTiers201Respo
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreateData) GetAttributesOk() (*POSTPriceVolumeTiers201ResponseDataAttributes, bool) {
+func (o *PriceVolumeTierCreateData) GetAttributesOk() (*PriceVolumeTierCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *PriceVolumeTierCreateData) GetAttributesOk() (*POSTPriceVolumeTiers201R
 }
 
 // SetAttributes sets field value
-func (o *PriceVolumeTierCreateData) SetAttributes(v POSTPriceVolumeTiers201ResponseDataAttributes) {
+func (o *PriceVolumeTierCreateData) SetAttributes(v PriceVolumeTierCreateDataAttributes) {
 	o.Attributes = v
 }
 

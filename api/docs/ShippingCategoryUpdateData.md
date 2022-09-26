@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes**](PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**ShippingCategoryUpdateDataAttributes**](ShippingCategoryUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewShippingCategoryUpdateData
 
-`func NewShippingCategoryUpdateData(type_ string, id string, attributes PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes, ) *ShippingCategoryUpdateData`
+`func NewShippingCategoryUpdateData(type_ string, id string, attributes ShippingCategoryUpdateDataAttributes, ) *ShippingCategoryUpdateData`
 
 NewShippingCategoryUpdateData instantiates a new ShippingCategoryUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *ShippingCategoryUpdateData) GetAttributes() PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes`
+`func (o *ShippingCategoryUpdateData) GetAttributes() ShippingCategoryUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingCategoryUpdateData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes, bool)`
+`func (o *ShippingCategoryUpdateData) GetAttributesOk() (*ShippingCategoryUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingCategoryUpdateData) SetAttributes(v PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes)`
+`func (o *ShippingCategoryUpdateData) SetAttributes(v ShippingCategoryUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

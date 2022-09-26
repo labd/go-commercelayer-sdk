@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -20,16 +20,16 @@ type ExternalGatewayUpdateData struct {
 	// The resource's type
 	Type string `json:"type"`
 	// The resource's id
-	Id            string                                                          `json:"id"`
-	Attributes    PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                          `json:"relationships,omitempty"`
+	Id            string                              `json:"id"`
+	Attributes    ExternalGatewayUpdateDataAttributes `json:"attributes"`
+	Relationships map[string]interface{}              `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayUpdateData instantiates a new ExternalGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayUpdateData(type_ string, id string, attributes PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) *ExternalGatewayUpdateData {
+func NewExternalGatewayUpdateData(type_ string, id string, attributes ExternalGatewayUpdateDataAttributes) *ExternalGatewayUpdateData {
 	this := ExternalGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -94,9 +94,9 @@ func (o *ExternalGatewayUpdateData) SetId(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalGatewayUpdateData) GetAttributes() PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes {
+func (o *ExternalGatewayUpdateData) GetAttributes() ExternalGatewayUpdateDataAttributes {
 	if o == nil {
-		var ret PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes
+		var ret ExternalGatewayUpdateDataAttributes
 		return ret
 	}
 
@@ -105,7 +105,7 @@ func (o *ExternalGatewayUpdateData) GetAttributes() PATCHExternalGatewaysExterna
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayUpdateData) GetAttributesOk() (*PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool) {
+func (o *ExternalGatewayUpdateData) GetAttributesOk() (*ExternalGatewayUpdateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,7 +113,7 @@ func (o *ExternalGatewayUpdateData) GetAttributesOk() (*PATCHExternalGatewaysExt
 }
 
 // SetAttributes sets field value
-func (o *ExternalGatewayUpdateData) SetAttributes(v PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) {
+func (o *ExternalGatewayUpdateData) SetAttributes(v ExternalGatewayUpdateDataAttributes) {
 	o.Attributes = v
 }
 

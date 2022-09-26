@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**POSTManualTaxCalculators201ResponseDataAttributes**](POSTManualTaxCalculators201ResponseDataAttributes.md) |  | 
+**Attributes** | [**ManualTaxCalculatorCreateDataAttributes**](ManualTaxCalculatorCreateDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualTaxCalculatorCreateDataRelationships**](ManualTaxCalculatorCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewManualTaxCalculatorCreateData
 
-`func NewManualTaxCalculatorCreateData(type_ string, attributes POSTManualTaxCalculators201ResponseDataAttributes, ) *ManualTaxCalculatorCreateData`
+`func NewManualTaxCalculatorCreateData(type_ string, attributes ManualTaxCalculatorCreateDataAttributes, ) *ManualTaxCalculatorCreateData`
 
 NewManualTaxCalculatorCreateData instantiates a new ManualTaxCalculatorCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *ManualTaxCalculatorCreateData) GetAttributes() POSTManualTaxCalculators201ResponseDataAttributes`
+`func (o *ManualTaxCalculatorCreateData) GetAttributes() ManualTaxCalculatorCreateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*POSTManualTaxCalculators201ResponseDataAttributes, bool)`
+`func (o *ManualTaxCalculatorCreateData) GetAttributesOk() (*ManualTaxCalculatorCreateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ManualTaxCalculatorCreateData) SetAttributes(v POSTManualTaxCalculators201ResponseDataAttributes)`
+`func (o *ManualTaxCalculatorCreateData) SetAttributes(v ManualTaxCalculatorCreateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**PATCHCapturesCaptureId200ResponseDataAttributes**](PATCHCapturesCaptureId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**CaptureUpdateDataAttributes**](CaptureUpdateDataAttributes.md) |  | 
 **Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCaptureUpdateData
 
-`func NewCaptureUpdateData(type_ string, id string, attributes PATCHCapturesCaptureId200ResponseDataAttributes, ) *CaptureUpdateData`
+`func NewCaptureUpdateData(type_ string, id string, attributes CaptureUpdateDataAttributes, ) *CaptureUpdateData`
 
 NewCaptureUpdateData instantiates a new CaptureUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -70,20 +70,20 @@ SetId sets Id field to given value.
 
 ### GetAttributes
 
-`func (o *CaptureUpdateData) GetAttributes() PATCHCapturesCaptureId200ResponseDataAttributes`
+`func (o *CaptureUpdateData) GetAttributes() CaptureUpdateDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CaptureUpdateData) GetAttributesOk() (*PATCHCapturesCaptureId200ResponseDataAttributes, bool)`
+`func (o *CaptureUpdateData) GetAttributesOk() (*CaptureUpdateDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CaptureUpdateData) SetAttributes(v PATCHCapturesCaptureId200ResponseDataAttributes)`
+`func (o *CaptureUpdateData) SetAttributes(v CaptureUpdateDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

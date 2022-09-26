@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.0
+API version: 3.0.1
 Contact: support@commercelayer.io
 */
 
@@ -18,16 +18,16 @@ import (
 // InStockSubscriptionCreateData struct for InStockSubscriptionCreateData
 type InStockSubscriptionCreateData struct {
 	// The resource's type
-	Type          string                                            `json:"type"`
-	Attributes    POSTInStockSubscriptions201ResponseDataAttributes `json:"attributes"`
-	Relationships *InStockSubscriptionCreateDataRelationships       `json:"relationships,omitempty"`
+	Type          string                                      `json:"type"`
+	Attributes    InStockSubscriptionCreateDataAttributes     `json:"attributes"`
+	Relationships *InStockSubscriptionCreateDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewInStockSubscriptionCreateData instantiates a new InStockSubscriptionCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionCreateData(type_ string, attributes POSTInStockSubscriptions201ResponseDataAttributes) *InStockSubscriptionCreateData {
+func NewInStockSubscriptionCreateData(type_ string, attributes InStockSubscriptionCreateDataAttributes) *InStockSubscriptionCreateData {
 	this := InStockSubscriptionCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -67,9 +67,9 @@ func (o *InStockSubscriptionCreateData) SetType(v string) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *InStockSubscriptionCreateData) GetAttributes() POSTInStockSubscriptions201ResponseDataAttributes {
+func (o *InStockSubscriptionCreateData) GetAttributes() InStockSubscriptionCreateDataAttributes {
 	if o == nil {
-		var ret POSTInStockSubscriptions201ResponseDataAttributes
+		var ret InStockSubscriptionCreateDataAttributes
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *InStockSubscriptionCreateData) GetAttributes() POSTInStockSubscriptions
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreateData) GetAttributesOk() (*POSTInStockSubscriptions201ResponseDataAttributes, bool) {
+func (o *InStockSubscriptionCreateData) GetAttributesOk() (*InStockSubscriptionCreateDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,7 +86,7 @@ func (o *InStockSubscriptionCreateData) GetAttributesOk() (*POSTInStockSubscript
 }
 
 // SetAttributes sets field value
-func (o *InStockSubscriptionCreateData) SetAttributes(v POSTInStockSubscriptions201ResponseDataAttributes) {
+func (o *InStockSubscriptionCreateData) SetAttributes(v InStockSubscriptionCreateDataAttributes) {
 	o.Attributes = v
 }
 

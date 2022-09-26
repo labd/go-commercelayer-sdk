@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETBraintreeGateways200ResponseDataInnerAttributes**](GETBraintreeGateways200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**BraintreeGatewayDataAttributes**](BraintreeGatewayDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BraintreeGatewayDataRelationships**](BraintreeGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreeGatewayData
 
-`func NewBraintreeGatewayData(type_ string, attributes GETBraintreeGateways200ResponseDataInnerAttributes, ) *BraintreeGatewayData`
+`func NewBraintreeGatewayData(type_ string, attributes BraintreeGatewayDataAttributes, ) *BraintreeGatewayData`
 
 NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -49,20 +49,20 @@ SetType sets Type field to given value.
 
 ### GetAttributes
 
-`func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGateways200ResponseDataInnerAttributes`
+`func (o *BraintreeGatewayData) GetAttributes() BraintreeGatewayDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGateways200ResponseDataInnerAttributes, bool)`
+`func (o *BraintreeGatewayData) GetAttributesOk() (*BraintreeGatewayDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGateways200ResponseDataInnerAttributes)`
+`func (o *BraintreeGatewayData) SetAttributes(v BraintreeGatewayDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
