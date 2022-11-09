@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -24,6 +24,7 @@ type GETCustomers200ResponseDataInnerRelationships struct {
 	Orders                 *GETCustomers200ResponseDataInnerRelationshipsOrders                 `json:"orders,omitempty"`
 	OrderSubscriptions     *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions     `json:"order_subscriptions,omitempty"`
 	Returns                *GETCustomers200ResponseDataInnerRelationshipsReturns                `json:"returns,omitempty"`
+	SkuLists               *GETCustomers200ResponseDataInnerRelationshipsSkuLists               `json:"sku_lists,omitempty"`
 	Attachments            *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments      `json:"attachments,omitempty"`
 	Events                 *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents         `json:"events,omitempty"`
 }
@@ -269,6 +270,38 @@ func (o *GETCustomers200ResponseDataInnerRelationships) SetReturns(v GETCustomer
 	o.Returns = &v
 }
 
+// GetSkuLists returns the SkuLists field value if set, zero value otherwise.
+func (o *GETCustomers200ResponseDataInnerRelationships) GetSkuLists() GETCustomers200ResponseDataInnerRelationshipsSkuLists {
+	if o == nil || o.SkuLists == nil {
+		var ret GETCustomers200ResponseDataInnerRelationshipsSkuLists
+		return ret
+	}
+	return *o.SkuLists
+}
+
+// GetSkuListsOk returns a tuple with the SkuLists field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETCustomers200ResponseDataInnerRelationships) GetSkuListsOk() (*GETCustomers200ResponseDataInnerRelationshipsSkuLists, bool) {
+	if o == nil || o.SkuLists == nil {
+		return nil, false
+	}
+	return o.SkuLists, true
+}
+
+// HasSkuLists returns a boolean if a field has been set.
+func (o *GETCustomers200ResponseDataInnerRelationships) HasSkuLists() bool {
+	if o != nil && o.SkuLists != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuLists gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsSkuLists and assigns it to the SkuLists field.
+func (o *GETCustomers200ResponseDataInnerRelationships) SetSkuLists(v GETCustomers200ResponseDataInnerRelationshipsSkuLists) {
+	o.SkuLists = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *GETCustomers200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
@@ -355,6 +388,9 @@ func (o GETCustomers200ResponseDataInnerRelationships) MarshalJSON() ([]byte, er
 	}
 	if o.Returns != nil {
 		toSerialize["returns"] = o.Returns
+	}
+	if o.SkuLists != nil {
+		toSerialize["sku_lists"] = o.SkuLists
 	}
 	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments

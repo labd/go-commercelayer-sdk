@@ -9,11 +9,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The export job status. One of &#39;pending&#39; (default), &#39;in_progress&#39;, or &#39;completed&#39;. | [optional] 
 **Includes** | Pointer to **[]string** | List of related resources that should be included in the export. | [optional] 
 **Filters** | Pointer to **map[string]interface{}** | The filters used to select the records to be exported. | [optional] 
-**SkipIds** | Pointer to **bool** | Send this attribute if you want to skip exporting of resources IDs. | [optional] 
-**SkipRelIds** | Pointer to **bool** | Send this attribute if you want to skip exporting of relationships IDs. | [optional] 
-**SkipTimestamps** | Pointer to **bool** | Send this attribute if you want to skip exporting of resources created_at and updated_at. | [optional] 
-**SkipBlanks** | Pointer to **bool** | Send this attribute if you want to skip exporting of blank values (not suitable for csv format). | [optional] 
-**SkipAmountFormats** | Pointer to **bool** | Send this attribute if you want to skip exporting of float and fromatted amounts. | [optional] 
+**DryData** | Pointer to **bool** | Send this attribute if you want to skip exporting redundant attributes (IDs, timespamps, blanks, etc), useful when combining export and import to duplicate your dataset. | [optional] 
 **StartedAt** | Pointer to **string** | Time at which the export was started. | [optional] 
 **CompletedAt** | Pointer to **string** | Time at which the export was completed. | [optional] 
 **InterruptedAt** | Pointer to **string** | Time at which the export was interrupted. | [optional] 
@@ -170,130 +166,30 @@ SetFilters sets Filters field to given value.
 
 HasFilters returns a boolean if a field has been set.
 
-### GetSkipIds
+### GetDryData
 
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipIds() bool`
+`func (o *GETExports200ResponseDataInnerAttributes) GetDryData() bool`
 
-GetSkipIds returns the SkipIds field if non-nil, zero value otherwise.
+GetDryData returns the DryData field if non-nil, zero value otherwise.
 
-### GetSkipIdsOk
+### GetDryDataOk
 
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipIdsOk() (*bool, bool)`
+`func (o *GETExports200ResponseDataInnerAttributes) GetDryDataOk() (*bool, bool)`
 
-GetSkipIdsOk returns a tuple with the SkipIds field if it's non-nil, zero value otherwise
+GetDryDataOk returns a tuple with the DryData field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetSkipIds
+### SetDryData
 
-`func (o *GETExports200ResponseDataInnerAttributes) SetSkipIds(v bool)`
+`func (o *GETExports200ResponseDataInnerAttributes) SetDryData(v bool)`
 
-SetSkipIds sets SkipIds field to given value.
+SetDryData sets DryData field to given value.
 
-### HasSkipIds
+### HasDryData
 
-`func (o *GETExports200ResponseDataInnerAttributes) HasSkipIds() bool`
+`func (o *GETExports200ResponseDataInnerAttributes) HasDryData() bool`
 
-HasSkipIds returns a boolean if a field has been set.
-
-### GetSkipRelIds
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipRelIds() bool`
-
-GetSkipRelIds returns the SkipRelIds field if non-nil, zero value otherwise.
-
-### GetSkipRelIdsOk
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipRelIdsOk() (*bool, bool)`
-
-GetSkipRelIdsOk returns a tuple with the SkipRelIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSkipRelIds
-
-`func (o *GETExports200ResponseDataInnerAttributes) SetSkipRelIds(v bool)`
-
-SetSkipRelIds sets SkipRelIds field to given value.
-
-### HasSkipRelIds
-
-`func (o *GETExports200ResponseDataInnerAttributes) HasSkipRelIds() bool`
-
-HasSkipRelIds returns a boolean if a field has been set.
-
-### GetSkipTimestamps
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipTimestamps() bool`
-
-GetSkipTimestamps returns the SkipTimestamps field if non-nil, zero value otherwise.
-
-### GetSkipTimestampsOk
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipTimestampsOk() (*bool, bool)`
-
-GetSkipTimestampsOk returns a tuple with the SkipTimestamps field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSkipTimestamps
-
-`func (o *GETExports200ResponseDataInnerAttributes) SetSkipTimestamps(v bool)`
-
-SetSkipTimestamps sets SkipTimestamps field to given value.
-
-### HasSkipTimestamps
-
-`func (o *GETExports200ResponseDataInnerAttributes) HasSkipTimestamps() bool`
-
-HasSkipTimestamps returns a boolean if a field has been set.
-
-### GetSkipBlanks
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipBlanks() bool`
-
-GetSkipBlanks returns the SkipBlanks field if non-nil, zero value otherwise.
-
-### GetSkipBlanksOk
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipBlanksOk() (*bool, bool)`
-
-GetSkipBlanksOk returns a tuple with the SkipBlanks field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSkipBlanks
-
-`func (o *GETExports200ResponseDataInnerAttributes) SetSkipBlanks(v bool)`
-
-SetSkipBlanks sets SkipBlanks field to given value.
-
-### HasSkipBlanks
-
-`func (o *GETExports200ResponseDataInnerAttributes) HasSkipBlanks() bool`
-
-HasSkipBlanks returns a boolean if a field has been set.
-
-### GetSkipAmountFormats
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipAmountFormats() bool`
-
-GetSkipAmountFormats returns the SkipAmountFormats field if non-nil, zero value otherwise.
-
-### GetSkipAmountFormatsOk
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetSkipAmountFormatsOk() (*bool, bool)`
-
-GetSkipAmountFormatsOk returns a tuple with the SkipAmountFormats field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSkipAmountFormats
-
-`func (o *GETExports200ResponseDataInnerAttributes) SetSkipAmountFormats(v bool)`
-
-SetSkipAmountFormats sets SkipAmountFormats field to given value.
-
-### HasSkipAmountFormats
-
-`func (o *GETExports200ResponseDataInnerAttributes) HasSkipAmountFormats() bool`
-
-HasSkipAmountFormats returns a boolean if a field has been set.
+HasDryData returns a boolean if a field has been set.
 
 ### GetStartedAt
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,10 @@ type GETParcelLineItems200ResponseDataInnerAttributes struct {
 	SkuCode *string `json:"sku_code,omitempty"`
 	// The parcel line item quantity.
 	Quantity *int32 `json:"quantity,omitempty"`
+	// The internal name of the associated line item.
+	Name *string `json:"name,omitempty"`
+	// The image_url of the associated line item.
+	ImageUrl *string `json:"image_url,omitempty"`
 	// Unique identifier for the resource (hash).
 	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
@@ -114,6 +118,70 @@ func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasQuantity() bool {
 // SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
 func (o *GETParcelLineItems200ResponseDataInnerAttributes) SetQuantity(v int32) {
 	o.Quantity = &v
+}
+
+// GetName returns the Name field value if set, zero value otherwise.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetName() string {
+	if o == nil || o.Name == nil {
+		var ret string
+		return ret
+	}
+	return *o.Name
+}
+
+// GetNameOk returns a tuple with the Name field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetNameOk() (*string, bool) {
+	if o == nil || o.Name == nil {
+		return nil, false
+	}
+	return o.Name, true
+}
+
+// HasName returns a boolean if a field has been set.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasName() bool {
+	if o != nil && o.Name != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetName gets a reference to the given string and assigns it to the Name field.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) SetName(v string) {
+	o.Name = &v
+}
+
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetImageUrl() string {
+	if o == nil || o.ImageUrl == nil {
+		var ret string
+		return ret
+	}
+	return *o.ImageUrl
+}
+
+// GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetImageUrlOk() (*string, bool) {
+	if o == nil || o.ImageUrl == nil {
+		return nil, false
+	}
+	return o.ImageUrl, true
+}
+
+// HasImageUrl returns a boolean if a field has been set.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasImageUrl() bool {
+	if o != nil && o.ImageUrl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
+func (o *GETParcelLineItems200ResponseDataInnerAttributes) SetImageUrl(v string) {
+	o.ImageUrl = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
@@ -315,6 +383,12 @@ func (o GETParcelLineItems200ResponseDataInnerAttributes) MarshalJSON() ([]byte,
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.Name != nil {
+		toSerialize["name"] = o.Name
+	}
+	if o.ImageUrl != nil {
+		toSerialize["image_url"] = o.ImageUrl
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

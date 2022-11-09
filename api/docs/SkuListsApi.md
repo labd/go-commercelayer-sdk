@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETESkuListsSkuListId**](SkuListsApi.md#DELETESkuListsSkuListId) | **Delete** /sku_lists/{skuListId} | Delete a SKU list
 [**GETBundleIdSkuList**](SkuListsApi.md#GETBundleIdSkuList) | **Get** /bundles/{bundleId}/sku_list | Retrieve the sku list associated to the bundle
+[**GETCustomerIdSkuLists**](SkuListsApi.md#GETCustomerIdSkuLists) | **Get** /customers/{customerId}/sku_lists | Retrieve the sku lists associated to the customer
 [**GETFixedPricePromotionIdSkuList**](SkuListsApi.md#GETFixedPricePromotionIdSkuList) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/sku_list | Retrieve the sku list associated to the fixed price promotion
 [**GETFreeGiftPromotionIdSkuList**](SkuListsApi.md#GETFreeGiftPromotionIdSkuList) | **Get** /free_gift_promotions/{freeGiftPromotionId}/sku_list | Retrieve the sku list associated to the free gift promotion
 [**GETPercentageDiscountPromotionIdSkuList**](SkuListsApi.md#GETPercentageDiscountPromotionIdSkuList) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list | Retrieve the sku list associated to the percentage discount promotion
@@ -130,6 +131,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETBundleIdSkuListRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCustomerIdSkuLists
+
+> GETCustomerIdSkuLists(ctx, customerId).Execute()
+
+Retrieve the sku lists associated to the customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerId := "customerId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETCustomerIdSkuLists``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerIdSkuListsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -18,7 +18,7 @@ import (
 // PriceCreateDataRelationships struct for PriceCreateDataRelationships
 type PriceCreateDataRelationships struct {
 	PriceList  MarketDataRelationshipsPriceList  `json:"price_list"`
-	Sku        *BundleDataRelationshipsSkus      `json:"sku,omitempty"`
+	Sku        BundleDataRelationshipsSkus       `json:"sku"`
 	PriceTiers *PriceDataRelationshipsPriceTiers `json:"price_tiers,omitempty"`
 }
 
@@ -26,9 +26,10 @@ type PriceCreateDataRelationships struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceCreateDataRelationships(priceList MarketDataRelationshipsPriceList) *PriceCreateDataRelationships {
+func NewPriceCreateDataRelationships(priceList MarketDataRelationshipsPriceList, sku BundleDataRelationshipsSkus) *PriceCreateDataRelationships {
 	this := PriceCreateDataRelationships{}
 	this.PriceList = priceList
+	this.Sku = sku
 	return &this
 }
 
@@ -64,36 +65,28 @@ func (o *PriceCreateDataRelationships) SetPriceList(v MarketDataRelationshipsPri
 	o.PriceList = v
 }
 
-// GetSku returns the Sku field value if set, zero value otherwise.
+// GetSku returns the Sku field value
 func (o *PriceCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || o.Sku == nil {
+	if o == nil {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
-	return *o.Sku
+
+	return o.Sku
 }
 
-// GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
+// GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
 func (o *PriceCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil {
 		return nil, false
 	}
-	return o.Sku, true
+	return &o.Sku, true
 }
 
-// HasSku returns a boolean if a field has been set.
-func (o *PriceCreateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
+// SetSku sets field value
 func (o *PriceCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
-	o.Sku = &v
+	o.Sku = v
 }
 
 // GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
@@ -133,7 +126,7 @@ func (o PriceCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	if true {
 		toSerialize["price_list"] = o.PriceList
 	}
-	if o.Sku != nil {
+	if true {
 		toSerialize["sku"] = o.Sku
 	}
 	if o.PriceTiers != nil {

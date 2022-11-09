@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **PromotionUrl** | Pointer to **string** | The URL to the service that will compute the discount. | [optional] 
+**SharedSecret** | Pointer to **string** | The shared secret used to sign the external request payload. | [optional] 
 
 ## Methods
 
@@ -387,6 +388,31 @@ SetPromotionUrl sets PromotionUrl field to given value.
 `func (o *GETExternalPromotions200ResponseDataInnerAttributes) HasPromotionUrl() bool`
 
 HasPromotionUrl returns a boolean if a field has been set.
+
+### GetSharedSecret
+
+`func (o *GETExternalPromotions200ResponseDataInnerAttributes) GetSharedSecret() string`
+
+GetSharedSecret returns the SharedSecret field if non-nil, zero value otherwise.
+
+### GetSharedSecretOk
+
+`func (o *GETExternalPromotions200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool)`
+
+GetSharedSecretOk returns a tuple with the SharedSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedSecret
+
+`func (o *GETExternalPromotions200ResponseDataInnerAttributes) SetSharedSecret(v string)`
+
+SetSharedSecret sets SharedSecret field to given value.
+
+### HasSharedSecret
+
+`func (o *GETExternalPromotions200ResponseDataInnerAttributes) HasSharedSecret() bool`
+
+HasSharedSecret returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

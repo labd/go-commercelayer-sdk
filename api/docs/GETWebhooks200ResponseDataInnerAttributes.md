@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IncludeResources** | Pointer to **[]string** | List of related resources that should be included in the webhook body. | [optional] 
 **CircuitState** | Pointer to **string** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
 **CircuitFailureCount** | Pointer to **int32** | The number of consecutive failures recorded by the circuit breaker associated to this webhook, will be reset on first successful call to callback. | [optional] 
+**SharedSecret** | Pointer to **string** | The shared secret used to sign the external request payload. | [optional] 
 **Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
@@ -185,6 +186,31 @@ SetCircuitFailureCount sets CircuitFailureCount field to given value.
 `func (o *GETWebhooks200ResponseDataInnerAttributes) HasCircuitFailureCount() bool`
 
 HasCircuitFailureCount returns a boolean if a field has been set.
+
+### GetSharedSecret
+
+`func (o *GETWebhooks200ResponseDataInnerAttributes) GetSharedSecret() string`
+
+GetSharedSecret returns the SharedSecret field if non-nil, zero value otherwise.
+
+### GetSharedSecretOk
+
+`func (o *GETWebhooks200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool)`
+
+GetSharedSecretOk returns a tuple with the SharedSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedSecret
+
+`func (o *GETWebhooks200ResponseDataInnerAttributes) SetSharedSecret(v string)`
+
+SetSharedSecret sets SharedSecret field to given value.
+
+### HasSharedSecret
+
+`func (o *GETWebhooks200ResponseDataInnerAttributes) HasSharedSecret() bool`
+
+HasSharedSecret returns a boolean if a field has been set.
 
 ### GetId
 

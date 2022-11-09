@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **PriceList** | [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | 
-**Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
+**Sku** | [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | 
 **PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceCreateDataRelationships
 
-`func NewPriceCreateDataRelationships(priceList MarketDataRelationshipsPriceList, ) *PriceCreateDataRelationships`
+`func NewPriceCreateDataRelationships(priceList MarketDataRelationshipsPriceList, sku BundleDataRelationshipsSkus, ) *PriceCreateDataRelationships`
 
 NewPriceCreateDataRelationships instantiates a new PriceCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -66,11 +66,6 @@ and a boolean to check if the value has been set.
 
 SetSku sets Sku field to given value.
 
-### HasSku
-
-`func (o *PriceCreateDataRelationships) HasSku() bool`
-
-HasSku returns a boolean if a field has been set.
 
 ### GetPriceTiers
 

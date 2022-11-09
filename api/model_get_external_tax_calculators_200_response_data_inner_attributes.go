@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -33,6 +33,8 @@ type GETExternalTaxCalculators200ResponseDataInnerAttributes struct {
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
 	// The URL to the service that will compute the taxes.
 	TaxCalculatorUrl *string `json:"tax_calculator_url,omitempty"`
+	// The shared secret used to sign the external request payload.
+	SharedSecret *string `json:"shared_secret,omitempty"`
 }
 
 // NewGETExternalTaxCalculators200ResponseDataInnerAttributes instantiates a new GETExternalTaxCalculators200ResponseDataInnerAttributes object
@@ -308,6 +310,38 @@ func (o *GETExternalTaxCalculators200ResponseDataInnerAttributes) SetTaxCalculat
 	o.TaxCalculatorUrl = &v
 }
 
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise.
+func (o *GETExternalTaxCalculators200ResponseDataInnerAttributes) GetSharedSecret() string {
+	if o == nil || o.SharedSecret == nil {
+		var ret string
+		return ret
+	}
+	return *o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETExternalTaxCalculators200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool) {
+	if o == nil || o.SharedSecret == nil {
+		return nil, false
+	}
+	return o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETExternalTaxCalculators200ResponseDataInnerAttributes) HasSharedSecret() bool {
+	if o != nil && o.SharedSecret != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given string and assigns it to the SharedSecret field.
+func (o *GETExternalTaxCalculators200ResponseDataInnerAttributes) SetSharedSecret(v string) {
+	o.SharedSecret = &v
+}
+
 func (o GETExternalTaxCalculators200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
@@ -333,6 +367,9 @@ func (o GETExternalTaxCalculators200ResponseDataInnerAttributes) MarshalJSON() (
 	}
 	if o.TaxCalculatorUrl != nil {
 		toSerialize["tax_calculator_url"] = o.TaxCalculatorUrl
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	return json.Marshal(toSerialize)
 }

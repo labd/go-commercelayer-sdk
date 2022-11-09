@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -24,6 +24,7 @@ type CustomerDataRelationships struct {
 	Orders                 *AdyenPaymentDataRelationshipsOrder              `json:"orders,omitempty"`
 	OrderSubscriptions     *CustomerDataRelationshipsOrderSubscriptions     `json:"order_subscriptions,omitempty"`
 	Returns                *CustomerDataRelationshipsReturns                `json:"returns,omitempty"`
+	SkuLists               *BundleDataRelationshipsSkuList                  `json:"sku_lists,omitempty"`
 	Attachments            *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
 	Events                 *CustomerAddressDataRelationshipsEvents          `json:"events,omitempty"`
 }
@@ -269,6 +270,38 @@ func (o *CustomerDataRelationships) SetReturns(v CustomerDataRelationshipsReturn
 	o.Returns = &v
 }
 
+// GetSkuLists returns the SkuLists field value if set, zero value otherwise.
+func (o *CustomerDataRelationships) GetSkuLists() BundleDataRelationshipsSkuList {
+	if o == nil || o.SkuLists == nil {
+		var ret BundleDataRelationshipsSkuList
+		return ret
+	}
+	return *o.SkuLists
+}
+
+// GetSkuListsOk returns a tuple with the SkuLists field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CustomerDataRelationships) GetSkuListsOk() (*BundleDataRelationshipsSkuList, bool) {
+	if o == nil || o.SkuLists == nil {
+		return nil, false
+	}
+	return o.SkuLists, true
+}
+
+// HasSkuLists returns a boolean if a field has been set.
+func (o *CustomerDataRelationships) HasSkuLists() bool {
+	if o != nil && o.SkuLists != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSkuLists gets a reference to the given BundleDataRelationshipsSkuList and assigns it to the SkuLists field.
+func (o *CustomerDataRelationships) SetSkuLists(v BundleDataRelationshipsSkuList) {
+	o.SkuLists = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *CustomerDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
 	if o == nil || o.Attachments == nil {
@@ -355,6 +388,9 @@ func (o CustomerDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Returns != nil {
 		toSerialize["returns"] = o.Returns
+	}
+	if o.SkuLists != nil {
+		toSerialize["sku_lists"] = o.SkuLists
 	}
 	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments

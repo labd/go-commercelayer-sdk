@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Orders** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsOrders**](GETCustomers200ResponseDataInnerRelationshipsOrders.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions**](GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions.md) |  | [optional] 
 **Returns** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsReturns**](GETCustomers200ResponseDataInnerRelationshipsReturns.md) |  | [optional] 
+**SkuLists** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsSkuLists**](GETCustomers200ResponseDataInnerRelationshipsSkuLists.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 **Events** | Pointer to [**GETCustomerAddresses200ResponseDataInnerRelationshipsEvents**](GETCustomerAddresses200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
 
@@ -207,6 +208,31 @@ SetReturns sets Returns field to given value.
 `func (o *GETCustomers200ResponseDataInnerRelationships) HasReturns() bool`
 
 HasReturns returns a boolean if a field has been set.
+
+### GetSkuLists
+
+`func (o *GETCustomers200ResponseDataInnerRelationships) GetSkuLists() GETCustomers200ResponseDataInnerRelationshipsSkuLists`
+
+GetSkuLists returns the SkuLists field if non-nil, zero value otherwise.
+
+### GetSkuListsOk
+
+`func (o *GETCustomers200ResponseDataInnerRelationships) GetSkuListsOk() (*GETCustomers200ResponseDataInnerRelationshipsSkuLists, bool)`
+
+GetSkuListsOk returns a tuple with the SkuLists field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkuLists
+
+`func (o *GETCustomers200ResponseDataInnerRelationships) SetSkuLists(v GETCustomers200ResponseDataInnerRelationshipsSkuLists)`
+
+SetSkuLists sets SkuLists field to given value.
+
+### HasSkuLists
+
+`func (o *GETCustomers200ResponseDataInnerRelationships) HasSkuLists() bool`
+
+HasSkuLists returns a boolean if a field has been set.
 
 ### GetAttachments
 

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **CheckoutUrl** | Pointer to **string** | The checkout URL for this market | [optional] 
 **ExternalPricesUrl** | Pointer to **string** | The URL used to fetch prices from an external source | [optional] 
 **Private** | Pointer to **bool** | Indicates if market belongs to a customer_group. | [optional] 
+**DisabledAt** | Pointer to **string** | Time at which the market was disabled. | [optional] 
 **Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
@@ -185,6 +186,31 @@ SetPrivate sets Private field to given value.
 `func (o *GETMarkets200ResponseDataInnerAttributes) HasPrivate() bool`
 
 HasPrivate returns a boolean if a field has been set.
+
+### GetDisabledAt
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetDisabledAt() string`
+
+GetDisabledAt returns the DisabledAt field if non-nil, zero value otherwise.
+
+### GetDisabledAtOk
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetDisabledAtOk() (*string, bool)`
+
+GetDisabledAtOk returns a tuple with the DisabledAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisabledAt
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) SetDisabledAt(v string)`
+
+SetDisabledAt sets DisabledAt field to given value.
+
+### HasDisabledAt
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) HasDisabledAt() bool`
+
+HasDisabledAt returns a boolean if a field has been set.
 
 ### GetId
 

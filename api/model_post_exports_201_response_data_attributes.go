@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -25,16 +25,8 @@ type POSTExports201ResponseDataAttributes struct {
 	Includes []string `json:"includes,omitempty"`
 	// The filters used to select the records to be exported.
 	Filters map[string]interface{} `json:"filters,omitempty"`
-	// Send this attribute if you want to skip exporting of resources IDs.
-	SkipIds *bool `json:"skip_ids,omitempty"`
-	// Send this attribute if you want to skip exporting of relationships IDs.
-	SkipRelIds *bool `json:"skip_rel_ids,omitempty"`
-	// Send this attribute if you want to skip exporting of resources created_at and updated_at.
-	SkipTimestamps *bool `json:"skip_timestamps,omitempty"`
-	// Send this attribute if you want to skip exporting of blank values (not suitable for csv format).
-	SkipBlanks *bool `json:"skip_blanks,omitempty"`
-	// Send this attribute if you want to skip exporting of float and fromatted amounts.
-	SkipAmountFormats *bool `json:"skip_amount_formats,omitempty"`
+	// Send this attribute if you want to skip exporting redundant attributes (IDs, timespamps, blanks, etc), useful when combining export and import to duplicate your dataset.
+	DryData *bool `json:"dry_data,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
@@ -181,164 +173,36 @@ func (o *POSTExports201ResponseDataAttributes) SetFilters(v map[string]interface
 	o.Filters = v
 }
 
-// GetSkipIds returns the SkipIds field value if set, zero value otherwise.
-func (o *POSTExports201ResponseDataAttributes) GetSkipIds() bool {
-	if o == nil || o.SkipIds == nil {
+// GetDryData returns the DryData field value if set, zero value otherwise.
+func (o *POSTExports201ResponseDataAttributes) GetDryData() bool {
+	if o == nil || o.DryData == nil {
 		var ret bool
 		return ret
 	}
-	return *o.SkipIds
+	return *o.DryData
 }
 
-// GetSkipIdsOk returns a tuple with the SkipIds field value if set, nil otherwise
+// GetDryDataOk returns a tuple with the DryData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExports201ResponseDataAttributes) GetSkipIdsOk() (*bool, bool) {
-	if o == nil || o.SkipIds == nil {
+func (o *POSTExports201ResponseDataAttributes) GetDryDataOk() (*bool, bool) {
+	if o == nil || o.DryData == nil {
 		return nil, false
 	}
-	return o.SkipIds, true
+	return o.DryData, true
 }
 
-// HasSkipIds returns a boolean if a field has been set.
-func (o *POSTExports201ResponseDataAttributes) HasSkipIds() bool {
-	if o != nil && o.SkipIds != nil {
+// HasDryData returns a boolean if a field has been set.
+func (o *POSTExports201ResponseDataAttributes) HasDryData() bool {
+	if o != nil && o.DryData != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetSkipIds gets a reference to the given bool and assigns it to the SkipIds field.
-func (o *POSTExports201ResponseDataAttributes) SetSkipIds(v bool) {
-	o.SkipIds = &v
-}
-
-// GetSkipRelIds returns the SkipRelIds field value if set, zero value otherwise.
-func (o *POSTExports201ResponseDataAttributes) GetSkipRelIds() bool {
-	if o == nil || o.SkipRelIds == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SkipRelIds
-}
-
-// GetSkipRelIdsOk returns a tuple with the SkipRelIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTExports201ResponseDataAttributes) GetSkipRelIdsOk() (*bool, bool) {
-	if o == nil || o.SkipRelIds == nil {
-		return nil, false
-	}
-	return o.SkipRelIds, true
-}
-
-// HasSkipRelIds returns a boolean if a field has been set.
-func (o *POSTExports201ResponseDataAttributes) HasSkipRelIds() bool {
-	if o != nil && o.SkipRelIds != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSkipRelIds gets a reference to the given bool and assigns it to the SkipRelIds field.
-func (o *POSTExports201ResponseDataAttributes) SetSkipRelIds(v bool) {
-	o.SkipRelIds = &v
-}
-
-// GetSkipTimestamps returns the SkipTimestamps field value if set, zero value otherwise.
-func (o *POSTExports201ResponseDataAttributes) GetSkipTimestamps() bool {
-	if o == nil || o.SkipTimestamps == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SkipTimestamps
-}
-
-// GetSkipTimestampsOk returns a tuple with the SkipTimestamps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTExports201ResponseDataAttributes) GetSkipTimestampsOk() (*bool, bool) {
-	if o == nil || o.SkipTimestamps == nil {
-		return nil, false
-	}
-	return o.SkipTimestamps, true
-}
-
-// HasSkipTimestamps returns a boolean if a field has been set.
-func (o *POSTExports201ResponseDataAttributes) HasSkipTimestamps() bool {
-	if o != nil && o.SkipTimestamps != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSkipTimestamps gets a reference to the given bool and assigns it to the SkipTimestamps field.
-func (o *POSTExports201ResponseDataAttributes) SetSkipTimestamps(v bool) {
-	o.SkipTimestamps = &v
-}
-
-// GetSkipBlanks returns the SkipBlanks field value if set, zero value otherwise.
-func (o *POSTExports201ResponseDataAttributes) GetSkipBlanks() bool {
-	if o == nil || o.SkipBlanks == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SkipBlanks
-}
-
-// GetSkipBlanksOk returns a tuple with the SkipBlanks field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTExports201ResponseDataAttributes) GetSkipBlanksOk() (*bool, bool) {
-	if o == nil || o.SkipBlanks == nil {
-		return nil, false
-	}
-	return o.SkipBlanks, true
-}
-
-// HasSkipBlanks returns a boolean if a field has been set.
-func (o *POSTExports201ResponseDataAttributes) HasSkipBlanks() bool {
-	if o != nil && o.SkipBlanks != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSkipBlanks gets a reference to the given bool and assigns it to the SkipBlanks field.
-func (o *POSTExports201ResponseDataAttributes) SetSkipBlanks(v bool) {
-	o.SkipBlanks = &v
-}
-
-// GetSkipAmountFormats returns the SkipAmountFormats field value if set, zero value otherwise.
-func (o *POSTExports201ResponseDataAttributes) GetSkipAmountFormats() bool {
-	if o == nil || o.SkipAmountFormats == nil {
-		var ret bool
-		return ret
-	}
-	return *o.SkipAmountFormats
-}
-
-// GetSkipAmountFormatsOk returns a tuple with the SkipAmountFormats field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *POSTExports201ResponseDataAttributes) GetSkipAmountFormatsOk() (*bool, bool) {
-	if o == nil || o.SkipAmountFormats == nil {
-		return nil, false
-	}
-	return o.SkipAmountFormats, true
-}
-
-// HasSkipAmountFormats returns a boolean if a field has been set.
-func (o *POSTExports201ResponseDataAttributes) HasSkipAmountFormats() bool {
-	if o != nil && o.SkipAmountFormats != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetSkipAmountFormats gets a reference to the given bool and assigns it to the SkipAmountFormats field.
-func (o *POSTExports201ResponseDataAttributes) SetSkipAmountFormats(v bool) {
-	o.SkipAmountFormats = &v
+// SetDryData gets a reference to the given bool and assigns it to the DryData field.
+func (o *POSTExports201ResponseDataAttributes) SetDryData(v bool) {
+	o.DryData = &v
 }
 
 // GetReference returns the Reference field value if set, zero value otherwise.
@@ -451,20 +315,8 @@ func (o POSTExports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Filters != nil {
 		toSerialize["filters"] = o.Filters
 	}
-	if o.SkipIds != nil {
-		toSerialize["skip_ids"] = o.SkipIds
-	}
-	if o.SkipRelIds != nil {
-		toSerialize["skip_rel_ids"] = o.SkipRelIds
-	}
-	if o.SkipTimestamps != nil {
-		toSerialize["skip_timestamps"] = o.SkipTimestamps
-	}
-	if o.SkipBlanks != nil {
-		toSerialize["skip_blanks"] = o.SkipBlanks
-	}
-	if o.SkipAmountFormats != nil {
-		toSerialize["skip_amount_formats"] = o.SkipAmountFormats
+	if o.DryData != nil {
+		toSerialize["dry_data"] = o.DryData
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

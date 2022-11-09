@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **SkuCode** | Pointer to **string** | The code of the SKU of the associated shipment_line_item. | [optional] 
 **Quantity** | Pointer to **int32** | The parcel line item quantity. | [optional] 
+**Name** | Pointer to **string** | The internal name of the associated line item. | [optional] 
+**ImageUrl** | Pointer to **string** | The image_url of the associated line item. | [optional] 
 **Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
@@ -81,6 +83,56 @@ SetQuantity sets Quantity field to given value.
 `func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetName
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetName() string`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetNameOk() (*string, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) SetName(v string)`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### GetImageUrl
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetImageUrl() string`
+
+GetImageUrl returns the ImageUrl field if non-nil, zero value otherwise.
+
+### GetImageUrlOk
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) GetImageUrlOk() (*string, bool)`
+
+GetImageUrlOk returns a tuple with the ImageUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImageUrl
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) SetImageUrl(v string)`
+
+SetImageUrl sets ImageUrl field to given value.
+
+### HasImageUrl
+
+`func (o *GETParcelLineItems200ResponseDataInnerAttributes) HasImageUrl() bool`
+
+HasImageUrl returns a boolean if a field has been set.
 
 ### GetId
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -29,6 +29,8 @@ type GETMarkets200ResponseDataInnerAttributes struct {
 	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
 	// Indicates if market belongs to a customer_group.
 	Private *bool `json:"private,omitempty"`
+	// Time at which the market was disabled.
+	DisabledAt *string `json:"disabled_at,omitempty"`
 	// Unique identifier for the resource (hash).
 	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
@@ -252,6 +254,38 @@ func (o *GETMarkets200ResponseDataInnerAttributes) SetPrivate(v bool) {
 	o.Private = &v
 }
 
+// GetDisabledAt returns the DisabledAt field value if set, zero value otherwise.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetDisabledAt() string {
+	if o == nil || o.DisabledAt == nil {
+		var ret string
+		return ret
+	}
+	return *o.DisabledAt
+}
+
+// GetDisabledAtOk returns a tuple with the DisabledAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetDisabledAtOk() (*string, bool) {
+	if o == nil || o.DisabledAt == nil {
+		return nil, false
+	}
+	return o.DisabledAt, true
+}
+
+// HasDisabledAt returns a boolean if a field has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) HasDisabledAt() bool {
+	if o != nil && o.DisabledAt != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisabledAt gets a reference to the given string and assigns it to the DisabledAt field.
+func (o *GETMarkets200ResponseDataInnerAttributes) SetDisabledAt(v string) {
+	o.DisabledAt = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *GETMarkets200ResponseDataInnerAttributes) GetId() string {
 	if o == nil || o.Id == nil {
@@ -463,6 +497,9 @@ func (o GETMarkets200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error) 
 	}
 	if o.Private != nil {
 		toSerialize["private"] = o.Private
+	}
+	if o.DisabledAt != nil {
+		toSerialize["disabled_at"] = o.DisabledAt
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

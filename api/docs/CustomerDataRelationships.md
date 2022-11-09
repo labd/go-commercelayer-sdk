@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Orders** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**CustomerDataRelationshipsOrderSubscriptions**](CustomerDataRelationshipsOrderSubscriptions.md) |  | [optional] 
 **Returns** | Pointer to [**CustomerDataRelationshipsReturns**](CustomerDataRelationshipsReturns.md) |  | [optional] 
+**SkuLists** | Pointer to [**BundleDataRelationshipsSkuList**](BundleDataRelationshipsSkuList.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 **Events** | Pointer to [**CustomerAddressDataRelationshipsEvents**](CustomerAddressDataRelationshipsEvents.md) |  | [optional] 
 
@@ -207,6 +208,31 @@ SetReturns sets Returns field to given value.
 `func (o *CustomerDataRelationships) HasReturns() bool`
 
 HasReturns returns a boolean if a field has been set.
+
+### GetSkuLists
+
+`func (o *CustomerDataRelationships) GetSkuLists() BundleDataRelationshipsSkuList`
+
+GetSkuLists returns the SkuLists field if non-nil, zero value otherwise.
+
+### GetSkuListsOk
+
+`func (o *CustomerDataRelationships) GetSkuListsOk() (*BundleDataRelationshipsSkuList, bool)`
+
+GetSkuListsOk returns a tuple with the SkuLists field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSkuLists
+
+`func (o *CustomerDataRelationships) SetSkuLists(v BundleDataRelationshipsSkuList)`
+
+SetSkuLists sets SkuLists field to given value.
+
+### HasSkuLists
+
+`func (o *CustomerDataRelationships) HasSkuLists() bool`
+
+HasSkuLists returns a boolean if a field has been set.
 
 ### GetAttachments
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -29,6 +29,8 @@ type GETWebhooks200ResponseDataInnerAttributes struct {
 	CircuitState *string `json:"circuit_state,omitempty"`
 	// The number of consecutive failures recorded by the circuit breaker associated to this webhook, will be reset on first successful call to callback.
 	CircuitFailureCount *int32 `json:"circuit_failure_count,omitempty"`
+	// The shared secret used to sign the external request payload.
+	SharedSecret *string `json:"shared_secret,omitempty"`
 	// Unique identifier for the resource (hash).
 	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
@@ -252,6 +254,38 @@ func (o *GETWebhooks200ResponseDataInnerAttributes) SetCircuitFailureCount(v int
 	o.CircuitFailureCount = &v
 }
 
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise.
+func (o *GETWebhooks200ResponseDataInnerAttributes) GetSharedSecret() string {
+	if o == nil || o.SharedSecret == nil {
+		var ret string
+		return ret
+	}
+	return *o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETWebhooks200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool) {
+	if o == nil || o.SharedSecret == nil {
+		return nil, false
+	}
+	return o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETWebhooks200ResponseDataInnerAttributes) HasSharedSecret() bool {
+	if o != nil && o.SharedSecret != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given string and assigns it to the SharedSecret field.
+func (o *GETWebhooks200ResponseDataInnerAttributes) SetSharedSecret(v string) {
+	o.SharedSecret = &v
+}
+
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *GETWebhooks200ResponseDataInnerAttributes) GetId() string {
 	if o == nil || o.Id == nil {
@@ -463,6 +497,9 @@ func (o GETWebhooks200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error)
 	}
 	if o.CircuitFailureCount != nil {
 		toSerialize["circuit_failure_count"] = o.CircuitFailureCount
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id

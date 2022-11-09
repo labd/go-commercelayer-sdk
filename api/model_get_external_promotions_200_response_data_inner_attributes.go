@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -45,6 +45,8 @@ type GETExternalPromotions200ResponseDataInnerAttributes struct {
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
 	// The URL to the service that will compute the discount.
 	PromotionUrl *string `json:"promotion_url,omitempty"`
+	// The shared secret used to sign the external request payload.
+	SharedSecret *string `json:"shared_secret,omitempty"`
 }
 
 // NewGETExternalPromotions200ResponseDataInnerAttributes instantiates a new GETExternalPromotions200ResponseDataInnerAttributes object
@@ -512,6 +514,38 @@ func (o *GETExternalPromotions200ResponseDataInnerAttributes) SetPromotionUrl(v 
 	o.PromotionUrl = &v
 }
 
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise.
+func (o *GETExternalPromotions200ResponseDataInnerAttributes) GetSharedSecret() string {
+	if o == nil || o.SharedSecret == nil {
+		var ret string
+		return ret
+	}
+	return *o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETExternalPromotions200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool) {
+	if o == nil || o.SharedSecret == nil {
+		return nil, false
+	}
+	return o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETExternalPromotions200ResponseDataInnerAttributes) HasSharedSecret() bool {
+	if o != nil && o.SharedSecret != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given string and assigns it to the SharedSecret field.
+func (o *GETExternalPromotions200ResponseDataInnerAttributes) SetSharedSecret(v string) {
+	o.SharedSecret = &v
+}
+
 func (o GETExternalPromotions200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
@@ -555,6 +589,9 @@ func (o GETExternalPromotions200ResponseDataInnerAttributes) MarshalJSON() ([]by
 	}
 	if o.PromotionUrl != nil {
 		toSerialize["promotion_url"] = o.PromotionUrl
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	return json.Marshal(toSerialize)
 }

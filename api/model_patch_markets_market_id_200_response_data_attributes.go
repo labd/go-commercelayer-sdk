@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -25,6 +25,10 @@ type PATCHMarketsMarketId200ResponseDataAttributes struct {
 	CheckoutUrl *string `json:"checkout_url,omitempty"`
 	// The URL used to fetch prices from an external source
 	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
+	// Send this attribute if you want to mark the market as disabled.
+	Disable *bool `json:"_disable,omitempty"`
+	// Send this attribute if you want to mark the market as enabled.
+	Enable *bool `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
@@ -178,6 +182,70 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalPricesUrl(v s
 	o.ExternalPricesUrl = &v
 }
 
+// GetDisable returns the Disable field value if set, zero value otherwise.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() bool {
+	if o == nil || o.Disable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Disable
+}
+
+// GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*bool, bool) {
+	if o == nil || o.Disable == nil {
+		return nil, false
+	}
+	return o.Disable, true
+}
+
+// HasDisable returns a boolean if a field has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasDisable() bool {
+	if o != nil && o.Disable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetDisable gets a reference to the given bool and assigns it to the Disable field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetDisable(v bool) {
+	o.Disable = &v
+}
+
+// GetEnable returns the Enable field value if set, zero value otherwise.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnable() bool {
+	if o == nil || o.Enable == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Enable
+}
+
+// GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*bool, bool) {
+	if o == nil || o.Enable == nil {
+		return nil, false
+	}
+	return o.Enable, true
+}
+
+// HasEnable returns a boolean if a field has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasEnable() bool {
+	if o != nil && o.Enable != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEnable gets a reference to the given bool and assigns it to the Enable field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetEnable(v bool) {
+	o.Enable = &v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReference() string {
 	if o == nil || o.Reference == nil {
@@ -287,6 +355,12 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	}
 	if o.ExternalPricesUrl != nil {
 		toSerialize["external_prices_url"] = o.ExternalPricesUrl
+	}
+	if o.Disable != nil {
+		toSerialize["_disable"] = o.Disable
+	}
+	if o.Enable != nil {
+		toSerialize["_enable"] = o.Enable
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

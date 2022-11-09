@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **FacebookPixelId** | Pointer to **string** | The Facebook Pixed ID | [optional] 
 **CheckoutUrl** | Pointer to **string** | The checkout URL for this market | [optional] 
 **ExternalPricesUrl** | Pointer to **string** | The URL used to fetch prices from an external source | [optional] 
+**Disable** | Pointer to **bool** | Send this attribute if you want to mark the market as disabled. | [optional] 
+**Enable** | Pointer to **bool** | Send this attribute if you want to mark the market as enabled. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
@@ -130,6 +132,56 @@ SetExternalPricesUrl sets ExternalPricesUrl field to given value.
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalPricesUrl() bool`
 
 HasExternalPricesUrl returns a boolean if a field has been set.
+
+### GetDisable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() bool`
+
+GetDisable returns the Disable field if non-nil, zero value otherwise.
+
+### GetDisableOk
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*bool, bool)`
+
+GetDisableOk returns a tuple with the Disable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDisable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetDisable(v bool)`
+
+SetDisable sets Disable field to given value.
+
+### HasDisable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasDisable() bool`
+
+HasDisable returns a boolean if a field has been set.
+
+### GetEnable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnable() bool`
+
+GetEnable returns the Enable field if non-nil, zero value otherwise.
+
+### GetEnableOk
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*bool, bool)`
+
+GetEnableOk returns a tuple with the Enable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetEnable(v bool)`
+
+SetEnable sets Enable field to given value.
+
+### HasEnable
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasEnable() bool`
+
+HasEnable returns a boolean if a field has been set.
 
 ### GetReference
 

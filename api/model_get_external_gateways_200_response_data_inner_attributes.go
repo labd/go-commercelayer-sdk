@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.1
+API version: 3.0.2
 Contact: support@commercelayer.io
 */
 
@@ -31,7 +31,7 @@ type GETExternalGateways200ResponseDataInnerAttributes struct {
 	ReferenceOrigin *string `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
-	// The shared secret used to sign gateway payloads.
+	// The shared secret used to sign the external request payload.
 	SharedSecret *string `json:"shared_secret,omitempty"`
 	// The endpoint used by the external gateway to authorize payments.
 	AuthorizeUrl *string `json:"authorize_url,omitempty"`

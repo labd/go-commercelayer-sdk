@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
-**SharedSecret** | Pointer to **string** | The shared secret used to sign gateway payloads. | [optional] 
+**SharedSecret** | Pointer to **string** | The shared secret used to sign the external request payload. | [optional] 
 **AuthorizeUrl** | Pointer to **string** | The endpoint used by the external gateway to authorize payments. | [optional] 
 **CaptureUrl** | Pointer to **string** | The endpoint used by the external gateway to capture payments. | [optional] 
 **VoidUrl** | Pointer to **string** | The endpoint used by the external gateway to void payments. | [optional] 

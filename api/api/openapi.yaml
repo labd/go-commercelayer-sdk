@@ -6,7 +6,7 @@ info:
     url: https://commercelayer.io
   description: Headless Commerce for Global Brands.
   title: Commerce Layer API
-  version: 3.0.1
+  version: 3.0.2
 servers:
 - description: API
   url: "https://{{your-organization-slug}}.commercelayer.io/api"
@@ -3717,6 +3717,26 @@ paths:
       tags:
       - has_many
       - returns
+  /customers/{customerId}/sku_lists:
+    get:
+      description: Retrieve the sku lists associated to the customer
+      operationId: GET/customerId/sku_lists
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: customerId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The sku_lists associated to the customer
+      summary: Retrieve the sku lists associated to the customer
+      tags:
+      - has_many
+      - sku_lists
   /customers/{customerId}/attachments:
     get:
       description: Retrieve the attachments associated to the customer
@@ -22998,6 +23018,26 @@ components:
             $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_returns_data_inner'
           type: array
       type: object
+    GET_customers_200_response_data_inner_relationships_sku_lists_data_inner:
+      properties:
+        type:
+          description: The resource's type
+          enum:
+          - sku_lists
+          type: string
+        id:
+          description: The resource ID
+          type: string
+      type: object
+    GET_customers_200_response_data_inner_relationships_sku_lists:
+      properties:
+        links:
+          $ref: '#/components/schemas/GET_addresses_200_response_data_inner_relationships_geocoder_links'
+        data:
+          items:
+            $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_sku_lists_data_inner'
+          type: array
+      type: object
     GET_customers_200_response_data_inner_relationships:
       properties:
         customer_group:
@@ -23014,6 +23054,8 @@ components:
           $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_order_subscriptions'
         returns:
           $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_returns'
+        sku_lists:
+          $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_sku_lists'
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
@@ -23642,29 +23684,10 @@ components:
           example:
             code_eq: AAA
           type: object
-        skip_ids:
-          description: Send this attribute if you want to skip exporting of resources
-            IDs.
-          example: false
-          type: boolean
-        skip_rel_ids:
-          description: Send this attribute if you want to skip exporting of relationships
-            IDs.
-          example: false
-          type: boolean
-        skip_timestamps:
-          description: Send this attribute if you want to skip exporting of resources
-            created_at and updated_at.
-          example: false
-          type: boolean
-        skip_blanks:
-          description: Send this attribute if you want to skip exporting of blank
-            values (not suitable for csv format).
-          example: false
-          type: boolean
-        skip_amount_formats:
-          description: Send this attribute if you want to skip exporting of float
-            and fromatted amounts.
+        dry_data:
+          description: "Send this attribute if you want to skip exporting redundant\
+            \ attributes (IDs, timespamps, blanks, etc), useful when combining export\
+            \ and import to duplicate your dataset."
           example: false
           type: boolean
         started_at:
@@ -23771,29 +23794,10 @@ components:
           example:
             code_eq: AAA
           type: object
-        skip_ids:
-          description: Send this attribute if you want to skip exporting of resources
-            IDs.
-          example: false
-          type: boolean
-        skip_rel_ids:
-          description: Send this attribute if you want to skip exporting of relationships
-            IDs.
-          example: false
-          type: boolean
-        skip_timestamps:
-          description: Send this attribute if you want to skip exporting of resources
-            created_at and updated_at.
-          example: false
-          type: boolean
-        skip_blanks:
-          description: Send this attribute if you want to skip exporting of blank
-            values (not suitable for csv format).
-          example: false
-          type: boolean
-        skip_amount_formats:
-          description: Send this attribute if you want to skip exporting of float
-            and fromatted amounts.
+        dry_data:
+          description: "Send this attribute if you want to skip exporting redundant\
+            \ attributes (IDs, timespamps, blanks, etc), useful when combining export\
+            \ and import to duplicate your dataset."
           example: false
           type: boolean
         reference:
@@ -23882,7 +23886,7 @@ components:
             foo: bar
           type: object
         shared_secret:
-          description: The shared secret used to sign gateway payloads.
+          description: The shared secret used to sign the external request payload.
           example: xxxx-yyyy-zzzz
           type: string
         authorize_url:
@@ -24374,6 +24378,10 @@ components:
           description: The URL to the service that will compute the discount.
           example: https://external_promotion.yourbrand.com
           type: string
+        shared_secret:
+          description: The shared secret used to sign the external request payload.
+          example: xxxx-yyyy-zzzz
+          type: string
       type: object
     GET_external_promotions_200_response_data_inner_relationships_promotion_rules_data_inner:
       properties:
@@ -24677,6 +24685,10 @@ components:
         tax_calculator_url:
           description: The URL to the service that will compute the taxes.
           example: https://external_calculator.yourbrand.com
+          type: string
+        shared_secret:
+          description: The shared secret used to sign the external request payload.
+          example: xxxx-yyyy-zzzz
           type: string
       type: object
     GET_external_tax_calculators_200_response_data_inner:
@@ -29038,6 +29050,10 @@ components:
           description: Indicates if market belongs to a customer_group.
           example: true
           type: boolean
+        disabled_at:
+          description: Time at which the market was disabled.
+          example: 2018-01-01T12:00:00.000Z
+          type: string
         id:
           description: Unique identifier for the resource (hash).
           example: XAyRWNUzyN
@@ -29248,6 +29264,14 @@ components:
           description: The URL used to fetch prices from an external source
           example: https://external_prices.yourbrand.com
           type: string
+        _disable:
+          description: Send this attribute if you want to mark the market as disabled.
+          example: true
+          type: boolean
+        _enable:
+          description: Send this attribute if you want to mark the market as enabled.
+          example: true
+          type: boolean
         reference:
           description: "A string that you can use to add any external identifier to\
             \ the resource. This can be useful for integrating the resource to an\
@@ -31638,6 +31662,14 @@ components:
           description: The parcel line item quantity.
           example: 4
           type: integer
+        name:
+          description: The internal name of the associated line item.
+          example: Black Men T-shirt with White Logo (XL)
+          type: string
+        image_url:
+          description: The image_url of the associated line item.
+          example: https://img.yourdomain.com/skus/xYZkjABcde.png
+          type: string
         id:
           description: Unique identifier for the resource (hash).
           example: XAyRWNUzyN
@@ -39370,7 +39402,7 @@ components:
         callback_url:
           description: URI where the webhook subscription should send the POST request
             when the event occurs.
-          example: https://yourapp.com/webhooks
+          example: ""
           type: string
         include_resources:
           description: List of related resources that should be included in the webhook
@@ -39395,6 +39427,10 @@ components:
             \ call to callback."
           example: 5
           type: integer
+        shared_secret:
+          description: The shared secret used to sign the external request payload.
+          example: https://yourapp.com/webhooks
+          type: string
         id:
           description: Unique identifier for the resource (hash).
           example: XAyRWNUzyN
@@ -39470,7 +39506,7 @@ components:
         callback_url:
           description: URI where the webhook subscription should send the POST request
             when the event occurs.
-          example: https://yourapp.com/webhooks
+          example: ""
           type: string
         include_resources:
           description: List of related resources that should be included in the webhook
@@ -39546,7 +39582,7 @@ components:
         callback_url:
           description: URI where the webhook subscription should send the POST request
             when the event occurs.
-          example: https://yourapp.com/webhooks
+          example: ""
           type: string
         include_resources:
           description: List of related resources that should be included in the webhook
@@ -41746,6 +41782,8 @@ components:
           $ref: '#/components/schemas/customer_data_relationships_order_subscriptions'
         returns:
           $ref: '#/components/schemas/customer_data_relationships_returns'
+        sku_lists:
+          $ref: '#/components/schemas/bundle_data_relationships_sku_list'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
@@ -45155,6 +45193,7 @@ components:
           $ref: '#/components/schemas/price_data_relationships_price_tiers'
       required:
       - price_list
+      - sku
       type: object
     priceCreate_data:
       properties:

@@ -35,6 +35,7 @@ Method | HTTP request | Description
 [**GETCustomerIdOrderSubscriptions**](HasManyApi.md#GETCustomerIdOrderSubscriptions) | **Get** /customers/{customerId}/order_subscriptions | Retrieve the order subscriptions associated to the customer
 [**GETCustomerIdOrders**](HasManyApi.md#GETCustomerIdOrders) | **Get** /customers/{customerId}/orders | Retrieve the orders associated to the customer
 [**GETCustomerIdReturns**](HasManyApi.md#GETCustomerIdReturns) | **Get** /customers/{customerId}/returns | Retrieve the returns associated to the customer
+[**GETCustomerIdSkuLists**](HasManyApi.md#GETCustomerIdSkuLists) | **Get** /customers/{customerId}/sku_lists | Retrieve the sku lists associated to the customer
 [**GETCustomerPasswordResetIdEvents**](HasManyApi.md#GETCustomerPasswordResetIdEvents) | **Get** /customer_password_resets/{customerPasswordResetId}/events | Retrieve the events associated to the customer password reset
 [**GETCustomerSubscriptionIdEvents**](HasManyApi.md#GETCustomerSubscriptionIdEvents) | **Get** /customer_subscriptions/{customerSubscriptionId}/events | Retrieve the events associated to the customer subscription
 [**GETDeliveryLeadTimeIdAttachments**](HasManyApi.md#GETDeliveryLeadTimeIdAttachments) | **Get** /delivery_lead_times/{deliveryLeadTimeId}/attachments | Retrieve the attachments associated to the delivery lead time
@@ -2247,6 +2248,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCustomerIdReturnsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCustomerIdSkuLists
+
+> GETCustomerIdSkuLists(ctx, customerId).Execute()
+
+Retrieve the sku lists associated to the customer
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    customerId := "customerId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdSkuLists``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**customerId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCustomerIdSkuListsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
