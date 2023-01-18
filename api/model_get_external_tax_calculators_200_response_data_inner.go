@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type GETExternalTaxCalculators200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                  `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                   `json:"links,omitempty"`
-	Attributes    *GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes,omitempty"`
-	Relationships *GETAvalaraAccounts200ResponseDataInnerRelationships     `json:"relationships,omitempty"`
+	Type          *string                                                     `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                      `json:"links,omitempty"`
+	Attributes    *GETExternalTaxCalculators200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
+	Relationships *GETExternalTaxCalculators200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewGETExternalTaxCalculators200ResponseDataInner instantiates a new GETExternalTaxCalculators200ResponseDataInner object
@@ -172,9 +172,9 @@ func (o *GETExternalTaxCalculators200ResponseDataInner) SetAttributes(v GETExter
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETExternalTaxCalculators200ResponseDataInner) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships {
+func (o *GETExternalTaxCalculators200ResponseDataInner) GetRelationships() GETExternalTaxCalculators200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationships
+		var ret GETExternalTaxCalculators200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,7 +182,7 @@ func (o *GETExternalTaxCalculators200ResponseDataInner) GetRelationships() GETAv
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalTaxCalculators200ResponseDataInner) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool) {
+func (o *GETExternalTaxCalculators200ResponseDataInner) GetRelationshipsOk() (*GETExternalTaxCalculators200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *GETExternalTaxCalculators200ResponseDataInner) HasRelationships() bool 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *GETExternalTaxCalculators200ResponseDataInner) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given GETExternalTaxCalculators200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *GETExternalTaxCalculators200ResponseDataInner) SetRelationships(v GETExternalTaxCalculators200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

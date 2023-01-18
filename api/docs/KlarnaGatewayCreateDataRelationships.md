@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**KlarnaPayments** | Pointer to [**KlarnaGatewayDataRelationshipsKlarnaPayments**](KlarnaGatewayDataRelationshipsKlarnaPayments.md) |  | [optional] 
+**KlarnaPayments** | Pointer to [**KlarnaGatewayCreateDataRelationshipsKlarnaPayments**](KlarnaGatewayCreateDataRelationshipsKlarnaPayments.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetKlarnaPayments
 
-`func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPayments() KlarnaGatewayDataRelationshipsKlarnaPayments`
+`func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPayments() KlarnaGatewayCreateDataRelationshipsKlarnaPayments`
 
 GetKlarnaPayments returns the KlarnaPayments field if non-nil, zero value otherwise.
 
 ### GetKlarnaPaymentsOk
 
-`func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayDataRelationshipsKlarnaPayments, bool)`
+`func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayCreateDataRelationshipsKlarnaPayments, bool)`
 
 GetKlarnaPaymentsOk returns a tuple with the KlarnaPayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetKlarnaPayments
 
-`func (o *KlarnaGatewayCreateDataRelationships) SetKlarnaPayments(v KlarnaGatewayDataRelationshipsKlarnaPayments)`
+`func (o *KlarnaGatewayCreateDataRelationships) SetKlarnaPayments(v KlarnaGatewayCreateDataRelationshipsKlarnaPayments)`
 
 SetKlarnaPayments sets KlarnaPayments field to given value.
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **GiftCardRecipient** | Pointer to [**GiftCardDataRelationshipsGiftCardRecipient**](GiftCardDataRelationshipsGiftCardRecipient.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**CustomerAddressDataRelationshipsEvents**](CustomerAddressDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GiftCardDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents`
+`func (o *GiftCardDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GiftCardDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool)`
+`func (o *GiftCardDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GiftCardDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents)`
+`func (o *GiftCardDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

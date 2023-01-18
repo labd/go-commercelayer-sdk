@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEPackagesPackageId Delete a package
 
 Delete a package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return PackagesApiDELETEPackagesPackageIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return PackagesApiDELETEPackagesPackageIdRequest
 */
 func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest {
 	return PackagesApiDELETEPackagesPackageIdRequest{
@@ -129,8 +129,8 @@ GETPackages List all packages
 
 List all packages
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PackagesApiGETPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PackagesApiGETPackagesRequest
 */
 func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPackagesRequest {
 	return PackagesApiGETPackagesRequest{
@@ -140,7 +140,8 @@ func (a *PackagesApiService) GETPackages(ctx context.Context) PackagesApiGETPack
 }
 
 // Execute executes the request
-//  @return GETPackages200Response
+//
+//	@return GETPackages200Response
 func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest) (*GETPackages200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETPackagesPackageId Retrieve a package
 
 Retrieve a package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return PackagesApiGETPackagesPackageIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return PackagesApiGETPackagesPackageIdRequest
 */
 func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest {
 	return PackagesApiGETPackagesPackageIdRequest{
@@ -242,7 +243,8 @@ func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId
 }
 
 // Execute executes the request
-//  @return GETPackagesPackageId200Response
+//
+//	@return GETPackagesPackageId200Response
 func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackagesPackageIdRequest) (*GETPackagesPackageId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETParcelIdPackage Retrieve the package associated to the parcel
 
 Retrieve the package associated to the parcel
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelId The resource's id
- @return PackagesApiGETParcelIdPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelId The resource's id
+	@return PackagesApiGETParcelIdPackageRequest
 */
 func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest {
 	return PackagesApiGETParcelIdPackageRequest{
@@ -430,9 +432,9 @@ PATCHPackagesPackageId Update a package
 
 Update a package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return PackagesApiPATCHPackagesPackageIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return PackagesApiPATCHPackagesPackageIdRequest
 */
 func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest {
 	return PackagesApiPATCHPackagesPackageIdRequest{
@@ -443,7 +445,8 @@ func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, package
 }
 
 // Execute executes the request
-//  @return PATCHPackagesPackageId200Response
+//
+//	@return PATCHPackagesPackageId200Response
 func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPackagesPackageIdRequest) (*PATCHPackagesPackageId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTPackages Create a package
 
 Create a package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PackagesApiPOSTPackagesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PackagesApiPOSTPackagesRequest
 */
 func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPackagesRequest {
 	return PackagesApiPOSTPackagesRequest{
@@ -554,7 +557,8 @@ func (a *PackagesApiService) POSTPackages(ctx context.Context) PackagesApiPOSTPa
 }
 
 // Execute executes the request
-//  @return POSTPackages201Response
+//
+//	@return POSTPackages201Response
 func (a *PackagesApiService) POSTPackagesExecute(r PackagesApiPOSTPackagesRequest) (*POSTPackages201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods struct for GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods
 type GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                `json:"links,omitempty"`
-	Data  []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks          `json:"links,omitempty"`
+	Data  *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData `json:"data,omitempty"`
 }
 
 // NewGETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods instantiates a new GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods object
@@ -71,17 +71,17 @@ func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetLin
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetData() []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner {
+func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetData() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData {
 	if o == nil || o.Data == nil {
-		var ret []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner
+		var ret GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetDataOk() ([]GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner, bool) {
+func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetDataOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) HasDat
 	return false
 }
 
-// SetData gets a reference to the given []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner and assigns it to the Data field.
-func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetData(v []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData and assigns it to the Data field.
+func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetData(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData) {
+	o.Data = &v
 }
 
 func (o GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) MarshalJSON() ([]byte, error) {

@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner**](GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData**](GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetData() []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner`
+`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetData() GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetDataOk() (*[]GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner, bool)`
+`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetDataOk() (*GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) SetData(v []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner)`
+`func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) SetData(v GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData)`
 
 SetData sets Data field to given value.
 

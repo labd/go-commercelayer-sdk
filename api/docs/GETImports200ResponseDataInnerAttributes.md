@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **WarningsLog** | Pointer to **map[string]interface{}** | Contains the import warnings, if any. | [optional] 
 **CleanupRecords** | Pointer to **bool** | Indicates if the import should cleanup records that are not included in the inputs array. | [optional] 
 **AttachmentUrl** | Pointer to **string** | The URL the the raw inputs file, which will be generated at import start. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -445,31 +444,6 @@ SetAttachmentUrl sets AttachmentUrl field to given value.
 `func (o *GETImports200ResponseDataInnerAttributes) HasAttachmentUrl() bool`
 
 HasAttachmentUrl returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETImports200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETImports200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETImports200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETImports200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

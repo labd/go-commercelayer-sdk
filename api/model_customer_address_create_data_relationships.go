@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // CustomerAddressCreateDataRelationships struct for CustomerAddressCreateDataRelationships
 type CustomerAddressCreateDataRelationships struct {
-	Customer CouponRecipientDataRelationshipsCustomer `json:"customer"`
-	Address  BingGeocoderDataRelationshipsAddresses   `json:"address"`
+	Customer CouponRecipientCreateDataRelationshipsCustomer `json:"customer"`
+	Address  CustomerAddressCreateDataRelationshipsAddress  `json:"address"`
 }
 
 // NewCustomerAddressCreateDataRelationships instantiates a new CustomerAddressCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressCreateDataRelationships(customer CouponRecipientDataRelationshipsCustomer, address BingGeocoderDataRelationshipsAddresses) *CustomerAddressCreateDataRelationships {
+func NewCustomerAddressCreateDataRelationships(customer CouponRecipientCreateDataRelationshipsCustomer, address CustomerAddressCreateDataRelationshipsAddress) *CustomerAddressCreateDataRelationships {
 	this := CustomerAddressCreateDataRelationships{}
 	this.Customer = customer
 	this.Address = address
@@ -41,9 +41,9 @@ func NewCustomerAddressCreateDataRelationshipsWithDefaults() *CustomerAddressCre
 }
 
 // GetCustomer returns the Customer field value
-func (o *CustomerAddressCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *CustomerAddressCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *CustomerAddressCreateDataRelationships) GetCustomer() CouponRecipientDa
 
 // GetCustomerOk returns a tuple with the Customer field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *CustomerAddressCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *CustomerAddressCreateDataRelationships) GetCustomerOk() (*CouponRecipie
 }
 
 // SetCustomer sets field value
-func (o *CustomerAddressCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+func (o *CustomerAddressCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = v
 }
 
 // GetAddress returns the Address field value
-func (o *CustomerAddressCreateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
+func (o *CustomerAddressCreateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress {
 	if o == nil {
-		var ret BingGeocoderDataRelationshipsAddresses
+		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *CustomerAddressCreateDataRelationships) GetAddress() BingGeocoderDataRe
 
 // GetAddressOk returns a tuple with the Address field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressCreateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
+func (o *CustomerAddressCreateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *CustomerAddressCreateDataRelationships) GetAddressOk() (*BingGeocoderDa
 }
 
 // SetAddress sets field value
-func (o *CustomerAddressCreateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses) {
+func (o *CustomerAddressCreateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.Address = v
 }
 

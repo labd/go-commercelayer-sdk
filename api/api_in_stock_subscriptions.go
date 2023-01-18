@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEInStockSubscriptionsInStockSubscriptionId Delete an in stock subscription
 
 Delete an in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest
 */
 func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiDELETEInStockSubscriptionsInStockSubscriptionIdRequest{
@@ -129,8 +129,8 @@ GETInStockSubscriptions List all in stock subscriptions
 
 List all in stock subscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return InStockSubscriptionsApiGETInStockSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return InStockSubscriptionsApiGETInStockSubscriptionsRequest
 */
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiGETInStockSubscriptionsRequest {
 	return InStockSubscriptionsApiGETInStockSubscriptionsRequest{
@@ -140,7 +140,8 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptions(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETInStockSubscriptions200Response
+//
+//	@return GETInStockSubscriptions200Response
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStockSubscriptionsApiGETInStockSubscriptionsRequest) (*GETInStockSubscriptions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETInStockSubscriptionsInStockSubscriptionId Retrieve an in stock subscription
 
 Retrieve an in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest
 */
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest{
@@ -242,7 +243,8 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 }
 
 // Execute executes the request
-//  @return GETInStockSubscriptionsInStockSubscriptionId200Response
+//
+//	@return GETInStockSubscriptionsInStockSubscriptionId200Response
 func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiGETInStockSubscriptionsInStockSubscriptionIdRequest) (*GETInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHInStockSubscriptionsInStockSubscriptionId Update an in stock subscription
 
 Update an in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest
 */
 func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionId(ctx context.Context, inStockSubscriptionId string) InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest {
 	return InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest{
@@ -351,7 +353,8 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 }
 
 // Execute executes the request
-//  @return PATCHInStockSubscriptionsInStockSubscriptionId200Response
+//
+//	@return PATCHInStockSubscriptionsInStockSubscriptionId200Response
 func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscriptionIdExecute(r InStockSubscriptionsApiPATCHInStockSubscriptionsInStockSubscriptionIdRequest) (*PATCHInStockSubscriptionsInStockSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTInStockSubscriptions Create an in stock subscription
 
 Create an in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest
 */
 func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Context) InStockSubscriptionsApiPOSTInStockSubscriptionsRequest {
 	return InStockSubscriptionsApiPOSTInStockSubscriptionsRequest{
@@ -462,7 +465,8 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptions(ctx context.Co
 }
 
 // Execute executes the request
-//  @return POSTInStockSubscriptions201Response
+//
+//	@return POSTInStockSubscriptions201Response
 func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InStockSubscriptionsApiPOSTInStockSubscriptionsRequest) (*POSTInStockSubscriptions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

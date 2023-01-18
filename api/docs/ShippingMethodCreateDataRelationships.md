@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**ShippingZone** | Pointer to [**ShippingMethodDataRelationshipsShippingZone**](ShippingMethodDataRelationshipsShippingZone.md) |  | [optional] 
-**ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
-**StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
-**ShippingMethodTiers** | Pointer to [**ShippingMethodDataRelationshipsShippingMethodTiers**](ShippingMethodDataRelationshipsShippingMethodTiers.md) |  | [optional] 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**ShippingZone** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingZone**](ShippingMethodCreateDataRelationshipsShippingZone.md) |  | [optional] 
+**ShippingCategory** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingCategory**](ShippingMethodCreateDataRelationshipsShippingCategory.md) |  | [optional] 
+**StockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
+**ShippingMethodTiers** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingMethodTiers**](ShippingMethodCreateDataRelationshipsShippingMethodTiers.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *ShippingMethodCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *ShippingMethodCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *ShippingMethodCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *ShippingMethodCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -56,20 +56,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetShippingZone
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingZone() ShippingMethodDataRelationshipsShippingZone`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingZone() ShippingMethodCreateDataRelationshipsShippingZone`
 
 GetShippingZone returns the ShippingZone field if non-nil, zero value otherwise.
 
 ### GetShippingZoneOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingZoneOk() (*ShippingMethodDataRelationshipsShippingZone, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingZoneOk() (*ShippingMethodCreateDataRelationshipsShippingZone, bool)`
 
 GetShippingZoneOk returns a tuple with the ShippingZone field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingZone
 
-`func (o *ShippingMethodCreateDataRelationships) SetShippingZone(v ShippingMethodDataRelationshipsShippingZone)`
+`func (o *ShippingMethodCreateDataRelationships) SetShippingZone(v ShippingMethodCreateDataRelationshipsShippingZone)`
 
 SetShippingZone sets ShippingZone field to given value.
 
@@ -81,20 +81,20 @@ HasShippingZone returns a boolean if a field has been set.
 
 ### GetShippingCategory
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory`
 
 GetShippingCategory returns the ShippingCategory field if non-nil, zero value otherwise.
 
 ### GetShippingCategoryOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool)`
 
 GetShippingCategoryOk returns a tuple with the ShippingCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingCategory
 
-`func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory)`
+`func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory)`
 
 SetShippingCategory sets ShippingCategory field to given value.
 
@@ -106,20 +106,20 @@ HasShippingCategory returns a boolean if a field has been set.
 
 ### GetStockLocation
 
-`func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *ShippingMethodCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *ShippingMethodCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
@@ -131,20 +131,20 @@ HasStockLocation returns a boolean if a field has been set.
 
 ### GetShippingMethodTiers
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() ShippingMethodCreateDataRelationshipsShippingMethodTiers`
 
 GetShippingMethodTiers returns the ShippingMethodTiers field if non-nil, zero value otherwise.
 
 ### GetShippingMethodTiersOk
 
-`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool)`
+`func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodCreateDataRelationshipsShippingMethodTiers, bool)`
 
 GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingMethodTiers
 
-`func (o *ShippingMethodCreateDataRelationships) SetShippingMethodTiers(v ShippingMethodDataRelationshipsShippingMethodTiers)`
+`func (o *ShippingMethodCreateDataRelationships) SetShippingMethodTiers(v ShippingMethodCreateDataRelationshipsShippingMethodTiers)`
 
 SetShippingMethodTiers sets ShippingMethodTiers field to given value.
 

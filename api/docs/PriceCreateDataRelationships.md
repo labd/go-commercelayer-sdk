@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PriceList** | [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | 
-**Sku** | [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | 
-**PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
+**PriceList** | [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | 
+**Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
+**PriceTiers** | Pointer to [**PriceCreateDataRelationshipsPriceTiers**](PriceCreateDataRelationshipsPriceTiers.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceCreateDataRelationships
 
-`func NewPriceCreateDataRelationships(priceList MarketDataRelationshipsPriceList, sku BundleDataRelationshipsSkus, ) *PriceCreateDataRelationships`
+`func NewPriceCreateDataRelationships(priceList MarketCreateDataRelationshipsPriceList, sku InStockSubscriptionCreateDataRelationshipsSku, ) *PriceCreateDataRelationships`
 
 NewPriceCreateDataRelationships instantiates a new PriceCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -29,60 +29,60 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPriceList
 
-`func (o *PriceCreateDataRelationships) GetPriceList() MarketDataRelationshipsPriceList`
+`func (o *PriceCreateDataRelationships) GetPriceList() MarketCreateDataRelationshipsPriceList`
 
 GetPriceList returns the PriceList field if non-nil, zero value otherwise.
 
 ### GetPriceListOk
 
-`func (o *PriceCreateDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool)`
+`func (o *PriceCreateDataRelationships) GetPriceListOk() (*MarketCreateDataRelationshipsPriceList, bool)`
 
 GetPriceListOk returns a tuple with the PriceList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceList
 
-`func (o *PriceCreateDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList)`
+`func (o *PriceCreateDataRelationships) SetPriceList(v MarketCreateDataRelationshipsPriceList)`
 
 SetPriceList sets PriceList field to given value.
 
 
 ### GetSku
 
-`func (o *PriceCreateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *PriceCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *PriceCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *PriceCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *PriceCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *PriceCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 
 
 ### GetPriceTiers
 
-`func (o *PriceCreateDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers`
+`func (o *PriceCreateDataRelationships) GetPriceTiers() PriceCreateDataRelationshipsPriceTiers`
 
 GetPriceTiers returns the PriceTiers field if non-nil, zero value otherwise.
 
 ### GetPriceTiersOk
 
-`func (o *PriceCreateDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool)`
+`func (o *PriceCreateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelationshipsPriceTiers, bool)`
 
 GetPriceTiersOk returns a tuple with the PriceTiers field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceTiers
 
-`func (o *PriceCreateDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers)`
+`func (o *PriceCreateDataRelationships) SetPriceTiers(v PriceCreateDataRelationshipsPriceTiers)`
 
 SetPriceTiers sets PriceTiers field to given value.
 

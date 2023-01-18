@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // LineItemOptionDataRelationshipsSkuOption struct for LineItemOptionDataRelationshipsSkuOption
 type LineItemOptionDataRelationshipsSkuOption struct {
-	Data LineItemOptionDataRelationshipsSkuOptionData `json:"data"`
+	Data *LineItemOptionDataRelationshipsSkuOptionData `json:"data,omitempty"`
 }
 
 // NewLineItemOptionDataRelationshipsSkuOption instantiates a new LineItemOptionDataRelationshipsSkuOption object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionDataRelationshipsSkuOption(data LineItemOptionDataRelationshipsSkuOptionData) *LineItemOptionDataRelationshipsSkuOption {
+func NewLineItemOptionDataRelationshipsSkuOption() *LineItemOptionDataRelationshipsSkuOption {
 	this := LineItemOptionDataRelationshipsSkuOption{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewLineItemOptionDataRelationshipsSkuOptionWithDefaults() *LineItemOptionDa
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *LineItemOptionDataRelationshipsSkuOption) GetData() LineItemOptionDataRelationshipsSkuOptionData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret LineItemOptionDataRelationshipsSkuOptionData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemOptionDataRelationshipsSkuOption) GetDataOk() (*LineItemOptionDataRelationshipsSkuOptionData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *LineItemOptionDataRelationshipsSkuOption) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given LineItemOptionDataRelationshipsSkuOptionData and assigns it to the Data field.
 func (o *LineItemOptionDataRelationshipsSkuOption) SetData(v LineItemOptionDataRelationshipsSkuOptionData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o LineItemOptionDataRelationshipsSkuOption) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

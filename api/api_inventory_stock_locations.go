@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEInventoryStockLocationsInventoryStockLocationId Delete an inventory stock 
 
 Delete an inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return InventoryStockLocationsApiDELETEInventoryStockLocationsInventoryStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return InventoryStockLocationsApiDELETEInventoryStockLocationsInventoryStockLocationIdRequest
 */
 func (a *InventoryStockLocationsApiService) DELETEInventoryStockLocationsInventoryStockLocationId(ctx context.Context, inventoryStockLocationId string) InventoryStockLocationsApiDELETEInventoryStockLocationsInventoryStockLocationIdRequest {
 	return InventoryStockLocationsApiDELETEInventoryStockLocationsInventoryStockLocationIdRequest{
@@ -130,9 +130,9 @@ GETInventoryModelIdInventoryStockLocations Retrieve the inventory stock location
 
 Retrieve the inventory stock locations associated to the inventory model
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryModelId The resource's id
- @return InventoryStockLocationsApiGETInventoryModelIdInventoryStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryModelId The resource's id
+	@return InventoryStockLocationsApiGETInventoryModelIdInventoryStockLocationsRequest
 */
 func (a *InventoryStockLocationsApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) InventoryStockLocationsApiGETInventoryModelIdInventoryStockLocationsRequest {
 	return InventoryStockLocationsApiGETInventoryModelIdInventoryStockLocationsRequest{
@@ -221,8 +221,8 @@ GETInventoryStockLocations List all inventory stock locations
 
 List all inventory stock locations
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return InventoryStockLocationsApiGETInventoryStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return InventoryStockLocationsApiGETInventoryStockLocationsRequest
 */
 func (a *InventoryStockLocationsApiService) GETInventoryStockLocations(ctx context.Context) InventoryStockLocationsApiGETInventoryStockLocationsRequest {
 	return InventoryStockLocationsApiGETInventoryStockLocationsRequest{
@@ -232,7 +232,8 @@ func (a *InventoryStockLocationsApiService) GETInventoryStockLocations(ctx conte
 }
 
 // Execute executes the request
-//  @return GETInventoryStockLocations200Response
+//
+//	@return GETInventoryStockLocations200Response
 func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsExecute(r InventoryStockLocationsApiGETInventoryStockLocationsRequest) (*GETInventoryStockLocations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETInventoryStockLocationsInventoryStockLocationId Retrieve an inventory stock l
 
 Retrieve an inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return InventoryStockLocationsApiGETInventoryStockLocationsInventoryStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return InventoryStockLocationsApiGETInventoryStockLocationsInventoryStockLocationIdRequest
 */
 func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsInventoryStockLocationId(ctx context.Context, inventoryStockLocationId string) InventoryStockLocationsApiGETInventoryStockLocationsInventoryStockLocationIdRequest {
 	return InventoryStockLocationsApiGETInventoryStockLocationsInventoryStockLocationIdRequest{
@@ -334,7 +335,8 @@ func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsInventoryS
 }
 
 // Execute executes the request
-//  @return GETInventoryStockLocationsInventoryStockLocationId200Response
+//
+//	@return GETInventoryStockLocationsInventoryStockLocationId200Response
 func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsInventoryStockLocationIdExecute(r InventoryStockLocationsApiGETInventoryStockLocationsInventoryStockLocationIdRequest) (*GETInventoryStockLocationsInventoryStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -424,9 +426,9 @@ GETStockLocationIdInventoryStockLocations Retrieve the inventory stock locations
 
 Retrieve the inventory stock locations associated to the stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return InventoryStockLocationsApiGETStockLocationIdInventoryStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return InventoryStockLocationsApiGETStockLocationIdInventoryStockLocationsRequest
 */
 func (a *InventoryStockLocationsApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) InventoryStockLocationsApiGETStockLocationIdInventoryStockLocationsRequest {
 	return InventoryStockLocationsApiGETStockLocationIdInventoryStockLocationsRequest{
@@ -522,9 +524,9 @@ PATCHInventoryStockLocationsInventoryStockLocationId Update an inventory stock l
 
 Update an inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest
 */
 func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventoryStockLocationId(ctx context.Context, inventoryStockLocationId string) InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest {
 	return InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest{
@@ -535,7 +537,8 @@ func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventor
 }
 
 // Execute executes the request
-//  @return PATCHInventoryStockLocationsInventoryStockLocationId200Response
+//
+//	@return PATCHInventoryStockLocationsInventoryStockLocationId200Response
 func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventoryStockLocationIdExecute(r InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest) (*PATCHInventoryStockLocationsInventoryStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -635,8 +638,8 @@ POSTInventoryStockLocations Create an inventory stock location
 
 Create an inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return InventoryStockLocationsApiPOSTInventoryStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return InventoryStockLocationsApiPOSTInventoryStockLocationsRequest
 */
 func (a *InventoryStockLocationsApiService) POSTInventoryStockLocations(ctx context.Context) InventoryStockLocationsApiPOSTInventoryStockLocationsRequest {
 	return InventoryStockLocationsApiPOSTInventoryStockLocationsRequest{
@@ -646,7 +649,8 @@ func (a *InventoryStockLocationsApiService) POSTInventoryStockLocations(ctx cont
 }
 
 // Execute executes the request
-//  @return POSTInventoryStockLocations201Response
+//
+//	@return POSTInventoryStockLocations201Response
 func (a *InventoryStockLocationsApiService) POSTInventoryStockLocationsExecute(r InventoryStockLocationsApiPOSTInventoryStockLocationsRequest) (*POSTInventoryStockLocations201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

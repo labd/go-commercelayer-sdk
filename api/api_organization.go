@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -36,8 +36,8 @@ GETOrganizationOrganizationId Retrieve the organization
 
 Retrieve the organization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrganizationApiGETOrganizationOrganizationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrganizationApiGETOrganizationOrganizationIdRequest
 */
 func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Context) OrganizationApiGETOrganizationOrganizationIdRequest {
 	return OrganizationApiGETOrganizationOrganizationIdRequest{
@@ -47,7 +47,8 @@ func (a *OrganizationApiService) GETOrganizationOrganizationId(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETOrganizationOrganizationId200Response
+//
+//	@return GETOrganizationOrganizationId200Response
 func (a *OrganizationApiService) GETOrganizationOrganizationIdExecute(r OrganizationApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

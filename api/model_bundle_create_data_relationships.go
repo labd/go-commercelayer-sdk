@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // BundleCreateDataRelationships struct for BundleCreateDataRelationships
 type BundleCreateDataRelationships struct {
-	Market  *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	SkuList BundleDataRelationshipsSkuList          `json:"sku_list"`
+	Market  *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	SkuList BundleCreateDataRelationshipsSkuList                    `json:"sku_list"`
 }
 
 // NewBundleCreateDataRelationships instantiates a new BundleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleCreateDataRelationships(skuList BundleDataRelationshipsSkuList) *BundleCreateDataRelationships {
+func NewBundleCreateDataRelationships(skuList BundleCreateDataRelationshipsSkuList) *BundleCreateDataRelationships {
 	this := BundleCreateDataRelationships{}
 	this.SkuList = skuList
 	return &this
@@ -40,9 +40,9 @@ func NewBundleCreateDataRelationshipsWithDefaults() *BundleCreateDataRelationshi
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *BundleCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *BundleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -50,7 +50,7 @@ func (o *BundleCreateDataRelationships) GetMarket() AvalaraAccountDataRelationsh
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *BundleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *BundleCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *BundleCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *BundleCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetSkuList returns the SkuList field value
-func (o *BundleCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
+func (o *BundleCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList {
 	if o == nil {
-		var ret BundleDataRelationshipsSkuList
+		var ret BundleCreateDataRelationshipsSkuList
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *BundleCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuL
 
 // GetSkuListOk returns a tuple with the SkuList field value
 // and a boolean to check if the value has been set.
-func (o *BundleCreateDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
+func (o *BundleCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *BundleCreateDataRelationships) GetSkuListOk() (*BundleDataRelationships
 }
 
 // SetSkuList sets field value
-func (o *BundleCreateDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList) {
+func (o *BundleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList) {
 	o.SkuList = v
 }
 

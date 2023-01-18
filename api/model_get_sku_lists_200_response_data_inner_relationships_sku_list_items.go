@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETSkuLists200ResponseDataInnerRelationshipsSkuListItems struct for GETSkuLists200ResponseDataInnerRelationshipsSkuListItems
 type GETSkuLists200ResponseDataInnerRelationshipsSkuListItems struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks         `json:"links,omitempty"`
-	Data  []GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks   `json:"links,omitempty"`
+	Data  *GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData `json:"data,omitempty"`
 }
 
 // NewGETSkuLists200ResponseDataInnerRelationshipsSkuListItems instantiates a new GETSkuLists200ResponseDataInnerRelationshipsSkuListItems object
@@ -71,17 +71,17 @@ func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) SetLinks(v GE
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) GetData() []GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner {
+func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) GetData() GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData {
 	if o == nil || o.Data == nil {
-		var ret []GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner
+		var ret GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) GetDataOk() ([]GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner, bool) {
+func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) GetDataOk() (*GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) HasData() boo
 	return false
 }
 
-// SetData gets a reference to the given []GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner and assigns it to the Data field.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) SetData(v []GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData and assigns it to the Data field.
+func (o *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) SetData(v GETSkuLists200ResponseDataInnerRelationshipsSkuListItemsData) {
+	o.Data = &v
 }
 
 func (o GETSkuLists200ResponseDataInnerRelationshipsSkuListItems) MarshalJSON() ([]byte, error) {

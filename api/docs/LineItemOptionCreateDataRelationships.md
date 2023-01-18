@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**LineItem** | [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | 
-**SkuOption** | [**LineItemOptionDataRelationshipsSkuOption**](LineItemOptionDataRelationshipsSkuOption.md) |  | 
+**LineItem** | [**LineItemOptionCreateDataRelationshipsLineItem**](LineItemOptionCreateDataRelationshipsLineItem.md) |  | 
+**SkuOption** | [**LineItemOptionCreateDataRelationshipsSkuOption**](LineItemOptionCreateDataRelationshipsSkuOption.md) |  | 
 
 ## Methods
 
 ### NewLineItemOptionCreateDataRelationships
 
-`func NewLineItemOptionCreateDataRelationships(lineItem LineItemOptionDataRelationshipsLineItem, skuOption LineItemOptionDataRelationshipsSkuOption, ) *LineItemOptionCreateDataRelationships`
+`func NewLineItemOptionCreateDataRelationships(lineItem LineItemOptionCreateDataRelationshipsLineItem, skuOption LineItemOptionCreateDataRelationshipsSkuOption, ) *LineItemOptionCreateDataRelationships`
 
 NewLineItemOptionCreateDataRelationships instantiates a new LineItemOptionCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetLineItem
 
-`func (o *LineItemOptionCreateDataRelationships) GetLineItem() LineItemOptionDataRelationshipsLineItem`
+`func (o *LineItemOptionCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem`
 
 GetLineItem returns the LineItem field if non-nil, zero value otherwise.
 
 ### GetLineItemOk
 
-`func (o *LineItemOptionCreateDataRelationships) GetLineItemOk() (*LineItemOptionDataRelationshipsLineItem, bool)`
+`func (o *LineItemOptionCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool)`
 
 GetLineItemOk returns a tuple with the LineItem field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLineItem
 
-`func (o *LineItemOptionCreateDataRelationships) SetLineItem(v LineItemOptionDataRelationshipsLineItem)`
+`func (o *LineItemOptionCreateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem)`
 
 SetLineItem sets LineItem field to given value.
 
 
 ### GetSkuOption
 
-`func (o *LineItemOptionCreateDataRelationships) GetSkuOption() LineItemOptionDataRelationshipsSkuOption`
+`func (o *LineItemOptionCreateDataRelationships) GetSkuOption() LineItemOptionCreateDataRelationshipsSkuOption`
 
 GetSkuOption returns the SkuOption field if non-nil, zero value otherwise.
 
 ### GetSkuOptionOk
 
-`func (o *LineItemOptionCreateDataRelationships) GetSkuOptionOk() (*LineItemOptionDataRelationshipsSkuOption, bool)`
+`func (o *LineItemOptionCreateDataRelationships) GetSkuOptionOk() (*LineItemOptionCreateDataRelationshipsSkuOption, bool)`
 
 GetSkuOptionOk returns a tuple with the SkuOption field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuOption
 
-`func (o *LineItemOptionCreateDataRelationships) SetSkuOption(v LineItemOptionDataRelationshipsSkuOption)`
+`func (o *LineItemOptionCreateDataRelationships) SetSkuOption(v LineItemOptionCreateDataRelationshipsSkuOption)`
 
 SetSkuOption sets SkuOption field to given value.
 

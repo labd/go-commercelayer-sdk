@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETEventCallbacks List all event callbacks
 
 List all event callbacks
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return EventCallbacksApiGETEventCallbacksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return EventCallbacksApiGETEventCallbacksRequest
 */
 func (a *EventCallbacksApiService) GETEventCallbacks(ctx context.Context) EventCallbacksApiGETEventCallbacksRequest {
 	return EventCallbacksApiGETEventCallbacksRequest{
@@ -48,7 +48,8 @@ func (a *EventCallbacksApiService) GETEventCallbacks(ctx context.Context) EventC
 }
 
 // Execute executes the request
-//  @return GETEventCallbacks200Response
+//
+//	@return GETEventCallbacks200Response
 func (a *EventCallbacksApiService) GETEventCallbacksExecute(r EventCallbacksApiGETEventCallbacksRequest) (*GETEventCallbacks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETEventCallbacksEventCallbackId Retrieve an event callback
 
 Retrieve an event callback
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventCallbackId The resource's id
- @return EventCallbacksApiGETEventCallbacksEventCallbackIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventCallbackId The resource's id
+	@return EventCallbacksApiGETEventCallbacksEventCallbackIdRequest
 */
 func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackId(ctx context.Context, eventCallbackId string) EventCallbacksApiGETEventCallbacksEventCallbackIdRequest {
 	return EventCallbacksApiGETEventCallbacksEventCallbackIdRequest{
@@ -150,7 +151,8 @@ func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETEventCallbacksEventCallbackId200Response
+//
+//	@return GETEventCallbacksEventCallbackId200Response
 func (a *EventCallbacksApiService) GETEventCallbacksEventCallbackIdExecute(r EventCallbacksApiGETEventCallbacksEventCallbackIdRequest) (*GETEventCallbacksEventCallbackId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -240,9 +242,9 @@ GETEventIdLastEventCallbacks Retrieve the last event callbacks associated to the
 
 Retrieve the last event callbacks associated to the event
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventId The resource's id
- @return EventCallbacksApiGETEventIdLastEventCallbacksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventId The resource's id
+	@return EventCallbacksApiGETEventIdLastEventCallbacksRequest
 */
 func (a *EventCallbacksApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId string) EventCallbacksApiGETEventIdLastEventCallbacksRequest {
 	return EventCallbacksApiGETEventIdLastEventCallbacksRequest{
@@ -332,9 +334,9 @@ GETWebhookIdLastEventCallbacks Retrieve the last event callbacks associated to t
 
 Retrieve the last event callbacks associated to the webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookId The resource's id
- @return EventCallbacksApiGETWebhookIdLastEventCallbacksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookId The resource's id
+	@return EventCallbacksApiGETWebhookIdLastEventCallbacksRequest
 */
 func (a *EventCallbacksApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) EventCallbacksApiGETWebhookIdLastEventCallbacksRequest {
 	return EventCallbacksApiGETWebhookIdLastEventCallbacksRequest{

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // ShippingZone struct for ShippingZone
 type ShippingZone struct {
-	Data ShippingZoneData `json:"data"`
+	Data *ShippingZoneData `json:"data,omitempty"`
 }
 
 // NewShippingZone instantiates a new ShippingZone object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZone(data ShippingZoneData) *ShippingZone {
+func NewShippingZone() *ShippingZone {
 	this := ShippingZone{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewShippingZoneWithDefaults() *ShippingZone {
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *ShippingZone) GetData() ShippingZoneData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret ShippingZoneData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingZone) GetDataOk() (*ShippingZoneData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *ShippingZone) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given ShippingZoneData and assigns it to the Data field.
 func (o *ShippingZone) SetData(v ShippingZoneData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o ShippingZone) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

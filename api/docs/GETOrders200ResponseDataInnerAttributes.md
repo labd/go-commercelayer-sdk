@@ -102,7 +102,6 @@ Name | Type | Description | Notes
 **RefreshedAt** | Pointer to **string** | Last time at which an order was manually refreshed. | [optional] 
 **ArchivedAt** | Pointer to **string** | Time at which the resource has been archived. | [optional] 
 **ExpiresAt** | Pointer to **string** | Time at which an order is marked for cleanup. Any order will start with a default expire time of 2 months. Expiration is reset once a line item is added to the order. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -2577,31 +2576,6 @@ SetExpiresAt sets ExpiresAt field to given value.
 `func (o *GETOrders200ResponseDataInnerAttributes) HasExpiresAt() bool`
 
 HasExpiresAt returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETOrders200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETOrders200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETOrders200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETOrders200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

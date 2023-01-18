@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEManualTaxCalculatorsManualTaxCalculatorId Delete a manual tax calculator
 
 Delete a manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
 func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest{
@@ -129,8 +129,8 @@ GETManualTaxCalculators List all manual tax calculators
 
 List all manual tax calculators
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest
 */
 func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculators(ctx context.Context) ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest {
 	return ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest{
@@ -140,7 +140,8 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculators(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETManualTaxCalculators200Response
+//
+//	@return GETManualTaxCalculators200Response
 func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsRequest) (*GETManualTaxCalculators200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETManualTaxCalculatorsManualTaxCalculatorId Retrieve a manual tax calculator
 
 Retrieve a manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
 func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest{
@@ -242,7 +243,8 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 }
 
 // Execute executes the request
-//  @return GETManualTaxCalculatorsManualTaxCalculatorId200Response
+//
+//	@return GETManualTaxCalculatorsManualTaxCalculatorId200Response
 func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETTaxRuleIdManualTaxCalculator Retrieve the manual tax calculator associated to
 
 Retrieve the manual tax calculator associated to the tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxRuleId The resource's id
- @return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest
 */
 func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest {
 	return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest{
@@ -430,9 +432,9 @@ PATCHManualTaxCalculatorsManualTaxCalculatorId Update a manual tax calculator
 
 Update a manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
 func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest{
@@ -443,7 +445,8 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 }
 
 // Execute executes the request
-//  @return PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
+//
+//	@return PATCHManualTaxCalculatorsManualTaxCalculatorId200Response
 func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorIdExecute(r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) (*PATCHManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTManualTaxCalculators Create a manual tax calculator
 
 Create a manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest
 */
 func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculators(ctx context.Context) ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest {
 	return ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest{
@@ -554,7 +557,8 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculators(ctx context.Co
 }
 
 // Execute executes the request
-//  @return POSTManualTaxCalculators201Response
+//
+//	@return POSTManualTaxCalculators201Response
 func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r ManualTaxCalculatorsApiPOSTManualTaxCalculatorsRequest) (*POSTManualTaxCalculators201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

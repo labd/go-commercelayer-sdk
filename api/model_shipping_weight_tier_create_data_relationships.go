@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // ShippingWeightTierCreateDataRelationships struct for ShippingWeightTierCreateDataRelationships
 type ShippingWeightTierCreateDataRelationships struct {
-	ShippingMethod DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method"`
+	ShippingMethod DeliveryLeadTimeCreateDataRelationshipsShippingMethod `json:"shipping_method"`
 }
 
 // NewShippingWeightTierCreateDataRelationships instantiates a new ShippingWeightTierCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierCreateDataRelationships(shippingMethod DeliveryLeadTimeDataRelationshipsShippingMethod) *ShippingWeightTierCreateDataRelationships {
+func NewShippingWeightTierCreateDataRelationships(shippingMethod DeliveryLeadTimeCreateDataRelationshipsShippingMethod) *ShippingWeightTierCreateDataRelationships {
 	this := ShippingWeightTierCreateDataRelationships{}
 	this.ShippingMethod = shippingMethod
 	return &this
@@ -39,9 +39,9 @@ func NewShippingWeightTierCreateDataRelationshipsWithDefaults() *ShippingWeightT
 }
 
 // GetShippingMethod returns the ShippingMethod field value
-func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeDataRelationshipsShippingMethod {
+func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod {
 	if o == nil {
-		var ret DeliveryLeadTimeDataRelationshipsShippingMethod
+		var ret DeliveryLeadTimeCreateDataRelationshipsShippingMethod
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethod() Delivery
 
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeDataRelationshipsShippingMethod, bool) {
+func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethodOk() (*Deli
 }
 
 // SetShippingMethod sets field value
-func (o *ShippingWeightTierCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeDataRelationshipsShippingMethod) {
+func (o *ShippingWeightTierCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCreateDataRelationshipsShippingMethod) {
 	o.ShippingMethod = v
 }
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxCategories** | Pointer to [**AvalaraAccountDataRelationshipsTaxCategories**](AvalaraAccountDataRelationshipsTaxCategories.md) |  | [optional] 
+**TaxCategories** | Pointer to [**AvalaraAccountCreateDataRelationshipsTaxCategories**](AvalaraAccountCreateDataRelationshipsTaxCategories.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetTaxCategories
 
-`func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories`
+`func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccountCreateDataRelationshipsTaxCategories`
 
 GetTaxCategories returns the TaxCategories field if non-nil, zero value otherwise.
 
 ### GetTaxCategoriesOk
 
-`func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool)`
+`func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountCreateDataRelationshipsTaxCategories, bool)`
 
 GetTaxCategoriesOk returns a tuple with the TaxCategories field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCategories
 
-`func (o *AvalaraAccountCreateDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories)`
+`func (o *AvalaraAccountCreateDataRelationships) SetTaxCategories(v AvalaraAccountCreateDataRelationshipsTaxCategories)`
 
 SetTaxCategories sets TaxCategories field to given value.
 

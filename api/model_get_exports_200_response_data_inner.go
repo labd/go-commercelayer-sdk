@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type GETExports200ResponseDataInner struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks       `json:"links,omitempty"`
-	Attributes    *GETExports200ResponseDataInnerAttributes    `json:"attributes,omitempty"`
-	Relationships *GETExports200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                       `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
+	Attributes    *GETExports200ResponseDataInnerAttributes     `json:"attributes,omitempty"`
+	Relationships *GETCleanups200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewGETExports200ResponseDataInner instantiates a new GETExports200ResponseDataInner object
@@ -172,9 +172,9 @@ func (o *GETExports200ResponseDataInner) SetAttributes(v GETExports200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *GETExports200ResponseDataInner) GetRelationships() GETExports200ResponseDataInnerRelationships {
+func (o *GETExports200ResponseDataInner) GetRelationships() GETCleanups200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETExports200ResponseDataInnerRelationships
+		var ret GETCleanups200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,7 +182,7 @@ func (o *GETExports200ResponseDataInner) GetRelationships() GETExports200Respons
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExports200ResponseDataInner) GetRelationshipsOk() (*GETExports200ResponseDataInnerRelationships, bool) {
+func (o *GETExports200ResponseDataInner) GetRelationshipsOk() (*GETCleanups200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *GETExports200ResponseDataInner) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETExports200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *GETExports200ResponseDataInner) SetRelationships(v GETExports200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given GETCleanups200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *GETExports200ResponseDataInner) SetRelationships(v GETCleanups200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -18,7 +18,7 @@ import (
 // GETCustomerPasswordResets200ResponseDataInnerRelationships struct for GETCustomerPasswordResets200ResponseDataInnerRelationships
 type GETCustomerPasswordResets200ResponseDataInnerRelationships struct {
 	Customer *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer `json:"customer,omitempty"`
-	Events   *GETCustomerAddresses200ResponseDataInnerRelationshipsEvents  `json:"events,omitempty"`
+	Events   *GETCleanups200ResponseDataInnerRelationshipsEvents           `json:"events,omitempty"`
 }
 
 // NewGETCustomerPasswordResets200ResponseDataInnerRelationships instantiates a new GETCustomerPasswordResets200ResponseDataInnerRelationships object
@@ -71,9 +71,9 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetCustomer
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents() GETCustomerAddresses200ResponseDataInnerRelationshipsEvents {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETCustomerAddresses200ResponseDataInnerRelationshipsEvents
+		var ret GETCleanups200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -81,7 +81,7 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEvents()
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEventsOk() (*GETCustomerAddresses200ResponseDataInnerRelationshipsEvents, bool) {
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) HasEvents()
 	return false
 }
 
-// SetEvents gets a reference to the given GETCustomerAddresses200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
-func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetEvents(v GETCustomerAddresses200ResponseDataInnerRelationshipsEvents) {
+// SetEvents gets a reference to the given GETCleanups200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETCustomerPasswordResets200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 

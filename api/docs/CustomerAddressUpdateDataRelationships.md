@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
-**Address** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
+**Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
+**Address** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCustomer
 
-`func (o *CustomerAddressUpdateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer`
+`func (o *CustomerAddressUpdateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *CustomerAddressUpdateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool)`
+`func (o *CustomerAddressUpdateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *CustomerAddressUpdateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer)`
+`func (o *CustomerAddressUpdateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 
@@ -53,20 +53,20 @@ HasCustomer returns a boolean if a field has been set.
 
 ### GetAddress
 
-`func (o *CustomerAddressUpdateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses`
+`func (o *CustomerAddressUpdateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *CustomerAddressUpdateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool)`
+`func (o *CustomerAddressUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *CustomerAddressUpdateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses)`
+`func (o *CustomerAddressUpdateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress)`
 
 SetAddress sets Address field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,10 +17,9 @@ import (
 
 // GETManualTaxCalculators200ResponseDataInnerRelationships struct for GETManualTaxCalculators200ResponseDataInnerRelationships
 type GETManualTaxCalculators200ResponseDataInnerRelationships struct {
-	TaxCategories *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories `json:"tax_categories,omitempty"`
-	Markets       *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets       `json:"markets,omitempty"`
-	Attachments   *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments   `json:"attachments,omitempty"`
-	TaxRules      *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules `json:"tax_rules,omitempty"`
+	Markets     *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets       `json:"markets,omitempty"`
+	Attachments *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments   `json:"attachments,omitempty"`
+	TaxRules    *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules `json:"tax_rules,omitempty"`
 }
 
 // NewGETManualTaxCalculators200ResponseDataInnerRelationships instantiates a new GETManualTaxCalculators200ResponseDataInnerRelationships object
@@ -38,38 +37,6 @@ func NewGETManualTaxCalculators200ResponseDataInnerRelationships() *GETManualTax
 func NewGETManualTaxCalculators200ResponseDataInnerRelationshipsWithDefaults() *GETManualTaxCalculators200ResponseDataInnerRelationships {
 	this := GETManualTaxCalculators200ResponseDataInnerRelationships{}
 	return &this
-}
-
-// GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) GetTaxCategories() GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories {
-	if o == nil || o.TaxCategories == nil {
-		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories
-		return ret
-	}
-	return *o.TaxCategories
-}
-
-// GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) GetTaxCategoriesOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories, bool) {
-	if o == nil || o.TaxCategories == nil {
-		return nil, false
-	}
-	return o.TaxCategories, true
-}
-
-// HasTaxCategories returns a boolean if a field has been set.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) HasTaxCategories() bool {
-	if o != nil && o.TaxCategories != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTaxCategories gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories and assigns it to the TaxCategories field.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) SetTaxCategories(v GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) {
-	o.TaxCategories = &v
 }
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
@@ -170,9 +137,6 @@ func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) SetTaxRules(v
 
 func (o GETManualTaxCalculators200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TaxCategories != nil {
-		toSerialize["tax_categories"] = o.TaxCategories
-	}
 	if o.Markets != nil {
 		toSerialize["markets"] = o.Markets
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations struct for GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations
 type GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                            `json:"links,omitempty"`
-	Data  []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                      `json:"links,omitempty"`
+	Data  *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData `json:"data,omitempty"`
 }
 
 // NewGETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations instantiates a new GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations object
@@ -71,17 +71,17 @@ func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocat
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetData() []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner {
+func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetData() GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData {
 	if o == nil || o.Data == nil {
-		var ret []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner
+		var ret GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetDataOk() ([]GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner, bool) {
+func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) GetDataOk() (*GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocat
 	return false
 }
 
-// SetData gets a reference to the given []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner and assigns it to the Data field.
-func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) SetData(v []GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData and assigns it to the Data field.
+func (o *GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) SetData(v GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocationsData) {
+	o.Data = &v
 }
 
 func (o GETInventoryModels200ResponseDataInnerRelationshipsInventoryReturnLocations) MarshalJSON() ([]byte, error) {

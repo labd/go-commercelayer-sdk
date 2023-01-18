@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Sku** | [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | 
-**TaxCalculator** | [**TaxCategoryDataRelationshipsTaxCalculator**](TaxCategoryDataRelationshipsTaxCalculator.md) |  | 
+**Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
+**TaxCalculator** | [**TaxCategoryCreateDataRelationshipsTaxCalculator**](TaxCategoryCreateDataRelationshipsTaxCalculator.md) |  | 
 
 ## Methods
 
 ### NewTaxCategoryCreateDataRelationships
 
-`func NewTaxCategoryCreateDataRelationships(sku BundleDataRelationshipsSkus, taxCalculator TaxCategoryDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
+`func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
 
 NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSku
 
-`func (o *TaxCategoryCreateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *TaxCategoryCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *TaxCategoryCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *TaxCategoryCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 
 
 ### GetTaxCalculator
 
-`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryDataRelationshipsTaxCalculator`
+`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryCreateDataRelationshipsTaxCalculator`
 
 GetTaxCalculator returns the TaxCalculator field if non-nil, zero value otherwise.
 
 ### GetTaxCalculatorOk
 
-`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryDataRelationshipsTaxCalculator, bool)`
+`func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryCreateDataRelationshipsTaxCalculator, bool)`
 
 GetTaxCalculatorOk returns a tuple with the TaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCalculator
 
-`func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryDataRelationshipsTaxCalculator)`
+`func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryCreateDataRelationshipsTaxCalculator)`
 
 SetTaxCalculator sets TaxCalculator field to given value.
 

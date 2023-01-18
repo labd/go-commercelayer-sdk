@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | Pointer to [**PriceListDataRelationshipsPrices**](PriceListDataRelationshipsPrices.md) |  | [optional] 
+**Price** | Pointer to [**PriceVolumeTierCreateDataRelationshipsPrice**](PriceVolumeTierCreateDataRelationshipsPrice.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPrice
 
-`func (o *PriceVolumeTierUpdateDataRelationships) GetPrice() PriceListDataRelationshipsPrices`
+`func (o *PriceVolumeTierUpdateDataRelationships) GetPrice() PriceVolumeTierCreateDataRelationshipsPrice`
 
 GetPrice returns the Price field if non-nil, zero value otherwise.
 
 ### GetPriceOk
 
-`func (o *PriceVolumeTierUpdateDataRelationships) GetPriceOk() (*PriceListDataRelationshipsPrices, bool)`
+`func (o *PriceVolumeTierUpdateDataRelationships) GetPriceOk() (*PriceVolumeTierCreateDataRelationshipsPrice, bool)`
 
 GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrice
 
-`func (o *PriceVolumeTierUpdateDataRelationships) SetPrice(v PriceListDataRelationshipsPrices)`
+`func (o *PriceVolumeTierUpdateDataRelationships) SetPrice(v PriceVolumeTierCreateDataRelationshipsPrice)`
 
 SetPrice sets Price field to given value.
 

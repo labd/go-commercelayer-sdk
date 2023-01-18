@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **Quantity** | Pointer to **int32** | The stock quantity to be transferred from the origin stock location to destination one | [optional] 
 **CompletedAt** | Pointer to **string** | Time at which the stock transfer was completed. | [optional] 
 **CancelledAt** | Pointer to **string** | Time at which the stock transfer was cancelled. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -159,31 +158,6 @@ SetCancelledAt sets CancelledAt field to given value.
 `func (o *GETStockTransfers200ResponseDataInnerAttributes) HasCancelledAt() bool`
 
 HasCancelledAt returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETStockTransfers200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETStockTransfers200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETStockTransfers200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETStockTransfers200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

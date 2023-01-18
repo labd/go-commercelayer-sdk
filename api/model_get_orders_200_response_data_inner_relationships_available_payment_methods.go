@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods struct for GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods
 type GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                  `json:"links,omitempty"`
-	Data  []GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks            `json:"links,omitempty"`
+	Data  *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData `json:"data,omitempty"`
 }
 
 // NewGETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods instantiates a new GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods object
@@ -71,17 +71,17 @@ func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) SetL
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) GetData() []GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner {
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) GetData() GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData {
 	if o == nil || o.Data == nil {
-		var ret []GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner
+		var ret GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) GetDataOk() ([]GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner, bool) {
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) GetDataOk() (*GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) HasD
 	return false
 }
 
-// SetData gets a reference to the given []GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner and assigns it to the Data field.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) SetData(v []GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData and assigns it to the Data field.
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) SetData(v GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethodsData) {
+	o.Data = &v
 }
 
 func (o GETOrders200ResponseDataInnerRelationshipsAvailablePaymentMethods) MarshalJSON() ([]byte, error) {

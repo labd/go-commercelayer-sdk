@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // TaxCategoryUpdateDataRelationships struct for TaxCategoryUpdateDataRelationships
 type TaxCategoryUpdateDataRelationships struct {
-	Sku *BundleDataRelationshipsSkus `json:"sku,omitempty"`
+	Sku *InStockSubscriptionCreateDataRelationshipsSku `json:"sku,omitempty"`
 }
 
 // NewTaxCategoryUpdateDataRelationships instantiates a new TaxCategoryUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewTaxCategoryUpdateDataRelationshipsWithDefaults() *TaxCategoryUpdateDataR
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *TaxCategoryUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *TaxCategoryUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -48,7 +48,7 @@ func (o *TaxCategoryUpdateDataRelationships) GetSku() BundleDataRelationshipsSku
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *TaxCategoryUpdateDataRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
-func (o *TaxCategoryUpdateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+// SetSku gets a reference to the given InStockSubscriptionCreateDataRelationshipsSku and assigns it to the Sku field.
+func (o *TaxCategoryUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = &v
 }
 

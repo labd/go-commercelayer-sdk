@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CouponCodesPromotionRuleData**](CouponCodesPromotionRuleData.md) |  | 
+**Data** | Pointer to [**CouponCodesPromotionRuleData**](CouponCodesPromotionRuleData.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCodesPromotionRule
 
-`func NewCouponCodesPromotionRule(data CouponCodesPromotionRuleData, ) *CouponCodesPromotionRule`
+`func NewCouponCodesPromotionRule() *CouponCodesPromotionRule`
 
 NewCouponCodesPromotionRule instantiates a new CouponCodesPromotionRule object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *CouponCodesPromotionRule) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

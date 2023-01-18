@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**PromotionRules** | Pointer to [**ExternalPromotionDataRelationshipsPromotionRules**](ExternalPromotionDataRelationshipsPromotionRules.md) |  | [optional] 
-**OrderAmountPromotionRule** | Pointer to [**ExternalPromotionDataRelationshipsOrderAmountPromotionRule**](ExternalPromotionDataRelationshipsOrderAmountPromotionRule.md) |  | [optional] 
-**SkuListPromotionRule** | Pointer to [**ExternalPromotionDataRelationshipsSkuListPromotionRule**](ExternalPromotionDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
-**CouponCodesPromotionRule** | Pointer to [**CouponDataRelationshipsPromotionRule**](CouponDataRelationshipsPromotionRule.md) |  | [optional] 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**PromotionRules** | Pointer to [**ExternalPromotionCreateDataRelationshipsPromotionRules**](ExternalPromotionCreateDataRelationshipsPromotionRules.md) |  | [optional] 
+**OrderAmountPromotionRule** | Pointer to [**ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule**](ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule.md) |  | [optional] 
+**SkuListPromotionRule** | Pointer to [**ExternalPromotionCreateDataRelationshipsSkuListPromotionRule**](ExternalPromotionCreateDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
+**CouponCodesPromotionRule** | Pointer to [**CouponCreateDataRelationshipsPromotionRule**](CouponCreateDataRelationshipsPromotionRule.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *ExternalPromotionCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *ExternalPromotionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *ExternalPromotionCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *ExternalPromotionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *ExternalPromotionCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *ExternalPromotionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -56,20 +56,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetPromotionRules
 
-`func (o *ExternalPromotionCreateDataRelationships) GetPromotionRules() ExternalPromotionDataRelationshipsPromotionRules`
+`func (o *ExternalPromotionCreateDataRelationships) GetPromotionRules() ExternalPromotionCreateDataRelationshipsPromotionRules`
 
 GetPromotionRules returns the PromotionRules field if non-nil, zero value otherwise.
 
 ### GetPromotionRulesOk
 
-`func (o *ExternalPromotionCreateDataRelationships) GetPromotionRulesOk() (*ExternalPromotionDataRelationshipsPromotionRules, bool)`
+`func (o *ExternalPromotionCreateDataRelationships) GetPromotionRulesOk() (*ExternalPromotionCreateDataRelationshipsPromotionRules, bool)`
 
 GetPromotionRulesOk returns a tuple with the PromotionRules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotionRules
 
-`func (o *ExternalPromotionCreateDataRelationships) SetPromotionRules(v ExternalPromotionDataRelationshipsPromotionRules)`
+`func (o *ExternalPromotionCreateDataRelationships) SetPromotionRules(v ExternalPromotionCreateDataRelationshipsPromotionRules)`
 
 SetPromotionRules sets PromotionRules field to given value.
 
@@ -81,20 +81,20 @@ HasPromotionRules returns a boolean if a field has been set.
 
 ### GetOrderAmountPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) GetOrderAmountPromotionRule() ExternalPromotionDataRelationshipsOrderAmountPromotionRule`
+`func (o *ExternalPromotionCreateDataRelationships) GetOrderAmountPromotionRule() ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule`
 
 GetOrderAmountPromotionRule returns the OrderAmountPromotionRule field if non-nil, zero value otherwise.
 
 ### GetOrderAmountPromotionRuleOk
 
-`func (o *ExternalPromotionCreateDataRelationships) GetOrderAmountPromotionRuleOk() (*ExternalPromotionDataRelationshipsOrderAmountPromotionRule, bool)`
+`func (o *ExternalPromotionCreateDataRelationships) GetOrderAmountPromotionRuleOk() (*ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule, bool)`
 
 GetOrderAmountPromotionRuleOk returns a tuple with the OrderAmountPromotionRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrderAmountPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) SetOrderAmountPromotionRule(v ExternalPromotionDataRelationshipsOrderAmountPromotionRule)`
+`func (o *ExternalPromotionCreateDataRelationships) SetOrderAmountPromotionRule(v ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule)`
 
 SetOrderAmountPromotionRule sets OrderAmountPromotionRule field to given value.
 
@@ -106,20 +106,20 @@ HasOrderAmountPromotionRule returns a boolean if a field has been set.
 
 ### GetSkuListPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) GetSkuListPromotionRule() ExternalPromotionDataRelationshipsSkuListPromotionRule`
+`func (o *ExternalPromotionCreateDataRelationships) GetSkuListPromotionRule() ExternalPromotionCreateDataRelationshipsSkuListPromotionRule`
 
 GetSkuListPromotionRule returns the SkuListPromotionRule field if non-nil, zero value otherwise.
 
 ### GetSkuListPromotionRuleOk
 
-`func (o *ExternalPromotionCreateDataRelationships) GetSkuListPromotionRuleOk() (*ExternalPromotionDataRelationshipsSkuListPromotionRule, bool)`
+`func (o *ExternalPromotionCreateDataRelationships) GetSkuListPromotionRuleOk() (*ExternalPromotionCreateDataRelationshipsSkuListPromotionRule, bool)`
 
 GetSkuListPromotionRuleOk returns a tuple with the SkuListPromotionRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuListPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) SetSkuListPromotionRule(v ExternalPromotionDataRelationshipsSkuListPromotionRule)`
+`func (o *ExternalPromotionCreateDataRelationships) SetSkuListPromotionRule(v ExternalPromotionCreateDataRelationshipsSkuListPromotionRule)`
 
 SetSkuListPromotionRule sets SkuListPromotionRule field to given value.
 
@@ -131,20 +131,20 @@ HasSkuListPromotionRule returns a boolean if a field has been set.
 
 ### GetCouponCodesPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) GetCouponCodesPromotionRule() CouponDataRelationshipsPromotionRule`
+`func (o *ExternalPromotionCreateDataRelationships) GetCouponCodesPromotionRule() CouponCreateDataRelationshipsPromotionRule`
 
 GetCouponCodesPromotionRule returns the CouponCodesPromotionRule field if non-nil, zero value otherwise.
 
 ### GetCouponCodesPromotionRuleOk
 
-`func (o *ExternalPromotionCreateDataRelationships) GetCouponCodesPromotionRuleOk() (*CouponDataRelationshipsPromotionRule, bool)`
+`func (o *ExternalPromotionCreateDataRelationships) GetCouponCodesPromotionRuleOk() (*CouponCreateDataRelationshipsPromotionRule, bool)`
 
 GetCouponCodesPromotionRuleOk returns a tuple with the CouponCodesPromotionRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCouponCodesPromotionRule
 
-`func (o *ExternalPromotionCreateDataRelationships) SetCouponCodesPromotionRule(v CouponDataRelationshipsPromotionRule)`
+`func (o *ExternalPromotionCreateDataRelationships) SetCouponCodesPromotionRule(v CouponCreateDataRelationshipsPromotionRule)`
 
 SetCouponCodesPromotionRule sets CouponCodesPromotionRule field to given value.
 

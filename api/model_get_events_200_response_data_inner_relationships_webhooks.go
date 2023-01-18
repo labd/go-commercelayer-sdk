@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETEvents200ResponseDataInnerRelationshipsWebhooks struct for GETEvents200ResponseDataInnerRelationshipsWebhooks
 type GETEvents200ResponseDataInnerRelationshipsWebhooks struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks   `json:"links,omitempty"`
-	Data  []GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks `json:"links,omitempty"`
+	Data  *GETEvents200ResponseDataInnerRelationshipsWebhooksData     `json:"data,omitempty"`
 }
 
 // NewGETEvents200ResponseDataInnerRelationshipsWebhooks instantiates a new GETEvents200ResponseDataInnerRelationshipsWebhooks object
@@ -71,17 +71,17 @@ func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) SetLinks(v GETAddre
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) GetData() []GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner {
+func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) GetData() GETEvents200ResponseDataInnerRelationshipsWebhooksData {
 	if o == nil || o.Data == nil {
-		var ret []GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner
+		var ret GETEvents200ResponseDataInnerRelationshipsWebhooksData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) GetDataOk() ([]GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner, bool) {
+func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) GetDataOk() (*GETEvents200ResponseDataInnerRelationshipsWebhooksData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner and assigns it to the Data field.
-func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) SetData(v []GETEvents200ResponseDataInnerRelationshipsWebhooksDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETEvents200ResponseDataInnerRelationshipsWebhooksData and assigns it to the Data field.
+func (o *GETEvents200ResponseDataInnerRelationshipsWebhooks) SetData(v GETEvents200ResponseDataInnerRelationshipsWebhooksData) {
+	o.Data = &v
 }
 
 func (o GETEvents200ResponseDataInnerRelationshipsWebhooks) MarshalJSON() ([]byte, error) {

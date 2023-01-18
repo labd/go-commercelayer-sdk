@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -19,7 +19,7 @@ import (
 type PATCHTaxRulesTaxRuleId200ResponseDataAttributes struct {
 	// The tax rule internal name.
 	Name *string `json:"name,omitempty"`
-	// The tax rate for this ruke.
+	// The tax rate for this rule.
 	TaxRate *float32 `json:"tax_rate,omitempty"`
 	// The regex that will be evaluated to match the shipping address country code.
 	CountryCodeRegex *string `json:"country_code_regex,omitempty"`

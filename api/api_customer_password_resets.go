@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECustomerPasswordResetsCustomerPasswordResetId Delete a customer password r
 
 Delete a customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPasswordResetId The resource's id
- @return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPasswordResetId The resource's id
+	@return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest
 */
 func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiDELETECustomerPasswordResetsCustomerPasswordResetIdRequest{
@@ -129,8 +129,8 @@ GETCustomerPasswordResets List all customer password resets
 
 List all customer password resets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest
 */
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiGETCustomerPasswordResetsRequest {
 	return CustomerPasswordResetsApiGETCustomerPasswordResetsRequest{
@@ -140,7 +140,8 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResets(ctx context
 }
 
 // Execute executes the request
-//  @return GETCustomerPasswordResets200Response
+//
+//	@return GETCustomerPasswordResets200Response
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsRequest) (*GETCustomerPasswordResets200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETCustomerPasswordResetsCustomerPasswordResetId Retrieve a customer password re
 
 Retrieve a customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPasswordResetId The resource's id
- @return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPasswordResetId The resource's id
+	@return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest
 */
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest{
@@ -242,7 +243,8 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 }
 
 // Execute executes the request
-//  @return GETCustomerPasswordResetsCustomerPasswordResetId200Response
+//
+//	@return GETCustomerPasswordResetsCustomerPasswordResetId200Response
 func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiGETCustomerPasswordResetsCustomerPasswordResetIdRequest) (*GETCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHCustomerPasswordResetsCustomerPasswordResetId Update a customer password re
 
 Update a customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPasswordResetId The resource's id
- @return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPasswordResetId The resource's id
+	@return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
 */
 func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx context.Context, customerPasswordResetId string) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
 	return CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest{
@@ -351,7 +353,8 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 }
 
 // Execute executes the request
-//  @return PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
+//
+//	@return PATCHCustomerPasswordResetsCustomerPasswordResetId200Response
 func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPasswordResetIdExecute(r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) (*PATCHCustomerPasswordResetsCustomerPasswordResetId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTCustomerPasswordResets Create a customer password reset
 
 Create a customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest
 */
 func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx context.Context) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
 	return CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest{
@@ -462,7 +465,8 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResets(ctx contex
 }
 
 // Execute executes the request
-//  @return POSTCustomerPasswordResets201Response
+//
+//	@return POSTCustomerPasswordResets201Response
 func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) (*POSTCustomerPasswordResets201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

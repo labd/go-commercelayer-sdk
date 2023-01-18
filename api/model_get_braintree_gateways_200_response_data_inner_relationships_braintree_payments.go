@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments struct for GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments
 type GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                       `json:"links,omitempty"`
-	Data  []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
+	Data  *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData `json:"data,omitempty"`
 }
 
 // NewGETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments instantiates a new GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments object
@@ -71,17 +71,17 @@ func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments)
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetData() []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner {
+func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetData() GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner
+		var ret GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetDataOk() ([]GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner, bool) {
+func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetDataOk() (*GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments)
 	return false
 }
 
-// SetData gets a reference to the given []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner and assigns it to the Data field.
-func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) SetData(v []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData and assigns it to the Data field.
+func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) SetData(v GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData) {
+	o.Data = &v
 }
 
 func (o GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) MarshalJSON() ([]byte, error) {

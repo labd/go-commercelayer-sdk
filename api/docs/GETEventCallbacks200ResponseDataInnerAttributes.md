@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **Payload** | Pointer to **map[string]interface{}** | The payload sent to the callback endpoint, including the event affected resource and the specified includes. | [optional] 
 **ResponseCode** | Pointer to **string** | The HTTP response code of the callback endpoint. | [optional] 
 **ResponseMessage** | Pointer to **string** | The HTTP response message of the callback endpoint. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -133,31 +132,6 @@ SetResponseMessage sets ResponseMessage field to given value.
 `func (o *GETEventCallbacks200ResponseDataInnerAttributes) HasResponseMessage() bool`
 
 HasResponseMessage returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETEventCallbacks200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETEventCallbacks200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETEventCallbacks200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETEventCallbacks200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

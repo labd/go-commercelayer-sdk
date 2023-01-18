@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEExternalGatewaysExternalGatewayId Delete an external gateway
 
 Delete an external gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGatewayId The resource's id
- @return ExternalGatewaysApiDELETEExternalGatewaysExternalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGatewayId The resource's id
+	@return ExternalGatewaysApiDELETEExternalGatewaysExternalGatewayIdRequest
 */
 func (a *ExternalGatewaysApiService) DELETEExternalGatewaysExternalGatewayId(ctx context.Context, externalGatewayId string) ExternalGatewaysApiDELETEExternalGatewaysExternalGatewayIdRequest {
 	return ExternalGatewaysApiDELETEExternalGatewaysExternalGatewayIdRequest{
@@ -129,8 +129,8 @@ GETExternalGateways List all external gateways
 
 List all external gateways
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExternalGatewaysApiGETExternalGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExternalGatewaysApiGETExternalGatewaysRequest
 */
 func (a *ExternalGatewaysApiService) GETExternalGateways(ctx context.Context) ExternalGatewaysApiGETExternalGatewaysRequest {
 	return ExternalGatewaysApiGETExternalGatewaysRequest{
@@ -140,7 +140,8 @@ func (a *ExternalGatewaysApiService) GETExternalGateways(ctx context.Context) Ex
 }
 
 // Execute executes the request
-//  @return GETExternalGateways200Response
+//
+//	@return GETExternalGateways200Response
 func (a *ExternalGatewaysApiService) GETExternalGatewaysExecute(r ExternalGatewaysApiGETExternalGatewaysRequest) (*GETExternalGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETExternalGatewaysExternalGatewayId Retrieve an external gateway
 
 Retrieve an external gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGatewayId The resource's id
- @return ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGatewayId The resource's id
+	@return ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest
 */
 func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayId(ctx context.Context, externalGatewayId string) ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest {
 	return ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest{
@@ -242,7 +243,8 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayId(ctx co
 }
 
 // Execute executes the request
-//  @return GETExternalGatewaysExternalGatewayId200Response
+//
+//	@return GETExternalGatewaysExternalGatewayId200Response
 func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiGETExternalGatewaysExternalGatewayIdRequest) (*GETExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHExternalGatewaysExternalGatewayId Update an external gateway
 
 Update an external gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalGatewayId The resource's id
- @return ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalGatewayId The resource's id
+	@return ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest
 */
 func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayId(ctx context.Context, externalGatewayId string) ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest {
 	return ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest{
@@ -351,7 +353,8 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayId(ctx 
 }
 
 // Execute executes the request
-//  @return PATCHExternalGatewaysExternalGatewayId200Response
+//
+//	@return PATCHExternalGatewaysExternalGatewayId200Response
 func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecute(r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) (*PATCHExternalGatewaysExternalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTExternalGateways Create an external gateway
 
 Create an external gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExternalGatewaysApiPOSTExternalGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExternalGatewaysApiPOSTExternalGatewaysRequest
 */
 func (a *ExternalGatewaysApiService) POSTExternalGateways(ctx context.Context) ExternalGatewaysApiPOSTExternalGatewaysRequest {
 	return ExternalGatewaysApiPOSTExternalGatewaysRequest{
@@ -462,7 +465,8 @@ func (a *ExternalGatewaysApiService) POSTExternalGateways(ctx context.Context) E
 }
 
 // Execute executes the request
-//  @return POSTExternalGateways201Response
+//
+//	@return POSTExternalGateways201Response
 func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatewaysApiPOSTExternalGatewaysRequest) (*POSTExternalGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

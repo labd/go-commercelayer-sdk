@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -23,8 +23,6 @@ type GETPriceLists200ResponseDataInnerAttributes struct {
 	CurrencyCode *string `json:"currency_code,omitempty"`
 	// Indicates if the associated prices include taxes.
 	TaxIncluded *bool `json:"tax_included,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -148,38 +146,6 @@ func (o *GETPriceLists200ResponseDataInnerAttributes) HasTaxIncluded() bool {
 // SetTaxIncluded gets a reference to the given bool and assigns it to the TaxIncluded field.
 func (o *GETPriceLists200ResponseDataInnerAttributes) SetTaxIncluded(v bool) {
 	o.TaxIncluded = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETPriceLists200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETPriceLists200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETPriceLists200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETPriceLists200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -352,9 +318,6 @@ func (o GETPriceLists200ResponseDataInnerAttributes) MarshalJSON() ([]byte, erro
 	}
 	if o.TaxIncluded != nil {
 		toSerialize["tax_included"] = o.TaxIncluded
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

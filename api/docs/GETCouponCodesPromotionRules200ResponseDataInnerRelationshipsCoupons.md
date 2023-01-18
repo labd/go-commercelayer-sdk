@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner**](GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData**](GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetData() []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner`
+`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetData() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetDataOk() (*[]GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner, bool)`
+`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetDataOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) SetData(v []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner)`
+`func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) SetData(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData)`
 
 SetData sets Data field to given value.
 

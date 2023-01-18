@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEKlarnaPaymentsKlarnaPaymentId Delete a klarna payment
 
 Delete a klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest
 */
 func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiDELETEKlarnaPaymentsKlarnaPaymentIdRequest{
@@ -130,9 +130,9 @@ GETKlarnaGatewayIdKlarnaPayments Retrieve the klarna payments associated to the 
 
 Retrieve the klarna payments associated to the klarna gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaGatewayId The resource's id
- @return KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaGatewayId The resource's id
+	@return KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest
 */
 func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
@@ -221,8 +221,8 @@ GETKlarnaPayments List all klarna payments
 
 List all klarna payments
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KlarnaPaymentsApiGETKlarnaPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return KlarnaPaymentsApiGETKlarnaPaymentsRequest
 */
 func (a *KlarnaPaymentsApiService) GETKlarnaPayments(ctx context.Context) KlarnaPaymentsApiGETKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiGETKlarnaPaymentsRequest{
@@ -232,7 +232,8 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPayments(ctx context.Context) Klarna
 }
 
 // Execute executes the request
-//  @return GETKlarnaPayments200Response
+//
+//	@return GETKlarnaPayments200Response
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsExecute(r KlarnaPaymentsApiGETKlarnaPaymentsRequest) (*GETKlarnaPayments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETKlarnaPaymentsKlarnaPaymentId Retrieve a klarna payment
 
 Retrieve a klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest
 */
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest{
@@ -334,7 +335,8 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETKlarnaPaymentsKlarnaPaymentId200Response
+//
+//	@return GETKlarnaPaymentsKlarnaPaymentId200Response
 func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r KlarnaPaymentsApiGETKlarnaPaymentsKlarnaPaymentIdRequest) (*GETKlarnaPaymentsKlarnaPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHKlarnaPaymentsKlarnaPaymentId Update a klarna payment
 
 Update a klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest
 */
 func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentId(ctx context.Context, klarnaPaymentId string) KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest {
 	return KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest{
@@ -443,7 +445,8 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHKlarnaPaymentsKlarnaPaymentId200Response
+//
+//	@return PATCHKlarnaPaymentsKlarnaPaymentId200Response
 func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest) (*PATCHKlarnaPaymentsKlarnaPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTKlarnaPayments Create a klarna payment
 
 Create a klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return KlarnaPaymentsApiPOSTKlarnaPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return KlarnaPaymentsApiPOSTKlarnaPaymentsRequest
 */
 func (a *KlarnaPaymentsApiService) POSTKlarnaPayments(ctx context.Context) KlarnaPaymentsApiPOSTKlarnaPaymentsRequest {
 	return KlarnaPaymentsApiPOSTKlarnaPaymentsRequest{
@@ -554,7 +557,8 @@ func (a *KlarnaPaymentsApiService) POSTKlarnaPayments(ctx context.Context) Klarn
 }
 
 // Execute executes the request
-//  @return POSTKlarnaPayments201Response
+//
+//	@return POSTKlarnaPayments201Response
 func (a *KlarnaPaymentsApiService) POSTKlarnaPaymentsExecute(r KlarnaPaymentsApiPOSTKlarnaPaymentsRequest) (*POSTKlarnaPayments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
+**Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCustomer
 
-`func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer`
+`func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool)`
+`func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *CouponRecipientCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer)`
+`func (o *CouponRecipientCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 

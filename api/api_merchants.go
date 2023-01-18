@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEMerchantsMerchantId Delete a merchant
 
 Delete a merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param merchantId The resource's id
- @return MerchantsApiDELETEMerchantsMerchantIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return MerchantsApiDELETEMerchantsMerchantIdRequest
 */
 func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiDELETEMerchantsMerchantIdRequest {
 	return MerchantsApiDELETEMerchantsMerchantIdRequest{
@@ -130,9 +130,9 @@ GETMarketIdMerchant Retrieve the merchant associated to the market
 
 Retrieve the merchant associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return MerchantsApiGETMarketIdMerchantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return MerchantsApiGETMarketIdMerchantRequest
 */
 func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId string) MerchantsApiGETMarketIdMerchantRequest {
 	return MerchantsApiGETMarketIdMerchantRequest{
@@ -221,8 +221,8 @@ GETMerchants List all merchants
 
 List all merchants
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantsApiGETMerchantsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return MerchantsApiGETMerchantsRequest
 */
 func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETMerchantsRequest {
 	return MerchantsApiGETMerchantsRequest{
@@ -232,7 +232,8 @@ func (a *MerchantsApiService) GETMerchants(ctx context.Context) MerchantsApiGETM
 }
 
 // Execute executes the request
-//  @return GETMerchants200Response
+//
+//	@return GETMerchants200Response
 func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequest) (*GETMerchants200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETMerchantsMerchantId Retrieve a merchant
 
 Retrieve a merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param merchantId The resource's id
- @return MerchantsApiGETMerchantsMerchantIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return MerchantsApiGETMerchantsMerchantIdRequest
 */
 func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiGETMerchantsMerchantIdRequest {
 	return MerchantsApiGETMerchantsMerchantIdRequest{
@@ -334,7 +335,8 @@ func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, mercha
 }
 
 // Execute executes the request
-//  @return GETMerchantsMerchantId200Response
+//
+//	@return GETMerchantsMerchantId200Response
 func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMerchantsMerchantIdRequest) (*GETMerchantsMerchantId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHMerchantsMerchantId Update a merchant
 
 Update a merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param merchantId The resource's id
- @return MerchantsApiPATCHMerchantsMerchantIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return MerchantsApiPATCHMerchantsMerchantIdRequest
 */
 func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiPATCHMerchantsMerchantIdRequest {
 	return MerchantsApiPATCHMerchantsMerchantIdRequest{
@@ -443,7 +445,8 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merc
 }
 
 // Execute executes the request
-//  @return PATCHMerchantsMerchantId200Response
+//
+//	@return PATCHMerchantsMerchantId200Response
 func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATCHMerchantsMerchantIdRequest) (*PATCHMerchantsMerchantId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTMerchants Create a merchant
 
 Create a merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MerchantsApiPOSTMerchantsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return MerchantsApiPOSTMerchantsRequest
 */
 func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOSTMerchantsRequest {
 	return MerchantsApiPOSTMerchantsRequest{
@@ -554,7 +557,8 @@ func (a *MerchantsApiService) POSTMerchants(ctx context.Context) MerchantsApiPOS
 }
 
 // Execute executes the request
-//  @return POSTMerchants201Response
+//
+//	@return POSTMerchants201Response
 func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRequest) (*POSTMerchants201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // DeliveryLeadTimeUpdateDataRelationships struct for DeliveryLeadTimeUpdateDataRelationships
 type DeliveryLeadTimeUpdateDataRelationships struct {
-	StockLocation  *DeliveryLeadTimeDataRelationshipsStockLocation  `json:"stock_location,omitempty"`
-	ShippingMethod *DeliveryLeadTimeDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
+	StockLocation  *DeliveryLeadTimeCreateDataRelationshipsStockLocation  `json:"stock_location,omitempty"`
+	ShippingMethod *DeliveryLeadTimeCreateDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
 }
 
 // NewDeliveryLeadTimeUpdateDataRelationships instantiates a new DeliveryLeadTimeUpdateDataRelationships object
@@ -39,9 +39,9 @@ func NewDeliveryLeadTimeUpdateDataRelationshipsWithDefaults() *DeliveryLeadTimeU
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil || o.StockLocation == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 	return *o.StockLocation
@@ -49,7 +49,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLea
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) HasStockLocation() bool {
 	return false
 }
 
-// SetStockLocation gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *DeliveryLeadTimeUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given DeliveryLeadTimeCreateDataRelationshipsStockLocation and assigns it to the StockLocation field.
+func (o *DeliveryLeadTimeUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = &v
 }
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
-func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeDataRelationshipsShippingMethod {
+func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod {
 	if o == nil || o.ShippingMethod == nil {
-		var ret DeliveryLeadTimeDataRelationshipsShippingMethod
+		var ret DeliveryLeadTimeCreateDataRelationshipsShippingMethod
 		return ret
 	}
 	return *o.ShippingMethod
@@ -81,7 +81,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLe
 
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeDataRelationshipsShippingMethod, bool) {
+func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool) {
 	if o == nil || o.ShippingMethod == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) HasShippingMethod() bool {
 	return false
 }
 
-// SetShippingMethod gets a reference to the given DeliveryLeadTimeDataRelationshipsShippingMethod and assigns it to the ShippingMethod field.
-func (o *DeliveryLeadTimeUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeDataRelationshipsShippingMethod) {
+// SetShippingMethod gets a reference to the given DeliveryLeadTimeCreateDataRelationshipsShippingMethod and assigns it to the ShippingMethod field.
+func (o *DeliveryLeadTimeUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCreateDataRelationshipsShippingMethod) {
 	o.ShippingMethod = &v
 }
 

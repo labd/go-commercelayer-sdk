@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsDataInner**](GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsData**](GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) GetData() []GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsDataInner`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) GetData() GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) GetDataOk() (*[]GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsDataInner, bool)`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) GetDataOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) SetData(v []GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsDataInner)`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptions) SetData(v GETCustomers200ResponseDataInnerRelationshipsCustomerSubscriptionsData)`
 
 SetData sets Data field to given value.
 

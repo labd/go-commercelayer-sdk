@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Merchant** | Pointer to [**MarketDataRelationshipsMerchant**](MarketDataRelationshipsMerchant.md) |  | [optional] 
-**PriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
-**InventoryModel** | Pointer to [**InventoryReturnLocationDataRelationshipsInventoryModel**](InventoryReturnLocationDataRelationshipsInventoryModel.md) |  | [optional] 
-**TaxCalculator** | Pointer to [**MarketDataRelationshipsTaxCalculator**](MarketDataRelationshipsTaxCalculator.md) |  | [optional] 
-**CustomerGroup** | Pointer to [**CustomerDataRelationshipsCustomerGroup**](CustomerDataRelationshipsCustomerGroup.md) |  | [optional] 
+**Merchant** | Pointer to [**MarketCreateDataRelationshipsMerchant**](MarketCreateDataRelationshipsMerchant.md) |  | [optional] 
+**PriceList** | Pointer to [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | [optional] 
+**InventoryModel** | Pointer to [**InventoryReturnLocationCreateDataRelationshipsInventoryModel**](InventoryReturnLocationCreateDataRelationshipsInventoryModel.md) |  | [optional] 
+**TaxCalculator** | Pointer to [**MarketCreateDataRelationshipsTaxCalculator**](MarketCreateDataRelationshipsTaxCalculator.md) |  | [optional] 
+**CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMerchant
 
-`func (o *MarketUpdateDataRelationships) GetMerchant() MarketDataRelationshipsMerchant`
+`func (o *MarketUpdateDataRelationships) GetMerchant() MarketCreateDataRelationshipsMerchant`
 
 GetMerchant returns the Merchant field if non-nil, zero value otherwise.
 
 ### GetMerchantOk
 
-`func (o *MarketUpdateDataRelationships) GetMerchantOk() (*MarketDataRelationshipsMerchant, bool)`
+`func (o *MarketUpdateDataRelationships) GetMerchantOk() (*MarketCreateDataRelationshipsMerchant, bool)`
 
 GetMerchantOk returns a tuple with the Merchant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMerchant
 
-`func (o *MarketUpdateDataRelationships) SetMerchant(v MarketDataRelationshipsMerchant)`
+`func (o *MarketUpdateDataRelationships) SetMerchant(v MarketCreateDataRelationshipsMerchant)`
 
 SetMerchant sets Merchant field to given value.
 
@@ -56,20 +56,20 @@ HasMerchant returns a boolean if a field has been set.
 
 ### GetPriceList
 
-`func (o *MarketUpdateDataRelationships) GetPriceList() MarketDataRelationshipsPriceList`
+`func (o *MarketUpdateDataRelationships) GetPriceList() MarketCreateDataRelationshipsPriceList`
 
 GetPriceList returns the PriceList field if non-nil, zero value otherwise.
 
 ### GetPriceListOk
 
-`func (o *MarketUpdateDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool)`
+`func (o *MarketUpdateDataRelationships) GetPriceListOk() (*MarketCreateDataRelationshipsPriceList, bool)`
 
 GetPriceListOk returns a tuple with the PriceList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPriceList
 
-`func (o *MarketUpdateDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList)`
+`func (o *MarketUpdateDataRelationships) SetPriceList(v MarketCreateDataRelationshipsPriceList)`
 
 SetPriceList sets PriceList field to given value.
 
@@ -81,20 +81,20 @@ HasPriceList returns a boolean if a field has been set.
 
 ### GetInventoryModel
 
-`func (o *MarketUpdateDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel`
+`func (o *MarketUpdateDataRelationships) GetInventoryModel() InventoryReturnLocationCreateDataRelationshipsInventoryModel`
 
 GetInventoryModel returns the InventoryModel field if non-nil, zero value otherwise.
 
 ### GetInventoryModelOk
 
-`func (o *MarketUpdateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool)`
+`func (o *MarketUpdateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationCreateDataRelationshipsInventoryModel, bool)`
 
 GetInventoryModelOk returns a tuple with the InventoryModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryModel
 
-`func (o *MarketUpdateDataRelationships) SetInventoryModel(v InventoryReturnLocationDataRelationshipsInventoryModel)`
+`func (o *MarketUpdateDataRelationships) SetInventoryModel(v InventoryReturnLocationCreateDataRelationshipsInventoryModel)`
 
 SetInventoryModel sets InventoryModel field to given value.
 
@@ -106,20 +106,20 @@ HasInventoryModel returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 
-`func (o *MarketUpdateDataRelationships) GetTaxCalculator() MarketDataRelationshipsTaxCalculator`
+`func (o *MarketUpdateDataRelationships) GetTaxCalculator() MarketCreateDataRelationshipsTaxCalculator`
 
 GetTaxCalculator returns the TaxCalculator field if non-nil, zero value otherwise.
 
 ### GetTaxCalculatorOk
 
-`func (o *MarketUpdateDataRelationships) GetTaxCalculatorOk() (*MarketDataRelationshipsTaxCalculator, bool)`
+`func (o *MarketUpdateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataRelationshipsTaxCalculator, bool)`
 
 GetTaxCalculatorOk returns a tuple with the TaxCalculator field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxCalculator
 
-`func (o *MarketUpdateDataRelationships) SetTaxCalculator(v MarketDataRelationshipsTaxCalculator)`
+`func (o *MarketUpdateDataRelationships) SetTaxCalculator(v MarketCreateDataRelationshipsTaxCalculator)`
 
 SetTaxCalculator sets TaxCalculator field to given value.
 
@@ -131,20 +131,20 @@ HasTaxCalculator returns a boolean if a field has been set.
 
 ### GetCustomerGroup
 
-`func (o *MarketUpdateDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCustomerGroup`
+`func (o *MarketUpdateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup`
 
 GetCustomerGroup returns the CustomerGroup field if non-nil, zero value otherwise.
 
 ### GetCustomerGroupOk
 
-`func (o *MarketUpdateDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshipsCustomerGroup, bool)`
+`func (o *MarketUpdateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool)`
 
 GetCustomerGroupOk returns a tuple with the CustomerGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerGroup
 
-`func (o *MarketUpdateDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCustomerGroup)`
+`func (o *MarketUpdateDataRelationships) SetCustomerGroup(v CustomerCreateDataRelationshipsCustomerGroup)`
 
 SetCustomerGroup sets CustomerGroup field to given value.
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
-**ShippingMethod** | Pointer to [**DeliveryLeadTimeDataRelationshipsShippingMethod**](DeliveryLeadTimeDataRelationshipsShippingMethod.md) |  | [optional] 
+**StockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
+**ShippingMethod** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsShippingMethod**](DeliveryLeadTimeCreateDataRelationshipsShippingMethod.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
@@ -53,20 +53,20 @@ HasStockLocation returns a boolean if a field has been set.
 
 ### GetShippingMethod
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeDataRelationshipsShippingMethod`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod`
 
 GetShippingMethod returns the ShippingMethod field if non-nil, zero value otherwise.
 
 ### GetShippingMethodOk
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeDataRelationshipsShippingMethod, bool)`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool)`
 
 GetShippingMethodOk returns a tuple with the ShippingMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingMethod
 
-`func (o *DeliveryLeadTimeUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeDataRelationshipsShippingMethod)`
+`func (o *DeliveryLeadTimeUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCreateDataRelationshipsShippingMethod)`
 
 SetShippingMethod sets ShippingMethod field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEExportsExportId Delete an export
 
 Delete an export
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exportId The resource's id
- @return ExportsApiDELETEExportsExportIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param exportId The resource's id
+	@return ExportsApiDELETEExportsExportIdRequest
 */
 func (a *ExportsApiService) DELETEExportsExportId(ctx context.Context, exportId string) ExportsApiDELETEExportsExportIdRequest {
 	return ExportsApiDELETEExportsExportIdRequest{
@@ -129,8 +129,8 @@ GETExports List all exports
 
 List all exports
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExportsApiGETExportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExportsApiGETExportsRequest
 */
 func (a *ExportsApiService) GETExports(ctx context.Context) ExportsApiGETExportsRequest {
 	return ExportsApiGETExportsRequest{
@@ -140,7 +140,8 @@ func (a *ExportsApiService) GETExports(ctx context.Context) ExportsApiGETExports
 }
 
 // Execute executes the request
-//  @return GETExports200Response
+//
+//	@return GETExports200Response
 func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*GETExports200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETExportsExportId Retrieve an export
 
 Retrieve an export
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param exportId The resource's id
- @return ExportsApiGETExportsExportIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param exportId The resource's id
+	@return ExportsApiGETExportsExportIdRequest
 */
 func (a *ExportsApiService) GETExportsExportId(ctx context.Context, exportId string) ExportsApiGETExportsExportIdRequest {
 	return ExportsApiGETExportsExportIdRequest{
@@ -242,7 +243,8 @@ func (a *ExportsApiService) GETExportsExportId(ctx context.Context, exportId str
 }
 
 // Execute executes the request
-//  @return GETExportsExportId200Response
+//
+//	@return GETExportsExportId200Response
 func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExportIdRequest) (*GETExportsExportId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -337,8 +339,8 @@ POSTExports Create an export
 
 Create an export
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExportsApiPOSTExportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExportsApiPOSTExportsRequest
 */
 func (a *ExportsApiService) POSTExports(ctx context.Context) ExportsApiPOSTExportsRequest {
 	return ExportsApiPOSTExportsRequest{
@@ -348,7 +350,8 @@ func (a *ExportsApiService) POSTExports(ctx context.Context) ExportsApiPOSTExpor
 }
 
 // Execute executes the request
-//  @return POSTExports201Response
+//
+//	@return POSTExports201Response
 func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (*POSTExports201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Skus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **SkuListItems** | Pointer to [**SkuListDataRelationshipsSkuListItems**](SkuListDataRelationshipsSkuListItems.md) |  | [optional] 
 **Bundles** | Pointer to [**OrderDataRelationshipsAvailableFreeBundles**](OrderDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
+**Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetBundles sets Bundles field to given value.
 `func (o *SkuListDataRelationships) HasBundles() bool`
 
 HasBundles returns a boolean if a field has been set.
+
+### GetAttachments
+
+`func (o *SkuListDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments`
+
+GetAttachments returns the Attachments field if non-nil, zero value otherwise.
+
+### GetAttachmentsOk
+
+`func (o *SkuListDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool)`
+
+GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachments
+
+`func (o *SkuListDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments)`
+
+SetAttachments sets Attachments field to given value.
+
+### HasAttachments
+
+`func (o *SkuListDataRelationships) HasAttachments() bool`
+
+HasAttachments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

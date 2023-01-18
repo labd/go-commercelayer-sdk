@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // CustomerDataRelationshipsCustomerPaymentSources struct for CustomerDataRelationshipsCustomerPaymentSources
 type CustomerDataRelationshipsCustomerPaymentSources struct {
-	Data CustomerDataRelationshipsCustomerPaymentSourcesData `json:"data"`
+	Data *CustomerDataRelationshipsCustomerPaymentSourcesData `json:"data,omitempty"`
 }
 
 // NewCustomerDataRelationshipsCustomerPaymentSources instantiates a new CustomerDataRelationshipsCustomerPaymentSources object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerDataRelationshipsCustomerPaymentSources(data CustomerDataRelationshipsCustomerPaymentSourcesData) *CustomerDataRelationshipsCustomerPaymentSources {
+func NewCustomerDataRelationshipsCustomerPaymentSources() *CustomerDataRelationshipsCustomerPaymentSources {
 	this := CustomerDataRelationshipsCustomerPaymentSources{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewCustomerDataRelationshipsCustomerPaymentSourcesWithDefaults() *CustomerD
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *CustomerDataRelationshipsCustomerPaymentSources) GetData() CustomerDataRelationshipsCustomerPaymentSourcesData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret CustomerDataRelationshipsCustomerPaymentSourcesData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerDataRelationshipsCustomerPaymentSources) GetDataOk() (*CustomerDataRelationshipsCustomerPaymentSourcesData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *CustomerDataRelationshipsCustomerPaymentSources) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given CustomerDataRelationshipsCustomerPaymentSourcesData and assigns it to the Data field.
 func (o *CustomerDataRelationshipsCustomerPaymentSources) SetData(v CustomerDataRelationshipsCustomerPaymentSourcesData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o CustomerDataRelationshipsCustomerPaymentSources) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

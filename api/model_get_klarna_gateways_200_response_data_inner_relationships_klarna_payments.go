@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments struct for GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments
 type GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
-	Data  []GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
+	Data  *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData `json:"data,omitempty"`
 }
 
 // NewGETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments instantiates a new GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments object
@@ -71,17 +71,17 @@ func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) SetLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) GetData() []GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner {
+func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) GetData() GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner
+		var ret GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) GetDataOk() ([]GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner, bool) {
+func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) GetDataOk() (*GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) HasDa
 	return false
 }
 
-// SetData gets a reference to the given []GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner and assigns it to the Data field.
-func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) SetData(v []GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData and assigns it to the Data field.
+func (o *GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) SetData(v GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPaymentsData) {
+	o.Data = &v
 }
 
 func (o GETKlarnaGateways200ResponseDataInnerRelationshipsKlarnaPayments) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules struct for GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules
 type GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                     `json:"links,omitempty"`
-	Data  []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks               `json:"links,omitempty"`
+	Data  *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData `json:"data,omitempty"`
 }
 
 // NewGETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules instantiates a new GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules object
@@ -71,17 +71,17 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) S
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetData() []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner {
+func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetData() GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData {
 	if o == nil || o.Data == nil {
-		var ret []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner
+		var ret GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetDataOk() ([]GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner, bool) {
+func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetDataOk() (*GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) H
 	return false
 }
 
-// SetData gets a reference to the given []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner and assigns it to the Data field.
-func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) SetData(v []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData and assigns it to the Data field.
+func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) SetData(v GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData) {
+	o.Data = &v
 }
 
 func (o GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) MarshalJSON() ([]byte, error) {

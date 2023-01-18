@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETOrderValidationRules List all order validation rules
 
 List all order validation rules
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrderValidationRulesApiGETOrderValidationRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrderValidationRulesApiGETOrderValidationRulesRequest
 */
 func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Context) OrderValidationRulesApiGETOrderValidationRulesRequest {
 	return OrderValidationRulesApiGETOrderValidationRulesRequest{
@@ -48,7 +48,8 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRules(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETOrderValidationRules200Response
+//
+//	@return GETOrderValidationRules200Response
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderValidationRulesApiGETOrderValidationRulesRequest) (*GETOrderValidationRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETOrderValidationRulesOrderValidationRuleId Retrieve an order validation rule
 
 Retrieve an order validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderValidationRuleId The resource's id
- @return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderValidationRuleId The resource's id
+	@return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest
 */
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId string) OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest {
 	return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest{
@@ -150,7 +151,8 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 }
 
 // Execute executes the request
-//  @return GETOrderValidationRulesOrderValidationRuleId200Response
+//
+//	@return GETOrderValidationRulesOrderValidationRuleId200Response
 func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleIdExecute(r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

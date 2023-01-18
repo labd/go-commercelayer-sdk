@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions struct for GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions
 type GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                `json:"links,omitempty"`
-	Data  []GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks          `json:"links,omitempty"`
+	Data  *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData `json:"data,omitempty"`
 }
 
 // NewGETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions instantiates a new GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions object
@@ -71,17 +71,17 @@ func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) SetLin
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) GetData() []GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner {
+func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) GetData() GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData {
 	if o == nil || o.Data == nil {
-		var ret []GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner
+		var ret GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) GetDataOk() ([]GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner, bool) {
+func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) GetDataOk() (*GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) HasDat
 	return false
 }
 
-// SetData gets a reference to the given []GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner and assigns it to the Data field.
-func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) SetData(v []GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData and assigns it to the Data field.
+func (o *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) SetData(v GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptionsData) {
+	o.Data = &v
 }
 
 func (o GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions) MarshalJSON() ([]byte, error) {

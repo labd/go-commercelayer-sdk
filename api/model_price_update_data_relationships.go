@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,9 @@ import (
 
 // PriceUpdateDataRelationships struct for PriceUpdateDataRelationships
 type PriceUpdateDataRelationships struct {
-	PriceList  *MarketDataRelationshipsPriceList `json:"price_list,omitempty"`
-	Sku        *BundleDataRelationshipsSkus      `json:"sku,omitempty"`
-	PriceTiers *PriceDataRelationshipsPriceTiers `json:"price_tiers,omitempty"`
+	PriceList  *MarketCreateDataRelationshipsPriceList        `json:"price_list,omitempty"`
+	Sku        *InStockSubscriptionCreateDataRelationshipsSku `json:"sku,omitempty"`
+	PriceTiers *PriceCreateDataRelationshipsPriceTiers        `json:"price_tiers,omitempty"`
 }
 
 // NewPriceUpdateDataRelationships instantiates a new PriceUpdateDataRelationships object
@@ -40,9 +40,9 @@ func NewPriceUpdateDataRelationshipsWithDefaults() *PriceUpdateDataRelationships
 }
 
 // GetPriceList returns the PriceList field value if set, zero value otherwise.
-func (o *PriceUpdateDataRelationships) GetPriceList() MarketDataRelationshipsPriceList {
+func (o *PriceUpdateDataRelationships) GetPriceList() MarketCreateDataRelationshipsPriceList {
 	if o == nil || o.PriceList == nil {
-		var ret MarketDataRelationshipsPriceList
+		var ret MarketCreateDataRelationshipsPriceList
 		return ret
 	}
 	return *o.PriceList
@@ -50,7 +50,7 @@ func (o *PriceUpdateDataRelationships) GetPriceList() MarketDataRelationshipsPri
 
 // GetPriceListOk returns a tuple with the PriceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceUpdateDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool) {
+func (o *PriceUpdateDataRelationships) GetPriceListOk() (*MarketCreateDataRelationshipsPriceList, bool) {
 	if o == nil || o.PriceList == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *PriceUpdateDataRelationships) HasPriceList() bool {
 	return false
 }
 
-// SetPriceList gets a reference to the given MarketDataRelationshipsPriceList and assigns it to the PriceList field.
-func (o *PriceUpdateDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList) {
+// SetPriceList gets a reference to the given MarketCreateDataRelationshipsPriceList and assigns it to the PriceList field.
+func (o *PriceUpdateDataRelationships) SetPriceList(v MarketCreateDataRelationshipsPriceList) {
 	o.PriceList = &v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *PriceUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *PriceUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -82,7 +82,7 @@ func (o *PriceUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus {
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceUpdateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *PriceUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *PriceUpdateDataRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
-func (o *PriceUpdateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+// SetSku gets a reference to the given InStockSubscriptionCreateDataRelationshipsSku and assigns it to the Sku field.
+func (o *PriceUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = &v
 }
 
 // GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
-func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers {
+func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceCreateDataRelationshipsPriceTiers {
 	if o == nil || o.PriceTiers == nil {
-		var ret PriceDataRelationshipsPriceTiers
+		var ret PriceCreateDataRelationshipsPriceTiers
 		return ret
 	}
 	return *o.PriceTiers
@@ -114,7 +114,7 @@ func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceDataRelationshipsPri
 
 // GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceUpdateDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool) {
+func (o *PriceUpdateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelationshipsPriceTiers, bool) {
 	if o == nil || o.PriceTiers == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *PriceUpdateDataRelationships) HasPriceTiers() bool {
 	return false
 }
 
-// SetPriceTiers gets a reference to the given PriceDataRelationshipsPriceTiers and assigns it to the PriceTiers field.
-func (o *PriceUpdateDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTiers) {
+// SetPriceTiers gets a reference to the given PriceCreateDataRelationshipsPriceTiers and assigns it to the PriceTiers field.
+func (o *PriceUpdateDataRelationships) SetPriceTiers(v PriceCreateDataRelationshipsPriceTiers) {
 	o.PriceTiers = &v
 }
 

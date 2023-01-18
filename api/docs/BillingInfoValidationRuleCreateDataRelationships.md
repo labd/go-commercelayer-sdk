@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | 
+**Market** | [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleCreateDataRelationships
 
-`func NewBillingInfoValidationRuleCreateDataRelationships(market AvalaraAccountDataRelationshipsMarkets, ) *BillingInfoValidationRuleCreateDataRelationships`
+`func NewBillingInfoValidationRuleCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, ) *BillingInfoValidationRuleCreateDataRelationships`
 
 NewBillingInfoValidationRuleCreateDataRelationships instantiates a new BillingInfoValidationRuleCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *BillingInfoValidationRuleCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *BillingInfoValidationRuleCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 

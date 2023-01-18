@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Type** | **string** | The resource&#39;s type | 
 **Id** | **string** | The resource&#39;s id | 
 **Attributes** | [**PATCHCouponsCouponId200ResponseDataAttributes**](PATCHCouponsCouponId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**CouponDataRelationships**](CouponDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**CouponUpdateDataRelationships**](CouponUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -90,20 +90,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CouponUpdateData) GetRelationships() CouponDataRelationships`
+`func (o *CouponUpdateData) GetRelationships() CouponUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CouponUpdateData) GetRelationshipsOk() (*CouponDataRelationships, bool)`
+`func (o *CouponUpdateData) GetRelationshipsOk() (*CouponUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CouponUpdateData) SetRelationships(v CouponDataRelationships)`
+`func (o *CouponUpdateData) SetRelationships(v CouponUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

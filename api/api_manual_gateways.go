@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEManualGatewaysManualGatewayId Delete a manual gateway
 
 Delete a manual gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualGatewayId The resource's id
- @return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualGatewayId The resource's id
+	@return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest
 */
 func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest{
@@ -129,8 +129,8 @@ GETManualGateways List all manual gateways
 
 List all manual gateways
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ManualGatewaysApiGETManualGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ManualGatewaysApiGETManualGatewaysRequest
 */
 func (a *ManualGatewaysApiService) GETManualGateways(ctx context.Context) ManualGatewaysApiGETManualGatewaysRequest {
 	return ManualGatewaysApiGETManualGatewaysRequest{
@@ -140,7 +140,8 @@ func (a *ManualGatewaysApiService) GETManualGateways(ctx context.Context) Manual
 }
 
 // Execute executes the request
-//  @return GETManualGateways200Response
+//
+//	@return GETManualGateways200Response
 func (a *ManualGatewaysApiService) GETManualGatewaysExecute(r ManualGatewaysApiGETManualGatewaysRequest) (*GETManualGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETManualGatewaysManualGatewayId Retrieve a manual gateway
 
 Retrieve a manual gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualGatewayId The resource's id
- @return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualGatewayId The resource's id
+	@return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest
 */
 func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest{
@@ -242,7 +243,8 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETManualGatewaysManualGatewayId200Response
+//
+//	@return GETManualGatewaysManualGatewayId200Response
 func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest) (*GETManualGatewaysManualGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHManualGatewaysManualGatewayId Update a manual gateway
 
 Update a manual gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualGatewayId The resource's id
- @return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualGatewayId The resource's id
+	@return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest
 */
 func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest{
@@ -351,7 +353,8 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHManualGatewaysManualGatewayId200Response
+//
+//	@return PATCHManualGatewaysManualGatewayId200Response
 func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest) (*PATCHManualGatewaysManualGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTManualGateways Create a manual gateway
 
 Create a manual gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ManualGatewaysApiPOSTManualGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ManualGatewaysApiPOSTManualGatewaysRequest
 */
 func (a *ManualGatewaysApiService) POSTManualGateways(ctx context.Context) ManualGatewaysApiPOSTManualGatewaysRequest {
 	return ManualGatewaysApiPOSTManualGatewaysRequest{
@@ -462,7 +465,8 @@ func (a *ManualGatewaysApiService) POSTManualGateways(ctx context.Context) Manua
 }
 
 // Execute executes the request
-//  @return POSTManualGateways201Response
+//
+//	@return POSTManualGateways201Response
 func (a *ManualGatewaysApiService) POSTManualGatewaysExecute(r ManualGatewaysApiPOSTManualGatewaysRequest) (*POSTManualGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

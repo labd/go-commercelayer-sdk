@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | 
-**Customer** | [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | 
-**Sku** | [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | 
+**Market** | [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | 
+**Customer** | [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | 
+**Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
 
 ## Methods
 
 ### NewInStockSubscriptionCreateDataRelationships
 
-`func NewInStockSubscriptionCreateDataRelationships(market AvalaraAccountDataRelationshipsMarkets, customer CouponRecipientDataRelationshipsCustomer, sku BundleDataRelationshipsSkus, ) *InStockSubscriptionCreateDataRelationships`
+`func NewInStockSubscriptionCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku, ) *InStockSubscriptionCreateDataRelationships`
 
 NewInStockSubscriptionCreateDataRelationships instantiates a new InStockSubscriptionCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -29,60 +29,60 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
 
 ### GetCustomer
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer`
+`func (o *InStockSubscriptionCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool)`
+`func (o *InStockSubscriptionCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *InStockSubscriptionCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer)`
+`func (o *InStockSubscriptionCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 
 
 ### GetSku
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *InStockSubscriptionCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *InStockSubscriptionCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *InStockSubscriptionCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *InStockSubscriptionCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *InStockSubscriptionCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShippingMethod** | [**DeliveryLeadTimeDataRelationshipsShippingMethod**](DeliveryLeadTimeDataRelationshipsShippingMethod.md) |  | 
+**ShippingMethod** | [**DeliveryLeadTimeCreateDataRelationshipsShippingMethod**](DeliveryLeadTimeCreateDataRelationshipsShippingMethod.md) |  | 
 
 ## Methods
 
 ### NewShippingWeightTierCreateDataRelationships
 
-`func NewShippingWeightTierCreateDataRelationships(shippingMethod DeliveryLeadTimeDataRelationshipsShippingMethod, ) *ShippingWeightTierCreateDataRelationships`
+`func NewShippingWeightTierCreateDataRelationships(shippingMethod DeliveryLeadTimeCreateDataRelationshipsShippingMethod, ) *ShippingWeightTierCreateDataRelationships`
 
 NewShippingWeightTierCreateDataRelationships instantiates a new ShippingWeightTierCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShippingMethod
 
-`func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeDataRelationshipsShippingMethod`
+`func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod`
 
 GetShippingMethod returns the ShippingMethod field if non-nil, zero value otherwise.
 
 ### GetShippingMethodOk
 
-`func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeDataRelationshipsShippingMethod, bool)`
+`func (o *ShippingWeightTierCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool)`
 
 GetShippingMethodOk returns a tuple with the ShippingMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingMethod
 
-`func (o *ShippingWeightTierCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeDataRelationshipsShippingMethod)`
+`func (o *ShippingWeightTierCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCreateDataRelationshipsShippingMethod)`
 
 SetShippingMethod sets ShippingMethod field to given value.
 

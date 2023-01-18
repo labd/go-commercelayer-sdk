@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -42,7 +42,7 @@ var (
 	xmlCheck  = regexp.MustCompile(`(?i:(?:application|text)/xml)`)
 )
 
-// APIClient manages communication with the Commerce Layer API API v3.0.2
+// APIClient manages communication with the Commerce Layer API API v3.0.4
 // In most cases there should be only one, shared, APIClient.
 type APIClient struct {
 	cfg    *Configuration
@@ -83,6 +83,8 @@ type APIClient struct {
 	CheckoutComGatewaysApi *CheckoutComGatewaysApiService
 
 	CheckoutComPaymentsApi *CheckoutComPaymentsApiService
+
+	CleanupsApi *CleanupsApiService
 
 	CouponCodesPromotionRulesApi *CouponCodesPromotionRulesApiService
 
@@ -296,6 +298,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.CarrierAccountsApi = (*CarrierAccountsApiService)(&c.common)
 	c.CheckoutComGatewaysApi = (*CheckoutComGatewaysApiService)(&c.common)
 	c.CheckoutComPaymentsApi = (*CheckoutComPaymentsApiService)(&c.common)
+	c.CleanupsApi = (*CleanupsApiService)(&c.common)
 	c.CouponCodesPromotionRulesApi = (*CouponCodesPromotionRulesApiService)(&c.common)
 	c.CouponRecipientsApi = (*CouponRecipientsApiService)(&c.common)
 	c.CouponsApi = (*CouponsApiService)(&c.common)

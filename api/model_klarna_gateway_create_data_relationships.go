@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // KlarnaGatewayCreateDataRelationships struct for KlarnaGatewayCreateDataRelationships
 type KlarnaGatewayCreateDataRelationships struct {
-	KlarnaPayments *KlarnaGatewayDataRelationshipsKlarnaPayments `json:"klarna_payments,omitempty"`
+	KlarnaPayments *KlarnaGatewayCreateDataRelationshipsKlarnaPayments `json:"klarna_payments,omitempty"`
 }
 
 // NewKlarnaGatewayCreateDataRelationships instantiates a new KlarnaGatewayCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewKlarnaGatewayCreateDataRelationshipsWithDefaults() *KlarnaGatewayCreateD
 }
 
 // GetKlarnaPayments returns the KlarnaPayments field value if set, zero value otherwise.
-func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPayments() KlarnaGatewayDataRelationshipsKlarnaPayments {
+func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPayments() KlarnaGatewayCreateDataRelationshipsKlarnaPayments {
 	if o == nil || o.KlarnaPayments == nil {
-		var ret KlarnaGatewayDataRelationshipsKlarnaPayments
+		var ret KlarnaGatewayCreateDataRelationshipsKlarnaPayments
 		return ret
 	}
 	return *o.KlarnaPayments
@@ -48,7 +48,7 @@ func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPayments() KlarnaGateway
 
 // GetKlarnaPaymentsOk returns a tuple with the KlarnaPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayDataRelationshipsKlarnaPayments, bool) {
+func (o *KlarnaGatewayCreateDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayCreateDataRelationshipsKlarnaPayments, bool) {
 	if o == nil || o.KlarnaPayments == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *KlarnaGatewayCreateDataRelationships) HasKlarnaPayments() bool {
 	return false
 }
 
-// SetKlarnaPayments gets a reference to the given KlarnaGatewayDataRelationshipsKlarnaPayments and assigns it to the KlarnaPayments field.
-func (o *KlarnaGatewayCreateDataRelationships) SetKlarnaPayments(v KlarnaGatewayDataRelationshipsKlarnaPayments) {
+// SetKlarnaPayments gets a reference to the given KlarnaGatewayCreateDataRelationshipsKlarnaPayments and assigns it to the KlarnaPayments field.
+func (o *KlarnaGatewayCreateDataRelationships) SetKlarnaPayments(v KlarnaGatewayCreateDataRelationshipsKlarnaPayments) {
 	o.KlarnaPayments = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,10 +17,11 @@ import (
 
 // GETSkuLists200ResponseDataInnerRelationships struct for GETSkuLists200ResponseDataInnerRelationships
 type GETSkuLists200ResponseDataInnerRelationships struct {
-	Customer     *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer `json:"customer,omitempty"`
-	Skus         *GETBundles200ResponseDataInnerRelationshipsSkus              `json:"skus,omitempty"`
-	SkuListItems *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems     `json:"sku_list_items,omitempty"`
-	Bundles      *GETSkuLists200ResponseDataInnerRelationshipsBundles          `json:"bundles,omitempty"`
+	Customer     *GETCouponRecipients200ResponseDataInnerRelationshipsCustomer   `json:"customer,omitempty"`
+	Skus         *GETBundles200ResponseDataInnerRelationshipsSkus                `json:"skus,omitempty"`
+	SkuListItems *GETSkuLists200ResponseDataInnerRelationshipsSkuListItems       `json:"sku_list_items,omitempty"`
+	Bundles      *GETSkuLists200ResponseDataInnerRelationshipsBundles            `json:"bundles,omitempty"`
+	Attachments  *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewGETSkuLists200ResponseDataInnerRelationships instantiates a new GETSkuLists200ResponseDataInnerRelationships object
@@ -168,6 +169,38 @@ func (o *GETSkuLists200ResponseDataInnerRelationships) SetBundles(v GETSkuLists2
 	o.Bundles = &v
 }
 
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+	if o == nil || o.Attachments == nil {
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETSkuLists200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+	if o == nil || o.Attachments == nil {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *GETSkuLists200ResponseDataInnerRelationships) HasAttachments() bool {
+	if o != nil && o.Attachments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETSkuLists200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
 func (o GETSkuLists200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Customer != nil {
@@ -181,6 +214,9 @@ func (o GETSkuLists200ResponseDataInnerRelationships) MarshalJSON() ([]byte, err
 	}
 	if o.Bundles != nil {
 		toSerialize["bundles"] = o.Bundles
+	}
+	if o.Attachments != nil {
+		toSerialize["attachments"] = o.Attachments
 	}
 	return json.Marshal(toSerialize)
 }

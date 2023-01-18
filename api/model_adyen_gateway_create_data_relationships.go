@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // AdyenGatewayCreateDataRelationships struct for AdyenGatewayCreateDataRelationships
 type AdyenGatewayCreateDataRelationships struct {
-	AdyenPayments *AdyenGatewayDataRelationshipsAdyenPayments `json:"adyen_payments,omitempty"`
+	AdyenPayments *AdyenGatewayCreateDataRelationshipsAdyenPayments `json:"adyen_payments,omitempty"`
 }
 
 // NewAdyenGatewayCreateDataRelationships instantiates a new AdyenGatewayCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewAdyenGatewayCreateDataRelationshipsWithDefaults() *AdyenGatewayCreateDat
 }
 
 // GetAdyenPayments returns the AdyenPayments field value if set, zero value otherwise.
-func (o *AdyenGatewayCreateDataRelationships) GetAdyenPayments() AdyenGatewayDataRelationshipsAdyenPayments {
+func (o *AdyenGatewayCreateDataRelationships) GetAdyenPayments() AdyenGatewayCreateDataRelationshipsAdyenPayments {
 	if o == nil || o.AdyenPayments == nil {
-		var ret AdyenGatewayDataRelationshipsAdyenPayments
+		var ret AdyenGatewayCreateDataRelationshipsAdyenPayments
 		return ret
 	}
 	return *o.AdyenPayments
@@ -48,7 +48,7 @@ func (o *AdyenGatewayCreateDataRelationships) GetAdyenPayments() AdyenGatewayDat
 
 // GetAdyenPaymentsOk returns a tuple with the AdyenPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayCreateDataRelationships) GetAdyenPaymentsOk() (*AdyenGatewayDataRelationshipsAdyenPayments, bool) {
+func (o *AdyenGatewayCreateDataRelationships) GetAdyenPaymentsOk() (*AdyenGatewayCreateDataRelationshipsAdyenPayments, bool) {
 	if o == nil || o.AdyenPayments == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *AdyenGatewayCreateDataRelationships) HasAdyenPayments() bool {
 	return false
 }
 
-// SetAdyenPayments gets a reference to the given AdyenGatewayDataRelationshipsAdyenPayments and assigns it to the AdyenPayments field.
-func (o *AdyenGatewayCreateDataRelationships) SetAdyenPayments(v AdyenGatewayDataRelationshipsAdyenPayments) {
+// SetAdyenPayments gets a reference to the given AdyenGatewayCreateDataRelationshipsAdyenPayments and assigns it to the AdyenPayments field.
+func (o *AdyenGatewayCreateDataRelationships) SetAdyenPayments(v AdyenGatewayCreateDataRelationshipsAdyenPayments) {
 	o.AdyenPayments = &v
 }
 

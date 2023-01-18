@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -23,6 +23,8 @@ type PATCHLineItemsLineItemId200ResponseDataAttributes struct {
 	BundleCode *string `json:"bundle_code,omitempty"`
 	// The line item quantity.
 	Quantity *int32 `json:"quantity,omitempty"`
+	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source.
+	ExternalPrice *bool `json:"_external_price,omitempty"`
 	// The name of the line item. When blank, it gets populated with the name of the associated item (if present).
 	Name *string `json:"name,omitempty"`
 	// The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only).
@@ -146,6 +148,38 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasQuantity() bool {
 // SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetQuantity(v int32) {
 	o.Quantity = &v
+}
+
+// GetExternalPrice returns the ExternalPrice field value if set, zero value otherwise.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPrice() bool {
+	if o == nil || o.ExternalPrice == nil {
+		var ret bool
+		return ret
+	}
+	return *o.ExternalPrice
+}
+
+// GetExternalPriceOk returns a tuple with the ExternalPrice field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk() (*bool, bool) {
+	if o == nil || o.ExternalPrice == nil {
+		return nil, false
+	}
+	return o.ExternalPrice, true
+}
+
+// HasExternalPrice returns a boolean if a field has been set.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasExternalPrice() bool {
+	if o != nil && o.ExternalPrice != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalPrice gets a reference to the given bool and assigns it to the ExternalPrice field.
+func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetExternalPrice(v bool) {
+	o.ExternalPrice = &v
 }
 
 // GetName returns the Name field value if set, zero value otherwise.
@@ -318,6 +352,9 @@ func (o PATCHLineItemsLineItemId200ResponseDataAttributes) MarshalJSON() ([]byte
 	}
 	if o.Quantity != nil {
 		toSerialize["quantity"] = o.Quantity
+	}
+	if o.ExternalPrice != nil {
+		toSerialize["_external_price"] = o.ExternalPrice
 	}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name

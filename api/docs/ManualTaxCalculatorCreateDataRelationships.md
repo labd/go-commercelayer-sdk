@@ -4,8 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxCategories** | Pointer to [**AvalaraAccountDataRelationshipsTaxCategories**](AvalaraAccountDataRelationshipsTaxCategories.md) |  | [optional] 
-**TaxRules** | Pointer to [**ManualTaxCalculatorDataRelationshipsTaxRules**](ManualTaxCalculatorDataRelationshipsTaxRules.md) |  | [optional] 
+**TaxRules** | Pointer to [**ManualTaxCalculatorCreateDataRelationshipsTaxRules**](ManualTaxCalculatorCreateDataRelationshipsTaxRules.md) |  | [optional] 
 
 ## Methods
 
@@ -26,47 +25,22 @@ NewManualTaxCalculatorCreateDataRelationshipsWithDefaults instantiates a new Man
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetTaxCategories
-
-`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories`
-
-GetTaxCategories returns the TaxCategories field if non-nil, zero value otherwise.
-
-### GetTaxCategoriesOk
-
-`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool)`
-
-GetTaxCategoriesOk returns a tuple with the TaxCategories field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaxCategories
-
-`func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories)`
-
-SetTaxCategories sets TaxCategories field to given value.
-
-### HasTaxCategories
-
-`func (o *ManualTaxCalculatorCreateDataRelationships) HasTaxCategories() bool`
-
-HasTaxCategories returns a boolean if a field has been set.
-
 ### GetTaxRules
 
-`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRules() ManualTaxCalculatorDataRelationshipsTaxRules`
+`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRules() ManualTaxCalculatorCreateDataRelationshipsTaxRules`
 
 GetTaxRules returns the TaxRules field if non-nil, zero value otherwise.
 
 ### GetTaxRulesOk
 
-`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRulesOk() (*ManualTaxCalculatorDataRelationshipsTaxRules, bool)`
+`func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRulesOk() (*ManualTaxCalculatorCreateDataRelationshipsTaxRules, bool)`
 
 GetTaxRulesOk returns a tuple with the TaxRules field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTaxRules
 
-`func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxRules(v ManualTaxCalculatorDataRelationshipsTaxRules)`
+`func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxRules(v ManualTaxCalculatorCreateDataRelationshipsTaxRules)`
 
 SetTaxRules sets TaxRules field to given value.
 

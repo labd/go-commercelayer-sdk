@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **CarrierAccounts** | Pointer to [**ShipmentDataRelationshipsCarrierAccounts**](ShipmentDataRelationshipsCarrierAccounts.md) |  | [optional] 
 **Parcels** | Pointer to [**PackageDataRelationshipsParcels**](PackageDataRelationshipsParcels.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**CustomerAddressDataRelationshipsEvents**](CustomerAddressDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -391,20 +391,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *ShipmentDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents`
+`func (o *ShipmentDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *ShipmentDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool)`
+`func (o *ShipmentDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *ShipmentDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents)`
+`func (o *ShipmentDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

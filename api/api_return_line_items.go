@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEReturnLineItemsReturnLineItemId Delete a return line item
 
 Delete a return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnLineItemId The resource's id
- @return ReturnLineItemsApiDELETEReturnLineItemsReturnLineItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnLineItemId The resource's id
+	@return ReturnLineItemsApiDELETEReturnLineItemsReturnLineItemIdRequest
 */
 func (a *ReturnLineItemsApiService) DELETEReturnLineItemsReturnLineItemId(ctx context.Context, returnLineItemId string) ReturnLineItemsApiDELETEReturnLineItemsReturnLineItemIdRequest {
 	return ReturnLineItemsApiDELETEReturnLineItemsReturnLineItemIdRequest{
@@ -130,9 +130,9 @@ GETReturnIdReturnLineItems Retrieve the return line items associated to the retu
 
 Retrieve the return line items associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return ReturnLineItemsApiGETReturnIdReturnLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return ReturnLineItemsApiGETReturnIdReturnLineItemsRequest
 */
 func (a *ReturnLineItemsApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId string) ReturnLineItemsApiGETReturnIdReturnLineItemsRequest {
 	return ReturnLineItemsApiGETReturnIdReturnLineItemsRequest{
@@ -221,8 +221,8 @@ GETReturnLineItems List all return line items
 
 List all return line items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ReturnLineItemsApiGETReturnLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ReturnLineItemsApiGETReturnLineItemsRequest
 */
 func (a *ReturnLineItemsApiService) GETReturnLineItems(ctx context.Context) ReturnLineItemsApiGETReturnLineItemsRequest {
 	return ReturnLineItemsApiGETReturnLineItemsRequest{
@@ -232,7 +232,8 @@ func (a *ReturnLineItemsApiService) GETReturnLineItems(ctx context.Context) Retu
 }
 
 // Execute executes the request
-//  @return GETReturnLineItems200Response
+//
+//	@return GETReturnLineItems200Response
 func (a *ReturnLineItemsApiService) GETReturnLineItemsExecute(r ReturnLineItemsApiGETReturnLineItemsRequest) (*GETReturnLineItems200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETReturnLineItemsReturnLineItemId Retrieve a return line item
 
 Retrieve a return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnLineItemId The resource's id
- @return ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnLineItemId The resource's id
+	@return ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest
 */
 func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemId(ctx context.Context, returnLineItemId string) ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest {
 	return ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest{
@@ -334,7 +335,8 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETReturnLineItemsReturnLineItemId200Response
+//
+//	@return GETReturnLineItemsReturnLineItemId200Response
 func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiGETReturnLineItemsReturnLineItemIdRequest) (*GETReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHReturnLineItemsReturnLineItemId Update a return line item
 
 Update a return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnLineItemId The resource's id
- @return ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnLineItemId The resource's id
+	@return ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest
 */
 func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemId(ctx context.Context, returnLineItemId string) ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest {
 	return ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest{
@@ -443,7 +445,8 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemId(ctx con
 }
 
 // Execute executes the request
-//  @return PATCHReturnLineItemsReturnLineItemId200Response
+//
+//	@return PATCHReturnLineItemsReturnLineItemId200Response
 func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) (*PATCHReturnLineItemsReturnLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTReturnLineItems Create a return line item
 
 Create a return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ReturnLineItemsApiPOSTReturnLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ReturnLineItemsApiPOSTReturnLineItemsRequest
 */
 func (a *ReturnLineItemsApiService) POSTReturnLineItems(ctx context.Context) ReturnLineItemsApiPOSTReturnLineItemsRequest {
 	return ReturnLineItemsApiPOSTReturnLineItemsRequest{
@@ -554,7 +557,8 @@ func (a *ReturnLineItemsApiService) POSTReturnLineItems(ctx context.Context) Ret
 }
 
 // Execute executes the request
-//  @return POSTReturnLineItems201Response
+//
+//	@return POSTReturnLineItems201Response
 func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItemsApiPOSTReturnLineItemsRequest) (*POSTReturnLineItems201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

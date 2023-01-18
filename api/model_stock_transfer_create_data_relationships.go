@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,18 +17,18 @@ import (
 
 // StockTransferCreateDataRelationships struct for StockTransferCreateDataRelationships
 type StockTransferCreateDataRelationships struct {
-	Sku                      BundleDataRelationshipsSkus                    `json:"sku"`
-	OriginStockLocation      DeliveryLeadTimeDataRelationshipsStockLocation `json:"origin_stock_location"`
-	DestinationStockLocation DeliveryLeadTimeDataRelationshipsStockLocation `json:"destination_stock_location"`
-	Shipment                 *OrderDataRelationshipsShipments               `json:"shipment,omitempty"`
-	LineItem                 *LineItemOptionDataRelationshipsLineItem       `json:"line_item,omitempty"`
+	Sku                      InStockSubscriptionCreateDataRelationshipsSku        `json:"sku"`
+	OriginStockLocation      DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"origin_stock_location"`
+	DestinationStockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"destination_stock_location"`
+	Shipment                 *ParcelCreateDataRelationshipsShipment               `json:"shipment,omitempty"`
+	LineItem                 *LineItemOptionCreateDataRelationshipsLineItem       `json:"line_item,omitempty"`
 }
 
 // NewStockTransferCreateDataRelationships instantiates a new StockTransferCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferCreateDataRelationships(sku BundleDataRelationshipsSkus, originStockLocation DeliveryLeadTimeDataRelationshipsStockLocation, destinationStockLocation DeliveryLeadTimeDataRelationshipsStockLocation) *StockTransferCreateDataRelationships {
+func NewStockTransferCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, originStockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, destinationStockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation) *StockTransferCreateDataRelationships {
 	this := StockTransferCreateDataRelationships{}
 	this.Sku = sku
 	this.OriginStockLocation = originStockLocation
@@ -45,9 +45,9 @@ func NewStockTransferCreateDataRelationshipsWithDefaults() *StockTransferCreateD
 }
 
 // GetSku returns the Sku field value
-func (o *StockTransferCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *StockTransferCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 
@@ -56,7 +56,7 @@ func (o *StockTransferCreateDataRelationships) GetSku() BundleDataRelationshipsS
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *StockTransferCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -64,14 +64,14 @@ func (o *StockTransferCreateDataRelationships) GetSkuOk() (*BundleDataRelationsh
 }
 
 // SetSku sets field value
-func (o *StockTransferCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+func (o *StockTransferCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = v
 }
 
 // GetOriginStockLocation returns the OriginStockLocation field value
-func (o *StockTransferCreateDataRelationships) GetOriginStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *StockTransferCreateDataRelationships) GetOriginStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 
@@ -80,7 +80,7 @@ func (o *StockTransferCreateDataRelationships) GetOriginStockLocation() Delivery
 
 // GetOriginStockLocationOk returns a tuple with the OriginStockLocation field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateDataRelationships) GetOriginStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *StockTransferCreateDataRelationships) GetOriginStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,14 +88,14 @@ func (o *StockTransferCreateDataRelationships) GetOriginStockLocationOk() (*Deli
 }
 
 // SetOriginStockLocation sets field value
-func (o *StockTransferCreateDataRelationships) SetOriginStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+func (o *StockTransferCreateDataRelationships) SetOriginStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.OriginStockLocation = v
 }
 
 // GetDestinationStockLocation returns the DestinationStockLocation field value
-func (o *StockTransferCreateDataRelationships) GetDestinationStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *StockTransferCreateDataRelationships) GetDestinationStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 
@@ -104,7 +104,7 @@ func (o *StockTransferCreateDataRelationships) GetDestinationStockLocation() Del
 
 // GetDestinationStockLocationOk returns a tuple with the DestinationStockLocation field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateDataRelationships) GetDestinationStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *StockTransferCreateDataRelationships) GetDestinationStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -112,14 +112,14 @@ func (o *StockTransferCreateDataRelationships) GetDestinationStockLocationOk() (
 }
 
 // SetDestinationStockLocation sets field value
-func (o *StockTransferCreateDataRelationships) SetDestinationStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+func (o *StockTransferCreateDataRelationships) SetDestinationStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.DestinationStockLocation = v
 }
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
-func (o *StockTransferCreateDataRelationships) GetShipment() OrderDataRelationshipsShipments {
+func (o *StockTransferCreateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment {
 	if o == nil || o.Shipment == nil {
-		var ret OrderDataRelationshipsShipments
+		var ret ParcelCreateDataRelationshipsShipment
 		return ret
 	}
 	return *o.Shipment
@@ -127,7 +127,7 @@ func (o *StockTransferCreateDataRelationships) GetShipment() OrderDataRelationsh
 
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool) {
+func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool) {
 	if o == nil || o.Shipment == nil {
 		return nil, false
 	}
@@ -143,15 +143,15 @@ func (o *StockTransferCreateDataRelationships) HasShipment() bool {
 	return false
 }
 
-// SetShipment gets a reference to the given OrderDataRelationshipsShipments and assigns it to the Shipment field.
-func (o *StockTransferCreateDataRelationships) SetShipment(v OrderDataRelationshipsShipments) {
+// SetShipment gets a reference to the given ParcelCreateDataRelationshipsShipment and assigns it to the Shipment field.
+func (o *StockTransferCreateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment) {
 	o.Shipment = &v
 }
 
 // GetLineItem returns the LineItem field value if set, zero value otherwise.
-func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionDataRelationshipsLineItem {
+func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem {
 	if o == nil || o.LineItem == nil {
-		var ret LineItemOptionDataRelationshipsLineItem
+		var ret LineItemOptionCreateDataRelationshipsLineItem
 		return ret
 	}
 	return *o.LineItem
@@ -159,7 +159,7 @@ func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionDataR
 
 // GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionDataRelationshipsLineItem, bool) {
+func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool) {
 	if o == nil || o.LineItem == nil {
 		return nil, false
 	}
@@ -175,8 +175,8 @@ func (o *StockTransferCreateDataRelationships) HasLineItem() bool {
 	return false
 }
 
-// SetLineItem gets a reference to the given LineItemOptionDataRelationshipsLineItem and assigns it to the LineItem field.
-func (o *StockTransferCreateDataRelationships) SetLineItem(v LineItemOptionDataRelationshipsLineItem) {
+// SetLineItem gets a reference to the given LineItemOptionCreateDataRelationshipsLineItem and assigns it to the LineItem field.
+func (o *StockTransferCreateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem) {
 	o.LineItem = &v
 }
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxCategoryData**](TaxCategoryData.md) |  | 
+**Data** | Pointer to [**TaxCategoryData**](TaxCategoryData.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategory
 
-`func NewTaxCategory(data TaxCategoryData, ) *TaxCategory`
+`func NewTaxCategory() *TaxCategory`
 
 NewTaxCategory instantiates a new TaxCategory object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *TaxCategory) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -9,7 +9,6 @@ Name | Type | Description | Notes
 **PublicAccess** | Pointer to **bool** | Indicates if the application has public access. | [optional] 
 **RedirectUri** | Pointer to **string** | The application&#39;s redirect URI. | [optional] 
 **Scopes** | Pointer to **string** | The application&#39;s scopes. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -159,31 +158,6 @@ SetScopes sets Scopes field to given value.
 `func (o *GETApplicationApplicationId200ResponseDataAttributes) HasScopes() bool`
 
 HasScopes returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETApplicationApplicationId200ResponseDataAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETApplicationApplicationId200ResponseDataAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETApplicationApplicationId200ResponseDataAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETApplicationApplicationId200ResponseDataAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

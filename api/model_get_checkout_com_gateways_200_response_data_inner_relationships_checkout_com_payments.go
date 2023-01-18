@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments struct for GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments
 type GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                           `json:"links,omitempty"`
-	Data  []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                     `json:"links,omitempty"`
+	Data  *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData `json:"data,omitempty"`
 }
 
 // NewGETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments instantiates a new GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments object
@@ -71,17 +71,17 @@ func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayme
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetData() []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner {
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetData() GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner
+		var ret GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetDataOk() ([]GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner, bool) {
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetDataOk() (*GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayme
 	return false
 }
 
-// SetData gets a reference to the given []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner and assigns it to the Data field.
-func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) SetData(v []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData and assigns it to the Data field.
+func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) SetData(v GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData) {
+	o.Data = &v
 }
 
 func (o GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) MarshalJSON() ([]byte, error) {

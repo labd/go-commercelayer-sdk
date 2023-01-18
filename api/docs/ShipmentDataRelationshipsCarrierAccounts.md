@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShipmentDataRelationshipsCarrierAccountsData**](ShipmentDataRelationshipsCarrierAccountsData.md) |  | 
+**Data** | Pointer to [**ShipmentDataRelationshipsCarrierAccountsData**](ShipmentDataRelationshipsCarrierAccountsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewShipmentDataRelationshipsCarrierAccounts
 
-`func NewShipmentDataRelationshipsCarrierAccounts(data ShipmentDataRelationshipsCarrierAccountsData, ) *ShipmentDataRelationshipsCarrierAccounts`
+`func NewShipmentDataRelationshipsCarrierAccounts() *ShipmentDataRelationshipsCarrierAccounts`
 
 NewShipmentDataRelationshipsCarrierAccounts instantiates a new ShipmentDataRelationshipsCarrierAccounts object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ShipmentDataRelationshipsCarrierAccounts) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

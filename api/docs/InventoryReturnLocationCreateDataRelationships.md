@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | 
-**InventoryModel** | [**InventoryReturnLocationDataRelationshipsInventoryModel**](InventoryReturnLocationDataRelationshipsInventoryModel.md) |  | 
+**StockLocation** | [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | 
+**InventoryModel** | [**InventoryReturnLocationCreateDataRelationshipsInventoryModel**](InventoryReturnLocationCreateDataRelationshipsInventoryModel.md) |  | 
 
 ## Methods
 
 ### NewInventoryReturnLocationCreateDataRelationships
 
-`func NewInventoryReturnLocationCreateDataRelationships(stockLocation DeliveryLeadTimeDataRelationshipsStockLocation, inventoryModel InventoryReturnLocationDataRelationshipsInventoryModel, ) *InventoryReturnLocationCreateDataRelationships`
+`func NewInventoryReturnLocationCreateDataRelationships(stockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, inventoryModel InventoryReturnLocationCreateDataRelationshipsInventoryModel, ) *InventoryReturnLocationCreateDataRelationships`
 
 NewInventoryReturnLocationCreateDataRelationships instantiates a new InventoryReturnLocationCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *InventoryReturnLocationCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *InventoryReturnLocationCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
 
 ### GetInventoryModel
 
-`func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel`
+`func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModel() InventoryReturnLocationCreateDataRelationshipsInventoryModel`
 
 GetInventoryModel returns the InventoryModel field if non-nil, zero value otherwise.
 
 ### GetInventoryModelOk
 
-`func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool)`
+`func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationCreateDataRelationshipsInventoryModel, bool)`
 
 GetInventoryModelOk returns a tuple with the InventoryModel field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetInventoryModel
 
-`func (o *InventoryReturnLocationCreateDataRelationships) SetInventoryModel(v InventoryReturnLocationDataRelationshipsInventoryModel)`
+`func (o *InventoryReturnLocationCreateDataRelationships) SetInventoryModel(v InventoryReturnLocationCreateDataRelationshipsInventoryModel)`
 
 SetInventoryModel sets InventoryModel field to given value.
 

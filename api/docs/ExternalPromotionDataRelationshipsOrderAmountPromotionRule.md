@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData**](ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData.md) |  | 
+**Data** | Pointer to [**ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData**](ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotionDataRelationshipsOrderAmountPromotionRule
 
-`func NewExternalPromotionDataRelationshipsOrderAmountPromotionRule(data ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData, ) *ExternalPromotionDataRelationshipsOrderAmountPromotionRule`
+`func NewExternalPromotionDataRelationshipsOrderAmountPromotionRule() *ExternalPromotionDataRelationshipsOrderAmountPromotionRule`
 
 NewExternalPromotionDataRelationshipsOrderAmountPromotionRule instantiates a new ExternalPromotionDataRelationshipsOrderAmountPromotionRule object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

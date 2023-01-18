@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type AddressUpdateData struct {
 	// The resource's id
 	Id            string                                           `json:"id"`
 	Attributes    PATCHAddressesAddressId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AddressDataRelationships                        `json:"relationships,omitempty"`
+	Relationships *AddressCreateDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewAddressUpdateData instantiates a new AddressUpdateData object
@@ -118,9 +118,9 @@ func (o *AddressUpdateData) SetAttributes(v PATCHAddressesAddressId200ResponseDa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AddressUpdateData) GetRelationships() AddressDataRelationships {
+func (o *AddressUpdateData) GetRelationships() AddressCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AddressDataRelationships
+		var ret AddressCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -128,7 +128,7 @@ func (o *AddressUpdateData) GetRelationships() AddressDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddressUpdateData) GetRelationshipsOk() (*AddressDataRelationships, bool) {
+func (o *AddressUpdateData) GetRelationshipsOk() (*AddressCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *AddressUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AddressDataRelationships and assigns it to the Relationships field.
-func (o *AddressUpdateData) SetRelationships(v AddressDataRelationships) {
+// SetRelationships gets a reference to the given AddressCreateDataRelationships and assigns it to the Relationships field.
+func (o *AddressUpdateData) SetRelationships(v AddressCreateDataRelationships) {
 	o.Relationships = &v
 }
 

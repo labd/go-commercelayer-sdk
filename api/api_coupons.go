@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECouponsCouponId Delete a coupon
 
 Delete a coupon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponId The resource's id
- @return CouponsApiDELETECouponsCouponIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return CouponsApiDELETECouponsCouponIdRequest
 */
 func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest {
 	return CouponsApiDELETECouponsCouponIdRequest{
@@ -130,9 +130,9 @@ GETCouponCodesPromotionRuleIdCoupons Retrieve the coupons associated to the coup
 
 Retrieve the coupons associated to the coupon codes promotion rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponCodesPromotionRuleId The resource's id
- @return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponCodesPromotionRuleId The resource's id
+	@return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
 func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
 	return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest{
@@ -221,8 +221,8 @@ GETCoupons List all coupons
 
 List all coupons
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponsApiGETCouponsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CouponsApiGETCouponsRequest
 */
 func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCouponsRequest {
 	return CouponsApiGETCouponsRequest{
@@ -232,7 +232,8 @@ func (a *CouponsApiService) GETCoupons(ctx context.Context) CouponsApiGETCoupons
 }
 
 // Execute executes the request
-//  @return GETCoupons200Response
+//
+//	@return GETCoupons200Response
 func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*GETCoupons200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETCouponsCouponId Retrieve a coupon
 
 Retrieve a coupon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponId The resource's id
- @return CouponsApiGETCouponsCouponIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return CouponsApiGETCouponsCouponIdRequest
 */
 func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest {
 	return CouponsApiGETCouponsCouponIdRequest{
@@ -334,7 +335,8 @@ func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId str
 }
 
 // Execute executes the request
-//  @return GETCouponsCouponId200Response
+//
+//	@return GETCouponsCouponId200Response
 func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCouponIdRequest) (*GETCouponsCouponId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHCouponsCouponId Update a coupon
 
 Update a coupon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponId The resource's id
- @return CouponsApiPATCHCouponsCouponIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return CouponsApiPATCHCouponsCouponIdRequest
 */
 func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest {
 	return CouponsApiPATCHCouponsCouponIdRequest{
@@ -443,7 +445,8 @@ func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId s
 }
 
 // Execute executes the request
-//  @return PATCHCouponsCouponId200Response
+//
+//	@return PATCHCouponsCouponId200Response
 func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCouponsCouponIdRequest) (*PATCHCouponsCouponId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTCoupons Create a coupon
 
 Create a coupon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponsApiPOSTCouponsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CouponsApiPOSTCouponsRequest
 */
 func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCouponsRequest {
 	return CouponsApiPOSTCouponsRequest{
@@ -554,7 +557,8 @@ func (a *CouponsApiService) POSTCoupons(ctx context.Context) CouponsApiPOSTCoupo
 }
 
 // Execute executes the request
-//  @return POSTCoupons201Response
+//
+//	@return POSTCoupons201Response
 func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (*POSTCoupons201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

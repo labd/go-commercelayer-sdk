@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // AdyenPaymentUpdateDataRelationships struct for AdyenPaymentUpdateDataRelationships
 type AdyenPaymentUpdateDataRelationships struct {
-	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
+	Order *AdyenPaymentCreateDataRelationshipsOrder `json:"order,omitempty"`
 }
 
 // NewAdyenPaymentUpdateDataRelationships instantiates a new AdyenPaymentUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewAdyenPaymentUpdateDataRelationshipsWithDefaults() *AdyenPaymentUpdateDat
 }
 
 // GetOrder returns the Order field value if set, zero value otherwise.
-func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
+func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil || o.Order == nil {
-		var ret AdyenPaymentDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 	return *o.Order
@@ -48,7 +48,7 @@ func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentDataRelatio
 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil || o.Order == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *AdyenPaymentUpdateDataRelationships) HasOrder() bool {
 	return false
 }
 
-// SetOrder gets a reference to the given AdyenPaymentDataRelationshipsOrder and assigns it to the Order field.
-func (o *AdyenPaymentUpdateDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
+// SetOrder gets a reference to the given AdyenPaymentCreateDataRelationshipsOrder and assigns it to the Order field.
+func (o *AdyenPaymentUpdateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.Order = &v
 }
 

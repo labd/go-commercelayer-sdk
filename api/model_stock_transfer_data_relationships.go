@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type StockTransferDataRelationships struct {
 	DestinationStockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"destination_stock_location,omitempty"`
 	Shipment                 *OrderDataRelationshipsShipments                `json:"shipment,omitempty"`
 	LineItem                 *LineItemOptionDataRelationshipsLineItem        `json:"line_item,omitempty"`
-	Events                   *CustomerAddressDataRelationshipsEvents         `json:"events,omitempty"`
+	Events                   *CleanupDataRelationshipsEvents                 `json:"events,omitempty"`
 }
 
 // NewStockTransferDataRelationships instantiates a new StockTransferDataRelationships object
@@ -203,9 +203,9 @@ func (o *StockTransferDataRelationships) SetLineItem(v LineItemOptionDataRelatio
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *StockTransferDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+func (o *StockTransferDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CustomerAddressDataRelationshipsEvents
+		var ret CleanupDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -213,7 +213,7 @@ func (o *StockTransferDataRelationships) GetEvents() CustomerAddressDataRelation
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockTransferDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+func (o *StockTransferDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -229,8 +229,8 @@ func (o *StockTransferDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
-func (o *StockTransferDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
+func (o *StockTransferDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
 	o.Events = &v
 }
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Skus** | Pointer to [**GETBundles200ResponseDataInnerRelationshipsSkus**](GETBundles200ResponseDataInnerRelationshipsSkus.md) |  | [optional] 
 **SkuListItems** | Pointer to [**GETSkuLists200ResponseDataInnerRelationshipsSkuListItems**](GETSkuLists200ResponseDataInnerRelationshipsSkuListItems.md) |  | [optional] 
 **Bundles** | Pointer to [**GETSkuLists200ResponseDataInnerRelationshipsBundles**](GETSkuLists200ResponseDataInnerRelationshipsBundles.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetBundles sets Bundles field to given value.
 `func (o *GETSkuLists200ResponseDataInnerRelationships) HasBundles() bool`
 
 HasBundles returns a boolean if a field has been set.
+
+### GetAttachments
+
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
+
+GetAttachments returns the Attachments field if non-nil, zero value otherwise.
+
+### GetAttachmentsOk
+
+`func (o *GETSkuLists200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
+
+GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachments
+
+`func (o *GETSkuLists200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
+
+SetAttachments sets Attachments field to given value.
+
+### HasAttachments
+
+`func (o *GETSkuLists200ResponseDataInnerRelationships) HasAttachments() bool`
+
+HasAttachments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

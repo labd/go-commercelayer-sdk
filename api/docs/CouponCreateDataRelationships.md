@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**PromotionRule** | [**CouponDataRelationshipsPromotionRule**](CouponDataRelationshipsPromotionRule.md) |  | 
+**PromotionRule** | [**CouponCreateDataRelationshipsPromotionRule**](CouponCreateDataRelationshipsPromotionRule.md) |  | 
 
 ## Methods
 
 ### NewCouponCreateDataRelationships
 
-`func NewCouponCreateDataRelationships(promotionRule CouponDataRelationshipsPromotionRule, ) *CouponCreateDataRelationships`
+`func NewCouponCreateDataRelationships(promotionRule CouponCreateDataRelationshipsPromotionRule, ) *CouponCreateDataRelationships`
 
 NewCouponCreateDataRelationships instantiates a new CouponCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotionRule
 
-`func (o *CouponCreateDataRelationships) GetPromotionRule() CouponDataRelationshipsPromotionRule`
+`func (o *CouponCreateDataRelationships) GetPromotionRule() CouponCreateDataRelationshipsPromotionRule`
 
 GetPromotionRule returns the PromotionRule field if non-nil, zero value otherwise.
 
 ### GetPromotionRuleOk
 
-`func (o *CouponCreateDataRelationships) GetPromotionRuleOk() (*CouponDataRelationshipsPromotionRule, bool)`
+`func (o *CouponCreateDataRelationships) GetPromotionRuleOk() (*CouponCreateDataRelationshipsPromotionRule, bool)`
 
 GetPromotionRuleOk returns a tuple with the PromotionRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotionRule
 
-`func (o *CouponCreateDataRelationships) SetPromotionRule(v CouponDataRelationshipsPromotionRule)`
+`func (o *CouponCreateDataRelationships) SetPromotionRule(v CouponCreateDataRelationshipsPromotionRule)`
 
 SetPromotionRule sets PromotionRule field to given value.
 

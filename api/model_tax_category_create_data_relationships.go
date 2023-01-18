@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // TaxCategoryCreateDataRelationships struct for TaxCategoryCreateDataRelationships
 type TaxCategoryCreateDataRelationships struct {
-	Sku           BundleDataRelationshipsSkus               `json:"sku"`
-	TaxCalculator TaxCategoryDataRelationshipsTaxCalculator `json:"tax_calculator"`
+	Sku           InStockSubscriptionCreateDataRelationshipsSku   `json:"sku"`
+	TaxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator `json:"tax_calculator"`
 }
 
 // NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryCreateDataRelationships(sku BundleDataRelationshipsSkus, taxCalculator TaxCategoryDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
+func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
 	this := TaxCategoryCreateDataRelationships{}
 	this.Sku = sku
 	this.TaxCalculator = taxCalculator
@@ -41,9 +41,9 @@ func NewTaxCategoryCreateDataRelationshipsWithDefaults() *TaxCategoryCreateDataR
 }
 
 // GetSku returns the Sku field value
-func (o *TaxCategoryCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *TaxCategoryCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *TaxCategoryCreateDataRelationships) GetSku() BundleDataRelationshipsSku
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*BundleDataRelationship
 }
 
 // SetSku sets field value
-func (o *TaxCategoryCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+func (o *TaxCategoryCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = v
 }
 
 // GetTaxCalculator returns the TaxCalculator field value
-func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryDataRelationshipsTaxCalculator {
+func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryCreateDataRelationshipsTaxCalculator {
 	if o == nil {
-		var ret TaxCategoryDataRelationshipsTaxCalculator
+		var ret TaxCategoryCreateDataRelationshipsTaxCalculator
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *TaxCategoryCreateDataRelationships) GetTaxCalculator() TaxCategoryDataR
 
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryDataRelationshipsTaxCalculator, bool) {
+func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryCreateDataRelationshipsTaxCalculator, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *TaxCategoryCreateDataRelationships) GetTaxCalculatorOk() (*TaxCategoryD
 }
 
 // SetTaxCalculator sets field value
-func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryDataRelationshipsTaxCalculator) {
+func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryCreateDataRelationshipsTaxCalculator) {
 	o.TaxCalculator = v
 }
 

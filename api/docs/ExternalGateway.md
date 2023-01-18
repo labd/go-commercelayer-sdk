@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalGatewayData**](ExternalGatewayData.md) |  | 
+**Data** | Pointer to [**ExternalGatewayData**](ExternalGatewayData.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalGateway
 
-`func NewExternalGateway(data ExternalGatewayData, ) *ExternalGateway`
+`func NewExternalGateway() *ExternalGateway`
 
 NewExternalGateway instantiates a new ExternalGateway object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ExternalGateway) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **SkuCode** | Pointer to **string** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **string** | The code of the associated bundle. | [optional] 
 **Quantity** | Pointer to **int32** | The line item quantity. | [optional] 
+**ExternalPrice** | Pointer to **bool** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. | [optional] 
 **Name** | Pointer to **string** | The name of the line item. When blank, it gets populated with the name of the associated item (if present). | [optional] 
 **ImageUrl** | Pointer to **string** | The image_url of the line item. When blank, it gets populated with the image_url of the associated item (if present, SKU only). | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -106,6 +107,31 @@ SetQuantity sets Quantity field to given value.
 `func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasQuantity() bool`
 
 HasQuantity returns a boolean if a field has been set.
+
+### GetExternalPrice
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPrice() bool`
+
+GetExternalPrice returns the ExternalPrice field if non-nil, zero value otherwise.
+
+### GetExternalPriceOk
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk() (*bool, bool)`
+
+GetExternalPriceOk returns a tuple with the ExternalPrice field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalPrice
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetExternalPrice(v bool)`
+
+SetExternalPrice sets ExternalPrice field to given value.
+
+### HasExternalPrice
+
+`func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasExternalPrice() bool`
+
+HasExternalPrice returns a boolean if a field has been set.
 
 ### GetName
 

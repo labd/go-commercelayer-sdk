@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxRuleDataRelationshipsManualTaxCalculatorData**](TaxRuleDataRelationshipsManualTaxCalculatorData.md) |  | 
+**Data** | Pointer to [**TaxRuleDataRelationshipsManualTaxCalculatorData**](TaxRuleDataRelationshipsManualTaxCalculatorData.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxRuleDataRelationshipsManualTaxCalculator
 
-`func NewTaxRuleDataRelationshipsManualTaxCalculator(data TaxRuleDataRelationshipsManualTaxCalculatorData, ) *TaxRuleDataRelationshipsManualTaxCalculator`
+`func NewTaxRuleDataRelationshipsManualTaxCalculator() *TaxRuleDataRelationshipsManualTaxCalculator`
 
 NewTaxRuleDataRelationshipsManualTaxCalculator instantiates a new TaxRuleDataRelationshipsManualTaxCalculator object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *TaxRuleDataRelationshipsManualTaxCalculator) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

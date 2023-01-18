@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**AdyenGatewayDataRelationshipsAdyenPaymentsData**](AdyenGatewayDataRelationshipsAdyenPaymentsData.md) |  | 
+**Data** | Pointer to [**AdyenGatewayDataRelationshipsAdyenPaymentsData**](AdyenGatewayDataRelationshipsAdyenPaymentsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdyenGatewayDataRelationshipsAdyenPayments
 
-`func NewAdyenGatewayDataRelationshipsAdyenPayments(data AdyenGatewayDataRelationshipsAdyenPaymentsData, ) *AdyenGatewayDataRelationshipsAdyenPayments`
+`func NewAdyenGatewayDataRelationshipsAdyenPayments() *AdyenGatewayDataRelationshipsAdyenPayments`
 
 NewAdyenGatewayDataRelationshipsAdyenPayments instantiates a new AdyenGatewayDataRelationshipsAdyenPayments object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *AdyenGatewayDataRelationshipsAdyenPayments) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

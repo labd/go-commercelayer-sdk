@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **Customer** | Pointer to [**CouponRecipientDataRelationshipsCustomer**](CouponRecipientDataRelationshipsCustomer.md) |  | [optional] 
 **Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
-**Events** | Pointer to [**CustomerAddressDataRelationshipsEvents**](CustomerAddressDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasSku returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *InStockSubscriptionDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents`
+`func (o *InStockSubscriptionDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool)`
+`func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *InStockSubscriptionDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents)`
+`func (o *InStockSubscriptionDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

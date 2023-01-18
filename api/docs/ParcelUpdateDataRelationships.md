@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Shipment** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
-**Package** | Pointer to [**ParcelDataRelationshipsPackage**](ParcelDataRelationshipsPackage.md) |  | [optional] 
+**Shipment** | Pointer to [**ParcelCreateDataRelationshipsShipment**](ParcelCreateDataRelationshipsShipment.md) |  | [optional] 
+**Package** | Pointer to [**ParcelCreateDataRelationshipsPackage**](ParcelCreateDataRelationshipsPackage.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShipment
 
-`func (o *ParcelUpdateDataRelationships) GetShipment() OrderDataRelationshipsShipments`
+`func (o *ParcelUpdateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment`
 
 GetShipment returns the Shipment field if non-nil, zero value otherwise.
 
 ### GetShipmentOk
 
-`func (o *ParcelUpdateDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool)`
+`func (o *ParcelUpdateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool)`
 
 GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipment
 
-`func (o *ParcelUpdateDataRelationships) SetShipment(v OrderDataRelationshipsShipments)`
+`func (o *ParcelUpdateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment)`
 
 SetShipment sets Shipment field to given value.
 
@@ -53,20 +53,20 @@ HasShipment returns a boolean if a field has been set.
 
 ### GetPackage
 
-`func (o *ParcelUpdateDataRelationships) GetPackage() ParcelDataRelationshipsPackage`
+`func (o *ParcelUpdateDataRelationships) GetPackage() ParcelCreateDataRelationshipsPackage`
 
 GetPackage returns the Package field if non-nil, zero value otherwise.
 
 ### GetPackageOk
 
-`func (o *ParcelUpdateDataRelationships) GetPackageOk() (*ParcelDataRelationshipsPackage, bool)`
+`func (o *ParcelUpdateDataRelationships) GetPackageOk() (*ParcelCreateDataRelationshipsPackage, bool)`
 
 GetPackageOk returns a tuple with the Package field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPackage
 
-`func (o *ParcelUpdateDataRelationships) SetPackage(v ParcelDataRelationshipsPackage)`
+`func (o *ParcelUpdateDataRelationships) SetPackage(v ParcelCreateDataRelationshipsPackage)`
 
 SetPackage sets Package field to given value.
 

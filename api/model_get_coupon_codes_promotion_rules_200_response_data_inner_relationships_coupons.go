@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons struct for GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons
 type GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                     `json:"links,omitempty"`
-	Data  []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks               `json:"links,omitempty"`
+	Data  *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData `json:"data,omitempty"`
 }
 
 // NewGETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons instantiates a new GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons object
@@ -71,17 +71,17 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) S
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetData() []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetData() GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData {
 	if o == nil || o.Data == nil {
-		var ret []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner
+		var ret GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetDataOk() ([]GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner, bool) {
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) GetDataOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) H
 	return false
 }
 
-// SetData gets a reference to the given []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner and assigns it to the Data field.
-func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) SetData(v []GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData and assigns it to the Data field.
+func (o *GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) SetData(v GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCouponsData) {
+	o.Data = &v
 }
 
 func (o GETCouponCodesPromotionRules200ResponseDataInnerRelationshipsCoupons) MarshalJSON() ([]byte, error) {

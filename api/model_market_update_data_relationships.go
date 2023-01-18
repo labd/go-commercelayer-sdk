@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,11 +17,11 @@ import (
 
 // MarketUpdateDataRelationships struct for MarketUpdateDataRelationships
 type MarketUpdateDataRelationships struct {
-	Merchant       *MarketDataRelationshipsMerchant                        `json:"merchant,omitempty"`
-	PriceList      *MarketDataRelationshipsPriceList                       `json:"price_list,omitempty"`
-	InventoryModel *InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
-	TaxCalculator  *MarketDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
-	CustomerGroup  *CustomerDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
+	Merchant       *MarketCreateDataRelationshipsMerchant                        `json:"merchant,omitempty"`
+	PriceList      *MarketCreateDataRelationshipsPriceList                       `json:"price_list,omitempty"`
+	InventoryModel *InventoryReturnLocationCreateDataRelationshipsInventoryModel `json:"inventory_model,omitempty"`
+	TaxCalculator  *MarketCreateDataRelationshipsTaxCalculator                   `json:"tax_calculator,omitempty"`
+	CustomerGroup  *CustomerCreateDataRelationshipsCustomerGroup                 `json:"customer_group,omitempty"`
 }
 
 // NewMarketUpdateDataRelationships instantiates a new MarketUpdateDataRelationships object
@@ -42,9 +42,9 @@ func NewMarketUpdateDataRelationshipsWithDefaults() *MarketUpdateDataRelationshi
 }
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
-func (o *MarketUpdateDataRelationships) GetMerchant() MarketDataRelationshipsMerchant {
+func (o *MarketUpdateDataRelationships) GetMerchant() MarketCreateDataRelationshipsMerchant {
 	if o == nil || o.Merchant == nil {
-		var ret MarketDataRelationshipsMerchant
+		var ret MarketCreateDataRelationshipsMerchant
 		return ret
 	}
 	return *o.Merchant
@@ -52,7 +52,7 @@ func (o *MarketUpdateDataRelationships) GetMerchant() MarketDataRelationshipsMer
 
 // GetMerchantOk returns a tuple with the Merchant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateDataRelationships) GetMerchantOk() (*MarketDataRelationshipsMerchant, bool) {
+func (o *MarketUpdateDataRelationships) GetMerchantOk() (*MarketCreateDataRelationshipsMerchant, bool) {
 	if o == nil || o.Merchant == nil {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *MarketUpdateDataRelationships) HasMerchant() bool {
 	return false
 }
 
-// SetMerchant gets a reference to the given MarketDataRelationshipsMerchant and assigns it to the Merchant field.
-func (o *MarketUpdateDataRelationships) SetMerchant(v MarketDataRelationshipsMerchant) {
+// SetMerchant gets a reference to the given MarketCreateDataRelationshipsMerchant and assigns it to the Merchant field.
+func (o *MarketUpdateDataRelationships) SetMerchant(v MarketCreateDataRelationshipsMerchant) {
 	o.Merchant = &v
 }
 
 // GetPriceList returns the PriceList field value if set, zero value otherwise.
-func (o *MarketUpdateDataRelationships) GetPriceList() MarketDataRelationshipsPriceList {
+func (o *MarketUpdateDataRelationships) GetPriceList() MarketCreateDataRelationshipsPriceList {
 	if o == nil || o.PriceList == nil {
-		var ret MarketDataRelationshipsPriceList
+		var ret MarketCreateDataRelationshipsPriceList
 		return ret
 	}
 	return *o.PriceList
@@ -84,7 +84,7 @@ func (o *MarketUpdateDataRelationships) GetPriceList() MarketDataRelationshipsPr
 
 // GetPriceListOk returns a tuple with the PriceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool) {
+func (o *MarketUpdateDataRelationships) GetPriceListOk() (*MarketCreateDataRelationshipsPriceList, bool) {
 	if o == nil || o.PriceList == nil {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *MarketUpdateDataRelationships) HasPriceList() bool {
 	return false
 }
 
-// SetPriceList gets a reference to the given MarketDataRelationshipsPriceList and assigns it to the PriceList field.
-func (o *MarketUpdateDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList) {
+// SetPriceList gets a reference to the given MarketCreateDataRelationshipsPriceList and assigns it to the PriceList field.
+func (o *MarketUpdateDataRelationships) SetPriceList(v MarketCreateDataRelationshipsPriceList) {
 	o.PriceList = &v
 }
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
-func (o *MarketUpdateDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel {
+func (o *MarketUpdateDataRelationships) GetInventoryModel() InventoryReturnLocationCreateDataRelationshipsInventoryModel {
 	if o == nil || o.InventoryModel == nil {
-		var ret InventoryReturnLocationDataRelationshipsInventoryModel
+		var ret InventoryReturnLocationCreateDataRelationshipsInventoryModel
 		return ret
 	}
 	return *o.InventoryModel
@@ -116,7 +116,7 @@ func (o *MarketUpdateDataRelationships) GetInventoryModel() InventoryReturnLocat
 
 // GetInventoryModelOk returns a tuple with the InventoryModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool) {
+func (o *MarketUpdateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationCreateDataRelationshipsInventoryModel, bool) {
 	if o == nil || o.InventoryModel == nil {
 		return nil, false
 	}
@@ -132,15 +132,15 @@ func (o *MarketUpdateDataRelationships) HasInventoryModel() bool {
 	return false
 }
 
-// SetInventoryModel gets a reference to the given InventoryReturnLocationDataRelationshipsInventoryModel and assigns it to the InventoryModel field.
-func (o *MarketUpdateDataRelationships) SetInventoryModel(v InventoryReturnLocationDataRelationshipsInventoryModel) {
+// SetInventoryModel gets a reference to the given InventoryReturnLocationCreateDataRelationshipsInventoryModel and assigns it to the InventoryModel field.
+func (o *MarketUpdateDataRelationships) SetInventoryModel(v InventoryReturnLocationCreateDataRelationshipsInventoryModel) {
 	o.InventoryModel = &v
 }
 
 // GetTaxCalculator returns the TaxCalculator field value if set, zero value otherwise.
-func (o *MarketUpdateDataRelationships) GetTaxCalculator() MarketDataRelationshipsTaxCalculator {
+func (o *MarketUpdateDataRelationships) GetTaxCalculator() MarketCreateDataRelationshipsTaxCalculator {
 	if o == nil || o.TaxCalculator == nil {
-		var ret MarketDataRelationshipsTaxCalculator
+		var ret MarketCreateDataRelationshipsTaxCalculator
 		return ret
 	}
 	return *o.TaxCalculator
@@ -148,7 +148,7 @@ func (o *MarketUpdateDataRelationships) GetTaxCalculator() MarketDataRelationshi
 
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateDataRelationships) GetTaxCalculatorOk() (*MarketDataRelationshipsTaxCalculator, bool) {
+func (o *MarketUpdateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataRelationshipsTaxCalculator, bool) {
 	if o == nil || o.TaxCalculator == nil {
 		return nil, false
 	}
@@ -164,15 +164,15 @@ func (o *MarketUpdateDataRelationships) HasTaxCalculator() bool {
 	return false
 }
 
-// SetTaxCalculator gets a reference to the given MarketDataRelationshipsTaxCalculator and assigns it to the TaxCalculator field.
-func (o *MarketUpdateDataRelationships) SetTaxCalculator(v MarketDataRelationshipsTaxCalculator) {
+// SetTaxCalculator gets a reference to the given MarketCreateDataRelationshipsTaxCalculator and assigns it to the TaxCalculator field.
+func (o *MarketUpdateDataRelationships) SetTaxCalculator(v MarketCreateDataRelationshipsTaxCalculator) {
 	o.TaxCalculator = &v
 }
 
 // GetCustomerGroup returns the CustomerGroup field value if set, zero value otherwise.
-func (o *MarketUpdateDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCustomerGroup {
+func (o *MarketUpdateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup {
 	if o == nil || o.CustomerGroup == nil {
-		var ret CustomerDataRelationshipsCustomerGroup
+		var ret CustomerCreateDataRelationshipsCustomerGroup
 		return ret
 	}
 	return *o.CustomerGroup
@@ -180,7 +180,7 @@ func (o *MarketUpdateDataRelationships) GetCustomerGroup() CustomerDataRelations
 
 // GetCustomerGroupOk returns a tuple with the CustomerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketUpdateDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshipsCustomerGroup, bool) {
+func (o *MarketUpdateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool) {
 	if o == nil || o.CustomerGroup == nil {
 		return nil, false
 	}
@@ -196,8 +196,8 @@ func (o *MarketUpdateDataRelationships) HasCustomerGroup() bool {
 	return false
 }
 
-// SetCustomerGroup gets a reference to the given CustomerDataRelationshipsCustomerGroup and assigns it to the CustomerGroup field.
-func (o *MarketUpdateDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCustomerGroup) {
+// SetCustomerGroup gets a reference to the given CustomerCreateDataRelationshipsCustomerGroup and assigns it to the CustomerGroup field.
+func (o *MarketUpdateDataRelationships) SetCustomerGroup(v CustomerCreateDataRelationshipsCustomerGroup) {
 	o.CustomerGroup = &v
 }
 

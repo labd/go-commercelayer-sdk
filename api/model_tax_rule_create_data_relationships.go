@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // TaxRuleCreateDataRelationships struct for TaxRuleCreateDataRelationships
 type TaxRuleCreateDataRelationships struct {
-	ManualTaxCalculator TaxRuleDataRelationshipsManualTaxCalculator `json:"manual_tax_calculator"`
+	ManualTaxCalculator TaxRuleCreateDataRelationshipsManualTaxCalculator `json:"manual_tax_calculator"`
 }
 
 // NewTaxRuleCreateDataRelationships instantiates a new TaxRuleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleCreateDataRelationships(manualTaxCalculator TaxRuleDataRelationshipsManualTaxCalculator) *TaxRuleCreateDataRelationships {
+func NewTaxRuleCreateDataRelationships(manualTaxCalculator TaxRuleCreateDataRelationshipsManualTaxCalculator) *TaxRuleCreateDataRelationships {
 	this := TaxRuleCreateDataRelationships{}
 	this.ManualTaxCalculator = manualTaxCalculator
 	return &this
@@ -39,9 +39,9 @@ func NewTaxRuleCreateDataRelationshipsWithDefaults() *TaxRuleCreateDataRelations
 }
 
 // GetManualTaxCalculator returns the ManualTaxCalculator field value
-func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculator() TaxRuleDataRelationshipsManualTaxCalculator {
+func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculator() TaxRuleCreateDataRelationshipsManualTaxCalculator {
 	if o == nil {
-		var ret TaxRuleDataRelationshipsManualTaxCalculator
+		var ret TaxRuleCreateDataRelationshipsManualTaxCalculator
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculator() TaxRuleDataRel
 
 // GetManualTaxCalculatorOk returns a tuple with the ManualTaxCalculator field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculatorOk() (*TaxRuleDataRelationshipsManualTaxCalculator, bool) {
+func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculatorOk() (*TaxRuleCreateDataRelationshipsManualTaxCalculator, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *TaxRuleCreateDataRelationships) GetManualTaxCalculatorOk() (*TaxRuleDat
 }
 
 // SetManualTaxCalculator sets field value
-func (o *TaxRuleCreateDataRelationships) SetManualTaxCalculator(v TaxRuleDataRelationshipsManualTaxCalculator) {
+func (o *TaxRuleCreateDataRelationships) SetManualTaxCalculator(v TaxRuleCreateDataRelationshipsManualTaxCalculator) {
 	o.ManualTaxCalculator = v
 }
 

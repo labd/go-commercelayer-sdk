@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **string** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuOptions201ResponseDataAttributes**](POSTSkuOptions201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**BillingInfoValidationRuleUpdateDataRelationships**](BillingInfoValidationRuleUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -69,20 +69,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *SkuOptionCreateData) GetRelationships() BillingInfoValidationRuleDataRelationships`
+`func (o *SkuOptionCreateData) GetRelationships() BillingInfoValidationRuleUpdateDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *SkuOptionCreateData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool)`
+`func (o *SkuOptionCreateData) GetRelationshipsOk() (*BillingInfoValidationRuleUpdateDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *SkuOptionCreateData) SetRelationships(v BillingInfoValidationRuleDataRelationships)`
+`func (o *SkuOptionCreateData) SetRelationships(v BillingInfoValidationRuleUpdateDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

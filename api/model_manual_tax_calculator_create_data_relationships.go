@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,7 @@ import (
 
 // ManualTaxCalculatorCreateDataRelationships struct for ManualTaxCalculatorCreateDataRelationships
 type ManualTaxCalculatorCreateDataRelationships struct {
-	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
-	TaxRules      *ManualTaxCalculatorDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
+	TaxRules *ManualTaxCalculatorCreateDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
 }
 
 // NewManualTaxCalculatorCreateDataRelationships instantiates a new ManualTaxCalculatorCreateDataRelationships object
@@ -38,42 +37,10 @@ func NewManualTaxCalculatorCreateDataRelationshipsWithDefaults() *ManualTaxCalcu
 	return &this
 }
 
-// GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories {
-	if o == nil || o.TaxCategories == nil {
-		var ret AvalaraAccountDataRelationshipsTaxCategories
-		return ret
-	}
-	return *o.TaxCategories
-}
-
-// GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool) {
-	if o == nil || o.TaxCategories == nil {
-		return nil, false
-	}
-	return o.TaxCategories, true
-}
-
-// HasTaxCategories returns a boolean if a field has been set.
-func (o *ManualTaxCalculatorCreateDataRelationships) HasTaxCategories() bool {
-	if o != nil && o.TaxCategories != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTaxCategories gets a reference to the given AvalaraAccountDataRelationshipsTaxCategories and assigns it to the TaxCategories field.
-func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories) {
-	o.TaxCategories = &v
-}
-
 // GetTaxRules returns the TaxRules field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRules() ManualTaxCalculatorDataRelationshipsTaxRules {
+func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRules() ManualTaxCalculatorCreateDataRelationshipsTaxRules {
 	if o == nil || o.TaxRules == nil {
-		var ret ManualTaxCalculatorDataRelationshipsTaxRules
+		var ret ManualTaxCalculatorCreateDataRelationshipsTaxRules
 		return ret
 	}
 	return *o.TaxRules
@@ -81,7 +48,7 @@ func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRules() ManualTaxCalc
 
 // GetTaxRulesOk returns a tuple with the TaxRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRulesOk() (*ManualTaxCalculatorDataRelationshipsTaxRules, bool) {
+func (o *ManualTaxCalculatorCreateDataRelationships) GetTaxRulesOk() (*ManualTaxCalculatorCreateDataRelationshipsTaxRules, bool) {
 	if o == nil || o.TaxRules == nil {
 		return nil, false
 	}
@@ -97,16 +64,13 @@ func (o *ManualTaxCalculatorCreateDataRelationships) HasTaxRules() bool {
 	return false
 }
 
-// SetTaxRules gets a reference to the given ManualTaxCalculatorDataRelationshipsTaxRules and assigns it to the TaxRules field.
-func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxRules(v ManualTaxCalculatorDataRelationshipsTaxRules) {
+// SetTaxRules gets a reference to the given ManualTaxCalculatorCreateDataRelationshipsTaxRules and assigns it to the TaxRules field.
+func (o *ManualTaxCalculatorCreateDataRelationships) SetTaxRules(v ManualTaxCalculatorCreateDataRelationshipsTaxRules) {
 	o.TaxRules = &v
 }
 
 func (o ManualTaxCalculatorCreateDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TaxCategories != nil {
-		toSerialize["tax_categories"] = o.TaxCategories
-	}
 	if o.TaxRules != nil {
 		toSerialize["tax_rules"] = o.TaxRules
 	}

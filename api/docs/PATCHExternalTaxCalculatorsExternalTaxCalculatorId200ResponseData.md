@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes**](PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationships**](GETAvalaraAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETExternalTaxCalculators200ResponseDataInnerRelationships**](GETExternalTaxCalculators200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) GetRelationships() GETAvalaraAccounts200ResponseDataInnerRelationships`
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) GetRelationships() GETExternalTaxCalculators200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) GetRelationshipsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationships, bool)`
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) GetRelationshipsOk() (*GETExternalTaxCalculators200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) SetRelationships(v GETAvalaraAccounts200ResponseDataInnerRelationships)`
+`func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) SetRelationships(v GETExternalTaxCalculators200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

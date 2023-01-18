@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type ImportData struct {
 	// The resource's type
 	Type          string                                   `json:"type"`
 	Attributes    GETImports200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExportDataRelationships                 `json:"relationships,omitempty"`
+	Relationships *CleanupDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewImportData instantiates a new ImportData object
@@ -91,9 +91,9 @@ func (o *ImportData) SetAttributes(v GETImports200ResponseDataInnerAttributes) {
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ImportData) GetRelationships() ExportDataRelationships {
+func (o *ImportData) GetRelationships() CleanupDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ExportDataRelationships
+		var ret CleanupDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *ImportData) GetRelationships() ExportDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ImportData) GetRelationshipsOk() (*ExportDataRelationships, bool) {
+func (o *ImportData) GetRelationshipsOk() (*CleanupDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ImportData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExportDataRelationships and assigns it to the Relationships field.
-func (o *ImportData) SetRelationships(v ExportDataRelationships) {
+// SetRelationships gets a reference to the given CleanupDataRelationships and assigns it to the Relationships field.
+func (o *ImportData) SetRelationships(v CleanupDataRelationships) {
 	o.Relationships = &v
 }
 

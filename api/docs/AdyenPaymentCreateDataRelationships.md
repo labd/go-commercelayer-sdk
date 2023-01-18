@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | 
+**Order** | [**AdyenPaymentCreateDataRelationshipsOrder**](AdyenPaymentCreateDataRelationshipsOrder.md) |  | 
 
 ## Methods
 
 ### NewAdyenPaymentCreateDataRelationships
 
-`func NewAdyenPaymentCreateDataRelationships(order AdyenPaymentDataRelationshipsOrder, ) *AdyenPaymentCreateDataRelationships`
+`func NewAdyenPaymentCreateDataRelationships(order AdyenPaymentCreateDataRelationshipsOrder, ) *AdyenPaymentCreateDataRelationships`
 
 NewAdyenPaymentCreateDataRelationships instantiates a new AdyenPaymentCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrder
 
-`func (o *AdyenPaymentCreateDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder`
+`func (o *AdyenPaymentCreateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder`
 
 GetOrder returns the Order field if non-nil, zero value otherwise.
 
 ### GetOrderOk
 
-`func (o *AdyenPaymentCreateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool)`
+`func (o *AdyenPaymentCreateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool)`
 
 GetOrderOk returns a tuple with the Order field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrder
 
-`func (o *AdyenPaymentCreateDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder)`
+`func (o *AdyenPaymentCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder)`
 
 SetOrder sets Order field to given value.
 

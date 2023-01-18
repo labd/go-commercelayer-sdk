@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETETaxjarAccountsTaxjarAccountId Delete a taxjar account
 
 Delete a taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxjarAccountId The resource's id
- @return TaxjarAccountsApiDELETETaxjarAccountsTaxjarAccountIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return TaxjarAccountsApiDELETETaxjarAccountsTaxjarAccountIdRequest
 */
 func (a *TaxjarAccountsApiService) DELETETaxjarAccountsTaxjarAccountId(ctx context.Context, taxjarAccountId string) TaxjarAccountsApiDELETETaxjarAccountsTaxjarAccountIdRequest {
 	return TaxjarAccountsApiDELETETaxjarAccountsTaxjarAccountIdRequest{
@@ -129,8 +129,8 @@ GETTaxjarAccounts List all taxjar accounts
 
 List all taxjar accounts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxjarAccountsApiGETTaxjarAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TaxjarAccountsApiGETTaxjarAccountsRequest
 */
 func (a *TaxjarAccountsApiService) GETTaxjarAccounts(ctx context.Context) TaxjarAccountsApiGETTaxjarAccountsRequest {
 	return TaxjarAccountsApiGETTaxjarAccountsRequest{
@@ -140,7 +140,8 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccounts(ctx context.Context) Taxjar
 }
 
 // Execute executes the request
-//  @return GETTaxjarAccounts200Response
+//
+//	@return GETTaxjarAccounts200Response
 func (a *TaxjarAccountsApiService) GETTaxjarAccountsExecute(r TaxjarAccountsApiGETTaxjarAccountsRequest) (*GETTaxjarAccounts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETTaxjarAccountsTaxjarAccountId Retrieve a taxjar account
 
 Retrieve a taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxjarAccountId The resource's id
- @return TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest
 */
 func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountId(ctx context.Context, taxjarAccountId string) TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest {
 	return TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest{
@@ -242,7 +243,8 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETTaxjarAccountsTaxjarAccountId200Response
+//
+//	@return GETTaxjarAccountsTaxjarAccountId200Response
 func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiGETTaxjarAccountsTaxjarAccountIdRequest) (*GETTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHTaxjarAccountsTaxjarAccountId Update a taxjar account
 
 Update a taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxjarAccountId The resource's id
- @return TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest
 */
 func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountId(ctx context.Context, taxjarAccountId string) TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest {
 	return TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest{
@@ -351,7 +353,8 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHTaxjarAccountsTaxjarAccountId200Response
+//
+//	@return PATCHTaxjarAccountsTaxjarAccountId200Response
 func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) (*PATCHTaxjarAccountsTaxjarAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTTaxjarAccounts Create a taxjar account
 
 Create a taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxjarAccountsApiPOSTTaxjarAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TaxjarAccountsApiPOSTTaxjarAccountsRequest
 */
 func (a *TaxjarAccountsApiService) POSTTaxjarAccounts(ctx context.Context) TaxjarAccountsApiPOSTTaxjarAccountsRequest {
 	return TaxjarAccountsApiPOSTTaxjarAccountsRequest{
@@ -462,7 +465,8 @@ func (a *TaxjarAccountsApiService) POSTTaxjarAccounts(ctx context.Context) Taxja
 }
 
 // Execute executes the request
-//  @return POSTTaxjarAccounts201Response
+//
+//	@return POSTTaxjarAccounts201Response
 func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApiPOSTTaxjarAccountsRequest) (*POSTTaxjarAccounts201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

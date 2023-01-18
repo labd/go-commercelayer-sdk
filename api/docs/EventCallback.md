@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**EventCallbackData**](EventCallbackData.md) |  | 
+**Data** | Pointer to [**EventCallbackData**](EventCallbackData.md) |  | [optional] 
 
 ## Methods
 
 ### NewEventCallback
 
-`func NewEventCallback(data EventCallbackData, ) *EventCallback`
+`func NewEventCallback() *EventCallback`
 
 NewEventCallback instantiates a new EventCallback object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *EventCallback) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

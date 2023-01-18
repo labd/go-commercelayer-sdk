@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner**](GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData**](GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetData() []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner`
+`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetData() GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetDataOk() (*[]GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner, bool)`
+`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) GetDataOk() (*GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) SetData(v []GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesDataInner)`
+`func (o *GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRules) SetData(v GETExternalPromotions200ResponseDataInnerRelationshipsPromotionRulesData)`
 
 SetData sets Data field to given value.
 

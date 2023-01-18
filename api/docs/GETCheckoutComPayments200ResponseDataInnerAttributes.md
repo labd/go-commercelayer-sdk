@@ -15,7 +15,6 @@ Name | Type | Description | Notes
 **RedirectUri** | Pointer to **string** | The URI that the customer should be redirected to in order to complete the payment. | [optional] 
 **PaymentResponse** | Pointer to **map[string]interface{}** | The Checkout.com payment response, used to fetch internal data. | [optional] 
 **MismatchedAmounts** | Pointer to **bool** | Indicates if the order current amount differs form the one of the associated authorization. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -315,31 +314,6 @@ SetMismatchedAmounts sets MismatchedAmounts field to given value.
 `func (o *GETCheckoutComPayments200ResponseDataInnerAttributes) HasMismatchedAmounts() bool`
 
 HasMismatchedAmounts returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETCheckoutComPayments200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETCheckoutComPayments200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETCheckoutComPayments200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETCheckoutComPayments200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

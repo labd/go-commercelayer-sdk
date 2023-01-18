@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETESkuOptionsSkuOptionId Delete a SKU option
 
 Delete a SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest
 */
 func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest{
@@ -130,9 +130,9 @@ GETLineItemOptionIdSkuOption Retrieve the sku option associated to the line item
 
 Retrieve the sku option associated to the line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest
 */
 func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) SkuOptionsApiGETLineItemOptionIdSkuOptionRequest {
 	return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest{
@@ -222,9 +222,9 @@ GETSkuIdSkuOptions Retrieve the sku options associated to the SKU
 
 Retrieve the sku options associated to the SKU
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuId The resource's id
- @return SkuOptionsApiGETSkuIdSkuOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return SkuOptionsApiGETSkuIdSkuOptionsRequest
 */
 func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) SkuOptionsApiGETSkuIdSkuOptionsRequest {
 	return SkuOptionsApiGETSkuIdSkuOptionsRequest{
@@ -313,8 +313,8 @@ GETSkuOptions List all SKU options
 
 List all SKU options
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuOptionsApiGETSkuOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuOptionsApiGETSkuOptionsRequest
 */
 func (a *SkuOptionsApiService) GETSkuOptions(ctx context.Context) SkuOptionsApiGETSkuOptionsRequest {
 	return SkuOptionsApiGETSkuOptionsRequest{
@@ -324,7 +324,8 @@ func (a *SkuOptionsApiService) GETSkuOptions(ctx context.Context) SkuOptionsApiG
 }
 
 // Execute executes the request
-//  @return GETSkuOptions200Response
+//
+//	@return GETSkuOptions200Response
 func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptionsRequest) (*GETSkuOptions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -413,9 +414,9 @@ GETSkuOptionsSkuOptionId Retrieve a SKU option
 
 Retrieve a SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest
 */
 func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiGETSkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest{
@@ -426,7 +427,8 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, sku
 }
 
 // Execute executes the request
-//  @return GETSkuOptionsSkuOptionId200Response
+//
+//	@return GETSkuOptionsSkuOptionId200Response
 func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -522,9 +524,9 @@ PATCHSkuOptionsSkuOptionId Update a SKU option
 
 Update a SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest
 */
 func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest{
@@ -535,7 +537,8 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, s
 }
 
 // Execute executes the request
-//  @return PATCHSkuOptionsSkuOptionId200Response
+//
+//	@return PATCHSkuOptionsSkuOptionId200Response
 func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) (*PATCHSkuOptionsSkuOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -635,8 +638,8 @@ POSTSkuOptions Create a SKU option
 
 Create a SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuOptionsApiPOSTSkuOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuOptionsApiPOSTSkuOptionsRequest
 */
 func (a *SkuOptionsApiService) POSTSkuOptions(ctx context.Context) SkuOptionsApiPOSTSkuOptionsRequest {
 	return SkuOptionsApiPOSTSkuOptionsRequest{
@@ -646,7 +649,8 @@ func (a *SkuOptionsApiService) POSTSkuOptions(ctx context.Context) SkuOptionsApi
 }
 
 // Execute executes the request
-//  @return POSTSkuOptions201Response
+//
+//	@return POSTSkuOptions201Response
 func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptionsRequest) (*POSTSkuOptions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

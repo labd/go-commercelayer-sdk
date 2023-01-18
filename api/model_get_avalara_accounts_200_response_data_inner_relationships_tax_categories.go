@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories struct for GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories
 type GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
-	Data  []GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
+	Data  *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData `json:"data,omitempty"`
 }
 
 // NewGETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories instantiates a new GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories object
@@ -71,17 +71,17 @@ func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) SetLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) GetData() []GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner {
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) GetData() GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData {
 	if o == nil || o.Data == nil {
-		var ret []GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) GetDataOk() ([]GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner, bool) {
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) GetDataOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) HasDa
 	return false
 }
 
-// SetData gets a reference to the given []GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner and assigns it to the Data field.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) SetData(v []GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData and assigns it to the Data field.
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) SetData(v GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategoriesData) {
+	o.Data = &v
 }
 
 func (o GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories) MarshalJSON() ([]byte, error) {

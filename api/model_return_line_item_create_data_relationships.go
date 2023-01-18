@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // ReturnLineItemCreateDataRelationships struct for ReturnLineItemCreateDataRelationships
 type ReturnLineItemCreateDataRelationships struct {
-	Return   CustomerDataRelationshipsReturns        `json:"return"`
-	LineItem LineItemOptionDataRelationshipsLineItem `json:"line_item"`
+	Return   ReturnLineItemCreateDataRelationshipsReturn   `json:"return"`
+	LineItem LineItemOptionCreateDataRelationshipsLineItem `json:"line_item"`
 }
 
 // NewReturnLineItemCreateDataRelationships instantiates a new ReturnLineItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreateDataRelationships(return_ CustomerDataRelationshipsReturns, lineItem LineItemOptionDataRelationshipsLineItem) *ReturnLineItemCreateDataRelationships {
+func NewReturnLineItemCreateDataRelationships(return_ ReturnLineItemCreateDataRelationshipsReturn, lineItem LineItemOptionCreateDataRelationshipsLineItem) *ReturnLineItemCreateDataRelationships {
 	this := ReturnLineItemCreateDataRelationships{}
 	this.Return = return_
 	this.LineItem = lineItem
@@ -41,9 +41,9 @@ func NewReturnLineItemCreateDataRelationshipsWithDefaults() *ReturnLineItemCreat
 }
 
 // GetReturn returns the Return field value
-func (o *ReturnLineItemCreateDataRelationships) GetReturn() CustomerDataRelationshipsReturns {
+func (o *ReturnLineItemCreateDataRelationships) GetReturn() ReturnLineItemCreateDataRelationshipsReturn {
 	if o == nil {
-		var ret CustomerDataRelationshipsReturns
+		var ret ReturnLineItemCreateDataRelationshipsReturn
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *ReturnLineItemCreateDataRelationships) GetReturn() CustomerDataRelation
 
 // GetReturnOk returns a tuple with the Return field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateDataRelationships) GetReturnOk() (*CustomerDataRelationshipsReturns, bool) {
+func (o *ReturnLineItemCreateDataRelationships) GetReturnOk() (*ReturnLineItemCreateDataRelationshipsReturn, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *ReturnLineItemCreateDataRelationships) GetReturnOk() (*CustomerDataRela
 }
 
 // SetReturn sets field value
-func (o *ReturnLineItemCreateDataRelationships) SetReturn(v CustomerDataRelationshipsReturns) {
+func (o *ReturnLineItemCreateDataRelationships) SetReturn(v ReturnLineItemCreateDataRelationshipsReturn) {
 	o.Return = v
 }
 
 // GetLineItem returns the LineItem field value
-func (o *ReturnLineItemCreateDataRelationships) GetLineItem() LineItemOptionDataRelationshipsLineItem {
+func (o *ReturnLineItemCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem {
 	if o == nil {
-		var ret LineItemOptionDataRelationshipsLineItem
+		var ret LineItemOptionCreateDataRelationshipsLineItem
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *ReturnLineItemCreateDataRelationships) GetLineItem() LineItemOptionData
 
 // GetLineItemOk returns a tuple with the LineItem field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreateDataRelationships) GetLineItemOk() (*LineItemOptionDataRelationshipsLineItem, bool) {
+func (o *ReturnLineItemCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *ReturnLineItemCreateDataRelationships) GetLineItemOk() (*LineItemOption
 }
 
 // SetLineItem sets field value
-func (o *ReturnLineItemCreateDataRelationships) SetLineItem(v LineItemOptionDataRelationshipsLineItem) {
+func (o *ReturnLineItemCreateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem) {
 	o.LineItem = v
 }
 

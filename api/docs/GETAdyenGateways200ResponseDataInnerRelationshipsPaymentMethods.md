@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData**](GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetData() []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetData() GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetDataOk() (*[]GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner, bool)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) GetDataOk() (*GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetData(v []GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsDataInner)`
+`func (o *GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethods) SetData(v GETAdyenGateways200ResponseDataInnerRelationshipsPaymentMethodsData)`
 
 SetData sets Data field to given value.
 

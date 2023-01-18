@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**AvalaraAccountDataRelationshipsMarketsData**](AvalaraAccountDataRelationshipsMarketsData.md) |  | 
+**Data** | Pointer to [**AvalaraAccountDataRelationshipsMarketsData**](AvalaraAccountDataRelationshipsMarketsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewAvalaraAccountDataRelationshipsMarkets
 
-`func NewAvalaraAccountDataRelationshipsMarkets(data AvalaraAccountDataRelationshipsMarketsData, ) *AvalaraAccountDataRelationshipsMarkets`
+`func NewAvalaraAccountDataRelationshipsMarkets() *AvalaraAccountDataRelationshipsMarkets`
 
 NewAvalaraAccountDataRelationshipsMarkets instantiates a new AvalaraAccountDataRelationshipsMarkets object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *AvalaraAccountDataRelationshipsMarkets) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

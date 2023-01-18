@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETLineItemIdStockLineItems Retrieve the stock line items associated to the line
 
 Retrieve the stock line items associated to the line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId The resource's id
- @return StockLineItemsApiGETLineItemIdStockLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return StockLineItemsApiGETLineItemIdStockLineItemsRequest
 */
 func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) StockLineItemsApiGETLineItemIdStockLineItemsRequest {
 	return StockLineItemsApiGETLineItemIdStockLineItemsRequest{
@@ -130,9 +130,9 @@ GETParcelLineItemIdStockLineItem Retrieve the stock line item associated to the 
 
 Retrieve the stock line item associated to the parcel line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelLineItemId The resource's id
- @return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelLineItemId The resource's id
+	@return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest
 */
 func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) StockLineItemsApiGETParcelLineItemIdStockLineItemRequest {
 	return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest{
@@ -222,9 +222,9 @@ GETShipmentIdStockLineItems Retrieve the stock line items associated to the ship
 
 Retrieve the stock line items associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return StockLineItemsApiGETShipmentIdStockLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return StockLineItemsApiGETShipmentIdStockLineItemsRequest
 */
 func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) StockLineItemsApiGETShipmentIdStockLineItemsRequest {
 	return StockLineItemsApiGETShipmentIdStockLineItemsRequest{
@@ -313,8 +313,8 @@ GETStockLineItems List all stock line items
 
 List all stock line items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockLineItemsApiGETStockLineItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return StockLineItemsApiGETStockLineItemsRequest
 */
 func (a *StockLineItemsApiService) GETStockLineItems(ctx context.Context) StockLineItemsApiGETStockLineItemsRequest {
 	return StockLineItemsApiGETStockLineItemsRequest{
@@ -324,7 +324,8 @@ func (a *StockLineItemsApiService) GETStockLineItems(ctx context.Context) StockL
 }
 
 // Execute executes the request
-//  @return GETStockLineItems200Response
+//
+//	@return GETStockLineItems200Response
 func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiGETStockLineItemsRequest) (*GETStockLineItems200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -413,9 +414,9 @@ GETStockLineItemsStockLineItemId Retrieve a stock line item
 
 Retrieve a stock line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLineItemId The resource's id
- @return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLineItemId The resource's id
+	@return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest
 */
 func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.Context, stockLineItemId string) StockLineItemsApiGETStockLineItemsStockLineItemIdRequest {
 	return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest{
@@ -426,7 +427,8 @@ func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETStockLineItemsStockLineItemId200Response
+//
+//	@return GETStockLineItemsStockLineItemId200Response
 func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

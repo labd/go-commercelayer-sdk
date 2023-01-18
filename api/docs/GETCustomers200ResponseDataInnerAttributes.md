@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **Email** | Pointer to **string** | The customer&#39;s email address | [optional] 
 **Status** | Pointer to **string** | The customer&#39;s status, one of &#39;prospect&#39;, &#39;acquired&#39;, or &#39;repeat&#39;. | [optional] 
 **HasPassword** | Pointer to **bool** | Indicates if the customer has a password. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -107,31 +106,6 @@ SetHasPassword sets HasPassword field to given value.
 `func (o *GETCustomers200ResponseDataInnerAttributes) HasHasPassword() bool`
 
 HasHasPassword returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETCustomers200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETCustomers200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETCustomers200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETCustomers200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

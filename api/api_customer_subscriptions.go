@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECustomerSubscriptionsCustomerSubscriptionId Delete a customer subscription
 
 Delete a customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerSubscriptionId The resource's id
- @return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
 */
 func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest{
@@ -130,9 +130,9 @@ GETCustomerIdCustomerSubscriptions Retrieve the customer subscriptions associate
 
 Retrieve the customer subscriptions associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
 */
 func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest {
 	return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest{
@@ -221,8 +221,8 @@ GETCustomerSubscriptions List all customer subscriptions
 
 List all customer subscriptions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest
 */
 func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiGETCustomerSubscriptionsRequest {
 	return CustomerSubscriptionsApiGETCustomerSubscriptionsRequest{
@@ -232,7 +232,8 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptions(ctx context.C
 }
 
 // Execute executes the request
-//  @return GETCustomerSubscriptions200Response
+//
+//	@return GETCustomerSubscriptions200Response
 func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsRequest) (*GETCustomerSubscriptions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETCustomerSubscriptionsCustomerSubscriptionId Retrieve a customer subscription
 
 Retrieve a customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerSubscriptionId The resource's id
- @return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
 func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest{
@@ -334,7 +335,8 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 }
 
 // Execute executes the request
-//  @return GETCustomerSubscriptionsCustomerSubscriptionId200Response
+//
+//	@return GETCustomerSubscriptionsCustomerSubscriptionId200Response
 func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) (*GETCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHCustomerSubscriptionsCustomerSubscriptionId Update a customer subscription
 
 Update a customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerSubscriptionId The resource's id
- @return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
 func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest{
@@ -443,7 +445,8 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 }
 
 // Execute executes the request
-//  @return PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
+//
+//	@return PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
 func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionIdExecute(r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) (*PATCHCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTCustomerSubscriptions Create a customer subscription
 
 Create a customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest
 */
 func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptions(ctx context.Context) CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest {
 	return CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest{
@@ -554,7 +557,8 @@ func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptions(ctx context.
 }
 
 // Execute executes the request
-//  @return POSTCustomerSubscriptions201Response
+//
+//	@return POSTCustomerSubscriptions201Response
 func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r CustomerSubscriptionsApiPOSTCustomerSubscriptionsRequest) (*POSTCustomerSubscriptions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

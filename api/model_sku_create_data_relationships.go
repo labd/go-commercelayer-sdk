@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // SkuCreateDataRelationships struct for SkuCreateDataRelationships
 type SkuCreateDataRelationships struct {
-	ShippingCategory ShipmentDataRelationshipsShippingCategory `json:"shipping_category"`
+	ShippingCategory ShippingMethodCreateDataRelationshipsShippingCategory `json:"shipping_category"`
 }
 
 // NewSkuCreateDataRelationships instantiates a new SkuCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuCreateDataRelationships(shippingCategory ShipmentDataRelationshipsShippingCategory) *SkuCreateDataRelationships {
+func NewSkuCreateDataRelationships(shippingCategory ShippingMethodCreateDataRelationshipsShippingCategory) *SkuCreateDataRelationships {
 	this := SkuCreateDataRelationships{}
 	this.ShippingCategory = shippingCategory
 	return &this
@@ -39,9 +39,9 @@ func NewSkuCreateDataRelationshipsWithDefaults() *SkuCreateDataRelationships {
 }
 
 // GetShippingCategory returns the ShippingCategory field value
-func (o *SkuCreateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory {
+func (o *SkuCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
 	if o == nil {
-		var ret ShipmentDataRelationshipsShippingCategory
+		var ret ShippingMethodCreateDataRelationshipsShippingCategory
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *SkuCreateDataRelationships) GetShippingCategory() ShipmentDataRelations
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value
 // and a boolean to check if the value has been set.
-func (o *SkuCreateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool) {
+func (o *SkuCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *SkuCreateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelat
 }
 
 // SetShippingCategory sets field value
-func (o *SkuCreateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory) {
+func (o *SkuCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory) {
 	o.ShippingCategory = v
 }
 

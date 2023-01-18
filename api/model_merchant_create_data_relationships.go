@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // MerchantCreateDataRelationships struct for MerchantCreateDataRelationships
 type MerchantCreateDataRelationships struct {
-	Address BingGeocoderDataRelationshipsAddresses `json:"address"`
+	Address CustomerAddressCreateDataRelationshipsAddress `json:"address"`
 }
 
 // NewMerchantCreateDataRelationships instantiates a new MerchantCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantCreateDataRelationships(address BingGeocoderDataRelationshipsAddresses) *MerchantCreateDataRelationships {
+func NewMerchantCreateDataRelationships(address CustomerAddressCreateDataRelationshipsAddress) *MerchantCreateDataRelationships {
 	this := MerchantCreateDataRelationships{}
 	this.Address = address
 	return &this
@@ -39,9 +39,9 @@ func NewMerchantCreateDataRelationshipsWithDefaults() *MerchantCreateDataRelatio
 }
 
 // GetAddress returns the Address field value
-func (o *MerchantCreateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
+func (o *MerchantCreateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress {
 	if o == nil {
-		var ret BingGeocoderDataRelationshipsAddresses
+		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *MerchantCreateDataRelationships) GetAddress() BingGeocoderDataRelations
 
 // GetAddressOk returns a tuple with the Address field value
 // and a boolean to check if the value has been set.
-func (o *MerchantCreateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
+func (o *MerchantCreateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *MerchantCreateDataRelationships) GetAddressOk() (*BingGeocoderDataRelat
 }
 
 // SetAddress sets field value
-func (o *MerchantCreateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses) {
+func (o *MerchantCreateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.Address = v
 }
 

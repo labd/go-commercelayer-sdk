@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type ExternalTaxCalculatorUpdateData struct {
 	// The resource's id
 	Id            string                                                                      `json:"id"`
 	Attributes    PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountCreateDataRelationships                                      `json:"relationships,omitempty"`
+	Relationships map[string]interface{}                                                      `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorUpdateData instantiates a new ExternalTaxCalculatorUpdateData object
@@ -118,17 +118,17 @@ func (o *ExternalTaxCalculatorUpdateData) SetAttributes(v PATCHExternalTaxCalcul
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalTaxCalculatorUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships {
+func (o *ExternalTaxCalculatorUpdateData) GetRelationships() map[string]interface{} {
 	if o == nil || o.Relationships == nil {
-		var ret AvalaraAccountCreateDataRelationships
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.Relationships
+	return o.Relationships
 }
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
+func (o *ExternalTaxCalculatorUpdateData) GetRelationshipsOk() (map[string]interface{}, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,9 +144,9 @@ func (o *ExternalTaxCalculatorUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountCreateDataRelationships and assigns it to the Relationships field.
-func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v AvalaraAccountCreateDataRelationships) {
-	o.Relationships = &v
+// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
+func (o *ExternalTaxCalculatorUpdateData) SetRelationships(v map[string]interface{}) {
+	o.Relationships = v
 }
 
 func (o ExternalTaxCalculatorUpdateData) MarshalJSON() ([]byte, error) {

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxCategories** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories**](GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories.md) |  | [optional] 
 **Markets** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets**](GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 **TaxRules** | Pointer to [**GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules**](GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules.md) |  | [optional] 
@@ -27,31 +26,6 @@ will change when the set of required properties is changed
 NewGETManualTaxCalculators200ResponseDataInnerRelationshipsWithDefaults instantiates a new GETManualTaxCalculators200ResponseDataInnerRelationships object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaxCategories
-
-`func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) GetTaxCategories() GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories`
-
-GetTaxCategories returns the TaxCategories field if non-nil, zero value otherwise.
-
-### GetTaxCategoriesOk
-
-`func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) GetTaxCategoriesOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories, bool)`
-
-GetTaxCategoriesOk returns a tuple with the TaxCategories field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaxCategories
-
-`func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) SetTaxCategories(v GETAvalaraAccounts200ResponseDataInnerRelationshipsTaxCategories)`
-
-SetTaxCategories sets TaxCategories field to given value.
-
-### HasTaxCategories
-
-`func (o *GETManualTaxCalculators200ResponseDataInnerRelationships) HasTaxCategories() bool`
-
-HasTaxCategories returns a boolean if a field has been set.
 
 ### GetMarkets
 

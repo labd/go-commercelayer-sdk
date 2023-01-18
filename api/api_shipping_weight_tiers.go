@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEShippingWeightTiersShippingWeightTierId Delete a shipping weight tier
 
 Delete a shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
 */
 func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest{
@@ -130,9 +130,9 @@ GETShippingMethodIdShippingWeightTiers Retrieve the shipping weight tiers associ
 
 Retrieve the shipping weight tiers associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
 */
 func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest {
 	return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest{
@@ -221,8 +221,8 @@ GETShippingWeightTiers List all shipping weight tiers
 
 List all shipping weight tiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingWeightTiersApiGETShippingWeightTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingWeightTiersApiGETShippingWeightTiersRequest
 */
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiGETShippingWeightTiersRequest {
 	return ShippingWeightTiersApiGETShippingWeightTiersRequest{
@@ -232,7 +232,8 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiers(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETShippingWeightTiers200Response
+//
+//	@return GETShippingWeightTiers200Response
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r ShippingWeightTiersApiGETShippingWeightTiersRequest) (*GETShippingWeightTiers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETShippingWeightTiersShippingWeightTierId Retrieve a shipping weight tier
 
 Retrieve a shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
 */
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest{
@@ -334,7 +335,8 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 }
 
 // Execute executes the request
-//  @return GETShippingWeightTiersShippingWeightTierId200Response
+//
+//	@return GETShippingWeightTiersShippingWeightTierId200Response
 func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) (*GETShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHShippingWeightTiersShippingWeightTierId Update a shipping weight tier
 
 Update a shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingWeightTierId The resource's id
- @return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
 */
 func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest{
@@ -443,7 +445,8 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 }
 
 // Execute executes the request
-//  @return PATCHShippingWeightTiersShippingWeightTierId200Response
+//
+//	@return PATCHShippingWeightTiersShippingWeightTierId200Response
 func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierIdExecute(r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) (*PATCHShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTShippingWeightTiers Create a shipping weight tier
 
 Create a shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingWeightTiersApiPOSTShippingWeightTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingWeightTiersApiPOSTShippingWeightTiersRequest
 */
 func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Context) ShippingWeightTiersApiPOSTShippingWeightTiersRequest {
 	return ShippingWeightTiersApiPOSTShippingWeightTiersRequest{
@@ -554,7 +557,8 @@ func (a *ShippingWeightTiersApiService) POSTShippingWeightTiers(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return POSTShippingWeightTiers201Response
+//
+//	@return POSTShippingWeightTiers201Response
 func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r ShippingWeightTiersApiPOSTShippingWeightTiersRequest) (*POSTShippingWeightTiers201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

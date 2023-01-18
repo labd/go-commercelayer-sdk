@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type AddressCreateData struct {
 	// The resource's type
 	Type          string                                 `json:"type"`
 	Attributes    POSTAddresses201ResponseDataAttributes `json:"attributes"`
-	Relationships *AddressDataRelationships              `json:"relationships,omitempty"`
+	Relationships *AddressCreateDataRelationships        `json:"relationships,omitempty"`
 }
 
 // NewAddressCreateData instantiates a new AddressCreateData object
@@ -91,9 +91,9 @@ func (o *AddressCreateData) SetAttributes(v POSTAddresses201ResponseDataAttribut
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AddressCreateData) GetRelationships() AddressDataRelationships {
+func (o *AddressCreateData) GetRelationships() AddressCreateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AddressDataRelationships
+		var ret AddressCreateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *AddressCreateData) GetRelationships() AddressDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddressCreateData) GetRelationshipsOk() (*AddressDataRelationships, bool) {
+func (o *AddressCreateData) GetRelationshipsOk() (*AddressCreateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *AddressCreateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AddressDataRelationships and assigns it to the Relationships field.
-func (o *AddressCreateData) SetRelationships(v AddressDataRelationships) {
+// SetRelationships gets a reference to the given AddressCreateDataRelationships and assigns it to the Relationships field.
+func (o *AddressCreateData) SetRelationships(v AddressCreateDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TaxCategories** | Pointer to [**AvalaraAccountDataRelationshipsTaxCategories**](AvalaraAccountDataRelationshipsTaxCategories.md) |  | [optional] 
 **Markets** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 **TaxRules** | Pointer to [**ManualTaxCalculatorDataRelationshipsTaxRules**](ManualTaxCalculatorDataRelationshipsTaxRules.md) |  | [optional] 
@@ -27,31 +26,6 @@ will change when the set of required properties is changed
 NewManualTaxCalculatorDataRelationshipsWithDefaults instantiates a new ManualTaxCalculatorDataRelationships object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetTaxCategories
-
-`func (o *ManualTaxCalculatorDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories`
-
-GetTaxCategories returns the TaxCategories field if non-nil, zero value otherwise.
-
-### GetTaxCategoriesOk
-
-`func (o *ManualTaxCalculatorDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool)`
-
-GetTaxCategoriesOk returns a tuple with the TaxCategories field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTaxCategories
-
-`func (o *ManualTaxCalculatorDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories)`
-
-SetTaxCategories sets TaxCategories field to given value.
-
-### HasTaxCategories
-
-`func (o *ManualTaxCalculatorDataRelationships) HasTaxCategories() bool`
-
-HasTaxCategories returns a boolean if a field has been set.
 
 ### GetMarkets
 

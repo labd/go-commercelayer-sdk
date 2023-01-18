@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETShipments200ResponseDataInnerRelationshipsCarrierAccounts struct for GETShipments200ResponseDataInnerRelationshipsCarrierAccounts
 type GETShipments200ResponseDataInnerRelationshipsCarrierAccounts struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks             `json:"links,omitempty"`
-	Data  []GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks       `json:"links,omitempty"`
+	Data  *GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData `json:"data,omitempty"`
 }
 
 // NewGETShipments200ResponseDataInnerRelationshipsCarrierAccounts instantiates a new GETShipments200ResponseDataInnerRelationshipsCarrierAccounts object
@@ -71,17 +71,17 @@ func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) SetLinks(
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) GetData() []GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner {
+func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) GetData() GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData {
 	if o == nil || o.Data == nil {
-		var ret []GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner
+		var ret GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) GetDataOk() ([]GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner, bool) {
+func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) GetDataOk() (*GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) HasData()
 	return false
 }
 
-// SetData gets a reference to the given []GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner and assigns it to the Data field.
-func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) SetData(v []GETShipments200ResponseDataInnerRelationshipsCarrierAccountsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData and assigns it to the Data field.
+func (o *GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) SetData(v GETShipments200ResponseDataInnerRelationshipsCarrierAccountsData) {
+	o.Data = &v
 }
 
 func (o GETShipments200ResponseDataInnerRelationshipsCarrierAccounts) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type CouponUpdateData struct {
 	// The resource's id
 	Id            string                                        `json:"id"`
 	Attributes    PATCHCouponsCouponId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CouponDataRelationships                      `json:"relationships,omitempty"`
+	Relationships *CouponUpdateDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewCouponUpdateData instantiates a new CouponUpdateData object
@@ -118,9 +118,9 @@ func (o *CouponUpdateData) SetAttributes(v PATCHCouponsCouponId200ResponseDataAt
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CouponUpdateData) GetRelationships() CouponDataRelationships {
+func (o *CouponUpdateData) GetRelationships() CouponUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CouponDataRelationships
+		var ret CouponUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -128,7 +128,7 @@ func (o *CouponUpdateData) GetRelationships() CouponDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponUpdateData) GetRelationshipsOk() (*CouponDataRelationships, bool) {
+func (o *CouponUpdateData) GetRelationshipsOk() (*CouponUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *CouponUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CouponDataRelationships and assigns it to the Relationships field.
-func (o *CouponUpdateData) SetRelationships(v CouponDataRelationships) {
+// SetRelationships gets a reference to the given CouponUpdateDataRelationships and assigns it to the Relationships field.
+func (o *CouponUpdateData) SetRelationships(v CouponUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

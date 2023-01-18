@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments struct for GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments
 type GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                     `json:"links,omitempty"`
-	Data  []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks               `json:"links,omitempty"`
+	Data  *GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData `json:"data,omitempty"`
 }
 
 // NewGETExternalGateways200ResponseDataInnerRelationshipsExternalPayments instantiates a new GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments object
@@ -71,17 +71,17 @@ func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) S
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetData() []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner {
+func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetData() GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner
+		var ret GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetDataOk() ([]GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner, bool) {
+func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetDataOk() (*GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) H
 	return false
 }
 
-// SetData gets a reference to the given []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner and assigns it to the Data field.
-func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) SetData(v []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData and assigns it to the Data field.
+func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) SetData(v GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData) {
+	o.Data = &v
 }
 
 func (o GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) MarshalJSON() ([]byte, error) {

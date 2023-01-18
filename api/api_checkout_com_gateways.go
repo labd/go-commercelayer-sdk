@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECheckoutComGatewaysCheckoutComGatewayId Delete a checkout.com gateway
 
 Delete a checkout.com gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComGatewayId The resource's id
- @return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComGatewayId The resource's id
+	@return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest
 */
 func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiDELETECheckoutComGatewaysCheckoutComGatewayIdRequest{
@@ -129,8 +129,8 @@ GETCheckoutComGateways List all checkout.com gateways
 
 List all checkout.com gateways
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest
 */
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiGETCheckoutComGatewaysRequest {
 	return CheckoutComGatewaysApiGETCheckoutComGatewaysRequest{
@@ -140,7 +140,8 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGateways(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETCheckoutComGateways200Response
+//
+//	@return GETCheckoutComGateways200Response
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysRequest) (*GETCheckoutComGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETCheckoutComGatewaysCheckoutComGatewayId Retrieve a checkout.com gateway
 
 Retrieve a checkout.com gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComGatewayId The resource's id
- @return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComGatewayId The resource's id
+	@return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest
 */
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest{
@@ -242,7 +243,8 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 }
 
 // Execute executes the request
-//  @return GETCheckoutComGatewaysCheckoutComGatewayId200Response
+//
+//	@return GETCheckoutComGatewaysCheckoutComGatewayId200Response
 func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiGETCheckoutComGatewaysCheckoutComGatewayIdRequest) (*GETCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHCheckoutComGatewaysCheckoutComGatewayId Update a checkout.com gateway
 
 Update a checkout.com gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComGatewayId The resource's id
- @return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComGatewayId The resource's id
+	@return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
 */
 func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx context.Context, checkoutComGatewayId string) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
 	return CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest{
@@ -351,7 +353,8 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 }
 
 // Execute executes the request
-//  @return PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
+//
+//	@return PATCHCheckoutComGatewaysCheckoutComGatewayId200Response
 func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatewayIdExecute(r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) (*PATCHCheckoutComGatewaysCheckoutComGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTCheckoutComGateways Create a checkout.com gateway
 
 Create a checkout.com gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest
 */
 func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Context) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
 	return CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest{
@@ -462,7 +465,8 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGateways(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return POSTCheckoutComGateways201Response
+//
+//	@return POSTCheckoutComGateways201Response
 func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) (*POSTCheckoutComGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

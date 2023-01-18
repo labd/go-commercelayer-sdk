@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GiftCardCreateDataRelationships struct for GiftCardCreateDataRelationships
 type GiftCardCreateDataRelationships struct {
-	Market            *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
-	GiftCardRecipient *GiftCardDataRelationshipsGiftCardRecipient `json:"gift_card_recipient,omitempty"`
+	Market            *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	GiftCardRecipient *GiftCardCreateDataRelationshipsGiftCardRecipient       `json:"gift_card_recipient,omitempty"`
 }
 
 // NewGiftCardCreateDataRelationships instantiates a new GiftCardCreateDataRelationships object
@@ -39,9 +39,9 @@ func NewGiftCardCreateDataRelationshipsWithDefaults() *GiftCardCreateDataRelatio
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *GiftCardCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -49,7 +49,7 @@ func (o *GiftCardCreateDataRelationships) GetMarket() AvalaraAccountDataRelation
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -65,15 +65,15 @@ func (o *GiftCardCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *GiftCardCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *GiftCardCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetGiftCardRecipient returns the GiftCardRecipient field value if set, zero value otherwise.
-func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardDataRelationshipsGiftCardRecipient {
+func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardCreateDataRelationshipsGiftCardRecipient {
 	if o == nil || o.GiftCardRecipient == nil {
-		var ret GiftCardDataRelationshipsGiftCardRecipient
+		var ret GiftCardCreateDataRelationshipsGiftCardRecipient
 		return ret
 	}
 	return *o.GiftCardRecipient
@@ -81,7 +81,7 @@ func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardDataRel
 
 // GetGiftCardRecipientOk returns a tuple with the GiftCardRecipient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardDataRelationshipsGiftCardRecipient, bool) {
+func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardCreateDataRelationshipsGiftCardRecipient, bool) {
 	if o == nil || o.GiftCardRecipient == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *GiftCardCreateDataRelationships) HasGiftCardRecipient() bool {
 	return false
 }
 
-// SetGiftCardRecipient gets a reference to the given GiftCardDataRelationshipsGiftCardRecipient and assigns it to the GiftCardRecipient field.
-func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardDataRelationshipsGiftCardRecipient) {
+// SetGiftCardRecipient gets a reference to the given GiftCardCreateDataRelationshipsGiftCardRecipient and assigns it to the GiftCardRecipient field.
+func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardCreateDataRelationshipsGiftCardRecipient) {
 	o.GiftCardRecipient = &v
 }
 

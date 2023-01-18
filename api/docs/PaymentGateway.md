@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PaymentGatewayData**](PaymentGatewayData.md) |  | 
+**Data** | Pointer to [**PaymentGatewayData**](PaymentGatewayData.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentGateway
 
-`func NewPaymentGateway(data PaymentGatewayData, ) *PaymentGateway`
+`func NewPaymentGateway() *PaymentGateway`
 
 NewPaymentGateway instantiates a new PaymentGateway object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *PaymentGateway) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

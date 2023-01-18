@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEBraintreePaymentsBraintreePaymentId Delete a braintree payment
 
 Delete a braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest
 */
 func (a *BraintreePaymentsApiService) DELETEBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest {
 	return BraintreePaymentsApiDELETEBraintreePaymentsBraintreePaymentIdRequest{
@@ -130,9 +130,9 @@ GETBraintreeGatewayIdBraintreePayments Retrieve the braintree payments associate
 
 Retrieve the braintree payments associated to the braintree gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreeGatewayId The resource's id
- @return BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreeGatewayId The resource's id
+	@return BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest
 */
 func (a *BraintreePaymentsApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest {
 	return BraintreePaymentsApiGETBraintreeGatewayIdBraintreePaymentsRequest{
@@ -221,8 +221,8 @@ GETBraintreePayments List all braintree payments
 
 List all braintree payments
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BraintreePaymentsApiGETBraintreePaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BraintreePaymentsApiGETBraintreePaymentsRequest
 */
 func (a *BraintreePaymentsApiService) GETBraintreePayments(ctx context.Context) BraintreePaymentsApiGETBraintreePaymentsRequest {
 	return BraintreePaymentsApiGETBraintreePaymentsRequest{
@@ -232,7 +232,8 @@ func (a *BraintreePaymentsApiService) GETBraintreePayments(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GETBraintreePayments200Response
+//
+//	@return GETBraintreePayments200Response
 func (a *BraintreePaymentsApiService) GETBraintreePaymentsExecute(r BraintreePaymentsApiGETBraintreePaymentsRequest) (*GETBraintreePayments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETBraintreePaymentsBraintreePaymentId Retrieve a braintree payment
 
 Retrieve a braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest
 */
 func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest {
 	return BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest{
@@ -334,7 +335,8 @@ func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentId(ctx
 }
 
 // Execute executes the request
-//  @return GETBraintreePaymentsBraintreePaymentId200Response
+//
+//	@return GETBraintreePaymentsBraintreePaymentId200Response
 func (a *BraintreePaymentsApiService) GETBraintreePaymentsBraintreePaymentIdExecute(r BraintreePaymentsApiGETBraintreePaymentsBraintreePaymentIdRequest) (*GETBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHBraintreePaymentsBraintreePaymentId Update a braintree payment
 
 Update a braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest
 */
 func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentId(ctx context.Context, braintreePaymentId string) BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest {
 	return BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest{
@@ -443,7 +445,8 @@ func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentId(c
 }
 
 // Execute executes the request
-//  @return PATCHBraintreePaymentsBraintreePaymentId200Response
+//
+//	@return PATCHBraintreePaymentsBraintreePaymentId200Response
 func (a *BraintreePaymentsApiService) PATCHBraintreePaymentsBraintreePaymentIdExecute(r BraintreePaymentsApiPATCHBraintreePaymentsBraintreePaymentIdRequest) (*PATCHBraintreePaymentsBraintreePaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTBraintreePayments Create a braintree payment
 
 Create a braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BraintreePaymentsApiPOSTBraintreePaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BraintreePaymentsApiPOSTBraintreePaymentsRequest
 */
 func (a *BraintreePaymentsApiService) POSTBraintreePayments(ctx context.Context) BraintreePaymentsApiPOSTBraintreePaymentsRequest {
 	return BraintreePaymentsApiPOSTBraintreePaymentsRequest{
@@ -554,7 +557,8 @@ func (a *BraintreePaymentsApiService) POSTBraintreePayments(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return POSTBraintreePayments201Response
+//
+//	@return POSTBraintreePayments201Response
 func (a *BraintreePaymentsApiService) POSTBraintreePaymentsExecute(r BraintreePaymentsApiPOSTBraintreePaymentsRequest) (*POSTBraintreePayments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

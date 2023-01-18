@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // CheckoutComGatewayCreateDataRelationships struct for CheckoutComGatewayCreateDataRelationships
 type CheckoutComGatewayCreateDataRelationships struct {
-	CheckoutComPayments *CheckoutComGatewayDataRelationshipsCheckoutComPayments `json:"checkout_com_payments,omitempty"`
+	CheckoutComPayments *CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments `json:"checkout_com_payments,omitempty"`
 }
 
 // NewCheckoutComGatewayCreateDataRelationships instantiates a new CheckoutComGatewayCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewCheckoutComGatewayCreateDataRelationshipsWithDefaults() *CheckoutComGate
 }
 
 // GetCheckoutComPayments returns the CheckoutComPayments field value if set, zero value otherwise.
-func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPayments() CheckoutComGatewayDataRelationshipsCheckoutComPayments {
+func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPayments() CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments {
 	if o == nil || o.CheckoutComPayments == nil {
-		var ret CheckoutComGatewayDataRelationshipsCheckoutComPayments
+		var ret CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments
 		return ret
 	}
 	return *o.CheckoutComPayments
@@ -48,7 +48,7 @@ func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPayments() Che
 
 // GetCheckoutComPaymentsOk returns a tuple with the CheckoutComPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPaymentsOk() (*CheckoutComGatewayDataRelationshipsCheckoutComPayments, bool) {
+func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPaymentsOk() (*CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments, bool) {
 	if o == nil || o.CheckoutComPayments == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *CheckoutComGatewayCreateDataRelationships) HasCheckoutComPayments() boo
 	return false
 }
 
-// SetCheckoutComPayments gets a reference to the given CheckoutComGatewayDataRelationshipsCheckoutComPayments and assigns it to the CheckoutComPayments field.
-func (o *CheckoutComGatewayCreateDataRelationships) SetCheckoutComPayments(v CheckoutComGatewayDataRelationshipsCheckoutComPayments) {
+// SetCheckoutComPayments gets a reference to the given CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments and assigns it to the CheckoutComPayments field.
+func (o *CheckoutComGatewayCreateDataRelationships) SetCheckoutComPayments(v CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments) {
 	o.CheckoutComPayments = &v
 }
 

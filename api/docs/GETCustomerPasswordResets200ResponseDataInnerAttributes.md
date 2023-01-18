@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **CustomerEmail** | Pointer to **string** | The email of the customer that requires a password reset | [optional] 
 **ResetPasswordToken** | Pointer to **string** | Automatically generated on create. Send its value as the &#39;_reset_password_token&#39; argument when updating the customer password. | [optional] 
 **ResetPasswordAt** | Pointer to **string** | Time at which the password was reset. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -107,31 +106,6 @@ SetResetPasswordAt sets ResetPasswordAt field to given value.
 `func (o *GETCustomerPasswordResets200ResponseDataInnerAttributes) HasResetPasswordAt() bool`
 
 HasResetPasswordAt returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETCustomerPasswordResets200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETCustomerPasswordResets200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETCustomerPasswordResets200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETCustomerPasswordResets200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

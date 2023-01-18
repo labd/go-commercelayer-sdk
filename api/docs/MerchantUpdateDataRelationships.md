@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
+**Address** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddress
 
-`func (o *MerchantUpdateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses`
+`func (o *MerchantUpdateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *MerchantUpdateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool)`
+`func (o *MerchantUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *MerchantUpdateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses)`
+`func (o *MerchantUpdateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress)`
 
 SetAddress sets Address field to given value.
 

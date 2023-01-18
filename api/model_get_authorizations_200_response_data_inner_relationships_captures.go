@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETAuthorizations200ResponseDataInnerRelationshipsCaptures struct for GETAuthorizations200ResponseDataInnerRelationshipsCaptures
 type GETAuthorizations200ResponseDataInnerRelationshipsCaptures struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
-	Data  []GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks     `json:"links,omitempty"`
+	Data  *GETAuthorizations200ResponseDataInnerRelationshipsCapturesData `json:"data,omitempty"`
 }
 
 // NewGETAuthorizations200ResponseDataInnerRelationshipsCaptures instantiates a new GETAuthorizations200ResponseDataInnerRelationshipsCaptures object
@@ -71,17 +71,17 @@ func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) SetLinks(v 
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) GetData() []GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner {
+func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) GetData() GETAuthorizations200ResponseDataInnerRelationshipsCapturesData {
 	if o == nil || o.Data == nil {
-		var ret []GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner
+		var ret GETAuthorizations200ResponseDataInnerRelationshipsCapturesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) GetDataOk() ([]GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner, bool) {
+func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) GetDataOk() (*GETAuthorizations200ResponseDataInnerRelationshipsCapturesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) HasData() b
 	return false
 }
 
-// SetData gets a reference to the given []GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner and assigns it to the Data field.
-func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) SetData(v []GETAuthorizations200ResponseDataInnerRelationshipsCapturesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETAuthorizations200ResponseDataInnerRelationshipsCapturesData and assigns it to the Data field.
+func (o *GETAuthorizations200ResponseDataInnerRelationshipsCaptures) SetData(v GETAuthorizations200ResponseDataInnerRelationshipsCapturesData) {
+	o.Data = &v
 }
 
 func (o GETAuthorizations200ResponseDataInnerRelationshipsCaptures) MarshalJSON() ([]byte, error) {

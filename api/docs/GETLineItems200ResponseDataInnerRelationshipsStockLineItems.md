@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETLineItems200ResponseDataInnerRelationshipsStockLineItemsDataInner**](GETLineItems200ResponseDataInnerRelationshipsStockLineItemsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETLineItems200ResponseDataInnerRelationshipsStockLineItemsData**](GETLineItems200ResponseDataInnerRelationshipsStockLineItemsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) GetData() []GETLineItems200ResponseDataInnerRelationshipsStockLineItemsDataInner`
+`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) GetData() GETLineItems200ResponseDataInnerRelationshipsStockLineItemsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) GetDataOk() (*[]GETLineItems200ResponseDataInnerRelationshipsStockLineItemsDataInner, bool)`
+`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) GetDataOk() (*GETLineItems200ResponseDataInnerRelationshipsStockLineItemsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) SetData(v []GETLineItems200ResponseDataInnerRelationshipsStockLineItemsDataInner)`
+`func (o *GETLineItems200ResponseDataInnerRelationshipsStockLineItems) SetData(v GETLineItems200ResponseDataInnerRelationshipsStockLineItemsData)`
 
 SetData sets Data field to given value.
 

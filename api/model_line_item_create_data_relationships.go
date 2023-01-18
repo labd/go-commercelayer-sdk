@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // LineItemCreateDataRelationships struct for LineItemCreateDataRelationships
 type LineItemCreateDataRelationships struct {
-	Order AdyenPaymentDataRelationshipsOrder `json:"order"`
-	Item  *LineItemDataRelationshipsItem     `json:"item,omitempty"`
+	Order AdyenPaymentCreateDataRelationshipsOrder `json:"order"`
+	Item  *LineItemCreateDataRelationshipsItem     `json:"item,omitempty"`
 }
 
 // NewLineItemCreateDataRelationships instantiates a new LineItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemCreateDataRelationships(order AdyenPaymentDataRelationshipsOrder) *LineItemCreateDataRelationships {
+func NewLineItemCreateDataRelationships(order AdyenPaymentCreateDataRelationshipsOrder) *LineItemCreateDataRelationships {
 	this := LineItemCreateDataRelationships{}
 	this.Order = order
 	return &this
@@ -40,9 +40,9 @@ func NewLineItemCreateDataRelationshipsWithDefaults() *LineItemCreateDataRelatio
 }
 
 // GetOrder returns the Order field value
-func (o *LineItemCreateDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
+func (o *LineItemCreateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil {
-		var ret AdyenPaymentDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 
@@ -51,7 +51,7 @@ func (o *LineItemCreateDataRelationships) GetOrder() AdyenPaymentDataRelationshi
 
 // GetOrderOk returns a tuple with the Order field value
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+func (o *LineItemCreateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -59,14 +59,14 @@ func (o *LineItemCreateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelatio
 }
 
 // SetOrder sets field value
-func (o *LineItemCreateDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
+func (o *LineItemCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.Order = v
 }
 
 // GetItem returns the Item field value if set, zero value otherwise.
-func (o *LineItemCreateDataRelationships) GetItem() LineItemDataRelationshipsItem {
+func (o *LineItemCreateDataRelationships) GetItem() LineItemCreateDataRelationshipsItem {
 	if o == nil || o.Item == nil {
-		var ret LineItemDataRelationshipsItem
+		var ret LineItemCreateDataRelationshipsItem
 		return ret
 	}
 	return *o.Item
@@ -74,7 +74,7 @@ func (o *LineItemCreateDataRelationships) GetItem() LineItemDataRelationshipsIte
 
 // GetItemOk returns a tuple with the Item field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateDataRelationships) GetItemOk() (*LineItemDataRelationshipsItem, bool) {
+func (o *LineItemCreateDataRelationships) GetItemOk() (*LineItemCreateDataRelationshipsItem, bool) {
 	if o == nil || o.Item == nil {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *LineItemCreateDataRelationships) HasItem() bool {
 	return false
 }
 
-// SetItem gets a reference to the given LineItemDataRelationshipsItem and assigns it to the Item field.
-func (o *LineItemCreateDataRelationships) SetItem(v LineItemDataRelationshipsItem) {
+// SetItem gets a reference to the given LineItemCreateDataRelationshipsItem and assigns it to the Item field.
+func (o *LineItemCreateDataRelationships) SetItem(v LineItemCreateDataRelationshipsItem) {
 	o.Item = &v
 }
 

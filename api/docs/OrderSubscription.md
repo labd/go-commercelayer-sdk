@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**OrderSubscriptionData**](OrderSubscriptionData.md) |  | 
+**Data** | Pointer to [**OrderSubscriptionData**](OrderSubscriptionData.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderSubscription
 
-`func NewOrderSubscription(data OrderSubscriptionData, ) *OrderSubscription`
+`func NewOrderSubscription() *OrderSubscription`
 
 NewOrderSubscription instantiates a new OrderSubscription object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *OrderSubscription) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

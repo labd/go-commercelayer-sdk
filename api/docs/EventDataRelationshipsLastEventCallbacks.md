@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**EventDataRelationshipsLastEventCallbacksData**](EventDataRelationshipsLastEventCallbacksData.md) |  | 
+**Data** | Pointer to [**EventDataRelationshipsLastEventCallbacksData**](EventDataRelationshipsLastEventCallbacksData.md) |  | [optional] 
 
 ## Methods
 
 ### NewEventDataRelationshipsLastEventCallbacks
 
-`func NewEventDataRelationshipsLastEventCallbacks(data EventDataRelationshipsLastEventCallbacksData, ) *EventDataRelationshipsLastEventCallbacks`
+`func NewEventDataRelationshipsLastEventCallbacks() *EventDataRelationshipsLastEventCallbacks`
 
 NewEventDataRelationshipsLastEventCallbacks instantiates a new EventDataRelationshipsLastEventCallbacks object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *EventDataRelationshipsLastEventCallbacks) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

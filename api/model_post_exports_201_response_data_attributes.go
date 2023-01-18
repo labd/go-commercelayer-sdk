@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -25,7 +25,7 @@ type POSTExports201ResponseDataAttributes struct {
 	Includes []string `json:"includes,omitempty"`
 	// The filters used to select the records to be exported.
 	Filters map[string]interface{} `json:"filters,omitempty"`
-	// Send this attribute if you want to skip exporting redundant attributes (IDs, timespamps, blanks, etc), useful when combining export and import to duplicate your dataset.
+	// Send this attribute if you want to skip exporting redundant attributes (IDs, timestamps, blanks, etc.), useful when combining export and import to duplicate your dataset.
 	DryData *bool `json:"dry_data,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETPromotionRules List all promotion rules
 
 List all promotion rules
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PromotionRulesApiGETPromotionRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PromotionRulesApiGETPromotionRulesRequest
 */
 func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) PromotionRulesApiGETPromotionRulesRequest {
 	return PromotionRulesApiGETPromotionRulesRequest{
@@ -48,7 +48,8 @@ func (a *PromotionRulesApiService) GETPromotionRules(ctx context.Context) Promot
 }
 
 // Execute executes the request
-//  @return GETPromotionRules200Response
+//
+//	@return GETPromotionRules200Response
 func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiGETPromotionRulesRequest) (*GETPromotionRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETPromotionRulesPromotionRuleId Retrieve a promotion rule
 
 Retrieve a promotion rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionRuleId The resource's id
- @return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionRuleId The resource's id
+	@return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
 */
 func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
 	return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest{
@@ -150,7 +151,8 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPromotionRulesPromotionRuleId200Response
+//
+//	@return GETPromotionRulesPromotionRuleId200Response
 func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

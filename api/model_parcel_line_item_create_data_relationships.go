@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,17 +17,17 @@ import (
 
 // ParcelLineItemCreateDataRelationships struct for ParcelLineItemCreateDataRelationships
 type ParcelLineItemCreateDataRelationships struct {
-	Parcel        PackageDataRelationshipsParcels         `json:"parcel"`
-	StockLineItem LineItemDataRelationshipsStockLineItems `json:"stock_line_item"`
+	Parcel        ParcelLineItemCreateDataRelationshipsParcel        `json:"parcel"`
+	StockLineItem ParcelLineItemCreateDataRelationshipsStockLineItem `json:"stock_line_item"`
 	// Deprecated
-	ShipmentLineItem *LineItemDataRelationshipsShipmentLineItems `json:"shipment_line_item,omitempty"`
+	ShipmentLineItem *ParcelLineItemCreateDataRelationshipsShipmentLineItem `json:"shipment_line_item,omitempty"`
 }
 
 // NewParcelLineItemCreateDataRelationships instantiates a new ParcelLineItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemCreateDataRelationships(parcel PackageDataRelationshipsParcels, stockLineItem LineItemDataRelationshipsStockLineItems) *ParcelLineItemCreateDataRelationships {
+func NewParcelLineItemCreateDataRelationships(parcel ParcelLineItemCreateDataRelationshipsParcel, stockLineItem ParcelLineItemCreateDataRelationshipsStockLineItem) *ParcelLineItemCreateDataRelationships {
 	this := ParcelLineItemCreateDataRelationships{}
 	this.Parcel = parcel
 	this.StockLineItem = stockLineItem
@@ -43,9 +43,9 @@ func NewParcelLineItemCreateDataRelationshipsWithDefaults() *ParcelLineItemCreat
 }
 
 // GetParcel returns the Parcel field value
-func (o *ParcelLineItemCreateDataRelationships) GetParcel() PackageDataRelationshipsParcels {
+func (o *ParcelLineItemCreateDataRelationships) GetParcel() ParcelLineItemCreateDataRelationshipsParcel {
 	if o == nil {
-		var ret PackageDataRelationshipsParcels
+		var ret ParcelLineItemCreateDataRelationshipsParcel
 		return ret
 	}
 
@@ -54,7 +54,7 @@ func (o *ParcelLineItemCreateDataRelationships) GetParcel() PackageDataRelations
 
 // GetParcelOk returns a tuple with the Parcel field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreateDataRelationships) GetParcelOk() (*PackageDataRelationshipsParcels, bool) {
+func (o *ParcelLineItemCreateDataRelationships) GetParcelOk() (*ParcelLineItemCreateDataRelationshipsParcel, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -62,14 +62,14 @@ func (o *ParcelLineItemCreateDataRelationships) GetParcelOk() (*PackageDataRelat
 }
 
 // SetParcel sets field value
-func (o *ParcelLineItemCreateDataRelationships) SetParcel(v PackageDataRelationshipsParcels) {
+func (o *ParcelLineItemCreateDataRelationships) SetParcel(v ParcelLineItemCreateDataRelationshipsParcel) {
 	o.Parcel = v
 }
 
 // GetStockLineItem returns the StockLineItem field value
-func (o *ParcelLineItemCreateDataRelationships) GetStockLineItem() LineItemDataRelationshipsStockLineItems {
+func (o *ParcelLineItemCreateDataRelationships) GetStockLineItem() ParcelLineItemCreateDataRelationshipsStockLineItem {
 	if o == nil {
-		var ret LineItemDataRelationshipsStockLineItems
+		var ret ParcelLineItemCreateDataRelationshipsStockLineItem
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *ParcelLineItemCreateDataRelationships) GetStockLineItem() LineItemDataR
 
 // GetStockLineItemOk returns a tuple with the StockLineItem field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreateDataRelationships) GetStockLineItemOk() (*LineItemDataRelationshipsStockLineItems, bool) {
+func (o *ParcelLineItemCreateDataRelationships) GetStockLineItemOk() (*ParcelLineItemCreateDataRelationshipsStockLineItem, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,15 +86,15 @@ func (o *ParcelLineItemCreateDataRelationships) GetStockLineItemOk() (*LineItemD
 }
 
 // SetStockLineItem sets field value
-func (o *ParcelLineItemCreateDataRelationships) SetStockLineItem(v LineItemDataRelationshipsStockLineItems) {
+func (o *ParcelLineItemCreateDataRelationships) SetStockLineItem(v ParcelLineItemCreateDataRelationshipsStockLineItem) {
 	o.StockLineItem = v
 }
 
 // GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
 // Deprecated
-func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() LineItemDataRelationshipsShipmentLineItems {
+func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() ParcelLineItemCreateDataRelationshipsShipmentLineItem {
 	if o == nil || o.ShipmentLineItem == nil {
-		var ret LineItemDataRelationshipsShipmentLineItems
+		var ret ParcelLineItemCreateDataRelationshipsShipmentLineItem
 		return ret
 	}
 	return *o.ShipmentLineItem
@@ -103,7 +103,7 @@ func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() LineItemDa
 // GetShipmentLineItemOk returns a tuple with the ShipmentLineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // Deprecated
-func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*LineItemDataRelationshipsShipmentLineItems, bool) {
+func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*ParcelLineItemCreateDataRelationshipsShipmentLineItem, bool) {
 	if o == nil || o.ShipmentLineItem == nil {
 		return nil, false
 	}
@@ -119,9 +119,9 @@ func (o *ParcelLineItemCreateDataRelationships) HasShipmentLineItem() bool {
 	return false
 }
 
-// SetShipmentLineItem gets a reference to the given LineItemDataRelationshipsShipmentLineItems and assigns it to the ShipmentLineItem field.
+// SetShipmentLineItem gets a reference to the given ParcelLineItemCreateDataRelationshipsShipmentLineItem and assigns it to the ShipmentLineItem field.
 // Deprecated
-func (o *ParcelLineItemCreateDataRelationships) SetShipmentLineItem(v LineItemDataRelationshipsShipmentLineItems) {
+func (o *ParcelLineItemCreateDataRelationships) SetShipmentLineItem(v ParcelLineItemCreateDataRelationshipsShipmentLineItem) {
 	o.ShipmentLineItem = &v
 }
 

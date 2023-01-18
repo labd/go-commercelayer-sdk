@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**SkuOption** | Pointer to [**LineItemOptionDataRelationshipsSkuOption**](LineItemOptionDataRelationshipsSkuOption.md) |  | [optional] 
+**SkuOption** | Pointer to [**LineItemOptionCreateDataRelationshipsSkuOption**](LineItemOptionCreateDataRelationshipsSkuOption.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSkuOption
 
-`func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionDataRelationshipsSkuOption`
+`func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionCreateDataRelationshipsSkuOption`
 
 GetSkuOption returns the SkuOption field if non-nil, zero value otherwise.
 
 ### GetSkuOptionOk
 
-`func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptionDataRelationshipsSkuOption, bool)`
+`func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptionCreateDataRelationshipsSkuOption, bool)`
 
 GetSkuOptionOk returns a tuple with the SkuOption field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuOption
 
-`func (o *LineItemOptionUpdateDataRelationships) SetSkuOption(v LineItemOptionDataRelationshipsSkuOption)`
+`func (o *LineItemOptionUpdateDataRelationships) SetSkuOption(v LineItemOptionCreateDataRelationshipsSkuOption)`
 
 SetSkuOption sets SkuOption field to given value.
 

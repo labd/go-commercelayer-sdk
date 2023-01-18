@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**LineItemData**](LineItemData.md) |  | 
+**Data** | Pointer to [**LineItemData**](LineItemData.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItem
 
-`func NewLineItem(data LineItemData, ) *LineItem`
+`func NewLineItem() *LineItem`
 
 NewLineItem instantiates a new LineItem object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *LineItem) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

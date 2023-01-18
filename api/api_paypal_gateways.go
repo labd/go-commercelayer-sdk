@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEPaypalGatewaysPaypalGatewayId Delete a paypal gateway
 
 Delete a paypal gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalGatewayId The resource's id
- @return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalGatewayId The resource's id
+	@return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
 */
 func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest{
@@ -129,8 +129,8 @@ GETPaypalGateways List all paypal gateways
 
 List all paypal gateways
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PaypalGatewaysApiGETPaypalGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PaypalGatewaysApiGETPaypalGatewaysRequest
 */
 func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) PaypalGatewaysApiGETPaypalGatewaysRequest {
 	return PaypalGatewaysApiGETPaypalGatewaysRequest{
@@ -140,7 +140,8 @@ func (a *PaypalGatewaysApiService) GETPaypalGateways(ctx context.Context) Paypal
 }
 
 // Execute executes the request
-//  @return GETPaypalGateways200Response
+//
+//	@return GETPaypalGateways200Response
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiGETPaypalGatewaysRequest) (*GETPaypalGateways200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETPaypalGatewaysPaypalGatewayId Retrieve a paypal gateway
 
 Retrieve a paypal gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalGatewayId The resource's id
- @return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalGatewayId The resource's id
+	@return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
 */
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest{
@@ -242,7 +243,8 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPaypalGatewaysPaypalGatewayId200Response
+//
+//	@return GETPaypalGatewaysPaypalGatewayId200Response
 func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) (*GETPaypalGatewaysPaypalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHPaypalGatewaysPaypalGatewayId Update a paypal gateway
 
 Update a paypal gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalGatewayId The resource's id
- @return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalGatewayId The resource's id
+	@return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
 */
 func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest{
@@ -351,7 +353,8 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHPaypalGatewaysPaypalGatewayId200Response
+//
+//	@return PATCHPaypalGatewaysPaypalGatewayId200Response
 func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) (*PATCHPaypalGatewaysPaypalGatewayId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTPaypalGateways Create a paypal gateway
 
 Create a paypal gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PaypalGatewaysApiPOSTPaypalGatewaysRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PaypalGatewaysApiPOSTPaypalGatewaysRequest
 */
 func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
 	return PaypalGatewaysApiPOSTPaypalGatewaysRequest{
@@ -462,7 +465,8 @@ func (a *PaypalGatewaysApiService) POSTPaypalGateways(ctx context.Context) Paypa
 }
 
 // Execute executes the request
-//  @return POSTPaypalGateways201Response
+//
+//	@return POSTPaypalGateways201Response
 func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApiPOSTPaypalGatewaysRequest) (*POSTPaypalGateways201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources struct for GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources
 type GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                    `json:"links,omitempty"`
-	Data  []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks              `json:"links,omitempty"`
+	Data  *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData `json:"data,omitempty"`
 }
 
 // NewGETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources instantiates a new GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources object
@@ -71,17 +71,17 @@ func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) Se
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetData() []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner {
+func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetData() GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData {
 	if o == nil || o.Data == nil {
-		var ret []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner
+		var ret GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetDataOk() ([]GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner, bool) {
+func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetDataOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) Ha
 	return false
 }
 
-// SetData gets a reference to the given []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner and assigns it to the Data field.
-func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) SetData(v []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData and assigns it to the Data field.
+func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) SetData(v GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData) {
+	o.Data = &v
 }
 
 func (o GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) MarshalJSON() ([]byte, error) {

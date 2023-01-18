@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // PriceVolumeTierCreateDataRelationships struct for PriceVolumeTierCreateDataRelationships
 type PriceVolumeTierCreateDataRelationships struct {
-	Price PriceListDataRelationshipsPrices `json:"price"`
+	Price PriceVolumeTierCreateDataRelationshipsPrice `json:"price"`
 }
 
 // NewPriceVolumeTierCreateDataRelationships instantiates a new PriceVolumeTierCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierCreateDataRelationships(price PriceListDataRelationshipsPrices) *PriceVolumeTierCreateDataRelationships {
+func NewPriceVolumeTierCreateDataRelationships(price PriceVolumeTierCreateDataRelationshipsPrice) *PriceVolumeTierCreateDataRelationships {
 	this := PriceVolumeTierCreateDataRelationships{}
 	this.Price = price
 	return &this
@@ -39,9 +39,9 @@ func NewPriceVolumeTierCreateDataRelationshipsWithDefaults() *PriceVolumeTierCre
 }
 
 // GetPrice returns the Price field value
-func (o *PriceVolumeTierCreateDataRelationships) GetPrice() PriceListDataRelationshipsPrices {
+func (o *PriceVolumeTierCreateDataRelationships) GetPrice() PriceVolumeTierCreateDataRelationshipsPrice {
 	if o == nil {
-		var ret PriceListDataRelationshipsPrices
+		var ret PriceVolumeTierCreateDataRelationshipsPrice
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *PriceVolumeTierCreateDataRelationships) GetPrice() PriceListDataRelatio
 
 // GetPriceOk returns a tuple with the Price field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreateDataRelationships) GetPriceOk() (*PriceListDataRelationshipsPrices, bool) {
+func (o *PriceVolumeTierCreateDataRelationships) GetPriceOk() (*PriceVolumeTierCreateDataRelationshipsPrice, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *PriceVolumeTierCreateDataRelationships) GetPriceOk() (*PriceListDataRel
 }
 
 // SetPrice sets field value
-func (o *PriceVolumeTierCreateDataRelationships) SetPrice(v PriceListDataRelationshipsPrices) {
+func (o *PriceVolumeTierCreateDataRelationships) SetPrice(v PriceVolumeTierCreateDataRelationshipsPrice) {
 	o.Price = v
 }
 

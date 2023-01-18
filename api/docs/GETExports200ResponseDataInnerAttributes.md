@@ -9,13 +9,12 @@ Name | Type | Description | Notes
 **Status** | Pointer to **string** | The export job status. One of &#39;pending&#39; (default), &#39;in_progress&#39;, or &#39;completed&#39;. | [optional] 
 **Includes** | Pointer to **[]string** | List of related resources that should be included in the export. | [optional] 
 **Filters** | Pointer to **map[string]interface{}** | The filters used to select the records to be exported. | [optional] 
-**DryData** | Pointer to **bool** | Send this attribute if you want to skip exporting redundant attributes (IDs, timespamps, blanks, etc), useful when combining export and import to duplicate your dataset. | [optional] 
+**DryData** | Pointer to **bool** | Send this attribute if you want to skip exporting redundant attributes (IDs, timestamps, blanks, etc.), useful when combining export and import to duplicate your dataset. | [optional] 
 **StartedAt** | Pointer to **string** | Time at which the export was started. | [optional] 
 **CompletedAt** | Pointer to **string** | Time at which the export was completed. | [optional] 
 **InterruptedAt** | Pointer to **string** | Time at which the export was interrupted. | [optional] 
 **RecordsCount** | Pointer to **int32** | Indicates the number of records to be exported. | [optional] 
 **AttachmentUrl** | Pointer to **string** | The URL to the output file, which will be generated upon export completion. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -315,31 +314,6 @@ SetAttachmentUrl sets AttachmentUrl field to given value.
 `func (o *GETExports200ResponseDataInnerAttributes) HasAttachmentUrl() bool`
 
 HasAttachmentUrl returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETExports200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETExports200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETExports200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.0.4
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETPriceIdPriceTiers Retrieve the price tiers associated to the price
 
 Retrieve the price tiers associated to the price
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceId The resource's id
- @return PriceTiersApiGETPriceIdPriceTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return PriceTiersApiGETPriceIdPriceTiersRequest
 */
 func (a *PriceTiersApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) PriceTiersApiGETPriceIdPriceTiersRequest {
 	return PriceTiersApiGETPriceIdPriceTiersRequest{
@@ -129,8 +129,8 @@ GETPriceTiers List all price tiers
 
 List all price tiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PriceTiersApiGETPriceTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PriceTiersApiGETPriceTiersRequest
 */
 func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiGETPriceTiersRequest {
 	return PriceTiersApiGETPriceTiersRequest{
@@ -140,7 +140,8 @@ func (a *PriceTiersApiService) GETPriceTiers(ctx context.Context) PriceTiersApiG
 }
 
 // Execute executes the request
-//  @return GETPriceTiers200Response
+//
+//	@return GETPriceTiers200Response
 func (a *PriceTiersApiService) GETPriceTiersExecute(r PriceTiersApiGETPriceTiersRequest) (*GETPriceTiers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETPriceTiersPriceTierId Retrieve a price tier
 
 Retrieve a price tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceTierId The resource's id
- @return PriceTiersApiGETPriceTiersPriceTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceTierId The resource's id
+	@return PriceTiersApiGETPriceTiersPriceTierIdRequest
 */
 func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, priceTierId string) PriceTiersApiGETPriceTiersPriceTierIdRequest {
 	return PriceTiersApiGETPriceTiersPriceTierIdRequest{
@@ -242,7 +243,8 @@ func (a *PriceTiersApiService) GETPriceTiersPriceTierId(ctx context.Context, pri
 }
 
 // Execute executes the request
-//  @return GETPriceTiersPriceTierId200Response
+//
+//	@return GETPriceTiersPriceTierId200Response
 func (a *PriceTiersApiService) GETPriceTiersPriceTierIdExecute(r PriceTiersApiGETPriceTiersPriceTierIdRequest) (*GETPriceTiersPriceTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
