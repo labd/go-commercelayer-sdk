@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.4
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -23,8 +23,10 @@ type PATCHMarketsMarketId200ResponseDataAttributes struct {
 	FacebookPixelId *string `json:"facebook_pixel_id,omitempty"`
 	// The checkout URL for this market
 	CheckoutUrl *string `json:"checkout_url,omitempty"`
-	// The URL used to fetch prices from an external source
+	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
+	// The URL used to validate orders by an external source.
+	ExternalOrderValidationUrl *string `json:"external_order_validation_url,omitempty"`
 	// Send this attribute if you want to mark the market as disabled.
 	Disable *bool `json:"_disable,omitempty"`
 	// Send this attribute if you want to mark the market as enabled.
@@ -180,6 +182,38 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalPricesUrl() b
 // SetExternalPricesUrl gets a reference to the given string and assigns it to the ExternalPricesUrl field.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalPricesUrl(v string) {
 	o.ExternalPricesUrl = &v
+}
+
+// GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field value if set, zero value otherwise.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrl() string {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		var ret string
+		return ret
+	}
+	return *o.ExternalOrderValidationUrl
+}
+
+// GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*string, bool) {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		return nil, false
+	}
+	return o.ExternalOrderValidationUrl, true
+}
+
+// HasExternalOrderValidationUrl returns a boolean if a field has been set.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalOrderValidationUrl() bool {
+	if o != nil && o.ExternalOrderValidationUrl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalOrderValidationUrl gets a reference to the given string and assigns it to the ExternalOrderValidationUrl field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidationUrl(v string) {
+	o.ExternalOrderValidationUrl = &v
 }
 
 // GetDisable returns the Disable field value if set, zero value otherwise.
@@ -355,6 +389,9 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	}
 	if o.ExternalPricesUrl != nil {
 		toSerialize["external_prices_url"] = o.ExternalPricesUrl
+	}
+	if o.ExternalOrderValidationUrl != nil {
+		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
 	}
 	if o.Disable != nil {
 		toSerialize["_disable"] = o.Disable

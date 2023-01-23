@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.4
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -25,8 +25,12 @@ type GETMarkets200ResponseDataInnerAttributes struct {
 	FacebookPixelId *string `json:"facebook_pixel_id,omitempty"`
 	// The checkout URL for this market
 	CheckoutUrl *string `json:"checkout_url,omitempty"`
-	// The URL used to fetch prices from an external source
+	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
+	// The URL used to validate orders by an external source.
+	ExternalOrderValidationUrl *string `json:"external_order_validation_url,omitempty"`
+	// The shared secret used to sign the external requests payload.
+	SharedSecret *string `json:"shared_secret,omitempty"`
 	// Indicates if market belongs to a customer_group.
 	Private *bool `json:"private,omitempty"`
 	// Time at which the market was disabled.
@@ -218,6 +222,70 @@ func (o *GETMarkets200ResponseDataInnerAttributes) HasExternalPricesUrl() bool {
 // SetExternalPricesUrl gets a reference to the given string and assigns it to the ExternalPricesUrl field.
 func (o *GETMarkets200ResponseDataInnerAttributes) SetExternalPricesUrl(v string) {
 	o.ExternalPricesUrl = &v
+}
+
+// GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field value if set, zero value otherwise.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetExternalOrderValidationUrl() string {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		var ret string
+		return ret
+	}
+	return *o.ExternalOrderValidationUrl
+}
+
+// GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetExternalOrderValidationUrlOk() (*string, bool) {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		return nil, false
+	}
+	return o.ExternalOrderValidationUrl, true
+}
+
+// HasExternalOrderValidationUrl returns a boolean if a field has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) HasExternalOrderValidationUrl() bool {
+	if o != nil && o.ExternalOrderValidationUrl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalOrderValidationUrl gets a reference to the given string and assigns it to the ExternalOrderValidationUrl field.
+func (o *GETMarkets200ResponseDataInnerAttributes) SetExternalOrderValidationUrl(v string) {
+	o.ExternalOrderValidationUrl = &v
+}
+
+// GetSharedSecret returns the SharedSecret field value if set, zero value otherwise.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetSharedSecret() string {
+	if o == nil || o.SharedSecret == nil {
+		var ret string
+		return ret
+	}
+	return *o.SharedSecret
+}
+
+// GetSharedSecretOk returns a tuple with the SharedSecret field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool) {
+	if o == nil || o.SharedSecret == nil {
+		return nil, false
+	}
+	return o.SharedSecret, true
+}
+
+// HasSharedSecret returns a boolean if a field has been set.
+func (o *GETMarkets200ResponseDataInnerAttributes) HasSharedSecret() bool {
+	if o != nil && o.SharedSecret != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetSharedSecret gets a reference to the given string and assigns it to the SharedSecret field.
+func (o *GETMarkets200ResponseDataInnerAttributes) SetSharedSecret(v string) {
+	o.SharedSecret = &v
 }
 
 // GetPrivate returns the Private field value if set, zero value otherwise.
@@ -460,6 +528,12 @@ func (o GETMarkets200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error) 
 	}
 	if o.ExternalPricesUrl != nil {
 		toSerialize["external_prices_url"] = o.ExternalPricesUrl
+	}
+	if o.ExternalOrderValidationUrl != nil {
+		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
+	}
+	if o.SharedSecret != nil {
+		toSerialize["shared_secret"] = o.SharedSecret
 	}
 	if o.Private != nil {
 		toSerialize["private"] = o.Private

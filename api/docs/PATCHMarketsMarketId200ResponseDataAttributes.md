@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The market&#39;s internal name | [optional] 
 **FacebookPixelId** | Pointer to **string** | The Facebook Pixed ID | [optional] 
 **CheckoutUrl** | Pointer to **string** | The checkout URL for this market | [optional] 
-**ExternalPricesUrl** | Pointer to **string** | The URL used to fetch prices from an external source | [optional] 
+**ExternalPricesUrl** | Pointer to **string** | The URL used to overwrite prices by an external source. | [optional] 
+**ExternalOrderValidationUrl** | Pointer to **string** | The URL used to validate orders by an external source. | [optional] 
 **Disable** | Pointer to **bool** | Send this attribute if you want to mark the market as disabled. | [optional] 
 **Enable** | Pointer to **bool** | Send this attribute if you want to mark the market as enabled. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -132,6 +133,31 @@ SetExternalPricesUrl sets ExternalPricesUrl field to given value.
 `func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalPricesUrl() bool`
 
 HasExternalPricesUrl returns a boolean if a field has been set.
+
+### GetExternalOrderValidationUrl
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrl() string`
+
+GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field if non-nil, zero value otherwise.
+
+### GetExternalOrderValidationUrlOk
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*string, bool)`
+
+GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalOrderValidationUrl
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidationUrl(v string)`
+
+SetExternalOrderValidationUrl sets ExternalOrderValidationUrl field to given value.
+
+### HasExternalOrderValidationUrl
+
+`func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalOrderValidationUrl() bool`
+
+HasExternalOrderValidationUrl returns a boolean if a field has been set.
 
 ### GetDisable
 

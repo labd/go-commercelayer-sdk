@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.4
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -89,6 +89,8 @@ type PATCHOrdersOrderId200ResponseDataAttributes struct {
 	SaveBillingAddressToCustomerAddressBook *bool `json:"_save_billing_address_to_customer_address_book,omitempty"`
 	// Send this attribute if you want to manually refresh the order.
 	Refresh *bool `json:"_refresh,omitempty"`
+	// Send this attribute if you want to trigger the external validation for the order.
+	Validate *bool `json:"_validate,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
@@ -1266,6 +1268,38 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefresh(v bool) {
 	o.Refresh = &v
 }
 
+// GetValidate returns the Validate field value if set, zero value otherwise.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidate() bool {
+	if o == nil || o.Validate == nil {
+		var ret bool
+		return ret
+	}
+	return *o.Validate
+}
+
+// GetValidateOk returns a tuple with the Validate field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*bool, bool) {
+	if o == nil || o.Validate == nil {
+		return nil, false
+	}
+	return o.Validate, true
+}
+
+// HasValidate returns a boolean if a field has been set.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasValidate() bool {
+	if o != nil && o.Validate != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetValidate gets a reference to the given bool and assigns it to the Validate field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetValidate(v bool) {
+	o.Validate = &v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReference() string {
 	if o == nil || o.Reference == nil {
@@ -1471,6 +1505,9 @@ func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	}
 	if o.Refresh != nil {
 		toSerialize["_refresh"] = o.Refresh
+	}
+	if o.Validate != nil {
+		toSerialize["_validate"] = o.Validate
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference

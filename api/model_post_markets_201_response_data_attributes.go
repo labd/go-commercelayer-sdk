@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.4
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -23,8 +23,10 @@ type POSTMarkets201ResponseDataAttributes struct {
 	FacebookPixelId *string `json:"facebook_pixel_id,omitempty"`
 	// The checkout URL for this market
 	CheckoutUrl *string `json:"checkout_url,omitempty"`
-	// The URL used to fetch prices from an external source
+	// The URL used to overwrite prices by an external source.
 	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
+	// The URL used to validate orders by an external source.
+	ExternalOrderValidationUrl *string `json:"external_order_validation_url,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
 	Reference *string `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
@@ -171,6 +173,38 @@ func (o *POSTMarkets201ResponseDataAttributes) SetExternalPricesUrl(v string) {
 	o.ExternalPricesUrl = &v
 }
 
+// GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field value if set, zero value otherwise.
+func (o *POSTMarkets201ResponseDataAttributes) GetExternalOrderValidationUrl() string {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		var ret string
+		return ret
+	}
+	return *o.ExternalOrderValidationUrl
+}
+
+// GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTMarkets201ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*string, bool) {
+	if o == nil || o.ExternalOrderValidationUrl == nil {
+		return nil, false
+	}
+	return o.ExternalOrderValidationUrl, true
+}
+
+// HasExternalOrderValidationUrl returns a boolean if a field has been set.
+func (o *POSTMarkets201ResponseDataAttributes) HasExternalOrderValidationUrl() bool {
+	if o != nil && o.ExternalOrderValidationUrl != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetExternalOrderValidationUrl gets a reference to the given string and assigns it to the ExternalOrderValidationUrl field.
+func (o *POSTMarkets201ResponseDataAttributes) SetExternalOrderValidationUrl(v string) {
+	o.ExternalOrderValidationUrl = &v
+}
+
 // GetReference returns the Reference field value if set, zero value otherwise.
 func (o *POSTMarkets201ResponseDataAttributes) GetReference() string {
 	if o == nil || o.Reference == nil {
@@ -280,6 +314,9 @@ func (o POSTMarkets201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExternalPricesUrl != nil {
 		toSerialize["external_prices_url"] = o.ExternalPricesUrl
+	}
+	if o.ExternalOrderValidationUrl != nil {
+		toSerialize["external_order_validation_url"] = o.ExternalOrderValidationUrl
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
